@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/dsm.TRADES/src-gen" creationIcons="false" editDirectory="/dsm.TRADES.edit/src-gen"
+    editorDirectory="/dsm.TRADES.editor/src-gen" modelPluginID="dsm.TRADES" modelName="TRADES"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" codeFormatting="true"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>TRADES.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="TRADES" basePackage="dsm" disposableProviderFactory="true"
+      ecorePackage="TRADES.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="TRADES.ecore#//AssessmentENUM">
+      <genEnumLiterals ecoreEnumLiteral="TRADES.ecore#//AssessmentENUM/Undecided"/>
+      <genEnumLiterals ecoreEnumLiteral="TRADES.ecore#//AssessmentENUM/Gap"/>
+      <genEnumLiterals ecoreEnumLiteral="TRADES.ecore#//AssessmentENUM/Accepted"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="TRADES.ecore#//AffectedENUM">
+      <genEnumLiterals ecoreEnumLiteral="TRADES.ecore#//AffectedENUM/Undecided"/>
+      <genEnumLiterals ecoreEnumLiteral="TRADES.ecore#//AffectedENUM/Confirmed"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="TRADES.ecore#//threatTypeENUM">
+      <genEnumLiterals ecoreEnumLiteral="TRADES.ecore#//threatTypeENUM/ConcreteThreat"/>
+      <genEnumLiterals ecoreEnumLiteral="TRADES.ecore#//threatTypeENUM/ConceptualThreat"/>
+    </genEnums>
+    <genClasses ecoreClass="TRADES.ecore#//Analysis">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Analysis/threat"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Analysis/component"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Analysis/control"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Analysis/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Analysis/threatallocation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Analysis/threatmitigation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Analysis/data"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Analysis/affectrelation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Analysis/analysisdiagram"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Analysis/attackchain"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Analysis/scoresystem"/>
+    </genClasses>
+    <genClasses ecoreClass="TRADES.ecore#//Threat">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TRADES.ecore#//Threat/allocated"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Threat/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TRADES.ecore#//Threat/threatallocation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Threat/threatType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Threat/id"/>
+    </genClasses>
+    <genClasses ecoreClass="TRADES.ecore#//Component">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TRADES.ecore#//Component/allocatedThreat"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TRADES.ecore#//Component/implements"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Component/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TRADES.ecore#//Component/threatallocation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Component/component"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Component/data"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Component/control"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Component/analysis"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Component/affectrelation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Component/threat"/>
+    </genClasses>
+    <genClasses ecoreClass="TRADES.ecore#//Control">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TRADES.ecore#//Control/mitigates"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TRADES.ecore#//Control/implementedBy"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Control/name"/>
+    </genClasses>
+    <genClasses ecoreClass="TRADES.ecore#//ThreatAllocationRelation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//ThreatAllocationRelation/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//ThreatAllocationRelation/assessment"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TRADES.ecore#//ThreatAllocationRelation/component"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TRADES.ecore#//ThreatAllocationRelation/threat"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TRADES.ecore#//ThreatAllocationRelation/impactscore"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TRADES.ecore#//ThreatAllocationRelation/difficultyscore"/>
+    </genClasses>
+    <genClasses ecoreClass="TRADES.ecore#//ThreatMitigationRelation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//ThreatMitigationRelation/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//ThreatMitigationRelation/assessment"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TRADES.ecore#//ThreatMitigationRelation/control"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TRADES.ecore#//ThreatMitigationRelation/threat"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TRADES.ecore#//ThreatMitigationRelation/mitigates"/>
+    </genClasses>
+    <genClasses ecoreClass="TRADES.ecore#//Data">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Data/name"/>
+    </genClasses>
+    <genClasses ecoreClass="TRADES.ecore#//AffectRelation">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TRADES.ecore#//AffectRelation/data"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TRADES.ecore#//AffectRelation/sourceComponent"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TRADES.ecore#//AffectRelation/targetComponent"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//AffectRelation/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//AffectRelation/analysisStatus"/>
+    </genClasses>
+    <genClasses ecoreClass="TRADES.ecore#//AnalysisDiagram">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//AnalysisDiagram/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TRADES.ecore#//AnalysisDiagram/threat"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TRADES.ecore#//AnalysisDiagram/component"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TRADES.ecore#//AnalysisDiagram/control"/>
+    </genClasses>
+    <genClasses ecoreClass="TRADES.ecore#//AttackChain">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//AttackChain/attackchainstep"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//AttackChain/name"/>
+    </genClasses>
+    <genClasses ecoreClass="TRADES.ecore#//AttackChainStep">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//AttackChainStep/stepNum"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TRADES.ecore#//AttackChainStep/threatallocationrelation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//AttackChainStep/difficulty"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//AttackChainStep/impactDescription"/>
+    </genClasses>
+    <genClasses ecoreClass="TRADES.ecore#//ScoreSystem">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//ScoreSystem/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//ScoreSystem/impactscore"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//ScoreSystem/difficultyscore"/>
+    </genClasses>
+    <genClasses ecoreClass="TRADES.ecore#//ImpactScore">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//ImpactScore/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//ImpactScore/impact"/>
+    </genClasses>
+    <genClasses ecoreClass="TRADES.ecore#//DifficultyScore">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//DifficultyScore/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//DifficultyScore/difficulty"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

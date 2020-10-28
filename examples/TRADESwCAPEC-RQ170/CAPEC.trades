@@ -1,0 +1,1970 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TRADES:Analysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:TRADES="dsm.TRADES" name="Elta SystemA">
+  <threat name="Accessing Functionality Not Properly Constrained by ACLs"/>
+  <threat name="Buffer Overflow via Environment Variables"/>
+  <threat name="Overflow Buffers"/>
+  <threat name="Server Side Include (SSI) Injection"/>
+  <threat name="Session Sidejacking"/>
+  <threat name="Clickjacking"/>
+  <threat name="Cross Zone Scripting"/>
+  <threat name="HTTP Request Splitting"/>
+  <threat name="Cross Site Tracing"/>
+  <threat name="Command Line Execution through SQL Injection"/>
+  <threat name="Object Relational Mapping Injection"/>
+  <threat name="Cause Web Server Misclassification"/>
+  <threat name="SQL Injection through SOAP Parameter Tampering"/>
+  <threat name="JSON Hijacking (aka JavaScript Hijacking)"/>
+  <threat name="Brute Force"/>
+  <threat name="API Manipulation"/>
+  <threat name="Authentication Abuse"/>
+  <threat name="Authentication Bypass"/>
+  <threat name="Excavation"/>
+  <threat name="Interception"/>
+  <threat name="Choosing Message Identifier"/>
+  <threat name="Double Encoding"/>
+  <threat name="Exploit Test APIs"/>
+  <threat name="Privilege Abuse"/>
+  <threat name="Buffer Manipulation"/>
+  <threat name="Shared Data Manipulation"/>
+  <threat name="Flooding"/>
+  <threat name="Path Traversal"/>
+  <threat name="Directory Indexing"/>
+  <threat name="Integer Attacks"/>
+  <threat name="Pointer Manipulation"/>
+  <threat name="Subverting Environment Variable Values"/>
+  <threat name="Excessive Allocation"/>
+  <threat name="Resource Leak Exposure"/>
+  <threat name="Symlink Attack"/>
+  <threat name="Try All Common Switches"/>
+  <threat name="Email Injection"/>
+  <threat name="Format String Injection"/>
+  <threat name="LDAP Injection"/>
+  <threat name="Parameter Injection"/>
+  <threat name="Reflection Injection"/>
+  <threat name="Relative Path Traversal"/>
+  <threat name="Client-side Injection-induced Buffer Overflow"/>
+  <threat name="Bypassing of Intermediate Forms in Multiple-Form Sets"/>
+  <threat name="Cache Poisoning"/>
+  <threat name="DNS Cache Poisoning"/>
+  <threat name="Detect Unpublicized Web Pages"/>
+  <threat name="Detect Unpublicized Web Services"/>
+  <threat name="Checksum Spoofing"/>
+  <threat name="XML Schema Poisoning"/>
+  <threat name="XML Ping of the Death"/>
+  <threat name="Content Spoofing"/>
+  <threat name="Explore for Predictable Temporary File Names"/>
+  <threat name="Command Delimiters"/>
+  <threat name="Collect Data from Common Resource Locations"/>
+  <threat name="Identity Spoofing"/>
+  <threat name="Input Data Manipulation"/>
+  <threat name="Resource Location Spoofing"/>
+  <threat name="Screen Temporary Files for Sensitive Information"/>
+  <threat name="Sniffing Attacks"/>
+  <threat name="Sniffing Network Traffic"/>
+  <threat name="Redirect Access to Libraries"/>
+  <threat name="Dictionary-based Password Attack"/>
+  <threat name="Exploit Script-Based APIs"/>
+  <threat name="Infrastructure Manipulation"/>
+  <threat name="Manipulating Hidden Fields"/>
+  <threat name="Spear Phishing"/>
+  <threat name="Mobile Phishing"/>
+  <threat name="File Manipulation"/>
+  <threat name="Force the System to Reset Values"/>
+  <threat name="White Box Reverse Engineering"/>
+  <threat name="Windows ::DATA Alternate Data Stream"/>
+  <threat name="Footprinting"/>
+  <threat name="Using Malicious Files"/>
+  <threat name="Web Application Fingerprinting"/>
+  <threat name="Action Spoofing"/>
+  <threat name="Flash Parameter Injection"/>
+  <threat name="Code Inclusion"/>
+  <threat name="Configuration/Environment Manipulation"/>
+  <threat name="Create files with the same name as files protected with a higher classification"/>
+  <threat name="Cross-Site Flashing"/>
+  <threat name="Calling Micro-Services Directly"/>
+  <threat name="XSS Targeting Non-Script Elements"/>
+  <threat name="Exploiting Incorrectly Configured Access Control Security Levels"/>
+  <threat name="Flash File Overlay"/>
+  <threat name="Flash Injection"/>
+  <threat name="IMAP/SMTP Command Injection"/>
+  <threat name="Software Integrity Attack"/>
+  <threat name="Malicious Software Download"/>
+  <threat name="Malicious Software Update"/>
+  <threat name="Malicious Automated Software Update"/>
+  <threat name="Reverse Engineering"/>
+  <threat name="Black Box Reverse Engineering">
+    <threatallocation href="My.trades#//@threatallocation.1"/>
+    <threatallocation href="My.trades#//@threatallocation.2"/>
+  </threat>
+  <threat name="Embedding Scripts within Scripts"/>
+  <threat name="Reverse Engineer an Executable to Expose Assumed Hidden Functionality"/>
+  <threat name="Read Sensitive Strings Within an Executable"/>
+  <threat name="Protocol Analysis"/>
+  <threat name="PHP Remote File Inclusion"/>
+  <threat name="Fake the Source of Data"/>
+  <threat name="Principal Spoof"/>
+  <threat name="Session Credential Falsification through Forging"/>
+  <threat name="XML Entity Expansion"/>
+  <threat name="XSS Targeting Error Pages"/>
+  <threat name="XSS Using Alternate Syntax"/>
+  <threat name="Inducing Account Lockout"/>
+  <threat name="Encryption Brute Forcing"/>
+  <threat name="Removal of filters: Input filters, output filters, data masking"/>
+  <threat name="XML Entity Linking"/>
+  <threat name="Create Malicious Client"/>
+  <threat name="Manipulate Registry Information"/>
+  <threat name="Lifting Sensitive Data Embedded in Cache"/>
+  <threat name="Signing Malicious Code"/>
+  <threat name="Removing Important Client Functionality"/>
+  <threat name="Removing/short-circuiting 'Purse' logic: removing/mutating 'cash' decrements"/>
+  <threat name="XSS Using MIME Type Mismatch"/>
+  <threat name="Exploitation of Trusted Credentials"/>
+  <threat name="Functionality Misuse"/>
+  <threat name="Fuzzing for garnering J2EE/.NET-based stack traces, for application mapping"/>
+  <threat name="Fuzzing and observing application log data/errors for application mapping"/>
+  <threat name="Communication Channel Manipulation"/>
+  <threat name="Exploiting Incorrectly Configured SSL"/>
+  <threat name="Spoofing of UDDI/ebXML Messages"/>
+  <threat name="XML Routing Detour Attacks"/>
+  <threat name="Exploiting Trust in Client"/>
+  <threat name="Client-Server Protocol Manipulation"/>
+  <threat name="XML External Entities Blowup"/>
+  <threat name="iFrame Overlay"/>
+  <threat name="Fingerprinting"/>
+  <threat name="Session Credential Falsification through Manipulation"/>
+  <threat name="Sustained Client Engagement"/>
+  <threat name="DTD Injection"/>
+  <threat name="XML Attribute Blowup"/>
+  <threat name="File Content Injection"/>
+  <threat name="XML Nested Payloads"/>
+  <threat name="XML Oversized Payloads"/>
+  <threat name="Privilege Escalation"/>
+  <threat name="Hijacking a privileged process"/>
+  <threat name="Catching exception throw/signal from privileged block"/>
+  <threat name="Escaping a Sandbox by Calling Signed Code in Another Language"/>
+  <threat name="Filter Failure through Buffer Overflow"/>
+  <threat name="Resource Injection"/>
+  <threat name="Code Injection"/>
+  <threat name="XSS Targeting HTML Attributes"/>
+  <threat name="XSS Targeting URI Placeholders"/>
+  <threat name="XSS Using Doubled Characters"/>
+  <threat name="XSS Using Invalid Characters"/>
+  <threat name="Command Injection"/>
+  <threat name="Forced Deadlock"/>
+  <threat name="XML Injection"/>
+  <threat name="Local Code Inclusion"/>
+  <threat name="PHP Local File Inclusion"/>
+  <threat name="Remote Code Inclusion"/>
+  <threat name="SOAP Array Overflow"/>
+  <threat name="Leveraging Race Conditions"/>
+  <threat name="Fuzzing for garnering other adjacent user/sensitive data"/>
+  <threat name="Force Use of Corrupted Files"/>
+  <threat name="Leverage Alternate Encoding"/>
+  <threat name="Audit Log Manipulation"/>
+  <threat name="Leveraging Race Conditions via Symbolic Links"/>
+  <threat name="Modification of Registry Run Keys"/>
+  <threat name="Schema Poisoning"/>
+  <threat name="Protocol Manipulation"/>
+  <threat name="HTTP Response Smuggling"/>
+  <threat name="HTTP Verb Tampering"/>
+  <threat name="DNS Rebinding"/>
+  <threat name="Inter-component Protocol Manipulation"/>
+  <threat name="Data Interchange Protocol Manipulation"/>
+  <threat name="Web Services Protocol Manipulation"/>
+  <threat name="SOAP Manipulation"/>
+  <threat name="Fuzzing"/>
+  <threat name="ICMP Echo Request Ping"/>
+  <threat name="TCP SYN Scan"/>
+  <threat name="Leveraging Time-of-Check and Time-of-Use (TOCTOU) Race Conditions"/>
+  <threat name="Enumerate Mail Exchange (MX) Records"/>
+  <threat name="DNS Zone Transfers"/>
+  <threat name="Host Discovery"/>
+  <threat name="Traceroute Route Enumeration"/>
+  <threat name="ICMP Address Mask Request"/>
+  <threat name="Timestamp Request"/>
+  <threat name="ICMP Information Request"/>
+  <threat name="TCP ACK Ping"/>
+  <threat name="UDP Ping"/>
+  <threat name="TCP SYN Ping"/>
+  <threat name="Using Leading 'Ghost' Character Sequences to Bypass Input Filters"/>
+  <threat name="Hijacking a Privileged Thread of Execution"/>
+  <threat name="Port Scanning"/>
+  <threat name="TCP Connect Scan"/>
+  <threat name="TCP FIN Scan"/>
+  <threat name="TCP Xmas Scan"/>
+  <threat name="TCP Null Scan"/>
+  <threat name="TCP ACK Scan"/>
+  <threat name="TCP Window Scan"/>
+  <threat name="TCP RPC Scan"/>
+  <threat name="UDP Scan"/>
+  <threat name="Network Topology Mapping"/>
+  <threat name="Accessing/Intercepting/Modifying HTTP Cookies"/>
+  <threat name="Scanning for Vulnerable Software"/>
+  <threat name="Active OS Fingerprinting"/>
+  <threat name="Passive OS Fingerprinting"/>
+  <threat name="IP ID Sequencing Probe"/>
+  <threat name="IP 'ID' Echoed Byte-Order Probe"/>
+  <threat name="IP (DF) 'Don't Fragment Bit' Echoing Probe"/>
+  <threat name="XSS Through HTTP Query Strings"/>
+  <threat name="TCP Timestamp Probe"/>
+  <threat name="TCP Sequence Number Probe"/>
+  <threat name="TCP (ISN) Greatest Common Divisor Probe"/>
+  <threat name="TCP (ISN) Counter Rate Probe"/>
+  <threat name="TCP (ISN) Sequence Predictability Probe"/>
+  <threat name="TCP Congestion Control Flag (ECN) Probe"/>
+  <threat name="TCP Initial Window Size Probe"/>
+  <threat name="TCP Options Probe"/>
+  <threat name="TCP 'RST' Flag Checksum Probe"/>
+  <threat name="ICMP Error Message Quoting Probe"/>
+  <threat name="HTTP Request Smuggling"/>
+  <threat name="ICMP Error Message Echoing Integrity Probe"/>
+  <threat name="ICMP IP Total Length Field Probe"/>
+  <threat name="ICMP IP 'ID' Field Error Message Probe"/>
+  <threat name="HTTP Response Splitting"/>
+  <threat name="Leverage Executable Code in Non-Executable Files"/>
+  <threat name="Using Unpublished APIs"/>
+  <threat name="Retrieve Embedded Sensitive Data"/>
+  <threat name="Leveraging/Manipulating Configuration File Search Paths"/>
+  <threat name="Harvesting Information via API Event Monitoring"/>
+  <threat name="Application API Message Manipulation via Man-in-the-Middle"/>
+  <threat name="Transaction or Event Tampering via Application API Manipulation"/>
+  <threat name="Application API Navigation Remapping"/>
+  <threat name="Navigation Remapping To Propagate Malicious Content"/>
+  <threat name="Application API Button Hijacking"/>
+  <threat name="Content Spoofing Via Application API Manipulation"/>
+  <threat name="Manipulating Opaque Client-based Data Tokens"/>
+  <threat name="Bypassing Physical Security"/>
+  <threat name="Bypassing Physical Locks"/>
+  <threat name="Lock Bumping"/>
+  <threat name="Lock Picking"/>
+  <threat name="Using a Snap Gun Lock to Force a Lock"/>
+  <threat name="Bypassing Electronic Locks and Access Controls"/>
+  <threat name="Cloning Magnetic Strip Cards"/>
+  <threat name="Magnetic Strip Card Brute Force Attacks"/>
+  <threat name="Cloning RFID Cards or Chips"/>
+  <threat name="Using Alternative IP Address Encodings"/>
+  <threat name="Manipulating Writeable Terminal Devices"/>
+  <threat name="RFID Chip Deactivation or Destruction"/>
+  <threat name="Hacking Hardware"/>
+  <threat name="Bypassing ATA Password Security"/>
+  <threat name="Dumpster Diving"/>
+  <threat name="Pretexting"/>
+  <threat name="Using Meta-characters in E-mail Headers to Inject Malicious Payloads"/>
+  <threat name="Information Elicitation"/>
+  <threat name="Pretexting via Customer Service"/>
+  <threat name="Pretexting via Tech Support"/>
+  <threat name="Pretexting via Delivery Person"/>
+  <threat name="Pretexting via Phone"/>
+  <threat name="Manipulate Human Behavior"/>
+  <threat name="Influence Perception"/>
+  <threat name="Influence Perception of Reciprocation"/>
+  <threat name="MIME Conversion"/>
+  <threat name="Influence Perception of Scarcity"/>
+  <threat name="Influence Perception of Authority"/>
+  <threat name="Influence Perception of Commitment and Consistency"/>
+  <threat name="Influence Perception of Liking"/>
+  <threat name="Influence Perception of Consensus or Social Proof"/>
+  <threat name="Target Influence via Framing"/>
+  <threat name="Influence via Incentives"/>
+  <threat name="Influence via Psychological Principles"/>
+  <threat name="Influence via Modes of Thinking"/>
+  <threat name="Target Influence via Eye Cues"/>
+  <threat name="Exploiting Multiple Input Interpretation Layers"/>
+  <threat name="Target Influence via The Human Buffer Overflow"/>
+  <threat name="Target Influence via Interview and Interrogation"/>
+  <threat name="Target Influence via Instant Rapport"/>
+  <threat name="Modification During Manufacture"/>
+  <threat name="Manipulation During Distribution"/>
+  <threat name="Overflow Binary Resource File"/>
+  <threat name="Hardware Integrity Attack"/>
+  <threat name="Malicious Logic Insertion"/>
+  <threat name="Infected Software"/>
+  <threat name="Malicious Logic Inserted Into Product Software by Authorized Developer"/>
+  <threat name="Development Alteration"/>
+  <threat name="Malicious Logic Insertion into Product Software via Configuration Management Manipulation"/>
+  <threat name="Malicious Logic Insertion into Product Software via Inclusion of 3rd Party Component Dependency"/>
+  <threat name="Design Alteration"/>
+  <threat name="Embed Virus into DLL"/>
+  <threat name="Buffer Overflow via Symbolic Links"/>
+  <threat name="Infected Hardware"/>
+  <threat name="Infected Memory"/>
+  <threat name="USB Memory Attacks"/>
+  <threat name="Flash Memory Attacks"/>
+  <threat name="Creating a Rogue Certification Authority Certificate"/>
+  <threat name="Overflow Variables and Tags"/>
+  <threat name="HTTP Parameter Pollution (HPP)"/>
+  <threat name="Web Services API Signature Forgery Leveraging Hash Function Extension Weakness"/>
+  <threat name="Cross-Domain Search Timing"/>
+  <threat name="Padding Oracle Crypto Attack"/>
+  <threat name="Evercookie"/>
+  <threat name="Transparent Proxy Abuse"/>
+  <threat name="Leveraging Active Man in the Middle Attacks to Bypass Same Origin Policy"/>
+  <threat name="Cross Site Identification"/>
+  <threat name="Generic Cross-Browser Cross-Domain Theft"/>
+  <threat name="HTTP DoS"/>
+  <threat name="Buffer Overflow via Parameter Expansion"/>
+  <threat name="Expanding Control over the Operating System from the Database"/>
+  <threat name="Search Order Hijacking"/>
+  <threat name="Browser Fingerprinting"/>
+  <threat name="Signature Spoof"/>
+  <threat name="Signature Spoofing by Key Theft"/>
+  <threat name="Signature Spoofing by Improper Validation"/>
+  <threat name="Signature Spoofing by Misrepresentation"/>
+  <threat name="Signature Spoofing by Mixing Signed and Unsigned Content"/>
+  <threat name="Modification of Windows Service Configuration"/>
+  <threat name="Malicious Root Certificate"/>
+  <threat name="Passing Local Filenames to Functions That Expect a URL"/>
+  <threat name="Escaping Virtualization"/>
+  <threat name="Contradictory Destinations in Traffic Routing Schemes"/>
+  <threat name="TCP Flood"/>
+  <threat name="Signature Spoofing by Key Recreation"/>
+  <threat name="UDP Flood"/>
+  <threat name="ICMP Flood"/>
+  <threat name="HTTP Flood"/>
+  <threat name="SSL Flood"/>
+  <threat name="Password Brute Forcing"/>
+  <threat name="Amplification"/>
+  <threat name="XML Quadratic Expansion"/>
+  <threat name="Regular Expression Exponential Blowup"/>
+  <threat name="SOAP Array Blowup"/>
+  <threat name="TCP Fragmentation"/>
+  <threat name="UDP Fragmentation"/>
+  <threat name="ICMP Fragmentation"/>
+  <threat name="File Discovery"/>
+  <threat name="Probe iOS Screenshots"/>
+  <threat name="Intent Intercept"/>
+  <threat name="Blue Boxing"/>
+  <threat name="Password Recovery Exploitation"/>
+  <threat name="WebView Injection"/>
+  <threat name="Activity Hijack"/>
+  <threat name="Intent Spoof"/>
+  <threat name="WebView Exposure"/>
+  <threat name="Task Impersonation"/>
+  <threat name="Scheme Squatting"/>
+  <threat name="Tapjacking"/>
+  <threat name="Physical Theft"/>
+  <threat name="Kerberoasting"/>
+  <threat name="Poison Web Service Registry"/>
+  <threat name="SaaS User Request Forgery"/>
+  <threat name="Infiltration of Software Development Environment"/>
+  <threat name="Hardware Component Substitution During Baselining"/>
+  <threat name="Documentation Alteration to Circumvent Dial-down"/>
+  <threat name="Documentation Alteration to Produce Under-performing Systems"/>
+  <threat name="Documentation Alteration to Cause Errors in System Design"/>
+  <threat name="Embedding NULL Bytes"/>
+  <threat name="Counterfeit Hardware Component Inserted During Product Assembly"/>
+  <threat name="Hardware Design Specifications Are Altered"/>
+  <threat name="Malicious Hardware Component Replacement"/>
+  <threat name="Malicious Software Implanted"/>
+  <threat name="Rogue Integration Procedures"/>
+  <threat name="XML Flood"/>
+  <threat name="Malware-Directed Internal Reconnaissance"/>
+  <threat name="Postfix, Null Terminate, and Backslash"/>
+  <threat name="Provide Counterfeit Component"/>
+  <threat name="Hardware Component Substitution"/>
+  <threat name="Altered Installed BIOS"/>
+  <threat name="Malicious Manual Software Update"/>
+  <threat name="Malicious Hardware Update"/>
+  <threat name="Malicious Gray Market Hardware"/>
+  <threat name="Data Injected During Configuration"/>
+  <threat name="Infiltration of Hardware Development Environment"/>
+  <threat name="Open Source Libraries Altered"/>
+  <threat name="ASIC With Malicious Functionality"/>
+  <threat name="Query System for Information"/>
+  <threat name="Overread Buffers"/>
+  <threat name="Application Fingerprinting"/>
+  <threat name="Targeted Malware"/>
+  <threat name="Counterfeit Websites"/>
+  <threat name="Counterfeit Organizations"/>
+  <threat name="Pull Data from System Resources"/>
+  <threat name="Probe Application Memory"/>
+  <threat name="Physical Destruction of Device or Component"/>
+  <threat name="Contaminate Resource"/>
+  <threat name="Local Execution of Code"/>
+  <threat name="Rainbow Table Password Cracking"/>
+  <threat name="Install New Service"/>
+  <threat name="Modify Existing Service"/>
+  <threat name="Install Rootkit "/>
+  <threat name="Functionality Bypass"/>
+  <threat name="Remote Services with Stolen Credentials"/>
+  <threat name="Replace File Extension Handlers"/>
+  <threat name="Replace Trusted Executable"/>
+  <threat name="Orbital Jamming"/>
+  <threat name="Use of Known Domain Credentials"/>
+  <threat name="Windows Admin Shares with Stolen Credentials"/>
+  <threat name="Modify Shared File"/>
+  <threat name="Add Malicious File to Shared Webroot"/>
+  <threat name="Run Software at Logon"/>
+  <threat name="Capture Credentials via Keylogger"/>
+  <threat name="Collect Data as Provided by Users"/>
+  <threat name="Utilizing REST's Trust in the System Resource to Obtain Sensitive Data"/>
+  <threat name="Block Logging to Central Repository"/>
+  <threat name="Artificially Inflate File Sizes"/>
+  <threat name="Process Footprinting"/>
+  <threat name="Services Footprinting"/>
+  <threat name="Account Footprinting"/>
+  <threat name="Group Permission Footprinting"/>
+  <threat name="Owner Footprinting"/>
+  <threat name="Disable Security Software"/>
+  <threat name="Replace Winlogon Helper DLL"/>
+  <threat name="Restful Privilege Elevation"/>
+  <threat name="Application Footprinting"/>
+  <threat name="Security Software Footprinting"/>
+  <threat name="Route Disabling"/>
+  <threat name="Disabling Network Hardware"/>
+  <threat name="BGP Route Disabling"/>
+  <threat name="DNS Domain Seizure"/>
+  <threat name="Object Injection"/>
+  <threat name="Cross Frame Scripting (XFS)"/>
+  <threat name="DOM-Based XSS"/>
+  <threat name="DNS Blocking"/>
+  <threat name="Session Credential Falsification through Prediction"/>
+  <threat name="IP Address Blocking"/>
+  <threat name="Reflected XSS"/>
+  <threat name="Stored XSS"/>
+  <threat name="Session Hijacking"/>
+  <threat name="Traffic Injection"/>
+  <threat name="Connection Reset"/>
+  <threat name="TCP RST Injection"/>
+  <threat name="Absolute Path Traversal"/>
+  <threat name="DNS Spoofing"/>
+  <threat name="Terrestrial Jamming"/>
+  <threat name="Argument Injection"/>
+  <threat name="Reusing Session IDs (aka Session Replay)"/>
+  <threat name="Jamming"/>
+  <threat name="Blockage">
+    <threatallocation href="My.trades#//@threatallocation.3"/>
+    <threatallocation href="My.trades#//@threatallocation.4"/>
+  </threat>
+  <threat name="Wi-Fi Jamming"/>
+  <threat name="Cellular Jamming"/>
+  <threat name="Weakening of Cellular Encryption"/>
+  <threat name="Obstruction"/>
+  <threat name="Cryptanalysis of Cellular Encryption"/>
+  <threat name="Cellular Traffic Intercept"/>
+  <threat name="Session Fixation"/>
+  <threat name="Cellular Data Injection"/>
+  <threat name="BitSquatting"/>
+  <threat name="WiFi MAC Address Tracking"/>
+  <threat name="WiFi SSID Tracking"/>
+  <threat name="Rooting SIM Cards"/>
+  <threat name="Evil Twin Wi-Fi Attack"/>
+  <threat name="Establish Rogue Location"/>
+  <threat name="Cellular Rogue Base Station"/>
+  <threat name="Cellular Broadcast Message Request"/>
+  <threat name="Signal Strength Tracking"/>
+  <threat name="Cross Site Request Forgery"/>
+  <threat name="Drop Encryption Level"/>
+  <threat name="Analysis of Packet Timing and Sizes"/>
+  <threat name="Electromagnetic Side-Channel Attack"/>
+  <threat name="Compromising Emanations Attack"/>
+  <threat name="Fault Injection"/>
+  <threat name="Mobile Device Fault Injection"/>
+  <threat name="Smudge Attack"/>
+  <threat name="Counterfeit GPS Signals">
+    <threatallocation href="My.trades#//@threatallocation.5"/>
+  </threat>
+  <threat name="Carry-Off GPS Attack"/>
+  <threat name="Unauthorized Use of Device Resources"/>
+  <threat name="Cross-Site Scripting (XSS)"/>
+  <threat name="TypoSquatting"/>
+  <threat name="SoundSquatting"/>
+  <threat name="Homograph Attack via Homoglyphs"/>
+  <threat name="Token Impersonation"/>
+  <threat name="Probe Audio and Video Peripherals"/>
+  <threat name="Alternative Execution Due to Deceptive Filenames"/>
+  <threat name="Hiding Malicious Data or Code within Files"/>
+  <threat name="Collect Data from Clipboard"/>
+  <threat name="Altered Component Firmware"/>
+  <threat name="Probe System Files"/>
+  <threat name="Using Slashes and URL Encoding Combined to Bypass Validation Logic"/>
+  <threat name="Inclusion of Code in Existing Process"/>
+  <threat name="DLL Side-Loading"/>
+  <threat name="Replace Binaries"/>
+  <threat name="Identify Shared Files/Directories on System"/>
+  <threat name="Use of Captured Hashes (Pass The Hash)"/>
+  <threat name="Use of Captured Tickets (Pass The Ticket)"/>
+  <threat name="Peripheral Footprinting"/>
+  <threat name="Collect Data from Registries"/>
+  <threat name="Collect Data from Screen Capture"/>
+  <threat name="Adding a Space to a File Extension"/>
+  <threat name="Sniff Application Code"/>
+  <threat name="Upload a Web Shell to a Web Server"/>
+  <threat name="Eavesdropping"/>
+  <threat name="SQL Injection"/>
+  <threat name="String Format Overflow in syslog()"/>
+  <threat name="Subvert Code-signing Facilities"/>
+  <threat name="Target Programs with Elevated Privileges"/>
+  <threat name="Blind SQL Injection"/>
+  <threat name="Try Common or Default Usernames and Passwords"/>
+  <threat name="Using Unicode Encoding to Bypass Validation Logic"/>
+  <threat name="URL Encoding"/>
+  <threat name="User-Controlled Filename"/>
+  <threat name="Manipulating User State"/>
+  <threat name="Manipulating Writeable Configuration Files"/>
+  <threat name="Manipulating Web Input to File System Calls"/>
+  <threat name="Manipulating User-Controlled Variables"/>
+  <threat name="Using Escaped Slashes in Alternate Encoding"/>
+  <threat name="Using Slashes in Alternate Encoding"/>
+  <threat name="Buffer Overflow in an API Call"/>
+  <threat name="Using UTF-8 Encoding to Bypass Validation Logic"/>
+  <threat name="Web Logs Tampering"/>
+  <threat name="XPath Injection"/>
+  <threat name="XQuery Injection"/>
+  <threat name="AJAX Fingerprinting"/>
+  <threat name="XSS Through HTTP Headers"/>
+  <threat name="Forceful Browsing"/>
+  <threat name="OS Command Injection"/>
+  <threat name="Pharming"/>
+  <threat name="Buffer Overflow in Local Command-Line Utilities"/>
+  <threat name="Reflection Attack in Authentication Protocol"/>
+  <threat name="Forced Integer Overflow"/>
+  <threat name="Log Injection-Tampering-Forging"/>
+  <threat name="Man in the Middle Attack"/>
+  <threat name="WSDL Scanning"/>
+  <threat name="Block Access to Libraries"/>
+  <threat name="Cryptanalysis"/>
+  <threat name="Phishing"/>
+  <control name="&#xA;               "/>
+  <control name="Do not expose environment variable to the user."/>
+  <control name="Do not use untrusted data in your environment variables."/>
+  <control name="Use a language or compiler that performs automatic bounds checking"/>
+  <control name="There are tools such as Sharefuzz [R.10.3] which is an environment variable fuzzer for Unix that support loading a shared library. You can use Sharefuzz to determine if you are exposing an environment variable vulnerable to buffer overflow."/>
+  <control name="Use a language or compiler that performs automatic bounds checking."/>
+  <control name="Use secure functions not vulnerable to buffer overflow."/>
+  <control name="If you have to use dangerous functions, make sure that you do boundary checking."/>
+  <control name="Compiler-based canary mechanisms such as StackGuard, ProPolice and the Microsoft Visual Studio /GS flag. Unless this provides automatic bounds checking, it is not a complete solution."/>
+  <control name="Use OS-level preventative functionality. Not a complete solution."/>
+  <control name="Utilize static source code analysis tools to identify potential buffer overflow weaknesses in the software."/>
+  <control name="Set the OPTIONS IncludesNOEXEC in the global access.conf file or local .htaccess (Apache) file to deny SSI execution in directories that do not need them"/>
+  <control name="All user controllable input must be appropriately sanitized before use in the application. This includes omitting, or encoding, certain characters or strings that have the potential of being interpreted as part of an SSI directive"/>
+  <control name="Server Side Includes must be enabled only if there is a strong business reason to do so. Every additional component enabled on the web server increases the attack surface as well as administrative overhead"/>
+  <control name="Make sure that HTTPS is used to communicate with the target system. Alternatively, use VPN if possible. It is important to ensure that all communication between the client and the server happens via an encrypted secure channel."/>
+  <control name="Modify the session token with each transmission and protect it with cryptography. Add the idea of request sequencing that gives the server an ability to detect replay attacks."/>
+  <control name="If using the Firefox browser, use the NoScript plug-in that will help forbid iFrames."/>
+  <control name="Turn off JavaScript, Flash and disable CSS."/>
+  <control name="When maintaining an authenticated session with a privileged target system, do not use the same browser to navigate to unfamiliar sites to perform other activities. Finish working with the target system and logout first before proceeding to other tasks."/>
+  <control name="Disable script execution."/>
+  <control name="Ensure that sufficient input validation is performed for any potentially untrusted data before it is used in any privileged context or zone"/>
+  <control name="Limit the flow of untrusted data into the privileged areas of the system that run in the higher trust zone"/>
+  <control name="Limit the sites that are being added to the local machine zone and restrict the privileges of the code running in that zone to the bare minimum"/>
+  <control name="Ensure proper HTML output encoding before writing user supplied data to the page"/>
+  <control name="Make sure to install the latest vendor security patches available for the web server."/>
+  <control name="If possible, make use of SSL."/>
+  <control name="Install a web application firewall that has been secured against HTTP Request Splitting"/>
+  <control name="Use web servers that employ a tight HTTP parsing process"/>
+  <control name="Administrators should disable support for HTTP TRACE at the destination's web server. Vendors should disable TRACE by default."/>
+  <control name="Patch web browser against known security origin policy bypass exploits."/>
+  <control name="Disable MSSQL xp_cmdshell directive on the database"/>
+  <control name="Properly validate the data (syntactically and semantically) before writing it to the database."/>
+  <control name="Do not implicitly trust the data stored in the database. Re-validate it prior to usage to make sure that it is safe to use in a given context (e.g. as a command line argument)."/>
+  <control name="Remember to understand how to use the data access methods generated by the ORM tool / framework properly in a way that would leverage the built-in security mechanisms of the framework"/>
+  <control name="Ensure to keep up to date with security relevant updates to the persistence framework used within your application."/>
+  <control name="Implementation: Server routines should be determined by content not determined by filename or file extension."/>
+  <control name="Properly validate and sanitize/reject user input at the service provider."/>
+  <control name="Ensure that prepared statements or other mechanism that enables parameter binding is used when accessing the database in a way that would prevent the attackers' supplied data from controlling the structure of the executed query."/>
+  <control name="At the database level, ensure that the database user used by the application in a particular context has the minimum needed privileges to the database that are needed to perform the operation. When possible, run queries against pre-generated views rather than the tables directly."/>
+  <control name="Ensure that server side code can differentiate between legitimate requests and forged requests. The solution is similar to protection against Cross Site Request Forger (CSRF), which is to use a hard to guess random nonce (that is unique to the victim's session with the server) that the attacker has no way of knowing (at least in the absence of other weaknesses). Each request from the client to the server should contain this nonce and the server should reject all requests that do not contain the nonce."/>
+  <control name="On the client side, the system's design could make it difficult to get access to the JSON object content via the script tag. Since the JSON object is never assigned locally to a variable, it cannot be readily modified by the attacker before being used by a script tag. For instance, if while(1) was added to the beginning of the JavaScript returned by the server, trying to access it with a script tag would result in an infinite loop. On the other hand, legitimate client side code can remove the while(1) statement after which the JavaScript can be evaluated. A similar result can be achieved by surrounding the returned JavaScript with comment tags, or using other similar techniques (e.g. wrapping the JavaScript with HTML tags)."/>
+  <control name="Make the URLs in the system used to retrieve JSON objects unpredictable and unique for each user session."/>
+  <control name="Ensure that to the extent possible, no sensitive data is passed from the server to the client via JSON objects. JavaScript was never intended to play that role, hence the same origin policy does not adequate address this scenario."/>
+  <control name="Select a provably large secret space for selection of the secret. Provably large means that the procedure by which the secret is selected does not have artifacts that significantly reduce the size of the total secret space."/>
+  <control name="Do not provide the means for an attacker to determine success independently. This forces the attacker to check their guesses against an external authority, which can slow the attack and warn the defender. This mitigation may not be possible if testing material must appear externally, such as with a transmitted cryptotext."/>
+  <control name="Minimize error/response output to only what is necessary for functional use or corrective language."/>
+  <control name="Remove potentially sensitive information that is not necessary for the application's functionality."/>
+  <control name="Leverage encryption to encode the transmission of data thus making it accessible only to authorized parties."/>
+  <control name="Re-architect system input/output channels as appropriate to distribute self-protecting data. That is, encrypt (or otherwise protect) channels/messages so that only authorized readers can see them."/>
+  <control name="Assume all input is malicious. Create a white list that defines all valid input to the software system based on the requirements specifications. Input that does not match against the white list should not be permitted to enter into the system. Test your decoding process against malicious input."/>
+  <control name="Be aware of the threat of alternative method of data encoding and obfuscation technique such as IP address encoding."/>
+  <control name="When client input is required from web-based forms, avoid using the &quot;GET&quot; method to submit data, as the method causes the form data to be appended to the URL and is easily manipulated. Instead, use the &quot;POST method whenever possible."/>
+  <control name="Any security checks should occur after the data has been decoded and validated as correct data format. Do not repeat decoding process, if bad character are left after decoding process, treat the data as suspicious, and fail the validation process."/>
+  <control name="Refer to the RFCs to safely decode URL."/>
+  <control name="Regular expression can be used to match safe URL patterns. However, that may discard valid URL requests if the regular expression is too restrictive."/>
+  <control name="There are tools to scan HTTP requests to the server for valid URL such as URLScan from Microsoft (http://www.microsoft.com/technet/security/tools/urlscan.mspx)."/>
+  <control name="Ensure that production systems to not contain sample or test APIs and that these APIs are only used in development environments."/>
+  <control name="To help protect an application from buffer manipulation attacks, a number of potential mitigations can be leveraged. Before starting the development of the application, consider using a code language (e.g., Java) or compiler that limits the ability of developers to act beyond the bounds of a buffer. If the chosen language is susceptible to buffer related issues (e.g., C) then consider using secure functions instead of those vulnerable to buffer manipulations. If a potentially dangerous function must be used, make sure that proper boundary checking is performed. Additionally, there are often a number of compiler-based mechanisms (e.g., StackGuard, ProPolice and the Microsoft Visual Studio /GS flag) that can help identify and protect against potential buffer issues. Finally, there may be operating system level preventative functionality that can be applied."/>
+  <control name="Ensure that protocols have specific limits of scale configured."/>
+  <control name="Specify expectations for capabilities and dictate which behaviors are acceptable when resource allocation reaches limits."/>
+  <control name="Uniformly throttle all requests in order to make it more difficult to consume resources more quickly than they can again be freed."/>
+  <control name="Design: Configure the access control correctly."/>
+  <control name="Design: Enforce principle of least privilege."/>
+  <control name="Design: Execute programs with constrained privileges, so parent process does not open up further vulnerabilities. Ensure that all directories, temporary directories and files, and memory are executing with limited privileges to protect against remote execution."/>
+  <control name="Design: Input validation. Assume that user inputs are malicious. Utilize strict type, character, and encoding enforcement."/>
+  <control name="Design: Proxy communication to host, so that communications are terminated at the proxy, sanitizing the requests before forwarding to server host."/>
+  <control name="Design: Run server interfaces with a non-root account and/or utilize chroot jails or other configuration techniques to constrain privileges even if attacker gains some limited access to commands."/>
+  <control name="Implementation: Host integrity monitoring for critical files, directories, and processes. The goal of host integrity monitoring is to be aware when a security issue has occurred so that incident response and other forensic activities can begin."/>
+  <control name="Implementation: Perform input validation for all remote content, including remote and user-generated content."/>
+  <control name="Implementation: Perform testing such as pen-testing and vulnerability scanning to identify directories, programs, and interfaces that grant direct access to executables."/>
+  <control name="Implementation: Use indirect references rather than actual file names."/>
+  <control name="Implementation: Use possible permissions on file access when developing and deploying web applications."/>
+  <control name="Implementation: Validate user input by only accepting known good. Ensure all content that is delivered to client is sanitized against an acceptable content specification -- whitelisting approach."/>
+  <control name="1. Using blank index.html: putting blank index.html simply prevent directory listings from displaying to site visitors."/>
+  <control name="2. Preventing with .htaccess in Apache web server: In .htaccess, write &quot;Options-indexes&quot;."/>
+  <control name="3. Suppressing error messages: using error 403 &quot;Forbidden&quot; message exactly like error 404 &quot;Not Found&quot; message."/>
+  <control name="Protect environment variables against unauthorized read and write access."/>
+  <control name="Protect the configuration files which contain environment variables against illegitimate read and write access."/>
+  <control name="Assume all input is malicious. Create a white list that defines all valid input to the software system based on the requirements specifications. Input that does not match against the white list should not be permitted to enter into the system."/>
+  <control name="Apply the least privilege principles. If a process has no legitimate reason to read an environment variable do not give that privilege."/>
+  <control name="Limit the amount of resources that are accessible to unprivileged users."/>
+  <control name="Assume all input is malicious. Consider all potentially relevant properties when validating input."/>
+  <control name="Consider uniformly throttling all requests in order to make it more difficult to consume resources more quickly than they can again be freed."/>
+  <control name="Use resource-limiting settings, if possible."/>
+  <control name="If possible, leverage coding language(s) that do not allow this weakness to occur (e.g., Java, Ruby, and Python all perform automatic garbage collection that releases memory for objects that have been deallocated)."/>
+  <control name="Memory should always be allocated/freed using matching functions (e.g., malloc/free, new/delete, etc.)"/>
+  <control name="Implement best practices with respect to memory management, including the freeing of all allocated resources at all exit points and ensuring consistency with how and where memory is freed in a function."/>
+  <control name="Design: Check for the existence of files to be created, if in existence verify they are neither symlinks nor hard links before opening them."/>
+  <control name="Implementation: Use randomly generated file names for temporary files. Give the files restrictive permissions."/>
+  <control name="Design: Minimize switch and option functionality to only that necessary for correct function of the command."/>
+  <control name="Implementation: Remove all debug and testing options from production code."/>
+  <control name="Limit the usage of formatting string functions."/>
+  <control name="Strong input validation - All user-controllable input must be validated and filtered for illegal formatting characters."/>
+  <control name="Strong input validation - All user-controllable input must be validated and filtered for illegal characters as well as LDAP content."/>
+  <control name="Use of custom error pages - Attackers can glean information about the nature of queries from descriptive error messages. Input validation must be coupled with customized error pages that inform about an error without disclosing information about the LDAP or application."/>
+  <control name="Implement an audit log written to a separate host. In the event of a compromise, the audit log may be able to provide evidence and details of the compromise."/>
+  <control name="Treat all user input as untrusted data that must be validated before use."/>
+  <control name="Design: Input validation. Assume that user inputs are malicious. Utilize strict type, character, and encoding enforcement"/>
+  <control name="Implementation: Prefer working without user input when using file system calls"/>
+  <control name="The client software should not install untrusted code from a non-authenticated server."/>
+  <control name="The client software should have the latest patches and should be audited for vulnerabilities before being used to communicate with potentially hostile servers."/>
+  <control name="Perform input validation for length of buffer inputs."/>
+  <control name="Use an abstraction library to abstract away risky APIs. Not a complete solution."/>
+  <control name="Ensure all buffer uses are consistently bounds-checked."/>
+  <control name="Configuration: Disable client side caching."/>
+  <control name="Implementation: Listens for query replies on a network, and sends a notification via email when an entry changes."/>
+  <control name="Configuration: Make sure your DNS servers have been updated to the latest versions"/>
+  <control name="Configuration: UNIX services like rlogin, rsh/rcp, xhost, and nfs are all susceptible to wrong information being held in a cache. Care should be taken with these services so they do not rely upon DNS caches that have been exposed to the Internet."/>
+  <control name="Configuration: Disable client side DNS caching."/>
+  <control name="Design: Protect the schema against unauthorized modification."/>
+  <control name="Implementation: For applications that use a known schema, use a local copy or a known good repository instead of the schema reference supplied in the XML document. Additionally, ensure that the proper permissions are set on local files to avoid unauthorized modification."/>
+  <control name="Implementation: For applications that leverage remote schemas, use the HTTPS protocol to prevent modification of traffic in transit and to avoid unauthorized modification."/>
+  <control name="Design: Build throttling mechanism into the resource allocation. Provide for a timeout mechanism for allocated resources whose transaction does not complete within a specified interval."/>
+  <control name="Implementation: Provide for network flow control and traffic shaping to control access to the resources."/>
+  <control name="Design: Perform whitelist validation against a positive specification for command length, type, and parameters."/>
+  <control name="Design: Limit program privileges, so if commands circumvent program input validation or filter routines then commands do not running under a privileged account"/>
+  <control name="Implementation: Perform input validation for all remote content."/>
+  <control name="Implementation: Use type conversions such as JDBC prepared statements."/>
+  <control name="Employ robust authentication processes (e.g., multi-factor authentication)."/>
+  <control name="Monitor network activity to detect any anomalous or unauthorized communication exchanges."/>
+  <control name="Encrypt sensitive information when transmitted on insecure mediums to prevent interception."/>
+  <control name="Obfuscate network traffic through encryption to prevent its readability by network sniffers."/>
+  <control name="Employ appropriate levels of segmentation to your network in accordance with best practices."/>
+  <control name="Implementation: Restrict the permission to modify the entries in the configuration file."/>
+  <control name="Implementation: Check the integrity of the dynamically linked libraries before use them."/>
+  <control name="Implementation: Use obfuscation and other techniques to prevent reverse engineering the libraries."/>
+  <control name="Create a strong password policy and ensure that your system enforces this policy."/>
+  <control name="Implement an intelligent password throttling mechanism. Care must be taken to assure that these mechanisms do not excessively enable account lockout attacks such as CAPEC-02."/>
+  <control name="Do not follow any links that you receive within your e-mails and certainly do not input any login credentials on the page that they take you too. Instead, call your Bank, PayPal, eBay, etc., and inquire about the problem. A safe practice would also be to type the URL of your bank in the browser directly and only then log in. Also, never reply to any e-mails that ask you to provide sensitive information of any kind."/>
+  <control name="Design: Use FAT file systems which do not support Alternate Data Streams."/>
+  <control name="Implementation: Use Vista dir with the -R switch or utility to find Alternate Data Streams and take appropriate action with those discovered."/>
+  <control name="Implementation: Use products that are Alternate Data Stream aware for virus scanning and system security operations."/>
+  <control name="Keep patches up to date by installing weekly or daily if possible."/>
+  <control name="Shut down unnecessary services/ports."/>
+  <control name="Change default passwords by choosing strong passwords."/>
+  <control name="Curtail unexpected input."/>
+  <control name="Encrypt and password-protect sensitive data."/>
+  <control name="Avoid including information that has the potential to identify and compromise your organization's security such as access to business plans, formulas, and proprietary documents."/>
+  <control name="Design: Enforce principle of least privilege"/>
+  <control name="Implementation: Obfuscate server fields of HTTP response."/>
+  <control name="Implementation: Hide inner ordering of HTTP response header."/>
+  <control name="Implementation: Customizing HTTP error codes such as 404 or 500."/>
+  <control name="Implementation: Hide URL file extension."/>
+  <control name="Implementation: Hide HTTP response header software information filed."/>
+  <control name="Implementation: Hide cookie's software information filed."/>
+  <control name="Implementation: Appropriately deal with error messages."/>
+  <control name="Implementation: Obfuscate database type in Database API's error message."/>
+  <control name="User input must be sanitized according to context before reflected back to the user. The JavaScript function 'encodeURI' is not always sufficient for sanitizing input intended for global Flash parameters. Extreme caution should be taken when saving user input in Flash cookies. In such cases the Flash file itself will need to be fixed and recompiled, changing the name of the local shared objects (Flash cookies)."/>
+  <control name="Implementation: Only allow known URL to be included as remote flash movies in a flash application"/>
+  <control name="Configuration: Properly configure the crossdomain.xml file to only include the known domains that should host remote flash movies."/>
+  <control name="In addition to the traditional input fields, all other user controllable inputs, such as image tags within messages or the likes, must also be subjected to input validation. Such validation should ensure that content that can be potentially interpreted as script by the browser is appropriately filtered."/>
+  <control name="All output displayed to clients must be properly escaped. Escaping ensures that the browser interprets special scripting characters literally and not as script to be executed."/>
+  <control name="Implementation: remove sensitive information such as user name and password in the SWF file."/>
+  <control name="Implementation: use validation on both client and server side."/>
+  <control name="Implementation: remove debug information."/>
+  <control name="Implementation: use SSL when loading external data"/>
+  <control name="Implementation: use crossdomain.xml file to allow the application domain to load stuff or the SWF file called by other domain."/>
+  <control name="Validate software updates before installing."/>
+  <control name="Employ code obfuscation techniques to prevent the adversary from reverse engineering the targeted entity."/>
+  <control name="Use browser technologies that do not allow client side scripting."/>
+  <control name="Utilize strict type, character, and encoding enforcement."/>
+  <control name="Server side developers should not proxy content via XHR or other means. If a HTTP proxy for remote content is setup on the server side, the client's browser has no way of discerning where the data is originating from."/>
+  <control name="Ensure all content that is delivered to client is sanitized against an acceptable content specification."/>
+  <control name="Perform input validation for all remote content."/>
+  <control name="Perform output validation for all remote content."/>
+  <control name="Disable scripting languages such as JavaScript in browser"/>
+  <control name="Session tokens for specific host"/>
+  <control name="Patching software. There are many attack vectors for XSS on the client side and the server side. Many vulnerabilities are fixed in service packs for browser, web servers, and plug in technologies, staying current on patch release that deal with XSS countermeasures mitigates this."/>
+  <control name="Privileges are constrained, if a script is loaded, ensure system runs in chroot jail or other limited authority mode"/>
+  <control name="Implementation: Perform input validation for all remote content, including remote and user-generated content"/>
+  <control name="Implementation: Only allow known files to be included (whitelist)"/>
+  <control name="Implementation: Make use of indirect references passed in URL parameters instead of file names"/>
+  <control name="Configuration: Ensure that remote scripts cannot be include in the &quot;include&quot; or &quot;require&quot; PHP directives"/>
+  <control name="Implementation: Use session IDs that are difficult to guess or brute-force: One way for the attackers to obtain valid session IDs is by brute-forcing or guessing them. By choosing session identifiers that are sufficiently random, brute-forcing or guessing becomes very difficult."/>
+  <control name="Implementation: Regenerate and destroy session identifiers when there is a change in the level of privilege: This ensures that even though a potential victim may have followed a link with a fixated identifier, a new one is issued when the level of privilege changes."/>
+  <control name="Design: Use libraries and templates that minimize unfiltered input. Use methods that limit entity expansion and throw exceptions on attempted entity expansion."/>
+  <control name="Implementation: Disable altogether the use of inline DTD schemas in your XML parsing objects. If must use DTD, normalize, filter and white list and parse with methods and routines that will detect entity expansion from untrusted sources."/>
+  <control name="Design: Use libraries and templates that minimize unfiltered input."/>
+  <control name="Implementation: Normalize, filter and white list any input that will be used in error messages."/>
+  <control name="Implementation: The victim should configure the browser to minimize active content from untrusted sources."/>
+  <control name="Design: Use browser technologies that do not allow client side scripting."/>
+  <control name="Design: Utilize strict type, character, and encoding enforcement"/>
+  <control name="Implementation: Ensure all content that is delivered to client is sanitized against an acceptable content specification."/>
+  <control name="Implementation: Ensure all content coming from the client is using the same encoding; if not, the server-side application must canonicalize the data before applying any filtering."/>
+  <control name="Implementation: Perform output validation for all remote content."/>
+  <control name="Implementation: Disable scripting languages such as JavaScript in browser"/>
+  <control name="Implementation: Patching software. There are many attack vectors for XSS on the client side and the server side. Many vulnerabilities are fixed in service packs for browser, web servers, and plug in technologies, staying current on patch release that deal with XSS countermeasures mitigates this."/>
+  <control name="Implement intelligent password throttling mechanisms such as those which take IP address into account, in addition to the login name."/>
+  <control name="When implementing security features, consider how they can be misused and made to turn on themselves."/>
+  <control name="Use commonly accepted algorithms and recommended key sizes. The key size used will depend on how important it is to keep the data confidential and for how long."/>
+  <control name="In theory a brute force attack performing an exhaustive key space search will always succeed, so the goal is to have computational security. Moore's law needs to be taken into account that suggests that computing resources double every eighteen months."/>
+  <control name="Configure the XML processor to only retrieve external entities from trusted sources."/>
+  <control name="Ensure proper permissions are set for Registry hives to prevent users from modifying keys."/>
+  <control name="Employ a robust and layered defensive posture in order to prevent unauthorized users on your system."/>
+  <control name="Employ robust identification and audit/blocking via whitelisting of applications on your system. Unnecessary applications, utilities, and configurations will have a presence in the system registry that can be leveraged by an adversary through this attack pattern."/>
+  <control name="Design: For any security checks that are performed on the client side, ensure that these checks are duplicated on the server side."/>
+  <control name="Design: Ship client-side application with integrity checks (code signing) when possible."/>
+  <control name="Design: Use obfuscation and other techniques to prevent reverse engineering the client code."/>
+  <control name="Design: utilize strong federated identity such as SAML to encrypt and sign identity tokens in transit."/>
+  <control name="Implementation: Use industry standards session key generation mechanisms that utilize high amount of entropy to generate the session key. Many standard web and application servers will perform this task on your behalf."/>
+  <control name="Implementation: If the session identifier is used for authentication, such as in the so-called single sign on use cases, then ensure that it is protected at the same level of assurance as authentication tokens."/>
+  <control name="Implementation: If the web or application server supports it, then encrypting and/or signing the session ID (such as cookie) can protect the ID if intercepted."/>
+  <control name="Design: Use strong session identifiers that are protected in transit and at rest."/>
+  <control name="Implementation: Utilize a session timeout for all sessions, for example 20 minutes. If the user does not explicitly logout, the server terminates their session after this period of inactivity. If the user logs back in then a new session key is generated."/>
+  <control name="Implementation: Verify of authenticity of all session IDs at runtime."/>
+  <control name="Perform comprehensive threat modeling, a process of identifying, evaluating, and mitigating potential threats to the application. This effort can help reveal potentially obscure application functionality that can be manipulated for malicious purposes."/>
+  <control name="When implementing security features, consider how they can be misused and compromised."/>
+  <control name="Design: Construct a 'code book' for error messages. When using a code book, application error messages aren't generated in string or stack trace form, but are catalogued and replaced with a unique (often integer-based) value 'coding' for the error. Such a technique will require helpdesk and hosting personnel to use a 'code book' or similar mapping to decode application errors/logs in order to respond to them normally."/>
+  <control name="Design: wrap application functionality (preferably through the underlying framework) in an output encoding scheme that obscures or cleanses error messages to prevent such attacks. Such a technique is often used in conjunction with the above 'code book' suggestion."/>
+  <control name="Encrypt all sensitive communications using properly-configured cryptography."/>
+  <control name="Design the communication system such that it associates proper authentication/authorization with each channel/message."/>
+  <control name="Usage of configuration settings, such as stream ciphers vs. block ciphers and setting timeouts on SSL sessions to extremely low values lessens the potential impact. Use of later versions of TLS (e.g. TLS 1.1+) can also be effective, but not all clients or servers support the later versions."/>
+  <control name="Implementation: Clients should only trust UDDI, ebXML, or similar messages that are verifiably signed by a trusted party."/>
+  <control name="Design: Specify maximum number intermediate nodes for the request and require SSL connections with mutual authentication."/>
+  <control name="Implementation: Use SSL for connections between all parties with mutual authentication."/>
+  <control name="Design: Ensure that client process and/or message is authenticated so that anonymous communications and/or messages are not accepted by the system."/>
+  <control name="Design: Do not rely on client validation or encoding for security purposes."/>
+  <control name="Design: Utilize digital signatures to increase authentication assurance."/>
+  <control name="Design: Utilize two factor authentication to increase authentication assurance."/>
+  <control name="This attack may be mitigated by tweaking the XML parser to not resolve external entities. If external entities are needed, then implement a custom XmlResolver that has a request timeout, data retrieval limit, and restrict resources it can retrieve locally."/>
+  <control name="Configuration: Disable iFrames in the Web browser."/>
+  <control name="Operation: When maintaining an authenticated session with a privileged target system, do not use the same browser to navigate to unfamiliar sites to perform other activities. Finish working with the target system and logout first before proceeding to other tasks."/>
+  <control name="Operation: If using the Firefox browser, use the NoScript plug-in that will help forbid iFrames."/>
+  <control name="While some information is shared by systems automatically based on standards and protocols, remove potentially sensitive information that is not necessary for the application's functionality as much as possible."/>
+  <control name="Potential mitigations include requiring a unique login for each resource request, constraining local unprivileged access by disallowing simultaneous engagements of the resource, or limiting access to the resource to one access per IP address. In such scenarios, the adversary would have to increase engagements either by launching multiple sessions manually or programmatically to counter such defenses."/>
+  <control name="Design: Sanitize incoming DTDs to prevent excessive expansion or other actions that could result in impacts like resource depletion."/>
+  <control name="Implementation: Disallow the inclusion of DTDs as part of incoming messages."/>
+  <control name="Implementation: Use XML parsing tools that protect against DTD attacks."/>
+  <control name="This attack may be mitigated completely by using a parser that is not using a vulnerable container. Mitigation may also limit the number of attributes per XML element."/>
+  <control name="Design: Validate all input for content including files. Ensure that if files and remote content must be accepted that once accepted, they are placed in a sandbox type location so that lower assurance clients cannot write up to higher assurance processes (like Web server processes for example)"/>
+  <control name="Implementation: Virus scanning on host"/>
+  <control name="Carefully validate and sanitize all user-controllable data prior to passing it to the XML parser routine. Ensure that the resultant data is safe to pass to the XML parser."/>
+  <control name="Perform validation on canonical data."/>
+  <control name="Pick a robust implementation of an XML parser."/>
+  <control name="Validate XML against a valid schema or DTD prior to parsing."/>
+  <control name="Application Architects must be careful to design callback, signal, and similar asynchronous constructs such that they shed excess privilege prior to handing control to user-written (thus untrusted) code."/>
+  <control name="Application Architects must be careful to design privileged code blocks such that upon return (successful, failed, or unpredicted) that privilege is shed prior to leaving the block/scope."/>
+  <control name="Assurance: Sanitize the code of the standard libraries to make sure there is no security weaknesses in them."/>
+  <control name="Design: Use obfuscation and other techniques to prevent reverse engineering the standard libraries."/>
+  <control name="Assurance: Use static analysis tool to do code review and dynamic tool to do penetration test on the standard library."/>
+  <control name="Configuration: Get latest updates for the computer."/>
+  <control name="Make sure that ANY failure occurring in the filtering or input validation routine is properly handled and that offending input is NOT allowed to go through. Basically make sure that the vault is closed when failure occurs."/>
+  <control name="Pre-design: Use a language or compiler that performs automatic bounds checking."/>
+  <control name="Pre-design through Build: Compiler-based canary mechanisms such as StackGuard, ProPolice and the Microsoft Visual Studio /GS flag. Unless this provides automatic bounds checking, it is not a complete solution."/>
+  <control name="Operational: Use OS-level preventative functionality. Not a complete solution."/>
+  <control name="Design: Use an abstraction library to abstract away risky APIs. Not a complete solution."/>
+  <control name="Ensure all input content that is delivered to client is sanitized against an acceptable content specification."/>
+  <control name="Perform input validation for all content."/>
+  <control name="Enforce regular patching of software."/>
+  <control name="Utilize strict type, character, and encoding enforcement"/>
+  <control name="Implementation: Normalize, filter and white list all input including that which is not expected to have any scripting content."/>
+  <control name="Design: Utilize strict type, character, and encoding enforcement."/>
+  <control name="Implementation: Normalize, filter and sanitize all user supplied fields."/>
+  <control name="Implementation: Normalize, filter and white list any input that will be included in any subsequent web pages or back end operations."/>
+  <control name="All user-controllable input should be validated and filtered for potentially unwanted characters. Whitelisting input is desired, but if a blacklisting approach is necessary, then focusing on command related terms and delimiters is necessary."/>
+  <control name="Input should be encoded prior to use in commands to make sure command related characters are not treated as part of the command. For example, quotation characters may need to be encoded so that the application does not treat the quotation as a delimiter."/>
+  <control name="Input should be parameterized, or restricted to data sections of a command, thus removing the chance that the input will be treated as part of the command itself."/>
+  <control name="Use known algorithm to avoid deadlock condition (for instance non-blocking synchronization algorithms)."/>
+  <control name="For competing actions, use well-known libraries which implement synchronization."/>
+  <control name="Implementation: Avoid passing user input to filesystem or framework API. If necessary to do so, implement specific, white-list approach."/>
+  <control name="Minimize attacks by input validation and sanitization of any user data that will be used by the target application to locate a remote file to be included."/>
+  <control name="If the server either verifies the correctness of the stated array size or if the server stops processing an array once the stated number of elements have been read, regardless of the actual array size, then this attack will fail. The former detects the malformed SOAP message while the latter ensures that the server does not attempt to load more data than was allocated for."/>
+  <control name="Use safe libraries to access resources such as files."/>
+  <control name="Be aware that improper use of access function calls such as chown(), tempfile(), chmod(), etc. can cause a race condition."/>
+  <control name="Use synchronization to control the flow of execution."/>
+  <control name="Use static analysis tools to find race conditions."/>
+  <control name="Pay attention to concurrency problems related to the access of resources."/>
+  <control name="Assume all input might use an improper representation. Use canonicalized data inside the application; all data must be converted into the representation used inside the application (UTF-8, UTF-16, etc.)"/>
+  <control name="Use safe libraries when creating temporary files. For instance the standard library function mkstemp can be used to safely create temporary files. For shell scripts, the system utility mktemp does the same thing."/>
+  <control name="Access to the directories should be restricted as to prevent attackers from manipulating the files. Denying access to a file can prevent an attacker from replacing that file with a link to a sensitive file."/>
+  <control name="Follow the principle of least privilege when assigning access rights to files."/>
+  <control name="Ensure good compartmentalization in the system to provide protected areas that can be trusted."/>
+  <control name="Identify programs that may be used to acquire process information and block them by using a software restriction policy or tools that restrict program execution by process whitelisting."/>
+  <control name="Implementation: For applications that use a known schema, use a local copy or a known good repository instead of the schema reference supplied in the schema document."/>
+  <control name="Design: Employ strict adherence to interpretations of HTTP messages wherever possible."/>
+  <control name="Implementation: Encode header information provided by user input so that user-supplied content is not interpreted by intermediaries."/>
+  <control name="Design: Ensure that only legitimate HTTP verbs are allowed."/>
+  <control name="Design: Do not use HTTP verbs as factors in access decisions."/>
+  <control name="Design: IP Pinning causes browsers to record the IP address to which a given name resolves and continue using this address regardless of the TTL set in the DNS response. Unfortunately, this is incompatible with the design of some legitimate sites."/>
+  <control name="Implementation: Reject HTTP request with a malicious Host header."/>
+  <control name="Implementation: Employ DNS resolvers that prevent external names from resolving to internal addresses."/>
+  <control name="Design: Range, size and value and consistency verification for any arguments supplied to applications and services from external sources and devise appropriate error response."/>
+  <control name="Design: Ensure that function calls that should not be called by an unprivileged user are not accessible to them."/>
+  <control name="Test to ensure that the software behaves as per specification and that there are no unintended side effects. Ensure that no assumptions about the validity of data are made."/>
+  <control name="Use fuzz testing during the software QA process to uncover any surprises, uncover any assumptions or unexpected behavior."/>
+  <control name="Consider configuring firewall rules to block ICMP Echo requests and prevent replies. If not practical, monitor and consider action when a system has fast and a repeated pattern of requests that move incrementally through port numbers."/>
+  <control name="Leverage stateful firewalls that allow for the rejection of a packet that is not part of an existing connection."/>
+  <control name="Configure your firewall to block egress ICMP messages."/>
+  <control name="Perform white list rather than black list input validation."/>
+  <control name="Canonicalize all data prior to validation."/>
+  <control name="Take an iterative approach to input validation (defense in depth)."/>
+  <control name="Employ a robust network defense posture that includes an IDS/IPS system."/>
+  <control name="Employ a robust network defensive posture that includes a managed IDS/IPS."/>
+  <control name="Typically, an IDS/IPS system is very effective against this type of attack."/>
+  <control name="Firewalls or ACLs which block egress ICMP error types effectively prevent UDP scans from returning any useful information."/>
+  <control name="UDP scanning is complicated by rate limiting mechanisms governing ICMP error messages."/>
+  <control name="Design: Use input validation for cookies"/>
+  <control name="Design: Generate and validate MAC for cookies"/>
+  <control name="Implementation: Use SSL/TLS to protect cookie in transit"/>
+  <control name="Implementation: Ensure the web server implements all relevant security patches, many exploitable buffer overflows are fixed in patches issued for the software."/>
+  <control name="Design: Server side developers should not proxy content via XHR or other means, if a http proxy for remote content is setup on the server side, the client's browser has no way of discerning where the data is originating from."/>
+  <control name="Implementation: Session tokens for specific host"/>
+  <control name="Implementation: Privileges are constrained, if a script is loaded, ensure system runs in chroot jail or other limited authority mode"/>
+  <control name="HTTP Request Smuggling is usually targeted at web servers. Therefore, in such cases, careful analysis of the entities must occur during system design prior to deployment. If there are known differences in the way the entities parse HTTP requests, the choice of entities needs consideration."/>
+  <control name="Employing an application firewall can help. However, there are instances of the firewalls being susceptible to HTTP Request Smuggling as well."/>
+  <control name="To avoid HTTP Response Splitting, the application must not rely on user-controllable input to form part of its output response stream. Specifically, response splitting occurs due to injection of CR-LF sequences and additional headers. All data arriving from the user and being used as part of HTTP response headers must be subjected to strict validation that performs simple character-based as well as semantic filtering to strip it of malicious character sequences and headers."/>
+  <control name="Implementation: Implement host integrity monitoring to detect any unwanted altering of configuration files."/>
+  <control name="Implementation: Ensure that files that are not required to execute, such as configuration files, are not over-privileged, i.e. not allowed to execute."/>
+  <control name="Authenticating both services and their discovery, and protecting that authentication mechanism simply fixes the bulk of this problem. Protecting the authentication involves the standard means, including: 1) protecting the channel over which authentication occurs, 2) preventing the theft, forgery, or prediction of authentication credentials or the resultant tokens, or 3) subversion of password reset and the like."/>
+  <control name="Design: Ensure that the program's compound parts, including all system dependencies, classpath, path, and so on, are secured to the same or higher level assurance as the program"/>
+  <control name="Implementation: Host integrity monitoring"/>
+  <control name="Leverage encryption techniques during information transactions so as to protect them from attack patterns of this kind."/>
+  <control name="One solution to this problem is to protect encrypted data with a CRC of some sort. If knowing who last manipulated the data is important, then using a cryptographic &quot;message authentication code&quot; (or hMAC) is prescribed. However, this guidance is not a panacea. In particular, any value created by (and therefore encrypted by) the client, which itself is a &quot;malicious&quot; value, all the protective cryptography in the world can't make the value 'correct' again. Put simply, if the client has control over the whole process of generating and encoding the value, then simply protecting its integrity doesn't help."/>
+  <control name="Make sure to protect client side authentication tokens for confidentiality (encryption) and integrity (signed hash)"/>
+  <control name="Make sure that all session tokens use a good source of randomness"/>
+  <control name="Perform validation on the server side to make sure that client side data tokens are consistent with what is expected."/>
+  <control name="Design: Default deny access control policies"/>
+  <control name="Design: Input validation routines should check and enforce both input data types and content against a positive specification. In regards to IP addresses, this should include the authorized manner for the application to represent IP addresses and not accept user specified IP addresses and IP address formats (such as ranges)"/>
+  <control name="Design: Ensure that terminals are only writeable by named owner user and/or administrator"/>
+  <control name="An organization should provide regular, robust cybersecurity training to its employees to prevent successful social engineering attacks."/>
+  <control name="Design: Perform validation on email header data"/>
+  <control name="Implementation: Implement email filtering solutions on mail server or on MTA, relay server."/>
+  <control name="Implementation: Mail servers that perform strict validation may catch these attacks, because metacharacters are not allowed in many header variables such as dns names"/>
+  <control name="An organization should provide regular, robust cybersecurity training to its employees to prevent social engineering attacks."/>
+  <control name="Stay up to date with third party vendor patches"/>
+  <control name="Use the sendmail restricted shell program (smrsh)"/>
+  <control name="Use mail.local"/>
+  <control name="An iterative approach to input validation may be required to ensure that no dangerous characters are present. It may be necessary to implement redundant checking across different input validation layers. Ensure that invalid data is rejected as soon as possible and do not continue to work with it."/>
+  <control name="Make sure to perform input validation on canonicalized data (i.e. data that is data in its most standard form). This will help avoid tricky encodings getting past the filters."/>
+  <control name="Perform appropriate bounds checking on all buffers."/>
+  <control name="Design: Static code analysis"/>
+  <control name="Implementation: Execute program in less trusted process space environment, do not allow lower integrity processes to write to higher integrity processes"/>
+  <control name="Implementation: Keep software patched to ensure that known vulnerabilities are not available for attackers to target on host."/>
+  <control name="Leverage anti-virus products to detect and quarantine software with known virus."/>
+  <control name="Assess software during development and prior to deployment to ensure that it functions as intended and without any malicious functionality."/>
+  <control name="Assess software and software components during development and prior to deployment to ensure that they function as intended and without any malicious functionality."/>
+  <control name="Assess design documentation prior to development to ensure that they function as intended and without any malicious functionality."/>
+  <control name="Ensure that design documentation is saved in a secure location and has proper access controls set in place to avoid unnecessary modification."/>
+  <control name="Pay attention to the fact that the resource you read from can be a replaced by a Symbolic link. You can do a Symlink check before reading the file and decide that this is not a legitimate way of accessing the resource."/>
+  <control name="Because Symlink can be modified by an attacker, make sure that the ones you read are located in protected directories."/>
+  <control name="Pay attention to the resource pointed to by your symlink links (See attack pattern named &quot;Forced Symlink race&quot;), they can be replaced by malicious resources."/>
+  <control name="Always check the size of the input data before copying to a buffer."/>
+  <control name="Leverage anti-virus products to detect stop operations with known virus."/>
+  <control name="Ensure that proper, physical system access is regulated to prevent an adversary from physically connecting a malicious USB device himself."/>
+  <control name="Use anti-virus and anti-malware tools which can prevent malware from executing if it finds its way onto a target system. Additionally, make sure these tools are regularly updated to contain up-to-date virus and malware signatures."/>
+  <control name="Do not connect untrusted USB devices to systems connected on an organizational network. Additionally, use an isolated testing machine to validate untrusted devices and confirm malware does not exist."/>
+  <control name="Certification Authorities need to stop using the weak collision prone MD5 hashing algorithm to hash the certificates that they are about to sign. Instead they should be using stronger hashing functions such as SHA-256 or SHA-512."/>
+  <control name="Do not trust input data from user. Validate all user input."/>
+  <control name="Design: Use a secure message authentication code (MAC) function such as an HMAC-SHA1"/>
+  <control name="Ensure that when parameter expansion happens in the code that the assumptions used to determine the resulting size of the parameter are accurate and that the new size of the parameter is visible to the whole system"/>
+  <control name="Configuration: Disable Java Script in the browser"/>
+  <control name="Use programs and products that contain cryptographic elements that have been thoroughly tested for flaws in the signature verification routines."/>
+  <control name="Ensure the application is using parsing and data display techniques that will accurately display control characters, international symbols and markings, and ultimately recognize potential homograph attacks."/>
+  <control name="Ensure the application is fully patched and does not allow the processing of unsigned data as if it is signed data."/>
+  <control name="Ensure proper permissions are set for Registry hives to prevent users from modifying keys for system components that may lead to privilege escalation."/>
+  <control name="Implementation: Ensure all configuration files and resource are either removed or protected when promoting code into production."/>
+  <control name="Ensure virtualization software is current and up-to-date."/>
+  <control name="Abide by the least privilege principle to avoid assigning users more privileges than necessary."/>
+  <control name="Monitor connections, checking headers in traffic for contradictory domain names, or empty domain names."/>
+  <control name="To mitigate this type of an attack, an organization can monitor incoming packets and look for patterns in the TCP traffic to determine if the network is under an attack. The potential target may implement a rate limit on TCP SYN messages which would provide limited capabilities while under attack."/>
+  <control name="Ensure cryptographic elements have been sufficiently tested for weaknesses."/>
+  <control name="To mitigate this type of an attack, modern firewalls drop UDP traffic destined for closed ports, and unsolicited UDP reply packets. A variety of other countermeasures such as universal reverse path forwarding and remote triggered black holing(RFC3704) along with modifications to BGP like black hole routing and sinkhole routing(RFC3882) help mitigate the spoofed source IP nature of these attacks."/>
+  <control name="To mitigate this type of an attack, an organization can enable ingress filtering. Additionally modifications to BGP like black hole routing and sinkhole routing(RFC3882) help mitigate the spoofed source IP nature of these attacks."/>
+  <control name="To mitigate this type of an attack, an organization can monitor the typical traffic flow. When spikes in usage occur, filters could examine traffic for indicators of bad behavior with respect to the web servers, and then create firewall rules to deny the malicious IP addresses. These patterns in the filter could be a combination of trained behavior, knowledge of standards as they apply to the web server, known patterns, or anomaly detection. Firewalling source IPs works since the HTTP is sent using TCP so the source IP can't be spoofed; if the source IP is spoofed is, then it's not legitimate traffic. Special care should be taken care with rule sets to ensure low false positive rates along with a method at the application layer to allow a valid user to begin using the service again. Another possible solution is using 3rd party providers as they have experts, knowledge, experience, and resources to deal with the attack and mitigate it before hand or while it occurs. The best mitigation is preparation before an attack, but there is no bulletproof solution as with ample resources a brute force attack may succeed."/>
+  <control name="To mitigate this type of an attack, an organization can create rule based filters to silently drop connections if too many are attempted in a certain time period."/>
+  <control name="Implement a password throttling mechanism. This mechanism should take into account both the IP address and the log in name of the user."/>
+  <control name="Put together a strong password policy and make sure that all user created passwords comply with it. Alternatively automatically generate strong passwords for users."/>
+  <control name="Passwords need to be recycled to prevent aging, that is every once in a while a new password must be chosen."/>
+  <control name="To mitigate this type of an attack, an organization can attempt to identify the 3rd party services being used in an active attack and blocking them until the attack ends. This can be accomplished by filtering traffic for suspicious message patterns such as a spike in traffic where each response contains the same large block of data. Care should be taken to prevent false positive rates so legitimate traffic isn't blocked."/>
+  <control name="Test custom written Regex with fuzzing to determine if the Regex is a poor one. Add timeouts to processes that handle the Regex logic. If an evil Regex is found rewrite it as a good Regex."/>
+  <control name="Enforce strict schema validation. The schema should enforce a maximum number of array elements. If the number of maximum array elements can't be limited another validation method should be used. One such method could be comparing the declared number of items in the array with the existing number of elements of the array. If these numbers don't match drop the SOAP packet at the web service layer."/>
+  <control name="This attack may be mitigated by enforcing rules at the router following the guidance of RFC1858. The essential part of the guidance is creating the following rule &quot;IF FO=1 and PROTOCOL=TCP then DROP PACKET&quot; as this mitigated both tiny fragment and overlapping fragment attacks in IPv4. In IPv6 overlapping(RFC5722) additional steps may be required such as deep packet inspection. The delayed fragments may be mitigated by enforcing a timeout on the transmission to receive all packets by a certain time since the first packet is received. According to RFC2460 IPv6 implementations should enforce a rule to discard all fragments if the fragments are not ALL received within 60 seconds of the FIRST arriving fragment."/>
+  <control name="This attack may be mitigated by changing default cache sizes to be larger at the OS level. Additionally rules can be enforced to prune the cache with shorter timeouts for packet reassembly as the cache nears capacity."/>
+  <control name="This attack may be mitigated through egress filtering based on ICMP payload so a network is a &quot;good neighbor&quot; to other networks. Bad IP implementations become patched, so using the proper version of a browser or OS is recommended."/>
+  <control name="Leverage file protection mechanisms to render these files accessible only to authorized parties."/>
+  <control name="To mitigate this type of an attack, an application that may display sensitive information should clear the screen contents before a screenshot is taken. This can be accomplished by setting the key window's hidden property to YES. This code to hide the contents should be placed in both the applicationWillResignActive() and applicationDidEnterBackground() methods."/>
+  <control name="To mitigate this type of an attack, explicit intents should be used whenever sensitive data is being sent. An explicit intent is delivered to a specific application as declared within the intent, whereas the Android operating system determines who receives an implicit intent which could potentially be a malicious application. If an implicit intent must be used, then it should be assumed that the intent will be received by an unknown application and any response should be treated accordingly. Implicit intents should never be used for inter-application communication."/>
+  <control name="Implementation: Upgrade phone lines. Note this may be prohibitively expensive"/>
+  <control name="Use strong access control such as two factor access control for administrative access to the switch"/>
+  <control name="Use multiple security questions (e.g. have three and make the user answer two of them correctly). Let the user select their own security questions or provide them with choices of questions that are not generic."/>
+  <control name="E-mail the temporary password to the registered e-mail address of the user rather than letting the user reset the password online."/>
+  <control name="Ensure that your password recovery functionality is not vulnerable to an injection style attack."/>
+  <control name="The only known mitigation to this type of attack is to keep the malicious application off the system. There is nothing that can be done to the target application to protect itself from a malicious application that has been installed and executed."/>
+  <control name="To mitigate this type of an attack, explicit intents should be used whenever sensitive data is being sent. An 'explicit intent' is delivered to a specific application as declared within the intent, whereas an 'implicit intent' is directed to an application as defined by the Android operating system. If an implicit intent must be used, then it should be assumed that the intent will be received by an unknown application and any response should be treated accordingly (i.e., with appropriate security controls)."/>
+  <control name="Never use implicit intents for inter-application communication."/>
+  <control name="To limit one's exposure to this type of attack, developers should avoid exporting components unless the component is specifically designed to handle requests from untrusted applications. Developers should be aware that declaring an intent filter will automatically export the component, exposing it to public access. Critical, state-changing actions should not be placed in exported components. If a single component handles both inter- and intra-application requests, the developer should consider dividing that component into separate components. If a component must be exported (e.g., to receive system broadcasts), then the component should dynamically check the caller's identity prior to performing any operations. Requiring Signature or SignatureOrSystem permissions is an effective way of limiting a component's exposure to a set of trusted applications. Finally, the return values of exported components can also leak private data, so developers should check the caller's identity prior to returning sensitive values."/>
+  <control name="To mitigate this type of an attack, an application should limit permissions to only those required and should verify the origin of all web content it loads."/>
+  <control name="The only known mitigation to this attack is to avoid installing the malicious application on the device. However, the malicious application does need the GET_TASKS permission to be able to query the task list, and being suspicious of applications with that permission can help."/>
+  <control name="The only known mitigation to this attack is to avoid installing the malicious application on the device. Applications usually have to declare the schemes they wish to register, so detecting this during a review is feasible."/>
+  <control name="To mitigate this type of attack, physical security techniques such as locks doors, alarms, and monitoring of targets should be implemented."/>
+  <control name="Monitor system and domain logs for abnormal access."/>
+  <control name="Employ a robust password policy for service accounts. Passwords should be of adequate length and complexity, and they should expire after a period of time."/>
+  <control name="Employ the principle of least privilege: limit service accounts privileges to what is required for functionality and no more."/>
+  <control name="Enable AES Kerberos encryption (or another stronger encryption algorithm), rather than RC4, where possible."/>
+  <control name="Design: Harden registry server and file access permissions"/>
+  <control name="Implementation: Implement communications to and from the registry using secure protocols"/>
+  <control name="To limit one's exposure to this type of attack, tunnel communications through a secure proxy service."/>
+  <control name="Detection of this type of attack can be done through heuristic analysis of behavioral anomalies (a la credit card fraud detection) which can be used to identify inhuman behavioral patterns. (e.g., spidering)"/>
+  <control name="Properly handle the NULL characters supplied as part of user input prior to doing anything with the data."/>
+  <control name="Identify programs that may be used to acquire peripheral information and block them by using a software restriction policy or tools that restrict program execution by process whitelisting."/>
+  <control name="Properly handle Null characters. Make sure canonicalization is properly applied. Do not pass Null characters to the underlying APIs."/>
+  <control name="Ensure that proper access control is implemented on all systems to prevent unauthorized access to system files and processes."/>
+  <control name="Application designers can construct a 'code book' for error messages. When using a code book, application error messages aren't generated in string or stack trace form, but are cataloged and replaced with a unique (often integer-based) value 'coding' for the error. Such a technique will require helpdesk and hosting personnel to use a 'code book' or similar mapping to decode application errors/logs in order to respond to them normally."/>
+  <control name="Application designers can wrap application functionality (preferably through the underlying framework) in an output encoding scheme that obscures or cleanses error messages to prevent such attacks. Such a technique is often used in conjunction with the above 'code book' suggestion."/>
+  <control name="Cloud providers should completely delete data to render it irrecoverable and inaccessible from any layer and component of infrastructure resources."/>
+  <control name="Deletion of data should be completed promptly when requested."/>
+  <control name="Employ robust cybersecurity training for all employees."/>
+  <control name="Implement system antivirus software that scans all attachments before opening them."/>
+  <control name="Regularly patch all software."/>
+  <control name="Execute all suspicious files in a sandbox environment."/>
+  <control name="Use salt when computing password hashes. That is, concatenate the salt (random bits) with the original password prior to hashing it."/>
+  <control name="Limit privileges of user accounts so new service creation can only be performed by authorized administrators."/>
+  <control name="Limit privileges of user accounts so service changes can only be performed by authorized administrators. Also monitor any service changes that may occur inadvertently."/>
+  <control name="Prevent adversary access to privileged accounts necessary to install rootkits."/>
+  <control name="Disable RDP, telnet, SSH and enable firewall rules to block such traffic. Limit users and accounts that have remote interactive login access. Remove the Local Administrators group from the list of groups allowed to login through RDP. Limit remote user permissions. Use remote desktop gateways and multifactor authentication for remote logins."/>
+  <control name="Inspect registry for changes. Limit privileges of user accounts so changes to default file handlers can only be performed by authorized administrators."/>
+  <control name="Do not reuse local administrator account passwords across systems. Ensure password complexity and uniqueness such that the passwords cannot be cracked or guessed. Deny remote use of local admin credentials to log into systems. Do not allow accounts to be a local administrator on more than one system."/>
+  <control name="Disallow shared content. Protect shared folders by minimizing users that have write access. Use utilities that mitigate exploitation like the Microsoft Enhanced Mitigation Experience Toolkit (EMET) to prevent exploits from being run."/>
+  <control name="Ensure proper permissions on directories that are accessible through a web server. Disallow remote access to the web root. Disable execution on directories within the web root. Ensure that permissions of the web server process are only what is required by not using built-in accounts and instead create specific accounts to limit unnecessary access or permissions overlap across multiple systems."/>
+  <control name="Restrict write access to logon scripts to necessary administrators."/>
+  <control name="Strong physical security can help reduce the ability of an adversary to install a keylogger."/>
+  <control name="Implementation: Implement message level security such as HMAC in the HTTP communication"/>
+  <control name="Design: Utilize defense in depth, do not rely on a single security mechanism like SSL"/>
+  <control name="Identify programs that may be used to acquire service information and block them by using a software restriction policy or tools that restrict program execution by process whitelisting."/>
+  <control name="Identify programs that may be used to acquire account information and block them by using a software restriction policy or tools that restrict program execution by process whitelisting."/>
+  <control name="Identify programs (such as &quot;net&quot;) that may be used to enumerate local group permissions and block them by using a software restriction Policy or tools that restrict program execution by process whitelisting."/>
+  <control name="Ensure that proper permissions on files and folders are enacted to limit accessibility."/>
+  <control name="Ensure proper permissions are in place to prevent adversaries from altering the execution status of security tools."/>
+  <control name="Changes to registry entries in &quot;HKLM\Software\Microsoft\Windows NT\Winlogon\Notify&quot; that do not correlate with known software, patch cycles, etc are suspicious. New DLLs written to System32 which do not correlate with known good software or patching may be suspicious."/>
+  <control name="Implementation: Ensure that HTTP Get methods only retrieve state and do not alter state on the server side"/>
+  <control name="Implementation: Ensure that HTTP methods have proper ACLs based on what the functionality they expose"/>
+  <control name="Identify programs that may be used to acquire security tool information and block them by using a software restriction policy or tools that restrict program execution by process whitelisting."/>
+  <control name="Ensure rigorous physical defensive measures to keep the adversary from accessing critical systems.."/>
+  <control name="Use browser technologies that do not allow client-side scripting."/>
+  <control name="Utilize proper character encoding for all output produced within client-site scripts manipulating the DOM."/>
+  <control name="Ensure that all user-supplied input is validated before use."/>
+  <control name="Use a strong source of randomness to generate a session ID."/>
+  <control name="Use adequate length session IDs"/>
+  <control name="Do not use information available to the user in order to generate session ID (e.g., time)."/>
+  <control name="Ideas for creating random numbers are offered by Eastlake [RFC1750]"/>
+  <control name="Encrypt the session ID if you expose it to the user. For instance session ID can be stored in a cookie in encrypted format."/>
+  <control name="Have a large pool of backup IPs built into the application and support proxy capability in the application."/>
+  <control name="Ensure that all user-supplied input is validated before being stored."/>
+  <control name="Properly encrypt and sign identity tokens in transit, and use industry standard session key generation mechanisms that utilize high amount of entropy to generate the session key. Many standard web and application servers will perform this task on your behalf. Utilize a session timeout for all sessions. If the user does not explicitly logout, terminate their session after this period of inactivity. If the user logs back in then a new session key should be generated."/>
+  <control name="Design: Avoid dependence on DNS"/>
+  <control name="Design: Include &quot;hosts file&quot;/IP address in the application"/>
+  <control name="Implementation: Utilize a .onion domain with Tor support"/>
+  <control name="Implementation: DNSSEC"/>
+  <control name="Implementation: DNS-hold-open"/>
+  <control name="Design: Do not program input values directly on command shell, instead treat user input as guilty until proven innocent. Build a function that takes user input and converts it to applications specific types and values, stripping or filtering out all unauthorized commands and characters in the process."/>
+  <control name="Design: Limit program privileges, so if metacharacters or other methods circumvent program input validation routines and shell access is attained then it is not running under a privileged account. chroot jails create a sandbox for the application to execute in, making it more difficult for an attacker to elevate privilege even in the case that a compromise has occurred."/>
+  <control name="Implementation: Implement an audit log that is written to a separate host, in the event of a compromise the audit log may be able to provide evidence and details of the compromise."/>
+  <control name="Always invalidate a session ID after the user logout."/>
+  <control name="Setup a session time out for the session IDs."/>
+  <control name="Protect the communication between the client and server. For instance it is best practice to use SSL to mitigate man in the middle attack."/>
+  <control name="Do not code send session ID with GET method, otherwise the session ID will be copied to the URL. In general avoid writing session IDs in the URLs. URLs can get logged in log files, which are vulnerable to an attacker."/>
+  <control name="Encrypt the session data associated with the session ID."/>
+  <control name="Use multifactor authentication."/>
+  <control name="Countermeasures have been proposed for both disassociation flooding and RF jamming, however these countermeasures are not standardized and would need to be supported on both the retransmission device and the handset in order to be effective. Commercial products are not currently available that support jamming countermeasures for Wi-Fi."/>
+  <control name="Mitigating this attack requires countermeasures employed on both the retransmission device as well as on the cell tower. Therefore, any system that relies on existing commercial cell towards will likely be vulnerable to this attack. By using a private cellular LTE network (i.e., a custom cell tower), jamming countermeasures could be developed and employed."/>
+  <control name="Use of hardened baseband firmware on retransmission device to detect and prevent the use of weak cellular encryption."/>
+  <control name="Monitor cellular RF interface to detect the usage of weaker-than-expected cellular encryption."/>
+  <control name="Encryption of all data packets emanating from the smartphone to a retransmission device via two encrypted tunnels with Suite B cryptography, all the way to the VPN gateway at the datacenter."/>
+  <control name="Use a strict session management mechanism that only accepts locally generated session identifiers: This prevents attackers from fixating session identifiers of their own choice."/>
+  <control name="Regenerate and destroy session identifiers when there is a change in the level of privilege: This ensures that even though a potential victim may have followed a link with a fixated identifier, a new one is issued when the level of privilege changes."/>
+  <control name="Use session identifiers that are difficult to guess or brute-force: One way for the attackers to obtain valid session identifiers is by brute-forcing or guessing them. By choosing session identifiers that are sufficiently random, brute-forcing or guessing becomes very difficult."/>
+  <control name="Commercial defensive technology to detect and alert to any attempts to modify mobile technology data flows or to inject new data into existing data flows and signaling data."/>
+  <control name="Authenticate all servers and perform redundant checks when using DNS hostnames."/>
+  <control name="When possible, use error-correcting (ECC) memory in local devices as non-ECC memory is significantly more vulnerable to faults."/>
+  <control name="Automatic randomization of WiFi MAC addresses"/>
+  <control name="Frequent changing of handset and retransmission device"/>
+  <control name="Do not enable the feature of &quot;Hidden SSIDs&quot; (also known as &quot;Network Cloaking&quot;) – this option disables the usual broadcasting of the SSID by the access point, but forces the mobile handset to send requests on all supported radio channels which contains the SSID. The result is that tracking of the mobile device becomes easier since it is transmitting the SSID more frequently."/>
+  <control name="Frequently change the SSID to new and unrelated values"/>
+  <control name="Upgrade the SIM card to use the state-of-the-art AES or the somewhat outdated 3DES algorithm for OTA."/>
+  <control name="Commercial defensive technology that monitors for rogue Wi-Fi access points, man-in-the-middle attacks, and anomalous activity with the mobile device baseband radios."/>
+  <control name="Passively monitor cellular network connection for real-time threat detection and logging for manual review."/>
+  <control name="Frequent changing of mobile number."/>
+  <control name="Use cryptographic tokens to associate a request with a specific action. The token can be regenerated at every request so that if a request with an invalid token is encountered, it can be reliably discarded. The token is considered invalid if it arrived with a request other than the action it was supposed to be associated with."/>
+  <control name="Although less reliable, the use of the optional HTTP Referrer header can also be used to determine whether an incoming request was actually one that the user is authorized for, in the current context."/>
+  <control name="Additionally, the user can also be prompted to confirm an action every time an action concerning potentially sensitive data is invoked. This way, even if the attacker manages to get the user to click on a malicious link and request the desired action, the user has a chance to recover by denying confirmation. This solution is also implicitly tied to using a second factor of authentication before performing such actions."/>
+  <control name="In general, every request must be checked for the appropriate authentication token as well as authorization in the current session context."/>
+  <control name="Distort packet sizes and timing at VPN layer by adding padding to normalize packet sizes and timing delays to reduce information leakage via timing."/>
+  <control name="Utilize side-channel resistant implementations of all crypto algorithms."/>
+  <control name="Strong physical security of all devices that contain secret key information. (even when devices are not in use)"/>
+  <control name="None are known."/>
+  <control name="Implement robust physical security countermeasures and monitoring."/>
+  <control name="Frequent changes to secret keys and certificates."/>
+  <control name="Strong physical security of the device."/>
+  <control name="Purchase potential TypoSquatted domains and forward to legitimate domain."/>
+  <control name="Purchase potential SoundSquatted domains and forward to legitimate domain."/>
+  <control name="Utilize browsers that can warn users if URLs contain characters from different character sets."/>
+  <control name="Prevent unknown code from executing on a system through whitelisting policy."/>
+  <control name="Patch installed applications as soon as new updates become available."/>
+  <control name="Applications should insure that the content of the file is consistent with format it is expecting, and not depend solely on the file extension."/>
+  <control name="Many tools are available to search for the hidden data. Scan regularly for such data using one of these tools."/>
+  <control name="While copying and pasting of data with the clipboard is a legitimate and practical function, certain situations and context may require the disabling of this feature. Just as certain applications disable screenshot capability, applications that handle highly sensitive information should consider disabling copy and paste functionality."/>
+  <control name="Employ a robust identification and audit/blocking via whitelisting of applications on your system. Malware may contain the functionality associated with this attack pattern."/>
+  <control name="Verify that files have proper access controls set, and reduce the storage of sensitive information to only what is necessary."/>
+  <control name="Prevent unknown or malicious software from loading through whitelisting policy."/>
+  <control name="Properly restrict the location of the software being used."/>
+  <control name="Leverage security kernel modules providing advanced access control and process restrictions like SELinux."/>
+  <control name="Monitor API calls like CreateRemoteThread, SuspendThread/SetThreadContext/ResumeThread, QueueUserAPC, and similar for Windows."/>
+  <control name="Monitor API calls like ptrace system call, use of LD_PRELOAD environment variable, dlfcn dynamic linking API calls, and similar for Linux."/>
+  <control name="Monitor processes and command-line arguments for unknown behavior related to code injection."/>
+  <control name="Prevent unknown DLLs from loading through whitelisting policy."/>
+  <control name="Use of sxstrace.exe on Windows as well as manual inspection of the manifests."/>
+  <control name="Require code signing and avoid using relative paths for resources."/>
+  <control name="Insure that binaries commonly used by the system have the correct file permissions. Set operating system policies that restrict privilege elevation of non-Administrators. Use auditing tools to observe changes to system services."/>
+  <control name="Identify unnecessary system utilities or potentially malicious software that may contain functionality to identify network share information, and audit and/or block them by using whitelisting tools."/>
+  <control name="Prevent the use of Lan Man and NT Lan Man authentication on severs and apply patch KB2871997 to Windows 7 and higher systems."/>
+  <control name="Monitor system and domain logs for abnormal credential access."/>
+  <control name="Leverage system penetration testing and other defense in depth methods to determine vulnerable systems within a domain."/>
+  <control name="Reset the built-in KRBTGT account password twice to invalidate the existence of any current Golden Tickets and any tickets derived from them."/>
+  <control name="Identify potentially malicious software that may have functionality to acquire screen captures, and audit and/or block it by using whitelisting tools."/>
+  <control name="While screen capture is a legitimate and practical function, certain situations and context may require the disabling of this feature."/>
+  <control name="File extensions should be checked to see if non-visible characters are being included."/>
+  <control name="Design: Encrypt all communication between the client and server."/>
+  <control name="Implementation: Use SSL, SSH, SCP."/>
+  <control name="Operation: Use &quot;ifconfig/ipconfig&quot; or other tools to detect the sniffer installed in the network."/>
+  <control name="Be mindful of your surroundings when discussing sensitive information in public areas."/>
+  <control name="Implement proper software restriction policies to only allow authorized software on your environment. Use of anti-virus and other security monitoring and detecting tools can aid in this too. Closely monitor installed software for unusual behavior or activity, and implement patches as soon as they become available."/>
+  <control name="If possible, physically disable the microphone on your machine if it is not needed."/>
+  <control name="Strong input validation - All user-controllable input must be validated and filtered for illegal characters as well as SQL content. Keywords such as UNION, SELECT or INSERT must be filtered in addition to characters such as a single-quote(') or SQL-comments (--) based on the context in which they appear."/>
+  <control name="Use of parameterized queries or stored procedures - Parameterization causes the input to be restricted to certain domains, such as strings or integers, and any input outside such domains is considered invalid and the query fails. Note that SQL Injection is possible even in the presence of stored procedures if the eventual query is constructed dynamically."/>
+  <control name="Use of custom error pages - Attackers can glean information about the nature of queries from descriptive error messages. Input validation must be coupled with customized error pages that inform about an error without disclosing information about the database or application."/>
+  <control name="A given code signing scheme may be fallible due to improper use of cryptography. Developers must never roll out their own cryptography, nor should existing primitives be modified or ignored."/>
+  <control name="If an attacker cannot attack the scheme directly, he might try to alter the environment that affects the signing and verification processes. A possible mitigation is to avoid reliance on flags or environment variables that are user-controllable."/>
+  <control name="Apply the principle of least privilege."/>
+  <control name="Validate all untrusted data."/>
+  <control name="Apply the latest patches."/>
+  <control name="Scan your services and disable the ones which are not needed and are exposed unnecessarily. Exposing programs increases the attack surface. Only expose the services which are needed and have security mechanisms such as authentication built around them."/>
+  <control name="Avoid revealing information about your system (e.g., version of the program) to anonymous users."/>
+  <control name="Make sure that your program or service fail safely. What happen if the communication protocol is interrupted suddenly? What happen if a parameter is missing? Does your system have resistance and resilience to attack? Fail safely when a resource exhaustion occurs."/>
+  <control name="If possible use a sandbox model which limits the actions that programs can take. A sandbox restricts a program to a set of privileges and commands that make it difficult or impossible for the program to cause any damage."/>
+  <control name="Check your program for buffer overflow and format String vulnerabilities which can lead to execution of malicious code."/>
+  <control name="Monitor traffic and resource usage and pay attention if resource exhaustion occurs."/>
+  <control name="Protect your log file from unauthorized modification and log forging."/>
+  <control name="Security by Obscurity is not a solution to preventing SQL Injection. Rather than suppress error messages and exceptions, the application must handle them gracefully, returning either a custom error page or redirecting the user to a default page, without revealing any information about the database or the application internals."/>
+  <control name="Delete all default account credentials that may be put in by the product vendor."/>
+  <control name="Ensure that the system is Unicode aware and can properly process Unicode data. Do not make an assumption that data will be in ASCII."/>
+  <control name="Ensure that filtering or input validation is applied to canonical data."/>
+  <control name="Be aware of the threat of alternative method of data encoding and obfuscation technique such as IP address encoding. (See related guideline section)"/>
+  <control name="Implementation: Scan dynamically generated content against validation specification"/>
+  <control name="Do not rely solely on user-controllable locations, such as cookies or URL parameters, to maintain user state."/>
+  <control name="Avoid sensitive information, such as usernames or authentication and authorization information, in user-controllable locations."/>
+  <control name="Sensitive information that is part of the user state must be appropriately protected to ensure confidentiality and integrity at each request."/>
+  <control name="Design: Backup copies of all configuration files"/>
+  <control name="Implementation: Integrity monitoring for configuration files"/>
+  <control name="Implementation: Enforce audit logging on code and configuration promotion procedures."/>
+  <control name="Implementation: Load configuration from separate process and memory space, for example a separate physical device like a CD"/>
+  <control name="Design: Ensure all input is validated, and does not contain file system commands"/>
+  <control name="Design: For interactive user applications, consider if direct file system interface is necessary, instead consider having the application proxy communication."/>
+  <control name="A software system should be reluctant to trust variables that have been initialized outside of its trust boundary. Ensure adequate checking is performed when relying on input from outside a trust boundary."/>
+  <control name="Separate the presentation layer and the business logic layer. Variables at the business logic layer should not be exposed at the presentation layer. This is to prevent computation of business logic from user controlled input data."/>
+  <control name="Use encapsulation when declaring your variables. This is to lower the exposure of your variables."/>
+  <control name="Assume all input is malicious. Create a white list that defines all valid input to the software system based on the requirements specifications. Input that does not match against the white list should be rejected by the program."/>
+  <control name="Verify that the user-supplied data does not use backslash character to escape malicious characters."/>
+  <control name="Be aware of the threat of alternative method of data encoding."/>
+  <control name="Regular expressions can be used to filter out backslash. Make sure you decode before filtering and validating the untrusted input data."/>
+  <control name="In the case of path traversals, use the principle of least privilege when determining access rights to file systems. Do not allow users to access directories/files that they should not access."/>
+  <control name="Avoid making decisions based on names of resources (e.g. files) if those resources can have alternate names."/>
+  <control name="Any security checks should occur after the data has been decoded and validated as correct data format. Do not repeat decoding process, if bad character are left after decoding process, treat the data as suspicious, and fail the validation process. Refer to the RFCs to safely decode URL."/>
+  <control name="There are tools to scan HTTP requests to the server for valid URL such as URLScan from Microsoft (http://www.microsoft.com/technet/security/tools/urlscan.mspx)"/>
+  <control name="Test your path decoding process against malicious input."/>
+  <control name="Assume all input is malicious. Create a white list that defines all valid input to the application based on the requirements specifications. Input that does not match against the white list should not be permitted to enter into the system."/>
+  <control name="The Unicode Consortium recognized multiple representations to be a problem and has revised the Unicode Standard to make multiple representations of the same code point with UTF-8 illegal. The UTF-8 Corrigendum lists the newly restricted UTF-8 range (See references). Many current applications may not have been revised to follow this rule. Verify that your application conform to the latest UTF-8 encoding specification. Pay extra attention to the filtering of illegal characters."/>
+  <control name="For security reasons, a UTF-8 decoder must not accept UTF-8 sequences that are longer than necessary to encode a character. If you use a parser to decode the UTF-8 encoding, make sure that parser filter the invalid UTF-8 characters (invalid forms or overlong forms)."/>
+  <control name="Look for overlong UTF-8 sequences starting with malicious pattern. You can also use a UTF-8 decoder stress test to test your UTF-8 parser (See Markus Kuhn's UTF-8 and Unicode FAQ in reference section)"/>
+  <control name="Design: Use input validation before writing to web log"/>
+  <control name="Design: Validate all log data before it is output"/>
+  <control name="Strong input validation - All user-controllable input must be validated and filtered for illegal characters as well as content that can be interpreted in the context of an XPath expression. Characters such as a single-quote(') or operators such as or (|), and (&amp;) and such should be filtered if the application does not expect them in the context in which they appear. If such content cannot be filtered, it must at least be properly escaped to avoid them being interpreted as part of XPath expressions."/>
+  <control name="Use of parameterized XPath queries - Parameterization causes the input to be restricted to certain domains, such as strings or integers, and any input outside such domains is considered invalid and the query fails."/>
+  <control name="Design: Perform input white list validation on all XML input"/>
+  <control name="Implementation: Run xml parsing and query infrastructure with minimal privileges so that an attacker is limited in their ability to probe other system resources from XQL."/>
+  <control name="Authenticate request to every resource. In addition, every page or resource must ensure that the request it is handling has been made in an authorized context."/>
+  <control name="Forceful browsing can also be made difficult to a large extent by not hard-coding names of application pages or resources. This way, the attacker cannot figure out, from the application alone, the resources available from the present context."/>
+  <control name="Use language APIs rather than relying on passing data to the operating system shell or command line. Doing so ensures that the available protection mechanisms in the language are intact and applicable."/>
+  <control name="Filter all incoming data to escape or remove characters or strings that can be potentially misinterpreted as operating system or shell commands"/>
+  <control name="All application processes should be run with the minimal privileges required. Also, processes must shed privileges as soon as they no longer require them."/>
+  <control name="All sensitive information must be handled over a secure connection."/>
+  <control name="Known vulnerabilities in DNS or router software or in operating systems must be patched as soon as a fix has been released and tested."/>
+  <control name="End users must ensure that they provide sensitive information only to websites that they trust, over a secure connection with a valid certificate issued by a well-known certificate authority."/>
+  <control name="Carefully review the service's implementation before making it available to user. For instance you can use manual or automated code review to uncover vulnerabilities such as buffer overflow."/>
+  <control name="Apply the latest patches to your user exposed services. This may not be a complete solution, especially against a zero day attack."/>
+  <control name="Do not unnecessarily expose services."/>
+  <control name="The server must initiate the handshake by issuing the challenge. This ensures that the client has to respond before the exchange can move any further"/>
+  <control name="The use of HMAC to hash the response from the server can also be used to thwart reflection. The server responds by returning its own challenge as well as hashing the client's challenge, its own challenge and the pre-shared secret. Requiring the client to respond with the HMAC of the two challenges ensures that only the possessor of a valid pre-shared secret can successfully hash in the two values."/>
+  <control name="Introducing a random nonce with each new connection ensures that the attacker cannot employ two connections to attack the authentication protocol"/>
+  <control name="Carefully review the service's implementation before making it available to user. For instance you can use manual or automated code review to uncover vulnerabilities such as integer overflow."/>
+  <control name="Always do bound checking before consuming user input data."/>
+  <control name="None"/>
+  <control name="Carefully control access to physical log files."/>
+  <control name="Do not allow tainted data to be written in the log file without prior input validation. Whitelisting may be used to properly validate the data."/>
+  <control name="Use static analysis tools to identify log forging vulnerabilities."/>
+  <control name="Avoid viewing logs with tools that may interpret control characters in the file, such as command-line shells."/>
+  <control name="Get your Public Key signed by a Certificate Authority"/>
+  <control name="Encrypt your communication using cryptography (SSL,...)"/>
+  <control name="Use Strong mutual authentication to always fully authenticate both ends of any communications channel."/>
+  <control name="Exchange public keys using a secure channel"/>
+  <control name="It is important to protect WSDL file or provide limited access to it."/>
+  <control name="Review the functions exposed by the WSDL interface (especially if you have used a tool to generate it). Make sure that none of them is vulnerable to injection."/>
+  <control name="Ensure the WSDL does not expose functions and APIs that were not intended to be exposed."/>
+  <control name="Pay attention to the function naming convention (within the WSDL interface). Easy to guess function name may be an entry point for attack."/>
+  <control name="Validate the received messages against the WSDL Schema. Incomplete solution."/>
+  <control name="Ensure that application handles situations where access to APIs in external libraries is not available securely. If the application cannot continue its execution safely it should fail in a consistent and secure fashion."/>
+  <control name="Use proven cryptographic algorithms with recommended key sizes."/>
+  <threatmitigation control="//@control.0" threat="//@threat.0"/>
+  <threatmitigation control="//@control.1" threat="//@threat.1"/>
+  <threatmitigation control="//@control.2" threat="//@threat.1"/>
+  <threatmitigation control="//@control.3" threat="//@threat.1"/>
+  <threatmitigation control="//@control.4" threat="//@threat.1"/>
+  <threatmitigation control="//@control.5" threat="//@threat.2"/>
+  <threatmitigation control="//@control.6" threat="//@threat.2"/>
+  <threatmitigation control="//@control.7" threat="//@threat.2"/>
+  <threatmitigation control="//@control.8" threat="//@threat.2"/>
+  <threatmitigation control="//@control.9" threat="//@threat.2"/>
+  <threatmitigation control="//@control.10" threat="//@threat.2"/>
+  <threatmitigation control="//@control.11" threat="//@threat.3"/>
+  <threatmitigation control="//@control.12" threat="//@threat.3"/>
+  <threatmitigation control="//@control.13" threat="//@threat.3"/>
+  <threatmitigation control="//@control.14" threat="//@threat.4"/>
+  <threatmitigation control="//@control.15" threat="//@threat.4"/>
+  <threatmitigation control="//@control.16" threat="//@threat.5"/>
+  <threatmitigation control="//@control.17" threat="//@threat.5"/>
+  <threatmitigation control="//@control.18" threat="//@threat.5"/>
+  <threatmitigation control="//@control.19" threat="//@threat.6"/>
+  <threatmitigation control="//@control.20" threat="//@threat.6"/>
+  <threatmitigation control="//@control.21" threat="//@threat.6"/>
+  <threatmitigation control="//@control.22" threat="//@threat.6"/>
+  <threatmitigation control="//@control.23" threat="//@threat.6"/>
+  <threatmitigation control="//@control.24" threat="//@threat.7"/>
+  <threatmitigation control="//@control.25" threat="//@threat.7"/>
+  <threatmitigation control="//@control.26" threat="//@threat.7"/>
+  <threatmitigation control="//@control.27" threat="//@threat.7"/>
+  <threatmitigation control="//@control.28" threat="//@threat.8"/>
+  <threatmitigation control="//@control.29" threat="//@threat.8"/>
+  <threatmitigation control="//@control.30" threat="//@threat.9"/>
+  <threatmitigation control="//@control.31" threat="//@threat.9"/>
+  <threatmitigation control="//@control.32" threat="//@threat.9"/>
+  <threatmitigation control="//@control.33" threat="//@threat.10"/>
+  <threatmitigation control="//@control.34" threat="//@threat.10"/>
+  <threatmitigation control="//@control.35" threat="//@threat.11"/>
+  <threatmitigation control="//@control.36" threat="//@threat.12"/>
+  <threatmitigation control="//@control.37" threat="//@threat.12"/>
+  <threatmitigation control="//@control.38" threat="//@threat.12"/>
+  <threatmitigation control="//@control.39" threat="//@threat.13"/>
+  <threatmitigation control="//@control.40" threat="//@threat.13"/>
+  <threatmitigation control="//@control.41" threat="//@threat.13"/>
+  <threatmitigation control="//@control.42" threat="//@threat.13"/>
+  <threatmitigation control="//@control.43" threat="//@threat.14"/>
+  <threatmitigation control="//@control.44" threat="//@threat.14"/>
+  <threatmitigation control="//@control.45" threat="//@threat.18"/>
+  <threatmitigation control="//@control.46" threat="//@threat.18"/>
+  <threatmitigation control="//@control.47" threat="//@threat.19"/>
+  <threatmitigation control="//@control.0" threat="//@threat.20"/>
+  <threatmitigation control="//@control.48" threat="//@threat.20"/>
+  <threatmitigation control="//@control.49" threat="//@threat.21"/>
+  <threatmitigation control="//@control.50" threat="//@threat.21"/>
+  <threatmitigation control="//@control.51" threat="//@threat.21"/>
+  <threatmitigation control="//@control.52" threat="//@threat.21"/>
+  <threatmitigation control="//@control.53" threat="//@threat.21"/>
+  <threatmitigation control="//@control.54" threat="//@threat.21"/>
+  <threatmitigation control="//@control.55" threat="//@threat.21"/>
+  <threatmitigation control="//@control.56" threat="//@threat.22"/>
+  <threatmitigation control="//@control.57" threat="//@threat.24"/>
+  <threatmitigation control="//@control.58" threat="//@threat.26"/>
+  <threatmitigation control="//@control.59" threat="//@threat.26"/>
+  <threatmitigation control="//@control.60" threat="//@threat.26"/>
+  <threatmitigation control="//@control.61" threat="//@threat.27"/>
+  <threatmitigation control="//@control.62" threat="//@threat.27"/>
+  <threatmitigation control="//@control.63" threat="//@threat.27"/>
+  <threatmitigation control="//@control.64" threat="//@threat.27"/>
+  <threatmitigation control="//@control.65" threat="//@threat.27"/>
+  <threatmitigation control="//@control.66" threat="//@threat.27"/>
+  <threatmitigation control="//@control.67" threat="//@threat.27"/>
+  <threatmitigation control="//@control.68" threat="//@threat.27"/>
+  <threatmitigation control="//@control.69" threat="//@threat.27"/>
+  <threatmitigation control="//@control.70" threat="//@threat.27"/>
+  <threatmitigation control="//@control.71" threat="//@threat.27"/>
+  <threatmitigation control="//@control.72" threat="//@threat.27"/>
+  <threatmitigation control="//@control.73" threat="//@threat.28"/>
+  <threatmitigation control="//@control.74" threat="//@threat.28"/>
+  <threatmitigation control="//@control.75" threat="//@threat.28"/>
+  <threatmitigation control="//@control.76" threat="//@threat.31"/>
+  <threatmitigation control="//@control.77" threat="//@threat.31"/>
+  <threatmitigation control="//@control.78" threat="//@threat.31"/>
+  <threatmitigation control="//@control.79" threat="//@threat.31"/>
+  <threatmitigation control="//@control.80" threat="//@threat.32"/>
+  <threatmitigation control="//@control.81" threat="//@threat.32"/>
+  <threatmitigation control="//@control.82" threat="//@threat.32"/>
+  <threatmitigation control="//@control.83" threat="//@threat.32"/>
+  <threatmitigation control="//@control.84" threat="//@threat.33"/>
+  <threatmitigation control="//@control.85" threat="//@threat.33"/>
+  <threatmitigation control="//@control.86" threat="//@threat.33"/>
+  <threatmitigation control="//@control.87" threat="//@threat.34"/>
+  <threatmitigation control="//@control.88" threat="//@threat.34"/>
+  <threatmitigation control="//@control.89" threat="//@threat.35"/>
+  <threatmitigation control="//@control.90" threat="//@threat.35"/>
+  <threatmitigation control="//@control.91" threat="//@threat.37"/>
+  <threatmitigation control="//@control.92" threat="//@threat.37"/>
+  <threatmitigation control="//@control.93" threat="//@threat.38"/>
+  <threatmitigation control="//@control.94" threat="//@threat.38"/>
+  <threatmitigation control="//@control.95" threat="//@threat.39"/>
+  <threatmitigation control="//@control.96" threat="//@threat.39"/>
+  <threatmitigation control="//@control.97" threat="//@threat.41"/>
+  <threatmitigation control="//@control.68" threat="//@threat.41"/>
+  <threatmitigation control="//@control.72" threat="//@threat.41"/>
+  <threatmitigation control="//@control.98" threat="//@threat.41"/>
+  <threatmitigation control="//@control.70" threat="//@threat.41"/>
+  <threatmitigation control="//@control.71" threat="//@threat.41"/>
+  <threatmitigation control="//@control.99" threat="//@threat.42"/>
+  <threatmitigation control="//@control.100" threat="//@threat.42"/>
+  <threatmitigation control="//@control.101" threat="//@threat.42"/>
+  <threatmitigation control="//@control.5" threat="//@threat.42"/>
+  <threatmitigation control="//@control.102" threat="//@threat.42"/>
+  <threatmitigation control="//@control.8" threat="//@threat.42"/>
+  <threatmitigation control="//@control.103" threat="//@threat.42"/>
+  <threatmitigation control="//@control.9" threat="//@threat.42"/>
+  <threatmitigation control="//@control.104" threat="//@threat.44"/>
+  <threatmitigation control="//@control.105" threat="//@threat.44"/>
+  <threatmitigation control="//@control.106" threat="//@threat.45"/>
+  <threatmitigation control="//@control.107" threat="//@threat.45"/>
+  <threatmitigation control="//@control.108" threat="//@threat.45"/>
+  <threatmitigation control="//@control.109" threat="//@threat.49"/>
+  <threatmitigation control="//@control.110" threat="//@threat.49"/>
+  <threatmitigation control="//@control.111" threat="//@threat.49"/>
+  <threatmitigation control="//@control.112" threat="//@threat.50"/>
+  <threatmitigation control="//@control.113" threat="//@threat.50"/>
+  <threatmitigation control="//@control.114" threat="//@threat.53"/>
+  <threatmitigation control="//@control.115" threat="//@threat.53"/>
+  <threatmitigation control="//@control.116" threat="//@threat.53"/>
+  <threatmitigation control="//@control.117" threat="//@threat.53"/>
+  <threatmitigation control="//@control.118" threat="//@threat.55"/>
+  <threatmitigation control="//@control.119" threat="//@threat.57"/>
+  <threatmitigation control="//@control.120" threat="//@threat.59"/>
+  <threatmitigation control="//@control.121" threat="//@threat.60"/>
+  <threatmitigation control="//@control.122" threat="//@threat.60"/>
+  <threatmitigation control="//@control.123" threat="//@threat.61"/>
+  <threatmitigation control="//@control.124" threat="//@threat.61"/>
+  <threatmitigation control="//@control.125" threat="//@threat.61"/>
+  <threatmitigation control="//@control.126" threat="//@threat.62"/>
+  <threatmitigation control="//@control.127" threat="//@threat.62"/>
+  <threatmitigation control="//@control.128" threat="//@threat.66"/>
+  <threatmitigation control="//@control.129" threat="//@threat.71"/>
+  <threatmitigation control="//@control.130" threat="//@threat.71"/>
+  <threatmitigation control="//@control.131" threat="//@threat.71"/>
+  <threatmitigation control="//@control.132" threat="//@threat.72"/>
+  <threatmitigation control="//@control.133" threat="//@threat.72"/>
+  <threatmitigation control="//@control.134" threat="//@threat.72"/>
+  <threatmitigation control="//@control.135" threat="//@threat.72"/>
+  <threatmitigation control="//@control.136" threat="//@threat.72"/>
+  <threatmitigation control="//@control.137" threat="//@threat.72"/>
+  <threatmitigation control="//@control.138" threat="//@threat.73"/>
+  <threatmitigation control="//@control.66" threat="//@threat.73"/>
+  <threatmitigation control="//@control.69" threat="//@threat.73"/>
+  <threatmitigation control="//@control.139" threat="//@threat.74"/>
+  <threatmitigation control="//@control.140" threat="//@threat.74"/>
+  <threatmitigation control="//@control.141" threat="//@threat.74"/>
+  <threatmitigation control="//@control.142" threat="//@threat.74"/>
+  <threatmitigation control="//@control.143" threat="//@threat.74"/>
+  <threatmitigation control="//@control.144" threat="//@threat.74"/>
+  <threatmitigation control="//@control.145" threat="//@threat.74"/>
+  <threatmitigation control="//@control.146" threat="//@threat.74"/>
+  <threatmitigation control="//@control.0" threat="//@threat.75"/>
+  <threatmitigation control="//@control.147" threat="//@threat.76"/>
+  <threatmitigation control="//@control.148" threat="//@threat.80"/>
+  <threatmitigation control="//@control.149" threat="//@threat.80"/>
+  <threatmitigation control="//@control.150" threat="//@threat.82"/>
+  <threatmitigation control="//@control.151" threat="//@threat.82"/>
+  <threatmitigation control="//@control.61" threat="//@threat.83"/>
+  <threatmitigation control="//@control.152" threat="//@threat.85"/>
+  <threatmitigation control="//@control.153" threat="//@threat.85"/>
+  <threatmitigation control="//@control.154" threat="//@threat.85"/>
+  <threatmitigation control="//@control.155" threat="//@threat.85"/>
+  <threatmitigation control="//@control.156" threat="//@threat.85"/>
+  <threatmitigation control="//@control.157" threat="//@threat.89"/>
+  <threatmitigation control="//@control.158" threat="//@threat.91"/>
+  <threatmitigation control="//@control.159" threat="//@threat.93"/>
+  <threatmitigation control="//@control.160" threat="//@threat.93"/>
+  <threatmitigation control="//@control.161" threat="//@threat.93"/>
+  <threatmitigation control="//@control.162" threat="//@threat.93"/>
+  <threatmitigation control="//@control.163" threat="//@threat.93"/>
+  <threatmitigation control="//@control.164" threat="//@threat.93"/>
+  <threatmitigation control="//@control.165" threat="//@threat.93"/>
+  <threatmitigation control="//@control.166" threat="//@threat.93"/>
+  <threatmitigation control="//@control.167" threat="//@threat.93"/>
+  <threatmitigation control="//@control.168" threat="//@threat.93"/>
+  <threatmitigation control="//@control.169" threat="//@threat.97"/>
+  <threatmitigation control="//@control.170" threat="//@threat.97"/>
+  <threatmitigation control="//@control.171" threat="//@threat.97"/>
+  <threatmitigation control="//@control.172" threat="//@threat.97"/>
+  <threatmitigation control="//@control.173" threat="//@threat.100"/>
+  <threatmitigation control="//@control.174" threat="//@threat.100"/>
+  <threatmitigation control="//@control.175" threat="//@threat.101"/>
+  <threatmitigation control="//@control.176" threat="//@threat.101"/>
+  <threatmitigation control="//@control.177" threat="//@threat.102"/>
+  <threatmitigation control="//@control.178" threat="//@threat.102"/>
+  <threatmitigation control="//@control.179" threat="//@threat.102"/>
+  <threatmitigation control="//@control.180" threat="//@threat.103"/>
+  <threatmitigation control="//@control.181" threat="//@threat.103"/>
+  <threatmitigation control="//@control.182" threat="//@threat.103"/>
+  <threatmitigation control="//@control.183" threat="//@threat.103"/>
+  <threatmitigation control="//@control.169" threat="//@threat.103"/>
+  <threatmitigation control="//@control.184" threat="//@threat.103"/>
+  <threatmitigation control="//@control.185" threat="//@threat.103"/>
+  <threatmitigation control="//@control.186" threat="//@threat.103"/>
+  <threatmitigation control="//@control.187" threat="//@threat.104"/>
+  <threatmitigation control="//@control.188" threat="//@threat.104"/>
+  <threatmitigation control="//@control.189" threat="//@threat.105"/>
+  <threatmitigation control="//@control.190" threat="//@threat.105"/>
+  <threatmitigation control="//@control.191" threat="//@threat.107"/>
+  <threatmitigation control="//@control.192" threat="//@threat.109"/>
+  <threatmitigation control="//@control.193" threat="//@threat.109"/>
+  <threatmitigation control="//@control.194" threat="//@threat.109"/>
+  <threatmitigation control="//@control.195" threat="//@threat.112"/>
+  <threatmitigation control="//@control.196" threat="//@threat.112"/>
+  <threatmitigation control="//@control.197" threat="//@threat.112"/>
+  <threatmitigation control="//@control.198" threat="//@threat.115"/>
+  <threatmitigation control="//@control.199" threat="//@threat.115"/>
+  <threatmitigation control="//@control.200" threat="//@threat.115"/>
+  <threatmitigation control="//@control.201" threat="//@threat.115"/>
+  <threatmitigation control="//@control.202" threat="//@threat.115"/>
+  <threatmitigation control="//@control.203" threat="//@threat.115"/>
+  <threatmitigation control="//@control.204" threat="//@threat.115"/>
+  <threatmitigation control="//@control.205" threat="//@threat.116"/>
+  <threatmitigation control="//@control.206" threat="//@threat.116"/>
+  <threatmitigation control="//@control.207" threat="//@threat.118"/>
+  <threatmitigation control="//@control.208" threat="//@threat.118"/>
+  <threatmitigation control="//@control.139" threat="//@threat.118"/>
+  <threatmitigation control="//@control.140" threat="//@threat.118"/>
+  <threatmitigation control="//@control.141" threat="//@threat.118"/>
+  <threatmitigation control="//@control.143" threat="//@threat.118"/>
+  <threatmitigation control="//@control.144" threat="//@threat.118"/>
+  <threatmitigation control="//@control.146" threat="//@threat.118"/>
+  <threatmitigation control="//@control.209" threat="//@threat.119"/>
+  <threatmitigation control="//@control.210" threat="//@threat.119"/>
+  <threatmitigation control="//@control.211" threat="//@threat.120"/>
+  <threatmitigation control="//@control.212" threat="//@threat.121"/>
+  <threatmitigation control="//@control.213" threat="//@threat.122"/>
+  <threatmitigation control="//@control.214" threat="//@threat.122"/>
+  <threatmitigation control="//@control.215" threat="//@threat.123"/>
+  <threatmitigation control="//@control.216" threat="//@threat.123"/>
+  <threatmitigation control="//@control.217" threat="//@threat.123"/>
+  <threatmitigation control="//@control.218" threat="//@threat.123"/>
+  <threatmitigation control="//@control.116" threat="//@threat.123"/>
+  <threatmitigation control="//@control.219" threat="//@threat.125"/>
+  <threatmitigation control="//@control.220" threat="//@threat.126"/>
+  <threatmitigation control="//@control.221" threat="//@threat.126"/>
+  <threatmitigation control="//@control.222" threat="//@threat.126"/>
+  <threatmitigation control="//@control.223" threat="//@threat.127"/>
+  <threatmitigation control="//@control.224" threat="//@threat.129"/>
+  <threatmitigation control="//@control.225" threat="//@threat.130"/>
+  <threatmitigation control="//@control.226" threat="//@threat.130"/>
+  <threatmitigation control="//@control.227" threat="//@threat.130"/>
+  <threatmitigation control="//@control.228" threat="//@threat.131"/>
+  <threatmitigation control="//@control.138" threat="//@threat.132"/>
+  <threatmitigation control="//@control.229" threat="//@threat.132"/>
+  <threatmitigation control="//@control.63" threat="//@threat.132"/>
+  <threatmitigation control="//@control.65" threat="//@threat.132"/>
+  <threatmitigation control="//@control.230" threat="//@threat.132"/>
+  <threatmitigation control="//@control.67" threat="//@threat.132"/>
+  <threatmitigation control="//@control.231" threat="//@threat.133"/>
+  <threatmitigation control="//@control.232" threat="//@threat.133"/>
+  <threatmitigation control="//@control.233" threat="//@threat.133"/>
+  <threatmitigation control="//@control.234" threat="//@threat.133"/>
+  <threatmitigation control="//@control.231" threat="//@threat.134"/>
+  <threatmitigation control="//@control.232" threat="//@threat.134"/>
+  <threatmitigation control="//@control.233" threat="//@threat.134"/>
+  <threatmitigation control="//@control.234" threat="//@threat.134"/>
+  <threatmitigation control="//@control.235" threat="//@threat.137"/>
+  <threatmitigation control="//@control.236" threat="//@threat.137"/>
+  <threatmitigation control="//@control.237" threat="//@threat.138"/>
+  <threatmitigation control="//@control.238" threat="//@threat.138"/>
+  <threatmitigation control="//@control.239" threat="//@threat.138"/>
+  <threatmitigation control="//@control.240" threat="//@threat.138"/>
+  <threatmitigation control="//@control.241" threat="//@threat.139"/>
+  <threatmitigation control="//@control.242" threat="//@threat.139"/>
+  <threatmitigation control="//@control.243" threat="//@threat.139"/>
+  <threatmitigation control="//@control.244" threat="//@threat.139"/>
+  <threatmitigation control="//@control.245" threat="//@threat.139"/>
+  <threatmitigation control="//@control.246" threat="//@threat.140"/>
+  <threatmitigation control="//@control.247" threat="//@threat.140"/>
+  <threatmitigation control="//@control.248" threat="//@threat.140"/>
+  <threatmitigation control="//@control.249" threat="//@threat.141"/>
+  <threatmitigation control="//@control.246" threat="//@threat.141"/>
+  <threatmitigation control="//@control.247" threat="//@threat.141"/>
+  <threatmitigation control="//@control.248" threat="//@threat.141"/>
+  <threatmitigation control="//@control.177" threat="//@threat.142"/>
+  <threatmitigation control="//@control.250" threat="//@threat.142"/>
+  <threatmitigation control="//@control.179" threat="//@threat.142"/>
+  <threatmitigation control="//@control.180" threat="//@threat.143"/>
+  <threatmitigation control="//@control.251" threat="//@threat.143"/>
+  <threatmitigation control="//@control.182" threat="//@threat.143"/>
+  <threatmitigation control="//@control.183" threat="//@threat.143"/>
+  <threatmitigation control="//@control.169" threat="//@threat.143"/>
+  <threatmitigation control="//@control.184" threat="//@threat.143"/>
+  <threatmitigation control="//@control.185" threat="//@threat.143"/>
+  <threatmitigation control="//@control.186" threat="//@threat.143"/>
+  <threatmitigation control="//@control.177" threat="//@threat.144"/>
+  <threatmitigation control="//@control.252" threat="//@threat.144"/>
+  <threatmitigation control="//@control.179" threat="//@threat.144"/>
+  <threatmitigation control="//@control.177" threat="//@threat.145"/>
+  <threatmitigation control="//@control.253" threat="//@threat.145"/>
+  <threatmitigation control="//@control.179" threat="//@threat.145"/>
+  <threatmitigation control="//@control.254" threat="//@threat.146"/>
+  <threatmitigation control="//@control.255" threat="//@threat.146"/>
+  <threatmitigation control="//@control.256" threat="//@threat.146"/>
+  <threatmitigation control="//@control.257" threat="//@threat.147"/>
+  <threatmitigation control="//@control.258" threat="//@threat.147"/>
+  <threatmitigation control="//@control.0" threat="//@threat.148"/>
+  <threatmitigation control="//@control.259" threat="//@threat.149"/>
+  <threatmitigation control="//@control.260" threat="//@threat.151"/>
+  <threatmitigation control="//@control.261" threat="//@threat.152"/>
+  <threatmitigation control="//@control.262" threat="//@threat.153"/>
+  <threatmitigation control="//@control.263" threat="//@threat.153"/>
+  <threatmitigation control="//@control.264" threat="//@threat.153"/>
+  <threatmitigation control="//@control.265" threat="//@threat.153"/>
+  <threatmitigation control="//@control.266" threat="//@threat.153"/>
+  <threatmitigation control="//@control.267" threat="//@threat.156"/>
+  <threatmitigation control="//@control.49" threat="//@threat.156"/>
+  <threatmitigation control="//@control.268" threat="//@threat.158"/>
+  <threatmitigation control="//@control.269" threat="//@threat.158"/>
+  <threatmitigation control="//@control.270" threat="//@threat.158"/>
+  <threatmitigation control="//@control.271" threat="//@threat.158"/>
+  <threatmitigation control="//@control.272" threat="//@threat.159"/>
+  <threatmitigation control="//@control.109" threat="//@threat.160"/>
+  <threatmitigation control="//@control.273" threat="//@threat.160"/>
+  <threatmitigation control="//@control.111" threat="//@threat.160"/>
+  <threatmitigation control="//@control.274" threat="//@threat.162"/>
+  <threatmitigation control="//@control.275" threat="//@threat.162"/>
+  <threatmitigation control="//@control.276" threat="//@threat.163"/>
+  <threatmitigation control="//@control.277" threat="//@threat.163"/>
+  <threatmitigation control="//@control.278" threat="//@threat.164"/>
+  <threatmitigation control="//@control.279" threat="//@threat.164"/>
+  <threatmitigation control="//@control.280" threat="//@threat.164"/>
+  <threatmitigation control="//@control.281" threat="//@threat.167"/>
+  <threatmitigation control="//@control.282" threat="//@threat.167"/>
+  <threatmitigation control="//@control.283" threat="//@threat.169"/>
+  <threatmitigation control="//@control.284" threat="//@threat.169"/>
+  <threatmitigation control="//@control.285" threat="//@threat.170"/>
+  <threatmitigation control="//@control.262" threat="//@threat.172"/>
+  <threatmitigation control="//@control.263" threat="//@threat.172"/>
+  <threatmitigation control="//@control.264" threat="//@threat.172"/>
+  <threatmitigation control="//@control.265" threat="//@threat.172"/>
+  <threatmitigation control="//@control.266" threat="//@threat.172"/>
+  <threatmitigation control="//@control.286" threat="//@threat.180"/>
+  <threatmitigation control="//@control.287" threat="//@threat.181"/>
+  <threatmitigation control="//@control.288" threat="//@threat.183"/>
+  <threatmitigation control="//@control.289" threat="//@threat.183"/>
+  <threatmitigation control="//@control.290" threat="//@threat.183"/>
+  <threatmitigation control="//@control.235" threat="//@threat.184"/>
+  <threatmitigation control="//@control.236" threat="//@threat.184"/>
+  <threatmitigation control="//@control.291" threat="//@threat.186"/>
+  <threatmitigation control="//@control.292" threat="//@threat.188"/>
+  <threatmitigation control="//@control.293" threat="//@threat.192"/>
+  <threatmitigation control="//@control.294" threat="//@threat.193"/>
+  <threatmitigation control="//@control.295" threat="//@threat.193"/>
+  <threatmitigation control="//@control.296" threat="//@threat.195"/>
+  <threatmitigation control="//@control.297" threat="//@threat.195"/>
+  <threatmitigation control="//@control.298" threat="//@threat.195"/>
+  <threatmitigation control="//@control.299" threat="//@threat.195"/>
+  <threatmitigation control="//@control.180" threat="//@threat.202"/>
+  <threatmitigation control="//@control.181" threat="//@threat.202"/>
+  <threatmitigation control="//@control.300" threat="//@threat.202"/>
+  <threatmitigation control="//@control.182" threat="//@threat.202"/>
+  <threatmitigation control="//@control.169" threat="//@threat.202"/>
+  <threatmitigation control="//@control.184" threat="//@threat.202"/>
+  <threatmitigation control="//@control.185" threat="//@threat.202"/>
+  <threatmitigation control="//@control.301" threat="//@threat.202"/>
+  <threatmitigation control="//@control.186" threat="//@threat.202"/>
+  <threatmitigation control="//@control.302" threat="//@threat.202"/>
+  <threatmitigation control="//@control.303" threat="//@threat.213"/>
+  <threatmitigation control="//@control.304" threat="//@threat.213"/>
+  <threatmitigation control="//@control.305" threat="//@threat.217"/>
+  <threatmitigation control="//@control.138" threat="//@threat.218"/>
+  <threatmitigation control="//@control.66" threat="//@threat.218"/>
+  <threatmitigation control="//@control.69" threat="//@threat.218"/>
+  <threatmitigation control="//@control.306" threat="//@threat.218"/>
+  <threatmitigation control="//@control.307" threat="//@threat.218"/>
+  <threatmitigation control="//@control.308" threat="//@threat.219"/>
+  <threatmitigation control="//@control.138" threat="//@threat.221"/>
+  <threatmitigation control="//@control.309" threat="//@threat.221"/>
+  <threatmitigation control="//@control.310" threat="//@threat.221"/>
+  <threatmitigation control="//@control.311" threat="//@threat.222"/>
+  <threatmitigation control="//@control.312" threat="//@threat.229"/>
+  <threatmitigation control="//@control.313" threat="//@threat.229"/>
+  <threatmitigation control="//@control.314" threat="//@threat.229"/>
+  <threatmitigation control="//@control.315" threat="//@threat.229"/>
+  <threatmitigation control="//@control.316" threat="//@threat.239"/>
+  <threatmitigation control="//@control.317" threat="//@threat.239"/>
+  <threatmitigation control="//@control.116" threat="//@threat.239"/>
+  <threatmitigation control="//@control.318" threat="//@threat.240"/>
+  <threatmitigation control="//@control.138" threat="//@threat.240"/>
+  <threatmitigation control="//@control.319" threat="//@threat.245"/>
+  <threatmitigation control="//@control.320" threat="//@threat.246"/>
+  <threatmitigation control="//@control.321" threat="//@threat.246"/>
+  <threatmitigation control="//@control.322" threat="//@threat.246"/>
+  <threatmitigation control="//@control.319" threat="//@threat.252"/>
+  <threatmitigation control="//@control.323" threat="//@threat.253"/>
+  <threatmitigation control="//@control.323" threat="//@threat.254"/>
+  <threatmitigation control="//@control.324" threat="//@threat.255"/>
+  <threatmitigation control="//@control.0" threat="//@threat.255"/>
+  <threatmitigation control="//@control.325" threat="//@threat.255"/>
+  <threatmitigation control="//@control.326" threat="//@threat.255"/>
+  <threatmitigation control="//@control.323" threat="//@threat.256"/>
+  <threatmitigation control="//@control.323" threat="//@threat.257"/>
+  <threatmitigation control="//@control.0" threat="//@threat.258"/>
+  <threatmitigation control="//@control.323" threat="//@threat.259"/>
+  <threatmitigation control="//@control.323" threat="//@threat.260"/>
+  <threatmitigation control="//@control.0" threat="//@threat.261"/>
+  <threatmitigation control="//@control.323" threat="//@threat.262"/>
+  <threatmitigation control="//@control.323" threat="//@threat.263"/>
+  <threatmitigation control="//@control.327" threat="//@threat.266"/>
+  <threatmitigation control="//@control.328" threat="//@threat.266"/>
+  <threatmitigation control="//@control.78" threat="//@threat.266"/>
+  <threatmitigation control="//@control.329" threat="//@threat.272"/>
+  <threatmitigation control="//@control.138" threat="//@threat.272"/>
+  <threatmitigation control="//@control.330" threat="//@threat.272"/>
+  <threatmitigation control="//@control.331" threat="//@threat.272"/>
+  <threatmitigation control="//@control.332" threat="//@threat.272"/>
+  <threatmitigation control="//@control.333" threat="//@threat.275"/>
+  <threatmitigation control="//@control.334" threat="//@threat.276"/>
+  <threatmitigation control="//@control.335" threat="//@threat.277"/>
+  <threatmitigation control="//@control.334" threat="//@threat.278"/>
+  <threatmitigation control="//@control.333" threat="//@threat.278"/>
+  <threatmitigation control="//@control.334" threat="//@threat.279"/>
+  <threatmitigation control="//@control.336" threat="//@threat.280"/>
+  <threatmitigation control="//@control.337" threat="//@threat.280"/>
+  <threatmitigation control="//@control.333" threat="//@threat.281"/>
+  <threatmitigation control="//@control.338" threat="//@threat.282"/>
+  <threatmitigation control="//@control.339" threat="//@threat.282"/>
+  <threatmitigation control="//@control.340" threat="//@threat.282"/>
+  <threatmitigation control="//@control.341" threat="//@threat.282"/>
+  <threatmitigation control="//@control.5" threat="//@threat.282"/>
+  <threatmitigation control="//@control.102" threat="//@threat.282"/>
+  <threatmitigation control="//@control.8" threat="//@threat.282"/>
+  <threatmitigation control="//@control.9" threat="//@threat.282"/>
+  <threatmitigation control="//@control.342" threat="//@threat.284"/>
+  <threatmitigation control="//@control.343" threat="//@threat.285"/>
+  <threatmitigation control="//@control.344" threat="//@threat.285"/>
+  <threatmitigation control="//@control.345" threat="//@threat.285"/>
+  <threatmitigation control="//@control.346" threat="//@threat.287"/>
+  <threatmitigation control="//@control.5" threat="//@threat.288"/>
+  <threatmitigation control="//@control.102" threat="//@threat.288"/>
+  <threatmitigation control="//@control.8" threat="//@threat.288"/>
+  <threatmitigation control="//@control.9" threat="//@threat.288"/>
+  <threatmitigation control="//@control.347" threat="//@threat.288"/>
+  <threatmitigation control="//@control.0" threat="//@threat.289"/>
+  <threatmitigation control="//@control.348" threat="//@threat.290"/>
+  <threatmitigation control="//@control.0" threat="//@threat.291"/>
+  <threatmitigation control="//@control.0" threat="//@threat.292"/>
+  <threatmitigation control="//@control.0" threat="//@threat.293"/>
+  <threatmitigation control="//@control.0" threat="//@threat.294"/>
+  <threatmitigation control="//@control.0" threat="//@threat.295"/>
+  <threatmitigation control="//@control.0" threat="//@threat.296"/>
+  <threatmitigation control="//@control.0" threat="//@threat.297"/>
+  <threatmitigation control="//@control.0" threat="//@threat.298"/>
+  <threatmitigation control="//@control.349" threat="//@threat.299"/>
+  <threatmitigation control="//@control.0" threat="//@threat.300"/>
+  <threatmitigation control="//@control.0" threat="//@threat.301"/>
+  <threatmitigation control="//@control.350" threat="//@threat.302"/>
+  <threatmitigation control="//@control.0" threat="//@threat.304"/>
+  <threatmitigation control="//@control.351" threat="//@threat.305"/>
+  <threatmitigation control="//@control.352" threat="//@threat.306"/>
+  <threatmitigation control="//@control.353" threat="//@threat.307"/>
+  <threatmitigation control="//@control.354" threat="//@threat.308"/>
+  <threatmitigation control="//@control.182" threat="//@threat.310"/>
+  <threatmitigation control="//@control.355" threat="//@threat.310"/>
+  <threatmitigation control="//@control.180" threat="//@threat.310"/>
+  <threatmitigation control="//@control.116" threat="//@threat.310"/>
+  <threatmitigation control="//@control.184" threat="//@threat.310"/>
+  <threatmitigation control="//@control.185" threat="//@threat.310"/>
+  <threatmitigation control="//@control.356" threat="//@threat.311"/>
+  <threatmitigation control="//@control.357" threat="//@threat.311"/>
+  <threatmitigation control="//@control.358" threat="//@threat.312"/>
+  <threatmitigation control="//@control.359" threat="//@threat.313"/>
+  <threatmitigation control="//@control.360" threat="//@threat.314"/>
+  <threatmitigation control="//@control.361" threat="//@threat.315"/>
+  <threatmitigation control="//@control.362" threat="//@threat.316"/>
+  <threatmitigation control="//@control.363" threat="//@threat.317"/>
+  <threatmitigation control="//@control.364" threat="//@threat.318"/>
+  <threatmitigation control="//@control.365" threat="//@threat.319"/>
+  <threatmitigation control="//@control.366" threat="//@threat.319"/>
+  <threatmitigation control="//@control.367" threat="//@threat.319"/>
+  <threatmitigation control="//@control.368" threat="//@threat.320"/>
+  <threatmitigation control="//@control.0" threat="//@threat.321"/>
+  <threatmitigation control="//@control.369" threat="//@threat.322"/>
+  <threatmitigation control="//@control.370" threat="//@threat.323"/>
+  <threatmitigation control="//@control.371" threat="//@threat.324"/>
+  <threatmitigation control="//@control.372" threat="//@threat.325"/>
+  <threatmitigation control="//@control.373" threat="//@threat.326"/>
+  <threatmitigation control="//@control.374" threat="//@threat.327"/>
+  <threatmitigation control="//@control.375" threat="//@threat.328"/>
+  <threatmitigation control="//@control.376" threat="//@threat.329"/>
+  <threatmitigation control="//@control.377" threat="//@threat.330"/>
+  <threatmitigation control="//@control.378" threat="//@threat.330"/>
+  <threatmitigation control="//@control.379" threat="//@threat.331"/>
+  <threatmitigation control="//@control.380" threat="//@threat.331"/>
+  <threatmitigation control="//@control.381" threat="//@threat.331"/>
+  <threatmitigation control="//@control.382" threat="//@threat.332"/>
+  <threatmitigation control="//@control.383" threat="//@threat.333"/>
+  <threatmitigation control="//@control.384" threat="//@threat.333"/>
+  <threatmitigation control="//@control.385" threat="//@threat.334"/>
+  <threatmitigation control="//@control.386" threat="//@threat.335"/>
+  <threatmitigation control="//@control.387" threat="//@threat.336"/>
+  <threatmitigation control="//@control.388" threat="//@threat.337"/>
+  <threatmitigation control="//@control.389" threat="//@threat.339"/>
+  <threatmitigation control="//@control.390" threat="//@threat.340"/>
+  <threatmitigation control="//@control.391" threat="//@threat.340"/>
+  <threatmitigation control="//@control.392" threat="//@threat.340"/>
+  <threatmitigation control="//@control.393" threat="//@threat.340"/>
+  <threatmitigation control="//@control.138" threat="//@threat.341"/>
+  <threatmitigation control="//@control.394" threat="//@threat.341"/>
+  <threatmitigation control="//@control.395" threat="//@threat.341"/>
+  <threatmitigation control="//@control.396" threat="//@threat.342"/>
+  <threatmitigation control="//@control.397" threat="//@threat.342"/>
+  <threatmitigation control="//@control.398" threat="//@threat.348"/>
+  <threatmitigation control="//@control.112" threat="//@threat.354"/>
+  <threatmitigation control="//@control.113" threat="//@threat.354"/>
+  <threatmitigation control="//@control.132" threat="//@threat.355"/>
+  <threatmitigation control="//@control.399" threat="//@threat.355"/>
+  <threatmitigation control="//@control.400" threat="//@threat.356"/>
+  <threatmitigation control="//@control.78" threat="//@threat.356"/>
+  <threatmitigation control="//@control.401" threat="//@threat.363"/>
+  <threatmitigation control="//@control.402" threat="//@threat.367"/>
+  <threatmitigation control="//@control.403" threat="//@threat.367"/>
+  <threatmitigation control="//@control.404" threat="//@threat.374"/>
+  <threatmitigation control="//@control.405" threat="//@threat.374"/>
+  <threatmitigation control="//@control.406" threat="//@threat.377"/>
+  <threatmitigation control="//@control.407" threat="//@threat.377"/>
+  <threatmitigation control="//@control.408" threat="//@threat.377"/>
+  <threatmitigation control="//@control.409" threat="//@threat.377"/>
+  <threatmitigation control="//@control.410" threat="//@threat.378"/>
+  <threatmitigation control="//@control.411" threat="//@threat.379"/>
+  <threatmitigation control="//@control.412" threat="//@threat.380"/>
+  <threatmitigation control="//@control.413" threat="//@threat.381"/>
+  <threatmitigation control="//@control.414" threat="//@threat.383"/>
+  <threatmitigation control="//@control.415" threat="//@threat.384"/>
+  <threatmitigation control="//@control.416" threat="//@threat.388"/>
+  <threatmitigation control="//@control.417" threat="//@threat.389"/>
+  <threatmitigation control="//@control.418" threat="//@threat.390"/>
+  <threatmitigation control="//@control.419" threat="//@threat.391"/>
+  <threatmitigation control="//@control.420" threat="//@threat.392"/>
+  <threatmitigation control="//@control.421" threat="//@threat.394"/>
+  <threatmitigation control="//@control.422" threat="//@threat.394"/>
+  <threatmitigation control="//@control.138" threat="//@threat.394"/>
+  <threatmitigation control="//@control.272" threat="//@threat.397"/>
+  <threatmitigation control="//@control.423" threat="//@threat.398"/>
+  <threatmitigation control="//@control.424" threat="//@threat.399"/>
+  <threatmitigation control="//@control.425" threat="//@threat.400"/>
+  <threatmitigation control="//@control.426" threat="//@threat.401"/>
+  <threatmitigation control="//@control.427" threat="//@threat.402"/>
+  <threatmitigation control="//@control.428" threat="//@threat.403"/>
+  <threatmitigation control="//@control.138" threat="//@threat.404"/>
+  <threatmitigation control="//@control.429" threat="//@threat.404"/>
+  <threatmitigation control="//@control.430" threat="//@threat.404"/>
+  <threatmitigation control="//@control.132" threat="//@threat.405"/>
+  <threatmitigation control="//@control.399" threat="//@threat.405"/>
+  <threatmitigation control="//@control.431" threat="//@threat.406"/>
+  <threatmitigation control="//@control.432" threat="//@threat.408"/>
+  <threatmitigation control="//@control.0" threat="//@threat.409"/>
+  <threatmitigation control="//@control.0" threat="//@threat.411"/>
+  <threatmitigation control="//@control.0" threat="//@threat.412"/>
+  <threatmitigation control="//@control.433" threat="//@threat.413"/>
+  <threatmitigation control="//@control.434" threat="//@threat.413"/>
+  <threatmitigation control="//@control.435" threat="//@threat.413"/>
+  <threatmitigation control="//@control.0" threat="//@threat.414"/>
+  <threatmitigation control="//@control.436" threat="//@threat.415"/>
+  <threatmitigation control="//@control.437" threat="//@threat.415"/>
+  <threatmitigation control="//@control.438" threat="//@threat.415"/>
+  <threatmitigation control="//@control.439" threat="//@threat.415"/>
+  <threatmitigation control="//@control.440" threat="//@threat.415"/>
+  <threatmitigation control="//@control.441" threat="//@threat.416"/>
+  <threatmitigation control="//@control.433" threat="//@threat.417"/>
+  <threatmitigation control="//@control.160" threat="//@threat.417"/>
+  <threatmitigation control="//@control.435" threat="//@threat.417"/>
+  <threatmitigation control="//@control.433" threat="//@threat.418"/>
+  <threatmitigation control="//@control.160" threat="//@threat.418"/>
+  <threatmitigation control="//@control.442" threat="//@threat.418"/>
+  <threatmitigation control="//@control.443" threat="//@threat.419"/>
+  <threatmitigation control="//@control.61" threat="//@threat.423"/>
+  <threatmitigation control="//@control.62" threat="//@threat.423"/>
+  <threatmitigation control="//@control.63" threat="//@threat.423"/>
+  <threatmitigation control="//@control.64" threat="//@threat.423"/>
+  <threatmitigation control="//@control.65" threat="//@threat.423"/>
+  <threatmitigation control="//@control.66" threat="//@threat.423"/>
+  <threatmitigation control="//@control.67" threat="//@threat.423"/>
+  <threatmitigation control="//@control.68" threat="//@threat.423"/>
+  <threatmitigation control="//@control.69" threat="//@threat.423"/>
+  <threatmitigation control="//@control.70" threat="//@threat.423"/>
+  <threatmitigation control="//@control.71" threat="//@threat.423"/>
+  <threatmitigation control="//@control.72" threat="//@threat.423"/>
+  <threatmitigation control="//@control.444" threat="//@threat.424"/>
+  <threatmitigation control="//@control.445" threat="//@threat.424"/>
+  <threatmitigation control="//@control.446" threat="//@threat.424"/>
+  <threatmitigation control="//@control.447" threat="//@threat.424"/>
+  <threatmitigation control="//@control.448" threat="//@threat.424"/>
+  <threatmitigation control="//@control.449" threat="//@threat.426"/>
+  <threatmitigation control="//@control.450" threat="//@threat.426"/>
+  <threatmitigation control="//@control.451" threat="//@threat.426"/>
+  <threatmitigation control="//@control.452" threat="//@threat.427"/>
+  <threatmitigation control="//@control.453" threat="//@threat.427"/>
+  <threatmitigation control="//@control.454" threat="//@threat.427"/>
+  <threatmitigation control="//@control.455" threat="//@threat.427"/>
+  <threatmitigation control="//@control.456" threat="//@threat.427"/>
+  <threatmitigation control="//@control.457" threat="//@threat.427"/>
+  <threatmitigation control="//@control.458" threat="//@threat.430"/>
+  <threatmitigation control="//@control.459" threat="//@threat.431"/>
+  <threatmitigation control="//@control.460" threat="//@threat.432"/>
+  <threatmitigation control="//@control.461" threat="//@threat.432"/>
+  <threatmitigation control="//@control.460" threat="//@threat.434"/>
+  <threatmitigation control="//@control.461" threat="//@threat.434"/>
+  <threatmitigation control="//@control.462" threat="//@threat.435"/>
+  <threatmitigation control="//@control.463" threat="//@threat.436"/>
+  <threatmitigation control="//@control.464" threat="//@threat.436"/>
+  <threatmitigation control="//@control.465" threat="//@threat.436"/>
+  <threatmitigation control="//@control.466" threat="//@threat.437"/>
+  <threatmitigation control="//@control.467" threat="//@threat.438"/>
+  <threatmitigation control="//@control.468" threat="//@threat.438"/>
+  <threatmitigation control="//@control.469" threat="//@threat.439"/>
+  <threatmitigation control="//@control.470" threat="//@threat.439"/>
+  <threatmitigation control="//@control.471" threat="//@threat.440"/>
+  <threatmitigation control="//@control.472" threat="//@threat.440"/>
+  <threatmitigation control="//@control.473" threat="//@threat.441"/>
+  <threatmitigation control="//@control.474" threat="//@threat.442"/>
+  <threatmitigation control="//@control.475" threat="//@threat.444"/>
+  <threatmitigation control="//@control.476" threat="//@threat.445"/>
+  <threatmitigation control="//@control.477" threat="//@threat.447"/>
+  <threatmitigation control="//@control.478" threat="//@threat.447"/>
+  <threatmitigation control="//@control.479" threat="//@threat.447"/>
+  <threatmitigation control="//@control.480" threat="//@threat.447"/>
+  <threatmitigation control="//@control.481" threat="//@threat.449"/>
+  <threatmitigation control="//@control.482" threat="//@threat.450"/>
+  <threatmitigation control="//@control.483" threat="//@threat.450"/>
+  <threatmitigation control="//@control.484" threat="//@threat.451"/>
+  <threatmitigation control="//@control.485" threat="//@threat.452"/>
+  <threatmitigation control="//@control.483" threat="//@threat.453"/>
+  <threatmitigation control="//@control.486" threat="//@threat.453"/>
+  <threatmitigation control="//@control.487" threat="//@threat.454"/>
+  <threatmitigation control="//@control.180" threat="//@threat.458"/>
+  <threatmitigation control="//@control.181" threat="//@threat.458"/>
+  <threatmitigation control="//@control.300" threat="//@threat.458"/>
+  <threatmitigation control="//@control.182" threat="//@threat.458"/>
+  <threatmitigation control="//@control.116" threat="//@threat.458"/>
+  <threatmitigation control="//@control.184" threat="//@threat.458"/>
+  <threatmitigation control="//@control.301" threat="//@threat.458"/>
+  <threatmitigation control="//@control.186" threat="//@threat.458"/>
+  <threatmitigation control="//@control.467" threat="//@threat.459"/>
+  <threatmitigation control="//@control.488" threat="//@threat.459"/>
+  <threatmitigation control="//@control.467" threat="//@threat.460"/>
+  <threatmitigation control="//@control.489" threat="//@threat.460"/>
+  <threatmitigation control="//@control.467" threat="//@threat.461"/>
+  <threatmitigation control="//@control.490" threat="//@threat.461"/>
+  <threatmitigation control="//@control.491" threat="//@threat.463"/>
+  <threatmitigation control="//@control.492" threat="//@threat.463"/>
+  <threatmitigation control="//@control.493" threat="//@threat.464"/>
+  <threatmitigation control="//@control.494" threat="//@threat.465"/>
+  <threatmitigation control="//@control.495" threat="//@threat.466"/>
+  <threatmitigation control="//@control.496" threat="//@threat.466"/>
+  <threatmitigation control="//@control.497" threat="//@threat.468"/>
+  <threatmitigation control="//@control.49" threat="//@threat.469"/>
+  <threatmitigation control="//@control.50" threat="//@threat.469"/>
+  <threatmitigation control="//@control.51" threat="//@threat.469"/>
+  <threatmitigation control="//@control.52" threat="//@threat.469"/>
+  <threatmitigation control="//@control.53" threat="//@threat.469"/>
+  <threatmitigation control="//@control.54" threat="//@threat.469"/>
+  <threatmitigation control="//@control.55" threat="//@threat.469"/>
+  <threatmitigation control="//@control.498" threat="//@threat.470"/>
+  <threatmitigation control="//@control.499" threat="//@threat.470"/>
+  <threatmitigation control="//@control.500" threat="//@threat.470"/>
+  <threatmitigation control="//@control.501" threat="//@threat.470"/>
+  <threatmitigation control="//@control.502" threat="//@threat.470"/>
+  <threatmitigation control="//@control.503" threat="//@threat.470"/>
+  <threatmitigation control="//@control.504" threat="//@threat.471"/>
+  <threatmitigation control="//@control.492" threat="//@threat.471"/>
+  <threatmitigation control="//@control.499" threat="//@threat.471"/>
+  <threatmitigation control="//@control.505" threat="//@threat.471"/>
+  <threatmitigation control="//@control.506" threat="//@threat.471"/>
+  <threatmitigation control="//@control.507" threat="//@threat.472"/>
+  <threatmitigation control="//@control.508" threat="//@threat.473"/>
+  <threatmitigation control="//@control.509" threat="//@threat.474"/>
+  <threatmitigation control="//@control.510" threat="//@threat.474"/>
+  <threatmitigation control="//@control.511" threat="//@threat.474"/>
+  <threatmitigation control="//@control.512" threat="//@threat.475"/>
+  <threatmitigation control="//@control.390" threat="//@threat.475"/>
+  <threatmitigation control="//@control.399" threat="//@threat.476"/>
+  <threatmitigation control="//@control.193" threat="//@threat.477"/>
+  <threatmitigation control="//@control.194" threat="//@threat.477"/>
+  <threatmitigation control="//@control.513" threat="//@threat.478"/>
+  <threatmitigation control="//@control.514" threat="//@threat.478"/>
+  <threatmitigation control="//@control.515" threat="//@threat.479"/>
+  <threatmitigation control="//@control.516" threat="//@threat.480"/>
+  <threatmitigation control="//@control.517" threat="//@threat.480"/>
+  <threatmitigation control="//@control.518" threat="//@threat.480"/>
+  <threatmitigation control="//@control.0" threat="//@threat.481"/>
+  <threatmitigation control="//@control.519" threat="//@threat.482"/>
+  <threatmitigation control="//@control.520" threat="//@threat.482"/>
+  <threatmitigation control="//@control.521" threat="//@threat.482"/>
+  <threatmitigation control="//@control.522" threat="//@threat.483"/>
+  <threatmitigation control="//@control.523" threat="//@threat.483"/>
+  <threatmitigation control="//@control.524" threat="//@threat.483"/>
+  <threatmitigation control="//@control.0" threat="//@threat.484"/>
+  <threatmitigation control="//@control.525" threat="//@threat.485"/>
+  <threatmitigation control="//@control.526" threat="//@threat.485"/>
+  <threatmitigation control="//@control.527" threat="//@threat.486"/>
+  <threatmitigation control="//@control.528" threat="//@threat.486"/>
+  <threatmitigation control="//@control.529" threat="//@threat.486"/>
+  <threatmitigation control="//@control.530" threat="//@threat.486"/>
+  <threatmitigation control="//@control.531" threat="//@threat.486"/>
+  <threatmitigation control="//@control.532" threat="//@threat.486"/>
+  <threatmitigation control="//@control.533" threat="//@threat.486"/>
+  <threatmitigation control="//@control.534" threat="//@threat.486"/>
+  <threatmitigation control="//@control.535" threat="//@threat.486"/>
+  <threatmitigation control="//@control.536" threat="//@threat.486"/>
+  <threatmitigation control="//@control.537" threat="//@threat.487"/>
+  <threatmitigation control="//@control.522" threat="//@threat.487"/>
+  <threatmitigation control="//@control.538" threat="//@threat.488"/>
+  <threatmitigation control="//@control.365" threat="//@threat.488"/>
+  <threatmitigation control="//@control.366" threat="//@threat.488"/>
+  <threatmitigation control="//@control.367" threat="//@threat.488"/>
+  <threatmitigation control="//@control.539" threat="//@threat.489"/>
+  <threatmitigation control="//@control.540" threat="//@threat.489"/>
+  <threatmitigation control="//@control.78" threat="//@threat.489"/>
+  <threatmitigation control="//@control.53" threat="//@threat.490"/>
+  <threatmitigation control="//@control.54" threat="//@threat.490"/>
+  <threatmitigation control="//@control.55" threat="//@threat.490"/>
+  <threatmitigation control="//@control.52" threat="//@threat.490"/>
+  <threatmitigation control="//@control.49" threat="//@threat.490"/>
+  <threatmitigation control="//@control.541" threat="//@threat.490"/>
+  <threatmitigation control="//@control.51" threat="//@threat.490"/>
+  <threatmitigation control="//@control.180" threat="//@threat.491"/>
+  <threatmitigation control="//@control.182" threat="//@threat.491"/>
+  <threatmitigation control="//@control.116" threat="//@threat.491"/>
+  <threatmitigation control="//@control.184" threat="//@threat.491"/>
+  <threatmitigation control="//@control.185" threat="//@threat.491"/>
+  <threatmitigation control="//@control.542" threat="//@threat.491"/>
+  <threatmitigation control="//@control.543" threat="//@threat.492"/>
+  <threatmitigation control="//@control.544" threat="//@threat.492"/>
+  <threatmitigation control="//@control.545" threat="//@threat.492"/>
+  <threatmitigation control="//@control.138" threat="//@threat.493"/>
+  <threatmitigation control="//@control.546" threat="//@threat.493"/>
+  <threatmitigation control="//@control.547" threat="//@threat.493"/>
+  <threatmitigation control="//@control.548" threat="//@threat.493"/>
+  <threatmitigation control="//@control.549" threat="//@threat.493"/>
+  <threatmitigation control="//@control.62" threat="//@threat.494"/>
+  <threatmitigation control="//@control.550" threat="//@threat.494"/>
+  <threatmitigation control="//@control.66" threat="//@threat.494"/>
+  <threatmitigation control="//@control.551" threat="//@threat.494"/>
+  <threatmitigation control="//@control.69" threat="//@threat.494"/>
+  <threatmitigation control="//@control.0" threat="//@threat.495"/>
+  <threatmitigation control="//@control.552" threat="//@threat.495"/>
+  <threatmitigation control="//@control.553" threat="//@threat.495"/>
+  <threatmitigation control="//@control.554" threat="//@threat.495"/>
+  <threatmitigation control="//@control.555" threat="//@threat.495"/>
+  <threatmitigation control="//@control.556" threat="//@threat.496"/>
+  <threatmitigation control="//@control.78" threat="//@threat.496"/>
+  <threatmitigation control="//@control.557" threat="//@threat.496"/>
+  <threatmitigation control="//@control.558" threat="//@threat.496"/>
+  <threatmitigation control="//@control.559" threat="//@threat.496"/>
+  <threatmitigation control="//@control.52" threat="//@threat.496"/>
+  <threatmitigation control="//@control.560" threat="//@threat.496"/>
+  <threatmitigation control="//@control.561" threat="//@threat.497"/>
+  <threatmitigation control="//@control.51" threat="//@threat.497"/>
+  <threatmitigation control="//@control.562" threat="//@threat.497"/>
+  <threatmitigation control="//@control.541" threat="//@threat.497"/>
+  <threatmitigation control="//@control.563" threat="//@threat.497"/>
+  <threatmitigation control="//@control.559" threat="//@threat.497"/>
+  <threatmitigation control="//@control.564" threat="//@threat.497"/>
+  <threatmitigation control="//@control.5" threat="//@threat.498"/>
+  <threatmitigation control="//@control.6" threat="//@threat.498"/>
+  <threatmitigation control="//@control.7" threat="//@threat.498"/>
+  <threatmitigation control="//@control.8" threat="//@threat.498"/>
+  <threatmitigation control="//@control.9" threat="//@threat.498"/>
+  <threatmitigation control="//@control.565" threat="//@threat.499"/>
+  <threatmitigation control="//@control.0" threat="//@threat.499"/>
+  <threatmitigation control="//@control.566" threat="//@threat.499"/>
+  <threatmitigation control="//@control.567" threat="//@threat.499"/>
+  <threatmitigation control="//@control.49" threat="//@threat.499"/>
+  <threatmitigation control="//@control.568" threat="//@threat.500"/>
+  <threatmitigation control="//@control.569" threat="//@threat.500"/>
+  <threatmitigation control="//@control.570" threat="//@threat.501"/>
+  <threatmitigation control="//@control.571" threat="//@threat.501"/>
+  <threatmitigation control="//@control.524" threat="//@threat.501"/>
+  <threatmitigation control="//@control.572" threat="//@threat.502"/>
+  <threatmitigation control="//@control.573" threat="//@threat.502"/>
+  <threatmitigation control="//@control.180" threat="//@threat.503"/>
+  <threatmitigation control="//@control.181" threat="//@threat.503"/>
+  <threatmitigation control="//@control.182" threat="//@threat.503"/>
+  <threatmitigation control="//@control.116" threat="//@threat.503"/>
+  <threatmitigation control="//@control.184" threat="//@threat.503"/>
+  <threatmitigation control="//@control.185" threat="//@threat.503"/>
+  <threatmitigation control="//@control.186" threat="//@threat.503"/>
+  <threatmitigation control="//@control.180" threat="//@threat.504"/>
+  <threatmitigation control="//@control.181" threat="//@threat.504"/>
+  <threatmitigation control="//@control.300" threat="//@threat.504"/>
+  <threatmitigation control="//@control.182" threat="//@threat.504"/>
+  <threatmitigation control="//@control.116" threat="//@threat.504"/>
+  <threatmitigation control="//@control.184" threat="//@threat.504"/>
+  <threatmitigation control="//@control.185" threat="//@threat.504"/>
+  <threatmitigation control="//@control.301" threat="//@threat.504"/>
+  <threatmitigation control="//@control.186" threat="//@threat.504"/>
+  <threatmitigation control="//@control.574" threat="//@threat.505"/>
+  <threatmitigation control="//@control.575" threat="//@threat.505"/>
+  <threatmitigation control="//@control.576" threat="//@threat.506"/>
+  <threatmitigation control="//@control.577" threat="//@threat.506"/>
+  <threatmitigation control="//@control.578" threat="//@threat.506"/>
+  <threatmitigation control="//@control.579" threat="//@threat.507"/>
+  <threatmitigation control="//@control.580" threat="//@threat.507"/>
+  <threatmitigation control="//@control.581" threat="//@threat.507"/>
+  <threatmitigation control="//@control.582" threat="//@threat.508"/>
+  <threatmitigation control="//@control.5" threat="//@threat.508"/>
+  <threatmitigation control="//@control.102" threat="//@threat.508"/>
+  <threatmitigation control="//@control.8" threat="//@threat.508"/>
+  <threatmitigation control="//@control.244" threat="//@threat.508"/>
+  <threatmitigation control="//@control.583" threat="//@threat.508"/>
+  <threatmitigation control="//@control.584" threat="//@threat.508"/>
+  <threatmitigation control="//@control.585" threat="//@threat.509"/>
+  <threatmitigation control="//@control.586" threat="//@threat.509"/>
+  <threatmitigation control="//@control.587" threat="//@threat.509"/>
+  <threatmitigation control="//@control.5" threat="//@threat.510"/>
+  <threatmitigation control="//@control.588" threat="//@threat.510"/>
+  <threatmitigation control="//@control.102" threat="//@threat.510"/>
+  <threatmitigation control="//@control.589" threat="//@threat.510"/>
+  <threatmitigation control="//@control.590" threat="//@threat.510"/>
+  <threatmitigation control="//@control.591" threat="//@threat.511"/>
+  <threatmitigation control="//@control.592" threat="//@threat.511"/>
+  <threatmitigation control="//@control.264" threat="//@threat.511"/>
+  <threatmitigation control="//@control.593" threat="//@threat.511"/>
+  <threatmitigation control="//@control.594" threat="//@threat.511"/>
+  <threatmitigation control="//@control.595" threat="//@threat.512"/>
+  <threatmitigation control="//@control.596" threat="//@threat.512"/>
+  <threatmitigation control="//@control.597" threat="//@threat.512"/>
+  <threatmitigation control="//@control.598" threat="//@threat.512"/>
+  <threatmitigation control="//@control.599" threat="//@threat.513"/>
+  <threatmitigation control="//@control.600" threat="//@threat.513"/>
+  <threatmitigation control="//@control.601" threat="//@threat.513"/>
+  <threatmitigation control="//@control.602" threat="//@threat.513"/>
+  <threatmitigation control="//@control.603" threat="//@threat.513"/>
+  <threatmitigation control="//@control.604" threat="//@threat.514"/>
+  <threatmitigation control="//@control.605" threat="//@threat.515"/>
+  <threatmitigation control="//@control.0" threat="//@threat.515"/>
+  <threatmitigation control="//@control.128" threat="//@threat.516"/>
+</TRADES:Analysis>

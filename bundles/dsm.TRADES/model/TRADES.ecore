@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="TRADES" nsURI="dsm.TRADES" nsPrefix="TRADES">
+  <eClassifiers xsi:type="ecore:EClass" name="Analysis">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="threat" upperBound="-1"
+        eType="#//Threat" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="component" upperBound="-1"
+        eType="#//Component" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="control" upperBound="-1"
+        eType="#//Control" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="threatallocation" upperBound="-1"
+        eType="#//ThreatAllocationRelation" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="threatmitigation" upperBound="-1"
+        eType="#//ThreatMitigationRelation" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="data" upperBound="-1" eType="#//Data"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="affectrelation" upperBound="-1"
+        eType="#//AffectRelation" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="analysisdiagram" upperBound="-1"
+        eType="#//AnalysisDiagram" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attackchain" upperBound="-1"
+        eType="#//AttackChain" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scoresystem" eType="#//ScoreSystem"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Threat">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="allocated" upperBound="-1"
+        eType="#//Component" eOpposite="#//Component/allocatedThreat"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="threatallocation" upperBound="-1"
+        eType="#//ThreatAllocationRelation" eOpposite="#//ThreatAllocationRelation/threat"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="threatType" eType="#//threatTypeENUM"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Component">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="allocatedThreat" upperBound="-1"
+        eType="#//Threat" eOpposite="#//Threat/allocated"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="implements" upperBound="-1"
+        eType="#//Control" eOpposite="#//Control/implementedBy"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="threatallocation" upperBound="-1"
+        eType="#//ThreatAllocationRelation" eOpposite="#//ThreatAllocationRelation/component"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="component" upperBound="-1"
+        eType="#//Component" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="data" upperBound="-1" eType="#//Data"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="control" upperBound="-1"
+        eType="#//Control" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="analysis" upperBound="-1"
+        eType="#//Analysis" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="affectrelation" upperBound="-1"
+        eType="#//AffectRelation" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="threat" upperBound="-1"
+        eType="#//Threat" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Control">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mitigates" upperBound="-1"
+        eType="#//Threat"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="implementedBy" upperBound="-1"
+        eType="#//Component" eOpposite="#//Component/implements"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ThreatAllocationRelation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="assessment" lowerBound="1"
+        eType="#//AssessmentENUM" defaultValueLiteral="Undecided"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="component" lowerBound="1"
+        eType="#//Component" eOpposite="#//Component/threatallocation"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="threat" lowerBound="1"
+        eType="#//Threat" eOpposite="#//Threat/threatallocation"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="impactscore" eType="#//ImpactScore"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="difficultyscore" eType="#//DifficultyScore"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="AssessmentENUM">
+    <eLiterals name="Undecided"/>
+    <eLiterals name="Gap" value="1"/>
+    <eLiterals name="Accepted" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ThreatMitigationRelation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="assessment" lowerBound="1"
+        eType="#//AssessmentENUM" defaultValueLiteral="Undecided"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="control" lowerBound="1"
+        eType="#//Control"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="threat" lowerBound="1"
+        eType="#//Threat"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mitigates" eType="#//ThreatAllocationRelation"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Data">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AffectRelation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="data" upperBound="-1" eType="#//Data"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sourceComponent" lowerBound="1"
+        eType="#//Component"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="targetComponent" lowerBound="1"
+        eType="#//Component"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="analysisStatus" lowerBound="1"
+        eType="#//AffectedENUM"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="AffectedENUM">
+    <eLiterals name="Undecided"/>
+    <eLiterals name="Confirmed" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="threatTypeENUM">
+    <eLiterals name="ConcreteThreat"/>
+    <eLiterals name="ConceptualThreat" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AnalysisDiagram">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="threat" upperBound="-1"
+        eType="#//Threat"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="component" upperBound="-1"
+        eType="#//Component"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="control" upperBound="-1"
+        eType="#//Control"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AttackChain">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attackchainstep" upperBound="-1"
+        eType="#//AttackChainStep" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AttackChainStep">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="stepNum" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="threatallocationrelation"
+        eType="#//ThreatAllocationRelation"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="difficulty" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="optional difficulty of implementing step, overriding ThreatAllocationRelation difficulty rating"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="impactDescription" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ScoreSystem">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="impactscore" upperBound="-1"
+        eType="#//ImpactScore" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="difficultyscore" upperBound="-1"
+        eType="#//DifficultyScore" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ImpactScore">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="impact" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DifficultyScore">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="difficulty" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+</ecore:EPackage>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TRADES:Analysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:TRADES="dsm.TRADES" name="RQ-170">
+  <threat name="Steal UAV" threatallocation="//@threatallocation.0"/>
+  <component name="UAV" threatallocation="//@threatallocation.0 //@threatallocation.2">
+    <component name="Navigation">
+      <component name="GPS" threatallocation="//@threatallocation.5"/>
+    </component>
+    <component name="Communication">
+      <component name="Radar" threatallocation="//@threatallocation.3"/>
+      <component name="SATCOM" threatallocation="//@threatallocation.4"/>
+    </component>
+  </component>
+  <threatallocation name="Steal UAV on UAV" assessment="Gap" component="//@component.0" threat="//@threat.0" impactscore="//@scoresystem/@impactscore.2" difficultyscore="//@scoresystem/@difficultyscore.4">
+    <attackinfo stepNum="2" attackVector="//@threatallocation.5"/>
+    <attackinfo stepNum="1" attackVector="//@threatallocation.4"/>
+    <attackinfo stepNum="1" attackVector="//@threatallocation.3"/>
+  </threatallocation>
+  <threatallocation name="Black Box Reverse Engineering on ">
+    <threat href="CAPEC.trades#//@threat.92"/>
+  </threatallocation>
+  <threatallocation name="Black Box Reverse Engineering on UAV" component="//@component.0">
+    <threat href="CAPEC.trades#//@threat.92"/>
+    <attackinfo attackVector="//@threatallocation.0"/>
+  </threatallocation>
+  <threatallocation name="Blockage on Radar" component="//@component.0/@component.1/@component.0" impactscore="//@scoresystem/@impactscore.0" difficultyscore="//@scoresystem/@difficultyscore.1">
+    <threat href="CAPEC.trades#//@threat.429"/>
+  </threatallocation>
+  <threatallocation name="Blockage on SATCOM" component="//@component.0/@component.1/@component.1">
+    <threat href="CAPEC.trades#//@threat.429"/>
+  </threatallocation>
+  <threatallocation name="Counterfeit GPS Signals on GPS" component="//@component.0/@component.0/@component.0">
+    <threat href="CAPEC.trades#//@threat.455"/>
+  </threatallocation>
+  <scoresystem>
+    <impactscore name="Low" impact="1"/>
+    <impactscore name="Medium" impact="2"/>
+    <impactscore name="High" impact="3"/>
+    <impactscore name="Catastrophic" impact="4"/>
+    <difficultyscore name="1" difficulty="1"/>
+    <difficultyscore name="2" difficulty="2"/>
+    <difficultyscore name="3" difficulty="3"/>
+    <difficultyscore name="4" difficulty="4"/>
+    <difficultyscore name="5" difficulty="5"/>
+  </scoresystem>
+</TRADES:Analysis>
