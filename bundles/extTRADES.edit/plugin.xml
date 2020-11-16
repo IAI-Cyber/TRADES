@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <!-- @generated extTRADES -->
+      <factory
+            uri="http://www.example.org/extTRADES"
+            class="extTRADES.provider.ExtTRADESItemProviderAdapterFactory"
+            supportedTypes=
+              "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
+               org.eclipse.emf.edit.provider.IStructuredItemContentProvider
+               org.eclipse.emf.edit.provider.ITreeItemContentProvider
+               org.eclipse.emf.edit.provider.IItemLabelProvider
+               org.eclipse.emf.edit.provider.IItemPropertySource"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.edit.childCreationExtenders">
+      <!-- @generated extTRADES -->
+      <extender
+            uri="dsm.TRADES"
+            class="extTRADES.provider.ExtTRADESItemProviderAdapterFactory$TRADESChildCreationExtender"/>
+   </extension>
+
+</plugin>
