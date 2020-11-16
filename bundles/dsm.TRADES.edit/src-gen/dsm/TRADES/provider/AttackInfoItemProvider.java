@@ -2,8 +2,7 @@
  */
 package dsm.TRADES.provider;
 
-import dsm.TRADES.AttackChain;
-import dsm.TRADES.TRADESFactory;
+import dsm.TRADES.AttackInfo;
 import dsm.TRADES.TRADESPackage;
 
 import java.util.Collection;
@@ -13,8 +12,6 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
-
-import org.eclipse.emf.ecore.EStructuralFeature;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IChildCreationExtender;
@@ -29,12 +26,12 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link dsm.TRADES.AttackChain} object.
+ * This is the item provider adapter for a {@link dsm.TRADES.AttackInfo} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class AttackChainItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
+public class AttackInfoItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
 		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -42,7 +39,7 @@ public class AttackChainItemProvider extends ItemProviderAdapter implements IEdi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AttackChainItemProvider(AdapterFactory adapterFactory) {
+	public AttackInfoItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -57,66 +54,52 @@ public class AttackChainItemProvider extends ItemProviderAdapter implements IEdi
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addNamePropertyDescriptor(object);
+			addStepNumPropertyDescriptor(object);
+			addAttackVectorPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Name feature.
+	 * This adds a property descriptor for the Step Num feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addNamePropertyDescriptor(Object object) {
+	protected void addStepNumPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_AttackChain_name_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_AttackChain_name_feature",
-								"_UI_AttackChain_type"),
-						TRADESPackage.Literals.ATTACK_CHAIN__NAME, true, false, false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+						getResourceLocator(), getString("_UI_AttackInfo_stepNum_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_AttackInfo_stepNum_feature",
+								"_UI_AttackInfo_type"),
+						TRADESPackage.Literals.ATTACK_INFO__STEP_NUM, true, false, false,
+						ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
-	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
+	 * This adds a property descriptor for the Attack Vector feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null) {
-			super.getChildrenFeatures(object);
-			childrenFeatures.add(TRADESPackage.Literals.ATTACK_CHAIN__ATTACKCHAINSTEP);
-		}
-		return childrenFeatures;
+	protected void addAttackVectorPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_AttackInfo_attackVector_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_AttackInfo_attackVector_feature",
+								"_UI_AttackInfo_type"),
+						TRADESPackage.Literals.ATTACK_INFO__ATTACK_VECTOR, true, false, true, null, null, null));
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected EStructuralFeature getChildFeature(Object object, Object child) {
-		// Check the type of the specified child object and return the proper feature to use for
-		// adding (see {@link AddCommand}) it as a child.
-
-		return super.getChildFeature(object, child);
-	}
-
-	/**
-	 * This returns AttackChain.gif.
+	 * This returns AttackInfo.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/AttackChain"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/AttackInfo"));
 	}
 
 	/**
@@ -137,9 +120,8 @@ public class AttackChainItemProvider extends ItemProviderAdapter implements IEdi
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((AttackChain) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_AttackChain_type")
-				: getString("_UI_AttackChain_type") + " " + label;
+		AttackInfo attackInfo = (AttackInfo) object;
+		return getString("_UI_AttackInfo_type") + " " + attackInfo.getStepNum();
 	}
 
 	/**
@@ -153,12 +135,9 @@ public class AttackChainItemProvider extends ItemProviderAdapter implements IEdi
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(AttackChain.class)) {
-		case TRADESPackage.ATTACK_CHAIN__NAME:
+		switch (notification.getFeatureID(AttackInfo.class)) {
+		case TRADESPackage.ATTACK_INFO__STEP_NUM:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-			return;
-		case TRADESPackage.ATTACK_CHAIN__ATTACKCHAINSTEP:
-			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
 		super.notifyChanged(notification);
@@ -174,9 +153,6 @@ public class AttackChainItemProvider extends ItemProviderAdapter implements IEdi
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add(createChildParameter(TRADESPackage.Literals.ATTACK_CHAIN__ATTACKCHAINSTEP,
-				TRADESFactory.eINSTANCE.createAttackChainStep()));
 	}
 
 	/**

@@ -36,7 +36,9 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dsm.TRADES.impl.ThreatImpl#getName <em>Name</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ThreatImpl#getThreatallocation <em>Threatallocation</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ThreatImpl#getThreatType <em>Threat Type</em>}</li>
- *   <li>{@link dsm.TRADES.impl.ThreatImpl#getId <em>Id</em>}</li>
+ *   <li>{@link dsm.TRADES.impl.ThreatImpl#getID <em>ID</em>}</li>
+ *   <li>{@link dsm.TRADES.impl.ThreatImpl#getDescription <em>Description</em>}</li>
+ *   <li>{@link dsm.TRADES.impl.ThreatImpl#getApplicability <em>Applicability</em>}</li>
  * </ul>
  *
  * @generated
@@ -103,24 +105,64 @@ public class ThreatImpl extends MinimalEObjectImpl.Container implements Threat {
 	protected threatTypeENUM threatType = THREAT_TYPE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * The default value of the '{@link #getID() <em>ID</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getId()
+	 * @see #getID()
 	 * @generated
 	 * @ordered
 	 */
 	protected static final String ID_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * The cached value of the '{@link #getID() <em>ID</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getId()
+	 * @see #getID()
 	 * @generated
 	 * @ordered
 	 */
 	protected String id = ID_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDescription()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String DESCRIPTION_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDescription()
+	 * @generated
+	 * @ordered
+	 */
+	protected String description = DESCRIPTION_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getApplicability() <em>Applicability</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getApplicability()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String APPLICABILITY_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getApplicability() <em>Applicability</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getApplicability()
+	 * @generated
+	 * @ordered
+	 */
+	protected String applicability = APPLICABILITY_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -223,7 +265,7 @@ public class ThreatImpl extends MinimalEObjectImpl.Container implements Threat {
 	 * @generated
 	 */
 	@Override
-	public String getId() {
+	public String getID() {
 		return id;
 	}
 
@@ -233,11 +275,59 @@ public class ThreatImpl extends MinimalEObjectImpl.Container implements Threat {
 	 * @generated
 	 */
 	@Override
-	public void setId(String newId) {
-		String oldId = id;
-		id = newId;
+	public void setID(String newID) {
+		String oldID = id;
+		id = newID;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TRADESPackage.THREAT__ID, oldId, id));
+			eNotify(new ENotificationImpl(this, Notification.SET, TRADESPackage.THREAT__ID, oldID, id));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getDescription() {
+		return description;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setDescription(String newDescription) {
+		String oldDescription = description;
+		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TRADESPackage.THREAT__DESCRIPTION, oldDescription,
+					description));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getApplicability() {
+		return applicability;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setApplicability(String newApplicability) {
+		String oldApplicability = applicability;
+		applicability = newApplicability;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TRADESPackage.THREAT__APPLICABILITY, oldApplicability,
+					applicability));
 	}
 
 	/**
@@ -290,7 +380,11 @@ public class ThreatImpl extends MinimalEObjectImpl.Container implements Threat {
 		case TRADESPackage.THREAT__THREAT_TYPE:
 			return getThreatType();
 		case TRADESPackage.THREAT__ID:
-			return getId();
+			return getID();
+		case TRADESPackage.THREAT__DESCRIPTION:
+			return getDescription();
+		case TRADESPackage.THREAT__APPLICABILITY:
+			return getApplicability();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -319,7 +413,13 @@ public class ThreatImpl extends MinimalEObjectImpl.Container implements Threat {
 			setThreatType((threatTypeENUM) newValue);
 			return;
 		case TRADESPackage.THREAT__ID:
-			setId((String) newValue);
+			setID((String) newValue);
+			return;
+		case TRADESPackage.THREAT__DESCRIPTION:
+			setDescription((String) newValue);
+			return;
+		case TRADESPackage.THREAT__APPLICABILITY:
+			setApplicability((String) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -346,7 +446,13 @@ public class ThreatImpl extends MinimalEObjectImpl.Container implements Threat {
 			setThreatType(THREAT_TYPE_EDEFAULT);
 			return;
 		case TRADESPackage.THREAT__ID:
-			setId(ID_EDEFAULT);
+			setID(ID_EDEFAULT);
+			return;
+		case TRADESPackage.THREAT__DESCRIPTION:
+			setDescription(DESCRIPTION_EDEFAULT);
+			return;
+		case TRADESPackage.THREAT__APPLICABILITY:
+			setApplicability(APPLICABILITY_EDEFAULT);
 			return;
 		}
 		super.eUnset(featureID);
@@ -370,6 +476,11 @@ public class ThreatImpl extends MinimalEObjectImpl.Container implements Threat {
 			return threatType != THREAT_TYPE_EDEFAULT;
 		case TRADESPackage.THREAT__ID:
 			return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
+		case TRADESPackage.THREAT__DESCRIPTION:
+			return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+		case TRADESPackage.THREAT__APPLICABILITY:
+			return APPLICABILITY_EDEFAULT == null ? applicability != null
+					: !APPLICABILITY_EDEFAULT.equals(applicability);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -389,8 +500,12 @@ public class ThreatImpl extends MinimalEObjectImpl.Container implements Threat {
 		result.append(name);
 		result.append(", threatType: ");
 		result.append(threatType);
-		result.append(", id: ");
+		result.append(", ID: ");
 		result.append(id);
+		result.append(", Description: ");
+		result.append(description);
+		result.append(", Applicability: ");
+		result.append(applicability);
 		result.append(')');
 		return result.toString();
 	}

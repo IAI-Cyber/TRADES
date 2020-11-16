@@ -3,19 +3,25 @@
 package dsm.TRADES.impl;
 
 import dsm.TRADES.AssessmentENUM;
+import dsm.TRADES.AttackInfo;
 import dsm.TRADES.Component;
 import dsm.TRADES.DifficultyScore;
 import dsm.TRADES.ImpactScore;
 import dsm.TRADES.TRADESPackage;
 import dsm.TRADES.Threat;
 import dsm.TRADES.ThreatAllocationRelation;
+import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,6 +37,9 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link dsm.TRADES.impl.ThreatAllocationRelationImpl#getThreat <em>Threat</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ThreatAllocationRelationImpl#getImpactscore <em>Impactscore</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ThreatAllocationRelationImpl#getDifficultyscore <em>Difficultyscore</em>}</li>
+ *   <li>{@link dsm.TRADES.impl.ThreatAllocationRelationImpl#getThreatDecomposed <em>Threat Decomposed</em>}</li>
+ *   <li>{@link dsm.TRADES.impl.ThreatAllocationRelationImpl#getThreatRelated <em>Threat Related</em>}</li>
+ *   <li>{@link dsm.TRADES.impl.ThreatAllocationRelationImpl#getAttackinfo <em>Attackinfo</em>}</li>
  * </ul>
  *
  * @generated
@@ -115,6 +124,36 @@ public class ThreatAllocationRelationImpl extends MinimalEObjectImpl.Container i
 	 * @ordered
 	 */
 	protected DifficultyScore difficultyscore;
+
+	/**
+	 * The cached value of the '{@link #getThreatDecomposed() <em>Threat Decomposed</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getThreatDecomposed()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<ThreatAllocationRelation> threatDecomposed;
+
+	/**
+	 * The cached value of the '{@link #getThreatRelated() <em>Threat Related</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getThreatRelated()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<ThreatAllocationRelation> threatRelated;
+
+	/**
+	 * The cached value of the '{@link #getAttackinfo() <em>Attackinfo</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAttackinfo()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<AttackInfo> attackinfo;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -414,6 +453,48 @@ public class ThreatAllocationRelationImpl extends MinimalEObjectImpl.Container i
 	 * @generated
 	 */
 	@Override
+	public EList<ThreatAllocationRelation> getThreatDecomposed() {
+		if (threatDecomposed == null) {
+			threatDecomposed = new EObjectContainmentEList<ThreatAllocationRelation>(ThreatAllocationRelation.class,
+					this, TRADESPackage.THREAT_ALLOCATION_RELATION__THREAT_DECOMPOSED);
+		}
+		return threatDecomposed;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<ThreatAllocationRelation> getThreatRelated() {
+		if (threatRelated == null) {
+			threatRelated = new EObjectResolvingEList<ThreatAllocationRelation>(ThreatAllocationRelation.class, this,
+					TRADESPackage.THREAT_ALLOCATION_RELATION__THREAT_RELATED);
+		}
+		return threatRelated;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<AttackInfo> getAttackinfo() {
+		if (attackinfo == null) {
+			attackinfo = new EObjectContainmentEList<AttackInfo>(AttackInfo.class, this,
+					TRADESPackage.THREAT_ALLOCATION_RELATION__ATTACKINFO);
+		}
+		return attackinfo;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case TRADESPackage.THREAT_ALLOCATION_RELATION__COMPONENT:
@@ -442,6 +523,10 @@ public class ThreatAllocationRelationImpl extends MinimalEObjectImpl.Container i
 			return basicSetComponent(null, msgs);
 		case TRADESPackage.THREAT_ALLOCATION_RELATION__THREAT:
 			return basicSetThreat(null, msgs);
+		case TRADESPackage.THREAT_ALLOCATION_RELATION__THREAT_DECOMPOSED:
+			return ((InternalEList<?>) getThreatDecomposed()).basicRemove(otherEnd, msgs);
+		case TRADESPackage.THREAT_ALLOCATION_RELATION__ATTACKINFO:
+			return ((InternalEList<?>) getAttackinfo()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -474,6 +559,12 @@ public class ThreatAllocationRelationImpl extends MinimalEObjectImpl.Container i
 			if (resolve)
 				return getDifficultyscore();
 			return basicGetDifficultyscore();
+		case TRADESPackage.THREAT_ALLOCATION_RELATION__THREAT_DECOMPOSED:
+			return getThreatDecomposed();
+		case TRADESPackage.THREAT_ALLOCATION_RELATION__THREAT_RELATED:
+			return getThreatRelated();
+		case TRADESPackage.THREAT_ALLOCATION_RELATION__ATTACKINFO:
+			return getAttackinfo();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -483,6 +574,7 @@ public class ThreatAllocationRelationImpl extends MinimalEObjectImpl.Container i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -503,6 +595,18 @@ public class ThreatAllocationRelationImpl extends MinimalEObjectImpl.Container i
 			return;
 		case TRADESPackage.THREAT_ALLOCATION_RELATION__DIFFICULTYSCORE:
 			setDifficultyscore((DifficultyScore) newValue);
+			return;
+		case TRADESPackage.THREAT_ALLOCATION_RELATION__THREAT_DECOMPOSED:
+			getThreatDecomposed().clear();
+			getThreatDecomposed().addAll((Collection<? extends ThreatAllocationRelation>) newValue);
+			return;
+		case TRADESPackage.THREAT_ALLOCATION_RELATION__THREAT_RELATED:
+			getThreatRelated().clear();
+			getThreatRelated().addAll((Collection<? extends ThreatAllocationRelation>) newValue);
+			return;
+		case TRADESPackage.THREAT_ALLOCATION_RELATION__ATTACKINFO:
+			getAttackinfo().clear();
+			getAttackinfo().addAll((Collection<? extends AttackInfo>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -534,6 +638,15 @@ public class ThreatAllocationRelationImpl extends MinimalEObjectImpl.Container i
 		case TRADESPackage.THREAT_ALLOCATION_RELATION__DIFFICULTYSCORE:
 			setDifficultyscore((DifficultyScore) null);
 			return;
+		case TRADESPackage.THREAT_ALLOCATION_RELATION__THREAT_DECOMPOSED:
+			getThreatDecomposed().clear();
+			return;
+		case TRADESPackage.THREAT_ALLOCATION_RELATION__THREAT_RELATED:
+			getThreatRelated().clear();
+			return;
+		case TRADESPackage.THREAT_ALLOCATION_RELATION__ATTACKINFO:
+			getAttackinfo().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -558,6 +671,12 @@ public class ThreatAllocationRelationImpl extends MinimalEObjectImpl.Container i
 			return impactscore != null;
 		case TRADESPackage.THREAT_ALLOCATION_RELATION__DIFFICULTYSCORE:
 			return difficultyscore != null;
+		case TRADESPackage.THREAT_ALLOCATION_RELATION__THREAT_DECOMPOSED:
+			return threatDecomposed != null && !threatDecomposed.isEmpty();
+		case TRADESPackage.THREAT_ALLOCATION_RELATION__THREAT_RELATED:
+			return threatRelated != null && !threatRelated.isEmpty();
+		case TRADESPackage.THREAT_ALLOCATION_RELATION__ATTACKINFO:
+			return attackinfo != null && !attackinfo.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

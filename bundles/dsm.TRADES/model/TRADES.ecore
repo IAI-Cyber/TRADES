@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="TRADES" nsURI="dsm.TRADES" nsPrefix="TRADES">
+  <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+    <details key="documentation" value="TRADES model, by Israel Aerospace Industries. All rights reserved.&#xD;&#xA;&#xD;&#xA;The TRADES model, based on Threat and Risk assessment ontology and the TRADES model-based methodology."/>
+  </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="Analysis">
     <eStructuralFeatures xsi:type="ecore:EReference" name="threat" upperBound="-1"
         eType="#//Threat" containment="true"/>
@@ -31,7 +34,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="threatallocation" upperBound="-1"
         eType="#//ThreatAllocationRelation" eOpposite="#//ThreatAllocationRelation/threat"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="threatType" eType="#//threatTypeENUM"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Applicability" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Component">
     <eStructuralFeatures xsi:type="ecore:EReference" name="allocatedThreat" upperBound="-1"
@@ -60,6 +65,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="implementedBy" upperBound="-1"
         eType="#//Component" eOpposite="#//Component/implements"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ThreatAllocationRelation">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -71,6 +78,12 @@
         eType="#//Threat" eOpposite="#//Threat/threatallocation"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="impactscore" eType="#//ImpactScore"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="difficultyscore" eType="#//DifficultyScore"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="threatDecomposed" upperBound="-1"
+        eType="#//ThreatAllocationRelation" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="threatRelated" upperBound="-1"
+        eType="#//ThreatAllocationRelation"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attackinfo" upperBound="-1"
+        eType="#//AttackInfo" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="AssessmentENUM">
     <eLiterals name="Undecided"/>
@@ -147,5 +160,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="DifficultyScore">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="difficulty" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AttackInfo">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="stepNum" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attackVector" lowerBound="1"
+        eType="#//ThreatAllocationRelation"/>
   </eClassifiers>
 </ecore:EPackage>

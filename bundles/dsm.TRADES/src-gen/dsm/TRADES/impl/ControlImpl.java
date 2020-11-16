@@ -35,6 +35,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dsm.TRADES.impl.ControlImpl#getMitigates <em>Mitigates</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ControlImpl#getImplementedBy <em>Implemented By</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ControlImpl#getName <em>Name</em>}</li>
+ *   <li>{@link dsm.TRADES.impl.ControlImpl#getID <em>ID</em>}</li>
+ *   <li>{@link dsm.TRADES.impl.ControlImpl#getDescription <em>Description</em>}</li>
  * </ul>
  *
  * @generated
@@ -79,6 +81,46 @@ public class ControlImpl extends MinimalEObjectImpl.Container implements Control
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getID() <em>ID</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getID()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String ID_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getID() <em>ID</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getID()
+	 * @generated
+	 * @ordered
+	 */
+	protected String id = ID_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDescription()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String DESCRIPTION_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDescription()
+	 * @generated
+	 * @ordered
+	 */
+	protected String description = DESCRIPTION_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -154,6 +196,53 @@ public class ControlImpl extends MinimalEObjectImpl.Container implements Control
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public String getID() {
+		return id;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setID(String newID) {
+		String oldID = id;
+		id = newID;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TRADESPackage.CONTROL__ID, oldID, id));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getDescription() {
+		return description;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setDescription(String newDescription) {
+		String oldDescription = description;
+		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TRADESPackage.CONTROL__DESCRIPTION, oldDescription,
+					description));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -192,6 +281,10 @@ public class ControlImpl extends MinimalEObjectImpl.Container implements Control
 			return getImplementedBy();
 		case TRADESPackage.CONTROL__NAME:
 			return getName();
+		case TRADESPackage.CONTROL__ID:
+			return getID();
+		case TRADESPackage.CONTROL__DESCRIPTION:
+			return getDescription();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -216,6 +309,12 @@ public class ControlImpl extends MinimalEObjectImpl.Container implements Control
 		case TRADESPackage.CONTROL__NAME:
 			setName((String) newValue);
 			return;
+		case TRADESPackage.CONTROL__ID:
+			setID((String) newValue);
+			return;
+		case TRADESPackage.CONTROL__DESCRIPTION:
+			setDescription((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -237,6 +336,12 @@ public class ControlImpl extends MinimalEObjectImpl.Container implements Control
 		case TRADESPackage.CONTROL__NAME:
 			setName(NAME_EDEFAULT);
 			return;
+		case TRADESPackage.CONTROL__ID:
+			setID(ID_EDEFAULT);
+			return;
+		case TRADESPackage.CONTROL__DESCRIPTION:
+			setDescription(DESCRIPTION_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -255,6 +360,10 @@ public class ControlImpl extends MinimalEObjectImpl.Container implements Control
 			return implementedBy != null && !implementedBy.isEmpty();
 		case TRADESPackage.CONTROL__NAME:
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+		case TRADESPackage.CONTROL__ID:
+			return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
+		case TRADESPackage.CONTROL__DESCRIPTION:
+			return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -272,6 +381,10 @@ public class ControlImpl extends MinimalEObjectImpl.Container implements Control
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
+		result.append(", ID: ");
+		result.append(id);
+		result.append(", Description: ");
+		result.append(description);
 		result.append(')');
 		return result.toString();
 	}

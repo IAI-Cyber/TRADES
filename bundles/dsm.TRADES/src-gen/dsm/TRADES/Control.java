@@ -18,6 +18,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link dsm.TRADES.Control#getMitigates <em>Mitigates</em>}</li>
  *   <li>{@link dsm.TRADES.Control#getImplementedBy <em>Implemented By</em>}</li>
  *   <li>{@link dsm.TRADES.Control#getName <em>Name</em>}</li>
+ *   <li>{@link dsm.TRADES.Control#getID <em>ID</em>}</li>
+ *   <li>{@link dsm.TRADES.Control#getDescription <em>Description</em>}</li>
  * </ul>
  *
  * @see dsm.TRADES.TRADESPackage#getControl()
@@ -84,5 +86,49 @@ public interface Control extends EObject {
 	 * @generated
 	 */
 	void setName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>ID</em>' attribute.
+	 * @see #setID(String)
+	 * @see dsm.TRADES.TRADESPackage#getControl_ID()
+	 * @model
+	 * @generated
+	 */
+	String getID();
+
+	/**
+	 * Sets the value of the '{@link dsm.TRADES.Control#getID <em>ID</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>ID</em>' attribute.
+	 * @see #getID()
+	 * @generated
+	 */
+	void setID(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Description</em>' attribute.
+	 * @see #setDescription(String)
+	 * @see dsm.TRADES.TRADESPackage#getControl_Description()
+	 * @model
+	 * @generated
+	 */
+	String getDescription();
+
+	/**
+	 * Sets the value of the '{@link dsm.TRADES.Control#getDescription <em>Description</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Description</em>' attribute.
+	 * @see #getDescription()
+	 * @generated
+	 */
+	void setDescription(String value);
 
 } // Control

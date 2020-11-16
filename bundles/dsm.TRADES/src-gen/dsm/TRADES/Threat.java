@@ -19,7 +19,9 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link dsm.TRADES.Threat#getName <em>Name</em>}</li>
  *   <li>{@link dsm.TRADES.Threat#getThreatallocation <em>Threatallocation</em>}</li>
  *   <li>{@link dsm.TRADES.Threat#getThreatType <em>Threat Type</em>}</li>
- *   <li>{@link dsm.TRADES.Threat#getId <em>Id</em>}</li>
+ *   <li>{@link dsm.TRADES.Threat#getID <em>ID</em>}</li>
+ *   <li>{@link dsm.TRADES.Threat#getDescription <em>Description</em>}</li>
+ *   <li>{@link dsm.TRADES.Threat#getApplicability <em>Applicability</em>}</li>
  * </ul>
  *
  * @see dsm.TRADES.TRADESPackage#getThreat()
@@ -119,25 +121,69 @@ public interface Threat extends EObject {
 	void setThreatType(threatTypeENUM value);
 
 	/**
-	 * Returns the value of the '<em><b>Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>ID</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Id</em>' attribute.
-	 * @see #setId(String)
-	 * @see dsm.TRADES.TRADESPackage#getThreat_Id()
+	 * @return the value of the '<em>ID</em>' attribute.
+	 * @see #setID(String)
+	 * @see dsm.TRADES.TRADESPackage#getThreat_ID()
 	 * @model
 	 * @generated
 	 */
-	String getId();
+	String getID();
 
 	/**
-	 * Sets the value of the '{@link dsm.TRADES.Threat#getId <em>Id</em>}' attribute.
+	 * Sets the value of the '{@link dsm.TRADES.Threat#getID <em>ID</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Id</em>' attribute.
-	 * @see #getId()
+	 * @param value the new value of the '<em>ID</em>' attribute.
+	 * @see #getID()
 	 * @generated
 	 */
-	void setId(String value);
+	void setID(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Description</em>' attribute.
+	 * @see #setDescription(String)
+	 * @see dsm.TRADES.TRADESPackage#getThreat_Description()
+	 * @model
+	 * @generated
+	 */
+	String getDescription();
+
+	/**
+	 * Sets the value of the '{@link dsm.TRADES.Threat#getDescription <em>Description</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Description</em>' attribute.
+	 * @see #getDescription()
+	 * @generated
+	 */
+	void setDescription(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Applicability</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Applicability</em>' attribute.
+	 * @see #setApplicability(String)
+	 * @see dsm.TRADES.TRADESPackage#getThreat_Applicability()
+	 * @model
+	 * @generated
+	 */
+	String getApplicability();
+
+	/**
+	 * Sets the value of the '{@link dsm.TRADES.Threat#getApplicability <em>Applicability</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Applicability</em>' attribute.
+	 * @see #getApplicability()
+	 * @generated
+	 */
+	void setApplicability(String value);
 
 } // Threat

@@ -14,6 +14,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
+import org.eclipse.emf.edit.provider.IChildCreationExtender;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
@@ -57,7 +58,9 @@ public class ThreatItemProvider extends ItemProviderAdapter implements IEditingD
 			addNamePropertyDescriptor(object);
 			addThreatallocationPropertyDescriptor(object);
 			addThreatTypePropertyDescriptor(object);
-			addIdPropertyDescriptor(object);
+			addIDPropertyDescriptor(object);
+			addDescriptionPropertyDescriptor(object);
+			addApplicabilityPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -124,17 +127,49 @@ public class ThreatItemProvider extends ItemProviderAdapter implements IEditingD
 	}
 
 	/**
-	 * This adds a property descriptor for the Id feature.
+	 * This adds a property descriptor for the ID feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addIdPropertyDescriptor(Object object) {
+	protected void addIDPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Threat_id_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Threat_id_feature", "_UI_Threat_type"),
+						getResourceLocator(), getString("_UI_Threat_ID_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Threat_ID_feature", "_UI_Threat_type"),
 						TRADESPackage.Literals.THREAT__ID, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Description feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDescriptionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Threat_Description_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Threat_Description_feature",
+								"_UI_Threat_type"),
+						TRADESPackage.Literals.THREAT__DESCRIPTION, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Applicability feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addApplicabilityPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Threat_Applicability_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Threat_Applicability_feature",
+								"_UI_Threat_type"),
+						TRADESPackage.Literals.THREAT__APPLICABILITY, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
@@ -187,6 +222,8 @@ public class ThreatItemProvider extends ItemProviderAdapter implements IEditingD
 		case TRADESPackage.THREAT__NAME:
 		case TRADESPackage.THREAT__THREAT_TYPE:
 		case TRADESPackage.THREAT__ID:
+		case TRADESPackage.THREAT__DESCRIPTION:
+		case TRADESPackage.THREAT__APPLICABILITY:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}
@@ -213,7 +250,7 @@ public class ThreatItemProvider extends ItemProviderAdapter implements IEditingD
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return TRADESEditPlugin.INSTANCE;
+		return ((IChildCreationExtender) adapterFactory).getResourceLocator();
 	}
 
 }

@@ -196,8 +196,6 @@ public class TRADESModelWizard extends Wizard implements INewWizard {
 				}
 			}
 			Collections.sort(initialObjectNames, CommonPlugin.INSTANCE.getComparator());
-			initialObjectNames.clear(); //TRADES: Removing all previous classes
-			initialObjectNames.add("Analysis"); //TRADES: Adding the only permitted root - Analysis
 		}
 		return initialObjectNames;
 	}

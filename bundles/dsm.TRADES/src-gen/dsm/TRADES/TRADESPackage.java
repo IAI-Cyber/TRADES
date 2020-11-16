@@ -20,6 +20,11 @@ import org.eclipse.emf.ecore.EReference;
  *   <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
+ * <!-- begin-model-doc -->
+ * TRADES model, by Israel Aerospace Industries. All rights reserved.
+ * 
+ * The TRADES model, based on Threat and Risk assessment ontology and the TRADES model-based methodology.
+ * <!-- end-model-doc -->
  * @see dsm.TRADES.TRADESFactory
  * @model kind="package"
  * @generated
@@ -231,7 +236,7 @@ public interface TRADESPackage extends EPackage {
 	int THREAT__THREAT_TYPE = 3;
 
 	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * The feature id for the '<em><b>ID</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -240,13 +245,31 @@ public interface TRADESPackage extends EPackage {
 	int THREAT__ID = 4;
 
 	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THREAT__DESCRIPTION = 5;
+
+	/**
+	 * The feature id for the '<em><b>Applicability</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THREAT__APPLICABILITY = 6;
+
+	/**
 	 * The number of structural features of the '<em>Threat</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int THREAT_FEATURE_COUNT = 5;
+	int THREAT_FEATURE_COUNT = 7;
 
 	/**
 	 * The number of operations of the '<em>Threat</em>' class.
@@ -413,13 +436,31 @@ public interface TRADESPackage extends EPackage {
 	int CONTROL__NAME = 2;
 
 	/**
+	 * The feature id for the '<em><b>ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL__ID = 3;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL__DESCRIPTION = 4;
+
+	/**
 	 * The number of structural features of the '<em>Control</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL_FEATURE_COUNT = 3;
+	int CONTROL_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>Control</em>' class.
@@ -495,13 +536,40 @@ public interface TRADESPackage extends EPackage {
 	int THREAT_ALLOCATION_RELATION__DIFFICULTYSCORE = 5;
 
 	/**
+	 * The feature id for the '<em><b>Threat Decomposed</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THREAT_ALLOCATION_RELATION__THREAT_DECOMPOSED = 6;
+
+	/**
+	 * The feature id for the '<em><b>Threat Related</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THREAT_ALLOCATION_RELATION__THREAT_RELATED = 7;
+
+	/**
+	 * The feature id for the '<em><b>Attackinfo</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THREAT_ALLOCATION_RELATION__ATTACKINFO = 8;
+
+	/**
 	 * The number of structural features of the '<em>Threat Allocation Relation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int THREAT_ALLOCATION_RELATION_FEATURE_COUNT = 6;
+	int THREAT_ALLOCATION_RELATION_FEATURE_COUNT = 9;
 
 	/**
 	 * The number of operations of the '<em>Threat Allocation Relation</em>' class.
@@ -1017,6 +1085,52 @@ public interface TRADESPackage extends EPackage {
 	int DIFFICULTY_SCORE_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link dsm.TRADES.impl.AttackInfoImpl <em>Attack Info</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see dsm.TRADES.impl.AttackInfoImpl
+	 * @see dsm.TRADES.impl.TRADESPackageImpl#getAttackInfo()
+	 * @generated
+	 */
+	int ATTACK_INFO = 14;
+
+	/**
+	 * The feature id for the '<em><b>Step Num</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTACK_INFO__STEP_NUM = 0;
+
+	/**
+	 * The feature id for the '<em><b>Attack Vector</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTACK_INFO__ATTACK_VECTOR = 1;
+
+	/**
+	 * The number of structural features of the '<em>Attack Info</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTACK_INFO_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Attack Info</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTACK_INFO_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link dsm.TRADES.AssessmentENUM <em>Assessment ENUM</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1024,7 +1138,7 @@ public interface TRADESPackage extends EPackage {
 	 * @see dsm.TRADES.impl.TRADESPackageImpl#getAssessmentENUM()
 	 * @generated
 	 */
-	int ASSESSMENT_ENUM = 14;
+	int ASSESSMENT_ENUM = 15;
 
 	/**
 	 * The meta object id for the '{@link dsm.TRADES.AffectedENUM <em>Affected ENUM</em>}' enum.
@@ -1034,7 +1148,7 @@ public interface TRADESPackage extends EPackage {
 	 * @see dsm.TRADES.impl.TRADESPackageImpl#getAffectedENUM()
 	 * @generated
 	 */
-	int AFFECTED_ENUM = 15;
+	int AFFECTED_ENUM = 16;
 
 	/**
 	 * The meta object id for the '{@link dsm.TRADES.threatTypeENUM <em>threat Type ENUM</em>}' enum.
@@ -1044,7 +1158,7 @@ public interface TRADESPackage extends EPackage {
 	 * @see dsm.TRADES.impl.TRADESPackageImpl#getthreatTypeENUM()
 	 * @generated
 	 */
-	int THREAT_TYPE_ENUM = 16;
+	int THREAT_TYPE_ENUM = 17;
 
 	/**
 	 * Returns the meta object for class '{@link dsm.TRADES.Analysis <em>Analysis</em>}'.
@@ -1232,15 +1346,37 @@ public interface TRADESPackage extends EPackage {
 	EAttribute getThreat_ThreatType();
 
 	/**
-	 * Returns the meta object for the attribute '{@link dsm.TRADES.Threat#getId <em>Id</em>}'.
+	 * Returns the meta object for the attribute '{@link dsm.TRADES.Threat#getID <em>ID</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Id</em>'.
-	 * @see dsm.TRADES.Threat#getId()
+	 * @return the meta object for the attribute '<em>ID</em>'.
+	 * @see dsm.TRADES.Threat#getID()
 	 * @see #getThreat()
 	 * @generated
 	 */
-	EAttribute getThreat_Id();
+	EAttribute getThreat_ID();
+
+	/**
+	 * Returns the meta object for the attribute '{@link dsm.TRADES.Threat#getDescription <em>Description</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Description</em>'.
+	 * @see dsm.TRADES.Threat#getDescription()
+	 * @see #getThreat()
+	 * @generated
+	 */
+	EAttribute getThreat_Description();
+
+	/**
+	 * Returns the meta object for the attribute '{@link dsm.TRADES.Threat#getApplicability <em>Applicability</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Applicability</em>'.
+	 * @see dsm.TRADES.Threat#getApplicability()
+	 * @see #getThreat()
+	 * @generated
+	 */
+	EAttribute getThreat_Applicability();
 
 	/**
 	 * Returns the meta object for class '{@link dsm.TRADES.Component <em>Component</em>}'.
@@ -1406,6 +1542,28 @@ public interface TRADESPackage extends EPackage {
 	EAttribute getControl_Name();
 
 	/**
+	 * Returns the meta object for the attribute '{@link dsm.TRADES.Control#getID <em>ID</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>ID</em>'.
+	 * @see dsm.TRADES.Control#getID()
+	 * @see #getControl()
+	 * @generated
+	 */
+	EAttribute getControl_ID();
+
+	/**
+	 * Returns the meta object for the attribute '{@link dsm.TRADES.Control#getDescription <em>Description</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Description</em>'.
+	 * @see dsm.TRADES.Control#getDescription()
+	 * @see #getControl()
+	 * @generated
+	 */
+	EAttribute getControl_Description();
+
+	/**
 	 * Returns the meta object for class '{@link dsm.TRADES.ThreatAllocationRelation <em>Threat Allocation Relation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1480,6 +1638,39 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getThreatAllocationRelation_Difficultyscore();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link dsm.TRADES.ThreatAllocationRelation#getThreatDecomposed <em>Threat Decomposed</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Threat Decomposed</em>'.
+	 * @see dsm.TRADES.ThreatAllocationRelation#getThreatDecomposed()
+	 * @see #getThreatAllocationRelation()
+	 * @generated
+	 */
+	EReference getThreatAllocationRelation_ThreatDecomposed();
+
+	/**
+	 * Returns the meta object for the reference list '{@link dsm.TRADES.ThreatAllocationRelation#getThreatRelated <em>Threat Related</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Threat Related</em>'.
+	 * @see dsm.TRADES.ThreatAllocationRelation#getThreatRelated()
+	 * @see #getThreatAllocationRelation()
+	 * @generated
+	 */
+	EReference getThreatAllocationRelation_ThreatRelated();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link dsm.TRADES.ThreatAllocationRelation#getAttackinfo <em>Attackinfo</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Attackinfo</em>'.
+	 * @see dsm.TRADES.ThreatAllocationRelation#getAttackinfo()
+	 * @see #getThreatAllocationRelation()
+	 * @generated
+	 */
+	EReference getThreatAllocationRelation_Attackinfo();
 
 	/**
 	 * Returns the meta object for class '{@link dsm.TRADES.ThreatMitigationRelation <em>Threat Mitigation Relation</em>}'.
@@ -1880,6 +2071,38 @@ public interface TRADESPackage extends EPackage {
 	EAttribute getDifficultyScore_Difficulty();
 
 	/**
+	 * Returns the meta object for class '{@link dsm.TRADES.AttackInfo <em>Attack Info</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Attack Info</em>'.
+	 * @see dsm.TRADES.AttackInfo
+	 * @generated
+	 */
+	EClass getAttackInfo();
+
+	/**
+	 * Returns the meta object for the attribute '{@link dsm.TRADES.AttackInfo#getStepNum <em>Step Num</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Step Num</em>'.
+	 * @see dsm.TRADES.AttackInfo#getStepNum()
+	 * @see #getAttackInfo()
+	 * @generated
+	 */
+	EAttribute getAttackInfo_StepNum();
+
+	/**
+	 * Returns the meta object for the reference '{@link dsm.TRADES.AttackInfo#getAttackVector <em>Attack Vector</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Attack Vector</em>'.
+	 * @see dsm.TRADES.AttackInfo#getAttackVector()
+	 * @see #getAttackInfo()
+	 * @generated
+	 */
+	EReference getAttackInfo_AttackVector();
+
+	/**
 	 * Returns the meta object for enum '{@link dsm.TRADES.AssessmentENUM <em>Assessment ENUM</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2073,12 +2296,28 @@ public interface TRADESPackage extends EPackage {
 		EAttribute THREAT__THREAT_TYPE = eINSTANCE.getThreat_ThreatType();
 
 		/**
-		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>ID</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute THREAT__ID = eINSTANCE.getThreat_Id();
+		EAttribute THREAT__ID = eINSTANCE.getThreat_ID();
+
+		/**
+		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute THREAT__DESCRIPTION = eINSTANCE.getThreat_Description();
+
+		/**
+		 * The meta object literal for the '<em><b>Applicability</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute THREAT__APPLICABILITY = eINSTANCE.getThreat_Applicability();
 
 		/**
 		 * The meta object literal for the '{@link dsm.TRADES.impl.ComponentImpl <em>Component</em>}' class.
@@ -2205,6 +2444,22 @@ public interface TRADESPackage extends EPackage {
 		EAttribute CONTROL__NAME = eINSTANCE.getControl_Name();
 
 		/**
+		 * The meta object literal for the '<em><b>ID</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CONTROL__ID = eINSTANCE.getControl_ID();
+
+		/**
+		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CONTROL__DESCRIPTION = eINSTANCE.getControl_Description();
+
+		/**
 		 * The meta object literal for the '{@link dsm.TRADES.impl.ThreatAllocationRelationImpl <em>Threat Allocation Relation</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2262,6 +2517,31 @@ public interface TRADESPackage extends EPackage {
 		 */
 		EReference THREAT_ALLOCATION_RELATION__DIFFICULTYSCORE = eINSTANCE
 				.getThreatAllocationRelation_Difficultyscore();
+
+		/**
+		 * The meta object literal for the '<em><b>Threat Decomposed</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference THREAT_ALLOCATION_RELATION__THREAT_DECOMPOSED = eINSTANCE
+				.getThreatAllocationRelation_ThreatDecomposed();
+
+		/**
+		 * The meta object literal for the '<em><b>Threat Related</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference THREAT_ALLOCATION_RELATION__THREAT_RELATED = eINSTANCE.getThreatAllocationRelation_ThreatRelated();
+
+		/**
+		 * The meta object literal for the '<em><b>Attackinfo</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference THREAT_ALLOCATION_RELATION__ATTACKINFO = eINSTANCE.getThreatAllocationRelation_Attackinfo();
 
 		/**
 		 * The meta object literal for the '{@link dsm.TRADES.impl.ThreatMitigationRelationImpl <em>Threat Mitigation Relation</em>}' class.
@@ -2577,6 +2857,32 @@ public interface TRADESPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute DIFFICULTY_SCORE__DIFFICULTY = eINSTANCE.getDifficultyScore_Difficulty();
+
+		/**
+		 * The meta object literal for the '{@link dsm.TRADES.impl.AttackInfoImpl <em>Attack Info</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see dsm.TRADES.impl.AttackInfoImpl
+		 * @see dsm.TRADES.impl.TRADESPackageImpl#getAttackInfo()
+		 * @generated
+		 */
+		EClass ATTACK_INFO = eINSTANCE.getAttackInfo();
+
+		/**
+		 * The meta object literal for the '<em><b>Step Num</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ATTACK_INFO__STEP_NUM = eINSTANCE.getAttackInfo_StepNum();
+
+		/**
+		 * The meta object literal for the '<em><b>Attack Vector</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ATTACK_INFO__ATTACK_VECTOR = eINSTANCE.getAttackInfo_AttackVector();
 
 		/**
 		 * The meta object literal for the '{@link dsm.TRADES.AssessmentENUM <em>Assessment ENUM</em>}' enum.
