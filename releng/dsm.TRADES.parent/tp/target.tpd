@@ -1,0 +1,19 @@
+target "TRADES"
+
+with requirements,source
+
+location "https://download.eclipse.org/releases/2020-06/" {
+	org.eclipse.platform.sdk lazy
+	org.eclipse.emf lazy
+	org.eclipse.pde.feature.group lazy
+	org.eclipse.rcp.feature.group lazy
+	org.eclipse.osgi.services lazy
+	org.eclipse.equinox.executable.feature.group lazy
+	org.eclipse.equinox.core.feature.feature.group lazy
+	
+	//Sirius
+	org.eclipse.sirius.specifier.feature.group lazy
+	org.eclipse.sirius.properties.feature.feature.group lazy
+	org.eclipse.sirius.runtime.ide.ui.feature.group lazy
+	org.eclipse.sirius.runtime.feature.group lazy
+}
