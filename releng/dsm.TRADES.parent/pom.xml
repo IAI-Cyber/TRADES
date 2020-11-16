@@ -131,6 +131,10 @@
 		<module>../../bundles/extTRADES/</module>
 		<module>../../bundles/extTRADES.edit/</module>
 		<module>../../bundles/extTRADES.editor/</module>
+		
+		<!-- releng -->
+		<module>../TRADES.feature/</module>
+		<module>../TRADES.update/</module>
 
 	</modules>
 

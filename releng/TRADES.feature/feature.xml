@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="TRADES.feature"
+      label="TRADES Tool feature"
+      version="1.0.0.qualifier"
+      provider-name="IAI Cyber Division">
+
+   <description url="www.iai.co.il">
+      TRADES Tool
+A Threat and Risk Assessment Tool for Systems Design
+By Israel Aersopace Industries\ELTA Cyber Division
+   </description>
+
+   <copyright url="http://www.example.com/copyright">
+      Copyright Israel Aerospace Industries, Eclipse contributors and others 2020. All rights reserved.
+   </copyright>
+
+   <license url="www.iai.co.il">
+      Copyright Israel Aerospace Industries, Eclipse contributors and others 2020. All rights reserved.
+   </license>
+
+   <url>
+      <discovery label="TRADES Tool (GitHub)" url="https://github.com/IAI-Cyber/TRADES"/>
+   </url>
+
+   <plugin
+         id="TRADES.design"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="dsm.TRADES"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
+
+   <plugin
+         id="dsm.TRADES.edit"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
+
+   <plugin
+         id="dsm.TRADES.editor"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
+
+   <plugin
+         id="extTRADES"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
+
+   <plugin
+         id="extTRADES.edit"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
+
+   <plugin
+         id="extTRADES.editor"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
+
+</feature>
