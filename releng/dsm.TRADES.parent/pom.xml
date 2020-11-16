@@ -122,10 +122,16 @@
 
 
 	<modules>
+		<!-- Base plugins -->
 		<module>../../bundles/dsm.TRADES/</module>
 		<module>../../bundles/dsm.TRADES.edit/</module>
 		<module>../../bundles/dsm.TRADES.editor/</module>
 		<module>../../bundles/dsm.TRADES.design/</module>
+		<!-- Ext plugins -->
+		<module>../../bundles/extTRADES/</module>
+		<module>../../bundles/extTRADES.edit/</module>
+		<module>../../bundles/extTRADES.editor/</module>
+
 	</modules>
 
 </project>

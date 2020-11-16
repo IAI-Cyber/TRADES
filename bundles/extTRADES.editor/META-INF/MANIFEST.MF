@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: extTRADES.editor;singleton:=true
 Automatic-Module-Name: extTRADES.editor
-Bundle-Version: 1.0.0.qualifier
+Bundle-Version: 0.1.0.qualifier
 Bundle-ClassPath: .
 Bundle-Activator: extTRADES.presentation.ExtTRADESEditorPlugin$Implementation
 Bundle-Vendor: %providerName
