@@ -18,7 +18,7 @@
       </vmArgsMac>
    </launcherArgs>
 
-   <windowImages i16="/dsm.TRADES.branding/icons/logo_16.png" i32="/dsm.TRADES.branding/icons/logo_32.png" i48="/dsm.TRADES.branding/icons/logo_32.png" i64="/dsm.TRADES.branding/icons/logo_64.png"/>
+   <windowImages i16="/dsm.TRADES.branding/icons/logo_16.png" i32="/dsm.TRADES.branding/icons/logo_32.png" i48="/dsm.TRADES.branding/icons/logo_48.png" i64="/dsm.TRADES.branding/icons/logo_64.png"/>
 
    <splash
       location="dsm.TRADES.branding"

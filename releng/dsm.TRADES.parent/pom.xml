@@ -127,7 +127,10 @@
 		<module>../../bundles/dsm.TRADES.edit/</module>
 		<module>../../bundles/dsm.TRADES.editor/</module>
 		<module>../../bundles/dsm.TRADES.design/</module>
+		
+		<!-- This plugin holdd all information about the product branding -->
 		<module>../../bundles/dsm.TRADES.branding/</module>
+		
 		<!-- Ext plugins -->
 		<module>../../bundles/extTRADES/</module>
 		<module>../../bundles/extTRADES.edit/</module>

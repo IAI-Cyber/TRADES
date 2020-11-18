@@ -25,6 +25,7 @@ location "http://download.eclipse.org/sirius/updates/releases/6.3.4/2020-06" {
 	org.eclipse.acceleo.query.feature.group lazy
 }
 
+// Orbit dependencies (All dependencies that are not Eclipse projects)
 location "https://download.eclipse.org/tools/orbit/downloads/drops/R20200529191137/repository" {
 	org.antlr.runtime lazy
 }
