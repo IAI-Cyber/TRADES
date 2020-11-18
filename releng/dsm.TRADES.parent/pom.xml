@@ -127,6 +127,7 @@
 		<module>../../bundles/dsm.TRADES.edit/</module>
 		<module>../../bundles/dsm.TRADES.editor/</module>
 		<module>../../bundles/dsm.TRADES.design/</module>
+		<module>../../bundles/dsm.TRADES.branding/</module>
 		<!-- Ext plugins -->
 		<module>../../bundles/extTRADES/</module>
 		<module>../../bundles/extTRADES.edit/</module>
@@ -135,6 +136,7 @@
 		<!-- releng -->
 		<module>../TRADES.feature/</module>
 		<module>../TRADES.update/</module>
+		<module>../TRADES.product/</module>
 
 	</modules>
 

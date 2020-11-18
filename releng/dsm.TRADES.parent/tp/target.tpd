@@ -11,9 +11,20 @@ location "https://download.eclipse.org/releases/2020-06/" {
 	org.eclipse.equinox.executable.feature.group lazy
 	org.eclipse.equinox.core.feature.feature.group lazy
 	
+}
+
+
+location "http://download.eclipse.org/sirius/updates/releases/6.3.4/2020-06" {
 	//Sirius
 	org.eclipse.sirius.specifier.feature.group lazy
 	org.eclipse.sirius.properties.feature.feature.group lazy
 	org.eclipse.sirius.runtime.ide.ui.feature.group lazy
 	org.eclipse.sirius.runtime.feature.group lazy
+	org.eclipse.eef.ide lazy
+	org.eclipse.sirius.runtime.ide.ui.acceleo.feature.group lazy
+	org.eclipse.acceleo.query.feature.group lazy
+}
+
+location "https://download.eclipse.org/tools/orbit/downloads/drops/R20200529191137/repository" {
+	org.antlr.runtime lazy
 }
