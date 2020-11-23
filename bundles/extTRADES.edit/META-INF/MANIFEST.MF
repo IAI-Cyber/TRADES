@@ -8,7 +8,7 @@ Bundle-ClassPath: .
 Bundle-Activator: extTRADES.provider.ExtTRADESEditPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-11
 Export-Package: extTRADES.provider
 Require-Bundle: org.eclipse.core.runtime,
  extTRADES;visibility:=reexport,

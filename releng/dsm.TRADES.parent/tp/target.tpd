@@ -13,6 +13,12 @@ location "https://download.eclipse.org/releases/2020-06/" {
 	
 }
 
+location "https://s3-eu-west-1.amazonaws.com/obeo-m2doc-releases/3.1.0/repository" {
+	org.obeonetwork.m2doc.feature.feature.group lazy
+	org.obeonetwork.m2doc.sirius.feature.feature.group lazy
+	org.obeonetwork.m2doc.ui.feature.feature.group lazy
+}
+
 
 location "http://download.eclipse.org/sirius/updates/releases/6.3.4/2020-06" {
 	//Sirius
@@ -23,6 +29,17 @@ location "http://download.eclipse.org/sirius/updates/releases/6.3.4/2020-06" {
 	org.eclipse.eef.ide lazy
 	org.eclipse.sirius.runtime.ide.ui.acceleo.feature.group lazy
 	org.eclipse.acceleo.query.feature.group lazy
+	org.eclipse.sirius.interpreter.feature.feature.group lazy
+	org.eclipse.sirius.properties.feature.source.feature.group
+	org.eclipse.sirius.runtime.acceleo.feature.group lazy
+	org.eclipse.sirius.runtime.aql.feature.group lazy
+	org.eclipse.sirius.runtime.ide.eef lazy
+	org.eclipse.sirius.runtime.ide.ui.acceleo.source.feature.group lazy
+	
+	org.eclipse.sirius.specifier.ide.ui.acceleo.feature.group lazy
+	org.eclipse.sirius.specifier.ide.ui.aql.feature.group lazy
+	org.eclipse.sirius.specifier.ide.ui.feature.group lazy
+	org.eclipse.sirius.specifier.properties.feature.feature.group lazy
 }
 
 // Orbit dependencies (All dependencies that are not Eclipse projects)

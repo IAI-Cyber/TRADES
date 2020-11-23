@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+  <extension point="org.eclipse.sirius.componentization">
+    <component class="TRADES.design.Activator"
+               id="TRADES.design"
+	       name="TRADES">
+    </component>
+  </extension>
+  <extension
+        point="org.eclipse.ui.newWizards">
+     <category
+           id="dsm.TRADES.wizardCat"
+           name="Trades">
+     </category>
+     <wizard
+           category="dsm.TRADES.wizardCat"
+           class="TRADES.design.wizards.TradesNewProjectNewWizard"
+           icon="Images/Threat-16.png"
+           id="TRADES.design.newProject"
+           name="New TRADES project"
+           project="true">
+     </wizard>
+  </extension>
+</plugin>

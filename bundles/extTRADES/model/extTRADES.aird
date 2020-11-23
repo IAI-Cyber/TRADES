@@ -6,6 +6,8 @@
     <semanticResources>dsm.TRADES</semanticResources>
     <semanticResources>platform:/resource/dsm.TRADES/model/TRADES.ecore</semanticResources>
     <semanticResources>platform:/resource/dsm.TRADES/model/TRADES.genmodel</semanticResources>
+    <semanticResources>platform:/plugin/org.obeonetwork.dsl.environment.common/model/obeo.environment</semanticResources>
+    <eAnnotations xmi:type="description:DAnnotationEntry" uid="_zZjb8C12EeuaqvAr74LiGA" source="FIRST_SESSION_OPENNING_PERFORMED"/>
     <ownedViews xmi:type="viewpoint:DView" uid="_AdDEYNGWEeqOasSNoZSdyg">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_AdeiMNGWEeqOasSNoZSdyg" name="extTRADES" repPath="#_AdZpsNGWEeqOasSNoZSdyg" changeId="3186484c-ad5b-4d66-aeac-e5797c7b83f7">

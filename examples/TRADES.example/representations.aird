@@ -30,25 +30,25 @@
       </ownedRepresentationDescriptors>
     </ownedViews>
     <ownedViews xmi:type="viewpoint:DView" uid="_cWyZECpDEeue6qPHrDrMOQ">
-      <viewpoint xmi:type="description:Viewpoint" href="platform:/resource/dsm.TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']"/>
+      <viewpoint xmi:type="description:Viewpoint" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']"/>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_cW34oCpDEeue6qPHrDrMOQ" name="TRADES diagram" repPath="#_cWznMCpDEeue6qPHrDrMOQ" changeId="69128451-54ec-4792-b82b-26beeef9700c">
-        <description xmi:type="description_1:DiagramDescription" href="platform:/resource/dsm.TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']"/>
+        <description xmi:type="description_1:DiagramDescription" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']"/>
         <target xmi:type="TRADES:Analysis" href="My.trades#/"/>
       </ownedRepresentationDescriptors>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_cXjOESpDEeue6qPHrDrMOQ" name="Scoring system design" repPath="#_cXinACpDEeue6qPHrDrMOQ" changeId="6fcce76f-56a2-4835-8477-6d9faba68aa6">
-        <description xmi:type="description_1:DiagramDescription" href="platform:/resource/dsm.TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Scoring%20system%20design']"/>
+        <description xmi:type="description_1:DiagramDescription" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Scoring%20system%20design']"/>
         <target xmi:type="TRADES:Analysis" href="My.trades#/"/>
       </ownedRepresentationDescriptors>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_cXrJ4SpDEeue6qPHrDrMOQ" name="TRADES diagram" repPath="#_cXqi0CpDEeue6qPHrDrMOQ" changeId="2bd305d3-27d7-4afb-a478-c2420d8a573a">
-        <description xmi:type="description_1:DiagramDescription" href="platform:/resource/dsm.TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']"/>
+        <description xmi:type="description_1:DiagramDescription" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']"/>
         <target xmi:type="TRADES:Analysis" href="My1.trades#/"/>
       </ownedRepresentationDescriptors>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_cXx3kipDEeue6qPHrDrMOQ" name="Scoring system design" repPath="#_cXxQgCpDEeue6qPHrDrMOQ" changeId="82beb762-eec0-4240-a11e-478daeb82d1a">
-        <description xmi:type="description_1:DiagramDescription" href="platform:/resource/dsm.TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Scoring%20system%20design']"/>
+        <description xmi:type="description_1:DiagramDescription" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Scoring%20system%20design']"/>
         <target xmi:type="TRADES:Analysis" href="My1.trades#/"/>
       </ownedRepresentationDescriptors>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_zd-WECpOEeuX69V82HnEeg" name="Threat on System Attack Chain Diagram" repPath="#_zd7SwCpOEeuX69V82HnEeg" changeId="f04c8e35-e123-42d5-b680-e84aefad1dd5">
-        <description xmi:type="description_1:DiagramDescription" href="platform:/resource/dsm.TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Attack%20chain%20design']"/>
+        <description xmi:type="description_1:DiagramDescription" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Attack%20chain%20design']"/>
         <target xmi:type="TRADES:ThreatAllocationRelation" href="My.trades#//@threatallocation.0"/>
       </ownedRepresentationDescriptors>
     </ownedViews>
@@ -610,9 +610,9 @@
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
       <ownedStyle xmi:type="diagram:Ellipse" uid="_cXI-YSpDEeue6qPHrDrMOQ" labelSize="15" labelPosition="node" color="255,255,255">
-        <description xmi:type="style:EllipseNodeDescription" href="platform:/resource/dsm.TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@nodeMappings[name='AllocatedThreatNode']/@style"/>
+        <description xmi:type="style:EllipseNodeDescription" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@nodeMappings[name='AllocatedThreatNode']/@style"/>
       </ownedStyle>
-      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/dsm.TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@nodeMappings[name='AllocatedThreatNode']"/>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@nodeMappings[name='AllocatedThreatNode']"/>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DNode" uid="_xaFLsypOEeuX69V82HnEeg" name="T2" tooltipText="T2" outgoingEdges="_xaJdICpOEeuX69V82HnEeg" width="10" height="10" resizeKind="NSEW">
       <target xmi:type="TRADES:Threat" href="My.trades#//@threat.1"/>
@@ -621,81 +621,81 @@
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
       <ownedStyle xmi:type="diagram:Ellipse" uid="_xaFywCpOEeuX69V82HnEeg" labelSize="15" labelPosition="node" color="255,255,255">
-        <description xmi:type="style:EllipseNodeDescription" href="platform:/resource/dsm.TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@nodeMappings[name='AllocatedThreatNode']/@style"/>
+        <description xmi:type="style:EllipseNodeDescription" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@nodeMappings[name='AllocatedThreatNode']/@style"/>
       </ownedStyle>
-      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/dsm.TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@nodeMappings[name='AllocatedThreatNode']"/>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@nodeMappings[name='AllocatedThreatNode']"/>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DNode" uid="_cXF7ECpDEeue6qPHrDrMOQ" name="Avi" tooltipText="Avi" width="10" height="10" resizeKind="NSEW">
       <target xmi:type="TRADES:Threat" href="My1.trades#//@threat.0"/>
       <semanticElements xmi:type="TRADES:Threat" href="My1.trades#//@threat.0"/>
       <ownedStyle xmi:type="diagram:Ellipse" uid="_cXHwQCpDEeue6qPHrDrMOQ" labelSize="15" labelPosition="node" color="255,255,255">
-        <description xmi:type="style:EllipseNodeDescription" href="platform:/resource/dsm.TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@additionalLayers[name='UnAllocatedThreats']/@nodeMappings[name='ThreatNode']/@style"/>
+        <description xmi:type="style:EllipseNodeDescription" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@additionalLayers[name='UnAllocatedThreats']/@nodeMappings[name='ThreatNode']/@style"/>
       </ownedStyle>
-      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/dsm.TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@additionalLayers[name='UnAllocatedThreats']/@nodeMappings[name='ThreatNode']"/>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@additionalLayers[name='UnAllocatedThreats']/@nodeMappings[name='ThreatNode']"/>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_cXJlcCpDEeue6qPHrDrMOQ" name="System" tooltipText="System" incomingEdges="_cXLaoSpDEeue6qPHrDrMOQ">
       <target xmi:type="TRADES:Component" href="My.trades#//@component.0"/>
       <semanticElements xmi:type="TRADES:Component" href="My.trades#//@component.0"/>
       <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_cXJlcSpDEeue6qPHrDrMOQ" labelSize="15" borderSize="2" borderSizeComputationExpression="2">
-        <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/dsm.TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage']/@style"/>
+        <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage']/@style"/>
       </ownedStyle>
-      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/dsm.TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage']"/>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage']"/>
       <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_cXKMgCpDEeue6qPHrDrMOQ" name="subsys" tooltipText="subsys">
         <target xmi:type="TRADES:Component" href="My.trades#//@component.0/@component.0"/>
         <semanticElements xmi:type="TRADES:Component" href="My.trades#//@component.0/@component.0"/>
         <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_cXKMgSpDEeue6qPHrDrMOQ" labelSize="15" borderSize="2" borderSizeComputationExpression="2">
-          <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/dsm.TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage']/@style"/>
+          <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage']/@style"/>
         </ownedStyle>
-        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/dsm.TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage']"/>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage']"/>
       </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_cXKMgypDEeue6qPHrDrMOQ" name="Testin" tooltipText="Testin" incomingEdges="_xaJdICpOEeuX69V82HnEeg">
         <target xmi:type="TRADES:Component" href="My.trades#//@component.0/@component.1"/>
         <semanticElements xmi:type="TRADES:Component" href="My.trades#//@component.0/@component.1"/>
         <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_cXKMhCpDEeue6qPHrDrMOQ" labelSize="15" borderSize="2" borderSizeComputationExpression="2">
-          <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/dsm.TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage']/@style"/>
+          <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage']/@style"/>
         </ownedStyle>
-        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/dsm.TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage']"/>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage']"/>
       </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DNode" uid="_cXKzkCpDEeue6qPHrDrMOQ" name="Control" tooltipText="Control" outgoingEdges="_cXNP0CpDEeue6qPHrDrMOQ" width="10" height="10" resizeKind="NSEW">
         <target xmi:type="TRADES:Control" href="My.trades#//@component.0/@control.0"/>
         <semanticElements xmi:type="TRADES:Control" href="My.trades#//@component.0/@control.0"/>
         <ownedStyle xmi:type="diagram:Square" uid="_1EQsgSpQEeuX69V82HnEeg" labelSize="15" borderSize="1" borderSizeComputationExpression="1" borderLineStyle="dash" labelPosition="node" color="173,127,168">
-          <description xmi:type="style:SquareDescription" href="platform:/resource/dsm.TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@nodeMappings[name='ControlNode']/@conditionnalStyles.0/@style"/>
+          <description xmi:type="style:SquareDescription" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@nodeMappings[name='ControlNode']/@conditionnalStyles.0/@style"/>
         </ownedStyle>
-        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/dsm.TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@nodeMappings[name='ControlNode']"/>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@nodeMappings[name='ControlNode']"/>
       </ownedDiagramElements>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DEdge" uid="_cXLaoSpDEeue6qPHrDrMOQ" incomingEdges="_cXNP0CpDEeue6qPHrDrMOQ" sourceNode="_cXI-YCpDEeue6qPHrDrMOQ" targetNode="_cXJlcCpDEeue6qPHrDrMOQ">
       <target xmi:type="TRADES:ThreatAllocationRelation" href="My.trades#//@threatallocation.0"/>
       <semanticElements xmi:type="TRADES:ThreatAllocationRelation" href="My.trades#//@threatallocation.0"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_cXMBsCpDEeue6qPHrDrMOQ" size="2" strokeColor="138,226,52">
-        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/dsm.TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@edgeMappings[name='allocatedThreat']/@conditionnalStyles.0/@style"/>
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@edgeMappings[name='allocatedThreat']/@conditionnalStyles.0/@style"/>
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_cXMBsSpDEeue6qPHrDrMOQ" labelSize="12" labelColor="239,41,41"/>
       </ownedStyle>
-      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/dsm.TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@edgeMappings[name='allocatedThreat']"/>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@edgeMappings[name='allocatedThreat']"/>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DEdge" uid="_cXNP0CpDEeue6qPHrDrMOQ" sourceNode="_cXKzkCpDEeue6qPHrDrMOQ" targetNode="_cXLaoSpDEeue6qPHrDrMOQ">
       <target xmi:type="TRADES:ThreatMitigationRelation" href="My.trades#//@threatmitigation.0"/>
       <semanticElements xmi:type="TRADES:ThreatMitigationRelation" href="My.trades#//@threatmitigation.0"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_cXNP0SpDEeue6qPHrDrMOQ" size="2" strokeColor="0,0,0">
-        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/dsm.TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@edgeMappings[name='mitigatesThreatAllocation']/@style"/>
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@edgeMappings[name='mitigatesThreatAllocation']/@style"/>
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_cXNP0ipDEeue6qPHrDrMOQ" labelSize="12"/>
       </ownedStyle>
-      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/dsm.TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@edgeMappings[name='mitigatesThreatAllocation']"/>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@edgeMappings[name='mitigatesThreatAllocation']"/>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DEdge" uid="_xaJdICpOEeuX69V82HnEeg" sourceNode="_xaFLsypOEeuX69V82HnEeg" targetNode="_cXKMgypDEeue6qPHrDrMOQ">
       <target xmi:type="TRADES:ThreatAllocationRelation" href="My.trades#//@threatallocation.1"/>
       <semanticElements xmi:type="TRADES:ThreatAllocationRelation" href="My.trades#//@threatallocation.1"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_xaKEMCpOEeuX69V82HnEeg" size="2" strokeColor="0,0,0">
-        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/dsm.TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@edgeMappings[name='allocatedThreat']/@style"/>
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@edgeMappings[name='allocatedThreat']/@style"/>
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_xaKEMSpOEeuX69V82HnEeg" labelSize="12"/>
       </ownedStyle>
-      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/dsm.TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@edgeMappings[name='allocatedThreat']"/>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@edgeMappings[name='allocatedThreat']"/>
     </ownedDiagramElements>
-    <description xmi:type="description_1:DiagramDescription" href="platform:/resource/dsm.TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']"/>
+    <description xmi:type="description_1:DiagramDescription" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']"/>
     <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_cW0OQCpDEeue6qPHrDrMOQ"/>
-    <activatedLayers xmi:type="description_1:Layer" href="platform:/resource/dsm.TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer"/>
-    <activatedLayers xmi:type="description_1:AdditionalLayer" href="platform:/resource/dsm.TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@additionalLayers[name='UnAllocatedThreats']"/>
+    <activatedLayers xmi:type="description_1:Layer" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer"/>
+    <activatedLayers xmi:type="description_1:AdditionalLayer" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@additionalLayers[name='UnAllocatedThreats']"/>
     <target xmi:type="TRADES:Analysis" href="My.trades#/"/>
   </diagram:DSemanticDiagram>
   <diagram:DSemanticDiagram uid="_cXinACpDEeue6qPHrDrMOQ">
@@ -729,21 +729,21 @@
       <target xmi:type="TRADES:ScoreSystem" href="My.trades#//@scoresystem"/>
       <semanticElements xmi:type="TRADES:ScoreSystem" href="My.trades#//@scoresystem"/>
       <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_cXlqUCpDEeue6qPHrDrMOQ" labelSize="12" showIcon="false" borderSize="1" borderSizeComputationExpression="1" foregroundColor="194,239,255">
-        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/dsm.TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Scoring%20system%20design']/@defaultLayer/@containerMappings[name='Scoring%20system%20difficulties']/@style"/>
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Scoring%20system%20design']/@defaultLayer/@containerMappings[name='Scoring%20system%20difficulties']/@style"/>
       </ownedStyle>
-      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/dsm.TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Scoring%20system%20design']/@defaultLayer/@containerMappings[name='Scoring%20system%20difficulties']"/>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Scoring%20system%20design']/@defaultLayer/@containerMappings[name='Scoring%20system%20difficulties']"/>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_cXmRYSpDEeue6qPHrDrMOQ" name="Impact Definitions">
       <target xmi:type="TRADES:ScoreSystem" href="My.trades#//@scoresystem"/>
       <semanticElements xmi:type="TRADES:ScoreSystem" href="My.trades#//@scoresystem"/>
       <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_cXm4cCpDEeue6qPHrDrMOQ" labelSize="12" showIcon="false" borderSize="1" borderSizeComputationExpression="1" foregroundColor="204,242,166">
-        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/dsm.TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Scoring%20system%20design']/@defaultLayer/@containerMappings[name='Scoring%20system%20impacts']/@style"/>
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Scoring%20system%20design']/@defaultLayer/@containerMappings[name='Scoring%20system%20impacts']/@style"/>
       </ownedStyle>
-      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/dsm.TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Scoring%20system%20design']/@defaultLayer/@containerMappings[name='Scoring%20system%20impacts']"/>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Scoring%20system%20design']/@defaultLayer/@containerMappings[name='Scoring%20system%20impacts']"/>
     </ownedDiagramElements>
-    <description xmi:type="description_1:DiagramDescription" href="platform:/resource/dsm.TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Scoring%20system%20design']"/>
+    <description xmi:type="description_1:DiagramDescription" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Scoring%20system%20design']"/>
     <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_cXinASpDEeue6qPHrDrMOQ"/>
-    <activatedLayers xmi:type="description_1:Layer" href="platform:/resource/dsm.TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Scoring%20system%20design']/@defaultLayer"/>
+    <activatedLayers xmi:type="description_1:Layer" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Scoring%20system%20design']/@defaultLayer"/>
     <target xmi:type="TRADES:Analysis" href="My.trades#/"/>
   </diagram:DSemanticDiagram>
   <diagram:DSemanticDiagram uid="_cXqi0CpDEeue6qPHrDrMOQ">
@@ -790,30 +790,30 @@
       <target xmi:type="TRADES:Threat" href="My1.trades#//@threat.0"/>
       <semanticElements xmi:type="TRADES:Threat" href="My1.trades#//@threat.0"/>
       <ownedStyle xmi:type="diagram:Ellipse" uid="_cXsYASpDEeue6qPHrDrMOQ" labelSize="15" labelPosition="node" color="255,255,255">
-        <description xmi:type="style:EllipseNodeDescription" href="platform:/resource/dsm.TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@additionalLayers[name='UnAllocatedThreats']/@nodeMappings[name='ThreatNode']/@style"/>
+        <description xmi:type="style:EllipseNodeDescription" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@additionalLayers[name='UnAllocatedThreats']/@nodeMappings[name='ThreatNode']/@style"/>
       </ownedStyle>
-      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/dsm.TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@additionalLayers[name='UnAllocatedThreats']/@nodeMappings[name='ThreatNode']"/>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@additionalLayers[name='UnAllocatedThreats']/@nodeMappings[name='ThreatNode']"/>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DNode" uid="_cXs_ECpDEeue6qPHrDrMOQ" name="Threat" tooltipText="Threat" width="10" height="10" resizeKind="NSEW">
       <target xmi:type="TRADES:Threat" href="My.trades#//@threat.0"/>
       <semanticElements xmi:type="TRADES:Threat" href="My.trades#//@threat.0"/>
       <ownedStyle xmi:type="diagram:Ellipse" uid="_cXs_ESpDEeue6qPHrDrMOQ" labelSize="15" labelPosition="node" color="255,255,255">
-        <description xmi:type="style:EllipseNodeDescription" href="platform:/resource/dsm.TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@nodeMappings[name='AllocatedThreatNode']/@style"/>
+        <description xmi:type="style:EllipseNodeDescription" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@nodeMappings[name='AllocatedThreatNode']/@style"/>
       </ownedStyle>
-      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/dsm.TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@nodeMappings[name='AllocatedThreatNode']"/>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@nodeMappings[name='AllocatedThreatNode']"/>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_cXtmICpDEeue6qPHrDrMOQ" name="Box" tooltipText="Box">
       <target xmi:type="TRADES:Component" href="My1.trades#//@component.0"/>
       <semanticElements xmi:type="TRADES:Component" href="My1.trades#//@component.0"/>
       <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_cXtmISpDEeue6qPHrDrMOQ" labelSize="15" borderSize="2" borderSizeComputationExpression="2">
-        <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/dsm.TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage']/@style"/>
+        <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage']/@style"/>
       </ownedStyle>
-      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/dsm.TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage']"/>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage']"/>
     </ownedDiagramElements>
-    <description xmi:type="description_1:DiagramDescription" href="platform:/resource/dsm.TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']"/>
+    <description xmi:type="description_1:DiagramDescription" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']"/>
     <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_cXqi0SpDEeue6qPHrDrMOQ"/>
-    <activatedLayers xmi:type="description_1:Layer" href="platform:/resource/dsm.TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer"/>
-    <activatedLayers xmi:type="description_1:AdditionalLayer" href="platform:/resource/dsm.TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@additionalLayers[name='UnAllocatedThreats']"/>
+    <activatedLayers xmi:type="description_1:Layer" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer"/>
+    <activatedLayers xmi:type="description_1:AdditionalLayer" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@additionalLayers[name='UnAllocatedThreats']"/>
     <target xmi:type="TRADES:Analysis" href="My1.trades#/"/>
   </diagram:DSemanticDiagram>
   <diagram:DSemanticDiagram uid="_cXxQgCpDEeue6qPHrDrMOQ">
@@ -825,9 +825,9 @@
     <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_cXzFsCpDEeue6qPHrDrMOQ" source="DANNOTATION_CUSTOMIZATION_KEY">
       <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_cXzFsSpDEeue6qPHrDrMOQ"/>
     </ownedAnnotationEntries>
-    <description xmi:type="description_1:DiagramDescription" href="platform:/resource/dsm.TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Scoring%20system%20design']"/>
+    <description xmi:type="description_1:DiagramDescription" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Scoring%20system%20design']"/>
     <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_cXx3kCpDEeue6qPHrDrMOQ"/>
-    <activatedLayers xmi:type="description_1:Layer" href="platform:/resource/dsm.TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Scoring%20system%20design']/@defaultLayer"/>
+    <activatedLayers xmi:type="description_1:Layer" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Scoring%20system%20design']/@defaultLayer"/>
     <target xmi:type="TRADES:Analysis" href="My1.trades#/"/>
   </diagram:DSemanticDiagram>
   <diagram:DSemanticDiagram uid="_zd7SwCpOEeuX69V82HnEeg">
@@ -922,9 +922,9 @@
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
       <ownedStyle xmi:type="diagram:Ellipse" uid="_0G4JICpOEeuX69V82HnEeg" labelSize="15" showIcon="false" borderColor="239,41,41" labelPosition="node" color="255,255,255">
-        <description xmi:type="style:EllipseNodeDescription" href="platform:/resource/dsm.TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Attack%20chain%20design']/@defaultLayer/@nodeMappings[name='ChainNode']/@style"/>
+        <description xmi:type="style:EllipseNodeDescription" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Attack%20chain%20design']/@defaultLayer/@nodeMappings[name='ChainNode']/@style"/>
       </ownedStyle>
-      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/dsm.TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Attack%20chain%20design']/@defaultLayer/@nodeMappings[name='ChainNode']"/>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Attack%20chain%20design']/@defaultLayer/@nodeMappings[name='ChainNode']"/>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DNode" uid="_HLlwMCpPEeuX69V82HnEeg" name="1) " outgoingEdges="_IdgEAipPEeuX69V82HnEeg" width="15" height="15" resizeKind="NSEW">
       <target xmi:type="TRADES:AttackInfo" href="My.trades#//@threatallocation.0/@attackinfo.1"/>
@@ -933,9 +933,9 @@
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
       <ownedStyle xmi:type="diagram:Ellipse" uid="_HLmXQCpPEeuX69V82HnEeg" labelSize="15" showIcon="false" borderColor="239,41,41" labelPosition="node" color="255,255,255">
-        <description xmi:type="style:EllipseNodeDescription" href="platform:/resource/dsm.TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Attack%20chain%20design']/@defaultLayer/@nodeMappings[name='ChainNode']/@style"/>
+        <description xmi:type="style:EllipseNodeDescription" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Attack%20chain%20design']/@defaultLayer/@nodeMappings[name='ChainNode']/@style"/>
       </ownedStyle>
-      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/dsm.TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Attack%20chain%20design']/@defaultLayer/@nodeMappings[name='ChainNode']"/>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Attack%20chain%20design']/@defaultLayer/@nodeMappings[name='ChainNode']"/>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DNode" uid="_Hh6lgCpPEeuX69V82HnEeg" name="2) " outgoingEdges="_Jvt51CpPEeuX69V82HnEeg" incomingEdges="_IdgEAipPEeuX69V82HnEeg" width="15" height="15" resizeKind="NSEW">
       <target xmi:type="TRADES:AttackInfo" href="My.trades#//@threatallocation.0/@attackinfo.2"/>
@@ -944,9 +944,9 @@
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
       <ownedStyle xmi:type="diagram:Ellipse" uid="_Hh7MkCpPEeuX69V82HnEeg" labelSize="15" showIcon="false" borderColor="239,41,41" labelPosition="node" color="255,255,255">
-        <description xmi:type="style:EllipseNodeDescription" href="platform:/resource/dsm.TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Attack%20chain%20design']/@defaultLayer/@nodeMappings[name='ChainNode']/@style"/>
+        <description xmi:type="style:EllipseNodeDescription" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Attack%20chain%20design']/@defaultLayer/@nodeMappings[name='ChainNode']/@style"/>
       </ownedStyle>
-      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/dsm.TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Attack%20chain%20design']/@defaultLayer/@nodeMappings[name='ChainNode']"/>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Attack%20chain%20design']/@defaultLayer/@nodeMappings[name='ChainNode']"/>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DNode" uid="_JTWt8CpPEeuX69V82HnEeg" name="3) " incomingEdges="_Jvt51CpPEeuX69V82HnEeg" width="15" height="15" resizeKind="NSEW">
       <target xmi:type="TRADES:AttackInfo" href="My.trades#//@threatallocation.0/@attackinfo.3"/>
@@ -955,29 +955,29 @@
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
       <ownedStyle xmi:type="diagram:Ellipse" uid="_JTXVACpPEeuX69V82HnEeg" labelSize="15" showIcon="false" borderColor="239,41,41" labelPosition="node" color="255,255,255">
-        <description xmi:type="style:EllipseNodeDescription" href="platform:/resource/dsm.TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Attack%20chain%20design']/@defaultLayer/@nodeMappings[name='ChainNode']/@style"/>
+        <description xmi:type="style:EllipseNodeDescription" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Attack%20chain%20design']/@defaultLayer/@nodeMappings[name='ChainNode']/@style"/>
       </ownedStyle>
-      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/dsm.TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Attack%20chain%20design']/@defaultLayer/@nodeMappings[name='ChainNode']"/>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Attack%20chain%20design']/@defaultLayer/@nodeMappings[name='ChainNode']"/>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DEdge" uid="_IdgEAipPEeuX69V82HnEeg" sourceNode="_HLlwMCpPEeuX69V82HnEeg" targetNode="_Hh6lgCpPEeuX69V82HnEeg">
       <target xmi:type="TRADES:AttackInfo" href="My.trades#//@threatallocation.0/@attackinfo.1"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_IdgrECpPEeuX69V82HnEeg" lineStyle="dash" targetArrow="InputClosedArrow" size="3" strokeColor="0,0,0">
-        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/dsm.TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Attack%20chain%20design']/@defaultLayer/@edgeMappings[name='LinkSteps']/@style"/>
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Attack%20chain%20design']/@defaultLayer/@edgeMappings[name='LinkSteps']/@style"/>
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_IdgrESpPEeuX69V82HnEeg" labelSize="12" showIcon="false"/>
       </ownedStyle>
-      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/dsm.TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Attack%20chain%20design']/@defaultLayer/@edgeMappings[name='LinkSteps']"/>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Attack%20chain%20design']/@defaultLayer/@edgeMappings[name='LinkSteps']"/>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DEdge" uid="_Jvt51CpPEeuX69V82HnEeg" sourceNode="_Hh6lgCpPEeuX69V82HnEeg" targetNode="_JTWt8CpPEeuX69V82HnEeg">
       <target xmi:type="TRADES:AttackInfo" href="My.trades#//@threatallocation.0/@attackinfo.2"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_Jvt51SpPEeuX69V82HnEeg" lineStyle="dash" targetArrow="InputClosedArrow" size="3" strokeColor="0,0,0">
-        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/dsm.TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Attack%20chain%20design']/@defaultLayer/@edgeMappings[name='LinkSteps']/@style"/>
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Attack%20chain%20design']/@defaultLayer/@edgeMappings[name='LinkSteps']/@style"/>
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_Jvt51ipPEeuX69V82HnEeg" labelSize="12" showIcon="false"/>
       </ownedStyle>
-      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/dsm.TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Attack%20chain%20design']/@defaultLayer/@edgeMappings[name='LinkSteps']"/>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Attack%20chain%20design']/@defaultLayer/@edgeMappings[name='LinkSteps']"/>
     </ownedDiagramElements>
-    <description xmi:type="description_1:DiagramDescription" href="platform:/resource/dsm.TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Attack%20chain%20design']"/>
+    <description xmi:type="description_1:DiagramDescription" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Attack%20chain%20design']"/>
     <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_zd750CpOEeuX69V82HnEeg"/>
-    <activatedLayers xmi:type="description_1:Layer" href="platform:/resource/dsm.TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Attack%20chain%20design']/@defaultLayer"/>
+    <activatedLayers xmi:type="description_1:Layer" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Attack%20chain%20design']/@defaultLayer"/>
     <target xmi:type="TRADES:ThreatAllocationRelation" href="My.trades#//@threatallocation.0"/>
   </diagram:DSemanticDiagram>
 </xmi:XMI>
