@@ -2,6 +2,7 @@
  */
 package dsm.TRADES;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -17,6 +18,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link dsm.TRADES.AttackChainStep#getThreatallocationrelation <em>Threatallocationrelation</em>}</li>
  *   <li>{@link dsm.TRADES.AttackChainStep#getDifficulty <em>Difficulty</em>}</li>
  *   <li>{@link dsm.TRADES.AttackChainStep#getImpactDescription <em>Impact Description</em>}</li>
+ *   <li>{@link dsm.TRADES.AttackChainStep#getNexts <em>Nexts</em>}</li>
+ *   <li>{@link dsm.TRADES.AttackChainStep#getPrevious <em>Previous</em>}</li>
  * </ul>
  *
  * @see dsm.TRADES.TRADESPackage#getAttackChainStep()
@@ -126,5 +129,43 @@ public interface AttackChainStep extends EObject {
 	 * @generated
 	 */
 	void setImpactDescription(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Nexts</b></em>' reference list.
+	 * The list contents are of type {@link dsm.TRADES.AttackChainStep}.
+	 * It is bidirectional and its opposite is '{@link dsm.TRADES.AttackChainStep#getPrevious <em>Previous</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Nexts</em>' reference list.
+	 * @see dsm.TRADES.TRADESPackage#getAttackChainStep_Nexts()
+	 * @see dsm.TRADES.AttackChainStep#getPrevious
+	 * @model opposite="previous"
+	 * @generated
+	 */
+	EList<AttackChainStep> getNexts();
+
+	/**
+	 * Returns the value of the '<em><b>Previous</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link dsm.TRADES.AttackChainStep#getNexts <em>Nexts</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Previous</em>' reference.
+	 * @see #setPrevious(AttackChainStep)
+	 * @see dsm.TRADES.TRADESPackage#getAttackChainStep_Previous()
+	 * @see dsm.TRADES.AttackChainStep#getNexts
+	 * @model opposite="nexts"
+	 * @generated
+	 */
+	AttackChainStep getPrevious();
+
+	/**
+	 * Sets the value of the '{@link dsm.TRADES.AttackChainStep#getPrevious <em>Previous</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Previous</em>' reference.
+	 * @see #getPrevious()
+	 * @generated
+	 */
+	void setPrevious(AttackChainStep value);
 
 } // AttackChainStep

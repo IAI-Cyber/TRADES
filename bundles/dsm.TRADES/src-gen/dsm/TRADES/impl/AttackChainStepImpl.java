@@ -6,13 +6,18 @@ import dsm.TRADES.AttackChainStep;
 import dsm.TRADES.TRADESPackage;
 import dsm.TRADES.ThreatAllocationRelation;
 
+import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,6 +31,8 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link dsm.TRADES.impl.AttackChainStepImpl#getThreatallocationrelation <em>Threatallocationrelation</em>}</li>
  *   <li>{@link dsm.TRADES.impl.AttackChainStepImpl#getDifficulty <em>Difficulty</em>}</li>
  *   <li>{@link dsm.TRADES.impl.AttackChainStepImpl#getImpactDescription <em>Impact Description</em>}</li>
+ *   <li>{@link dsm.TRADES.impl.AttackChainStepImpl#getNexts <em>Nexts</em>}</li>
+ *   <li>{@link dsm.TRADES.impl.AttackChainStepImpl#getPrevious <em>Previous</em>}</li>
  * </ul>
  *
  * @generated
@@ -100,6 +107,26 @@ public class AttackChainStepImpl extends MinimalEObjectImpl.Container implements
 	 * @ordered
 	 */
 	protected String impactDescription = IMPACT_DESCRIPTION_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getNexts() <em>Nexts</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNexts()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<AttackChainStep> nexts;
+
+	/**
+	 * The cached value of the '{@link #getPrevious() <em>Previous</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPrevious()
+	 * @generated
+	 * @ordered
+	 */
+	protected AttackChainStep previous;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -242,6 +269,126 @@ public class AttackChainStepImpl extends MinimalEObjectImpl.Container implements
 	 * @generated
 	 */
 	@Override
+	public EList<AttackChainStep> getNexts() {
+		if (nexts == null) {
+			nexts = new EObjectWithInverseResolvingEList<AttackChainStep>(AttackChainStep.class, this,
+					TRADESPackage.ATTACK_CHAIN_STEP__NEXTS, TRADESPackage.ATTACK_CHAIN_STEP__PREVIOUS);
+		}
+		return nexts;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public AttackChainStep getPrevious() {
+		if (previous != null && previous.eIsProxy()) {
+			InternalEObject oldPrevious = (InternalEObject) previous;
+			previous = (AttackChainStep) eResolveProxy(oldPrevious);
+			if (previous != oldPrevious) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TRADESPackage.ATTACK_CHAIN_STEP__PREVIOUS,
+							oldPrevious, previous));
+			}
+		}
+		return previous;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AttackChainStep basicGetPrevious() {
+		return previous;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetPrevious(AttackChainStep newPrevious, NotificationChain msgs) {
+		AttackChainStep oldPrevious = previous;
+		previous = newPrevious;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					TRADESPackage.ATTACK_CHAIN_STEP__PREVIOUS, oldPrevious, newPrevious);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setPrevious(AttackChainStep newPrevious) {
+		if (newPrevious != previous) {
+			NotificationChain msgs = null;
+			if (previous != null)
+				msgs = ((InternalEObject) previous).eInverseRemove(this, TRADESPackage.ATTACK_CHAIN_STEP__NEXTS,
+						AttackChainStep.class, msgs);
+			if (newPrevious != null)
+				msgs = ((InternalEObject) newPrevious).eInverseAdd(this, TRADESPackage.ATTACK_CHAIN_STEP__NEXTS,
+						AttackChainStep.class, msgs);
+			msgs = basicSetPrevious(newPrevious, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TRADESPackage.ATTACK_CHAIN_STEP__PREVIOUS,
+					newPrevious, newPrevious));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+		case TRADESPackage.ATTACK_CHAIN_STEP__NEXTS:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getNexts()).basicAdd(otherEnd, msgs);
+		case TRADESPackage.ATTACK_CHAIN_STEP__PREVIOUS:
+			if (previous != null)
+				msgs = ((InternalEObject) previous).eInverseRemove(this, TRADESPackage.ATTACK_CHAIN_STEP__NEXTS,
+						AttackChainStep.class, msgs);
+			return basicSetPrevious((AttackChainStep) otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+		case TRADESPackage.ATTACK_CHAIN_STEP__NEXTS:
+			return ((InternalEList<?>) getNexts()).basicRemove(otherEnd, msgs);
+		case TRADESPackage.ATTACK_CHAIN_STEP__PREVIOUS:
+			return basicSetPrevious(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case TRADESPackage.ATTACK_CHAIN_STEP__STEP_NUM:
@@ -254,6 +401,12 @@ public class AttackChainStepImpl extends MinimalEObjectImpl.Container implements
 			return getDifficulty();
 		case TRADESPackage.ATTACK_CHAIN_STEP__IMPACT_DESCRIPTION:
 			return getImpactDescription();
+		case TRADESPackage.ATTACK_CHAIN_STEP__NEXTS:
+			return getNexts();
+		case TRADESPackage.ATTACK_CHAIN_STEP__PREVIOUS:
+			if (resolve)
+				return getPrevious();
+			return basicGetPrevious();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -263,6 +416,7 @@ public class AttackChainStepImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -277,6 +431,13 @@ public class AttackChainStepImpl extends MinimalEObjectImpl.Container implements
 			return;
 		case TRADESPackage.ATTACK_CHAIN_STEP__IMPACT_DESCRIPTION:
 			setImpactDescription((String) newValue);
+			return;
+		case TRADESPackage.ATTACK_CHAIN_STEP__NEXTS:
+			getNexts().clear();
+			getNexts().addAll((Collection<? extends AttackChainStep>) newValue);
+			return;
+		case TRADESPackage.ATTACK_CHAIN_STEP__PREVIOUS:
+			setPrevious((AttackChainStep) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -302,6 +463,12 @@ public class AttackChainStepImpl extends MinimalEObjectImpl.Container implements
 		case TRADESPackage.ATTACK_CHAIN_STEP__IMPACT_DESCRIPTION:
 			setImpactDescription(IMPACT_DESCRIPTION_EDEFAULT);
 			return;
+		case TRADESPackage.ATTACK_CHAIN_STEP__NEXTS:
+			getNexts().clear();
+			return;
+		case TRADESPackage.ATTACK_CHAIN_STEP__PREVIOUS:
+			setPrevious((AttackChainStep) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -323,6 +490,10 @@ public class AttackChainStepImpl extends MinimalEObjectImpl.Container implements
 		case TRADESPackage.ATTACK_CHAIN_STEP__IMPACT_DESCRIPTION:
 			return IMPACT_DESCRIPTION_EDEFAULT == null ? impactDescription != null
 					: !IMPACT_DESCRIPTION_EDEFAULT.equals(impactDescription);
+		case TRADESPackage.ATTACK_CHAIN_STEP__NEXTS:
+			return nexts != null && !nexts.isEmpty();
+		case TRADESPackage.ATTACK_CHAIN_STEP__PREVIOUS:
+			return previous != null;
 		}
 		return super.eIsSet(featureID);
 	}

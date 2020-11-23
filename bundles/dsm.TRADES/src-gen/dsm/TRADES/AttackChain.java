@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link dsm.TRADES.AttackChain#getAttackchainstep <em>Attackchainstep</em>}</li>
  *   <li>{@link dsm.TRADES.AttackChain#getName <em>Name</em>}</li>
+ *   <li>{@link dsm.TRADES.AttackChain#getStart <em>Start</em>}</li>
  * </ul>
  *
  * @see dsm.TRADES.TRADESPackage#getAttackChain()
@@ -65,5 +66,27 @@ public interface AttackChain extends EObject {
 	 * @generated
 	 */
 	void setName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Start</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Start</em>' reference.
+	 * @see #setStart(AttackChainStep)
+	 * @see dsm.TRADES.TRADESPackage#getAttackChain_Start()
+	 * @model
+	 * @generated
+	 */
+	AttackChainStep getStart();
+
+	/**
+	 * Sets the value of the '{@link dsm.TRADES.AttackChain#getStart <em>Start</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Start</em>' reference.
+	 * @see #getStart()
+	 * @generated
+	 */
+	void setStart(AttackChainStep value);
 
 } // AttackChain

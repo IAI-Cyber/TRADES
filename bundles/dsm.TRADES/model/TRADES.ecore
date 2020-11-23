@@ -134,6 +134,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="attackchainstep" upperBound="-1"
         eType="#//AttackChainStep" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//AttackChainStep"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AttackChainStep">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="stepNum" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
@@ -145,6 +146,10 @@
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="impactDescription" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nexts" upperBound="-1"
+        eType="#//AttackChainStep" eOpposite="#//AttackChainStep/previous"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="previous" eType="#//AttackChainStep"
+        eOpposite="#//AttackChainStep/nexts"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ScoreSystem">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

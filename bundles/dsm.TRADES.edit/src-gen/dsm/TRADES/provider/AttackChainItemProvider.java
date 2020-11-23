@@ -58,6 +58,7 @@ public class AttackChainItemProvider extends ItemProviderAdapter implements IEdi
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
+			addStartPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -76,6 +77,21 @@ public class AttackChainItemProvider extends ItemProviderAdapter implements IEdi
 								"_UI_AttackChain_type"),
 						TRADESPackage.Literals.ATTACK_CHAIN__NAME, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Start feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addStartPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_AttackChain_start_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_AttackChain_start_feature",
+								"_UI_AttackChain_type"),
+						TRADESPackage.Literals.ATTACK_CHAIN__START, true, false, true, null, null, null));
 	}
 
 	/**

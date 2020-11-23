@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:description_2="http://www.eclipse.org/sirius/table/description/1.1.0" xmlns:properties="http://www.eclipse.org/sirius/properties/1.0.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="TRADES" version="12.0.0.2017041100">
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:description_2="http://www.eclipse.org/sirius/table/description/1.1.0" xmlns:description_3="http://www.eclipse.org/sirius/tree/description/1.0.0" xmlns:properties="http://www.eclipse.org/sirius/properties/1.0.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="TRADES" version="12.0.0.2017041100">
   <ownedViewpoints name="TRADESview">
     <ownedRepresentations xsi:type="description_1:DiagramDescription" dropDescriptions="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='copyThreatDragDrop']" name="TRADES diagram" initialisation="true" showOnStartup="true" domainClass="TRADES::Analysis" enablePopupBars="true">
       <metamodel href="dsm.TRADES#/"/>
@@ -843,7 +843,197 @@
         </toolSections>
       </defaultLayer>
     </ownedRepresentations>
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" dropDescriptions="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='AttackChainDiagram']/@additionalLayers[name='Threats']/@toolSections.0/@ownedTools[name='DropThreatRepresentation']" name="AttackChainDiagram" label="Attack chain diagram" titleExpression="aql:self.name+' attack description'" domainClass="TRADES::AttackChain" enablePopupBars="true">
+      <defaultLayer name="Default">
+        <nodeMappings name="AttackChainStep_ACD" semanticCandidatesExpression="feature:attackchainstep" domainClass="TRADES::AttackChainStep" dropDescriptions="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='AttackChainDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='DropAllocation']">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" labelExpression="aql:self.getAttackChainLabel()" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/TRADES.design/Images/attack_chain_step_info.svg">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+          <conditionnalStyles predicateExpression="aql:self.difficulty > 7">
+            <style xsi:type="style:WorkspaceImageDescription" labelSize="12" labelExpression="aql:self.getAttackChainLabel()" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/TRADES.design/Images/attack_chain_step_danger.svg">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </conditionnalStyles>
+          <conditionnalStyles predicateExpression="aql:self.difficulty > 3">
+            <style xsi:type="style:WorkspaceImageDescription" labelSize="12" labelExpression="aql:self.getAttackChainLabel()" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/TRADES.design/Images/attack_chain_step_warning.svg">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </conditionnalStyles>
+        </nodeMappings>
+        <nodeMappings name="Start_ACD" semanticCandidatesExpression="var:self" domainClass="TRADES::AttackChain">
+          <style xsi:type="style:DotDescription" labelSize="12" showIcon="false" labelExpression="" labelPosition="node" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+          </style>
+        </nodeMappings>
+        <edgeMappings name="NextMapping_ACT" sourceMapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='AttackChainDiagram']/@defaultLayer/@nodeMappings[name='AttackChainStep_ACD']" targetMapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='AttackChainDiagram']/@defaultLayer/@nodeMappings[name='AttackChainStep_ACD']" targetFinderExpression="feature:nexts" reconnections="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='AttackChainDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='ReconnectAttackChaineTool_ACD']">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="StartingRelation_ACD" sourceMapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='AttackChainDiagram']/@defaultLayer/@nodeMappings[name='Start_ACD']" targetMapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='AttackChainDiagram']/@defaultLayer/@nodeMappings[name='AttackChainStep_ACD']" targetFinderExpression="feature:start">
+          <style lineStyle="dash" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12" showIcon="false">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <toolSections name="Creation">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="StepCreationTool_ACD" label="Create step" nodeMappings="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='AttackChainDiagram']/@defaultLayer/@nodeMappings[name='AttackChainStep_ACD']" iconPath="/TRADES.design/Images/icons/attack_chain_step.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="TRADES::AttackChainStep" referenceName="attackchainstep">
+                <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:self.eContainer().attackchainstep->size() ==1">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.eContainer()">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="start" valueExpression="aql:self.attackchainstep->at(1)"/>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="NextEdgetCreationTool" label="Step link" edgeMappings="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='AttackChainDiagram']/@defaultLayer/@edgeMappings[name='NextMapping_ACT']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:source">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="nexts" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ReconnectEdgeDescription" name="ReconnectAttackChaineTool_ACD">
+            <source name="source"/>
+            <target name="target"/>
+            <sourceView name="sourceView"/>
+            <targetView name="targetView"/>
+            <element name="element"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool_1:Unset" featureName="nexts" elementExpression="var:source"/>
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="nexts" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+            <edgeView name="edgeView"/>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerDropDescription" name="DropAllocation" dragSource="PROJECT_EXPLORER">
+            <oldContainer name="oldSemanticContainer"/>
+            <newContainer name="newSemanticContainer"/>
+            <element name="element"/>
+            <newViewContainer name="newContainerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:newSemanticContainer">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="threatallocationrelation" valueExpression="var:element"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+      </defaultLayer>
+      <additionalLayers name="Threats">
+        <nodeMappings name="RelatedThreats" deletionDescription="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='AttackChainDiagram']/@additionalLayers[name='Threats']/@toolSections.0/@ownedTools[name='DeleteRelatedThreat']" semanticCandidatesExpression="aql:self.attackchainstep.threatallocationrelation.threat" createElements="false" domainClass="TRADES::Threat">
+          <style xsi:type="style:EllipseNodeDescription" labelSize="15" tooltipExpression="aql: self.name" sizeComputationExpression="10" labelPosition="node" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+          </style>
+        </nodeMappings>
+        <edgeMappings name="ThreatLink" sourceMapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='AttackChainDiagram']/@defaultLayer/@nodeMappings[name='AttackChainStep_ACD']" targetMapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='AttackChainDiagram']/@additionalLayers[name='Threats']/@nodeMappings[name='RelatedThreats']" targetFinderExpression="aql:self.threatallocationrelation.threat">
+          <style lineStyle="dot" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12" labelExpression="aql:self.threatallocationrelation.component.name">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <toolSections>
+          <ownedTools xsi:type="tool:ContainerDropDescription" name="DropThreatRepresentation" dragSource="PROJECT_EXPLORER">
+            <oldContainer name="oldSemanticContainer"/>
+            <newContainer name="newSemanticContainer"/>
+            <element name="element"/>
+            <newViewContainer name="newContainerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool:CreateView" mapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='AttackChainDiagram']/@additionalLayers[name='Threats']/@nodeMappings[name='RelatedThreats']" containerViewExpression="var:newContainerView"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:SelectionWizardDescription" name="SelectThreatWizardAndDisplay" candidatesExpression="aql:self.eContainer().eAllContents()->filter(TRADES::Threat)" multiple="true">
+            <element name="element"/>
+            <containerView name="containerView"/>
+            <container name="container"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:For" expression="var:element">
+                <subModelOperations xsi:type="tool:CreateView" mapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='AttackChainDiagram']/@additionalLayers[name='Threats']/@nodeMappings[name='RelatedThreats']" containerViewExpression="var:containerView"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DeleteElementDescription" name="DeleteRelatedThreat">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <containerView name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:DeleteView"/>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+      </additionalLayers>
+    </ownedRepresentations>
+    <ownedRepresentations xsi:type="description_3:TreeDescription" name="AttackChainsTree" label="Attack chains" initialisation="true" domainClass="TRADES::Analysis">
+      <subItemMappings name="AttackChainItem" detailDescriptions="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='AttackChainsTree']/@ownedRepresentationCreationDescriptions[name='AttackChainDiagCreation_ACT']" domainClass="TRADES::AttackChain" semanticCandidatesExpression="feature:attackchain">
+        <defaultStyle labelExpression="aql:self.name+if self.start &lt;> null then '['+self.start+']' else  '[]' endif ">
+          <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+        </defaultStyle>
+        <subItemMappings name="AttackChainStep_ACT" domainClass="TRADES::AttackChainStep" semanticCandidatesExpression="feature:attackchainstep">
+          <defaultStyle labelExpression="aql:self.getAttackChainLabel()" iconPath="/TRADES.design/Images/icons/attack_chain_step_info.png">
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+          </defaultStyle>
+          <conditionalStyles predicateExpression="aql:self.difficulty > 3">
+            <style labelExpression="aql:self.getAttackChainLabel()" iconPath="/TRADES.design/Images/icons/attack_chain_step_warning.png">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </conditionalStyles>
+          <conditionalStyles predicateExpression="aql:self.difficulty > 7">
+            <style labelExpression="aql:self.getAttackChainLabel()" iconPath="/TRADES.design/Images/icons/attack_chain_step_danger.png">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </conditionalStyles>
+        </subItemMappings>
+      </subItemMappings>
+      <createTreeItem name="AttachChainCreationTools" label="Create new attack" mapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='AttackChainsTree']/@subItemMappings[name='AttackChainItem']">
+        <firstModelOperation xsi:type="tool_1:ChangeContext" browseExpression="aql:root">
+          <subModelOperations xsi:type="tool_1:CreateInstance" typeName="TRADES::AttackChain" referenceName="attackchain">
+            <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Attack '+self.eContainer().attackchain->size()"/>
+          </subModelOperations>
+        </firstModelOperation>
+        <variables name="root" documentation="The semantic element of the tree."/>
+        <variables name="element" documentation="The currently edited element."/>
+        <variables name="container" documentation="The semantic element corresponding to the view container."/>
+      </createTreeItem>
+      <ownedRepresentationCreationDescriptions xsi:type="tool:DiagramCreationDescription" name="AttackChainDiagCreation_ACT" diagramDescription="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='AttackChainDiagram']">
+        <initialOperation/>
+        <containerViewVariable name="containerView"/>
+        <representationNameVariable name="diagramName"/>
+      </ownedRepresentationCreationDescriptions>
+    </ownedRepresentations>
+    <ownedRepresentations xsi:type="description_2:EditionTableDescription" name="ThreatAllocation" label="Threat allocation relations" domainClass="TRADES::Analysis">
+      <ownedLineMappings name="ThreateAllocationMRelation" domainClass="TRADES::ThreatAllocationRelation" semanticCandidatesExpression="feature:threatallocation" headerLabelExpression="aql:self.name + ' (' + self.threat.name +'->'+self.component.name+')'"/>
+      <ownedColumnMappings name="ImpactScpreColumn_TAR" headerLabelExpression="Impact score" featureName="impactscore"/>
+    </ownedRepresentations>
     <ownedJavaExtensions qualifiedClassName="TRADES.design.Services"/>
+    <ownedJavaExtensions qualifiedClassName="TRADES.design.DiagramService"/>
   </ownedViewpoints>
   <extensions xsi:type="properties:ViewExtensionDescription" name="Properties"/>
 </description:Group>
