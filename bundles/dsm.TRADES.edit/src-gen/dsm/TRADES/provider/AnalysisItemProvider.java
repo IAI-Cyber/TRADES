@@ -98,7 +98,6 @@ public class AnalysisItemProvider extends ItemProviderAdapter implements IEditin
 			childrenFeatures.add(TRADESPackage.Literals.ANALYSIS__DATA);
 			childrenFeatures.add(TRADESPackage.Literals.ANALYSIS__AFFECTRELATION);
 			childrenFeatures.add(TRADESPackage.Literals.ANALYSIS__ANALYSISDIAGRAM);
-			childrenFeatures.add(TRADESPackage.Literals.ANALYSIS__ATTACKCHAIN);
 			childrenFeatures.add(TRADESPackage.Literals.ANALYSIS__SCORESYSTEM);
 		}
 		return childrenFeatures;
@@ -174,7 +173,6 @@ public class AnalysisItemProvider extends ItemProviderAdapter implements IEditin
 		case TRADESPackage.ANALYSIS__DATA:
 		case TRADESPackage.ANALYSIS__AFFECTRELATION:
 		case TRADESPackage.ANALYSIS__ANALYSISDIAGRAM:
-		case TRADESPackage.ANALYSIS__ATTACKCHAIN:
 		case TRADESPackage.ANALYSIS__SCORESYSTEM:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
@@ -216,9 +214,6 @@ public class AnalysisItemProvider extends ItemProviderAdapter implements IEditin
 
 		newChildDescriptors.add(createChildParameter(TRADESPackage.Literals.ANALYSIS__ANALYSISDIAGRAM,
 				TRADESFactory.eINSTANCE.createAnalysisDiagram()));
-
-		newChildDescriptors.add(createChildParameter(TRADESPackage.Literals.ANALYSIS__ATTACKCHAIN,
-				TRADESFactory.eINSTANCE.createAttackChain()));
 
 		newChildDescriptors.add(createChildParameter(TRADESPackage.Literals.ANALYSIS__SCORESYSTEM,
 				TRADESFactory.eINSTANCE.createScoreSystem()));

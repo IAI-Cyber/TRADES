@@ -3,7 +3,7 @@
 package dsm.TRADES.impl;
 
 import dsm.TRADES.AssessmentENUM;
-import dsm.TRADES.AttackInfo;
+import dsm.TRADES.AttackChain;
 import dsm.TRADES.Component;
 import dsm.TRADES.DifficultyScore;
 import dsm.TRADES.ImpactScore;
@@ -39,7 +39,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dsm.TRADES.impl.ThreatAllocationRelationImpl#getDifficultyscore <em>Difficultyscore</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ThreatAllocationRelationImpl#getThreatDecomposed <em>Threat Decomposed</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ThreatAllocationRelationImpl#getThreatRelated <em>Threat Related</em>}</li>
- *   <li>{@link dsm.TRADES.impl.ThreatAllocationRelationImpl#getAttackinfo <em>Attackinfo</em>}</li>
+ *   <li>{@link dsm.TRADES.impl.ThreatAllocationRelationImpl#getAttackChains <em>Attack Chains</em>}</li>
  * </ul>
  *
  * @generated
@@ -146,14 +146,14 @@ public class ThreatAllocationRelationImpl extends MinimalEObjectImpl.Container i
 	protected EList<ThreatAllocationRelation> threatRelated;
 
 	/**
-	 * The cached value of the '{@link #getAttackinfo() <em>Attackinfo</em>}' containment reference list.
+	 * The cached value of the '{@link #getAttackChains() <em>Attack Chains</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAttackinfo()
+	 * @see #getAttackChains()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<AttackInfo> attackinfo;
+	protected EList<AttackChain> attackChains;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -481,12 +481,12 @@ public class ThreatAllocationRelationImpl extends MinimalEObjectImpl.Container i
 	 * @generated
 	 */
 	@Override
-	public EList<AttackInfo> getAttackinfo() {
-		if (attackinfo == null) {
-			attackinfo = new EObjectContainmentEList<AttackInfo>(AttackInfo.class, this,
-					TRADESPackage.THREAT_ALLOCATION_RELATION__ATTACKINFO);
+	public EList<AttackChain> getAttackChains() {
+		if (attackChains == null) {
+			attackChains = new EObjectContainmentEList<AttackChain>(AttackChain.class, this,
+					TRADESPackage.THREAT_ALLOCATION_RELATION__ATTACK_CHAINS);
 		}
-		return attackinfo;
+		return attackChains;
 	}
 
 	/**
@@ -525,8 +525,8 @@ public class ThreatAllocationRelationImpl extends MinimalEObjectImpl.Container i
 			return basicSetThreat(null, msgs);
 		case TRADESPackage.THREAT_ALLOCATION_RELATION__THREAT_DECOMPOSED:
 			return ((InternalEList<?>) getThreatDecomposed()).basicRemove(otherEnd, msgs);
-		case TRADESPackage.THREAT_ALLOCATION_RELATION__ATTACKINFO:
-			return ((InternalEList<?>) getAttackinfo()).basicRemove(otherEnd, msgs);
+		case TRADESPackage.THREAT_ALLOCATION_RELATION__ATTACK_CHAINS:
+			return ((InternalEList<?>) getAttackChains()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -563,8 +563,8 @@ public class ThreatAllocationRelationImpl extends MinimalEObjectImpl.Container i
 			return getThreatDecomposed();
 		case TRADESPackage.THREAT_ALLOCATION_RELATION__THREAT_RELATED:
 			return getThreatRelated();
-		case TRADESPackage.THREAT_ALLOCATION_RELATION__ATTACKINFO:
-			return getAttackinfo();
+		case TRADESPackage.THREAT_ALLOCATION_RELATION__ATTACK_CHAINS:
+			return getAttackChains();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -604,9 +604,9 @@ public class ThreatAllocationRelationImpl extends MinimalEObjectImpl.Container i
 			getThreatRelated().clear();
 			getThreatRelated().addAll((Collection<? extends ThreatAllocationRelation>) newValue);
 			return;
-		case TRADESPackage.THREAT_ALLOCATION_RELATION__ATTACKINFO:
-			getAttackinfo().clear();
-			getAttackinfo().addAll((Collection<? extends AttackInfo>) newValue);
+		case TRADESPackage.THREAT_ALLOCATION_RELATION__ATTACK_CHAINS:
+			getAttackChains().clear();
+			getAttackChains().addAll((Collection<? extends AttackChain>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -644,8 +644,8 @@ public class ThreatAllocationRelationImpl extends MinimalEObjectImpl.Container i
 		case TRADESPackage.THREAT_ALLOCATION_RELATION__THREAT_RELATED:
 			getThreatRelated().clear();
 			return;
-		case TRADESPackage.THREAT_ALLOCATION_RELATION__ATTACKINFO:
-			getAttackinfo().clear();
+		case TRADESPackage.THREAT_ALLOCATION_RELATION__ATTACK_CHAINS:
+			getAttackChains().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -675,8 +675,8 @@ public class ThreatAllocationRelationImpl extends MinimalEObjectImpl.Container i
 			return threatDecomposed != null && !threatDecomposed.isEmpty();
 		case TRADESPackage.THREAT_ALLOCATION_RELATION__THREAT_RELATED:
 			return threatRelated != null && !threatRelated.isEmpty();
-		case TRADESPackage.THREAT_ALLOCATION_RELATION__ATTACKINFO:
-			return attackinfo != null && !attackinfo.isEmpty();
+		case TRADESPackage.THREAT_ALLOCATION_RELATION__ATTACK_CHAINS:
+			return attackChains != null && !attackChains.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

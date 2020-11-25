@@ -5,7 +5,6 @@ package dsm.TRADES.impl;
 import dsm.TRADES.AffectRelation;
 import dsm.TRADES.Analysis;
 import dsm.TRADES.AnalysisDiagram;
-import dsm.TRADES.AttackChain;
 import dsm.TRADES.Component;
 import dsm.TRADES.Control;
 import dsm.TRADES.Data;
@@ -48,7 +47,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getData <em>Data</em>}</li>
  *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getAffectrelation <em>Affectrelation</em>}</li>
  *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getAnalysisdiagram <em>Analysisdiagram</em>}</li>
- *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getAttackchain <em>Attackchain</em>}</li>
  *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getScoresystem <em>Scoresystem</em>}</li>
  * </ul>
  *
@@ -154,16 +152,6 @@ public class AnalysisImpl extends MinimalEObjectImpl.Container implements Analys
 	 * @ordered
 	 */
 	protected EList<AnalysisDiagram> analysisdiagram;
-
-	/**
-	 * The cached value of the '{@link #getAttackchain() <em>Attackchain</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAttackchain()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<AttackChain> attackchain;
 
 	/**
 	 * The cached value of the '{@link #getScoresystem() <em>Scoresystem</em>}' containment reference.
@@ -332,20 +320,6 @@ public class AnalysisImpl extends MinimalEObjectImpl.Container implements Analys
 	 * @generated
 	 */
 	@Override
-	public EList<AttackChain> getAttackchain() {
-		if (attackchain == null) {
-			attackchain = new EObjectContainmentEList<AttackChain>(AttackChain.class, this,
-					TRADESPackage.ANALYSIS__ATTACKCHAIN);
-		}
-		return attackchain;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public ScoreSystem getScoresystem() {
 		return scoresystem;
 	}
@@ -416,8 +390,6 @@ public class AnalysisImpl extends MinimalEObjectImpl.Container implements Analys
 			return ((InternalEList<?>) getAffectrelation()).basicRemove(otherEnd, msgs);
 		case TRADESPackage.ANALYSIS__ANALYSISDIAGRAM:
 			return ((InternalEList<?>) getAnalysisdiagram()).basicRemove(otherEnd, msgs);
-		case TRADESPackage.ANALYSIS__ATTACKCHAIN:
-			return ((InternalEList<?>) getAttackchain()).basicRemove(otherEnd, msgs);
 		case TRADESPackage.ANALYSIS__SCORESYSTEM:
 			return basicSetScoresystem(null, msgs);
 		}
@@ -450,8 +422,6 @@ public class AnalysisImpl extends MinimalEObjectImpl.Container implements Analys
 			return getAffectrelation();
 		case TRADESPackage.ANALYSIS__ANALYSISDIAGRAM:
 			return getAnalysisdiagram();
-		case TRADESPackage.ANALYSIS__ATTACKCHAIN:
-			return getAttackchain();
 		case TRADESPackage.ANALYSIS__SCORESYSTEM:
 			return getScoresystem();
 		}
@@ -502,10 +472,6 @@ public class AnalysisImpl extends MinimalEObjectImpl.Container implements Analys
 			getAnalysisdiagram().clear();
 			getAnalysisdiagram().addAll((Collection<? extends AnalysisDiagram>) newValue);
 			return;
-		case TRADESPackage.ANALYSIS__ATTACKCHAIN:
-			getAttackchain().clear();
-			getAttackchain().addAll((Collection<? extends AttackChain>) newValue);
-			return;
 		case TRADESPackage.ANALYSIS__SCORESYSTEM:
 			setScoresystem((ScoreSystem) newValue);
 			return;
@@ -548,9 +514,6 @@ public class AnalysisImpl extends MinimalEObjectImpl.Container implements Analys
 		case TRADESPackage.ANALYSIS__ANALYSISDIAGRAM:
 			getAnalysisdiagram().clear();
 			return;
-		case TRADESPackage.ANALYSIS__ATTACKCHAIN:
-			getAttackchain().clear();
-			return;
 		case TRADESPackage.ANALYSIS__SCORESYSTEM:
 			setScoresystem((ScoreSystem) null);
 			return;
@@ -584,8 +547,6 @@ public class AnalysisImpl extends MinimalEObjectImpl.Container implements Analys
 			return affectrelation != null && !affectrelation.isEmpty();
 		case TRADESPackage.ANALYSIS__ANALYSISDIAGRAM:
 			return analysisdiagram != null && !analysisdiagram.isEmpty();
-		case TRADESPackage.ANALYSIS__ATTACKCHAIN:
-			return attackchain != null && !attackchain.isEmpty();
 		case TRADESPackage.ANALYSIS__SCORESYSTEM:
 			return scoresystem != null;
 		}

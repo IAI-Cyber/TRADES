@@ -410,29 +410,6 @@ public class TRADESItemProviderAdapterFactory extends TRADESAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link dsm.TRADES.AttackInfo} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected AttackInfoItemProvider attackInfoItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link dsm.TRADES.AttackInfo}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createAttackInfoAdapter() {
-		if (attackInfoItemProvider == null) {
-			attackInfoItemProvider = new AttackInfoItemProvider(this);
-		}
-
-		return attackInfoItemProvider;
-	}
-
-	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -592,8 +569,6 @@ public class TRADESItemProviderAdapterFactory extends TRADESAdapterFactory
 			impactScoreItemProvider.dispose();
 		if (difficultyScoreItemProvider != null)
 			difficultyScoreItemProvider.dispose();
-		if (attackInfoItemProvider != null)
-			attackInfoItemProvider.dispose();
 	}
 
 }

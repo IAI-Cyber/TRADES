@@ -154,22 +154,13 @@ public interface TRADESPackage extends EPackage {
 	int ANALYSIS__ANALYSISDIAGRAM = 8;
 
 	/**
-	 * The feature id for the '<em><b>Attackchain</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ANALYSIS__ATTACKCHAIN = 9;
-
-	/**
 	 * The feature id for the '<em><b>Scoresystem</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ANALYSIS__SCORESYSTEM = 10;
+	int ANALYSIS__SCORESYSTEM = 9;
 
 	/**
 	 * The number of structural features of the '<em>Analysis</em>' class.
@@ -178,7 +169,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ANALYSIS_FEATURE_COUNT = 11;
+	int ANALYSIS_FEATURE_COUNT = 10;
 
 	/**
 	 * The number of operations of the '<em>Analysis</em>' class.
@@ -554,13 +545,13 @@ public interface TRADESPackage extends EPackage {
 	int THREAT_ALLOCATION_RELATION__THREAT_RELATED = 7;
 
 	/**
-	 * The feature id for the '<em><b>Attackinfo</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Attack Chains</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int THREAT_ALLOCATION_RELATION__ATTACKINFO = 8;
+	int THREAT_ALLOCATION_RELATION__ATTACK_CHAINS = 8;
 
 	/**
 	 * The number of structural features of the '<em>Threat Allocation Relation</em>' class.
@@ -838,13 +829,13 @@ public interface TRADESPackage extends EPackage {
 	int ATTACK_CHAIN = 9;
 
 	/**
-	 * The feature id for the '<em><b>Attackchainstep</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Attackchain Steps</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ATTACK_CHAIN__ATTACKCHAINSTEP = 0;
+	int ATTACK_CHAIN__ATTACKCHAIN_STEPS = 0;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -856,31 +847,13 @@ public interface TRADESPackage extends EPackage {
 	int ATTACK_CHAIN__NAME = 1;
 
 	/**
-	 * The feature id for the '<em><b>Start</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATTACK_CHAIN__START = 2;
-
-	/**
-	 * The feature id for the '<em><b>End</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATTACK_CHAIN__END = 3;
-
-	/**
 	 * The number of structural features of the '<em>Attack Chain</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ATTACK_CHAIN_FEATURE_COUNT = 4;
+	int ATTACK_CHAIN_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Attack Chain</em>' class.
@@ -911,13 +884,13 @@ public interface TRADESPackage extends EPackage {
 	int ATTACK_CHAIN_STEP__STEP_NUM = 0;
 
 	/**
-	 * The feature id for the '<em><b>Threatallocationrelation</b></em>' reference.
+	 * The feature id for the '<em><b>Threat Allocation Relation</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ATTACK_CHAIN_STEP__THREATALLOCATIONRELATION = 1;
+	int ATTACK_CHAIN_STEP__THREAT_ALLOCATION_RELATION = 1;
 
 	/**
 	 * The feature id for the '<em><b>Difficulty</b></em>' attribute.
@@ -938,13 +911,13 @@ public interface TRADESPackage extends EPackage {
 	int ATTACK_CHAIN_STEP__IMPACT_DESCRIPTION = 3;
 
 	/**
-	 * The feature id for the '<em><b>Nexts</b></em>' reference list.
+	 * The feature id for the '<em><b>Next</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ATTACK_CHAIN_STEP__NEXTS = 4;
+	int ATTACK_CHAIN_STEP__NEXT = 4;
 
 	/**
 	 * The feature id for the '<em><b>Previous</b></em>' reference list.
@@ -1121,52 +1094,6 @@ public interface TRADESPackage extends EPackage {
 	int DIFFICULTY_SCORE_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link dsm.TRADES.impl.AttackInfoImpl <em>Attack Info</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see dsm.TRADES.impl.AttackInfoImpl
-	 * @see dsm.TRADES.impl.TRADESPackageImpl#getAttackInfo()
-	 * @generated
-	 */
-	int ATTACK_INFO = 14;
-
-	/**
-	 * The feature id for the '<em><b>Step Num</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATTACK_INFO__STEP_NUM = 0;
-
-	/**
-	 * The feature id for the '<em><b>Attack Vector</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATTACK_INFO__ATTACK_VECTOR = 1;
-
-	/**
-	 * The number of structural features of the '<em>Attack Info</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATTACK_INFO_FEATURE_COUNT = 2;
-
-	/**
-	 * The number of operations of the '<em>Attack Info</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATTACK_INFO_OPERATION_COUNT = 0;
-
-	/**
 	 * The meta object id for the '{@link dsm.TRADES.AssessmentENUM <em>Assessment ENUM</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1174,7 +1101,7 @@ public interface TRADESPackage extends EPackage {
 	 * @see dsm.TRADES.impl.TRADESPackageImpl#getAssessmentENUM()
 	 * @generated
 	 */
-	int ASSESSMENT_ENUM = 15;
+	int ASSESSMENT_ENUM = 14;
 
 	/**
 	 * The meta object id for the '{@link dsm.TRADES.AffectedENUM <em>Affected ENUM</em>}' enum.
@@ -1184,7 +1111,7 @@ public interface TRADESPackage extends EPackage {
 	 * @see dsm.TRADES.impl.TRADESPackageImpl#getAffectedENUM()
 	 * @generated
 	 */
-	int AFFECTED_ENUM = 16;
+	int AFFECTED_ENUM = 15;
 
 	/**
 	 * The meta object id for the '{@link dsm.TRADES.threatTypeENUM <em>threat Type ENUM</em>}' enum.
@@ -1194,7 +1121,7 @@ public interface TRADESPackage extends EPackage {
 	 * @see dsm.TRADES.impl.TRADESPackageImpl#getthreatTypeENUM()
 	 * @generated
 	 */
-	int THREAT_TYPE_ENUM = 17;
+	int THREAT_TYPE_ENUM = 16;
 
 	/**
 	 * Returns the meta object for class '{@link dsm.TRADES.Analysis <em>Analysis</em>}'.
@@ -1304,17 +1231,6 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getAnalysis_Analysisdiagram();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link dsm.TRADES.Analysis#getAttackchain <em>Attackchain</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Attackchain</em>'.
-	 * @see dsm.TRADES.Analysis#getAttackchain()
-	 * @see #getAnalysis()
-	 * @generated
-	 */
-	EReference getAnalysis_Attackchain();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link dsm.TRADES.Analysis#getScoresystem <em>Scoresystem</em>}'.
@@ -1698,15 +1614,15 @@ public interface TRADESPackage extends EPackage {
 	EReference getThreatAllocationRelation_ThreatRelated();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link dsm.TRADES.ThreatAllocationRelation#getAttackinfo <em>Attackinfo</em>}'.
+	 * Returns the meta object for the containment reference list '{@link dsm.TRADES.ThreatAllocationRelation#getAttackChains <em>Attack Chains</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Attackinfo</em>'.
-	 * @see dsm.TRADES.ThreatAllocationRelation#getAttackinfo()
+	 * @return the meta object for the containment reference list '<em>Attack Chains</em>'.
+	 * @see dsm.TRADES.ThreatAllocationRelation#getAttackChains()
 	 * @see #getThreatAllocationRelation()
 	 * @generated
 	 */
-	EReference getThreatAllocationRelation_Attackinfo();
+	EReference getThreatAllocationRelation_AttackChains();
 
 	/**
 	 * Returns the meta object for class '{@link dsm.TRADES.ThreatMitigationRelation <em>Threat Mitigation Relation</em>}'.
@@ -1924,15 +1840,15 @@ public interface TRADESPackage extends EPackage {
 	EClass getAttackChain();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link dsm.TRADES.AttackChain#getAttackchainstep <em>Attackchainstep</em>}'.
+	 * Returns the meta object for the containment reference list '{@link dsm.TRADES.AttackChain#getAttackchainSteps <em>Attackchain Steps</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Attackchainstep</em>'.
-	 * @see dsm.TRADES.AttackChain#getAttackchainstep()
+	 * @return the meta object for the containment reference list '<em>Attackchain Steps</em>'.
+	 * @see dsm.TRADES.AttackChain#getAttackchainSteps()
 	 * @see #getAttackChain()
 	 * @generated
 	 */
-	EReference getAttackChain_Attackchainstep();
+	EReference getAttackChain_AttackchainSteps();
 
 	/**
 	 * Returns the meta object for the attribute '{@link dsm.TRADES.AttackChain#getName <em>Name</em>}'.
@@ -1944,28 +1860,6 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getAttackChain_Name();
-
-	/**
-	 * Returns the meta object for the reference '{@link dsm.TRADES.AttackChain#getStart <em>Start</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Start</em>'.
-	 * @see dsm.TRADES.AttackChain#getStart()
-	 * @see #getAttackChain()
-	 * @generated
-	 */
-	EReference getAttackChain_Start();
-
-	/**
-	 * Returns the meta object for the reference '{@link dsm.TRADES.AttackChain#getEnd <em>End</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>End</em>'.
-	 * @see dsm.TRADES.AttackChain#getEnd()
-	 * @see #getAttackChain()
-	 * @generated
-	 */
-	EReference getAttackChain_End();
 
 	/**
 	 * Returns the meta object for class '{@link dsm.TRADES.AttackChainStep <em>Attack Chain Step</em>}'.
@@ -1989,15 +1883,15 @@ public interface TRADESPackage extends EPackage {
 	EAttribute getAttackChainStep_StepNum();
 
 	/**
-	 * Returns the meta object for the reference '{@link dsm.TRADES.AttackChainStep#getThreatallocationrelation <em>Threatallocationrelation</em>}'.
+	 * Returns the meta object for the reference '{@link dsm.TRADES.AttackChainStep#getThreatAllocationRelation <em>Threat Allocation Relation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Threatallocationrelation</em>'.
-	 * @see dsm.TRADES.AttackChainStep#getThreatallocationrelation()
+	 * @return the meta object for the reference '<em>Threat Allocation Relation</em>'.
+	 * @see dsm.TRADES.AttackChainStep#getThreatAllocationRelation()
 	 * @see #getAttackChainStep()
 	 * @generated
 	 */
-	EReference getAttackChainStep_Threatallocationrelation();
+	EReference getAttackChainStep_ThreatAllocationRelation();
 
 	/**
 	 * Returns the meta object for the attribute '{@link dsm.TRADES.AttackChainStep#getDifficulty <em>Difficulty</em>}'.
@@ -2022,15 +1916,15 @@ public interface TRADESPackage extends EPackage {
 	EAttribute getAttackChainStep_ImpactDescription();
 
 	/**
-	 * Returns the meta object for the reference list '{@link dsm.TRADES.AttackChainStep#getNexts <em>Nexts</em>}'.
+	 * Returns the meta object for the reference list '{@link dsm.TRADES.AttackChainStep#getNext <em>Next</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Nexts</em>'.
-	 * @see dsm.TRADES.AttackChainStep#getNexts()
+	 * @return the meta object for the reference list '<em>Next</em>'.
+	 * @see dsm.TRADES.AttackChainStep#getNext()
 	 * @see #getAttackChainStep()
 	 * @generated
 	 */
-	EReference getAttackChainStep_Nexts();
+	EReference getAttackChainStep_Next();
 
 	/**
 	 * Returns the meta object for the reference list '{@link dsm.TRADES.AttackChainStep#getPrevious <em>Previous</em>}'.
@@ -2149,38 +2043,6 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getDifficultyScore_Difficulty();
-
-	/**
-	 * Returns the meta object for class '{@link dsm.TRADES.AttackInfo <em>Attack Info</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Attack Info</em>'.
-	 * @see dsm.TRADES.AttackInfo
-	 * @generated
-	 */
-	EClass getAttackInfo();
-
-	/**
-	 * Returns the meta object for the attribute '{@link dsm.TRADES.AttackInfo#getStepNum <em>Step Num</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Step Num</em>'.
-	 * @see dsm.TRADES.AttackInfo#getStepNum()
-	 * @see #getAttackInfo()
-	 * @generated
-	 */
-	EAttribute getAttackInfo_StepNum();
-
-	/**
-	 * Returns the meta object for the reference '{@link dsm.TRADES.AttackInfo#getAttackVector <em>Attack Vector</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Attack Vector</em>'.
-	 * @see dsm.TRADES.AttackInfo#getAttackVector()
-	 * @see #getAttackInfo()
-	 * @generated
-	 */
-	EReference getAttackInfo_AttackVector();
 
 	/**
 	 * Returns the meta object for enum '{@link dsm.TRADES.AssessmentENUM <em>Assessment ENUM</em>}'.
@@ -2316,14 +2178,6 @@ public interface TRADESPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ANALYSIS__ANALYSISDIAGRAM = eINSTANCE.getAnalysis_Analysisdiagram();
-
-		/**
-		 * The meta object literal for the '<em><b>Attackchain</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ANALYSIS__ATTACKCHAIN = eINSTANCE.getAnalysis_Attackchain();
 
 		/**
 		 * The meta object literal for the '<em><b>Scoresystem</b></em>' containment reference feature.
@@ -2616,12 +2470,12 @@ public interface TRADESPackage extends EPackage {
 		EReference THREAT_ALLOCATION_RELATION__THREAT_RELATED = eINSTANCE.getThreatAllocationRelation_ThreatRelated();
 
 		/**
-		 * The meta object literal for the '<em><b>Attackinfo</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Attack Chains</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference THREAT_ALLOCATION_RELATION__ATTACKINFO = eINSTANCE.getThreatAllocationRelation_Attackinfo();
+		EReference THREAT_ALLOCATION_RELATION__ATTACK_CHAINS = eINSTANCE.getThreatAllocationRelation_AttackChains();
 
 		/**
 		 * The meta object literal for the '{@link dsm.TRADES.impl.ThreatMitigationRelationImpl <em>Threat Mitigation Relation</em>}' class.
@@ -2794,12 +2648,12 @@ public interface TRADESPackage extends EPackage {
 		EClass ATTACK_CHAIN = eINSTANCE.getAttackChain();
 
 		/**
-		 * The meta object literal for the '<em><b>Attackchainstep</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Attackchain Steps</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ATTACK_CHAIN__ATTACKCHAINSTEP = eINSTANCE.getAttackChain_Attackchainstep();
+		EReference ATTACK_CHAIN__ATTACKCHAIN_STEPS = eINSTANCE.getAttackChain_AttackchainSteps();
 
 		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -2808,22 +2662,6 @@ public interface TRADESPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ATTACK_CHAIN__NAME = eINSTANCE.getAttackChain_Name();
-
-		/**
-		 * The meta object literal for the '<em><b>Start</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ATTACK_CHAIN__START = eINSTANCE.getAttackChain_Start();
-
-		/**
-		 * The meta object literal for the '<em><b>End</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ATTACK_CHAIN__END = eINSTANCE.getAttackChain_End();
 
 		/**
 		 * The meta object literal for the '{@link dsm.TRADES.impl.AttackChainStepImpl <em>Attack Chain Step</em>}' class.
@@ -2844,13 +2682,13 @@ public interface TRADESPackage extends EPackage {
 		EAttribute ATTACK_CHAIN_STEP__STEP_NUM = eINSTANCE.getAttackChainStep_StepNum();
 
 		/**
-		 * The meta object literal for the '<em><b>Threatallocationrelation</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Threat Allocation Relation</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ATTACK_CHAIN_STEP__THREATALLOCATIONRELATION = eINSTANCE
-				.getAttackChainStep_Threatallocationrelation();
+		EReference ATTACK_CHAIN_STEP__THREAT_ALLOCATION_RELATION = eINSTANCE
+				.getAttackChainStep_ThreatAllocationRelation();
 
 		/**
 		 * The meta object literal for the '<em><b>Difficulty</b></em>' attribute feature.
@@ -2869,12 +2707,12 @@ public interface TRADESPackage extends EPackage {
 		EAttribute ATTACK_CHAIN_STEP__IMPACT_DESCRIPTION = eINSTANCE.getAttackChainStep_ImpactDescription();
 
 		/**
-		 * The meta object literal for the '<em><b>Nexts</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Next</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ATTACK_CHAIN_STEP__NEXTS = eINSTANCE.getAttackChainStep_Nexts();
+		EReference ATTACK_CHAIN_STEP__NEXT = eINSTANCE.getAttackChainStep_Next();
 
 		/**
 		 * The meta object literal for the '<em><b>Previous</b></em>' reference list feature.
@@ -2969,32 +2807,6 @@ public interface TRADESPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute DIFFICULTY_SCORE__DIFFICULTY = eINSTANCE.getDifficultyScore_Difficulty();
-
-		/**
-		 * The meta object literal for the '{@link dsm.TRADES.impl.AttackInfoImpl <em>Attack Info</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see dsm.TRADES.impl.AttackInfoImpl
-		 * @see dsm.TRADES.impl.TRADESPackageImpl#getAttackInfo()
-		 * @generated
-		 */
-		EClass ATTACK_INFO = eINSTANCE.getAttackInfo();
-
-		/**
-		 * The meta object literal for the '<em><b>Step Num</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ATTACK_INFO__STEP_NUM = eINSTANCE.getAttackInfo_StepNum();
-
-		/**
-		 * The meta object literal for the '<em><b>Attack Vector</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ATTACK_INFO__ATTACK_VECTOR = eINSTANCE.getAttackInfo_AttackVector();
 
 		/**
 		 * The meta object literal for the '{@link dsm.TRADES.AssessmentENUM <em>Assessment ENUM</em>}' enum.

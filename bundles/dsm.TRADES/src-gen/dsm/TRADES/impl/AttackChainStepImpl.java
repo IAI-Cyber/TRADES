@@ -28,10 +28,10 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link dsm.TRADES.impl.AttackChainStepImpl#getStepNum <em>Step Num</em>}</li>
- *   <li>{@link dsm.TRADES.impl.AttackChainStepImpl#getThreatallocationrelation <em>Threatallocationrelation</em>}</li>
+ *   <li>{@link dsm.TRADES.impl.AttackChainStepImpl#getThreatAllocationRelation <em>Threat Allocation Relation</em>}</li>
  *   <li>{@link dsm.TRADES.impl.AttackChainStepImpl#getDifficulty <em>Difficulty</em>}</li>
  *   <li>{@link dsm.TRADES.impl.AttackChainStepImpl#getImpactDescription <em>Impact Description</em>}</li>
- *   <li>{@link dsm.TRADES.impl.AttackChainStepImpl#getNexts <em>Nexts</em>}</li>
+ *   <li>{@link dsm.TRADES.impl.AttackChainStepImpl#getNext <em>Next</em>}</li>
  *   <li>{@link dsm.TRADES.impl.AttackChainStepImpl#getPrevious <em>Previous</em>}</li>
  * </ul>
  *
@@ -49,14 +49,14 @@ public class AttackChainStepImpl extends MinimalEObjectImpl.Container implements
 	protected static final String STEP_NUM_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getThreatallocationrelation() <em>Threatallocationrelation</em>}' reference.
+	 * The cached value of the '{@link #getThreatAllocationRelation() <em>Threat Allocation Relation</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getThreatallocationrelation()
+	 * @see #getThreatAllocationRelation()
 	 * @generated
 	 * @ordered
 	 */
-	protected ThreatAllocationRelation threatallocationrelation;
+	protected ThreatAllocationRelation threatAllocationRelation;
 
 	/**
 	 * The default value of the '{@link #getDifficulty() <em>Difficulty</em>}' attribute.
@@ -99,14 +99,14 @@ public class AttackChainStepImpl extends MinimalEObjectImpl.Container implements
 	protected String impactDescription = IMPACT_DESCRIPTION_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getNexts() <em>Nexts</em>}' reference list.
+	 * The cached value of the '{@link #getNext() <em>Next</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getNexts()
+	 * @see #getNext()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<AttackChainStep> nexts;
+	protected EList<AttackChainStep> next;
 
 	/**
 	 * The cached value of the '{@link #getPrevious() <em>Previous</em>}' reference list.
@@ -182,7 +182,7 @@ public class AttackChainStepImpl extends MinimalEObjectImpl.Container implements
 	private int getSubNum(AttackChainStep step) {
 		int index = -1;
 		for (AttackChainStep previous : step.getPrevious()) {
-			index = Math.max(index, previous.getNexts().indexOf(step));
+			index = Math.max(index, previous.getNext().indexOf(step));
 		}
 		return index;
 	}
@@ -205,18 +205,18 @@ public class AttackChainStepImpl extends MinimalEObjectImpl.Container implements
 	 * @generated
 	 */
 	@Override
-	public ThreatAllocationRelation getThreatallocationrelation() {
-		if (threatallocationrelation != null && threatallocationrelation.eIsProxy()) {
-			InternalEObject oldThreatallocationrelation = (InternalEObject) threatallocationrelation;
-			threatallocationrelation = (ThreatAllocationRelation) eResolveProxy(oldThreatallocationrelation);
-			if (threatallocationrelation != oldThreatallocationrelation) {
+	public ThreatAllocationRelation getThreatAllocationRelation() {
+		if (threatAllocationRelation != null && threatAllocationRelation.eIsProxy()) {
+			InternalEObject oldThreatAllocationRelation = (InternalEObject) threatAllocationRelation;
+			threatAllocationRelation = (ThreatAllocationRelation) eResolveProxy(oldThreatAllocationRelation);
+			if (threatAllocationRelation != oldThreatAllocationRelation) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							TRADESPackage.ATTACK_CHAIN_STEP__THREATALLOCATIONRELATION, oldThreatallocationrelation,
-							threatallocationrelation));
+							TRADESPackage.ATTACK_CHAIN_STEP__THREAT_ALLOCATION_RELATION, oldThreatAllocationRelation,
+							threatAllocationRelation));
 			}
 		}
-		return threatallocationrelation;
+		return threatAllocationRelation;
 	}
 
 	/**
@@ -224,8 +224,8 @@ public class AttackChainStepImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ThreatAllocationRelation basicGetThreatallocationrelation() {
-		return threatallocationrelation;
+	public ThreatAllocationRelation basicGetThreatAllocationRelation() {
+		return threatAllocationRelation;
 	}
 
 	/**
@@ -234,13 +234,13 @@ public class AttackChainStepImpl extends MinimalEObjectImpl.Container implements
 	 * @generated
 	 */
 	@Override
-	public void setThreatallocationrelation(ThreatAllocationRelation newThreatallocationrelation) {
-		ThreatAllocationRelation oldThreatallocationrelation = threatallocationrelation;
-		threatallocationrelation = newThreatallocationrelation;
+	public void setThreatAllocationRelation(ThreatAllocationRelation newThreatAllocationRelation) {
+		ThreatAllocationRelation oldThreatAllocationRelation = threatAllocationRelation;
+		threatAllocationRelation = newThreatAllocationRelation;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET,
-					TRADESPackage.ATTACK_CHAIN_STEP__THREATALLOCATIONRELATION, oldThreatallocationrelation,
-					threatallocationrelation));
+					TRADESPackage.ATTACK_CHAIN_STEP__THREAT_ALLOCATION_RELATION, oldThreatAllocationRelation,
+					threatAllocationRelation));
 	}
 
 	/**
@@ -297,12 +297,12 @@ public class AttackChainStepImpl extends MinimalEObjectImpl.Container implements
 	 * @generated
 	 */
 	@Override
-	public EList<AttackChainStep> getNexts() {
-		if (nexts == null) {
-			nexts = new EObjectWithInverseResolvingEList.ManyInverse<AttackChainStep>(AttackChainStep.class, this,
-					TRADESPackage.ATTACK_CHAIN_STEP__NEXTS, TRADESPackage.ATTACK_CHAIN_STEP__PREVIOUS);
+	public EList<AttackChainStep> getNext() {
+		if (next == null) {
+			next = new EObjectWithInverseResolvingEList.ManyInverse<AttackChainStep>(AttackChainStep.class, this,
+					TRADESPackage.ATTACK_CHAIN_STEP__NEXT, TRADESPackage.ATTACK_CHAIN_STEP__PREVIOUS);
 		}
-		return nexts;
+		return next;
 	}
 
 	/**
@@ -314,7 +314,7 @@ public class AttackChainStepImpl extends MinimalEObjectImpl.Container implements
 	public EList<AttackChainStep> getPrevious() {
 		if (previous == null) {
 			previous = new EObjectWithInverseResolvingEList.ManyInverse<AttackChainStep>(AttackChainStep.class, this,
-					TRADESPackage.ATTACK_CHAIN_STEP__PREVIOUS, TRADESPackage.ATTACK_CHAIN_STEP__NEXTS);
+					TRADESPackage.ATTACK_CHAIN_STEP__PREVIOUS, TRADESPackage.ATTACK_CHAIN_STEP__NEXT);
 		}
 		return previous;
 	}
@@ -328,8 +328,8 @@ public class AttackChainStepImpl extends MinimalEObjectImpl.Container implements
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case TRADESPackage.ATTACK_CHAIN_STEP__NEXTS:
-			return ((InternalEList<InternalEObject>) (InternalEList<?>) getNexts()).basicAdd(otherEnd, msgs);
+		case TRADESPackage.ATTACK_CHAIN_STEP__NEXT:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getNext()).basicAdd(otherEnd, msgs);
 		case TRADESPackage.ATTACK_CHAIN_STEP__PREVIOUS:
 			return ((InternalEList<InternalEObject>) (InternalEList<?>) getPrevious()).basicAdd(otherEnd, msgs);
 		}
@@ -344,8 +344,8 @@ public class AttackChainStepImpl extends MinimalEObjectImpl.Container implements
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case TRADESPackage.ATTACK_CHAIN_STEP__NEXTS:
-			return ((InternalEList<?>) getNexts()).basicRemove(otherEnd, msgs);
+		case TRADESPackage.ATTACK_CHAIN_STEP__NEXT:
+			return ((InternalEList<?>) getNext()).basicRemove(otherEnd, msgs);
 		case TRADESPackage.ATTACK_CHAIN_STEP__PREVIOUS:
 			return ((InternalEList<?>) getPrevious()).basicRemove(otherEnd, msgs);
 		}
@@ -362,16 +362,16 @@ public class AttackChainStepImpl extends MinimalEObjectImpl.Container implements
 		switch (featureID) {
 		case TRADESPackage.ATTACK_CHAIN_STEP__STEP_NUM:
 			return getStepNum();
-		case TRADESPackage.ATTACK_CHAIN_STEP__THREATALLOCATIONRELATION:
+		case TRADESPackage.ATTACK_CHAIN_STEP__THREAT_ALLOCATION_RELATION:
 			if (resolve)
-				return getThreatallocationrelation();
-			return basicGetThreatallocationrelation();
+				return getThreatAllocationRelation();
+			return basicGetThreatAllocationRelation();
 		case TRADESPackage.ATTACK_CHAIN_STEP__DIFFICULTY:
 			return getDifficulty();
 		case TRADESPackage.ATTACK_CHAIN_STEP__IMPACT_DESCRIPTION:
 			return getImpactDescription();
-		case TRADESPackage.ATTACK_CHAIN_STEP__NEXTS:
-			return getNexts();
+		case TRADESPackage.ATTACK_CHAIN_STEP__NEXT:
+			return getNext();
 		case TRADESPackage.ATTACK_CHAIN_STEP__PREVIOUS:
 			return getPrevious();
 		}
@@ -390,8 +390,8 @@ public class AttackChainStepImpl extends MinimalEObjectImpl.Container implements
 		case TRADESPackage.ATTACK_CHAIN_STEP__STEP_NUM:
 			setStepNum((String) newValue);
 			return;
-		case TRADESPackage.ATTACK_CHAIN_STEP__THREATALLOCATIONRELATION:
-			setThreatallocationrelation((ThreatAllocationRelation) newValue);
+		case TRADESPackage.ATTACK_CHAIN_STEP__THREAT_ALLOCATION_RELATION:
+			setThreatAllocationRelation((ThreatAllocationRelation) newValue);
 			return;
 		case TRADESPackage.ATTACK_CHAIN_STEP__DIFFICULTY:
 			setDifficulty((Integer) newValue);
@@ -399,9 +399,9 @@ public class AttackChainStepImpl extends MinimalEObjectImpl.Container implements
 		case TRADESPackage.ATTACK_CHAIN_STEP__IMPACT_DESCRIPTION:
 			setImpactDescription((String) newValue);
 			return;
-		case TRADESPackage.ATTACK_CHAIN_STEP__NEXTS:
-			getNexts().clear();
-			getNexts().addAll((Collection<? extends AttackChainStep>) newValue);
+		case TRADESPackage.ATTACK_CHAIN_STEP__NEXT:
+			getNext().clear();
+			getNext().addAll((Collection<? extends AttackChainStep>) newValue);
 			return;
 		case TRADESPackage.ATTACK_CHAIN_STEP__PREVIOUS:
 			getPrevious().clear();
@@ -422,8 +422,8 @@ public class AttackChainStepImpl extends MinimalEObjectImpl.Container implements
 		case TRADESPackage.ATTACK_CHAIN_STEP__STEP_NUM:
 			setStepNum(STEP_NUM_EDEFAULT);
 			return;
-		case TRADESPackage.ATTACK_CHAIN_STEP__THREATALLOCATIONRELATION:
-			setThreatallocationrelation((ThreatAllocationRelation) null);
+		case TRADESPackage.ATTACK_CHAIN_STEP__THREAT_ALLOCATION_RELATION:
+			setThreatAllocationRelation((ThreatAllocationRelation) null);
 			return;
 		case TRADESPackage.ATTACK_CHAIN_STEP__DIFFICULTY:
 			setDifficulty(DIFFICULTY_EDEFAULT);
@@ -431,8 +431,8 @@ public class AttackChainStepImpl extends MinimalEObjectImpl.Container implements
 		case TRADESPackage.ATTACK_CHAIN_STEP__IMPACT_DESCRIPTION:
 			setImpactDescription(IMPACT_DESCRIPTION_EDEFAULT);
 			return;
-		case TRADESPackage.ATTACK_CHAIN_STEP__NEXTS:
-			getNexts().clear();
+		case TRADESPackage.ATTACK_CHAIN_STEP__NEXT:
+			getNext().clear();
 			return;
 		case TRADESPackage.ATTACK_CHAIN_STEP__PREVIOUS:
 			getPrevious().clear();
@@ -451,15 +451,15 @@ public class AttackChainStepImpl extends MinimalEObjectImpl.Container implements
 		switch (featureID) {
 		case TRADESPackage.ATTACK_CHAIN_STEP__STEP_NUM:
 			return STEP_NUM_EDEFAULT == null ? getStepNum() != null : !STEP_NUM_EDEFAULT.equals(getStepNum());
-		case TRADESPackage.ATTACK_CHAIN_STEP__THREATALLOCATIONRELATION:
-			return threatallocationrelation != null;
+		case TRADESPackage.ATTACK_CHAIN_STEP__THREAT_ALLOCATION_RELATION:
+			return threatAllocationRelation != null;
 		case TRADESPackage.ATTACK_CHAIN_STEP__DIFFICULTY:
 			return difficulty != DIFFICULTY_EDEFAULT;
 		case TRADESPackage.ATTACK_CHAIN_STEP__IMPACT_DESCRIPTION:
 			return IMPACT_DESCRIPTION_EDEFAULT == null ? impactDescription != null
 					: !IMPACT_DESCRIPTION_EDEFAULT.equals(impactDescription);
-		case TRADESPackage.ATTACK_CHAIN_STEP__NEXTS:
-			return nexts != null && !nexts.isEmpty();
+		case TRADESPackage.ATTACK_CHAIN_STEP__NEXT:
+			return next != null && !next.isEmpty();
 		case TRADESPackage.ATTACK_CHAIN_STEP__PREVIOUS:
 			return previous != null && !previous.isEmpty();
 		}

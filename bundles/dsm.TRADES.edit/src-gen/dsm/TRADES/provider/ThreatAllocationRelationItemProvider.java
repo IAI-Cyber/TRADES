@@ -189,7 +189,7 @@ public class ThreatAllocationRelationItemProvider extends ItemProviderAdapter im
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(TRADESPackage.Literals.THREAT_ALLOCATION_RELATION__THREAT_DECOMPOSED);
-			childrenFeatures.add(TRADESPackage.Literals.THREAT_ALLOCATION_RELATION__ATTACKINFO);
+			childrenFeatures.add(TRADESPackage.Literals.THREAT_ALLOCATION_RELATION__ATTACK_CHAINS);
 		}
 		return childrenFeatures;
 	}
@@ -258,7 +258,7 @@ public class ThreatAllocationRelationItemProvider extends ItemProviderAdapter im
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		case TRADESPackage.THREAT_ALLOCATION_RELATION__THREAT_DECOMPOSED:
-		case TRADESPackage.THREAT_ALLOCATION_RELATION__ATTACKINFO:
+		case TRADESPackage.THREAT_ALLOCATION_RELATION__ATTACK_CHAINS:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -280,8 +280,8 @@ public class ThreatAllocationRelationItemProvider extends ItemProviderAdapter im
 				.add(createChildParameter(TRADESPackage.Literals.THREAT_ALLOCATION_RELATION__THREAT_DECOMPOSED,
 						TRADESFactory.eINSTANCE.createThreatAllocationRelation()));
 
-		newChildDescriptors.add(createChildParameter(TRADESPackage.Literals.THREAT_ALLOCATION_RELATION__ATTACKINFO,
-				TRADESFactory.eINSTANCE.createAttackInfo()));
+		newChildDescriptors.add(createChildParameter(TRADESPackage.Literals.THREAT_ALLOCATION_RELATION__ATTACK_CHAINS,
+				TRADESFactory.eINSTANCE.createAttackChain()));
 	}
 
 	/**

@@ -1,10 +1,13 @@
 package TRADES.design;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
 
-import dsm.TRADES.AttackChain;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.sirius.business.api.session.Session;
+
 import dsm.TRADES.AttackChainStep;
 import dsm.TRADES.ThreatAllocationRelation;
 
@@ -14,7 +17,7 @@ public class DiagramService {
 
 		String label = step.getStepNum();
 
-		ThreatAllocationRelation allocation = step.getThreatallocationrelation();
+		ThreatAllocationRelation allocation = step.getThreatAllocationRelation();
 
 		label += " : " + getAllocLabel(allocation);
 
@@ -32,29 +35,49 @@ public class DiagramService {
 
 		return threatLabel + "->" + componentLabel;
 	}
-	
-	public List<AttackChainStep> getLastSteps(AttackChain chain){
-		if(chain.getStart() == null) {
-			return Collections.emptyList();
-		}else {
-			List<AttackChainStep> leaves = new ArrayList<>();
-			collectLeaves(chain.getStart(),leaves);
-			return leaves;
+
+	public void printAllVariable(EObject context) {
+
+		Map<String, ?> variableMap = Session.of(context).get().getInterpreter().getVariables();
+		for (Entry<String, ?> entry : variableMap.entrySet()) {
+			System.out.println(entry.getKey() + "->" + entry.getValue());
 		}
 	}
 
-	private void collectLeaves(AttackChainStep start, List<AttackChainStep> leaves) {
-		if(start == null) {
+	public Set<AttackChainStep> getAllPrevious(AttackChainStep step) {
+		Set<AttackChainStep> result = new HashSet<>();
+		getAllPrevious(step, result, 0);
+		return result;
+	}
+
+	public void getAllPrevious(AttackChainStep step, Set<AttackChainStep> collector, int stepNb) {
+		if (stepNb > 10000) {
 			return;
 		}
-		for(AttackChainStep step : start.getNexts()) {
-			if(step.getNexts().isEmpty()) {
-				leaves.add(step);
-			}else {
-				collectLeaves(step, leaves);
+		for (AttackChainStep previous : step.getPrevious()) {
+			if (!collector.contains(previous)) {
+				collector.add(previous);
+				getAllPrevious(previous, collector, stepNb++);
 			}
 		}
-		
+	}
+
+	public Set<AttackChainStep> getAllNext(AttackChainStep step) {
+		Set<AttackChainStep> result = new HashSet<>();
+		getAllNext(step, result, 0);
+		return result;
+	}
+
+	public void getAllNext(AttackChainStep step, Set<AttackChainStep> collector, int stepNb) {
+		if (stepNb > 10000) {
+			return;
+		}
+		for (AttackChainStep next : step.getNext()) {
+			if (!collector.contains(next)) {
+				collector.add(next);
+				getAllPrevious(next, collector, stepNb++);
+			}
+		}
 	}
 
 }

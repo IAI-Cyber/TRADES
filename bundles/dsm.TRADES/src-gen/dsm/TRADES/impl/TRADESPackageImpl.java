@@ -9,7 +9,6 @@ import dsm.TRADES.AnalysisDiagram;
 import dsm.TRADES.AssessmentENUM;
 import dsm.TRADES.AttackChain;
 import dsm.TRADES.AttackChainStep;
-import dsm.TRADES.AttackInfo;
 import dsm.TRADES.Component;
 import dsm.TRADES.Control;
 import dsm.TRADES.Data;
@@ -135,13 +134,6 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * @generated
 	 */
 	private EClass difficultyScoreEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass attackInfoEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -334,18 +326,8 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getAnalysis_Attackchain() {
-		return (EReference) analysisEClass.getEStructuralFeatures().get(9);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EReference getAnalysis_Scoresystem() {
-		return (EReference) analysisEClass.getEStructuralFeatures().get(10);
+		return (EReference) analysisEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -694,7 +676,7 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getThreatAllocationRelation_Attackinfo() {
+	public EReference getThreatAllocationRelation_AttackChains() {
 		return (EReference) threatAllocationRelationEClass.getEStructuralFeatures().get(8);
 	}
 
@@ -904,7 +886,7 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getAttackChain_Attackchainstep() {
+	public EReference getAttackChain_AttackchainSteps() {
 		return (EReference) attackChainEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -916,26 +898,6 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	@Override
 	public EAttribute getAttackChain_Name() {
 		return (EAttribute) attackChainEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getAttackChain_Start() {
-		return (EReference) attackChainEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getAttackChain_End() {
-		return (EReference) attackChainEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -964,7 +926,7 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getAttackChainStep_Threatallocationrelation() {
+	public EReference getAttackChainStep_ThreatAllocationRelation() {
 		return (EReference) attackChainStepEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -994,7 +956,7 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getAttackChainStep_Nexts() {
+	public EReference getAttackChainStep_Next() {
 		return (EReference) attackChainStepEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -1114,36 +1076,6 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getAttackInfo() {
-		return attackInfoEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getAttackInfo_StepNum() {
-		return (EAttribute) attackInfoEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getAttackInfo_AttackVector() {
-		return (EReference) attackInfoEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EEnum getAssessmentENUM() {
 		return assessmentENUMEEnum;
 	}
@@ -1208,7 +1140,6 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		createEReference(analysisEClass, ANALYSIS__DATA);
 		createEReference(analysisEClass, ANALYSIS__AFFECTRELATION);
 		createEReference(analysisEClass, ANALYSIS__ANALYSISDIAGRAM);
-		createEReference(analysisEClass, ANALYSIS__ATTACKCHAIN);
 		createEReference(analysisEClass, ANALYSIS__SCORESYSTEM);
 
 		threatEClass = createEClass(THREAT);
@@ -1248,7 +1179,7 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		createEReference(threatAllocationRelationEClass, THREAT_ALLOCATION_RELATION__DIFFICULTYSCORE);
 		createEReference(threatAllocationRelationEClass, THREAT_ALLOCATION_RELATION__THREAT_DECOMPOSED);
 		createEReference(threatAllocationRelationEClass, THREAT_ALLOCATION_RELATION__THREAT_RELATED);
-		createEReference(threatAllocationRelationEClass, THREAT_ALLOCATION_RELATION__ATTACKINFO);
+		createEReference(threatAllocationRelationEClass, THREAT_ALLOCATION_RELATION__ATTACK_CHAINS);
 
 		threatMitigationRelationEClass = createEClass(THREAT_MITIGATION_RELATION);
 		createEAttribute(threatMitigationRelationEClass, THREAT_MITIGATION_RELATION__NAME);
@@ -1274,17 +1205,15 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		createEReference(analysisDiagramEClass, ANALYSIS_DIAGRAM__CONTROL);
 
 		attackChainEClass = createEClass(ATTACK_CHAIN);
-		createEReference(attackChainEClass, ATTACK_CHAIN__ATTACKCHAINSTEP);
+		createEReference(attackChainEClass, ATTACK_CHAIN__ATTACKCHAIN_STEPS);
 		createEAttribute(attackChainEClass, ATTACK_CHAIN__NAME);
-		createEReference(attackChainEClass, ATTACK_CHAIN__START);
-		createEReference(attackChainEClass, ATTACK_CHAIN__END);
 
 		attackChainStepEClass = createEClass(ATTACK_CHAIN_STEP);
 		createEAttribute(attackChainStepEClass, ATTACK_CHAIN_STEP__STEP_NUM);
-		createEReference(attackChainStepEClass, ATTACK_CHAIN_STEP__THREATALLOCATIONRELATION);
+		createEReference(attackChainStepEClass, ATTACK_CHAIN_STEP__THREAT_ALLOCATION_RELATION);
 		createEAttribute(attackChainStepEClass, ATTACK_CHAIN_STEP__DIFFICULTY);
 		createEAttribute(attackChainStepEClass, ATTACK_CHAIN_STEP__IMPACT_DESCRIPTION);
-		createEReference(attackChainStepEClass, ATTACK_CHAIN_STEP__NEXTS);
+		createEReference(attackChainStepEClass, ATTACK_CHAIN_STEP__NEXT);
 		createEReference(attackChainStepEClass, ATTACK_CHAIN_STEP__PREVIOUS);
 
 		scoreSystemEClass = createEClass(SCORE_SYSTEM);
@@ -1299,10 +1228,6 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		difficultyScoreEClass = createEClass(DIFFICULTY_SCORE);
 		createEAttribute(difficultyScoreEClass, DIFFICULTY_SCORE__NAME);
 		createEAttribute(difficultyScoreEClass, DIFFICULTY_SCORE__DIFFICULTY);
-
-		attackInfoEClass = createEClass(ATTACK_INFO);
-		createEAttribute(attackInfoEClass, ATTACK_INFO__STEP_NUM);
-		createEReference(attackInfoEClass, ATTACK_INFO__ATTACK_VECTOR);
 
 		// Create enums
 		assessmentENUMEEnum = createEEnum(ASSESSMENT_ENUM);
@@ -1367,9 +1292,6 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 				Analysis.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAnalysis_Analysisdiagram(), this.getAnalysisDiagram(), null, "analysisdiagram", null, 0, -1,
-				Analysis.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAnalysis_Attackchain(), this.getAttackChain(), null, "attackchain", null, 0, -1,
 				Analysis.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAnalysis_Scoresystem(), this.getScoreSystem(), null, "scoresystem", null, 0, 1,
@@ -1469,8 +1391,8 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		initEReference(getThreatAllocationRelation_ThreatRelated(), this.getThreatAllocationRelation(), null,
 				"threatRelated", null, 0, -1, ThreatAllocationRelation.class, !IS_TRANSIENT, !IS_VOLATILE,
 				IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getThreatAllocationRelation_Attackinfo(), this.getAttackInfo(), null, "attackinfo", null, 0, -1,
-				ThreatAllocationRelation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
+		initEReference(getThreatAllocationRelation_AttackChains(), this.getAttackChain(), null, "attackChains", null, 0,
+				-1, ThreatAllocationRelation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
 				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(threatMitigationRelationEClass, ThreatMitigationRelation.class, "ThreatMitigationRelation",
@@ -1528,25 +1450,19 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 
 		initEClass(attackChainEClass, AttackChain.class, "AttackChain", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAttackChain_Attackchainstep(), this.getAttackChainStep(), null, "attackchainstep", null, 0,
+		initEReference(getAttackChain_AttackchainSteps(), this.getAttackChainStep(), null, "attackchainSteps", null, 0,
 				-1, AttackChain.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAttackChain_Name(), ecorePackage.getEString(), "name", null, 0, 1, AttackChain.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAttackChain_Start(), this.getAttackChainStep(), null, "start", null, 1, 1, AttackChain.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAttackChain_End(), this.getAttackChainStep(), null, "end", null, 1, 1, AttackChain.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(attackChainStepEClass, AttackChainStep.class, "AttackChainStep", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAttackChainStep_StepNum(), ecorePackage.getEString(), "stepNum", null, 0, 1,
 				AttackChainStep.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				IS_DERIVED, IS_ORDERED);
-		initEReference(getAttackChainStep_Threatallocationrelation(), this.getThreatAllocationRelation(), null,
-				"threatallocationrelation", null, 0, 1, AttackChainStep.class, !IS_TRANSIENT, !IS_VOLATILE,
+		initEReference(getAttackChainStep_ThreatAllocationRelation(), this.getThreatAllocationRelation(), null,
+				"threatAllocationRelation", null, 0, 1, AttackChainStep.class, !IS_TRANSIENT, !IS_VOLATILE,
 				IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAttackChainStep_Difficulty(), ecorePackage.getEInt(), "difficulty", null, 0, 1,
 				AttackChainStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
@@ -1554,10 +1470,10 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		initEAttribute(getAttackChainStep_ImpactDescription(), ecorePackage.getEString(), "impactDescription", null, 0,
 				1, AttackChainStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
-		initEReference(getAttackChainStep_Nexts(), this.getAttackChainStep(), this.getAttackChainStep_Previous(),
-				"nexts", null, 0, -1, AttackChainStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+		initEReference(getAttackChainStep_Next(), this.getAttackChainStep(), this.getAttackChainStep_Previous(), "next",
+				null, 0, -1, AttackChainStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
 				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAttackChainStep_Previous(), this.getAttackChainStep(), this.getAttackChainStep_Nexts(),
+		initEReference(getAttackChainStep_Previous(), this.getAttackChainStep(), this.getAttackChainStep_Next(),
 				"previous", null, 0, -1, AttackChainStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
 				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -1586,14 +1502,6 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		initEAttribute(getDifficultyScore_Difficulty(), ecorePackage.getEInt(), "difficulty", null, 0, 1,
 				DifficultyScore.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
-
-		initEClass(attackInfoEClass, AttackInfo.class, "AttackInfo", !IS_ABSTRACT, !IS_INTERFACE,
-				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getAttackInfo_StepNum(), ecorePackage.getEInt(), "stepNum", null, 0, 1, AttackInfo.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAttackInfo_AttackVector(), this.getThreatAllocationRelation(), null, "attackVector", null, 1,
-				1, AttackInfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(assessmentENUMEEnum, AssessmentENUM.class, "AssessmentENUM");

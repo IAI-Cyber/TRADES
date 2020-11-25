@@ -15,10 +15,8 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link dsm.TRADES.AttackChain#getAttackchainstep <em>Attackchainstep</em>}</li>
+ *   <li>{@link dsm.TRADES.AttackChain#getAttackchainSteps <em>Attackchain Steps</em>}</li>
  *   <li>{@link dsm.TRADES.AttackChain#getName <em>Name</em>}</li>
- *   <li>{@link dsm.TRADES.AttackChain#getStart <em>Start</em>}</li>
- *   <li>{@link dsm.TRADES.AttackChain#getEnd <em>End</em>}</li>
  * </ul>
  *
  * @see dsm.TRADES.TRADESPackage#getAttackChain()
@@ -27,20 +25,16 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface AttackChain extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Attackchainstep</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Attackchain Steps</b></em>' containment reference list.
 	 * The list contents are of type {@link dsm.TRADES.AttackChainStep}.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Attackchainstep</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Attackchainstep</em>' containment reference list.
-	 * @see dsm.TRADES.TRADESPackage#getAttackChain_Attackchainstep()
+	 * @return the value of the '<em>Attackchain Steps</em>' containment reference list.
+	 * @see dsm.TRADES.TRADESPackage#getAttackChain_AttackchainSteps()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<AttackChainStep> getAttackchainstep();
+	EList<AttackChainStep> getAttackchainSteps();
 
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
@@ -67,49 +61,5 @@ public interface AttackChain extends EObject {
 	 * @generated
 	 */
 	void setName(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Start</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Start</em>' reference.
-	 * @see #setStart(AttackChainStep)
-	 * @see dsm.TRADES.TRADESPackage#getAttackChain_Start()
-	 * @model required="true"
-	 * @generated
-	 */
-	AttackChainStep getStart();
-
-	/**
-	 * Sets the value of the '{@link dsm.TRADES.AttackChain#getStart <em>Start</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Start</em>' reference.
-	 * @see #getStart()
-	 * @generated
-	 */
-	void setStart(AttackChainStep value);
-
-	/**
-	 * Returns the value of the '<em><b>End</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>End</em>' reference.
-	 * @see #setEnd(AttackChainStep)
-	 * @see dsm.TRADES.TRADESPackage#getAttackChain_End()
-	 * @model required="true"
-	 * @generated
-	 */
-	AttackChainStep getEnd();
-
-	/**
-	 * Sets the value of the '{@link dsm.TRADES.AttackChain#getEnd <em>End</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>End</em>' reference.
-	 * @see #getEnd()
-	 * @generated
-	 */
-	void setEnd(AttackChainStep value);
 
 } // AttackChain

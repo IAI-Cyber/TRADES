@@ -58,8 +58,6 @@ public class AttackChainItemProvider extends ItemProviderAdapter implements IEdi
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
-			addStartPropertyDescriptor(object);
-			addEndPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -81,36 +79,6 @@ public class AttackChainItemProvider extends ItemProviderAdapter implements IEdi
 	}
 
 	/**
-	 * This adds a property descriptor for the Start feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addStartPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_AttackChain_start_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_AttackChain_start_feature",
-								"_UI_AttackChain_type"),
-						TRADESPackage.Literals.ATTACK_CHAIN__START, true, false, true, null, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the End feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addEndPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_AttackChain_end_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_AttackChain_end_feature",
-								"_UI_AttackChain_type"),
-						TRADESPackage.Literals.ATTACK_CHAIN__END, true, false, true, null, null, null));
-	}
-
-	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -122,7 +90,7 @@ public class AttackChainItemProvider extends ItemProviderAdapter implements IEdi
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(TRADESPackage.Literals.ATTACK_CHAIN__ATTACKCHAINSTEP);
+			childrenFeatures.add(TRADESPackage.Literals.ATTACK_CHAIN__ATTACKCHAIN_STEPS);
 		}
 		return childrenFeatures;
 	}
@@ -189,7 +157,7 @@ public class AttackChainItemProvider extends ItemProviderAdapter implements IEdi
 		case TRADESPackage.ATTACK_CHAIN__NAME:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
-		case TRADESPackage.ATTACK_CHAIN__ATTACKCHAINSTEP:
+		case TRADESPackage.ATTACK_CHAIN__ATTACKCHAIN_STEPS:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -207,7 +175,7 @@ public class AttackChainItemProvider extends ItemProviderAdapter implements IEdi
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(TRADESPackage.Literals.ATTACK_CHAIN__ATTACKCHAINSTEP,
+		newChildDescriptors.add(createChildParameter(TRADESPackage.Literals.ATTACK_CHAIN__ATTACKCHAIN_STEPS,
 				TRADESFactory.eINSTANCE.createAttackChainStep()));
 	}
 

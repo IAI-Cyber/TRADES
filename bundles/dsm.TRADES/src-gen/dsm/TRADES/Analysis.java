@@ -24,7 +24,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link dsm.TRADES.Analysis#getData <em>Data</em>}</li>
  *   <li>{@link dsm.TRADES.Analysis#getAffectrelation <em>Affectrelation</em>}</li>
  *   <li>{@link dsm.TRADES.Analysis#getAnalysisdiagram <em>Analysisdiagram</em>}</li>
- *   <li>{@link dsm.TRADES.Analysis#getAttackchain <em>Attackchain</em>}</li>
  *   <li>{@link dsm.TRADES.Analysis#getScoresystem <em>Scoresystem</em>}</li>
  * </ul>
  *
@@ -186,22 +185,6 @@ public interface Analysis extends EObject {
 	 * @generated
 	 */
 	EList<AnalysisDiagram> getAnalysisdiagram();
-
-	/**
-	 * Returns the value of the '<em><b>Attackchain</b></em>' containment reference list.
-	 * The list contents are of type {@link dsm.TRADES.AttackChain}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Attackchain</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Attackchain</em>' containment reference list.
-	 * @see dsm.TRADES.TRADESPackage#getAnalysis_Attackchain()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<AttackChain> getAttackchain();
 
 	/**
 	 * Returns the value of the '<em><b>Scoresystem</b></em>' containment reference.

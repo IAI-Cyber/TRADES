@@ -22,7 +22,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link dsm.TRADES.ThreatAllocationRelation#getDifficultyscore <em>Difficultyscore</em>}</li>
  *   <li>{@link dsm.TRADES.ThreatAllocationRelation#getThreatDecomposed <em>Threat Decomposed</em>}</li>
  *   <li>{@link dsm.TRADES.ThreatAllocationRelation#getThreatRelated <em>Threat Related</em>}</li>
- *   <li>{@link dsm.TRADES.ThreatAllocationRelation#getAttackinfo <em>Attackinfo</em>}</li>
+ *   <li>{@link dsm.TRADES.ThreatAllocationRelation#getAttackChains <em>Attack Chains</em>}</li>
  * </ul>
  *
  * @see dsm.TRADES.TRADESPackage#getThreatAllocationRelation()
@@ -219,15 +219,15 @@ public interface ThreatAllocationRelation extends EObject {
 	EList<ThreatAllocationRelation> getThreatRelated();
 
 	/**
-	 * Returns the value of the '<em><b>Attackinfo</b></em>' containment reference list.
-	 * The list contents are of type {@link dsm.TRADES.AttackInfo}.
+	 * Returns the value of the '<em><b>Attack Chains</b></em>' containment reference list.
+	 * The list contents are of type {@link dsm.TRADES.AttackChain}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Attackinfo</em>' containment reference list.
-	 * @see dsm.TRADES.TRADESPackage#getThreatAllocationRelation_Attackinfo()
+	 * @return the value of the '<em>Attack Chains</em>' containment reference list.
+	 * @see dsm.TRADES.TRADESPackage#getThreatAllocationRelation_AttackChains()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<AttackInfo> getAttackinfo();
+	EList<AttackChain> getAttackChains();
 
 } // ThreatAllocationRelation

@@ -55,10 +55,10 @@ public class AttackChainStepItemProvider extends ItemProviderAdapter implements 
 			super.getPropertyDescriptors(object);
 
 			addStepNumPropertyDescriptor(object);
-			addThreatallocationrelationPropertyDescriptor(object);
+			addThreatAllocationRelationPropertyDescriptor(object);
 			addDifficultyPropertyDescriptor(object);
 			addImpactDescriptionPropertyDescriptor(object);
-			addNextsPropertyDescriptor(object);
+			addNextPropertyDescriptor(object);
 			addPreviousPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -81,19 +81,19 @@ public class AttackChainStepItemProvider extends ItemProviderAdapter implements 
 	}
 
 	/**
-	 * This adds a property descriptor for the Threatallocationrelation feature.
+	 * This adds a property descriptor for the Threat Allocation Relation feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addThreatallocationrelationPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-				getString("_UI_AttackChainStep_threatallocationrelation_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_AttackChainStep_threatallocationrelation_feature",
-						"_UI_AttackChainStep_type"),
-				TRADESPackage.Literals.ATTACK_CHAIN_STEP__THREATALLOCATIONRELATION, true, false, true, null, null,
-				null));
+	protected void addThreatAllocationRelationPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_AttackChainStep_threatAllocationRelation_feature"),
+						getString("_UI_PropertyDescriptor_description",
+								"_UI_AttackChainStep_threatAllocationRelation_feature", "_UI_AttackChainStep_type"),
+						TRADESPackage.Literals.ATTACK_CHAIN_STEP__THREAT_ALLOCATION_RELATION, true, false, true, null,
+						null, null));
 	}
 
 	/**
@@ -129,18 +129,18 @@ public class AttackChainStepItemProvider extends ItemProviderAdapter implements 
 	}
 
 	/**
-	 * This adds a property descriptor for the Nexts feature.
+	 * This adds a property descriptor for the Next feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addNextsPropertyDescriptor(Object object) {
+	protected void addNextPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_AttackChainStep_nexts_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_AttackChainStep_nexts_feature",
+						getResourceLocator(), getString("_UI_AttackChainStep_next_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_AttackChainStep_next_feature",
 								"_UI_AttackChainStep_type"),
-						TRADESPackage.Literals.ATTACK_CHAIN_STEP__NEXTS, true, false, true, null, null, null));
+						TRADESPackage.Literals.ATTACK_CHAIN_STEP__NEXT, true, false, true, null, null, null));
 	}
 
 	/**
