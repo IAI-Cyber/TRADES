@@ -2,8 +2,8 @@ package TRADES.design;
 
 import java.util.HashSet;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
+import java.util.Map.Entry;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.sirius.business.api.session.Session;
@@ -36,12 +36,14 @@ public class DiagramService {
 		return threatLabel + "->" + componentLabel;
 	}
 
-	public void printAllVariable(EObject context) {
+	public EObject printAllVariable(EObject context) {
 
 		Map<String, ?> variableMap = Session.of(context).get().getInterpreter().getVariables();
 		for (Entry<String, ?> entry : variableMap.entrySet()) {
 			System.out.println(entry.getKey() + "->" + entry.getValue());
 		}
+
+		return context;
 	}
 
 	public Set<AttackChainStep> getAllPrevious(AttackChainStep step) {
