@@ -9,12 +9,8 @@ import dsm.TRADES.TRADESPackage;
 import dsm.TRADES.Threat;
 
 import java.util.Collection;
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
@@ -25,7 +21,6 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link dsm.TRADES.impl.AnalysisDiagramImpl#getName <em>Name</em>}</li>
  *   <li>{@link dsm.TRADES.impl.AnalysisDiagramImpl#getThreat <em>Threat</em>}</li>
  *   <li>{@link dsm.TRADES.impl.AnalysisDiagramImpl#getComponent <em>Component</em>}</li>
  *   <li>{@link dsm.TRADES.impl.AnalysisDiagramImpl#getControl <em>Control</em>}</li>
@@ -33,27 +28,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  *
  * @generated
  */
-public class AnalysisDiagramImpl extends MinimalEObjectImpl.Container implements AnalysisDiagram {
-	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String name = NAME_EDEFAULT;
-
+public class AnalysisDiagramImpl extends NamedElementImpl implements AnalysisDiagram {
 	/**
 	 * The cached value of the '{@link #getThreat() <em>Threat</em>}' reference list.
 	 * <!-- begin-user-doc -->
@@ -109,29 +84,6 @@ public class AnalysisDiagramImpl extends MinimalEObjectImpl.Container implements
 	 * @generated
 	 */
 	@Override
-	public String getName() {
-		return name;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setName(String newName) {
-		String oldName = name;
-		name = newName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TRADESPackage.ANALYSIS_DIAGRAM__NAME, oldName, name));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EList<Threat> getThreat() {
 		if (threat == null) {
 			threat = new EObjectResolvingEList<Threat>(Threat.class, this, TRADESPackage.ANALYSIS_DIAGRAM__THREAT);
@@ -174,8 +126,6 @@ public class AnalysisDiagramImpl extends MinimalEObjectImpl.Container implements
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case TRADESPackage.ANALYSIS_DIAGRAM__NAME:
-			return getName();
 		case TRADESPackage.ANALYSIS_DIAGRAM__THREAT:
 			return getThreat();
 		case TRADESPackage.ANALYSIS_DIAGRAM__COMPONENT:
@@ -195,9 +145,6 @@ public class AnalysisDiagramImpl extends MinimalEObjectImpl.Container implements
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case TRADESPackage.ANALYSIS_DIAGRAM__NAME:
-			setName((String) newValue);
-			return;
 		case TRADESPackage.ANALYSIS_DIAGRAM__THREAT:
 			getThreat().clear();
 			getThreat().addAll((Collection<? extends Threat>) newValue);
@@ -222,9 +169,6 @@ public class AnalysisDiagramImpl extends MinimalEObjectImpl.Container implements
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case TRADESPackage.ANALYSIS_DIAGRAM__NAME:
-			setName(NAME_EDEFAULT);
-			return;
 		case TRADESPackage.ANALYSIS_DIAGRAM__THREAT:
 			getThreat().clear();
 			return;
@@ -246,8 +190,6 @@ public class AnalysisDiagramImpl extends MinimalEObjectImpl.Container implements
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case TRADESPackage.ANALYSIS_DIAGRAM__NAME:
-			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		case TRADESPackage.ANALYSIS_DIAGRAM__THREAT:
 			return threat != null && !threat.isEmpty();
 		case TRADESPackage.ANALYSIS_DIAGRAM__COMPONENT:
@@ -256,23 +198,6 @@ public class AnalysisDiagramImpl extends MinimalEObjectImpl.Container implements
 			return control != null && !control.isEmpty();
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy())
-			return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (name: ");
-		result.append(name);
-		result.append(')');
-		return result.toString();
 	}
 
 } //AnalysisDiagramImpl

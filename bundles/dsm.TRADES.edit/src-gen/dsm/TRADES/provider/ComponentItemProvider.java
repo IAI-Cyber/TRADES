@@ -11,21 +11,11 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.EStructuralFeature;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IChildCreationExtender;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
@@ -34,8 +24,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ComponentItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
-		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class ComponentItemProvider extends ComponentOwerItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -57,9 +46,9 @@ public class ComponentItemProvider extends ItemProviderAdapter implements IEditi
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addNamePropertyDescriptor(object);
 			addAllocatedThreatPropertyDescriptor(object);
 			addImplementsPropertyDescriptor(object);
-			addNamePropertyDescriptor(object);
 			addThreatallocationPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -104,10 +93,10 @@ public class ComponentItemProvider extends ItemProviderAdapter implements IEditi
 	protected void addNamePropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Component_name_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Component_name_feature",
-								"_UI_Component_type"),
-						TRADESPackage.Literals.COMPONENT__NAME, true, false, false,
+						getResourceLocator(), getString("_UI_NamedElement_name_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_NamedElement_name_feature",
+								"_UI_NamedElement_type"),
+						TRADESPackage.Literals.NAMED_ELEMENT__NAME, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
@@ -138,8 +127,7 @@ public class ComponentItemProvider extends ItemProviderAdapter implements IEditi
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(TRADESPackage.Literals.COMPONENT__COMPONENT);
-			childrenFeatures.add(TRADESPackage.Literals.COMPONENT__DATA);
+			childrenFeatures.add(TRADESPackage.Literals.DATA_OWNER__DATA);
 			childrenFeatures.add(TRADESPackage.Literals.COMPONENT__CONTROL);
 			childrenFeatures.add(TRADESPackage.Literals.COMPONENT__ANALYSIS);
 			childrenFeatures.add(TRADESPackage.Literals.COMPONENT__AFFECTRELATION);
@@ -210,7 +198,6 @@ public class ComponentItemProvider extends ItemProviderAdapter implements IEditi
 		case TRADESPackage.COMPONENT__NAME:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
-		case TRADESPackage.COMPONENT__COMPONENT:
 		case TRADESPackage.COMPONENT__DATA:
 		case TRADESPackage.COMPONENT__CONTROL:
 		case TRADESPackage.COMPONENT__ANALYSIS:
@@ -233,11 +220,8 @@ public class ComponentItemProvider extends ItemProviderAdapter implements IEditi
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(TRADESPackage.Literals.COMPONENT__COMPONENT,
-				TRADESFactory.eINSTANCE.createComponent()));
-
 		newChildDescriptors.add(
-				createChildParameter(TRADESPackage.Literals.COMPONENT__DATA, TRADESFactory.eINSTANCE.createData()));
+				createChildParameter(TRADESPackage.Literals.DATA_OWNER__DATA, TRADESFactory.eINSTANCE.createData()));
 
 		newChildDescriptors.add(createChildParameter(TRADESPackage.Literals.COMPONENT__CONTROL,
 				TRADESFactory.eINSTANCE.createControl()));
@@ -250,17 +234,6 @@ public class ComponentItemProvider extends ItemProviderAdapter implements IEditi
 
 		newChildDescriptors.add(
 				createChildParameter(TRADESPackage.Literals.COMPONENT__THREAT, TRADESFactory.eINSTANCE.createThreat()));
-	}
-
-	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ResourceLocator getResourceLocator() {
-		return ((IChildCreationExtender) adapterFactory).getResourceLocator();
 	}
 
 }

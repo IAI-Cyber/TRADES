@@ -19,8 +19,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -33,7 +31,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link dsm.TRADES.impl.ThreatImpl#getAllocated <em>Allocated</em>}</li>
- *   <li>{@link dsm.TRADES.impl.ThreatImpl#getName <em>Name</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ThreatImpl#getThreatallocation <em>Threatallocation</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ThreatImpl#getThreatType <em>Threat Type</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ThreatImpl#getID <em>ID</em>}</li>
@@ -43,7 +40,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class ThreatImpl extends MinimalEObjectImpl.Container implements Threat {
+public class ThreatImpl extends NamedElementImpl implements Threat {
 	/**
 	 * The cached value of the '{@link #getAllocated() <em>Allocated</em>}' reference list.
 	 * <!-- begin-user-doc -->
@@ -53,26 +50,6 @@ public class ThreatImpl extends MinimalEObjectImpl.Container implements Threat {
 	 * @ordered
 	 */
 	protected EList<Component> allocated;
-
-	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String name = NAME_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getThreatallocation() <em>Threatallocation</em>}' reference list.
@@ -195,29 +172,6 @@ public class ThreatImpl extends MinimalEObjectImpl.Container implements Threat {
 					TRADESPackage.THREAT__ALLOCATED, TRADESPackage.COMPONENT__ALLOCATED_THREAT);
 		}
 		return allocated;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getName() {
-		return name;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setName(String newName) {
-		String oldName = name;
-		name = newName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TRADESPackage.THREAT__NAME, oldName, name));
 	}
 
 	/**
@@ -373,8 +327,6 @@ public class ThreatImpl extends MinimalEObjectImpl.Container implements Threat {
 		switch (featureID) {
 		case TRADESPackage.THREAT__ALLOCATED:
 			return getAllocated();
-		case TRADESPackage.THREAT__NAME:
-			return getName();
 		case TRADESPackage.THREAT__THREATALLOCATION:
 			return getThreatallocation();
 		case TRADESPackage.THREAT__THREAT_TYPE:
@@ -401,9 +353,6 @@ public class ThreatImpl extends MinimalEObjectImpl.Container implements Threat {
 		case TRADESPackage.THREAT__ALLOCATED:
 			getAllocated().clear();
 			getAllocated().addAll((Collection<? extends Component>) newValue);
-			return;
-		case TRADESPackage.THREAT__NAME:
-			setName((String) newValue);
 			return;
 		case TRADESPackage.THREAT__THREATALLOCATION:
 			getThreatallocation().clear();
@@ -436,9 +385,6 @@ public class ThreatImpl extends MinimalEObjectImpl.Container implements Threat {
 		case TRADESPackage.THREAT__ALLOCATED:
 			getAllocated().clear();
 			return;
-		case TRADESPackage.THREAT__NAME:
-			setName(NAME_EDEFAULT);
-			return;
 		case TRADESPackage.THREAT__THREATALLOCATION:
 			getThreatallocation().clear();
 			return;
@@ -468,8 +414,6 @@ public class ThreatImpl extends MinimalEObjectImpl.Container implements Threat {
 		switch (featureID) {
 		case TRADESPackage.THREAT__ALLOCATED:
 			return allocated != null && !allocated.isEmpty();
-		case TRADESPackage.THREAT__NAME:
-			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		case TRADESPackage.THREAT__THREATALLOCATION:
 			return threatallocation != null && !threatallocation.isEmpty();
 		case TRADESPackage.THREAT__THREAT_TYPE:
@@ -496,9 +440,7 @@ public class ThreatImpl extends MinimalEObjectImpl.Container implements Threat {
 			return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (name: ");
-		result.append(name);
-		result.append(", threatType: ");
+		result.append(" (threatType: ");
 		result.append(threatType);
 		result.append(", ID: ");
 		result.append(id);

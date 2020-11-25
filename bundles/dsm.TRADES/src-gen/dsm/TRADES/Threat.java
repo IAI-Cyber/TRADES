@@ -4,8 +4,6 @@ package dsm.TRADES;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Threat</b></em>'.
@@ -16,7 +14,6 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link dsm.TRADES.Threat#getAllocated <em>Allocated</em>}</li>
- *   <li>{@link dsm.TRADES.Threat#getName <em>Name</em>}</li>
  *   <li>{@link dsm.TRADES.Threat#getThreatallocation <em>Threatallocation</em>}</li>
  *   <li>{@link dsm.TRADES.Threat#getThreatType <em>Threat Type</em>}</li>
  *   <li>{@link dsm.TRADES.Threat#getID <em>ID</em>}</li>
@@ -28,7 +25,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface Threat extends EObject {
+public interface Threat extends NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Allocated</b></em>' reference list.
 	 * The list contents are of type {@link dsm.TRADES.Component}.
@@ -46,32 +43,6 @@ public interface Threat extends EObject {
 	 * @generated
 	 */
 	EList<Component> getAllocated();
-
-	/**
-	 * Returns the value of the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Name</em>' attribute.
-	 * @see #setName(String)
-	 * @see dsm.TRADES.TRADESPackage#getThreat_Name()
-	 * @model
-	 * @generated
-	 */
-	String getName();
-
-	/**
-	 * Sets the value of the '{@link dsm.TRADES.Threat#getName <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
-	 * @see #getName()
-	 * @generated
-	 */
-	void setName(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Threatallocation</b></em>' reference list.

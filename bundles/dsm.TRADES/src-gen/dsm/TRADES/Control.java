@@ -4,8 +4,6 @@ package dsm.TRADES;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Control</b></em>'.
@@ -17,7 +15,6 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link dsm.TRADES.Control#getMitigates <em>Mitigates</em>}</li>
  *   <li>{@link dsm.TRADES.Control#getImplementedBy <em>Implemented By</em>}</li>
- *   <li>{@link dsm.TRADES.Control#getName <em>Name</em>}</li>
  *   <li>{@link dsm.TRADES.Control#getID <em>ID</em>}</li>
  *   <li>{@link dsm.TRADES.Control#getDescription <em>Description</em>}</li>
  * </ul>
@@ -26,7 +23,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface Control extends EObject {
+public interface Control extends NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Mitigates</b></em>' reference list.
 	 * The list contents are of type {@link dsm.TRADES.Threat}.
@@ -60,32 +57,6 @@ public interface Control extends EObject {
 	 * @generated
 	 */
 	EList<Component> getImplementedBy();
-
-	/**
-	 * Returns the value of the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Name</em>' attribute.
-	 * @see #setName(String)
-	 * @see dsm.TRADES.TRADESPackage#getControl_Name()
-	 * @model
-	 * @generated
-	 */
-	String getName();
-
-	/**
-	 * Sets the value of the '{@link dsm.TRADES.Control#getName <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
-	 * @see #getName()
-	 * @generated
-	 */
-	void setName(String value);
 
 	/**
 	 * Returns the value of the '<em><b>ID</b></em>' attribute.

@@ -2,7 +2,7 @@
  */
 package dsm.TRADES.provider;
 
-import dsm.TRADES.ScoreSystem;
+import dsm.TRADES.ComponentOwer;
 import dsm.TRADES.TRADESFactory;
 import dsm.TRADES.TRADESPackage;
 
@@ -11,24 +11,36 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.common.util.ResourceLocator;
+
 import org.eclipse.emf.ecore.EStructuralFeature;
+
+import org.eclipse.emf.edit.provider.IChildCreationExtender;
+import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
+import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.IItemPropertySource;
+import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
+import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link dsm.TRADES.ScoreSystem} object.
+ * This is the item provider adapter for a {@link dsm.TRADES.ComponentOwer} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ScoreSystemItemProvider extends NamedElementItemProvider {
+public class ComponentOwerItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
+		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ScoreSystemItemProvider(AdapterFactory adapterFactory) {
+	public ComponentOwerItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -59,8 +71,7 @@ public class ScoreSystemItemProvider extends NamedElementItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(TRADESPackage.Literals.SCORE_SYSTEM__IMPACTSCORE);
-			childrenFeatures.add(TRADESPackage.Literals.SCORE_SYSTEM__DIFFICULTYSCORE);
+			childrenFeatures.add(TRADESPackage.Literals.COMPONENT_OWER__COMPONENT);
 		}
 		return childrenFeatures;
 	}
@@ -76,17 +87,6 @@ public class ScoreSystemItemProvider extends NamedElementItemProvider {
 		// adding (see {@link AddCommand}) it as a child.
 
 		return super.getChildFeature(object, child);
-	}
-
-	/**
-	 * This returns ScoreSystem.gif.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/ScoreSystem"));
 	}
 
 	/**
@@ -107,9 +107,7 @@ public class ScoreSystemItemProvider extends NamedElementItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ScoreSystem) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_ScoreSystem_type")
-				: getString("_UI_ScoreSystem_type") + " " + label;
+		return getString("_UI_ComponentOwer_type");
 	}
 
 	/**
@@ -123,9 +121,8 @@ public class ScoreSystemItemProvider extends NamedElementItemProvider {
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(ScoreSystem.class)) {
-		case TRADESPackage.SCORE_SYSTEM__IMPACTSCORE:
-		case TRADESPackage.SCORE_SYSTEM__DIFFICULTYSCORE:
+		switch (notification.getFeatureID(ComponentOwer.class)) {
+		case TRADESPackage.COMPONENT_OWER__COMPONENT:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -143,11 +140,19 @@ public class ScoreSystemItemProvider extends NamedElementItemProvider {
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(TRADESPackage.Literals.SCORE_SYSTEM__IMPACTSCORE,
-				TRADESFactory.eINSTANCE.createImpactScore()));
+		newChildDescriptors.add(createChildParameter(TRADESPackage.Literals.COMPONENT_OWER__COMPONENT,
+				TRADESFactory.eINSTANCE.createComponent()));
+	}
 
-		newChildDescriptors.add(createChildParameter(TRADESPackage.Literals.SCORE_SYSTEM__DIFFICULTYSCORE,
-				TRADESFactory.eINSTANCE.createDifficultyScore()));
+	/**
+	 * Return the resource locator for this item provider's resources.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ResourceLocator getResourceLocator() {
+		return ((IChildCreationExtender) adapterFactory).getResourceLocator();
 	}
 
 }

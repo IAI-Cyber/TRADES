@@ -11,21 +11,11 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.EStructuralFeature;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IChildCreationExtender;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
@@ -34,8 +24,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class AnalysisItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
-		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class AnalysisItemProvider extends ComponentOwerItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -71,10 +60,10 @@ public class AnalysisItemProvider extends ItemProviderAdapter implements IEditin
 	protected void addNamePropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Analysis_name_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Analysis_name_feature",
-								"_UI_Analysis_type"),
-						TRADESPackage.Literals.ANALYSIS__NAME, true, false, false,
+						getResourceLocator(), getString("_UI_NamedElement_name_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_NamedElement_name_feature",
+								"_UI_NamedElement_type"),
+						TRADESPackage.Literals.NAMED_ELEMENT__NAME, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
@@ -90,12 +79,11 @@ public class AnalysisItemProvider extends ItemProviderAdapter implements IEditin
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
+			childrenFeatures.add(TRADESPackage.Literals.DATA_OWNER__DATA);
 			childrenFeatures.add(TRADESPackage.Literals.ANALYSIS__THREAT);
-			childrenFeatures.add(TRADESPackage.Literals.ANALYSIS__COMPONENT);
 			childrenFeatures.add(TRADESPackage.Literals.ANALYSIS__CONTROL);
 			childrenFeatures.add(TRADESPackage.Literals.ANALYSIS__THREATALLOCATION);
 			childrenFeatures.add(TRADESPackage.Literals.ANALYSIS__THREATMITIGATION);
-			childrenFeatures.add(TRADESPackage.Literals.ANALYSIS__DATA);
 			childrenFeatures.add(TRADESPackage.Literals.ANALYSIS__AFFECTRELATION);
 			childrenFeatures.add(TRADESPackage.Literals.ANALYSIS__ANALYSISDIAGRAM);
 			childrenFeatures.add(TRADESPackage.Literals.ANALYSIS__SCORESYSTEM);
@@ -165,12 +153,11 @@ public class AnalysisItemProvider extends ItemProviderAdapter implements IEditin
 		case TRADESPackage.ANALYSIS__NAME:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
+		case TRADESPackage.ANALYSIS__DATA:
 		case TRADESPackage.ANALYSIS__THREAT:
-		case TRADESPackage.ANALYSIS__COMPONENT:
 		case TRADESPackage.ANALYSIS__CONTROL:
 		case TRADESPackage.ANALYSIS__THREATALLOCATION:
 		case TRADESPackage.ANALYSIS__THREATMITIGATION:
-		case TRADESPackage.ANALYSIS__DATA:
 		case TRADESPackage.ANALYSIS__AFFECTRELATION:
 		case TRADESPackage.ANALYSIS__ANALYSISDIAGRAM:
 		case TRADESPackage.ANALYSIS__SCORESYSTEM:
@@ -192,10 +179,10 @@ public class AnalysisItemProvider extends ItemProviderAdapter implements IEditin
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
 		newChildDescriptors.add(
-				createChildParameter(TRADESPackage.Literals.ANALYSIS__THREAT, TRADESFactory.eINSTANCE.createThreat()));
+				createChildParameter(TRADESPackage.Literals.DATA_OWNER__DATA, TRADESFactory.eINSTANCE.createData()));
 
-		newChildDescriptors.add(createChildParameter(TRADESPackage.Literals.ANALYSIS__COMPONENT,
-				TRADESFactory.eINSTANCE.createComponent()));
+		newChildDescriptors.add(
+				createChildParameter(TRADESPackage.Literals.ANALYSIS__THREAT, TRADESFactory.eINSTANCE.createThreat()));
 
 		newChildDescriptors.add(createChildParameter(TRADESPackage.Literals.ANALYSIS__CONTROL,
 				TRADESFactory.eINSTANCE.createControl()));
@@ -206,9 +193,6 @@ public class AnalysisItemProvider extends ItemProviderAdapter implements IEditin
 		newChildDescriptors.add(createChildParameter(TRADESPackage.Literals.ANALYSIS__THREATMITIGATION,
 				TRADESFactory.eINSTANCE.createThreatMitigationRelation()));
 
-		newChildDescriptors
-				.add(createChildParameter(TRADESPackage.Literals.ANALYSIS__DATA, TRADESFactory.eINSTANCE.createData()));
-
 		newChildDescriptors.add(createChildParameter(TRADESPackage.Literals.ANALYSIS__AFFECTRELATION,
 				TRADESFactory.eINSTANCE.createAffectRelation()));
 
@@ -217,17 +201,6 @@ public class AnalysisItemProvider extends ItemProviderAdapter implements IEditin
 
 		newChildDescriptors.add(createChildParameter(TRADESPackage.Literals.ANALYSIS__SCORESYSTEM,
 				TRADESFactory.eINSTANCE.createScoreSystem()));
-	}
-
-	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ResourceLocator getResourceLocator() {
-		return ((IChildCreationExtender) adapterFactory).getResourceLocator();
 	}
 
 }

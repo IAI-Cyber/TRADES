@@ -70,12 +70,20 @@ public class TRADESSwitch<T> extends Switch<T> {
 			Analysis analysis = (Analysis) theEObject;
 			T result = caseAnalysis(analysis);
 			if (result == null)
+				result = caseComponentOwer(analysis);
+			if (result == null)
+				result = caseDataOwner(analysis);
+			if (result == null)
+				result = caseNamedElement(analysis);
+			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
 		case TRADESPackage.THREAT: {
 			Threat threat = (Threat) theEObject;
 			T result = caseThreat(threat);
+			if (result == null)
+				result = caseNamedElement(threat);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -84,12 +92,20 @@ public class TRADESSwitch<T> extends Switch<T> {
 			Component component = (Component) theEObject;
 			T result = caseComponent(component);
 			if (result == null)
+				result = caseComponentOwer(component);
+			if (result == null)
+				result = caseDataOwner(component);
+			if (result == null)
+				result = caseNamedElement(component);
+			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
 		case TRADESPackage.CONTROL: {
 			Control control = (Control) theEObject;
 			T result = caseControl(control);
+			if (result == null)
+				result = caseNamedElement(control);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -98,12 +114,16 @@ public class TRADESSwitch<T> extends Switch<T> {
 			ThreatAllocationRelation threatAllocationRelation = (ThreatAllocationRelation) theEObject;
 			T result = caseThreatAllocationRelation(threatAllocationRelation);
 			if (result == null)
+				result = caseNamedElement(threatAllocationRelation);
+			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
 		case TRADESPackage.THREAT_MITIGATION_RELATION: {
 			ThreatMitigationRelation threatMitigationRelation = (ThreatMitigationRelation) theEObject;
 			T result = caseThreatMitigationRelation(threatMitigationRelation);
+			if (result == null)
+				result = caseNamedElement(threatMitigationRelation);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -112,12 +132,16 @@ public class TRADESSwitch<T> extends Switch<T> {
 			Data data = (Data) theEObject;
 			T result = caseData(data);
 			if (result == null)
+				result = caseNamedElement(data);
+			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
 		case TRADESPackage.AFFECT_RELATION: {
 			AffectRelation affectRelation = (AffectRelation) theEObject;
 			T result = caseAffectRelation(affectRelation);
+			if (result == null)
+				result = caseNamedElement(affectRelation);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -126,12 +150,16 @@ public class TRADESSwitch<T> extends Switch<T> {
 			AnalysisDiagram analysisDiagram = (AnalysisDiagram) theEObject;
 			T result = caseAnalysisDiagram(analysisDiagram);
 			if (result == null)
+				result = caseNamedElement(analysisDiagram);
+			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
 		case TRADESPackage.ATTACK_CHAIN: {
 			AttackChain attackChain = (AttackChain) theEObject;
 			T result = caseAttackChain(attackChain);
+			if (result == null)
+				result = caseNamedElement(attackChain);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -147,6 +175,8 @@ public class TRADESSwitch<T> extends Switch<T> {
 			ScoreSystem scoreSystem = (ScoreSystem) theEObject;
 			T result = caseScoreSystem(scoreSystem);
 			if (result == null)
+				result = caseNamedElement(scoreSystem);
+			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
@@ -154,12 +184,37 @@ public class TRADESSwitch<T> extends Switch<T> {
 			ImpactScore impactScore = (ImpactScore) theEObject;
 			T result = caseImpactScore(impactScore);
 			if (result == null)
+				result = caseNamedElement(impactScore);
+			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
 		case TRADESPackage.DIFFICULTY_SCORE: {
 			DifficultyScore difficultyScore = (DifficultyScore) theEObject;
 			T result = caseDifficultyScore(difficultyScore);
+			if (result == null)
+				result = caseNamedElement(difficultyScore);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case TRADESPackage.DATA_OWNER: {
+			DataOwner dataOwner = (DataOwner) theEObject;
+			T result = caseDataOwner(dataOwner);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case TRADESPackage.COMPONENT_OWER: {
+			ComponentOwer componentOwer = (ComponentOwer) theEObject;
+			T result = caseComponentOwer(componentOwer);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case TRADESPackage.NAMED_ELEMENT: {
+			NamedElement namedElement = (NamedElement) theEObject;
+			T result = caseNamedElement(namedElement);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -376,6 +431,51 @@ public class TRADESSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseDifficultyScore(DifficultyScore object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Data Owner</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Data Owner</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDataOwner(DataOwner object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Component Ower</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Component Ower</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseComponentOwer(ComponentOwer object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Named Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Named Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseNamedElement(NamedElement object) {
 		return null;
 	}
 

@@ -5,9 +5,10 @@ package dsm.TRADES.impl;
 import dsm.TRADES.AffectRelation;
 import dsm.TRADES.Analysis;
 import dsm.TRADES.AnalysisDiagram;
-import dsm.TRADES.Component;
 import dsm.TRADES.Control;
 import dsm.TRADES.Data;
+import dsm.TRADES.DataOwner;
+import dsm.TRADES.NamedElement;
 import dsm.TRADES.ScoreSystem;
 import dsm.TRADES.TRADESPackage;
 import dsm.TRADES.Threat;
@@ -25,8 +26,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -38,13 +37,12 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getThreat <em>Threat</em>}</li>
- *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getComponent <em>Component</em>}</li>
- *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getControl <em>Control</em>}</li>
+ *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getData <em>Data</em>}</li>
  *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getName <em>Name</em>}</li>
+ *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getThreat <em>Threat</em>}</li>
+ *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getControl <em>Control</em>}</li>
  *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getThreatallocation <em>Threatallocation</em>}</li>
  *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getThreatmitigation <em>Threatmitigation</em>}</li>
- *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getData <em>Data</em>}</li>
  *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getAffectrelation <em>Affectrelation</em>}</li>
  *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getAnalysisdiagram <em>Analysisdiagram</em>}</li>
  *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getScoresystem <em>Scoresystem</em>}</li>
@@ -52,36 +50,16 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class AnalysisImpl extends MinimalEObjectImpl.Container implements Analysis {
+public class AnalysisImpl extends ComponentOwerImpl implements Analysis {
 	/**
-	 * The cached value of the '{@link #getThreat() <em>Threat</em>}' containment reference list.
+	 * The cached value of the '{@link #getData() <em>Data</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getThreat()
+	 * @see #getData()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Threat> threat;
-
-	/**
-	 * The cached value of the '{@link #getComponent() <em>Component</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getComponent()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Component> component;
-
-	/**
-	 * The cached value of the '{@link #getControl() <em>Control</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getControl()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Control> control;
+	protected EList<Data> data;
 
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -104,6 +82,26 @@ public class AnalysisImpl extends MinimalEObjectImpl.Container implements Analys
 	protected String name = NAME_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getThreat() <em>Threat</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getThreat()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Threat> threat;
+
+	/**
+	 * The cached value of the '{@link #getControl() <em>Control</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getControl()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Control> control;
+
+	/**
 	 * The cached value of the '{@link #getThreatallocation() <em>Threatallocation</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -122,16 +120,6 @@ public class AnalysisImpl extends MinimalEObjectImpl.Container implements Analys
 	 * @ordered
 	 */
 	protected EList<ThreatMitigationRelation> threatmitigation;
-
-	/**
-	 * The cached value of the '{@link #getData() <em>Data</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getData()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Data> data;
 
 	/**
 	 * The cached value of the '{@link #getAffectrelation() <em>Affectrelation</em>}' containment reference list.
@@ -193,20 +181,6 @@ public class AnalysisImpl extends MinimalEObjectImpl.Container implements Analys
 			threat = new EObjectContainmentEList<Threat>(Threat.class, this, TRADESPackage.ANALYSIS__THREAT);
 		}
 		return threat;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EList<Component> getComponent() {
-		if (component == null) {
-			component = new EObjectContainmentEList<Component>(Component.class, this,
-					TRADESPackage.ANALYSIS__COMPONENT);
-		}
-		return component;
 	}
 
 	/**
@@ -374,18 +348,16 @@ public class AnalysisImpl extends MinimalEObjectImpl.Container implements Analys
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+		case TRADESPackage.ANALYSIS__DATA:
+			return ((InternalEList<?>) getData()).basicRemove(otherEnd, msgs);
 		case TRADESPackage.ANALYSIS__THREAT:
 			return ((InternalEList<?>) getThreat()).basicRemove(otherEnd, msgs);
-		case TRADESPackage.ANALYSIS__COMPONENT:
-			return ((InternalEList<?>) getComponent()).basicRemove(otherEnd, msgs);
 		case TRADESPackage.ANALYSIS__CONTROL:
 			return ((InternalEList<?>) getControl()).basicRemove(otherEnd, msgs);
 		case TRADESPackage.ANALYSIS__THREATALLOCATION:
 			return ((InternalEList<?>) getThreatallocation()).basicRemove(otherEnd, msgs);
 		case TRADESPackage.ANALYSIS__THREATMITIGATION:
 			return ((InternalEList<?>) getThreatmitigation()).basicRemove(otherEnd, msgs);
-		case TRADESPackage.ANALYSIS__DATA:
-			return ((InternalEList<?>) getData()).basicRemove(otherEnd, msgs);
 		case TRADESPackage.ANALYSIS__AFFECTRELATION:
 			return ((InternalEList<?>) getAffectrelation()).basicRemove(otherEnd, msgs);
 		case TRADESPackage.ANALYSIS__ANALYSISDIAGRAM:
@@ -404,20 +376,18 @@ public class AnalysisImpl extends MinimalEObjectImpl.Container implements Analys
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case TRADESPackage.ANALYSIS__THREAT:
-			return getThreat();
-		case TRADESPackage.ANALYSIS__COMPONENT:
-			return getComponent();
-		case TRADESPackage.ANALYSIS__CONTROL:
-			return getControl();
+		case TRADESPackage.ANALYSIS__DATA:
+			return getData();
 		case TRADESPackage.ANALYSIS__NAME:
 			return getName();
+		case TRADESPackage.ANALYSIS__THREAT:
+			return getThreat();
+		case TRADESPackage.ANALYSIS__CONTROL:
+			return getControl();
 		case TRADESPackage.ANALYSIS__THREATALLOCATION:
 			return getThreatallocation();
 		case TRADESPackage.ANALYSIS__THREATMITIGATION:
 			return getThreatmitigation();
-		case TRADESPackage.ANALYSIS__DATA:
-			return getData();
 		case TRADESPackage.ANALYSIS__AFFECTRELATION:
 			return getAffectrelation();
 		case TRADESPackage.ANALYSIS__ANALYSISDIAGRAM:
@@ -437,20 +407,20 @@ public class AnalysisImpl extends MinimalEObjectImpl.Container implements Analys
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+		case TRADESPackage.ANALYSIS__DATA:
+			getData().clear();
+			getData().addAll((Collection<? extends Data>) newValue);
+			return;
+		case TRADESPackage.ANALYSIS__NAME:
+			setName((String) newValue);
+			return;
 		case TRADESPackage.ANALYSIS__THREAT:
 			getThreat().clear();
 			getThreat().addAll((Collection<? extends Threat>) newValue);
 			return;
-		case TRADESPackage.ANALYSIS__COMPONENT:
-			getComponent().clear();
-			getComponent().addAll((Collection<? extends Component>) newValue);
-			return;
 		case TRADESPackage.ANALYSIS__CONTROL:
 			getControl().clear();
 			getControl().addAll((Collection<? extends Control>) newValue);
-			return;
-		case TRADESPackage.ANALYSIS__NAME:
-			setName((String) newValue);
 			return;
 		case TRADESPackage.ANALYSIS__THREATALLOCATION:
 			getThreatallocation().clear();
@@ -459,10 +429,6 @@ public class AnalysisImpl extends MinimalEObjectImpl.Container implements Analys
 		case TRADESPackage.ANALYSIS__THREATMITIGATION:
 			getThreatmitigation().clear();
 			getThreatmitigation().addAll((Collection<? extends ThreatMitigationRelation>) newValue);
-			return;
-		case TRADESPackage.ANALYSIS__DATA:
-			getData().clear();
-			getData().addAll((Collection<? extends Data>) newValue);
 			return;
 		case TRADESPackage.ANALYSIS__AFFECTRELATION:
 			getAffectrelation().clear();
@@ -487,26 +453,23 @@ public class AnalysisImpl extends MinimalEObjectImpl.Container implements Analys
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case TRADESPackage.ANALYSIS__THREAT:
-			getThreat().clear();
-			return;
-		case TRADESPackage.ANALYSIS__COMPONENT:
-			getComponent().clear();
-			return;
-		case TRADESPackage.ANALYSIS__CONTROL:
-			getControl().clear();
+		case TRADESPackage.ANALYSIS__DATA:
+			getData().clear();
 			return;
 		case TRADESPackage.ANALYSIS__NAME:
 			setName(NAME_EDEFAULT);
+			return;
+		case TRADESPackage.ANALYSIS__THREAT:
+			getThreat().clear();
+			return;
+		case TRADESPackage.ANALYSIS__CONTROL:
+			getControl().clear();
 			return;
 		case TRADESPackage.ANALYSIS__THREATALLOCATION:
 			getThreatallocation().clear();
 			return;
 		case TRADESPackage.ANALYSIS__THREATMITIGATION:
 			getThreatmitigation().clear();
-			return;
-		case TRADESPackage.ANALYSIS__DATA:
-			getData().clear();
 			return;
 		case TRADESPackage.ANALYSIS__AFFECTRELATION:
 			getAffectrelation().clear();
@@ -529,20 +492,18 @@ public class AnalysisImpl extends MinimalEObjectImpl.Container implements Analys
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case TRADESPackage.ANALYSIS__THREAT:
-			return threat != null && !threat.isEmpty();
-		case TRADESPackage.ANALYSIS__COMPONENT:
-			return component != null && !component.isEmpty();
-		case TRADESPackage.ANALYSIS__CONTROL:
-			return control != null && !control.isEmpty();
+		case TRADESPackage.ANALYSIS__DATA:
+			return data != null && !data.isEmpty();
 		case TRADESPackage.ANALYSIS__NAME:
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+		case TRADESPackage.ANALYSIS__THREAT:
+			return threat != null && !threat.isEmpty();
+		case TRADESPackage.ANALYSIS__CONTROL:
+			return control != null && !control.isEmpty();
 		case TRADESPackage.ANALYSIS__THREATALLOCATION:
 			return threatallocation != null && !threatallocation.isEmpty();
 		case TRADESPackage.ANALYSIS__THREATMITIGATION:
 			return threatmitigation != null && !threatmitigation.isEmpty();
-		case TRADESPackage.ANALYSIS__DATA:
-			return data != null && !data.isEmpty();
 		case TRADESPackage.ANALYSIS__AFFECTRELATION:
 			return affectrelation != null && !affectrelation.isEmpty();
 		case TRADESPackage.ANALYSIS__ANALYSISDIAGRAM:
@@ -551,6 +512,58 @@ public class AnalysisImpl extends MinimalEObjectImpl.Container implements Analys
 			return scoresystem != null;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == DataOwner.class) {
+			switch (derivedFeatureID) {
+			case TRADESPackage.ANALYSIS__DATA:
+				return TRADESPackage.DATA_OWNER__DATA;
+			default:
+				return -1;
+			}
+		}
+		if (baseClass == NamedElement.class) {
+			switch (derivedFeatureID) {
+			case TRADESPackage.ANALYSIS__NAME:
+				return TRADESPackage.NAMED_ELEMENT__NAME;
+			default:
+				return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == DataOwner.class) {
+			switch (baseFeatureID) {
+			case TRADESPackage.DATA_OWNER__DATA:
+				return TRADESPackage.ANALYSIS__DATA;
+			default:
+				return -1;
+			}
+		}
+		if (baseClass == NamedElement.class) {
+			switch (baseFeatureID) {
+			case TRADESPackage.NAMED_ELEMENT__NAME:
+				return TRADESPackage.ANALYSIS__NAME;
+			default:
+				return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
 	/**

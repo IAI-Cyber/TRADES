@@ -9,7 +9,6 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -19,31 +18,12 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link dsm.TRADES.impl.DifficultyScoreImpl#getName <em>Name</em>}</li>
  *   <li>{@link dsm.TRADES.impl.DifficultyScoreImpl#getDifficulty <em>Difficulty</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class DifficultyScoreImpl extends MinimalEObjectImpl.Container implements DifficultyScore {
-	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String NAME_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String name = NAME_EDEFAULT;
+public class DifficultyScoreImpl extends NamedElementImpl implements DifficultyScore {
 	/**
 	 * The default value of the '{@link #getDifficulty() <em>Difficulty</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -88,29 +68,6 @@ public class DifficultyScoreImpl extends MinimalEObjectImpl.Container implements
 	 * @generated
 	 */
 	@Override
-	public String getName() {
-		return name;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setName(String newName) {
-		String oldName = name;
-		name = newName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TRADESPackage.DIFFICULTY_SCORE__NAME, oldName, name));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public int getDifficulty() {
 		return difficulty;
 	}
@@ -137,8 +94,6 @@ public class DifficultyScoreImpl extends MinimalEObjectImpl.Container implements
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case TRADESPackage.DIFFICULTY_SCORE__NAME:
-			return getName();
 		case TRADESPackage.DIFFICULTY_SCORE__DIFFICULTY:
 			return getDifficulty();
 		}
@@ -153,9 +108,6 @@ public class DifficultyScoreImpl extends MinimalEObjectImpl.Container implements
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case TRADESPackage.DIFFICULTY_SCORE__NAME:
-			setName((String) newValue);
-			return;
 		case TRADESPackage.DIFFICULTY_SCORE__DIFFICULTY:
 			setDifficulty((Integer) newValue);
 			return;
@@ -171,9 +123,6 @@ public class DifficultyScoreImpl extends MinimalEObjectImpl.Container implements
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case TRADESPackage.DIFFICULTY_SCORE__NAME:
-			setName(NAME_EDEFAULT);
-			return;
 		case TRADESPackage.DIFFICULTY_SCORE__DIFFICULTY:
 			setDifficulty(DIFFICULTY_EDEFAULT);
 			return;
@@ -189,8 +138,6 @@ public class DifficultyScoreImpl extends MinimalEObjectImpl.Container implements
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case TRADESPackage.DIFFICULTY_SCORE__NAME:
-			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		case TRADESPackage.DIFFICULTY_SCORE__DIFFICULTY:
 			return difficulty != DIFFICULTY_EDEFAULT;
 		}
@@ -208,9 +155,7 @@ public class DifficultyScoreImpl extends MinimalEObjectImpl.Container implements
 			return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (name: ");
-		result.append(name);
-		result.append(", difficulty: ");
+		result.append(" (difficulty: ");
 		result.append(difficulty);
 		result.append(')');
 		return result.toString();

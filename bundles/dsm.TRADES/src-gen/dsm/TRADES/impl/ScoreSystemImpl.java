@@ -8,18 +8,12 @@ import dsm.TRADES.ScoreSystem;
 import dsm.TRADES.TRADESPackage;
 
 import java.util.Collection;
-
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -31,34 +25,13 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link dsm.TRADES.impl.ScoreSystemImpl#getName <em>Name</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ScoreSystemImpl#getImpactscore <em>Impactscore</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ScoreSystemImpl#getDifficultyscore <em>Difficultyscore</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ScoreSystemImpl extends MinimalEObjectImpl.Container implements ScoreSystem {
-	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String name = NAME_EDEFAULT;
-
+public class ScoreSystemImpl extends NamedElementImpl implements ScoreSystem {
 	/**
 	 * The cached value of the '{@link #getImpactscore() <em>Impactscore</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -96,29 +69,6 @@ public class ScoreSystemImpl extends MinimalEObjectImpl.Container implements Sco
 	@Override
 	protected EClass eStaticClass() {
 		return TRADESPackage.Literals.SCORE_SYSTEM;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getName() {
-		return name;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setName(String newName) {
-		String oldName = name;
-		name = newName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TRADESPackage.SCORE_SYSTEM__NAME, oldName, name));
 	}
 
 	/**
@@ -173,8 +123,6 @@ public class ScoreSystemImpl extends MinimalEObjectImpl.Container implements Sco
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case TRADESPackage.SCORE_SYSTEM__NAME:
-			return getName();
 		case TRADESPackage.SCORE_SYSTEM__IMPACTSCORE:
 			return getImpactscore();
 		case TRADESPackage.SCORE_SYSTEM__DIFFICULTYSCORE:
@@ -192,9 +140,6 @@ public class ScoreSystemImpl extends MinimalEObjectImpl.Container implements Sco
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case TRADESPackage.SCORE_SYSTEM__NAME:
-			setName((String) newValue);
-			return;
 		case TRADESPackage.SCORE_SYSTEM__IMPACTSCORE:
 			getImpactscore().clear();
 			getImpactscore().addAll((Collection<? extends ImpactScore>) newValue);
@@ -215,9 +160,6 @@ public class ScoreSystemImpl extends MinimalEObjectImpl.Container implements Sco
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case TRADESPackage.SCORE_SYSTEM__NAME:
-			setName(NAME_EDEFAULT);
-			return;
 		case TRADESPackage.SCORE_SYSTEM__IMPACTSCORE:
 			getImpactscore().clear();
 			return;
@@ -236,31 +178,12 @@ public class ScoreSystemImpl extends MinimalEObjectImpl.Container implements Sco
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case TRADESPackage.SCORE_SYSTEM__NAME:
-			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		case TRADESPackage.SCORE_SYSTEM__IMPACTSCORE:
 			return impactscore != null && !impactscore.isEmpty();
 		case TRADESPackage.SCORE_SYSTEM__DIFFICULTYSCORE:
 			return difficultyscore != null && !difficultyscore.isEmpty();
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy())
-			return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (name: ");
-		result.append(name);
-		result.append(')');
-		return result.toString();
 	}
 
 } //ScoreSystemImpl

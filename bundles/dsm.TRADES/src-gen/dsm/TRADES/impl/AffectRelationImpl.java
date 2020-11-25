@@ -18,8 +18,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
@@ -33,13 +31,12 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  *   <li>{@link dsm.TRADES.impl.AffectRelationImpl#getData <em>Data</em>}</li>
  *   <li>{@link dsm.TRADES.impl.AffectRelationImpl#getSourceComponent <em>Source Component</em>}</li>
  *   <li>{@link dsm.TRADES.impl.AffectRelationImpl#getTargetComponent <em>Target Component</em>}</li>
- *   <li>{@link dsm.TRADES.impl.AffectRelationImpl#getName <em>Name</em>}</li>
  *   <li>{@link dsm.TRADES.impl.AffectRelationImpl#getAnalysisStatus <em>Analysis Status</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class AffectRelationImpl extends MinimalEObjectImpl.Container implements AffectRelation {
+public class AffectRelationImpl extends NamedElementImpl implements AffectRelation {
 	/**
 	 * The cached value of the '{@link #getData() <em>Data</em>}' reference list.
 	 * <!-- begin-user-doc -->
@@ -69,26 +66,6 @@ public class AffectRelationImpl extends MinimalEObjectImpl.Container implements 
 	 * @ordered
 	 */
 	protected Component targetComponent;
-
-	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String name = NAME_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getAnalysisStatus() <em>Analysis Status</em>}' attribute.
@@ -232,29 +209,6 @@ public class AffectRelationImpl extends MinimalEObjectImpl.Container implements 
 	 * @generated
 	 */
 	@Override
-	public String getName() {
-		return name;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setName(String newName) {
-		String oldName = name;
-		name = newName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TRADESPackage.AFFECT_RELATION__NAME, oldName, name));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public AffectedENUM getAnalysisStatus() {
 		return analysisStatus;
 	}
@@ -291,8 +245,6 @@ public class AffectRelationImpl extends MinimalEObjectImpl.Container implements 
 			if (resolve)
 				return getTargetComponent();
 			return basicGetTargetComponent();
-		case TRADESPackage.AFFECT_RELATION__NAME:
-			return getName();
 		case TRADESPackage.AFFECT_RELATION__ANALYSIS_STATUS:
 			return getAnalysisStatus();
 		}
@@ -318,9 +270,6 @@ public class AffectRelationImpl extends MinimalEObjectImpl.Container implements 
 		case TRADESPackage.AFFECT_RELATION__TARGET_COMPONENT:
 			setTargetComponent((Component) newValue);
 			return;
-		case TRADESPackage.AFFECT_RELATION__NAME:
-			setName((String) newValue);
-			return;
 		case TRADESPackage.AFFECT_RELATION__ANALYSIS_STATUS:
 			setAnalysisStatus((AffectedENUM) newValue);
 			return;
@@ -345,9 +294,6 @@ public class AffectRelationImpl extends MinimalEObjectImpl.Container implements 
 		case TRADESPackage.AFFECT_RELATION__TARGET_COMPONENT:
 			setTargetComponent((Component) null);
 			return;
-		case TRADESPackage.AFFECT_RELATION__NAME:
-			setName(NAME_EDEFAULT);
-			return;
 		case TRADESPackage.AFFECT_RELATION__ANALYSIS_STATUS:
 			setAnalysisStatus(ANALYSIS_STATUS_EDEFAULT);
 			return;
@@ -369,8 +315,6 @@ public class AffectRelationImpl extends MinimalEObjectImpl.Container implements 
 			return sourceComponent != null;
 		case TRADESPackage.AFFECT_RELATION__TARGET_COMPONENT:
 			return targetComponent != null;
-		case TRADESPackage.AFFECT_RELATION__NAME:
-			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		case TRADESPackage.AFFECT_RELATION__ANALYSIS_STATUS:
 			return analysisStatus != ANALYSIS_STATUS_EDEFAULT;
 		}
@@ -388,9 +332,7 @@ public class AffectRelationImpl extends MinimalEObjectImpl.Container implements 
 			return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (name: ");
-		result.append(name);
-		result.append(", analysisStatus: ");
+		result.append(" (analysisStatus: ");
 		result.append(analysisStatus);
 		result.append(')');
 		return result.toString();

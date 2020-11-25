@@ -7,6 +7,8 @@ import dsm.TRADES.Analysis;
 import dsm.TRADES.Component;
 import dsm.TRADES.Control;
 import dsm.TRADES.Data;
+import dsm.TRADES.DataOwner;
+import dsm.TRADES.NamedElement;
 import dsm.TRADES.TRADESPackage;
 import dsm.TRADES.Threat;
 import dsm.TRADES.ThreatAllocationRelation;
@@ -22,8 +24,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -36,12 +36,11 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link dsm.TRADES.impl.ComponentImpl#getData <em>Data</em>}</li>
+ *   <li>{@link dsm.TRADES.impl.ComponentImpl#getName <em>Name</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ComponentImpl#getAllocatedThreat <em>Allocated Threat</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ComponentImpl#getImplements <em>Implements</em>}</li>
- *   <li>{@link dsm.TRADES.impl.ComponentImpl#getName <em>Name</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ComponentImpl#getThreatallocation <em>Threatallocation</em>}</li>
- *   <li>{@link dsm.TRADES.impl.ComponentImpl#getComponent <em>Component</em>}</li>
- *   <li>{@link dsm.TRADES.impl.ComponentImpl#getData <em>Data</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ComponentImpl#getControl <em>Control</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ComponentImpl#getAnalysis <em>Analysis</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ComponentImpl#getAffectrelation <em>Affectrelation</em>}</li>
@@ -50,26 +49,16 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class ComponentImpl extends MinimalEObjectImpl.Container implements Component {
+public class ComponentImpl extends ComponentOwerImpl implements Component {
 	/**
-	 * The cached value of the '{@link #getAllocatedThreat() <em>Allocated Threat</em>}' reference list.
+	 * The cached value of the '{@link #getData() <em>Data</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAllocatedThreat()
+	 * @see #getData()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Threat> allocatedThreat;
-
-	/**
-	 * The cached value of the '{@link #getImplements() <em>Implements</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getImplements()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Control> implements_;
+	protected EList<Data> data;
 
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -92,6 +81,26 @@ public class ComponentImpl extends MinimalEObjectImpl.Container implements Compo
 	protected String name = NAME_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getAllocatedThreat() <em>Allocated Threat</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAllocatedThreat()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Threat> allocatedThreat;
+
+	/**
+	 * The cached value of the '{@link #getImplements() <em>Implements</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getImplements()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Control> implements_;
+
+	/**
 	 * The cached value of the '{@link #getThreatallocation() <em>Threatallocation</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -100,26 +109,6 @@ public class ComponentImpl extends MinimalEObjectImpl.Container implements Compo
 	 * @ordered
 	 */
 	protected EList<ThreatAllocationRelation> threatallocation;
-
-	/**
-	 * The cached value of the '{@link #getComponent() <em>Component</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getComponent()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Component> component;
-
-	/**
-	 * The cached value of the '{@link #getData() <em>Data</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getData()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Data> data;
 
 	/**
 	 * The cached value of the '{@link #getControl() <em>Control</em>}' containment reference list.
@@ -252,20 +241,6 @@ public class ComponentImpl extends MinimalEObjectImpl.Container implements Compo
 	 * @generated
 	 */
 	@Override
-	public EList<Component> getComponent() {
-		if (component == null) {
-			component = new EObjectContainmentEList<Component>(Component.class, this,
-					TRADESPackage.COMPONENT__COMPONENT);
-		}
-		return component;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EList<Data> getData() {
 		if (data == null) {
 			data = new EObjectContainmentEList<Data>(Data.class, this, TRADESPackage.COMPONENT__DATA);
@@ -353,16 +328,14 @@ public class ComponentImpl extends MinimalEObjectImpl.Container implements Compo
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+		case TRADESPackage.COMPONENT__DATA:
+			return ((InternalEList<?>) getData()).basicRemove(otherEnd, msgs);
 		case TRADESPackage.COMPONENT__ALLOCATED_THREAT:
 			return ((InternalEList<?>) getAllocatedThreat()).basicRemove(otherEnd, msgs);
 		case TRADESPackage.COMPONENT__IMPLEMENTS:
 			return ((InternalEList<?>) getImplements()).basicRemove(otherEnd, msgs);
 		case TRADESPackage.COMPONENT__THREATALLOCATION:
 			return ((InternalEList<?>) getThreatallocation()).basicRemove(otherEnd, msgs);
-		case TRADESPackage.COMPONENT__COMPONENT:
-			return ((InternalEList<?>) getComponent()).basicRemove(otherEnd, msgs);
-		case TRADESPackage.COMPONENT__DATA:
-			return ((InternalEList<?>) getData()).basicRemove(otherEnd, msgs);
 		case TRADESPackage.COMPONENT__CONTROL:
 			return ((InternalEList<?>) getControl()).basicRemove(otherEnd, msgs);
 		case TRADESPackage.COMPONENT__ANALYSIS:
@@ -383,18 +356,16 @@ public class ComponentImpl extends MinimalEObjectImpl.Container implements Compo
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+		case TRADESPackage.COMPONENT__DATA:
+			return getData();
+		case TRADESPackage.COMPONENT__NAME:
+			return getName();
 		case TRADESPackage.COMPONENT__ALLOCATED_THREAT:
 			return getAllocatedThreat();
 		case TRADESPackage.COMPONENT__IMPLEMENTS:
 			return getImplements();
-		case TRADESPackage.COMPONENT__NAME:
-			return getName();
 		case TRADESPackage.COMPONENT__THREATALLOCATION:
 			return getThreatallocation();
-		case TRADESPackage.COMPONENT__COMPONENT:
-			return getComponent();
-		case TRADESPackage.COMPONENT__DATA:
-			return getData();
 		case TRADESPackage.COMPONENT__CONTROL:
 			return getControl();
 		case TRADESPackage.COMPONENT__ANALYSIS:
@@ -416,6 +387,13 @@ public class ComponentImpl extends MinimalEObjectImpl.Container implements Compo
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+		case TRADESPackage.COMPONENT__DATA:
+			getData().clear();
+			getData().addAll((Collection<? extends Data>) newValue);
+			return;
+		case TRADESPackage.COMPONENT__NAME:
+			setName((String) newValue);
+			return;
 		case TRADESPackage.COMPONENT__ALLOCATED_THREAT:
 			getAllocatedThreat().clear();
 			getAllocatedThreat().addAll((Collection<? extends Threat>) newValue);
@@ -424,20 +402,9 @@ public class ComponentImpl extends MinimalEObjectImpl.Container implements Compo
 			getImplements().clear();
 			getImplements().addAll((Collection<? extends Control>) newValue);
 			return;
-		case TRADESPackage.COMPONENT__NAME:
-			setName((String) newValue);
-			return;
 		case TRADESPackage.COMPONENT__THREATALLOCATION:
 			getThreatallocation().clear();
 			getThreatallocation().addAll((Collection<? extends ThreatAllocationRelation>) newValue);
-			return;
-		case TRADESPackage.COMPONENT__COMPONENT:
-			getComponent().clear();
-			getComponent().addAll((Collection<? extends Component>) newValue);
-			return;
-		case TRADESPackage.COMPONENT__DATA:
-			getData().clear();
-			getData().addAll((Collection<? extends Data>) newValue);
 			return;
 		case TRADESPackage.COMPONENT__CONTROL:
 			getControl().clear();
@@ -467,23 +434,20 @@ public class ComponentImpl extends MinimalEObjectImpl.Container implements Compo
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+		case TRADESPackage.COMPONENT__DATA:
+			getData().clear();
+			return;
+		case TRADESPackage.COMPONENT__NAME:
+			setName(NAME_EDEFAULT);
+			return;
 		case TRADESPackage.COMPONENT__ALLOCATED_THREAT:
 			getAllocatedThreat().clear();
 			return;
 		case TRADESPackage.COMPONENT__IMPLEMENTS:
 			getImplements().clear();
 			return;
-		case TRADESPackage.COMPONENT__NAME:
-			setName(NAME_EDEFAULT);
-			return;
 		case TRADESPackage.COMPONENT__THREATALLOCATION:
 			getThreatallocation().clear();
-			return;
-		case TRADESPackage.COMPONENT__COMPONENT:
-			getComponent().clear();
-			return;
-		case TRADESPackage.COMPONENT__DATA:
-			getData().clear();
 			return;
 		case TRADESPackage.COMPONENT__CONTROL:
 			getControl().clear();
@@ -509,18 +473,16 @@ public class ComponentImpl extends MinimalEObjectImpl.Container implements Compo
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+		case TRADESPackage.COMPONENT__DATA:
+			return data != null && !data.isEmpty();
+		case TRADESPackage.COMPONENT__NAME:
+			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		case TRADESPackage.COMPONENT__ALLOCATED_THREAT:
 			return allocatedThreat != null && !allocatedThreat.isEmpty();
 		case TRADESPackage.COMPONENT__IMPLEMENTS:
 			return implements_ != null && !implements_.isEmpty();
-		case TRADESPackage.COMPONENT__NAME:
-			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		case TRADESPackage.COMPONENT__THREATALLOCATION:
 			return threatallocation != null && !threatallocation.isEmpty();
-		case TRADESPackage.COMPONENT__COMPONENT:
-			return component != null && !component.isEmpty();
-		case TRADESPackage.COMPONENT__DATA:
-			return data != null && !data.isEmpty();
 		case TRADESPackage.COMPONENT__CONTROL:
 			return control != null && !control.isEmpty();
 		case TRADESPackage.COMPONENT__ANALYSIS:
@@ -531,6 +493,58 @@ public class ComponentImpl extends MinimalEObjectImpl.Container implements Compo
 			return threat != null && !threat.isEmpty();
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == DataOwner.class) {
+			switch (derivedFeatureID) {
+			case TRADESPackage.COMPONENT__DATA:
+				return TRADESPackage.DATA_OWNER__DATA;
+			default:
+				return -1;
+			}
+		}
+		if (baseClass == NamedElement.class) {
+			switch (derivedFeatureID) {
+			case TRADESPackage.COMPONENT__NAME:
+				return TRADESPackage.NAMED_ELEMENT__NAME;
+			default:
+				return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == DataOwner.class) {
+			switch (baseFeatureID) {
+			case TRADESPackage.DATA_OWNER__DATA:
+				return TRADESPackage.COMPONENT__DATA;
+			default:
+				return -1;
+			}
+		}
+		if (baseClass == NamedElement.class) {
+			switch (baseFeatureID) {
+			case TRADESPackage.NAMED_ELEMENT__NAME:
+				return TRADESPackage.COMPONENT__NAME;
+			default:
+				return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
 	/**

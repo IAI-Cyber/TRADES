@@ -4,8 +4,6 @@ package dsm.TRADES;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Affect Relation</b></em>'.
@@ -18,7 +16,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link dsm.TRADES.AffectRelation#getData <em>Data</em>}</li>
  *   <li>{@link dsm.TRADES.AffectRelation#getSourceComponent <em>Source Component</em>}</li>
  *   <li>{@link dsm.TRADES.AffectRelation#getTargetComponent <em>Target Component</em>}</li>
- *   <li>{@link dsm.TRADES.AffectRelation#getName <em>Name</em>}</li>
  *   <li>{@link dsm.TRADES.AffectRelation#getAnalysisStatus <em>Analysis Status</em>}</li>
  * </ul>
  *
@@ -26,7 +23,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface AffectRelation extends EObject {
+public interface AffectRelation extends NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Data</b></em>' reference list.
 	 * The list contents are of type {@link dsm.TRADES.Data}.
@@ -94,32 +91,6 @@ public interface AffectRelation extends EObject {
 	 * @generated
 	 */
 	void setTargetComponent(Component value);
-
-	/**
-	 * Returns the value of the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Name</em>' attribute.
-	 * @see #setName(String)
-	 * @see dsm.TRADES.TRADESPackage#getAffectRelation_Name()
-	 * @model
-	 * @generated
-	 */
-	String getName();
-
-	/**
-	 * Sets the value of the '{@link dsm.TRADES.AffectRelation#getName <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
-	 * @see #getName()
-	 * @generated
-	 */
-	void setName(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Analysis Status</b></em>' attribute.
