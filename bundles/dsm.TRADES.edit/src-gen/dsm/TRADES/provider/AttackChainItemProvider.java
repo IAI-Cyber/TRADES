@@ -59,6 +59,7 @@ public class AttackChainItemProvider extends ItemProviderAdapter implements IEdi
 
 			addNamePropertyDescriptor(object);
 			addStartPropertyDescriptor(object);
+			addEndPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -92,6 +93,21 @@ public class AttackChainItemProvider extends ItemProviderAdapter implements IEdi
 						getString("_UI_PropertyDescriptor_description", "_UI_AttackChain_start_feature",
 								"_UI_AttackChain_type"),
 						TRADESPackage.Literals.ATTACK_CHAIN__START, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the End feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addEndPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_AttackChain_end_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_AttackChain_end_feature",
+								"_UI_AttackChain_type"),
+						TRADESPackage.Literals.ATTACK_CHAIN__END, true, false, true, null, null, null));
 	}
 
 	/**

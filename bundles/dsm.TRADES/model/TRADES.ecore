@@ -134,10 +134,12 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="attackchainstep" upperBound="-1"
         eType="#//AttackChainStep" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//AttackChainStep"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="start" lowerBound="1" eType="#//AttackChainStep"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="end" lowerBound="1" eType="#//AttackChainStep"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AttackChainStep">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="stepNum" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="stepNum" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        volatile="true" transient="true" derived="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="threatallocationrelation"
         eType="#//ThreatAllocationRelation"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="difficulty" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
@@ -148,8 +150,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="impactDescription" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="nexts" upperBound="-1"
         eType="#//AttackChainStep" eOpposite="#//AttackChainStep/previous"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="previous" eType="#//AttackChainStep"
-        eOpposite="#//AttackChainStep/nexts"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="previous" upperBound="-1"
+        eType="#//AttackChainStep" eOpposite="#//AttackChainStep/nexts"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ScoreSystem">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

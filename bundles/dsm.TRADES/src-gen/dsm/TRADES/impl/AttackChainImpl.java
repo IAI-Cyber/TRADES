@@ -33,6 +33,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dsm.TRADES.impl.AttackChainImpl#getAttackchainstep <em>Attackchainstep</em>}</li>
  *   <li>{@link dsm.TRADES.impl.AttackChainImpl#getName <em>Name</em>}</li>
  *   <li>{@link dsm.TRADES.impl.AttackChainImpl#getStart <em>Start</em>}</li>
+ *   <li>{@link dsm.TRADES.impl.AttackChainImpl#getEnd <em>End</em>}</li>
  * </ul>
  *
  * @generated
@@ -77,6 +78,16 @@ public class AttackChainImpl extends MinimalEObjectImpl.Container implements Att
 	 * @ordered
 	 */
 	protected AttackChainStep start;
+
+	/**
+	 * The cached value of the '{@link #getEnd() <em>End</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEnd()
+	 * @generated
+	 * @ordered
+	 */
+	protected AttackChainStep end;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -181,6 +192,47 @@ public class AttackChainImpl extends MinimalEObjectImpl.Container implements Att
 	 * @generated
 	 */
 	@Override
+	public AttackChainStep getEnd() {
+		if (end != null && end.eIsProxy()) {
+			InternalEObject oldEnd = (InternalEObject) end;
+			end = (AttackChainStep) eResolveProxy(oldEnd);
+			if (end != oldEnd) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TRADESPackage.ATTACK_CHAIN__END, oldEnd,
+							end));
+			}
+		}
+		return end;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AttackChainStep basicGetEnd() {
+		return end;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setEnd(AttackChainStep newEnd) {
+		AttackChainStep oldEnd = end;
+		end = newEnd;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TRADESPackage.ATTACK_CHAIN__END, oldEnd, end));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case TRADESPackage.ATTACK_CHAIN__ATTACKCHAINSTEP:
@@ -205,6 +257,10 @@ public class AttackChainImpl extends MinimalEObjectImpl.Container implements Att
 			if (resolve)
 				return getStart();
 			return basicGetStart();
+		case TRADESPackage.ATTACK_CHAIN__END:
+			if (resolve)
+				return getEnd();
+			return basicGetEnd();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -228,6 +284,9 @@ public class AttackChainImpl extends MinimalEObjectImpl.Container implements Att
 		case TRADESPackage.ATTACK_CHAIN__START:
 			setStart((AttackChainStep) newValue);
 			return;
+		case TRADESPackage.ATTACK_CHAIN__END:
+			setEnd((AttackChainStep) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -249,6 +308,9 @@ public class AttackChainImpl extends MinimalEObjectImpl.Container implements Att
 		case TRADESPackage.ATTACK_CHAIN__START:
 			setStart((AttackChainStep) null);
 			return;
+		case TRADESPackage.ATTACK_CHAIN__END:
+			setEnd((AttackChainStep) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -267,6 +329,8 @@ public class AttackChainImpl extends MinimalEObjectImpl.Container implements Att
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		case TRADESPackage.ATTACK_CHAIN__START:
 			return start != null;
+		case TRADESPackage.ATTACK_CHAIN__END:
+			return end != null;
 		}
 		return super.eIsSet(featureID);
 	}

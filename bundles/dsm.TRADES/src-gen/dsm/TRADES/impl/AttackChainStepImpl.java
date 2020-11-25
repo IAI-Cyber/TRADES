@@ -46,17 +46,7 @@ public class AttackChainStepImpl extends MinimalEObjectImpl.Container implements
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int STEP_NUM_EDEFAULT = 0;
-
-	/**
-	 * The cached value of the '{@link #getStepNum() <em>Step Num</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStepNum()
-	 * @generated
-	 * @ordered
-	 */
-	protected int stepNum = STEP_NUM_EDEFAULT;
+	protected static final String STEP_NUM_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getThreatallocationrelation() <em>Threatallocationrelation</em>}' reference.
@@ -119,14 +109,14 @@ public class AttackChainStepImpl extends MinimalEObjectImpl.Container implements
 	protected EList<AttackChainStep> nexts;
 
 	/**
-	 * The cached value of the '{@link #getPrevious() <em>Previous</em>}' reference.
+	 * The cached value of the '{@link #getPrevious() <em>Previous</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getPrevious()
 	 * @generated
 	 * @ordered
 	 */
-	protected AttackChainStep previous;
+	protected EList<AttackChainStep> previous;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -150,11 +140,51 @@ public class AttackChainStepImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated not
 	 */
 	@Override
-	public int getStepNum() {
-		return stepNum;
+	public String getStepNum() {
+		int index = getNum(this);
+		int subNum = getSubNum(this);
+
+		String label = "";
+		if (index != -1) {
+			label += index;
+		} else {
+			label += "?";
+		}
+
+		if (subNum != -1) {
+			label += "." + subNum;
+		}
+
+		return label;
+	}
+
+	private int getNum(AttackChainStep step) {
+		return doGetNum(step, 0);
+	}
+
+	private int doGetNum(AttackChainStep step, int stepNum) {
+		if (stepNum > 1000) {
+			return -1;
+		}
+
+		int result = stepNum;
+		for (AttackChainStep previous : step.getPrevious()) {
+			result = Math.max(doGetNum(previous, stepNum + 1), result);
+		}
+
+		return result;
+
+	}
+
+	private int getSubNum(AttackChainStep step) {
+		int index = -1;
+		for (AttackChainStep previous : step.getPrevious()) {
+			index = Math.max(index, previous.getNexts().indexOf(step));
+		}
+		return index;
 	}
 
 	/**
@@ -163,12 +193,10 @@ public class AttackChainStepImpl extends MinimalEObjectImpl.Container implements
 	 * @generated
 	 */
 	@Override
-	public void setStepNum(int newStepNum) {
-		int oldStepNum = stepNum;
-		stepNum = newStepNum;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TRADESPackage.ATTACK_CHAIN_STEP__STEP_NUM, oldStepNum,
-					stepNum));
+	public void setStepNum(String newStepNum) {
+		// TODO: implement this method to set the 'Step Num' attribute
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -271,7 +299,7 @@ public class AttackChainStepImpl extends MinimalEObjectImpl.Container implements
 	@Override
 	public EList<AttackChainStep> getNexts() {
 		if (nexts == null) {
-			nexts = new EObjectWithInverseResolvingEList<AttackChainStep>(AttackChainStep.class, this,
+			nexts = new EObjectWithInverseResolvingEList.ManyInverse<AttackChainStep>(AttackChainStep.class, this,
 					TRADESPackage.ATTACK_CHAIN_STEP__NEXTS, TRADESPackage.ATTACK_CHAIN_STEP__PREVIOUS);
 		}
 		return nexts;
@@ -283,68 +311,12 @@ public class AttackChainStepImpl extends MinimalEObjectImpl.Container implements
 	 * @generated
 	 */
 	@Override
-	public AttackChainStep getPrevious() {
-		if (previous != null && previous.eIsProxy()) {
-			InternalEObject oldPrevious = (InternalEObject) previous;
-			previous = (AttackChainStep) eResolveProxy(oldPrevious);
-			if (previous != oldPrevious) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TRADESPackage.ATTACK_CHAIN_STEP__PREVIOUS,
-							oldPrevious, previous));
-			}
+	public EList<AttackChainStep> getPrevious() {
+		if (previous == null) {
+			previous = new EObjectWithInverseResolvingEList.ManyInverse<AttackChainStep>(AttackChainStep.class, this,
+					TRADESPackage.ATTACK_CHAIN_STEP__PREVIOUS, TRADESPackage.ATTACK_CHAIN_STEP__NEXTS);
 		}
 		return previous;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public AttackChainStep basicGetPrevious() {
-		return previous;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetPrevious(AttackChainStep newPrevious, NotificationChain msgs) {
-		AttackChainStep oldPrevious = previous;
-		previous = newPrevious;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					TRADESPackage.ATTACK_CHAIN_STEP__PREVIOUS, oldPrevious, newPrevious);
-			if (msgs == null)
-				msgs = notification;
-			else
-				msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setPrevious(AttackChainStep newPrevious) {
-		if (newPrevious != previous) {
-			NotificationChain msgs = null;
-			if (previous != null)
-				msgs = ((InternalEObject) previous).eInverseRemove(this, TRADESPackage.ATTACK_CHAIN_STEP__NEXTS,
-						AttackChainStep.class, msgs);
-			if (newPrevious != null)
-				msgs = ((InternalEObject) newPrevious).eInverseAdd(this, TRADESPackage.ATTACK_CHAIN_STEP__NEXTS,
-						AttackChainStep.class, msgs);
-			msgs = basicSetPrevious(newPrevious, msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TRADESPackage.ATTACK_CHAIN_STEP__PREVIOUS,
-					newPrevious, newPrevious));
 	}
 
 	/**
@@ -359,10 +331,7 @@ public class AttackChainStepImpl extends MinimalEObjectImpl.Container implements
 		case TRADESPackage.ATTACK_CHAIN_STEP__NEXTS:
 			return ((InternalEList<InternalEObject>) (InternalEList<?>) getNexts()).basicAdd(otherEnd, msgs);
 		case TRADESPackage.ATTACK_CHAIN_STEP__PREVIOUS:
-			if (previous != null)
-				msgs = ((InternalEObject) previous).eInverseRemove(this, TRADESPackage.ATTACK_CHAIN_STEP__NEXTS,
-						AttackChainStep.class, msgs);
-			return basicSetPrevious((AttackChainStep) otherEnd, msgs);
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getPrevious()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -378,7 +347,7 @@ public class AttackChainStepImpl extends MinimalEObjectImpl.Container implements
 		case TRADESPackage.ATTACK_CHAIN_STEP__NEXTS:
 			return ((InternalEList<?>) getNexts()).basicRemove(otherEnd, msgs);
 		case TRADESPackage.ATTACK_CHAIN_STEP__PREVIOUS:
-			return basicSetPrevious(null, msgs);
+			return ((InternalEList<?>) getPrevious()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -404,9 +373,7 @@ public class AttackChainStepImpl extends MinimalEObjectImpl.Container implements
 		case TRADESPackage.ATTACK_CHAIN_STEP__NEXTS:
 			return getNexts();
 		case TRADESPackage.ATTACK_CHAIN_STEP__PREVIOUS:
-			if (resolve)
-				return getPrevious();
-			return basicGetPrevious();
+			return getPrevious();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -421,7 +388,7 @@ public class AttackChainStepImpl extends MinimalEObjectImpl.Container implements
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 		case TRADESPackage.ATTACK_CHAIN_STEP__STEP_NUM:
-			setStepNum((Integer) newValue);
+			setStepNum((String) newValue);
 			return;
 		case TRADESPackage.ATTACK_CHAIN_STEP__THREATALLOCATIONRELATION:
 			setThreatallocationrelation((ThreatAllocationRelation) newValue);
@@ -437,7 +404,8 @@ public class AttackChainStepImpl extends MinimalEObjectImpl.Container implements
 			getNexts().addAll((Collection<? extends AttackChainStep>) newValue);
 			return;
 		case TRADESPackage.ATTACK_CHAIN_STEP__PREVIOUS:
-			setPrevious((AttackChainStep) newValue);
+			getPrevious().clear();
+			getPrevious().addAll((Collection<? extends AttackChainStep>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -467,7 +435,7 @@ public class AttackChainStepImpl extends MinimalEObjectImpl.Container implements
 			getNexts().clear();
 			return;
 		case TRADESPackage.ATTACK_CHAIN_STEP__PREVIOUS:
-			setPrevious((AttackChainStep) null);
+			getPrevious().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -482,7 +450,7 @@ public class AttackChainStepImpl extends MinimalEObjectImpl.Container implements
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 		case TRADESPackage.ATTACK_CHAIN_STEP__STEP_NUM:
-			return stepNum != STEP_NUM_EDEFAULT;
+			return STEP_NUM_EDEFAULT == null ? getStepNum() != null : !STEP_NUM_EDEFAULT.equals(getStepNum());
 		case TRADESPackage.ATTACK_CHAIN_STEP__THREATALLOCATIONRELATION:
 			return threatallocationrelation != null;
 		case TRADESPackage.ATTACK_CHAIN_STEP__DIFFICULTY:
@@ -493,7 +461,7 @@ public class AttackChainStepImpl extends MinimalEObjectImpl.Container implements
 		case TRADESPackage.ATTACK_CHAIN_STEP__NEXTS:
 			return nexts != null && !nexts.isEmpty();
 		case TRADESPackage.ATTACK_CHAIN_STEP__PREVIOUS:
-			return previous != null;
+			return previous != null && !previous.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -509,9 +477,7 @@ public class AttackChainStepImpl extends MinimalEObjectImpl.Container implements
 			return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (stepNum: ");
-		result.append(stepNum);
-		result.append(", difficulty: ");
+		result.append(" (difficulty: ");
 		result.append(difficulty);
 		result.append(", impactDescription: ");
 		result.append(impactDescription);

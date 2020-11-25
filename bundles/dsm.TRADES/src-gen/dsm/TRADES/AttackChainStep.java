@@ -36,12 +36,12 @@ public interface AttackChainStep extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Step Num</em>' attribute.
-	 * @see #setStepNum(int)
+	 * @see #setStepNum(String)
 	 * @see dsm.TRADES.TRADESPackage#getAttackChainStep_StepNum()
-	 * @model
+	 * @model transient="true" volatile="true" derived="true"
 	 * @generated
 	 */
-	int getStepNum();
+	String getStepNum();
 
 	/**
 	 * Sets the value of the '{@link dsm.TRADES.AttackChainStep#getStepNum <em>Step Num</em>}' attribute.
@@ -51,7 +51,7 @@ public interface AttackChainStep extends EObject {
 	 * @see #getStepNum()
 	 * @generated
 	 */
-	void setStepNum(int value);
+	void setStepNum(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Threatallocationrelation</b></em>' reference.
@@ -145,27 +145,17 @@ public interface AttackChainStep extends EObject {
 	EList<AttackChainStep> getNexts();
 
 	/**
-	 * Returns the value of the '<em><b>Previous</b></em>' reference.
+	 * Returns the value of the '<em><b>Previous</b></em>' reference list.
+	 * The list contents are of type {@link dsm.TRADES.AttackChainStep}.
 	 * It is bidirectional and its opposite is '{@link dsm.TRADES.AttackChainStep#getNexts <em>Nexts</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Previous</em>' reference.
-	 * @see #setPrevious(AttackChainStep)
+	 * @return the value of the '<em>Previous</em>' reference list.
 	 * @see dsm.TRADES.TRADESPackage#getAttackChainStep_Previous()
 	 * @see dsm.TRADES.AttackChainStep#getNexts
 	 * @model opposite="nexts"
 	 * @generated
 	 */
-	AttackChainStep getPrevious();
-
-	/**
-	 * Sets the value of the '{@link dsm.TRADES.AttackChainStep#getPrevious <em>Previous</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Previous</em>' reference.
-	 * @see #getPrevious()
-	 * @generated
-	 */
-	void setPrevious(AttackChainStep value);
+	EList<AttackChainStep> getPrevious();
 
 } // AttackChainStep

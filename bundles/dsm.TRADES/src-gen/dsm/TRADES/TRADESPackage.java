@@ -865,13 +865,22 @@ public interface TRADESPackage extends EPackage {
 	int ATTACK_CHAIN__START = 2;
 
 	/**
+	 * The feature id for the '<em><b>End</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTACK_CHAIN__END = 3;
+
+	/**
 	 * The number of structural features of the '<em>Attack Chain</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ATTACK_CHAIN_FEATURE_COUNT = 3;
+	int ATTACK_CHAIN_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Attack Chain</em>' class.
@@ -938,7 +947,7 @@ public interface TRADESPackage extends EPackage {
 	int ATTACK_CHAIN_STEP__NEXTS = 4;
 
 	/**
-	 * The feature id for the '<em><b>Previous</b></em>' reference.
+	 * The feature id for the '<em><b>Previous</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1948,6 +1957,17 @@ public interface TRADESPackage extends EPackage {
 	EReference getAttackChain_Start();
 
 	/**
+	 * Returns the meta object for the reference '{@link dsm.TRADES.AttackChain#getEnd <em>End</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>End</em>'.
+	 * @see dsm.TRADES.AttackChain#getEnd()
+	 * @see #getAttackChain()
+	 * @generated
+	 */
+	EReference getAttackChain_End();
+
+	/**
 	 * Returns the meta object for class '{@link dsm.TRADES.AttackChainStep <em>Attack Chain Step</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2013,10 +2033,10 @@ public interface TRADESPackage extends EPackage {
 	EReference getAttackChainStep_Nexts();
 
 	/**
-	 * Returns the meta object for the reference '{@link dsm.TRADES.AttackChainStep#getPrevious <em>Previous</em>}'.
+	 * Returns the meta object for the reference list '{@link dsm.TRADES.AttackChainStep#getPrevious <em>Previous</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Previous</em>'.
+	 * @return the meta object for the reference list '<em>Previous</em>'.
 	 * @see dsm.TRADES.AttackChainStep#getPrevious()
 	 * @see #getAttackChainStep()
 	 * @generated
@@ -2798,6 +2818,14 @@ public interface TRADESPackage extends EPackage {
 		EReference ATTACK_CHAIN__START = eINSTANCE.getAttackChain_Start();
 
 		/**
+		 * The meta object literal for the '<em><b>End</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ATTACK_CHAIN__END = eINSTANCE.getAttackChain_End();
+
+		/**
 		 * The meta object literal for the '{@link dsm.TRADES.impl.AttackChainStepImpl <em>Attack Chain Step</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2849,7 +2877,7 @@ public interface TRADESPackage extends EPackage {
 		EReference ATTACK_CHAIN_STEP__NEXTS = eINSTANCE.getAttackChainStep_Nexts();
 
 		/**
-		 * The meta object literal for the '<em><b>Previous</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Previous</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

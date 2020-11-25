@@ -1,65 +1,60 @@
 package TRADES.design;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 import dsm.TRADES.AttackChain;
 import dsm.TRADES.AttackChainStep;
-import dsm.TRADES.Threat;
 import dsm.TRADES.ThreatAllocationRelation;
 
 public class DiagramService {
 
 	public String getAttackChainLabel(AttackChainStep step) {
-		int index = getNum(step);
-		int subNum = getSubNum(step);
-		
-		String label = "";
-		if(index != -1) {
-			label += index;
-		}else {
-			label += "?";
-		}
-		
-		if(subNum != -1) {
-			label+="."+subNum;
-		}
-		
+
+		String label = step.getStepNum();
+
 		ThreatAllocationRelation allocation = step.getThreatallocationrelation();
-		
-		label+=" : " +getAllocLabel(allocation);
-		
+
+		label += " : " + getAllocLabel(allocation);
+
 		return label;
 
 	}
-	
+
 	private String getAllocLabel(ThreatAllocationRelation alloc) {
-		if(alloc == null) {
+		if (alloc == null) {
 			return "No allocation";
 		}
-		
+
 		String threatLabel = alloc.getThreat() != null ? alloc.getThreat().getName() : "No Threat";
 		String componentLabel = alloc.getComponent() != null ? alloc.getComponent().getName() : "No component";
+
+		return threatLabel + "->" + componentLabel;
+	}
+	
+	public List<AttackChainStep> getLastSteps(AttackChain chain){
+		if(chain.getStart() == null) {
+			return Collections.emptyList();
+		}else {
+			List<AttackChainStep> leaves = new ArrayList<>();
+			collectLeaves(chain.getStart(),leaves);
+			return leaves;
+		}
+	}
+
+	private void collectLeaves(AttackChainStep start, List<AttackChainStep> leaves) {
+		if(start == null) {
+			return;
+		}
+		for(AttackChainStep step : start.getNexts()) {
+			if(step.getNexts().isEmpty()) {
+				leaves.add(step);
+			}else {
+				collectLeaves(step, leaves);
+			}
+		}
 		
-		return threatLabel +"->"+componentLabel;
 	}
 
-	private int getNum(AttackChainStep step) {
-		AttackChainStep current = step;
-		int index = 0;
-		while (current.getPrevious() != null && index < 1000) {
-			index++;
-			current = current.getPrevious();
-		}
-
-		if (index > 999) {
-			return -1;
-		}
-		return index;
-	}
-
-	private int getSubNum(AttackChainStep step) {
-		AttackChainStep previous = step.getPrevious();
-		if (previous != null) {
-			return previous.getNexts().indexOf(step);
-		}
-		return -1;
-	}
 }

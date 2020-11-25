@@ -934,6 +934,16 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * @generated
 	 */
 	@Override
+	public EReference getAttackChain_End() {
+		return (EReference) attackChainEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getAttackChainStep() {
 		return attackChainStepEClass;
 	}
@@ -1267,6 +1277,7 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		createEReference(attackChainEClass, ATTACK_CHAIN__ATTACKCHAINSTEP);
 		createEAttribute(attackChainEClass, ATTACK_CHAIN__NAME);
 		createEReference(attackChainEClass, ATTACK_CHAIN__START);
+		createEReference(attackChainEClass, ATTACK_CHAIN__END);
 
 		attackChainStepEClass = createEClass(ATTACK_CHAIN_STEP);
 		createEAttribute(attackChainStepEClass, ATTACK_CHAIN_STEP__STEP_NUM);
@@ -1522,15 +1533,18 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAttackChain_Name(), ecorePackage.getEString(), "name", null, 0, 1, AttackChain.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAttackChain_Start(), this.getAttackChainStep(), null, "start", null, 0, 1, AttackChain.class,
+		initEReference(getAttackChain_Start(), this.getAttackChainStep(), null, "start", null, 1, 1, AttackChain.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAttackChain_End(), this.getAttackChainStep(), null, "end", null, 1, 1, AttackChain.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(attackChainStepEClass, AttackChainStep.class, "AttackChainStep", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getAttackChainStep_StepNum(), ecorePackage.getEInt(), "stepNum", null, 0, 1,
-				AttackChainStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
-				!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAttackChainStep_StepNum(), ecorePackage.getEString(), "stepNum", null, 0, 1,
+				AttackChainStep.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				IS_DERIVED, IS_ORDERED);
 		initEReference(getAttackChainStep_Threatallocationrelation(), this.getThreatAllocationRelation(), null,
 				"threatallocationrelation", null, 0, 1, AttackChainStep.class, !IS_TRANSIENT, !IS_VOLATILE,
 				IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1544,7 +1558,7 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 				"nexts", null, 0, -1, AttackChainStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
 				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAttackChainStep_Previous(), this.getAttackChainStep(), this.getAttackChainStep_Nexts(),
-				"previous", null, 0, 1, AttackChainStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				"previous", null, 0, -1, AttackChainStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
 				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(scoreSystemEClass, ScoreSystem.class, "ScoreSystem", !IS_ABSTRACT, !IS_INTERFACE,

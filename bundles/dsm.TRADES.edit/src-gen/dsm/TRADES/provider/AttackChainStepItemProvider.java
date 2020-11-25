@@ -77,7 +77,7 @@ public class AttackChainStepItemProvider extends ItemProviderAdapter implements 
 						getString("_UI_PropertyDescriptor_description", "_UI_AttackChainStep_stepNum_feature",
 								"_UI_AttackChainStep_type"),
 						TRADESPackage.Literals.ATTACK_CHAIN_STEP__STEP_NUM, true, false, false,
-						ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -187,8 +187,9 @@ public class AttackChainStepItemProvider extends ItemProviderAdapter implements 
 	 */
 	@Override
 	public String getText(Object object) {
-		AttackChainStep attackChainStep = (AttackChainStep) object;
-		return getString("_UI_AttackChainStep_type") + " " + attackChainStep.getStepNum();
+		String label = ((AttackChainStep) object).getStepNum();
+		return label == null || label.length() == 0 ? getString("_UI_AttackChainStep_type")
+				: getString("_UI_AttackChainStep_type") + " " + label;
 	}
 
 	/**

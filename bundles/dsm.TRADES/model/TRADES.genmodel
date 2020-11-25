@@ -102,6 +102,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//AttackChain/attackchainstep"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//AttackChain/name"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TRADES.ecore#//AttackChain/start"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TRADES.ecore#//AttackChain/end"/>
     </genClasses>
     <genClasses ecoreClass="TRADES.ecore#//AttackChainStep">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//AttackChainStep/stepNum"/>
