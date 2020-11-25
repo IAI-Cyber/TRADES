@@ -94,15 +94,6 @@ public interface TRADESFactory extends EFactory {
 	AffectRelation createAffectRelation();
 
 	/**
-	 * Returns a new object of class '<em>Analysis Diagram</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Analysis Diagram</em>'.
-	 * @generated
-	 */
-	AnalysisDiagram createAnalysisDiagram();
-
-	/**
 	 * Returns a new object of class '<em>Attack Chain</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

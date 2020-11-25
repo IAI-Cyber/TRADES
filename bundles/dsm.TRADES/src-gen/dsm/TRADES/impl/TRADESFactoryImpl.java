@@ -73,8 +73,6 @@ public class TRADESFactoryImpl extends EFactoryImpl implements TRADESFactory {
 			return createData();
 		case TRADESPackage.AFFECT_RELATION:
 			return createAffectRelation();
-		case TRADESPackage.ANALYSIS_DIAGRAM:
-			return createAnalysisDiagram();
 		case TRADESPackage.ATTACK_CHAIN:
 			return createAttackChain();
 		case TRADESPackage.ATTACK_CHAIN_STEP:
@@ -214,17 +212,6 @@ public class TRADESFactoryImpl extends EFactoryImpl implements TRADESFactory {
 	public AffectRelation createAffectRelation() {
 		AffectRelationImpl affectRelation = new AffectRelationImpl();
 		return affectRelation;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public AnalysisDiagram createAnalysisDiagram() {
-		AnalysisDiagramImpl analysisDiagram = new AnalysisDiagramImpl();
-		return analysisDiagram;
 	}
 
 	/**

@@ -272,29 +272,6 @@ public class TRADESItemProviderAdapterFactory extends TRADESAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link dsm.TRADES.AnalysisDiagram} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected AnalysisDiagramItemProvider analysisDiagramItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link dsm.TRADES.AnalysisDiagram}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createAnalysisDiagramAdapter() {
-		if (analysisDiagramItemProvider == null) {
-			analysisDiagramItemProvider = new AnalysisDiagramItemProvider(this);
-		}
-
-		return analysisDiagramItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link dsm.TRADES.AttackChain} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -557,8 +534,6 @@ public class TRADESItemProviderAdapterFactory extends TRADESAdapterFactory
 			dataItemProvider.dispose();
 		if (affectRelationItemProvider != null)
 			affectRelationItemProvider.dispose();
-		if (analysisDiagramItemProvider != null)
-			analysisDiagramItemProvider.dispose();
 		if (attackChainItemProvider != null)
 			attackChainItemProvider.dispose();
 		if (attackChainStepItemProvider != null)

@@ -70,7 +70,7 @@ public interface TRADESPackage extends EPackage {
 	 * @see dsm.TRADES.impl.TRADESPackageImpl#getComponentOwer()
 	 * @generated
 	 */
-	int COMPONENT_OWER = 15;
+	int COMPONENT_OWER = 14;
 
 	/**
 	 * The feature id for the '<em><b>Component</b></em>' containment reference list.
@@ -182,22 +182,13 @@ public interface TRADESPackage extends EPackage {
 	int ANALYSIS__AFFECTRELATION = COMPONENT_OWER_FEATURE_COUNT + 6;
 
 	/**
-	 * The feature id for the '<em><b>Analysisdiagram</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ANALYSIS__ANALYSISDIAGRAM = COMPONENT_OWER_FEATURE_COUNT + 7;
-
-	/**
 	 * The feature id for the '<em><b>Scoresystem</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ANALYSIS__SCORESYSTEM = COMPONENT_OWER_FEATURE_COUNT + 8;
+	int ANALYSIS__SCORESYSTEM = COMPONENT_OWER_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of structural features of the '<em>Analysis</em>' class.
@@ -206,7 +197,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ANALYSIS_FEATURE_COUNT = COMPONENT_OWER_FEATURE_COUNT + 9;
+	int ANALYSIS_FEATURE_COUNT = COMPONENT_OWER_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of operations of the '<em>Analysis</em>' class.
@@ -225,7 +216,7 @@ public interface TRADESPackage extends EPackage {
 	 * @see dsm.TRADES.impl.TRADESPackageImpl#getNamedElement()
 	 * @generated
 	 */
-	int NAMED_ELEMENT = 16;
+	int NAMED_ELEMENT = 15;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -829,70 +820,6 @@ public interface TRADESPackage extends EPackage {
 	int AFFECT_RELATION_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link dsm.TRADES.impl.AnalysisDiagramImpl <em>Analysis Diagram</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see dsm.TRADES.impl.AnalysisDiagramImpl
-	 * @see dsm.TRADES.impl.TRADESPackageImpl#getAnalysisDiagram()
-	 * @generated
-	 */
-	int ANALYSIS_DIAGRAM = 8;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ANALYSIS_DIAGRAM__NAME = NAMED_ELEMENT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Threat</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ANALYSIS_DIAGRAM__THREAT = NAMED_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Component</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ANALYSIS_DIAGRAM__COMPONENT = NAMED_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Control</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ANALYSIS_DIAGRAM__CONTROL = NAMED_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of structural features of the '<em>Analysis Diagram</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ANALYSIS_DIAGRAM_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 3;
-
-	/**
-	 * The number of operations of the '<em>Analysis Diagram</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ANALYSIS_DIAGRAM_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link dsm.TRADES.impl.AttackChainImpl <em>Attack Chain</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -900,7 +827,7 @@ public interface TRADESPackage extends EPackage {
 	 * @see dsm.TRADES.impl.TRADESPackageImpl#getAttackChain()
 	 * @generated
 	 */
-	int ATTACK_CHAIN = 9;
+	int ATTACK_CHAIN = 8;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -946,7 +873,7 @@ public interface TRADESPackage extends EPackage {
 	 * @see dsm.TRADES.impl.TRADESPackageImpl#getAttackChainStep()
 	 * @generated
 	 */
-	int ATTACK_CHAIN_STEP = 10;
+	int ATTACK_CHAIN_STEP = 9;
 
 	/**
 	 * The feature id for the '<em><b>Step Num</b></em>' attribute.
@@ -1028,7 +955,7 @@ public interface TRADESPackage extends EPackage {
 	 * @see dsm.TRADES.impl.TRADESPackageImpl#getScoreSystem()
 	 * @generated
 	 */
-	int SCORE_SYSTEM = 11;
+	int SCORE_SYSTEM = 10;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1083,7 +1010,7 @@ public interface TRADESPackage extends EPackage {
 	 * @see dsm.TRADES.impl.TRADESPackageImpl#getImpactScore()
 	 * @generated
 	 */
-	int IMPACT_SCORE = 12;
+	int IMPACT_SCORE = 11;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1129,7 +1056,7 @@ public interface TRADESPackage extends EPackage {
 	 * @see dsm.TRADES.impl.TRADESPackageImpl#getDifficultyScore()
 	 * @generated
 	 */
-	int DIFFICULTY_SCORE = 13;
+	int DIFFICULTY_SCORE = 12;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1175,7 +1102,7 @@ public interface TRADESPackage extends EPackage {
 	 * @see dsm.TRADES.impl.TRADESPackageImpl#getDataOwner()
 	 * @generated
 	 */
-	int DATA_OWNER = 14;
+	int DATA_OWNER = 13;
 
 	/**
 	 * The feature id for the '<em><b>Data</b></em>' containment reference list.
@@ -1212,7 +1139,7 @@ public interface TRADESPackage extends EPackage {
 	 * @see dsm.TRADES.impl.TRADESPackageImpl#getAssessmentENUM()
 	 * @generated
 	 */
-	int ASSESSMENT_ENUM = 17;
+	int ASSESSMENT_ENUM = 16;
 
 	/**
 	 * The meta object id for the '{@link dsm.TRADES.AffectedENUM <em>Affected ENUM</em>}' enum.
@@ -1222,7 +1149,7 @@ public interface TRADESPackage extends EPackage {
 	 * @see dsm.TRADES.impl.TRADESPackageImpl#getAffectedENUM()
 	 * @generated
 	 */
-	int AFFECTED_ENUM = 18;
+	int AFFECTED_ENUM = 17;
 
 	/**
 	 * The meta object id for the '{@link dsm.TRADES.threatTypeENUM <em>threat Type ENUM</em>}' enum.
@@ -1232,7 +1159,7 @@ public interface TRADESPackage extends EPackage {
 	 * @see dsm.TRADES.impl.TRADESPackageImpl#getthreatTypeENUM()
 	 * @generated
 	 */
-	int THREAT_TYPE_ENUM = 19;
+	int THREAT_TYPE_ENUM = 18;
 
 	/**
 	 * Returns the meta object for class '{@link dsm.TRADES.Analysis <em>Analysis</em>}'.
@@ -1298,17 +1225,6 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getAnalysis_Affectrelation();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link dsm.TRADES.Analysis#getAnalysisdiagram <em>Analysisdiagram</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Analysisdiagram</em>'.
-	 * @see dsm.TRADES.Analysis#getAnalysisdiagram()
-	 * @see #getAnalysis()
-	 * @generated
-	 */
-	EReference getAnalysis_Analysisdiagram();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link dsm.TRADES.Analysis#getScoresystem <em>Scoresystem</em>}'.
@@ -1755,49 +1671,6 @@ public interface TRADESPackage extends EPackage {
 	EAttribute getAffectRelation_AnalysisStatus();
 
 	/**
-	 * Returns the meta object for class '{@link dsm.TRADES.AnalysisDiagram <em>Analysis Diagram</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Analysis Diagram</em>'.
-	 * @see dsm.TRADES.AnalysisDiagram
-	 * @generated
-	 */
-	EClass getAnalysisDiagram();
-
-	/**
-	 * Returns the meta object for the reference list '{@link dsm.TRADES.AnalysisDiagram#getThreat <em>Threat</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Threat</em>'.
-	 * @see dsm.TRADES.AnalysisDiagram#getThreat()
-	 * @see #getAnalysisDiagram()
-	 * @generated
-	 */
-	EReference getAnalysisDiagram_Threat();
-
-	/**
-	 * Returns the meta object for the reference list '{@link dsm.TRADES.AnalysisDiagram#getComponent <em>Component</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Component</em>'.
-	 * @see dsm.TRADES.AnalysisDiagram#getComponent()
-	 * @see #getAnalysisDiagram()
-	 * @generated
-	 */
-	EReference getAnalysisDiagram_Component();
-
-	/**
-	 * Returns the meta object for the reference list '{@link dsm.TRADES.AnalysisDiagram#getControl <em>Control</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Control</em>'.
-	 * @see dsm.TRADES.AnalysisDiagram#getControl()
-	 * @see #getAnalysisDiagram()
-	 * @generated
-	 */
-	EReference getAnalysisDiagram_Control();
-
-	/**
 	 * Returns the meta object for class '{@link dsm.TRADES.AttackChain <em>Attack Chain</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2133,14 +2006,6 @@ public interface TRADESPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ANALYSIS__AFFECTRELATION = eINSTANCE.getAnalysis_Affectrelation();
-
-		/**
-		 * The meta object literal for the '<em><b>Analysisdiagram</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ANALYSIS__ANALYSISDIAGRAM = eINSTANCE.getAnalysis_Analysisdiagram();
 
 		/**
 		 * The meta object literal for the '<em><b>Scoresystem</b></em>' containment reference feature.
@@ -2485,40 +2350,6 @@ public interface TRADESPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute AFFECT_RELATION__ANALYSIS_STATUS = eINSTANCE.getAffectRelation_AnalysisStatus();
-
-		/**
-		 * The meta object literal for the '{@link dsm.TRADES.impl.AnalysisDiagramImpl <em>Analysis Diagram</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see dsm.TRADES.impl.AnalysisDiagramImpl
-		 * @see dsm.TRADES.impl.TRADESPackageImpl#getAnalysisDiagram()
-		 * @generated
-		 */
-		EClass ANALYSIS_DIAGRAM = eINSTANCE.getAnalysisDiagram();
-
-		/**
-		 * The meta object literal for the '<em><b>Threat</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ANALYSIS_DIAGRAM__THREAT = eINSTANCE.getAnalysisDiagram_Threat();
-
-		/**
-		 * The meta object literal for the '<em><b>Component</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ANALYSIS_DIAGRAM__COMPONENT = eINSTANCE.getAnalysisDiagram_Component();
-
-		/**
-		 * The meta object literal for the '<em><b>Control</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ANALYSIS_DIAGRAM__CONTROL = eINSTANCE.getAnalysisDiagram_Control();
 
 		/**
 		 * The meta object literal for the '{@link dsm.TRADES.impl.AttackChainImpl <em>Attack Chain</em>}' class.

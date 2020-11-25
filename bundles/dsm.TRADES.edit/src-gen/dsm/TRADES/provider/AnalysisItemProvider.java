@@ -85,7 +85,6 @@ public class AnalysisItemProvider extends ComponentOwerItemProvider {
 			childrenFeatures.add(TRADESPackage.Literals.ANALYSIS__THREATALLOCATION);
 			childrenFeatures.add(TRADESPackage.Literals.ANALYSIS__THREATMITIGATION);
 			childrenFeatures.add(TRADESPackage.Literals.ANALYSIS__AFFECTRELATION);
-			childrenFeatures.add(TRADESPackage.Literals.ANALYSIS__ANALYSISDIAGRAM);
 			childrenFeatures.add(TRADESPackage.Literals.ANALYSIS__SCORESYSTEM);
 		}
 		return childrenFeatures;
@@ -159,7 +158,6 @@ public class AnalysisItemProvider extends ComponentOwerItemProvider {
 		case TRADESPackage.ANALYSIS__THREATALLOCATION:
 		case TRADESPackage.ANALYSIS__THREATMITIGATION:
 		case TRADESPackage.ANALYSIS__AFFECTRELATION:
-		case TRADESPackage.ANALYSIS__ANALYSISDIAGRAM:
 		case TRADESPackage.ANALYSIS__SCORESYSTEM:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
@@ -195,9 +193,6 @@ public class AnalysisItemProvider extends ComponentOwerItemProvider {
 
 		newChildDescriptors.add(createChildParameter(TRADESPackage.Literals.ANALYSIS__AFFECTRELATION,
 				TRADESFactory.eINSTANCE.createAffectRelation()));
-
-		newChildDescriptors.add(createChildParameter(TRADESPackage.Literals.ANALYSIS__ANALYSISDIAGRAM,
-				TRADESFactory.eINSTANCE.createAnalysisDiagram()));
 
 		newChildDescriptors.add(createChildParameter(TRADESPackage.Literals.ANALYSIS__SCORESYSTEM,
 				TRADESFactory.eINSTANCE.createScoreSystem()));

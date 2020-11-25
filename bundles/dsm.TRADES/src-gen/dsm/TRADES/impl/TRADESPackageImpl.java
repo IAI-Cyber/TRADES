@@ -5,7 +5,6 @@ package dsm.TRADES.impl;
 import dsm.TRADES.AffectRelation;
 import dsm.TRADES.AffectedENUM;
 import dsm.TRADES.Analysis;
-import dsm.TRADES.AnalysisDiagram;
 import dsm.TRADES.AssessmentENUM;
 import dsm.TRADES.AttackChain;
 import dsm.TRADES.AttackChainStep;
@@ -95,13 +94,6 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * @generated
 	 */
 	private EClass affectRelationEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass analysisDiagramEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -310,18 +302,8 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getAnalysis_Analysisdiagram() {
-		return (EReference) analysisEClass.getEStructuralFeatures().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EReference getAnalysis_Scoresystem() {
-		return (EReference) analysisEClass.getEStructuralFeatures().get(6);
+		return (EReference) analysisEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -730,46 +712,6 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getAnalysisDiagram() {
-		return analysisDiagramEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getAnalysisDiagram_Threat() {
-		return (EReference) analysisDiagramEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getAnalysisDiagram_Component() {
-		return (EReference) analysisDiagramEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getAnalysisDiagram_Control() {
-		return (EReference) analysisDiagramEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getAttackChain() {
 		return attackChainEClass;
 	}
@@ -1050,7 +992,6 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		createEReference(analysisEClass, ANALYSIS__THREATALLOCATION);
 		createEReference(analysisEClass, ANALYSIS__THREATMITIGATION);
 		createEReference(analysisEClass, ANALYSIS__AFFECTRELATION);
-		createEReference(analysisEClass, ANALYSIS__ANALYSISDIAGRAM);
 		createEReference(analysisEClass, ANALYSIS__SCORESYSTEM);
 
 		threatEClass = createEClass(THREAT);
@@ -1099,11 +1040,6 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		createEReference(affectRelationEClass, AFFECT_RELATION__SOURCE_COMPONENT);
 		createEReference(affectRelationEClass, AFFECT_RELATION__TARGET_COMPONENT);
 		createEAttribute(affectRelationEClass, AFFECT_RELATION__ANALYSIS_STATUS);
-
-		analysisDiagramEClass = createEClass(ANALYSIS_DIAGRAM);
-		createEReference(analysisDiagramEClass, ANALYSIS_DIAGRAM__THREAT);
-		createEReference(analysisDiagramEClass, ANALYSIS_DIAGRAM__COMPONENT);
-		createEReference(analysisDiagramEClass, ANALYSIS_DIAGRAM__CONTROL);
 
 		attackChainEClass = createEClass(ATTACK_CHAIN);
 		createEReference(attackChainEClass, ATTACK_CHAIN__ATTACKCHAIN_STEPS);
@@ -1182,7 +1118,6 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		threatMitigationRelationEClass.getESuperTypes().add(this.getNamedElement());
 		dataEClass.getESuperTypes().add(this.getNamedElement());
 		affectRelationEClass.getESuperTypes().add(this.getNamedElement());
-		analysisDiagramEClass.getESuperTypes().add(this.getNamedElement());
 		attackChainEClass.getESuperTypes().add(this.getNamedElement());
 		scoreSystemEClass.getESuperTypes().add(this.getNamedElement());
 		impactScoreEClass.getESuperTypes().add(this.getNamedElement());
@@ -1204,9 +1139,6 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 				null, 0, -1, Analysis.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
 				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAnalysis_Affectrelation(), this.getAffectRelation(), null, "affectrelation", null, 0, -1,
-				Analysis.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAnalysis_Analysisdiagram(), this.getAnalysisDiagram(), null, "analysisdiagram", null, 0, -1,
 				Analysis.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAnalysis_Scoresystem(), this.getScoreSystem(), null, "scoresystem", null, 0, 1,
@@ -1326,18 +1258,6 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		initEAttribute(getAffectRelation_AnalysisStatus(), this.getAffectedENUM(), "analysisStatus", null, 1, 1,
 				AffectRelation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
-
-		initEClass(analysisDiagramEClass, AnalysisDiagram.class, "AnalysisDiagram", !IS_ABSTRACT, !IS_INTERFACE,
-				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAnalysisDiagram_Threat(), this.getThreat(), null, "threat", null, 0, -1,
-				AnalysisDiagram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAnalysisDiagram_Component(), this.getComponent(), null, "component", null, 0, -1,
-				AnalysisDiagram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAnalysisDiagram_Control(), this.getControl(), null, "control", null, 0, -1,
-				AnalysisDiagram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(attackChainEClass, AttackChain.class, "AttackChain", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);

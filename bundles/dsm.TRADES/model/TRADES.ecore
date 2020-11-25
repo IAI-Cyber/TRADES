@@ -15,8 +15,6 @@
         eType="#//ThreatMitigationRelation" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="affectrelation" upperBound="-1"
         eType="#//AffectRelation" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="analysisdiagram" upperBound="-1"
-        eType="#//AnalysisDiagram" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="scoresystem" eType="#//ScoreSystem"
         containment="true"/>
   </eClassifiers>
@@ -101,14 +99,6 @@
   <eClassifiers xsi:type="ecore:EEnum" name="threatTypeENUM">
     <eLiterals name="ConcreteThreat"/>
     <eLiterals name="ConceptualThreat" value="1"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AnalysisDiagram" eSuperTypes="#//NamedElement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="threat" upperBound="-1"
-        eType="#//Threat"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="component" upperBound="-1"
-        eType="#//Component"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="control" upperBound="-1"
-        eType="#//Control"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AttackChain" eSuperTypes="#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="attackchainSteps" upperBound="-1"

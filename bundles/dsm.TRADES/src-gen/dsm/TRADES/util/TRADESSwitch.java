@@ -146,15 +146,6 @@ public class TRADESSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case TRADESPackage.ANALYSIS_DIAGRAM: {
-			AnalysisDiagram analysisDiagram = (AnalysisDiagram) theEObject;
-			T result = caseAnalysisDiagram(analysisDiagram);
-			if (result == null)
-				result = caseNamedElement(analysisDiagram);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
 		case TRADESPackage.ATTACK_CHAIN: {
 			AttackChain attackChain = (AttackChain) theEObject;
 			T result = caseAttackChain(attackChain);
@@ -341,21 +332,6 @@ public class TRADESSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseAffectRelation(AffectRelation object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Analysis Diagram</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Analysis Diagram</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseAnalysisDiagram(AnalysisDiagram object) {
 		return null;
 	}
 

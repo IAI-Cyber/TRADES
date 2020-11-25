@@ -18,7 +18,6 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link dsm.TRADES.Analysis#getThreatallocation <em>Threatallocation</em>}</li>
  *   <li>{@link dsm.TRADES.Analysis#getThreatmitigation <em>Threatmitigation</em>}</li>
  *   <li>{@link dsm.TRADES.Analysis#getAffectrelation <em>Affectrelation</em>}</li>
- *   <li>{@link dsm.TRADES.Analysis#getAnalysisdiagram <em>Analysisdiagram</em>}</li>
  *   <li>{@link dsm.TRADES.Analysis#getScoresystem <em>Scoresystem</em>}</li>
  * </ul>
  *
@@ -106,22 +105,6 @@ public interface Analysis extends ComponentOwer, DataOwner, NamedElement {
 	 * @generated
 	 */
 	EList<AffectRelation> getAffectrelation();
-
-	/**
-	 * Returns the value of the '<em><b>Analysisdiagram</b></em>' containment reference list.
-	 * The list contents are of type {@link dsm.TRADES.AnalysisDiagram}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Analysisdiagram</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Analysisdiagram</em>' containment reference list.
-	 * @see dsm.TRADES.TRADESPackage#getAnalysis_Analysisdiagram()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<AnalysisDiagram> getAnalysisdiagram();
 
 	/**
 	 * Returns the value of the '<em><b>Scoresystem</b></em>' containment reference.

@@ -4,7 +4,6 @@ package dsm.TRADES.impl;
 
 import dsm.TRADES.AffectRelation;
 import dsm.TRADES.Analysis;
-import dsm.TRADES.AnalysisDiagram;
 import dsm.TRADES.Control;
 import dsm.TRADES.Data;
 import dsm.TRADES.DataOwner;
@@ -44,7 +43,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getThreatallocation <em>Threatallocation</em>}</li>
  *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getThreatmitigation <em>Threatmitigation</em>}</li>
  *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getAffectrelation <em>Affectrelation</em>}</li>
- *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getAnalysisdiagram <em>Analysisdiagram</em>}</li>
  *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getScoresystem <em>Scoresystem</em>}</li>
  * </ul>
  *
@@ -130,16 +128,6 @@ public class AnalysisImpl extends ComponentOwerImpl implements Analysis {
 	 * @ordered
 	 */
 	protected EList<AffectRelation> affectrelation;
-
-	/**
-	 * The cached value of the '{@link #getAnalysisdiagram() <em>Analysisdiagram</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAnalysisdiagram()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<AnalysisDiagram> analysisdiagram;
 
 	/**
 	 * The cached value of the '{@link #getScoresystem() <em>Scoresystem</em>}' containment reference.
@@ -280,20 +268,6 @@ public class AnalysisImpl extends ComponentOwerImpl implements Analysis {
 	 * @generated
 	 */
 	@Override
-	public EList<AnalysisDiagram> getAnalysisdiagram() {
-		if (analysisdiagram == null) {
-			analysisdiagram = new EObjectContainmentEList<AnalysisDiagram>(AnalysisDiagram.class, this,
-					TRADESPackage.ANALYSIS__ANALYSISDIAGRAM);
-		}
-		return analysisdiagram;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public ScoreSystem getScoresystem() {
 		return scoresystem;
 	}
@@ -360,8 +334,6 @@ public class AnalysisImpl extends ComponentOwerImpl implements Analysis {
 			return ((InternalEList<?>) getThreatmitigation()).basicRemove(otherEnd, msgs);
 		case TRADESPackage.ANALYSIS__AFFECTRELATION:
 			return ((InternalEList<?>) getAffectrelation()).basicRemove(otherEnd, msgs);
-		case TRADESPackage.ANALYSIS__ANALYSISDIAGRAM:
-			return ((InternalEList<?>) getAnalysisdiagram()).basicRemove(otherEnd, msgs);
 		case TRADESPackage.ANALYSIS__SCORESYSTEM:
 			return basicSetScoresystem(null, msgs);
 		}
@@ -390,8 +362,6 @@ public class AnalysisImpl extends ComponentOwerImpl implements Analysis {
 			return getThreatmitigation();
 		case TRADESPackage.ANALYSIS__AFFECTRELATION:
 			return getAffectrelation();
-		case TRADESPackage.ANALYSIS__ANALYSISDIAGRAM:
-			return getAnalysisdiagram();
 		case TRADESPackage.ANALYSIS__SCORESYSTEM:
 			return getScoresystem();
 		}
@@ -434,10 +404,6 @@ public class AnalysisImpl extends ComponentOwerImpl implements Analysis {
 			getAffectrelation().clear();
 			getAffectrelation().addAll((Collection<? extends AffectRelation>) newValue);
 			return;
-		case TRADESPackage.ANALYSIS__ANALYSISDIAGRAM:
-			getAnalysisdiagram().clear();
-			getAnalysisdiagram().addAll((Collection<? extends AnalysisDiagram>) newValue);
-			return;
 		case TRADESPackage.ANALYSIS__SCORESYSTEM:
 			setScoresystem((ScoreSystem) newValue);
 			return;
@@ -474,9 +440,6 @@ public class AnalysisImpl extends ComponentOwerImpl implements Analysis {
 		case TRADESPackage.ANALYSIS__AFFECTRELATION:
 			getAffectrelation().clear();
 			return;
-		case TRADESPackage.ANALYSIS__ANALYSISDIAGRAM:
-			getAnalysisdiagram().clear();
-			return;
 		case TRADESPackage.ANALYSIS__SCORESYSTEM:
 			setScoresystem((ScoreSystem) null);
 			return;
@@ -506,8 +469,6 @@ public class AnalysisImpl extends ComponentOwerImpl implements Analysis {
 			return threatmitigation != null && !threatmitigation.isEmpty();
 		case TRADESPackage.ANALYSIS__AFFECTRELATION:
 			return affectrelation != null && !affectrelation.isEmpty();
-		case TRADESPackage.ANALYSIS__ANALYSISDIAGRAM:
-			return analysisdiagram != null && !analysisdiagram.isEmpty();
 		case TRADESPackage.ANALYSIS__SCORESYSTEM:
 			return scoresystem != null;
 		}

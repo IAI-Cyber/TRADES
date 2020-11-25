@@ -107,11 +107,6 @@ public class TRADESAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseAnalysisDiagram(AnalysisDiagram object) {
-			return createAnalysisDiagramAdapter();
-		}
-
-		@Override
 		public Adapter caseAttackChain(AttackChain object) {
 			return createAttackChainAdapter();
 		}
@@ -279,20 +274,6 @@ public class TRADESAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createAffectRelationAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link dsm.TRADES.AnalysisDiagram <em>Analysis Diagram</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see dsm.TRADES.AnalysisDiagram
-	 * @generated
-	 */
-	public Adapter createAnalysisDiagramAdapter() {
 		return null;
 	}
 
