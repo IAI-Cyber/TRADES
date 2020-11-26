@@ -3,12 +3,14 @@
 package dsm.TRADES.provider;
 
 import dsm.TRADES.ImpactScore;
+import dsm.TRADES.TRADESFactory;
 import dsm.TRADES.TRADESPackage;
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
@@ -43,6 +45,7 @@ public class ImpactScoreItemProvider extends NamedElementItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addImpactPropertyDescriptor(object);
+			addConfigurationsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -61,6 +64,51 @@ public class ImpactScoreItemProvider extends NamedElementItemProvider {
 								"_UI_ImpactScore_type"),
 						TRADESPackage.Literals.IMPACT_SCORE__IMPACT, true, false, false,
 						ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Configurations feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addConfigurationsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_ImpactScore_configurations_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_ImpactScore_configurations_feature",
+								"_UI_ImpactScore_type"),
+						TRADESPackage.Literals.IMPACT_SCORE__CONFIGURATIONS, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
+			super.getChildrenFeatures(object);
+			childrenFeatures.add(TRADESPackage.Literals.IMPACT_SCORE__CONFIGURATIONS);
+		}
+		return childrenFeatures;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EStructuralFeature getChildFeature(Object object, Object child) {
+		// Check the type of the specified child object and return the proper feature to use for
+		// adding (see {@link AddCommand}) it as a child.
+
+		return super.getChildFeature(object, child);
 	}
 
 	/**
@@ -88,13 +136,14 @@ public class ImpactScoreItemProvider extends NamedElementItemProvider {
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated not
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ImpactScore) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_ImpactScore_type")
-				: getString("_UI_ImpactScore_type") + " " + label;
+		ImpactScore impactScore = (ImpactScore) object;
+		String label = impactScore.getName() == null ? "" : " " + impactScore.getName();
+		String score = "[" + String.valueOf(impactScore.getImpact()) + "]";
+		return "Impact" + label + " " + score;
 	}
 
 	/**
@@ -112,6 +161,9 @@ public class ImpactScoreItemProvider extends NamedElementItemProvider {
 		case TRADESPackage.IMPACT_SCORE__IMPACT:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
+		case TRADESPackage.IMPACT_SCORE__CONFIGURATIONS:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -126,6 +178,9 @@ public class ImpactScoreItemProvider extends NamedElementItemProvider {
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add(createChildParameter(TRADESPackage.Literals.IMPACT_SCORE__CONFIGURATIONS,
+				TRADESFactory.eINSTANCE.createImpactConfiguration()));
 	}
 
 }

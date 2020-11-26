@@ -4,10 +4,8 @@ package dsm.TRADES.impl;
 
 import dsm.TRADES.DifficultyScore;
 import dsm.TRADES.TRADESPackage;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -105,6 +103,7 @@ public class DifficultyScoreImpl extends NamedElementImpl implements DifficultyS
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {

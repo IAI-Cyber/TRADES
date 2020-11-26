@@ -16,18 +16,21 @@ import dsm.TRADES.DataOwner;
 import dsm.TRADES.DifficultyScore;
 import dsm.TRADES.ExternalElement;
 import dsm.TRADES.ExternalThreat;
+import dsm.TRADES.ImpactConfiguration;
 import dsm.TRADES.ImpactScore;
 import dsm.TRADES.NamedElement;
+import dsm.TRADES.RGBColor;
 import dsm.TRADES.ScoreSystem;
 import dsm.TRADES.TRADESFactory;
 import dsm.TRADES.TRADESPackage;
 import dsm.TRADES.Threat;
 import dsm.TRADES.ThreatAllocationRelation;
 import dsm.TRADES.ThreatMitigationRelation;
-
 import dsm.TRADES.threatTypeENUM;
+
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
@@ -172,6 +175,13 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass impactConfigurationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EEnum assessmentENUMEEnum = null;
 
 	/**
@@ -187,6 +197,13 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * @generated
 	 */
 	private EEnum threatTypeENUMEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType rgbColorEDataType = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -868,6 +885,16 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * @generated
 	 */
 	@Override
+	public EReference getImpactScore_Configurations() {
+		return (EReference) impactScoreEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getDifficultyScore() {
 		return difficultyScoreEClass;
 	}
@@ -988,6 +1015,46 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * @generated
 	 */
 	@Override
+	public EClass getImpactConfiguration() {
+		return impactConfigurationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getImpactConfiguration_Difficulty() {
+		return (EReference) impactConfigurationEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getImpactConfiguration_Impact() {
+		return (EReference) impactConfigurationEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getImpactConfiguration_Color() {
+		return (EAttribute) impactConfigurationEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EEnum getAssessmentENUM() {
 		return assessmentENUMEEnum;
 	}
@@ -1010,6 +1077,16 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	@Override
 	public EEnum getthreatTypeENUM() {
 		return threatTypeENUMEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EDataType getRGBColor() {
+		return rgbColorEDataType;
 	}
 
 	/**
@@ -1114,6 +1191,7 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 
 		impactScoreEClass = createEClass(IMPACT_SCORE);
 		createEAttribute(impactScoreEClass, IMPACT_SCORE__IMPACT);
+		createEReference(impactScoreEClass, IMPACT_SCORE__CONFIGURATIONS);
 
 		difficultyScoreEClass = createEClass(DIFFICULTY_SCORE);
 		createEAttribute(difficultyScoreEClass, DIFFICULTY_SCORE__DIFFICULTY);
@@ -1133,10 +1211,18 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		createEAttribute(externalElementEClass, EXTERNAL_ELEMENT__SOURCE);
 		createEAttribute(externalElementEClass, EXTERNAL_ELEMENT__LINK);
 
+		impactConfigurationEClass = createEClass(IMPACT_CONFIGURATION);
+		createEReference(impactConfigurationEClass, IMPACT_CONFIGURATION__DIFFICULTY);
+		createEReference(impactConfigurationEClass, IMPACT_CONFIGURATION__IMPACT);
+		createEAttribute(impactConfigurationEClass, IMPACT_CONFIGURATION__COLOR);
+
 		// Create enums
 		assessmentENUMEEnum = createEEnum(ASSESSMENT_ENUM);
 		affectedENUMEEnum = createEEnum(AFFECTED_ENUM);
 		threatTypeENUMEEnum = createEEnum(THREAT_TYPE_ENUM);
+
+		// Create data types
+		rgbColorEDataType = createEDataType(RGB_COLOR);
 	}
 
 	/**
@@ -1362,6 +1448,10 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 				IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getImpactScore_Impact(), ecorePackage.getEInt(), "impact", null, 0, 1, ImpactScore.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getImpactScore_Configurations(), this.getImpactConfiguration(),
+				this.getImpactConfiguration_Impact(), "configurations", null, 0, -1, ImpactScore.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
 
 		initEClass(difficultyScoreEClass, DifficultyScore.class, "DifficultyScore", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
@@ -1397,6 +1487,18 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		initEAttribute(getExternalElement_Link(), ecorePackage.getEString(), "link", null, 0, 1, ExternalElement.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEClass(impactConfigurationEClass, ImpactConfiguration.class, "ImpactConfiguration", !IS_ABSTRACT,
+				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getImpactConfiguration_Difficulty(), this.getDifficultyScore(), null, "difficulty", null, 1, 1,
+				ImpactConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getImpactConfiguration_Impact(), this.getImpactScore(), this.getImpactScore_Configurations(),
+				"impact", null, 1, 1, ImpactConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getImpactConfiguration_Color(), this.getRGBColor(), "color", "#FFFFFF", 0, 1,
+				ImpactConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		// Initialize enums and add enum literals
 		initEEnum(assessmentENUMEEnum, AssessmentENUM.class, "AssessmentENUM");
 		addEEnumLiteral(assessmentENUMEEnum, AssessmentENUM.UNDECIDED);
@@ -1410,6 +1512,9 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		initEEnum(threatTypeENUMEEnum, threatTypeENUM.class, "threatTypeENUM");
 		addEEnumLiteral(threatTypeENUMEEnum, threatTypeENUM.CONCRETE_THREAT);
 		addEEnumLiteral(threatTypeENUMEEnum, threatTypeENUM.CONCEPTUAL_THREAT);
+
+		// Initialize data types
+		initEDataType(rgbColorEDataType, RGBColor.class, "RGBColor", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

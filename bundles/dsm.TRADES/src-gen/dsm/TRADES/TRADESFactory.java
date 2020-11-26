@@ -148,6 +148,15 @@ public interface TRADESFactory extends EFactory {
 	ExternalThreat createExternalThreat();
 
 	/**
+	 * Returns a new object of class '<em>Impact Configuration</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Impact Configuration</em>'.
+	 * @generated
+	 */
+	ImpactConfiguration createImpactConfiguration();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

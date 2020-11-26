@@ -128,6 +128,8 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ImpactScore" eSuperTypes="#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="impact" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="configurations" upperBound="-1"
+        eType="#//ImpactConfiguration" containment="true" eOpposite="#//ImpactConfiguration/impact"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DifficultyScore" eSuperTypes="#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="difficulty" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
@@ -148,4 +150,13 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="source" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="link" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ImpactConfiguration">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="difficulty" lowerBound="1"
+        eType="#//DifficultyScore"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="impact" lowerBound="1"
+        eType="#//ImpactScore" eOpposite="#//ImpactScore/configurations"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="color" eType="#//RGBColor"
+        defaultValueLiteral="#FFFFFF"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="RGBColor" instanceClassName="dsm.TRADES.RGBColor"/>
 </ecore:EPackage>

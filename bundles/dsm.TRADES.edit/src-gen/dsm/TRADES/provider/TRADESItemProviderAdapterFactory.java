@@ -3,18 +3,21 @@
 package dsm.TRADES.provider;
 
 import dsm.TRADES.TRADESPackage;
+
 import dsm.TRADES.util.TRADESAdapterFactory;
 
 import java.util.ArrayList;
 import java.util.Collection;
-
 import java.util.List;
+
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.Notifier;
 
 import org.eclipse.emf.common.util.ResourceLocator;
+
 import org.eclipse.emf.edit.domain.EditingDomain;
+
 import org.eclipse.emf.edit.provider.ChangeNotifier;
 import org.eclipse.emf.edit.provider.ChildCreationExtenderManager;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
@@ -410,6 +413,29 @@ public class TRADESItemProviderAdapterFactory extends TRADESAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link dsm.TRADES.ImpactConfiguration} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ImpactConfigurationItemProvider impactConfigurationItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link dsm.TRADES.ImpactConfiguration}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createImpactConfigurationAdapter() {
+		if (impactConfigurationItemProvider == null) {
+			impactConfigurationItemProvider = new ImpactConfigurationItemProvider(this);
+		}
+
+		return impactConfigurationItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -569,6 +595,8 @@ public class TRADESItemProviderAdapterFactory extends TRADESAdapterFactory
 			difficultyScoreItemProvider.dispose();
 		if (externalThreatItemProvider != null)
 			externalThreatItemProvider.dispose();
+		if (impactConfigurationItemProvider != null)
+			impactConfigurationItemProvider.dispose();
 	}
 
 }

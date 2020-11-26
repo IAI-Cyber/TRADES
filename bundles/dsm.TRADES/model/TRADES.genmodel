@@ -23,6 +23,8 @@
       <genEnumLiterals ecoreEnumLiteral="TRADES.ecore#//threatTypeENUM/ConcreteThreat"/>
       <genEnumLiterals ecoreEnumLiteral="TRADES.ecore#//threatTypeENUM/ConceptualThreat"/>
     </genEnums>
+    <genDataTypes ecoreDataType="TRADES.ecore#//RGBColor" create="return RGBColor.decode(it);"
+        convert="return it == null ? &quot;&quot; : it.encode();"/>
     <genClasses ecoreClass="TRADES.ecore#//Analysis">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Analysis/threat"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Analysis/control"/>
@@ -94,6 +96,7 @@
     </genClasses>
     <genClasses ecoreClass="TRADES.ecore#//ImpactScore">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//ImpactScore/impact"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference TRADES.ecore#//ImpactScore/configurations"/>
     </genClasses>
     <genClasses ecoreClass="TRADES.ecore#//DifficultyScore">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//DifficultyScore/difficulty"/>
@@ -111,6 +114,11 @@
     <genClasses image="false" ecoreClass="TRADES.ecore#//ExternalElement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//ExternalElement/source"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//ExternalElement/link"/>
+    </genClasses>
+    <genClasses ecoreClass="TRADES.ecore#//ImpactConfiguration">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TRADES.ecore#//ImpactConfiguration/difficulty"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference TRADES.ecore#//ImpactConfiguration/impact"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//ImpactConfiguration/color"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>
