@@ -12,7 +12,8 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.sirius.common.acceleo.aql,
  org.eclipse.sirius.diagram,
  dsm.TRADES;bundle-version="1.0.0",
- org.eclipse.sirius.common;bundle-version="6.3.4"
+ org.eclipse.sirius.common;bundle-version="6.3.4",
+ org.eclipse.emf.transaction;bundle-version="1.9.1"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-11
 Bundle-Vendor: %providerName
