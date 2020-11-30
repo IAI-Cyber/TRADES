@@ -832,20 +832,23 @@
     <ownedRepresentations xsi:type="description_1:DiagramDescription" dropDescriptions="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='AttackChainDiagram']/@additionalLayers[name='Threats']/@toolSections.0/@ownedTools[name='DropThreatRepresentation']" name="AttackChainDiagram" label="Attack chain diagram" titleExpression="aql:self.name+' description'" domainClass="TRADES::AttackChain" enablePopupBars="true">
       <defaultLayer name="Default">
         <nodeMappings name="AttackChainStep_ACD" semanticCandidatesExpression="feature:attackchainSteps" domainClass="TRADES::AttackChainStep" dropDescriptions="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='AttackChainDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='DropAllocation']">
-          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" labelExpression="aql:self.getAttackChainLabel()" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/TRADES.design/Images/attack_chain_step_info.svg">
+          <style xsi:type="style:BundledImageDescription" labelSize="12" showIcon="false" labelExpression="aql:self.getAttackChainLabel()" sizeComputationExpression="13" labelPosition="node" resizeKind="NSEW">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_blue']"/>
           </style>
           <conditionnalStyles predicateExpression="aql:self.difficulty > 7">
-            <style xsi:type="style:WorkspaceImageDescription" labelSize="12" labelExpression="aql:self.getAttackChainLabel()" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/TRADES.design/Images/attack_chain_step_danger.svg">
+            <style xsi:type="style:BundledImageDescription" labelSize="12" showIcon="false" labelExpression="aql:self.getAttackChainLabel()" sizeComputationExpression="13" labelPosition="node" resizeKind="NSEW">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_red']"/>
             </style>
           </conditionnalStyles>
           <conditionnalStyles predicateExpression="aql:self.difficulty > 3">
-            <style xsi:type="style:WorkspaceImageDescription" labelSize="12" labelExpression="aql:self.getAttackChainLabel()" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/TRADES.design/Images/attack_chain_step_warning.svg">
+            <style xsi:type="style:BundledImageDescription" labelSize="12" showIcon="false" labelExpression="aql:self.getAttackChainLabel()" sizeComputationExpression="13" labelPosition="node" resizeKind="NSEW">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_orange']"/>
             </style>
           </conditionnalStyles>
         </nodeMappings>
@@ -924,17 +927,17 @@
         </toolSections>
       </defaultLayer>
       <additionalLayers name="Threats">
-        <nodeMappings name="RelatedThreats" deletionDescription="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='AttackChainDiagram']/@additionalLayers[name='Threats']/@toolSections.0/@ownedTools[name='DeleteRelatedThreat']" semanticCandidatesExpression="aql:self.attackchainstep.threatallocationrelation.threat" createElements="false" domainClass="TRADES::Threat">
+        <nodeMappings name="RelatedThreats" deletionDescription="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='AttackChainDiagram']/@additionalLayers[name='Threats']/@toolSections.0/@ownedTools[name='DeleteRelatedThreat']" semanticCandidatesExpression="aql:self.attackchainSteps.threatAllocationRelation.threat" createElements="false" domainClass="TRADES::Threat">
           <style xsi:type="style:EllipseNodeDescription" labelSize="15" tooltipExpression="aql: self.name" sizeComputationExpression="10" labelPosition="node" resizeKind="NSEW">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
           </style>
         </nodeMappings>
-        <edgeMappings name="ThreatLink" sourceMapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='AttackChainDiagram']/@defaultLayer/@nodeMappings[name='AttackChainStep_ACD']" targetMapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='AttackChainDiagram']/@additionalLayers[name='Threats']/@nodeMappings[name='RelatedThreats']" targetFinderExpression="aql:self.threatallocationrelation.threat">
+        <edgeMappings name="ThreatLink" sourceMapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='AttackChainDiagram']/@defaultLayer/@nodeMappings[name='AttackChainStep_ACD']" targetMapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='AttackChainDiagram']/@additionalLayers[name='Threats']/@nodeMappings[name='RelatedThreats']" targetFinderExpression="aql:self.threatAllocationRelation.threat">
           <style lineStyle="dot" sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
-            <centerLabelStyleDescription labelSize="12" labelExpression="aql:self.threatallocationrelation.component.name">
+            <centerLabelStyleDescription labelSize="12" showIcon="false" labelExpression="aql:self.threatAllocationRelation.component.name">
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </centerLabelStyleDescription>
           </style>
@@ -951,7 +954,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool_1:SelectionWizardDescription" name="SelectThreatWizardAndDisplay" candidatesExpression="aql:self.eContainer().eAllContents()->filter(TRADES::Threat)" multiple="true">
+          <ownedTools xsi:type="tool_1:SelectionWizardDescription" name="SelectThreatWizardAndDisplay" candidatesExpression="aql:self.attackchainSteps.threatAllocationRelation.threat" multiple="true">
             <element name="element"/>
             <containerView name="containerView"/>
             <container name="container"/>
