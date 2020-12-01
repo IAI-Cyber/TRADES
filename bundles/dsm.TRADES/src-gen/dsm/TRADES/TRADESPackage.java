@@ -538,22 +538,13 @@ public interface TRADESPackage extends EPackage {
 	int THREAT_ALLOCATION_RELATION = 4;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int THREAT_ALLOCATION_RELATION__NAME = NAMED_ELEMENT__NAME;
-
-	/**
 	 * The feature id for the '<em><b>Assessment</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int THREAT_ALLOCATION_RELATION__ASSESSMENT = NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int THREAT_ALLOCATION_RELATION__ASSESSMENT = 0;
 
 	/**
 	 * The feature id for the '<em><b>Component</b></em>' reference.
@@ -562,7 +553,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int THREAT_ALLOCATION_RELATION__COMPONENT = NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int THREAT_ALLOCATION_RELATION__COMPONENT = 1;
 
 	/**
 	 * The feature id for the '<em><b>Threat</b></em>' reference.
@@ -571,7 +562,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int THREAT_ALLOCATION_RELATION__THREAT = NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int THREAT_ALLOCATION_RELATION__THREAT = 2;
 
 	/**
 	 * The feature id for the '<em><b>Impactscore</b></em>' reference.
@@ -580,7 +571,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int THREAT_ALLOCATION_RELATION__IMPACTSCORE = NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int THREAT_ALLOCATION_RELATION__IMPACTSCORE = 3;
 
 	/**
 	 * The feature id for the '<em><b>Difficultyscore</b></em>' reference.
@@ -589,7 +580,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int THREAT_ALLOCATION_RELATION__DIFFICULTYSCORE = NAMED_ELEMENT_FEATURE_COUNT + 4;
+	int THREAT_ALLOCATION_RELATION__DIFFICULTYSCORE = 4;
 
 	/**
 	 * The feature id for the '<em><b>Threat Decomposed</b></em>' containment reference list.
@@ -598,7 +589,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int THREAT_ALLOCATION_RELATION__THREAT_DECOMPOSED = NAMED_ELEMENT_FEATURE_COUNT + 5;
+	int THREAT_ALLOCATION_RELATION__THREAT_DECOMPOSED = 5;
 
 	/**
 	 * The feature id for the '<em><b>Threat Related</b></em>' reference list.
@@ -607,7 +598,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int THREAT_ALLOCATION_RELATION__THREAT_RELATED = NAMED_ELEMENT_FEATURE_COUNT + 6;
+	int THREAT_ALLOCATION_RELATION__THREAT_RELATED = 6;
 
 	/**
 	 * The feature id for the '<em><b>Attack Chains</b></em>' containment reference list.
@@ -616,7 +607,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int THREAT_ALLOCATION_RELATION__ATTACK_CHAINS = NAMED_ELEMENT_FEATURE_COUNT + 7;
+	int THREAT_ALLOCATION_RELATION__ATTACK_CHAINS = 7;
 
 	/**
 	 * The number of structural features of the '<em>Threat Allocation Relation</em>' class.
@@ -625,7 +616,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int THREAT_ALLOCATION_RELATION_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 8;
+	int THREAT_ALLOCATION_RELATION_FEATURE_COUNT = 8;
 
 	/**
 	 * The number of operations of the '<em>Threat Allocation Relation</em>' class.
@@ -634,7 +625,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int THREAT_ALLOCATION_RELATION_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
+	int THREAT_ALLOCATION_RELATION_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link dsm.TRADES.impl.ThreatMitigationRelationImpl <em>Threat Mitigation Relation</em>}' class.

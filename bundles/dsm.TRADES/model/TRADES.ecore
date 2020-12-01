@@ -52,7 +52,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ThreatAllocationRelation" eSuperTypes="#//NamedElement">
+  <eClassifiers xsi:type="ecore:EClass" name="ThreatAllocationRelation">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="assessment" lowerBound="1"
         eType="#//AssessmentENUM" defaultValueLiteral="Undecided"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="component" lowerBound="1"

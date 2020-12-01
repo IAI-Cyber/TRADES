@@ -114,8 +114,6 @@ public class TRADESSwitch<T> extends Switch<T> {
 			ThreatAllocationRelation threatAllocationRelation = (ThreatAllocationRelation) theEObject;
 			T result = caseThreatAllocationRelation(threatAllocationRelation);
 			if (result == null)
-				result = caseNamedElement(threatAllocationRelation);
-			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}

@@ -4,6 +4,7 @@ package dsm.TRADES.provider;
 
 import dsm.TRADES.TRADESPackage;
 import dsm.TRADES.Threat;
+import dsm.TRADES.ThreatAllocationRelation;
 
 import java.util.Collection;
 import java.util.List;
@@ -185,12 +186,22 @@ public class ThreatItemProvider extends NamedElementItemProvider {
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated not
 	 */
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
+		if(notification.getFeatureID(Threat.class) == TRADESPackage.NAMED_ELEMENT__NAME) {
+			Object notifier = notification.getNotifier();
+			if (notifier instanceof Threat) {
+				Threat new_name = (Threat) notifier;
+				for(ThreatAllocationRelation rel : new_name.getThreatallocation()) {
+					fireNotifyChanged(new ViewerNotification(notification, rel, false, true));
+				}
+			}
+		}
+		
 		switch (notification.getFeatureID(Threat.class)) {
 		case TRADESPackage.THREAT__THREAT_TYPE:
 		case TRADESPackage.THREAT__ID:

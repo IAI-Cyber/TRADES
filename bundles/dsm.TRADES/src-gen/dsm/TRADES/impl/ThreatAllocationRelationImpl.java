@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -42,7 +43,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class ThreatAllocationRelationImpl extends NamedElementImpl implements ThreatAllocationRelation {
+public class ThreatAllocationRelationImpl extends MinimalEObjectImpl.Container implements ThreatAllocationRelation {
 	/**
 	 * The default value of the '{@link #getAssessment() <em>Assessment</em>}' attribute.
 	 * <!-- begin-user-doc -->

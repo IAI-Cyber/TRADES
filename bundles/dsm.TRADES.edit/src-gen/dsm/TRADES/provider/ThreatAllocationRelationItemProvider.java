@@ -2,20 +2,31 @@
  */
 package dsm.TRADES.provider;
 
-import dsm.TRADES.TRADESFactory;
-import dsm.TRADES.TRADESPackage;
-import dsm.TRADES.ThreatAllocationRelation;
-
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
+import org.eclipse.emf.edit.provider.IChildCreationExtender;
+import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
+import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.IItemPropertySource;
+import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
+import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+
+import dsm.TRADES.AssessmentENUM;
+import dsm.TRADES.Component;
+import dsm.TRADES.TRADESFactory;
+import dsm.TRADES.TRADESPackage;
+import dsm.TRADES.Threat;
+import dsm.TRADES.ThreatAllocationRelation;
 
 /**
  * This is the item provider adapter for a {@link dsm.TRADES.ThreatAllocationRelation} object.
@@ -23,7 +34,8 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ThreatAllocationRelationItemProvider extends NamedElementItemProvider {
+public class ThreatAllocationRelationItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
+		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -204,13 +216,22 @@ public class ThreatAllocationRelationItemProvider extends NamedElementItemProvid
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated not
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ThreatAllocationRelation) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_ThreatAllocationRelation_type")
-				: getString("_UI_ThreatAllocationRelation_type") + " " + label;
+		String label = "";
+		ThreatAllocationRelation relation = ((ThreatAllocationRelation) object);
+		Threat threat = relation.getThreat();
+		if(threat != null) {
+			label += threat.getName();
+		}
+		label += " on ";
+		Component component = relation.getComponent();
+		if(component != null) {
+			label += component.getName();
+		}
+		return label;
 	}
 
 	/**
@@ -218,7 +239,7 @@ public class ThreatAllocationRelationItemProvider extends NamedElementItemProvid
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated not
 	 */
 	@Override
 	public void notifyChanged(Notification notification) {
@@ -226,6 +247,8 @@ public class ThreatAllocationRelationItemProvider extends NamedElementItemProvid
 
 		switch (notification.getFeatureID(ThreatAllocationRelation.class)) {
 		case TRADESPackage.THREAT_ALLOCATION_RELATION__ASSESSMENT:
+		case TRADESPackage.THREAT_ALLOCATION_RELATION__THREAT:
+		case TRADESPackage.THREAT_ALLOCATION_RELATION__COMPONENT:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		case TRADESPackage.THREAT_ALLOCATION_RELATION__THREAT_DECOMPOSED:
@@ -253,6 +276,17 @@ public class ThreatAllocationRelationItemProvider extends NamedElementItemProvid
 
 		newChildDescriptors.add(createChildParameter(TRADESPackage.Literals.THREAT_ALLOCATION_RELATION__ATTACK_CHAINS,
 				TRADESFactory.eINSTANCE.createAttackChain()));
+	}
+
+	/**
+	 * Return the resource locator for this item provider's resources.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ResourceLocator getResourceLocator() {
+		return ((IChildCreationExtender) adapterFactory).getResourceLocator();
 	}
 
 }

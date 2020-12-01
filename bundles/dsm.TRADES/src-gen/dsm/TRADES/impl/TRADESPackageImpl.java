@@ -1114,7 +1114,6 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		componentEClass.getESuperTypes().add(this.getDataOwner());
 		componentEClass.getESuperTypes().add(this.getNamedElement());
 		controlEClass.getESuperTypes().add(this.getNamedElement());
-		threatAllocationRelationEClass.getESuperTypes().add(this.getNamedElement());
 		threatMitigationRelationEClass.getESuperTypes().add(this.getNamedElement());
 		dataEClass.getESuperTypes().add(this.getNamedElement());
 		affectRelationEClass.getESuperTypes().add(this.getNamedElement());

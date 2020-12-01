@@ -3,6 +3,7 @@
 package dsm.TRADES;
 
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,7 +28,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface ThreatAllocationRelation extends NamedElement {
+public interface ThreatAllocationRelation extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Assessment</b></em>' attribute.
 	 * The default value is <code>"Undecided"</code>.

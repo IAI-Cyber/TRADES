@@ -5,6 +5,7 @@ package dsm.TRADES.provider;
 import dsm.TRADES.Component;
 import dsm.TRADES.TRADESFactory;
 import dsm.TRADES.TRADESPackage;
+import dsm.TRADES.ThreatAllocationRelation;
 
 import java.util.Collection;
 import java.util.List;
@@ -188,11 +189,21 @@ public class ComponentItemProvider extends ComponentOwerItemProvider {
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated not
 	 */
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+		
+		if(notification.getFeature() == TRADESPackage.eINSTANCE.getNamedElement_Name()) {
+			Object notifier = notification.getNotifier();
+			if (notifier instanceof Component) {
+				Component new_name = (Component) notifier;
+				for(ThreatAllocationRelation rel : new_name.getThreatallocation()) {
+					fireNotifyChanged(new ViewerNotification(notification, rel, false, true));
+				}
+			}
+		}
 
 		switch (notification.getFeatureID(Component.class)) {
 		case TRADESPackage.COMPONENT__NAME:
