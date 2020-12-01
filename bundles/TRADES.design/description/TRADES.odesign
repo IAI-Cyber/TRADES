@@ -987,6 +987,7 @@
       <pages name="ComponentGeneralPage" label="Component General Page" labelExpression="General" domainClass="TRADES::Component" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.0 //@extensions.0/@categories.0/@groups.3"/>
       <pages name="ThreatAllocationPage" label="Threat Allocation Page" labelExpression="General" domainClass="TRADES::ThreatAllocationRelation" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.4"/>
       <pages name="ThreatMitigationPage" label="Threat Mitigation Page" labelExpression="General" domainClass="TRADES::ThreatMitigationRelation" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.0 //@extensions.0/@categories.0/@groups.5"/>
+      <pages name="AnalysisPage" label="Analysis Page" labelExpression="General " domainClass="TRADES::Analysis" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.0 //@extensions.0/@categories.0/@groups.6"/>
       <groups name="ModelElementGroup" label="Model element" labelExpression="Basic Properties" domainClass="TRADES::NamedElement" semanticCandidateExpression="var:self">
         <controls xsi:type="properties:TextDescription" name="ElementNameFiald" label="Name" labelExpression="Name" helpExpression="Name of the element" valueExpression="aql:self.name">
           <initialOperation>
@@ -1029,7 +1030,7 @@
           </initialOperation>
         </controls>
       </groups>
-      <groups name="ControlDetails" label="Cnotrol Details" labelExpression="Control Details" domainClass="TRADES::Control" semanticCandidateExpression="var:self">
+      <groups name="ControlGroup" label="Cnotrol Details" labelExpression="Control Details" domainClass="TRADES::Control" semanticCandidateExpression="var:self">
         <controls xsi:type="properties:TextDescription" name="ControlDFieald" label="ID" labelExpression="ID" helpExpression="ID of the control" valueExpression="aql:self.ID">
           <initialOperation>
             <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
@@ -1052,7 +1053,7 @@
           </onClickOperation>
         </controls>
       </groups>
-      <groups name="ThreatAllocationDetails" label="Threat Allocation Details" labelExpression="ThreatAllocationDetails" domainClass="TRADES::ThreatAllocationRelation" semanticCandidateExpression="var:self">
+      <groups name="ThreatAllocationGroup" label="Threat Allocation Details" labelExpression="ThreatAllocationDetails" domainClass="TRADES::ThreatAllocationRelation" semanticCandidateExpression="var:self">
         <controls xsi:type="properties:ContainerDescription" name="ThreatAlocationContainer">
           <controls xsi:type="properties:SelectDescription" name="AssessmentField" labelExpression="Assessment" valueExpression="aql:TRADES::AssessmentENUM.getEEnumLiteral(self.assessment.toString())" candidatesExpression="aql:TRADES::AssessmentENUM.eLiterals" candidateDisplayExpression="aql:candidate.name">
             <initialOperation>
@@ -1078,13 +1079,20 @@
           <layout xsi:type="properties:FillLayoutDescription" orientation="HORIZONTAL"/>
         </controls>
       </groups>
-      <groups name="ThreatMitigationGroup" label="Threat Mitigation" labelExpression="Threat Mitigation Details" domainClass="TRADES::ThreatMitigationRelation" semanticCandidateExpression="var:self">
+      <groups name="ThreatMitigationGroup" label="Threat Mitigation Details" labelExpression="Threat Mitigation Details" domainClass="TRADES::ThreatMitigationRelation" semanticCandidateExpression="var:self">
         <controls xsi:type="properties:SelectDescription" name="AssessmentField" labelExpression="Assessment" valueExpression="aql:TRADES::AssessmentENUM.getEEnumLiteral(self.assessment.toString())" candidatesExpression="aql:TRADES::AssessmentENUM.eLiterals" candidateDisplayExpression="aql:candidate.name">
           <initialOperation>
             <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
               <subModelOperations xsi:type="tool_1:SetValue" featureName="assessment" valueExpression="aql:newValue.instance"/>
             </firstModelOperations>
           </initialOperation>
+        </controls>
+      </groups>
+      <groups name="AnalysisGroup" label="Analysis Details" labelExpression="Analysis Details" domainClass="TRADES::Analysis" semanticCandidateExpression="var:self">
+        <controls xsi:type="properties:ListDescription" name="ComponentList" label="Component List" labelExpression="Component List" valueExpression="aql:self.component" displayExpression="aql:value.name">
+          <onClickOperation>
+            <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self"/>
+          </onClickOperation>
         </controls>
       </groups>
     </categories>
