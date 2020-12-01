@@ -4,7 +4,7 @@
 <product name="TRADES" uid="TRADES.product" id="dsm.TRADES.branding.product" application="org.eclipse.ui.ide.workbench" version="1.0.0.qualifier" useFeatures="true" includeLaunchers="true">
 
    <aboutInfo>
-      <image path="eclipse_lg.png"/>
+      <image path="/dsm.TRADES.branding/icons/about.png"/>
       <text>
          %productBlurb
       </text>
