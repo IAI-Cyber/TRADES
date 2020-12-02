@@ -2,6 +2,8 @@
  */
 package dsm.TRADES;
 
+import org.eclipse.emf.ecore.EObject;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>External Element</b></em>'.
@@ -19,7 +21,7 @@ package dsm.TRADES;
  * @model abstract="true"
  * @generated
  */
-public interface ExternalElement extends Threat {
+public interface ExternalElement extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Source</b></em>' attribute.
 	 * <!-- begin-user-doc -->

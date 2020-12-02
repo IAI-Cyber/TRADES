@@ -1196,13 +1196,31 @@ public interface TRADESPackage extends EPackage {
 	int EXTERNAL_THREAT__APPLICABILITY = THREAT__APPLICABILITY;
 
 	/**
+	 * The feature id for the '<em><b>Source</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTERNAL_THREAT__SOURCE = THREAT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Link</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTERNAL_THREAT__LINK = THREAT_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>External Threat</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXTERNAL_THREAT_FEATURE_COUNT = THREAT_FEATURE_COUNT + 0;
+	int EXTERNAL_THREAT_FEATURE_COUNT = THREAT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>External Threat</em>' class.
@@ -1224,76 +1242,13 @@ public interface TRADESPackage extends EPackage {
 	int EXTERNAL_ELEMENT = 17;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXTERNAL_ELEMENT__NAME = THREAT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Allocated</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXTERNAL_ELEMENT__ALLOCATED = THREAT__ALLOCATED;
-
-	/**
-	 * The feature id for the '<em><b>Threatallocation</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXTERNAL_ELEMENT__THREATALLOCATION = THREAT__THREATALLOCATION;
-
-	/**
-	 * The feature id for the '<em><b>Threat Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXTERNAL_ELEMENT__THREAT_TYPE = THREAT__THREAT_TYPE;
-
-	/**
-	 * The feature id for the '<em><b>ID</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXTERNAL_ELEMENT__ID = THREAT__ID;
-
-	/**
-	 * The feature id for the '<em><b>Description</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXTERNAL_ELEMENT__DESCRIPTION = THREAT__DESCRIPTION;
-
-	/**
-	 * The feature id for the '<em><b>Applicability</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXTERNAL_ELEMENT__APPLICABILITY = THREAT__APPLICABILITY;
-
-	/**
 	 * The feature id for the '<em><b>Source</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXTERNAL_ELEMENT__SOURCE = THREAT_FEATURE_COUNT + 0;
+	int EXTERNAL_ELEMENT__SOURCE = 0;
 
 	/**
 	 * The feature id for the '<em><b>Link</b></em>' attribute.
@@ -1302,7 +1257,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXTERNAL_ELEMENT__LINK = THREAT_FEATURE_COUNT + 1;
+	int EXTERNAL_ELEMENT__LINK = 1;
 
 	/**
 	 * The number of structural features of the '<em>External Element</em>' class.
@@ -1311,7 +1266,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXTERNAL_ELEMENT_FEATURE_COUNT = THREAT_FEATURE_COUNT + 2;
+	int EXTERNAL_ELEMENT_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>External Element</em>' class.
@@ -1320,7 +1275,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXTERNAL_ELEMENT_OPERATION_COUNT = THREAT_OPERATION_COUNT + 0;
+	int EXTERNAL_ELEMENT_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link dsm.TRADES.AssessmentENUM <em>Assessment ENUM</em>}' enum.

@@ -1184,7 +1184,7 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		impactScoreEClass.getESuperTypes().add(this.getNamedElement());
 		difficultyScoreEClass.getESuperTypes().add(this.getNamedElement());
 		externalThreatEClass.getESuperTypes().add(this.getThreat());
-		externalElementEClass.getESuperTypes().add(this.getThreat());
+		externalThreatEClass.getESuperTypes().add(this.getExternalElement());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(analysisEClass, Analysis.class, "Analysis", !IS_ABSTRACT, !IS_INTERFACE,

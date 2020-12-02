@@ -214,6 +214,8 @@ public class TRADESSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseThreat(externalThreat);
 			if (result == null)
+				result = caseExternalElement(externalThreat);
+			if (result == null)
 				result = caseNamedElement(externalThreat);
 			if (result == null)
 				result = defaultCase(theEObject);
@@ -222,10 +224,6 @@ public class TRADESSwitch<T> extends Switch<T> {
 		case TRADESPackage.EXTERNAL_ELEMENT: {
 			ExternalElement externalElement = (ExternalElement) theEObject;
 			T result = caseExternalElement(externalElement);
-			if (result == null)
-				result = caseThreat(externalElement);
-			if (result == null)
-				result = caseNamedElement(externalElement);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;

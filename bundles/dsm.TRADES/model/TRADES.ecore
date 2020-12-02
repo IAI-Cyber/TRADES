@@ -143,8 +143,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="NamedElement" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ExternalThreat" eSuperTypes="#//Threat"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ExternalElement" abstract="true" eSuperTypes="#//Threat">
+  <eClassifiers xsi:type="ecore:EClass" name="ExternalThreat" eSuperTypes="#//Threat #//ExternalElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ExternalElement" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="source" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="link" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>

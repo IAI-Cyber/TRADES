@@ -4,13 +4,17 @@ package dsm.TRADES.provider;
 
 import dsm.TRADES.ExternalThreat;
 
+import dsm.TRADES.TRADESPackage;
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
  * This is the item provider adapter for a {@link dsm.TRADES.ExternalThreat} object.
@@ -40,8 +44,42 @@ public class ExternalThreatItemProvider extends ThreatItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addSourcePropertyDescriptor(object);
+			addLinkPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Source feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSourcePropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_ExternalElement_source_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_ExternalElement_source_feature",
+								"_UI_ExternalElement_type"),
+						TRADESPackage.Literals.EXTERNAL_ELEMENT__SOURCE, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Link feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addLinkPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_ExternalElement_link_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_ExternalElement_link_feature",
+								"_UI_ExternalElement_type"),
+						TRADESPackage.Literals.EXTERNAL_ELEMENT__LINK, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -88,6 +126,13 @@ public class ExternalThreatItemProvider extends ThreatItemProvider {
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(ExternalThreat.class)) {
+		case TRADESPackage.EXTERNAL_THREAT__SOURCE:
+		case TRADESPackage.EXTERNAL_THREAT__LINK:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
+		}
 		super.notifyChanged(notification);
 	}
 

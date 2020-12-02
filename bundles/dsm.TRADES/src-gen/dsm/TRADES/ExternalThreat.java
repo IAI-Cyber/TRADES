@@ -12,5 +12,5 @@ package dsm.TRADES;
  * @model
  * @generated
  */
-public interface ExternalThreat extends Threat {
+public interface ExternalThreat extends Threat, ExternalElement {
 } // ExternalThreat
