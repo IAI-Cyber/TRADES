@@ -147,6 +147,16 @@ public class TRADESAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseExternalThreat(ExternalThreat object) {
+			return createExternalThreatAdapter();
+		}
+
+		@Override
+		public Adapter caseExternalElement(ExternalElement object) {
+			return createExternalElementAdapter();
+		}
+
+		@Override
 		public Adapter defaultCase(EObject object) {
 			return createEObjectAdapter();
 		}
@@ -386,6 +396,34 @@ public class TRADESAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createNamedElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link dsm.TRADES.ExternalThreat <em>External Threat</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see dsm.TRADES.ExternalThreat
+	 * @generated
+	 */
+	public Adapter createExternalThreatAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link dsm.TRADES.ExternalElement <em>External Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see dsm.TRADES.ExternalElement
+	 * @generated
+	 */
+	public Adapter createExternalElementAdapter() {
 		return null;
 	}
 

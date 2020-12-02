@@ -194,12 +194,12 @@ public class ComponentItemProvider extends ComponentOwerItemProvider {
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-		
-		if(notification.getFeature() == TRADESPackage.eINSTANCE.getNamedElement_Name()) {
+
+		if (notification.getFeature() == TRADESPackage.eINSTANCE.getNamedElement_Name()) {
 			Object notifier = notification.getNotifier();
 			if (notifier instanceof Component) {
 				Component new_name = (Component) notifier;
-				for(ThreatAllocationRelation rel : new_name.getThreatallocation()) {
+				for (ThreatAllocationRelation rel : new_name.getThreatallocation()) {
 					fireNotifyChanged(new ViewerNotification(notification, rel, false, true));
 				}
 			}
@@ -245,6 +245,9 @@ public class ComponentItemProvider extends ComponentOwerItemProvider {
 
 		newChildDescriptors.add(
 				createChildParameter(TRADESPackage.Literals.COMPONENT__THREAT, TRADESFactory.eINSTANCE.createThreat()));
+
+		newChildDescriptors.add(createChildParameter(TRADESPackage.Literals.COMPONENT__THREAT,
+				TRADESFactory.eINSTANCE.createExternalThreat()));
 	}
 
 }

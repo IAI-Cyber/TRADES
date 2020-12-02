@@ -83,6 +83,8 @@ public class TRADESFactoryImpl extends EFactoryImpl implements TRADESFactory {
 			return createImpactScore();
 		case TRADESPackage.DIFFICULTY_SCORE:
 			return createDifficultyScore();
+		case TRADESPackage.EXTERNAL_THREAT:
+			return createExternalThreat();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -267,6 +269,17 @@ public class TRADESFactoryImpl extends EFactoryImpl implements TRADESFactory {
 	public DifficultyScore createDifficultyScore() {
 		DifficultyScoreImpl difficultyScore = new DifficultyScoreImpl();
 		return difficultyScore;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ExternalThreat createExternalThreat() {
+		ExternalThreatImpl externalThreat = new ExternalThreatImpl();
+		return externalThreat;
 	}
 
 	/**

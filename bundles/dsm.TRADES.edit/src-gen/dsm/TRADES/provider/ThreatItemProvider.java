@@ -192,16 +192,16 @@ public class ThreatItemProvider extends NamedElementItemProvider {
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		if(notification.getFeatureID(Threat.class) == TRADESPackage.NAMED_ELEMENT__NAME) {
+		if (notification.getFeatureID(Threat.class) == TRADESPackage.NAMED_ELEMENT__NAME) {
 			Object notifier = notification.getNotifier();
 			if (notifier instanceof Threat) {
 				Threat new_name = (Threat) notifier;
-				for(ThreatAllocationRelation rel : new_name.getThreatallocation()) {
+				for (ThreatAllocationRelation rel : new_name.getThreatallocation()) {
 					fireNotifyChanged(new ViewerNotification(notification, rel, false, true));
 				}
 			}
 		}
-		
+
 		switch (notification.getFeatureID(Threat.class)) {
 		case TRADESPackage.THREAT__THREAT_TYPE:
 		case TRADESPackage.THREAT__ID:

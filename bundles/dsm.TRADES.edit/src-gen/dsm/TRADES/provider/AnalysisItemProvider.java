@@ -182,6 +182,9 @@ public class AnalysisItemProvider extends ComponentOwerItemProvider {
 		newChildDescriptors.add(
 				createChildParameter(TRADESPackage.Literals.ANALYSIS__THREAT, TRADESFactory.eINSTANCE.createThreat()));
 
+		newChildDescriptors.add(createChildParameter(TRADESPackage.Literals.ANALYSIS__THREAT,
+				TRADESFactory.eINSTANCE.createExternalThreat()));
+
 		newChildDescriptors.add(createChildParameter(TRADESPackage.Literals.ANALYSIS__CONTROL,
 				TRADESFactory.eINSTANCE.createControl()));
 

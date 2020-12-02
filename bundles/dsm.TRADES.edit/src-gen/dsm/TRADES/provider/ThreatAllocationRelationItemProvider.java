@@ -20,8 +20,6 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
-import dsm.TRADES.AssessmentENUM;
 import dsm.TRADES.Component;
 import dsm.TRADES.TRADESFactory;
 import dsm.TRADES.TRADESPackage;
@@ -223,12 +221,12 @@ public class ThreatAllocationRelationItemProvider extends ItemProviderAdapter im
 		String label = "";
 		ThreatAllocationRelation relation = ((ThreatAllocationRelation) object);
 		Threat threat = relation.getThreat();
-		if(threat != null) {
+		if (threat != null) {
 			label += threat.getName();
 		}
 		label += " on ";
 		Component component = relation.getComponent();
-		if(component != null) {
+		if (component != null) {
 			label += component.getName();
 		}
 		return label;

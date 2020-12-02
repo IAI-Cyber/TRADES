@@ -1,12 +1,9 @@
 /**
  */
-package extTRADES.impl;
+package dsm.TRADES.impl;
 
-import dsm.TRADES.impl.ThreatImpl;
-
-import extTRADES.ExtTRADESPackage;
-import extTRADES.extElement;
-import extTRADES.extThreat;
+import dsm.TRADES.ExternalElement;
+import dsm.TRADES.TRADESPackage;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -16,19 +13,19 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>ext Threat</b></em>'.
+ * An implementation of the model object '<em><b>External Element</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link extTRADES.impl.extThreatImpl#getSource <em>Source</em>}</li>
- *   <li>{@link extTRADES.impl.extThreatImpl#getLink <em>Link</em>}</li>
+ *   <li>{@link dsm.TRADES.impl.ExternalElementImpl#getSource <em>Source</em>}</li>
+ *   <li>{@link dsm.TRADES.impl.ExternalElementImpl#getLink <em>Link</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class extThreatImpl extends ThreatImpl implements extThreat {
+public abstract class ExternalElementImpl extends ThreatImpl implements ExternalElement {
 	/**
 	 * The default value of the '{@link #getSource() <em>Source</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -74,7 +71,7 @@ public class extThreatImpl extends ThreatImpl implements extThreat {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected extThreatImpl() {
+	protected ExternalElementImpl() {
 		super();
 	}
 
@@ -85,7 +82,7 @@ public class extThreatImpl extends ThreatImpl implements extThreat {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ExtTRADESPackage.Literals.EXT_THREAT;
+		return TRADESPackage.Literals.EXTERNAL_ELEMENT;
 	}
 
 	/**
@@ -108,7 +105,7 @@ public class extThreatImpl extends ThreatImpl implements extThreat {
 		String oldSource = source;
 		source = newSource;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ExtTRADESPackage.EXT_THREAT__SOURCE, oldSource,
+			eNotify(new ENotificationImpl(this, Notification.SET, TRADESPackage.EXTERNAL_ELEMENT__SOURCE, oldSource,
 					source));
 	}
 
@@ -132,7 +129,7 @@ public class extThreatImpl extends ThreatImpl implements extThreat {
 		String oldLink = link;
 		link = newLink;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ExtTRADESPackage.EXT_THREAT__LINK, oldLink, link));
+			eNotify(new ENotificationImpl(this, Notification.SET, TRADESPackage.EXTERNAL_ELEMENT__LINK, oldLink, link));
 	}
 
 	/**
@@ -143,9 +140,9 @@ public class extThreatImpl extends ThreatImpl implements extThreat {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case ExtTRADESPackage.EXT_THREAT__SOURCE:
+		case TRADESPackage.EXTERNAL_ELEMENT__SOURCE:
 			return getSource();
-		case ExtTRADESPackage.EXT_THREAT__LINK:
+		case TRADESPackage.EXTERNAL_ELEMENT__LINK:
 			return getLink();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -159,10 +156,10 @@ public class extThreatImpl extends ThreatImpl implements extThreat {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case ExtTRADESPackage.EXT_THREAT__SOURCE:
+		case TRADESPackage.EXTERNAL_ELEMENT__SOURCE:
 			setSource((String) newValue);
 			return;
-		case ExtTRADESPackage.EXT_THREAT__LINK:
+		case TRADESPackage.EXTERNAL_ELEMENT__LINK:
 			setLink((String) newValue);
 			return;
 		}
@@ -177,10 +174,10 @@ public class extThreatImpl extends ThreatImpl implements extThreat {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case ExtTRADESPackage.EXT_THREAT__SOURCE:
+		case TRADESPackage.EXTERNAL_ELEMENT__SOURCE:
 			setSource(SOURCE_EDEFAULT);
 			return;
-		case ExtTRADESPackage.EXT_THREAT__LINK:
+		case TRADESPackage.EXTERNAL_ELEMENT__LINK:
 			setLink(LINK_EDEFAULT);
 			return;
 		}
@@ -195,52 +192,12 @@ public class extThreatImpl extends ThreatImpl implements extThreat {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case ExtTRADESPackage.EXT_THREAT__SOURCE:
+		case TRADESPackage.EXTERNAL_ELEMENT__SOURCE:
 			return SOURCE_EDEFAULT == null ? source != null : !SOURCE_EDEFAULT.equals(source);
-		case ExtTRADESPackage.EXT_THREAT__LINK:
+		case TRADESPackage.EXTERNAL_ELEMENT__LINK:
 			return LINK_EDEFAULT == null ? link != null : !LINK_EDEFAULT.equals(link);
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == extElement.class) {
-			switch (derivedFeatureID) {
-			case ExtTRADESPackage.EXT_THREAT__SOURCE:
-				return ExtTRADESPackage.EXT_ELEMENT__SOURCE;
-			case ExtTRADESPackage.EXT_THREAT__LINK:
-				return ExtTRADESPackage.EXT_ELEMENT__LINK;
-			default:
-				return -1;
-			}
-		}
-		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == extElement.class) {
-			switch (baseFeatureID) {
-			case ExtTRADESPackage.EXT_ELEMENT__SOURCE:
-				return ExtTRADESPackage.EXT_THREAT__SOURCE;
-			case ExtTRADESPackage.EXT_ELEMENT__LINK:
-				return ExtTRADESPackage.EXT_THREAT__LINK;
-			default:
-				return -1;
-			}
-		}
-		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
 	/**
@@ -262,4 +219,4 @@ public class extThreatImpl extends ThreatImpl implements extThreat {
 		return result.toString();
 	}
 
-} //extThreatImpl
+} //ExternalElementImpl

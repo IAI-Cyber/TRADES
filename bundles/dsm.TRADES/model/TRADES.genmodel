@@ -107,5 +107,10 @@
     <genClasses image="false" ecoreClass="TRADES.ecore#//NamedElement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//NamedElement/name"/>
     </genClasses>
+    <genClasses ecoreClass="TRADES.ecore#//ExternalThreat"/>
+    <genClasses image="false" ecoreClass="TRADES.ecore#//ExternalElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//ExternalElement/source"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//ExternalElement/link"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

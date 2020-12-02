@@ -2,12 +2,8 @@
  */
 package dsm.TRADES.provider;
 
-import dsm.TRADES.Component;
 import dsm.TRADES.Control;
 import dsm.TRADES.TRADESPackage;
-import dsm.TRADES.Threat;
-import dsm.TRADES.ThreatAllocationRelation;
-
 import java.util.Collection;
 import java.util.List;
 
@@ -159,8 +155,6 @@ public class ControlItemProvider extends NamedElementItemProvider {
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-		
-	
 
 		switch (notification.getFeatureID(Control.class)) {
 		case TRADESPackage.CONTROL__ID:

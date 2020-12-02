@@ -208,6 +208,28 @@ public class TRADESSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
+		case TRADESPackage.EXTERNAL_THREAT: {
+			ExternalThreat externalThreat = (ExternalThreat) theEObject;
+			T result = caseExternalThreat(externalThreat);
+			if (result == null)
+				result = caseThreat(externalThreat);
+			if (result == null)
+				result = caseNamedElement(externalThreat);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case TRADESPackage.EXTERNAL_ELEMENT: {
+			ExternalElement externalElement = (ExternalElement) theEObject;
+			T result = caseExternalElement(externalElement);
+			if (result == null)
+				result = caseThreat(externalElement);
+			if (result == null)
+				result = caseNamedElement(externalElement);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
 		default:
 			return defaultCase(theEObject);
 		}
@@ -450,6 +472,36 @@ public class TRADESSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseNamedElement(NamedElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>External Threat</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>External Threat</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseExternalThreat(ExternalThreat object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>External Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>External Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseExternalElement(ExternalElement object) {
 		return null;
 	}
 

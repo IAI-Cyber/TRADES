@@ -14,6 +14,8 @@ import dsm.TRADES.Control;
 import dsm.TRADES.Data;
 import dsm.TRADES.DataOwner;
 import dsm.TRADES.DifficultyScore;
+import dsm.TRADES.ExternalElement;
+import dsm.TRADES.ExternalThreat;
 import dsm.TRADES.ImpactScore;
 import dsm.TRADES.NamedElement;
 import dsm.TRADES.ScoreSystem;
@@ -150,6 +152,20 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * @generated
 	 */
 	private EClass namedElementEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass externalThreatEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass externalElementEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -932,6 +948,46 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * @generated
 	 */
 	@Override
+	public EClass getExternalThreat() {
+		return externalThreatEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getExternalElement() {
+		return externalElementEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getExternalElement_Source() {
+		return (EAttribute) externalElementEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getExternalElement_Link() {
+		return (EAttribute) externalElementEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EEnum getAssessmentENUM() {
 		return assessmentENUMEEnum;
 	}
@@ -1071,6 +1127,12 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		namedElementEClass = createEClass(NAMED_ELEMENT);
 		createEAttribute(namedElementEClass, NAMED_ELEMENT__NAME);
 
+		externalThreatEClass = createEClass(EXTERNAL_THREAT);
+
+		externalElementEClass = createEClass(EXTERNAL_ELEMENT);
+		createEAttribute(externalElementEClass, EXTERNAL_ELEMENT__SOURCE);
+		createEAttribute(externalElementEClass, EXTERNAL_ELEMENT__LINK);
+
 		// Create enums
 		assessmentENUMEEnum = createEEnum(ASSESSMENT_ENUM);
 		affectedENUMEEnum = createEEnum(AFFECTED_ENUM);
@@ -1121,6 +1183,8 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		scoreSystemEClass.getESuperTypes().add(this.getNamedElement());
 		impactScoreEClass.getESuperTypes().add(this.getNamedElement());
 		difficultyScoreEClass.getESuperTypes().add(this.getNamedElement());
+		externalThreatEClass.getESuperTypes().add(this.getThreat());
+		externalElementEClass.getESuperTypes().add(this.getThreat());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(analysisEClass, Analysis.class, "Analysis", !IS_ABSTRACT, !IS_INTERFACE,
@@ -1320,6 +1384,17 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		initEClass(namedElementEClass, NamedElement.class, "NamedElement", IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getNamedElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, NamedElement.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(externalThreatEClass, ExternalThreat.class, "ExternalThreat", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(externalElementEClass, ExternalElement.class, "ExternalElement", IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getExternalElement_Source(), ecorePackage.getEString(), "source", null, 0, 1,
+				ExternalElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getExternalElement_Link(), ecorePackage.getEString(), "link", null, 0, 1, ExternalElement.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals

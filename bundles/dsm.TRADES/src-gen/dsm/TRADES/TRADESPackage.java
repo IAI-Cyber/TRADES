@@ -1123,6 +1123,206 @@ public interface TRADESPackage extends EPackage {
 	int DATA_OWNER_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link dsm.TRADES.impl.ExternalThreatImpl <em>External Threat</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see dsm.TRADES.impl.ExternalThreatImpl
+	 * @see dsm.TRADES.impl.TRADESPackageImpl#getExternalThreat()
+	 * @generated
+	 */
+	int EXTERNAL_THREAT = 16;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTERNAL_THREAT__NAME = THREAT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Allocated</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTERNAL_THREAT__ALLOCATED = THREAT__ALLOCATED;
+
+	/**
+	 * The feature id for the '<em><b>Threatallocation</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTERNAL_THREAT__THREATALLOCATION = THREAT__THREATALLOCATION;
+
+	/**
+	 * The feature id for the '<em><b>Threat Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTERNAL_THREAT__THREAT_TYPE = THREAT__THREAT_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTERNAL_THREAT__ID = THREAT__ID;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTERNAL_THREAT__DESCRIPTION = THREAT__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Applicability</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTERNAL_THREAT__APPLICABILITY = THREAT__APPLICABILITY;
+
+	/**
+	 * The number of structural features of the '<em>External Threat</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTERNAL_THREAT_FEATURE_COUNT = THREAT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>External Threat</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTERNAL_THREAT_OPERATION_COUNT = THREAT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link dsm.TRADES.impl.ExternalElementImpl <em>External Element</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see dsm.TRADES.impl.ExternalElementImpl
+	 * @see dsm.TRADES.impl.TRADESPackageImpl#getExternalElement()
+	 * @generated
+	 */
+	int EXTERNAL_ELEMENT = 17;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTERNAL_ELEMENT__NAME = THREAT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Allocated</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTERNAL_ELEMENT__ALLOCATED = THREAT__ALLOCATED;
+
+	/**
+	 * The feature id for the '<em><b>Threatallocation</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTERNAL_ELEMENT__THREATALLOCATION = THREAT__THREATALLOCATION;
+
+	/**
+	 * The feature id for the '<em><b>Threat Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTERNAL_ELEMENT__THREAT_TYPE = THREAT__THREAT_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTERNAL_ELEMENT__ID = THREAT__ID;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTERNAL_ELEMENT__DESCRIPTION = THREAT__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Applicability</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTERNAL_ELEMENT__APPLICABILITY = THREAT__APPLICABILITY;
+
+	/**
+	 * The feature id for the '<em><b>Source</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTERNAL_ELEMENT__SOURCE = THREAT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Link</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTERNAL_ELEMENT__LINK = THREAT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>External Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTERNAL_ELEMENT_FEATURE_COUNT = THREAT_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>External Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTERNAL_ELEMENT_OPERATION_COUNT = THREAT_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link dsm.TRADES.AssessmentENUM <em>Assessment ENUM</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1130,7 +1330,7 @@ public interface TRADESPackage extends EPackage {
 	 * @see dsm.TRADES.impl.TRADESPackageImpl#getAssessmentENUM()
 	 * @generated
 	 */
-	int ASSESSMENT_ENUM = 16;
+	int ASSESSMENT_ENUM = 18;
 
 	/**
 	 * The meta object id for the '{@link dsm.TRADES.AffectedENUM <em>Affected ENUM</em>}' enum.
@@ -1140,7 +1340,7 @@ public interface TRADESPackage extends EPackage {
 	 * @see dsm.TRADES.impl.TRADESPackageImpl#getAffectedENUM()
 	 * @generated
 	 */
-	int AFFECTED_ENUM = 17;
+	int AFFECTED_ENUM = 19;
 
 	/**
 	 * The meta object id for the '{@link dsm.TRADES.threatTypeENUM <em>threat Type ENUM</em>}' enum.
@@ -1150,7 +1350,7 @@ public interface TRADESPackage extends EPackage {
 	 * @see dsm.TRADES.impl.TRADESPackageImpl#getthreatTypeENUM()
 	 * @generated
 	 */
-	int THREAT_TYPE_ENUM = 18;
+	int THREAT_TYPE_ENUM = 20;
 
 	/**
 	 * Returns the meta object for class '{@link dsm.TRADES.Analysis <em>Analysis</em>}'.
@@ -1896,6 +2096,48 @@ public interface TRADESPackage extends EPackage {
 	EAttribute getNamedElement_Name();
 
 	/**
+	 * Returns the meta object for class '{@link dsm.TRADES.ExternalThreat <em>External Threat</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>External Threat</em>'.
+	 * @see dsm.TRADES.ExternalThreat
+	 * @generated
+	 */
+	EClass getExternalThreat();
+
+	/**
+	 * Returns the meta object for class '{@link dsm.TRADES.ExternalElement <em>External Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>External Element</em>'.
+	 * @see dsm.TRADES.ExternalElement
+	 * @generated
+	 */
+	EClass getExternalElement();
+
+	/**
+	 * Returns the meta object for the attribute '{@link dsm.TRADES.ExternalElement#getSource <em>Source</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Source</em>'.
+	 * @see dsm.TRADES.ExternalElement#getSource()
+	 * @see #getExternalElement()
+	 * @generated
+	 */
+	EAttribute getExternalElement_Source();
+
+	/**
+	 * Returns the meta object for the attribute '{@link dsm.TRADES.ExternalElement#getLink <em>Link</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Link</em>'.
+	 * @see dsm.TRADES.ExternalElement#getLink()
+	 * @see #getExternalElement()
+	 * @generated
+	 */
+	EAttribute getExternalElement_Link();
+
+	/**
 	 * Returns the meta object for enum '{@link dsm.TRADES.AssessmentENUM <em>Assessment ENUM</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2534,6 +2776,42 @@ public interface TRADESPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute NAMED_ELEMENT__NAME = eINSTANCE.getNamedElement_Name();
+
+		/**
+		 * The meta object literal for the '{@link dsm.TRADES.impl.ExternalThreatImpl <em>External Threat</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see dsm.TRADES.impl.ExternalThreatImpl
+		 * @see dsm.TRADES.impl.TRADESPackageImpl#getExternalThreat()
+		 * @generated
+		 */
+		EClass EXTERNAL_THREAT = eINSTANCE.getExternalThreat();
+
+		/**
+		 * The meta object literal for the '{@link dsm.TRADES.impl.ExternalElementImpl <em>External Element</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see dsm.TRADES.impl.ExternalElementImpl
+		 * @see dsm.TRADES.impl.TRADESPackageImpl#getExternalElement()
+		 * @generated
+		 */
+		EClass EXTERNAL_ELEMENT = eINSTANCE.getExternalElement();
+
+		/**
+		 * The meta object literal for the '<em><b>Source</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute EXTERNAL_ELEMENT__SOURCE = eINSTANCE.getExternalElement_Source();
+
+		/**
+		 * The meta object literal for the '<em><b>Link</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute EXTERNAL_ELEMENT__LINK = eINSTANCE.getExternalElement_Link();
 
 		/**
 		 * The meta object literal for the '{@link dsm.TRADES.AssessmentENUM <em>Assessment ENUM</em>}' enum.
