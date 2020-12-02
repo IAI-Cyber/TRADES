@@ -50,8 +50,8 @@ public class ExtThreatServices {
 	 * @param source   the source to copy
 	 * @return the result
 	 */
-	public Threat copy(Analysis analysis, Threat source) {
-		Threat result = EcoreUtil.copy(source);
+	public Threat copy(Analysis analysis, ExternalThreat source) {
+		ExternalThreat result = EcoreUtil.copy(source);
 		analysis.getThreat().add(result);
 		return result;
 	}

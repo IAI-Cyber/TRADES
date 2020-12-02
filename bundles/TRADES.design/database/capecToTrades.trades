@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<TRADES:Analysis xmi:version="2.0" xmlns:xmi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TRADES="dsm.TRADES">
-  <threat xsi:type="TRADES:ExternalThreat" name="Accessing Functionality Not Properly Constrained by ACLs" ID="CAPEC_1" source="CAPEC" link="https://capec.mitre.org/data/definitions/1.html" />
+<TRADES:Analysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TRADES="dsm.TRADES">  <threat xsi:type="TRADES:ExternalThreat" name="Accessing Functionality Not Properly Constrained by ACLs" ID="CAPEC_1" source="CAPEC" link="https://capec.mitre.org/data/definitions/1.html" />
   <threat xsi:type="TRADES:ExternalThreat" name="Buffer Overflow via Environment Variables" ID="CAPEC_10" source="CAPEC" link="https://capec.mitre.org/data/definitions/10.html" />
   <control name="Do not expose environment variable to the user." />
   <threatmitigation control="//@control.0" threat="//@threat.1" />

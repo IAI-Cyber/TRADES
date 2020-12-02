@@ -11,6 +11,13 @@
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
           </style>
+          <conditionnalStyles predicateExpression="aql:self.oclIsTypeOf(TRADES::ExternalThreat)">
+            <style xsi:type="style:EllipseNodeDescription" labelSize="15" tooltipExpression="aql: self.name" sizeComputationExpression="10" labelPosition="node" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_green']"/>
+            </style>
+          </conditionnalStyles>
         </nodeMappings>
         <nodeMappings name="ControlNode" labelDirectEdit="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Change%20name']" semanticCandidatesExpression="aql: self.eContents()" domainClass="TRADES::Control">
           <style xsi:type="style:SquareDescription" borderSizeComputationExpression="1" borderLineStyle="dash" labelSize="15" tooltipExpression="aql: self.name" sizeComputationExpression="0" labelPosition="node" resizeKind="NSEW" width="14" height="4">
@@ -31,13 +38,6 @@
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
-          </style>
-        </nodeMappings>
-        <nodeMappings name="ExternalThreatNode" label="ExternalThreatNode_TD" domainClass="ExternalThreat">
-          <style xsi:type="style:EllipseNodeDescription" labelSize="12" labelPosition="node" resizeKind="NSEW">
-            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
           </style>
         </nodeMappings>
         <edgeMappings name="allocatedThreat" navigationDescriptions="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='AttachChainDiagramNavTool_TD']" labelDirectEdit="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Change%20name']" sourceMapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@nodeMappings[name='ThreatNode_TD'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Component%20Analysis']/@additionalLayers[name='AllocatedThreats']/@nodeMappings[name='AllocatedThreatNode']" targetMapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@nodeMappings[name='ComponentNode'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Component%20Analysis']/@defaultLayer/@containerMappings[name='ComponentPackageHierarchy']" targetFinderExpression="feature:component" sourceFinderExpression="feature:threat" targetExpression="var:self" domainClass="TRADES::ThreatAllocationRelation" useDomainElement="true" reconnections="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Component%20Analysis']/@defaultLayer/@toolSections.0/@ownedTools[name='ChangeThreatInThreatAllocation'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Component%20Analysis']/@defaultLayer/@toolSections.0/@ownedTools[name='ChangeComponentInThreatAllocation'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='ChangeThreatInThreatAllocation'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='ChangeComponentInThreatAllocation']">
@@ -291,13 +291,6 @@
             <containerViewVariable name="containerView"/>
             <containerVariable name="container"/>
             <representationNameVariable name="diagramName"/>
-          </ownedTools>
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="ExternalThreatCreation" nodeMappings="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@nodeMappings[name='ExternalThreatNode']">
-            <variable name="container"/>
-            <viewVariable name="containerView"/>
-            <initialOperation>
-              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="TRADES::ExternalThreat" referenceName="threat"/>
-            </initialOperation>
           </ownedTools>
         </toolSections>
         <toolSections name="Representation Tools">
@@ -1112,12 +1105,16 @@
       <groups name="ExternalThreatGroup" label="ExternalThreatDetails" labelExpression="External Threat Details" domainClass="TRADES::ExternalThreat" semanticCandidateExpression="var:self">
         <controls xsi:type="properties:TextDescription" name="ExternalThreatSource" label=" External lThreat Source" labelExpression="Source" helpExpression="The source of the threat" isEnabledExpression="aql:false" valueExpression="aql:self.source">
           <initialOperation>
-            <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self"/>
+            <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+              <subModelOperations xsi:type="tool_1:SetValue" featureName="source" valueExpression="aql:newValue"/>
+            </firstModelOperations>
           </initialOperation>
         </controls>
         <controls xsi:type="properties:TextDescription" name="ExternalThreatLink" label="ExternalThreatLink" labelExpression="Link" helpExpression="Link to the origenal source" isEnabledExpression="aql:false" valueExpression="aql:self.link">
           <initialOperation>
-            <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self"/>
+            <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+              <subModelOperations xsi:type="tool_1:SetValue" featureName="link" valueExpression="aql:newValue"/>
+            </firstModelOperations>
           </initialOperation>
         </controls>
       </groups>
