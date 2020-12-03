@@ -221,12 +221,12 @@ public class ThreatAllocationRelationItemProvider extends ItemProviderAdapter im
 		String label = "";
 		ThreatAllocationRelation relation = ((ThreatAllocationRelation) object);
 		Threat threat = relation.getThreat();
-		if (threat != null) {
+		if (threat != null && threat.getName() != null) {
 			label += threat.getName();
 		}
 		label += " on ";
 		Component component = relation.getComponent();
-		if (component != null) {
+		if (component != null && component.getName() != null) {
 			label += component.getName();
 		}
 		return label;

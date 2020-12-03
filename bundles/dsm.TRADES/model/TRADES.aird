@@ -7,7 +7,7 @@
     <eAnnotations xmi:type="description:DAnnotationEntry" uid="_3xruUBk0Eeu_b_FWDsJtqQ" source="FIRST_SESSION_OPENNING_PERFORMED"/>
     <ownedViews xmi:type="viewpoint:DView" uid="_D9XOQPWAEemZc42BBVcGEg">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_D_zeQPWAEemZc42BBVcGEg" name="TRADES" repPath="#_D9-5UPWAEemZc42BBVcGEg" changeId="4618245a-ef85-4869-acac-ab79f45bd250">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_D_zeQPWAEemZc42BBVcGEg" name="TRADES" repPath="#_D9-5UPWAEemZc42BBVcGEg" changeId="f578f733-4a25-484a-97ab-4828ef535871">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="TRADES.ecore#/"/>
       </ownedRepresentationDescriptors>
@@ -295,6 +295,10 @@
             <children xmi:type="notation:Node" xmi:id="_ShqnEFO4Eeq4apjYAkMrHQ" type="3010" element="_Shfn-FO4Eeq4apjYAkMrHQ">
               <styles xmi:type="notation:FontStyle" xmi:id="_ShqnEVO4Eeq4apjYAkMrHQ" fontName="Segoe UI" fontHeight="8"/>
               <layoutConstraint xmi:type="notation:Location" xmi:id="_ShqnElO4Eeq4apjYAkMrHQ"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_TudWMDVYEeu66YY-LpaXBA" type="3010" element="_Tt8_4TVYEeu66YY-LpaXBA">
+              <styles xmi:type="notation:FontStyle" xmi:id="_TudWMTVYEeu66YY-LpaXBA" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_TudWMjVYEeu66YY-LpaXBA"/>
             </children>
             <styles xmi:type="notation:SortingStyle" xmi:id="_4PHVwVO2Eeq4apjYAkMrHQ"/>
             <styles xmi:type="notation:FilteringStyle" xmi:id="_4PHVwlO2Eeq4apjYAkMrHQ"/>
@@ -1342,6 +1346,14 @@
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_Tt8_4TVYEeu66YY-LpaXBA" name=" configurations : ImpactConfiguration" tooltipText="">
+        <target xmi:type="ecore:EReference" href="TRADES.ecore#//ImpactScore/configurations"/>
+        <semanticElements xmi:type="ecore:EReference" href="TRADES.ecore#//ImpactScore/configurations"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_Tt9m8DVYEeu66YY-LpaXBA" labelAlignment="LEFT" color="114,159,207">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_8PEkMFO2Eeq4apjYAkMrHQ" name="DifficultyScore" tooltipText="" incomingEdges="_HRdT6lO3Eeq4apjYAkMrHQ _IKCXJ5Q-EeqFNeAYZTuXDQ" width="12" height="10">

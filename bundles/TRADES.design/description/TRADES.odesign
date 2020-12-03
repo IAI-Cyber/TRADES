@@ -53,7 +53,7 @@
           </conditionnalStyles>
         </nodeMappings>
         <nodeMappings name="ComponentNode" preconditionExpression="aql: self->notEmpty() = false" labelDirectEdit="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Change%20name']" semanticCandidatesExpression="feature:eContents" domainClass="TRADES::Component">
-          <style xsi:type="style:SquareDescription" labelSize="15" showIcon="false" tooltipExpression="aql: self.name" sizeComputationExpression="20" labelPosition="node" resizeKind="NSEW">
+          <style xsi:type="style:SquareDescription" borderSizeComputationExpression="1" labelSize="15" showIcon="false" tooltipExpression="aql: self.name" sizeComputationExpression="20" labelPosition="node" resizeKind="NSEW">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
@@ -69,7 +69,7 @@
           <conditionnalStyles predicateExpression="aql: self.eGet('assessment')->toString()='Accepted'">
             <style sizeComputationExpression="2">
               <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='green']"/>
-              <centerLabelStyleDescription labelSize="12">
+              <centerLabelStyleDescription labelSize="12" showIcon="false">
                 <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
               </centerLabelStyleDescription>
             </style>
@@ -77,7 +77,7 @@
           <conditionnalStyles predicateExpression="aql: self.eGet('assessment')->toString()='Gap'">
             <style sizeComputationExpression="2">
               <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
-              <centerLabelStyleDescription labelSize="12">
+              <centerLabelStyleDescription labelSize="12" showIcon="false">
                 <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
               </centerLabelStyleDescription>
             </style>
