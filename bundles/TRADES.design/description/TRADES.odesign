@@ -361,7 +361,7 @@
             </initialOperation>
           </ownedTools>
         </toolSections>
-        <toolSections name="ThreatsSectionTool_TD" label="Threats">
+        <toolSections name="ThreatsSectionTool_TD" label="Threats Tools">
           <ownedTools xsi:type="tool_1:SelectionWizardDescription" name="AddThreat" label="Display threats" candidatesExpression="aql:self.threat" multiple="true" message="Please select threat(s)">
             <element name="element"/>
             <containerView name="containerView"/>
