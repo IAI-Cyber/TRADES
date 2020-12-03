@@ -32,17 +32,16 @@
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
           <conditionnalStyles predicateExpression="aql:self.oclIsTypeOf(TRADES::ExternalThreat)">
-            <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelAlignment="LEFT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/TRADES.design/Images/ExteenalThreatImage.svg">
+            <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="aql:self.getLabelProviderText()" labelAlignment="LEFT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/TRADES.design/Images/ExteenalThreatImage.svg">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </style>
           </conditionnalStyles>
         </nodeMappings>
         <nodeMappings name="ControlNode" labelDirectEdit="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Change%20name']" semanticCandidatesExpression="aql: self.eContents()" domainClass="TRADES::Control">
-          <style xsi:type="style:SquareDescription" borderSizeComputationExpression="1" borderLineStyle="dash" labelSize="15" tooltipExpression="aql: self.name" sizeComputationExpression="0" labelPosition="node" resizeKind="NSEW" width="14" height="4">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelAlignment="LEFT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/TRADES.design/Images/controlImage.svg">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
           </style>
           <conditionnalStyles predicateExpression="aql: self.implementedBy->notEmpty() = true">
             <style xsi:type="style:SquareDescription" borderSizeComputationExpression="1" borderLineStyle="dash" labelSize="15" sizeComputationExpression="10" labelPosition="node" resizeKind="NSEW">

@@ -112,8 +112,8 @@ public class ExternalThreatItemProvider extends ThreatItemProvider {
 	@Override
 	public String getText(Object object) {
 		String label = ((ExternalThreat) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_ExternalThreat_type")
-				: label;
+				return label == null || label.length() == 0 ? getString("_UI_ExternalThreat_type")
+				: "Ex " + label;
 	}
 
 	/**
