@@ -27,10 +27,9 @@
       <metamodel href="http://www.example.org/extTRADES#/"/>
       <defaultLayer name="Default">
         <nodeMappings name="ThreatNode_TD" deletionDescription="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.2/@ownedTools[name='DeleteThreatFromDiagram']" labelDirectEdit="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Change%20name']" semanticCandidatesExpression="feature:threat" createElements="false" doubleClickDescription="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='OpenProgramTool']" domainClass="TRADES::Threat">
-          <style xsi:type="style:EllipseNodeDescription" labelSize="15" tooltipExpression="aql: self.name" sizeComputationExpression="10" labelPosition="node" resizeKind="NSEW">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="aql:self.getLabelProviderText()" labelAlignment="RIGHT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/TRADES.design/Images/Threat.svg">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
           </style>
           <conditionnalStyles predicateExpression="aql:self.oclIsTypeOf(TRADES::ExternalThreat)">
             <style xsi:type="style:EllipseNodeDescription" labelSize="15" tooltipExpression="aql: self.name" sizeComputationExpression="10" labelPosition="node" resizeKind="NSEW">
@@ -337,7 +336,7 @@
               <firstModelOperations xsi:type="tool_1:Let" valueExpression="aql: element->filter(TRADES::Component).decapsulateElements(diagram)"/>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:ContainerDropDescription" name="copyThreatDragDrop" precondition="aql: element.eClass().name='Threat'" mappings="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@nodeMappings[name='ThreatNode_TD']" dragSource="BOTH">
+          <ownedTools xsi:type="tool:ContainerDropDescription" name="copyThreatDragDrop" precondition="aql:element.oclIsKindOf(TRADES::Threat)" mappings="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@nodeMappings[name='ThreatNode_TD']" dragSource="BOTH">
             <oldContainer name="oldSemanticContainer"/>
             <newContainer name="newSemanticContainer"/>
             <element name="element"/>
