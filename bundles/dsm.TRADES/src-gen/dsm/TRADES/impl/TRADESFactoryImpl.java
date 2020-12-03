@@ -85,6 +85,8 @@ public class TRADESFactoryImpl extends EFactoryImpl implements TRADESFactory {
 			return createDifficultyScore();
 		case TRADESPackage.EXTERNAL_THREAT:
 			return createExternalThreat();
+		case TRADESPackage.IMPACT_CONFIGURATION:
+			return createImpactConfiguration();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -104,6 +106,8 @@ public class TRADESFactoryImpl extends EFactoryImpl implements TRADESFactory {
 			return createAffectedENUMFromString(eDataType, initialValue);
 		case TRADESPackage.THREAT_TYPE_ENUM:
 			return createthreatTypeENUMFromString(eDataType, initialValue);
+		case TRADESPackage.RGB_COLOR:
+			return createRGBColorFromString(eDataType, initialValue);
 		default:
 			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -123,6 +127,8 @@ public class TRADESFactoryImpl extends EFactoryImpl implements TRADESFactory {
 			return convertAffectedENUMToString(eDataType, instanceValue);
 		case TRADESPackage.THREAT_TYPE_ENUM:
 			return convertthreatTypeENUMToString(eDataType, instanceValue);
+		case TRADESPackage.RGB_COLOR:
+			return convertRGBColorToString(eDataType, instanceValue);
 		default:
 			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -287,6 +293,17 @@ public class TRADESFactoryImpl extends EFactoryImpl implements TRADESFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public ImpactConfiguration createImpactConfiguration() {
+		ImpactConfigurationImpl impactConfiguration = new ImpactConfigurationImpl();
+		return impactConfiguration;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public AssessmentENUM createAssessmentENUMFromString(EDataType eDataType, String initialValue) {
 		AssessmentENUM result = AssessmentENUM.get(initialValue);
 		if (result == null)
@@ -346,6 +363,42 @@ public class TRADESFactoryImpl extends EFactoryImpl implements TRADESFactory {
 	 */
 	public String convertthreatTypeENUMToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RGBColor createRGBColor(final String it) {
+		return RGBColor.decode(it);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RGBColor createRGBColorFromString(EDataType eDataType, String initialValue) {
+		return createRGBColor(initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertRGBColor(final RGBColor it) {
+		return it == null ? "" : it.encode();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertRGBColorToString(EDataType eDataType, Object instanceValue) {
+		return convertRGBColor((RGBColor) instanceValue);
 	}
 
 	/**

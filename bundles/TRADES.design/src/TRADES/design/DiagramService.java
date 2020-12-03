@@ -1,12 +1,7 @@
 package TRADES.design;
 
 import java.util.HashSet;
-import java.util.Map;
 import java.util.Set;
-import java.util.Map.Entry;
-
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.sirius.business.api.session.Session;
 
 import dsm.TRADES.AttackChainStep;
 import dsm.TRADES.ThreatAllocationRelation;
@@ -34,16 +29,6 @@ public class DiagramService {
 		String componentLabel = alloc.getComponent() != null ? alloc.getComponent().getName() : "No component";
 
 		return threatLabel + "->" + componentLabel;
-	}
-
-	public EObject printAllVariable(EObject context) {
-
-		Map<String, ?> variableMap = Session.of(context).get().getInterpreter().getVariables();
-		for (Entry<String, ?> entry : variableMap.entrySet()) {
-			System.out.println(entry.getKey() + "->" + entry.getValue());
-		}
-
-		return context;
 	}
 
 	public Set<AttackChainStep> getAllPrevious(AttackChainStep step) {

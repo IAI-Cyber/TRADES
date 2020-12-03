@@ -4,6 +4,7 @@ package dsm.TRADES;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
@@ -1022,13 +1023,22 @@ public interface TRADESPackage extends EPackage {
 	int IMPACT_SCORE__IMPACT = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Configurations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMPACT_SCORE__CONFIGURATIONS = NAMED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Impact Score</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IMPACT_SCORE_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int IMPACT_SCORE_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Impact Score</em>' class.
@@ -1278,6 +1288,61 @@ public interface TRADESPackage extends EPackage {
 	int EXTERNAL_ELEMENT_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link dsm.TRADES.impl.ImpactConfigurationImpl <em>Impact Configuration</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see dsm.TRADES.impl.ImpactConfigurationImpl
+	 * @see dsm.TRADES.impl.TRADESPackageImpl#getImpactConfiguration()
+	 * @generated
+	 */
+	int IMPACT_CONFIGURATION = 18;
+
+	/**
+	 * The feature id for the '<em><b>Difficulty</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMPACT_CONFIGURATION__DIFFICULTY = 0;
+
+	/**
+	 * The feature id for the '<em><b>Impact</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMPACT_CONFIGURATION__IMPACT = 1;
+
+	/**
+	 * The feature id for the '<em><b>Color</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMPACT_CONFIGURATION__COLOR = 2;
+
+	/**
+	 * The number of structural features of the '<em>Impact Configuration</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMPACT_CONFIGURATION_FEATURE_COUNT = 3;
+
+	/**
+	 * The number of operations of the '<em>Impact Configuration</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMPACT_CONFIGURATION_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link dsm.TRADES.AssessmentENUM <em>Assessment ENUM</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1285,7 +1350,7 @@ public interface TRADESPackage extends EPackage {
 	 * @see dsm.TRADES.impl.TRADESPackageImpl#getAssessmentENUM()
 	 * @generated
 	 */
-	int ASSESSMENT_ENUM = 18;
+	int ASSESSMENT_ENUM = 19;
 
 	/**
 	 * The meta object id for the '{@link dsm.TRADES.AffectedENUM <em>Affected ENUM</em>}' enum.
@@ -1295,7 +1360,7 @@ public interface TRADESPackage extends EPackage {
 	 * @see dsm.TRADES.impl.TRADESPackageImpl#getAffectedENUM()
 	 * @generated
 	 */
-	int AFFECTED_ENUM = 19;
+	int AFFECTED_ENUM = 20;
 
 	/**
 	 * The meta object id for the '{@link dsm.TRADES.threatTypeENUM <em>threat Type ENUM</em>}' enum.
@@ -1305,7 +1370,17 @@ public interface TRADESPackage extends EPackage {
 	 * @see dsm.TRADES.impl.TRADESPackageImpl#getthreatTypeENUM()
 	 * @generated
 	 */
-	int THREAT_TYPE_ENUM = 20;
+	int THREAT_TYPE_ENUM = 21;
+
+	/**
+	 * The meta object id for the '<em>RGB Color</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see dsm.TRADES.RGBColor
+	 * @see dsm.TRADES.impl.TRADESPackageImpl#getRGBColor()
+	 * @generated
+	 */
+	int RGB_COLOR = 22;
 
 	/**
 	 * Returns the meta object for class '{@link dsm.TRADES.Analysis <em>Analysis</em>}'.
@@ -1967,6 +2042,17 @@ public interface TRADESPackage extends EPackage {
 	EAttribute getImpactScore_Impact();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link dsm.TRADES.ImpactScore#getConfigurations <em>Configurations</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Configurations</em>'.
+	 * @see dsm.TRADES.ImpactScore#getConfigurations()
+	 * @see #getImpactScore()
+	 * @generated
+	 */
+	EReference getImpactScore_Configurations();
+
+	/**
 	 * Returns the meta object for class '{@link dsm.TRADES.DifficultyScore <em>Difficulty Score</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2093,6 +2179,49 @@ public interface TRADESPackage extends EPackage {
 	EAttribute getExternalElement_Link();
 
 	/**
+	 * Returns the meta object for class '{@link dsm.TRADES.ImpactConfiguration <em>Impact Configuration</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Impact Configuration</em>'.
+	 * @see dsm.TRADES.ImpactConfiguration
+	 * @generated
+	 */
+	EClass getImpactConfiguration();
+
+	/**
+	 * Returns the meta object for the reference '{@link dsm.TRADES.ImpactConfiguration#getDifficulty <em>Difficulty</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Difficulty</em>'.
+	 * @see dsm.TRADES.ImpactConfiguration#getDifficulty()
+	 * @see #getImpactConfiguration()
+	 * @generated
+	 */
+	EReference getImpactConfiguration_Difficulty();
+
+	/**
+	 * Returns the meta object for the container reference '{@link dsm.TRADES.ImpactConfiguration#getImpact <em>Impact</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Impact</em>'.
+	 * @see dsm.TRADES.ImpactConfiguration#getImpact()
+	 * @see #getImpactConfiguration()
+	 * @generated
+	 */
+	EReference getImpactConfiguration_Impact();
+
+	/**
+	 * Returns the meta object for the attribute '{@link dsm.TRADES.ImpactConfiguration#getColor <em>Color</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Color</em>'.
+	 * @see dsm.TRADES.ImpactConfiguration#getColor()
+	 * @see #getImpactConfiguration()
+	 * @generated
+	 */
+	EAttribute getImpactConfiguration_Color();
+
+	/**
 	 * Returns the meta object for enum '{@link dsm.TRADES.AssessmentENUM <em>Assessment ENUM</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2121,6 +2250,17 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 */
 	EEnum getthreatTypeENUM();
+
+	/**
+	 * Returns the meta object for data type '{@link dsm.TRADES.RGBColor <em>RGB Color</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>RGB Color</em>'.
+	 * @see dsm.TRADES.RGBColor
+	 * @model instanceClass="dsm.TRADES.RGBColor"
+	 * @generated
+	 */
+	EDataType getRGBColor();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -2661,6 +2801,14 @@ public interface TRADESPackage extends EPackage {
 		EAttribute IMPACT_SCORE__IMPACT = eINSTANCE.getImpactScore_Impact();
 
 		/**
+		 * The meta object literal for the '<em><b>Configurations</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference IMPACT_SCORE__CONFIGURATIONS = eINSTANCE.getImpactScore_Configurations();
+
+		/**
 		 * The meta object literal for the '{@link dsm.TRADES.impl.DifficultyScoreImpl <em>Difficulty Score</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2769,6 +2917,40 @@ public interface TRADESPackage extends EPackage {
 		EAttribute EXTERNAL_ELEMENT__LINK = eINSTANCE.getExternalElement_Link();
 
 		/**
+		 * The meta object literal for the '{@link dsm.TRADES.impl.ImpactConfigurationImpl <em>Impact Configuration</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see dsm.TRADES.impl.ImpactConfigurationImpl
+		 * @see dsm.TRADES.impl.TRADESPackageImpl#getImpactConfiguration()
+		 * @generated
+		 */
+		EClass IMPACT_CONFIGURATION = eINSTANCE.getImpactConfiguration();
+
+		/**
+		 * The meta object literal for the '<em><b>Difficulty</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference IMPACT_CONFIGURATION__DIFFICULTY = eINSTANCE.getImpactConfiguration_Difficulty();
+
+		/**
+		 * The meta object literal for the '<em><b>Impact</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference IMPACT_CONFIGURATION__IMPACT = eINSTANCE.getImpactConfiguration_Impact();
+
+		/**
+		 * The meta object literal for the '<em><b>Color</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute IMPACT_CONFIGURATION__COLOR = eINSTANCE.getImpactConfiguration_Color();
+
+		/**
 		 * The meta object literal for the '{@link dsm.TRADES.AssessmentENUM <em>Assessment ENUM</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2797,6 +2979,16 @@ public interface TRADESPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum THREAT_TYPE_ENUM = eINSTANCE.getthreatTypeENUM();
+
+		/**
+		 * The meta object literal for the '<em>RGB Color</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see dsm.TRADES.RGBColor
+		 * @see dsm.TRADES.impl.TRADESPackageImpl#getRGBColor()
+		 * @generated
+		 */
+		EDataType RGB_COLOR = eINSTANCE.getRGBColor();
 
 	}
 
