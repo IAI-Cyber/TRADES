@@ -172,13 +172,13 @@ public class ThreatItemProvider extends NamedElementItemProvider {
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated not
 	 */
 	@Override
 	public String getText(Object object) {
 		String label = ((Threat) object).getName();
 		return label == null || label.length() == 0 ? getString("_UI_Threat_type")
-				: getString("_UI_Threat_type") + " " + label;
+				: label;
 	}
 
 	/**
