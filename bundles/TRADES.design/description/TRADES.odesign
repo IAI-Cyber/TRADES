@@ -384,7 +384,16 @@
             <view name="views"/>
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self">
-                <subModelOperations xsi:type="tool_1:RemoveElement"/>
+                <subModelOperations xsi:type="tool_1:Switch">
+                  <cases conditionExpression="aql:self.oclIsKindOf(TRADES::Threat)">
+                    <subModelOperations xsi:type="tool_1:For" expression="aql:self.threatallocation">
+                      <subModelOperations xsi:type="tool_1:RemoveElement"/>
+                    </subModelOperations>
+                  </cases>
+                  <default>
+                    <subModelOperations xsi:type="tool_1:RemoveElement"/>
+                  </default>
+                </subModelOperations>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
