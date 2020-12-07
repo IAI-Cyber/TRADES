@@ -93,24 +93,6 @@ By Israel Aersopace Industries\ELTA Cyber Division
          version="0.0.0"/>
 
    <plugin
-         id="extTRADES"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"/>
-
-   <plugin
-         id="extTRADES.edit"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"/>
-
-   <plugin
-         id="extTRADES.editor"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"/>
-
-   <plugin
          id="dsm.TRADES.branding"
          download-size="0"
          install-size="0"
