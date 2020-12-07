@@ -33,7 +33,7 @@ location "http://download.eclipse.org/sirius/updates/releases/6.3.4/2020-06" {
 	org.eclipse.sirius.properties.feature.source.feature.group
 	org.eclipse.sirius.runtime.acceleo.feature.group lazy
 	org.eclipse.sirius.runtime.aql.feature.group lazy
-	org.eclipse.sirius.runtime.ide.eef lazy
+	org.eclipse.sirius.runtime.ide.eef.feature.group lazy
 	org.eclipse.sirius.runtime.ide.ui.acceleo.source.feature.group lazy
 	
 	org.eclipse.sirius.specifier.ide.ui.acceleo.feature.group lazy
@@ -45,4 +45,8 @@ location "http://download.eclipse.org/sirius/updates/releases/6.3.4/2020-06" {
 // Orbit dependencies (All dependencies that are not Eclipse projects)
 location "https://download.eclipse.org/tools/orbit/downloads/drops/R20200529191137/repository" {
 	org.antlr.runtime lazy
+}
+
+location "https://download.eclipse.org/justj/jres/14/updates/nightly/latest" {
+	org.eclipse.justj.openjdk.hotspot.jre.full.feature.group lazy
 }
