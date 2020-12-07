@@ -147,7 +147,7 @@
           </conditionnalStyles>
         </edgeMappings>
         <containerMappings name="ComponentPackage" preconditionExpression="aql: self->notEmpty() = true" labelDirectEdit="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Change%20name']" semanticCandidatesExpression="aql: self.eContents()" domainClass="TRADES::Component" dropDescriptions="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='allocatedThreaToComponent']" reusedNodeMappings="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@nodeMappings[name='ComponentNode'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@nodeMappings[name='ControlNode']" reusedContainerMappings="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage']">
-          <style xsi:type="style:WorkspaceImageDescription" borderSizeComputationExpression="2" labelSize="15" tooltipExpression="aql: self.name">
+          <style xsi:type="style:WorkspaceImageDescription" borderSizeComputationExpression="2" labelSize="15" showIcon="false" tooltipExpression="aql: self.name">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
@@ -431,7 +431,7 @@
           </conditionnalStyles>
         </edgeMappings>
         <containerMappings name="ComponentPackageHierarchy" preconditionExpression="aql: self.eContainer()->notEmpty() = true" labelDirectEdit="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Change%20name']" semanticCandidatesExpression="aql: self" domainClass="TRADES::Component" dropDescriptions="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='allocatedThreaToComponent']" reusedNodeMappings="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@nodeMappings[name='ComponentNode'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@nodeMappings[name='ControlNode']" reusedContainerMappings="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage']">
-          <style xsi:type="style:WorkspaceImageDescription" borderSizeComputationExpression="2" labelSize="15">
+          <style xsi:type="style:WorkspaceImageDescription" borderSizeComputationExpression="2" labelSize="15" showIcon="false">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
