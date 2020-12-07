@@ -2,9 +2,10 @@
 <?eclipse version="3.0"?>
 <plugin>
   <extension point="org.eclipse.sirius.componentization">
-    <component class="TRADES.design.Activator"
-               id="TRADES.design"
-	       name="TRADES">
+    <component
+          class="TRADES.design.Activator"
+          id="TRADES.design"
+          name="TRADES">
     </component>
   </extension>
   <extension
@@ -16,10 +17,30 @@
      <wizard
            category="dsm.TRADES.wizardCat"
            class="TRADES.design.wizards.TradesNewProjectNewWizard"
-           icon="Images/Threat-16.png"
+           descriptionImage="Images/logo_64.png"
+           finalPerspective="org.eclipse.sirius.ui.tools.perspective.modeling"
+           icon="Images/logo_16.png"
            id="TRADES.design.newProject"
            name="New TRADES project"
+           preferredPerspectives="org.eclipse.sirius.ui.tools.perspective.modeling"
            project="true">
      </wizard>
+  </extension>
+  <extension
+        point="org.eclipse.ui.perspectiveExtensions">
+     <perspectiveExtension
+           targetID="org.eclipse.sirius.ui.tools.perspective.modeling">
+        <newWizardShortcut
+              id="TRADES.design.newProject">
+        </newWizardShortcut>
+     </perspectiveExtension>
+  </extension>
+  <extension
+        point="org.eclipse.ui.navigator.navigatorContent">
+     <commonWizard
+           type="new"
+           wizardId="TRADES.design.newProject">
+        <enablement></enablement>
+     </commonWizard>
   </extension>
 </plugin>
