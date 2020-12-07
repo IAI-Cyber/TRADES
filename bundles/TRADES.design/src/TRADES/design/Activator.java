@@ -1,10 +1,15 @@
 package TRADES.design;
 
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.Enumeration;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.sirius.business.api.componentization.ViewpointRegistry;
 import org.eclipse.sirius.viewpoint.description.Viewpoint;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
@@ -40,7 +45,21 @@ public class Activator extends AbstractUIPlugin {
 		viewpoints = new HashSet<Viewpoint>();
 		viewpoints
 				.addAll(ViewpointRegistry.getInstance().registerFromPlugin(PLUGIN_ID + "/description/TRADES.odesign"));
+		
 	}
+	
+	public List<URI> getDatabaseURI(){
+		List<URI> result = new ArrayList<>();
+		Enumeration<URL> entries = plugin.getBundle().findEntries("database","*.trades", true);
+		while(entries.hasMoreElements()) {
+			URL url = entries.nextElement();
+			URI uri = URI.createPlatformPluginURI("/"+Activator.PLUGIN_ID+url.getPath(), false);
+			result.add(uri);
+		}
+		return result;
+	}
+	
+	
 
 	/*
 	 * (non-Javadoc)

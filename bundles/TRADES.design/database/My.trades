@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TRADES:Analysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TRADES="dsm.TRADES">
-  <threat xsi:type="TRADES:ExternalThreat" name="AAA" ID="BBB" source="SSS" link="LL"/>
-  <threat xsi:type="TRADES:ExternalThreat"/>
-  <threat xsi:type="TRADES:ExternalThreat"/>
-</TRADES:Analysis>

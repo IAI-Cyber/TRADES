@@ -1,5 +1,6 @@
 package TRADES.design;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
@@ -19,28 +20,44 @@ import dsm.TRADES.Threat;
 
 public class ExtThreatServices {
 
-	public List<ExternalThreat> getAvailableExternalServices(Analysis analysis) {
-
+	public List<Analysis> getAvailableExternalServices(Analysis analysis) {
+		
 		ResourceSet rs = Session.of(analysis).get().getTransactionalEditingDomain().getResourceSet();
 
-		Resource resource = rs
-				.getResource(URI.createPlatformPluginURI("/TRADES.design/database/capecToTrades.trades", true), true);
-
-		Set<String> importedExtThreats = analysis.getThreat().stream()
-				.filter(t -> t instanceof ExternalThreat && (((ExternalThreat) t).getID()) != null).map(t -> ((ExternalThreat) t).getID())
-				.collect(Collectors.toSet());
-		TreeIterator<EObject> ite = resource.getAllContents();
-		List<ExternalThreat> result = new ArrayList<ExternalThreat>();
-		while (ite.hasNext()) {
-			EObject item = ite.next();
-			if (item instanceof ExternalThreat) {
-				ExternalThreat extThreat = (ExternalThreat) item;
-				if (extThreat.getID() != null && !importedExtThreats.contains(extThreat.getID())) {
-					result.add(extThreat);
-				}
-			}
+		List<Analysis> result = new ArrayList<Analysis>();
+		for (URI uri : Activator.getDefault().getDatabaseURI()) {
+			Resource resource = rs.getResource(uri, true);
+			result.add((Analysis) resource.getContents().get(0));
 		}
+		
+		//Resource resource = rs
+		//		.getResource(URI.createPlatformPluginURI("/TRADES.design/database/capecToTrades.trades", true), true);
+		//
+		//Set<String> importedExtThreats = analysis.getThreat().stream()
+		//		.filter(t -> t instanceof ExternalThreat && (((ExternalThreat) t).getID()) != null).map(t -> ((ExternalThreat) t).getID())
+		//		.collect(Collectors.toSet());
+		//TreeIterator<EObject> ite = resource.getAllContents();
+		//List<ExternalThreat> result = new ArrayList<ExternalThreat>();
+		//while (ite.hasNext()) {
+		//	EObject item = ite.next();
+		//	if (item instanceof ExternalThreat) {
+		//		ExternalThreat extThreat = (ExternalThreat) item;
+		//		if (extThreat.getID() != null && !importedExtThreats.contains(extThreat.getID())) {
+		//			result.add(extThreat);
+		//		}
+		//	}
+		//}
 		return result;
+	}
+	
+	public String[] getDatabaseList(){
+		
+		String[] databaseList;
+		File f = new File("/TRADES.design/database");
+		databaseList = f.list();
+		return databaseList;
+		
+		
 	}
 
 	/**

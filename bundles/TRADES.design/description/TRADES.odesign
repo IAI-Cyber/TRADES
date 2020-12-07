@@ -420,7 +420,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool_1:SelectionWizardDescription" name="ExtThreatImportTool_TD" label="Import external threat" candidatesExpression="aql:self.getAvailableExternalServices()" multiple="true">
+          <ownedTools xsi:type="tool_1:SelectionWizardDescription" name="ExtThreatImportTool_TD" label="Import external threat" candidatesExpression="aql:self.getAvailableExternalServices()->collect(e |e.eAllContents(TRADES::ExternalThreat))->union(self.getAvailableExternalServices())" multiple="true" tree="true" rootExpression="aql:self.getAvailableExternalServices()" childrenExpression="aql:self.eAllContents(TRADES::ExternalThreat)">
             <element name="element"/>
             <containerView name="containerView"/>
             <container name="container"/>
