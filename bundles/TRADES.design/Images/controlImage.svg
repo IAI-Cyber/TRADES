@@ -61,7 +61,7 @@
      id="g20">
     <g
        id="g8"
-       transform="matrix(0.94874223,0,0,0.8686242,-3.078106,1.4483014)">
+       transform="matrix(0.89963021,0,0,0.82146366,-1.3828996,-2.6240113)">
       <g
          id="g6">
         <path
@@ -74,11 +74,11 @@
     </g>
     <path
        style="fill:none;stroke:#000000;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="M 67.346938,37.204081 29.693877,62.306122"
+       d="M 67.346938,30.77551 29.693877,55.877551"
        id="path22" />
     <path
        style="fill:none;stroke:#000000;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="M 62.613098,27.244898 23.724489,52.346938"
+       d="M 61.694731,21.428572 22.806122,46.530612"
        id="path22-5" />
   </g>
 </svg>

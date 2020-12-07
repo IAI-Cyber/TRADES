@@ -28,7 +28,7 @@
       <defaultLayer name="Default">
         <nodeMappings name="ThreatNode_TD" deletionDescription="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.2/@ownedTools[name='DeleteThreatFromDiagram']" labelDirectEdit="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Change%20name']" semanticCandidatesExpression="feature:threat" createElements="false" doubleClickDescription="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='OpenProgramTool']" domainClass="TRADES::Threat">
           <borderedNodeMappings name="ThreatLabel_TD" semanticCandidatesExpression="var:self" domainClass="TRADES::Threat">
-            <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" sizeComputationExpression="10" labelPosition="node" resizeKind="NSEW">
+            <style xsi:type="style:SquareDescription" showIcon="false" tooltipExpression="feature:name" sizeComputationExpression="0" labelPosition="node" resizeKind="NSEW" width="9" height="3">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <forbiddenSides>WEST</forbiddenSides>
@@ -37,19 +37,29 @@
               <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
             </style>
           </borderedNodeMappings>
-          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="aql:self.getLabelProviderText()" labelAlignment="RIGHT" sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW" workspacePath="/TRADES.design/Images/ThreatImage.svg">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="aql:''" labelAlignment="LEFT" tooltipExpression="feature:name" sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW" workspacePath="/TRADES.design/Images/ThreatImage.svg">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
           <conditionnalStyles predicateExpression="aql:self.oclIsTypeOf(TRADES::ExternalThreat)">
-            <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="aql:''" labelAlignment="LEFT" hideLabelByDefault="true" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/TRADES.design/Images/ExteenalThreatImage.svg">
+            <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="aql:''" labelAlignment="LEFT" tooltipExpression="feature:name" hideLabelByDefault="true" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/TRADES.design/Images/ExteenalThreatImage.svg">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </style>
           </conditionnalStyles>
         </nodeMappings>
         <nodeMappings name="ControlNode" labelDirectEdit="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Change%20name']" semanticCandidatesExpression="aql: self.eContents()" domainClass="TRADES::Control">
-          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelAlignment="LEFT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/TRADES.design/Images/controlImage.svg">
+          <borderedNodeMappings name="ControlLabel_TD" semanticCandidatesExpression="var:self" domainClass="TRADES::Control">
+            <style xsi:type="style:SquareDescription" showIcon="false" tooltipExpression="feature:name" sizeComputationExpression="0" labelPosition="node" resizeKind="NSEW" width="9" height="3">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <forbiddenSides>WEST</forbiddenSides>
+              <forbiddenSides>EAST</forbiddenSides>
+              <forbiddenSides>NORTH</forbiddenSides>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </borderedNodeMappings>
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="aql:''" labelAlignment="LEFT" tooltipExpression="feature:name" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/TRADES.design/Images/controlImage.svg">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
@@ -64,6 +74,7 @@
         <nodeMappings name="ComponentNode" preconditionExpression="aql: self->notEmpty() = false" labelDirectEdit="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Change%20name']" semanticCandidatesExpression="feature:eContents" domainClass="TRADES::Component">
           <style xsi:type="style:SquareDescription" borderSizeComputationExpression="1" labelSize="15" showIcon="false" tooltipExpression="aql: self.name" sizeComputationExpression="20" labelPosition="node" resizeKind="NSEW">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelFormat>bold</labelFormat>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
           </style>
@@ -159,6 +170,8 @@
         <containerMappings name="ComponentPackage" preconditionExpression="aql: self->notEmpty() = true" labelDirectEdit="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Change%20name']" semanticCandidatesExpression="aql: self.eContents()" domainClass="TRADES::Component" dropDescriptions="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='allocatedThreaToComponent']" reusedNodeMappings="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@nodeMappings[name='ComponentNode'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@nodeMappings[name='ControlNode']" reusedContainerMappings="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage']">
           <style xsi:type="style:WorkspaceImageDescription" borderSizeComputationExpression="2" labelSize="15" showIcon="false" tooltipExpression="aql: self.name">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelFormat>bold</labelFormat>
+            <labelFormat>underline</labelFormat>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </containerMappings>
