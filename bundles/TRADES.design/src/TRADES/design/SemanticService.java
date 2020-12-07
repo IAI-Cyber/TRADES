@@ -4,11 +4,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import org.eclipse.jface.dialogs.MessageDialog;
-import org.eclipse.jface.viewers.ISelection;
-import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.sirius.business.api.session.Session;
-import org.eclipse.sirius.table.metamodel.table.DCell;
-import org.eclipse.ui.ISelectionService;
 import org.eclipse.ui.PlatformUI;
 
 import dsm.TRADES.DifficultyScore;
@@ -133,7 +129,7 @@ public class SemanticService {
 					impact2);
 			for (ImpactConfiguration conf : impact.getConfigurations()) {
 				int difficulty = conf.getDifficulty().getDifficulty();
-				RGBColor diffColor = ColorService.computeColor(ColorService.RED, ColorService.BLUE, minDiff, maxDiff,
+				RGBColor diffColor = ColorService.computeColor(ColorService.RED, ColorService.GREEN, minDiff, maxDiff,
 						difficulty);
 				conf.setColor(impactColor.merge(diffColor));
 
