@@ -520,12 +520,27 @@
         </toolSections>
       </defaultLayer>
       <additionalLayers name="AllocatedThreats" activeByDefault="true">
-        <nodeMappings name="AllocatedThreatNode" labelDirectEdit="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Change%20name']" semanticCandidatesExpression="aql: self.threatallocation.threat" domainClass="TRADES::Threat">
-          <style xsi:type="style:EllipseNodeDescription" labelSize="15" sizeComputationExpression="10" labelPosition="node" resizeKind="NSEW">
+        <nodeMappings name="AllocatedThreatNode" labelDirectEdit="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Change%20name']" semanticCandidatesExpression="aql:self.threatallocation.threat" domainClass="TRADES::Threat">
+          <borderedNodeMappings name="ThreatLabel_TD" semanticCandidatesExpression="var:self" domainClass="TRADES::Threat">
+            <style xsi:type="style:SquareDescription" showIcon="false" tooltipExpression="feature:name" sizeComputationExpression="0" labelPosition="node" resizeKind="NSEW" width="9" height="3">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <forbiddenSides>WEST</forbiddenSides>
+              <forbiddenSides>EAST</forbiddenSides>
+              <forbiddenSides>NORTH</forbiddenSides>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </borderedNodeMappings>
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="aql:''" labelAlignment="LEFT" tooltipExpression="feature:name" sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW" workspacePath="/TRADES.design/Images/ThreatImage.svg">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
           </style>
+          <conditionnalStyles predicateExpression="aql:self.oclIsTypeOf(TRADES::ExternalThreat)">
+            <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="aql:''" labelAlignment="LEFT" tooltipExpression="feature:name" hideLabelByDefault="true" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/TRADES.design/Images/ExteenalThreatImage.svg">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </conditionnalStyles>
         </nodeMappings>
       </additionalLayers>
       <additionalLayers name="All Threats" reusedMappings="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@nodeMappings[name='ThreatNode_TD']"/>
