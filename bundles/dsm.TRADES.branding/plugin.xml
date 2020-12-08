@@ -17,5 +17,16 @@
               </property>
       </product>
    </extension>
+   <extension
+         point="org.eclipse.ui.splashHandlers">
+      <splashHandler
+            class="dsm.trades.branding.SplashHandler"
+            id="dsm.TRADES.branding.splashHandler">
+      </splashHandler>
+      <splashHandlerProductBinding
+            productId="dsm.TRADES.branding.product"
+            splashId="dsm.TRADES.branding.splashHandler">
+      </splashHandlerProductBinding>
+   </extension>
 
 </plugin>
