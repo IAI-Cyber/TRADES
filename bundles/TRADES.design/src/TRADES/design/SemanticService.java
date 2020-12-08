@@ -125,11 +125,11 @@ public class SemanticService {
 
 		for (ImpactScore impact : scoreSystem.getImpactscore()) {
 			int impact2 = impact.getImpact();
-			RGBColor impactColor = ColorService.computeColor(ColorService.GREEN, ColorService.RED, minImpact, maxImpact,
+			RGBColor impactColor = ColorService.computeColor(new RGBColor(154, 255, 77), new RGBColor(252, 86, 86), minImpact, maxImpact,
 					impact2);
 			for (ImpactConfiguration conf : impact.getConfigurations()) {
 				int difficulty = conf.getDifficulty().getDifficulty();
-				RGBColor diffColor = ColorService.computeColor(ColorService.RED, ColorService.GREEN, minDiff, maxDiff,
+				RGBColor diffColor = ColorService.computeColor(new RGBColor(252, 86, 86), new RGBColor(154, 255, 77), minDiff, maxDiff,
 						difficulty);
 				conf.setColor(impactColor.merge(diffColor));
 
