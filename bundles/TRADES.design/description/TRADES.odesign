@@ -520,8 +520,8 @@
         </toolSections>
       </defaultLayer>
       <additionalLayers name="AllocatedThreats" activeByDefault="true">
-        <nodeMappings name="AllocatedThreatNode" labelDirectEdit="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Change%20name']" semanticCandidatesExpression="aql:self.threatallocation.threat" domainClass="TRADES::Threat">
-          <borderedNodeMappings name="ThreatLabel_TD" semanticCandidatesExpression="var:self" domainClass="TRADES::Threat">
+        <nodeMappings name="AllocatedThreatNode" labelDirectEdit="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Change%20name']" semanticCandidatesExpression="aql:self.eAllContents(TRADES::Component)->collect(c|c.threatallocation.threat)->union(self.threatallocation.threat)" synchronizationLock="true" domainClass="TRADES::Threat">
+          <borderedNodeMappings name="ThreatLabel_TD" semanticCandidatesExpression="var:self" synchronizationLock="true" domainClass="TRADES::Threat">
             <style xsi:type="style:SquareDescription" showIcon="false" tooltipExpression="feature:name" sizeComputationExpression="0" labelPosition="node" resizeKind="NSEW" width="9" height="3">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
