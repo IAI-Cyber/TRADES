@@ -187,11 +187,11 @@ public class TradesNewProjectNewWizard extends BasicNewProjectResourceWizard imp
 
 						createDifficulty("Low", 1, scoreSystem);
 						createDifficulty("Medium", 2, scoreSystem);
-						createDifficulty("Hight", 3, scoreSystem);
+						createDifficulty("High", 3, scoreSystem);
 
 						createImpact("Low", 1, scoreSystem);
 						createImpact("Medium", 2, scoreSystem);
-						createImpact("Hight", 3, scoreSystem);
+						createImpact("High", 3, scoreSystem);
 
 						return analysis;
 					}
