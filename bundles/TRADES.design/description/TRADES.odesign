@@ -1207,11 +1207,9 @@
             </firstModelOperations>
           </initialOperation>
         </controls>
-        <controls xsi:type="properties:TextDescription" name="ExternalThreatLink" label="ExternalThreatLink" labelExpression="Link" helpExpression="Link to the origenal source" isEnabledExpression="aql:false" valueExpression="aql:self.link">
+        <controls xsi:type="properties:HyperlinkDescription" name="ExternalThreatLink" labelExpression="Link" helpExpression="Link to the origenal source" isEnabledExpression="aql:false" valueExpression="aql:self.link" displayExpression="aql:self.link">
           <initialOperation>
-            <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
-              <subModelOperations xsi:type="tool_1:SetValue" featureName="link" valueExpression="aql:newValue"/>
-            </firstModelOperations>
+            <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self"/>
           </initialOperation>
         </controls>
       </groups>
