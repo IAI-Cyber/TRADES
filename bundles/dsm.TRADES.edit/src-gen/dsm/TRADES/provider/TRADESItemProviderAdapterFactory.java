@@ -436,6 +436,29 @@ public class TRADESItemProviderAdapterFactory extends TRADESAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link dsm.TRADES.ExternalControl} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ExternalControlItemProvider externalControlItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link dsm.TRADES.ExternalControl}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createExternalControlAdapter() {
+		if (externalControlItemProvider == null) {
+			externalControlItemProvider = new ExternalControlItemProvider(this);
+		}
+
+		return externalControlItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -597,6 +620,8 @@ public class TRADESItemProviderAdapterFactory extends TRADESAdapterFactory
 			externalThreatItemProvider.dispose();
 		if (impactConfigurationItemProvider != null)
 			impactConfigurationItemProvider.dispose();
+		if (externalControlItemProvider != null)
+			externalControlItemProvider.dispose();
 	}
 
 }

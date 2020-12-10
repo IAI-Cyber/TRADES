@@ -14,6 +14,7 @@ import dsm.TRADES.Control;
 import dsm.TRADES.Data;
 import dsm.TRADES.DataOwner;
 import dsm.TRADES.DifficultyScore;
+import dsm.TRADES.ExternalControl;
 import dsm.TRADES.ExternalElement;
 import dsm.TRADES.ExternalThreat;
 import dsm.TRADES.ImpactConfiguration;
@@ -176,6 +177,13 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * @generated
 	 */
 	private EClass impactConfigurationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass externalControlEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1055,6 +1063,16 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * @generated
 	 */
 	@Override
+	public EClass getExternalControl() {
+		return externalControlEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EEnum getAssessmentENUM() {
 		return assessmentENUMEEnum;
 	}
@@ -1216,6 +1234,8 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		createEReference(impactConfigurationEClass, IMPACT_CONFIGURATION__IMPACT);
 		createEAttribute(impactConfigurationEClass, IMPACT_CONFIGURATION__COLOR);
 
+		externalControlEClass = createEClass(EXTERNAL_CONTROL);
+
 		// Create enums
 		assessmentENUMEEnum = createEEnum(ASSESSMENT_ENUM);
 		affectedENUMEEnum = createEEnum(AFFECTED_ENUM);
@@ -1271,6 +1291,8 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		difficultyScoreEClass.getESuperTypes().add(this.getNamedElement());
 		externalThreatEClass.getESuperTypes().add(this.getThreat());
 		externalThreatEClass.getESuperTypes().add(this.getExternalElement());
+		externalControlEClass.getESuperTypes().add(this.getExternalElement());
+		externalControlEClass.getESuperTypes().add(this.getControl());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(analysisEClass, Analysis.class, "Analysis", !IS_ABSTRACT, !IS_INTERFACE,
@@ -1498,6 +1520,9 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		initEAttribute(getImpactConfiguration_Color(), this.getRGBColor(), "color", "#FFFFFF", 0, 1,
 				ImpactConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(externalControlEClass, ExternalControl.class, "ExternalControl", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
 
 		// Initialize enums and add enum literals
 		initEEnum(assessmentENUMEEnum, AssessmentENUM.class, "AssessmentENUM");

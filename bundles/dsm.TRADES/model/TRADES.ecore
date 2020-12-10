@@ -159,4 +159,5 @@
         defaultValueLiteral="#FFFFFF"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EDataType" name="RGBColor" instanceClassName="dsm.TRADES.RGBColor"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ExternalControl" eSuperTypes="#//ExternalElement #//Control"/>
 </ecore:EPackage>

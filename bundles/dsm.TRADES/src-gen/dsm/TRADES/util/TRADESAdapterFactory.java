@@ -162,6 +162,11 @@ public class TRADESAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseExternalControl(ExternalControl object) {
+			return createExternalControlAdapter();
+		}
+
+		@Override
 		public Adapter defaultCase(EObject object) {
 			return createEObjectAdapter();
 		}
@@ -443,6 +448,20 @@ public class TRADESAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createImpactConfigurationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link dsm.TRADES.ExternalControl <em>External Control</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see dsm.TRADES.ExternalControl
+	 * @generated
+	 */
+	public Adapter createExternalControlAdapter() {
 		return null;
 	}
 

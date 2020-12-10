@@ -2,34 +2,34 @@
  */
 package dsm.TRADES.provider;
 
+import dsm.TRADES.ExternalControl;
 import dsm.TRADES.TRADESPackage;
-import dsm.TRADES.Threat;
-import dsm.TRADES.ThreatAllocationRelation;
 
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link dsm.TRADES.Threat} object.
+ * This is the item provider adapter for a {@link dsm.TRADES.ExternalControl} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ThreatItemProvider extends NamedElementItemProvider {
+public class ExternalControlItemProvider extends ExternalElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ThreatItemProvider(AdapterFactory adapterFactory) {
+	public ExternalControlItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -44,60 +44,59 @@ public class ThreatItemProvider extends NamedElementItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addAllocatedPropertyDescriptor(object);
-			addThreatallocationPropertyDescriptor(object);
-			addThreatTypePropertyDescriptor(object);
+			addNamePropertyDescriptor(object);
+			addMitigatesPropertyDescriptor(object);
+			addImplementedByPropertyDescriptor(object);
 			addIDPropertyDescriptor(object);
 			addDescriptionPropertyDescriptor(object);
-			addApplicabilityPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Allocated feature.
+	 * This adds a property descriptor for the Name feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addAllocatedPropertyDescriptor(Object object) {
+	protected void addNamePropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Threat_allocated_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Threat_allocated_feature",
-								"_UI_Threat_type"),
-						TRADESPackage.Literals.THREAT__ALLOCATED, true, false, true, null, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Threatallocation feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addThreatallocationPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Threat_threatallocation_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Threat_threatallocation_feature",
-								"_UI_Threat_type"),
-						TRADESPackage.Literals.THREAT__THREATALLOCATION, true, false, true, null, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Threat Type feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addThreatTypePropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Threat_threatType_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Threat_threatType_feature",
-								"_UI_Threat_type"),
-						TRADESPackage.Literals.THREAT__THREAT_TYPE, true, false, false,
+						getResourceLocator(), getString("_UI_NamedElement_name_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_NamedElement_name_feature",
+								"_UI_NamedElement_type"),
+						TRADESPackage.Literals.NAMED_ELEMENT__NAME, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Mitigates feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addMitigatesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Control_mitigates_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Control_mitigates_feature",
+								"_UI_Control_type"),
+						TRADESPackage.Literals.CONTROL__MITIGATES, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Implemented By feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addImplementedByPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Control_implementedBy_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Control_implementedBy_feature",
+								"_UI_Control_type"),
+						TRADESPackage.Literals.CONTROL__IMPLEMENTED_BY, true, false, true, null, null, null));
 	}
 
 	/**
@@ -109,9 +108,9 @@ public class ThreatItemProvider extends NamedElementItemProvider {
 	protected void addIDPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Threat_ID_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Threat_ID_feature", "_UI_Threat_type"),
-						TRADESPackage.Literals.THREAT__ID, true, false, false,
+						getResourceLocator(), getString("_UI_Control_ID_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Control_ID_feature", "_UI_Control_type"),
+						TRADESPackage.Literals.CONTROL__ID, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
@@ -124,38 +123,22 @@ public class ThreatItemProvider extends NamedElementItemProvider {
 	protected void addDescriptionPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Threat_Description_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Threat_Description_feature",
-								"_UI_Threat_type"),
-						TRADESPackage.Literals.THREAT__DESCRIPTION, true, false, false,
+						getResourceLocator(), getString("_UI_Control_Description_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Control_Description_feature",
+								"_UI_Control_type"),
+						TRADESPackage.Literals.CONTROL__DESCRIPTION, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
-	 * This adds a property descriptor for the Applicability feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addApplicabilityPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Threat_Applicability_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Threat_Applicability_feature",
-								"_UI_Threat_type"),
-						TRADESPackage.Literals.THREAT__APPLICABILITY, true, false, false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
-	}
-
-	/**
-	 * This returns Threat.gif.
+	 * This returns ExternalControl.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Threat"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/ExternalControl"));
 	}
 
 	/**
@@ -172,12 +155,13 @@ public class ThreatItemProvider extends NamedElementItemProvider {
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated not
+	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Threat) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_Threat_type") : label;
+		String label = ((ExternalControl) object).getName();
+		return label == null || label.length() == 0 ? getString("_UI_ExternalControl_type")
+				: getString("_UI_ExternalControl_type") + " " + label;
 	}
 
 	/**
@@ -185,27 +169,16 @@ public class ThreatItemProvider extends NamedElementItemProvider {
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated not
+	 * @generated
 	 */
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		if (notification.getFeatureID(Threat.class) == TRADESPackage.NAMED_ELEMENT__NAME) {
-			Object notifier = notification.getNotifier();
-			if (notifier instanceof Threat) {
-				Threat new_name = (Threat) notifier;
-				for (ThreatAllocationRelation rel : new_name.getThreatallocation()) {
-					fireNotifyChanged(new ViewerNotification(notification, rel, false, true));
-				}
-			}
-		}
-
-		switch (notification.getFeatureID(Threat.class)) {
-		case TRADESPackage.THREAT__THREAT_TYPE:
-		case TRADESPackage.THREAT__ID:
-		case TRADESPackage.THREAT__DESCRIPTION:
-		case TRADESPackage.THREAT__APPLICABILITY:
+		switch (notification.getFeatureID(ExternalControl.class)) {
+		case TRADESPackage.EXTERNAL_CONTROL__NAME:
+		case TRADESPackage.EXTERNAL_CONTROL__ID:
+		case TRADESPackage.EXTERNAL_CONTROL__DESCRIPTION:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}

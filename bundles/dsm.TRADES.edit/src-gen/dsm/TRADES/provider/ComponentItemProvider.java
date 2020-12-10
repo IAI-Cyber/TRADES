@@ -180,8 +180,7 @@ public class ComponentItemProvider extends ComponentOwerItemProvider {
 	@Override
 	public String getText(Object object) {
 		String label = ((Component) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_Component_type")
-				: label;
+		return label == null || label.length() == 0 ? getString("_UI_Component_type") : label;
 	}
 
 	/**
@@ -236,6 +235,9 @@ public class ComponentItemProvider extends ComponentOwerItemProvider {
 
 		newChildDescriptors.add(createChildParameter(TRADESPackage.Literals.COMPONENT__CONTROL,
 				TRADESFactory.eINSTANCE.createControl()));
+
+		newChildDescriptors.add(createChildParameter(TRADESPackage.Literals.COMPONENT__CONTROL,
+				TRADESFactory.eINSTANCE.createExternalControl()));
 
 		newChildDescriptors.add(createChildParameter(TRADESPackage.Literals.COMPONENT__ANALYSIS,
 				TRADESFactory.eINSTANCE.createAnalysis()));

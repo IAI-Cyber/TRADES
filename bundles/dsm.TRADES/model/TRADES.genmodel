@@ -120,5 +120,6 @@
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference TRADES.ecore#//ImpactConfiguration/impact"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//ImpactConfiguration/color"/>
     </genClasses>
+    <genClasses ecoreClass="TRADES.ecore#//ExternalControl"/>
   </genPackages>
 </genmodel:GenModel>
