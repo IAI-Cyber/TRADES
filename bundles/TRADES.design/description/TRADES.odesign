@@ -63,8 +63,8 @@
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
-          <conditionnalStyles predicateExpression="aql: self.implementedBy->notEmpty() = true">
-            <style xsi:type="style:SquareDescription" borderSizeComputationExpression="1" borderLineStyle="dash" labelSize="15" sizeComputationExpression="10" labelPosition="node" resizeKind="NSEW">
+          <conditionnalStyles predicateExpression="aql:self.oclIsTypeOf(TRADES::ExternalControl)">
+            <style xsi:type="style:SquareDescription" borderSizeComputationExpression="1" borderLineStyle="dash" labelSize="15" tooltipExpression="feature:name" sizeComputationExpression="10" labelPosition="node" resizeKind="NSEW">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='purple']"/>
@@ -1103,14 +1103,14 @@
       </groups>
       <groups name="ThreatGroup" label="Threat Details" labelExpression="Threat Details" domainClass="TRADES::Threat" semanticCandidateExpression="var:self">
         <controls xsi:type="properties:ContainerDescription" name="ThreatContainer">
-          <controls xsi:type="properties:TextDescription" name="ThreatIDFieald" label="ID" labelExpression="ID" helpExpression="ID of the threat" valueExpression="aql:self.ID">
+          <controls xsi:type="properties:TextDescription" name="ThreatIDFieald" label="ID" labelExpression="ID" helpExpression="ID of the threat" isEnabledExpression="aql:self.oclIsTypeOf(TRADES::Threat)" valueExpression="aql:self.ID">
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
                 <subModelOperations xsi:type="tool_1:SetValue" featureName="ID" valueExpression="var:newValue"/>
               </firstModelOperations>
             </initialOperation>
           </controls>
-          <controls xsi:type="properties:SelectDescription" name="ThreatTypeField" label="Threat Type" labelExpression="Treat Type" helpExpression="The type of the treat" valueExpression="aql:TRADES::threatTypeENUM.getEEnumLiteral(self.threatType.toString())" candidatesExpression="aql:TRADES::threatTypeENUM.eLiterals" candidateDisplayExpression="aql:candidate.name">
+          <controls xsi:type="properties:SelectDescription" name="ThreatTypeField" label="Threat Type" labelExpression="Treat Type" helpExpression="The type of the treat" isEnabledExpression="aql:self.oclIsTypeOf(TRADES::Threat)" valueExpression="aql:TRADES::threatTypeENUM.getEEnumLiteral(self.threatType.toString())" candidatesExpression="aql:TRADES::threatTypeENUM.eLiterals" candidateDisplayExpression="aql:candidate.name">
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
                 <subModelOperations xsi:type="tool_1:SetValue" featureName="threatType" valueExpression="aql:newValue.instance"/>
@@ -1119,14 +1119,14 @@
           </controls>
           <layout xsi:type="properties:FillLayoutDescription" orientation="HORIZONTAL"/>
         </controls>
-        <controls xsi:type="properties:TextDescription" name="ThreatApplicabilityField" label="Applicability Field" labelExpression="Applicability" valueExpression="aql:self.Applicability">
+        <controls xsi:type="properties:TextDescription" name="ThreatApplicabilityField" label="Applicability Field" labelExpression="Applicability" isEnabledExpression="aql:self.oclIsTypeOf(TRADES::Threat)" valueExpression="aql:self.Applicability">
           <initialOperation>
             <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
               <subModelOperations xsi:type="tool_1:SetValue" featureName="Applicability" valueExpression="var:newValue"/>
             </firstModelOperations>
           </initialOperation>
         </controls>
-        <controls xsi:type="properties:TextAreaDescription" name="ThreatDescriptionField" label="Threat Description" labelExpression="Description" valueExpression="aql:self.Description">
+        <controls xsi:type="properties:TextAreaDescription" name="ThreatDescriptionField" label="Threat Description" labelExpression="Description" isEnabledExpression="aql:self.oclIsTypeOf(TRADES::Threat)" valueExpression="aql:self.Description">
           <initialOperation>
             <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
               <subModelOperations xsi:type="tool_1:SetValue" featureName="Description" valueExpression="var:newValue"/>
@@ -1135,14 +1135,14 @@
         </controls>
       </groups>
       <groups name="ControlGroup" label="Cnotrol Details" labelExpression="Control Details" domainClass="TRADES::Control" semanticCandidateExpression="var:self">
-        <controls xsi:type="properties:TextDescription" name="ControlDFieald" label="ID" labelExpression="ID" helpExpression="ID of the control" valueExpression="aql:self.ID">
+        <controls xsi:type="properties:TextDescription" name="ControlDFieald" label="ID" labelExpression="ID" helpExpression="ID of the control" isEnabledExpression="aql:self.oclIsTypeOf(TRADES::Control)" valueExpression="aql:self.ID">
           <initialOperation>
             <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
               <subModelOperations xsi:type="tool_1:SetValue" featureName="ID" valueExpression="var:newValue"/>
             </firstModelOperations>
           </initialOperation>
         </controls>
-        <controls xsi:type="properties:TextAreaDescription" name="ControlDescriptionField" label="Control Description" labelExpression="Description" valueExpression="aql:self.Description">
+        <controls xsi:type="properties:TextAreaDescription" name="ControlDescriptionField" label="Control Description" labelExpression="Description" isEnabledExpression="aql:self.oclIsTypeOf(TRADES::Control)" valueExpression="aql:self.Description">
           <initialOperation>
             <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
               <subModelOperations xsi:type="tool_1:SetValue" featureName="Description" valueExpression="var:newValue"/>
