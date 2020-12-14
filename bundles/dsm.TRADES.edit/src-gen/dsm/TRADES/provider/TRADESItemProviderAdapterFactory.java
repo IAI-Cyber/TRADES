@@ -459,6 +459,52 @@ public class TRADESItemProviderAdapterFactory extends TRADESAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link dsm.TRADES.ThreatType} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ThreatTypeItemProvider threatTypeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link dsm.TRADES.ThreatType}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createThreatTypeAdapter() {
+		if (threatTypeItemProvider == null) {
+			threatTypeItemProvider = new ThreatTypeItemProvider(this);
+		}
+
+		return threatTypeItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link dsm.TRADES.ThreatsOwner} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ThreatsOwnerItemProvider threatsOwnerItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link dsm.TRADES.ThreatsOwner}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createThreatsOwnerAdapter() {
+		if (threatsOwnerItemProvider == null) {
+			threatsOwnerItemProvider = new ThreatsOwnerItemProvider(this);
+		}
+
+		return threatsOwnerItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -622,6 +668,10 @@ public class TRADESItemProviderAdapterFactory extends TRADESAdapterFactory
 			impactConfigurationItemProvider.dispose();
 		if (externalControlItemProvider != null)
 			externalControlItemProvider.dispose();
+		if (threatTypeItemProvider != null)
+			threatTypeItemProvider.dispose();
+		if (threatsOwnerItemProvider != null)
+			threatsOwnerItemProvider.dispose();
 	}
 
 }

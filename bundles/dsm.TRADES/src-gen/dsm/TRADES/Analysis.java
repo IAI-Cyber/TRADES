@@ -13,10 +13,10 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link dsm.TRADES.Analysis#getThreat <em>Threat</em>}</li>
  *   <li>{@link dsm.TRADES.Analysis#getControl <em>Control</em>}</li>
  *   <li>{@link dsm.TRADES.Analysis#getAffectrelation <em>Affectrelation</em>}</li>
  *   <li>{@link dsm.TRADES.Analysis#getScoresystem <em>Scoresystem</em>}</li>
+ *   <li>{@link dsm.TRADES.Analysis#getThreatOwner <em>Threat Owner</em>}</li>
  * </ul>
  *
  * @see dsm.TRADES.TRADESPackage#getAnalysis()
@@ -24,22 +24,6 @@ import org.eclipse.emf.common.util.EList;
  * @generated
  */
 public interface Analysis extends ComponentOwer, DataOwner, NamedElement {
-	/**
-	 * Returns the value of the '<em><b>Threat</b></em>' containment reference list.
-	 * The list contents are of type {@link dsm.TRADES.Threat}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Threat</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Threat</em>' containment reference list.
-	 * @see dsm.TRADES.TRADESPackage#getAnalysis_Threat()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<Threat> getThreat();
-
 	/**
 	 * Returns the value of the '<em><b>Control</b></em>' containment reference list.
 	 * The list contents are of type {@link dsm.TRADES.Control}.
@@ -97,5 +81,27 @@ public interface Analysis extends ComponentOwer, DataOwner, NamedElement {
 	 * @generated
 	 */
 	void setScoresystem(ScoreSystem value);
+
+	/**
+	 * Returns the value of the '<em><b>Threat Owner</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Threat Owner</em>' containment reference.
+	 * @see #setThreatOwner(ThreatsOwner)
+	 * @see dsm.TRADES.TRADESPackage#getAnalysis_ThreatOwner()
+	 * @model containment="true" required="true"
+	 * @generated
+	 */
+	ThreatsOwner getThreatOwner();
+
+	/**
+	 * Sets the value of the '{@link dsm.TRADES.Analysis#getThreatOwner <em>Threat Owner</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Threat Owner</em>' containment reference.
+	 * @see #getThreatOwner()
+	 * @generated
+	 */
+	void setThreatOwner(ThreatsOwner value);
 
 } // Analysis

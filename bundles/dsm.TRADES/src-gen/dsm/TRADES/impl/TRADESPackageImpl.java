@@ -27,6 +27,8 @@ import dsm.TRADES.TRADESPackage;
 import dsm.TRADES.Threat;
 import dsm.TRADES.ThreatAllocationRelation;
 import dsm.TRADES.ThreatMitigationRelation;
+import dsm.TRADES.ThreatType;
+import dsm.TRADES.ThreatsOwner;
 import dsm.TRADES.threatTypeENUM;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -190,6 +192,20 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass threatTypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass threatsOwnerEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EEnum assessmentENUMEEnum = null;
 
 	/**
@@ -293,7 +309,7 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getAnalysis_Threat() {
+	public EReference getAnalysis_Control() {
 		return (EReference) analysisEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -303,7 +319,7 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getAnalysis_Control() {
+	public EReference getAnalysis_Affectrelation() {
 		return (EReference) analysisEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -313,7 +329,7 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getAnalysis_Affectrelation() {
+	public EReference getAnalysis_Scoresystem() {
 		return (EReference) analysisEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -323,7 +339,7 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getAnalysis_Scoresystem() {
+	public EReference getAnalysis_ThreatOwner() {
 		return (EReference) analysisEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -1053,6 +1069,66 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * @generated
 	 */
 	@Override
+	public EClass getThreatType() {
+		return threatTypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getThreatType_SubTypes() {
+		return (EReference) threatTypeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getThreatType_Threats() {
+		return (EReference) threatTypeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getThreatsOwner() {
+		return threatsOwnerEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getThreatsOwner_Internal() {
+		return (EReference) threatsOwnerEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getThreatsOwner_External() {
+		return (EReference) threatsOwnerEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EEnum getAssessmentENUM() {
 		return assessmentENUMEEnum;
 	}
@@ -1118,10 +1194,10 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 
 		// Create classes and their features
 		analysisEClass = createEClass(ANALYSIS);
-		createEReference(analysisEClass, ANALYSIS__THREAT);
 		createEReference(analysisEClass, ANALYSIS__CONTROL);
 		createEReference(analysisEClass, ANALYSIS__AFFECTRELATION);
 		createEReference(analysisEClass, ANALYSIS__SCORESYSTEM);
+		createEReference(analysisEClass, ANALYSIS__THREAT_OWNER);
 
 		threatEClass = createEClass(THREAT);
 		createEReference(threatEClass, THREAT__ALLOCATED);
@@ -1214,6 +1290,14 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 
 		externalControlEClass = createEClass(EXTERNAL_CONTROL);
 
+		threatTypeEClass = createEClass(THREAT_TYPE);
+		createEReference(threatTypeEClass, THREAT_TYPE__SUB_TYPES);
+		createEReference(threatTypeEClass, THREAT_TYPE__THREATS);
+
+		threatsOwnerEClass = createEClass(THREATS_OWNER);
+		createEReference(threatsOwnerEClass, THREATS_OWNER__INTERNAL);
+		createEReference(threatsOwnerEClass, THREATS_OWNER__EXTERNAL);
+
 		// Create enums
 		assessmentENUMEEnum = createEEnum(ASSESSMENT_ENUM);
 		affectedENUMEEnum = createEEnum(AFFECTED_ENUM);
@@ -1271,13 +1355,11 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		externalThreatEClass.getESuperTypes().add(this.getExternalElement());
 		externalControlEClass.getESuperTypes().add(this.getExternalElement());
 		externalControlEClass.getESuperTypes().add(this.getControl());
+		threatTypeEClass.getESuperTypes().add(this.getNamedElement());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(analysisEClass, Analysis.class, "Analysis", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAnalysis_Threat(), this.getThreat(), null, "threat", null, 0, -1, Analysis.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAnalysis_Control(), this.getControl(), null, "control", null, 0, -1, Analysis.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1285,6 +1367,9 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 				Analysis.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAnalysis_Scoresystem(), this.getScoreSystem(), null, "scoresystem", null, 0, 1,
+				Analysis.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAnalysis_ThreatOwner(), this.getThreatsOwner(), null, "threatOwner", null, 1, 1,
 				Analysis.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -1496,6 +1581,24 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 
 		initEClass(externalControlEClass, ExternalControl.class, "ExternalControl", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(threatTypeEClass, ThreatType.class, "ThreatType", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getThreatType_SubTypes(), this.getThreatType(), null, "subTypes", null, 0, -1, ThreatType.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getThreatType_Threats(), this.getThreat(), null, "threats", null, 0, -1, ThreatType.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(threatsOwnerEClass, ThreatsOwner.class, "ThreatsOwner", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getThreatsOwner_Internal(), this.getThreatType(), null, "internal", null, 1, 1,
+				ThreatsOwner.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getThreatsOwner_External(), this.getThreatType(), null, "external", null, 1, 1,
+				ThreatsOwner.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(assessmentENUMEEnum, AssessmentENUM.class, "AssessmentENUM");

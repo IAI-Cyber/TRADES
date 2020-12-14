@@ -26,7 +26,7 @@
       <metamodel href="dsm.TRADES#/"/>
       <metamodel href="http://www.example.org/extTRADES#/"/>
       <defaultLayer name="Default">
-        <nodeMappings name="ThreatNode_TD" deletionDescription="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.2/@ownedTools[name='DeleteThreatFromDiagram']" labelDirectEdit="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Change%20name']" semanticCandidatesExpression="feature:threat" createElements="false" doubleClickDescription="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='OpenProgramTool']" domainClass="TRADES::Threat">
+        <nodeMappings name="ThreatNode_TD" deletionDescription="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.2/@ownedTools[name='DeleteThreatFromDiagram']" labelDirectEdit="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Change%20name']" semanticCandidatesExpression="aql:self.threatOwner.eAllContents(TRADES::Threat)" createElements="false" doubleClickDescription="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='OpenProgramTool']" domainClass="TRADES::Threat">
           <borderedNodeMappings name="ThreatLabel_TD" semanticCandidatesExpression="var:self" domainClass="TRADES::Threat">
             <style xsi:type="style:SquareDescription" showIcon="false" tooltipExpression="feature:name" sizeComputationExpression="0" labelPosition="node" resizeKind="NSEW" width="9" height="3">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -37,7 +37,7 @@
               <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
             </style>
           </borderedNodeMappings>
-          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="aql:''" labelAlignment="LEFT" tooltipExpression="feature:name" sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW" workspacePath="/TRADES.design/Images/ThreatImage.svg">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="aql:''" labelAlignment="LEFT" tooltipExpression="feature:name" sizeComputationExpression="-1" labelPosition="node" workspacePath="/TRADES.design/Images/ThreatImage.svg">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
@@ -180,8 +180,8 @@
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="TRADES::Threat" referenceName="threat"/>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:container.threatOwner.internal">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="TRADES::Threat" referenceName="threats"/>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
@@ -467,8 +467,8 @@
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql: self.ancestors()->last()">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="TRADES::Threat" referenceName="threat"/>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql: self.ancestors()->last().threatOwner.internal">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="TRADES::Threat" referenceName="threats"/>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
@@ -523,7 +523,7 @@
         </toolSections>
       </defaultLayer>
       <additionalLayers name="AllocatedThreats" activeByDefault="true">
-        <nodeMappings name="AllocatedThreatNode" labelDirectEdit="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Change%20name']" semanticCandidatesExpression="aql:self.eAllContents(TRADES::Component)->collect(c|c.threatallocation.threat)->union(self.threatallocation.threat)" synchronizationLock="true" domainClass="TRADES::Threat">
+        <nodeMappings name="AllocatedThreatNode" labelDirectEdit="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Change%20name']" semanticCandidatesExpression="aql:self.eAllContents(TRADES::Component)->collect(c|c.threatAllocations.threat)->union(self.threatAllocations.threat)" synchronizationLock="true" domainClass="TRADES::Threat">
           <borderedNodeMappings name="ThreatLabel_TD" semanticCandidatesExpression="var:self" synchronizationLock="true" domainClass="TRADES::Threat">
             <style xsi:type="style:SquareDescription" showIcon="false" tooltipExpression="feature:name" sizeComputationExpression="0" labelPosition="node" resizeKind="NSEW" width="9" height="3">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>

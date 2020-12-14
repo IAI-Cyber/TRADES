@@ -10,7 +10,7 @@ import dsm.TRADES.DataOwner;
 import dsm.TRADES.NamedElement;
 import dsm.TRADES.ScoreSystem;
 import dsm.TRADES.TRADESPackage;
-import dsm.TRADES.Threat;
+import dsm.TRADES.ThreatsOwner;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -35,10 +35,10 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getData <em>Data</em>}</li>
  *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getName <em>Name</em>}</li>
- *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getThreat <em>Threat</em>}</li>
  *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getControl <em>Control</em>}</li>
  *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getAffectrelation <em>Affectrelation</em>}</li>
  *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getScoresystem <em>Scoresystem</em>}</li>
+ *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getThreatOwner <em>Threat Owner</em>}</li>
  * </ul>
  *
  * @generated
@@ -75,16 +75,6 @@ public class AnalysisImpl extends ComponentOwerImpl implements Analysis {
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getThreat() <em>Threat</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getThreat()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Threat> threat;
-
-	/**
 	 * The cached value of the '{@link #getControl() <em>Control</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -115,6 +105,16 @@ public class AnalysisImpl extends ComponentOwerImpl implements Analysis {
 	protected ScoreSystem scoresystem;
 
 	/**
+	 * The cached value of the '{@link #getThreatOwner() <em>Threat Owner</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getThreatOwner()
+	 * @generated
+	 * @ordered
+	 */
+	protected ThreatsOwner threatOwner;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -131,19 +131,6 @@ public class AnalysisImpl extends ComponentOwerImpl implements Analysis {
 	@Override
 	protected EClass eStaticClass() {
 		return TRADESPackage.Literals.ANALYSIS;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EList<Threat> getThreat() {
-		if (threat == null) {
-			threat = new EObjectContainmentEList<Threat>(Threat.class, this, TRADESPackage.ANALYSIS__THREAT);
-		}
-		return threat;
 	}
 
 	/**
@@ -267,18 +254,70 @@ public class AnalysisImpl extends ComponentOwerImpl implements Analysis {
 	 * @generated
 	 */
 	@Override
+	public ThreatsOwner getThreatOwner() {
+		return threatOwner;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetThreatOwner(ThreatsOwner newThreatOwner, NotificationChain msgs) {
+		ThreatsOwner oldThreatOwner = threatOwner;
+		threatOwner = newThreatOwner;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					TRADESPackage.ANALYSIS__THREAT_OWNER, oldThreatOwner, newThreatOwner);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setThreatOwner(ThreatsOwner newThreatOwner) {
+		if (newThreatOwner != threatOwner) {
+			NotificationChain msgs = null;
+			if (threatOwner != null)
+				msgs = ((InternalEObject) threatOwner).eInverseRemove(this,
+						EOPPOSITE_FEATURE_BASE - TRADESPackage.ANALYSIS__THREAT_OWNER, null, msgs);
+			if (newThreatOwner != null)
+				msgs = ((InternalEObject) newThreatOwner).eInverseAdd(this,
+						EOPPOSITE_FEATURE_BASE - TRADESPackage.ANALYSIS__THREAT_OWNER, null, msgs);
+			msgs = basicSetThreatOwner(newThreatOwner, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TRADESPackage.ANALYSIS__THREAT_OWNER, newThreatOwner,
+					newThreatOwner));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case TRADESPackage.ANALYSIS__DATA:
 			return ((InternalEList<?>) getData()).basicRemove(otherEnd, msgs);
-		case TRADESPackage.ANALYSIS__THREAT:
-			return ((InternalEList<?>) getThreat()).basicRemove(otherEnd, msgs);
 		case TRADESPackage.ANALYSIS__CONTROL:
 			return ((InternalEList<?>) getControl()).basicRemove(otherEnd, msgs);
 		case TRADESPackage.ANALYSIS__AFFECTRELATION:
 			return ((InternalEList<?>) getAffectrelation()).basicRemove(otherEnd, msgs);
 		case TRADESPackage.ANALYSIS__SCORESYSTEM:
 			return basicSetScoresystem(null, msgs);
+		case TRADESPackage.ANALYSIS__THREAT_OWNER:
+			return basicSetThreatOwner(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -295,14 +334,14 @@ public class AnalysisImpl extends ComponentOwerImpl implements Analysis {
 			return getData();
 		case TRADESPackage.ANALYSIS__NAME:
 			return getName();
-		case TRADESPackage.ANALYSIS__THREAT:
-			return getThreat();
 		case TRADESPackage.ANALYSIS__CONTROL:
 			return getControl();
 		case TRADESPackage.ANALYSIS__AFFECTRELATION:
 			return getAffectrelation();
 		case TRADESPackage.ANALYSIS__SCORESYSTEM:
 			return getScoresystem();
+		case TRADESPackage.ANALYSIS__THREAT_OWNER:
+			return getThreatOwner();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -323,10 +362,6 @@ public class AnalysisImpl extends ComponentOwerImpl implements Analysis {
 		case TRADESPackage.ANALYSIS__NAME:
 			setName((String) newValue);
 			return;
-		case TRADESPackage.ANALYSIS__THREAT:
-			getThreat().clear();
-			getThreat().addAll((Collection<? extends Threat>) newValue);
-			return;
 		case TRADESPackage.ANALYSIS__CONTROL:
 			getControl().clear();
 			getControl().addAll((Collection<? extends Control>) newValue);
@@ -337,6 +372,9 @@ public class AnalysisImpl extends ComponentOwerImpl implements Analysis {
 			return;
 		case TRADESPackage.ANALYSIS__SCORESYSTEM:
 			setScoresystem((ScoreSystem) newValue);
+			return;
+		case TRADESPackage.ANALYSIS__THREAT_OWNER:
+			setThreatOwner((ThreatsOwner) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -356,9 +394,6 @@ public class AnalysisImpl extends ComponentOwerImpl implements Analysis {
 		case TRADESPackage.ANALYSIS__NAME:
 			setName(NAME_EDEFAULT);
 			return;
-		case TRADESPackage.ANALYSIS__THREAT:
-			getThreat().clear();
-			return;
 		case TRADESPackage.ANALYSIS__CONTROL:
 			getControl().clear();
 			return;
@@ -367,6 +402,9 @@ public class AnalysisImpl extends ComponentOwerImpl implements Analysis {
 			return;
 		case TRADESPackage.ANALYSIS__SCORESYSTEM:
 			setScoresystem((ScoreSystem) null);
+			return;
+		case TRADESPackage.ANALYSIS__THREAT_OWNER:
+			setThreatOwner((ThreatsOwner) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -384,14 +422,14 @@ public class AnalysisImpl extends ComponentOwerImpl implements Analysis {
 			return data != null && !data.isEmpty();
 		case TRADESPackage.ANALYSIS__NAME:
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-		case TRADESPackage.ANALYSIS__THREAT:
-			return threat != null && !threat.isEmpty();
 		case TRADESPackage.ANALYSIS__CONTROL:
 			return control != null && !control.isEmpty();
 		case TRADESPackage.ANALYSIS__AFFECTRELATION:
 			return affectrelation != null && !affectrelation.isEmpty();
 		case TRADESPackage.ANALYSIS__SCORESYSTEM:
 			return scoresystem != null;
+		case TRADESPackage.ANALYSIS__THREAT_OWNER:
+			return threatOwner != null;
 		}
 		return super.eIsSet(featureID);
 	}

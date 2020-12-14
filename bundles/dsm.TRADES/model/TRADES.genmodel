@@ -26,10 +26,10 @@
     <genDataTypes ecoreDataType="TRADES.ecore#//RGBColor" create="return RGBColor.decode(it);"
         convert="return it == null ? &quot;&quot; : it.encode();"/>
     <genClasses ecoreClass="TRADES.ecore#//Analysis">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Analysis/threat"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Analysis/control"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Analysis/affectrelation"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Analysis/scoresystem"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Analysis/threatOwner"/>
     </genClasses>
     <genClasses ecoreClass="TRADES.ecore#//Threat">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TRADES.ecore#//Threat/allocated"/>
@@ -119,5 +119,13 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//ImpactConfiguration/color"/>
     </genClasses>
     <genClasses ecoreClass="TRADES.ecore#//ExternalControl"/>
+    <genClasses ecoreClass="TRADES.ecore#//ThreatType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//ThreatType/subTypes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//ThreatType/threats"/>
+    </genClasses>
+    <genClasses ecoreClass="TRADES.ecore#//ThreatsOwner">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//ThreatsOwner/internal"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//ThreatsOwner/external"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

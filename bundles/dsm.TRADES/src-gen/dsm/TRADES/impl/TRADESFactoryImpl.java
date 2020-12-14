@@ -89,6 +89,10 @@ public class TRADESFactoryImpl extends EFactoryImpl implements TRADESFactory {
 			return createImpactConfiguration();
 		case TRADESPackage.EXTERNAL_CONTROL:
 			return createExternalControl();
+		case TRADESPackage.THREAT_TYPE:
+			return createThreatType();
+		case TRADESPackage.THREATS_OWNER:
+			return createThreatsOwner();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -310,6 +314,28 @@ public class TRADESFactoryImpl extends EFactoryImpl implements TRADESFactory {
 	public ExternalControl createExternalControl() {
 		ExternalControlImpl externalControl = new ExternalControlImpl();
 		return externalControl;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ThreatType createThreatType() {
+		ThreatTypeImpl threatType = new ThreatTypeImpl();
+		return threatType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ThreatsOwner createThreatsOwner() {
+		ThreatsOwnerImpl threatsOwner = new ThreatsOwnerImpl();
+		return threatsOwner;
 	}
 
 	/**

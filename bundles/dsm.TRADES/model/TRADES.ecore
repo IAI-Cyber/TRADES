@@ -5,14 +5,14 @@
     <details key="documentation" value="TRADES model, by Israel Aerospace Industries. All rights reserved.&#xD;&#xA;&#xD;&#xA;The TRADES model, based on Threat and Risk assessment ontology and the TRADES model-based methodology."/>
   </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="Analysis" eSuperTypes="#//ComponentOwer #//DataOwner #//NamedElement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="threat" upperBound="-1"
-        eType="#//Threat" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="control" upperBound="-1"
         eType="#//Control" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="affectrelation" upperBound="-1"
         eType="#//AffectRelation" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="scoresystem" eType="#//ScoreSystem"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="threatOwner" lowerBound="1"
+        eType="#//ThreatsOwner" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Threat" eSuperTypes="#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="allocated" upperBound="-1"
@@ -156,4 +156,16 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EDataType" name="RGBColor" instanceClassName="dsm.TRADES.RGBColor"/>
   <eClassifiers xsi:type="ecore:EClass" name="ExternalControl" eSuperTypes="#//ExternalElement #//Control"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ThreatType" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subTypes" upperBound="-1"
+        eType="#//ThreatType" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="threats" upperBound="-1"
+        eType="#//Threat" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ThreatsOwner">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="internal" lowerBound="1"
+        eType="#//ThreatType" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="external" lowerBound="1"
+        eType="#//ThreatType" containment="true"/>
+  </eClassifiers>
 </ecore:EPackage>
