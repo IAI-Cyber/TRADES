@@ -1,5 +1,8 @@
 package TRADES.design;
 
+import java.awt.Desktop;
+import java.io.IOException;
+import java.net.URI;
 import java.util.Collection;
 
 import org.eclipse.emf.ecore.EObject;
@@ -50,6 +53,14 @@ public class Services {
 		return;
 	}
 
+	
+	public void openInBrowser(String link) {
+		try {
+			Desktop.getDesktop().browse(URI.create(link));
+		} catch (IOException e) {
+			Activator.logError("Problem while open link "+link,e);
+		}
+	}
 
 
 	// A function to show (cancel hiding) elements from diagram
