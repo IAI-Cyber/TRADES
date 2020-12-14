@@ -156,22 +156,13 @@ public interface TRADESPackage extends EPackage {
 	int ANALYSIS__CONTROL = COMPONENT_OWER_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Threatmitigation</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ANALYSIS__THREATMITIGATION = COMPONENT_OWER_FEATURE_COUNT + 4;
-
-	/**
 	 * The feature id for the '<em><b>Affectrelation</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ANALYSIS__AFFECTRELATION = COMPONENT_OWER_FEATURE_COUNT + 5;
+	int ANALYSIS__AFFECTRELATION = COMPONENT_OWER_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Scoresystem</b></em>' containment reference.
@@ -180,7 +171,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ANALYSIS__SCORESYSTEM = COMPONENT_OWER_FEATURE_COUNT + 6;
+	int ANALYSIS__SCORESYSTEM = COMPONENT_OWER_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Analysis</em>' class.
@@ -189,7 +180,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ANALYSIS_FEATURE_COUNT = COMPONENT_OWER_FEATURE_COUNT + 7;
+	int ANALYSIS_FEATURE_COUNT = COMPONENT_OWER_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of operations of the '<em>Analysis</em>' class.
@@ -502,13 +493,22 @@ public interface TRADESPackage extends EPackage {
 	int CONTROL__DESCRIPTION = NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
+	 * The feature id for the '<em><b>Mitigationr Relations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL__MITIGATIONR_RELATIONS = NAMED_ELEMENT_FEATURE_COUNT + 4;
+
+	/**
 	 * The number of structural features of the '<em>Control</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 4;
+	int CONTROL_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of operations of the '<em>Control</em>' class.
@@ -639,7 +639,7 @@ public interface TRADESPackage extends EPackage {
 	int THREAT_MITIGATION_RELATION__ASSESSMENT = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Control</b></em>' reference.
+	 * The feature id for the '<em><b>Control</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1398,13 +1398,22 @@ public interface TRADESPackage extends EPackage {
 	int EXTERNAL_CONTROL__DESCRIPTION = EXTERNAL_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
+	 * The feature id for the '<em><b>Mitigationr Relations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTERNAL_CONTROL__MITIGATIONR_RELATIONS = EXTERNAL_ELEMENT_FEATURE_COUNT + 5;
+
+	/**
 	 * The number of structural features of the '<em>External Control</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXTERNAL_CONTROL_FEATURE_COUNT = EXTERNAL_ELEMENT_FEATURE_COUNT + 5;
+	int EXTERNAL_CONTROL_FEATURE_COUNT = EXTERNAL_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of operations of the '<em>External Control</em>' class.
@@ -1486,17 +1495,6 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getAnalysis_Control();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link dsm.TRADES.Analysis#getThreatmitigation <em>Threatmitigation</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Threatmitigation</em>'.
-	 * @see dsm.TRADES.Analysis#getThreatmitigation()
-	 * @see #getAnalysis()
-	 * @generated
-	 */
-	EReference getAnalysis_Threatmitigation();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link dsm.TRADES.Analysis#getAffectrelation <em>Affectrelation</em>}'.
@@ -1738,6 +1736,17 @@ public interface TRADESPackage extends EPackage {
 	EAttribute getControl_Description();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link dsm.TRADES.Control#getMitigationrRelations <em>Mitigationr Relations</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Mitigationr Relations</em>'.
+	 * @see dsm.TRADES.Control#getMitigationrRelations()
+	 * @see #getControl()
+	 * @generated
+	 */
+	EReference getControl_MitigationrRelations();
+
+	/**
 	 * Returns the meta object for class '{@link dsm.TRADES.ThreatAllocationRelation <em>Threat Allocation Relation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1846,10 +1855,10 @@ public interface TRADESPackage extends EPackage {
 	EAttribute getThreatMitigationRelation_Assessment();
 
 	/**
-	 * Returns the meta object for the reference '{@link dsm.TRADES.ThreatMitigationRelation#getControl <em>Control</em>}'.
+	 * Returns the meta object for the container reference '{@link dsm.TRADES.ThreatMitigationRelation#getControl <em>Control</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Control</em>'.
+	 * @return the meta object for the container reference '<em>Control</em>'.
 	 * @see dsm.TRADES.ThreatMitigationRelation#getControl()
 	 * @see #getThreatMitigationRelation()
 	 * @generated
@@ -2373,14 +2382,6 @@ public interface TRADESPackage extends EPackage {
 		EReference ANALYSIS__CONTROL = eINSTANCE.getAnalysis_Control();
 
 		/**
-		 * The meta object literal for the '<em><b>Threatmitigation</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ANALYSIS__THREATMITIGATION = eINSTANCE.getAnalysis_Threatmitigation();
-
-		/**
 		 * The meta object literal for the '<em><b>Affectrelation</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2563,6 +2564,14 @@ public interface TRADESPackage extends EPackage {
 		EAttribute CONTROL__DESCRIPTION = eINSTANCE.getControl_Description();
 
 		/**
+		 * The meta object literal for the '<em><b>Mitigationr Relations</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONTROL__MITIGATIONR_RELATIONS = eINSTANCE.getControl_MitigationrRelations();
+
+		/**
 		 * The meta object literal for the '{@link dsm.TRADES.impl.ThreatAllocationRelationImpl <em>Threat Allocation Relation</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2648,7 +2657,7 @@ public interface TRADESPackage extends EPackage {
 		EAttribute THREAT_MITIGATION_RELATION__ASSESSMENT = eINSTANCE.getThreatMitigationRelation_Assessment();
 
 		/**
-		 * The meta object literal for the '<em><b>Control</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Control</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

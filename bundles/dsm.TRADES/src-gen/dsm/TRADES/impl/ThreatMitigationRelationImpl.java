@@ -11,10 +11,12 @@ import dsm.TRADES.ThreatMitigationRelation;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 
 /**
  * <!-- begin-user-doc -->
@@ -52,16 +54,6 @@ public class ThreatMitigationRelationImpl extends NamedElementImpl implements Th
 	 * @ordered
 	 */
 	protected AssessmentENUM assessment = ASSESSMENT_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getControl() <em>Control</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getControl()
-	 * @generated
-	 * @ordered
-	 */
-	protected Control control;
 
 	/**
 	 * The cached value of the '{@link #getThreat() <em>Threat</em>}' reference.
@@ -133,16 +125,9 @@ public class ThreatMitigationRelationImpl extends NamedElementImpl implements Th
 	 */
 	@Override
 	public Control getControl() {
-		if (control != null && control.eIsProxy()) {
-			InternalEObject oldControl = (InternalEObject) control;
-			control = (Control) eResolveProxy(oldControl);
-			if (control != oldControl) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							TRADESPackage.THREAT_MITIGATION_RELATION__CONTROL, oldControl, control));
-			}
-		}
-		return control;
+		if (eContainerFeatureID() != TRADESPackage.THREAT_MITIGATION_RELATION__CONTROL)
+			return null;
+		return (Control) eInternalContainer();
 	}
 
 	/**
@@ -150,8 +135,10 @@ public class ThreatMitigationRelationImpl extends NamedElementImpl implements Th
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Control basicGetControl() {
-		return control;
+	public NotificationChain basicSetControl(Control newControl, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject) newControl, TRADESPackage.THREAT_MITIGATION_RELATION__CONTROL,
+				msgs);
+		return msgs;
 	}
 
 	/**
@@ -161,11 +148,22 @@ public class ThreatMitigationRelationImpl extends NamedElementImpl implements Th
 	 */
 	@Override
 	public void setControl(Control newControl) {
-		Control oldControl = control;
-		control = newControl;
-		if (eNotificationRequired())
+		if (newControl != eInternalContainer()
+				|| (eContainerFeatureID() != TRADESPackage.THREAT_MITIGATION_RELATION__CONTROL && newControl != null)) {
+			if (EcoreUtil.isAncestor(this, newControl))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newControl != null)
+				msgs = ((InternalEObject) newControl).eInverseAdd(this, TRADESPackage.CONTROL__MITIGATIONR_RELATIONS,
+						Control.class, msgs);
+			msgs = basicSetControl(newControl, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TRADESPackage.THREAT_MITIGATION_RELATION__CONTROL,
-					oldControl, control));
+					newControl, newControl));
 	}
 
 	/**
@@ -258,14 +256,57 @@ public class ThreatMitigationRelationImpl extends NamedElementImpl implements Th
 	 * @generated
 	 */
 	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+		case TRADESPackage.THREAT_MITIGATION_RELATION__CONTROL:
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			return basicSetControl((Control) otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+		case TRADESPackage.THREAT_MITIGATION_RELATION__CONTROL:
+			return basicSetControl(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+		case TRADESPackage.THREAT_MITIGATION_RELATION__CONTROL:
+			return eInternalContainer().eInverseRemove(this, TRADESPackage.CONTROL__MITIGATIONR_RELATIONS,
+					Control.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case TRADESPackage.THREAT_MITIGATION_RELATION__ASSESSMENT:
 			return getAssessment();
 		case TRADESPackage.THREAT_MITIGATION_RELATION__CONTROL:
-			if (resolve)
-				return getControl();
-			return basicGetControl();
+			return getControl();
 		case TRADESPackage.THREAT_MITIGATION_RELATION__THREAT:
 			if (resolve)
 				return getThreat();
@@ -337,7 +378,7 @@ public class ThreatMitigationRelationImpl extends NamedElementImpl implements Th
 		case TRADESPackage.THREAT_MITIGATION_RELATION__ASSESSMENT:
 			return assessment != ASSESSMENT_EDEFAULT;
 		case TRADESPackage.THREAT_MITIGATION_RELATION__CONTROL:
-			return control != null;
+			return getControl() != null;
 		case TRADESPackage.THREAT_MITIGATION_RELATION__THREAT:
 			return threat != null;
 		case TRADESPackage.THREAT_MITIGATION_RELATION__MITIGATES:

@@ -223,8 +223,8 @@
             <sourceViewVariable name="sourceView"/>
             <targetViewVariable name="targetView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql: source.ancestors()->last()">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="TRADES::ThreatMitigationRelation" referenceName="threatmitigation">
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql: source">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="TRADES::ThreatMitigationRelation" referenceName="mitigationrRelations">
                   <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql: instance">
                     <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:"/>
                     <subModelOperations xsi:type="tool_1:SetValue" featureName="control" valueExpression="var:source"/>

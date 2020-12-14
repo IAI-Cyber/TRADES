@@ -11,8 +11,6 @@ import dsm.TRADES.NamedElement;
 import dsm.TRADES.ScoreSystem;
 import dsm.TRADES.TRADESPackage;
 import dsm.TRADES.Threat;
-import dsm.TRADES.ThreatMitigationRelation;
-
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -39,7 +37,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getName <em>Name</em>}</li>
  *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getThreat <em>Threat</em>}</li>
  *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getControl <em>Control</em>}</li>
- *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getThreatmitigation <em>Threatmitigation</em>}</li>
  *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getAffectrelation <em>Affectrelation</em>}</li>
  *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getScoresystem <em>Scoresystem</em>}</li>
  * </ul>
@@ -96,16 +93,6 @@ public class AnalysisImpl extends ComponentOwerImpl implements Analysis {
 	 * @ordered
 	 */
 	protected EList<Control> control;
-
-	/**
-	 * The cached value of the '{@link #getThreatmitigation() <em>Threatmitigation</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getThreatmitigation()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<ThreatMitigationRelation> threatmitigation;
 
 	/**
 	 * The cached value of the '{@link #getAffectrelation() <em>Affectrelation</em>}' containment reference list.
@@ -201,20 +188,6 @@ public class AnalysisImpl extends ComponentOwerImpl implements Analysis {
 	 * @generated
 	 */
 	@Override
-	public EList<ThreatMitigationRelation> getThreatmitigation() {
-		if (threatmitigation == null) {
-			threatmitigation = new EObjectContainmentEList<ThreatMitigationRelation>(ThreatMitigationRelation.class,
-					this, TRADESPackage.ANALYSIS__THREATMITIGATION);
-		}
-		return threatmitigation;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EList<Data> getData() {
 		if (data == null) {
 			data = new EObjectContainmentEList<Data>(Data.class, this, TRADESPackage.ANALYSIS__DATA);
@@ -302,8 +275,6 @@ public class AnalysisImpl extends ComponentOwerImpl implements Analysis {
 			return ((InternalEList<?>) getThreat()).basicRemove(otherEnd, msgs);
 		case TRADESPackage.ANALYSIS__CONTROL:
 			return ((InternalEList<?>) getControl()).basicRemove(otherEnd, msgs);
-		case TRADESPackage.ANALYSIS__THREATMITIGATION:
-			return ((InternalEList<?>) getThreatmitigation()).basicRemove(otherEnd, msgs);
 		case TRADESPackage.ANALYSIS__AFFECTRELATION:
 			return ((InternalEList<?>) getAffectrelation()).basicRemove(otherEnd, msgs);
 		case TRADESPackage.ANALYSIS__SCORESYSTEM:
@@ -328,8 +299,6 @@ public class AnalysisImpl extends ComponentOwerImpl implements Analysis {
 			return getThreat();
 		case TRADESPackage.ANALYSIS__CONTROL:
 			return getControl();
-		case TRADESPackage.ANALYSIS__THREATMITIGATION:
-			return getThreatmitigation();
 		case TRADESPackage.ANALYSIS__AFFECTRELATION:
 			return getAffectrelation();
 		case TRADESPackage.ANALYSIS__SCORESYSTEM:
@@ -362,10 +331,6 @@ public class AnalysisImpl extends ComponentOwerImpl implements Analysis {
 			getControl().clear();
 			getControl().addAll((Collection<? extends Control>) newValue);
 			return;
-		case TRADESPackage.ANALYSIS__THREATMITIGATION:
-			getThreatmitigation().clear();
-			getThreatmitigation().addAll((Collection<? extends ThreatMitigationRelation>) newValue);
-			return;
 		case TRADESPackage.ANALYSIS__AFFECTRELATION:
 			getAffectrelation().clear();
 			getAffectrelation().addAll((Collection<? extends AffectRelation>) newValue);
@@ -397,9 +362,6 @@ public class AnalysisImpl extends ComponentOwerImpl implements Analysis {
 		case TRADESPackage.ANALYSIS__CONTROL:
 			getControl().clear();
 			return;
-		case TRADESPackage.ANALYSIS__THREATMITIGATION:
-			getThreatmitigation().clear();
-			return;
 		case TRADESPackage.ANALYSIS__AFFECTRELATION:
 			getAffectrelation().clear();
 			return;
@@ -426,8 +388,6 @@ public class AnalysisImpl extends ComponentOwerImpl implements Analysis {
 			return threat != null && !threat.isEmpty();
 		case TRADESPackage.ANALYSIS__CONTROL:
 			return control != null && !control.isEmpty();
-		case TRADESPackage.ANALYSIS__THREATMITIGATION:
-			return threatmitigation != null && !threatmitigation.isEmpty();
 		case TRADESPackage.ANALYSIS__AFFECTRELATION:
 			return affectrelation != null && !affectrelation.isEmpty();
 		case TRADESPackage.ANALYSIS__SCORESYSTEM:

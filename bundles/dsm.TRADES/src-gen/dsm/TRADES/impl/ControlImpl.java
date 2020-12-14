@@ -7,6 +7,7 @@ import dsm.TRADES.Control;
 import dsm.TRADES.TRADESPackage;
 import dsm.TRADES.Threat;
 
+import dsm.TRADES.ThreatMitigationRelation;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -18,6 +19,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -34,6 +36,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dsm.TRADES.impl.ControlImpl#getImplementedBy <em>Implemented By</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ControlImpl#getID <em>ID</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ControlImpl#getDescription <em>Description</em>}</li>
+ *   <li>{@link dsm.TRADES.impl.ControlImpl#getMitigationrRelations <em>Mitigationr Relations</em>}</li>
  * </ul>
  *
  * @generated
@@ -98,6 +101,16 @@ public class ControlImpl extends NamedElementImpl implements Control {
 	 * @ordered
 	 */
 	protected String description = DESCRIPTION_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getMitigationrRelations() <em>Mitigationr Relations</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMitigationrRelations()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<ThreatMitigationRelation> mitigationrRelations;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -197,12 +210,30 @@ public class ControlImpl extends NamedElementImpl implements Control {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public EList<ThreatMitigationRelation> getMitigationrRelations() {
+		if (mitigationrRelations == null) {
+			mitigationrRelations = new EObjectContainmentWithInverseEList<ThreatMitigationRelation>(
+					ThreatMitigationRelation.class, this, TRADESPackage.CONTROL__MITIGATIONR_RELATIONS,
+					TRADESPackage.THREAT_MITIGATION_RELATION__CONTROL);
+		}
+		return mitigationrRelations;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case TRADESPackage.CONTROL__IMPLEMENTED_BY:
 			return ((InternalEList<InternalEObject>) (InternalEList<?>) getImplementedBy()).basicAdd(otherEnd, msgs);
+		case TRADESPackage.CONTROL__MITIGATIONR_RELATIONS:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getMitigationrRelations()).basicAdd(otherEnd,
+					msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -217,6 +248,8 @@ public class ControlImpl extends NamedElementImpl implements Control {
 		switch (featureID) {
 		case TRADESPackage.CONTROL__IMPLEMENTED_BY:
 			return ((InternalEList<?>) getImplementedBy()).basicRemove(otherEnd, msgs);
+		case TRADESPackage.CONTROL__MITIGATIONR_RELATIONS:
+			return ((InternalEList<?>) getMitigationrRelations()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -237,6 +270,8 @@ public class ControlImpl extends NamedElementImpl implements Control {
 			return getID();
 		case TRADESPackage.CONTROL__DESCRIPTION:
 			return getDescription();
+		case TRADESPackage.CONTROL__MITIGATIONR_RELATIONS:
+			return getMitigationrRelations();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -264,6 +299,10 @@ public class ControlImpl extends NamedElementImpl implements Control {
 		case TRADESPackage.CONTROL__DESCRIPTION:
 			setDescription((String) newValue);
 			return;
+		case TRADESPackage.CONTROL__MITIGATIONR_RELATIONS:
+			getMitigationrRelations().clear();
+			getMitigationrRelations().addAll((Collection<? extends ThreatMitigationRelation>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -288,6 +327,9 @@ public class ControlImpl extends NamedElementImpl implements Control {
 		case TRADESPackage.CONTROL__DESCRIPTION:
 			setDescription(DESCRIPTION_EDEFAULT);
 			return;
+		case TRADESPackage.CONTROL__MITIGATIONR_RELATIONS:
+			getMitigationrRelations().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -308,6 +350,8 @@ public class ControlImpl extends NamedElementImpl implements Control {
 			return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
 		case TRADESPackage.CONTROL__DESCRIPTION:
 			return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+		case TRADESPackage.CONTROL__MITIGATIONR_RELATIONS:
+			return mitigationrRelations != null && !mitigationrRelations.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

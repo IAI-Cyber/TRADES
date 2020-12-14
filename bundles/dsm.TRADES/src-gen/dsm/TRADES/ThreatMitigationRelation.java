@@ -53,26 +53,28 @@ public interface ThreatMitigationRelation extends NamedElement {
 	void setAssessment(AssessmentENUM value);
 
 	/**
-	 * Returns the value of the '<em><b>Control</b></em>' reference.
+	 * Returns the value of the '<em><b>Control</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link dsm.TRADES.Control#getMitigationrRelations <em>Mitigationr Relations</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Control</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Control</em>' reference.
+	 * @return the value of the '<em>Control</em>' container reference.
 	 * @see #setControl(Control)
 	 * @see dsm.TRADES.TRADESPackage#getThreatMitigationRelation_Control()
-	 * @model required="true"
+	 * @see dsm.TRADES.Control#getMitigationrRelations
+	 * @model opposite="mitigationrRelations" required="true" transient="false"
 	 * @generated
 	 */
 	Control getControl();
 
 	/**
-	 * Sets the value of the '{@link dsm.TRADES.ThreatMitigationRelation#getControl <em>Control</em>}' reference.
+	 * Sets the value of the '{@link dsm.TRADES.ThreatMitigationRelation#getControl <em>Control</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Control</em>' reference.
+	 * @param value the new value of the '<em>Control</em>' container reference.
 	 * @see #getControl()
 	 * @generated
 	 */

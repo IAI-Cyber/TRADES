@@ -17,6 +17,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link dsm.TRADES.Control#getImplementedBy <em>Implemented By</em>}</li>
  *   <li>{@link dsm.TRADES.Control#getID <em>ID</em>}</li>
  *   <li>{@link dsm.TRADES.Control#getDescription <em>Description</em>}</li>
+ *   <li>{@link dsm.TRADES.Control#getMitigationrRelations <em>Mitigationr Relations</em>}</li>
  * </ul>
  *
  * @see dsm.TRADES.TRADESPackage#getControl()
@@ -101,5 +102,19 @@ public interface Control extends NamedElement {
 	 * @generated
 	 */
 	void setDescription(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Mitigationr Relations</b></em>' containment reference list.
+	 * The list contents are of type {@link dsm.TRADES.ThreatMitigationRelation}.
+	 * It is bidirectional and its opposite is '{@link dsm.TRADES.ThreatMitigationRelation#getControl <em>Control</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Mitigationr Relations</em>' containment reference list.
+	 * @see dsm.TRADES.TRADESPackage#getControl_MitigationrRelations()
+	 * @see dsm.TRADES.ThreatMitigationRelation#getControl
+	 * @model opposite="control" containment="true"
+	 * @generated
+	 */
+	EList<ThreatMitigationRelation> getMitigationrRelations();
 
 } // Control

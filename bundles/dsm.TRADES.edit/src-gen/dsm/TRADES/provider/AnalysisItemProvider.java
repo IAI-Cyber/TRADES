@@ -82,7 +82,6 @@ public class AnalysisItemProvider extends ComponentOwerItemProvider {
 			childrenFeatures.add(TRADESPackage.Literals.DATA_OWNER__DATA);
 			childrenFeatures.add(TRADESPackage.Literals.ANALYSIS__THREAT);
 			childrenFeatures.add(TRADESPackage.Literals.ANALYSIS__CONTROL);
-			childrenFeatures.add(TRADESPackage.Literals.ANALYSIS__THREATMITIGATION);
 			childrenFeatures.add(TRADESPackage.Literals.ANALYSIS__AFFECTRELATION);
 			childrenFeatures.add(TRADESPackage.Literals.ANALYSIS__SCORESYSTEM);
 		}
@@ -154,7 +153,6 @@ public class AnalysisItemProvider extends ComponentOwerItemProvider {
 		case TRADESPackage.ANALYSIS__DATA:
 		case TRADESPackage.ANALYSIS__THREAT:
 		case TRADESPackage.ANALYSIS__CONTROL:
-		case TRADESPackage.ANALYSIS__THREATMITIGATION:
 		case TRADESPackage.ANALYSIS__AFFECTRELATION:
 		case TRADESPackage.ANALYSIS__SCORESYSTEM:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
@@ -188,9 +186,6 @@ public class AnalysisItemProvider extends ComponentOwerItemProvider {
 
 		newChildDescriptors.add(createChildParameter(TRADESPackage.Literals.ANALYSIS__CONTROL,
 				TRADESFactory.eINSTANCE.createExternalControl()));
-
-		newChildDescriptors.add(createChildParameter(TRADESPackage.Literals.ANALYSIS__THREATMITIGATION,
-				TRADESFactory.eINSTANCE.createThreatMitigationRelation()));
 
 		newChildDescriptors.add(createChildParameter(TRADESPackage.Literals.ANALYSIS__AFFECTRELATION,
 				TRADESFactory.eINSTANCE.createAffectRelation()));
