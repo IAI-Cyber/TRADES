@@ -19,7 +19,15 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.ui.ide;bundle-version="3.17.100",
  org.eclipse.sirius.ui,
  org.eclipse.sirius.ext.base,
- org.eclipse.ui.navigator
+ org.eclipse.ui.navigator,
+ org.eclipse.sirius.diagram.elk,
+ org.eclipse.elk.core.service,
+ org.eclipse.elk.graph,
+ org.eclipse.gmf.runtime.notation,
+ org.eclipse.sirius.diagram.ui,
+ org.eclipse.gmf.runtime.diagram.ui,
+ com.google.guava,
+ org.eclipse.collections;bundle-version="10.1.0"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-11
 Bundle-Vendor: %providerName

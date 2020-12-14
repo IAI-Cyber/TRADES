@@ -10,15 +10,16 @@ location "https://download.eclipse.org/releases/2020-06/" {
 	org.eclipse.osgi.services lazy
 	org.eclipse.equinox.executable.feature.group lazy
 	org.eclipse.equinox.core.feature.feature.group lazy
+	org.eclipse.collections.feature.feature.group lazy
 	
 }
 
-location "https://s3-eu-west-1.amazonaws.com/obeo-m2doc-releases/3.1.0/repository" {
+location "https://s3-eu-west-1.amazonaws.com/obeo-m2doc-releases/master/nightly/repository" {
 	org.obeonetwork.m2doc.feature.feature.group lazy
 	org.obeonetwork.m2doc.sirius.feature.feature.group lazy
 	org.obeonetwork.m2doc.ui.feature.feature.group lazy
 	org.eclipse.acceleo.query.feature.group lazy
-	org.antlr.runtime lazy
+	
 }
 
 location "http://download.eclipse.org/e4/snapshots/org.eclipse.e4.tools/latest/" {
@@ -28,7 +29,7 @@ location "http://download.eclipse.org/e4/snapshots/org.eclipse.e4.tools/latest/"
 }
 
 
-location "http://download.eclipse.org/sirius/updates/releases/6.3.4/2020-06" {
+location "https://download.eclipse.org/sirius/updates/releases/6.4.0/2020-06/" {
 	//Sirius
 	org.eclipse.sirius.specifier.feature.group lazy
 	org.eclipse.sirius.properties.feature.feature.group lazy
@@ -48,6 +49,8 @@ location "http://download.eclipse.org/sirius/updates/releases/6.3.4/2020-06" {
 	org.eclipse.sirius.specifier.ide.ui.aql.feature.group lazy
 	org.eclipse.sirius.specifier.ide.ui.feature.group lazy
 	org.eclipse.sirius.specifier.properties.feature.feature.group lazy
+	
+	org.eclipse.sirius.diagram.elk.sdk.feature.feature.group lazy
 }
 
 

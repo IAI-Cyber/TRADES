@@ -43,4 +43,9 @@
         <enablement></enablement>
      </commonWizard>
   </extension>
+  <extension point="org.eclipse.sirius.diagram.elk.layout.extension">
+     <layoutExtension
+           class="TRADES.design.layout.TradesAutoLayoutCusto">
+     </layoutExtension>
+  </extension>
 </plugin>
