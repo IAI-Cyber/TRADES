@@ -8,7 +8,7 @@
     operationReflection="true" importOrganizing="true">
   <foreignModel>TRADES.ecore</foreignModel>
   <testsDirectory xsi:nil="true"/>
-  <genPackages prefix="TRADES" basePackage="dsm" disposableProviderFactory="true"
+  <genPackages prefix="TRADES" basePackage="dsm" resource="XMI" disposableProviderFactory="true"
       extensibleProviderFactory="true" ecorePackage="TRADES.ecore#/">
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="TRADES.ecore#//AssessmentENUM">
       <genEnumLiterals ecoreEnumLiteral="TRADES.ecore#//AssessmentENUM/Undecided"/>

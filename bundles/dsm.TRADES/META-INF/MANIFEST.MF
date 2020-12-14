@@ -12,5 +12,6 @@ Export-Package: dsm.TRADES,
  dsm.TRADES.impl,
  dsm.TRADES.util
 Require-Bundle: org.eclipse.emf.ecore;bundle-version="0.0.0";visibility:=reexport,
+ org.eclipse.emf.ecore.xmi;visibility:=reexport,
  org.eclipse.core.runtime;bundle-version="0.0.0"
 Bundle-ActivationPolicy: lazy
