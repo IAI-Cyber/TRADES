@@ -209,10 +209,9 @@
             <sourceViewVariable name="sourceView"/>
             <targetViewVariable name="targetView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql: target.ancestors()->last()">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="TRADES::ThreatAllocationRelation" referenceName="threatallocation">
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:target">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="TRADES::ThreatAllocationRelation" referenceName="threatAllocations">
                   <subModelOperations xsi:type="tool_1:SetValue" featureName="threat" valueExpression="var:source"/>
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="component" valueExpression="var:target"/>
                   <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql: self.threat.name + ' on ' + self.component.name"/>
                 </subModelOperations>
               </firstModelOperations>

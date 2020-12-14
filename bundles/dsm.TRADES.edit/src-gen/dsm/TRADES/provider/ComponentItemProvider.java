@@ -2,22 +2,21 @@
  */
 package dsm.TRADES.provider;
 
-import dsm.TRADES.Component;
-import dsm.TRADES.TRADESFactory;
-import dsm.TRADES.TRADESPackage;
-import dsm.TRADES.ThreatAllocationRelation;
-
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+
+import dsm.TRADES.Component;
+import dsm.TRADES.TRADESFactory;
+import dsm.TRADES.TRADESPackage;
+import dsm.TRADES.ThreatAllocationRelation;
 
 /**
  * This is the item provider adapter for a {@link dsm.TRADES.Component} object.
@@ -50,7 +49,7 @@ public class ComponentItemProvider extends ComponentOwerItemProvider {
 			addNamePropertyDescriptor(object);
 			addAllocatedThreatPropertyDescriptor(object);
 			addImplementsPropertyDescriptor(object);
-			addThreatallocationPropertyDescriptor(object);
+			addThreatAllocationsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -86,6 +85,21 @@ public class ComponentItemProvider extends ComponentOwerItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Threat Allocations feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addThreatAllocationsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Component_threatAllocations_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Component_threatAllocations_feature",
+								"_UI_Component_type"),
+						TRADESPackage.Literals.COMPONENT__THREAT_ALLOCATIONS, true, false, true, null, null, null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Name feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -102,21 +116,6 @@ public class ComponentItemProvider extends ComponentOwerItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Threatallocation feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addThreatallocationPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Component_threatallocation_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Component_threatallocation_feature",
-								"_UI_Component_type"),
-						TRADESPackage.Literals.COMPONENT__THREATALLOCATION, true, false, true, null, null, null));
-	}
-
-	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -129,6 +128,7 @@ public class ComponentItemProvider extends ComponentOwerItemProvider {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(TRADESPackage.Literals.DATA_OWNER__DATA);
+			childrenFeatures.add(TRADESPackage.Literals.COMPONENT__THREAT_ALLOCATIONS);
 			childrenFeatures.add(TRADESPackage.Literals.COMPONENT__CONTROL);
 			childrenFeatures.add(TRADESPackage.Literals.COMPONENT__ANALYSIS);
 			childrenFeatures.add(TRADESPackage.Literals.COMPONENT__AFFECTRELATION);
@@ -184,10 +184,10 @@ public class ComponentItemProvider extends ComponentOwerItemProvider {
 	}
 
 	/**
-	 * This handles model notifications by calling {@link #updateChildren} to update any cached
-	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * This handles model notifications by calling {@link #updateChildren} to update
+	 * any cached children and by creating a viewer notification, which it passes to
+	 * {@link #fireNotifyChanged}. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated not
 	 */
 	@Override
@@ -198,7 +198,7 @@ public class ComponentItemProvider extends ComponentOwerItemProvider {
 			Object notifier = notification.getNotifier();
 			if (notifier instanceof Component) {
 				Component new_name = (Component) notifier;
-				for (ThreatAllocationRelation rel : new_name.getThreatallocation()) {
+				for (ThreatAllocationRelation rel : new_name.getThreatAllocations()) {
 					fireNotifyChanged(new ViewerNotification(notification, rel, false, true));
 				}
 			}
@@ -209,6 +209,7 @@ public class ComponentItemProvider extends ComponentOwerItemProvider {
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		case TRADESPackage.COMPONENT__DATA:
+		case TRADESPackage.COMPONENT__THREAT_ALLOCATIONS:
 		case TRADESPackage.COMPONENT__CONTROL:
 		case TRADESPackage.COMPONENT__ANALYSIS:
 		case TRADESPackage.COMPONENT__AFFECTRELATION:
@@ -232,6 +233,9 @@ public class ComponentItemProvider extends ComponentOwerItemProvider {
 
 		newChildDescriptors.add(
 				createChildParameter(TRADESPackage.Literals.DATA_OWNER__DATA, TRADESFactory.eINSTANCE.createData()));
+
+		newChildDescriptors.add(createChildParameter(TRADESPackage.Literals.COMPONENT__THREAT_ALLOCATIONS,
+				TRADESFactory.eINSTANCE.createThreatAllocationRelation()));
 
 		newChildDescriptors.add(createChildParameter(TRADESPackage.Literals.COMPONENT__CONTROL,
 				TRADESFactory.eINSTANCE.createControl()));

@@ -11,7 +11,6 @@ import dsm.TRADES.NamedElement;
 import dsm.TRADES.ScoreSystem;
 import dsm.TRADES.TRADESPackage;
 import dsm.TRADES.Threat;
-import dsm.TRADES.ThreatAllocationRelation;
 import dsm.TRADES.ThreatMitigationRelation;
 
 import java.util.Collection;
@@ -40,7 +39,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getName <em>Name</em>}</li>
  *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getThreat <em>Threat</em>}</li>
  *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getControl <em>Control</em>}</li>
- *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getThreatallocation <em>Threatallocation</em>}</li>
  *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getThreatmitigation <em>Threatmitigation</em>}</li>
  *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getAffectrelation <em>Affectrelation</em>}</li>
  *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getScoresystem <em>Scoresystem</em>}</li>
@@ -98,16 +96,6 @@ public class AnalysisImpl extends ComponentOwerImpl implements Analysis {
 	 * @ordered
 	 */
 	protected EList<Control> control;
-
-	/**
-	 * The cached value of the '{@link #getThreatallocation() <em>Threatallocation</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getThreatallocation()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<ThreatAllocationRelation> threatallocation;
 
 	/**
 	 * The cached value of the '{@link #getThreatmitigation() <em>Threatmitigation</em>}' containment reference list.
@@ -205,20 +193,6 @@ public class AnalysisImpl extends ComponentOwerImpl implements Analysis {
 		name = newName;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TRADESPackage.ANALYSIS__NAME, oldName, name));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EList<ThreatAllocationRelation> getThreatallocation() {
-		if (threatallocation == null) {
-			threatallocation = new EObjectContainmentEList<ThreatAllocationRelation>(ThreatAllocationRelation.class,
-					this, TRADESPackage.ANALYSIS__THREATALLOCATION);
-		}
-		return threatallocation;
 	}
 
 	/**
@@ -328,8 +302,6 @@ public class AnalysisImpl extends ComponentOwerImpl implements Analysis {
 			return ((InternalEList<?>) getThreat()).basicRemove(otherEnd, msgs);
 		case TRADESPackage.ANALYSIS__CONTROL:
 			return ((InternalEList<?>) getControl()).basicRemove(otherEnd, msgs);
-		case TRADESPackage.ANALYSIS__THREATALLOCATION:
-			return ((InternalEList<?>) getThreatallocation()).basicRemove(otherEnd, msgs);
 		case TRADESPackage.ANALYSIS__THREATMITIGATION:
 			return ((InternalEList<?>) getThreatmitigation()).basicRemove(otherEnd, msgs);
 		case TRADESPackage.ANALYSIS__AFFECTRELATION:
@@ -356,8 +328,6 @@ public class AnalysisImpl extends ComponentOwerImpl implements Analysis {
 			return getThreat();
 		case TRADESPackage.ANALYSIS__CONTROL:
 			return getControl();
-		case TRADESPackage.ANALYSIS__THREATALLOCATION:
-			return getThreatallocation();
 		case TRADESPackage.ANALYSIS__THREATMITIGATION:
 			return getThreatmitigation();
 		case TRADESPackage.ANALYSIS__AFFECTRELATION:
@@ -391,10 +361,6 @@ public class AnalysisImpl extends ComponentOwerImpl implements Analysis {
 		case TRADESPackage.ANALYSIS__CONTROL:
 			getControl().clear();
 			getControl().addAll((Collection<? extends Control>) newValue);
-			return;
-		case TRADESPackage.ANALYSIS__THREATALLOCATION:
-			getThreatallocation().clear();
-			getThreatallocation().addAll((Collection<? extends ThreatAllocationRelation>) newValue);
 			return;
 		case TRADESPackage.ANALYSIS__THREATMITIGATION:
 			getThreatmitigation().clear();
@@ -431,9 +397,6 @@ public class AnalysisImpl extends ComponentOwerImpl implements Analysis {
 		case TRADESPackage.ANALYSIS__CONTROL:
 			getControl().clear();
 			return;
-		case TRADESPackage.ANALYSIS__THREATALLOCATION:
-			getThreatallocation().clear();
-			return;
 		case TRADESPackage.ANALYSIS__THREATMITIGATION:
 			getThreatmitigation().clear();
 			return;
@@ -463,8 +426,6 @@ public class AnalysisImpl extends ComponentOwerImpl implements Analysis {
 			return threat != null && !threat.isEmpty();
 		case TRADESPackage.ANALYSIS__CONTROL:
 			return control != null && !control.isEmpty();
-		case TRADESPackage.ANALYSIS__THREATALLOCATION:
-			return threatallocation != null && !threatallocation.isEmpty();
 		case TRADESPackage.ANALYSIS__THREATMITIGATION:
 			return threatmitigation != null && !threatmitigation.isEmpty();
 		case TRADESPackage.ANALYSIS__AFFECTRELATION:

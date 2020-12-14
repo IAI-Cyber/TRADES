@@ -15,7 +15,6 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link dsm.TRADES.Analysis#getThreat <em>Threat</em>}</li>
  *   <li>{@link dsm.TRADES.Analysis#getControl <em>Control</em>}</li>
- *   <li>{@link dsm.TRADES.Analysis#getThreatallocation <em>Threatallocation</em>}</li>
  *   <li>{@link dsm.TRADES.Analysis#getThreatmitigation <em>Threatmitigation</em>}</li>
  *   <li>{@link dsm.TRADES.Analysis#getAffectrelation <em>Affectrelation</em>}</li>
  *   <li>{@link dsm.TRADES.Analysis#getScoresystem <em>Scoresystem</em>}</li>
@@ -57,22 +56,6 @@ public interface Analysis extends ComponentOwer, DataOwner, NamedElement {
 	 * @generated
 	 */
 	EList<Control> getControl();
-
-	/**
-	 * Returns the value of the '<em><b>Threatallocation</b></em>' containment reference list.
-	 * The list contents are of type {@link dsm.TRADES.ThreatAllocationRelation}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Threatallocation</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Threatallocation</em>' containment reference list.
-	 * @see dsm.TRADES.TRADESPackage#getAnalysis_Threatallocation()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<ThreatAllocationRelation> getThreatallocation();
 
 	/**
 	 * Returns the value of the '<em><b>Threatmitigation</b></em>' containment reference list.

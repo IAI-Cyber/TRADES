@@ -15,7 +15,7 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link dsm.TRADES.Component#getAllocatedThreat <em>Allocated Threat</em>}</li>
  *   <li>{@link dsm.TRADES.Component#getImplements <em>Implements</em>}</li>
- *   <li>{@link dsm.TRADES.Component#getThreatallocation <em>Threatallocation</em>}</li>
+ *   <li>{@link dsm.TRADES.Component#getThreatAllocations <em>Threat Allocations</em>}</li>
  *   <li>{@link dsm.TRADES.Component#getControl <em>Control</em>}</li>
  *   <li>{@link dsm.TRADES.Component#getAnalysis <em>Analysis</em>}</li>
  *   <li>{@link dsm.TRADES.Component#getAffectrelation <em>Affectrelation</em>}</li>
@@ -64,22 +64,18 @@ public interface Component extends ComponentOwer, DataOwner, NamedElement {
 	EList<Control> getImplements();
 
 	/**
-	 * Returns the value of the '<em><b>Threatallocation</b></em>' reference list.
+	 * Returns the value of the '<em><b>Threat Allocations</b></em>' containment reference list.
 	 * The list contents are of type {@link dsm.TRADES.ThreatAllocationRelation}.
 	 * It is bidirectional and its opposite is '{@link dsm.TRADES.ThreatAllocationRelation#getComponent <em>Component</em>}'.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Threatallocation</em>' reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Threatallocation</em>' reference list.
-	 * @see dsm.TRADES.TRADESPackage#getComponent_Threatallocation()
+	 * @return the value of the '<em>Threat Allocations</em>' containment reference list.
+	 * @see dsm.TRADES.TRADESPackage#getComponent_ThreatAllocations()
 	 * @see dsm.TRADES.ThreatAllocationRelation#getComponent
-	 * @model opposite="component"
+	 * @model opposite="component" containment="true"
 	 * @generated
 	 */
-	EList<ThreatAllocationRelation> getThreatallocation();
+	EList<ThreatAllocationRelation> getThreatAllocations();
 
 	/**
 	 * Returns the value of the '<em><b>Control</b></em>' containment reference list.

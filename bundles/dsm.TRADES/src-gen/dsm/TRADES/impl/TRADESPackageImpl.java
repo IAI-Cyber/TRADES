@@ -313,7 +313,7 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getAnalysis_Threatallocation() {
+	public EReference getAnalysis_Threatmitigation() {
 		return (EReference) analysisEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -323,7 +323,7 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getAnalysis_Threatmitigation() {
+	public EReference getAnalysis_Affectrelation() {
 		return (EReference) analysisEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -333,18 +333,8 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getAnalysis_Affectrelation() {
-		return (EReference) analysisEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EReference getAnalysis_Scoresystem() {
-		return (EReference) analysisEClass.getEStructuralFeatures().get(5);
+		return (EReference) analysisEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -453,7 +443,7 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getComponent_Threatallocation() {
+	public EReference getComponent_ThreatAllocations() {
 		return (EReference) componentEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -613,7 +603,7 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getThreatAllocationRelation_ThreatDecomposed() {
+	public EReference getThreatAllocationRelation_ThreatRelated() {
 		return (EReference) threatAllocationRelationEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -623,18 +613,8 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getThreatAllocationRelation_ThreatRelated() {
-		return (EReference) threatAllocationRelationEClass.getEStructuralFeatures().get(6);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EReference getThreatAllocationRelation_AttackChains() {
-		return (EReference) threatAllocationRelationEClass.getEStructuralFeatures().get(7);
+		return (EReference) threatAllocationRelationEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -1140,7 +1120,6 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		analysisEClass = createEClass(ANALYSIS);
 		createEReference(analysisEClass, ANALYSIS__THREAT);
 		createEReference(analysisEClass, ANALYSIS__CONTROL);
-		createEReference(analysisEClass, ANALYSIS__THREATALLOCATION);
 		createEReference(analysisEClass, ANALYSIS__THREATMITIGATION);
 		createEReference(analysisEClass, ANALYSIS__AFFECTRELATION);
 		createEReference(analysisEClass, ANALYSIS__SCORESYSTEM);
@@ -1156,7 +1135,7 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		componentEClass = createEClass(COMPONENT);
 		createEReference(componentEClass, COMPONENT__ALLOCATED_THREAT);
 		createEReference(componentEClass, COMPONENT__IMPLEMENTS);
-		createEReference(componentEClass, COMPONENT__THREATALLOCATION);
+		createEReference(componentEClass, COMPONENT__THREAT_ALLOCATIONS);
 		createEReference(componentEClass, COMPONENT__CONTROL);
 		createEReference(componentEClass, COMPONENT__ANALYSIS);
 		createEReference(componentEClass, COMPONENT__AFFECTRELATION);
@@ -1174,7 +1153,6 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		createEReference(threatAllocationRelationEClass, THREAT_ALLOCATION_RELATION__THREAT);
 		createEReference(threatAllocationRelationEClass, THREAT_ALLOCATION_RELATION__IMPACTSCORE);
 		createEReference(threatAllocationRelationEClass, THREAT_ALLOCATION_RELATION__DIFFICULTYSCORE);
-		createEReference(threatAllocationRelationEClass, THREAT_ALLOCATION_RELATION__THREAT_DECOMPOSED);
 		createEReference(threatAllocationRelationEClass, THREAT_ALLOCATION_RELATION__THREAT_RELATED);
 		createEReference(threatAllocationRelationEClass, THREAT_ALLOCATION_RELATION__ATTACK_CHAINS);
 
@@ -1303,9 +1281,6 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		initEReference(getAnalysis_Control(), this.getControl(), null, "control", null, 0, -1, Analysis.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAnalysis_Threatallocation(), this.getThreatAllocationRelation(), null, "threatallocation",
-				null, 0, -1, Analysis.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
-				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAnalysis_Threatmitigation(), this.getThreatMitigationRelation(), null, "threatmitigation",
 				null, 0, -1, Analysis.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
 				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1341,9 +1316,9 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		initEReference(getComponent_Implements(), this.getControl(), this.getControl_ImplementedBy(), "implements",
 				null, 0, -1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
 				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getComponent_Threatallocation(), this.getThreatAllocationRelation(),
-				this.getThreatAllocationRelation_Component(), "threatallocation", null, 0, -1, Component.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+		initEReference(getComponent_ThreatAllocations(), this.getThreatAllocationRelation(),
+				this.getThreatAllocationRelation_Component(), "threatAllocations", null, 0, -1, Component.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getComponent_Control(), this.getControl(), null, "control", null, 0, -1, Component.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
@@ -1376,8 +1351,8 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 				1, ThreatAllocationRelation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getThreatAllocationRelation_Component(), this.getComponent(),
-				this.getComponent_Threatallocation(), "component", null, 1, 1, ThreatAllocationRelation.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				this.getComponent_ThreatAllocations(), "component", null, 1, 1, ThreatAllocationRelation.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getThreatAllocationRelation_Threat(), this.getThreat(), this.getThreat_Threatallocation(),
 				"threat", null, 1, 1, ThreatAllocationRelation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
@@ -1388,9 +1363,6 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		initEReference(getThreatAllocationRelation_Difficultyscore(), this.getDifficultyScore(), null,
 				"difficultyscore", null, 0, 1, ThreatAllocationRelation.class, !IS_TRANSIENT, !IS_VOLATILE,
 				IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getThreatAllocationRelation_ThreatDecomposed(), this.getThreatAllocationRelation(), null,
-				"threatDecomposed", null, 0, -1, ThreatAllocationRelation.class, !IS_TRANSIENT, !IS_VOLATILE,
-				IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getThreatAllocationRelation_ThreatRelated(), this.getThreatAllocationRelation(), null,
 				"threatRelated", null, 0, -1, ThreatAllocationRelation.class, !IS_TRANSIENT, !IS_VOLATILE,
 				IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

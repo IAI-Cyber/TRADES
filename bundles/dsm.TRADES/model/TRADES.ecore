@@ -9,8 +9,6 @@
         eType="#//Threat" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="control" upperBound="-1"
         eType="#//Control" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="threatallocation" upperBound="-1"
-        eType="#//ThreatAllocationRelation" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="threatmitigation" upperBound="-1"
         eType="#//ThreatMitigationRelation" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="affectrelation" upperBound="-1"
@@ -33,8 +31,8 @@
         eType="#//Threat" eOpposite="#//Threat/allocated"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="implements" upperBound="-1"
         eType="#//Control" eOpposite="#//Control/implementedBy"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="threatallocation" upperBound="-1"
-        eType="#//ThreatAllocationRelation" eOpposite="#//ThreatAllocationRelation/component"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="threatAllocations" upperBound="-1"
+        eType="#//ThreatAllocationRelation" containment="true" eOpposite="#//ThreatAllocationRelation/component"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="control" upperBound="-1"
         eType="#//Control" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="analysis" upperBound="-1"
@@ -56,13 +54,11 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="assessment" lowerBound="1"
         eType="#//AssessmentENUM" defaultValueLiteral="Undecided"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="component" lowerBound="1"
-        eType="#//Component" eOpposite="#//Component/threatallocation"/>
+        eType="#//Component" eOpposite="#//Component/threatAllocations"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="threat" lowerBound="1"
         eType="#//Threat" eOpposite="#//Threat/threatallocation"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="impactscore" eType="#//ImpactScore"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="difficultyscore" eType="#//DifficultyScore"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="threatDecomposed" upperBound="-1"
-        eType="#//ThreatAllocationRelation" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="threatRelated" upperBound="-1"
         eType="#//ThreatAllocationRelation"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="attackChains" upperBound="-1"

@@ -25,6 +25,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -40,7 +41,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dsm.TRADES.impl.ComponentImpl#getName <em>Name</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ComponentImpl#getAllocatedThreat <em>Allocated Threat</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ComponentImpl#getImplements <em>Implements</em>}</li>
- *   <li>{@link dsm.TRADES.impl.ComponentImpl#getThreatallocation <em>Threatallocation</em>}</li>
+ *   <li>{@link dsm.TRADES.impl.ComponentImpl#getThreatAllocations <em>Threat Allocations</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ComponentImpl#getControl <em>Control</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ComponentImpl#getAnalysis <em>Analysis</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ComponentImpl#getAffectrelation <em>Affectrelation</em>}</li>
@@ -101,14 +102,14 @@ public class ComponentImpl extends ComponentOwerImpl implements Component {
 	protected EList<Control> implements_;
 
 	/**
-	 * The cached value of the '{@link #getThreatallocation() <em>Threatallocation</em>}' reference list.
+	 * The cached value of the '{@link #getThreatAllocations() <em>Threat Allocations</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getThreatallocation()
+	 * @see #getThreatAllocations()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<ThreatAllocationRelation> threatallocation;
+	protected EList<ThreatAllocationRelation> threatAllocations;
 
 	/**
 	 * The cached value of the '{@link #getControl() <em>Control</em>}' containment reference list.
@@ -203,6 +204,21 @@ public class ComponentImpl extends ComponentOwerImpl implements Component {
 	 * @generated
 	 */
 	@Override
+	public EList<ThreatAllocationRelation> getThreatAllocations() {
+		if (threatAllocations == null) {
+			threatAllocations = new EObjectContainmentWithInverseEList<ThreatAllocationRelation>(
+					ThreatAllocationRelation.class, this, TRADESPackage.COMPONENT__THREAT_ALLOCATIONS,
+					TRADESPackage.THREAT_ALLOCATION_RELATION__COMPONENT);
+		}
+		return threatAllocations;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -218,21 +234,6 @@ public class ComponentImpl extends ComponentOwerImpl implements Component {
 		name = newName;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TRADESPackage.COMPONENT__NAME, oldName, name));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EList<ThreatAllocationRelation> getThreatallocation() {
-		if (threatallocation == null) {
-			threatallocation = new EObjectWithInverseResolvingEList<ThreatAllocationRelation>(
-					ThreatAllocationRelation.class, this, TRADESPackage.COMPONENT__THREATALLOCATION,
-					TRADESPackage.THREAT_ALLOCATION_RELATION__COMPONENT);
-		}
-		return threatallocation;
 	}
 
 	/**
@@ -314,8 +315,9 @@ public class ComponentImpl extends ComponentOwerImpl implements Component {
 			return ((InternalEList<InternalEObject>) (InternalEList<?>) getAllocatedThreat()).basicAdd(otherEnd, msgs);
 		case TRADESPackage.COMPONENT__IMPLEMENTS:
 			return ((InternalEList<InternalEObject>) (InternalEList<?>) getImplements()).basicAdd(otherEnd, msgs);
-		case TRADESPackage.COMPONENT__THREATALLOCATION:
-			return ((InternalEList<InternalEObject>) (InternalEList<?>) getThreatallocation()).basicAdd(otherEnd, msgs);
+		case TRADESPackage.COMPONENT__THREAT_ALLOCATIONS:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getThreatAllocations()).basicAdd(otherEnd,
+					msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -334,8 +336,8 @@ public class ComponentImpl extends ComponentOwerImpl implements Component {
 			return ((InternalEList<?>) getAllocatedThreat()).basicRemove(otherEnd, msgs);
 		case TRADESPackage.COMPONENT__IMPLEMENTS:
 			return ((InternalEList<?>) getImplements()).basicRemove(otherEnd, msgs);
-		case TRADESPackage.COMPONENT__THREATALLOCATION:
-			return ((InternalEList<?>) getThreatallocation()).basicRemove(otherEnd, msgs);
+		case TRADESPackage.COMPONENT__THREAT_ALLOCATIONS:
+			return ((InternalEList<?>) getThreatAllocations()).basicRemove(otherEnd, msgs);
 		case TRADESPackage.COMPONENT__CONTROL:
 			return ((InternalEList<?>) getControl()).basicRemove(otherEnd, msgs);
 		case TRADESPackage.COMPONENT__ANALYSIS:
@@ -364,8 +366,8 @@ public class ComponentImpl extends ComponentOwerImpl implements Component {
 			return getAllocatedThreat();
 		case TRADESPackage.COMPONENT__IMPLEMENTS:
 			return getImplements();
-		case TRADESPackage.COMPONENT__THREATALLOCATION:
-			return getThreatallocation();
+		case TRADESPackage.COMPONENT__THREAT_ALLOCATIONS:
+			return getThreatAllocations();
 		case TRADESPackage.COMPONENT__CONTROL:
 			return getControl();
 		case TRADESPackage.COMPONENT__ANALYSIS:
@@ -402,9 +404,9 @@ public class ComponentImpl extends ComponentOwerImpl implements Component {
 			getImplements().clear();
 			getImplements().addAll((Collection<? extends Control>) newValue);
 			return;
-		case TRADESPackage.COMPONENT__THREATALLOCATION:
-			getThreatallocation().clear();
-			getThreatallocation().addAll((Collection<? extends ThreatAllocationRelation>) newValue);
+		case TRADESPackage.COMPONENT__THREAT_ALLOCATIONS:
+			getThreatAllocations().clear();
+			getThreatAllocations().addAll((Collection<? extends ThreatAllocationRelation>) newValue);
 			return;
 		case TRADESPackage.COMPONENT__CONTROL:
 			getControl().clear();
@@ -446,8 +448,8 @@ public class ComponentImpl extends ComponentOwerImpl implements Component {
 		case TRADESPackage.COMPONENT__IMPLEMENTS:
 			getImplements().clear();
 			return;
-		case TRADESPackage.COMPONENT__THREATALLOCATION:
-			getThreatallocation().clear();
+		case TRADESPackage.COMPONENT__THREAT_ALLOCATIONS:
+			getThreatAllocations().clear();
 			return;
 		case TRADESPackage.COMPONENT__CONTROL:
 			getControl().clear();
@@ -481,8 +483,8 @@ public class ComponentImpl extends ComponentOwerImpl implements Component {
 			return allocatedThreat != null && !allocatedThreat.isEmpty();
 		case TRADESPackage.COMPONENT__IMPLEMENTS:
 			return implements_ != null && !implements_.isEmpty();
-		case TRADESPackage.COMPONENT__THREATALLOCATION:
-			return threatallocation != null && !threatallocation.isEmpty();
+		case TRADESPackage.COMPONENT__THREAT_ALLOCATIONS:
+			return threatAllocations != null && !threatAllocations.isEmpty();
 		case TRADESPackage.COMPONENT__CONTROL:
 			return control != null && !control.isEmpty();
 		case TRADESPackage.COMPONENT__ANALYSIS:

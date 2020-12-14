@@ -20,6 +20,7 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+
 import dsm.TRADES.Component;
 import dsm.TRADES.TRADESFactory;
 import dsm.TRADES.TRADESPackage;
@@ -170,7 +171,6 @@ public class ThreatAllocationRelationItemProvider extends ItemProviderAdapter im
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(TRADESPackage.Literals.THREAT_ALLOCATION_RELATION__THREAT_DECOMPOSED);
 			childrenFeatures.add(TRADESPackage.Literals.THREAT_ALLOCATION_RELATION__ATTACK_CHAINS);
 		}
 		return childrenFeatures;
@@ -235,8 +235,7 @@ public class ThreatAllocationRelationItemProvider extends ItemProviderAdapter im
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated not
 	 */
 	@Override
@@ -246,10 +245,8 @@ public class ThreatAllocationRelationItemProvider extends ItemProviderAdapter im
 		switch (notification.getFeatureID(ThreatAllocationRelation.class)) {
 		case TRADESPackage.THREAT_ALLOCATION_RELATION__ASSESSMENT:
 		case TRADESPackage.THREAT_ALLOCATION_RELATION__THREAT:
-		case TRADESPackage.THREAT_ALLOCATION_RELATION__COMPONENT:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
-		case TRADESPackage.THREAT_ALLOCATION_RELATION__THREAT_DECOMPOSED:
 		case TRADESPackage.THREAT_ALLOCATION_RELATION__ATTACK_CHAINS:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
@@ -267,10 +264,6 @@ public class ThreatAllocationRelationItemProvider extends ItemProviderAdapter im
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors
-				.add(createChildParameter(TRADESPackage.Literals.THREAT_ALLOCATION_RELATION__THREAT_DECOMPOSED,
-						TRADESFactory.eINSTANCE.createThreatAllocationRelation()));
 
 		newChildDescriptors.add(createChildParameter(TRADESPackage.Literals.THREAT_ALLOCATION_RELATION__ATTACK_CHAINS,
 				TRADESFactory.eINSTANCE.createAttackChain()));

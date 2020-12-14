@@ -156,22 +156,13 @@ public interface TRADESPackage extends EPackage {
 	int ANALYSIS__CONTROL = COMPONENT_OWER_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Threatallocation</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ANALYSIS__THREATALLOCATION = COMPONENT_OWER_FEATURE_COUNT + 4;
-
-	/**
 	 * The feature id for the '<em><b>Threatmitigation</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ANALYSIS__THREATMITIGATION = COMPONENT_OWER_FEATURE_COUNT + 5;
+	int ANALYSIS__THREATMITIGATION = COMPONENT_OWER_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Affectrelation</b></em>' containment reference list.
@@ -180,7 +171,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ANALYSIS__AFFECTRELATION = COMPONENT_OWER_FEATURE_COUNT + 6;
+	int ANALYSIS__AFFECTRELATION = COMPONENT_OWER_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Scoresystem</b></em>' containment reference.
@@ -189,7 +180,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ANALYSIS__SCORESYSTEM = COMPONENT_OWER_FEATURE_COUNT + 7;
+	int ANALYSIS__SCORESYSTEM = COMPONENT_OWER_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of structural features of the '<em>Analysis</em>' class.
@@ -198,7 +189,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ANALYSIS_FEATURE_COUNT = COMPONENT_OWER_FEATURE_COUNT + 8;
+	int ANALYSIS_FEATURE_COUNT = COMPONENT_OWER_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of operations of the '<em>Analysis</em>' class.
@@ -393,13 +384,13 @@ public interface TRADESPackage extends EPackage {
 	int COMPONENT__IMPLEMENTS = COMPONENT_OWER_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Threatallocation</b></em>' reference list.
+	 * The feature id for the '<em><b>Threat Allocations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__THREATALLOCATION = COMPONENT_OWER_FEATURE_COUNT + 4;
+	int COMPONENT__THREAT_ALLOCATIONS = COMPONENT_OWER_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Control</b></em>' containment reference list.
@@ -548,7 +539,7 @@ public interface TRADESPackage extends EPackage {
 	int THREAT_ALLOCATION_RELATION__ASSESSMENT = 0;
 
 	/**
-	 * The feature id for the '<em><b>Component</b></em>' reference.
+	 * The feature id for the '<em><b>Component</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -584,22 +575,13 @@ public interface TRADESPackage extends EPackage {
 	int THREAT_ALLOCATION_RELATION__DIFFICULTYSCORE = 4;
 
 	/**
-	 * The feature id for the '<em><b>Threat Decomposed</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int THREAT_ALLOCATION_RELATION__THREAT_DECOMPOSED = 5;
-
-	/**
 	 * The feature id for the '<em><b>Threat Related</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int THREAT_ALLOCATION_RELATION__THREAT_RELATED = 6;
+	int THREAT_ALLOCATION_RELATION__THREAT_RELATED = 5;
 
 	/**
 	 * The feature id for the '<em><b>Attack Chains</b></em>' containment reference list.
@@ -608,7 +590,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int THREAT_ALLOCATION_RELATION__ATTACK_CHAINS = 7;
+	int THREAT_ALLOCATION_RELATION__ATTACK_CHAINS = 6;
 
 	/**
 	 * The number of structural features of the '<em>Threat Allocation Relation</em>' class.
@@ -617,7 +599,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int THREAT_ALLOCATION_RELATION_FEATURE_COUNT = 8;
+	int THREAT_ALLOCATION_RELATION_FEATURE_COUNT = 7;
 
 	/**
 	 * The number of operations of the '<em>Threat Allocation Relation</em>' class.
@@ -1506,17 +1488,6 @@ public interface TRADESPackage extends EPackage {
 	EReference getAnalysis_Control();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link dsm.TRADES.Analysis#getThreatallocation <em>Threatallocation</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Threatallocation</em>'.
-	 * @see dsm.TRADES.Analysis#getThreatallocation()
-	 * @see #getAnalysis()
-	 * @generated
-	 */
-	EReference getAnalysis_Threatallocation();
-
-	/**
 	 * Returns the meta object for the containment reference list '{@link dsm.TRADES.Analysis#getThreatmitigation <em>Threatmitigation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1658,15 +1629,15 @@ public interface TRADESPackage extends EPackage {
 	EReference getComponent_Implements();
 
 	/**
-	 * Returns the meta object for the reference list '{@link dsm.TRADES.Component#getThreatallocation <em>Threatallocation</em>}'.
+	 * Returns the meta object for the containment reference list '{@link dsm.TRADES.Component#getThreatAllocations <em>Threat Allocations</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Threatallocation</em>'.
-	 * @see dsm.TRADES.Component#getThreatallocation()
+	 * @return the meta object for the containment reference list '<em>Threat Allocations</em>'.
+	 * @see dsm.TRADES.Component#getThreatAllocations()
 	 * @see #getComponent()
 	 * @generated
 	 */
-	EReference getComponent_Threatallocation();
+	EReference getComponent_ThreatAllocations();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link dsm.TRADES.Component#getControl <em>Control</em>}'.
@@ -1788,10 +1759,10 @@ public interface TRADESPackage extends EPackage {
 	EAttribute getThreatAllocationRelation_Assessment();
 
 	/**
-	 * Returns the meta object for the reference '{@link dsm.TRADES.ThreatAllocationRelation#getComponent <em>Component</em>}'.
+	 * Returns the meta object for the container reference '{@link dsm.TRADES.ThreatAllocationRelation#getComponent <em>Component</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Component</em>'.
+	 * @return the meta object for the container reference '<em>Component</em>'.
 	 * @see dsm.TRADES.ThreatAllocationRelation#getComponent()
 	 * @see #getThreatAllocationRelation()
 	 * @generated
@@ -1830,17 +1801,6 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getThreatAllocationRelation_Difficultyscore();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link dsm.TRADES.ThreatAllocationRelation#getThreatDecomposed <em>Threat Decomposed</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Threat Decomposed</em>'.
-	 * @see dsm.TRADES.ThreatAllocationRelation#getThreatDecomposed()
-	 * @see #getThreatAllocationRelation()
-	 * @generated
-	 */
-	EReference getThreatAllocationRelation_ThreatDecomposed();
 
 	/**
 	 * Returns the meta object for the reference list '{@link dsm.TRADES.ThreatAllocationRelation#getThreatRelated <em>Threat Related</em>}'.
@@ -2413,14 +2373,6 @@ public interface TRADESPackage extends EPackage {
 		EReference ANALYSIS__CONTROL = eINSTANCE.getAnalysis_Control();
 
 		/**
-		 * The meta object literal for the '<em><b>Threatallocation</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ANALYSIS__THREATALLOCATION = eINSTANCE.getAnalysis_Threatallocation();
-
-		/**
 		 * The meta object literal for the '<em><b>Threatmitigation</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2529,12 +2481,12 @@ public interface TRADESPackage extends EPackage {
 		EReference COMPONENT__IMPLEMENTS = eINSTANCE.getComponent_Implements();
 
 		/**
-		 * The meta object literal for the '<em><b>Threatallocation</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Threat Allocations</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference COMPONENT__THREATALLOCATION = eINSTANCE.getComponent_Threatallocation();
+		EReference COMPONENT__THREAT_ALLOCATIONS = eINSTANCE.getComponent_ThreatAllocations();
 
 		/**
 		 * The meta object literal for the '<em><b>Control</b></em>' containment reference list feature.
@@ -2629,7 +2581,7 @@ public interface TRADESPackage extends EPackage {
 		EAttribute THREAT_ALLOCATION_RELATION__ASSESSMENT = eINSTANCE.getThreatAllocationRelation_Assessment();
 
 		/**
-		 * The meta object literal for the '<em><b>Component</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Component</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -2660,15 +2612,6 @@ public interface TRADESPackage extends EPackage {
 		 */
 		EReference THREAT_ALLOCATION_RELATION__DIFFICULTYSCORE = eINSTANCE
 				.getThreatAllocationRelation_Difficultyscore();
-
-		/**
-		 * The meta object literal for the '<em><b>Threat Decomposed</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference THREAT_ALLOCATION_RELATION__THREAT_DECOMPOSED = eINSTANCE
-				.getThreatAllocationRelation_ThreatDecomposed();
 
 		/**
 		 * The meta object literal for the '<em><b>Threat Related</b></em>' reference list feature.
