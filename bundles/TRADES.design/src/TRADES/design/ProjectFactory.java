@@ -23,7 +23,7 @@ public class ProjectFactory {
 
 		ThreatType internalThreatFolder = threatOwner.getExternal();
 		internalThreatFolder = TRADESFactory.eINSTANCE.createThreatType();
-		internalThreatFolder.setName("Internal");
+		internalThreatFolder.setName("Internals");
 		threatOwner.setInternal(internalThreatFolder);
 
 		ThreatType externalThreatFolder = threatOwner.getExternal();
