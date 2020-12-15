@@ -19,6 +19,12 @@ location "https://s3-eu-west-1.amazonaws.com/obeo-m2doc-releases/3.1.0/repositor
 	org.obeonetwork.m2doc.ui.feature.feature.group lazy
 }
 
+location "http://download.eclipse.org/e4/snapshots/org.eclipse.e4.tools/latest/" {
+	org.eclipse.e4.tools.bundle.spy.feature.feature.group lazy
+	org.eclipse.e4.tools.model.spy.feature.feature.group lazy
+	
+}
+
 
 location "http://download.eclipse.org/sirius/updates/releases/6.3.4/2020-06" {
 	//Sirius
