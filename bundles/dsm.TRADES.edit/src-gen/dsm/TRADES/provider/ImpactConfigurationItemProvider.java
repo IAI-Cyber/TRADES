@@ -19,9 +19,8 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
-import dsm.TRADES.DifficultyScore;
 import dsm.TRADES.ImpactConfiguration;
+import dsm.TRADES.RGBColor;
 import dsm.TRADES.TRADESPackage;
 
 /**
@@ -111,21 +110,16 @@ public class ImpactConfigurationItemProvider extends ItemProviderAdapter impleme
 	}
 
 	/**
+	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated not
+	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		ImpactConfiguration impactConfiguration = (ImpactConfiguration) object;
-
-		DifficultyScore difficulty = impactConfiguration.getDifficulty();
-		if (difficulty != null) {
-			return ((IItemLabelProvider) getRootAdapterFactory().adapt(difficulty, IItemLabelProvider.class))
-					.getText(difficulty);
-		} else {
-			return "";
-		}
+		RGBColor labelValue = ((ImpactConfiguration) object).getColor();
+		String label = labelValue == null ? null : labelValue.toString();
+		return label == null || label.length() == 0 ? getString("_UI_ImpactConfiguration_type")
+				: getString("_UI_ImpactConfiguration_type") + " " + label;
 	}
 
 	/**

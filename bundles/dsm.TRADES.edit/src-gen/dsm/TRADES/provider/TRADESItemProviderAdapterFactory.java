@@ -119,7 +119,7 @@ public class TRADESItemProviderAdapterFactory extends TRADESAdapterFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ThreatItemProvider threatItemProvider;
+	protected ThreatItemProviderCustomImpl threatItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link dsm.TRADES.Threat}.
@@ -130,7 +130,7 @@ public class TRADESItemProviderAdapterFactory extends TRADESAdapterFactory
 	@Override
 	public Adapter createThreatAdapter() {
 		if (threatItemProvider == null) {
-			threatItemProvider = new ThreatItemProvider(this);
+			threatItemProvider = new ThreatItemProviderCustomImpl(this);
 		}
 
 		return threatItemProvider;
@@ -142,7 +142,7 @@ public class TRADESItemProviderAdapterFactory extends TRADESAdapterFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ComponentItemProvider componentItemProvider;
+	protected ComponentItemProviderCustomImpl componentItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link dsm.TRADES.Component}.
@@ -153,7 +153,7 @@ public class TRADESItemProviderAdapterFactory extends TRADESAdapterFactory
 	@Override
 	public Adapter createComponentAdapter() {
 		if (componentItemProvider == null) {
-			componentItemProvider = new ComponentItemProvider(this);
+			componentItemProvider = new ComponentItemProviderCustomImpl(this);
 		}
 
 		return componentItemProvider;
@@ -188,7 +188,7 @@ public class TRADESItemProviderAdapterFactory extends TRADESAdapterFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ThreatAllocationRelationItemProvider threatAllocationRelationItemProvider;
+	protected ThreatAllocationRelationItemProviderCustomImpl threatAllocationRelationItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link dsm.TRADES.ThreatAllocationRelation}.
@@ -199,7 +199,7 @@ public class TRADESItemProviderAdapterFactory extends TRADESAdapterFactory
 	@Override
 	public Adapter createThreatAllocationRelationAdapter() {
 		if (threatAllocationRelationItemProvider == null) {
-			threatAllocationRelationItemProvider = new ThreatAllocationRelationItemProvider(this);
+			threatAllocationRelationItemProvider = new ThreatAllocationRelationItemProviderCustomImpl(this);
 		}
 
 		return threatAllocationRelationItemProvider;
@@ -349,7 +349,7 @@ public class TRADESItemProviderAdapterFactory extends TRADESAdapterFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ImpactScoreItemProvider impactScoreItemProvider;
+	protected ImpactScoreItemProviderCustomImpl impactScoreItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link dsm.TRADES.ImpactScore}.
@@ -360,7 +360,7 @@ public class TRADESItemProviderAdapterFactory extends TRADESAdapterFactory
 	@Override
 	public Adapter createImpactScoreAdapter() {
 		if (impactScoreItemProvider == null) {
-			impactScoreItemProvider = new ImpactScoreItemProvider(this);
+			impactScoreItemProvider = new ImpactScoreItemProviderCustomImpl(this);
 		}
 
 		return impactScoreItemProvider;
@@ -372,7 +372,7 @@ public class TRADESItemProviderAdapterFactory extends TRADESAdapterFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected DifficultyScoreItemProvider difficultyScoreItemProvider;
+	protected DifficultyScoreItemProviderCustomImpl difficultyScoreItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link dsm.TRADES.DifficultyScore}.
@@ -383,7 +383,7 @@ public class TRADESItemProviderAdapterFactory extends TRADESAdapterFactory
 	@Override
 	public Adapter createDifficultyScoreAdapter() {
 		if (difficultyScoreItemProvider == null) {
-			difficultyScoreItemProvider = new DifficultyScoreItemProvider(this);
+			difficultyScoreItemProvider = new DifficultyScoreItemProviderCustomImpl(this);
 		}
 
 		return difficultyScoreItemProvider;
@@ -395,7 +395,7 @@ public class TRADESItemProviderAdapterFactory extends TRADESAdapterFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ExternalThreatItemProvider externalThreatItemProvider;
+	protected ExternalThreatItemProviderCustomImpl externalThreatItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link dsm.TRADES.ExternalThreat}.
@@ -406,7 +406,7 @@ public class TRADESItemProviderAdapterFactory extends TRADESAdapterFactory
 	@Override
 	public Adapter createExternalThreatAdapter() {
 		if (externalThreatItemProvider == null) {
-			externalThreatItemProvider = new ExternalThreatItemProvider(this);
+			externalThreatItemProvider = new ExternalThreatItemProviderCustomImpl(this);
 		}
 
 		return externalThreatItemProvider;
@@ -418,7 +418,7 @@ public class TRADESItemProviderAdapterFactory extends TRADESAdapterFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ImpactConfigurationItemProvider impactConfigurationItemProvider;
+	protected ImpactConfigurationItemProviderCustomImpl impactConfigurationItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link dsm.TRADES.ImpactConfiguration}.
@@ -429,7 +429,7 @@ public class TRADESItemProviderAdapterFactory extends TRADESAdapterFactory
 	@Override
 	public Adapter createImpactConfigurationAdapter() {
 		if (impactConfigurationItemProvider == null) {
-			impactConfigurationItemProvider = new ImpactConfigurationItemProvider(this);
+			impactConfigurationItemProvider = new ImpactConfigurationItemProviderCustomImpl(this);
 		}
 
 		return impactConfigurationItemProvider;
@@ -464,7 +464,7 @@ public class TRADESItemProviderAdapterFactory extends TRADESAdapterFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ThreatTypeItemProvider threatTypeItemProvider;
+	protected ThreatTypeItemProviderCustomImpl threatTypeItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link dsm.TRADES.ThreatType}.
@@ -475,7 +475,7 @@ public class TRADESItemProviderAdapterFactory extends TRADESAdapterFactory
 	@Override
 	public Adapter createThreatTypeAdapter() {
 		if (threatTypeItemProvider == null) {
-			threatTypeItemProvider = new ThreatTypeItemProvider(this);
+			threatTypeItemProvider = new ThreatTypeItemProviderCustomImpl(this);
 		}
 
 		return threatTypeItemProvider;
@@ -487,7 +487,7 @@ public class TRADESItemProviderAdapterFactory extends TRADESAdapterFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ThreatsOwnerItemProvider threatsOwnerItemProvider;
+	protected ThreatsOwnerItemProviderCustomImpl threatsOwnerItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link dsm.TRADES.ThreatsOwner}.
@@ -498,7 +498,7 @@ public class TRADESItemProviderAdapterFactory extends TRADESAdapterFactory
 	@Override
 	public Adapter createThreatsOwnerAdapter() {
 		if (threatsOwnerItemProvider == null) {
-			threatsOwnerItemProvider = new ThreatsOwnerItemProvider(this);
+			threatsOwnerItemProvider = new ThreatsOwnerItemProviderCustomImpl(this);
 		}
 
 		return threatsOwnerItemProvider;

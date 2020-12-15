@@ -250,7 +250,7 @@ public class TRADESFactoryImpl extends EFactoryImpl implements TRADESFactory {
 	 */
 	@Override
 	public AttackChainStep createAttackChainStep() {
-		AttackChainStepImpl attackChainStep = new AttackChainStepImpl();
+		AttackChainStepCustomImpl attackChainStep = new AttackChainStepCustomImpl();
 		return attackChainStep;
 	}
 

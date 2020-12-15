@@ -2,6 +2,7 @@
  */
 package dsm.TRADES.provider;
 
+import dsm.TRADES.AssessmentENUM;
 import java.util.Collection;
 import java.util.List;
 
@@ -20,11 +21,8 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
-import dsm.TRADES.Component;
 import dsm.TRADES.TRADESFactory;
 import dsm.TRADES.TRADESPackage;
-import dsm.TRADES.Threat;
 import dsm.TRADES.ThreatAllocationRelation;
 
 /**
@@ -214,29 +212,21 @@ public class ThreatAllocationRelationItemProvider extends ItemProviderAdapter im
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated not
+	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = "";
-		ThreatAllocationRelation relation = ((ThreatAllocationRelation) object);
-		Threat threat = relation.getThreat();
-		if (threat != null && threat.getName() != null) {
-			label += threat.getName();
-		}
-		label += " on ";
-		Component component = relation.getComponent();
-		if (component != null && component.getName() != null) {
-			label += component.getName();
-		}
-		return label;
+		AssessmentENUM labelValue = ((ThreatAllocationRelation) object).getAssessment();
+		String label = labelValue == null ? null : labelValue.toString();
+		return label == null || label.length() == 0 ? getString("_UI_ThreatAllocationRelation_type")
+				: getString("_UI_ThreatAllocationRelation_type") + " " + label;
 	}
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated not
+	 * @generated
 	 */
 	@Override
 	public void notifyChanged(Notification notification) {
@@ -244,7 +234,6 @@ public class ThreatAllocationRelationItemProvider extends ItemProviderAdapter im
 
 		switch (notification.getFeatureID(ThreatAllocationRelation.class)) {
 		case TRADESPackage.THREAT_ALLOCATION_RELATION__ASSESSMENT:
-		case TRADESPackage.THREAT_ALLOCATION_RELATION__THREAT:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		case TRADESPackage.THREAT_ALLOCATION_RELATION__ATTACK_CHAINS:

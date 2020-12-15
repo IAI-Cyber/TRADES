@@ -2,8 +2,6 @@
  */
 package dsm.TRADES.provider;
 
-import dsm.TRADES.DifficultyScore;
-import dsm.TRADES.TRADESPackage;
 import java.util.Collection;
 import java.util.List;
 
@@ -13,6 +11,9 @@ import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+
+import dsm.TRADES.DifficultyScore;
+import dsm.TRADES.TRADESPackage;
 
 /**
  * This is the item provider adapter for a {@link dsm.TRADES.DifficultyScore} object.
@@ -83,17 +84,16 @@ public class DifficultyScoreItemProvider extends NamedElementItemProvider {
 	}
 
 	/**
-	 * This returns the label text for the adapted class. <!-- begin-user-doc -->
+	 * This returns the label text for the adapted class.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @generated not
+	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		DifficultyScore difficultyScore = (DifficultyScore) object;
-		String label = difficultyScore.getName() == null ? "" : " " + difficultyScore.getName();
-		String score = "[" + String.valueOf(difficultyScore.getDifficulty()) + "]";
-		return "Difficulty" + label + " " + score;
+		String label = ((DifficultyScore) object).getName();
+		return label == null || label.length() == 0 ? getString("_UI_DifficultyScore_type")
+				: getString("_UI_DifficultyScore_type") + " " + label;
 	}
 
 	/**

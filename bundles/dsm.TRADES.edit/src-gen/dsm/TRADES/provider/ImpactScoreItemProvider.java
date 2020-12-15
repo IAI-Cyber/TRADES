@@ -2,9 +2,6 @@
  */
 package dsm.TRADES.provider;
 
-import dsm.TRADES.ImpactScore;
-import dsm.TRADES.TRADESFactory;
-import dsm.TRADES.TRADESPackage;
 import java.util.Collection;
 import java.util.List;
 
@@ -15,6 +12,10 @@ import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+
+import dsm.TRADES.ImpactScore;
+import dsm.TRADES.TRADESFactory;
+import dsm.TRADES.TRADESPackage;
 
 /**
  * This is the item provider adapter for a {@link dsm.TRADES.ImpactScore} object.
@@ -136,14 +137,13 @@ public class ImpactScoreItemProvider extends NamedElementItemProvider {
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated not
+	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		ImpactScore impactScore = (ImpactScore) object;
-		String label = impactScore.getName() == null ? "" : " " + impactScore.getName();
-		String score = "[" + String.valueOf(impactScore.getImpact()) + "]";
-		return "Impact" + label + " " + score;
+		String label = ((ImpactScore) object).getName();
+		return label == null || label.length() == 0 ? getString("_UI_ImpactScore_type")
+				: getString("_UI_ImpactScore_type") + " " + label;
 	}
 
 	/**

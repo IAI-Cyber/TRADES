@@ -16,7 +16,6 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 import dsm.TRADES.Component;
 import dsm.TRADES.TRADESFactory;
 import dsm.TRADES.TRADESPackage;
-import dsm.TRADES.ThreatAllocationRelation;
 
 /**
  * This is the item provider adapter for a {@link dsm.TRADES.Component} object.
@@ -175,45 +174,35 @@ public class ComponentItemProvider extends ComponentOwerItemProvider {
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated not
+	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
 		String label = ((Component) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_Component_type") : label;
+		return label == null || label.length() == 0 ? getString("_UI_Component_type")
+				: getString("_UI_Component_type") + " " + label;
 	}
 
 	/**
-	 * This handles model notifications by calling {@link #updateChildren} to update
-	 * any cached children and by creating a viewer notification, which it passes to
-	 * {@link #fireNotifyChanged}. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated not
+	 * This handles model notifications by calling {@link #updateChildren} to update any cached
+	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
 	 */
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-
-		if (notification.getFeature() == TRADESPackage.eINSTANCE.getNamedElement_Name()) {
-			Object notifier = notification.getNotifier();
-			if (notifier instanceof Component) {
-				Component new_name = (Component) notifier;
-				for (ThreatAllocationRelation rel : new_name.getThreatAllocations()) {
-					fireNotifyChanged(new ViewerNotification(notification, rel, false, true));
-				}
-			}
-		}
 
 		switch (notification.getFeatureID(Component.class)) {
 		case TRADESPackage.COMPONENT__NAME:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		case TRADESPackage.COMPONENT__DATA:
+		case TRADESPackage.COMPONENT__CONTROL_OWNER:
 		case TRADESPackage.COMPONENT__THREAT_ALLOCATIONS:
 		case TRADESPackage.COMPONENT__ANALYSIS:
 		case TRADESPackage.COMPONENT__AFFECTRELATION:
 		case TRADESPackage.COMPONENT__THREAT:
-		case TRADESPackage.COMPONENT__CONTROL_OWNER:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}

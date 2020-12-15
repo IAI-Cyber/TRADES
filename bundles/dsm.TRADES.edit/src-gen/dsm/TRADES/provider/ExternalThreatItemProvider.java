@@ -2,19 +2,18 @@
  */
 package dsm.TRADES.provider;
 
-import dsm.TRADES.ExternalThreat;
-
-import dsm.TRADES.TRADESPackage;
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+
+import dsm.TRADES.ExternalThreat;
+import dsm.TRADES.TRADESPackage;
 
 /**
  * This is the item provider adapter for a {@link dsm.TRADES.ExternalThreat} object.
@@ -22,7 +21,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ExternalThreatItemProvider extends ThreatItemProvider {
+public class ExternalThreatItemProvider extends ThreatItemProviderCustomImpl {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -107,12 +106,13 @@ public class ExternalThreatItemProvider extends ThreatItemProvider {
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated not
+	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
 		String label = ((ExternalThreat) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_ExternalThreat_type") : "Ex " + label;
+		return label == null || label.length() == 0 ? getString("_UI_ExternalThreat_type")
+				: getString("_UI_ExternalThreat_type") + " " + label;
 	}
 
 	/**

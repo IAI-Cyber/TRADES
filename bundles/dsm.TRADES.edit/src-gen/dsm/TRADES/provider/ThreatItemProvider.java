@@ -2,10 +2,6 @@
  */
 package dsm.TRADES.provider;
 
-import dsm.TRADES.TRADESPackage;
-import dsm.TRADES.Threat;
-import dsm.TRADES.ThreatAllocationRelation;
-
 import java.util.Collection;
 import java.util.List;
 
@@ -15,6 +11,9 @@ import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+
+import dsm.TRADES.TRADESPackage;
+import dsm.TRADES.Threat;
 
 /**
  * This is the item provider adapter for a {@link dsm.TRADES.Threat} object.
@@ -172,34 +171,24 @@ public class ThreatItemProvider extends NamedElementItemProvider {
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated not
+	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
 		String label = ((Threat) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_Threat_type") : label;
+		return label == null || label.length() == 0 ? getString("_UI_Threat_type")
+				: getString("_UI_Threat_type") + " " + label;
 	}
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated not
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
 	 */
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-
-		if (notification.getFeatureID(Threat.class) == TRADESPackage.NAMED_ELEMENT__NAME) {
-			Object notifier = notification.getNotifier();
-			if (notifier instanceof Threat) {
-				Threat new_name = (Threat) notifier;
-				for (ThreatAllocationRelation rel : new_name.getThreatallocation()) {
-					fireNotifyChanged(new ViewerNotification(notification, rel, false, true));
-				}
-			}
-		}
 
 		switch (notification.getFeatureID(Threat.class)) {
 		case TRADESPackage.THREAT__THREAT_TYPE:
