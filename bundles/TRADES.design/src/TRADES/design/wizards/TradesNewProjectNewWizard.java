@@ -35,14 +35,7 @@ import org.eclipse.ui.dialogs.WizardNewProjectCreationPage;
 import org.eclipse.ui.wizards.newresource.BasicNewProjectResourceWizard;
 
 import TRADES.design.Activator;
-import dsm.TRADES.Analysis;
-import dsm.TRADES.DifficultyScore;
-import dsm.TRADES.ImpactConfiguration;
-import dsm.TRADES.ImpactScore;
-import dsm.TRADES.ScoreSystem;
-import dsm.TRADES.TRADESFactory;
-import dsm.TRADES.ThreatType;
-import dsm.TRADES.ThreatsOwner;
+import TRADES.design.ProjectFactory;
 
 /**
  * TRADES new project creation wizard
@@ -164,7 +157,7 @@ public class TradesNewProjectNewWizard extends BasicNewProjectResourceWizard imp
 						final Resource res = new ResourceSetImpl().createResource(semanticModelURI);
 
 						/* Add the initial model object to the contents. */
-						final EObject rootObject = createInitialModel(rootObjectName);
+						final EObject rootObject = ProjectFactory.createInitialModel(rootObjectName);
 
 						if (rootObject != null) {
 							res.getContents().add(rootObject);
@@ -180,56 +173,7 @@ public class TradesNewProjectNewWizard extends BasicNewProjectResourceWizard imp
 						session.save(new NullProgressMonitor());
 					}
 
-					private EObject createInitialModel(String rootObjectName) {
-						Analysis analysis = TRADESFactory.eINSTANCE.createAnalysis();
-						analysis.setName(rootObjectName);
 
-						ScoreSystem scoreSystem = TRADESFactory.eINSTANCE.createScoreSystem();
-						analysis.setScoresystem(scoreSystem);
-
-						ThreatsOwner threatOwner = TRADESFactory.eINSTANCE.createThreatsOwner();
-						analysis.setThreatOwner(threatOwner);
-
-						ThreatType internalThreatFolder = threatOwner.getExternal();
-						internalThreatFolder = TRADESFactory.eINSTANCE.createThreatType();
-						internalThreatFolder.setName("Internal");
-						threatOwner.setInternal(internalThreatFolder);
-
-						ThreatType externalThreatFolder = threatOwner.getExternal();
-						externalThreatFolder = TRADESFactory.eINSTANCE.createThreatType();
-						externalThreatFolder.setName("Externals");
-						threatOwner.setExternal(externalThreatFolder);
-
-						createDifficulty("Low", 1, scoreSystem);
-						createDifficulty("Medium", 2, scoreSystem);
-						createDifficulty("High", 3, scoreSystem);
-
-						createImpact("Low", 1, scoreSystem);
-						createImpact("Medium", 2, scoreSystem);
-						createImpact("High", 3, scoreSystem);
-
-						return analysis;
-					}
-
-					private void createDifficulty(String name, int score, ScoreSystem system) {
-						DifficultyScore diff = TRADESFactory.eINSTANCE.createDifficultyScore();
-						system.getDifficultyscore().add(diff);
-						diff.setName(name);
-						diff.setDifficulty(score);
-
-					}
-
-					private void createImpact(String name, int score, ScoreSystem system) {
-						ImpactScore impact = TRADESFactory.eINSTANCE.createImpactScore();
-						system.getImpactscore().add(impact);
-						impact.setName(name);
-						impact.setImpact(score);
-						for (DifficultyScore dif : system.getDifficultyscore()) {
-							ImpactConfiguration conf = TRADESFactory.eINSTANCE.createImpactConfiguration();
-							impact.getConfigurations().add(conf);
-							conf.setDifficulty(dif);
-						}
-					}
 				});
 		return Options.newSome(ResourcesPlugin.getWorkspace().getRoot().getFile(new Path(platformPath)));
 	}
