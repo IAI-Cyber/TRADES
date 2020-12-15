@@ -13,7 +13,6 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link dsm.TRADES.Analysis#getControl <em>Control</em>}</li>
  *   <li>{@link dsm.TRADES.Analysis#getAffectrelation <em>Affectrelation</em>}</li>
  *   <li>{@link dsm.TRADES.Analysis#getScoresystem <em>Scoresystem</em>}</li>
  *   <li>{@link dsm.TRADES.Analysis#getThreatOwner <em>Threat Owner</em>}</li>
@@ -23,23 +22,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface Analysis extends ComponentOwer, DataOwner, NamedElement {
-	/**
-	 * Returns the value of the '<em><b>Control</b></em>' containment reference list.
-	 * The list contents are of type {@link dsm.TRADES.Control}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Control</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Control</em>' containment reference list.
-	 * @see dsm.TRADES.TRADESPackage#getAnalysis_Control()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<Control> getControl();
-
+public interface Analysis extends ComponentOwer, DataOwner, NamedElement, AbstractControlOwner {
 	/**
 	 * Returns the value of the '<em><b>Affectrelation</b></em>' containment reference list.
 	 * The list contents are of type {@link dsm.TRADES.AffectRelation}.

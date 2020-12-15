@@ -2,6 +2,7 @@
  */
 package dsm.TRADES.impl;
 
+import dsm.TRADES.AbstractControlOwner;
 import dsm.TRADES.AffectRelation;
 import dsm.TRADES.AffectedENUM;
 import dsm.TRADES.Analysis;
@@ -11,6 +12,8 @@ import dsm.TRADES.AttackChainStep;
 import dsm.TRADES.Component;
 import dsm.TRADES.ComponentOwer;
 import dsm.TRADES.Control;
+import dsm.TRADES.ControlOwner;
+import dsm.TRADES.ControlType;
 import dsm.TRADES.Data;
 import dsm.TRADES.DataOwner;
 import dsm.TRADES.DifficultyScore;
@@ -206,6 +209,27 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass controlOwnerEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass controlTypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass abstractControlOwnerEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EEnum assessmentENUMEEnum = null;
 
 	/**
@@ -309,7 +333,7 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getAnalysis_Control() {
+	public EReference getAnalysis_Affectrelation() {
 		return (EReference) analysisEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -319,7 +343,7 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getAnalysis_Affectrelation() {
+	public EReference getAnalysis_Scoresystem() {
 		return (EReference) analysisEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -329,18 +353,8 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getAnalysis_Scoresystem() {
-		return (EReference) analysisEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EReference getAnalysis_ThreatOwner() {
-		return (EReference) analysisEClass.getEStructuralFeatures().get(3);
+		return (EReference) analysisEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -459,7 +473,7 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getComponent_Control() {
+	public EReference getComponent_Analysis() {
 		return (EReference) componentEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -469,7 +483,7 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getComponent_Analysis() {
+	public EReference getComponent_Affectrelation() {
 		return (EReference) componentEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -479,18 +493,8 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getComponent_Affectrelation() {
-		return (EReference) componentEClass.getEStructuralFeatures().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EReference getComponent_Threat() {
-		return (EReference) componentEClass.getEStructuralFeatures().get(6);
+		return (EReference) componentEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -1129,6 +1133,76 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * @generated
 	 */
 	@Override
+	public EClass getControlOwner() {
+		return controlOwnerEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getControlOwner_Internal() {
+		return (EReference) controlOwnerEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getControlOwner_External() {
+		return (EReference) controlOwnerEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getControlType() {
+		return controlTypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getControlType_Controls() {
+		return (EReference) controlTypeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getAbstractControlOwner() {
+		return abstractControlOwnerEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getAbstractControlOwner_ControlOwner() {
+		return (EReference) abstractControlOwnerEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EEnum getAssessmentENUM() {
 		return assessmentENUMEEnum;
 	}
@@ -1194,7 +1268,6 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 
 		// Create classes and their features
 		analysisEClass = createEClass(ANALYSIS);
-		createEReference(analysisEClass, ANALYSIS__CONTROL);
 		createEReference(analysisEClass, ANALYSIS__AFFECTRELATION);
 		createEReference(analysisEClass, ANALYSIS__SCORESYSTEM);
 		createEReference(analysisEClass, ANALYSIS__THREAT_OWNER);
@@ -1211,7 +1284,6 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		createEReference(componentEClass, COMPONENT__ALLOCATED_THREAT);
 		createEReference(componentEClass, COMPONENT__IMPLEMENTS);
 		createEReference(componentEClass, COMPONENT__THREAT_ALLOCATIONS);
-		createEReference(componentEClass, COMPONENT__CONTROL);
 		createEReference(componentEClass, COMPONENT__ANALYSIS);
 		createEReference(componentEClass, COMPONENT__AFFECTRELATION);
 		createEReference(componentEClass, COMPONENT__THREAT);
@@ -1298,6 +1370,16 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		createEReference(threatsOwnerEClass, THREATS_OWNER__INTERNAL);
 		createEReference(threatsOwnerEClass, THREATS_OWNER__EXTERNAL);
 
+		controlOwnerEClass = createEClass(CONTROL_OWNER);
+		createEReference(controlOwnerEClass, CONTROL_OWNER__INTERNAL);
+		createEReference(controlOwnerEClass, CONTROL_OWNER__EXTERNAL);
+
+		controlTypeEClass = createEClass(CONTROL_TYPE);
+		createEReference(controlTypeEClass, CONTROL_TYPE__CONTROLS);
+
+		abstractControlOwnerEClass = createEClass(ABSTRACT_CONTROL_OWNER);
+		createEReference(abstractControlOwnerEClass, ABSTRACT_CONTROL_OWNER__CONTROL_OWNER);
+
 		// Create enums
 		assessmentENUMEEnum = createEEnum(ASSESSMENT_ENUM);
 		affectedENUMEEnum = createEEnum(AFFECTED_ENUM);
@@ -1339,10 +1421,12 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		analysisEClass.getESuperTypes().add(this.getComponentOwer());
 		analysisEClass.getESuperTypes().add(this.getDataOwner());
 		analysisEClass.getESuperTypes().add(this.getNamedElement());
+		analysisEClass.getESuperTypes().add(this.getAbstractControlOwner());
 		threatEClass.getESuperTypes().add(this.getNamedElement());
 		componentEClass.getESuperTypes().add(this.getComponentOwer());
 		componentEClass.getESuperTypes().add(this.getDataOwner());
 		componentEClass.getESuperTypes().add(this.getNamedElement());
+		componentEClass.getESuperTypes().add(this.getAbstractControlOwner());
 		controlEClass.getESuperTypes().add(this.getNamedElement());
 		threatMitigationRelationEClass.getESuperTypes().add(this.getNamedElement());
 		dataEClass.getESuperTypes().add(this.getNamedElement());
@@ -1356,13 +1440,11 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		externalControlEClass.getESuperTypes().add(this.getExternalElement());
 		externalControlEClass.getESuperTypes().add(this.getControl());
 		threatTypeEClass.getESuperTypes().add(this.getNamedElement());
+		controlTypeEClass.getESuperTypes().add(this.getNamedElement());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(analysisEClass, Analysis.class, "Analysis", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAnalysis_Control(), this.getControl(), null, "control", null, 0, -1, Analysis.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAnalysis_Affectrelation(), this.getAffectRelation(), null, "affectrelation", null, 0, -1,
 				Analysis.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1400,9 +1482,6 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getComponent_ThreatAllocations(), this.getThreatAllocationRelation(),
 				this.getThreatAllocationRelation_Component(), "threatAllocations", null, 0, -1, Component.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getComponent_Control(), this.getControl(), null, "control", null, 0, -1, Component.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getComponent_Analysis(), this.getAnalysis(), null, "analysis", null, 0, -1, Component.class,
@@ -1599,6 +1678,27 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		initEReference(getThreatsOwner_External(), this.getThreatType(), null, "external", null, 1, 1,
 				ThreatsOwner.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(controlOwnerEClass, ControlOwner.class, "ControlOwner", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getControlOwner_Internal(), this.getControlType(), null, "internal", null, 1, 1,
+				ControlOwner.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getControlOwner_External(), this.getControlType(), null, "external", null, 1, 1,
+				ControlOwner.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(controlTypeEClass, ControlType.class, "ControlType", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getControlType_Controls(), this.getControl(), null, "controls", null, 0, -1, ControlType.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(abstractControlOwnerEClass, AbstractControlOwner.class, "AbstractControlOwner", IS_ABSTRACT,
+				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAbstractControlOwner_ControlOwner(), this.getControlOwner(), null, "controlOwner", null, 1, 1,
+				AbstractControlOwner.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
+				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(assessmentENUMEEnum, AssessmentENUM.class, "AssessmentENUM");

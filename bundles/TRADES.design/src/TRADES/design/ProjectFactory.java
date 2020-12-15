@@ -1,6 +1,9 @@
 package TRADES.design;
 
+import dsm.TRADES.AbstractControlOwner;
 import dsm.TRADES.Analysis;
+import dsm.TRADES.ControlOwner;
+import dsm.TRADES.ControlType;
 import dsm.TRADES.DifficultyScore;
 import dsm.TRADES.ImpactConfiguration;
 import dsm.TRADES.ImpactScore;
@@ -31,6 +34,8 @@ public class ProjectFactory {
 		externalThreatFolder.setName("Externals");
 		threatOwner.setExternal(externalThreatFolder);
 
+		createControlOwner(analysis);
+
 		createDifficulty("Low", 1, scoreSystem);
 		createDifficulty("Medium", 2, scoreSystem);
 		createDifficulty("High", 3, scoreSystem);
@@ -40,6 +45,19 @@ public class ProjectFactory {
 		createImpact("High", 3, scoreSystem);
 
 		return analysis;
+	}
+
+	public static void createControlOwner(AbstractControlOwner analysis) {
+		ControlOwner controlOwner = TRADESFactory.eINSTANCE.createControlOwner();
+		analysis.setControlOwner(controlOwner);
+
+		ControlType internalControlFolder = TRADESFactory.eINSTANCE.createControlType();
+		internalControlFolder.setName("Internals");
+		controlOwner.setInternal(internalControlFolder);
+
+		ControlType externalControlFolder = TRADESFactory.eINSTANCE.createControlType();
+		externalControlFolder.setName("Externals");
+		controlOwner.setExternal(externalControlFolder);
 	}
 
 	private static void createDifficulty(String name, int score, ScoreSystem system) {

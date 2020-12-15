@@ -25,6 +25,7 @@ import org.xml.sax.SAXException;
 
 import TRADES.design.ProjectFactory;
 import dsm.TRADES.Analysis;
+import dsm.TRADES.ControlType;
 import dsm.TRADES.ExternalControl;
 import dsm.TRADES.ExternalThreat;
 import dsm.TRADES.TRADESFactory;
@@ -77,7 +78,8 @@ public class InitCapec implements IApplication {
 						Node threatNode = attackPatternList.item(j);
 						if (threatNode instanceof Element) {
 
-							ExternalThreat threat = createNewThreat((Element) threatNode, analysis);
+							ExternalThreat threat = createNewThreat((Element) threatNode,
+									analysis.getControlOwner().getExternal());
 							threatOwner.getThreats().add(threat);
 						}
 					}
@@ -103,7 +105,7 @@ public class InitCapec implements IApplication {
 
 	private static Map<String, ExternalControl> idToControls = new HashMap<>();
 
-	private ExternalThreat createNewThreat(Element parent, Analysis root) {
+	private ExternalThreat createNewThreat(Element parent, ControlType externalControlsOwner) {
 		ExternalThreat extPattern = TRADESFactory.eINSTANCE.createExternalThreat();
 		extPattern.setName(parent.getAttribute("Name"));
 		String oritinalId = parent.getAttribute("ID");
@@ -132,7 +134,8 @@ public class InitCapec implements IApplication {
 					existingControl = TRADESFactory.eINSTANCE.createExternalControl();
 					existingControl.setName(textContent);
 					existingControl.setSource("Capec");
-					root.getControl().add(existingControl);
+
+					externalControlsOwner.getControls().add(existingControl);
 					idToControls.put(textContent, existingControl);
 				}
 

@@ -138,13 +138,13 @@ public interface TRADESPackage extends EPackage {
 	int ANALYSIS__NAME = COMPONENT_OWER_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Control</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Control Owner</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ANALYSIS__CONTROL = COMPONENT_OWER_FEATURE_COUNT + 2;
+	int ANALYSIS__CONTROL_OWNER = COMPONENT_OWER_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Affectrelation</b></em>' containment reference list.
@@ -357,13 +357,22 @@ public interface TRADESPackage extends EPackage {
 	int COMPONENT__NAME = COMPONENT_OWER_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Control Owner</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT__CONTROL_OWNER = COMPONENT_OWER_FEATURE_COUNT + 2;
+
+	/**
 	 * The feature id for the '<em><b>Allocated Threat</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__ALLOCATED_THREAT = COMPONENT_OWER_FEATURE_COUNT + 2;
+	int COMPONENT__ALLOCATED_THREAT = COMPONENT_OWER_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Implements</b></em>' reference list.
@@ -372,7 +381,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__IMPLEMENTS = COMPONENT_OWER_FEATURE_COUNT + 3;
+	int COMPONENT__IMPLEMENTS = COMPONENT_OWER_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Threat Allocations</b></em>' containment reference list.
@@ -381,16 +390,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__THREAT_ALLOCATIONS = COMPONENT_OWER_FEATURE_COUNT + 4;
-
-	/**
-	 * The feature id for the '<em><b>Control</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT__CONTROL = COMPONENT_OWER_FEATURE_COUNT + 5;
+	int COMPONENT__THREAT_ALLOCATIONS = COMPONENT_OWER_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Analysis</b></em>' containment reference list.
@@ -1526,6 +1526,135 @@ public interface TRADESPackage extends EPackage {
 	int THREATS_OWNER_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link dsm.TRADES.impl.ControlOwnerImpl <em>Control Owner</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see dsm.TRADES.impl.ControlOwnerImpl
+	 * @see dsm.TRADES.impl.TRADESPackageImpl#getControlOwner()
+	 * @generated
+	 */
+	int CONTROL_OWNER = 22;
+
+	/**
+	 * The feature id for the '<em><b>Internal</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL_OWNER__INTERNAL = 0;
+
+	/**
+	 * The feature id for the '<em><b>External</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL_OWNER__EXTERNAL = 1;
+
+	/**
+	 * The number of structural features of the '<em>Control Owner</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL_OWNER_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Control Owner</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL_OWNER_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link dsm.TRADES.impl.ControlTypeImpl <em>Control Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see dsm.TRADES.impl.ControlTypeImpl
+	 * @see dsm.TRADES.impl.TRADESPackageImpl#getControlType()
+	 * @generated
+	 */
+	int CONTROL_TYPE = 23;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL_TYPE__NAME = NAMED_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Controls</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL_TYPE__CONTROLS = NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Control Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL_TYPE_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Control Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL_TYPE_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link dsm.TRADES.impl.AbstractControlOwnerImpl <em>Abstract Control Owner</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see dsm.TRADES.impl.AbstractControlOwnerImpl
+	 * @see dsm.TRADES.impl.TRADESPackageImpl#getAbstractControlOwner()
+	 * @generated
+	 */
+	int ABSTRACT_CONTROL_OWNER = 24;
+
+	/**
+	 * The feature id for the '<em><b>Control Owner</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_CONTROL_OWNER__CONTROL_OWNER = 0;
+
+	/**
+	 * The number of structural features of the '<em>Abstract Control Owner</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_CONTROL_OWNER_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Abstract Control Owner</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_CONTROL_OWNER_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link dsm.TRADES.AssessmentENUM <em>Assessment ENUM</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1533,7 +1662,7 @@ public interface TRADESPackage extends EPackage {
 	 * @see dsm.TRADES.impl.TRADESPackageImpl#getAssessmentENUM()
 	 * @generated
 	 */
-	int ASSESSMENT_ENUM = 22;
+	int ASSESSMENT_ENUM = 25;
 
 	/**
 	 * The meta object id for the '{@link dsm.TRADES.AffectedENUM <em>Affected ENUM</em>}' enum.
@@ -1543,7 +1672,7 @@ public interface TRADESPackage extends EPackage {
 	 * @see dsm.TRADES.impl.TRADESPackageImpl#getAffectedENUM()
 	 * @generated
 	 */
-	int AFFECTED_ENUM = 23;
+	int AFFECTED_ENUM = 26;
 
 	/**
 	 * The meta object id for the '{@link dsm.TRADES.threatTypeENUM <em>threat Type ENUM</em>}' enum.
@@ -1553,7 +1682,7 @@ public interface TRADESPackage extends EPackage {
 	 * @see dsm.TRADES.impl.TRADESPackageImpl#getthreatTypeENUM()
 	 * @generated
 	 */
-	int THREAT_TYPE_ENUM = 24;
+	int THREAT_TYPE_ENUM = 27;
 
 	/**
 	 * The meta object id for the '<em>RGB Color</em>' data type.
@@ -1563,7 +1692,7 @@ public interface TRADESPackage extends EPackage {
 	 * @see dsm.TRADES.impl.TRADESPackageImpl#getRGBColor()
 	 * @generated
 	 */
-	int RGB_COLOR = 25;
+	int RGB_COLOR = 28;
 
 	/**
 	 * Returns the meta object for class '{@link dsm.TRADES.Analysis <em>Analysis</em>}'.
@@ -1574,17 +1703,6 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getAnalysis();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link dsm.TRADES.Analysis#getControl <em>Control</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Control</em>'.
-	 * @see dsm.TRADES.Analysis#getControl()
-	 * @see #getAnalysis()
-	 * @generated
-	 */
-	EReference getAnalysis_Control();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link dsm.TRADES.Analysis#getAffectrelation <em>Affectrelation</em>}'.
@@ -1737,17 +1855,6 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getComponent_ThreatAllocations();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link dsm.TRADES.Component#getControl <em>Control</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Control</em>'.
-	 * @see dsm.TRADES.Component#getControl()
-	 * @see #getComponent()
-	 * @generated
-	 */
-	EReference getComponent_Control();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link dsm.TRADES.Component#getAnalysis <em>Analysis</em>}'.
@@ -2457,6 +2564,80 @@ public interface TRADESPackage extends EPackage {
 	EReference getThreatsOwner_External();
 
 	/**
+	 * Returns the meta object for class '{@link dsm.TRADES.ControlOwner <em>Control Owner</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Control Owner</em>'.
+	 * @see dsm.TRADES.ControlOwner
+	 * @generated
+	 */
+	EClass getControlOwner();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link dsm.TRADES.ControlOwner#getInternal <em>Internal</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Internal</em>'.
+	 * @see dsm.TRADES.ControlOwner#getInternal()
+	 * @see #getControlOwner()
+	 * @generated
+	 */
+	EReference getControlOwner_Internal();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link dsm.TRADES.ControlOwner#getExternal <em>External</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>External</em>'.
+	 * @see dsm.TRADES.ControlOwner#getExternal()
+	 * @see #getControlOwner()
+	 * @generated
+	 */
+	EReference getControlOwner_External();
+
+	/**
+	 * Returns the meta object for class '{@link dsm.TRADES.ControlType <em>Control Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Control Type</em>'.
+	 * @see dsm.TRADES.ControlType
+	 * @generated
+	 */
+	EClass getControlType();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link dsm.TRADES.ControlType#getControls <em>Controls</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Controls</em>'.
+	 * @see dsm.TRADES.ControlType#getControls()
+	 * @see #getControlType()
+	 * @generated
+	 */
+	EReference getControlType_Controls();
+
+	/**
+	 * Returns the meta object for class '{@link dsm.TRADES.AbstractControlOwner <em>Abstract Control Owner</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Abstract Control Owner</em>'.
+	 * @see dsm.TRADES.AbstractControlOwner
+	 * @generated
+	 */
+	EClass getAbstractControlOwner();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link dsm.TRADES.AbstractControlOwner#getControlOwner <em>Control Owner</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Control Owner</em>'.
+	 * @see dsm.TRADES.AbstractControlOwner#getControlOwner()
+	 * @see #getAbstractControlOwner()
+	 * @generated
+	 */
+	EReference getAbstractControlOwner_ControlOwner();
+
+	/**
 	 * Returns the meta object for enum '{@link dsm.TRADES.AssessmentENUM <em>Assessment ENUM</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2529,14 +2710,6 @@ public interface TRADESPackage extends EPackage {
 		 * @generated
 		 */
 		EClass ANALYSIS = eINSTANCE.getAnalysis();
-
-		/**
-		 * The meta object literal for the '<em><b>Control</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ANALYSIS__CONTROL = eINSTANCE.getAnalysis_Control();
 
 		/**
 		 * The meta object literal for the '<em><b>Affectrelation</b></em>' containment reference list feature.
@@ -2653,14 +2826,6 @@ public interface TRADESPackage extends EPackage {
 		 * @generated
 		 */
 		EReference COMPONENT__THREAT_ALLOCATIONS = eINSTANCE.getComponent_ThreatAllocations();
-
-		/**
-		 * The meta object literal for the '<em><b>Control</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference COMPONENT__CONTROL = eINSTANCE.getComponent_Control();
 
 		/**
 		 * The meta object literal for the '<em><b>Analysis</b></em>' containment reference list feature.
@@ -3229,6 +3394,68 @@ public interface TRADESPackage extends EPackage {
 		 * @generated
 		 */
 		EReference THREATS_OWNER__EXTERNAL = eINSTANCE.getThreatsOwner_External();
+
+		/**
+		 * The meta object literal for the '{@link dsm.TRADES.impl.ControlOwnerImpl <em>Control Owner</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see dsm.TRADES.impl.ControlOwnerImpl
+		 * @see dsm.TRADES.impl.TRADESPackageImpl#getControlOwner()
+		 * @generated
+		 */
+		EClass CONTROL_OWNER = eINSTANCE.getControlOwner();
+
+		/**
+		 * The meta object literal for the '<em><b>Internal</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONTROL_OWNER__INTERNAL = eINSTANCE.getControlOwner_Internal();
+
+		/**
+		 * The meta object literal for the '<em><b>External</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONTROL_OWNER__EXTERNAL = eINSTANCE.getControlOwner_External();
+
+		/**
+		 * The meta object literal for the '{@link dsm.TRADES.impl.ControlTypeImpl <em>Control Type</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see dsm.TRADES.impl.ControlTypeImpl
+		 * @see dsm.TRADES.impl.TRADESPackageImpl#getControlType()
+		 * @generated
+		 */
+		EClass CONTROL_TYPE = eINSTANCE.getControlType();
+
+		/**
+		 * The meta object literal for the '<em><b>Controls</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONTROL_TYPE__CONTROLS = eINSTANCE.getControlType_Controls();
+
+		/**
+		 * The meta object literal for the '{@link dsm.TRADES.impl.AbstractControlOwnerImpl <em>Abstract Control Owner</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see dsm.TRADES.impl.AbstractControlOwnerImpl
+		 * @see dsm.TRADES.impl.TRADESPackageImpl#getAbstractControlOwner()
+		 * @generated
+		 */
+		EClass ABSTRACT_CONTROL_OWNER = eINSTANCE.getAbstractControlOwner();
+
+		/**
+		 * The meta object literal for the '<em><b>Control Owner</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ABSTRACT_CONTROL_OWNER__CONTROL_OWNER = eINSTANCE.getAbstractControlOwner_ControlOwner();
 
 		/**
 		 * The meta object literal for the '{@link dsm.TRADES.AssessmentENUM <em>Assessment ENUM</em>}' enum.

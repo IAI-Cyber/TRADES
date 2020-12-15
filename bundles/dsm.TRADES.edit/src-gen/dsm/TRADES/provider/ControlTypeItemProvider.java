@@ -2,7 +2,7 @@
  */
 package dsm.TRADES.provider;
 
-import dsm.TRADES.Analysis;
+import dsm.TRADES.ControlType;
 import dsm.TRADES.TRADESFactory;
 import dsm.TRADES.TRADESPackage;
 
@@ -12,26 +12,23 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EStructuralFeature;
-
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link dsm.TRADES.Analysis} object.
+ * This is the item provider adapter for a {@link dsm.TRADES.ControlType} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class AnalysisItemProvider extends ComponentOwerItemProvider {
+public class ControlTypeItemProvider extends NamedElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AnalysisItemProvider(AdapterFactory adapterFactory) {
+	public ControlTypeItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -46,25 +43,8 @@ public class AnalysisItemProvider extends ComponentOwerItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addNamePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Name feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_NamedElement_name_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_NamedElement_name_feature",
-								"_UI_NamedElement_type"),
-						TRADESPackage.Literals.NAMED_ELEMENT__NAME, true, false, false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -79,11 +59,7 @@ public class AnalysisItemProvider extends ComponentOwerItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(TRADESPackage.Literals.DATA_OWNER__DATA);
-			childrenFeatures.add(TRADESPackage.Literals.ABSTRACT_CONTROL_OWNER__CONTROL_OWNER);
-			childrenFeatures.add(TRADESPackage.Literals.ANALYSIS__AFFECTRELATION);
-			childrenFeatures.add(TRADESPackage.Literals.ANALYSIS__SCORESYSTEM);
-			childrenFeatures.add(TRADESPackage.Literals.ANALYSIS__THREAT_OWNER);
+			childrenFeatures.add(TRADESPackage.Literals.CONTROL_TYPE__CONTROLS);
 		}
 		return childrenFeatures;
 	}
@@ -102,14 +78,14 @@ public class AnalysisItemProvider extends ComponentOwerItemProvider {
 	}
 
 	/**
-	 * This returns Analysis.gif.
+	 * This returns ControlType.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Analysis"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/ControlType"));
 	}
 
 	/**
@@ -130,9 +106,9 @@ public class AnalysisItemProvider extends ComponentOwerItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Analysis) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_Analysis_type")
-				: getString("_UI_Analysis_type") + " " + label;
+		String label = ((ControlType) object).getName();
+		return label == null || label.length() == 0 ? getString("_UI_ControlType_type")
+				: getString("_UI_ControlType_type") + " " + label;
 	}
 
 	/**
@@ -146,15 +122,8 @@ public class AnalysisItemProvider extends ComponentOwerItemProvider {
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Analysis.class)) {
-		case TRADESPackage.ANALYSIS__NAME:
-			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-			return;
-		case TRADESPackage.ANALYSIS__DATA:
-		case TRADESPackage.ANALYSIS__CONTROL_OWNER:
-		case TRADESPackage.ANALYSIS__AFFECTRELATION:
-		case TRADESPackage.ANALYSIS__SCORESYSTEM:
-		case TRADESPackage.ANALYSIS__THREAT_OWNER:
+		switch (notification.getFeatureID(ControlType.class)) {
+		case TRADESPackage.CONTROL_TYPE__CONTROLS:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -172,20 +141,11 @@ public class AnalysisItemProvider extends ComponentOwerItemProvider {
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(
-				createChildParameter(TRADESPackage.Literals.DATA_OWNER__DATA, TRADESFactory.eINSTANCE.createData()));
+		newChildDescriptors.add(createChildParameter(TRADESPackage.Literals.CONTROL_TYPE__CONTROLS,
+				TRADESFactory.eINSTANCE.createControl()));
 
-		newChildDescriptors.add(createChildParameter(TRADESPackage.Literals.ABSTRACT_CONTROL_OWNER__CONTROL_OWNER,
-				TRADESFactory.eINSTANCE.createControlOwner()));
-
-		newChildDescriptors.add(createChildParameter(TRADESPackage.Literals.ANALYSIS__AFFECTRELATION,
-				TRADESFactory.eINSTANCE.createAffectRelation()));
-
-		newChildDescriptors.add(createChildParameter(TRADESPackage.Literals.ANALYSIS__SCORESYSTEM,
-				TRADESFactory.eINSTANCE.createScoreSystem()));
-
-		newChildDescriptors.add(createChildParameter(TRADESPackage.Literals.ANALYSIS__THREAT_OWNER,
-				TRADESFactory.eINSTANCE.createThreatsOwner()));
+		newChildDescriptors.add(createChildParameter(TRADESPackage.Literals.CONTROL_TYPE__CONTROLS,
+				TRADESFactory.eINSTANCE.createExternalControl()));
 	}
 
 }

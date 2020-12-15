@@ -16,7 +16,6 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link dsm.TRADES.Component#getAllocatedThreat <em>Allocated Threat</em>}</li>
  *   <li>{@link dsm.TRADES.Component#getImplements <em>Implements</em>}</li>
  *   <li>{@link dsm.TRADES.Component#getThreatAllocations <em>Threat Allocations</em>}</li>
- *   <li>{@link dsm.TRADES.Component#getControl <em>Control</em>}</li>
  *   <li>{@link dsm.TRADES.Component#getAnalysis <em>Analysis</em>}</li>
  *   <li>{@link dsm.TRADES.Component#getAffectrelation <em>Affectrelation</em>}</li>
  *   <li>{@link dsm.TRADES.Component#getThreat <em>Threat</em>}</li>
@@ -26,7 +25,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface Component extends ComponentOwer, DataOwner, NamedElement {
+public interface Component extends ComponentOwer, DataOwner, NamedElement, AbstractControlOwner {
 	/**
 	 * Returns the value of the '<em><b>Allocated Threat</b></em>' reference list.
 	 * The list contents are of type {@link dsm.TRADES.Threat}.
@@ -76,22 +75,6 @@ public interface Component extends ComponentOwer, DataOwner, NamedElement {
 	 * @generated
 	 */
 	EList<ThreatAllocationRelation> getThreatAllocations();
-
-	/**
-	 * Returns the value of the '<em><b>Control</b></em>' containment reference list.
-	 * The list contents are of type {@link dsm.TRADES.Control}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Control</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Control</em>' containment reference list.
-	 * @see dsm.TRADES.TRADESPackage#getComponent_Control()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<Control> getControl();
 
 	/**
 	 * Returns the value of the '<em><b>Analysis</b></em>' containment reference list.

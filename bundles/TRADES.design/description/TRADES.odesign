@@ -48,7 +48,7 @@
             </style>
           </conditionnalStyles>
         </nodeMappings>
-        <nodeMappings name="ControlNode" labelDirectEdit="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Change%20name']" semanticCandidatesExpression="aql: self.eContents()" domainClass="TRADES::Control">
+        <nodeMappings name="ControlNode" labelDirectEdit="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Change%20name']" semanticCandidatesExpression="aql: self.controlOwner.eAllContents(TRADES::Control)" domainClass="TRADES::Control">
           <borderedNodeMappings name="ControlLabel_TD" semanticCandidatesExpression="var:self" domainClass="TRADES::Control">
             <style xsi:type="style:SquareDescription" showIcon="false" tooltipExpression="feature:name" sizeComputationExpression="0" labelPosition="node" resizeKind="NSEW" width="9" height="3">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -190,7 +190,7 @@
             <viewVariable name="containerView"/>
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="TRADES::Control" referenceName="control"/>
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.createInternalControl()"/>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
@@ -811,11 +811,11 @@
       </createColumn>
     </ownedRepresentations>
     <ownedRepresentations xsi:type="description_2:CrossTableDescription" name="Controls to Components " domainClass="TRADES::Analysis">
-      <ownedLineMappings name="Component Row" reusedInMappings="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Controls%20to%20Components%20']/@ownedLineMappings[name='Component%20Row']/@ownedSubLines[name='subComp%20Row']" domainClass="TRADES::Component" semanticCandidatesExpression="aql: self.eContents()">
+      <ownedLineMappings name="Component Row" reusedInMappings="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Controls%20to%20Components%20']/@ownedLineMappings[name='Component%20Row']/@ownedSubLines[name='subComp%20Row']" domainClass="TRADES::Component" semanticCandidatesExpression="aql:self.component">
         <ownedSubLines name="subComp Row" reusedSubLines="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Controls%20to%20Components%20']/@ownedLineMappings[name='Component%20Row']" domainClass="TRADES::Component"/>
       </ownedLineMappings>
       <ownedColumnMappings name="Control Column" domainClass="TRADES::Control"/>
-      <intersection name="Controls to Components Mapping" lineMapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Controls%20to%20Components%20']/@ownedLineMappings[name='Component%20Row'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Controls%20to%20Components%20']/@ownedLineMappings[name='Component%20Row']/@ownedSubLines[name='subComp%20Row']" columnMapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Controls%20to%20Components%20']/@ownedColumnMappings.0" labelExpression="V" columnFinderExpression="aql: self.control">
+      <intersection name="Controls to Components Mapping" lineMapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Controls%20to%20Components%20']/@ownedLineMappings[name='Component%20Row'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Controls%20to%20Components%20']/@ownedLineMappings[name='Component%20Row']/@ownedSubLines[name='subComp%20Row']" columnMapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Controls%20to%20Components%20']/@ownedColumnMappings.0" labelExpression="V" columnFinderExpression="aql:self.controlOwner.eAllContents(TRADES::Control)">
         <defaultForeground>
           <labelFormat>bold</labelFormat>
           <foreGroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>

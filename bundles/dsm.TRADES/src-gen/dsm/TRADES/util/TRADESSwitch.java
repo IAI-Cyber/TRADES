@@ -76,6 +76,8 @@ public class TRADESSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseNamedElement(analysis);
 			if (result == null)
+				result = caseAbstractControlOwner(analysis);
+			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
@@ -97,6 +99,8 @@ public class TRADESSwitch<T> extends Switch<T> {
 				result = caseDataOwner(component);
 			if (result == null)
 				result = caseNamedElement(component);
+			if (result == null)
+				result = caseAbstractControlOwner(component);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -260,6 +264,29 @@ public class TRADESSwitch<T> extends Switch<T> {
 		case TRADESPackage.THREATS_OWNER: {
 			ThreatsOwner threatsOwner = (ThreatsOwner) theEObject;
 			T result = caseThreatsOwner(threatsOwner);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case TRADESPackage.CONTROL_OWNER: {
+			ControlOwner controlOwner = (ControlOwner) theEObject;
+			T result = caseControlOwner(controlOwner);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case TRADESPackage.CONTROL_TYPE: {
+			ControlType controlType = (ControlType) theEObject;
+			T result = caseControlType(controlType);
+			if (result == null)
+				result = caseNamedElement(controlType);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case TRADESPackage.ABSTRACT_CONTROL_OWNER: {
+			AbstractControlOwner abstractControlOwner = (AbstractControlOwner) theEObject;
+			T result = caseAbstractControlOwner(abstractControlOwner);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -596,6 +623,51 @@ public class TRADESSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseThreatsOwner(ThreatsOwner object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Control Owner</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Control Owner</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseControlOwner(ControlOwner object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Control Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Control Type</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseControlType(ControlType object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Abstract Control Owner</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Abstract Control Owner</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAbstractControlOwner(AbstractControlOwner object) {
 		return null;
 	}
 

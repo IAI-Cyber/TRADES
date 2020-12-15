@@ -1,5 +1,6 @@
 package TRADES.design;
 
+import java.security.acl.Owner;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -7,6 +8,10 @@ import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.ui.PlatformUI;
 
+import dsm.TRADES.Component;
+import dsm.TRADES.Control;
+import dsm.TRADES.ControlOwner;
+import dsm.TRADES.ControlType;
 import dsm.TRADES.DifficultyScore;
 import dsm.TRADES.ImpactConfiguration;
 import dsm.TRADES.ImpactScore;
@@ -51,7 +56,26 @@ public class SemanticService {
 			conf.setDifficulty(dif);
 		}
 	}
+	
 
+	public void createInternalControl(Component cmp) {
+		Control control = TRADESFactory.eINSTANCE.createControl();
+		
+		ControlOwner owner = cmp.getControlOwner();
+		if(owner == null) {
+			owner = TRADESFactory.eINSTANCE.createControlOwner();
+			cmp.setControlOwner(owner);
+		}
+		
+		ControlType internal = owner.getInternal();
+		if(internal == null) {
+			internal = TRADESFactory.eINSTANCE.createControlType();
+			owner.setInternal(internal);
+		}
+		
+		internal.getControls().add(control);
+	}
+	
 	/**
 	 * Gets all {@link ImpactConfiguration} linked to a {@link DifficultyScore}
 	 * 

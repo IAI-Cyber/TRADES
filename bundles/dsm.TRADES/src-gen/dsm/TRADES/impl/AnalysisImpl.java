@@ -2,9 +2,10 @@
  */
 package dsm.TRADES.impl;
 
+import dsm.TRADES.AbstractControlOwner;
 import dsm.TRADES.AffectRelation;
 import dsm.TRADES.Analysis;
-import dsm.TRADES.Control;
+import dsm.TRADES.ControlOwner;
 import dsm.TRADES.Data;
 import dsm.TRADES.DataOwner;
 import dsm.TRADES.NamedElement;
@@ -35,7 +36,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getData <em>Data</em>}</li>
  *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getName <em>Name</em>}</li>
- *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getControl <em>Control</em>}</li>
+ *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getControlOwner <em>Control Owner</em>}</li>
  *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getAffectrelation <em>Affectrelation</em>}</li>
  *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getScoresystem <em>Scoresystem</em>}</li>
  *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getThreatOwner <em>Threat Owner</em>}</li>
@@ -75,14 +76,14 @@ public class AnalysisImpl extends ComponentOwerImpl implements Analysis {
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getControl() <em>Control</em>}' containment reference list.
+	 * The cached value of the '{@link #getControlOwner() <em>Control Owner</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getControl()
+	 * @see #getControlOwner()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Control> control;
+	protected ControlOwner controlOwner;
 
 	/**
 	 * The cached value of the '{@link #getAffectrelation() <em>Affectrelation</em>}' containment reference list.
@@ -131,19 +132,6 @@ public class AnalysisImpl extends ComponentOwerImpl implements Analysis {
 	@Override
 	protected EClass eStaticClass() {
 		return TRADESPackage.Literals.ANALYSIS;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EList<Control> getControl() {
-		if (control == null) {
-			control = new EObjectContainmentEList<Control>(Control.class, this, TRADESPackage.ANALYSIS__CONTROL);
-		}
-		return control;
 	}
 
 	/**
@@ -306,12 +294,64 @@ public class AnalysisImpl extends ComponentOwerImpl implements Analysis {
 	 * @generated
 	 */
 	@Override
+	public ControlOwner getControlOwner() {
+		return controlOwner;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetControlOwner(ControlOwner newControlOwner, NotificationChain msgs) {
+		ControlOwner oldControlOwner = controlOwner;
+		controlOwner = newControlOwner;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					TRADESPackage.ANALYSIS__CONTROL_OWNER, oldControlOwner, newControlOwner);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setControlOwner(ControlOwner newControlOwner) {
+		if (newControlOwner != controlOwner) {
+			NotificationChain msgs = null;
+			if (controlOwner != null)
+				msgs = ((InternalEObject) controlOwner).eInverseRemove(this,
+						EOPPOSITE_FEATURE_BASE - TRADESPackage.ANALYSIS__CONTROL_OWNER, null, msgs);
+			if (newControlOwner != null)
+				msgs = ((InternalEObject) newControlOwner).eInverseAdd(this,
+						EOPPOSITE_FEATURE_BASE - TRADESPackage.ANALYSIS__CONTROL_OWNER, null, msgs);
+			msgs = basicSetControlOwner(newControlOwner, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TRADESPackage.ANALYSIS__CONTROL_OWNER,
+					newControlOwner, newControlOwner));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case TRADESPackage.ANALYSIS__DATA:
 			return ((InternalEList<?>) getData()).basicRemove(otherEnd, msgs);
-		case TRADESPackage.ANALYSIS__CONTROL:
-			return ((InternalEList<?>) getControl()).basicRemove(otherEnd, msgs);
+		case TRADESPackage.ANALYSIS__CONTROL_OWNER:
+			return basicSetControlOwner(null, msgs);
 		case TRADESPackage.ANALYSIS__AFFECTRELATION:
 			return ((InternalEList<?>) getAffectrelation()).basicRemove(otherEnd, msgs);
 		case TRADESPackage.ANALYSIS__SCORESYSTEM:
@@ -334,8 +374,8 @@ public class AnalysisImpl extends ComponentOwerImpl implements Analysis {
 			return getData();
 		case TRADESPackage.ANALYSIS__NAME:
 			return getName();
-		case TRADESPackage.ANALYSIS__CONTROL:
-			return getControl();
+		case TRADESPackage.ANALYSIS__CONTROL_OWNER:
+			return getControlOwner();
 		case TRADESPackage.ANALYSIS__AFFECTRELATION:
 			return getAffectrelation();
 		case TRADESPackage.ANALYSIS__SCORESYSTEM:
@@ -362,9 +402,8 @@ public class AnalysisImpl extends ComponentOwerImpl implements Analysis {
 		case TRADESPackage.ANALYSIS__NAME:
 			setName((String) newValue);
 			return;
-		case TRADESPackage.ANALYSIS__CONTROL:
-			getControl().clear();
-			getControl().addAll((Collection<? extends Control>) newValue);
+		case TRADESPackage.ANALYSIS__CONTROL_OWNER:
+			setControlOwner((ControlOwner) newValue);
 			return;
 		case TRADESPackage.ANALYSIS__AFFECTRELATION:
 			getAffectrelation().clear();
@@ -394,8 +433,8 @@ public class AnalysisImpl extends ComponentOwerImpl implements Analysis {
 		case TRADESPackage.ANALYSIS__NAME:
 			setName(NAME_EDEFAULT);
 			return;
-		case TRADESPackage.ANALYSIS__CONTROL:
-			getControl().clear();
+		case TRADESPackage.ANALYSIS__CONTROL_OWNER:
+			setControlOwner((ControlOwner) null);
 			return;
 		case TRADESPackage.ANALYSIS__AFFECTRELATION:
 			getAffectrelation().clear();
@@ -422,8 +461,8 @@ public class AnalysisImpl extends ComponentOwerImpl implements Analysis {
 			return data != null && !data.isEmpty();
 		case TRADESPackage.ANALYSIS__NAME:
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-		case TRADESPackage.ANALYSIS__CONTROL:
-			return control != null && !control.isEmpty();
+		case TRADESPackage.ANALYSIS__CONTROL_OWNER:
+			return controlOwner != null;
 		case TRADESPackage.ANALYSIS__AFFECTRELATION:
 			return affectrelation != null && !affectrelation.isEmpty();
 		case TRADESPackage.ANALYSIS__SCORESYSTEM:
@@ -457,6 +496,14 @@ public class AnalysisImpl extends ComponentOwerImpl implements Analysis {
 				return -1;
 			}
 		}
+		if (baseClass == AbstractControlOwner.class) {
+			switch (derivedFeatureID) {
+			case TRADESPackage.ANALYSIS__CONTROL_OWNER:
+				return TRADESPackage.ABSTRACT_CONTROL_OWNER__CONTROL_OWNER;
+			default:
+				return -1;
+			}
+		}
 		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
 	}
 
@@ -479,6 +526,14 @@ public class AnalysisImpl extends ComponentOwerImpl implements Analysis {
 			switch (baseFeatureID) {
 			case TRADESPackage.NAMED_ELEMENT__NAME:
 				return TRADESPackage.ANALYSIS__NAME;
+			default:
+				return -1;
+			}
+		}
+		if (baseClass == AbstractControlOwner.class) {
+			switch (baseFeatureID) {
+			case TRADESPackage.ABSTRACT_CONTROL_OWNER__CONTROL_OWNER:
+				return TRADESPackage.ANALYSIS__CONTROL_OWNER;
 			default:
 				return -1;
 			}

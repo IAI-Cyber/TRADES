@@ -128,8 +128,8 @@ public class ComponentItemProvider extends ComponentOwerItemProvider {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(TRADESPackage.Literals.DATA_OWNER__DATA);
+			childrenFeatures.add(TRADESPackage.Literals.ABSTRACT_CONTROL_OWNER__CONTROL_OWNER);
 			childrenFeatures.add(TRADESPackage.Literals.COMPONENT__THREAT_ALLOCATIONS);
-			childrenFeatures.add(TRADESPackage.Literals.COMPONENT__CONTROL);
 			childrenFeatures.add(TRADESPackage.Literals.COMPONENT__ANALYSIS);
 			childrenFeatures.add(TRADESPackage.Literals.COMPONENT__AFFECTRELATION);
 			childrenFeatures.add(TRADESPackage.Literals.COMPONENT__THREAT);
@@ -210,10 +210,10 @@ public class ComponentItemProvider extends ComponentOwerItemProvider {
 			return;
 		case TRADESPackage.COMPONENT__DATA:
 		case TRADESPackage.COMPONENT__THREAT_ALLOCATIONS:
-		case TRADESPackage.COMPONENT__CONTROL:
 		case TRADESPackage.COMPONENT__ANALYSIS:
 		case TRADESPackage.COMPONENT__AFFECTRELATION:
 		case TRADESPackage.COMPONENT__THREAT:
+		case TRADESPackage.COMPONENT__CONTROL_OWNER:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -234,14 +234,11 @@ public class ComponentItemProvider extends ComponentOwerItemProvider {
 		newChildDescriptors.add(
 				createChildParameter(TRADESPackage.Literals.DATA_OWNER__DATA, TRADESFactory.eINSTANCE.createData()));
 
+		newChildDescriptors.add(createChildParameter(TRADESPackage.Literals.ABSTRACT_CONTROL_OWNER__CONTROL_OWNER,
+				TRADESFactory.eINSTANCE.createControlOwner()));
+
 		newChildDescriptors.add(createChildParameter(TRADESPackage.Literals.COMPONENT__THREAT_ALLOCATIONS,
 				TRADESFactory.eINSTANCE.createThreatAllocationRelation()));
-
-		newChildDescriptors.add(createChildParameter(TRADESPackage.Literals.COMPONENT__CONTROL,
-				TRADESFactory.eINSTANCE.createControl()));
-
-		newChildDescriptors.add(createChildParameter(TRADESPackage.Literals.COMPONENT__CONTROL,
-				TRADESFactory.eINSTANCE.createExternalControl()));
 
 		newChildDescriptors.add(createChildParameter(TRADESPackage.Literals.COMPONENT__ANALYSIS,
 				TRADESFactory.eINSTANCE.createAnalysis()));

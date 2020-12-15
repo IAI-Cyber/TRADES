@@ -4,9 +4,7 @@
   <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
     <details key="documentation" value="TRADES model, by Israel Aerospace Industries. All rights reserved.&#xD;&#xA;&#xD;&#xA;The TRADES model, based on Threat and Risk assessment ontology and the TRADES model-based methodology."/>
   </eAnnotations>
-  <eClassifiers xsi:type="ecore:EClass" name="Analysis" eSuperTypes="#//ComponentOwer #//DataOwner #//NamedElement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="control" upperBound="-1"
-        eType="#//Control" containment="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Analysis" eSuperTypes="#//ComponentOwer #//DataOwner #//NamedElement #//AbstractControlOwner">
     <eStructuralFeatures xsi:type="ecore:EReference" name="affectrelation" upperBound="-1"
         eType="#//AffectRelation" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="scoresystem" eType="#//ScoreSystem"
@@ -24,15 +22,13 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Applicability" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Component" eSuperTypes="#//ComponentOwer #//DataOwner #//NamedElement">
+  <eClassifiers xsi:type="ecore:EClass" name="Component" eSuperTypes="#//ComponentOwer #//DataOwner #//NamedElement #//AbstractControlOwner">
     <eStructuralFeatures xsi:type="ecore:EReference" name="allocatedThreat" upperBound="-1"
         eType="#//Threat" eOpposite="#//Threat/allocated"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="implements" upperBound="-1"
         eType="#//Control" eOpposite="#//Control/implementedBy"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="threatAllocations" upperBound="-1"
         eType="#//ThreatAllocationRelation" containment="true" eOpposite="#//ThreatAllocationRelation/component"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="control" upperBound="-1"
-        eType="#//Control" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="analysis" upperBound="-1"
         eType="#//Analysis" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="affectrelation" upperBound="-1"
@@ -167,5 +163,19 @@
         eType="#//ThreatType" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="external" lowerBound="1"
         eType="#//ThreatType" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ControlOwner">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="internal" lowerBound="1"
+        eType="#//ControlType" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="external" lowerBound="1"
+        eType="#//ControlType" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ControlType" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="controls" upperBound="-1"
+        eType="#//Control" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractControlOwner" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="controlOwner" lowerBound="1"
+        eType="#//ControlOwner" containment="true"/>
   </eClassifiers>
 </ecore:EPackage>
