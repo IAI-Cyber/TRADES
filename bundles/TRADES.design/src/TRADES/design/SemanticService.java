@@ -1,13 +1,16 @@
 package TRADES.design;
 
-import java.security.acl.Owner;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.ui.PlatformUI;
 
+import dsm.TRADES.AbstractControlOwner;
 import dsm.TRADES.Component;
 import dsm.TRADES.Control;
 import dsm.TRADES.ControlOwner;
@@ -57,8 +60,22 @@ public class SemanticService {
 		}
 	}
 	
+	public List<Control> getAllControls(AbstractControlOwner owner){
+		ControlOwner cOwner = owner.getControlOwner();
+		if(cOwner == null) {
+			return Collections.emptyList();
+		}
+		
+		List<Control> result = new ArrayList<Control>();
+		
+		Optional.ofNullable(cOwner.getInternal()).ifPresent(t -> result.addAll(t.getControls()));
+		Optional.ofNullable(cOwner.getExternal()).ifPresent(t -> result.addAll(t.getControls()));
+		return result;
+	}
+	
+	
 
-	public void createInternalControl(Component cmp) {
+	public void createInternalControl(AbstractControlOwner cmp) {
 		Control control = TRADESFactory.eINSTANCE.createControl();
 		
 		ControlOwner owner = cmp.getControlOwner();

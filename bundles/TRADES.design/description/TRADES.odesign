@@ -48,7 +48,7 @@
             </style>
           </conditionnalStyles>
         </nodeMappings>
-        <nodeMappings name="ControlNode" labelDirectEdit="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Change%20name']" semanticCandidatesExpression="aql: self.controlOwner.eAllContents(TRADES::Control)" domainClass="TRADES::Control">
+        <nodeMappings name="ControlNode" labelDirectEdit="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Change%20name']" semanticCandidatesExpression="aql: self.getAllControls()" domainClass="TRADES::Control">
           <borderedNodeMappings name="ControlLabel_TD" semanticCandidatesExpression="var:self" domainClass="TRADES::Control">
             <style xsi:type="style:SquareDescription" showIcon="false" tooltipExpression="feature:name" sizeComputationExpression="0" labelPosition="node" resizeKind="NSEW" width="9" height="3">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -104,7 +104,7 @@
           </conditionnalStyles>
         </edgeMappings>
         <edgeMappings name="mitigatesThreat" labelDirectEdit="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Change%20name']" sourceMapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@nodeMappings[name='ControlNode']" targetMapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@nodeMappings[name='ThreatNode_TD'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Component%20Analysis']/@additionalLayers[name='AllocatedThreats']/@nodeMappings[name='AllocatedThreatNode']" targetFinderExpression="feature:threat" sourceFinderExpression="feature:control" targetExpression="var:self" domainClass="TRADES::ThreatMitigationRelation" useDomainElement="true">
-          <style sizeComputationExpression="2">
+          <style lineStyle="dash" sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <centerLabelStyleDescription labelSize="12">
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -144,7 +144,7 @@
           </conditionnalStyles>
         </edgeMappings>
         <edgeMappings name="mitigatesThreatAllocation" labelDirectEdit="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Change%20name']" sourceMapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@nodeMappings[name='ControlNode']" targetMapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Analysis%20Diagram']/@additionalLayers[name='Threat']/@edgeMappings[name='allocatedThreat'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@edgeMappings[name='allocatedThreat']" targetFinderExpression="feature:mitigates" sourceFinderExpression="feature:control" targetExpression="var:self" domainClass="TRADES::ThreatMitigationRelation" useDomainElement="true">
-          <style sizeComputationExpression="2">
+          <style lineStyle="dash" sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <centerLabelStyleDescription labelSize="12">
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -772,6 +772,9 @@
         <defaultForeground labelSize="15">
           <foreGroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
         </defaultForeground>
+        <defaultBackground>
+          <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+        </defaultBackground>
       </ownedLineMappings>
       <ownedCreateLine name="NewImpactRow_RMS" label="New impact score" mapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Risk%20Managemeny%20Summary']/@ownedLineMappings[name='ImpactRow_RMS']">
         <variables name="root" documentation="The semantic root element of the table."/>
@@ -784,6 +787,9 @@
         </firstModelOperation>
       </ownedCreateLine>
       <ownedColumnMappings name="DifficultyColumn_RMS" label="Difficulty column" headerLabelExpression="aql:self.getLabelProviderText()" domainClass="TRADES::DifficultyScore" semanticCandidatesExpression="aql:self.scoresystem.difficultyscore">
+        <defaultBackground>
+          <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+        </defaultBackground>
         <delete name="DeleteDiffultyTool" label="Delete difficulty">
           <variables name="element" documentation="The semantic currently edited element."/>
           <variables name="root" documentation="The semantic root element of the table."/>
