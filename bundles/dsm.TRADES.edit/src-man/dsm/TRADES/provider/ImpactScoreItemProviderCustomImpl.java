@@ -13,9 +13,9 @@ public class ImpactScoreItemProviderCustomImpl extends ImpactScoreItemProvider {
 	@Override
 	public String getText(Object object) {
 		ImpactScore impactScore = (ImpactScore) object;
-		String label = impactScore.getName() == null ? "" : " " + impactScore.getName();
+		String label = impactScore.getName() == null ? "Impact" : " " + impactScore.getName();
 		String score = "[" + String.valueOf(impactScore.getImpact()) + "]";
-		return "Impact" + label + " " + score;
+		return label + " " + score;
 	}
 
 }

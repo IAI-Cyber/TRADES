@@ -13,9 +13,9 @@ public class DifficultyScoreItemProviderCustomImpl extends DifficultyScoreItemPr
 	@Override
 	public String getText(Object object) {
 		DifficultyScore difficultyScore = (DifficultyScore) object;
-		String label = difficultyScore.getName() == null ? "" : " " + difficultyScore.getName();
+		String label = difficultyScore.getName() == null ? "Difficulty" : " " + difficultyScore.getName();
 		String score = "[" + String.valueOf(difficultyScore.getDifficulty()) + "]";
-		return "Difficulty" + label + " " + score;
+		return label + " " + score;
 	}
 
 }

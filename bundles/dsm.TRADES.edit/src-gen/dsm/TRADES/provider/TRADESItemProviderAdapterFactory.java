@@ -510,7 +510,7 @@ public class TRADESItemProviderAdapterFactory extends TRADESAdapterFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ControlOwnerItemProvider controlOwnerItemProvider;
+	protected ControlOwnerItemProviderCustomImpl controlOwnerItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link dsm.TRADES.ControlOwner}.
@@ -521,7 +521,7 @@ public class TRADESItemProviderAdapterFactory extends TRADESAdapterFactory
 	@Override
 	public Adapter createControlOwnerAdapter() {
 		if (controlOwnerItemProvider == null) {
-			controlOwnerItemProvider = new ControlOwnerItemProvider(this);
+			controlOwnerItemProvider = new ControlOwnerItemProviderCustomImpl(this);
 		}
 
 		return controlOwnerItemProvider;
