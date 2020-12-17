@@ -52,7 +52,7 @@ public class InitCapec implements IApplication {
 		Resource resource = rs.createResource(
 				URI.createFileURI(targetModelFile));
 
-		Analysis analysis = ProjectFactory.createInitialModel("CapecMode");
+		Analysis analysis = ProjectFactory.createInitialModel("Capec");
 
 
 

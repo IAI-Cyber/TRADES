@@ -22,7 +22,7 @@
     </ownedRepresentations>
   </ownedViewpoints>
   <ownedViewpoints name="TRADESview">
-    <ownedRepresentations xsi:type="description_1:DiagramDescription" dropDescriptions="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='copyThreatDragDrop']" name="TRADES diagram" initialisation="true" showOnStartup="true" domainClass="TRADES::Analysis" enablePopupBars="true">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" dropDescriptions="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='copyThreatDragDrop'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='ExternalControlDrop_TD']" name="TRADES diagram" initialisation="true" showOnStartup="true" domainClass="TRADES::Analysis" enablePopupBars="true">
       <metamodel href="dsm.TRADES#/"/>
       <metamodel href="http://www.example.org/extTRADES#/"/>
       <defaultLayer name="Default">
@@ -167,7 +167,7 @@
             </style>
           </conditionnalStyles>
         </edgeMappings>
-        <containerMappings name="ComponentPackage" preconditionExpression="aql: self->notEmpty() = true" labelDirectEdit="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Change%20name']" semanticCandidatesExpression="aql: self.eContents()" domainClass="TRADES::Component" dropDescriptions="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='allocatedThreaToComponent']" reusedNodeMappings="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@nodeMappings[name='ComponentNode'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@nodeMappings[name='ControlNode']" reusedContainerMappings="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage']">
+        <containerMappings name="ComponentPackage" preconditionExpression="aql: self->notEmpty() = true" labelDirectEdit="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Change%20name']" semanticCandidatesExpression="aql: self.eContents()" domainClass="TRADES::Component" dropDescriptions="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='allocatedThreaToComponent'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='ExternalControlDrop_TD']" reusedNodeMappings="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@nodeMappings[name='ComponentNode'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@nodeMappings[name='ControlNode']" reusedContainerMappings="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage']">
           <style xsi:type="style:WorkspaceImageDescription" borderSizeComputationExpression="2" labelSize="15" showIcon="false" tooltipExpression="aql: self.name">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelFormat>bold</labelFormat>
@@ -383,7 +383,37 @@
           <ownedTools xsi:type="tool_1:OperationAction" name="ImportControl" label="Import Control" precondition="aql:self.oclIsTypeOf(TRADES::ExternalThreat)">
             <view name="views"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.printAllVariable()"/>
+              <firstModelOperations xsi:type="tool_1:Let" variableName="externalThreat" valueExpression="var:self">
+                <subModelOperations xsi:type="properties:DialogModelOperation" titleExpression="Import controls">
+                  <buttons labelExpression="Cancel" closeDialogOnClick="true" rollbackChangesOnClose="true">
+                    <initialOperation/>
+                  </buttons>
+                  <buttons labelExpression="Create" default="true" closeDialogOnClick="true">
+                    <initialOperation>
+                      <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:externalThreat.copyControl(controls)"/>
+                    </initialOperation>
+                  </buttons>
+                  <page name="Default Page" semanticCandidateExpression="var:self" groups="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='ImportControl']/@initialOperation/@firstModelOperations/@subModelOperations.0/@groups.0"/>
+                  <groups name="RelatedControls" labelExpression="aql:'Controls for ' + self.name" domainClass="TRADES::ExternalThreat" semanticCandidateExpression="var:self">
+                    <controls xsi:type="properties:ListDescription" name="ControlsList" labelExpression="aql:'Linked control'" helpExpression="aql:'Controls related to ' + self.name " valueExpression="aql:self.getLinkedControlInDataBases()" displayExpression="aql:value.name">
+                      <onClickOperation>
+                        <firstModelOperations xsi:type="tool_1:Let" variableName="controls" valueExpression="var:selection"/>
+                      </onClickOperation>
+                    </controls>
+                  </groups>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerDropDescription" name="ExternalControlDrop_TD" mappings="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@nodeMappings[name='ControlNode'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@nodeMappings[name='ControlNode']/@borderedNodeMappings[name='ControlLabel_TD']">
+            <oldContainer name="oldSemanticContainer"/>
+            <newContainer name="newSemanticContainer"/>
+            <element name="element"/>
+            <newViewContainer name="newContainerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:newContainerView">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="implements" valueExpression="var:self"/>
+              </firstModelOperations>
             </initialOperation>
           </ownedTools>
         </toolSections>
@@ -429,7 +459,7 @@
             <container name="container"/>
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:For" expression="var:element">
-                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:container.copy(i)">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:container.copyTreat(i)">
                   <subModelOperations xsi:type="tool:CreateView" mapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@nodeMappings[name='ThreatNode_TD']" containerViewExpression="var:containerView"/>
                 </subModelOperations>
               </firstModelOperations>
