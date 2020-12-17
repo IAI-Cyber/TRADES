@@ -5,6 +5,7 @@ package dsm.TRADES.impl;
 import dsm.TRADES.AbstractControlOwner;
 import dsm.TRADES.AffectRelation;
 import dsm.TRADES.Analysis;
+import dsm.TRADES.Control;
 import dsm.TRADES.ControlOwner;
 import dsm.TRADES.Data;
 import dsm.TRADES.DataOwner;
@@ -12,6 +13,7 @@ import dsm.TRADES.NamedElement;
 import dsm.TRADES.ScoreSystem;
 import dsm.TRADES.TRADESPackage;
 import dsm.TRADES.ThreatsOwner;
+import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -294,6 +296,18 @@ public class AnalysisImpl extends ComponentOwerImpl implements Analysis {
 	 * @generated
 	 */
 	@Override
+	public EList<Control> getAllControls() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public ControlOwner getControlOwner() {
 		return controlOwner;
 	}
@@ -539,6 +553,50 @@ public class AnalysisImpl extends ComponentOwerImpl implements Analysis {
 			}
 		}
 		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
+		if (baseClass == DataOwner.class) {
+			switch (baseOperationID) {
+			default:
+				return -1;
+			}
+		}
+		if (baseClass == NamedElement.class) {
+			switch (baseOperationID) {
+			default:
+				return -1;
+			}
+		}
+		if (baseClass == AbstractControlOwner.class) {
+			switch (baseOperationID) {
+			case TRADESPackage.ABSTRACT_CONTROL_OWNER___GET_ALL_CONTROLS:
+				return TRADESPackage.ANALYSIS___GET_ALL_CONTROLS;
+			default:
+				return -1;
+			}
+		}
+		return super.eDerivedOperationID(baseOperationID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+		case TRADESPackage.ANALYSIS___GET_ALL_CONTROLS:
+			return getAllControls();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

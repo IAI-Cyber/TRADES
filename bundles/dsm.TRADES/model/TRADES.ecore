@@ -175,6 +175,7 @@
         eType="#//Control" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AbstractControlOwner" abstract="true">
+    <eOperations name="getAllControls" upperBound="-1" eType="#//Control"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="controlOwner" lowerBound="1"
         eType="#//ControlOwner" containment="true"/>
   </eClassifiers>

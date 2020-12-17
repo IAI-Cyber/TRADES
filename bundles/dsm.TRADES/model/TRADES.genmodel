@@ -134,6 +134,7 @@
     </genClasses>
     <genClasses ecoreClass="TRADES.ecore#//AbstractControlOwner">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//AbstractControlOwner/controlOwner"/>
+      <genOperations ecoreOperation="TRADES.ecore#//AbstractControlOwner/getAllControls"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

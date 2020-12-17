@@ -2,6 +2,7 @@
  */
 package dsm.TRADES;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -42,5 +43,13 @@ public interface AbstractControlOwner extends EObject {
 	 * @generated
 	 */
 	void setControlOwner(ControlOwner value);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation"
+	 * @generated
+	 */
+	EList<Control> getAllControls();
 
 } // AbstractControlOwner

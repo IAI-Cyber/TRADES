@@ -151,7 +151,7 @@ public class TRADESFactoryImpl extends EFactoryImpl implements TRADESFactory {
 	 */
 	@Override
 	public Analysis createAnalysis() {
-		AnalysisImpl analysis = new AnalysisImpl();
+		AnalysisCustomImpl analysis = new AnalysisCustomImpl();
 		return analysis;
 	}
 
@@ -173,7 +173,7 @@ public class TRADESFactoryImpl extends EFactoryImpl implements TRADESFactory {
 	 */
 	@Override
 	public Component createComponent() {
-		ComponentImpl component = new ComponentImpl();
+		ComponentCustomImpl component = new ComponentCustomImpl();
 		return component;
 	}
 

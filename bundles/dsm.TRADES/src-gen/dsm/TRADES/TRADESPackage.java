@@ -6,6 +6,7 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EEnum;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -183,13 +184,22 @@ public interface TRADESPackage extends EPackage {
 	int ANALYSIS_FEATURE_COUNT = COMPONENT_OWER_FEATURE_COUNT + 6;
 
 	/**
+	 * The operation id for the '<em>Get All Controls</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ANALYSIS___GET_ALL_CONTROLS = COMPONENT_OWER_OPERATION_COUNT + 0;
+
+	/**
 	 * The number of operations of the '<em>Analysis</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ANALYSIS_OPERATION_COUNT = COMPONENT_OWER_OPERATION_COUNT + 0;
+	int ANALYSIS_OPERATION_COUNT = COMPONENT_OWER_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link dsm.TRADES.impl.NamedElementImpl <em>Named Element</em>}' class.
@@ -429,13 +439,22 @@ public interface TRADESPackage extends EPackage {
 	int COMPONENT_FEATURE_COUNT = COMPONENT_OWER_FEATURE_COUNT + 9;
 
 	/**
+	 * The operation id for the '<em>Get All Controls</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT___GET_ALL_CONTROLS = COMPONENT_OWER_OPERATION_COUNT + 0;
+
+	/**
 	 * The number of operations of the '<em>Component</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_OPERATION_COUNT = COMPONENT_OWER_OPERATION_COUNT + 0;
+	int COMPONENT_OPERATION_COUNT = COMPONENT_OWER_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link dsm.TRADES.impl.ControlImpl <em>Control</em>}' class.
@@ -1646,13 +1665,22 @@ public interface TRADESPackage extends EPackage {
 	int ABSTRACT_CONTROL_OWNER_FEATURE_COUNT = 1;
 
 	/**
+	 * The operation id for the '<em>Get All Controls</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_CONTROL_OWNER___GET_ALL_CONTROLS = 0;
+
+	/**
 	 * The number of operations of the '<em>Abstract Control Owner</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_CONTROL_OWNER_OPERATION_COUNT = 0;
+	int ABSTRACT_CONTROL_OWNER_OPERATION_COUNT = 1;
 
 	/**
 	 * The meta object id for the '{@link dsm.TRADES.AssessmentENUM <em>Assessment ENUM</em>}' enum.
@@ -2638,6 +2666,16 @@ public interface TRADESPackage extends EPackage {
 	EReference getAbstractControlOwner_ControlOwner();
 
 	/**
+	 * Returns the meta object for the '{@link dsm.TRADES.AbstractControlOwner#getAllControls() <em>Get All Controls</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get All Controls</em>' operation.
+	 * @see dsm.TRADES.AbstractControlOwner#getAllControls()
+	 * @generated
+	 */
+	EOperation getAbstractControlOwner__GetAllControls();
+
+	/**
 	 * Returns the meta object for enum '{@link dsm.TRADES.AssessmentENUM <em>Assessment ENUM</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3456,6 +3494,14 @@ public interface TRADESPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ABSTRACT_CONTROL_OWNER__CONTROL_OWNER = eINSTANCE.getAbstractControlOwner_ControlOwner();
+
+		/**
+		 * The meta object literal for the '<em><b>Get All Controls</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ABSTRACT_CONTROL_OWNER___GET_ALL_CONTROLS = eINSTANCE.getAbstractControlOwner__GetAllControls();
 
 		/**
 		 * The meta object literal for the '{@link dsm.TRADES.AssessmentENUM <em>Assessment ENUM</em>}' enum.
