@@ -3,7 +3,12 @@ package TRADES.design;
 import java.util.HashSet;
 import java.util.Set;
 
+import org.eclipse.emf.ecore.EObject;
+
 import dsm.TRADES.AttackChainStep;
+import dsm.TRADES.Component;
+import dsm.TRADES.ControlOwner;
+import dsm.TRADES.ControlType;
 import dsm.TRADES.ThreatAllocationRelation;
 
 public class DiagramService {
@@ -47,6 +52,18 @@ public class DiagramService {
 				getAllPrevious(previous, collector, stepNb++);
 			}
 		}
+	}
+
+	public boolean containedInComponent(EObject o) {
+		EObject eContainer = o.eContainer();
+		if (eContainer instanceof Component) {
+			return true;
+		} else if (eContainer instanceof ControlType) {
+			return containedInComponent(eContainer);
+		} else if (eContainer instanceof ControlOwner) {
+			return containedInComponent(eContainer);
+		}
+		return false;
 	}
 
 	public Set<AttackChainStep> getAllNext(AttackChainStep step) {
