@@ -11,6 +11,7 @@ import dsm.TRADES.AbstractControlOwner;
 import dsm.TRADES.Control;
 import dsm.TRADES.ControlOwner;
 import dsm.TRADES.DifficultyScore;
+import dsm.TRADES.ExternalControl;
 import dsm.TRADES.ImpactConfiguration;
 import dsm.TRADES.ImpactScore;
 import dsm.TRADES.RGBColor;
@@ -54,19 +55,19 @@ public class SemanticService {
 			conf.setDifficulty(dif);
 		}
 	}
-	
+
 	public void createInternalControl(AbstractControlOwner cmp) {
 		Control control = TRADESFactory.eINSTANCE.createControl();
-		
+
 		ControlOwner owner = cmp.getControlOwner();
-		if(owner == null) {
+		if (owner == null) {
 			owner = TRADESFactory.eINSTANCE.createControlOwner();
 			cmp.setControlOwner(owner);
 		}
-		
+
 		owner.getInternals().add(control);
 	}
-	
+
 	/**
 	 * Gets all {@link ImpactConfiguration} linked to a {@link DifficultyScore}
 	 * 
@@ -140,16 +141,31 @@ public class SemanticService {
 
 		for (ImpactScore impact : scoreSystem.getImpactscore()) {
 			int impact2 = impact.getImpact();
-			RGBColor impactColor = ColorService.computeColor(new RGBColor(154, 255, 77), new RGBColor(252, 86, 86), minImpact, maxImpact,
-					impact2);
+			RGBColor impactColor = ColorService.computeColor(new RGBColor(154, 255, 77), new RGBColor(252, 86, 86),
+					minImpact, maxImpact, impact2);
 			for (ImpactConfiguration conf : impact.getConfigurations()) {
 				int difficulty = conf.getDifficulty().getDifficulty();
-				RGBColor diffColor = ColorService.computeColor(new RGBColor(252, 86, 86), new RGBColor(154, 255, 77), minDiff, maxDiff,
-						difficulty);
+				RGBColor diffColor = ColorService.computeColor(new RGBColor(252, 86, 86), new RGBColor(154, 255, 77),
+						minDiff, maxDiff, difficulty);
 				conf.setColor(impactColor.merge(diffColor));
 
 			}
 		}
+	}
+
+	public Control moveControl(AbstractControlOwner newOnwer, Control control) {
+		ControlOwner owner = newOnwer.getControlOwner();
+		if (owner == null) {
+			owner = TRADESFactory.eINSTANCE.createControlOwner();
+			newOnwer.setControlOwner(owner);
+		}
+		if (control instanceof ExternalControl) {
+			owner.getExternals().add(control);
+		} else {
+			owner.getInternals().add(control);
+		}
+
+		return control;
 	}
 
 }

@@ -423,9 +423,7 @@
             <element name="element"/>
             <newViewContainer name="newContainerView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:newContainerView">
-                <subModelOperations xsi:type="tool_1:SetValue" featureName="implements" valueExpression="var:self"/>
-              </firstModelOperations>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:newSemanticContainer.moveControl(element)"/>
             </initialOperation>
           </ownedTools>
         </toolSections>
