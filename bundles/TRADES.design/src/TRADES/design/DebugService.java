@@ -26,7 +26,7 @@ public class DebugService {
 		for (Entry<String, ?> entry : variableMap.entrySet()) {
 			System.out.println(entry.getKey() + "->" + entry.getValue());
 		}
-
+		System.out.println("-----");
 		return context;
 	}
 

@@ -8,6 +8,7 @@ import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.ui.PlatformUI;
 
 import dsm.TRADES.AbstractControlOwner;
+import dsm.TRADES.Component;
 import dsm.TRADES.Control;
 import dsm.TRADES.ControlOwner;
 import dsm.TRADES.DifficultyScore;
@@ -18,6 +19,8 @@ import dsm.TRADES.RGBColor;
 import dsm.TRADES.ScoreSystem;
 import dsm.TRADES.TRADESFactory;
 import dsm.TRADES.TRADESPackage;
+import dsm.TRADES.Threat;
+import dsm.TRADES.ThreatAllocationRelation;
 
 /**
  * Services used to compute business logic operations
@@ -166,6 +169,16 @@ public class SemanticService {
 		}
 
 		return control;
+	}
+
+	public void affectThreatToComponent(Component owner, Threat threat) {
+
+		if (owner.getThreatAllocations().stream().noneMatch(rel -> rel.getThreat() == threat)) {
+			ThreatAllocationRelation rel = TRADESFactory.eINSTANCE.createThreatAllocationRelation();
+			owner.getThreatAllocations().add(rel);
+			rel.setThreat(threat);
+
+		}
 	}
 
 }

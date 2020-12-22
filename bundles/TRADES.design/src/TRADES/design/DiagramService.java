@@ -4,7 +4,10 @@ import java.util.HashSet;
 import java.util.Set;
 
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.sirius.viewpoint.DRepresentationElement;
+import org.eclipse.sirius.viewpoint.DSemanticDecorator;
 
+import dsm.TRADES.Analysis;
 import dsm.TRADES.AttackChainStep;
 import dsm.TRADES.Component;
 import dsm.TRADES.ControlOwner;
@@ -79,6 +82,21 @@ public class DiagramService {
 				getAllPrevious(next, collector, stepNb++);
 			}
 		}
+	}
+
+	public DSemanticDecorator getAnalysisView(DRepresentationElement view, EObject containerSmeantic) {
+		if (containerSmeantic instanceof Analysis) {
+			return view;
+		} else if (containerSmeantic instanceof Component) {
+			EObject viewContainer = view.eContainer();
+			while (viewContainer instanceof DSemanticDecorator) {
+				DSemanticDecorator parentView = (DSemanticDecorator) viewContainer;
+				if (parentView.getTarget() instanceof Analysis) {
+					return parentView;
+				}
+			}
+		}
+		return null;
 	}
 
 }
