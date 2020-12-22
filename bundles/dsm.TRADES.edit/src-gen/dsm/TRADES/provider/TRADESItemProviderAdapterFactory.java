@@ -528,35 +528,11 @@ public class TRADESItemProviderAdapterFactory extends TRADESAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link dsm.TRADES.ControlType} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ControlTypeItemProvider controlTypeItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link dsm.TRADES.ControlType}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createControlTypeAdapter() {
-		if (controlTypeItemProvider == null) {
-			controlTypeItemProvider = new ControlTypeItemProvider(this);
-		}
-
-		return controlTypeItemProvider;
-	}
-
-	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public ComposeableAdapterFactory getRootAdapterFactory() {
 		return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
 	}
@@ -567,7 +543,6 @@ public class TRADESItemProviderAdapterFactory extends TRADESAdapterFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory) {
 		this.parentAdapterFactory = parentAdapterFactory;
 	}
@@ -643,7 +618,6 @@ public class TRADESItemProviderAdapterFactory extends TRADESAdapterFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void addListener(INotifyChangedListener notifyChangedListener) {
 		changeNotifier.addListener(notifyChangedListener);
 	}
@@ -654,7 +628,6 @@ public class TRADESItemProviderAdapterFactory extends TRADESAdapterFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void removeListener(INotifyChangedListener notifyChangedListener) {
 		changeNotifier.removeListener(notifyChangedListener);
 	}
@@ -665,7 +638,6 @@ public class TRADESItemProviderAdapterFactory extends TRADESAdapterFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void fireNotifyChanged(Notification notification) {
 		changeNotifier.fireNotifyChanged(notification);
 
@@ -680,7 +652,6 @@ public class TRADESItemProviderAdapterFactory extends TRADESAdapterFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void dispose() {
 		if (analysisItemProvider != null)
 			analysisItemProvider.dispose();
@@ -720,8 +691,6 @@ public class TRADESItemProviderAdapterFactory extends TRADESAdapterFactory
 			threatsOwnerItemProvider.dispose();
 		if (controlOwnerItemProvider != null)
 			controlOwnerItemProvider.dispose();
-		if (controlTypeItemProvider != null)
-			controlTypeItemProvider.dispose();
 	}
 
 }

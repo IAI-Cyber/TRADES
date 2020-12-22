@@ -182,11 +182,6 @@ public class TRADESAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseControlType(ControlType object) {
-			return createControlTypeAdapter();
-		}
-
-		@Override
 		public Adapter caseAbstractControlOwner(AbstractControlOwner object) {
 			return createAbstractControlOwnerAdapter();
 		}
@@ -529,20 +524,6 @@ public class TRADESAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createControlOwnerAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link dsm.TRADES.ControlType <em>Control Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see dsm.TRADES.ControlType
-	 * @generated
-	 */
-	public Adapter createControlTypeAdapter() {
 		return null;
 	}
 

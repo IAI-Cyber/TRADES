@@ -28,10 +28,6 @@ public interface AffectRelation extends NamedElement {
 	 * Returns the value of the '<em><b>Data</b></em>' reference list.
 	 * The list contents are of type {@link dsm.TRADES.Data}.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Data</em>' reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Data</em>' reference list.
 	 * @see dsm.TRADES.TRADESPackage#getAffectRelation_Data()
@@ -43,10 +39,6 @@ public interface AffectRelation extends NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Source Component</b></em>' reference.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Source Component</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Source Component</em>' reference.
 	 * @see #setSourceComponent(Component)
@@ -69,10 +61,6 @@ public interface AffectRelation extends NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Target Component</b></em>' reference.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Target Component</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Target Component</em>' reference.
 	 * @see #setTargetComponent(Component)
@@ -96,10 +84,6 @@ public interface AffectRelation extends NamedElement {
 	 * Returns the value of the '<em><b>Analysis Status</b></em>' attribute.
 	 * The literals are from the enumeration {@link dsm.TRADES.AffectedENUM}.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Analysis Status</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Analysis Status</em>' attribute.
 	 * @see dsm.TRADES.AffectedENUM

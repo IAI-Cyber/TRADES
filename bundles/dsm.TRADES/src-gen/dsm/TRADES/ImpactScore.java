@@ -22,14 +22,9 @@ import org.eclipse.emf.common.util.EList;
  * @generated
  */
 public interface ImpactScore extends NamedElement {
-
 	/**
 	 * Returns the value of the '<em><b>Impact</b></em>' attribute.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Impact</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Impact</em>' attribute.
 	 * @see #setImpact(int)
@@ -62,4 +57,5 @@ public interface ImpactScore extends NamedElement {
 	 * @generated
 	 */
 	EList<ImpactConfiguration> getConfigurations();
+
 } // ImpactScore

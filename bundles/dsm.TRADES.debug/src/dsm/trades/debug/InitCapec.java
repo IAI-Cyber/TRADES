@@ -25,7 +25,7 @@ import org.xml.sax.SAXException;
 
 import TRADES.design.ProjectFactory;
 import dsm.TRADES.Analysis;
-import dsm.TRADES.ControlType;
+import dsm.TRADES.ControlOwner;
 import dsm.TRADES.ExternalControl;
 import dsm.TRADES.ExternalThreat;
 import dsm.TRADES.TRADESFactory;
@@ -49,20 +49,16 @@ public class InitCapec implements IApplication {
 
 		ResourceSet rs = new ResourceSetImpl();
 
-		Resource resource = rs.createResource(
-				URI.createFileURI(targetModelFile));
+		Resource resource = rs.createResource(URI.createFileURI(targetModelFile));
 
 		Analysis analysis = ProjectFactory.createInitialModel("Capec");
-
-
 
 		ThreatType threatOwner = analysis.getThreatOwner().getExternal();
 
 		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 		DocumentBuilder builder = factory.newDocumentBuilder();
 
-		try (InputStream input = new FileInputStream(
-				Paths.get(inputFile).toFile())) {
+		try (InputStream input = new FileInputStream(Paths.get(inputFile).toFile())) {
 			Document doc = builder.parse(input);
 
 			Element root = doc.getDocumentElement();
@@ -78,8 +74,7 @@ public class InitCapec implements IApplication {
 						Node threatNode = attackPatternList.item(j);
 						if (threatNode instanceof Element) {
 
-							ExternalThreat threat = createNewThreat((Element) threatNode,
-									analysis.getControlOwner().getExternal());
+							ExternalThreat threat = createNewThreat((Element) threatNode, analysis.getControlOwner());
 							threatOwner.getThreats().add(threat);
 						}
 					}
@@ -105,7 +100,7 @@ public class InitCapec implements IApplication {
 
 	private static Map<String, ExternalControl> idToControls = new HashMap<>();
 
-	private ExternalThreat createNewThreat(Element parent, ControlType externalControlsOwner) {
+	private ExternalThreat createNewThreat(Element parent, ControlOwner controlOwner) {
 		ExternalThreat extPattern = TRADESFactory.eINSTANCE.createExternalThreat();
 		extPattern.setName(parent.getAttribute("Name"));
 		String oritinalId = parent.getAttribute("ID");
@@ -135,14 +130,13 @@ public class InitCapec implements IApplication {
 					existingControl.setName(textContent);
 					existingControl.setSource("Capec");
 
-					externalControlsOwner.getControls().add(existingControl);
+					controlOwner.getExternals().add(existingControl);
 					idToControls.put(textContent, existingControl);
 				}
 
 				ThreatMitigationRelation mitigation = TRADESFactory.eINSTANCE.createThreatMitigationRelation();
 				mitigation.setThreat(extPattern);
 				mitigation.setControl(existingControl);
-
 
 			}
 		}

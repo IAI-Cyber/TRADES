@@ -3,6 +3,7 @@
 package dsm.TRADES;
 
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -33,10 +34,6 @@ public interface ThreatAllocationRelation extends EObject {
 	 * The default value is <code>"Undecided"</code>.
 	 * The literals are from the enumeration {@link dsm.TRADES.AssessmentENUM}.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Assessment</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Assessment</em>' attribute.
 	 * @see dsm.TRADES.AssessmentENUM
@@ -62,10 +59,6 @@ public interface ThreatAllocationRelation extends EObject {
 	 * Returns the value of the '<em><b>Component</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link dsm.TRADES.Component#getThreatAllocations <em>Threat Allocations</em>}'.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Component</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Component</em>' container reference.
 	 * @see #setComponent(Component)
@@ -90,10 +83,6 @@ public interface ThreatAllocationRelation extends EObject {
 	 * Returns the value of the '<em><b>Threat</b></em>' reference.
 	 * It is bidirectional and its opposite is '{@link dsm.TRADES.Threat#getThreatallocation <em>Threatallocation</em>}'.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Threat</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Threat</em>' reference.
 	 * @see #setThreat(Threat)
@@ -117,10 +106,6 @@ public interface ThreatAllocationRelation extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Impactscore</b></em>' reference.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Impactscore</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Impactscore</em>' reference.
 	 * @see #setImpactscore(ImpactScore)
@@ -143,10 +128,6 @@ public interface ThreatAllocationRelation extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Difficultyscore</b></em>' reference.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Difficultyscore</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Difficultyscore</em>' reference.
 	 * @see #setDifficultyscore(DifficultyScore)

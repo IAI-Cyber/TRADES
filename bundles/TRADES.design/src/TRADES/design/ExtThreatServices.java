@@ -16,7 +16,6 @@ import org.eclipse.sirius.business.api.session.Session;
 import dsm.TRADES.Analysis;
 import dsm.TRADES.Control;
 import dsm.TRADES.ControlOwner;
-import dsm.TRADES.ControlType;
 import dsm.TRADES.ExternalControl;
 import dsm.TRADES.ExternalThreat;
 import dsm.TRADES.TRADESFactory;
@@ -126,9 +125,7 @@ public class ExtThreatServices {
 				realAnalysis.setControlOwner(controlOwner);
 			}
 			
-			ControlType externalControlFolder = getExternalControlSubType(controlOwner);
-			
-			externalControlFolder.getControls().add(newControl);
+			controlOwner.getExternals().add(newControl);
 			
 			result.add(newControl);
 		}
@@ -146,15 +143,6 @@ public class ExtThreatServices {
 	}
 	
 	
-	private ControlType getExternalControlSubType(ControlOwner controlOwner) {
-		ControlType externalControlFolder = controlOwner.getExternal();
-		if (externalControlFolder == null) {
-			externalControlFolder = TRADESFactory.eINSTANCE.createControlType();
-			externalControlFolder.setName("Externals");
-			controlOwner.setExternal(externalControlFolder);
-		}
-		return externalControlFolder;
-	}
 	
 	public List<ExternalControl> getLinkedControlInDataBases(ExternalThreat ext) {
         ResourceSet rs = Session.of(ext).get().getTransactionalEditingDomain().getResourceSet();

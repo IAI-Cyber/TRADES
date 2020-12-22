@@ -51,10 +51,6 @@ public enum AssessmentENUM implements Enumerator {
 	/**
 	 * The '<em><b>Undecided</b></em>' literal value.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>Undecided</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #UNDECIDED
 	 * @model name="Undecided"
@@ -66,10 +62,6 @@ public enum AssessmentENUM implements Enumerator {
 	/**
 	 * The '<em><b>Gap</b></em>' literal value.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>Gap</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #GAP
 	 * @model name="Gap"
@@ -81,10 +73,6 @@ public enum AssessmentENUM implements Enumerator {
 	/**
 	 * The '<em><b>Accepted</b></em>' literal value.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>Accepted</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #ACCEPTED
 	 * @model name="Accepted"

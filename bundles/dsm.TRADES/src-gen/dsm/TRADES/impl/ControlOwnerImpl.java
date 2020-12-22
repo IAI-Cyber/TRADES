@@ -2,18 +2,23 @@
  */
 package dsm.TRADES.impl;
 
+import dsm.TRADES.Control;
 import dsm.TRADES.ControlOwner;
-import dsm.TRADES.ControlType;
 import dsm.TRADES.TRADESPackage;
 
-import org.eclipse.emf.common.notify.Notification;
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,32 +28,32 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link dsm.TRADES.impl.ControlOwnerImpl#getInternal <em>Internal</em>}</li>
- *   <li>{@link dsm.TRADES.impl.ControlOwnerImpl#getExternal <em>External</em>}</li>
+ *   <li>{@link dsm.TRADES.impl.ControlOwnerImpl#getInternals <em>Internals</em>}</li>
+ *   <li>{@link dsm.TRADES.impl.ControlOwnerImpl#getExternals <em>Externals</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class ControlOwnerImpl extends MinimalEObjectImpl.Container implements ControlOwner {
 	/**
-	 * The cached value of the '{@link #getInternal() <em>Internal</em>}' containment reference.
+	 * The cached value of the '{@link #getInternals() <em>Internals</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getInternal()
+	 * @see #getInternals()
 	 * @generated
 	 * @ordered
 	 */
-	protected ControlType internal;
+	protected EList<Control> internals;
 
 	/**
-	 * The cached value of the '{@link #getExternal() <em>External</em>}' containment reference.
+	 * The cached value of the '{@link #getExternals() <em>Externals</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getExternal()
+	 * @see #getExternals()
 	 * @generated
 	 * @ordered
 	 */
-	protected ControlType external;
+	protected EList<Control> externals;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -75,27 +80,12 @@ public class ControlOwnerImpl extends MinimalEObjectImpl.Container implements Co
 	 * @generated
 	 */
 	@Override
-	public ControlType getInternal() {
-		return internal;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetInternal(ControlType newInternal, NotificationChain msgs) {
-		ControlType oldInternal = internal;
-		internal = newInternal;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					TRADESPackage.CONTROL_OWNER__INTERNAL, oldInternal, newInternal);
-			if (msgs == null)
-				msgs = notification;
-			else
-				msgs.add(notification);
+	public EList<Control> getInternals() {
+		if (internals == null) {
+			internals = new EObjectContainmentEList<Control>(Control.class, this,
+					TRADESPackage.CONTROL_OWNER__INTERNALS);
 		}
-		return msgs;
+		return internals;
 	}
 
 	/**
@@ -104,73 +94,12 @@ public class ControlOwnerImpl extends MinimalEObjectImpl.Container implements Co
 	 * @generated
 	 */
 	@Override
-	public void setInternal(ControlType newInternal) {
-		if (newInternal != internal) {
-			NotificationChain msgs = null;
-			if (internal != null)
-				msgs = ((InternalEObject) internal).eInverseRemove(this,
-						EOPPOSITE_FEATURE_BASE - TRADESPackage.CONTROL_OWNER__INTERNAL, null, msgs);
-			if (newInternal != null)
-				msgs = ((InternalEObject) newInternal).eInverseAdd(this,
-						EOPPOSITE_FEATURE_BASE - TRADESPackage.CONTROL_OWNER__INTERNAL, null, msgs);
-			msgs = basicSetInternal(newInternal, msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TRADESPackage.CONTROL_OWNER__INTERNAL, newInternal,
-					newInternal));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ControlType getExternal() {
-		return external;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetExternal(ControlType newExternal, NotificationChain msgs) {
-		ControlType oldExternal = external;
-		external = newExternal;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					TRADESPackage.CONTROL_OWNER__EXTERNAL, oldExternal, newExternal);
-			if (msgs == null)
-				msgs = notification;
-			else
-				msgs.add(notification);
+	public EList<Control> getExternals() {
+		if (externals == null) {
+			externals = new EObjectContainmentEList<Control>(Control.class, this,
+					TRADESPackage.CONTROL_OWNER__EXTERNALS);
 		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setExternal(ControlType newExternal) {
-		if (newExternal != external) {
-			NotificationChain msgs = null;
-			if (external != null)
-				msgs = ((InternalEObject) external).eInverseRemove(this,
-						EOPPOSITE_FEATURE_BASE - TRADESPackage.CONTROL_OWNER__EXTERNAL, null, msgs);
-			if (newExternal != null)
-				msgs = ((InternalEObject) newExternal).eInverseAdd(this,
-						EOPPOSITE_FEATURE_BASE - TRADESPackage.CONTROL_OWNER__EXTERNAL, null, msgs);
-			msgs = basicSetExternal(newExternal, msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TRADESPackage.CONTROL_OWNER__EXTERNAL, newExternal,
-					newExternal));
+		return externals;
 	}
 
 	/**
@@ -181,10 +110,10 @@ public class ControlOwnerImpl extends MinimalEObjectImpl.Container implements Co
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case TRADESPackage.CONTROL_OWNER__INTERNAL:
-			return basicSetInternal(null, msgs);
-		case TRADESPackage.CONTROL_OWNER__EXTERNAL:
-			return basicSetExternal(null, msgs);
+		case TRADESPackage.CONTROL_OWNER__INTERNALS:
+			return ((InternalEList<?>) getInternals()).basicRemove(otherEnd, msgs);
+		case TRADESPackage.CONTROL_OWNER__EXTERNALS:
+			return ((InternalEList<?>) getExternals()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -197,10 +126,10 @@ public class ControlOwnerImpl extends MinimalEObjectImpl.Container implements Co
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case TRADESPackage.CONTROL_OWNER__INTERNAL:
-			return getInternal();
-		case TRADESPackage.CONTROL_OWNER__EXTERNAL:
-			return getExternal();
+		case TRADESPackage.CONTROL_OWNER__INTERNALS:
+			return getInternals();
+		case TRADESPackage.CONTROL_OWNER__EXTERNALS:
+			return getExternals();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -210,14 +139,17 @@ public class ControlOwnerImpl extends MinimalEObjectImpl.Container implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case TRADESPackage.CONTROL_OWNER__INTERNAL:
-			setInternal((ControlType) newValue);
+		case TRADESPackage.CONTROL_OWNER__INTERNALS:
+			getInternals().clear();
+			getInternals().addAll((Collection<? extends Control>) newValue);
 			return;
-		case TRADESPackage.CONTROL_OWNER__EXTERNAL:
-			setExternal((ControlType) newValue);
+		case TRADESPackage.CONTROL_OWNER__EXTERNALS:
+			getExternals().clear();
+			getExternals().addAll((Collection<? extends Control>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -231,11 +163,11 @@ public class ControlOwnerImpl extends MinimalEObjectImpl.Container implements Co
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case TRADESPackage.CONTROL_OWNER__INTERNAL:
-			setInternal((ControlType) null);
+		case TRADESPackage.CONTROL_OWNER__INTERNALS:
+			getInternals().clear();
 			return;
-		case TRADESPackage.CONTROL_OWNER__EXTERNAL:
-			setExternal((ControlType) null);
+		case TRADESPackage.CONTROL_OWNER__EXTERNALS:
+			getExternals().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -249,10 +181,10 @@ public class ControlOwnerImpl extends MinimalEObjectImpl.Container implements Co
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case TRADESPackage.CONTROL_OWNER__INTERNAL:
-			return internal != null;
-		case TRADESPackage.CONTROL_OWNER__EXTERNAL:
-			return external != null;
+		case TRADESPackage.CONTROL_OWNER__INTERNALS:
+			return internals != null && !internals.isEmpty();
+		case TRADESPackage.CONTROL_OWNER__EXTERNALS:
+			return externals != null && !externals.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

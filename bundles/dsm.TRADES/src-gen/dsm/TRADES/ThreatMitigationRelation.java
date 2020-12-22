@@ -27,10 +27,6 @@ public interface ThreatMitigationRelation extends NamedElement {
 	 * The default value is <code>"Undecided"</code>.
 	 * The literals are from the enumeration {@link dsm.TRADES.AssessmentENUM}.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Assessment</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Assessment</em>' attribute.
 	 * @see dsm.TRADES.AssessmentENUM
@@ -56,10 +52,6 @@ public interface ThreatMitigationRelation extends NamedElement {
 	 * Returns the value of the '<em><b>Control</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link dsm.TRADES.Control#getMitigationrRelations <em>Mitigationr Relations</em>}'.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Control</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Control</em>' container reference.
 	 * @see #setControl(Control)
@@ -83,10 +75,6 @@ public interface ThreatMitigationRelation extends NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Threat</b></em>' reference.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Threat</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Threat</em>' reference.
 	 * @see #setThreat(Threat)
@@ -109,10 +97,6 @@ public interface ThreatMitigationRelation extends NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Mitigates</b></em>' reference.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Mitigates</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Mitigates</em>' reference.
 	 * @see #setMitigates(ThreatAllocationRelation)

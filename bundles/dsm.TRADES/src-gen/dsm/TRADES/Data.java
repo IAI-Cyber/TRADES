@@ -13,5 +13,4 @@ package dsm.TRADES;
  * @generated
  */
 public interface Data extends NamedElement {
-
 } // Data

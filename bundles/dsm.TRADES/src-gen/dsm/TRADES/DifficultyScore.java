@@ -19,14 +19,9 @@ package dsm.TRADES;
  * @generated
  */
 public interface DifficultyScore extends NamedElement {
-
 	/**
 	 * Returns the value of the '<em><b>Difficulty</b></em>' attribute.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Difficulty</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Difficulty</em>' attribute.
 	 * @see #setDifficulty(int)
@@ -45,4 +40,5 @@ public interface DifficultyScore extends NamedElement {
 	 * @generated
 	 */
 	void setDifficulty(int value);
+
 } // DifficultyScore

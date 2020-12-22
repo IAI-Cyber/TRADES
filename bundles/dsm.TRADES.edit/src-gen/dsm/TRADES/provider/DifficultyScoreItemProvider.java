@@ -2,29 +2,31 @@
  */
 package dsm.TRADES.provider;
 
+import dsm.TRADES.DifficultyScore;
+import dsm.TRADES.TRADESPackage;
+
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import dsm.TRADES.DifficultyScore;
-import dsm.TRADES.TRADESPackage;
-
 /**
  * This is the item provider adapter for a {@link dsm.TRADES.DifficultyScore} object.
- * <!-- begin-user-doc --> <!-- end-user-doc -->
+ * <!-- begin-user-doc -->
+ * <!-- end-user-doc -->
  * @generated
  */
 public class DifficultyScoreItemProvider extends NamedElementItemProvider {
 	/**
-	 * This constructs an instance from a factory and a notifier. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This constructs an instance from a factory and a notifier.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public DifficultyScoreItemProvider(AdapterFactory adapterFactory) {
@@ -32,9 +34,9 @@ public class DifficultyScoreItemProvider extends NamedElementItemProvider {
 	}
 
 	/**
-	 * This returns the property descriptors for the adapted class. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This returns the property descriptors for the adapted class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -48,9 +50,9 @@ public class DifficultyScoreItemProvider extends NamedElementItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Difficulty feature. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This adds a property descriptor for the Difficulty feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected void addDifficultyPropertyDescriptor(Object object) {
@@ -64,9 +66,9 @@ public class DifficultyScoreItemProvider extends NamedElementItemProvider {
 	}
 
 	/**
-	 * This returns DifficultyScore.gif. <!-- begin-user-doc --> <!-- end-user-doc
-	 * -->
-	 * 
+	 * This returns DifficultyScore.gif.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -75,7 +77,8 @@ public class DifficultyScoreItemProvider extends NamedElementItemProvider {
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -99,7 +102,8 @@ public class DifficultyScoreItemProvider extends NamedElementItemProvider {
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override

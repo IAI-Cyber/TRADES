@@ -7,7 +7,9 @@ import dsm.TRADES.ExternalThreat;
 import dsm.TRADES.TRADESPackage;
 
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EClass;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -34,6 +36,7 @@ public class ExternalThreatImpl extends ThreatImpl implements ExternalThreat {
 	 * @ordered
 	 */
 	protected static final String SOURCE_EDEFAULT = null;
+
 	/**
 	 * The cached value of the '{@link #getSource() <em>Source</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -43,6 +46,7 @@ public class ExternalThreatImpl extends ThreatImpl implements ExternalThreat {
 	 * @ordered
 	 */
 	protected String source = SOURCE_EDEFAULT;
+
 	/**
 	 * The default value of the '{@link #getLink() <em>Link</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -52,6 +56,7 @@ public class ExternalThreatImpl extends ThreatImpl implements ExternalThreat {
 	 * @ordered
 	 */
 	protected static final String LINK_EDEFAULT = null;
+
 	/**
 	 * The cached value of the '{@link #getLink() <em>Link</em>}' attribute.
 	 * <!-- begin-user-doc -->

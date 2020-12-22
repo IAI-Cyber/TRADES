@@ -26,10 +26,6 @@ public interface ScoreSystem extends NamedElement {
 	 * Returns the value of the '<em><b>Impactscore</b></em>' containment reference list.
 	 * The list contents are of type {@link dsm.TRADES.ImpactScore}.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Impactscore</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Impactscore</em>' containment reference list.
 	 * @see dsm.TRADES.TRADESPackage#getScoreSystem_Impactscore()
@@ -42,10 +38,6 @@ public interface ScoreSystem extends NamedElement {
 	 * Returns the value of the '<em><b>Difficultyscore</b></em>' containment reference list.
 	 * The list contents are of type {@link dsm.TRADES.DifficultyScore}.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Difficultyscore</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Difficultyscore</em>' containment reference list.
 	 * @see dsm.TRADES.TRADESPackage#getScoreSystem_Difficultyscore()

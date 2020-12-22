@@ -71,8 +71,8 @@ public class ControlOwnerItemProvider extends ItemProviderAdapter implements IEd
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(TRADESPackage.Literals.CONTROL_OWNER__INTERNAL);
-			childrenFeatures.add(TRADESPackage.Literals.CONTROL_OWNER__EXTERNAL);
+			childrenFeatures.add(TRADESPackage.Literals.CONTROL_OWNER__INTERNALS);
+			childrenFeatures.add(TRADESPackage.Literals.CONTROL_OWNER__EXTERNALS);
 		}
 		return childrenFeatures;
 	}
@@ -134,8 +134,8 @@ public class ControlOwnerItemProvider extends ItemProviderAdapter implements IEd
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ControlOwner.class)) {
-		case TRADESPackage.CONTROL_OWNER__INTERNAL:
-		case TRADESPackage.CONTROL_OWNER__EXTERNAL:
+		case TRADESPackage.CONTROL_OWNER__INTERNALS:
+		case TRADESPackage.CONTROL_OWNER__EXTERNALS:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -153,11 +153,17 @@ public class ControlOwnerItemProvider extends ItemProviderAdapter implements IEd
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(TRADESPackage.Literals.CONTROL_OWNER__INTERNAL,
-				TRADESFactory.eINSTANCE.createControlType()));
+		newChildDescriptors.add(createChildParameter(TRADESPackage.Literals.CONTROL_OWNER__INTERNALS,
+				TRADESFactory.eINSTANCE.createControl()));
 
-		newChildDescriptors.add(createChildParameter(TRADESPackage.Literals.CONTROL_OWNER__EXTERNAL,
-				TRADESFactory.eINSTANCE.createControlType()));
+		newChildDescriptors.add(createChildParameter(TRADESPackage.Literals.CONTROL_OWNER__INTERNALS,
+				TRADESFactory.eINSTANCE.createExternalControl()));
+
+		newChildDescriptors.add(createChildParameter(TRADESPackage.Literals.CONTROL_OWNER__EXTERNALS,
+				TRADESFactory.eINSTANCE.createControl()));
+
+		newChildDescriptors.add(createChildParameter(TRADESPackage.Literals.CONTROL_OWNER__EXTERNALS,
+				TRADESFactory.eINSTANCE.createExternalControl()));
 	}
 
 	/**
@@ -171,8 +177,8 @@ public class ControlOwnerItemProvider extends ItemProviderAdapter implements IEd
 		Object childFeature = feature;
 		Object childObject = child;
 
-		boolean qualify = childFeature == TRADESPackage.Literals.CONTROL_OWNER__INTERNAL
-				|| childFeature == TRADESPackage.Literals.CONTROL_OWNER__EXTERNAL;
+		boolean qualify = childFeature == TRADESPackage.Literals.CONTROL_OWNER__INTERNALS
+				|| childFeature == TRADESPackage.Literals.CONTROL_OWNER__EXTERNALS;
 
 		if (qualify) {
 			return getString("_UI_CreateChild_text2",

@@ -165,13 +165,9 @@
         eType="#//ThreatType" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ControlOwner">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="internal" lowerBound="1"
-        eType="#//ControlType" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="external" lowerBound="1"
-        eType="#//ControlType" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ControlType" eSuperTypes="#//NamedElement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="controls" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="internals" upperBound="-1"
+        eType="#//Control" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="externals" upperBound="-1"
         eType="#//Control" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AbstractControlOwner" abstract="true">

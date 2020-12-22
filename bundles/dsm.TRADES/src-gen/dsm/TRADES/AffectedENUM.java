@@ -41,10 +41,6 @@ public enum AffectedENUM implements Enumerator {
 	/**
 	 * The '<em><b>Undecided</b></em>' literal value.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>Undecided</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #UNDECIDED
 	 * @model name="Undecided"
@@ -56,10 +52,6 @@ public enum AffectedENUM implements Enumerator {
 	/**
 	 * The '<em><b>Confirmed</b></em>' literal value.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>Confirmed</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #CONFIRMED
 	 * @model name="Confirmed"

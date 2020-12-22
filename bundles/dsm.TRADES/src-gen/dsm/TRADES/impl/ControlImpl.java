@@ -6,8 +6,8 @@ import dsm.TRADES.Component;
 import dsm.TRADES.Control;
 import dsm.TRADES.TRADESPackage;
 import dsm.TRADES.Threat;
-
 import dsm.TRADES.ThreatMitigationRelation;
+
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;

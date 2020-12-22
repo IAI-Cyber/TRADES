@@ -13,7 +13,6 @@ import dsm.TRADES.Component;
 import dsm.TRADES.ComponentOwer;
 import dsm.TRADES.Control;
 import dsm.TRADES.ControlOwner;
-import dsm.TRADES.ControlType;
 import dsm.TRADES.Data;
 import dsm.TRADES.DataOwner;
 import dsm.TRADES.DifficultyScore;
@@ -211,13 +210,6 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * @generated
 	 */
 	private EClass controlOwnerEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass controlTypeEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1144,7 +1136,7 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getControlOwner_Internal() {
+	public EReference getControlOwner_Internals() {
 		return (EReference) controlOwnerEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -1154,28 +1146,8 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getControlOwner_External() {
+	public EReference getControlOwner_Externals() {
 		return (EReference) controlOwnerEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getControlType() {
-		return controlTypeEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getControlType_Controls() {
-		return (EReference) controlTypeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1382,11 +1354,8 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		createEReference(threatsOwnerEClass, THREATS_OWNER__EXTERNAL);
 
 		controlOwnerEClass = createEClass(CONTROL_OWNER);
-		createEReference(controlOwnerEClass, CONTROL_OWNER__INTERNAL);
-		createEReference(controlOwnerEClass, CONTROL_OWNER__EXTERNAL);
-
-		controlTypeEClass = createEClass(CONTROL_TYPE);
-		createEReference(controlTypeEClass, CONTROL_TYPE__CONTROLS);
+		createEReference(controlOwnerEClass, CONTROL_OWNER__INTERNALS);
+		createEReference(controlOwnerEClass, CONTROL_OWNER__EXTERNALS);
 
 		abstractControlOwnerEClass = createEClass(ABSTRACT_CONTROL_OWNER);
 		createEReference(abstractControlOwnerEClass, ABSTRACT_CONTROL_OWNER__CONTROL_OWNER);
@@ -1452,7 +1421,6 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		externalControlEClass.getESuperTypes().add(this.getExternalElement());
 		externalControlEClass.getESuperTypes().add(this.getControl());
 		threatTypeEClass.getESuperTypes().add(this.getNamedElement());
-		controlTypeEClass.getESuperTypes().add(this.getNamedElement());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(analysisEClass, Analysis.class, "Analysis", !IS_ABSTRACT, !IS_INTERFACE,
@@ -1693,18 +1661,12 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 
 		initEClass(controlOwnerEClass, ControlOwner.class, "ControlOwner", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getControlOwner_Internal(), this.getControlType(), null, "internal", null, 1, 1,
+		initEReference(getControlOwner_Internals(), this.getControl(), null, "internals", null, 0, -1,
 				ControlOwner.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getControlOwner_External(), this.getControlType(), null, "external", null, 1, 1,
+		initEReference(getControlOwner_Externals(), this.getControl(), null, "externals", null, 0, -1,
 				ControlOwner.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(controlTypeEClass, ControlType.class, "ControlType", !IS_ABSTRACT, !IS_INTERFACE,
-				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getControlType_Controls(), this.getControl(), null, "controls", null, 0, -1, ControlType.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(abstractControlOwnerEClass, AbstractControlOwner.class, "AbstractControlOwner", IS_ABSTRACT,
 				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

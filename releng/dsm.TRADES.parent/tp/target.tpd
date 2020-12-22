@@ -17,6 +17,8 @@ location "https://s3-eu-west-1.amazonaws.com/obeo-m2doc-releases/3.1.0/repositor
 	org.obeonetwork.m2doc.feature.feature.group lazy
 	org.obeonetwork.m2doc.sirius.feature.feature.group lazy
 	org.obeonetwork.m2doc.ui.feature.feature.group lazy
+	org.eclipse.acceleo.query.feature.group lazy
+	org.antlr.runtime lazy
 }
 
 location "http://download.eclipse.org/e4/snapshots/org.eclipse.e4.tools/latest/" {
@@ -34,7 +36,7 @@ location "http://download.eclipse.org/sirius/updates/releases/6.3.4/2020-06" {
 	org.eclipse.sirius.runtime.feature.group lazy
 	org.eclipse.eef.ide lazy
 	org.eclipse.sirius.runtime.ide.ui.acceleo.feature.group lazy
-	org.eclipse.acceleo.query.feature.group lazy
+	
 	org.eclipse.sirius.interpreter.feature.feature.group lazy
 	org.eclipse.sirius.properties.feature.source.feature.group
 	org.eclipse.sirius.runtime.acceleo.feature.group lazy
@@ -48,10 +50,6 @@ location "http://download.eclipse.org/sirius/updates/releases/6.3.4/2020-06" {
 	org.eclipse.sirius.specifier.properties.feature.feature.group lazy
 }
 
-// Orbit dependencies (All dependencies that are not Eclipse projects)
-location "https://download.eclipse.org/tools/orbit/downloads/drops/R20200529191137/repository" {
-	org.antlr.runtime lazy
-}
 
 location "https://download.eclipse.org/justj/jres/14/updates/nightly/latest" {
 	org.eclipse.justj.openjdk.hotspot.jre.full.feature.group lazy

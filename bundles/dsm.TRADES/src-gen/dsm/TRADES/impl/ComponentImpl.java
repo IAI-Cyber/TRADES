@@ -16,6 +16,7 @@ import dsm.TRADES.Threat;
 import dsm.TRADES.ThreatAllocationRelation;
 
 import java.lang.reflect.InvocationTargetException;
+
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -27,6 +28,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
@@ -179,41 +181,11 @@ public class ComponentImpl extends ComponentOwerImpl implements Component {
 	 * @generated
 	 */
 	@Override
-	public EList<Threat> getAllocatedThreat() {
-		if (allocatedThreat == null) {
-			allocatedThreat = new EObjectWithInverseResolvingEList.ManyInverse<Threat>(Threat.class, this,
-					TRADESPackage.COMPONENT__ALLOCATED_THREAT, TRADESPackage.THREAT__ALLOCATED);
+	public EList<Data> getData() {
+		if (data == null) {
+			data = new EObjectContainmentEList<Data>(Data.class, this, TRADESPackage.COMPONENT__DATA);
 		}
-		return allocatedThreat;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EList<Control> getImplements() {
-		if (implements_ == null) {
-			implements_ = new EObjectWithInverseResolvingEList.ManyInverse<Control>(Control.class, this,
-					TRADESPackage.COMPONENT__IMPLEMENTS, TRADESPackage.CONTROL__IMPLEMENTED_BY);
-		}
-		return implements_;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EList<ThreatAllocationRelation> getThreatAllocations() {
-		if (threatAllocations == null) {
-			threatAllocations = new EObjectContainmentWithInverseEList<ThreatAllocationRelation>(
-					ThreatAllocationRelation.class, this, TRADESPackage.COMPONENT__THREAT_ALLOCATIONS,
-					TRADESPackage.THREAT_ALLOCATION_RELATION__COMPONENT);
-		}
-		return threatAllocations;
+		return data;
 	}
 
 	/**
@@ -237,71 +209,6 @@ public class ComponentImpl extends ComponentOwerImpl implements Component {
 		name = newName;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TRADESPackage.COMPONENT__NAME, oldName, name));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EList<Data> getData() {
-		if (data == null) {
-			data = new EObjectContainmentEList<Data>(Data.class, this, TRADESPackage.COMPONENT__DATA);
-		}
-		return data;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EList<Analysis> getAnalysis() {
-		if (analysis == null) {
-			analysis = new EObjectContainmentEList<Analysis>(Analysis.class, this, TRADESPackage.COMPONENT__ANALYSIS);
-		}
-		return analysis;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EList<AffectRelation> getAffectrelation() {
-		if (affectrelation == null) {
-			affectrelation = new EObjectContainmentEList<AffectRelation>(AffectRelation.class, this,
-					TRADESPackage.COMPONENT__AFFECTRELATION);
-		}
-		return affectrelation;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EList<Threat> getThreat() {
-		if (threat == null) {
-			threat = new EObjectContainmentEList<Threat>(Threat.class, this, TRADESPackage.COMPONENT__THREAT);
-		}
-		return threat;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EList<Control> getAllControls() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -354,6 +261,101 @@ public class ComponentImpl extends ComponentOwerImpl implements Component {
 		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TRADESPackage.COMPONENT__CONTROL_OWNER,
 					newControlOwner, newControlOwner));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<Threat> getAllocatedThreat() {
+		if (allocatedThreat == null) {
+			allocatedThreat = new EObjectWithInverseResolvingEList.ManyInverse<Threat>(Threat.class, this,
+					TRADESPackage.COMPONENT__ALLOCATED_THREAT, TRADESPackage.THREAT__ALLOCATED);
+		}
+		return allocatedThreat;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<Control> getImplements() {
+		if (implements_ == null) {
+			implements_ = new EObjectWithInverseResolvingEList.ManyInverse<Control>(Control.class, this,
+					TRADESPackage.COMPONENT__IMPLEMENTS, TRADESPackage.CONTROL__IMPLEMENTED_BY);
+		}
+		return implements_;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<ThreatAllocationRelation> getThreatAllocations() {
+		if (threatAllocations == null) {
+			threatAllocations = new EObjectContainmentWithInverseEList<ThreatAllocationRelation>(
+					ThreatAllocationRelation.class, this, TRADESPackage.COMPONENT__THREAT_ALLOCATIONS,
+					TRADESPackage.THREAT_ALLOCATION_RELATION__COMPONENT);
+		}
+		return threatAllocations;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<Analysis> getAnalysis() {
+		if (analysis == null) {
+			analysis = new EObjectContainmentEList<Analysis>(Analysis.class, this, TRADESPackage.COMPONENT__ANALYSIS);
+		}
+		return analysis;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<AffectRelation> getAffectrelation() {
+		if (affectrelation == null) {
+			affectrelation = new EObjectContainmentEList<AffectRelation>(AffectRelation.class, this,
+					TRADESPackage.COMPONENT__AFFECTRELATION);
+		}
+		return affectrelation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<Threat> getThreat() {
+		if (threat == null) {
+			threat = new EObjectContainmentEList<Threat>(Threat.class, this, TRADESPackage.COMPONENT__THREAT);
+		}
+		return threat;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<Control> getAllControls() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**

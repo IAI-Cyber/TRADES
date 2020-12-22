@@ -10,7 +10,6 @@ import org.eclipse.ui.PlatformUI;
 import dsm.TRADES.AbstractControlOwner;
 import dsm.TRADES.Control;
 import dsm.TRADES.ControlOwner;
-import dsm.TRADES.ControlType;
 import dsm.TRADES.DifficultyScore;
 import dsm.TRADES.ImpactConfiguration;
 import dsm.TRADES.ImpactScore;
@@ -65,13 +64,7 @@ public class SemanticService {
 			cmp.setControlOwner(owner);
 		}
 		
-		ControlType internal = owner.getInternal();
-		if(internal == null) {
-			internal = TRADESFactory.eINSTANCE.createControlType();
-			owner.setInternal(internal);
-		}
-		
-		internal.getControls().add(control);
+		owner.getInternals().add(control);
 	}
 	
 	/**

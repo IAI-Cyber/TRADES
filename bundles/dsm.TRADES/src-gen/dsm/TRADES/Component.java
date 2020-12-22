@@ -31,10 +31,6 @@ public interface Component extends ComponentOwer, DataOwner, NamedElement, Abstr
 	 * The list contents are of type {@link dsm.TRADES.Threat}.
 	 * It is bidirectional and its opposite is '{@link dsm.TRADES.Threat#getAllocated <em>Allocated</em>}'.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Allocated Threat</em>' reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Allocated Threat</em>' reference list.
 	 * @see dsm.TRADES.TRADESPackage#getComponent_AllocatedThreat()
@@ -49,10 +45,6 @@ public interface Component extends ComponentOwer, DataOwner, NamedElement, Abstr
 	 * The list contents are of type {@link dsm.TRADES.Control}.
 	 * It is bidirectional and its opposite is '{@link dsm.TRADES.Control#getImplementedBy <em>Implemented By</em>}'.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Implements</em>' reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Implements</em>' reference list.
 	 * @see dsm.TRADES.TRADESPackage#getComponent_Implements()
@@ -80,10 +72,6 @@ public interface Component extends ComponentOwer, DataOwner, NamedElement, Abstr
 	 * Returns the value of the '<em><b>Analysis</b></em>' containment reference list.
 	 * The list contents are of type {@link dsm.TRADES.Analysis}.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Analysis</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Analysis</em>' containment reference list.
 	 * @see dsm.TRADES.TRADESPackage#getComponent_Analysis()
@@ -96,10 +84,6 @@ public interface Component extends ComponentOwer, DataOwner, NamedElement, Abstr
 	 * Returns the value of the '<em><b>Affectrelation</b></em>' containment reference list.
 	 * The list contents are of type {@link dsm.TRADES.AffectRelation}.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Affectrelation</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Affectrelation</em>' containment reference list.
 	 * @see dsm.TRADES.TRADESPackage#getComponent_Affectrelation()
@@ -112,10 +96,6 @@ public interface Component extends ComponentOwer, DataOwner, NamedElement, Abstr
 	 * Returns the value of the '<em><b>Threat</b></em>' containment reference list.
 	 * The list contents are of type {@link dsm.TRADES.Threat}.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Threat</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Threat</em>' containment reference list.
 	 * @see dsm.TRADES.TRADESPackage#getComponent_Threat()

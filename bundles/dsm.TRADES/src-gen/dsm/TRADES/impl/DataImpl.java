@@ -4,6 +4,7 @@ package dsm.TRADES.impl;
 
 import dsm.TRADES.Data;
 import dsm.TRADES.TRADESPackage;
+
 import org.eclipse.emf.ecore.EClass;
 
 /**

@@ -3,6 +3,7 @@
 package dsm.TRADES;
 
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -30,10 +31,6 @@ public interface AttackChainStep extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Step Num</b></em>' attribute.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Step Num</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Step Num</em>' attribute.
 	 * @see #setStepNum(String)
@@ -103,10 +100,6 @@ public interface AttackChainStep extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Impact Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Impact Description</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Impact Description</em>' attribute.
 	 * @see #setImpactDescription(String)

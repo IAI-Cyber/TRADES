@@ -3,7 +3,6 @@ package TRADES.design;
 import dsm.TRADES.AbstractControlOwner;
 import dsm.TRADES.Analysis;
 import dsm.TRADES.ControlOwner;
-import dsm.TRADES.ControlType;
 import dsm.TRADES.DifficultyScore;
 import dsm.TRADES.ImpactConfiguration;
 import dsm.TRADES.ImpactScore;
@@ -51,13 +50,6 @@ public class ProjectFactory {
 		ControlOwner controlOwner = TRADESFactory.eINSTANCE.createControlOwner();
 		analysis.setControlOwner(controlOwner);
 
-		ControlType internalControlFolder = TRADESFactory.eINSTANCE.createControlType();
-		internalControlFolder.setName("Internals");
-		controlOwner.setInternal(internalControlFolder);
-
-		ControlType externalControlFolder = TRADESFactory.eINSTANCE.createControlType();
-		externalControlFolder.setName("Externals");
-		controlOwner.setExternal(externalControlFolder);
 	}
 
 	private static void createDifficulty(String name, int score, ScoreSystem system) {

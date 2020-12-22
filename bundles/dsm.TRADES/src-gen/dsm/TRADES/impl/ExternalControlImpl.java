@@ -8,8 +8,8 @@ import dsm.TRADES.ExternalControl;
 import dsm.TRADES.NamedElement;
 import dsm.TRADES.TRADESPackage;
 import dsm.TRADES.Threat;
-
 import dsm.TRADES.ThreatMitigationRelation;
+
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;

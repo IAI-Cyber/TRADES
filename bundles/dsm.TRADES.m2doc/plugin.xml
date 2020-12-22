@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+  <extension
+        point="org.eclipse.ui.commands">
+     <command
+           defaultHandler="dsm.trades.m2doc.handler.GenerationHandler"
+           id="TRADES.design.command.generate.report"
+           name="Generate report">
+     </command>
+  </extension>
+  <extension
+        point="org.eclipse.ui.menus">
+     <menuContribution
+           allPopups="false"
+           locationURI="popup:org.eclipse.ui.popup.any?after=additions">
+        <command
+              commandId="TRADES.design.command.generate.report"
+              label="Generate report"
+              style="push">
+           <visibleWhen
+                 checkEnabled="false">
+              <iterate
+                    ifEmpty="false"
+                    operator="and">
+                 <adapt
+                       type="org.eclipse.emf.ecore.EObject">
+                 </adapt>
+              </iterate>
+           </visibleWhen>
+        </command>
+     </menuContribution>
+  </extension>
+</plugin>

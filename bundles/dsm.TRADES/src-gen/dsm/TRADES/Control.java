@@ -29,10 +29,6 @@ public interface Control extends NamedElement {
 	 * Returns the value of the '<em><b>Mitigates</b></em>' reference list.
 	 * The list contents are of type {@link dsm.TRADES.Threat}.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Mitigates</em>' reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Mitigates</em>' reference list.
 	 * @see dsm.TRADES.TRADESPackage#getControl_Mitigates()
@@ -46,10 +42,6 @@ public interface Control extends NamedElement {
 	 * The list contents are of type {@link dsm.TRADES.Component}.
 	 * It is bidirectional and its opposite is '{@link dsm.TRADES.Component#getImplements <em>Implements</em>}'.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Implemented By</em>' reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Implemented By</em>' reference list.
 	 * @see dsm.TRADES.TRADESPackage#getControl_ImplementedBy()

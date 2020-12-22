@@ -31,10 +31,6 @@ public interface Threat extends NamedElement {
 	 * The list contents are of type {@link dsm.TRADES.Component}.
 	 * It is bidirectional and its opposite is '{@link dsm.TRADES.Component#getAllocatedThreat <em>Allocated Threat</em>}'.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Allocated</em>' reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Allocated</em>' reference list.
 	 * @see dsm.TRADES.TRADESPackage#getThreat_Allocated()
@@ -49,10 +45,6 @@ public interface Threat extends NamedElement {
 	 * The list contents are of type {@link dsm.TRADES.ThreatAllocationRelation}.
 	 * It is bidirectional and its opposite is '{@link dsm.TRADES.ThreatAllocationRelation#getThreat <em>Threat</em>}'.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Threatallocation</em>' reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Threatallocation</em>' reference list.
 	 * @see dsm.TRADES.TRADESPackage#getThreat_Threatallocation()
@@ -66,10 +58,6 @@ public interface Threat extends NamedElement {
 	 * Returns the value of the '<em><b>Threat Type</b></em>' attribute.
 	 * The literals are from the enumeration {@link dsm.TRADES.threatTypeENUM}.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Threat Type</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Threat Type</em>' attribute.
 	 * @see dsm.TRADES.threatTypeENUM

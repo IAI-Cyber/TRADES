@@ -3,7 +3,6 @@ package dsm.TRADES;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.Optional;
 
 public final class SemanticHelper {
 
@@ -17,9 +16,8 @@ public final class SemanticHelper {
 		}
 
 		List<Control> result = new ArrayList<Control>();
-
-		Optional.ofNullable(cOwner.getInternal()).ifPresent(t -> result.addAll(t.getControls()));
-		Optional.ofNullable(cOwner.getExternal()).ifPresent(t -> result.addAll(t.getControls()));
+		result.addAll(cOwner.getInternals());
+		result.addAll(cOwner.getExternals());
 		return result;
 	}
 }

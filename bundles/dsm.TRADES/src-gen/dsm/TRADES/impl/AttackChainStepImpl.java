@@ -2,25 +2,30 @@
  */
 package dsm.TRADES.impl;
 
-import java.util.Collection;
-
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
-import org.eclipse.emf.ecore.util.InternalEList;
-
 import dsm.TRADES.AttackChainStep;
 import dsm.TRADES.TRADESPackage;
 import dsm.TRADES.ThreatAllocationRelation;
 
+import java.util.Collection;
+
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
+import org.eclipse.emf.ecore.util.InternalEList;
+
 /**
- * <!-- begin-user-doc --> An implementation of the model object '<em><b>Attack
- * Chain Step</b></em>'. <!-- end-user-doc -->
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>Attack Chain Step</b></em>'.
+ * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
@@ -38,7 +43,8 @@ import dsm.TRADES.ThreatAllocationRelation;
 public class AttackChainStepImpl extends MinimalEObjectImpl.Container implements AttackChainStep {
 	/**
 	 * The default value of the '{@link #getStepNum() <em>Step Num</em>}' attribute.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getStepNum()
 	 * @generated
 	 * @ordered
@@ -47,8 +53,8 @@ public class AttackChainStepImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * The cached value of the '{@link #getThreatAllocationRelation() <em>Threat Allocation Relation</em>}' reference.
-	 * <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getThreatAllocationRelation()
 	 * @generated
 	 * @ordered
@@ -57,7 +63,8 @@ public class AttackChainStepImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * The default value of the '{@link #getDifficulty() <em>Difficulty</em>}' attribute.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getDifficulty()
 	 * @generated
 	 * @ordered
@@ -66,7 +73,8 @@ public class AttackChainStepImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * The cached value of the '{@link #getDifficulty() <em>Difficulty</em>}' attribute.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getDifficulty()
 	 * @generated
 	 * @ordered
@@ -75,7 +83,8 @@ public class AttackChainStepImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * The default value of the '{@link #getImpactDescription() <em>Impact Description</em>}' attribute.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getImpactDescription()
 	 * @generated
 	 * @ordered
@@ -84,7 +93,8 @@ public class AttackChainStepImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * The cached value of the '{@link #getImpactDescription() <em>Impact Description</em>}' attribute.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getImpactDescription()
 	 * @generated
 	 * @ordered
@@ -93,7 +103,8 @@ public class AttackChainStepImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * The cached value of the '{@link #getNext() <em>Next</em>}' reference list.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getNext()
 	 * @generated
 	 * @ordered
@@ -102,7 +113,8 @@ public class AttackChainStepImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * The cached value of the '{@link #getPrevious() <em>Previous</em>}' reference list.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getPrevious()
 	 * @generated
 	 * @ordered
@@ -110,7 +122,8 @@ public class AttackChainStepImpl extends MinimalEObjectImpl.Container implements
 	protected EList<AttackChainStep> previous;
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected AttackChainStepImpl() {
@@ -118,7 +131,8 @@ public class AttackChainStepImpl extends MinimalEObjectImpl.Container implements
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -127,7 +141,8 @@ public class AttackChainStepImpl extends MinimalEObjectImpl.Container implements
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -138,7 +153,8 @@ public class AttackChainStepImpl extends MinimalEObjectImpl.Container implements
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -149,7 +165,8 @@ public class AttackChainStepImpl extends MinimalEObjectImpl.Container implements
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -168,7 +185,8 @@ public class AttackChainStepImpl extends MinimalEObjectImpl.Container implements
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public ThreatAllocationRelation basicGetThreatAllocationRelation() {
@@ -176,7 +194,8 @@ public class AttackChainStepImpl extends MinimalEObjectImpl.Container implements
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -190,7 +209,8 @@ public class AttackChainStepImpl extends MinimalEObjectImpl.Container implements
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -199,7 +219,8 @@ public class AttackChainStepImpl extends MinimalEObjectImpl.Container implements
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -212,7 +233,8 @@ public class AttackChainStepImpl extends MinimalEObjectImpl.Container implements
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -221,7 +243,8 @@ public class AttackChainStepImpl extends MinimalEObjectImpl.Container implements
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -234,7 +257,8 @@ public class AttackChainStepImpl extends MinimalEObjectImpl.Container implements
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -247,7 +271,8 @@ public class AttackChainStepImpl extends MinimalEObjectImpl.Container implements
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -260,7 +285,8 @@ public class AttackChainStepImpl extends MinimalEObjectImpl.Container implements
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -276,7 +302,8 @@ public class AttackChainStepImpl extends MinimalEObjectImpl.Container implements
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -291,7 +318,8 @@ public class AttackChainStepImpl extends MinimalEObjectImpl.Container implements
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -316,7 +344,8 @@ public class AttackChainStepImpl extends MinimalEObjectImpl.Container implements
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -348,7 +377,8 @@ public class AttackChainStepImpl extends MinimalEObjectImpl.Container implements
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -377,7 +407,8 @@ public class AttackChainStepImpl extends MinimalEObjectImpl.Container implements
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -401,7 +432,8 @@ public class AttackChainStepImpl extends MinimalEObjectImpl.Container implements
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -418,4 +450,4 @@ public class AttackChainStepImpl extends MinimalEObjectImpl.Container implements
 		return result.toString();
 	}
 
-} // AttackChainStepImpl
+} //AttackChainStepImpl

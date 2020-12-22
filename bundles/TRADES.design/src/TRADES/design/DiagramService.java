@@ -8,7 +8,6 @@ import org.eclipse.emf.ecore.EObject;
 import dsm.TRADES.AttackChainStep;
 import dsm.TRADES.Component;
 import dsm.TRADES.ControlOwner;
-import dsm.TRADES.ControlType;
 import dsm.TRADES.ThreatAllocationRelation;
 
 public class DiagramService {
@@ -58,8 +57,6 @@ public class DiagramService {
 		EObject eContainer = o.eContainer();
 		if (eContainer instanceof Component) {
 			return true;
-		} else if (eContainer instanceof ControlType) {
-			return containedInComponent(eContainer);
 		} else if (eContainer instanceof ControlOwner) {
 			return containedInComponent(eContainer);
 		}

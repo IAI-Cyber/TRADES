@@ -13,7 +13,9 @@ import dsm.TRADES.NamedElement;
 import dsm.TRADES.ScoreSystem;
 import dsm.TRADES.TRADESPackage;
 import dsm.TRADES.ThreatsOwner;
+
 import java.lang.reflect.InvocationTargetException;
+
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -25,6 +27,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -142,6 +145,19 @@ public class AnalysisImpl extends ComponentOwerImpl implements Analysis {
 	 * @generated
 	 */
 	@Override
+	public EList<Data> getData() {
+		if (data == null) {
+			data = new EObjectContainmentEList<Data>(Data.class, this, TRADESPackage.ANALYSIS__DATA);
+		}
+		return data;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -165,11 +181,50 @@ public class AnalysisImpl extends ComponentOwerImpl implements Analysis {
 	 * @generated
 	 */
 	@Override
-	public EList<Data> getData() {
-		if (data == null) {
-			data = new EObjectContainmentEList<Data>(Data.class, this, TRADESPackage.ANALYSIS__DATA);
+	public ControlOwner getControlOwner() {
+		return controlOwner;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetControlOwner(ControlOwner newControlOwner, NotificationChain msgs) {
+		ControlOwner oldControlOwner = controlOwner;
+		controlOwner = newControlOwner;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					TRADESPackage.ANALYSIS__CONTROL_OWNER, oldControlOwner, newControlOwner);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
-		return data;
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setControlOwner(ControlOwner newControlOwner) {
+		if (newControlOwner != controlOwner) {
+			NotificationChain msgs = null;
+			if (controlOwner != null)
+				msgs = ((InternalEObject) controlOwner).eInverseRemove(this,
+						EOPPOSITE_FEATURE_BASE - TRADESPackage.ANALYSIS__CONTROL_OWNER, null, msgs);
+			if (newControlOwner != null)
+				msgs = ((InternalEObject) newControlOwner).eInverseAdd(this,
+						EOPPOSITE_FEATURE_BASE - TRADESPackage.ANALYSIS__CONTROL_OWNER, null, msgs);
+			msgs = basicSetControlOwner(newControlOwner, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TRADESPackage.ANALYSIS__CONTROL_OWNER,
+					newControlOwner, newControlOwner));
 	}
 
 	/**
@@ -300,58 +355,6 @@ public class AnalysisImpl extends ComponentOwerImpl implements Analysis {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ControlOwner getControlOwner() {
-		return controlOwner;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetControlOwner(ControlOwner newControlOwner, NotificationChain msgs) {
-		ControlOwner oldControlOwner = controlOwner;
-		controlOwner = newControlOwner;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					TRADESPackage.ANALYSIS__CONTROL_OWNER, oldControlOwner, newControlOwner);
-			if (msgs == null)
-				msgs = notification;
-			else
-				msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setControlOwner(ControlOwner newControlOwner) {
-		if (newControlOwner != controlOwner) {
-			NotificationChain msgs = null;
-			if (controlOwner != null)
-				msgs = ((InternalEObject) controlOwner).eInverseRemove(this,
-						EOPPOSITE_FEATURE_BASE - TRADESPackage.ANALYSIS__CONTROL_OWNER, null, msgs);
-			if (newControlOwner != null)
-				msgs = ((InternalEObject) newControlOwner).eInverseAdd(this,
-						EOPPOSITE_FEATURE_BASE - TRADESPackage.ANALYSIS__CONTROL_OWNER, null, msgs);
-			msgs = basicSetControlOwner(newControlOwner, msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TRADESPackage.ANALYSIS__CONTROL_OWNER,
-					newControlOwner, newControlOwner));
 	}
 
 	/**

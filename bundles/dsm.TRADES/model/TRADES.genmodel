@@ -126,11 +126,8 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//ThreatsOwner/external"/>
     </genClasses>
     <genClasses ecoreClass="TRADES.ecore#//ControlOwner">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//ControlOwner/internal"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//ControlOwner/external"/>
-    </genClasses>
-    <genClasses ecoreClass="TRADES.ecore#//ControlType">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//ControlType/controls"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//ControlOwner/internals"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//ControlOwner/externals"/>
     </genClasses>
     <genClasses ecoreClass="TRADES.ecore#//AbstractControlOwner">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//AbstractControlOwner/controlOwner"/>

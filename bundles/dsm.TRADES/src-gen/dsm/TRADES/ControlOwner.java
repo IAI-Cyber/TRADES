@@ -2,6 +2,8 @@
  */
 package dsm.TRADES;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -13,8 +15,8 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link dsm.TRADES.ControlOwner#getInternal <em>Internal</em>}</li>
- *   <li>{@link dsm.TRADES.ControlOwner#getExternal <em>External</em>}</li>
+ *   <li>{@link dsm.TRADES.ControlOwner#getInternals <em>Internals</em>}</li>
+ *   <li>{@link dsm.TRADES.ControlOwner#getExternals <em>Externals</em>}</li>
  * </ul>
  *
  * @see dsm.TRADES.TRADESPackage#getControlOwner()
@@ -23,47 +25,27 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface ControlOwner extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Internal</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Internals</b></em>' containment reference list.
+	 * The list contents are of type {@link dsm.TRADES.Control}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Internal</em>' containment reference.
-	 * @see #setInternal(ControlType)
-	 * @see dsm.TRADES.TRADESPackage#getControlOwner_Internal()
-	 * @model containment="true" required="true"
+	 * @return the value of the '<em>Internals</em>' containment reference list.
+	 * @see dsm.TRADES.TRADESPackage#getControlOwner_Internals()
+	 * @model containment="true"
 	 * @generated
 	 */
-	ControlType getInternal();
+	EList<Control> getInternals();
 
 	/**
-	 * Sets the value of the '{@link dsm.TRADES.ControlOwner#getInternal <em>Internal</em>}' containment reference.
+	 * Returns the value of the '<em><b>Externals</b></em>' containment reference list.
+	 * The list contents are of type {@link dsm.TRADES.Control}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Internal</em>' containment reference.
-	 * @see #getInternal()
+	 * @return the value of the '<em>Externals</em>' containment reference list.
+	 * @see dsm.TRADES.TRADESPackage#getControlOwner_Externals()
+	 * @model containment="true"
 	 * @generated
 	 */
-	void setInternal(ControlType value);
-
-	/**
-	 * Returns the value of the '<em><b>External</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>External</em>' containment reference.
-	 * @see #setExternal(ControlType)
-	 * @see dsm.TRADES.TRADESPackage#getControlOwner_External()
-	 * @model containment="true" required="true"
-	 * @generated
-	 */
-	ControlType getExternal();
-
-	/**
-	 * Sets the value of the '{@link dsm.TRADES.ControlOwner#getExternal <em>External</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>External</em>' containment reference.
-	 * @see #getExternal()
-	 * @generated
-	 */
-	void setExternal(ControlType value);
+	EList<Control> getExternals();
 
 } // ControlOwner

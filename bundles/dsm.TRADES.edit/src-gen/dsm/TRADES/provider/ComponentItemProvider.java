@@ -2,20 +2,22 @@
  */
 package dsm.TRADES.provider;
 
+import dsm.TRADES.Component;
+import dsm.TRADES.TRADESFactory;
+import dsm.TRADES.TRADESPackage;
+
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EStructuralFeature;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
-import dsm.TRADES.Component;
-import dsm.TRADES.TRADESFactory;
-import dsm.TRADES.TRADESPackage;
 
 /**
  * This is the item provider adapter for a {@link dsm.TRADES.Component} object.
@@ -51,6 +53,22 @@ public class ComponentItemProvider extends ComponentOwerItemProvider {
 			addThreatAllocationsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_NamedElement_name_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_NamedElement_name_feature",
+								"_UI_NamedElement_type"),
+						TRADESPackage.Literals.NAMED_ELEMENT__NAME, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -96,22 +114,6 @@ public class ComponentItemProvider extends ComponentOwerItemProvider {
 						getString("_UI_PropertyDescriptor_description", "_UI_Component_threatAllocations_feature",
 								"_UI_Component_type"),
 						TRADESPackage.Literals.COMPONENT__THREAT_ALLOCATIONS, true, false, true, null, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Name feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_NamedElement_name_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_NamedElement_name_feature",
-								"_UI_NamedElement_type"),
-						TRADESPackage.Literals.NAMED_ELEMENT__NAME, true, false, false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -186,7 +188,8 @@ public class ComponentItemProvider extends ComponentOwerItemProvider {
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
