@@ -18,15 +18,17 @@ import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.NullProgressMonitor;
+import org.eclipse.core.runtime.Status;
+import org.eclipse.emf.common.util.BasicMonitor;
 import org.eclipse.emf.common.util.Monitor;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.sirius.business.api.session.Session;
-import org.eclipse.swt.widgets.Shell;
 import org.obeonetwork.m2doc.generator.DocumentGenerationException;
 import org.obeonetwork.m2doc.parser.DocumentParserException;
 import org.obeonetwork.m2doc.parser.ValidationMessageLevel;
@@ -36,10 +38,17 @@ import org.obeonetwork.m2doc.util.ClassProvider;
 import org.obeonetwork.m2doc.util.M2DocUtils;
 
 import dsm.trades.m2doc.Activator;
-import dsm.trades.m2doc.IGenerationTemplate;
-import dsm.trades.m2doc.LoggingMonitor;
+import dsm.trades.m2doc.IM2DocTemplate;
 
-public class GenerationTemplate implements IGenerationTemplate {
+/**
+ * M2doc template used to generate reports
+ * 
+ * @author Arthur Daussy
+ *
+ */
+public class GenerationTemplate implements IM2DocTemplate {
+
+
 
 	private static final String REPORTS_TEMPLATE = "Reports";
 
@@ -62,7 +71,7 @@ public class GenerationTemplate implements IGenerationTemplate {
 	}
 
 	@Override
-	public String getActionName() {
+	public String getTemplateName() {
 		return actionName;
 	}
 
@@ -72,7 +81,7 @@ public class GenerationTemplate implements IGenerationTemplate {
 	}
 
 	@Override
-	public void generate(EObject selection, Shell shell, boolean open) {
+	public IStatus generate(EObject selection, IProgressMonitor progressMonitor, boolean open) {
 		Optional<Session> optSession = Session.of(selection);
 		if (optSession.isPresent()) {
 			Session session = optSession.get();
@@ -82,7 +91,7 @@ public class GenerationTemplate implements IGenerationTemplate {
 					session.getSessionResource().getURI(), Collections.emptyList());
 
 			final Map<String, Object> variables = new HashMap<String, Object>();
-			variables.put("self", selection);
+			variables.put(SELF_VAR, selection);
 
 			URI uri = session.getSessionResource().getURI();
 			String path = uri.trimSegments(1).toPlatformString(true);
@@ -93,15 +102,14 @@ public class GenerationTemplate implements IGenerationTemplate {
 				try {
 					reportFolder.create(true, true, new NullProgressMonitor());
 				} catch (CoreException e) {
-					Activator.logError("Unable to create report folder", e);
-					return;
+					return Activator.createErrorStatus("Unable to create report folder", e);
 				}
 			}
 
 			java.nio.file.Path targetFile = reportFolder.getLocation().toFile().toPath().resolve(buildReportName());
 			final URI outputURI = URI.createFileURI(targetFile.toUri().getPath());
 
-			LoggingMonitor monitor = new LoggingMonitor();
+			Monitor monitor = BasicMonitor.toMonitor(progressMonitor);
 			try (DocumentTemplate template = M2DocUtils.parse(resourceSet.getURIConverter(), templatURI,
 					queryEnvironment, new ClassProvider(this.getClass().getClassLoader()), monitor)) {
 
@@ -109,7 +117,8 @@ public class GenerationTemplate implements IGenerationTemplate {
 					M2DocUtils.generate(template, queryEnvironment, variables, resourceSet, outputURI, true, monitor);
 				} else {
 					M2DocUtils.serializeValidatedDocumentTemplate(resourceSet.getURIConverter(), template, outputURI);
-					displayError(shell, MessageFormat.format("Error during template validation at {0}", outputURI));
+					return Activator.createErrorStatus(
+							MessageFormat.format("Error during template validation at {0}", outputURI));
 				}
 				reportFolder.refreshLocal(1, new NullProgressMonitor());
 				File generatedFile = targetFile.toFile();
@@ -117,25 +126,23 @@ public class GenerationTemplate implements IGenerationTemplate {
 					try {
 						java.awt.Desktop.getDesktop().open(targetFile.toFile());
 					} catch (IOException e) {
-						displayError(shell, MessageFormat.format("Error while opening target file",
-								generatedFile.getAbsolutePath()));
+						return Activator.createErrorStatus(MessageFormat.format("Error while opening target file",
+								generatedFile.getAbsolutePath()), e);
 					}
 				}
 
 			} catch (IOException | DocumentParserException | DocumentGenerationException | CoreException e) {
-				Activator.logError(MessageFormat.format("Error during geneartion : {0}", e.getMessage()), e);
-				displayError(shell, "Error during generation. See error log view");
+				return Activator
+						.createErrorStatus(MessageFormat.format("Error during generation : {0}", e.getMessage()), e);
 			}
 		}
+
+		return Status.OK_STATUS;
 	}
 
 	private String buildReportName() {
 		return actionName + "_" + LocalDateTime.now().format(DateTimeFormatter.ofPattern(FILE_NAME_TIMESTAMP_FORMAT))
 				+ ".docx";
-	}
-
-	private void displayError(Shell shell, String message) {
-		MessageDialog.openError(shell, "Generation error", message);
 	}
 
 	private boolean validateTemplate(DocumentTemplate template, IReadOnlyQueryEnvironment queryEnvironment,

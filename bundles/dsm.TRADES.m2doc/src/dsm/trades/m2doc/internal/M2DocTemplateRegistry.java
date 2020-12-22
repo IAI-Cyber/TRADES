@@ -17,15 +17,22 @@ import org.obeonetwork.m2doc.properties.TemplateCustomProperties;
 
 import dsm.TRADES.TRADESPackage;
 import dsm.trades.m2doc.Activator;
-import dsm.trades.m2doc.IGenerationTemplate;
+import dsm.trades.m2doc.IM2DocTemplate;
 import dsm.trades.m2doc.IM2DocTemplateRegistry;
 
+/**
+ * Registry used to keep tracks of all available {@link IM2DocTemplate}
+ * 
+ * @author Arthur Daussy
+ *
+ */
 public class M2DocTemplateRegistry implements IM2DocTemplateRegistry {
 
-	private List<IGenerationTemplate> templates = new ArrayList<IGenerationTemplate>();
+	private static final String TRADES_PKG_PREFIX = "TRADES::";
+	private List<IM2DocTemplate> templates = new ArrayList<IM2DocTemplate>();
 
 	@Override
-	public List<IGenerationTemplate> getTemplates() {
+	public List<IM2DocTemplate> getTemplates() {
 		return templates;
 	}
 
@@ -36,13 +43,14 @@ public class M2DocTemplateRegistry implements IM2DocTemplateRegistry {
 			OPCPackage pkg = OPCPackage.open(input);
 			try (XWPFDocument res = new XWPFDocument(pkg)) {
 				final TemplateCustomProperties customProperties = new TemplateCustomProperties(res);
-				String selfType = customProperties.getVariables().get("self");
+				String selfType = customProperties.getVariables().get(IM2DocTemplate.SELF_VAR);
 				if (selfType == null) {
 					Activator.logError("Unkown type of self for the template" + newTemplate);
 					return this;
 				}
 
-				EClassifier selfTypeEClass = TRADESPackage.eINSTANCE.getEClassifier(selfType.replace("TRADES::", ""));
+				EClassifier selfTypeEClass = TRADESPackage.eINSTANCE
+						.getEClassifier(selfType.replace(TRADES_PKG_PREFIX, ""));
 				if (!(selfTypeEClass instanceof EClass)) {
 					Activator.logError("Unkown type of self for the template" + newTemplate);
 					return this;
@@ -58,13 +66,12 @@ public class M2DocTemplateRegistry implements IM2DocTemplateRegistry {
 		} catch (RuntimeException | IOException | InvalidFormatException e2) {
 			Activator.logError("Error while reading template " + newTemplate, e2);
 		}
-		// CHECKSTYLE:ON Apache POI API
 		return this;
 	}
 
 	@Override
 	public IM2DocTemplateRegistry removeTemplate(URI toRemove) {
-		List<IGenerationTemplate> toRemoves = templates.stream()
+		List<IM2DocTemplate> toRemoves = templates.stream()
 				.filter(f -> f.getTemplateURI() != null && f.getTemplateURI().equals(toRemove))
 				.collect(Collectors.toList());
 		templates.removeAll(toRemoves);

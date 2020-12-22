@@ -73,11 +73,19 @@ public class Activator extends AbstractUIPlugin {
 	}
 
 	private void doLogInfo(String message) {
-		getLog().log(new Status(IStatus.INFO, PLUGIN_ID, message));
+		getLog().log(createInfoStatus(message));
+	}
+
+	public static Status createInfoStatus(String message) {
+		return new Status(IStatus.INFO, PLUGIN_ID, message);
 	}
 
 	private void doLogWarning(String message) {
-		getLog().log(new Status(IStatus.WARNING, PLUGIN_ID, message));
+		getLog().log(createWarningStatus(message));
+	}
+
+	public static Status createWarningStatus(String message) {
+		return new Status(IStatus.WARNING, PLUGIN_ID, message);
 	}
 
 	private void doLogError(String message) {
@@ -125,7 +133,15 @@ public class Activator extends AbstractUIPlugin {
 	}
 
 	private void doLogError(String string, Throwable e) {
-		getLog().log(new Status(IStatus.ERROR, PLUGIN_ID, string, e));
+		getLog().log(createErrorStatus(string, e));
+	}
+
+	public static Status createErrorStatus(String string, Throwable e) {
+		return new Status(IStatus.ERROR, PLUGIN_ID, string, e);
+	}
+
+	public static Status createErrorStatus(String string) {
+		return new Status(IStatus.ERROR, PLUGIN_ID, string);
 	}
 
 }

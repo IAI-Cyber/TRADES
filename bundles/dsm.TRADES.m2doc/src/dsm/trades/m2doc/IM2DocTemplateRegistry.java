@@ -6,7 +6,7 @@ import org.eclipse.emf.common.util.URI;
 
 public interface IM2DocTemplateRegistry {
 
-	List<IGenerationTemplate> getTemplates();
+	List<IM2DocTemplate> getTemplates();
 
 	IM2DocTemplateRegistry addTemplate(URI template, String name);
 

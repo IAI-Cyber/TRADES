@@ -2,16 +2,22 @@ package dsm.trades.m2doc.handler;
 
 import static java.util.stream.Collectors.toList;
 
+import java.lang.reflect.InvocationTargetException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
+import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.IStatus;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jface.dialogs.IDialogConstants;
 import org.eclipse.jface.dialogs.MessageDialog;
+import org.eclipse.jface.dialogs.ProgressMonitorDialog;
 import org.eclipse.jface.viewers.ArrayContentProvider;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
@@ -22,9 +28,16 @@ import org.eclipse.ui.handlers.HandlerUtil;
 
 import dsm.TRADES.TRADESPackage;
 import dsm.trades.m2doc.Activator;
-import dsm.trades.m2doc.IGenerationTemplate;
+import dsm.trades.m2doc.IM2DocTemplate;
 import dsm.trades.m2doc.IM2DocTemplateRegistry;
 
+/**
+ * Handler that launch the generation of templates depending on the current
+ * selection
+ * 
+ * @author Arthur Daussy
+ *
+ */
 public class GenerationHandler extends AbstractHandler {
 
 	@Override
@@ -35,24 +48,20 @@ public class GenerationHandler extends AbstractHandler {
 			if (optSession.isPresent()) {
 				IM2DocTemplateRegistry templateRegistry = Activator.getDefault().getTemplateRegistry();
 				EClass type = selection.eClass();
-				List<IGenerationTemplate> availableTemaplte = templateRegistry.getTemplates().stream()
+				List<IM2DocTemplate> availableTemplate = templateRegistry.getTemplates().stream()
 						.filter(t -> t.getMainType().isSuperTypeOf(type)).collect(toList());
-				if (!availableTemaplte.isEmpty()) {
+				if (!availableTemplate.isEmpty()) {
 
 					ListSelectionDialog dialog = new ListSelectionDialog(HandlerUtil.getActiveShell(event),
-							availableTemaplte, ArrayContentProvider.getInstance(), new LabelProvider() {
+							availableTemplate, ArrayContentProvider.getInstance(), new LabelProvider() {
 								@Override
 								public String getText(Object element) {
-									return ((IGenerationTemplate) element).getActionName();
+									return ((IM2DocTemplate) element).getTemplateName();
 								};
 							}, "Select a template");
-					dialog.setInitialSelections(availableTemaplte.get(0));
+					dialog.setInitialSelections(availableTemplate.get(0));
 					if (dialog.open() == IDialogConstants.OK_ID) {
-						Object[] result = dialog.getResult();
-						for (int i = 0; i < result.length; i++) {
-							IGenerationTemplate template = (IGenerationTemplate) result[i];
-							template.generate(selection, HandlerUtil.getActiveShell(event), true);
-						}
+						runGeneration(event, selection, dialog);
 					}
 				} else {
 					displayInfo(event, "No template available for this selection");
@@ -64,8 +73,37 @@ public class GenerationHandler extends AbstractHandler {
 		return null;
 	}
 
+	private void runGeneration(ExecutionEvent event, EObject selection, ListSelectionDialog dialog) {
+		ProgressMonitorDialog progressDialog = new ProgressMonitorDialog(
+				HandlerUtil.getActiveShell(event));
+		try {
+			List<IStatus> results = new ArrayList<IStatus>();
+			progressDialog.run(true, true, monitor -> {
+				Object[] result = dialog.getResult();
+				monitor.beginTask("Generation report", IProgressMonitor.UNKNOWN);
+				for (int i = 0; i < result.length; i++) {
+					IM2DocTemplate template = (IM2DocTemplate) result[i];
+					results.add(template.generate(selection, monitor, true));
+				}
+			});
+
+			List<IStatus> errors = results.stream().filter(s -> !s.isOK()).collect(toList());
+			if (!errors.isEmpty()) {
+				displayError(event, errors.stream().map(s -> s.getMessage())
+						.collect(Collectors.joining(System.lineSeparator())));
+			}
+		} catch (InvocationTargetException | InterruptedException e) {
+			Activator.logError("Generation error " + e.getMessage(), e);
+			displayError(event, "Generation error " + e.getMessage());
+		}
+	}
+
+	private void displayError(ExecutionEvent event, String message) {
+		MessageDialog.openError(HandlerUtil.getActiveShell(event), "Generation error", message);
+	}
+
 	private void displayInfo(ExecutionEvent event, String message) {
-		MessageDialog.openInformation(HandlerUtil.getActiveShell(event), "Generation error", message);
+		MessageDialog.openInformation(HandlerUtil.getActiveShell(event), "Generation info", message);
 	}
 
 	private EObject getTradesSection(ExecutionEvent event) {
