@@ -43,7 +43,7 @@ public class TradesAutoLayoutCusto implements IELKLayoutExtension {
 			String diagramDescriptionName = optionalDDiagram.get().getDescription() != null
 					? optionalDDiagram.get().getDescription().getName()
 					: StringUtil.EMPTY_STRING;
-			if (TRADES_DIAGRAM.equals(diagramDescriptionName)) {
+			if (TRADES_DIAGRAM.equals(diagramDescriptionName) || "Component Analysis".equals(diagramDescriptionName)) {
 				beforeElkLayout_MainDiagram(layoutMapping, optionalDDiagram.get());
 			}
 		}
