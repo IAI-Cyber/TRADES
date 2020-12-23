@@ -53,6 +53,10 @@ location "https://download.eclipse.org/sirius/updates/releases/6.4.0/2020-06/" {
 	org.eclipse.sirius.diagram.elk.sdk.feature.feature.group lazy
 }
 
+location  "https://download.eclipse.org/tools/orbit/downloads/drops/R20200529191137/repository" {
+	org.jsoup lazy
+}
+
 
 location "https://download.eclipse.org/justj/jres/14/updates/nightly/latest" {
 	org.eclipse.justj.openjdk.hotspot.jre.full.feature.group lazy

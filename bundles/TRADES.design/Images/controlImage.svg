@@ -9,9 +9,9 @@
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    version="1.1"
    id="svg12"
-   width="23mm"
-   height="23mm"
-   viewBox="0 0 86.929125 86.929122"
+   width="17mm"
+   height="17mm"
+   viewBox="0 0 64.251962 64.25196"
    sodipodi:docname="controlImage.svg"
    inkscape:export-filename="C:\Users\825901\git\TRADES\bundles\TRADES.design\Images\ContrilIcon.png"
    inkscape:export-xdpi="19.458748"
@@ -54,14 +54,15 @@
      inkscape:document-rotation="0"
      units="mm"
      width="249mm"
-     inkscape:snap-to-guides="true" />
+     inkscape:snap-to-guides="true"
+     inkscape:object-paths="true" />
   <g
      inkscape:groupmode="layer"
      inkscape:label="Image"
      id="g20">
     <g
        id="g8"
-       transform="matrix(0.89963021,0,0,0.82146366,-1.3828996,-2.6240113)">
+       transform="matrix(0.62000322,0,0,0.53499658,3.1748635,1.8232572)">
       <g
          id="g6">
         <path
@@ -73,12 +74,12 @@
       </g>
     </g>
     <path
-       style="fill:none;stroke:#000000;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="M 67.346938,30.77551 29.693877,55.877551"
+       style="fill:none;stroke:#000000;stroke-width:0.952406;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 48.974969,24.830463 25.735343,41.226526"
        id="path22" />
     <path
-       style="fill:none;stroke:#000000;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="M 61.694731,21.428572 22.806122,46.530612"
+       style="fill:none;stroke:#000000;stroke-width:0.886904;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 44.065895,17.585288 21.303829,32.57828"
        id="path22-5" />
   </g>
 </svg>
