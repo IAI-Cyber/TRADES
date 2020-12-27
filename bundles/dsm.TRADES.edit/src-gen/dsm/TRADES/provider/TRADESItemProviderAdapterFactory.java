@@ -441,7 +441,7 @@ public class TRADESItemProviderAdapterFactory extends TRADESAdapterFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ExternalControlItemProvider externalControlItemProvider;
+	protected ExternalControlItemProviderCustomImpl externalControlItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link dsm.TRADES.ExternalControl}.
@@ -452,7 +452,7 @@ public class TRADESItemProviderAdapterFactory extends TRADESAdapterFactory
 	@Override
 	public Adapter createExternalControlAdapter() {
 		if (externalControlItemProvider == null) {
-			externalControlItemProvider = new ExternalControlItemProvider(this);
+			externalControlItemProvider = new ExternalControlItemProviderCustomImpl(this);
 		}
 
 		return externalControlItemProvider;
