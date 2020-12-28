@@ -3,6 +3,7 @@ package TRADES.design;
 import java.util.HashSet;
 import java.util.Set;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.sirius.viewpoint.DRepresentationElement;
 import org.eclipse.sirius.viewpoint.DSemanticDecorator;
@@ -10,8 +11,10 @@ import org.eclipse.sirius.viewpoint.DSemanticDecorator;
 import dsm.TRADES.Analysis;
 import dsm.TRADES.AttackChainStep;
 import dsm.TRADES.Component;
+import dsm.TRADES.Control;
 import dsm.TRADES.ControlOwner;
 import dsm.TRADES.ThreatAllocationRelation;
+import dsm.TRADES.ThreatMitigationRelation;
 
 public class DiagramService {
 
@@ -97,6 +100,24 @@ public class DiagramService {
 			}
 		}
 		return null;
+	}
+	
+	public String threatMitigationName (ThreatMitigationRelation mitigation) {
+
+		String label = "";
+		int i = 0;
+		
+		Control control = mitigation.getControl();
+		EList<ThreatMitigationRelation> threatMitigationsList = control.getMitigationrRelations();
+		
+		for (ThreatMitigationRelation currThreat : threatMitigationsList) {
+			i ++;
+			label = "Mitigation #" + String.valueOf(i) + " " +control.getName();
+			currThreat.setName(label);
+			}
+		
+		label = "Mitigation #" + String.valueOf(i) + " " +control.getName();
+		return label;
 	}
 
 }

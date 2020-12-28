@@ -211,7 +211,7 @@ public class TRADESItemProviderAdapterFactory extends TRADESAdapterFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ThreatMitigationRelationItemProvider threatMitigationRelationItemProvider;
+	protected ThreatMitigationRelationItemProviderCustomImpl threatMitigationRelationItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link dsm.TRADES.ThreatMitigationRelation}.
@@ -222,7 +222,7 @@ public class TRADESItemProviderAdapterFactory extends TRADESAdapterFactory
 	@Override
 	public Adapter createThreatMitigationRelationAdapter() {
 		if (threatMitigationRelationItemProvider == null) {
-			threatMitigationRelationItemProvider = new ThreatMitigationRelationItemProvider(this);
+			threatMitigationRelationItemProvider = new ThreatMitigationRelationItemProviderCustomImpl(this);
 		}
 
 		return threatMitigationRelationItemProvider;

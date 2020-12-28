@@ -248,7 +248,7 @@
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql: source">
                 <subModelOperations xsi:type="tool_1:CreateInstance" typeName="TRADES::ThreatMitigationRelation" referenceName="mitigationrRelations">
                   <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql: instance">
-                    <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:"/>
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:self.threatMitigationName()"/>
                     <subModelOperations xsi:type="tool_1:SetValue" featureName="control" valueExpression="var:source"/>
                     <subModelOperations xsi:type="tool_1:If" conditionExpression="aql: target.oclIsKindOf(TRADES::Threat)">
                       <subModelOperations xsi:type="tool_1:SetValue" featureName="threat" valueExpression="var:target"/>
@@ -1109,7 +1109,7 @@
       <pages name="DifficultyPage" labelExpression="Difficulty" domainClass="TRADES::DifficultyScore" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.0 //@extensions.0/@categories.0/@groups.9"/>
       <pages name="ScoreSystemPage" labelExpression="Score system" domainClass="TRADES::ScoreSystem" semanticCandidateExpression="aql:Sequence{self,self.eContainer()}" groups="//@extensions.0/@categories.0/@groups.11"/>
       <groups name="ModelElementGroup" label="Model element" labelExpression="Basic Properties" domainClass="TRADES::NamedElement" semanticCandidateExpression="var:self">
-        <controls xsi:type="properties:TextDescription" name="ElementNameFiald" label="Name" labelExpression="Name" helpExpression="Name of the element" isEnabledExpression="aql:not(self.oclIsTypeOf(TRADES::ExternalThreat) or self.oclIsTypeOf(TRADES::ExternalControl))" valueExpression="aql:self.name">
+        <controls xsi:type="properties:TextDescription" name="ElementNameFiald" label="Name" labelExpression="Name" helpExpression="Name of the element" isEnabledExpression="aql:not(self.oclIsTypeOf(TRADES::ExternalThreat) or self.oclIsTypeOf(TRADES::ExternalControl) or self.oclIsTypeOf(TRADES::ThreatMitigationRelation))" valueExpression="aql:self.name">
           <initialOperation>
             <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
               <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="var:newValue"/>
