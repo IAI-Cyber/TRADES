@@ -8,6 +8,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.sirius.viewpoint.DRepresentationElement;
 import org.eclipse.sirius.viewpoint.DSemanticDecorator;
 
+import dsm.TRADES.AffectRelation;
 import dsm.TRADES.Analysis;
 import dsm.TRADES.AttackChainStep;
 import dsm.TRADES.Component;
@@ -118,6 +119,15 @@ public class DiagramService {
 		
 		label = "Mitigation #" + String.valueOf(i) + " " +control.getName();
 		return label;
+	}
+	
+	public String affectRelationName (AffectRelation affect) {
+		
+		String label = "";
+		label = affect.getSourceComponent().getName() + " To " + affect.getTargetComponent().getName();
+		return label;
+		
+	
 	}
 
 }
