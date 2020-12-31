@@ -57,8 +57,8 @@
         </layoutOptions>
       </layout>
       <defaultLayer name="Default">
-        <nodeMappings name="ThreatNode_TD" deletionDescription="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.2/@ownedTools[name='DeleteThreatFromDiagram']" semanticCandidatesExpression="aql:self.eContainerOrSelf(TRADES::Analysis).threatOwner.eAllContents(TRADES::Threat)" createElements="false" doubleClickDescription="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='OpenProgramTool']" domainClass="TRADES::Threat">
-          <borderedNodeMappings name="ThreatLabel_TD" deletionDescription="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.2/@ownedTools[name='DeleteThreatFromDiagram']" semanticCandidatesExpression="var:self" doubleClickDescription="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='OpenProgramTool']" domainClass="TRADES::Threat">
+        <nodeMappings name="ThreatNode_TD" deletionDescription="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.2/@ownedTools[name='DeleteThreatFromDiagram']" labelDirectEdit="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Change%20name']" semanticCandidatesExpression="aql:self.eContainerOrSelf(TRADES::Analysis).threatOwner.eAllContents(TRADES::Threat)" createElements="false" doubleClickDescription="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='OpenProgramTool']" domainClass="TRADES::Threat">
+          <borderedNodeMappings name="ThreatLabel_TD" deletionDescription="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.2/@ownedTools[name='DeleteThreatFromDiagram']" labelDirectEdit="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Change%20name']" semanticCandidatesExpression="var:self" doubleClickDescription="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='OpenProgramTool']" domainClass="TRADES::Threat">
             <style xsi:type="style:SquareDescription" labelSize="6" showIcon="false" labelExpression="aql:self.getLabelProviderText()" tooltipExpression="aql:self.getLabelProviderText()" labelPosition="node" width="7" height="2">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -80,7 +80,7 @@
           </conditionnalStyles>
         </nodeMappings>
         <nodeMappings name="ControlNode" labelDirectEdit="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Change%20name']" semanticCandidatesExpression="aql: self.getAllControls()" domainClass="TRADES::Control">
-          <borderedNodeMappings name="ControlLabel_TD" semanticCandidatesExpression="var:self" domainClass="TRADES::Control">
+          <borderedNodeMappings name="ControlLabel_TD" labelDirectEdit="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Change%20name']" semanticCandidatesExpression="var:self" domainClass="TRADES::Control">
             <style xsi:type="style:SquareDescription" showIcon="false" labelExpression="aql:self.getLabelProviderText()" tooltipExpression="aql:self.getLabelProviderText()" labelPosition="node" width="7" height="2">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -1291,12 +1291,9 @@
                     <initialOperation>
                       <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.eContainer(TRADES::Analysis) ">
                         <subModelOperations xsi:type="tool_1:CreateInstance" typeName="TRADES::Data" referenceName="data">
-                          <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="var:newName">
-                            <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.printAllVariable()">
-                              <subModelOperations xsi:type="tool_1:SetValue" featureName="Data" valueExpression="var:instance"/>
-                            </subModelOperations>
-                          </subModelOperations>
+                          <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="var:newName"/>
                         </subModelOperations>
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="data" valueExpression="var:instance"/>
                       </firstModelOperations>
                     </initialOperation>
                   </buttons>
