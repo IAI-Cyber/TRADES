@@ -1,6 +1,8 @@
 package TRADES.design;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import org.eclipse.emf.common.util.EList;
@@ -14,6 +16,7 @@ import dsm.TRADES.AttackChainStep;
 import dsm.TRADES.Component;
 import dsm.TRADES.Control;
 import dsm.TRADES.ControlOwner;
+import dsm.TRADES.Data;
 import dsm.TRADES.ThreatAllocationRelation;
 import dsm.TRADES.ThreatMitigationRelation;
 
@@ -125,9 +128,47 @@ public class DiagramService {
 		
 		String label = "";
 		label = affect.getSourceComponent().getName() + " To " + affect.getTargetComponent().getName();
+			
 		return label;
 		
-	
 	}
+	
+	public List<Data> availableData (AffectRelation affect) {
+		
+		EObject analysis = affect.eContainer();
+		while (!(analysis instanceof Analysis) && analysis != null) {
+			analysis = analysis.eContainer();
+		}
+		
+		Analysis realAnalysis =  ((Analysis)analysis);
+		
+		EList<Data> analysisDataList = realAnalysis.getData();
+		EList<Data> affectDataList = affect.getData();
+		List<Data> result = new ArrayList<Data>();
+		
+		for (Data data : analysisDataList) {
+			if (!affectDataList.contains(data)) {
+				result.add(data);
+			}
+		}			
+					
+		return result;
+	}
+	
+	public String dataLabelOnAffect (AffectRelation affect) {
+		
+		String label = ""; 
+		
+		for (Data data : affect.getData()) {
+			label = label + data.getName() + " ,";
+		}
+		
+		if (label != "") {
+			label = label.substring(0, label.length() - 2);
+		}
+		
+		return label;
+	}
+	
 
 }

@@ -152,14 +152,14 @@
         <edgeMappings name="Affect" semanticCandidatesExpression="feature:eAllContents" sourceMapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage']" targetMapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage']" targetFinderExpression="feature:targetComponent" sourceFinderExpression="feature:sourceComponent" targetExpression="var: self" domainClass="TRADES::AffectRelation" useDomainElement="true">
           <style sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_blue']"/>
-            <centerLabelStyleDescription labelSize="12" showIcon="false" labelExpression="aql: self.eGet('data').name->toString() ">
+            <centerLabelStyleDescription labelSize="12" showIcon="false" labelExpression="aql:self.dataLabelOnAffect()">
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </centerLabelStyleDescription>
           </style>
           <conditionnalStyles predicateExpression="aql: self.eGet('analysisStatus')->toString()='Confirmed'">
             <style targetArrow="InputClosedArrow" sizeComputationExpression="3">
               <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_purple']"/>
-              <centerLabelStyleDescription labelSize="12" showIcon="false" labelExpression="aql: self.eGet('data').name">
+              <centerLabelStyleDescription labelSize="12" showIcon="false" labelExpression="aql:self.dataLabelOnAffect()">
                 <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_blue']"/>
               </centerLabelStyleDescription>
             </style>
@@ -430,6 +430,16 @@
             <containerViewVariable name="containerView"/>
             <containerVariable name="container"/>
             <representationNameVariable name="diagramName"/>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:PopupMenu" name="Data" precondition="aql:self.oclIsTypeOf(TRADES::AffectRelation)">
+            <menuItemDescription xsi:type="tool_1:OperationAction" name="AddData" label="Add Data">
+              <view name="views"/>
+              <initialOperation/>
+            </menuItemDescription>
+            <menuItemDescription xsi:type="tool_1:OperationAction" name="CreateNewData" label="Create New Data">
+              <view name="views"/>
+              <initialOperation/>
+            </menuItemDescription>
           </ownedTools>
         </toolSections>
         <toolSections name="ThreatsSectionTool_TD" label="Threats Tools">
@@ -1276,41 +1286,77 @@
         </controls>
       </groups>
       <groups name="AffectGroup" label="Affect Group" labelExpression="Data" domainClass="TRADES::AffectRelation" semanticCandidateExpression="var:self">
-        <controls xsi:type="properties:ListDescription" name="DataList" labelExpression="Related Data" valueExpression="aql:self.data" displayExpression="aql:value.name">
-          <onClickOperation>
-            <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self"/>
-          </onClickOperation>
-          <actions labelExpression="Add">
-            <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
-                <subModelOperations xsi:type="properties:DialogModelOperation" titleExpression="Add New Data">
-                  <buttons labelExpression="Cancel" closeDialogOnClick="true" rollbackChangesOnClose="true">
-                    <initialOperation/>
-                  </buttons>
-                  <buttons labelExpression="Add" default="true" closeDialogOnClick="true">
-                    <initialOperation>
-                      <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.eContainer(TRADES::Analysis) ">
-                        <subModelOperations xsi:type="tool_1:CreateInstance" typeName="TRADES::Data" referenceName="data">
-                          <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="var:newName"/>
-                        </subModelOperations>
-                        <subModelOperations xsi:type="tool_1:SetValue" featureName="data" valueExpression="var:instance"/>
-                      </firstModelOperations>
-                    </initialOperation>
-                  </buttons>
-                  <page name="Default Page" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.12/@controls.0/@actions.0/@initialOperation/@firstModelOperations/@subModelOperations.0/@groups.0"/>
-                  <groups name="Default Group" semanticCandidateExpression="var:self">
-                    <controls xsi:type="properties:TextDescription" name="DataName" labelExpression="Data Name">
+        <controls xsi:type="properties:ContainerDescription" name="AffectDataContainer">
+          <controls xsi:type="properties:ListDescription" name="RelatedDataList" labelExpression="Related Data" valueExpression="aql:self.data" displayExpression="aql:value.name">
+            <onClickOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self"/>
+            </onClickOperation>
+            <actions labelExpression="Remove">
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                  <subModelOperations xsi:type="tool_1:Let" variableName="affectRelationEntityR" valueExpression="aql:self"/>
+                  <subModelOperations xsi:type="tool_1:For" expression="var:selection" iteratorName="currentData">
+                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:affectRelationEntityR">
+                      <subModelOperations xsi:type="tool_1:Unset" featureName="data" elementExpression="var:currentData"/>
+                    </subModelOperations>
+                  </subModelOperations>
+                </firstModelOperations>
+              </initialOperation>
+            </actions>
+          </controls>
+          <controls xsi:type="properties:ListDescription" name="AvailableData" labelExpression="Available  Data" valueExpression="aql:self.availableData()" displayExpression="aql:value.name">
+            <onClickOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self"/>
+            </onClickOperation>
+            <actions labelExpression="New">
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                  <subModelOperations xsi:type="properties:DialogModelOperation" titleExpression="Add New Data">
+                    <buttons labelExpression="Cancel" closeDialogOnClick="true" rollbackChangesOnClose="true">
+                      <initialOperation/>
+                    </buttons>
+                    <buttons labelExpression="Add" default="true" closeDialogOnClick="true">
                       <initialOperation>
-                        <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
-                          <subModelOperations xsi:type="tool_1:Let" variableName="newName" valueExpression="var:newValue"/>
+                        <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql: self">
+                          <subModelOperations xsi:type="tool_1:Let" variableName="affectRelationEntity" valueExpression="aql:self">
+                            <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.eContainer(TRADES::Analysis) ">
+                              <subModelOperations xsi:type="tool_1:CreateInstance" typeName="TRADES::Data" referenceName="data">
+                                <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="var:newName"/>
+                              </subModelOperations>
+                            </subModelOperations>
+                            <subModelOperations xsi:type="tool_1:SetValue" featureName="data" valueExpression="var:instance"/>
+                          </subModelOperations>
                         </firstModelOperations>
                       </initialOperation>
-                    </controls>
-                  </groups>
-                </subModelOperations>
-              </firstModelOperations>
-            </initialOperation>
-          </actions>
+                    </buttons>
+                    <page name="Default Page" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.12/@controls.0/@controls.1/@actions.0/@initialOperation/@firstModelOperations/@subModelOperations.0/@groups.0"/>
+                    <groups name="Default Group" semanticCandidateExpression="var:self">
+                      <controls xsi:type="properties:TextDescription" name="DataName" labelExpression="Data Name">
+                        <initialOperation>
+                          <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                            <subModelOperations xsi:type="tool_1:Let" variableName="newName" valueExpression="var:newValue"/>
+                          </firstModelOperations>
+                        </initialOperation>
+                      </controls>
+                    </groups>
+                  </subModelOperations>
+                </firstModelOperations>
+              </initialOperation>
+            </actions>
+            <actions labelExpression="Add">
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                  <subModelOperations xsi:type="tool_1:Let" variableName="affectRelationEntityA" valueExpression="aql:self"/>
+                  <subModelOperations xsi:type="tool_1:For" expression="var:selection" iteratorName="currentData">
+                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:affectRelationEntityA">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="data" valueExpression="var:currentData"/>
+                    </subModelOperations>
+                  </subModelOperations>
+                </firstModelOperations>
+              </initialOperation>
+            </actions>
+          </controls>
+          <layout xsi:type="properties:FillLayoutDescription" orientation="HORIZONTAL"/>
         </controls>
       </groups>
     </categories>
