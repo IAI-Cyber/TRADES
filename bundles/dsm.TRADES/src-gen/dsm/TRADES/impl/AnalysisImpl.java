@@ -7,8 +7,8 @@ import dsm.TRADES.AffectRelation;
 import dsm.TRADES.Analysis;
 import dsm.TRADES.Control;
 import dsm.TRADES.ControlOwner;
-import dsm.TRADES.Data;
 import dsm.TRADES.DataOwner;
+import dsm.TRADES.DataOwnerElement;
 import dsm.TRADES.NamedElement;
 import dsm.TRADES.ScoreSystem;
 import dsm.TRADES.TRADESPackage;
@@ -39,7 +39,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getData <em>Data</em>}</li>
+ *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getDataOwner <em>Data Owner</em>}</li>
  *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getName <em>Name</em>}</li>
  *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getControlOwner <em>Control Owner</em>}</li>
  *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getAffectrelation <em>Affectrelation</em>}</li>
@@ -51,14 +51,14 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class AnalysisImpl extends ComponentOwnerImpl implements Analysis {
 	/**
-	 * The cached value of the '{@link #getData() <em>Data</em>}' containment reference list.
+	 * The cached value of the '{@link #getDataOwner() <em>Data Owner</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getData()
+	 * @see #getDataOwner()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Data> data;
+	protected DataOwner dataOwner;
 
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -145,11 +145,50 @@ public class AnalysisImpl extends ComponentOwnerImpl implements Analysis {
 	 * @generated
 	 */
 	@Override
-	public EList<Data> getData() {
-		if (data == null) {
-			data = new EObjectContainmentEList<Data>(Data.class, this, TRADESPackage.ANALYSIS__DATA);
+	public DataOwner getDataOwner() {
+		return dataOwner;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetDataOwner(DataOwner newDataOwner, NotificationChain msgs) {
+		DataOwner oldDataOwner = dataOwner;
+		dataOwner = newDataOwner;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					TRADESPackage.ANALYSIS__DATA_OWNER, oldDataOwner, newDataOwner);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
-		return data;
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setDataOwner(DataOwner newDataOwner) {
+		if (newDataOwner != dataOwner) {
+			NotificationChain msgs = null;
+			if (dataOwner != null)
+				msgs = ((InternalEObject) dataOwner).eInverseRemove(this,
+						EOPPOSITE_FEATURE_BASE - TRADESPackage.ANALYSIS__DATA_OWNER, null, msgs);
+			if (newDataOwner != null)
+				msgs = ((InternalEObject) newDataOwner).eInverseAdd(this,
+						EOPPOSITE_FEATURE_BASE - TRADESPackage.ANALYSIS__DATA_OWNER, null, msgs);
+			msgs = basicSetDataOwner(newDataOwner, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TRADESPackage.ANALYSIS__DATA_OWNER, newDataOwner,
+					newDataOwner));
 	}
 
 	/**
@@ -365,8 +404,8 @@ public class AnalysisImpl extends ComponentOwnerImpl implements Analysis {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case TRADESPackage.ANALYSIS__DATA:
-			return ((InternalEList<?>) getData()).basicRemove(otherEnd, msgs);
+		case TRADESPackage.ANALYSIS__DATA_OWNER:
+			return basicSetDataOwner(null, msgs);
 		case TRADESPackage.ANALYSIS__CONTROL_OWNER:
 			return basicSetControlOwner(null, msgs);
 		case TRADESPackage.ANALYSIS__AFFECTRELATION:
@@ -387,8 +426,8 @@ public class AnalysisImpl extends ComponentOwnerImpl implements Analysis {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case TRADESPackage.ANALYSIS__DATA:
-			return getData();
+		case TRADESPackage.ANALYSIS__DATA_OWNER:
+			return getDataOwner();
 		case TRADESPackage.ANALYSIS__NAME:
 			return getName();
 		case TRADESPackage.ANALYSIS__CONTROL_OWNER:
@@ -412,9 +451,8 @@ public class AnalysisImpl extends ComponentOwnerImpl implements Analysis {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case TRADESPackage.ANALYSIS__DATA:
-			getData().clear();
-			getData().addAll((Collection<? extends Data>) newValue);
+		case TRADESPackage.ANALYSIS__DATA_OWNER:
+			setDataOwner((DataOwner) newValue);
 			return;
 		case TRADESPackage.ANALYSIS__NAME:
 			setName((String) newValue);
@@ -444,8 +482,8 @@ public class AnalysisImpl extends ComponentOwnerImpl implements Analysis {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case TRADESPackage.ANALYSIS__DATA:
-			getData().clear();
+		case TRADESPackage.ANALYSIS__DATA_OWNER:
+			setDataOwner((DataOwner) null);
 			return;
 		case TRADESPackage.ANALYSIS__NAME:
 			setName(NAME_EDEFAULT);
@@ -474,8 +512,8 @@ public class AnalysisImpl extends ComponentOwnerImpl implements Analysis {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case TRADESPackage.ANALYSIS__DATA:
-			return data != null && !data.isEmpty();
+		case TRADESPackage.ANALYSIS__DATA_OWNER:
+			return dataOwner != null;
 		case TRADESPackage.ANALYSIS__NAME:
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		case TRADESPackage.ANALYSIS__CONTROL_OWNER:
@@ -497,10 +535,10 @@ public class AnalysisImpl extends ComponentOwnerImpl implements Analysis {
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == DataOwner.class) {
+		if (baseClass == DataOwnerElement.class) {
 			switch (derivedFeatureID) {
-			case TRADESPackage.ANALYSIS__DATA:
-				return TRADESPackage.DATA_OWNER__DATA;
+			case TRADESPackage.ANALYSIS__DATA_OWNER:
+				return TRADESPackage.DATA_OWNER_ELEMENT__DATA_OWNER;
 			default:
 				return -1;
 			}
@@ -531,10 +569,10 @@ public class AnalysisImpl extends ComponentOwnerImpl implements Analysis {
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == DataOwner.class) {
+		if (baseClass == DataOwnerElement.class) {
 			switch (baseFeatureID) {
-			case TRADESPackage.DATA_OWNER__DATA:
-				return TRADESPackage.ANALYSIS__DATA;
+			case TRADESPackage.DATA_OWNER_ELEMENT__DATA_OWNER:
+				return TRADESPackage.ANALYSIS__DATA_OWNER;
 			default:
 				return -1;
 			}
@@ -565,7 +603,7 @@ public class AnalysisImpl extends ComponentOwnerImpl implements Analysis {
 	 */
 	@Override
 	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
-		if (baseClass == DataOwner.class) {
+		if (baseClass == DataOwnerElement.class) {
 			switch (baseOperationID) {
 			default:
 				return -1;

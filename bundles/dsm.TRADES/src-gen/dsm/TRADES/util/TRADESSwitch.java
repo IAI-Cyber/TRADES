@@ -72,7 +72,7 @@ public class TRADESSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseComponentOwner(analysis);
 			if (result == null)
-				result = caseDataOwner(analysis);
+				result = caseDataOwnerElement(analysis);
 			if (result == null)
 				result = caseNamedElement(analysis);
 			if (result == null)
@@ -96,7 +96,7 @@ public class TRADESSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseComponentOwner(component);
 			if (result == null)
-				result = caseDataOwner(component);
+				result = caseDataOwnerElement(component);
 			if (result == null)
 				result = caseNamedElement(component);
 			if (result == null)
@@ -191,9 +191,9 @@ public class TRADESSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case TRADESPackage.DATA_OWNER: {
-			DataOwner dataOwner = (DataOwner) theEObject;
-			T result = caseDataOwner(dataOwner);
+		case TRADESPackage.DATA_OWNER_ELEMENT: {
+			DataOwnerElement dataOwnerElement = (DataOwnerElement) theEObject;
+			T result = caseDataOwnerElement(dataOwnerElement);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -269,6 +269,13 @@ public class TRADESSwitch<T> extends Switch<T> {
 		case TRADESPackage.ABSTRACT_CONTROL_OWNER: {
 			AbstractControlOwner abstractControlOwner = (AbstractControlOwner) theEObject;
 			T result = caseAbstractControlOwner(abstractControlOwner);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case TRADESPackage.DATA_OWNER: {
+			DataOwner dataOwner = (DataOwner) theEObject;
+			T result = caseDataOwner(dataOwner);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -474,17 +481,17 @@ public class TRADESSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Data Owner</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Data Owner Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Data Owner</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Data Owner Element</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseDataOwner(DataOwner object) {
+	public T caseDataOwnerElement(DataOwnerElement object) {
 		return null;
 	}
 
@@ -620,6 +627,21 @@ public class TRADESSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseAbstractControlOwner(AbstractControlOwner object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Data Owner</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Data Owner</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDataOwner(DataOwner object) {
 		return null;
 	}
 

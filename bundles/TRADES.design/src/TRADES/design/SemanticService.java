@@ -11,6 +11,9 @@ import dsm.TRADES.AbstractControlOwner;
 import dsm.TRADES.Component;
 import dsm.TRADES.Control;
 import dsm.TRADES.ControlOwner;
+import dsm.TRADES.Data;
+import dsm.TRADES.DataOwner;
+import dsm.TRADES.DataOwnerElement;
 import dsm.TRADES.DifficultyScore;
 import dsm.TRADES.ExternalControl;
 import dsm.TRADES.ImpactConfiguration;
@@ -69,6 +72,32 @@ public class SemanticService {
 		}
 
 		owner.getInternals().add(control);
+	}
+
+	public Data createData(DataOwnerElement element) {
+		DataOwner owner = element.getDataOwner();
+
+		if (owner == null) {
+			owner = TRADESFactory.eINSTANCE.createDataOwner();
+			element.setDataOwner(owner);
+		}
+
+		Data result = TRADESFactory.eINSTANCE.createData();
+		owner.getData().add(result);
+
+		return result;
+
+	}
+
+	public DataOwner getOrCreateDataOwner(DataOwnerElement element) {
+
+		DataOwner owner = element.getDataOwner();
+		if (owner == null) {
+			owner = TRADESFactory.eINSTANCE.createDataOwner();
+			element.setDataOwner(owner);
+		}
+
+		return owner;
 	}
 
 	/**

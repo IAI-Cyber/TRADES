@@ -1,5 +1,7 @@
 package TRADES.design;
 
+import static java.util.stream.Collectors.toList;
+
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -17,6 +19,8 @@ import dsm.TRADES.Component;
 import dsm.TRADES.Control;
 import dsm.TRADES.ControlOwner;
 import dsm.TRADES.Data;
+import dsm.TRADES.DataOwner;
+import dsm.TRADES.DataOwnerElement;
 import dsm.TRADES.ThreatAllocationRelation;
 import dsm.TRADES.ThreatMitigationRelation;
 
@@ -105,70 +109,69 @@ public class DiagramService {
 		}
 		return null;
 	}
-	
-	public String threatMitigationName (ThreatMitigationRelation mitigation) {
+
+	public String threatMitigationName(ThreatMitigationRelation mitigation) {
 
 		String label = "";
 		int i = 0;
-		
+
 		Control control = mitigation.getControl();
 		EList<ThreatMitigationRelation> threatMitigationsList = control.getMitigationrRelations();
-		
+
 		for (ThreatMitigationRelation currThreat : threatMitigationsList) {
-			i ++;
-			label = "Mitigation #" + String.valueOf(i) + " " +control.getName();
+			i++;
+			label = "Mitigation #" + String.valueOf(i) + " " + control.getName();
 			currThreat.setName(label);
-			}
-		
-		label = "Mitigation #" + String.valueOf(i) + " " +control.getName();
+		}
+
+		label = "Mitigation #" + String.valueOf(i) + " " + control.getName();
 		return label;
 	}
-	
-	public String affectRelationName (AffectRelation affect) {
-		
+
+	public String affectRelationName(AffectRelation affect) {
+
 		String label = "";
 		label = affect.getSourceComponent().getName() + " To " + affect.getTargetComponent().getName();
-			
+
 		return label;
-		
+
 	}
-	
-	public List<Data> availableData (AffectRelation affect) {
-		
-		EObject analysis = affect.eContainer();
-		while (!(analysis instanceof Analysis) && analysis != null) {
-			analysis = analysis.eContainer();
-		}
-		
-		Analysis realAnalysis =  ((Analysis)analysis);
-		
-		EList<Data> analysisDataList = realAnalysis.getData();
-		EList<Data> affectDataList = affect.getData();
+
+	public List<Data> availableData(AffectRelation affect) {
 		List<Data> result = new ArrayList<Data>();
-		
-		for (Data data : analysisDataList) {
-			if (!affectDataList.contains(data)) {
-				result.add(data);
-			}
-		}			
-					
+
+		collectData(affect.eContainer(), result, new HashSet<>(affect.getData()));
+
 		return result;
 	}
-	
-	public String dataLabelOnAffect (AffectRelation affect) {
-		
-		String label = ""; 
-		
+
+	private void collectData(EObject from, List<Data> datas, Set<Data> relatedData) {
+		if (from instanceof DataOwnerElement) {
+			DataOwner owner = ((DataOwnerElement) from).getDataOwner();
+			if (owner != null) {
+				datas.addAll(owner.getData().stream().filter(d -> !relatedData.contains(d)).collect(toList()));
+			}
+		}
+
+		EObject eContainer = from.eContainer();
+		if (eContainer != null) {
+			collectData(eContainer, datas, relatedData);
+		}
+	}
+
+	public String dataLabelOnAffect(AffectRelation affect) {
+
+		String label = "";
+
 		for (Data data : affect.getData()) {
 			label = label + data.getName() + " ,";
 		}
-		
+
 		if (label != "") {
 			label = label.substring(0, label.length() - 2);
 		}
-		
+
 		return label;
 	}
-	
 
 }

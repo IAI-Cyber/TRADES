@@ -121,13 +121,13 @@ public interface TRADESPackage extends EPackage {
 	int ANALYSIS__COMPONENT = COMPONENT_OWNER__COMPONENT;
 
 	/**
-	 * The feature id for the '<em><b>Data</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Data Owner</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ANALYSIS__DATA = COMPONENT_OWNER_FEATURE_COUNT + 0;
+	int ANALYSIS__DATA_OWNER = COMPONENT_OWNER_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -349,13 +349,13 @@ public interface TRADESPackage extends EPackage {
 	int COMPONENT__COMPONENT = COMPONENT_OWNER__COMPONENT;
 
 	/**
-	 * The feature id for the '<em><b>Data</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Data Owner</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__DATA = COMPONENT_OWNER_FEATURE_COUNT + 0;
+	int COMPONENT__DATA_OWNER = COMPONENT_OWNER_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1097,41 +1097,41 @@ public interface TRADESPackage extends EPackage {
 	int DIFFICULTY_SCORE_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link dsm.TRADES.impl.DataOwnerImpl <em>Data Owner</em>}' class.
+	 * The meta object id for the '{@link dsm.TRADES.impl.DataOwnerElementImpl <em>Data Owner Element</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see dsm.TRADES.impl.DataOwnerImpl
-	 * @see dsm.TRADES.impl.TRADESPackageImpl#getDataOwner()
+	 * @see dsm.TRADES.impl.DataOwnerElementImpl
+	 * @see dsm.TRADES.impl.TRADESPackageImpl#getDataOwnerElement()
 	 * @generated
 	 */
-	int DATA_OWNER = 13;
+	int DATA_OWNER_ELEMENT = 13;
 
 	/**
-	 * The feature id for the '<em><b>Data</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Data Owner</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_OWNER__DATA = 0;
+	int DATA_OWNER_ELEMENT__DATA_OWNER = 0;
 
 	/**
-	 * The number of structural features of the '<em>Data Owner</em>' class.
+	 * The number of structural features of the '<em>Data Owner Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_OWNER_FEATURE_COUNT = 1;
+	int DATA_OWNER_ELEMENT_FEATURE_COUNT = 1;
 
 	/**
-	 * The number of operations of the '<em>Data Owner</em>' class.
+	 * The number of operations of the '<em>Data Owner Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_OWNER_OPERATION_COUNT = 0;
+	int DATA_OWNER_ELEMENT_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link dsm.TRADES.impl.ExternalThreatImpl <em>External Threat</em>}' class.
@@ -1582,6 +1582,43 @@ public interface TRADESPackage extends EPackage {
 	int ABSTRACT_CONTROL_OWNER_OPERATION_COUNT = 1;
 
 	/**
+	 * The meta object id for the '{@link dsm.TRADES.impl.DataOwnerImpl <em>Data Owner</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see dsm.TRADES.impl.DataOwnerImpl
+	 * @see dsm.TRADES.impl.TRADESPackageImpl#getDataOwner()
+	 * @generated
+	 */
+	int DATA_OWNER = 23;
+
+	/**
+	 * The feature id for the '<em><b>Data</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_OWNER__DATA = 0;
+
+	/**
+	 * The number of structural features of the '<em>Data Owner</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_OWNER_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Data Owner</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_OWNER_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link dsm.TRADES.AssessmentENUM <em>Assessment ENUM</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1589,7 +1626,7 @@ public interface TRADESPackage extends EPackage {
 	 * @see dsm.TRADES.impl.TRADESPackageImpl#getAssessmentENUM()
 	 * @generated
 	 */
-	int ASSESSMENT_ENUM = 23;
+	int ASSESSMENT_ENUM = 24;
 
 	/**
 	 * The meta object id for the '{@link dsm.TRADES.AffectedENUM <em>Affected ENUM</em>}' enum.
@@ -1599,7 +1636,7 @@ public interface TRADESPackage extends EPackage {
 	 * @see dsm.TRADES.impl.TRADESPackageImpl#getAffectedENUM()
 	 * @generated
 	 */
-	int AFFECTED_ENUM = 24;
+	int AFFECTED_ENUM = 25;
 
 	/**
 	 * The meta object id for the '{@link dsm.TRADES.threatTypeENUM <em>threat Type ENUM</em>}' enum.
@@ -1609,7 +1646,7 @@ public interface TRADESPackage extends EPackage {
 	 * @see dsm.TRADES.impl.TRADESPackageImpl#getthreatTypeENUM()
 	 * @generated
 	 */
-	int THREAT_TYPE_ENUM = 25;
+	int THREAT_TYPE_ENUM = 26;
 
 	/**
 	 * The meta object id for the '<em>RGB Color</em>' data type.
@@ -1619,7 +1656,7 @@ public interface TRADESPackage extends EPackage {
 	 * @see dsm.TRADES.impl.TRADESPackageImpl#getRGBColor()
 	 * @generated
 	 */
-	int RGB_COLOR = 26;
+	int RGB_COLOR = 27;
 
 	/**
 	 * Returns the meta object for class '{@link dsm.TRADES.Analysis <em>Analysis</em>}'.
@@ -2269,25 +2306,25 @@ public interface TRADESPackage extends EPackage {
 	EAttribute getDifficultyScore_Difficulty();
 
 	/**
-	 * Returns the meta object for class '{@link dsm.TRADES.DataOwner <em>Data Owner</em>}'.
+	 * Returns the meta object for class '{@link dsm.TRADES.DataOwnerElement <em>Data Owner Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Data Owner</em>'.
-	 * @see dsm.TRADES.DataOwner
+	 * @return the meta object for class '<em>Data Owner Element</em>'.
+	 * @see dsm.TRADES.DataOwnerElement
 	 * @generated
 	 */
-	EClass getDataOwner();
+	EClass getDataOwnerElement();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link dsm.TRADES.DataOwner#getData <em>Data</em>}'.
+	 * Returns the meta object for the containment reference '{@link dsm.TRADES.DataOwnerElement#getDataOwner <em>Data Owner</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Data</em>'.
-	 * @see dsm.TRADES.DataOwner#getData()
-	 * @see #getDataOwner()
+	 * @return the meta object for the containment reference '<em>Data Owner</em>'.
+	 * @see dsm.TRADES.DataOwnerElement#getDataOwner()
+	 * @see #getDataOwnerElement()
 	 * @generated
 	 */
-	EReference getDataOwner_Data();
+	EReference getDataOwnerElement_DataOwner();
 
 	/**
 	 * Returns the meta object for class '{@link dsm.TRADES.ComponentOwner <em>Component Owner</em>}'.
@@ -2520,6 +2557,27 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getAbstractControlOwner__GetAllControls();
+
+	/**
+	 * Returns the meta object for class '{@link dsm.TRADES.DataOwner <em>Data Owner</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Data Owner</em>'.
+	 * @see dsm.TRADES.DataOwner
+	 * @generated
+	 */
+	EClass getDataOwner();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link dsm.TRADES.DataOwner#getData <em>Data</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Data</em>'.
+	 * @see dsm.TRADES.DataOwner#getData()
+	 * @see #getDataOwner()
+	 * @generated
+	 */
+	EReference getDataOwner_Data();
 
 	/**
 	 * Returns the meta object for enum '{@link dsm.TRADES.AssessmentENUM <em>Assessment ENUM</em>}'.
@@ -3094,22 +3152,22 @@ public interface TRADESPackage extends EPackage {
 		EAttribute DIFFICULTY_SCORE__DIFFICULTY = eINSTANCE.getDifficultyScore_Difficulty();
 
 		/**
-		 * The meta object literal for the '{@link dsm.TRADES.impl.DataOwnerImpl <em>Data Owner</em>}' class.
+		 * The meta object literal for the '{@link dsm.TRADES.impl.DataOwnerElementImpl <em>Data Owner Element</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see dsm.TRADES.impl.DataOwnerImpl
-		 * @see dsm.TRADES.impl.TRADESPackageImpl#getDataOwner()
+		 * @see dsm.TRADES.impl.DataOwnerElementImpl
+		 * @see dsm.TRADES.impl.TRADESPackageImpl#getDataOwnerElement()
 		 * @generated
 		 */
-		EClass DATA_OWNER = eINSTANCE.getDataOwner();
+		EClass DATA_OWNER_ELEMENT = eINSTANCE.getDataOwnerElement();
 
 		/**
-		 * The meta object literal for the '<em><b>Data</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Data Owner</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference DATA_OWNER__DATA = eINSTANCE.getDataOwner_Data();
+		EReference DATA_OWNER_ELEMENT__DATA_OWNER = eINSTANCE.getDataOwnerElement_DataOwner();
 
 		/**
 		 * The meta object literal for the '{@link dsm.TRADES.impl.ComponentOwnerImpl <em>Component Owner</em>}' class.
@@ -3304,6 +3362,24 @@ public interface TRADESPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation ABSTRACT_CONTROL_OWNER___GET_ALL_CONTROLS = eINSTANCE.getAbstractControlOwner__GetAllControls();
+
+		/**
+		 * The meta object literal for the '{@link dsm.TRADES.impl.DataOwnerImpl <em>Data Owner</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see dsm.TRADES.impl.DataOwnerImpl
+		 * @see dsm.TRADES.impl.TRADESPackageImpl#getDataOwner()
+		 * @generated
+		 */
+		EClass DATA_OWNER = eINSTANCE.getDataOwner();
+
+		/**
+		 * The meta object literal for the '<em><b>Data</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DATA_OWNER__DATA = eINSTANCE.getDataOwner_Data();
 
 		/**
 		 * The meta object literal for the '{@link dsm.TRADES.AssessmentENUM <em>Assessment ENUM</em>}' enum.

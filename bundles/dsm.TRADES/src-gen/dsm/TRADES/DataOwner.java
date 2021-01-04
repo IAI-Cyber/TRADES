@@ -19,7 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see dsm.TRADES.TRADESPackage#getDataOwner()
- * @model abstract="true"
+ * @model
  * @generated
  */
 public interface DataOwner extends EObject {

@@ -33,7 +33,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public abstract class DataOwnerImpl extends MinimalEObjectImpl.Container implements DataOwner {
+public class DataOwnerImpl extends MinimalEObjectImpl.Container implements DataOwner {
 	/**
 	 * The cached value of the '{@link #getData() <em>Data</em>}' containment reference list.
 	 * <!-- begin-user-doc -->

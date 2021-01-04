@@ -132,8 +132,8 @@ public class TRADESAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseDataOwner(DataOwner object) {
-			return createDataOwnerAdapter();
+		public Adapter caseDataOwnerElement(DataOwnerElement object) {
+			return createDataOwnerElementAdapter();
 		}
 
 		@Override
@@ -179,6 +179,11 @@ public class TRADESAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseAbstractControlOwner(AbstractControlOwner object) {
 			return createAbstractControlOwnerAdapter();
+		}
+
+		@Override
+		public Adapter caseDataOwner(DataOwner object) {
+			return createDataOwnerAdapter();
 		}
 
 		@Override
@@ -383,16 +388,16 @@ public class TRADESAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link dsm.TRADES.DataOwner <em>Data Owner</em>}'.
+	 * Creates a new adapter for an object of class '{@link dsm.TRADES.DataOwnerElement <em>Data Owner Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see dsm.TRADES.DataOwner
+	 * @see dsm.TRADES.DataOwnerElement
 	 * @generated
 	 */
-	public Adapter createDataOwnerAdapter() {
+	public Adapter createDataOwnerElementAdapter() {
 		return null;
 	}
 
@@ -519,6 +524,20 @@ public class TRADESAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createAbstractControlOwnerAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link dsm.TRADES.DataOwner <em>Data Owner</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see dsm.TRADES.DataOwner
+	 * @generated
+	 */
+	public Adapter createDataOwnerAdapter() {
 		return null;
 	}
 

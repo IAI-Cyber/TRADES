@@ -128,7 +128,7 @@ public class ComponentItemProvider extends ComponentOwnerItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(TRADESPackage.Literals.DATA_OWNER__DATA);
+			childrenFeatures.add(TRADESPackage.Literals.DATA_OWNER_ELEMENT__DATA_OWNER);
 			childrenFeatures.add(TRADESPackage.Literals.ABSTRACT_CONTROL_OWNER__CONTROL_OWNER);
 			childrenFeatures.add(TRADESPackage.Literals.COMPONENT__THREAT_ALLOCATIONS);
 			childrenFeatures.add(TRADESPackage.Literals.COMPONENT__ANALYSIS);
@@ -200,7 +200,7 @@ public class ComponentItemProvider extends ComponentOwnerItemProvider {
 		case TRADESPackage.COMPONENT__NAME:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
-		case TRADESPackage.COMPONENT__DATA:
+		case TRADESPackage.COMPONENT__DATA_OWNER:
 		case TRADESPackage.COMPONENT__CONTROL_OWNER:
 		case TRADESPackage.COMPONENT__THREAT_ALLOCATIONS:
 		case TRADESPackage.COMPONENT__ANALYSIS:
@@ -223,8 +223,8 @@ public class ComponentItemProvider extends ComponentOwnerItemProvider {
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(
-				createChildParameter(TRADESPackage.Literals.DATA_OWNER__DATA, TRADESFactory.eINSTANCE.createData()));
+		newChildDescriptors.add(createChildParameter(TRADESPackage.Literals.DATA_OWNER_ELEMENT__DATA_OWNER,
+				TRADESFactory.eINSTANCE.createDataOwner()));
 
 		newChildDescriptors.add(createChildParameter(TRADESPackage.Literals.ABSTRACT_CONTROL_OWNER__CONTROL_OWNER,
 				TRADESFactory.eINSTANCE.createControlOwner()));

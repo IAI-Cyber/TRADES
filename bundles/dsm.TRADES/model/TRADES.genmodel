@@ -97,8 +97,8 @@
     <genClasses ecoreClass="TRADES.ecore#//DifficultyScore">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//DifficultyScore/difficulty"/>
     </genClasses>
-    <genClasses image="false" ecoreClass="TRADES.ecore#//DataOwner">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//DataOwner/data"/>
+    <genClasses image="false" ecoreClass="TRADES.ecore#//DataOwnerElement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//DataOwnerElement/dataOwner"/>
     </genClasses>
     <genClasses image="false" ecoreClass="TRADES.ecore#//ComponentOwner">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//ComponentOwner/component"/>
@@ -128,6 +128,9 @@
     <genClasses ecoreClass="TRADES.ecore#//AbstractControlOwner">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//AbstractControlOwner/controlOwner"/>
       <genOperations ecoreOperation="TRADES.ecore#//AbstractControlOwner/getAllControls"/>
+    </genClasses>
+    <genClasses ecoreClass="TRADES.ecore#//DataOwner">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//DataOwner/data"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

@@ -505,6 +505,29 @@ public class TRADESItemProviderAdapterFactory extends TRADESAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link dsm.TRADES.DataOwner} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected DataOwnerItemProvider dataOwnerItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link dsm.TRADES.DataOwner}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createDataOwnerAdapter() {
+		if (dataOwnerItemProvider == null) {
+			dataOwnerItemProvider = new DataOwnerItemProvider(this);
+		}
+
+		return dataOwnerItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -666,6 +689,8 @@ public class TRADESItemProviderAdapterFactory extends TRADESAdapterFactory
 			threatsOwnerItemProvider.dispose();
 		if (controlOwnerItemProvider != null)
 			controlOwnerItemProvider.dispose();
+		if (dataOwnerItemProvider != null)
+			dataOwnerItemProvider.dispose();
 	}
 
 }

@@ -3,6 +3,7 @@ package TRADES.design;
 import dsm.TRADES.AbstractControlOwner;
 import dsm.TRADES.Analysis;
 import dsm.TRADES.ControlOwner;
+import dsm.TRADES.DataOwner;
 import dsm.TRADES.DifficultyScore;
 import dsm.TRADES.ImpactConfiguration;
 import dsm.TRADES.ImpactScore;
@@ -24,6 +25,8 @@ public class ProjectFactory {
 
 		createControlOwner(analysis);
 
+		createDataOwner(analysis);
+
 		createDifficulty("Low", 1, scoreSystem);
 		createDifficulty("Medium", 2, scoreSystem);
 		createDifficulty("High", 3, scoreSystem);
@@ -33,6 +36,11 @@ public class ProjectFactory {
 		createImpact("High", 3, scoreSystem);
 
 		return analysis;
+	}
+
+	private static void createDataOwner(Analysis analysis) {
+		DataOwner dataOwner = TRADESFactory.eINSTANCE.createDataOwner();
+		analysis.setDataOwner(dataOwner);
 	}
 
 	public static void createControlOwner(AbstractControlOwner analysis) {

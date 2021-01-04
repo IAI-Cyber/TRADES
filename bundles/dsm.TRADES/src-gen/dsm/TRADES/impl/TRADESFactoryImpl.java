@@ -93,6 +93,8 @@ public class TRADESFactoryImpl extends EFactoryImpl implements TRADESFactory {
 			return createThreatsOwner();
 		case TRADESPackage.CONTROL_OWNER:
 			return createControlOwner();
+		case TRADESPackage.DATA_OWNER:
+			return createDataOwner();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -336,6 +338,17 @@ public class TRADESFactoryImpl extends EFactoryImpl implements TRADESFactory {
 	public ControlOwner createControlOwner() {
 		ControlOwnerImpl controlOwner = new ControlOwnerImpl();
 		return controlOwner;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public DataOwner createDataOwner() {
+		DataOwnerImpl dataOwner = new DataOwnerImpl();
+		return dataOwner;
 	}
 
 	/**

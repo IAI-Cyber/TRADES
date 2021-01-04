@@ -25,7 +25,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface Component extends ComponentOwner, DataOwner, NamedElement, AbstractControlOwner {
+public interface Component extends ComponentOwner, DataOwnerElement, NamedElement, AbstractControlOwner {
 	/**
 	 * Returns the value of the '<em><b>Allocated Threat</b></em>' reference list.
 	 * The list contents are of type {@link dsm.TRADES.Threat}.

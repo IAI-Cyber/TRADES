@@ -15,6 +15,7 @@ import dsm.TRADES.Control;
 import dsm.TRADES.ControlOwner;
 import dsm.TRADES.Data;
 import dsm.TRADES.DataOwner;
+import dsm.TRADES.DataOwnerElement;
 import dsm.TRADES.DifficultyScore;
 import dsm.TRADES.ExternalControl;
 import dsm.TRADES.ExternalElement;
@@ -145,7 +146,7 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass dataOwnerEClass = null;
+	private EClass dataOwnerElementEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -209,6 +210,13 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * @generated
 	 */
 	private EClass abstractControlOwnerEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass dataOwnerEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -908,8 +916,8 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getDataOwner() {
-		return dataOwnerEClass;
+	public EClass getDataOwnerElement() {
+		return dataOwnerElementEClass;
 	}
 
 	/**
@@ -918,8 +926,8 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getDataOwner_Data() {
-		return (EReference) dataOwnerEClass.getEStructuralFeatures().get(0);
+	public EReference getDataOwnerElement_DataOwner() {
+		return (EReference) dataOwnerElementEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1148,6 +1156,26 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * @generated
 	 */
 	@Override
+	public EClass getDataOwner() {
+		return dataOwnerEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getDataOwner_Data() {
+		return (EReference) dataOwnerEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EEnum getAssessmentENUM() {
 		return assessmentENUMEEnum;
 	}
@@ -1285,8 +1313,8 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		difficultyScoreEClass = createEClass(DIFFICULTY_SCORE);
 		createEAttribute(difficultyScoreEClass, DIFFICULTY_SCORE__DIFFICULTY);
 
-		dataOwnerEClass = createEClass(DATA_OWNER);
-		createEReference(dataOwnerEClass, DATA_OWNER__DATA);
+		dataOwnerElementEClass = createEClass(DATA_OWNER_ELEMENT);
+		createEReference(dataOwnerElementEClass, DATA_OWNER_ELEMENT__DATA_OWNER);
 
 		componentOwnerEClass = createEClass(COMPONENT_OWNER);
 		createEReference(componentOwnerEClass, COMPONENT_OWNER__COMPONENT);
@@ -1318,6 +1346,9 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		abstractControlOwnerEClass = createEClass(ABSTRACT_CONTROL_OWNER);
 		createEReference(abstractControlOwnerEClass, ABSTRACT_CONTROL_OWNER__CONTROL_OWNER);
 		createEOperation(abstractControlOwnerEClass, ABSTRACT_CONTROL_OWNER___GET_ALL_CONTROLS);
+
+		dataOwnerEClass = createEClass(DATA_OWNER);
+		createEReference(dataOwnerEClass, DATA_OWNER__DATA);
 
 		// Create enums
 		assessmentENUMEEnum = createEEnum(ASSESSMENT_ENUM);
@@ -1358,12 +1389,12 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 
 		// Add supertypes to classes
 		analysisEClass.getESuperTypes().add(this.getComponentOwner());
-		analysisEClass.getESuperTypes().add(this.getDataOwner());
+		analysisEClass.getESuperTypes().add(this.getDataOwnerElement());
 		analysisEClass.getESuperTypes().add(this.getNamedElement());
 		analysisEClass.getESuperTypes().add(this.getAbstractControlOwner());
 		threatEClass.getESuperTypes().add(this.getNamedElement());
 		componentEClass.getESuperTypes().add(this.getComponentOwner());
-		componentEClass.getESuperTypes().add(this.getDataOwner());
+		componentEClass.getESuperTypes().add(this.getDataOwnerElement());
 		componentEClass.getESuperTypes().add(this.getNamedElement());
 		componentEClass.getESuperTypes().add(this.getAbstractControlOwner());
 		controlEClass.getESuperTypes().add(this.getNamedElement());
@@ -1555,11 +1586,11 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 				DifficultyScore.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
 
-		initEClass(dataOwnerEClass, DataOwner.class, "DataOwner", IS_ABSTRACT, !IS_INTERFACE,
+		initEClass(dataOwnerElementEClass, DataOwnerElement.class, "DataOwnerElement", IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getDataOwner_Data(), this.getData(), null, "data", null, 0, -1, DataOwner.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
+		initEReference(getDataOwnerElement_DataOwner(), this.getDataOwner(), null, "dataOwner", null, 1, 1,
+				DataOwnerElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(componentOwnerEClass, ComponentOwner.class, "ComponentOwner", IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
@@ -1623,6 +1654,12 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEOperation(getAbstractControlOwner__GetAllControls(), this.getControl(), "getAllControls", 0, -1, IS_UNIQUE,
+				IS_ORDERED);
+
+		initEClass(dataOwnerEClass, DataOwner.class, "DataOwner", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getDataOwner_Data(), this.getData(), null, "data", null, 0, -1, DataOwner.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
 
 		// Initialize enums and add enum literals
