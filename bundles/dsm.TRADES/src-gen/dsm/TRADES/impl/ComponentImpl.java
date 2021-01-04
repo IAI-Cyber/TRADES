@@ -55,7 +55,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class ComponentImpl extends ComponentOwerImpl implements Component {
+public class ComponentImpl extends ComponentOwnerImpl implements Component {
 	/**
 	 * The cached value of the '{@link #getData() <em>Data</em>}' containment reference list.
 	 * <!-- begin-user-doc -->

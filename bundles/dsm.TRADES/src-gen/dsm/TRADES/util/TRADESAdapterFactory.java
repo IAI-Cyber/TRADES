@@ -137,8 +137,8 @@ public class TRADESAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseComponentOwer(ComponentOwer object) {
-			return createComponentOwerAdapter();
+		public Adapter caseComponentOwner(ComponentOwner object) {
+			return createComponentOwnerAdapter();
 		}
 
 		@Override
@@ -402,16 +402,16 @@ public class TRADESAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link dsm.TRADES.ComponentOwer <em>Component Ower</em>}'.
+	 * Creates a new adapter for an object of class '{@link dsm.TRADES.ComponentOwner <em>Component Owner</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see dsm.TRADES.ComponentOwer
+	 * @see dsm.TRADES.ComponentOwner
 	 * @generated
 	 */
-	public Adapter createComponentOwerAdapter() {
+	public Adapter createComponentOwnerAdapter() {
 		return null;
 	}
 

@@ -10,7 +10,7 @@ import dsm.TRADES.AssessmentENUM;
 import dsm.TRADES.AttackChain;
 import dsm.TRADES.AttackChainStep;
 import dsm.TRADES.Component;
-import dsm.TRADES.ComponentOwer;
+import dsm.TRADES.ComponentOwner;
 import dsm.TRADES.Control;
 import dsm.TRADES.ControlOwner;
 import dsm.TRADES.Data;
@@ -153,7 +153,7 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass componentOwerEClass = null;
+	private EClass componentOwnerEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -936,8 +936,8 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getComponentOwer() {
-		return componentOwerEClass;
+	public EClass getComponentOwner() {
+		return componentOwnerEClass;
 	}
 
 	/**
@@ -946,8 +946,8 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getComponentOwer_Component() {
-		return (EReference) componentOwerEClass.getEStructuralFeatures().get(0);
+	public EReference getComponentOwner_Component() {
+		return (EReference) componentOwnerEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1326,8 +1326,8 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		dataOwnerEClass = createEClass(DATA_OWNER);
 		createEReference(dataOwnerEClass, DATA_OWNER__DATA);
 
-		componentOwerEClass = createEClass(COMPONENT_OWER);
-		createEReference(componentOwerEClass, COMPONENT_OWER__COMPONENT);
+		componentOwnerEClass = createEClass(COMPONENT_OWNER);
+		createEReference(componentOwnerEClass, COMPONENT_OWNER__COMPONENT);
 
 		namedElementEClass = createEClass(NAMED_ELEMENT);
 		createEAttribute(namedElementEClass, NAMED_ELEMENT__NAME);
@@ -1399,12 +1399,12 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		analysisEClass.getESuperTypes().add(this.getComponentOwer());
+		analysisEClass.getESuperTypes().add(this.getComponentOwner());
 		analysisEClass.getESuperTypes().add(this.getDataOwner());
 		analysisEClass.getESuperTypes().add(this.getNamedElement());
 		analysisEClass.getESuperTypes().add(this.getAbstractControlOwner());
 		threatEClass.getESuperTypes().add(this.getNamedElement());
-		componentEClass.getESuperTypes().add(this.getComponentOwer());
+		componentEClass.getESuperTypes().add(this.getComponentOwner());
 		componentEClass.getESuperTypes().add(this.getDataOwner());
 		componentEClass.getESuperTypes().add(this.getNamedElement());
 		componentEClass.getESuperTypes().add(this.getAbstractControlOwner());
@@ -1604,10 +1604,10 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
 
-		initEClass(componentOwerEClass, ComponentOwer.class, "ComponentOwer", IS_ABSTRACT, !IS_INTERFACE,
+		initEClass(componentOwnerEClass, ComponentOwner.class, "ComponentOwner", IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getComponentOwer_Component(), this.getComponent(), null, "component", null, 0, -1,
-				ComponentOwer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+		initEReference(getComponentOwner_Component(), this.getComponent(), null, "component", null, 0, -1,
+				ComponentOwner.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(namedElementEClass, NamedElement.class, "NamedElement", IS_ABSTRACT, !IS_INTERFACE,

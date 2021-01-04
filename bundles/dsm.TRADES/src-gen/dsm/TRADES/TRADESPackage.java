@@ -65,14 +65,14 @@ public interface TRADESPackage extends EPackage {
 	TRADESPackage eINSTANCE = dsm.TRADES.impl.TRADESPackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link dsm.TRADES.impl.ComponentOwerImpl <em>Component Ower</em>}' class.
+	 * The meta object id for the '{@link dsm.TRADES.impl.ComponentOwnerImpl <em>Component Owner</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see dsm.TRADES.impl.ComponentOwerImpl
-	 * @see dsm.TRADES.impl.TRADESPackageImpl#getComponentOwer()
+	 * @see dsm.TRADES.impl.ComponentOwnerImpl
+	 * @see dsm.TRADES.impl.TRADESPackageImpl#getComponentOwner()
 	 * @generated
 	 */
-	int COMPONENT_OWER = 14;
+	int COMPONENT_OWNER = 14;
 
 	/**
 	 * The feature id for the '<em><b>Component</b></em>' containment reference list.
@@ -81,25 +81,25 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_OWER__COMPONENT = 0;
+	int COMPONENT_OWNER__COMPONENT = 0;
 
 	/**
-	 * The number of structural features of the '<em>Component Ower</em>' class.
+	 * The number of structural features of the '<em>Component Owner</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_OWER_FEATURE_COUNT = 1;
+	int COMPONENT_OWNER_FEATURE_COUNT = 1;
 
 	/**
-	 * The number of operations of the '<em>Component Ower</em>' class.
+	 * The number of operations of the '<em>Component Owner</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_OWER_OPERATION_COUNT = 0;
+	int COMPONENT_OWNER_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link dsm.TRADES.impl.AnalysisImpl <em>Analysis</em>}' class.
@@ -118,7 +118,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ANALYSIS__COMPONENT = COMPONENT_OWER__COMPONENT;
+	int ANALYSIS__COMPONENT = COMPONENT_OWNER__COMPONENT;
 
 	/**
 	 * The feature id for the '<em><b>Data</b></em>' containment reference list.
@@ -127,7 +127,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ANALYSIS__DATA = COMPONENT_OWER_FEATURE_COUNT + 0;
+	int ANALYSIS__DATA = COMPONENT_OWNER_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -136,7 +136,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ANALYSIS__NAME = COMPONENT_OWER_FEATURE_COUNT + 1;
+	int ANALYSIS__NAME = COMPONENT_OWNER_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Control Owner</b></em>' containment reference.
@@ -145,7 +145,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ANALYSIS__CONTROL_OWNER = COMPONENT_OWER_FEATURE_COUNT + 2;
+	int ANALYSIS__CONTROL_OWNER = COMPONENT_OWNER_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Affectrelation</b></em>' containment reference list.
@@ -154,7 +154,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ANALYSIS__AFFECTRELATION = COMPONENT_OWER_FEATURE_COUNT + 3;
+	int ANALYSIS__AFFECTRELATION = COMPONENT_OWNER_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Scoresystem</b></em>' containment reference.
@@ -163,7 +163,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ANALYSIS__SCORESYSTEM = COMPONENT_OWER_FEATURE_COUNT + 4;
+	int ANALYSIS__SCORESYSTEM = COMPONENT_OWNER_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Threat Owner</b></em>' containment reference.
@@ -172,7 +172,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ANALYSIS__THREAT_OWNER = COMPONENT_OWER_FEATURE_COUNT + 5;
+	int ANALYSIS__THREAT_OWNER = COMPONENT_OWNER_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Analysis</em>' class.
@@ -181,7 +181,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ANALYSIS_FEATURE_COUNT = COMPONENT_OWER_FEATURE_COUNT + 6;
+	int ANALYSIS_FEATURE_COUNT = COMPONENT_OWNER_FEATURE_COUNT + 6;
 
 	/**
 	 * The operation id for the '<em>Get All Controls</em>' operation.
@@ -190,7 +190,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ANALYSIS___GET_ALL_CONTROLS = COMPONENT_OWER_OPERATION_COUNT + 0;
+	int ANALYSIS___GET_ALL_CONTROLS = COMPONENT_OWNER_OPERATION_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Analysis</em>' class.
@@ -199,7 +199,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ANALYSIS_OPERATION_COUNT = COMPONENT_OWER_OPERATION_COUNT + 1;
+	int ANALYSIS_OPERATION_COUNT = COMPONENT_OWNER_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link dsm.TRADES.impl.NamedElementImpl <em>Named Element</em>}' class.
@@ -346,7 +346,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__COMPONENT = COMPONENT_OWER__COMPONENT;
+	int COMPONENT__COMPONENT = COMPONENT_OWNER__COMPONENT;
 
 	/**
 	 * The feature id for the '<em><b>Data</b></em>' containment reference list.
@@ -355,7 +355,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__DATA = COMPONENT_OWER_FEATURE_COUNT + 0;
+	int COMPONENT__DATA = COMPONENT_OWNER_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -364,7 +364,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__NAME = COMPONENT_OWER_FEATURE_COUNT + 1;
+	int COMPONENT__NAME = COMPONENT_OWNER_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Control Owner</b></em>' containment reference.
@@ -373,7 +373,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__CONTROL_OWNER = COMPONENT_OWER_FEATURE_COUNT + 2;
+	int COMPONENT__CONTROL_OWNER = COMPONENT_OWNER_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Allocated Threat</b></em>' reference list.
@@ -382,7 +382,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__ALLOCATED_THREAT = COMPONENT_OWER_FEATURE_COUNT + 3;
+	int COMPONENT__ALLOCATED_THREAT = COMPONENT_OWNER_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Implements</b></em>' reference list.
@@ -391,7 +391,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__IMPLEMENTS = COMPONENT_OWER_FEATURE_COUNT + 4;
+	int COMPONENT__IMPLEMENTS = COMPONENT_OWNER_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Threat Allocations</b></em>' containment reference list.
@@ -400,7 +400,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__THREAT_ALLOCATIONS = COMPONENT_OWER_FEATURE_COUNT + 5;
+	int COMPONENT__THREAT_ALLOCATIONS = COMPONENT_OWNER_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Analysis</b></em>' containment reference list.
@@ -409,7 +409,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__ANALYSIS = COMPONENT_OWER_FEATURE_COUNT + 6;
+	int COMPONENT__ANALYSIS = COMPONENT_OWNER_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Affectrelation</b></em>' containment reference list.
@@ -418,7 +418,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__AFFECTRELATION = COMPONENT_OWER_FEATURE_COUNT + 7;
+	int COMPONENT__AFFECTRELATION = COMPONENT_OWNER_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Threat</b></em>' containment reference list.
@@ -427,7 +427,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__THREAT = COMPONENT_OWER_FEATURE_COUNT + 8;
+	int COMPONENT__THREAT = COMPONENT_OWNER_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of structural features of the '<em>Component</em>' class.
@@ -436,7 +436,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_FEATURE_COUNT = COMPONENT_OWER_FEATURE_COUNT + 9;
+	int COMPONENT_FEATURE_COUNT = COMPONENT_OWNER_FEATURE_COUNT + 9;
 
 	/**
 	 * The operation id for the '<em>Get All Controls</em>' operation.
@@ -445,7 +445,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT___GET_ALL_CONTROLS = COMPONENT_OWER_OPERATION_COUNT + 0;
+	int COMPONENT___GET_ALL_CONTROLS = COMPONENT_OWNER_OPERATION_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Component</em>' class.
@@ -454,7 +454,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_OPERATION_COUNT = COMPONENT_OWER_OPERATION_COUNT + 1;
+	int COMPONENT_OPERATION_COUNT = COMPONENT_OWNER_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link dsm.TRADES.impl.ControlImpl <em>Control</em>}' class.
@@ -2345,25 +2345,25 @@ public interface TRADESPackage extends EPackage {
 	EReference getDataOwner_Data();
 
 	/**
-	 * Returns the meta object for class '{@link dsm.TRADES.ComponentOwer <em>Component Ower</em>}'.
+	 * Returns the meta object for class '{@link dsm.TRADES.ComponentOwner <em>Component Owner</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Component Ower</em>'.
-	 * @see dsm.TRADES.ComponentOwer
+	 * @return the meta object for class '<em>Component Owner</em>'.
+	 * @see dsm.TRADES.ComponentOwner
 	 * @generated
 	 */
-	EClass getComponentOwer();
+	EClass getComponentOwner();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link dsm.TRADES.ComponentOwer#getComponent <em>Component</em>}'.
+	 * Returns the meta object for the containment reference list '{@link dsm.TRADES.ComponentOwner#getComponent <em>Component</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Component</em>'.
-	 * @see dsm.TRADES.ComponentOwer#getComponent()
-	 * @see #getComponentOwer()
+	 * @see dsm.TRADES.ComponentOwner#getComponent()
+	 * @see #getComponentOwner()
 	 * @generated
 	 */
-	EReference getComponentOwer_Component();
+	EReference getComponentOwner_Component();
 
 	/**
 	 * Returns the meta object for class '{@link dsm.TRADES.NamedElement <em>Named Element</em>}'.
@@ -3199,14 +3199,14 @@ public interface TRADESPackage extends EPackage {
 		EReference DATA_OWNER__DATA = eINSTANCE.getDataOwner_Data();
 
 		/**
-		 * The meta object literal for the '{@link dsm.TRADES.impl.ComponentOwerImpl <em>Component Ower</em>}' class.
+		 * The meta object literal for the '{@link dsm.TRADES.impl.ComponentOwnerImpl <em>Component Owner</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see dsm.TRADES.impl.ComponentOwerImpl
-		 * @see dsm.TRADES.impl.TRADESPackageImpl#getComponentOwer()
+		 * @see dsm.TRADES.impl.ComponentOwnerImpl
+		 * @see dsm.TRADES.impl.TRADESPackageImpl#getComponentOwner()
 		 * @generated
 		 */
-		EClass COMPONENT_OWER = eINSTANCE.getComponentOwer();
+		EClass COMPONENT_OWNER = eINSTANCE.getComponentOwner();
 
 		/**
 		 * The meta object literal for the '<em><b>Component</b></em>' containment reference list feature.
@@ -3214,7 +3214,7 @@ public interface TRADESPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference COMPONENT_OWER__COMPONENT = eINSTANCE.getComponentOwer_Component();
+		EReference COMPONENT_OWNER__COMPONENT = eINSTANCE.getComponentOwner_Component();
 
 		/**
 		 * The meta object literal for the '{@link dsm.TRADES.impl.NamedElementImpl <em>Named Element</em>}' class.

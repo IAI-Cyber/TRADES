@@ -100,8 +100,8 @@
     <genClasses image="false" ecoreClass="TRADES.ecore#//DataOwner">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//DataOwner/data"/>
     </genClasses>
-    <genClasses image="false" ecoreClass="TRADES.ecore#//ComponentOwer">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//ComponentOwer/component"/>
+    <genClasses image="false" ecoreClass="TRADES.ecore#//ComponentOwner">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//ComponentOwner/component"/>
     </genClasses>
     <genClasses image="false" ecoreClass="TRADES.ecore#//NamedElement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//NamedElement/name"/>

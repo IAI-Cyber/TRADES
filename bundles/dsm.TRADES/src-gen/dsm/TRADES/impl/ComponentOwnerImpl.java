@@ -3,7 +3,7 @@
 package dsm.TRADES.impl;
 
 import dsm.TRADES.Component;
-import dsm.TRADES.ComponentOwer;
+import dsm.TRADES.ComponentOwner;
 import dsm.TRADES.TRADESPackage;
 
 import java.util.Collection;
@@ -22,18 +22,18 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Component Ower</b></em>'.
+ * An implementation of the model object '<em><b>Component Owner</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link dsm.TRADES.impl.ComponentOwerImpl#getComponent <em>Component</em>}</li>
+ *   <li>{@link dsm.TRADES.impl.ComponentOwnerImpl#getComponent <em>Component</em>}</li>
  * </ul>
  *
  * @generated
  */
-public abstract class ComponentOwerImpl extends MinimalEObjectImpl.Container implements ComponentOwer {
+public abstract class ComponentOwnerImpl extends MinimalEObjectImpl.Container implements ComponentOwner {
 	/**
 	 * The cached value of the '{@link #getComponent() <em>Component</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -49,7 +49,7 @@ public abstract class ComponentOwerImpl extends MinimalEObjectImpl.Container imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ComponentOwerImpl() {
+	protected ComponentOwnerImpl() {
 		super();
 	}
 
@@ -60,7 +60,7 @@ public abstract class ComponentOwerImpl extends MinimalEObjectImpl.Container imp
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return TRADESPackage.Literals.COMPONENT_OWER;
+		return TRADESPackage.Literals.COMPONENT_OWNER;
 	}
 
 	/**
@@ -72,7 +72,7 @@ public abstract class ComponentOwerImpl extends MinimalEObjectImpl.Container imp
 	public EList<Component> getComponent() {
 		if (component == null) {
 			component = new EObjectContainmentEList<Component>(Component.class, this,
-					TRADESPackage.COMPONENT_OWER__COMPONENT);
+					TRADESPackage.COMPONENT_OWNER__COMPONENT);
 		}
 		return component;
 	}
@@ -85,7 +85,7 @@ public abstract class ComponentOwerImpl extends MinimalEObjectImpl.Container imp
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case TRADESPackage.COMPONENT_OWER__COMPONENT:
+		case TRADESPackage.COMPONENT_OWNER__COMPONENT:
 			return ((InternalEList<?>) getComponent()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -99,7 +99,7 @@ public abstract class ComponentOwerImpl extends MinimalEObjectImpl.Container imp
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case TRADESPackage.COMPONENT_OWER__COMPONENT:
+		case TRADESPackage.COMPONENT_OWNER__COMPONENT:
 			return getComponent();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -114,7 +114,7 @@ public abstract class ComponentOwerImpl extends MinimalEObjectImpl.Container imp
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case TRADESPackage.COMPONENT_OWER__COMPONENT:
+		case TRADESPackage.COMPONENT_OWNER__COMPONENT:
 			getComponent().clear();
 			getComponent().addAll((Collection<? extends Component>) newValue);
 			return;
@@ -130,7 +130,7 @@ public abstract class ComponentOwerImpl extends MinimalEObjectImpl.Container imp
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case TRADESPackage.COMPONENT_OWER__COMPONENT:
+		case TRADESPackage.COMPONENT_OWNER__COMPONENT:
 			getComponent().clear();
 			return;
 		}
@@ -145,10 +145,10 @@ public abstract class ComponentOwerImpl extends MinimalEObjectImpl.Container imp
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case TRADESPackage.COMPONENT_OWER__COMPONENT:
+		case TRADESPackage.COMPONENT_OWNER__COMPONENT:
 			return component != null && !component.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //ComponentOwerImpl
+} //ComponentOwnerImpl

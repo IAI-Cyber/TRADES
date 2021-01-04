@@ -22,7 +22,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface Analysis extends ComponentOwer, DataOwner, NamedElement, AbstractControlOwner {
+public interface Analysis extends ComponentOwner, DataOwner, NamedElement, AbstractControlOwner {
 	/**
 	 * Returns the value of the '<em><b>Affectrelation</b></em>' containment reference list.
 	 * The list contents are of type {@link dsm.TRADES.AffectRelation}.

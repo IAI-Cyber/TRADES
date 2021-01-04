@@ -49,7 +49,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class AnalysisImpl extends ComponentOwerImpl implements Analysis {
+public class AnalysisImpl extends ComponentOwnerImpl implements Analysis {
 	/**
 	 * The cached value of the '{@link #getData() <em>Data</em>}' containment reference list.
 	 * <!-- begin-user-doc -->

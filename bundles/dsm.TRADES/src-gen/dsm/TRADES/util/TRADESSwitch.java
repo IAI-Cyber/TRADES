@@ -70,7 +70,7 @@ public class TRADESSwitch<T> extends Switch<T> {
 			Analysis analysis = (Analysis) theEObject;
 			T result = caseAnalysis(analysis);
 			if (result == null)
-				result = caseComponentOwer(analysis);
+				result = caseComponentOwner(analysis);
 			if (result == null)
 				result = caseDataOwner(analysis);
 			if (result == null)
@@ -94,7 +94,7 @@ public class TRADESSwitch<T> extends Switch<T> {
 			Component component = (Component) theEObject;
 			T result = caseComponent(component);
 			if (result == null)
-				result = caseComponentOwer(component);
+				result = caseComponentOwner(component);
 			if (result == null)
 				result = caseDataOwner(component);
 			if (result == null)
@@ -198,9 +198,9 @@ public class TRADESSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case TRADESPackage.COMPONENT_OWER: {
-			ComponentOwer componentOwer = (ComponentOwer) theEObject;
-			T result = caseComponentOwer(componentOwer);
+		case TRADESPackage.COMPONENT_OWNER: {
+			ComponentOwner componentOwner = (ComponentOwner) theEObject;
+			T result = caseComponentOwner(componentOwner);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -498,17 +498,17 @@ public class TRADESSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Component Ower</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Component Owner</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Component Ower</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Component Owner</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseComponentOwer(ComponentOwer object) {
+	public T caseComponentOwner(ComponentOwner object) {
 		return null;
 	}
 

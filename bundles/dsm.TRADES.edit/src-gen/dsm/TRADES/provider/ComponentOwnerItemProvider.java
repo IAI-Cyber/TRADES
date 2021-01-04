@@ -2,7 +2,7 @@
  */
 package dsm.TRADES.provider;
 
-import dsm.TRADES.ComponentOwer;
+import dsm.TRADES.ComponentOwner;
 import dsm.TRADES.TRADESFactory;
 import dsm.TRADES.TRADESPackage;
 
@@ -27,12 +27,12 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link dsm.TRADES.ComponentOwer} object.
+ * This is the item provider adapter for a {@link dsm.TRADES.ComponentOwner} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ComponentOwerItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
+public class ComponentOwnerItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
 		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -40,7 +40,7 @@ public class ComponentOwerItemProvider extends ItemProviderAdapter implements IE
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ComponentOwerItemProvider(AdapterFactory adapterFactory) {
+	public ComponentOwnerItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -71,7 +71,7 @@ public class ComponentOwerItemProvider extends ItemProviderAdapter implements IE
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(TRADESPackage.Literals.COMPONENT_OWER__COMPONENT);
+			childrenFeatures.add(TRADESPackage.Literals.COMPONENT_OWNER__COMPONENT);
 		}
 		return childrenFeatures;
 	}
@@ -107,7 +107,7 @@ public class ComponentOwerItemProvider extends ItemProviderAdapter implements IE
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_ComponentOwer_type");
+		return getString("_UI_ComponentOwner_type");
 	}
 
 	/**
@@ -121,8 +121,8 @@ public class ComponentOwerItemProvider extends ItemProviderAdapter implements IE
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(ComponentOwer.class)) {
-		case TRADESPackage.COMPONENT_OWER__COMPONENT:
+		switch (notification.getFeatureID(ComponentOwner.class)) {
+		case TRADESPackage.COMPONENT_OWNER__COMPONENT:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -140,7 +140,7 @@ public class ComponentOwerItemProvider extends ItemProviderAdapter implements IE
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(TRADESPackage.Literals.COMPONENT_OWER__COMPONENT,
+		newChildDescriptors.add(createChildParameter(TRADESPackage.Literals.COMPONENT_OWNER__COMPONENT,
 				TRADESFactory.eINSTANCE.createComponent()));
 	}
 
