@@ -21,7 +21,6 @@ import dsm.TRADES.ExternalThreat;
 import dsm.TRADES.TRADESFactory;
 import dsm.TRADES.Threat;
 import dsm.TRADES.ThreatMitigationRelation;
-import dsm.TRADES.ThreatType;
 import dsm.TRADES.ThreatsOwner;
 
 public class ExtThreatServices {
@@ -67,25 +66,10 @@ public class ExtThreatServices {
 			analysis.setThreatOwner(threatOwner);
 		}
 
-		ThreatType externalThreatFolder = getExternalThreatSubType(threatOwner);
 
 		String threatSource = source.getSource();
 
-		final ThreatType newOwner;
-		if (threatSource != null) {
-			newOwner = externalThreatFolder.getSubTypes().stream().filter(st -> threatSource.equals(st.getName()))
-					.findFirst().orElseGet(() -> {
-						ThreatType subType = TRADESFactory.eINSTANCE.createThreatType();
-						subType.setName(threatSource);
-						externalThreatFolder.getSubTypes().add(subType);
-						return subType;
-					});
-
-		} else {
-			newOwner = externalThreatFolder;
-		}
-
-		newOwner.getThreats().add(result);
+		threatOwner.getExternals().add(result);
 		return result;
 	}
 	
@@ -132,15 +116,6 @@ public class ExtThreatServices {
 		return result;
 	}
 
-	private ThreatType getExternalThreatSubType(ThreatsOwner threatOwner) {
-		ThreatType externalThreatFolder = threatOwner.getExternal();
-		if (externalThreatFolder == null) {
-			externalThreatFolder = TRADESFactory.eINSTANCE.createThreatType();
-			externalThreatFolder.setName("Externals");
-			threatOwner.setExternal(externalThreatFolder);
-		}
-		return externalThreatFolder;
-	}
 	
 	
 	

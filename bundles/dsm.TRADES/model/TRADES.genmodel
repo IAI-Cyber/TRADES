@@ -117,13 +117,9 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//ImpactConfiguration/color"/>
     </genClasses>
     <genClasses ecoreClass="TRADES.ecore#//ExternalControl"/>
-    <genClasses ecoreClass="TRADES.ecore#//ThreatType">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//ThreatType/subTypes"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//ThreatType/threats"/>
-    </genClasses>
     <genClasses ecoreClass="TRADES.ecore#//ThreatsOwner">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//ThreatsOwner/internal"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//ThreatsOwner/external"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//ThreatsOwner/internals"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference TRADES.ecore#//ThreatsOwner/externals"/>
     </genClasses>
     <genClasses ecoreClass="TRADES.ecore#//ControlOwner">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//ControlOwner/internals"/>

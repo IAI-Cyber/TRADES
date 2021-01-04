@@ -8,7 +8,6 @@ import dsm.TRADES.ImpactConfiguration;
 import dsm.TRADES.ImpactScore;
 import dsm.TRADES.ScoreSystem;
 import dsm.TRADES.TRADESFactory;
-import dsm.TRADES.ThreatType;
 import dsm.TRADES.ThreatsOwner;
 
 public class ProjectFactory {
@@ -22,16 +21,6 @@ public class ProjectFactory {
 
 		ThreatsOwner threatOwner = TRADESFactory.eINSTANCE.createThreatsOwner();
 		analysis.setThreatOwner(threatOwner);
-
-		ThreatType internalThreatFolder = threatOwner.getExternal();
-		internalThreatFolder = TRADESFactory.eINSTANCE.createThreatType();
-		internalThreatFolder.setName("Internals");
-		threatOwner.setInternal(internalThreatFolder);
-
-		ThreatType externalThreatFolder = threatOwner.getExternal();
-		externalThreatFolder = TRADESFactory.eINSTANCE.createThreatType();
-		externalThreatFolder.setName("Externals");
-		threatOwner.setExternal(externalThreatFolder);
 
 		createControlOwner(analysis);
 

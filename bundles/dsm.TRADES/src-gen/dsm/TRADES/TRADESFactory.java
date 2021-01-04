@@ -166,15 +166,6 @@ public interface TRADESFactory extends EFactory {
 	ExternalControl createExternalControl();
 
 	/**
-	 * Returns a new object of class '<em>Threat Type</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Threat Type</em>'.
-	 * @generated
-	 */
-	ThreatType createThreatType();
-
-	/**
 	 * Returns a new object of class '<em>Threats Owner</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

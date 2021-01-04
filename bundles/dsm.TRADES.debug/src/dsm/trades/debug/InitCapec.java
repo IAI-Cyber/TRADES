@@ -30,7 +30,7 @@ import dsm.TRADES.ExternalControl;
 import dsm.TRADES.ExternalThreat;
 import dsm.TRADES.TRADESFactory;
 import dsm.TRADES.ThreatMitigationRelation;
-import dsm.TRADES.ThreatType;
+import dsm.TRADES.ThreatsOwner;
 
 /*
  * cmd argument : -os ${target.os} -ws ${target.ws} -arch ${target.arch} -nl ${target.nl} -consoleLog <pathToTargetFile> <pathToInputFile>
@@ -53,7 +53,7 @@ public class InitCapec implements IApplication {
 
 		Analysis analysis = ProjectFactory.createInitialModel("Capec");
 
-		ThreatType threatOwner = analysis.getThreatOwner().getExternal();
+		ThreatsOwner threatOwner = analysis.getThreatOwner();
 
 		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 		DocumentBuilder builder = factory.newDocumentBuilder();
@@ -75,7 +75,7 @@ public class InitCapec implements IApplication {
 						if (threatNode instanceof Element) {
 
 							ExternalThreat threat = createNewThreat((Element) threatNode, analysis.getControlOwner());
-							threatOwner.getThreats().add(threat);
+							threatOwner.getExternals().add(threat);
 						}
 					}
 

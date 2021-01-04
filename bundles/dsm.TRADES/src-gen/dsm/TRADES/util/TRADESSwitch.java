@@ -252,15 +252,6 @@ public class TRADESSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case TRADESPackage.THREAT_TYPE: {
-			ThreatType threatType = (ThreatType) theEObject;
-			T result = caseThreatType(threatType);
-			if (result == null)
-				result = caseNamedElement(threatType);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
 		case TRADESPackage.THREATS_OWNER: {
 			ThreatsOwner threatsOwner = (ThreatsOwner) theEObject;
 			T result = caseThreatsOwner(threatsOwner);
@@ -584,21 +575,6 @@ public class TRADESSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseExternalControl(ExternalControl object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Threat Type</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Threat Type</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseThreatType(ThreatType object) {
 		return null;
 	}
 

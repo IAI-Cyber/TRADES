@@ -202,8 +202,8 @@
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:container.eContainerOrSelf(TRADES::Analysis).threatOwner.internal">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="TRADES::Threat" referenceName="threats"/>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:container.eContainerOrSelf(TRADES::Analysis).threatOwner">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="TRADES::Threat" referenceName="internals"/>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
@@ -443,7 +443,7 @@
           </ownedTools>
         </toolSections>
         <toolSections name="ThreatsSectionTool_TD" label="Threats Tools">
-          <ownedTools xsi:type="tool_1:SelectionWizardDescription" name="AddThreat" label="Display threats" candidatesExpression="aql:self.eContainerOrSelf(TRADES::Analysis).eAllContents(TRADES::Threat)" multiple="true" message="Please select threat(s)">
+          <ownedTools xsi:type="tool_1:SelectionWizardDescription" name="AddThreat" label="Display threats" candidatesExpression="aql:self.eContainerOrSelf(TRADES::Analysis).threatOwner.eAllContents(TRADES::Threat)" multiple="true" message="Please select threat(s)">
             <element name="element"/>
             <containerView name="containerView"/>
             <container name="container"/>

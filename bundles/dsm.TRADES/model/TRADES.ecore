@@ -152,17 +152,11 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EDataType" name="RGBColor" instanceClassName="dsm.TRADES.RGBColor"/>
   <eClassifiers xsi:type="ecore:EClass" name="ExternalControl" eSuperTypes="#//ExternalElement #//Control"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ThreatType" eSuperTypes="#//NamedElement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="subTypes" upperBound="-1"
-        eType="#//ThreatType" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="threats" upperBound="-1"
-        eType="#//Threat" containment="true"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ThreatsOwner">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="internal" lowerBound="1"
-        eType="#//ThreatType" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="external" lowerBound="1"
-        eType="#//ThreatType" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="internals" upperBound="-1"
+        eType="#//Threat" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="externals" upperBound="-1"
+        eType="#//Threat" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ControlOwner">
     <eStructuralFeatures xsi:type="ecore:EReference" name="internals" upperBound="-1"

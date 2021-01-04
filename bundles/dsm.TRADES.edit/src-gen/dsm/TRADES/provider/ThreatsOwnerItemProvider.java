@@ -16,6 +16,7 @@ import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
 
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IChildCreationExtender;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -55,8 +56,24 @@ public class ThreatsOwnerItemProvider extends ItemProviderAdapter implements IEd
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addExternalsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Externals feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addExternalsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_ThreatsOwner_externals_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_ThreatsOwner_externals_feature",
+								"_UI_ThreatsOwner_type"),
+						TRADESPackage.Literals.THREATS_OWNER__EXTERNALS, true, false, true, null, null, null));
 	}
 
 	/**
@@ -71,8 +88,8 @@ public class ThreatsOwnerItemProvider extends ItemProviderAdapter implements IEd
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(TRADESPackage.Literals.THREATS_OWNER__INTERNAL);
-			childrenFeatures.add(TRADESPackage.Literals.THREATS_OWNER__EXTERNAL);
+			childrenFeatures.add(TRADESPackage.Literals.THREATS_OWNER__INTERNALS);
+			childrenFeatures.add(TRADESPackage.Literals.THREATS_OWNER__EXTERNALS);
 		}
 		return childrenFeatures;
 	}
@@ -134,8 +151,8 @@ public class ThreatsOwnerItemProvider extends ItemProviderAdapter implements IEd
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ThreatsOwner.class)) {
-		case TRADESPackage.THREATS_OWNER__INTERNAL:
-		case TRADESPackage.THREATS_OWNER__EXTERNAL:
+		case TRADESPackage.THREATS_OWNER__INTERNALS:
+		case TRADESPackage.THREATS_OWNER__EXTERNALS:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -153,11 +170,17 @@ public class ThreatsOwnerItemProvider extends ItemProviderAdapter implements IEd
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(TRADESPackage.Literals.THREATS_OWNER__INTERNAL,
-				TRADESFactory.eINSTANCE.createThreatType()));
+		newChildDescriptors.add(createChildParameter(TRADESPackage.Literals.THREATS_OWNER__INTERNALS,
+				TRADESFactory.eINSTANCE.createThreat()));
 
-		newChildDescriptors.add(createChildParameter(TRADESPackage.Literals.THREATS_OWNER__EXTERNAL,
-				TRADESFactory.eINSTANCE.createThreatType()));
+		newChildDescriptors.add(createChildParameter(TRADESPackage.Literals.THREATS_OWNER__INTERNALS,
+				TRADESFactory.eINSTANCE.createExternalThreat()));
+
+		newChildDescriptors.add(createChildParameter(TRADESPackage.Literals.THREATS_OWNER__EXTERNALS,
+				TRADESFactory.eINSTANCE.createThreat()));
+
+		newChildDescriptors.add(createChildParameter(TRADESPackage.Literals.THREATS_OWNER__EXTERNALS,
+				TRADESFactory.eINSTANCE.createExternalThreat()));
 	}
 
 	/**
@@ -171,8 +194,8 @@ public class ThreatsOwnerItemProvider extends ItemProviderAdapter implements IEd
 		Object childFeature = feature;
 		Object childObject = child;
 
-		boolean qualify = childFeature == TRADESPackage.Literals.THREATS_OWNER__INTERNAL
-				|| childFeature == TRADESPackage.Literals.THREATS_OWNER__EXTERNAL;
+		boolean qualify = childFeature == TRADESPackage.Literals.THREATS_OWNER__INTERNALS
+				|| childFeature == TRADESPackage.Literals.THREATS_OWNER__EXTERNALS;
 
 		if (qualify) {
 			return getString("_UI_CreateChild_text2",

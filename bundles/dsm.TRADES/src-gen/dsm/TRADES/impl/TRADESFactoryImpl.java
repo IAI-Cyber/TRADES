@@ -89,8 +89,6 @@ public class TRADESFactoryImpl extends EFactoryImpl implements TRADESFactory {
 			return createImpactConfiguration();
 		case TRADESPackage.EXTERNAL_CONTROL:
 			return createExternalControl();
-		case TRADESPackage.THREAT_TYPE:
-			return createThreatType();
 		case TRADESPackage.THREATS_OWNER:
 			return createThreatsOwner();
 		case TRADESPackage.CONTROL_OWNER:
@@ -316,17 +314,6 @@ public class TRADESFactoryImpl extends EFactoryImpl implements TRADESFactory {
 	public ExternalControl createExternalControl() {
 		ExternalControlImpl externalControl = new ExternalControlImpl();
 		return externalControl;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ThreatType createThreatType() {
-		ThreatTypeImpl threatType = new ThreatTypeImpl();
-		return threatType;
 	}
 
 	/**

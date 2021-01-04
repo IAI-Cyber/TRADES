@@ -29,7 +29,6 @@ import dsm.TRADES.TRADESPackage;
 import dsm.TRADES.Threat;
 import dsm.TRADES.ThreatAllocationRelation;
 import dsm.TRADES.ThreatMitigationRelation;
-import dsm.TRADES.ThreatType;
 import dsm.TRADES.ThreatsOwner;
 import dsm.TRADES.threatTypeENUM;
 
@@ -189,13 +188,6 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * @generated
 	 */
 	private EClass externalControlEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass threatTypeEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1066,36 +1058,6 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getThreatType() {
-		return threatTypeEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getThreatType_SubTypes() {
-		return (EReference) threatTypeEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getThreatType_Threats() {
-		return (EReference) threatTypeEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getThreatsOwner() {
 		return threatsOwnerEClass;
 	}
@@ -1106,7 +1068,7 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getThreatsOwner_Internal() {
+	public EReference getThreatsOwner_Internals() {
 		return (EReference) threatsOwnerEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -1116,7 +1078,7 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getThreatsOwner_External() {
+	public EReference getThreatsOwner_Externals() {
 		return (EReference) threatsOwnerEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -1345,13 +1307,9 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 
 		externalControlEClass = createEClass(EXTERNAL_CONTROL);
 
-		threatTypeEClass = createEClass(THREAT_TYPE);
-		createEReference(threatTypeEClass, THREAT_TYPE__SUB_TYPES);
-		createEReference(threatTypeEClass, THREAT_TYPE__THREATS);
-
 		threatsOwnerEClass = createEClass(THREATS_OWNER);
-		createEReference(threatsOwnerEClass, THREATS_OWNER__INTERNAL);
-		createEReference(threatsOwnerEClass, THREATS_OWNER__EXTERNAL);
+		createEReference(threatsOwnerEClass, THREATS_OWNER__INTERNALS);
+		createEReference(threatsOwnerEClass, THREATS_OWNER__EXTERNALS);
 
 		controlOwnerEClass = createEClass(CONTROL_OWNER);
 		createEReference(controlOwnerEClass, CONTROL_OWNER__INTERNALS);
@@ -1420,7 +1378,6 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		externalThreatEClass.getESuperTypes().add(this.getExternalElement());
 		externalControlEClass.getESuperTypes().add(this.getExternalElement());
 		externalControlEClass.getESuperTypes().add(this.getControl());
-		threatTypeEClass.getESuperTypes().add(this.getNamedElement());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(analysisEClass, Analysis.class, "Analysis", !IS_ABSTRACT, !IS_INTERFACE,
@@ -1641,21 +1598,12 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		initEClass(externalControlEClass, ExternalControl.class, "ExternalControl", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(threatTypeEClass, ThreatType.class, "ThreatType", !IS_ABSTRACT, !IS_INTERFACE,
-				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getThreatType_SubTypes(), this.getThreatType(), null, "subTypes", null, 0, -1, ThreatType.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getThreatType_Threats(), this.getThreat(), null, "threats", null, 0, -1, ThreatType.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
 		initEClass(threatsOwnerEClass, ThreatsOwner.class, "ThreatsOwner", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getThreatsOwner_Internal(), this.getThreatType(), null, "internal", null, 1, 1,
+		initEReference(getThreatsOwner_Internals(), this.getThreat(), null, "internals", null, 0, -1,
 				ThreatsOwner.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getThreatsOwner_External(), this.getThreatType(), null, "external", null, 1, 1,
+		initEReference(getThreatsOwner_Externals(), this.getThreat(), null, "externals", null, 0, -1,
 				ThreatsOwner.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
