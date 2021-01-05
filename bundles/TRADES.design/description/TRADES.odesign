@@ -1339,7 +1339,7 @@
                             </firstModelOperations>
                           </initialOperation>
                         </controls>
-                        <controls xsi:type="properties:SelectDescription" name="DataOwnerSelectWidget" labelExpression="aql:'Select the data owner'" valueExpression="aql:self.eContainer().eContainer()" candidatesExpression="aql:self.ancestors()->filter(TRADES::DataOwnerElement)" candidateDisplayExpression="aql:candidate.name">
+                        <controls xsi:type="properties:SelectDescription" name="DataOwnerSelectWidget" labelExpression="aql:'Select the data owner'" valueExpression="aql:self.eContainer().eContainer()" candidatesExpression="aql:self.printAllVariable().ancestors()->filter(TRADES::DataOwnerElement)" candidateDisplayExpression="aql:candidate.name">
                           <initialOperation>
                             <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self">
                               <subModelOperations xsi:type="tool_1:MoveElement" newContainerExpression="aql:newValue.getOrCreateDataOwner()" featureName="data"/>
