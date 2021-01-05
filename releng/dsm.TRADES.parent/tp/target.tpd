@@ -55,6 +55,10 @@ location "https://download.eclipse.org/sirius/updates/releases/6.4.0/2020-06/" {
 
 location  "https://download.eclipse.org/tools/orbit/downloads/drops/R20200529191137/repository" {
 	org.jsoup lazy
+	com.fasterxml.jackson.core.jackson-core lazy
+	com.fasterxml.jackson.core.jackson-databind lazy
+	com.fasterxml.jackson.core.jackson-annotations lazy
+	com.fasterxml.jackson.jaxrs.jackson-jaxrs-json-provider lazy
 }
 
 

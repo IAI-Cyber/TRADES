@@ -11,8 +11,11 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.emf.ecore;bundle-version="2.22.0",
  org.eclipse.emf.ecore.xmi;bundle-version="2.16.0",
  dsm.TRADES;bundle-version="2.5.0",
- TRADES.design;bundle-version="2.5.0",
- org.jsoup;bundle-version="1.8.3"
+ org.jsoup;bundle-version="1.8.3",
+ com.fasterxml.jackson.core.jackson-core;bundle-version="2.10.3",
+ com.fasterxml.jackson.core.jackson-databind;bundle-version="2.10.3",
+ com.fasterxml.jackson.core.jackson-annotations;bundle-version="2.10.3",
+ TRADES.design;bundle-version="2.5.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-11
 Automatic-Module-Name: dsm.TRADES.debug
 Import-Package: javax.inject;version="1.0.0"
