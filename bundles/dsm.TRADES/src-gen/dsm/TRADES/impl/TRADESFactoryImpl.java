@@ -237,7 +237,7 @@ public class TRADESFactoryImpl extends EFactoryImpl implements TRADESFactory {
 	 */
 	@Override
 	public AttackChain createAttackChain() {
-		AttackChainImpl attackChain = new AttackChainImpl();
+		AttackChainCustomImpl attackChain = new AttackChainCustomImpl();
 		return attackChain;
 	}
 

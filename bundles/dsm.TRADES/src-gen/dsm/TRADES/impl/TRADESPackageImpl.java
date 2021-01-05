@@ -766,6 +766,16 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * @generated
 	 */
 	@Override
+	public EAttribute getAttackChain_ComputedDifficulty() {
+		return (EAttribute) attackChainEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getAttackChainStep() {
 		return attackChainStepEClass;
 	}
@@ -1293,6 +1303,7 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 
 		attackChainEClass = createEClass(ATTACK_CHAIN);
 		createEReference(attackChainEClass, ATTACK_CHAIN__ATTACKCHAIN_STEPS);
+		createEAttribute(attackChainEClass, ATTACK_CHAIN__COMPUTED_DIFFICULTY);
 
 		attackChainStepEClass = createEClass(ATTACK_CHAIN_STEP);
 		createEAttribute(attackChainStepEClass, ATTACK_CHAIN_STEP__STEP_NUM);
@@ -1540,6 +1551,9 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		initEReference(getAttackChain_AttackchainSteps(), this.getAttackChainStep(), null, "attackchainSteps", null, 0,
 				-1, AttackChain.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAttackChain_ComputedDifficulty(), ecorePackage.getEInt(), "computedDifficulty", null, 0, 1,
+				AttackChain.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				IS_DERIVED, IS_ORDERED);
 
 		initEClass(attackChainStepEClass, AttackChainStep.class, "AttackChainStep", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);

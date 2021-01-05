@@ -77,6 +77,7 @@
     </genClasses>
     <genClasses ecoreClass="TRADES.ecore#//AttackChain">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//AttackChain/attackchainSteps"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//AttackChain/computedDifficulty"/>
     </genClasses>
     <genClasses ecoreClass="TRADES.ecore#//AttackChainStep">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//AttackChainStep/stepNum"/>

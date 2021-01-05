@@ -95,6 +95,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="AttackChain" eSuperTypes="#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="attackchainSteps" upperBound="-1"
         eType="#//AttackChainStep" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="computedDifficulty" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        volatile="true" transient="true" derived="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AttackChainStep">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="stepNum" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"

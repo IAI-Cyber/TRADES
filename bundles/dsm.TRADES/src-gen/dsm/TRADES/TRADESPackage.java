@@ -841,13 +841,22 @@ public interface TRADESPackage extends EPackage {
 	int ATTACK_CHAIN__ATTACKCHAIN_STEPS = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Computed Difficulty</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTACK_CHAIN__COMPUTED_DIFFICULTY = NAMED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Attack Chain</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ATTACK_CHAIN_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int ATTACK_CHAIN_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Attack Chain</em>' class.
@@ -2145,6 +2154,17 @@ public interface TRADESPackage extends EPackage {
 	EReference getAttackChain_AttackchainSteps();
 
 	/**
+	 * Returns the meta object for the attribute '{@link dsm.TRADES.AttackChain#getComputedDifficulty <em>Computed Difficulty</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Computed Difficulty</em>'.
+	 * @see dsm.TRADES.AttackChain#getComputedDifficulty()
+	 * @see #getAttackChain()
+	 * @generated
+	 */
+	EAttribute getAttackChain_ComputedDifficulty();
+
+	/**
 	 * Returns the meta object for class '{@link dsm.TRADES.AttackChainStep <em>Attack Chain Step</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3021,6 +3041,14 @@ public interface TRADESPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ATTACK_CHAIN__ATTACKCHAIN_STEPS = eINSTANCE.getAttackChain_AttackchainSteps();
+
+		/**
+		 * The meta object literal for the '<em><b>Computed Difficulty</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ATTACK_CHAIN__COMPUTED_DIFFICULTY = eINSTANCE.getAttackChain_ComputedDifficulty();
 
 		/**
 		 * The meta object literal for the '{@link dsm.TRADES.impl.AttackChainStepImpl <em>Attack Chain Step</em>}' class.

@@ -27,6 +27,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link dsm.TRADES.impl.AttackChainImpl#getAttackchainSteps <em>Attackchain Steps</em>}</li>
+ *   <li>{@link dsm.TRADES.impl.AttackChainImpl#getComputedDifficulty <em>Computed Difficulty</em>}</li>
  * </ul>
  *
  * @generated
@@ -41,6 +42,16 @@ public class AttackChainImpl extends NamedElementImpl implements AttackChain {
 	 * @ordered
 	 */
 	protected EList<AttackChainStep> attackchainSteps;
+
+	/**
+	 * The default value of the '{@link #getComputedDifficulty() <em>Computed Difficulty</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getComputedDifficulty()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int COMPUTED_DIFFICULTY_EDEFAULT = 0;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -81,6 +92,30 @@ public class AttackChainImpl extends NamedElementImpl implements AttackChain {
 	 * @generated
 	 */
 	@Override
+	public int getComputedDifficulty() {
+		// TODO: implement this method to return the 'Computed Difficulty' attribute
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setComputedDifficulty(int newComputedDifficulty) {
+		// TODO: implement this method to set the 'Computed Difficulty' attribute
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case TRADESPackage.ATTACK_CHAIN__ATTACKCHAIN_STEPS:
@@ -99,6 +134,8 @@ public class AttackChainImpl extends NamedElementImpl implements AttackChain {
 		switch (featureID) {
 		case TRADESPackage.ATTACK_CHAIN__ATTACKCHAIN_STEPS:
 			return getAttackchainSteps();
+		case TRADESPackage.ATTACK_CHAIN__COMPUTED_DIFFICULTY:
+			return getComputedDifficulty();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -116,6 +153,9 @@ public class AttackChainImpl extends NamedElementImpl implements AttackChain {
 			getAttackchainSteps().clear();
 			getAttackchainSteps().addAll((Collection<? extends AttackChainStep>) newValue);
 			return;
+		case TRADESPackage.ATTACK_CHAIN__COMPUTED_DIFFICULTY:
+			setComputedDifficulty((Integer) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -131,6 +171,9 @@ public class AttackChainImpl extends NamedElementImpl implements AttackChain {
 		case TRADESPackage.ATTACK_CHAIN__ATTACKCHAIN_STEPS:
 			getAttackchainSteps().clear();
 			return;
+		case TRADESPackage.ATTACK_CHAIN__COMPUTED_DIFFICULTY:
+			setComputedDifficulty(COMPUTED_DIFFICULTY_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -145,6 +188,8 @@ public class AttackChainImpl extends NamedElementImpl implements AttackChain {
 		switch (featureID) {
 		case TRADESPackage.ATTACK_CHAIN__ATTACKCHAIN_STEPS:
 			return attackchainSteps != null && !attackchainSteps.isEmpty();
+		case TRADESPackage.ATTACK_CHAIN__COMPUTED_DIFFICULTY:
+			return getComputedDifficulty() != COMPUTED_DIFFICULTY_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
