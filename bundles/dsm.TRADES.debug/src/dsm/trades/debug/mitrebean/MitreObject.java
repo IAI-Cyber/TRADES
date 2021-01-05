@@ -2,10 +2,6 @@ package dsm.trades.debug.mitrebean;
 
 import java.util.List;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
-@JsonIgnoreProperties({ "spec_version", "modified", "created", "object_marking_refs", "created_by_ref",
-		"kill_chain_phases", "x_mitre_version" })
 public class MitreObject {
 
 	private String type;
@@ -13,6 +9,9 @@ public class MitreObject {
 	private String name;
 	private boolean revoked;
 	private String description;
+	private List<String> x_mitre_platforms;
+	private String target_ref;
+	private String source_ref;
 
 	private List<ExternalReference> external_references;
 
@@ -20,8 +19,32 @@ public class MitreObject {
 		return type;
 	}
 
+	public String getTarget_ref() {
+		return target_ref;
+	}
+
+	public void setTarget_ref(String target_ref) {
+		this.target_ref = target_ref;
+	}
+
+	public String getSource_ref() {
+		return source_ref;
+	}
+
+	public void setSource_ref(String source_ref) {
+		this.source_ref = source_ref;
+	}
+
 	public String getDescription() {
 		return description;
+	}
+
+	public List<String> getX_mitre_platforms() {
+		return x_mitre_platforms;
+	}
+
+	public void setX_mitre_platforms(List<String> x_mitre_platforms) {
+		this.x_mitre_platforms = x_mitre_platforms;
 	}
 
 	public void setDescription(String description) {

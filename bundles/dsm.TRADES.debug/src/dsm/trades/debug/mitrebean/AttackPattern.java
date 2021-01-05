@@ -2,9 +2,6 @@ package dsm.trades.debug.mitrebean;
 
 import java.util.List;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
-@JsonIgnoreProperties({ "id", "spec_version" })
 public class AttackPattern {
 
 	private List<MitreObject> objects;

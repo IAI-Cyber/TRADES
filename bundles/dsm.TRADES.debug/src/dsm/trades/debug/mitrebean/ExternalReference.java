@@ -1,8 +1,5 @@
 package dsm.trades.debug.mitrebean;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
-@JsonIgnoreProperties({ "description" })
 public class ExternalReference {
 
 	private String source_name;
