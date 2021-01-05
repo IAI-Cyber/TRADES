@@ -128,15 +128,6 @@ public class DiagramService {
 		return label;
 	}
 
-	public String affectRelationName(AffectRelation affect) {
-
-		String label = "";
-		label = affect.getSourceComponent().getName() + " To " + affect.getTargetComponent().getName();
-
-		return label;
-
-	}
-
 	public List<Data> availableData(AffectRelation affect) {
 		List<Data> result = new ArrayList<Data>();
 

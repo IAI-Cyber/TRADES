@@ -271,7 +271,6 @@
                 <subModelOperations xsi:type="tool_1:CreateInstance" typeName="TRADES::AffectRelation" referenceName="affectrelation">
                   <subModelOperations xsi:type="tool_1:SetValue" featureName="sourceComponent" valueExpression="var:source"/>
                   <subModelOperations xsi:type="tool_1:SetValue" featureName="targetComponent" valueExpression="var:target"/>
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:self.affectRelationName()"/>
                 </subModelOperations>
               </firstModelOperations>
             </initialOperation>

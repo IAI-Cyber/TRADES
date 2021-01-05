@@ -257,7 +257,7 @@ public class TRADESItemProviderAdapterFactory extends TRADESAdapterFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected AffectRelationItemProvider affectRelationItemProvider;
+	protected AffectRelationItemProviderCustomImpl affectRelationItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link dsm.TRADES.AffectRelation}.
@@ -268,7 +268,7 @@ public class TRADESItemProviderAdapterFactory extends TRADESAdapterFactory
 	@Override
 	public Adapter createAffectRelationAdapter() {
 		if (affectRelationItemProvider == null) {
-			affectRelationItemProvider = new AffectRelationItemProvider(this);
+			affectRelationItemProvider = new AffectRelationItemProviderCustomImpl(this);
 		}
 
 		return affectRelationItemProvider;

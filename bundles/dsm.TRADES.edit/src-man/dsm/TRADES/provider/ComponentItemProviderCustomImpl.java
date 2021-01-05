@@ -2,6 +2,7 @@ package dsm.TRADES.provider;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.ecore.util.ECrossReferenceAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import dsm.TRADES.AffectRelation;
@@ -34,6 +35,20 @@ public class ComponentItemProviderCustomImpl extends ComponentItemProvider {
 				}
 				for (AffectRelation affect : new_name.getAffectrelation()) {
 					fireNotifyChanged(new ViewerNotification(notification, affect, false, true));
+				}
+
+				ECrossReferenceAdapter crossRef = new_name.eAdapters().stream()
+						.filter(e -> e instanceof ECrossReferenceAdapter).findAny()
+						.map(opt -> (ECrossReferenceAdapter) opt).orElse(null);
+				if (crossRef != null) {
+					crossRef.getInverseReferences(new_name).stream()//
+							.filter(s -> s.getEObject() instanceof AffectRelation
+									&& s.getEStructuralFeature() == TRADESPackage.eINSTANCE
+											.getAffectRelation_TargetComponent())//
+							.map(s -> s.getEObject())//
+							.forEach(rel -> fireNotifyChanged(new ViewerNotification(notification, rel, false, true)));
+					;
+
 				}
 			}
 		}
