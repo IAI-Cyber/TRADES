@@ -1,13 +1,16 @@
 package TRADES.design;
 
 import static java.util.stream.Collectors.toList;
+import static java.util.stream.Collectors.toSet;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.sirius.diagram.DSemanticDiagram;
 import org.eclipse.sirius.viewpoint.DRepresentationElement;
 import org.eclipse.sirius.viewpoint.DSemanticDecorator;
 
@@ -15,10 +18,12 @@ import dsm.TRADES.AffectRelation;
 import dsm.TRADES.Analysis;
 import dsm.TRADES.AttackChainStep;
 import dsm.TRADES.Component;
+import dsm.TRADES.ComponentOwner;
 import dsm.TRADES.ControlOwner;
 import dsm.TRADES.Data;
 import dsm.TRADES.DataOwner;
 import dsm.TRADES.DataOwnerElement;
+import dsm.TRADES.Threat;
 import dsm.TRADES.ThreatAllocationRelation;
 
 public class DiagramService {
@@ -33,6 +38,45 @@ public class DiagramService {
 
 		return label;
 
+	}
+
+	/**
+	 * Gets all threats that are linked to the semantic element behind the given node
+	 * or one of its descendant
+	 * 
+	 * @param node a node
+	 * @return a list of {@link Threat}
+	 */
+	public List<Threat> getRelatedThreats(DSemanticDecorator node) {
+		EObject semanticTarget = node.getTarget();
+
+		EObject current = node;
+		while (!(current instanceof DSemanticDiagram) && current != null) {
+			current = current.eContainer();
+		}
+		if (current instanceof DSemanticDiagram) {
+
+			Set<EObject> alsreadyDisplayed = EcoreUtils.allContainedObjectOfType(current, DSemanticDecorator.class)
+					.filter(n -> n.getTarget() instanceof Threat).map(n -> n.getTarget()).collect(toSet());
+
+			Set<Threat> collector = new HashSet<>();
+			getLinkedThreat(semanticTarget, collector);
+			return collector.stream().filter(e -> !alsreadyDisplayed.contains(e)).collect(toList());
+		}
+		return Collections.emptyList();
+	}
+
+	private void getLinkedThreat(EObject o, Set<Threat> collector) {
+		if (o instanceof Component) {
+			Component cmp = (Component) o;
+			cmp.getThreatAllocations().stream().map(rel -> rel.getThreat()).forEach(collector::add);
+		}
+
+		if (o instanceof ComponentOwner) {
+			for (Component c : ((ComponentOwner) o).getComponent()) {
+				getLinkedThreat(c, collector);
+			}
+		}
 	}
 
 	private String getAllocLabel(ThreatAllocationRelation alloc) {
