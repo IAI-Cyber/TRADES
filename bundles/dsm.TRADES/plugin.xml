@@ -15,10 +15,10 @@
    </extension>
 
    <extension point="org.eclipse.emf.ecore.extension_parser">
-      <!-- @generated TRADES -->
+      <!-- @generated not TRADES -->
       <parser
             type="trades"
-            class="dsm.TRADES.util.TRADESResourceFactoryImpl"/>
+            class="dsm.TRADES.util.TRADESResourceFactoryCustomImpl"/>
    </extension>
 
 </plugin>
