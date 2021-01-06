@@ -24,6 +24,7 @@ import TRADES.design.ProjectFactory;
 import dsm.TRADES.Analysis;
 import dsm.TRADES.Control;
 import dsm.TRADES.ControlOwner;
+import dsm.TRADES.ExternalControl;
 import dsm.TRADES.ExternalThreat;
 import dsm.TRADES.TRADESFactory;
 import dsm.TRADES.Threat;
@@ -55,11 +56,14 @@ public class InitMitre implements IApplication {
 
 		for (String fileName : fileNames) {
 
+			System.out.println("## Current woking on " + fileName);
+
 			String modelName = Paths.get(fileName).getFileName().toString().replace(".json", "");
 
 			Resource resource = rs.createResource(URI.createFileURI(targetModelFile + "_" + modelName + ".trades"));
 
-			Analysis analysis = ProjectFactory.createInitialModel("Mitre Att&ck :" + modelName);
+			String analysisName = "Mitre Att&ck : " + modelName;
+			Analysis analysis = ProjectFactory.createInitialModel(analysisName);
 
 			ThreatsOwner threatOwner = analysis.getThreatOwner();
 			ControlOwner controlOwnedr = analysis.getControlOwner();
@@ -70,6 +74,7 @@ public class InitMitre implements IApplication {
 			mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
 			try {
 				DomainAttacks attack = mapper.readValue(path.toFile(), DomainAttacks.class);
+				System.out.println("### Addign threats & controls");
 				for (MitreObject m : attack.getObjects()) {
 					if ("attack-pattern".equals(m.getType())) {
 						ExternalThreat threat = TRADESFactory.eINSTANCE.createExternalThreat();
@@ -81,33 +86,41 @@ public class InitMitre implements IApplication {
 						}
 						threatOwner.getExternals().add(threat);
 
-						m.getExternal_references().stream().filter(ext -> "mitre-attack".equals(ext.getSource_name()))
-								.findFirst().ifPresent(ext -> {
+						m.getExternal_references().stream()
+								.filter(ext -> ext.getSource_name() != null && ext.getSource_name().endsWith("attack"))
+								.findFirst().ifPresentOrElse(ext -> {
 									threat.setID(ext.getExternal_id());
+									threat.setSource(analysisName);
+									threat.setLink(ext.getUrl());
+								}, () -> {
+									System.err.println("No id for threat " + m.getName());
 								});
 
 						idToThreat.put(m.getId(), threat);
 
-					}
-				}
-				for (MitreObject m : attack.getObjects()) {
-					if ("course-of-action".equals(m.getType())) {
+					} else if ("course-of-action".equals(m.getType())) {
 						// TODO create the mitigation
-						Control control = TRADESFactory.eINSTANCE.createControl();
+						ExternalControl control = TRADESFactory.eINSTANCE.createExternalControl();
 						control.setName(m.getName());
 						control.setDescription(m.getDescription());
 						controlOwnedr.getExternals().add(control);
-						m.getExternal_references().stream().filter(ext -> "mitre-attack".equals(ext.getSource_name()))
-								.findFirst().ifPresent(ext -> {
+						m.getExternal_references().stream()
+								.filter(ext -> ext.getSource_name() != null && ext.getSource_name().endsWith("attack"))
+								.findFirst().ifPresentOrElse(ext -> {
 									control.setID(ext.getExternal_id());
+									control.setSource(analysisName);
+									control.setLink(ext.getUrl());
+								}, () -> {
+									System.err.println("No id for control " + m.getName());
 								});
 
 						idToControl.put(m.getId(), control);
 					}
 				}
 
+				System.out.println("### Adding relationships");
 				for (MitreObject m : attack.getObjects()) {
-					if ("relationship".equals(m.getType())) {
+					if ("relationship".equals(m.getType()) && "mitigates".equals(m.getRelationship_type())) {
 						String sourceRef = m.getSource_ref();
 						Control control = idToControl.get(sourceRef);
 						if (control != null) {
@@ -118,17 +131,17 @@ public class InitMitre implements IApplication {
 								rel.setControl(control);
 								rel.setThreat(targetThreat);
 							} else {
-								System.out.println("Unkown threat " + targetRef);
+								System.err.println("No threat for " + targetRef);
 							}
 						} else {
-							System.out.println("Unkown control " + sourceRef);
+							System.err.println("No control for " + sourceRef);
 						}
 					}
 				}
 
 				// Iterate on relationships to create the links
 			} catch (IOException e) {
-				System.err.println("Error while parsong " + path);
+				System.err.println("Error while parsing " + path);
 				e.printStackTrace();
 			}
 			resource.getContents().add(analysis);

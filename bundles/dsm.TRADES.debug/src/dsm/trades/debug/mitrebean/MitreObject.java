@@ -12,11 +12,20 @@ public class MitreObject {
 	private List<String> x_mitre_platforms;
 	private String target_ref;
 	private String source_ref;
+	private String relationship_type;
 
 	private List<ExternalReference> external_references;
 
 	public String getType() {
 		return type;
+	}
+
+	public String getRelationship_type() {
+		return relationship_type;
+	}
+
+	public void setRelationship_type(String relationship_type) {
+		this.relationship_type = relationship_type;
 	}
 
 	public String getTarget_ref() {
