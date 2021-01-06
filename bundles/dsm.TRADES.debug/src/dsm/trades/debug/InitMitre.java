@@ -31,6 +31,7 @@ import dsm.TRADES.Threat;
 import dsm.TRADES.ThreatMitigationRelation;
 import dsm.TRADES.ThreatsOwner;
 import dsm.trades.debug.mitrebean.DomainAttacks;
+import dsm.trades.debug.mitrebean.ExternalReference;
 import dsm.trades.debug.mitrebean.MitreObject;
 
 /*
@@ -87,7 +88,8 @@ public class InitMitre implements IApplication {
 						threatOwner.getExternals().add(threat);
 
 						m.getExternal_references().stream()
-								.filter(ext -> ext.getSource_name() != null && ext.getSource_name().endsWith("attack"))
+								.filter(ext -> ext.getSource_name() != null && (ext.getSource_name().endsWith("attack")
+										|| ext.getSource_name().equals("capec")))
 								.findFirst().ifPresentOrElse(ext -> {
 									threat.setID(ext.getExternal_id());
 									threat.setSource(analysisName);
@@ -104,15 +106,19 @@ public class InitMitre implements IApplication {
 						control.setName(m.getName());
 						control.setDescription(m.getDescription());
 						controlOwnedr.getExternals().add(control);
-						m.getExternal_references().stream()
-								.filter(ext -> ext.getSource_name() != null && ext.getSource_name().endsWith("attack"))
-								.findFirst().ifPresentOrElse(ext -> {
-									control.setID(ext.getExternal_id());
-									control.setSource(analysisName);
-									control.setLink(ext.getUrl());
-								}, () -> {
-									System.err.println("No id for control " + m.getName());
-								});
+						List<ExternalReference> external_references = m.getExternal_references();
+						if (external_references != null) {
+							external_references.stream().filter(
+									ext -> ext.getSource_name() != null && (ext.getSource_name().endsWith("attack")
+											|| ext.getSource_name().equals("capec")))
+									.findFirst().ifPresentOrElse(ext -> {
+										control.setID(ext.getExternal_id());
+										control.setSource(analysisName);
+										control.setLink(ext.getUrl());
+									}, () -> {
+										System.err.println("No id for control " + m.getName());
+									});
+						}
 
 						idToControl.put(m.getId(), control);
 					}
@@ -130,6 +136,7 @@ public class InitMitre implements IApplication {
 								ThreatMitigationRelation rel = TRADESFactory.eINSTANCE.createThreatMitigationRelation();
 								rel.setControl(control);
 								rel.setThreat(targetThreat);
+								rel.setDescription(m.getDescription());
 							} else {
 								System.err.println("No threat for " + targetRef);
 							}
