@@ -462,13 +462,34 @@
           </ownedTools>
         </toolSections>
         <toolSections name="ThreatsSectionTool_TD" label="Threats Tools">
-          <ownedTools xsi:type="tool_1:SelectionWizardDescription" name="AddThreat" label="Display threats" candidatesExpression="aql:self.eContainerOrSelf(TRADES::Analysis).threatOwner.eAllContents(TRADES::Threat)" multiple="true" message="Please select threat(s)">
+          <ownedTools xsi:type="tool_1:SelectionWizardDescription" documentation="Display a threat in the diagram (only non displayed threats are displayed)" name="AddThreat" label="Display threats" candidatesExpression="aql:self.getAllNonDisplayedThreats(containerView)" multiple="true" message="Please select threat(s)">
             <element name="element"/>
             <containerView name="containerView"/>
             <container name="container"/>
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:For" expression="aql: element">
                 <subModelOperations xsi:type="tool:CreateView" mapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@nodeMappings[name='ThreatNode_TD']" containerViewExpression="var:containerView"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:SelectionWizardDescription" documentation="Display all allocated threats on the selection Component" name="Display Allocated Threats" label="Display Allocated Threats" precondition="aql:container.oclIsKindOf(TRADES::Component)" candidatesExpression="aql:self.threatAllocations.threat" multiple="true">
+            <element name="element"/>
+            <containerView name="containerView"/>
+            <container name="container"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:For" expression="aql: element">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql: self.printAllVariable()"/>
+                <subModelOperations xsi:type="tool:CreateView" mapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@nodeMappings[name='ThreatNode_TD']" containerViewExpression="var:diagram"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:SelectionWizardDescription" documentation="Displays all the threats allocated to the target and its descendants." name="RelatedThreatTool_TD" label="Display All Allocated threats" precondition="aql:container.oclIsKindOf(TRADES::ComponentOwner)" candidatesExpression="aql:containerView.getRelatedThreats()" multiple="true">
+            <element name="element"/>
+            <containerView name="containerView"/>
+            <container name="container"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:For" expression="var:element" iteratorName="rThreat">
+                <subModelOperations xsi:type="tool:CreateView" mapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@nodeMappings[name='ThreatNode_TD']" containerViewExpression="var:diagram"/>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
@@ -509,16 +530,6 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool_1:SelectionWizardDescription" name="RelatedThreatTool_TD" label="Display related threat" candidatesExpression="aql:containerView.getRelatedThreats()" multiple="true">
-            <element name="element"/>
-            <containerView name="containerView"/>
-            <container name="container"/>
-            <initialOperation>
-              <firstModelOperations xsi:type="tool_1:For" expression="var:element" iteratorName="rThreat">
-                <subModelOperations xsi:type="tool:CreateView" mapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@nodeMappings[name='ThreatNode_TD']" containerViewExpression="var:diagram"/>
-              </firstModelOperations>
-            </initialOperation>
-          </ownedTools>
         </toolSections>
       </defaultLayer>
     </ownedRepresentations>
@@ -553,19 +564,7 @@
         <toolSections name="RepresentationTool_CAs" label="Representation Tools" reusedTools="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='Hide%20details'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='Unhide%20details']"/>
       </defaultLayer>
       <additionalLayers name="All Threats" reusedMappings="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@nodeMappings[name='ThreatNode_TD'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@nodeMappings[name='ThreatNode_TD']/@borderedNodeMappings[name='ThreatLabel_TD']" activeByDefault="true">
-        <toolSections name="ThreatsSectionTool_CA" reusedTools="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.2/@ownedTools[name='AddThreat'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='copyThreatDragDrop'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.2/@ownedTools[name='RelatedThreatTool_TD']">
-          <ownedTools xsi:type="tool_1:SelectionWizardDescription" name="Display Allocated Threats" label="Display Allocated Threats" candidatesExpression="aql:self.threatAllocations.threat" multiple="true">
-            <element name="element"/>
-            <containerView name="containerView"/>
-            <container name="container"/>
-            <initialOperation>
-              <firstModelOperations xsi:type="tool_1:For" expression="aql: element">
-                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql: self.printAllVariable()"/>
-                <subModelOperations xsi:type="tool:CreateView" mapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@nodeMappings[name='ThreatNode_TD']" containerViewExpression="var:diagram"/>
-              </firstModelOperations>
-            </initialOperation>
-          </ownedTools>
-        </toolSections>
+        <toolSections name="ThreatsSectionTool_CA" reusedTools="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.2/@ownedTools[name='AddThreat'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.2/@ownedTools[name='Display%20Allocated%20Threats'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.2/@ownedTools[name='RelatedThreatTool_TD'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='copyThreatDragDrop']"/>
       </additionalLayers>
       <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
     </ownedRepresentations>

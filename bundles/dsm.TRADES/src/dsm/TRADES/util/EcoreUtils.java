@@ -26,6 +26,27 @@ public class EcoreUtils {
 	}
 
 	/**
+	 * Gets an optional ancestor of the given type
+	 * 
+	 * @param <T>  the expected type
+	 * @param self the source element
+	 * @param type the expected type class
+	 * @return an element or <code>null</code>
+	 */
+	public static <T extends EObject> T getAncestor(EObject self, Class<T> type) {
+		EObject current = self;
+		while (current != null && !(type.isInstance(current))) {
+			current = current.eContainer();
+		}
+		if (current != null && type.isInstance(current)) {
+			return type.cast(current);
+		} else {
+			return null;
+		}
+
+	}
+
+	/**
 	 * Gets a stream composed from the object itself and all its content
 	 * 
 	 * @param rs a resource set

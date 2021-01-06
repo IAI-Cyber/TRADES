@@ -42,8 +42,8 @@ public class DiagramService {
 	}
 
 	/**
-	 * Gets all threats that are linked to the semantic element behind the given node
-	 * or one of its descendant
+	 * Gets all threats that are linked to the semantic element behind the given
+	 * node or one of its descendant
 	 * 
 	 * @param node a node
 	 * @return a list of {@link Threat}
@@ -51,20 +51,22 @@ public class DiagramService {
 	public List<Threat> getRelatedThreats(DSemanticDecorator node) {
 		EObject semanticTarget = node.getTarget();
 
-		EObject current = node;
-		while (!(current instanceof DSemanticDiagram) && current != null) {
-			current = current.eContainer();
-		}
-		if (current instanceof DSemanticDiagram) {
+		Set<Threat> alsreadyDisplayed = getDisplayedThreats(node);
+		Set<Threat> collector = new HashSet<>();
+		getLinkedThreat(semanticTarget, collector);
+		return collector.stream().filter(e -> !alsreadyDisplayed.contains(e)).collect(toList());
+	}
 
-			Set<EObject> alsreadyDisplayed = EcoreUtils.allContainedObjectOfType(current, DSemanticDecorator.class)
-					.filter(n -> n.getTarget() instanceof Threat).map(n -> n.getTarget()).collect(toSet());
+	private Set<Threat> getDisplayedThreats(DSemanticDecorator node) {
+		DSemanticDiagram diagram = EcoreUtils.getAncestor(node, DSemanticDiagram.class);
 
-			Set<Threat> collector = new HashSet<>();
-			getLinkedThreat(semanticTarget, collector);
-			return collector.stream().filter(e -> !alsreadyDisplayed.contains(e)).collect(toList());
+		if (diagram != null) {
+
+			return EcoreUtils.allContainedObjectOfType(diagram, DSemanticDecorator.class)
+					.filter(n -> n.getTarget() instanceof Threat).map(n -> (Threat) n.getTarget()).collect(toSet());
+		} else {
+			return Collections.emptySet();
 		}
-		return Collections.emptyList();
 	}
 
 	private void getLinkedThreat(EObject o, Set<Threat> collector) {
@@ -123,6 +125,22 @@ public class DiagramService {
 		Set<AttackChainStep> result = new HashSet<>();
 		getAllNext(step, result, 0);
 		return result;
+	}
+
+	/**
+	 * Gets all threats not already displayed in the diagram
+	 * 
+	 * @param semanticElement a semantic element (should be contained in a
+	 *                        {@link Analysis})
+	 * @param node            an element of the diagram)
+	 * @return
+	 */
+	public List<Threat> getAllNonDisplayedThreats(EObject semanticElement, DSemanticDecorator node) {
+		Set<Threat> displayedThreat = getDisplayedThreats(node);
+		return EcoreUtils
+				.allContainedObjectOfType(EcoreUtils.getAncestor(semanticElement, Analysis.class).getThreatOwner(),
+						Threat.class)
+				.filter(t -> !displayedThreat.contains(t)).collect(toList());
 	}
 
 	public void getAllNext(AttackChainStep step, Set<AttackChainStep> collector, int stepNb) {
