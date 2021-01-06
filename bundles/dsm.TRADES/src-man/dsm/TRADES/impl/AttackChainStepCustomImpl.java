@@ -1,12 +1,17 @@
 package dsm.TRADES.impl;
 
+import static java.util.stream.Collectors.toList;
+
+import java.util.List;
+
 import dsm.TRADES.AttackChainStep;
+import dsm.TRADES.util.EcoreUtils;
 
 public class AttackChainStepCustomImpl extends AttackChainStepImpl {
 	@Override
 	public String getStepNum() {
-		int index = getNum(this);
-		int subNum = getSubNum(this);
+		int index = getNum();
+		int subNum = getSubNum(index);
 
 		String label = "";
 		if (index != -1) {
@@ -22,8 +27,8 @@ public class AttackChainStepCustomImpl extends AttackChainStepImpl {
 		return label;
 	}
 
-	private int getNum(AttackChainStep step) {
-		return doGetNum(step, 0);
+	int getNum() {
+		return doGetNum(this, 0);
 	}
 
 	private int doGetNum(AttackChainStep step, int stepNum) {
@@ -40,11 +45,14 @@ public class AttackChainStepCustomImpl extends AttackChainStepImpl {
 
 	}
 
-	private int getSubNum(AttackChainStep step) {
-		int index = -1;
-		for (AttackChainStep previous : step.getPrevious()) {
-			index = Math.max(index, previous.getNext().indexOf(step));
+	private int getSubNum(int stepNum) {
+		List<AttackChainStepCustomImpl> sameSteps = EcoreUtils
+				.allContainedObjectOfType(eContainer, AttackChainStepCustomImpl.class)
+				.filter(s -> s.getNum() == stepNum).collect(toList());
+		if (sameSteps.size() == 1) {
+			// Not other sub step
+			return -1;
 		}
-		return index;
+		return sameSteps.indexOf(this);
 	}
 }

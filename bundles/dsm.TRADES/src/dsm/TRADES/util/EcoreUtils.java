@@ -1,4 +1,4 @@
-package TRADES.design;
+package dsm.TRADES.util;
 
 import java.util.Spliterator;
 import java.util.Spliterators;

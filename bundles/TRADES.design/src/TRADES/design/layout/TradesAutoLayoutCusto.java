@@ -24,10 +24,10 @@ import org.eclipse.sirius.diagram.elk.IELKLayoutExtension;
 
 import com.google.common.collect.BiMap;
 
-import TRADES.design.EcoreUtils;
 import dsm.TRADES.Component;
 import dsm.TRADES.Control;
 import dsm.TRADES.Threat;
+import dsm.TRADES.util.EcoreUtils;
 
 public class TradesAutoLayoutCusto implements IELKLayoutExtension {
 

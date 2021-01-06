@@ -25,6 +25,7 @@ import dsm.TRADES.DataOwner;
 import dsm.TRADES.DataOwnerElement;
 import dsm.TRADES.Threat;
 import dsm.TRADES.ThreatAllocationRelation;
+import dsm.TRADES.util.EcoreUtils;
 
 public class DiagramService {
 
