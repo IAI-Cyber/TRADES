@@ -640,22 +640,13 @@ public interface TRADESPackage extends EPackage {
 	int THREAT_MITIGATION_RELATION = 5;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int THREAT_MITIGATION_RELATION__NAME = NAMED_ELEMENT__NAME;
-
-	/**
 	 * The feature id for the '<em><b>Assessment</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int THREAT_MITIGATION_RELATION__ASSESSMENT = NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int THREAT_MITIGATION_RELATION__ASSESSMENT = 0;
 
 	/**
 	 * The feature id for the '<em><b>Control</b></em>' container reference.
@@ -664,7 +655,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int THREAT_MITIGATION_RELATION__CONTROL = NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int THREAT_MITIGATION_RELATION__CONTROL = 1;
 
 	/**
 	 * The feature id for the '<em><b>Threat</b></em>' reference.
@@ -673,7 +664,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int THREAT_MITIGATION_RELATION__THREAT = NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int THREAT_MITIGATION_RELATION__THREAT = 2;
 
 	/**
 	 * The feature id for the '<em><b>Mitigates</b></em>' reference.
@@ -682,7 +673,16 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int THREAT_MITIGATION_RELATION__MITIGATES = NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int THREAT_MITIGATION_RELATION__MITIGATES = 3;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THREAT_MITIGATION_RELATION__DESCRIPTION = 4;
 
 	/**
 	 * The number of structural features of the '<em>Threat Mitigation Relation</em>' class.
@@ -691,7 +691,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int THREAT_MITIGATION_RELATION_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 4;
+	int THREAT_MITIGATION_RELATION_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>Threat Mitigation Relation</em>' class.
@@ -700,7 +700,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int THREAT_MITIGATION_RELATION_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
+	int THREAT_MITIGATION_RELATION_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link dsm.TRADES.impl.DataImpl <em>Data</em>}' class.
@@ -2069,6 +2069,17 @@ public interface TRADESPackage extends EPackage {
 	EReference getThreatMitigationRelation_Mitigates();
 
 	/**
+	 * Returns the meta object for the attribute '{@link dsm.TRADES.ThreatMitigationRelation#getDescription <em>Description</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Description</em>'.
+	 * @see dsm.TRADES.ThreatMitigationRelation#getDescription()
+	 * @see #getThreatMitigationRelation()
+	 * @generated
+	 */
+	EAttribute getThreatMitigationRelation_Description();
+
+	/**
 	 * Returns the meta object for class '{@link dsm.TRADES.Data <em>Data</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2971,6 +2982,14 @@ public interface TRADESPackage extends EPackage {
 		 * @generated
 		 */
 		EReference THREAT_MITIGATION_RELATION__MITIGATES = eINSTANCE.getThreatMitigationRelation_Mitigates();
+
+		/**
+		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute THREAT_MITIGATION_RELATION__DESCRIPTION = eINSTANCE.getThreatMitigationRelation_Description();
 
 		/**
 		 * The meta object literal for the '{@link dsm.TRADES.impl.DataImpl <em>Data</em>}' class.

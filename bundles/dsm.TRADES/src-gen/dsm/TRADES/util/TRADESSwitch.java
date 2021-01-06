@@ -125,8 +125,6 @@ public class TRADESSwitch<T> extends Switch<T> {
 			ThreatMitigationRelation threatMitigationRelation = (ThreatMitigationRelation) theEObject;
 			T result = caseThreatMitigationRelation(threatMitigationRelation);
 			if (result == null)
-				result = caseNamedElement(threatMitigationRelation);
-			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}

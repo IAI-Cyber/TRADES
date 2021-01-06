@@ -67,6 +67,7 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TRADES.ecore#//ThreatMitigationRelation/control"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TRADES.ecore#//ThreatMitigationRelation/threat"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TRADES.ecore#//ThreatMitigationRelation/mitigates"/>
+      <genFeatures createChild="false" propertyMultiLine="true" ecoreFeature="ecore:EAttribute TRADES.ecore#//ThreatMitigationRelation/description"/>
     </genClasses>
     <genClasses ecoreClass="TRADES.ecore#//Data"/>
     <genClasses ecoreClass="TRADES.ecore#//AffectRelation">

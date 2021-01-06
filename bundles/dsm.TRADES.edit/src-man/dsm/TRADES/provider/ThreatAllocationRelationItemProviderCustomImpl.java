@@ -2,12 +2,15 @@ package dsm.TRADES.provider;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import dsm.TRADES.Component;
+import dsm.TRADES.EcoreEditUtil;
 import dsm.TRADES.TRADESPackage;
 import dsm.TRADES.Threat;
 import dsm.TRADES.ThreatAllocationRelation;
+import dsm.TRADES.ThreatMitigationRelation;
 
 public class ThreatAllocationRelationItemProviderCustomImpl extends ThreatAllocationRelationItemProvider {
 
@@ -37,6 +40,11 @@ public class ThreatAllocationRelationItemProviderCustomImpl extends ThreatAlloca
 		switch (notification.getFeatureID(ThreatAllocationRelation.class)) {
 		case TRADESPackage.THREAT_ALLOCATION_RELATION__THREAT:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			// Threat mitigation can use the label of the ThreatAllocation so also refresh the label
+			EcoreEditUtil
+					.getInverse((EObject) notification.getNotifier(), ThreatMitigationRelation.class,
+							TRADESPackage.eINSTANCE.getThreatMitigationRelation_Mitigates())
+					.forEach(rel -> fireNotifyChanged(new ViewerNotification(notification, rel, false, true)));
 			return;
 		}
 	}

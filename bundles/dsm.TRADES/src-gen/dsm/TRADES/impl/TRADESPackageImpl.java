@@ -686,6 +686,16 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * @generated
 	 */
 	@Override
+	public EAttribute getThreatMitigationRelation_Description() {
+		return (EAttribute) threatMitigationRelationEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getData() {
 		return dataEClass;
 	}
@@ -1292,6 +1302,7 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		createEReference(threatMitigationRelationEClass, THREAT_MITIGATION_RELATION__CONTROL);
 		createEReference(threatMitigationRelationEClass, THREAT_MITIGATION_RELATION__THREAT);
 		createEReference(threatMitigationRelationEClass, THREAT_MITIGATION_RELATION__MITIGATES);
+		createEAttribute(threatMitigationRelationEClass, THREAT_MITIGATION_RELATION__DESCRIPTION);
 
 		dataEClass = createEClass(DATA);
 
@@ -1409,7 +1420,6 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		componentEClass.getESuperTypes().add(this.getNamedElement());
 		componentEClass.getESuperTypes().add(this.getAbstractControlOwner());
 		controlEClass.getESuperTypes().add(this.getNamedElement());
-		threatMitigationRelationEClass.getESuperTypes().add(this.getNamedElement());
 		dataEClass.getESuperTypes().add(this.getNamedElement());
 		affectRelationEClass.getESuperTypes().add(this.getNamedElement());
 		attackChainEClass.getESuperTypes().add(this.getNamedElement());
@@ -1528,6 +1538,9 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		initEReference(getThreatMitigationRelation_Mitigates(), this.getThreatAllocationRelation(), null, "mitigates",
 				null, 0, 1, ThreatMitigationRelation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
 				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getThreatMitigationRelation_Description(), ecorePackage.getEString(), "description", null, 0, 1,
+				ThreatMitigationRelation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(dataEClass, Data.class, "Data", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
 /**
@@ -31,11 +32,12 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  *   <li>{@link dsm.TRADES.impl.ThreatMitigationRelationImpl#getControl <em>Control</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ThreatMitigationRelationImpl#getThreat <em>Threat</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ThreatMitigationRelationImpl#getMitigates <em>Mitigates</em>}</li>
+ *   <li>{@link dsm.TRADES.impl.ThreatMitigationRelationImpl#getDescription <em>Description</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ThreatMitigationRelationImpl extends NamedElementImpl implements ThreatMitigationRelation {
+public class ThreatMitigationRelationImpl extends MinimalEObjectImpl.Container implements ThreatMitigationRelation {
 	/**
 	 * The default value of the '{@link #getAssessment() <em>Assessment</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -75,6 +77,26 @@ public class ThreatMitigationRelationImpl extends NamedElementImpl implements Th
 	 * @ordered
 	 */
 	protected ThreatAllocationRelation mitigates;
+
+	/**
+	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDescription()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String DESCRIPTION_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDescription()
+	 * @generated
+	 * @ordered
+	 */
+	protected String description = DESCRIPTION_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -257,6 +279,30 @@ public class ThreatMitigationRelationImpl extends NamedElementImpl implements Th
 	 * @generated
 	 */
 	@Override
+	public String getDescription() {
+		return description;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setDescription(String newDescription) {
+		String oldDescription = description;
+		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TRADESPackage.THREAT_MITIGATION_RELATION__DESCRIPTION,
+					oldDescription, description));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case TRADESPackage.THREAT_MITIGATION_RELATION__CONTROL:
@@ -316,6 +362,8 @@ public class ThreatMitigationRelationImpl extends NamedElementImpl implements Th
 			if (resolve)
 				return getMitigates();
 			return basicGetMitigates();
+		case TRADESPackage.THREAT_MITIGATION_RELATION__DESCRIPTION:
+			return getDescription();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -339,6 +387,9 @@ public class ThreatMitigationRelationImpl extends NamedElementImpl implements Th
 			return;
 		case TRADESPackage.THREAT_MITIGATION_RELATION__MITIGATES:
 			setMitigates((ThreatAllocationRelation) newValue);
+			return;
+		case TRADESPackage.THREAT_MITIGATION_RELATION__DESCRIPTION:
+			setDescription((String) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -364,6 +415,9 @@ public class ThreatMitigationRelationImpl extends NamedElementImpl implements Th
 		case TRADESPackage.THREAT_MITIGATION_RELATION__MITIGATES:
 			setMitigates((ThreatAllocationRelation) null);
 			return;
+		case TRADESPackage.THREAT_MITIGATION_RELATION__DESCRIPTION:
+			setDescription(DESCRIPTION_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -384,6 +438,8 @@ public class ThreatMitigationRelationImpl extends NamedElementImpl implements Th
 			return threat != null;
 		case TRADESPackage.THREAT_MITIGATION_RELATION__MITIGATES:
 			return mitigates != null;
+		case TRADESPackage.THREAT_MITIGATION_RELATION__DESCRIPTION:
+			return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -401,6 +457,8 @@ public class ThreatMitigationRelationImpl extends NamedElementImpl implements Th
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (assessment: ");
 		result.append(assessment);
+		result.append(", description: ");
+		result.append(description);
 		result.append(')');
 		return result.toString();
 	}

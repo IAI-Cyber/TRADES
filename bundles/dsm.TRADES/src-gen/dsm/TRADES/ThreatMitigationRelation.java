@@ -2,6 +2,8 @@
  */
 package dsm.TRADES;
 
+import org.eclipse.emf.ecore.EObject;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Threat Mitigation Relation</b></em>'.
@@ -15,13 +17,14 @@ package dsm.TRADES;
  *   <li>{@link dsm.TRADES.ThreatMitigationRelation#getControl <em>Control</em>}</li>
  *   <li>{@link dsm.TRADES.ThreatMitigationRelation#getThreat <em>Threat</em>}</li>
  *   <li>{@link dsm.TRADES.ThreatMitigationRelation#getMitigates <em>Mitigates</em>}</li>
+ *   <li>{@link dsm.TRADES.ThreatMitigationRelation#getDescription <em>Description</em>}</li>
  * </ul>
  *
  * @see dsm.TRADES.TRADESPackage#getThreatMitigationRelation()
  * @model
  * @generated
  */
-public interface ThreatMitigationRelation extends NamedElement {
+public interface ThreatMitigationRelation extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Assessment</b></em>' attribute.
 	 * The default value is <code>"Undecided"</code>.
@@ -115,5 +118,27 @@ public interface ThreatMitigationRelation extends NamedElement {
 	 * @generated
 	 */
 	void setMitigates(ThreatAllocationRelation value);
+
+	/**
+	 * Returns the value of the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Description</em>' attribute.
+	 * @see #setDescription(String)
+	 * @see dsm.TRADES.TRADESPackage#getThreatMitigationRelation_Description()
+	 * @model
+	 * @generated
+	 */
+	String getDescription();
+
+	/**
+	 * Sets the value of the '{@link dsm.TRADES.ThreatMitigationRelation#getDescription <em>Description</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Description</em>' attribute.
+	 * @see #getDescription()
+	 * @generated
+	 */
+	void setDescription(String value);
 
 } // ThreatMitigationRelation

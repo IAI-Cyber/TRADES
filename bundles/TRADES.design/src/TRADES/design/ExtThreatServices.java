@@ -24,12 +24,11 @@ import dsm.TRADES.ThreatMitigationRelation;
 import dsm.TRADES.ThreatsOwner;
 
 public class ExtThreatServices {
-	
 
 	public List<Analysis> getAvailableExternalServices(Analysis analysis) {
 
 		List<Analysis> result = new ArrayList<Analysis>();
-		
+
 		ResourceSet rs = Session.of(analysis).get().getTransactionalEditingDomain().getResourceSet();
 
 		for (URI uri : Activator.getDefault().getDatabaseURI()) {
@@ -39,8 +38,7 @@ public class ExtThreatServices {
 
 		return result;
 	}
-	
-	
+
 	public String[] getDatabaseList() {
 
 		String[] databaseList;
@@ -66,14 +64,12 @@ public class ExtThreatServices {
 			analysis.setThreatOwner(threatOwner);
 		}
 
-
 		String threatSource = source.getSource();
 
 		threatOwner.getExternals().add(result);
 		return result;
 	}
-	
-	
+
 	/**
 	 * Copy an external control inside my analysis
 	 * 
@@ -81,75 +77,76 @@ public class ExtThreatServices {
 	 * @param source   the source to copy
 	 * @return the result
 	 */
-	public List<Control> copyControl(ExternalThreat threat , List<ExternalControl> sources) {
+	public List<Control> copyControl(ExternalThreat threat, List<ExternalControl> sources) {
 		List<Control> result = new ArrayList<>();
-		for(ExternalControl source : sources) {
-			
+		for (ExternalControl source : sources) {
+
 			ExternalControl newControl = TRADESFactory.eINSTANCE.createExternalControl();
 			newControl.setName(source.getName());
 			newControl.setSource(source.getSource());
-			
-			ThreatMitigationRelation controlMitigation =TRADESFactory.eINSTANCE.createThreatMitigationRelation();
-			controlMitigation.setControl(newControl);
-			controlMitigation.setThreat(threat);
-			
-//			for(ThreatMitigationRelation rel : r.getMitigationrRelations()) {
-//				rel.setThreat(threat);
-//			}
-			
+			newControl.setID(source.getID());
+			newControl.setDescription(source.getDescription());
+
+			// Copy all existing mitigation
+			source.getMitigationrRelations().stream().filter(rel -> rel.getThreat().getID().equals(threat.getID()))
+					.forEach(rel -> {
+						ThreatMitigationRelation controlMitigation = TRADESFactory.eINSTANCE
+								.createThreatMitigationRelation();
+						controlMitigation.setControl(newControl);
+						controlMitigation.setThreat(threat);
+						controlMitigation.setDescription(rel.getDescription());
+					});
+
 			EObject analysis = threat.eContainer();
 			while (!(analysis instanceof Analysis) && analysis != null) {
 				analysis = analysis.eContainer();
 			}
-			
-			Analysis realAnalysis =  ((Analysis)analysis);
-			ControlOwner controlOwner =realAnalysis.getControlOwner();
+
+			Analysis realAnalysis = ((Analysis) analysis);
+			ControlOwner controlOwner = realAnalysis.getControlOwner();
 			if (controlOwner == null) {
 				controlOwner = TRADESFactory.eINSTANCE.createControlOwner();
 				realAnalysis.setControlOwner(controlOwner);
 			}
-			
+
 			controlOwner.getExternals().add(newControl);
-			
+
 			result.add(newControl);
 		}
 		return result;
 	}
 
-	
-	
-	
 	public List<ExternalControl> getLinkedControlInDataBases(ExternalThreat ext) {
-        ResourceSet rs = Session.of(ext).get().getTransactionalEditingDomain().getResourceSet();
+		ResourceSet rs = Session.of(ext).get().getTransactionalEditingDomain().getResourceSet();
 
-        String source = ext.getSource();
-        String id = ext.getID();
-        if (id == null) {
-            return Collections.emptyList();
-        }
-        List<ExternalControl> controls = new ArrayList<ExternalControl>();
-        for (URI uri : Activator.getDefault().getDatabaseURI()) {
-            Resource resource = rs.getResource(uri, true);
-            Analysis databaseAnalysis = (Analysis) resource.getContents().get(0);
-            if (source != null && source.equals(databaseAnalysis.getName())) {
-               
-                TreeIterator<EObject> ite = databaseAnalysis.eAllContents();
-                while (ite.hasNext()) {
-                    EObject eObject = (EObject) ite.next();
-                    if (eObject instanceof ThreatMitigationRelation) {
-                        ThreatMitigationRelation miti = (ThreatMitigationRelation) eObject;
-                        Threat linkedThreat = miti.getThreat();
-                        if (id.equals(linkedThreat.getID())) {
-                            controls.add((ExternalControl) miti.getControl());
-                        }
-                    }
+		String source = ext.getSource();
+		String id = ext.getID();
+		if (id == null) {
+			return Collections.emptyList();
+		}
+		List<ExternalControl> controls = new ArrayList<ExternalControl>();
+		for (URI uri : Activator.getDefault().getDatabaseURI()) {
+			Resource resource = rs.getResource(uri, true);
+			Analysis databaseAnalysis = (Analysis) resource.getContents().get(0);
+			if (source != null && source.equals(databaseAnalysis.getName())) {
 
-                }
+				TreeIterator<EObject> ite = databaseAnalysis.eAllContents();
+				while (ite.hasNext()) {
+					EObject eObject = ite.next();
+					if (eObject instanceof ThreatMitigationRelation) {
+						ThreatMitigationRelation miti = (ThreatMitigationRelation) eObject;
+						Threat linkedThreat = miti.getThreat();
+						if (id.equals(linkedThreat.getID())) {
+							controls.add((ExternalControl) miti.getControl());
+						}
+					}
 
-            }
-        }
-        return controls;
+				}
 
-    }
+			}
+		}
+		return controls;
+
+	}
 
 }

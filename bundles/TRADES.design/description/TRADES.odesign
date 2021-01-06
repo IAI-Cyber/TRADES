@@ -248,7 +248,6 @@
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql: source">
                 <subModelOperations xsi:type="tool_1:CreateInstance" typeName="TRADES::ThreatMitigationRelation" referenceName="mitigationrRelations">
                   <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql: instance">
-                    <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:self.threatMitigationName()"/>
                     <subModelOperations xsi:type="tool_1:SetValue" featureName="control" valueExpression="var:source"/>
                     <subModelOperations xsi:type="tool_1:If" conditionExpression="aql: target.oclIsKindOf(TRADES::Threat)">
                       <subModelOperations xsi:type="tool_1:SetValue" featureName="threat" valueExpression="var:target"/>
@@ -1201,7 +1200,7 @@
             </firstModelOperations>
           </initialOperation>
         </controls>
-        <controls xsi:type="properties:TextAreaDescription" name="ControlDescriptionField" label="Control Description" labelExpression="Description" isEnabledExpression="aql:self.oclIsTypeOf(TRADES::Control)" valueExpression="aql:self.Description">
+        <controls xsi:type="properties:TextAreaDescription" name="ControlDescriptionField" label="Control Description" labelExpression="Description" isEnabledExpression="aql:self.oclIsTypeOf(TRADES::Control)" valueExpression="aql:self.DEscription">
           <initialOperation>
             <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
               <subModelOperations xsi:type="tool_1:SetValue" featureName="Description" valueExpression="var:newValue"/>
@@ -1243,6 +1242,11 @@
         </controls>
       </groups>
       <groups name="ThreatMitigationGroup" label="Threat Mitigation Details" labelExpression="Threat Mitigation Details" domainClass="TRADES::ThreatMitigationRelation" semanticCandidateExpression="var:self">
+        <controls xsi:type="properties:TextAreaDescription" name="ThreatMitigationRelation_Description_Widget" labelExpression="Description" isEnabledExpression="aql:self.control.oclIsTypeOf(TRADES::Control) or self.threat.oclIsTypeOf(TRADES::Threat)" valueExpression="feature:description">
+          <initialOperation>
+            <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self"/>
+          </initialOperation>
+        </controls>
         <controls xsi:type="properties:SelectDescription" name="AssessmentField" labelExpression="Assessment" valueExpression="aql:TRADES::AssessmentENUM.getEEnumLiteral(self.assessment.toString())" candidatesExpression="aql:TRADES::AssessmentENUM.eLiterals" candidateDisplayExpression="aql:candidate.name">
           <initialOperation>
             <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
