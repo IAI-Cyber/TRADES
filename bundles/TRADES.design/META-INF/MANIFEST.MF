@@ -29,7 +29,7 @@ Require-Bundle: org.eclipse.ui,
  com.google.guava,
  org.eclipse.collections;bundle-version="10.1.0"
 Bundle-ActivationPolicy: lazy
-Bundle-RequiredExecutionEnvironment: JavaSE-11
+Bundle-RequiredExecutionEnvironment: JavaSE-14
 Bundle-Vendor: %providerName
 Export-Package: TRADES.design
 Automatic-Module-Name: TRADES.design
