@@ -28,7 +28,7 @@ public interface DataOwnerElement extends EObject {
 	 * @return the value of the '<em>Data Owner</em>' containment reference.
 	 * @see #setDataOwner(DataOwner)
 	 * @see dsm.TRADES.TRADESPackage#getDataOwnerElement_DataOwner()
-	 * @model containment="true" required="true"
+	 * @model containment="true"
 	 * @generated
 	 */
 	DataOwner getDataOwner();

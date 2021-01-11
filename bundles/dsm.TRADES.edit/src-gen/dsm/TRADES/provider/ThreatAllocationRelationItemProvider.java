@@ -173,7 +173,7 @@ public class ThreatAllocationRelationItemProvider extends ItemProviderAdapter im
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(TRADESPackage.Literals.THREAT_ALLOCATION_RELATION__ATTACK_CHAINS);
+			childrenFeatures.add(TRADESPackage.Literals.THREAT_ALLOCATION_RELATION__ATTACK_CHAIN);
 		}
 		return childrenFeatures;
 	}
@@ -241,7 +241,7 @@ public class ThreatAllocationRelationItemProvider extends ItemProviderAdapter im
 		case TRADESPackage.THREAT_ALLOCATION_RELATION__ASSESSMENT:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
-		case TRADESPackage.THREAT_ALLOCATION_RELATION__ATTACK_CHAINS:
+		case TRADESPackage.THREAT_ALLOCATION_RELATION__ATTACK_CHAIN:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -259,7 +259,7 @@ public class ThreatAllocationRelationItemProvider extends ItemProviderAdapter im
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(TRADESPackage.Literals.THREAT_ALLOCATION_RELATION__ATTACK_CHAINS,
+		newChildDescriptors.add(createChildParameter(TRADESPackage.Literals.THREAT_ALLOCATION_RELATION__ATTACK_CHAIN,
 				TRADESFactory.eINSTANCE.createAttackChain()));
 	}
 

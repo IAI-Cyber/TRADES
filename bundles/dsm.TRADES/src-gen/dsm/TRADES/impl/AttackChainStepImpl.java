@@ -6,11 +6,18 @@ import dsm.TRADES.AttackChainStep;
 import dsm.TRADES.TRADESPackage;
 import dsm.TRADES.ThreatAllocationRelation;
 
+import dsm.TRADES.util.TRADESValidator;
+import java.lang.reflect.InvocationTargetException;
+
 import java.util.Collection;
 
+import java.util.Map;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
+import org.eclipse.emf.common.util.BasicDiagnostic;
+import org.eclipse.emf.common.util.Diagnostic;
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
@@ -19,6 +26,8 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.eclipse.emf.ecore.plugin.EcorePlugin;
+import org.eclipse.emf.ecore.util.EObjectValidator;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -32,7 +41,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link dsm.TRADES.impl.AttackChainStepImpl#getStepNum <em>Step Num</em>}</li>
  *   <li>{@link dsm.TRADES.impl.AttackChainStepImpl#getThreatAllocationRelation <em>Threat Allocation Relation</em>}</li>
- *   <li>{@link dsm.TRADES.impl.AttackChainStepImpl#getDifficulty <em>Difficulty</em>}</li>
  *   <li>{@link dsm.TRADES.impl.AttackChainStepImpl#getImpactDescription <em>Impact Description</em>}</li>
  *   <li>{@link dsm.TRADES.impl.AttackChainStepImpl#getNext <em>Next</em>}</li>
  *   <li>{@link dsm.TRADES.impl.AttackChainStepImpl#getPrevious <em>Previous</em>}</li>
@@ -60,26 +68,6 @@ public class AttackChainStepImpl extends MinimalEObjectImpl.Container implements
 	 * @ordered
 	 */
 	protected ThreatAllocationRelation threatAllocationRelation;
-
-	/**
-	 * The default value of the '{@link #getDifficulty() <em>Difficulty</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDifficulty()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final int DIFFICULTY_EDEFAULT = 0;
-
-	/**
-	 * The cached value of the '{@link #getDifficulty() <em>Difficulty</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDifficulty()
-	 * @generated
-	 * @ordered
-	 */
-	protected int difficulty = DIFFICULTY_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getImpactDescription() <em>Impact Description</em>}' attribute.
@@ -214,30 +202,6 @@ public class AttackChainStepImpl extends MinimalEObjectImpl.Container implements
 	 * @generated
 	 */
 	@Override
-	public int getDifficulty() {
-		return difficulty;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setDifficulty(int newDifficulty) {
-		int oldDifficulty = difficulty;
-		difficulty = newDifficulty;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TRADESPackage.ATTACK_CHAIN_STEP__DIFFICULTY,
-					oldDifficulty, difficulty));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public String getImpactDescription() {
 		return impactDescription;
 	}
@@ -289,6 +253,44 @@ public class AttackChainStepImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public EList<ThreatAllocationRelation> getThreatAllocationRelationCandidates() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean checkAllocationValue(DiagnosticChain chain, Map context) {
+		// TODO: implement this method
+		// -> specify the condition that violates the invariant
+		// -> verify the details of the diagnostic, including severity and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (chain != null) {
+				chain.add(
+						new BasicDiagnostic(Diagnostic.ERROR, TRADESValidator.DIAGNOSTIC_SOURCE,
+								TRADESValidator.ATTACK_CHAIN_STEP__CHECK_ALLOCATION_VALUE,
+								EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic",
+										new Object[] { "checkAllocationValue",
+												EObjectValidator.getObjectLabel(this, context) }),
+								new Object[] { this }));
+			}
+			return false;
+		}
+		return true;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -331,8 +333,6 @@ public class AttackChainStepImpl extends MinimalEObjectImpl.Container implements
 			if (resolve)
 				return getThreatAllocationRelation();
 			return basicGetThreatAllocationRelation();
-		case TRADESPackage.ATTACK_CHAIN_STEP__DIFFICULTY:
-			return getDifficulty();
 		case TRADESPackage.ATTACK_CHAIN_STEP__IMPACT_DESCRIPTION:
 			return getImpactDescription();
 		case TRADESPackage.ATTACK_CHAIN_STEP__NEXT:
@@ -357,9 +357,6 @@ public class AttackChainStepImpl extends MinimalEObjectImpl.Container implements
 			return;
 		case TRADESPackage.ATTACK_CHAIN_STEP__THREAT_ALLOCATION_RELATION:
 			setThreatAllocationRelation((ThreatAllocationRelation) newValue);
-			return;
-		case TRADESPackage.ATTACK_CHAIN_STEP__DIFFICULTY:
-			setDifficulty((Integer) newValue);
 			return;
 		case TRADESPackage.ATTACK_CHAIN_STEP__IMPACT_DESCRIPTION:
 			setImpactDescription((String) newValue);
@@ -390,9 +387,6 @@ public class AttackChainStepImpl extends MinimalEObjectImpl.Container implements
 		case TRADESPackage.ATTACK_CHAIN_STEP__THREAT_ALLOCATION_RELATION:
 			setThreatAllocationRelation((ThreatAllocationRelation) null);
 			return;
-		case TRADESPackage.ATTACK_CHAIN_STEP__DIFFICULTY:
-			setDifficulty(DIFFICULTY_EDEFAULT);
-			return;
 		case TRADESPackage.ATTACK_CHAIN_STEP__IMPACT_DESCRIPTION:
 			setImpactDescription(IMPACT_DESCRIPTION_EDEFAULT);
 			return;
@@ -418,8 +412,6 @@ public class AttackChainStepImpl extends MinimalEObjectImpl.Container implements
 			return STEP_NUM_EDEFAULT == null ? getStepNum() != null : !STEP_NUM_EDEFAULT.equals(getStepNum());
 		case TRADESPackage.ATTACK_CHAIN_STEP__THREAT_ALLOCATION_RELATION:
 			return threatAllocationRelation != null;
-		case TRADESPackage.ATTACK_CHAIN_STEP__DIFFICULTY:
-			return difficulty != DIFFICULTY_EDEFAULT;
 		case TRADESPackage.ATTACK_CHAIN_STEP__IMPACT_DESCRIPTION:
 			return IMPACT_DESCRIPTION_EDEFAULT == null ? impactDescription != null
 					: !IMPACT_DESCRIPTION_EDEFAULT.equals(impactDescription);
@@ -437,14 +429,28 @@ public class AttackChainStepImpl extends MinimalEObjectImpl.Container implements
 	 * @generated
 	 */
 	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+		case TRADESPackage.ATTACK_CHAIN_STEP___GET_THREAT_ALLOCATION_RELATION_CANDIDATES:
+			return getThreatAllocationRelationCandidates();
+		case TRADESPackage.ATTACK_CHAIN_STEP___CHECK_ALLOCATION_VALUE__DIAGNOSTICCHAIN_MAP:
+			return checkAllocationValue((DiagnosticChain) arguments.get(0), (Map) arguments.get(1));
+		}
+		return super.eInvoke(operationID, arguments);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public String toString() {
 		if (eIsProxy())
 			return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (difficulty: ");
-		result.append(difficulty);
-		result.append(", impactDescription: ");
+		result.append(" (impactDescription: ");
 		result.append(impactDescription);
 		result.append(')');
 		return result.toString();

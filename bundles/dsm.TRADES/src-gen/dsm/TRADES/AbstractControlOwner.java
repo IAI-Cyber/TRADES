@@ -30,7 +30,7 @@ public interface AbstractControlOwner extends EObject {
 	 * @return the value of the '<em>Control Owner</em>' containment reference.
 	 * @see #setControlOwner(ControlOwner)
 	 * @see dsm.TRADES.TRADESPackage#getAbstractControlOwner_ControlOwner()
-	 * @model containment="true" required="true"
+	 * @model containment="true"
 	 * @generated
 	 */
 	ControlOwner getControlOwner();

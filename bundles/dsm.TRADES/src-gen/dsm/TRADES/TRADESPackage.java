@@ -22,11 +22,6 @@ import org.eclipse.emf.ecore.EReference;
  *   <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- * <!-- begin-model-doc -->
- * TRADES model, by Israel Aerospace Industries. All rights reserved.
- * 
- * The TRADES model, based on Threat and Risk assessment ontology and the TRADES model-based methodology.
- * <!-- end-model-doc -->
  * @see dsm.TRADES.TRADESFactory
  * @model kind="package"
  * @generated
@@ -603,13 +598,13 @@ public interface TRADESPackage extends EPackage {
 	int THREAT_ALLOCATION_RELATION__THREAT_RELATED = 5;
 
 	/**
-	 * The feature id for the '<em><b>Attack Chains</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Attack Chain</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int THREAT_ALLOCATION_RELATION__ATTACK_CHAINS = 6;
+	int THREAT_ALLOCATION_RELATION__ATTACK_CHAIN = 6;
 
 	/**
 	 * The number of structural features of the '<em>Threat Allocation Relation</em>' class.
@@ -621,13 +616,22 @@ public interface TRADESPackage extends EPackage {
 	int THREAT_ALLOCATION_RELATION_FEATURE_COUNT = 7;
 
 	/**
+	 * The operation id for the '<em>Check Computed Difficulty Constraint</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THREAT_ALLOCATION_RELATION___CHECK_COMPUTED_DIFFICULTY_CONSTRAINT__DIAGNOSTICCHAIN_MAP = 0;
+
+	/**
 	 * The number of operations of the '<em>Threat Allocation Relation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int THREAT_ALLOCATION_RELATION_OPERATION_COUNT = 0;
+	int THREAT_ALLOCATION_RELATION_OPERATION_COUNT = 1;
 
 	/**
 	 * The meta object id for the '{@link dsm.TRADES.impl.ThreatMitigationRelationImpl <em>Threat Mitigation Relation</em>}' class.
@@ -896,22 +900,13 @@ public interface TRADESPackage extends EPackage {
 	int ATTACK_CHAIN_STEP__THREAT_ALLOCATION_RELATION = 1;
 
 	/**
-	 * The feature id for the '<em><b>Difficulty</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATTACK_CHAIN_STEP__DIFFICULTY = 2;
-
-	/**
 	 * The feature id for the '<em><b>Impact Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ATTACK_CHAIN_STEP__IMPACT_DESCRIPTION = 3;
+	int ATTACK_CHAIN_STEP__IMPACT_DESCRIPTION = 2;
 
 	/**
 	 * The feature id for the '<em><b>Next</b></em>' reference list.
@@ -920,7 +915,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ATTACK_CHAIN_STEP__NEXT = 4;
+	int ATTACK_CHAIN_STEP__NEXT = 3;
 
 	/**
 	 * The feature id for the '<em><b>Previous</b></em>' reference list.
@@ -929,7 +924,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ATTACK_CHAIN_STEP__PREVIOUS = 5;
+	int ATTACK_CHAIN_STEP__PREVIOUS = 4;
 
 	/**
 	 * The number of structural features of the '<em>Attack Chain Step</em>' class.
@@ -938,7 +933,25 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ATTACK_CHAIN_STEP_FEATURE_COUNT = 6;
+	int ATTACK_CHAIN_STEP_FEATURE_COUNT = 5;
+
+	/**
+	 * The operation id for the '<em>Get Threat Allocation Relation Candidates</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTACK_CHAIN_STEP___GET_THREAT_ALLOCATION_RELATION_CANDIDATES = 0;
+
+	/**
+	 * The operation id for the '<em>Check Allocation Value</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTACK_CHAIN_STEP___CHECK_ALLOCATION_VALUE__DIAGNOSTICCHAIN_MAP = 1;
 
 	/**
 	 * The number of operations of the '<em>Attack Chain Step</em>' class.
@@ -947,7 +960,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ATTACK_CHAIN_STEP_OPERATION_COUNT = 0;
+	int ATTACK_CHAIN_STEP_OPERATION_COUNT = 2;
 
 	/**
 	 * The meta object id for the '{@link dsm.TRADES.impl.ScoreSystemImpl <em>Score System</em>}' class.
@@ -2004,15 +2017,25 @@ public interface TRADESPackage extends EPackage {
 	EReference getThreatAllocationRelation_ThreatRelated();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link dsm.TRADES.ThreatAllocationRelation#getAttackChains <em>Attack Chains</em>}'.
+	 * Returns the meta object for the containment reference '{@link dsm.TRADES.ThreatAllocationRelation#getAttackChain <em>Attack Chain</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Attack Chains</em>'.
-	 * @see dsm.TRADES.ThreatAllocationRelation#getAttackChains()
+	 * @return the meta object for the containment reference '<em>Attack Chain</em>'.
+	 * @see dsm.TRADES.ThreatAllocationRelation#getAttackChain()
 	 * @see #getThreatAllocationRelation()
 	 * @generated
 	 */
-	EReference getThreatAllocationRelation_AttackChains();
+	EReference getThreatAllocationRelation_AttackChain();
+
+	/**
+	 * Returns the meta object for the '{@link dsm.TRADES.ThreatAllocationRelation#checkComputedDifficultyConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Check Computed Difficulty Constraint</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Check Computed Difficulty Constraint</em>' operation.
+	 * @see dsm.TRADES.ThreatAllocationRelation#checkComputedDifficultyConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getThreatAllocationRelation__CheckComputedDifficultyConstraint__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for class '{@link dsm.TRADES.ThreatMitigationRelation <em>Threat Mitigation Relation</em>}'.
@@ -2208,17 +2231,6 @@ public interface TRADESPackage extends EPackage {
 	EReference getAttackChainStep_ThreatAllocationRelation();
 
 	/**
-	 * Returns the meta object for the attribute '{@link dsm.TRADES.AttackChainStep#getDifficulty <em>Difficulty</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Difficulty</em>'.
-	 * @see dsm.TRADES.AttackChainStep#getDifficulty()
-	 * @see #getAttackChainStep()
-	 * @generated
-	 */
-	EAttribute getAttackChainStep_Difficulty();
-
-	/**
 	 * Returns the meta object for the attribute '{@link dsm.TRADES.AttackChainStep#getImpactDescription <em>Impact Description</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2250,6 +2262,26 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getAttackChainStep_Previous();
+
+	/**
+	 * Returns the meta object for the '{@link dsm.TRADES.AttackChainStep#getThreatAllocationRelationCandidates() <em>Get Threat Allocation Relation Candidates</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Threat Allocation Relation Candidates</em>' operation.
+	 * @see dsm.TRADES.AttackChainStep#getThreatAllocationRelationCandidates()
+	 * @generated
+	 */
+	EOperation getAttackChainStep__GetThreatAllocationRelationCandidates();
+
+	/**
+	 * Returns the meta object for the '{@link dsm.TRADES.AttackChainStep#checkAllocationValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Check Allocation Value</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Check Allocation Value</em>' operation.
+	 * @see dsm.TRADES.AttackChainStep#checkAllocationValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getAttackChainStep__CheckAllocationValue__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for class '{@link dsm.TRADES.ScoreSystem <em>Score System</em>}'.
@@ -2934,12 +2966,21 @@ public interface TRADESPackage extends EPackage {
 		EReference THREAT_ALLOCATION_RELATION__THREAT_RELATED = eINSTANCE.getThreatAllocationRelation_ThreatRelated();
 
 		/**
-		 * The meta object literal for the '<em><b>Attack Chains</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Attack Chain</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference THREAT_ALLOCATION_RELATION__ATTACK_CHAINS = eINSTANCE.getThreatAllocationRelation_AttackChains();
+		EReference THREAT_ALLOCATION_RELATION__ATTACK_CHAIN = eINSTANCE.getThreatAllocationRelation_AttackChain();
+
+		/**
+		 * The meta object literal for the '<em><b>Check Computed Difficulty Constraint</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation THREAT_ALLOCATION_RELATION___CHECK_COMPUTED_DIFFICULTY_CONSTRAINT__DIAGNOSTICCHAIN_MAP = eINSTANCE
+				.getThreatAllocationRelation__CheckComputedDifficultyConstraint__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '{@link dsm.TRADES.impl.ThreatMitigationRelationImpl <em>Threat Mitigation Relation</em>}' class.
@@ -3097,14 +3138,6 @@ public interface TRADESPackage extends EPackage {
 				.getAttackChainStep_ThreatAllocationRelation();
 
 		/**
-		 * The meta object literal for the '<em><b>Difficulty</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ATTACK_CHAIN_STEP__DIFFICULTY = eINSTANCE.getAttackChainStep_Difficulty();
-
-		/**
 		 * The meta object literal for the '<em><b>Impact Description</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3127,6 +3160,24 @@ public interface TRADESPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ATTACK_CHAIN_STEP__PREVIOUS = eINSTANCE.getAttackChainStep_Previous();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Threat Allocation Relation Candidates</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ATTACK_CHAIN_STEP___GET_THREAT_ALLOCATION_RELATION_CANDIDATES = eINSTANCE
+				.getAttackChainStep__GetThreatAllocationRelationCandidates();
+
+		/**
+		 * The meta object literal for the '<em><b>Check Allocation Value</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ATTACK_CHAIN_STEP___CHECK_ALLOCATION_VALUE__DIAGNOSTICCHAIN_MAP = eINSTANCE
+				.getAttackChainStep__CheckAllocationValue__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '{@link dsm.TRADES.impl.ScoreSystemImpl <em>Score System</em>}' class.

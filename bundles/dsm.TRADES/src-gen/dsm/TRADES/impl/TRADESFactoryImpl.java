@@ -193,7 +193,7 @@ public class TRADESFactoryImpl extends EFactoryImpl implements TRADESFactory {
 	 */
 	@Override
 	public ThreatAllocationRelation createThreatAllocationRelation() {
-		ThreatAllocationRelationImpl threatAllocationRelation = new ThreatAllocationRelationImpl();
+		ThreatAllocationRelationCustomImpl threatAllocationRelation = new ThreatAllocationRelationCustomImpl();
 		return threatAllocationRelation;
 	}
 

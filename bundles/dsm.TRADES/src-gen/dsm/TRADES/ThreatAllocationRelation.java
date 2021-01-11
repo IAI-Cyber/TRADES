@@ -2,6 +2,8 @@
  */
 package dsm.TRADES;
 
+import java.util.Map;
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
@@ -21,7 +23,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link dsm.TRADES.ThreatAllocationRelation#getImpactscore <em>Impactscore</em>}</li>
  *   <li>{@link dsm.TRADES.ThreatAllocationRelation#getDifficultyscore <em>Difficultyscore</em>}</li>
  *   <li>{@link dsm.TRADES.ThreatAllocationRelation#getThreatRelated <em>Threat Related</em>}</li>
- *   <li>{@link dsm.TRADES.ThreatAllocationRelation#getAttackChains <em>Attack Chains</em>}</li>
+ *   <li>{@link dsm.TRADES.ThreatAllocationRelation#getAttackChain <em>Attack Chain</em>}</li>
  * </ul>
  *
  * @see dsm.TRADES.TRADESPackage#getThreatAllocationRelation()
@@ -160,15 +162,36 @@ public interface ThreatAllocationRelation extends EObject {
 	EList<ThreatAllocationRelation> getThreatRelated();
 
 	/**
-	 * Returns the value of the '<em><b>Attack Chains</b></em>' containment reference list.
-	 * The list contents are of type {@link dsm.TRADES.AttackChain}.
+	 * Returns the value of the '<em><b>Attack Chain</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Attack Chains</em>' containment reference list.
-	 * @see dsm.TRADES.TRADESPackage#getThreatAllocationRelation_AttackChains()
+	 * @return the value of the '<em>Attack Chain</em>' containment reference.
+	 * @see #setAttackChain(AttackChain)
+	 * @see dsm.TRADES.TRADESPackage#getThreatAllocationRelation_AttackChain()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<AttackChain> getAttackChains();
+	AttackChain getAttackChain();
+
+	/**
+	 * Sets the value of the '{@link dsm.TRADES.ThreatAllocationRelation#getAttackChain <em>Attack Chain</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Attack Chain</em>' containment reference.
+	 * @see #getAttackChain()
+	 * @generated
+	 */
+	void setAttackChain(AttackChain value);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Check that the define difference for this allocation is not different from the one computed on the attack chain
+	 * <!-- end-model-doc -->
+	 * @model
+	 * @generated
+	 */
+	boolean checkComputedDifficultyConstraint(DiagnosticChain chain, Map context);
 
 } // ThreatAllocationRelation

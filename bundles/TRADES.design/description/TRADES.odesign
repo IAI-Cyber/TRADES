@@ -336,7 +336,7 @@
               <initialOperation>
                 <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.oclIsKindOf(TRADES::ThreatAllocationRelation)">
                   <subModelOperations xsi:type="tool_1:Let" variableName="relation" valueExpression="var:self">
-                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="TRADES::AttackChain" referenceName="attackChains">
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="TRADES::AttackChain" referenceName="attackChain">
                       <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Attack decomposition on '+relation.threat.name"/>
                       <subModelOperations xsi:type="tool:Navigation" createIfNotExistent="true" diagramDescription="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='AttackChainDiagram']"/>
                     </subModelOperations>
@@ -998,20 +998,6 @@
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_blue']"/>
           </style>
-          <conditionnalStyles predicateExpression="aql:self.difficulty > 7">
-            <style xsi:type="style:BundledImageDescription" labelSize="12" showIcon="false" labelExpression="aql:self.getAttackChainLabel()" sizeComputationExpression="13" labelPosition="node" resizeKind="NSEW">
-              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_red']"/>
-            </style>
-          </conditionnalStyles>
-          <conditionnalStyles predicateExpression="aql:self.difficulty > 3">
-            <style xsi:type="style:BundledImageDescription" labelSize="12" showIcon="false" labelExpression="aql:self.getAttackChainLabel()" sizeComputationExpression="13" labelPosition="node" resizeKind="NSEW">
-              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_orange']"/>
-            </style>
-          </conditionnalStyles>
         </nodeMappings>
         <edgeMappings name="NextMapping_ACT" deletionDescription="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='AttackChainDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='DeleteNextLink_Tool_ACD']" sourceMapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='AttackChainDiagram']/@defaultLayer/@nodeMappings[name='AttackChainStep_ACD']" targetMapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='AttackChainDiagram']/@defaultLayer/@nodeMappings[name='AttackChainStep_ACD']" targetFinderExpression="feature:next" reconnections="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='AttackChainDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='ReconnectAttackChaineTool_ACD']">
           <style sizeComputationExpression="2">
@@ -1155,7 +1141,9 @@
       <pages name="ThreatGeneralPage" label="Threat General" labelExpression="General" domainClass="TRADES::Threat" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.0 //@extensions.0/@categories.0/@groups.1 //@extensions.0/@categories.0/@groups.7"/>
       <pages name="ControlGeneralPage" label="Control General Page" labelExpression="General" domainClass="TRADES::Control" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.0 //@extensions.0/@categories.0/@groups.2"/>
       <pages name="ComponentGeneralPage" label="Component General Page" labelExpression="General" domainClass="TRADES::Component" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.0 //@extensions.0/@categories.0/@groups.3"/>
-      <pages name="ThreatAllocationPage" label="Threat Allocation Page" labelExpression="General" domainClass="TRADES::ThreatAllocationRelation" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.4"/>
+      <pages name="AttackChainStep_Page" labelExpression="Attack chain step" domainClass="TRADES::AttackChainStep" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.14"/>
+      <pages name="AttackChain_Page" labelExpression="Attack chain" domainClass="TRADES::AttackChain" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.13"/>
+      <pages name="ThreatAllocationPage" label="Threat Allocation Page" labelExpression="Threat allocation Relation" domainClass="TRADES::ThreatAllocationRelation" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.4"/>
       <pages name="ThreatMitigationPage" label="Threat Mitigation Page" labelExpression="General" domainClass="TRADES::ThreatMitigationRelation" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.0 //@extensions.0/@categories.0/@groups.5"/>
       <pages name="AnalysisPage" label="Analysis Page" labelExpression="General " domainClass="TRADES::Analysis" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.0 //@extensions.0/@categories.0/@groups.6"/>
       <pages name="ImpactConfigurationPage" label="Impact Configuration" labelExpression="Impact configuration" domainClass="TRADES::ImpactConfiguration" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.10"/>
@@ -1163,6 +1151,7 @@
       <pages name="DifficultyPage" labelExpression="Difficulty" domainClass="TRADES::DifficultyScore" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.0 //@extensions.0/@categories.0/@groups.9"/>
       <pages name="ScoreSystemPage" labelExpression="Score system" domainClass="TRADES::ScoreSystem" semanticCandidateExpression="aql:Sequence{self,self.eContainer()}" groups="//@extensions.0/@categories.0/@groups.11"/>
       <pages name="AffectPage" label="Affect Page" labelExpression="Affect" domainClass="TRADES::AffectRelation" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.0 //@extensions.0/@categories.0/@groups.12"/>
+      <pages name="LinkeThreatAllocationRelation_Page" label="Linked Threat Allocation" labelExpression="Linked allocation" domainClass="TRADES::ThreatAllocationRelation" semanticCandidateExpression="aql:self.threatAllocationRelation" groups="//@extensions.0/@categories.0/@groups.4" indented="true"/>
       <groups name="ModelElementGroup" label="Model element" labelExpression="Basic Properties" domainClass="TRADES::NamedElement" semanticCandidateExpression="var:self">
         <controls xsi:type="properties:TextDescription" name="ElementNameFiald" label="Name" labelExpression="Name" helpExpression="Name of the element" isEnabledExpression="aql:not(self.oclIsTypeOf(TRADES::ExternalThreat) or self.oclIsTypeOf(TRADES::ExternalControl) or self.oclIsTypeOf(TRADES::ThreatMitigationRelation)" valueExpression="aql:self.name">
           <initialOperation>
@@ -1307,7 +1296,7 @@
           </initialOperation>
         </controls>
       </groups>
-      <groups name="ImpactConfigurationGroup" label="Impact configuration" labelExpression="Configuration" domainClass="TRADES::ImpactConfiguration">
+      <groups name="ImpactConfigurationGroup" label="Impact configuration" labelExpression="Configuration" domainClass="TRADES::ImpactConfiguration" semanticCandidateExpression="var:self">
         <controls xsi:type="properties:ButtonDescription" name="ImpactConfigurationColor" labelExpression="'  Change color  '">
           <initialOperation>
             <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.setRGBColorByUI()"/>
@@ -1403,6 +1392,22 @@
             </actions>
           </controls>
           <layout xsi:type="properties:FillLayoutDescription" orientation="HORIZONTAL"/>
+        </controls>
+      </groups>
+      <groups name="AttackChain_Group" labelExpression="Attack chain" domainClass="TRADES::AttackChain" semanticCandidateExpression="var:self">
+        <controls xsi:type="properties:TextDescription" name="ComputedDifficulty_Widget" labelExpression="Computed difficulty" isEnabledExpression="aql:false" valueExpression="aql:self.computedDifficulty">
+          <initialOperation>
+            <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self"/>
+          </initialOperation>
+        </controls>
+      </groups>
+      <groups name="AttackChainStep_Group" labelExpression="AttackChainStep" domainClass="TRADES::AttackChainStep" semanticCandidateExpression="var:self">
+        <controls xsi:type="properties:SelectDescription" name="ThreatAllocation_Widget" labelExpression="Threat allocation" valueExpression="aql:self.threatAllocationRelation" candidatesExpression="aql:self.getThreatAllocationRelationCandidates()" candidateDisplayExpression="aql:candidate.getLabelProviderText()">
+          <initialOperation>
+            <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+              <subModelOperations xsi:type="tool_1:SetValue" featureName="threatAllocationRelation" valueExpression="var:newValue"/>
+            </firstModelOperations>
+          </initialOperation>
         </controls>
       </groups>
     </categories>

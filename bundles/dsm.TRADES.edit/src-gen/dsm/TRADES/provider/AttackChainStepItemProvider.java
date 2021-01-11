@@ -56,7 +56,6 @@ public class AttackChainStepItemProvider extends ItemProviderAdapter implements 
 
 			addStepNumPropertyDescriptor(object);
 			addThreatAllocationRelationPropertyDescriptor(object);
-			addDifficultyPropertyDescriptor(object);
 			addImpactDescriptionPropertyDescriptor(object);
 			addNextPropertyDescriptor(object);
 			addPreviousPropertyDescriptor(object);
@@ -94,22 +93,6 @@ public class AttackChainStepItemProvider extends ItemProviderAdapter implements 
 								"_UI_AttackChainStep_threatAllocationRelation_feature", "_UI_AttackChainStep_type"),
 						TRADESPackage.Literals.ATTACK_CHAIN_STEP__THREAT_ALLOCATION_RELATION, true, false, true, null,
 						null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Difficulty feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addDifficultyPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_AttackChainStep_difficulty_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_AttackChainStep_difficulty_feature",
-								"_UI_AttackChainStep_type"),
-						TRADESPackage.Literals.ATTACK_CHAIN_STEP__DIFFICULTY, true, false, false,
-						ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -205,7 +188,6 @@ public class AttackChainStepItemProvider extends ItemProviderAdapter implements 
 
 		switch (notification.getFeatureID(AttackChainStep.class)) {
 		case TRADESPackage.ATTACK_CHAIN_STEP__STEP_NUM:
-		case TRADESPackage.ATTACK_CHAIN_STEP__DIFFICULTY:
 		case TRADESPackage.ATTACK_CHAIN_STEP__IMPACT_DESCRIPTION:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;

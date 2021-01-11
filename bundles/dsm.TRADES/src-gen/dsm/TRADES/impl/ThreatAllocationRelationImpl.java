@@ -11,11 +11,17 @@ import dsm.TRADES.TRADESPackage;
 import dsm.TRADES.Threat;
 import dsm.TRADES.ThreatAllocationRelation;
 
+import dsm.TRADES.util.TRADESValidator;
+import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 
+import java.util.Map;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
+import org.eclipse.emf.common.util.BasicDiagnostic;
+import org.eclipse.emf.common.util.Diagnostic;
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
@@ -23,11 +29,10 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.plugin.EcorePlugin;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.EObjectValidator;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -43,7 +48,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dsm.TRADES.impl.ThreatAllocationRelationImpl#getImpactscore <em>Impactscore</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ThreatAllocationRelationImpl#getDifficultyscore <em>Difficultyscore</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ThreatAllocationRelationImpl#getThreatRelated <em>Threat Related</em>}</li>
- *   <li>{@link dsm.TRADES.impl.ThreatAllocationRelationImpl#getAttackChains <em>Attack Chains</em>}</li>
+ *   <li>{@link dsm.TRADES.impl.ThreatAllocationRelationImpl#getAttackChain <em>Attack Chain</em>}</li>
  * </ul>
  *
  * @generated
@@ -110,14 +115,14 @@ public class ThreatAllocationRelationImpl extends MinimalEObjectImpl.Container i
 	protected EList<ThreatAllocationRelation> threatRelated;
 
 	/**
-	 * The cached value of the '{@link #getAttackChains() <em>Attack Chains</em>}' containment reference list.
+	 * The cached value of the '{@link #getAttackChain() <em>Attack Chain</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAttackChains()
+	 * @see #getAttackChain()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<AttackChain> attackChains;
+	protected AttackChain attackChain;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -386,12 +391,76 @@ public class ThreatAllocationRelationImpl extends MinimalEObjectImpl.Container i
 	 * @generated
 	 */
 	@Override
-	public EList<AttackChain> getAttackChains() {
-		if (attackChains == null) {
-			attackChains = new EObjectContainmentEList<AttackChain>(AttackChain.class, this,
-					TRADESPackage.THREAT_ALLOCATION_RELATION__ATTACK_CHAINS);
+	public AttackChain getAttackChain() {
+		return attackChain;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetAttackChain(AttackChain newAttackChain, NotificationChain msgs) {
+		AttackChain oldAttackChain = attackChain;
+		attackChain = newAttackChain;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					TRADESPackage.THREAT_ALLOCATION_RELATION__ATTACK_CHAIN, oldAttackChain, newAttackChain);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
-		return attackChains;
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setAttackChain(AttackChain newAttackChain) {
+		if (newAttackChain != attackChain) {
+			NotificationChain msgs = null;
+			if (attackChain != null)
+				msgs = ((InternalEObject) attackChain).eInverseRemove(this,
+						EOPPOSITE_FEATURE_BASE - TRADESPackage.THREAT_ALLOCATION_RELATION__ATTACK_CHAIN, null, msgs);
+			if (newAttackChain != null)
+				msgs = ((InternalEObject) newAttackChain).eInverseAdd(this,
+						EOPPOSITE_FEATURE_BASE - TRADESPackage.THREAT_ALLOCATION_RELATION__ATTACK_CHAIN, null, msgs);
+			msgs = basicSetAttackChain(newAttackChain, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					TRADESPackage.THREAT_ALLOCATION_RELATION__ATTACK_CHAIN, newAttackChain, newAttackChain));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean checkComputedDifficultyConstraint(DiagnosticChain chain, Map context) {
+		// TODO: implement this method
+		// -> specify the condition that violates the invariant
+		// -> verify the details of the diagnostic, including severity and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (chain != null) {
+				chain.add(
+						new BasicDiagnostic(Diagnostic.ERROR, TRADESValidator.DIAGNOSTIC_SOURCE,
+								TRADESValidator.THREAT_ALLOCATION_RELATION__CHECK_COMPUTED_DIFFICULTY_CONSTRAINT,
+								EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic",
+										new Object[] { "checkComputedDifficultyConstraint",
+												EObjectValidator.getObjectLabel(this, context) }),
+								new Object[] { this }));
+			}
+			return false;
+		}
+		return true;
 	}
 
 	/**
@@ -427,8 +496,8 @@ public class ThreatAllocationRelationImpl extends MinimalEObjectImpl.Container i
 			return basicSetComponent(null, msgs);
 		case TRADESPackage.THREAT_ALLOCATION_RELATION__THREAT:
 			return basicSetThreat(null, msgs);
-		case TRADESPackage.THREAT_ALLOCATION_RELATION__ATTACK_CHAINS:
-			return ((InternalEList<?>) getAttackChains()).basicRemove(otherEnd, msgs);
+		case TRADESPackage.THREAT_ALLOCATION_RELATION__ATTACK_CHAIN:
+			return basicSetAttackChain(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -474,8 +543,8 @@ public class ThreatAllocationRelationImpl extends MinimalEObjectImpl.Container i
 			return basicGetDifficultyscore();
 		case TRADESPackage.THREAT_ALLOCATION_RELATION__THREAT_RELATED:
 			return getThreatRelated();
-		case TRADESPackage.THREAT_ALLOCATION_RELATION__ATTACK_CHAINS:
-			return getAttackChains();
+		case TRADESPackage.THREAT_ALLOCATION_RELATION__ATTACK_CHAIN:
+			return getAttackChain();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -508,9 +577,8 @@ public class ThreatAllocationRelationImpl extends MinimalEObjectImpl.Container i
 			getThreatRelated().clear();
 			getThreatRelated().addAll((Collection<? extends ThreatAllocationRelation>) newValue);
 			return;
-		case TRADESPackage.THREAT_ALLOCATION_RELATION__ATTACK_CHAINS:
-			getAttackChains().clear();
-			getAttackChains().addAll((Collection<? extends AttackChain>) newValue);
+		case TRADESPackage.THREAT_ALLOCATION_RELATION__ATTACK_CHAIN:
+			setAttackChain((AttackChain) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -542,8 +610,8 @@ public class ThreatAllocationRelationImpl extends MinimalEObjectImpl.Container i
 		case TRADESPackage.THREAT_ALLOCATION_RELATION__THREAT_RELATED:
 			getThreatRelated().clear();
 			return;
-		case TRADESPackage.THREAT_ALLOCATION_RELATION__ATTACK_CHAINS:
-			getAttackChains().clear();
+		case TRADESPackage.THREAT_ALLOCATION_RELATION__ATTACK_CHAIN:
+			setAttackChain((AttackChain) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -569,10 +637,24 @@ public class ThreatAllocationRelationImpl extends MinimalEObjectImpl.Container i
 			return difficultyscore != null;
 		case TRADESPackage.THREAT_ALLOCATION_RELATION__THREAT_RELATED:
 			return threatRelated != null && !threatRelated.isEmpty();
-		case TRADESPackage.THREAT_ALLOCATION_RELATION__ATTACK_CHAINS:
-			return attackChains != null && !attackChains.isEmpty();
+		case TRADESPackage.THREAT_ALLOCATION_RELATION__ATTACK_CHAIN:
+			return attackChain != null;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+		case TRADESPackage.THREAT_ALLOCATION_RELATION___CHECK_COMPUTED_DIFFICULTY_CONSTRAINT__DIAGNOSTICCHAIN_MAP:
+			return checkComputedDifficultyConstraint((DiagnosticChain) arguments.get(0), (Map) arguments.get(1));
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

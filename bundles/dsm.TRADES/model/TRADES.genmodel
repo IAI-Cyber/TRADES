@@ -60,7 +60,11 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TRADES.ecore#//ThreatAllocationRelation/impactscore"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TRADES.ecore#//ThreatAllocationRelation/difficultyscore"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TRADES.ecore#//ThreatAllocationRelation/threatRelated"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//ThreatAllocationRelation/attackChains"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//ThreatAllocationRelation/attackChain"/>
+      <genOperations ecoreOperation="TRADES.ecore#//ThreatAllocationRelation/checkComputedDifficultyConstraint">
+        <genParameters ecoreParameter="TRADES.ecore#//ThreatAllocationRelation/checkComputedDifficultyConstraint/chain"/>
+        <genParameters ecoreParameter="TRADES.ecore#//ThreatAllocationRelation/checkComputedDifficultyConstraint/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="TRADES.ecore#//ThreatMitigationRelation">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//ThreatMitigationRelation/assessment"/>
@@ -83,10 +87,14 @@
     <genClasses ecoreClass="TRADES.ecore#//AttackChainStep">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//AttackChainStep/stepNum"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TRADES.ecore#//AttackChainStep/threatAllocationRelation"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//AttackChainStep/difficulty"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//AttackChainStep/impactDescription"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TRADES.ecore#//AttackChainStep/next"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TRADES.ecore#//AttackChainStep/previous"/>
+      <genOperations ecoreOperation="TRADES.ecore#//AttackChainStep/getThreatAllocationRelationCandidates"/>
+      <genOperations ecoreOperation="TRADES.ecore#//AttackChainStep/checkAllocationValue">
+        <genParameters ecoreParameter="TRADES.ecore#//AttackChainStep/checkAllocationValue/chain"/>
+        <genParameters ecoreParameter="TRADES.ecore#//AttackChainStep/checkAllocationValue/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="TRADES.ecore#//ScoreSystem">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//ScoreSystem/impactscore"/>

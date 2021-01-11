@@ -2,6 +2,8 @@
  */
 package dsm.TRADES;
 
+import java.util.Map;
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
@@ -17,7 +19,6 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link dsm.TRADES.AttackChainStep#getStepNum <em>Step Num</em>}</li>
  *   <li>{@link dsm.TRADES.AttackChainStep#getThreatAllocationRelation <em>Threat Allocation Relation</em>}</li>
- *   <li>{@link dsm.TRADES.AttackChainStep#getDifficulty <em>Difficulty</em>}</li>
  *   <li>{@link dsm.TRADES.AttackChainStep#getImpactDescription <em>Impact Description</em>}</li>
  *   <li>{@link dsm.TRADES.AttackChainStep#getNext <em>Next</em>}</li>
  *   <li>{@link dsm.TRADES.AttackChainStep#getPrevious <em>Previous</em>}</li>
@@ -73,31 +74,6 @@ public interface AttackChainStep extends EObject {
 	void setThreatAllocationRelation(ThreatAllocationRelation value);
 
 	/**
-	 * Returns the value of the '<em><b>Difficulty</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * optional difficulty of implementing step, overriding ThreatAllocationRelation difficulty rating
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Difficulty</em>' attribute.
-	 * @see #setDifficulty(int)
-	 * @see dsm.TRADES.TRADESPackage#getAttackChainStep_Difficulty()
-	 * @model
-	 * @generated
-	 */
-	int getDifficulty();
-
-	/**
-	 * Sets the value of the '{@link dsm.TRADES.AttackChainStep#getDifficulty <em>Difficulty</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Difficulty</em>' attribute.
-	 * @see #getDifficulty()
-	 * @generated
-	 */
-	void setDifficulty(int value);
-
-	/**
 	 * Returns the value of the '<em><b>Impact Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -146,5 +122,24 @@ public interface AttackChainStep extends EObject {
 	 * @generated
 	 */
 	EList<AttackChainStep> getPrevious();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Check that the actual threatAllocationRelation belong to the correct candidates scope.
+	 * <!-- end-model-doc -->
+	 * @model kind="operation"
+	 * @generated
+	 */
+	EList<ThreatAllocationRelation> getThreatAllocationRelationCandidates();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	boolean checkAllocationValue(DiagnosticChain chain, Map context);
 
 } // AttackChainStep

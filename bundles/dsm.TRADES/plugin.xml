@@ -14,6 +14,7 @@
             genModel="model/TRADES.genmodel"/>
    </extension>
 
+
    <extension point="org.eclipse.emf.ecore.extension_parser">
       <!-- @generated not TRADES -->
       <parser
