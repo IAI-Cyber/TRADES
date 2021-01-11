@@ -8,6 +8,8 @@ import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.ui.PlatformUI;
 
 import dsm.TRADES.AbstractControlOwner;
+import dsm.TRADES.Analysis;
+import dsm.TRADES.AttackChain;
 import dsm.TRADES.Component;
 import dsm.TRADES.Control;
 import dsm.TRADES.ControlOwner;
@@ -24,6 +26,7 @@ import dsm.TRADES.TRADESFactory;
 import dsm.TRADES.TRADESPackage;
 import dsm.TRADES.Threat;
 import dsm.TRADES.ThreatAllocationRelation;
+import dsm.TRADES.util.EcoreUtils;
 
 /**
  * Services used to compute business logic operations
@@ -60,6 +63,29 @@ public class SemanticService {
 			score.getConfigurations().add(conf);
 			conf.setDifficulty(dif);
 		}
+	}
+
+	public void synchronizeDifficulty(ThreatAllocationRelation rel) {
+
+		AttackChain attackChain = rel.getAttackChain();
+
+		if (attackChain != null) {
+			int cmpDiff = attackChain.getComputedDifficulty();
+
+			if (rel.getDifficultyscore() == null || rel.getDifficultyscore().getDifficulty() != cmpDiff) {
+				ScoreSystem scoresystem = EcoreUtils.getAncestor(rel, Analysis.class).getScoresystem();
+				DifficultyScore diffScore = scoresystem.getDifficultyscore().stream()
+						.filter(d -> d.getDifficulty() == cmpDiff).findFirst().orElseGet(() -> {
+							DifficultyScore diff = TRADESFactory.eINSTANCE.createDifficultyScore();
+							scoresystem.getDifficultyscore().add(diff);
+							diff.setDifficulty(cmpDiff);
+							updateImpactWithNewDifficulty(diff, scoresystem);
+							return diff;
+						});
+				rel.setDifficultyscore(diffScore);
+			}
+		}
+
 	}
 
 	public void createInternalControl(AbstractControlOwner cmp) {
@@ -135,6 +161,10 @@ public class SemanticService {
 			diff.setDifficulty(scoreSystem.getDifficultyscore().get(index - 1).getDifficulty() + 1);
 		}
 
+		updateImpactWithNewDifficulty(diff, scoreSystem);
+	}
+
+	private void updateImpactWithNewDifficulty(DifficultyScore diff, ScoreSystem scoreSystem) {
 		for (ImpactScore impact : scoreSystem.getImpactscore()) {
 			ImpactConfiguration conf = TRADESFactory.eINSTANCE.createImpactConfiguration();
 			impact.getConfigurations().add(conf);

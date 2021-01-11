@@ -1143,7 +1143,7 @@
       <pages name="ComponentGeneralPage" label="Component General Page" labelExpression="General" domainClass="TRADES::Component" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.0 //@extensions.0/@categories.0/@groups.3"/>
       <pages name="AttackChainStep_Page" labelExpression="Attack chain step" domainClass="TRADES::AttackChainStep" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.14"/>
       <pages name="AttackChain_Page" labelExpression="Attack chain" domainClass="TRADES::AttackChain" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.13"/>
-      <pages name="ThreatAllocationPage" label="Threat Allocation Page" labelExpression="Threat allocation Relation" domainClass="TRADES::ThreatAllocationRelation" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.4"/>
+      <pages name="ThreatAllocationPage" label="Threat Allocation Page" labelExpression="Threat allocation Relation" domainClass="TRADES::ThreatAllocationRelation" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.4 //@extensions.0/@categories.0/@groups.15"/>
       <pages name="ThreatMitigationPage" label="Threat Mitigation Page" labelExpression="General" domainClass="TRADES::ThreatMitigationRelation" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.0 //@extensions.0/@categories.0/@groups.5"/>
       <pages name="AnalysisPage" label="Analysis Page" labelExpression="General " domainClass="TRADES::Analysis" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.0 //@extensions.0/@categories.0/@groups.6"/>
       <pages name="ImpactConfigurationPage" label="Impact Configuration" labelExpression="Impact configuration" domainClass="TRADES::ImpactConfiguration" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.10"/>
@@ -1407,6 +1407,18 @@
             <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
               <subModelOperations xsi:type="tool_1:SetValue" featureName="threatAllocationRelation" valueExpression="var:newValue"/>
             </firstModelOperations>
+          </initialOperation>
+        </controls>
+      </groups>
+      <groups name="ThreatAllocationGroup_Difficulty" labelExpression="Threat allocation difficulty detail" domainClass="TRADES::ThreatAllocationRelation" semanticCandidateExpression="var:self">
+        <controls xsi:type="properties:TextDescription" name="ComputedDifficulty" labelExpression="Computed difficulty" isEnabledExpression="aql:false" valueExpression="aql:if self.attackChain &lt;> null then self.attackChain.computedDifficulty else ' ' endif">
+          <initialOperation>
+            <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self"/>
+          </initialOperation>
+        </controls>
+        <controls xsi:type="properties:ButtonDescription" name="UpdateDifficulty_Button" buttonLabelExpression="Update difficulty">
+          <initialOperation>
+            <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.synchronizeDifficulty()"/>
           </initialOperation>
         </controls>
       </groups>
