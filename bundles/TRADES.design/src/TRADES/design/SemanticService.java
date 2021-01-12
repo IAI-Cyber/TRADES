@@ -1,10 +1,20 @@
 package TRADES.design;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import org.eclipse.collections.api.factory.Sets;
+import org.eclipse.collections.api.set.FixedSizeSet;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.ecore.util.ECrossReferenceAdapter;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.sirius.business.api.session.Session;
+import org.eclipse.sirius.business.api.session.SessionManager;
+import org.eclipse.sirius.viewpoint.SiriusPlugin;
 import org.eclipse.ui.PlatformUI;
 
 import dsm.TRADES.AbstractControlOwner;
@@ -238,6 +248,77 @@ public class SemanticService {
 			rel.setThreat(threat);
 
 		}
+	}
+
+	/**
+	 * Features to ignore when computing the usage of a {@link DifficultyScore}
+	 */
+	private static FixedSizeSet<EReference> USAGE_REF_TO_IGNORE_DIFF_SCORE = Sets.fixedSize
+			.of(TRADESPackage.eINSTANCE.getImpactConfiguration_Difficulty());
+	/**
+	 * Features to ignore when computing the usage of a {@link ImpactScore}
+	 */
+	private static FixedSizeSet<EReference> USAGE_REF_TO_IGNORE_IMPACT_SCORE = Sets.fixedSize
+			.of(TRADESPackage.eINSTANCE.getImpactConfiguration_Impact());
+
+	public void clearUnusedDifficulties(ScoreSystem scoreSystem) {
+		ECrossReferenceAdapter crossRef = SessionManager.INSTANCE.getSession(scoreSystem).getSemanticCrossReferencer();
+		List<EObject> toRemove = new ArrayList<>();
+
+		for (DifficultyScore diff : scoreSystem.getDifficultyscore()) {
+
+			if (!isSemanticallyUsed(diff, crossRef, USAGE_REF_TO_IGNORE_DIFF_SCORE)) {
+				toRemove.add(diff);
+				toRemove.addAll(EcoreUtils.getInverse(diff, ImpactConfiguration.class, crossRef,
+						TRADESPackage.eINSTANCE.getImpactConfiguration_Difficulty()));
+			}
+		}
+
+		for (EObject rm : toRemove) {
+			SiriusPlugin.getDefault().getModelAccessorRegistry().getModelAccessor(rm).eRemove(rm);
+		}
+	}
+
+	public void clearUnusedImpacts(ScoreSystem scoreSystem) {
+		ECrossReferenceAdapter crossRef = SessionManager.INSTANCE.getSession(scoreSystem).getSemanticCrossReferencer();
+		List<EObject> toRemove = new ArrayList<>();
+
+		for (ImpactScore impact : scoreSystem.getImpactscore()) {
+
+			if (!isSemanticallyUsed(impact, crossRef, USAGE_REF_TO_IGNORE_IMPACT_SCORE)) {
+				toRemove.add(impact);
+			}
+		}
+
+		for (EObject rm : toRemove) {
+			SiriusPlugin.getDefault().getModelAccessorRegistry().getModelAccessor(rm).eRemove(rm);
+		}
+	}
+
+	public boolean isSemanticallyUsed(EObject o, ECrossReferenceAdapter crossRef, Collection<EReference> toIgnore) {
+		return crossRef.getInverseReferences(o).stream().anyMatch(s -> {
+			EStructuralFeature feature = s.getEStructuralFeature();
+
+			EObject notifier = s.getEObject();
+			if (notifier != null && notifier.eClass().getEPackage() != TRADESPackage.eINSTANCE) {
+				return false;
+			}
+
+			if (feature instanceof EReference) {
+				EReference eReference = (EReference) feature;
+				// Ignore containment
+				// them also
+				if (eReference.isContainment()) {
+					return false;
+				}
+
+				if (toIgnore.contains(eReference)) {
+					return false;
+				}
+			}
+
+			return true;
+		});
 	}
 
 }

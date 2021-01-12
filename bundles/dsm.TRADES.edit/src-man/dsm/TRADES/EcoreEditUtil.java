@@ -2,11 +2,12 @@ package dsm.TRADES;
 
 import java.util.Collections;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.util.ECrossReferenceAdapter;
+
+import dsm.TRADES.util.EcoreUtils;
 
 public class EcoreEditUtil {
 
@@ -24,9 +25,7 @@ public class EcoreEditUtil {
 		ECrossReferenceAdapter crossRef = source.eAdapters().stream().filter(e -> e instanceof ECrossReferenceAdapter)
 				.findAny().map(opt -> (ECrossReferenceAdapter) opt).orElse(null);
 		if (crossRef != null) {
-			return crossRef.getInverseReferences(source).stream()//
-					.filter(s -> expectedType.isInstance(s.getEObject()) && s.getEStructuralFeature() == reference)//
-					.map(s -> ((T) s.getEObject())).collect(Collectors.toList());
+			return EcoreUtils.getInverse(source, expectedType, crossRef, reference);
 
 		} else {
 			return Collections.emptyList();

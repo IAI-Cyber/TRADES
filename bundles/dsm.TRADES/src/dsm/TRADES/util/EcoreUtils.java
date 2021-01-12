@@ -1,14 +1,19 @@
 package dsm.TRADES.util;
 
+import java.util.Collections;
+import java.util.List;
 import java.util.Spliterator;
 import java.util.Spliterators;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.util.ECrossReferenceAdapter;
 
 public class EcoreUtils {
 	/**
@@ -97,5 +102,17 @@ public class EcoreUtils {
 		}
 		return Stream.concat(Stream.of(o), StreamSupport
 				.stream(Spliterators.spliteratorUnknownSize(o.eAllContents(), Spliterator.NONNULL), false));
+	}
+
+	public static <T extends EObject> List<T> getInverse(EObject source, Class<T> expectedType,
+			ECrossReferenceAdapter crossRef, EReference reference) {
+		if (crossRef != null) {
+			return crossRef.getInverseReferences(source).stream()//
+					.filter(s -> expectedType.isInstance(s.getEObject()) && s.getEStructuralFeature() == reference)//
+					.map(s -> ((T) s.getEObject())).collect(Collectors.toList());
+
+		} else {
+			return Collections.emptyList();
+		}
 	}
 }
