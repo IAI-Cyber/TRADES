@@ -519,19 +519,23 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool_1:OperationAction" name="DeleteThreatFromModelMenu" label="Delete from model" icon="/TRADES.design/Images/delete.png">
+          <ownedTools xsi:type="tool_1:OperationAction" name="DeleteThreatFromModelMenu" label="Delete from model" precondition="aql:views->any(v | not v.target.oclIsKindOf(TRADES::Threat)) == null" icon="/TRADES.design/Images/delete.png">
             <view name="views"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self">
-                <subModelOperations xsi:type="tool_1:Switch">
-                  <cases conditionExpression="aql:self.oclIsKindOf(TRADES::Threat)">
-                    <subModelOperations xsi:type="tool_1:For" expression="aql:self.threatallocation">
-                      <subModelOperations xsi:type="tool_1:RemoveElement"/>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:views">
+                <subModelOperations xsi:type="tool_1:For" expression="var:views" iteratorName="view">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:view.target">
+                    <subModelOperations xsi:type="tool_1:Switch">
+                      <cases conditionExpression="aql:self.oclIsKindOf(TRADES::Threat)">
+                        <subModelOperations xsi:type="tool_1:For" expression="aql:self.threatallocation">
+                          <subModelOperations xsi:type="tool_1:RemoveElement"/>
+                        </subModelOperations>
+                      </cases>
+                      <default>
+                        <subModelOperations xsi:type="tool_1:RemoveElement"/>
+                      </default>
                     </subModelOperations>
-                  </cases>
-                  <default>
-                    <subModelOperations xsi:type="tool_1:RemoveElement"/>
-                  </default>
+                  </subModelOperations>
                 </subModelOperations>
               </firstModelOperations>
             </initialOperation>
