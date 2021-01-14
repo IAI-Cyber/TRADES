@@ -498,7 +498,9 @@
             <elementView name="elementView"/>
             <containerView name="containerView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:DeleteView"/>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:elementView">
+                <subModelOperations xsi:type="tool_1:DeleteView"/>
+              </firstModelOperations>
             </initialOperation>
           </ownedTools>
           <ownedTools xsi:type="tool_1:OperationAction" name="DeleteThreatFromModelMenu" label="Delete from model" icon="/TRADES.design/Images/delete.png">
