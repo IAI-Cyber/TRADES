@@ -9,7 +9,6 @@ import org.eclipse.emf.common.util.DiagnosticChain;
 
 import dsm.TRADES.AttackChain;
 import dsm.TRADES.DifficultyScore;
-import dsm.TRADES.TRADESPackage;
 import dsm.TRADES.util.TRADESValidator;
 
 public class ThreatAllocationRelationCustomImpl extends ThreatAllocationRelationImpl {
@@ -27,7 +26,7 @@ public class ThreatAllocationRelationCustomImpl extends ThreatAllocationRelation
 						MessageFormat.format(
 								"Linked attack chain defines a difficulty ({0}) which is different from the one defined for this ThreatAllocationRelation ({1})",
 								cmpDiff, diff),
-						new Object[] { this, TRADESPackage.eINSTANCE.getThreatAllocationRelation_Difficultyscore() }));
+						new Object[] { this }));
 				return false;
 			}
 		}

@@ -15,7 +15,6 @@ import org.eclipse.emf.ecore.EObject;
 
 import dsm.TRADES.AttackChainStep;
 import dsm.TRADES.Component;
-import dsm.TRADES.TRADESPackage;
 import dsm.TRADES.ThreatAllocationRelation;
 import dsm.TRADES.util.EcoreUtils;
 import dsm.TRADES.util.TRADESValidator;
@@ -96,7 +95,7 @@ public class AttackChainStepCustomImpl extends AttackChainStepImpl {
 			chain.add(new BasicDiagnostic(Diagnostic.WARNING, TRADESValidator.DIAGNOSTIC_SOURCE,
 					TRADESValidator.ATTACK_CHAIN_STEP__CHECK_ALLOCATION_VALUE,
 					"Each step should be linked a threat allocation relation.",
-					new Object[] { this, TRADESPackage.eINSTANCE.getAttackChainStep_ThreatAllocationRelation() }));
+					new Object[] { this }));
 			return false;
 		} else {
 			EList<ThreatAllocationRelation> threatAllocationRelationCandidates = getThreatAllocationRelationCandidates();
@@ -104,7 +103,7 @@ public class AttackChainStepCustomImpl extends AttackChainStepImpl {
 				chain.add(new BasicDiagnostic(Diagnostic.WARNING, TRADESValidator.DIAGNOSTIC_SOURCE,
 						TRADESValidator.ATTACK_CHAIN_STEP__CHECK_ALLOCATION_VALUE,
 						"The current threat allocation does not belong the possible threat allocations for this step",
-						new Object[] { this, TRADESPackage.eINSTANCE.getAttackChainStep_ThreatAllocationRelation() }));
+						new Object[] { this }));
 				return false;
 			}
 		}
