@@ -40,12 +40,20 @@ public class TRADESValidator extends EObjectValidator {
 	public static final String DIAGNOSTIC_SOURCE = "dsm.TRADES";
 
 	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Check Is Used' of 'Threat'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int THREAT__CHECK_IS_USED = 1;
+
+	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Check Computed Difficulty Constraint' of 'Threat Allocation Relation'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int THREAT_ALLOCATION_RELATION__CHECK_COMPUTED_DIFFICULTY_CONSTRAINT = 1;
+	public static final int THREAT_ALLOCATION_RELATION__CHECK_COMPUTED_DIFFICULTY_CONSTRAINT = 2;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Check Allocation Value' of 'Attack Chain Step'.
@@ -53,7 +61,7 @@ public class TRADESValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ATTACK_CHAIN_STEP__CHECK_ALLOCATION_VALUE = 2;
+	public static final int ATTACK_CHAIN_STEP__CHECK_ALLOCATION_VALUE = 3;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants.
@@ -61,7 +69,7 @@ public class TRADESValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 2;
+	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 3;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants in a derived class.
@@ -178,7 +186,36 @@ public class TRADESValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateThreat(Threat threat, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(threat, diagnostics, context);
+		if (!validate_NoCircularContainment(threat, diagnostics, context))
+			return false;
+		boolean result = validate_EveryMultiplicityConforms(threat, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_EveryDataValueConforms(threat, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_EveryReferenceIsContained(threat, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_EveryBidirectionalReferenceIsPaired(threat, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_EveryProxyResolves(threat, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_UniqueID(threat, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_EveryKeyUnique(threat, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_EveryMapEntryUnique(threat, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validateThreat_checkIsUsed(threat, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * Validates the checkIsUsed constraint of '<em>Threat</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateThreat_checkIsUsed(Threat threat, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return threat.checkIsUsed(diagnostics, context);
 	}
 
 	/**
@@ -387,7 +424,26 @@ public class TRADESValidator extends EObjectValidator {
 	 */
 	public boolean validateExternalThreat(ExternalThreat externalThreat, DiagnosticChain diagnostics,
 			Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(externalThreat, diagnostics, context);
+		if (!validate_NoCircularContainment(externalThreat, diagnostics, context))
+			return false;
+		boolean result = validate_EveryMultiplicityConforms(externalThreat, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_EveryDataValueConforms(externalThreat, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_EveryReferenceIsContained(externalThreat, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_EveryBidirectionalReferenceIsPaired(externalThreat, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_EveryProxyResolves(externalThreat, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_UniqueID(externalThreat, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_EveryKeyUnique(externalThreat, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_EveryMapEntryUnique(externalThreat, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validateThreat_checkIsUsed(externalThreat, diagnostics, context);
+		return result;
 	}
 
 	/**

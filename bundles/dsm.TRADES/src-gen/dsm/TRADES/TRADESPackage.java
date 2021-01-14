@@ -22,6 +22,11 @@ import org.eclipse.emf.ecore.EReference;
  *   <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
+ * <!-- begin-model-doc -->
+ * TRADES model, by Israel Aerospace Industries. All rights reserved.
+ * 
+ * The TRADES model, based on Threat and Risk assessment ontology and the TRADES model-based methodology.
+ * <!-- end-model-doc -->
  * @see dsm.TRADES.TRADESFactory
  * @model kind="package"
  * @generated
@@ -316,13 +321,22 @@ public interface TRADESPackage extends EPackage {
 	int THREAT_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
+	 * The operation id for the '<em>Check Is Used</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THREAT___CHECK_IS_USED__DIAGNOSTICCHAIN_MAP = NAMED_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
 	 * The number of operations of the '<em>Threat</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int THREAT_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
+	int THREAT_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link dsm.TRADES.impl.ComponentImpl <em>Component</em>}' class.
@@ -1256,6 +1270,15 @@ public interface TRADESPackage extends EPackage {
 	int EXTERNAL_THREAT_FEATURE_COUNT = THREAT_FEATURE_COUNT + 2;
 
 	/**
+	 * The operation id for the '<em>Check Is Used</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTERNAL_THREAT___CHECK_IS_USED__DIAGNOSTICCHAIN_MAP = THREAT___CHECK_IS_USED__DIAGNOSTICCHAIN_MAP;
+
+	/**
 	 * The number of operations of the '<em>External Threat</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1798,6 +1821,16 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getThreat_Applicability();
+
+	/**
+	 * Returns the meta object for the '{@link dsm.TRADES.Threat#checkIsUsed(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Check Is Used</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Check Is Used</em>' operation.
+	 * @see dsm.TRADES.Threat#checkIsUsed(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getThreat__CheckIsUsed__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for class '{@link dsm.TRADES.Component <em>Component</em>}'.
@@ -2797,6 +2830,15 @@ public interface TRADESPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute THREAT__APPLICABILITY = eINSTANCE.getThreat_Applicability();
+
+		/**
+		 * The meta object literal for the '<em><b>Check Is Used</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation THREAT___CHECK_IS_USED__DIAGNOSTICCHAIN_MAP = eINSTANCE
+				.getThreat__CheckIsUsed__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '{@link dsm.TRADES.impl.ComponentImpl <em>Component</em>}' class.

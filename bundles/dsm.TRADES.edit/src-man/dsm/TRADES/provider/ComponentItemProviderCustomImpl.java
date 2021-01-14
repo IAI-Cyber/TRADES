@@ -6,10 +6,10 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import dsm.TRADES.AffectRelation;
 import dsm.TRADES.Component;
-import dsm.TRADES.EcoreEditUtil;
 import dsm.TRADES.TRADESPackage;
 import dsm.TRADES.ThreatAllocationRelation;
 import dsm.TRADES.ThreatMitigationRelation;
+import dsm.TRADES.util.EcoreUtils;
 
 public class ComponentItemProviderCustomImpl extends ComponentItemProvider {
 
@@ -35,7 +35,7 @@ public class ComponentItemProviderCustomImpl extends ComponentItemProvider {
 					fireNotifyChanged(new ViewerNotification(notification, rel, false, true));
 					// ThreatMitigation label can use the name of the component so refresh their
 					// label too
-					EcoreEditUtil
+					EcoreUtils
 							.getInverse(rel, ThreatMitigationRelation.class,
 									TRADESPackage.eINSTANCE.getThreatMitigationRelation_Mitigates())
 							.forEach(
@@ -45,7 +45,7 @@ public class ComponentItemProviderCustomImpl extends ComponentItemProvider {
 					fireNotifyChanged(new ViewerNotification(notification, affect, false, true));
 				}
 
-				EcoreEditUtil
+				EcoreUtils
 						.getInverse(new_name, AffectRelation.class,
 								TRADESPackage.eINSTANCE.getAffectRelation_TargetComponent())
 						.forEach(rel -> fireNotifyChanged(new ViewerNotification(notification, rel, false, true)));

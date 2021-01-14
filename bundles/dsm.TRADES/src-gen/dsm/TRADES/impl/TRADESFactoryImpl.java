@@ -160,7 +160,7 @@ public class TRADESFactoryImpl extends EFactoryImpl implements TRADESFactory {
 	 */
 	@Override
 	public Threat createThreat() {
-		ThreatImpl threat = new ThreatImpl();
+		ThreatCustomImpl threat = new ThreatCustomImpl();
 		return threat;
 	}
 

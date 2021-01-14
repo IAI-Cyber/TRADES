@@ -26,7 +26,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class ExternalThreatImpl extends ThreatImpl implements ExternalThreat {
+public class ExternalThreatImpl extends ThreatCustomImpl implements ExternalThreat {
 	/**
 	 * The default value of the '{@link #getSource() <em>Source</em>}' attribute.
 	 * <!-- begin-user-doc -->

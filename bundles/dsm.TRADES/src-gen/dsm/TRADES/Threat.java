@@ -2,6 +2,8 @@
  */
 package dsm.TRADES;
 
+import java.util.Map;
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
 
 /**
@@ -144,5 +146,13 @@ public interface Threat extends NamedElement {
 	 * @generated
 	 */
 	void setApplicability(String value);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	boolean checkIsUsed(DiagnosticChain chain, Map context);
 
 } // Threat
