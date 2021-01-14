@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TRADES:Analysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:TRADES="dsm.TRADES">
+  <threat name="Threat" threatallocation="//@threatallocation.0"/>
+  <threat name="T2" threatallocation="//@threatallocation.1"/>
+  <component name="System" threatallocation="//@threatallocation.0">
+    <component implements="//@component.0/@control.0" name="subsys"/>
+    <component name="Testin" threatallocation="//@threatallocation.1"/>
+    <control implementedBy="//@component.0/@component.0" name="Control"/>
+  </component>
+  <threatallocation name="Threat on System" assessment="Accepted" component="//@component.0" threat="//@threat.0">
+    <attackinfo/>
+    <attackinfo stepNum="1"/>
+    <attackinfo stepNum="2"/>
+    <attackinfo stepNum="3"/>
+  </threatallocation>
+  <threatallocation name="T2 on Testin" component="//@component.0/@component.1" threat="//@threat.1"/>
+  <threatmitigation control="//@component.0/@control.0" mitigates="//@threatallocation.0"/>
+  <scoresystem/>
+</TRADES:Analysis>

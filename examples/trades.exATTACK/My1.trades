@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TRADES:Analysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:TRADES="dsm.TRADES">
+  <threat name="ThreatHigh" threatallocation="//@threatallocation.2"/>
+  <component name="System" threatallocation="//@threatallocation.0 //@threatallocation.1 //@threatallocation.2">
+    <component name="subsystem" threatallocation="//@threatallocation.3 //@threatallocation.4"/>
+  </component>
+  <threatallocation name="Credential Dumping on " component="//@component.0">
+    <threat href="ATTACKdb.trades#//@threat.2"/>
+  </threatallocation>
+  <threatallocation name="Data Compressed on System" component="//@component.0">
+    <threat href="ATTACKdb.trades#//@threat.1"/>
+  </threatallocation>
+  <threatallocation name="ThreatHigh on System" component="//@component.0" threat="//@threat.0"/>
+  <threatallocation name="Data from Local System on subsystem" component="//@component.0/@component.0">
+    <threat href="ATTACKdb.trades#//@threat.4"/>
+  </threatallocation>
+  <threatallocation name="Hooking on subsystem" component="//@component.0/@component.0">
+    <threat href="ATTACKdb.trades#//@threat.178"/>
+  </threatallocation>
+</TRADES:Analysis>

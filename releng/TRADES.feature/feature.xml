@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="TRADES.feature"
+      label="TRADES Tool feature"
+      version="2.5.0.qualifier"
+      provider-name="IAI Cyber Division"
+      plugin="dsm.TRADES.branding">
+
+   <description url="www.iai.co.il">
+      TRADES Tool
+A Threat and Risk Assessment Tool for Systems Design
+By Israel Aersopace Industries\ELTA Cyber Division
+   </description>
+
+   <copyright url="http://www.example.com/copyright">
+      Copyright Israel Aerospace Industries, Eclipse contributors and others 2020. All rights reserved.
+   </copyright>
+
+   <license url="www.iai.co.il">
+      Copyright Israel Aerospace Industries, Eclipse contributors and others 2020. All rights reserved.
+   </license>
+
+   <url>
+      <discovery label="TRADES Tool (GitHub)" url="https://github.com/IAI-Cyber/TRADES"/>
+   </url>
+
+   <requires>
+      <import feature="org.eclipse.gmf.runtime.notation" version="0.0.0" match="greaterOrEqual"/>
+      <import feature="org.eclipse.sirius.runtime" version="0.0.0" match="greaterOrEqual"/>
+      <import feature="org.eclipse.sirius.runtime.ide.ui" version="0.0.0" match="greaterOrEqual"/>
+      <import feature="org.eclipse.sirius.runtime.ide.ui.acceleo" version="0.0.0" match="greaterOrEqual"/>
+      <import plugin="com.google.guava"/>
+      <import plugin="org.eclipse.core.resources"/>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="org.eclipse.emf.edit.ui"/>
+      <import plugin="org.eclipse.emf.transaction"/>
+      <import plugin="org.eclipse.gmf.runtime.common.core" version="1.7.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.gmf.runtime.notation.edit"/>
+      <import plugin="org.eclipse.jdt.core"/>
+      <import plugin="org.eclipse.jface"/>
+      <import plugin="org.eclipse.pde.core"/>
+      <import plugin="org.eclipse.sirius" version="6.0.0" match="compatible"/>
+      <import plugin="org.eclipse.sirius.common" version="6.0.0" match="compatible"/>
+      <import plugin="org.eclipse.sirius.common.ui" version="6.0.0" match="compatible"/>
+      <import plugin="org.eclipse.sirius.diagram" version="6.0.0" match="compatible"/>
+      <import plugin="org.eclipse.sirius.diagram.ui" version="6.0.0" match="compatible"/>
+      <import plugin="org.eclipse.sirius.ecore.extender" version="6.0.0" match="compatible"/>
+      <import plugin="org.eclipse.sirius.ext.base" version="6.0.0" match="compatible"/>
+      <import plugin="org.eclipse.sirius.ui" version="6.0.0" match="compatible"/>
+      <import plugin="org.eclipse.ui"/>
+      <import plugin="org.eclipse.ui.ide"/>
+      <import plugin="org.eclipse.ui.navigator"/>
+      <import plugin="org.eclipse.ui.workbench"/>
+      <import plugin="org.eclipse.eef"/>
+      <import plugin="org.eclipse.eef.common"/>
+      <import plugin="org.eclipse.eef.common.ui"/>
+      <import plugin="org.eclipse.eef.core"/>
+      <import plugin="org.eclipse.eef.core.ext.widgets.reference"/>
+      <import plugin="org.eclipse.eef.ext.widgets.reference"/>
+      <import plugin="org.eclipse.eef.ide"/>
+      <import plugin="org.eclipse.eef.ide.ui"/>
+      <import plugin="org.eclipse.eef.ide.ui.ext.widgets.reference"/>
+      <import plugin="org.eclipse.eef.ide.ui.properties"/>
+      <import plugin="org.eclipse.eef.properties.ui"/>
+      <import plugin="org.eclipse.eef.properties.ui.legacy"/>
+      <import feature="org.eclipse.sirius.properties.feature"/>
+      <import feature="org.eclipse.acceleo.query" version="6.0.8.201902261618"/>
+   </requires>
+
+   <plugin
+         id="TRADES.design"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="dsm.TRADES"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
+
+   <plugin
+         id="dsm.TRADES.edit"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
+
+   <plugin
+         id="dsm.TRADES.editor"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
+
+   <plugin
+         id="dsm.TRADES.branding"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="dsm.TRADES.m2doc"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>

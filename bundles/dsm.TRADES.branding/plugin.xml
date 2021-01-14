@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="org.eclipse.ui.ide.workbench"
+            name="TRADES Tool">
+              <property
+                name="windowImages"
+                value="icons/logo_16.png,icons/logo_32.png,icons/logo_48.png,icons/logo_64.png,icons/logo_128.png">
+          </property>
+              <property
+                    name="preferenceCustomization"
+                    value="plugin_customization.ini">
+              </property>
+              <property
+                    name="appName"
+                    value="TRADES Tool">
+              </property>
+              <property
+                    name="aboutText"
+                    value="TRADES Tool: A modeling workbench for systems security engineering, based on the TRADES methodology. By IAI Cyber Division.">
+              </property>
+              <property
+                    name="aboutImage"
+                    value="icons/logo_128.png">
+              </property>
+      </product>
+   </extension>
+   <extension
+         point="org.eclipse.ui.splashHandlers">
+      <splashHandler
+            class="dsm.trades.branding.SplashHandler"
+            id="dsm.TRADES.branding.splashHandler">
+      </splashHandler>
+      <splashHandlerProductBinding
+            productId="dsm.TRADES.branding.product"
+            splashId="dsm.TRADES.branding.splashHandler">
+      </splashHandlerProductBinding>
+   </extension>
+
+</plugin>

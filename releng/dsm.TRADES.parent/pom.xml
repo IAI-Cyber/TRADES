@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright (c) 2019 Mesuris. All rights reserved. Contributors: Obeo 
+	- initial API and implementation. -->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>TRADES</groupId>
+	<artifactId>TRADES.parent</artifactId>
+	<version>2.5.0-SNAPSHOT</version>
+
+	<packaging>pom</packaging>
+	<name>TRADES Parent</name>
+
+	<properties>
+		<tycho.version>2.1.0</tycho.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<build>
+		<plugins>
+			<!-- All inheriting projects are eclipse projects. -->
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-maven-plugin</artifactId>
+				<extensions>true</extensions>
+			</plugin>
+			<!-- Only for this pom : Publish target and tpd -->
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>build-helper-maven-plugin</artifactId>
+				<inherited>false</inherited>
+				<executions>
+					<execution>
+						<id>attach-artifacts</id>
+						<phase>package</phase>
+						<goals>
+							<goal>attach-artifact</goal>
+						</goals>
+						<configuration>
+							<artifacts>
+								<artifact>
+									<file>tp/target.target</file>
+									<type>target</type>
+									<classifier>target</classifier>
+								</artifact>
+							</artifacts>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+
+		<pluginManagement>
+			<plugins>
+				<!-- Eclipse tycho -->
+				<plugin> <!-- Lifecycle -->
+					<groupId>org.eclipse.tycho</groupId>
+					<artifactId>tycho-maven-plugin</artifactId>
+					<version>${tycho.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.eclipse.tycho</groupId>
+					<artifactId>tycho-source-plugin</artifactId>
+					<version>${tycho.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.eclipse.tycho</groupId>
+					<artifactId>tycho-p2-repository-plugin</artifactId>
+					<version>${tycho.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.eclipse.tycho</groupId>
+					<artifactId>tycho-compiler</artifactId>
+					<version>${tycho.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.eclipse.tycho</groupId>
+					<artifactId>tycho-p2-director-plugin</artifactId>
+					<version>${tycho.version}</version>
+				</plugin>
+
+				<plugin> <!-- Target platform -->
+					<groupId>org.eclipse.tycho</groupId>
+					<artifactId>target-platform-configuration</artifactId>
+					<version>${tycho.version}</version>
+					<configuration>
+						<resolver>p2</resolver>
+						<environments>
+							<environment>
+								<os>win32</os>
+								<ws>win32</ws>
+								<arch>x86_64</arch>
+							</environment>
+							<environment>
+								<os>macosx</os>
+								<ws>cocoa</ws>
+								<arch>x86_64</arch>
+							</environment>
+							<environment><!-- Needed to run test on the integration server which 
+									is under linux -->
+								<os>linux</os>
+								<ws>gtk</ws>
+								<arch>x86_64</arch>
+							</environment>
+						</environments>
+						<target>
+							<artifact>
+								<groupId>TRADES</groupId><!-- self -->
+								<artifactId>TRADES.parent</artifactId><!-- self -->
+								<version>2.5.0-SNAPSHOT</version>
+								<classifier>tp/target</classifier>
+							</artifact>
+						</target>
+						<!-- Required to include JustJ JRE see https://www.eclipse.org/justj/?page=documentation -->
+						<resolveWithExecutionEnvironmentConstraints>false</resolveWithExecutionEnvironmentConstraints>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.codehaus.mojo</groupId>
+					<artifactId>build-helper-maven-plugin</artifactId>
+					<version>3.0.0</version>
+				</plugin>
+			</plugins>
+
+		</pluginManagement>
+	</build>
+
+
+	<modules>
+		<!-- Base plugins -->
+		<module>../../bundles/dsm.TRADES/</module>
+		<module>../../bundles/dsm.TRADES.edit/</module>
+		<module>../../bundles/dsm.TRADES.editor/</module>
+		<module>../../bundles/TRADES.design/</module>
+		<module>../../bundles/dsm.TRADES.m2doc/</module>
+
+		<!-- This plugin holdd all information about the product branding -->
+		<module>../../bundles/dsm.TRADES.branding/</module>
+
+
+		<!-- releng -->
+		<module>../TRADES.feature/</module>
+		<module>../TRADES.update/</module>
+		<module>../TRADES.product/</module>
+
+	</modules>
+
+</project>

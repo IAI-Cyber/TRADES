@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TRADES:Analysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:TRADES="dsm.TRADES">
+  <threat name="Threat" threatallocation="//@threatallocation.0"/>
+  <threat name="NewThreat1" threatallocation="//@threatallocation.2"/>
+  <component name="Comp" threatallocation="//@threatallocation.0 //@threatallocation.1">
+    <component name="subcomp" threatallocation="//@threatallocation.2 //@threatallocation.3">
+      <control name="control2"/>
+    </component>
+    <control name="cont"/>
+  </component>
+  <threatallocation name="Threat on Comp" component="//@component.0" threat="//@threat.0" impactscore="//@scoresystem/@impactscore.2" difficultyscore="//@scoresystem/@difficultyscore.1"/>
+  <threatallocation name="Data from Local System on Comp" assessment="Gap" component="//@component.0" impactscore="//@scoresystem/@impactscore.0" difficultyscore="//@scoresystem/@difficultyscore.0">
+    <threat href="ATTACKdb.trades#//@threat.4"/>
+  </threatallocation>
+  <threatallocation name="NewThreat1 on subcomp" component="//@component.0/@component.0" threat="//@threat.1" impactscore="//@scoresystem/@impactscore.1" difficultyscore="//@scoresystem/@difficultyscore.1"/>
+  <threatallocation name="Data Compressed on subcomp" component="//@component.0/@component.0">
+    <threat href="ATTACKdb.trades#//@threat.1"/>
+  </threatallocation>
+  <threatmitigation control="//@component.0/@control.0" mitigates="//@threatallocation.0"/>
+  <threatmitigation control="//@component.0/@component.0/@control.0" mitigates="//@threatallocation.2"/>
+  <scoresystem>
+    <impactscore name="1" impact="1"/>
+    <impactscore name="2" impact="2"/>
+    <impactscore name="3" impact="3"/>
+    <difficultyscore name="1" difficulty="1"/>
+    <difficultyscore name="2" difficulty="2"/>
+    <difficultyscore name="3" difficulty="3"/>
+  </scoresystem>
+</TRADES:Analysis>

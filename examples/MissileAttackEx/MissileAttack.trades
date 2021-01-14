@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TRADES:Analysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:TRADES="dsm.TRADES" name="Campaign">
+  <threat name="Neutralizing System" threatallocation="//@threatallocation.1"/>
+  <threat name="Blockage"/>
+  <threat name="Blockage"/>
+  <threat name="ThreatHighLevel" threatallocation="//@threatallocation.7"/>
+  <component name="Anti-missile System" threatallocation="//@threatallocation.1 //@threatallocation.5 //@threatallocation.7">
+    <component name="Radar" threatallocation="//@threatallocation.2">
+      <affectrelation sourceComponent="//@component.0/@component.0" targetComponent="//@component.0/@component.1"/>
+    </component>
+    <component name="BMC">
+      <affectrelation sourceComponent="//@component.0/@component.1" targetComponent="//@component.0/@component.3"/>
+    </component>
+    <component name="Missile Launcher" threatallocation="//@threatallocation.3 //@threatallocation.0">
+      <affectrelation sourceComponent="//@component.0/@component.2" targetComponent="//@component.0/@component.4"/>
+    </component>
+    <component name="Datalink" threatallocation="//@threatallocation.4 //@threatallocation.6">
+      <affectrelation sourceComponent="//@component.0/@component.3" targetComponent="//@component.0/@component.2"/>
+    </component>
+    <component name="Missile"/>
+  </component>
+  <threatallocation name="Counterfeit Hardware Component Inserted During Product Assembly on Missile Launcher" component="//@component.0/@component.2">
+    <threat href="CAPEC.trades#//@threat.349"/>
+  </threatallocation>
+  <threatallocation name="Neutralizing System on Anti-missile System" assessment="Gap" component="//@component.0" threat="//@threat.0" impactscore="//@scoresystem/@impactscore.2" difficultyscore="//@scoresystem/@difficultyscore.4">
+    <attackinfo stepNum="1" attackVector="//@threatallocation.0"/>
+    <attackinfo stepNum="2" attackVector="//@threatallocation.2"/>
+    <attackinfo stepNum="3" attackVector="//@threatallocation.3"/>
+    <attackinfo stepNum="4" attackVector="//@threatallocation.4"/>
+  </threatallocation>
+  <threatallocation name="Malware-Directed Internal Reconnaissance on Radar" component="//@component.0/@component.0">
+    <threat href="CAPEC.trades#//@threat.355"/>
+  </threatallocation>
+  <threatallocation name="Targeted Malware on Missile Launcher" component="//@component.0/@component.2">
+    <threat href="CAPEC.trades#//@threat.370"/>
+  </threatallocation>
+  <threatallocation name="Blockage on Datalink" component="//@component.0/@component.3" impactscore="//@scoresystem/@impactscore.0" difficultyscore="//@scoresystem/@difficultyscore.1">
+    <threat href="CAPEC.trades#//@threat.429"/>
+  </threatallocation>
+  <threatallocation name="Clickjacking on Anti-missile System" component="//@component.0">
+    <threat href="CAPEC.trades#//@threat.5"/>
+  </threatallocation>
+  <threatallocation name="DNS Blocking on Datalink" component="//@component.0/@component.3">
+    <threat href="CAPEC.trades#//@threat.414"/>
+  </threatallocation>
+  <threatallocation name="ThreatHighLevel on Anti-missile System" component="//@component.0" threat="//@threat.3" impactscore="//@scoresystem/@impactscore.3" difficultyscore="//@scoresystem/@difficultyscore.0">
+    <attackinfo stepNum="1" attackVector="//@threatallocation.4"/>
+    <attackinfo stepNum="2" attackVector="//@threatallocation.6"/>
+  </threatallocation>
+  <scoresystem>
+    <impactscore name="Low" impact="1"/>
+    <impactscore name="Medium" impact="2"/>
+    <impactscore name="High" impact="3"/>
+    <impactscore name="Critical" impact="4"/>
+    <difficultyscore name="1" difficulty="1"/>
+    <difficultyscore name="2" difficulty="2"/>
+    <difficultyscore name="3" difficulty="3"/>
+    <difficultyscore name="4" difficulty="4"/>
+    <difficultyscore name="5" difficulty="5"/>
+  </scoresystem>
+</TRADES:Analysis>

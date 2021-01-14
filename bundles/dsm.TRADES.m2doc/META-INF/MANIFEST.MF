@@ -1,0 +1,22 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: TRADES M2doc
+Bundle-SymbolicName: dsm.TRADES.m2doc;singleton:=true
+Bundle-Version: 2.5.0.qualifier
+Bundle-Activator: dsm.trades.m2doc.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.obeonetwork.m2doc;bundle-version="3.1.0",
+ org.obeonetwork.m2doc.ide;bundle-version="3.1.0",
+ org.obeonetwork.m2doc.ide.ui;bundle-version="3.1.0",
+ org.obeonetwork.m2doc.sirius;bundle-version="3.1.0",
+ org.obeonetwork.m2doc.sirius.ui;bundle-version="3.1.0",
+ org.eclipse.acceleo.query,
+ dsm.TRADES;bundle-version="2.5.0",
+ org.eclipse.sirius,
+ org.eclipse.core.resources;bundle-version="3.13.700",
+ org.eclipse.emf.transaction;bundle-version="1.9.1",
+ org.apache.poi
+Bundle-RequiredExecutionEnvironment: JavaSE-14
+Automatic-Module-Name: dsm.TRADES.m2doc
+Bundle-ActivationPolicy: lazy

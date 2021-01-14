@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   id="svg12"
+   width="14mm"
+   height="15mm"
+   viewBox="0 0 52.913381 56.692906"
+   sodipodi:docname="ComponentImage.svg"
+   inkscape:export-filename="C:\Users\825901\git\TRADES\bundles\TRADES.design\Images\ContrilIcon.png"
+   inkscape:export-xdpi="31.46488"
+   inkscape:export-ydpi="31.46488"
+   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)">
+  <metadata
+     id="metadata18">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs16" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1680"
+     inkscape:window-height="987"
+     id="namedview14"
+     showgrid="false"
+     inkscape:zoom="3.2666667"
+     inkscape:cx="87.704082"
+     inkscape:cy="46.430861"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g20"
+     inkscape:document-rotation="0"
+     units="mm"
+     width="249mm"
+     inkscape:snap-to-guides="true"
+     inkscape:object-paths="false"
+     inkscape:object-nodes="false" />
+  <g
+     inkscape:groupmode="layer"
+     inkscape:label="Image"
+     id="g20">
+    <rect
+       style="fill:#f9f9f9;stroke:#111106;stroke-width:3.48974;stroke-opacity:1"
+       id="rect13"
+       width="48.377613"
+       height="45.622509"
+       x="2.4438488"
+       y="2.4438491" />
+  </g>
+</svg>

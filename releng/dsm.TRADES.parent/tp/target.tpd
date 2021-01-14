@@ -1,0 +1,72 @@
+target "TRADES"
+
+with requirements,source
+
+location "https://download.eclipse.org/releases/2020-06/" {
+	org.eclipse.platform.sdk lazy
+	org.eclipse.emf lazy
+	org.eclipse.pde.feature.group lazy
+	org.eclipse.rcp.feature.group lazy
+	org.eclipse.osgi.services lazy
+	org.eclipse.equinox.executable.feature.group lazy
+	org.eclipse.equinox.core.feature.feature.group lazy
+	org.eclipse.collections.feature.feature.group lazy
+	
+}
+
+location "https://s3-eu-west-1.amazonaws.com/obeo-m2doc-releases/3.1.1/repository" {
+	org.obeonetwork.m2doc.feature.feature.group lazy
+	org.obeonetwork.m2doc.sirius.feature.feature.group lazy
+	org.obeonetwork.m2doc.ui.feature.feature.group lazy
+	org.eclipse.acceleo.query.feature.group lazy
+	org.apache.poi lazy
+	
+}
+
+location "http://download.eclipse.org/e4/snapshots/org.eclipse.e4.tools/latest/" {
+	org.eclipse.e4.tools.bundle.spy.feature.feature.group lazy
+	org.eclipse.e4.tools.model.spy.feature.feature.group lazy
+	
+}
+
+location "https://www.obeo.fr/download/release/designer/11.3/community/latest/repository" {
+	fr.obeo.dsl.designer.gen.html.feature.feature.group lazy
+}
+
+
+location "https://download.eclipse.org/sirius/updates/releases/6.4.0/2020-06/" {
+	//Sirius
+	org.eclipse.sirius.specifier.feature.group lazy
+	org.eclipse.sirius.properties.feature.feature.group lazy
+	org.eclipse.sirius.runtime.ide.ui.feature.group lazy
+	org.eclipse.sirius.runtime.feature.group lazy
+	org.eclipse.eef.ide lazy
+	org.eclipse.sirius.runtime.ide.ui.acceleo.feature.group lazy
+	
+	org.eclipse.sirius.interpreter.feature.feature.group lazy
+	org.eclipse.sirius.properties.feature.source.feature.group
+	org.eclipse.sirius.runtime.acceleo.feature.group lazy
+	org.eclipse.sirius.runtime.aql.feature.group lazy
+	org.eclipse.sirius.runtime.ide.eef.feature.group lazy
+	org.eclipse.sirius.runtime.ide.ui.acceleo.source.feature.group lazy
+	
+	org.eclipse.sirius.specifier.ide.ui.acceleo.feature.group lazy
+	org.eclipse.sirius.specifier.ide.ui.aql.feature.group lazy
+	org.eclipse.sirius.specifier.ide.ui.feature.group lazy
+	org.eclipse.sirius.specifier.properties.feature.feature.group lazy
+	
+	org.eclipse.sirius.diagram.elk.sdk.feature.feature.group lazy
+}
+
+location  "https://download.eclipse.org/tools/orbit/downloads/drops/R20200529191137/repository" {
+	org.jsoup lazy
+	com.fasterxml.jackson.core.jackson-core lazy
+	com.fasterxml.jackson.core.jackson-databind lazy
+	com.fasterxml.jackson.core.jackson-annotations lazy
+	com.fasterxml.jackson.jaxrs.jackson-jaxrs-json-provider lazy
+}
+
+
+location "https://download.eclipse.org/justj/jres/14/updates/nightly/latest" {
+	org.eclipse.justj.openjdk.hotspot.jre.full.feature.group lazy
+}

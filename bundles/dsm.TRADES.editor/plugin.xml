@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated TRADES -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="dsm.TRADES.presentation.TRADESModelWizardID"
+            name="%_UI_TRADESModelWizard_label"
+            class="dsm.TRADES.presentation.TRADESModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/TRADESModelFile.gif">
+         <description>%_UI_TRADESModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated TRADES -->
+      <editor
+            id="dsm.TRADES.presentation.TRADESEditorID"
+            name="%_UI_TRADESEditor_label"
+            icon="icons/full/obj16/TRADESModelFile.gif"
+            extensions="trades"
+            class="dsm.TRADES.presentation.TRADESEditor"
+            contributorClass="dsm.TRADES.presentation.TRADESActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>
