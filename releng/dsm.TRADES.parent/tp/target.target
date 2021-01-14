@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?pde?>
 <!-- generated with https://github.com/eclipse-cbi/targetplatform-dsl -->
-<target name="TRADES" sequenceNumber="1609858731">
+<target name="TRADES" sequenceNumber="1610449799">
   <locations>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.platform.sdk" version="0.0.0"/>
@@ -19,12 +19,17 @@
       <unit id="org.obeonetwork.m2doc.sirius.feature.feature.group" version="0.0.0"/>
       <unit id="org.obeonetwork.m2doc.ui.feature.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.acceleo.query.feature.group" version="0.0.0"/>
-      <repository location="https://s3-eu-west-1.amazonaws.com/obeo-m2doc-releases/master/nightly/repository"/>
+      <unit id="org.apache.poi" version="0.0.0"/>
+      <repository location="https://s3-eu-west-1.amazonaws.com/obeo-m2doc-releases/3.1.1/repository"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.e4.tools.bundle.spy.feature.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.e4.tools.model.spy.feature.feature.group" version="0.0.0"/>
       <repository location="http://download.eclipse.org/e4/snapshots/org.eclipse.e4.tools/latest/"/>
+    </location>
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
+      <unit id="fr.obeo.dsl.designer.gen.html.feature.feature.group" version="0.0.0"/>
+      <repository location="https://www.obeo.fr/download/release/designer/11.3/community/latest/repository"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.sirius.specifier.feature.group" version="0.0.0"/>

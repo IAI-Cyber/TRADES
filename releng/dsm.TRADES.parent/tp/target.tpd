@@ -14,11 +14,12 @@ location "https://download.eclipse.org/releases/2020-06/" {
 	
 }
 
-location "https://s3-eu-west-1.amazonaws.com/obeo-m2doc-releases/master/nightly/repository" {
+location "https://s3-eu-west-1.amazonaws.com/obeo-m2doc-releases/3.1.1/repository" {
 	org.obeonetwork.m2doc.feature.feature.group lazy
 	org.obeonetwork.m2doc.sirius.feature.feature.group lazy
 	org.obeonetwork.m2doc.ui.feature.feature.group lazy
 	org.eclipse.acceleo.query.feature.group lazy
+	org.apache.poi lazy
 	
 }
 
@@ -26,6 +27,10 @@ location "http://download.eclipse.org/e4/snapshots/org.eclipse.e4.tools/latest/"
 	org.eclipse.e4.tools.bundle.spy.feature.feature.group lazy
 	org.eclipse.e4.tools.model.spy.feature.feature.group lazy
 	
+}
+
+location "https://www.obeo.fr/download/release/designer/11.3/community/latest/repository" {
+	fr.obeo.dsl.designer.gen.html.feature.feature.group lazy
 }
 
 
