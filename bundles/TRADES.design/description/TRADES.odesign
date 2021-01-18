@@ -133,7 +133,7 @@
             </centerLabelStyleDescription>
           </style>
           <conditionnalStyles predicateExpression="aql: self.eGet('assessment')->toString()='Accepted'">
-            <style sizeComputationExpression="2">
+            <style lineStyle="dash" sizeComputationExpression="2">
               <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='green']"/>
               <centerLabelStyleDescription labelSize="12">
                 <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
@@ -141,7 +141,7 @@
             </style>
           </conditionnalStyles>
           <conditionnalStyles predicateExpression="aql: self.eGet('assessment')->toString()='Gap'">
-            <style sizeComputationExpression="2">
+            <style lineStyle="dash" sizeComputationExpression="2">
               <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
               <centerLabelStyleDescription labelSize="12">
                 <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
@@ -173,7 +173,7 @@
             </centerLabelStyleDescription>
           </style>
           <conditionnalStyles predicateExpression="aql: self.eGet('assessment')->toString()='Accepted'">
-            <style sizeComputationExpression="2">
+            <style lineStyle="dash" sizeComputationExpression="2">
               <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='green']"/>
               <centerLabelStyleDescription labelSize="12">
                 <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
@@ -181,7 +181,7 @@
             </style>
           </conditionnalStyles>
           <conditionnalStyles predicateExpression="aql: self.eGet('assessment')->toString()='Gap'">
-            <style sizeComputationExpression="2">
+            <style lineStyle="dash" sizeComputationExpression="2">
               <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
               <centerLabelStyleDescription labelSize="12">
                 <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
