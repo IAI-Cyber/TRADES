@@ -165,7 +165,7 @@ public class TRADESItemProviderAdapterFactory extends TRADESAdapterFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ControlItemProvider controlItemProvider;
+	protected ControlItemProviderCustomImpl controlItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link dsm.TRADES.Control}.
@@ -176,7 +176,7 @@ public class TRADESItemProviderAdapterFactory extends TRADESAdapterFactory
 	@Override
 	public Adapter createControlAdapter() {
 		if (controlItemProvider == null) {
-			controlItemProvider = new ControlItemProvider(this);
+			controlItemProvider = new ControlItemProviderCustomImpl(this);
 		}
 
 		return controlItemProvider;
