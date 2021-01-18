@@ -118,7 +118,7 @@ public class InitCapec implements IApplication {
 		for (int j = 0; j < mitigationsNodes.getLength(); j++) {
 			Element mitigationsNode = (Element) mitigationsNodes.item(j);
 
-			NodeList mitigationNodes = mitigationsNode.getElementsByTagName("CourseOfAction");
+			NodeList mitigationNodes = mitigationsNode.getElementsByTagName("Mitigation");
 			for (int i = 0; i < mitigationNodes.getLength(); i++) {
 				Element mitigatioNode = (Element) mitigationNodes.item(i);
 
