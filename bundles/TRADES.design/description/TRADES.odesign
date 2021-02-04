@@ -1187,6 +1187,7 @@
       <pages name="ScoreSystemPage" labelExpression="Score system" domainClass="TRADES::ScoreSystem" semanticCandidateExpression="aql:Sequence{self,self.eContainer()}" groups="//@extensions.0/@categories.0/@groups.11"/>
       <pages name="AffectPage" label="Affect Page" labelExpression="Affect" domainClass="TRADES::AffectRelation" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.0 //@extensions.0/@categories.0/@groups.12"/>
       <pages name="LinkeThreatAllocationRelation_Page" label="Linked Threat Allocation" labelExpression="Linked allocation" domainClass="TRADES::ThreatAllocationRelation" semanticCandidateExpression="aql:self.threatAllocationRelation" groups="//@extensions.0/@categories.0/@groups.4" indented="true"/>
+      <pages name="DataPage" labelExpression="Data" domainClass="TRADES::Data" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.0"/>
       <groups name="ModelElementGroup" label="Model element" labelExpression="Basic Properties" domainClass="TRADES::NamedElement" semanticCandidateExpression="var:self">
         <controls xsi:type="properties:TextDescription" name="ElementNameFiald" label="Name" labelExpression="Name" helpExpression="Name of the element" isEnabledExpression="aql:not(self.oclIsTypeOf(TRADES::ExternalThreat) or self.oclIsTypeOf(TRADES::ExternalControl) or self.oclIsTypeOf(TRADES::ThreatMitigationRelation)" valueExpression="aql:self.name">
           <initialOperation>
