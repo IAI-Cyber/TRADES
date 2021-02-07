@@ -149,7 +149,7 @@
             </style>
           </conditionnalStyles>
         </edgeMappings>
-        <edgeMappings name="Affect" semanticCandidatesExpression="feature:eAllContents" sourceMapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage']" targetMapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage']" targetFinderExpression="feature:targetComponent" sourceFinderExpression="feature:sourceComponent" targetExpression="var: self" domainClass="TRADES::AffectRelation" useDomainElement="true">
+        <edgeMappings name="Affect" labelDirectEdit="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='AffectEditLabel']" semanticCandidatesExpression="feature:eAllContents" sourceMapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage']" targetMapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage']" targetFinderExpression="feature:targetComponent" sourceFinderExpression="feature:sourceComponent" targetExpression="var: self" domainClass="TRADES::AffectRelation" useDomainElement="true">
           <style sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_blue']"/>
             <centerLabelStyleDescription labelSize="12" showIcon="false" labelExpression="aql:self.dataLabelOnAffect()">
@@ -338,7 +338,7 @@
               </initialOperation>
             </menuItemDescription>
           </ownedTools>
-          <ownedTools xsi:type="tool:DiagramNavigationDescription" name="AttachChainDiagramNavTool_TD" browseExpression="aql:self.attackChains" diagramDescription="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='AttackChainDiagram']">
+          <ownedTools xsi:type="tool:DiagramNavigationDescription" name="AttachChainDiagramNavTool_TD" navigationNameExpression="aql:self.attackChain.name" diagramDescription="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='AttackChainDiagram']">
             <containerViewVariable name="containerView"/>
             <containerVariable name="container"/>
             <representationNameVariable name="diagramName"/>
@@ -389,6 +389,14 @@
                     <subModelOperations xsi:type="tool:Navigation" createIfNotExistent="true" diagramDescription="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='AttackChainDiagram']"/>
                   </subModelOperations>
                 </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="AffectEditLabel">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.editAffectLabel(arg0)">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.printAllVariable()"/>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>

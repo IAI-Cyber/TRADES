@@ -64,7 +64,7 @@ public class ExtThreatServices {
 			analysis.setThreatOwner(threatOwner);
 		}
 
-		String threatSource = source.getSource();
+		//String threatSource = source.getSource();
 
 		threatOwner.getExternals().add(result);
 		return result;

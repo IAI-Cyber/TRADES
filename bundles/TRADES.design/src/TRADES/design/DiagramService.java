@@ -206,5 +206,16 @@ public class DiagramService {
 
 		return label;
 	}
+	
+	public String editAffectLabel(AffectRelation affect, String newLabel) {
+		
+		List<Data> relatedData = availableData(affect);
+		String[] labelData = newLabel.split(",");
+		
+		System.out.print("ppp");
+		
+		
+		return "dd";
+	}
 
 }
