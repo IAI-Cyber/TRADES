@@ -1,20 +1,29 @@
 package dsm.trades.m2doc;
 
+import java.net.URL;
 import java.util.Iterator;
 
+import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
+import org.eclipse.core.runtime.jobs.Job;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.jface.resource.ImageDescriptor;
+import org.eclipse.swt.graphics.Image;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.obeonetwork.m2doc.ide.M2DocPlugin;
 import org.osgi.framework.BundleContext;
+import org.osgi.framework.InvalidSyntaxException;
+import org.osgi.framework.ServiceReference;
 
 import dsm.trades.m2doc.internal.M2DocTemplateRegistry;
 
 /**
  * The activator class controls the plug-in life cycle
  */
-public class Activator extends AbstractUIPlugin {
+public class TradesM2docActivator extends AbstractUIPlugin {
+
+	public static final String DOCX = "docx";
 
 	private static final String TEMPLATES_FOLDER = "/templates";
 
@@ -22,14 +31,14 @@ public class Activator extends AbstractUIPlugin {
 	public static final String PLUGIN_ID = "dsm.TRADES.m2doc"; //$NON-NLS-1$
 
 	// The shared instance
-	private static Activator plugin;
+	private static TradesM2docActivator plugin;
 
 	private IM2DocTemplateRegistry templateRegistry;
 
 	/**
 	 * The constructor
 	 */
-	public Activator() {
+	public TradesM2docActivator() {
 	}
 
 	@Override
@@ -42,15 +51,34 @@ public class Activator extends AbstractUIPlugin {
 		Iterator<String> ite = plugin.getBundle().getEntryPaths(TEMPLATES_FOLDER).asIterator();
 		while (ite.hasNext()) {
 			String entry = ite.next();
-			if (entry.endsWith("docx") && !entry.startsWith("~")) {
+			if (entry.endsWith(DOCX) && !entry.startsWith("~")) {
 				URI uri = URI.createPlatformPluginURI("/" + PLUGIN_ID + "/" + entry, true);
 				templateRegistry.addTemplate(uri, entry.substring(TEMPLATES_FOLDER.length(), entry.length() - 5));
 			}
 
 		}
 
+		Job.create("Init TRADES external template provider", monitor -> {
+			try {
+				@SuppressWarnings("unchecked")
+				ServiceReference<IM2docTemplateRegistryConfigurator>[] providerRefs = (ServiceReference<IM2docTemplateRegistryConfigurator>[]) context
+						.getServiceReferences(IM2docTemplateRegistryConfigurator.class.getCanonicalName(), null);
+				if (providerRefs != null) {
+					for (ServiceReference<IM2docTemplateRegistryConfigurator> ref : providerRefs) {
+						IM2docTemplateRegistryConfigurator tmpProvider = context.getService(ref);
+						tmpProvider.configure(templateRegistry);
+						context.ungetService(ref);
+					}
+				}
+			} catch (InvalidSyntaxException e) {
+				TradesM2docActivator.logError("Error during registration of external templates", e);
+
+			}
+		}).schedule();
+
 		// Force the plugin to start and read extension (and add external service)
 		M2DocPlugin.getDefault();
+
 	}
 
 	@Override
@@ -68,7 +96,7 @@ public class Activator extends AbstractUIPlugin {
 	 *
 	 * @return the shared instance
 	 */
-	public static Activator getDefault() {
+	public static TradesM2docActivator getDefault() {
 		return plugin;
 	}
 
@@ -130,6 +158,19 @@ public class Activator extends AbstractUIPlugin {
 			System.err.println(message);
 			e.printStackTrace();
 		}
+	}
+
+	public Image getImage(String path) {
+		Image img = getImageRegistry().get(path);
+		if (img == null) {
+
+			URL url = FileLocator.find(getBundle(), new org.eclipse.core.runtime.Path(path), null);
+			if (url != null) {
+				getImageRegistry().put(path, ImageDescriptor.createFromURL(url));
+				img = getImageRegistry().get(path);
+			}
+		}
+		return img;
 	}
 
 	private void doLogError(String string, Throwable e) {

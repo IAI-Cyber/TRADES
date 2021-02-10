@@ -7,7 +7,7 @@
     <eAnnotations xmi:type="description:DAnnotationEntry" uid="_3xruUBk0Eeu_b_FWDsJtqQ" source="FIRST_SESSION_OPENNING_PERFORMED"/>
     <ownedViews xmi:type="viewpoint:DView" uid="_D9XOQPWAEemZc42BBVcGEg">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_D_zeQPWAEemZc42BBVcGEg" name="TRADES" repPath="#_D9-5UPWAEemZc42BBVcGEg" changeId="eca81252-4d96-4038-a4b3-f84e982ff07c">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_D_zeQPWAEemZc42BBVcGEg" name="TRADES" repPath="#_D9-5UPWAEemZc42BBVcGEg" changeId="9807fcfe-4fe7-44c2-9b2c-4b2f19b88228">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="TRADES.ecore#/"/>
       </ownedRepresentationDescriptors>
@@ -119,6 +119,10 @@
             <children xmi:type="notation:Node" xmi:id="_Ip1ZkCgPEeuNv5MVaTdRBg" type="3010" element="_IpbJ4SgPEeuNv5MVaTdRBg">
               <styles xmi:type="notation:FontStyle" xmi:id="_Ip1ZkSgPEeuNv5MVaTdRBg" fontName="Segoe UI" fontHeight="8"/>
               <layoutConstraint xmi:type="notation:Location" xmi:id="_Ip1ZkigPEeuNv5MVaTdRBg"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_GLZ88GCyEeuFiI0DobwdiA" type="3010" element="_GKtZYGCyEeuFiI0DobwdiA">
+              <styles xmi:type="notation:FontStyle" xmi:id="_GLZ88WCyEeuFiI0DobwdiA" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_GLZ88mCyEeuFiI0DobwdiA"/>
             </children>
             <styles xmi:type="notation:SortingStyle" xmi:id="_GEwYkvWAEemZc42BBVcGEg"/>
             <styles xmi:type="notation:FilteringStyle" xmi:id="_GEwYk_WAEemZc42BBVcGEg"/>
@@ -810,7 +814,7 @@
         </edges>
       </data>
     </ownedAnnotationEntries>
-    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_GEq5APWAEemZc42BBVcGEg" name="Threat" tooltipText="" outgoingEdges="_Uw1ygPWAEemZc42BBVcGEg _fHB8svZkEemZc42BBVcGEg" incomingEdges="_Pt_js_WAEemZc42BBVcGEg _9JVEgPiGEemZc42BBVcGEg _DYq12TX3Eeqv7vqZKuce8w" width="12" height="10">
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_GEq5APWAEemZc42BBVcGEg" name="Threat" tooltipText="&#xA;WARNING : The generic type associated with the 'EMap' classifier should have 2 type argument(s) to match the number of type parameter(s) of the classifier " outgoingEdges="_Uw1ygPWAEemZc42BBVcGEg _fHB8svZkEemZc42BBVcGEg" incomingEdges="_Pt_js_WAEemZc42BBVcGEg _9JVEgPiGEemZc42BBVcGEg _DYq12TX3Eeqv7vqZKuce8w" width="12" height="10">
       <target xmi:type="ecore:EClass" href="TRADES.ecore#//Threat"/>
       <semanticElements xmi:type="ecore:EClass" href="TRADES.ecore#//Threat"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
@@ -851,6 +855,16 @@
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_GKtZYGCyEeuFiI0DobwdiA" name="checkIsUsed(chain EDiagnosticChain, context EMap) : EBoolean" tooltipText="checkIsUsed(chain, context) : EBoolean">
+        <target xmi:type="ecore:EOperation" href="TRADES.ecore#//Threat/checkIsUsed"/>
+        <semanticElements xmi:type="ecore:EOperation" href="TRADES.ecore#//Threat/checkIsUsed"/>
+        <semanticElements xmi:type="ecore:EParameter" href="TRADES.ecore#//Threat/checkIsUsed/chain"/>
+        <semanticElements xmi:type="ecore:EParameter" href="TRADES.ecore#//Threat/checkIsUsed/context"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_GKungGCyEeuFiI0DobwdiA" labelAlignment="LEFT">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='Operation']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='Operation']"/>
       </ownedElements>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_GxSHYPWAEemZc42BBVcGEg" name="Component" tooltipText="" outgoingEdges="_imFEBvWAEemZc42BBVcGEg _ZxZ7zPZkEemZc42BBVcGEg _l5cyAPi4EemZc42BBVcGEg _DYq12TX3Eeqv7vqZKuce8w _7fjcUCpNEeuh44JT6bu1tg" incomingEdges="_Uw1ygPWAEemZc42BBVcGEg _-Q4n-viZEemZc42BBVcGEg _EDJhe_iaEemZc42BBVcGEg" width="12" height="10">
