@@ -140,6 +140,7 @@
 
 
 		<!-- releng -->
+		<module>../dsm.TRADES.branding.feature/</module>
 		<module>../TRADES.feature/</module>
 		<module>../TRADES.update/</module>
 		<module>../TRADES.product/</module>

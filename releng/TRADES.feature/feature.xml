@@ -3,8 +3,7 @@
       id="TRADES.feature"
       label="TRADES Tool feature"
       version="2.5.0.qualifier"
-      provider-name="IAI Cyber Division"
-      plugin="dsm.TRADES.branding">
+      provider-name="IAI Cyber Division">
 
    <description url="www.iai.co.il">
       TRADES Tool
