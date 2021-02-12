@@ -134,6 +134,7 @@
 		<module>../../bundles/dsm.TRADES.editor/</module>
 		<module>../../bundles/TRADES.design/</module>
 		<module>../../bundles/dsm.TRADES.m2doc/</module>
+		<module>../../bundles/dsm.TRADES.rcp/</module>
 
 		<!-- This plugin holdd all information about the product branding -->
 		<module>../../bundles/dsm.TRADES.branding/</module>
