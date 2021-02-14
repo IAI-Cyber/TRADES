@@ -82,7 +82,7 @@ public interface ThreatMitigationRelation extends EObject {
 	 * @return the value of the '<em>Threat</em>' reference.
 	 * @see #setThreat(Threat)
 	 * @see dsm.TRADES.TRADESPackage#getThreatMitigationRelation_Threat()
-	 * @model required="true"
+	 * @model
 	 * @generated
 	 */
 	Threat getThreat();

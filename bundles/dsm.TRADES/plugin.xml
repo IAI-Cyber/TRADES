@@ -14,6 +14,13 @@
             genModel="model/TRADES.genmodel"/>
    </extension>
 
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated TRADES -->
+      <parser
+            type="trades"
+            class="dsm.TRADES.util.TRADESResourceFactoryImpl"/>
+   </extension>
+
 
    <extension point="org.eclipse.emf.ecore.extension_parser">
       <!-- @generated not TRADES -->

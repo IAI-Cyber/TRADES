@@ -81,8 +81,7 @@
         eType="#//AssessmentENUM" defaultValueLiteral="Undecided"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="control" lowerBound="1"
         eType="#//Control" eOpposite="#//Control/mitigationrRelations"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="threat" lowerBound="1"
-        eType="#//Threat"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="threat" eType="#//Threat"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="mitigates" eType="#//ThreatAllocationRelation"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
@@ -190,5 +189,27 @@
   <eClassifiers xsi:type="ecore:EClass" name="DataOwner">
     <eStructuralFeatures xsi:type="ecore:EReference" name="data" upperBound="-1" eType="#//Data"
         containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="metadata">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Provides information about the publication and availability of the containing document.&#xD;&#xA;&#xD;&#xA;This element appears inside catalog."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="A name given to the document, which may be used by a tool for display and navigation"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="published" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The date and time the document was published. The date-time value must be formatted according to RFC 3339 with full time and time zone included."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="version" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="A string used to distinguish the current version of the document from other previous (and future) versions."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="oscalVersion" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral="1.0.0-rc1"/>
   </eClassifiers>
 </ecore:EPackage>

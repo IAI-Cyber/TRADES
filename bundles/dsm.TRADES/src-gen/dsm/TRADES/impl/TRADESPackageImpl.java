@@ -31,6 +31,7 @@ import dsm.TRADES.Threat;
 import dsm.TRADES.ThreatAllocationRelation;
 import dsm.TRADES.ThreatMitigationRelation;
 import dsm.TRADES.ThreatsOwner;
+import dsm.TRADES.metadata;
 import dsm.TRADES.threatTypeENUM;
 
 import dsm.TRADES.util.TRADESValidator;
@@ -219,6 +220,13 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * @generated
 	 */
 	private EClass dataOwnerEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass metadataEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1236,6 +1244,56 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * @generated
 	 */
 	@Override
+	public EClass getmetadata() {
+		return metadataEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getmetadata_Title() {
+		return (EAttribute) metadataEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getmetadata_Published() {
+		return (EAttribute) metadataEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getmetadata_Version() {
+		return (EAttribute) metadataEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getmetadata_OscalVersion() {
+		return (EAttribute) metadataEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EEnum getAssessmentENUM() {
 		return assessmentENUMEEnum;
 	}
@@ -1416,6 +1474,12 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		dataOwnerEClass = createEClass(DATA_OWNER);
 		createEReference(dataOwnerEClass, DATA_OWNER__DATA);
 
+		metadataEClass = createEClass(METADATA);
+		createEAttribute(metadataEClass, METADATA__TITLE);
+		createEAttribute(metadataEClass, METADATA__PUBLISHED);
+		createEAttribute(metadataEClass, METADATA__VERSION);
+		createEAttribute(metadataEClass, METADATA__OSCAL_VERSION);
+
 		// Create enums
 		assessmentENUMEEnum = createEEnum(ASSESSMENT_ENUM);
 		affectedENUMEEnum = createEEnum(AFFECTED_ENUM);
@@ -1586,7 +1650,7 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		initEReference(getThreatMitigationRelation_Control(), this.getControl(), this.getControl_MitigationrRelations(),
 				"control", null, 1, 1, ThreatMitigationRelation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
 				!IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getThreatMitigationRelation_Threat(), this.getThreat(), null, "threat", null, 1, 1,
+		initEReference(getThreatMitigationRelation_Threat(), this.getThreat(), null, "threat", null, 0, 1,
 				ThreatMitigationRelation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
 				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getThreatMitigationRelation_Mitigates(), this.getThreatAllocationRelation(), null, "mitigates",
@@ -1747,6 +1811,18 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		initEReference(getDataOwner_Data(), this.getData(), null, "data", null, 0, -1, DataOwner.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
+
+		initEClass(metadataEClass, metadata.class, "metadata", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getmetadata_Title(), ecorePackage.getEString(), "title", null, 0, 1, metadata.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getmetadata_Published(), ecorePackage.getEDate(), "published", null, 0, 1, metadata.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getmetadata_Version(), ecorePackage.getEString(), "version", null, 0, 1, metadata.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getmetadata_OscalVersion(), ecorePackage.getEString(), "oscalVersion", "1.0.0-rc1", 0, 1,
+				metadata.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(assessmentENUMEEnum, AssessmentENUM.class, "AssessmentENUM");
