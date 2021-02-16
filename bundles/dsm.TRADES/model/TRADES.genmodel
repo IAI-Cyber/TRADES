@@ -146,11 +146,5 @@
     <genClasses ecoreClass="TRADES.ecore#//DataOwner">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//DataOwner/data"/>
     </genClasses>
-    <genClasses ecoreClass="TRADES.ecore#//metadata">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//metadata/title"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//metadata/published"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//metadata/version"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//metadata/oscalVersion"/>
-    </genClasses>
   </genPackages>
 </genmodel:GenModel>
