@@ -1165,6 +1165,128 @@
         </toolSections>
       </additionalLayers>
     </ownedRepresentations>
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="DataByComponentDiagram" label="Datas structure" initialisation="true" domainClass="TRADES::Analysis" enablePopupBars="true">
+      <layout xsi:type="description_1:CustomLayoutConfiguration" id="org.eclipse.elk.layered" label="ELK Layered" description="Layer-based algorithm provided by the Eclipse Layout Kernel. Arranges as many edges as possible into one direction by placing nodes into subsequent layers. This implementation supports different routing styles (straight, orthogonal, splines); if orthogonal routing is selected, arbitrary port constraints are respected, thus enabling the layout of block diagrams such as actor-oriented models or circuit schematics. Furthermore, full layout of compound graphs with cross-hierarchy edges is supported when the respective option is activated on the top level.">
+        <layoutOptions xsi:type="description_1:DoubleLayoutOption" id="org.eclipse.elk.spacing.edgeNode" value="50.0">
+          <targets>PARENT</targets>
+        </layoutOptions>
+        <layoutOptions xsi:type="description_1:DoubleLayoutOption" id="org.eclipse.elk.spacing.edgeEdge" value="50.0">
+          <targets>PARENT</targets>
+        </layoutOptions>
+        <layoutOptions xsi:type="description_1:EnumLayoutOption" id="org.eclipse.elk.hierarchyHandling">
+          <targets>NODE</targets>
+          <targets>PARENT</targets>
+          <value name="SEPARATE_CHILDREN"/>
+        </layoutOptions>
+        <layoutOptions xsi:type="description_1:DoubleLayoutOption" id="org.eclipse.elk.layered.spacing.nodeNodeBetweenLayers" value="75.0">
+          <targets>PARENT</targets>
+        </layoutOptions>
+        <layoutOptions xsi:type="description_1:DoubleLayoutOption" id="org.eclipse.elk.spacing.nodeNode" value="50.0">
+          <targets>PARENT</targets>
+        </layoutOptions>
+        <layoutOptions xsi:type="description_1:DoubleLayoutOption" id="org.eclipse.elk.spacing.portPort">
+          <targets>PARENT</targets>
+          <targets>NODE</targets>
+        </layoutOptions>
+        <layoutOptions xsi:type="description_1:DoubleLayoutOption" id="org.eclipse.elk.spacing.nodeSelfLoop">
+          <targets>PARENT</targets>
+        </layoutOptions>
+        <layoutOptions xsi:type="description_1:DoubleLayoutOption" id="org.eclipse.elk.layered.spacing.edgeNodeBetweenLayers">
+          <targets>PARENT</targets>
+        </layoutOptions>
+        <layoutOptions xsi:type="description_1:DoubleLayoutOption" id="org.eclipse.elk.spacing.componentComponent">
+          <targets>PARENT</targets>
+        </layoutOptions>
+        <layoutOptions xsi:type="description_1:DoubleLayoutOption" id="org.eclipse.elk.spacing.labelLabel">
+          <targets>PARENT</targets>
+        </layoutOptions>
+        <layoutOptions xsi:type="description_1:EnumLayoutOption" id="org.eclipse.elk.edgeRouting">
+          <targets>PARENT</targets>
+          <value name="ORTHOGONAL"/>
+        </layoutOptions>
+        <layoutOptions xsi:type="description_1:EnumLayoutOption" id="org.eclipse.elk.direction">
+          <targets>PARENT</targets>
+          <value name="DOWN"/>
+        </layoutOptions>
+        <layoutOptions xsi:type="description_1:EnumLayoutOption" id="org.eclipse.elk.layered.layering.strategy">
+          <targets>PARENT</targets>
+          <value name="INTERACTIVE"/>
+        </layoutOptions>
+        <layoutOptions xsi:type="description_1:EnumLayoutOption" id="org.eclipse.elk.layered.nodePlacement.strategy">
+          <targets>PARENT</targets>
+          <value name="LINEAR_SEGMENTS"/>
+        </layoutOptions>
+      </layout>
+      <defaultLayer name="Default">
+        <edgeMappings name="Children_DCD" sourceMapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='DataByComponentDiagram']/@defaultLayer/@containerMappings[name='DataOwnerElement_DCD']" targetMapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='DataByComponentDiagram']/@defaultLayer/@containerMappings[name='DataOwnerElement_DCD']" targetFinderExpression="aql:self.component">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <containerMappings name="DataOwnerElement_DCD" semanticCandidatesExpression="aql:self.getDataOwnerElements()" domainClass="TRADES::DataOwnerElement" dropDescriptions="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='DataByComponentDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='DataDNDTool_DCD']" childrenPresentation="List">
+          <subNodeMappings name="Data" labelDirectEdit="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='DataByComponentDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='RenameDataTool_DCD']" semanticCandidatesExpression="aql:self.getDatas()" domainClass="TRADES::Data">
+            <style xsi:type="style:BundledImageDescription" labelSize="12" labelPosition="node" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </subNodeMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12" widthComputationExpression="15" heightComputationExpression="15" backgroundStyle="GradientTopToBottom" backgroundColor="//@userColorsPalettes[name='Colors']/@entries[name='ComponetBGColor']" foregroundColor="//@userColorsPalettes[name='Colors']/@entries[name='ComponetBGColor']">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelFormat>bold</labelFormat>
+            <labelFormat>underline</labelFormat>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+          <conditionnalStyles predicateExpression="aql:self.oclIsTypeOf(TRADES::Analysis)">
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_blue']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_blue']"/>
+            </style>
+          </conditionnalStyles>
+        </containerMappings>
+        <toolSections name="DCDTools">
+          <ownedTools xsi:type="tool:DirectEditLabel" name="RenameDataTool_DCD">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerDropDescription" name="DataDNDTool_DCD" mappings="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='DataByComponentDiagram']/@defaultLayer/@containerMappings[name='DataOwnerElement_DCD']/@subNodeMappings[name='Data']">
+            <oldContainer name="oldSemanticContainer"/>
+            <newContainer name="newSemanticContainer"/>
+            <element name="element"/>
+            <newViewContainer name="newContainerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:element.moveData(newSemanticContainer)"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="DataCreationTool_DCD" nodeMappings="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='DataByComponentDiagram']/@defaultLayer/@containerMappings[name='DataOwnerElement_DCD']/@subNodeMappings[name='Data']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.createData()"/>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+      </defaultLayer>
+      <additionalLayers name="AvailableData_DCD" label="Available Data">
+        <containerMappings xsi:type="description_1:ContainerMappingImport" reusedNodeMappings="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='DataByComponentDiagram']/@defaultLayer/@containerMappings[name='DataOwnerElement_DCD']/@subNodeMappings[name='Data']" childrenPresentation="List" importedMapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='DataByComponentDiagram']/@defaultLayer/@containerMappings[name='DataOwnerElement_DCD']">
+          <subNodeMappings name="InheritedData" semanticCandidatesExpression="aql:self.getInheritedData()" domainClass="TRADES::Data">
+            <style xsi:type="style:BundledImageDescription" labelSize="12" labelExpression="aql:'/'+self.name" labelPosition="node" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelFormat>underline</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_blue']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </subNodeMappings>
+        </containerMappings>
+      </additionalLayers>
+    </ownedRepresentations>
     <ownedJavaExtensions qualifiedClassName="TRADES.design.Services"/>
     <ownedJavaExtensions qualifiedClassName="TRADES.design.DiagramService"/>
     <ownedJavaExtensions qualifiedClassName="TRADES.design.ExtThreatServices"/>

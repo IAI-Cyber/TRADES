@@ -21,6 +21,7 @@ import dsm.TRADES.AbstractControlOwner;
 import dsm.TRADES.Analysis;
 import dsm.TRADES.AttackChain;
 import dsm.TRADES.Component;
+import dsm.TRADES.ComponentOwner;
 import dsm.TRADES.Control;
 import dsm.TRADES.ControlOwner;
 import dsm.TRADES.Data;
@@ -96,6 +97,54 @@ public class SemanticService {
 			}
 		}
 
+	}
+
+	/**
+	 * Gets all the element that can contain data
+	 * 
+	 * @param analysis the root analysis
+	 * @return a list of container
+	 */
+	public List<DataOwnerElement> getDataOwnerElements(Analysis analysis) {
+		List<DataOwnerElement> results = new ArrayList<>();
+		results.add(analysis);
+		getSubDataOwners(analysis, results);
+		return results;
+
+	}
+
+	private void getSubDataOwners(ComponentOwner o, List<DataOwnerElement> collector) {
+		for (Component sub : o.getComponent()) {
+			collector.add(sub);
+			getSubDataOwners(sub, collector);
+		}
+	}
+
+	public List<Data> getInheritedData(DataOwnerElement owner) {
+		List<Data> results = new ArrayList<>();
+		collectData(owner.eContainer(), results);
+		return results;
+	}
+
+	public void collectData(EObject object, List<Data> collector) {
+		if (object == null) {
+			return;
+		}
+		if (object instanceof DataOwnerElement) {
+			collector.addAll(((DataOwnerElement) object).getDatas());
+		}
+
+		collectData(object.eContainer(), collector);
+
+	}
+
+	public void moveData(Data toMove, DataOwnerElement owner) {
+		DataOwner dataOwner = owner.getDataOwner();
+		if (dataOwner == null) {
+			dataOwner = TRADESFactory.eINSTANCE.createDataOwner();
+			owner.setDataOwner(dataOwner);
+		}
+		dataOwner.getData().add(toMove);
 	}
 
 	public void createInternalControl(AbstractControlOwner cmp) {

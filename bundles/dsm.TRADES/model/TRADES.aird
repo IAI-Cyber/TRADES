@@ -27,7 +27,7 @@
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="TRADES.ecore#/"/>
       </ownedRepresentationDescriptors>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_wPiZQC8yEeuVmdV6Ldl59Q" name="Hierarchy" repPath="#_wPO3QC8yEeuVmdV6Ldl59Q" changeId="0842cf1b-7e69-4cdc-879a-94a3f0c0d9e2">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_wPiZQC8yEeuVmdV6Ldl59Q" name="Hierarchy" repPath="#_wPO3QC8yEeuVmdV6Ldl59Q" changeId="b01dd5b2-bfd7-47d4-af7f-2ae7b5d7b9c0">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="TRADES.ecore#/"/>
       </ownedRepresentationDescriptors>
@@ -3877,6 +3877,10 @@
               <styles xmi:type="notation:FontStyle" xmi:id="_MDUUkU50EeuYA9FUWcOTWw" fontName="Segoe UI" fontHeight="8" bold="true"/>
               <layoutConstraint xmi:type="notation:Location" xmi:id="_MDUUkk50EeuYA9FUWcOTWw"/>
             </children>
+            <children xmi:type="notation:Node" xmi:id="_QSbbAHHvEeu0msLdGgrtCg" type="3010" element="_QSCZcHHvEeu0msLdGgrtCg">
+              <styles xmi:type="notation:FontStyle" xmi:id="_QSbbAXHvEeu0msLdGgrtCg" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_QSbbAnHvEeu0msLdGgrtCg"/>
+            </children>
             <styles xmi:type="notation:SortingStyle" xmi:id="_x2YbQi8yEeuVmdV6Ldl59Q"/>
             <styles xmi:type="notation:FilteringStyle" xmi:id="_x2YbQy8yEeuVmdV6Ldl59Q"/>
           </children>
@@ -4165,6 +4169,14 @@
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_QSCZcHHvEeu0msLdGgrtCg" name="getDatas() : Data" tooltipText="getDatas() : Data">
+        <target xmi:type="ecore:EOperation" href="TRADES.ecore#//DataOwnerElement/getDatas"/>
+        <semanticElements xmi:type="ecore:EOperation" href="TRADES.ecore#//DataOwnerElement/getDatas"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_QSDnkHHvEeu0msLdGgrtCg" labelAlignment="LEFT">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='Operation']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='Operation']"/>
       </ownedElements>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_yM8hIC8yEeuVmdV6Ldl59Q" name="ComponentOwner" tooltipText="" outgoingEdges="_3JqSwC8yEeuVmdV6Ldl59Q" incomingEdges="_-YLH4C8yEeuVmdV6Ldl59Q _-os3MC8yEeuVmdV6Ldl59Q" width="12" height="10">

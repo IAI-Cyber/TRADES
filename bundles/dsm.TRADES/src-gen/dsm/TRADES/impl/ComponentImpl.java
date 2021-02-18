@@ -8,6 +8,7 @@ import dsm.TRADES.Analysis;
 import dsm.TRADES.Component;
 import dsm.TRADES.Control;
 import dsm.TRADES.ControlOwner;
+import dsm.TRADES.Data;
 import dsm.TRADES.DataOwner;
 import dsm.TRADES.DataOwnerElement;
 import dsm.TRADES.NamedElement;
@@ -402,6 +403,18 @@ public class ComponentImpl extends ComponentOwnerImpl implements Component {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public EList<Data> getDatas() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -667,6 +680,8 @@ public class ComponentImpl extends ComponentOwnerImpl implements Component {
 	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
 		if (baseClass == DataOwnerElement.class) {
 			switch (baseOperationID) {
+			case TRADESPackage.DATA_OWNER_ELEMENT___GET_DATAS:
+				return TRADESPackage.COMPONENT___GET_DATAS;
 			default:
 				return -1;
 			}
@@ -698,6 +713,8 @@ public class ComponentImpl extends ComponentOwnerImpl implements Component {
 		switch (operationID) {
 		case TRADESPackage.COMPONENT___GET_ALL_CONTROLS:
 			return getAllControls();
+		case TRADESPackage.COMPONENT___GET_DATAS:
+			return getDatas();
 		}
 		return super.eInvoke(operationID, arguments);
 	}

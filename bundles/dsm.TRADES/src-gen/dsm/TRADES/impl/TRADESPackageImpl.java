@@ -996,6 +996,16 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * @generated
 	 */
 	@Override
+	public EOperation getDataOwnerElement__GetDatas() {
+		return dataOwnerElementEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getComponentOwner() {
 		return componentOwnerEClass;
 	}
@@ -1381,6 +1391,7 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 
 		dataOwnerElementEClass = createEClass(DATA_OWNER_ELEMENT);
 		createEReference(dataOwnerElementEClass, DATA_OWNER_ELEMENT__DATA_OWNER);
+		createEOperation(dataOwnerElementEClass, DATA_OWNER_ELEMENT___GET_DATAS);
 
 		componentOwnerEClass = createEClass(COMPONENT_OWNER);
 		createEReference(componentOwnerEClass, COMPONENT_OWNER__COMPONENT);
@@ -1677,6 +1688,8 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		initEReference(getDataOwnerElement_DataOwner(), this.getDataOwner(), null, "dataOwner", null, 0, 1,
 				DataOwnerElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEOperation(getDataOwnerElement__GetDatas(), this.getData(), "getDatas", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(componentOwnerEClass, ComponentOwner.class, "ComponentOwner", IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);

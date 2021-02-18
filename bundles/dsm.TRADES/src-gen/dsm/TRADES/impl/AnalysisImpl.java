@@ -7,6 +7,7 @@ import dsm.TRADES.AffectRelation;
 import dsm.TRADES.Analysis;
 import dsm.TRADES.Control;
 import dsm.TRADES.ControlOwner;
+import dsm.TRADES.Data;
 import dsm.TRADES.DataOwner;
 import dsm.TRADES.DataOwnerElement;
 import dsm.TRADES.NamedElement;
@@ -402,6 +403,18 @@ public class AnalysisImpl extends ComponentOwnerImpl implements Analysis {
 	 * @generated
 	 */
 	@Override
+	public EList<Data> getDatas() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case TRADESPackage.ANALYSIS__DATA_OWNER:
@@ -605,6 +618,8 @@ public class AnalysisImpl extends ComponentOwnerImpl implements Analysis {
 	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
 		if (baseClass == DataOwnerElement.class) {
 			switch (baseOperationID) {
+			case TRADESPackage.DATA_OWNER_ELEMENT___GET_DATAS:
+				return TRADESPackage.ANALYSIS___GET_DATAS;
 			default:
 				return -1;
 			}
@@ -636,6 +651,8 @@ public class AnalysisImpl extends ComponentOwnerImpl implements Analysis {
 		switch (operationID) {
 		case TRADESPackage.ANALYSIS___GET_ALL_CONTROLS:
 			return getAllControls();
+		case TRADESPackage.ANALYSIS___GET_DATAS:
+			return getDatas();
 		}
 		return super.eInvoke(operationID, arguments);
 	}
