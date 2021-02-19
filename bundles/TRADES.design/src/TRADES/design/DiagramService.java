@@ -7,8 +7,11 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
+import java.util.stream.Collectors;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.sirius.diagram.DSemanticDiagram;
 import org.eclipse.sirius.viewpoint.DRepresentationElement;
@@ -21,8 +24,6 @@ import dsm.TRADES.Component;
 import dsm.TRADES.ComponentOwner;
 import dsm.TRADES.ControlOwner;
 import dsm.TRADES.Data;
-import dsm.TRADES.DataOwner;
-import dsm.TRADES.DataOwnerElement;
 import dsm.TRADES.Threat;
 import dsm.TRADES.ThreatAllocationRelation;
 import dsm.TRADES.util.EcoreUtils;
@@ -171,25 +172,16 @@ public class DiagramService {
 	}
 
 	public List<Data> availableData(AffectRelation affect) {
-		List<Data> result = new ArrayList<Data>();
 
-		collectData(affect.eContainer(), result, new HashSet<>(affect.getData()));
-
-		return result;
-	}
-
-	private void collectData(EObject from, List<Data> datas, Set<Data> relatedData) {
-		if (from instanceof DataOwnerElement) {
-			DataOwner owner = ((DataOwnerElement) from).getDataOwner();
-			if (owner != null) {
-				datas.addAll(owner.getData().stream().filter(d -> !relatedData.contains(d)).collect(toList()));
-			}
+		Component source = affect.getSourceComponent();
+		if (source == null) {
+			return Collections.emptyList();
 		}
 
-		EObject eContainer = from.eContainer();
-		if (eContainer != null) {
-			collectData(eContainer, datas, relatedData);
-		}
+		List<Data> availableData = new ArrayList<>(source.getAllDatas());
+		availableData.removeAll(affect.getData());
+		return availableData;
+
 	}
 
 	public String dataLabelOnAffect(AffectRelation affect) {
@@ -206,16 +198,33 @@ public class DiagramService {
 
 		return label;
 	}
-	
-	public String editAffectLabel(AffectRelation affect, String newLabel) {
-		
-		List<Data> relatedData = availableData(affect);
-		String[] labelData = newLabel.split(",");
-		
-		System.out.print("ppp");
-		
-		
-		return "dd";
+
+	public void editAffectLabel(AffectRelation affect, String newLabel) {
+
+		Component source = affect.getSourceComponent();
+		if (source == null) {
+			return;
+		}
+
+		Map<String, List<Data>> datas = source.getAllDatas().stream().filter(d -> d.getName() != null)//
+				.collect(Collectors.groupingBy(d -> d.getName().trim()));
+
+		EList<Data> data = affect.getData();
+		data.clear();
+
+		String[] labels = newLabel.split(",");
+		for (String dataName : labels) {
+			String dName = dataName.trim();
+			List<Data> existingData = datas.get(dName);
+
+			if (existingData != null && !existingData.isEmpty()) {
+
+				if (existingData.size() > 1) {
+					Activator.logInfo("More than one data has the following name " + dName);
+				}
+				data.add(existingData.get(0));
+			}
+		}
 	}
 
 }

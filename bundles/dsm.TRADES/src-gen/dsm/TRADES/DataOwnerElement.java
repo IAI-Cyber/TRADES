@@ -52,4 +52,20 @@ public interface DataOwnerElement extends EObject {
 	 */
 	EList<Data> getDatas();
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation"
+	 * @generated
+	 */
+	EList<Data> getInheritedDatas();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation"
+	 * @generated
+	 */
+	EList<Data> getAllDatas();
+
 } // DataOwnerElement

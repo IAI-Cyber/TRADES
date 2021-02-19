@@ -131,6 +131,30 @@ public abstract class DataOwnerElementImpl extends MinimalEObjectImpl.Container 
 	 * @generated
 	 */
 	@Override
+	public EList<Data> getInheritedDatas() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<Data> getAllDatas() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case TRADESPackage.DATA_OWNER_ELEMENT__DATA_OWNER:
@@ -207,6 +231,10 @@ public abstract class DataOwnerElementImpl extends MinimalEObjectImpl.Container 
 		switch (operationID) {
 		case TRADESPackage.DATA_OWNER_ELEMENT___GET_DATAS:
 			return getDatas();
+		case TRADESPackage.DATA_OWNER_ELEMENT___GET_INHERITED_DATAS:
+			return getInheritedDatas();
+		case TRADESPackage.DATA_OWNER_ELEMENT___GET_ALL_DATAS:
+			return getAllDatas();
 		}
 		return super.eInvoke(operationID, arguments);
 	}

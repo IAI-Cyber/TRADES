@@ -193,13 +193,31 @@ public interface TRADESPackage extends EPackage {
 	int ANALYSIS___GET_DATAS = COMPONENT_OWNER_OPERATION_COUNT + 0;
 
 	/**
+	 * The operation id for the '<em>Get Inherited Datas</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ANALYSIS___GET_INHERITED_DATAS = COMPONENT_OWNER_OPERATION_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Get All Datas</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ANALYSIS___GET_ALL_DATAS = COMPONENT_OWNER_OPERATION_COUNT + 2;
+
+	/**
 	 * The operation id for the '<em>Get All Controls</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ANALYSIS___GET_ALL_CONTROLS = COMPONENT_OWNER_OPERATION_COUNT + 1;
+	int ANALYSIS___GET_ALL_CONTROLS = COMPONENT_OWNER_OPERATION_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Analysis</em>' class.
@@ -208,7 +226,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ANALYSIS_OPERATION_COUNT = COMPONENT_OWNER_OPERATION_COUNT + 2;
+	int ANALYSIS_OPERATION_COUNT = COMPONENT_OWNER_OPERATION_COUNT + 4;
 
 	/**
 	 * The meta object id for the '{@link dsm.TRADES.impl.NamedElementImpl <em>Named Element</em>}' class.
@@ -466,13 +484,31 @@ public interface TRADESPackage extends EPackage {
 	int COMPONENT___GET_DATAS = COMPONENT_OWNER_OPERATION_COUNT + 0;
 
 	/**
+	 * The operation id for the '<em>Get Inherited Datas</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT___GET_INHERITED_DATAS = COMPONENT_OWNER_OPERATION_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Get All Datas</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT___GET_ALL_DATAS = COMPONENT_OWNER_OPERATION_COUNT + 2;
+
+	/**
 	 * The operation id for the '<em>Get All Controls</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT___GET_ALL_CONTROLS = COMPONENT_OWNER_OPERATION_COUNT + 1;
+	int COMPONENT___GET_ALL_CONTROLS = COMPONENT_OWNER_OPERATION_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Component</em>' class.
@@ -481,7 +517,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_OPERATION_COUNT = COMPONENT_OWNER_OPERATION_COUNT + 2;
+	int COMPONENT_OPERATION_COUNT = COMPONENT_OWNER_OPERATION_COUNT + 4;
 
 	/**
 	 * The meta object id for the '{@link dsm.TRADES.impl.ControlImpl <em>Control</em>}' class.
@@ -1188,13 +1224,31 @@ public interface TRADESPackage extends EPackage {
 	int DATA_OWNER_ELEMENT___GET_DATAS = 0;
 
 	/**
+	 * The operation id for the '<em>Get Inherited Datas</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_OWNER_ELEMENT___GET_INHERITED_DATAS = 1;
+
+	/**
+	 * The operation id for the '<em>Get All Datas</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_OWNER_ELEMENT___GET_ALL_DATAS = 2;
+
+	/**
 	 * The number of operations of the '<em>Data Owner Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_OWNER_ELEMENT_OPERATION_COUNT = 1;
+	int DATA_OWNER_ELEMENT_OPERATION_COUNT = 3;
 
 	/**
 	 * The meta object id for the '{@link dsm.TRADES.impl.ExternalThreatImpl <em>External Threat</em>}' class.
@@ -2460,6 +2514,26 @@ public interface TRADESPackage extends EPackage {
 	EOperation getDataOwnerElement__GetDatas();
 
 	/**
+	 * Returns the meta object for the '{@link dsm.TRADES.DataOwnerElement#getInheritedDatas() <em>Get Inherited Datas</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Inherited Datas</em>' operation.
+	 * @see dsm.TRADES.DataOwnerElement#getInheritedDatas()
+	 * @generated
+	 */
+	EOperation getDataOwnerElement__GetInheritedDatas();
+
+	/**
+	 * Returns the meta object for the '{@link dsm.TRADES.DataOwnerElement#getAllDatas() <em>Get All Datas</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get All Datas</em>' operation.
+	 * @see dsm.TRADES.DataOwnerElement#getAllDatas()
+	 * @generated
+	 */
+	EOperation getDataOwnerElement__GetAllDatas();
+
+	/**
 	 * Returns the meta object for class '{@link dsm.TRADES.ComponentOwner <em>Component Owner</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3353,6 +3427,22 @@ public interface TRADESPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation DATA_OWNER_ELEMENT___GET_DATAS = eINSTANCE.getDataOwnerElement__GetDatas();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Inherited Datas</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DATA_OWNER_ELEMENT___GET_INHERITED_DATAS = eINSTANCE.getDataOwnerElement__GetInheritedDatas();
+
+		/**
+		 * The meta object literal for the '<em><b>Get All Datas</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DATA_OWNER_ELEMENT___GET_ALL_DATAS = eINSTANCE.getDataOwnerElement__GetAllDatas();
 
 		/**
 		 * The meta object literal for the '{@link dsm.TRADES.impl.ComponentOwnerImpl <em>Component Owner</em>}' class.

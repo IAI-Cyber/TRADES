@@ -1,7 +1,11 @@
 package dsm.TRADES.impl;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.eclipse.emf.common.util.ECollections;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EObject;
 
 import dsm.TRADES.Data;
 import dsm.TRADES.DataOwner;
@@ -17,8 +21,40 @@ public class DataOwnerElementCustomImpl extends DataOwnerElementImpl {
 		return ECollections.emptyEList();
 	}
 
+	public static EList<Data> getInheritedData(DataOwnerElement owner) {
+		List<Data> results = new ArrayList<>();
+		collectData(owner.eContainer(), results);
+		return ECollections.asEList(results);
+	}
+
+	private static void collectData(EObject object, List<Data> collector) {
+		if (object == null) {
+			return;
+		}
+		if (object instanceof DataOwnerElement) {
+			collector.addAll(((DataOwnerElement) object).getDatas());
+		}
+
+		collectData(object.eContainer(), collector);
+	}
+
 	@Override
 	public EList<Data> getDatas() {
 		return getDatas(this);
+	}
+
+	@Override
+	public EList<Data> getInheritedDatas() {
+		return getInheritedData(this);
+	}
+
+	@Override
+	public EList<Data> getAllDatas() {
+		EList<Data> ownedData = getDatas();
+		EList<Data> inheritedData = getInheritedDatas();
+		List<Data> result = new ArrayList<>(ownedData.size() + inheritedData.size());
+		result.addAll(ownedData);
+		result.addAll(inheritedData);
+		return ECollections.asEList(result);
 	}
 }

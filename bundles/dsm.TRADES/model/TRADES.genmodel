@@ -114,6 +114,8 @@
     <genClasses image="false" ecoreClass="TRADES.ecore#//DataOwnerElement">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//DataOwnerElement/dataOwner"/>
       <genOperations ecoreOperation="TRADES.ecore#//DataOwnerElement/getDatas"/>
+      <genOperations ecoreOperation="TRADES.ecore#//DataOwnerElement/getInheritedDatas"/>
+      <genOperations ecoreOperation="TRADES.ecore#//DataOwnerElement/getAllDatas"/>
     </genClasses>
     <genClasses image="false" ecoreClass="TRADES.ecore#//ComponentOwner">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//ComponentOwner/component"/>

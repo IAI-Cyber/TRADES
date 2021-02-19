@@ -415,6 +415,30 @@ public class ComponentImpl extends ComponentOwnerImpl implements Component {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public EList<Data> getInheritedDatas() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<Data> getAllDatas() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -682,6 +706,10 @@ public class ComponentImpl extends ComponentOwnerImpl implements Component {
 			switch (baseOperationID) {
 			case TRADESPackage.DATA_OWNER_ELEMENT___GET_DATAS:
 				return TRADESPackage.COMPONENT___GET_DATAS;
+			case TRADESPackage.DATA_OWNER_ELEMENT___GET_INHERITED_DATAS:
+				return TRADESPackage.COMPONENT___GET_INHERITED_DATAS;
+			case TRADESPackage.DATA_OWNER_ELEMENT___GET_ALL_DATAS:
+				return TRADESPackage.COMPONENT___GET_ALL_DATAS;
 			default:
 				return -1;
 			}
@@ -715,6 +743,10 @@ public class ComponentImpl extends ComponentOwnerImpl implements Component {
 			return getAllControls();
 		case TRADESPackage.COMPONENT___GET_DATAS:
 			return getDatas();
+		case TRADESPackage.COMPONENT___GET_INHERITED_DATAS:
+			return getInheritedDatas();
+		case TRADESPackage.COMPONENT___GET_ALL_DATAS:
+			return getAllDatas();
 		}
 		return super.eInvoke(operationID, arguments);
 	}

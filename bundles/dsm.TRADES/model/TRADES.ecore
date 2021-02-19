@@ -145,6 +145,8 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DataOwnerElement" abstract="true">
     <eOperations name="getDatas" upperBound="-1" eType="#//Data"/>
+    <eOperations name="getInheritedDatas" upperBound="-1" eType="#//Data"/>
+    <eOperations name="getAllDatas" upperBound="-1" eType="#//Data"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="dataOwner" eType="#//DataOwner"
         containment="true"/>
   </eClassifiers>
