@@ -168,6 +168,7 @@ public class SemanticService {
 		}
 
 		Data result = TRADESFactory.eINSTANCE.createData();
+		result.setName("New data");
 		owner.getData().add(result);
 
 		return result;
