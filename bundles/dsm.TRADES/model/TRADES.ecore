@@ -87,6 +87,13 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Data" eSuperTypes="#//NamedElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="AffectRelation" eSuperTypes="#//NamedElement">
+    <eOperations name="checkDataScope" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Check that the referenced data belong to correct scope."/>
+      </eAnnotations>
+      <eParameters name="chain" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain"/>
+      <eParameters name="context" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap"/>
+    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="data" upperBound="-1" eType="#//Data"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="sourceComponent" lowerBound="1"
         eType="#//Component"/>

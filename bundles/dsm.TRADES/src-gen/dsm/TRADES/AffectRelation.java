@@ -2,6 +2,8 @@
  */
 package dsm.TRADES;
 
+import java.util.Map;
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
 
 /**
@@ -104,5 +106,16 @@ public interface AffectRelation extends NamedElement {
 	 * @generated
 	 */
 	void setAnalysisStatus(AffectedENUM value);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Check that the referenced data belong to correct scope.
+	 * <!-- end-model-doc -->
+	 * @model
+	 * @generated
+	 */
+	boolean checkDataScope(DiagnosticChain chain, Map context);
 
 } // AffectRelation

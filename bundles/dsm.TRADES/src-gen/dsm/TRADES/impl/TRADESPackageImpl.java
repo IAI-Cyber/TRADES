@@ -786,6 +786,16 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * @generated
 	 */
 	@Override
+	public EOperation getAffectRelation__CheckDataScope__DiagnosticChain_Map() {
+		return affectRelationEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getAttackChain() {
 		return attackChainEClass;
 	}
@@ -1384,6 +1394,7 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		createEReference(affectRelationEClass, AFFECT_RELATION__SOURCE_COMPONENT);
 		createEReference(affectRelationEClass, AFFECT_RELATION__TARGET_COMPONENT);
 		createEAttribute(affectRelationEClass, AFFECT_RELATION__ANALYSIS_STATUS);
+		createEOperation(affectRelationEClass, AFFECT_RELATION___CHECK_DATA_SCOPE__DIAGNOSTICCHAIN_MAP);
 
 		attackChainEClass = createEClass(ATTACK_CHAIN);
 		createEReference(attackChainEClass, ATTACK_CHAIN__ATTACKCHAIN_STEPS);
@@ -1645,6 +1656,11 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		initEAttribute(getAffectRelation_AnalysisStatus(), this.getAffectedENUM(), "analysisStatus", null, 1, 1,
 				AffectRelation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
+
+		op = initEOperation(getAffectRelation__CheckDataScope__DiagnosticChain_Map(), ecorePackage.getEBoolean(),
+				"checkDataScope", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "chain", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEMap(), "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(attackChainEClass, AttackChain.class, "AttackChain", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);

@@ -8,10 +8,16 @@ import dsm.TRADES.Component;
 import dsm.TRADES.Data;
 import dsm.TRADES.TRADESPackage;
 
+import dsm.TRADES.util.TRADESValidator;
+import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 
+import java.util.Map;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.BasicDiagnostic;
+import org.eclipse.emf.common.util.Diagnostic;
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
@@ -19,7 +25,9 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.eclipse.emf.ecore.plugin.EcorePlugin;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.EObjectValidator;
 
 /**
  * <!-- begin-user-doc -->
@@ -234,6 +242,30 @@ public class AffectRelationImpl extends NamedElementImpl implements AffectRelati
 	 * @generated
 	 */
 	@Override
+	public boolean checkDataScope(DiagnosticChain chain, Map context) {
+		// TODO: implement this method
+		// -> specify the condition that violates the invariant
+		// -> verify the details of the diagnostic, including severity and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (chain != null) {
+				chain.add(new BasicDiagnostic(Diagnostic.ERROR, TRADESValidator.DIAGNOSTIC_SOURCE,
+						TRADESValidator.AFFECT_RELATION__CHECK_DATA_SCOPE,
+						EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic",
+								new Object[] { "checkDataScope", EObjectValidator.getObjectLabel(this, context) }),
+						new Object[] { this }));
+			}
+			return false;
+		}
+		return true;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case TRADESPackage.AFFECT_RELATION__DATA:
@@ -320,6 +352,20 @@ public class AffectRelationImpl extends NamedElementImpl implements AffectRelati
 			return analysisStatus != ANALYSIS_STATUS_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+		case TRADESPackage.AFFECT_RELATION___CHECK_DATA_SCOPE__DIAGNOSTICCHAIN_MAP:
+			return checkDataScope((DiagnosticChain) arguments.get(0), (Map) arguments.get(1));
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

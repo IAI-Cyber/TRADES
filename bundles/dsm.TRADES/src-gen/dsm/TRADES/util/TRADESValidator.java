@@ -56,12 +56,20 @@ public class TRADESValidator extends EObjectValidator {
 	public static final int THREAT_ALLOCATION_RELATION__CHECK_COMPUTED_DIFFICULTY_CONSTRAINT = 2;
 
 	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Check Data Scope' of 'Affect Relation'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int AFFECT_RELATION__CHECK_DATA_SCOPE = 3;
+
+	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Check Allocation Value' of 'Attack Chain Step'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ATTACK_CHAIN_STEP__CHECK_ALLOCATION_VALUE = 3;
+	public static final int ATTACK_CHAIN_STEP__CHECK_ALLOCATION_VALUE = 4;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants.
@@ -69,7 +77,7 @@ public class TRADESValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 3;
+	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 4;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants in a derived class.
@@ -304,7 +312,37 @@ public class TRADESValidator extends EObjectValidator {
 	 */
 	public boolean validateAffectRelation(AffectRelation affectRelation, DiagnosticChain diagnostics,
 			Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(affectRelation, diagnostics, context);
+		if (!validate_NoCircularContainment(affectRelation, diagnostics, context))
+			return false;
+		boolean result = validate_EveryMultiplicityConforms(affectRelation, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_EveryDataValueConforms(affectRelation, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_EveryReferenceIsContained(affectRelation, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_EveryBidirectionalReferenceIsPaired(affectRelation, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_EveryProxyResolves(affectRelation, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_UniqueID(affectRelation, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_EveryKeyUnique(affectRelation, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_EveryMapEntryUnique(affectRelation, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validateAffectRelation_checkDataScope(affectRelation, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * Validates the checkDataScope constraint of '<em>Affect Relation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateAffectRelation_checkDataScope(AffectRelation affectRelation, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
+		return affectRelation.checkDataScope(diagnostics, context);
 	}
 
 	/**

@@ -83,6 +83,10 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TRADES.ecore#//AffectRelation/sourceComponent"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TRADES.ecore#//AffectRelation/targetComponent"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//AffectRelation/analysisStatus"/>
+      <genOperations ecoreOperation="TRADES.ecore#//AffectRelation/checkDataScope">
+        <genParameters ecoreParameter="TRADES.ecore#//AffectRelation/checkDataScope/chain"/>
+        <genParameters ecoreParameter="TRADES.ecore#//AffectRelation/checkDataScope/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="TRADES.ecore#//AttackChain">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//AttackChain/attackchainSteps"/>
