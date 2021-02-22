@@ -1,9 +1,17 @@
 package TRADES.design;
 
+import static java.util.stream.Collectors.toCollection;
+import static java.util.stream.Collectors.toList;
+import static java.util.stream.Collectors.toSet;
+
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Iterator;
+import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import org.eclipse.collections.api.factory.Sets;
 import org.eclipse.collections.api.set.FixedSizeSet;
@@ -14,10 +22,13 @@ import org.eclipse.emf.ecore.util.ECrossReferenceAdapter;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.sirius.business.api.session.SessionManager;
+import org.eclipse.sirius.diagram.AbstractDNode;
+import org.eclipse.sirius.diagram.DSemanticDiagram;
 import org.eclipse.sirius.viewpoint.SiriusPlugin;
 import org.eclipse.ui.PlatformUI;
 
 import dsm.TRADES.AbstractControlOwner;
+import dsm.TRADES.AffectRelation;
 import dsm.TRADES.Analysis;
 import dsm.TRADES.AttackChain;
 import dsm.TRADES.Component;
@@ -369,6 +380,143 @@ public class SemanticService {
 
 			return true;
 		});
+	}
+
+	public List<AffectRelation> getAffectRelationsBy(Data data) {
+		return EcoreUtils.getInverse(data, AffectRelation.class, TRADESPackage.eINSTANCE.getAffectRelation_Data());
+	}
+
+	/**
+	 * Retrieve the containing {@link DSemanticDiagram} from any node in it
+	 * 
+	 * @param node a node
+	 * @return a {@link DSemanticDiagram} or <code>null</code>
+	 */
+	private DSemanticDiagram getContainingDiagram(AbstractDNode node) {
+		EObject container = node.eContainer();
+		while (container != null) {
+			if (container instanceof DSemanticDiagram) {
+				return (DSemanticDiagram) container;
+			}
+			container = container.eContainer();
+		}
+		return null;
+	}
+
+	/**
+	 * Check if the given component is affected by a data. The data is retrieve by
+	 * accessing the {@link DSemanticDiagram#getTarget()} value
+	 * 
+	 * @param component the component to test
+	 * @param node      the node that belong to a {@link DSemanticDiagram} that is
+	 *                  linked to a data
+	 * @return
+	 */
+	public boolean isComponentDataPassThrough(Component component, AbstractDNode node) {
+		DSemanticDiagram diagram = getContainingDiagram(node);
+		if (diagram == null) {
+			return false;
+		}
+
+		EObject target = diagram.getTarget();
+		if (!(target instanceof Data)) {
+			return false;
+		}
+
+		Data data = (Data) target;
+		List<AffectRelation> affectRelations = getAffectRelationsBy(data);
+		return affectRelations.stream()
+				.flatMap(affect -> Stream.of(affect.getSourceComponent(), affect.getTargetComponent()))
+				.noneMatch(c -> c == component);
+	}
+
+	/**
+	 * Gets the root components affected by the data. A root component is defined by
+	 * a component that is affected by the date but which is not contained by
+	 * another affected component
+	 * 
+	 * @param data the queried data
+	 * @return a list of component
+	 */
+	public List<Component> getRootAffectedComponentsByData(Data data) {
+
+		List<AffectRelation> affectRelations = getAffectRelationsBy(data);
+		Set<Component> allComponents = affectRelations.stream()
+				.flatMap(affect -> Stream.of(affect.getSourceComponent(), affect.getTargetComponent()))
+				.filter(c -> c != null).collect(toCollection(LinkedHashSet::new));
+
+		// Filter sub components
+
+		List<Component> rootComponents = new ArrayList<>();
+		Iterator<Component> cmpItge = allComponents.iterator();
+		while (cmpItge.hasNext()) {
+			Component component = cmpItge.next();
+			if (!isContainedBy(component, allComponents)) {
+				rootComponents.add(component);
+			}
+		}
+
+		return rootComponents;
+	}
+
+	/**
+	 * Gets the list of children component that are either affected by the given
+	 * data or owning another affected component
+	 * 
+	 * @param parent the parent component
+	 * @param data   the current data
+	 * @return a list of children
+	 */
+	public List<Component> getSubComponentAffectBy(Component parent, Data data) {
+
+		List<AffectRelation> affectRelations = getAffectRelationsBy(data);
+		Set<Component> allComponents = affectRelations.stream()
+				.flatMap(affect -> Stream.of(affect.getSourceComponent(), affect.getTargetComponent()))
+				.filter(c -> c != null).collect(toSet());
+
+		return parent.getComponent().stream().filter(child -> contains(child, allComponents)).collect(toList());
+
+	}
+
+	/**
+	 * Checks if the given component contains at least one of the given components
+	 * 
+	 * @param c          the component to test
+	 * @param components list of possible children (or itself)
+	 * @return <code>true</code> if the component or one of its children belongs to
+	 *         the given set
+	 */
+	private boolean contains(Component c, Set<Component> components) {
+		if (components.contains(c)) {
+			return true;
+		}
+		for (Component child : c.getComponent()) {
+			if (contains(child, components)) {
+				return true;
+			}
+		}
+
+		return false;
+
+	}
+
+	/**
+	 * Checks if the given component is contained by at least on of the given
+	 * component (returns false if c belongs to the given set)
+	 * 
+	 * @param c          the component to test
+	 * @param components the set of potential container
+	 * @return <code>true</code> if contained by at least of of the given component
+	 */
+	private boolean isContainedBy(Component c, Set<Component> components) {
+		EObject container = c.eContainer();
+		while (container != null) {
+			if (components.contains(container)) {
+				return true;
+			}
+			container = container.eContainer();
+		}
+		return false;
 	}
 
 }
