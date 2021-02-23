@@ -528,29 +528,6 @@ public class TRADESItemProviderAdapterFactory extends TRADESAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link dsm.TRADES.metadata} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected metadataItemProvider metadataItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link dsm.TRADES.metadata}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createmetadataAdapter() {
-		if (metadataItemProvider == null) {
-			metadataItemProvider = new metadataItemProvider(this);
-		}
-
-		return metadataItemProvider;
-	}
-
-	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -714,8 +691,6 @@ public class TRADESItemProviderAdapterFactory extends TRADESAdapterFactory
 			controlOwnerItemProvider.dispose();
 		if (dataOwnerItemProvider != null)
 			dataOwnerItemProvider.dispose();
-		if (metadataItemProvider != null)
-			metadataItemProvider.dispose();
 	}
 
 }

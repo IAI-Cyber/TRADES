@@ -95,8 +95,6 @@ public class TRADESFactoryImpl extends EFactoryImpl implements TRADESFactory {
 			return createControlOwner();
 		case TRADESPackage.DATA_OWNER:
 			return createDataOwner();
-		case TRADESPackage.METADATA:
-			return createmetadata();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -351,17 +349,6 @@ public class TRADESFactoryImpl extends EFactoryImpl implements TRADESFactory {
 	public DataOwner createDataOwner() {
 		DataOwnerImpl dataOwner = new DataOwnerImpl();
 		return dataOwner;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public metadata createmetadata() {
-		metadataImpl metadata = new metadataImpl();
-		return metadata;
 	}
 
 	/**

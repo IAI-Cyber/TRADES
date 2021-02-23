@@ -1664,70 +1664,6 @@ public interface TRADESPackage extends EPackage {
 	int DATA_OWNER_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link dsm.TRADES.impl.metadataImpl <em>metadata</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see dsm.TRADES.impl.metadataImpl
-	 * @see dsm.TRADES.impl.TRADESPackageImpl#getmetadata()
-	 * @generated
-	 */
-	int METADATA = 24;
-
-	/**
-	 * The feature id for the '<em><b>Title</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int METADATA__TITLE = 0;
-
-	/**
-	 * The feature id for the '<em><b>Published</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int METADATA__PUBLISHED = 1;
-
-	/**
-	 * The feature id for the '<em><b>Version</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int METADATA__VERSION = 2;
-
-	/**
-	 * The feature id for the '<em><b>Oscal Version</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int METADATA__OSCAL_VERSION = 3;
-
-	/**
-	 * The number of structural features of the '<em>metadata</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int METADATA_FEATURE_COUNT = 4;
-
-	/**
-	 * The number of operations of the '<em>metadata</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int METADATA_OPERATION_COUNT = 0;
-
-	/**
 	 * The meta object id for the '{@link dsm.TRADES.AssessmentENUM <em>Assessment ENUM</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1735,7 +1671,7 @@ public interface TRADESPackage extends EPackage {
 	 * @see dsm.TRADES.impl.TRADESPackageImpl#getAssessmentENUM()
 	 * @generated
 	 */
-	int ASSESSMENT_ENUM = 25;
+	int ASSESSMENT_ENUM = 24;
 
 	/**
 	 * The meta object id for the '{@link dsm.TRADES.AffectedENUM <em>Affected ENUM</em>}' enum.
@@ -1745,7 +1681,7 @@ public interface TRADESPackage extends EPackage {
 	 * @see dsm.TRADES.impl.TRADESPackageImpl#getAffectedENUM()
 	 * @generated
 	 */
-	int AFFECTED_ENUM = 26;
+	int AFFECTED_ENUM = 25;
 
 	/**
 	 * The meta object id for the '{@link dsm.TRADES.threatTypeENUM <em>threat Type ENUM</em>}' enum.
@@ -1755,7 +1691,7 @@ public interface TRADESPackage extends EPackage {
 	 * @see dsm.TRADES.impl.TRADESPackageImpl#getthreatTypeENUM()
 	 * @generated
 	 */
-	int THREAT_TYPE_ENUM = 27;
+	int THREAT_TYPE_ENUM = 26;
 
 	/**
 	 * The meta object id for the '<em>RGB Color</em>' data type.
@@ -1765,7 +1701,7 @@ public interface TRADESPackage extends EPackage {
 	 * @see dsm.TRADES.impl.TRADESPackageImpl#getRGBColor()
 	 * @generated
 	 */
-	int RGB_COLOR = 28;
+	int RGB_COLOR = 27;
 
 	/**
 	 * Returns the meta object for class '{@link dsm.TRADES.Analysis <em>Analysis</em>}'.
@@ -2740,60 +2676,6 @@ public interface TRADESPackage extends EPackage {
 	EReference getDataOwner_Data();
 
 	/**
-	 * Returns the meta object for class '{@link dsm.TRADES.metadata <em>metadata</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>metadata</em>'.
-	 * @see dsm.TRADES.metadata
-	 * @generated
-	 */
-	EClass getmetadata();
-
-	/**
-	 * Returns the meta object for the attribute '{@link dsm.TRADES.metadata#getTitle <em>Title</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Title</em>'.
-	 * @see dsm.TRADES.metadata#getTitle()
-	 * @see #getmetadata()
-	 * @generated
-	 */
-	EAttribute getmetadata_Title();
-
-	/**
-	 * Returns the meta object for the attribute '{@link dsm.TRADES.metadata#getPublished <em>Published</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Published</em>'.
-	 * @see dsm.TRADES.metadata#getPublished()
-	 * @see #getmetadata()
-	 * @generated
-	 */
-	EAttribute getmetadata_Published();
-
-	/**
-	 * Returns the meta object for the attribute '{@link dsm.TRADES.metadata#getVersion <em>Version</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Version</em>'.
-	 * @see dsm.TRADES.metadata#getVersion()
-	 * @see #getmetadata()
-	 * @generated
-	 */
-	EAttribute getmetadata_Version();
-
-	/**
-	 * Returns the meta object for the attribute '{@link dsm.TRADES.metadata#getOscalVersion <em>Oscal Version</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Oscal Version</em>'.
-	 * @see dsm.TRADES.metadata#getOscalVersion()
-	 * @see #getmetadata()
-	 * @generated
-	 */
-	EAttribute getmetadata_OscalVersion();
-
-	/**
 	 * Returns the meta object for enum '{@link dsm.TRADES.AssessmentENUM <em>Assessment ENUM</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3638,48 +3520,6 @@ public interface TRADESPackage extends EPackage {
 		 * @generated
 		 */
 		EReference DATA_OWNER__DATA = eINSTANCE.getDataOwner_Data();
-
-		/**
-		 * The meta object literal for the '{@link dsm.TRADES.impl.metadataImpl <em>metadata</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see dsm.TRADES.impl.metadataImpl
-		 * @see dsm.TRADES.impl.TRADESPackageImpl#getmetadata()
-		 * @generated
-		 */
-		EClass METADATA = eINSTANCE.getmetadata();
-
-		/**
-		 * The meta object literal for the '<em><b>Title</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute METADATA__TITLE = eINSTANCE.getmetadata_Title();
-
-		/**
-		 * The meta object literal for the '<em><b>Published</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute METADATA__PUBLISHED = eINSTANCE.getmetadata_Published();
-
-		/**
-		 * The meta object literal for the '<em><b>Version</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute METADATA__VERSION = eINSTANCE.getmetadata_Version();
-
-		/**
-		 * The meta object literal for the '<em><b>Oscal Version</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute METADATA__OSCAL_VERSION = eINSTANCE.getmetadata_OscalVersion();
 
 		/**
 		 * The meta object literal for the '{@link dsm.TRADES.AssessmentENUM <em>Assessment ENUM</em>}' enum.
