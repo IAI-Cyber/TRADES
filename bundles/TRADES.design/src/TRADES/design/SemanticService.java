@@ -387,23 +387,6 @@ public class SemanticService {
 	}
 
 	/**
-	 * Retrieve the containing {@link DSemanticDiagram} from any node in it
-	 * 
-	 * @param node a node
-	 * @return a {@link DSemanticDiagram} or <code>null</code>
-	 */
-	private DSemanticDiagram getContainingDiagram(AbstractDNode node) {
-		EObject container = node.eContainer();
-		while (container != null) {
-			if (container instanceof DSemanticDiagram) {
-				return (DSemanticDiagram) container;
-			}
-			container = container.eContainer();
-		}
-		return null;
-	}
-
-	/**
 	 * Check if the given component is affected by a data. The data is retrieve by
 	 * accessing the {@link DSemanticDiagram#getTarget()} value
 	 * 
@@ -413,7 +396,7 @@ public class SemanticService {
 	 * @return
 	 */
 	public boolean isComponentDataPassThrough(Component component, AbstractDNode node) {
-		DSemanticDiagram diagram = getContainingDiagram(node);
+		DSemanticDiagram diagram = DiagramService.getContainingDiagram(node);
 		if (diagram == null) {
 			return false;
 		}

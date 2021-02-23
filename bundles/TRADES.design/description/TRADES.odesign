@@ -26,6 +26,7 @@
   <ownedViewpoints name="TRADESview">
     <ownedRepresentations xsi:type="description_1:DiagramDescription" dropDescriptions="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='copyThreatDragDrop'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='ExternalControlDrop_TD']" name="TRADES diagram" initialisation="true" showOnStartup="true" domainClass="TRADES::Analysis" enablePopupBars="true">
       <metamodel href="dsm.TRADES#/"/>
+      <metamodel href="http://www.eclipse.org/sirius/diagram/1.1.0#/"/>
       <filters xsi:type="filter:CompositeFilterDescription" name="HideComponentFilter_TD" label="Hide Components">
         <filters xsi:type="filter:MappingFilter" mappings="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage']"/>
       </filters>
@@ -332,6 +333,7 @@
             <representationNameVariable name="diagramName"/>
           </ownedTools>
           <ownedTools xsi:type="tool:DiagramCreationDescription" name="SubComponentDiagramCreation" label="Analysis of component" diagramDescription="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Component%20Analysis']">
+            <initialOperation/>
             <containerViewVariable name="containerView"/>
             <representationNameVariable name="diagramName"/>
           </ownedTools>
@@ -387,20 +389,20 @@
           </ownedTools>
         </toolSections>
         <toolSections name="Representation Tools">
-          <ownedTools xsi:type="tool_1:SelectionWizardDescription" name="Hide details" precondition="Select components to hide in this diagram" candidatesExpression="aql: self.component" multiple="true" iconPath="/TRADES.design/Images/inspectEncapSmall.png" windowTitle="Component encapsulation">
+          <ownedTools xsi:type="tool_1:SelectionWizardDescription" name="Hide details" precondition="aql:self.oclAsType(TRADES::ComponentOwner)" candidatesExpression="aql:self.oclAsType(TRADES::ComponentOwner).component" multiple="true" message="Select components to hide in this diagram" iconPath="/TRADES.design/Images/inspectEncapSmall.png" windowTitle="Component encapsulation">
             <element name="element"/>
             <containerView name="containerView"/>
             <container name="container"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:Let" valueExpression="aql: element->filter(TRADES::Component).encapsulateElements(diagram)"/>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:element->filter(TRADES::Component).encapsulateElements(containerView)"/>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool_1:SelectionWizardDescription" name="Unhide details" precondition="Select components to show in this diagram" candidatesExpression="aql: self.component" multiple="true" iconPath="/TRADES.design/Images/inspectDeEncapSmall.png" windowTitle="Cancel Component Encapsulation">
+          <ownedTools xsi:type="tool_1:SelectionWizardDescription" name="Unhide details" precondition="aql:self.oclAsType(TRADES::ComponentOwner)" candidatesExpression="aql:self.oclAsType(TRADES::ComponentOwner).component" multiple="true" message="Select components to show in this diagram" iconPath="/TRADES.design/Images/inspectDeEncapSmall.png" windowTitle="Cancel Component Encapsulation">
             <element name="element"/>
             <containerView name="containerView"/>
             <container name="container"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:Let" valueExpression="aql: element->filter(TRADES::Component).decapsulateElements(diagram)"/>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql: element->filter(TRADES::Component).decapsulateElements(containerView)"/>
             </initialOperation>
           </ownedTools>
           <ownedTools xsi:type="tool:ContainerDropDescription" name="copyThreatDragDrop" precondition="aql:element.oclIsKindOf(TRADES::Threat)" mappings="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@nodeMappings[name='ThreatNode_TD']" dragSource="PROJECT_EXPLORER">
@@ -943,6 +945,7 @@
             <representationNameVariable name="diagramName"/>
           </ownedTools>
           <ownedTools xsi:type="tool:DiagramCreationDescription" name="DataflowCreationTool" diagramDescription="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='DataFlowDiagram']">
+            <initialOperation/>
             <containerViewVariable name="containerView"/>
             <representationNameVariable name="diagramName"/>
           </ownedTools>

@@ -13,9 +13,13 @@ import java.util.stream.Collectors;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.sirius.business.api.query.EObjectQuery;
+import org.eclipse.sirius.diagram.DNodeContainer;
 import org.eclipse.sirius.diagram.DSemanticDiagram;
+import org.eclipse.sirius.diagram.business.api.helper.graphicalfilters.HideFilterHelper;
 import org.eclipse.sirius.viewpoint.DRepresentationElement;
 import org.eclipse.sirius.viewpoint.DSemanticDecorator;
+import org.eclipse.sirius.viewpoint.ViewpointPackage;
 
 import dsm.TRADES.AffectRelation;
 import dsm.TRADES.Analysis;
@@ -29,6 +33,16 @@ import dsm.TRADES.ThreatAllocationRelation;
 import dsm.TRADES.util.EcoreUtils;
 
 public class DiagramService {
+
+	/**
+	 * Retrieve the containing {@link DSemanticDiagram} from any node in it
+	 * 
+	 * @param node a node
+	 * @return a {@link DSemanticDiagram} or <code>null</code>
+	 */
+	public static DSemanticDiagram getContainingDiagram(DSemanticDecorator node) {
+		return EcoreUtils.getAncestor(node, DSemanticDiagram.class);
+	}
 
 	public String getAttackChainLabel(AttackChainStep step) {
 
@@ -62,7 +76,6 @@ public class DiagramService {
 		DSemanticDiagram diagram = EcoreUtils.getAncestor(node, DSemanticDiagram.class);
 
 		if (diagram != null) {
-
 			return EcoreUtils.allContainedObjectOfType(diagram, DSemanticDecorator.class)
 					.filter(n -> n.getTarget() instanceof Threat).map(n -> (Threat) n.getTarget()).collect(toSet());
 		} else {
@@ -224,6 +237,52 @@ public class DiagramService {
 				}
 				data.add(existingData.get(0));
 			}
+		}
+	}
+
+	/**
+	 * Function that hides the detail of a component in a diagram
+	 * 
+	 * @param component                the component to hide details from
+	 * @param anyRepresentationElement any element that belong a diagram (or the
+	 *                                 diagram itself)
+	 */
+	public void encapsulateElements(Component component, EObject anyRepresentationElement) {
+
+		if (!(anyRepresentationElement instanceof DSemanticDecorator)) {
+			return;
+		}
+		DSemanticDiagram diagram = getContainingDiagram((DSemanticDecorator) anyRepresentationElement);
+		if (diagram != null) {
+			new EObjectQuery(component)
+					.getInverseReferences(ViewpointPackage.Literals.DREPRESENTATION_ELEMENT__SEMANTIC_ELEMENTS).stream()//
+					.filter(e -> e instanceof DNodeContainer)//
+					.map(e -> (DNodeContainer) e)//
+					.filter(e -> e.getParentDiagram() == diagram)//
+					.forEach(diagramElement -> HideFilterHelper.INSTANCE.hide(diagramElement));
+		}
+
+	}
+
+	/**
+	 * A function to show (cancel hiding) elements from diagram
+	 * 
+	 * @param component                the component to hide details from
+	 * @param anyRepresentationElement any element that belong a diagram (or the
+	 *                                 diagram itself)
+	 */
+	public void decapsulateElements(Component component, EObject anyElement) {
+		if (!(anyElement instanceof DSemanticDecorator)) {
+			return;
+		}
+		DSemanticDiagram diagram = getContainingDiagram((DSemanticDecorator) anyElement);
+		if (diagram != null) {
+			new EObjectQuery(component)
+					.getInverseReferences(ViewpointPackage.Literals.DREPRESENTATION_ELEMENT__SEMANTIC_ELEMENTS).stream()//
+					.filter(e -> e instanceof DNodeContainer)//
+					.map(e -> (DNodeContainer) e)//
+					.filter(e -> e.getParentDiagram() == diagram)//
+					.forEach(diagramElement -> HideFilterHelper.INSTANCE.reveal(diagramElement));
 		}
 	}
 
