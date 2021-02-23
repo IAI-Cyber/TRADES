@@ -1136,7 +1136,7 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <toolSections>
+        <toolSections name="MainToolSection_ACD">
           <ownedTools xsi:type="tool:ContainerDropDescription" name="DropThreatRepresentation" dragSource="PROJECT_EXPLORER">
             <oldContainer name="oldSemanticContainer"/>
             <newContainer name="newSemanticContainer"/>
@@ -1289,7 +1289,7 @@
         </toolSections>
       </defaultLayer>
       <additionalLayers name="AvailableData_DCD" label="Available Data">
-        <containerMappings xsi:type="description_1:ContainerMappingImport" reusedNodeMappings="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='DataByComponentDiagram']/@defaultLayer/@containerMappings[name='DataOwnerElement_DCD']/@subNodeMappings[name='Data']" childrenPresentation="List" importedMapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='DataByComponentDiagram']/@defaultLayer/@containerMappings[name='DataOwnerElement_DCD']">
+        <containerMappings xsi:type="description_1:ContainerMappingImport" name="ComponentNode_DS" reusedNodeMappings="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='DataByComponentDiagram']/@defaultLayer/@containerMappings[name='DataOwnerElement_DCD']/@subNodeMappings[name='Data']" childrenPresentation="List" importedMapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='DataByComponentDiagram']/@defaultLayer/@containerMappings[name='DataOwnerElement_DCD']">
           <subNodeMappings name="InheritedData" semanticCandidatesExpression="aql:self.getInheritedData()" domainClass="TRADES::Data">
             <style xsi:type="style:BundledImageDescription" labelSize="12" labelExpression="aql:'/'+self.name" labelPosition="node" resizeKind="NSEW">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
