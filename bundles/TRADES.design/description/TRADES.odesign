@@ -338,7 +338,7 @@
             <menuItemDescription xsi:type="tool_1:OperationAction" name="CreateNewData" label="Create New Data" precondition="aql:self.oclIsKindOf(TRADES::AffectRelation)">
               <view name="views"/>
               <initialOperation>
-                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.oclAsType(TRADES::AffectRelation)">
                   <subModelOperations xsi:type="tool_1:Let" variableName="affectRelation" valueExpression="var:self"/>
                   <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.eContainer().createData()">
                     <subModelOperations xsi:type="properties:DialogModelOperation" titleExpression="Add New Data">
@@ -351,7 +351,7 @@
                         <initialOperation>
                           <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self">
                             <subModelOperations xsi:type="tool_1:Let" variableName="newData" valueExpression="aql:self">
-                              <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:affectRelation">
+                              <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:affectRelation">
                                 <subModelOperations xsi:type="tool_1:SetValue" featureName="data" valueExpression="var:newData"/>
                               </subModelOperations>
                             </subModelOperations>
@@ -1319,17 +1319,23 @@
       <groups name="ScoreSystemGroup" labelExpression="Score system" domainClass="TRADES::ScoreSystem" semanticCandidateExpression="var:self">
         <controls xsi:type="properties:ButtonDescription" name="InitColorMap" labelExpression="Initialize colors" helpExpression="Compute a default color for each cell of the 'Risk Managemet Summary' table" buttonLabelExpression="Change all colors">
           <initialOperation>
-            <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.initColors()"/>
+            <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.oclAsType(TRADES::ScoreSystem)">
+              <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.initColors()"/>
+            </firstModelOperations>
           </initialOperation>
         </controls>
         <controls xsi:type="properties:ButtonDescription" name="DeleteUnusedDiff_Button" labelExpression="Delete unused difficulties" helpExpression="Delete all Difficulty score that are not used" buttonLabelExpression="Delete">
           <initialOperation>
-            <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.clearUnusedDifficulties()"/>
+            <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.oclAsType(TRADES::ScoreSystem)">
+              <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.clearUnusedDifficulties()"/>
+            </firstModelOperations>
           </initialOperation>
         </controls>
         <controls xsi:type="properties:ButtonDescription" name="DeleteUnusedImpatcs_Button" labelExpression="Delete unused impacts" helpExpression="Delete all Impact score that are not used" buttonLabelExpression="Delete">
           <initialOperation>
-            <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.clearUnusedImpacts()"/>
+            <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.oclAsType(TRADES::ScoreSystem)">
+              <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.clearUnusedImpacts()"/>
+            </firstModelOperations>
           </initialOperation>
         </controls>
       </groups>
@@ -1371,7 +1377,7 @@
                         <initialOperation>
                           <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self">
                             <subModelOperations xsi:type="tool_1:Let" variableName="newData" valueExpression="aql:self">
-                              <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:affectRelation">
+                              <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:affectRelation">
                                 <subModelOperations xsi:type="tool_1:SetValue" featureName="data" valueExpression="var:newData"/>
                               </subModelOperations>
                             </subModelOperations>
