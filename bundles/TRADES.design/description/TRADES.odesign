@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:description_2="http://www.eclipse.org/sirius/table/description/1.1.0" xmlns:filter="http://www.eclipse.org/sirius/diagram/description/filter/1.1.0" xmlns:properties="http://www.eclipse.org/sirius/properties/1.0.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="TRADES" version="12.0.0.2017041100">
   <ownedViewpoints name="NoOp">
-    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="NoOPDiag" preconditionExpression="aql:false" enablePopupBars="true">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="NoOPDiag" domainClass="TRADES::Analysis" preconditionExpression="aql:false" enablePopupBars="true">
       <metamodel href="dsm.TRADES#/"/>
       <defaultLayer name="Default">
         <toolSections name="NoOpTool">
@@ -10,7 +10,7 @@
             <elementView name="elementView"/>
             <containerView name="containerView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.oclAsType(TRADES::DifficultyScore)">
                 <subModelOperations xsi:type="tool_1:For" expression="aql:self.getLinkedConfigurations()" iteratorName="conf">
                   <subModelOperations xsi:type="tool_1:RemoveElement"/>
                 </subModelOperations>
@@ -21,6 +21,7 @@
         </toolSections>
       </defaultLayer>
     </ownedRepresentations>
+    <ownedJavaExtensions qualifiedClassName="TRADES.design.SemanticService"/>
   </ownedViewpoints>
   <ownedViewpoints name="TRADESview">
     <ownedRepresentations xsi:type="description_1:DiagramDescription" dropDescriptions="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='copyThreatDragDrop'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='ExternalControlDrop_TD']" name="TRADES diagram" initialisation="true" showOnStartup="true" domainClass="TRADES::Analysis" enablePopupBars="true">
