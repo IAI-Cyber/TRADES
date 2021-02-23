@@ -827,7 +827,7 @@
         </edgeMappings>
       </additionalLayers>
     </ownedRepresentations>
-    <ownedRepresentations xsi:type="description_2:CrossTableDescription" name="Risk Managemeny Summary" titleExpression="aql: self.name + ' Risk Management Summary'" initialisation="true" domainClass="TRADES::Analysis">
+    <ownedRepresentations xsi:type="description_2:CrossTableDescription" name="RiskManagementSummaryTable" label="Risk Management Summary" titleExpression="aql: self.name + ' Risk Management Summary'" initialisation="true" domainClass="TRADES::Analysis">
       <metamodel href="dsm.TRADES#/"/>
       <ownedLineMappings name="ImpactRow_RMS" label="Impac Row" domainClass="TRADES::ImpactScore" semanticCandidatesExpression="aql:self.scoresystem.impactscore" headerLabelExpression="aql:self.getLabelProviderText()">
         <defaultForeground labelSize="15">
@@ -837,7 +837,7 @@
           <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
         </defaultBackground>
       </ownedLineMappings>
-      <ownedCreateLine name="NewImpactRow_RMS" label="New impact score" mapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Risk%20Managemeny%20Summary']/@ownedLineMappings[name='ImpactRow_RMS']">
+      <ownedCreateLine name="NewImpactRow_RMS" label="New impact score" mapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='RiskManagementSummaryTable']/@ownedLineMappings[name='ImpactRow_RMS']">
         <variables name="root" documentation="The semantic root element of the table."/>
         <variables name="element" documentation="The semantic currently edited element."/>
         <variables name="container" documentation="The semantic element corresponding to the view container."/>
@@ -862,11 +862,11 @@
           </firstModelOperation>
         </delete>
       </ownedColumnMappings>
-      <intersection name="ImpactConfiguration_RMS" semanticElements="aql:self.makeUnion(self, self.eContainer())" canEdit="aql:false" lineMapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Risk%20Managemeny%20Summary']/@ownedLineMappings[name='ImpactRow_RMS']" columnMapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Risk%20Managemeny%20Summary']/@ownedColumnMappings.0" labelExpression="aql:lineSemantic.eInverse(TRADES::ThreatAllocationRelation)->select(r | r.difficultyscore = columnSemantic).getLabelProviderText()" useDomainClass="true" columnFinderExpression="aql:self.difficulty" lineFinderExpression="aql:self.impact" semanticCandidatesExpression="aql:self.scoresystem.impactscore.configurations" domainClass="TRADES::ImpactConfiguration">
+      <intersection name="ImpactConfiguration_RMS" semanticElements="aql:self.makeUnion(self, self.eContainer())" canEdit="aql:false" lineMapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='RiskManagementSummaryTable']/@ownedLineMappings[name='ImpactRow_RMS']" columnMapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='RiskManagementSummaryTable']/@ownedColumnMappings.0" labelExpression="aql:lineSemantic.eInverse(TRADES::ThreatAllocationRelation)->select(r | r.difficultyscore = columnSemantic).getLabelProviderText()" useDomainClass="true" columnFinderExpression="aql:self.difficulty" lineFinderExpression="aql:self.impact" semanticCandidatesExpression="aql:self.scoresystem.impactscore.configurations" domainClass="TRADES::ImpactConfiguration">
         <defaultForeground labelSize="10" foreGroundColor="//@userColorsPalettes[name='Colors']/@entries[name='HeatMapColorForeground']"/>
         <defaultBackground backgroundColor="//@userColorsPalettes[name='Colors']/@entries[name='HeatMapColorBackGround']"/>
       </intersection>
-      <createColumn name="CreateDifficultyColum" mapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Risk%20Managemeny%20Summary']/@ownedColumnMappings.0">
+      <createColumn name="CreateDifficultyColum" mapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='RiskManagementSummaryTable']/@ownedColumnMappings.0">
         <variables name="root" documentation="The semantic root element of the table."/>
         <variables name="element" documentation="The semantic currently edited element."/>
         <variables name="container" documentation="The semantic element corresponding to the view container."/>
