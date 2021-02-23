@@ -2,6 +2,7 @@
 <description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:description_2="http://www.eclipse.org/sirius/table/description/1.1.0" xmlns:filter="http://www.eclipse.org/sirius/diagram/description/filter/1.1.0" xmlns:properties="http://www.eclipse.org/sirius/properties/1.0.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="TRADES" version="12.0.0.2017041100">
   <ownedViewpoints name="NoOp">
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="NoOPDiag" preconditionExpression="aql:false" enablePopupBars="true">
+      <metamodel href="dsm.TRADES#/"/>
       <defaultLayer name="Default">
         <toolSections name="NoOpTool">
           <ownedTools xsi:type="tool:DeleteElementDescription" name="DeleteDifficultyTool">
@@ -24,7 +25,6 @@
   <ownedViewpoints name="TRADESview">
     <ownedRepresentations xsi:type="description_1:DiagramDescription" dropDescriptions="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='copyThreatDragDrop'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='ExternalControlDrop_TD']" name="TRADES diagram" initialisation="true" showOnStartup="true" domainClass="TRADES::Analysis" enablePopupBars="true">
       <metamodel href="dsm.TRADES#/"/>
-      <metamodel href="http://www.example.org/extTRADES#/"/>
       <filters xsi:type="filter:CompositeFilterDescription" name="HideComponentFilter_TD" label="Hide Components">
         <filters xsi:type="filter:MappingFilter" mappings="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage']"/>
       </filters>
@@ -562,6 +562,7 @@
       </defaultLayer>
     </ownedRepresentations>
     <ownedRepresentations xsi:type="description_1:DiagramDescription" dropDescriptions="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='copyThreatDragDrop']" name="Component Analysis" titleExpression="aql: 'Analysis of ' + self.name" domainClass="TRADES::Component">
+      <metamodel href="dsm.TRADES#/"/>
       <layout xsi:type="description_1:CustomLayoutConfiguration" id="org.eclipse.elk.layered" label="ELK Layered" description="Layer-based algorithm provided by the Eclipse Layout Kernel. Arranges as many edges as possible into one direction by placing nodes into subsequent layers. This implementation supports different routing styles (straight, orthogonal, splines); if orthogonal routing is selected, arbitrary port constraints are respected, thus enabling the layout of block diagrams such as actor-oriented models or circuit schematics. Furthermore, full layout of compound graphs with cross-hierarchy edges is supported when the respective option is activated on the top level.">
         <layoutOptions xsi:type="description_1:EnumLayoutOption" id="org.eclipse.elk.hierarchyHandling">
           <targets>PARENT</targets>
@@ -610,6 +611,7 @@
       <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
     </ownedRepresentations>
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Analysis Diagram" domainClass="TRADES::AnalysisDiagram" enablePopupBars="true">
+      <metamodel href="dsm.TRADES#/"/>
       <defaultLayer name="Default">
         <toolSections name="TRADES tools">
           <ownedTools xsi:type="tool:NodeCreationDescription" name="Threat" nodeMappings="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Analysis%20Diagram']/@additionalLayers[name='Threat']/@nodeMappings[name='ThreatNode']">
@@ -878,6 +880,7 @@
       </createColumn>
     </ownedRepresentations>
     <ownedRepresentations xsi:type="description_2:CrossTableDescription" name="Controls to Components " domainClass="TRADES::Analysis">
+      <metamodel href="dsm.TRADES#/"/>
       <ownedLineMappings name="Component Row" reusedInMappings="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Controls%20to%20Components%20']/@ownedLineMappings[name='Component%20Row']/@ownedSubLines[name='subComp%20Row']" domainClass="TRADES::Component" semanticCandidatesExpression="aql:self.component">
         <ownedSubLines name="subComp Row" reusedSubLines="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Controls%20to%20Components%20']/@ownedLineMappings[name='Component%20Row']" domainClass="TRADES::Component" semanticCandidatesExpression="aql:self.component"/>
       </ownedLineMappings>
@@ -890,6 +893,7 @@
       </intersection>
     </ownedRepresentations>
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Scoring system design" initialisation="true" domainClass="TRADES::Analysis" enablePopupBars="true">
+      <metamodel href="dsm.TRADES#/"/>
       <defaultLayer name="Default">
         <containerMappings name="Scoring system difficulties" semanticCandidatesExpression="feature:scoresystem" domainClass="TRADES::ScoreSystem" childrenPresentation="List">
           <subNodeMappings name="difficulty" deletionDescription="//@ownedViewpoints[name='NoOp']/@ownedRepresentations[name='NoOPDiag']/@defaultLayer/@toolSections.0/@ownedTools[name='DeleteDifficultyTool']" semanticCandidatesExpression="feature:eAllContents" domainClass="TRADES::DifficultyScore">
@@ -957,6 +961,7 @@
       </defaultLayer>
     </ownedRepresentations>
     <ownedRepresentations xsi:type="description_1:DiagramDescription" documentation="Deprecated as of August 2020" name="Attack chain free diagram" titleExpression="aql: self.name + ' Attack Chain Diagram'" domainClass="TRADES::AttackChain" enablePopupBars="true">
+      <metamodel href="dsm.TRADES#/"/>
       <defaultLayer name="Default">
         <nodeMappings name="ChainNode" labelDirectEdit="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Analysis%20Diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Change%20name']" semanticCandidatesExpression="aql: self.eContents()" domainClass="TRADES::AttackChainStep">
           <style xsi:type="style:EllipseNodeDescription" labelSize="15" showIcon="false" labelExpression="aql: view.target.stepNum + ') ' + view.target.threatallocationrelation.name" sizeComputationExpression="10" labelPosition="node" resizeKind="NSEW">
@@ -993,6 +998,7 @@
       </defaultLayer>
     </ownedRepresentations>
     <ownedRepresentations xsi:type="description_1:DiagramDescription" dropDescriptions="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='AttackChainDiagram']/@additionalLayers[name='Threats']/@toolSections.0/@ownedTools[name='DropThreatRepresentation']" name="AttackChainDiagram" label="Attack chain diagram" titleExpression="aql:self.name+' description'" domainClass="TRADES::AttackChain" enablePopupBars="true">
+      <metamodel href="dsm.TRADES#/"/>
       <layout xsi:type="description_1:CustomLayoutConfiguration" id="org.eclipse.elk.layered" label="ELK Layered" description="Layer-based algorithm provided by the Eclipse Layout Kernel. Arranges as many edges as possible into one direction by placing nodes into subsequent layers. This implementation supports different routing styles (straight, orthogonal, splines); if orthogonal routing is selected, arbitrary port constraints are respected, thus enabling the layout of block diagrams such as actor-oriented models or circuit schematics. Furthermore, full layout of compound graphs with cross-hierarchy edges is supported when the respective option is activated on the top level.">
         <layoutOptions xsi:type="description_1:DoubleLayoutOption" id="org.eclipse.elk.spacing.edgeNode" value="50.0">
           <targets>PARENT</targets>
@@ -1390,6 +1396,7 @@
     <entries xsi:type="description:UserFixedColor" red="230" green="230" blue="230" name="ComponetDiagramBGColor"/>
   </userColorsPalettes>
   <extensions xsi:type="properties:ViewExtensionDescription" name="Properties">
+    <metamodels href="dsm.TRADES#/"/>
     <categories name="GeneralCategory">
       <pages name="ThreatGeneralPage" label="Threat General" labelExpression="General" domainClass="TRADES::Threat" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.0 //@extensions.0/@categories.0/@groups.1 //@extensions.0/@categories.0/@groups.7"/>
       <pages name="ControlGeneralPage" label="Control General Page" labelExpression="General" domainClass="TRADES::Control" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.0 //@extensions.0/@categories.0/@groups.2"/>
