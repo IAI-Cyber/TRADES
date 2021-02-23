@@ -344,7 +344,6 @@
             <representationNameVariable name="diagramName"/>
           </ownedTools>
           <ownedTools xsi:type="tool:DiagramCreationDescription" name="SubComponentDiagramCreation" label="Analysis of component" diagramDescription="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Component%20Analysis']">
-            <initialOperation/>
             <containerViewVariable name="containerView"/>
             <representationNameVariable name="diagramName"/>
           </ownedTools>
@@ -432,9 +431,7 @@
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:Let" variableName="externalThreat" valueExpression="var:self">
                 <subModelOperations xsi:type="properties:DialogModelOperation" titleExpression="Import controls">
-                  <buttons labelExpression="Cancel" closeDialogOnClick="true" rollbackChangesOnClose="true">
-                    <initialOperation/>
-                  </buttons>
+                  <buttons labelExpression="Cancel" closeDialogOnClick="true" rollbackChangesOnClose="true"/>
                   <buttons labelExpression="Create" default="true" closeDialogOnClick="true">
                     <initialOperation>
                       <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:externalThreat.copyControl(controls)"/>
@@ -958,7 +955,6 @@
             <representationNameVariable name="diagramName"/>
           </ownedTools>
           <ownedTools xsi:type="tool:DiagramCreationDescription" name="DataflowCreationTool" diagramDescription="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='DataFlowDiagram']">
-            <initialOperation/>
             <containerViewVariable name="containerView"/>
             <representationNameVariable name="diagramName"/>
           </ownedTools>
@@ -1492,9 +1488,14 @@
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:selection">
                 <subModelOperations xsi:type="tool_1:For" expression="var:selection" iteratorName="data">
+                  <subModelOperations xsi:type="tool_1:Let" variableName="oldName" valueExpression="aql:data.oclAsType(TRADES::Data).name"/>
                   <subModelOperations xsi:type="properties:DialogModelOperation" titleExpression="Rename dialog">
                     <buttons labelExpression="Cancel" closeDialogOnClick="true" rollbackChangesOnClose="true">
-                      <initialOperation/>
+                      <initialOperation>
+                        <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:data">
+                          <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="var:oldName"/>
+                        </firstModelOperations>
+                      </initialOperation>
                     </buttons>
                     <buttons labelExpression="OK" default="true" closeDialogOnClick="true">
                       <initialOperation/>
@@ -1521,9 +1522,14 @@
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:selection">
                 <subModelOperations xsi:type="tool_1:For" expression="var:selection" iteratorName="data">
+                  <subModelOperations xsi:type="tool_1:Let" variableName="oldName" valueExpression="aql:data.name"/>
                   <subModelOperations xsi:type="properties:DialogModelOperation" titleExpression="Rename dialog">
                     <buttons labelExpression="Cancel" closeDialogOnClick="true" rollbackChangesOnClose="true">
-                      <initialOperation/>
+                      <initialOperation>
+                        <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:data">
+                          <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="var:oldName"/>
+                        </firstModelOperations>
+                      </initialOperation>
                     </buttons>
                     <buttons labelExpression="OK" default="true" closeDialogOnClick="true">
                       <initialOperation/>
