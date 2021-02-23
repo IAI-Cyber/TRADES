@@ -146,5 +146,136 @@
     <genClasses ecoreClass="TRADES.ecore#//DataOwner">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//DataOwner/data"/>
     </genClasses>
+    <genClasses ecoreClass="TRADES.ecore#//Link">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Link/href"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Link/rel"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Link/mediaType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Link/text"/>
+    </genClasses>
+    <genClasses ecoreClass="TRADES.ecore#//Param"/>
+    <genClasses ecoreClass="TRADES.ecore#//Conrol"/>
+    <genClasses ecoreClass="TRADES.ecore#//Address">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Address/addrLine"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Address/city"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Address/state"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Address/postaCode"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Address/country"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Address/type"/>
+    </genClasses>
+    <genClasses ecoreClass="TRADES.ecore#//Role">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Role/title"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Role/shortName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Role/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Role/properties"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Role/annotations"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Role/links"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Role/remark"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Role/id"/>
+    </genClasses>
+    <genClasses ecoreClass="TRADES.ecore#//Remark">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Remark/description"/>
+    </genClasses>
+    <genClasses ecoreClass="TRADES.ecore#//Catalog">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Catalog/uuid"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Catalog/metadata"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Catalog/params"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Catalog/conrols"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Catalog/groups"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Catalog/backmatter"/>
+    </genClasses>
+    <genClasses ecoreClass="TRADES.ecore#//BackMatter"/>
+    <genClasses ecoreClass="TRADES.ecore#//Revision">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Revision/title"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Revision/published"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Revision/lastModified"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Revision/version"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Revision/oscalVersion"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Revision/propertyies"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Revision/annotations"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Revision/links"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Revision/remark"/>
+    </genClasses>
+    <genClasses ecoreClass="TRADES.ecore#//Group"/>
+    <genClasses ecoreClass="TRADES.ecore#//Location">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Location/title"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Location/addres"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Location/emailAddress"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Location/uuid"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Location/telephonenumbers"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Location/url"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Location/properties"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Location/annotations"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Location/links"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Location/remark"/>
+    </genClasses>
+    <genClasses ecoreClass="TRADES.ecore#//Annotation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Annotation/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Annotation/uuid"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Annotation/ns"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Annotation/value"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Annotation/remark"/>
+    </genClasses>
+    <genClasses ecoreClass="TRADES.ecore#//DocumentId">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//DocumentId/scheme"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//DocumentId/text"/>
+    </genClasses>
+    <genClasses ecoreClass="TRADES.ecore#//Property">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Property/uuid"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Property/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Property/ns"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Property/class"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Property/description"/>
+    </genClasses>
+    <genClasses ecoreClass="TRADES.ecore#//Metadata">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Metadata/title"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Metadata/published"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Metadata/lastModified"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Metadata/version"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Metadata/oscalVersion"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Metadata/documentid"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Metadata/properties"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Metadata/annotations"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Metadata/links"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Metadata/roles"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Metadata/revision"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Metadata/locations"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Metadata/parties"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Metadata/responsibleparties"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Metadata/remark"/>
+    </genClasses>
+    <genClasses ecoreClass="TRADES.ecore#//Revisions">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Revisions/revisions"/>
+    </genClasses>
+    <genClasses ecoreClass="TRADES.ecore#//TelephoneNumber">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//TelephoneNumber/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//TelephoneNumber/number"/>
+    </genClasses>
+    <genClasses ecoreClass="TRADES.ecore#//Party">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Party/uuid"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Party/newAttribute"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Party/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Party/shortName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Party/externalids"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Party/properties"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Party/annotations"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Party/links"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Party/emailAddress"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Party/telephonenumbers"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Party/address"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Party/locationUuid"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Party/memberOfOrganization"/>
+    </genClasses>
+    <genClasses ecoreClass="TRADES.ecore#//ExternalId">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//ExternalId/scheme"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//ExternalId/text"/>
+    </genClasses>
+    <genClasses ecoreClass="TRADES.ecore#//ResponsibleParty">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//ResponsibleParty/roleId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//ResponsibleParty/partyUuid"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//ResponsibleParty/properties"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//ResponsibleParty/annotations"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//ResponsibleParty/links"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//ResponsibleParty/remark"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>
