@@ -342,8 +342,8 @@ public class ComponentImpl extends ComponentOwnerImpl implements Component {
 	@Override
 	public EList<AffectRelation> getAffectrelation() {
 		if (affectrelation == null) {
-			affectrelation = new EObjectContainmentEList<AffectRelation>(AffectRelation.class, this,
-					TRADESPackage.COMPONENT__AFFECTRELATION);
+			affectrelation = new EObjectContainmentWithInverseEList<AffectRelation>(AffectRelation.class, this,
+					TRADESPackage.COMPONENT__AFFECTRELATION, TRADESPackage.AFFECT_RELATION__SOURCE_COMPONENT);
 		}
 		return affectrelation;
 	}
@@ -425,6 +425,8 @@ public class ComponentImpl extends ComponentOwnerImpl implements Component {
 		case TRADESPackage.COMPONENT__THREAT_ALLOCATIONS:
 			return ((InternalEList<InternalEObject>) (InternalEList<?>) getThreatAllocations()).basicAdd(otherEnd,
 					msgs);
+		case TRADESPackage.COMPONENT__AFFECTRELATION:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getAffectrelation()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}

@@ -39,22 +39,24 @@ public interface AffectRelation extends NamedElement {
 	EList<Data> getData();
 
 	/**
-	 * Returns the value of the '<em><b>Source Component</b></em>' reference.
+	 * Returns the value of the '<em><b>Source Component</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link dsm.TRADES.Component#getAffectrelation <em>Affectrelation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Source Component</em>' reference.
+	 * @return the value of the '<em>Source Component</em>' container reference.
 	 * @see #setSourceComponent(Component)
 	 * @see dsm.TRADES.TRADESPackage#getAffectRelation_SourceComponent()
-	 * @model required="true"
+	 * @see dsm.TRADES.Component#getAffectrelation
+	 * @model opposite="affectrelation" required="true" transient="false"
 	 * @generated
 	 */
 	Component getSourceComponent();
 
 	/**
-	 * Sets the value of the '{@link dsm.TRADES.AffectRelation#getSourceComponent <em>Source Component</em>}' reference.
+	 * Sets the value of the '{@link dsm.TRADES.AffectRelation#getSourceComponent <em>Source Component</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Source Component</em>' reference.
+	 * @param value the new value of the '<em>Source Component</em>' container reference.
 	 * @see #getSourceComponent()
 	 * @generated
 	 */

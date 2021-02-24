@@ -15,6 +15,7 @@ import java.util.Collection;
 import java.util.Map;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
@@ -28,6 +29,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EObjectValidator;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 
 /**
  * <!-- begin-user-doc -->
@@ -55,16 +57,6 @@ public class AffectRelationImpl extends NamedElementImpl implements AffectRelati
 	 * @ordered
 	 */
 	protected EList<Data> data;
-
-	/**
-	 * The cached value of the '{@link #getSourceComponent() <em>Source Component</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSourceComponent()
-	 * @generated
-	 * @ordered
-	 */
-	protected Component sourceComponent;
 
 	/**
 	 * The cached value of the '{@link #getTargetComponent() <em>Target Component</em>}' reference.
@@ -135,16 +127,9 @@ public class AffectRelationImpl extends NamedElementImpl implements AffectRelati
 	 */
 	@Override
 	public Component getSourceComponent() {
-		if (sourceComponent != null && sourceComponent.eIsProxy()) {
-			InternalEObject oldSourceComponent = (InternalEObject) sourceComponent;
-			sourceComponent = (Component) eResolveProxy(oldSourceComponent);
-			if (sourceComponent != oldSourceComponent) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							TRADESPackage.AFFECT_RELATION__SOURCE_COMPONENT, oldSourceComponent, sourceComponent));
-			}
-		}
-		return sourceComponent;
+		if (eContainerFeatureID() != TRADESPackage.AFFECT_RELATION__SOURCE_COMPONENT)
+			return null;
+		return (Component) eInternalContainer();
 	}
 
 	/**
@@ -152,8 +137,10 @@ public class AffectRelationImpl extends NamedElementImpl implements AffectRelati
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Component basicGetSourceComponent() {
-		return sourceComponent;
+	public NotificationChain basicSetSourceComponent(Component newSourceComponent, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject) newSourceComponent, TRADESPackage.AFFECT_RELATION__SOURCE_COMPONENT,
+				msgs);
+		return msgs;
 	}
 
 	/**
@@ -163,11 +150,23 @@ public class AffectRelationImpl extends NamedElementImpl implements AffectRelati
 	 */
 	@Override
 	public void setSourceComponent(Component newSourceComponent) {
-		Component oldSourceComponent = sourceComponent;
-		sourceComponent = newSourceComponent;
-		if (eNotificationRequired())
+		if (newSourceComponent != eInternalContainer()
+				|| (eContainerFeatureID() != TRADESPackage.AFFECT_RELATION__SOURCE_COMPONENT
+						&& newSourceComponent != null)) {
+			if (EcoreUtil.isAncestor(this, newSourceComponent))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newSourceComponent != null)
+				msgs = ((InternalEObject) newSourceComponent).eInverseAdd(this, TRADESPackage.COMPONENT__AFFECTRELATION,
+						Component.class, msgs);
+			msgs = basicSetSourceComponent(newSourceComponent, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TRADESPackage.AFFECT_RELATION__SOURCE_COMPONENT,
-					oldSourceComponent, sourceComponent));
+					newSourceComponent, newSourceComponent));
 	}
 
 	/**
@@ -266,14 +265,57 @@ public class AffectRelationImpl extends NamedElementImpl implements AffectRelati
 	 * @generated
 	 */
 	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+		case TRADESPackage.AFFECT_RELATION__SOURCE_COMPONENT:
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			return basicSetSourceComponent((Component) otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+		case TRADESPackage.AFFECT_RELATION__SOURCE_COMPONENT:
+			return basicSetSourceComponent(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+		case TRADESPackage.AFFECT_RELATION__SOURCE_COMPONENT:
+			return eInternalContainer().eInverseRemove(this, TRADESPackage.COMPONENT__AFFECTRELATION, Component.class,
+					msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case TRADESPackage.AFFECT_RELATION__DATA:
 			return getData();
 		case TRADESPackage.AFFECT_RELATION__SOURCE_COMPONENT:
-			if (resolve)
-				return getSourceComponent();
-			return basicGetSourceComponent();
+			return getSourceComponent();
 		case TRADESPackage.AFFECT_RELATION__TARGET_COMPONENT:
 			if (resolve)
 				return getTargetComponent();
@@ -345,7 +387,7 @@ public class AffectRelationImpl extends NamedElementImpl implements AffectRelati
 		case TRADESPackage.AFFECT_RELATION__DATA:
 			return data != null && !data.isEmpty();
 		case TRADESPackage.AFFECT_RELATION__SOURCE_COMPONENT:
-			return sourceComponent != null;
+			return getSourceComponent() != null;
 		case TRADESPackage.AFFECT_RELATION__TARGET_COMPONENT:
 			return targetComponent != null;
 		case TRADESPackage.AFFECT_RELATION__ANALYSIS_STATUS:

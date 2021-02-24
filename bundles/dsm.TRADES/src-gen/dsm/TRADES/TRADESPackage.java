@@ -822,7 +822,7 @@ public interface TRADESPackage extends EPackage {
 	int AFFECT_RELATION__DATA = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Source Component</b></em>' reference.
+	 * The feature id for the '<em><b>Source Component</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2217,10 +2217,10 @@ public interface TRADESPackage extends EPackage {
 	EReference getAffectRelation_Data();
 
 	/**
-	 * Returns the meta object for the reference '{@link dsm.TRADES.AffectRelation#getSourceComponent <em>Source Component</em>}'.
+	 * Returns the meta object for the container reference '{@link dsm.TRADES.AffectRelation#getSourceComponent <em>Source Component</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Source Component</em>'.
+	 * @return the meta object for the container reference '<em>Source Component</em>'.
 	 * @see dsm.TRADES.AffectRelation#getSourceComponent()
 	 * @see #getAffectRelation()
 	 * @generated
@@ -3177,7 +3177,7 @@ public interface TRADESPackage extends EPackage {
 		EReference AFFECT_RELATION__DATA = eINSTANCE.getAffectRelation_Data();
 
 		/**
-		 * The meta object literal for the '<em><b>Source Component</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Source Component</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

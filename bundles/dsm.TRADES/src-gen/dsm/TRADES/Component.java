@@ -70,11 +70,13 @@ public interface Component extends ComponentOwner, DataOwnerElement, NamedElemen
 	/**
 	 * Returns the value of the '<em><b>Affectrelation</b></em>' containment reference list.
 	 * The list contents are of type {@link dsm.TRADES.AffectRelation}.
+	 * It is bidirectional and its opposite is '{@link dsm.TRADES.AffectRelation#getSourceComponent <em>Source Component</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Affectrelation</em>' containment reference list.
 	 * @see dsm.TRADES.TRADESPackage#getComponent_Affectrelation()
-	 * @model containment="true"
+	 * @see dsm.TRADES.AffectRelation#getSourceComponent
+	 * @model opposite="sourceComponent" containment="true"
 	 * @generated
 	 */
 	EList<AffectRelation> getAffectrelation();
