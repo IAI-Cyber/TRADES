@@ -166,7 +166,16 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Parameter/value"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Parameter/select"/>
     </genClasses>
-    <genClasses ecoreClass="TRADES.ecore#//Conrol"/>
+    <genClasses ecoreClass="TRADES.ecore#//OscalControl">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//OscalControl/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//OscalControl/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//OscalControl/title"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//OscalControl/parameters"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//OscalControl/properties"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//OscalControl/annotations"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//OscalControl/links"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//OscalControl/parts"/>
+    </genClasses>
     <genClasses ecoreClass="TRADES.ecore#//Address">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Address/addrLine"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Address/city"/>
@@ -192,9 +201,9 @@
       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Catalog/uuid"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Catalog/metadata"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Catalog/params"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Catalog/conrols"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Catalog/groups"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Catalog/backmatter"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Catalog/oscalcontrols"/>
     </genClasses>
     <genClasses ecoreClass="TRADES.ecore#//BackMatter"/>
     <genClasses ecoreClass="TRADES.ecore#//Revision">
@@ -298,12 +307,15 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Test/expression"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Test/remark"/>
     </genClasses>
-    <genClasses ecoreClass="TRADES.ecore#//Part">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Part/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Part/id"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Part/ns"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Part/calss"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Part/title"/>
+    <genClasses ecoreClass="TRADES.ecore#//Partition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Partition/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Partition/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Partition/ns"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Partition/calss"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Partition/title"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Partition/properties"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Partition/annotations"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Partition/links"/>
     </genClasses>
     <genClasses ecoreClass="TRADES.ecore#//Select">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Select/howMany"/>
