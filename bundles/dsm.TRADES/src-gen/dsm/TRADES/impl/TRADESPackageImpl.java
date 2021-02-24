@@ -336,7 +336,7 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getAnalysis_Affectrelation() {
+	public EReference getAnalysis_Scoresystem() {
 		return (EReference) analysisEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -346,18 +346,8 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getAnalysis_Scoresystem() {
-		return (EReference) analysisEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EReference getAnalysis_ThreatOwner() {
-		return (EReference) analysisEClass.getEStructuralFeatures().get(2);
+		return (EReference) analysisEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1331,7 +1321,6 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 
 		// Create classes and their features
 		analysisEClass = createEClass(ANALYSIS);
-		createEReference(analysisEClass, ANALYSIS__AFFECTRELATION);
 		createEReference(analysisEClass, ANALYSIS__SCORESYSTEM);
 		createEReference(analysisEClass, ANALYSIS__THREAT_OWNER);
 
@@ -1511,9 +1500,6 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		// Initialize classes, features, and operations; add parameters
 		initEClass(analysisEClass, Analysis.class, "Analysis", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAnalysis_Affectrelation(), this.getAffectRelation(), null, "affectrelation", null, 0, -1,
-				Analysis.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAnalysis_Scoresystem(), this.getScoreSystem(), null, "scoresystem", null, 0, 1,
 				Analysis.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -148,22 +148,13 @@ public interface TRADESPackage extends EPackage {
 	int ANALYSIS__CONTROL_OWNER = COMPONENT_OWNER_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Affectrelation</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ANALYSIS__AFFECTRELATION = COMPONENT_OWNER_FEATURE_COUNT + 3;
-
-	/**
 	 * The feature id for the '<em><b>Scoresystem</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ANALYSIS__SCORESYSTEM = COMPONENT_OWNER_FEATURE_COUNT + 4;
+	int ANALYSIS__SCORESYSTEM = COMPONENT_OWNER_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Threat Owner</b></em>' containment reference.
@@ -172,7 +163,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ANALYSIS__THREAT_OWNER = COMPONENT_OWNER_FEATURE_COUNT + 5;
+	int ANALYSIS__THREAT_OWNER = COMPONENT_OWNER_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Analysis</em>' class.
@@ -181,7 +172,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ANALYSIS_FEATURE_COUNT = COMPONENT_OWNER_FEATURE_COUNT + 6;
+	int ANALYSIS_FEATURE_COUNT = COMPONENT_OWNER_FEATURE_COUNT + 5;
 
 	/**
 	 * The operation id for the '<em>Get Datas</em>' operation.
@@ -1795,17 +1786,6 @@ public interface TRADESPackage extends EPackage {
 	EClass getAnalysis();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link dsm.TRADES.Analysis#getAffectrelation <em>Affectrelation</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Affectrelation</em>'.
-	 * @see dsm.TRADES.Analysis#getAffectrelation()
-	 * @see #getAnalysis()
-	 * @generated
-	 */
-	EReference getAnalysis_Affectrelation();
-
-	/**
 	 * Returns the meta object for the containment reference '{@link dsm.TRADES.Analysis#getScoresystem <em>Scoresystem</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2858,14 +2838,6 @@ public interface TRADESPackage extends EPackage {
 		 * @generated
 		 */
 		EClass ANALYSIS = eINSTANCE.getAnalysis();
-
-		/**
-		 * The meta object literal for the '<em><b>Affectrelation</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ANALYSIS__AFFECTRELATION = eINSTANCE.getAnalysis_Affectrelation();
 
 		/**
 		 * The meta object literal for the '<em><b>Scoresystem</b></em>' containment reference feature.

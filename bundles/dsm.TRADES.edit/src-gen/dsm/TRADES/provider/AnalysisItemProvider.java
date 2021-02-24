@@ -82,7 +82,6 @@ public class AnalysisItemProvider extends ComponentOwnerItemProvider {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(TRADESPackage.Literals.DATA_OWNER_ELEMENT__DATA_OWNER);
 			childrenFeatures.add(TRADESPackage.Literals.ABSTRACT_CONTROL_OWNER__CONTROL_OWNER);
-			childrenFeatures.add(TRADESPackage.Literals.ANALYSIS__AFFECTRELATION);
 			childrenFeatures.add(TRADESPackage.Literals.ANALYSIS__SCORESYSTEM);
 			childrenFeatures.add(TRADESPackage.Literals.ANALYSIS__THREAT_OWNER);
 		}
@@ -153,7 +152,6 @@ public class AnalysisItemProvider extends ComponentOwnerItemProvider {
 			return;
 		case TRADESPackage.ANALYSIS__DATA_OWNER:
 		case TRADESPackage.ANALYSIS__CONTROL_OWNER:
-		case TRADESPackage.ANALYSIS__AFFECTRELATION:
 		case TRADESPackage.ANALYSIS__SCORESYSTEM:
 		case TRADESPackage.ANALYSIS__THREAT_OWNER:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
@@ -178,9 +176,6 @@ public class AnalysisItemProvider extends ComponentOwnerItemProvider {
 
 		newChildDescriptors.add(createChildParameter(TRADESPackage.Literals.ABSTRACT_CONTROL_OWNER__CONTROL_OWNER,
 				TRADESFactory.eINSTANCE.createControlOwner()));
-
-		newChildDescriptors.add(createChildParameter(TRADESPackage.Literals.ANALYSIS__AFFECTRELATION,
-				TRADESFactory.eINSTANCE.createAffectRelation()));
 
 		newChildDescriptors.add(createChildParameter(TRADESPackage.Literals.ANALYSIS__SCORESYSTEM,
 				TRADESFactory.eINSTANCE.createScoreSystem()));

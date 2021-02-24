@@ -2,8 +2,6 @@
  */
 package dsm.TRADES;
 
-import org.eclipse.emf.common.util.EList;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Analysis</b></em>'.
@@ -13,7 +11,6 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link dsm.TRADES.Analysis#getAffectrelation <em>Affectrelation</em>}</li>
  *   <li>{@link dsm.TRADES.Analysis#getScoresystem <em>Scoresystem</em>}</li>
  *   <li>{@link dsm.TRADES.Analysis#getThreatOwner <em>Threat Owner</em>}</li>
  * </ul>
@@ -23,18 +20,6 @@ import org.eclipse.emf.common.util.EList;
  * @generated
  */
 public interface Analysis extends ComponentOwner, DataOwnerElement, NamedElement, AbstractControlOwner {
-	/**
-	 * Returns the value of the '<em><b>Affectrelation</b></em>' containment reference list.
-	 * The list contents are of type {@link dsm.TRADES.AffectRelation}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Affectrelation</em>' containment reference list.
-	 * @see dsm.TRADES.TRADESPackage#getAnalysis_Affectrelation()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<AffectRelation> getAffectrelation();
-
 	/**
 	 * Returns the value of the '<em><b>Scoresystem</b></em>' containment reference.
 	 * <!-- begin-user-doc -->

@@ -26,7 +26,6 @@
     <genDataTypes ecoreDataType="TRADES.ecore#//RGBColor" create="return RGBColor.decode(it);"
         convert="return it == null ? &quot;&quot; : it.encode();"/>
     <genClasses ecoreClass="TRADES.ecore#//Analysis">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Analysis/affectrelation"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Analysis/scoresystem"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Analysis/threatOwner"/>
     </genClasses>

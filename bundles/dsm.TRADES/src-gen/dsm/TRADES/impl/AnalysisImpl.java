@@ -3,7 +3,6 @@
 package dsm.TRADES.impl;
 
 import dsm.TRADES.AbstractControlOwner;
-import dsm.TRADES.AffectRelation;
 import dsm.TRADES.Analysis;
 import dsm.TRADES.Control;
 import dsm.TRADES.ControlOwner;
@@ -16,9 +15,6 @@ import dsm.TRADES.TRADESPackage;
 import dsm.TRADES.ThreatsOwner;
 
 import java.lang.reflect.InvocationTargetException;
-
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -28,9 +24,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -43,7 +36,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getDataOwner <em>Data Owner</em>}</li>
  *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getName <em>Name</em>}</li>
  *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getControlOwner <em>Control Owner</em>}</li>
- *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getAffectrelation <em>Affectrelation</em>}</li>
  *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getScoresystem <em>Scoresystem</em>}</li>
  *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getThreatOwner <em>Threat Owner</em>}</li>
  * </ul>
@@ -90,16 +82,6 @@ public class AnalysisImpl extends ComponentOwnerImpl implements Analysis {
 	 * @ordered
 	 */
 	protected ControlOwner controlOwner;
-
-	/**
-	 * The cached value of the '{@link #getAffectrelation() <em>Affectrelation</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAffectrelation()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<AffectRelation> affectrelation;
 
 	/**
 	 * The cached value of the '{@link #getScoresystem() <em>Scoresystem</em>}' containment reference.
@@ -273,20 +255,6 @@ public class AnalysisImpl extends ComponentOwnerImpl implements Analysis {
 	 * @generated
 	 */
 	@Override
-	public EList<AffectRelation> getAffectrelation() {
-		if (affectrelation == null) {
-			affectrelation = new EObjectContainmentEList<AffectRelation>(AffectRelation.class, this,
-					TRADESPackage.ANALYSIS__AFFECTRELATION);
-		}
-		return affectrelation;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public ScoreSystem getScoresystem() {
 		return scoresystem;
 	}
@@ -445,8 +413,6 @@ public class AnalysisImpl extends ComponentOwnerImpl implements Analysis {
 			return basicSetDataOwner(null, msgs);
 		case TRADESPackage.ANALYSIS__CONTROL_OWNER:
 			return basicSetControlOwner(null, msgs);
-		case TRADESPackage.ANALYSIS__AFFECTRELATION:
-			return ((InternalEList<?>) getAffectrelation()).basicRemove(otherEnd, msgs);
 		case TRADESPackage.ANALYSIS__SCORESYSTEM:
 			return basicSetScoresystem(null, msgs);
 		case TRADESPackage.ANALYSIS__THREAT_OWNER:
@@ -469,8 +435,6 @@ public class AnalysisImpl extends ComponentOwnerImpl implements Analysis {
 			return getName();
 		case TRADESPackage.ANALYSIS__CONTROL_OWNER:
 			return getControlOwner();
-		case TRADESPackage.ANALYSIS__AFFECTRELATION:
-			return getAffectrelation();
 		case TRADESPackage.ANALYSIS__SCORESYSTEM:
 			return getScoresystem();
 		case TRADESPackage.ANALYSIS__THREAT_OWNER:
@@ -496,10 +460,6 @@ public class AnalysisImpl extends ComponentOwnerImpl implements Analysis {
 			return;
 		case TRADESPackage.ANALYSIS__CONTROL_OWNER:
 			setControlOwner((ControlOwner) newValue);
-			return;
-		case TRADESPackage.ANALYSIS__AFFECTRELATION:
-			getAffectrelation().clear();
-			getAffectrelation().addAll((Collection<? extends AffectRelation>) newValue);
 			return;
 		case TRADESPackage.ANALYSIS__SCORESYSTEM:
 			setScoresystem((ScoreSystem) newValue);
@@ -528,9 +488,6 @@ public class AnalysisImpl extends ComponentOwnerImpl implements Analysis {
 		case TRADESPackage.ANALYSIS__CONTROL_OWNER:
 			setControlOwner((ControlOwner) null);
 			return;
-		case TRADESPackage.ANALYSIS__AFFECTRELATION:
-			getAffectrelation().clear();
-			return;
 		case TRADESPackage.ANALYSIS__SCORESYSTEM:
 			setScoresystem((ScoreSystem) null);
 			return;
@@ -555,8 +512,6 @@ public class AnalysisImpl extends ComponentOwnerImpl implements Analysis {
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		case TRADESPackage.ANALYSIS__CONTROL_OWNER:
 			return controlOwner != null;
-		case TRADESPackage.ANALYSIS__AFFECTRELATION:
-			return affectrelation != null && !affectrelation.isEmpty();
 		case TRADESPackage.ANALYSIS__SCORESYSTEM:
 			return scoresystem != null;
 		case TRADESPackage.ANALYSIS__THREAT_OWNER:
