@@ -486,7 +486,7 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getComponent_Analysis() {
+	public EReference getComponent_Affectrelation() {
 		return (EReference) componentEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -496,18 +496,8 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getComponent_Affectrelation() {
-		return (EReference) componentEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EReference getComponent_Threat() {
-		return (EReference) componentEClass.getEStructuralFeatures().get(5);
+		return (EReference) componentEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -1358,7 +1348,6 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		createEReference(componentEClass, COMPONENT__ALLOCATED_THREAT);
 		createEReference(componentEClass, COMPONENT__IMPLEMENTS);
 		createEReference(componentEClass, COMPONENT__THREAT_ALLOCATIONS);
-		createEReference(componentEClass, COMPONENT__ANALYSIS);
 		createEReference(componentEClass, COMPONENT__AFFECTRELATION);
 		createEReference(componentEClass, COMPONENT__THREAT);
 
@@ -1564,9 +1553,6 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getComponent_ThreatAllocations(), this.getThreatAllocationRelation(),
 				this.getThreatAllocationRelation_Component(), "threatAllocations", null, 0, -1, Component.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getComponent_Analysis(), this.getAnalysis(), null, "analysis", null, 0, -1, Component.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getComponent_Affectrelation(), this.getAffectRelation(), null, "affectrelation", null, 0, -1,

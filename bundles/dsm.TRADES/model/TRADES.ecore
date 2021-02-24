@@ -33,8 +33,6 @@
         eType="#//Control" eOpposite="#//Control/implementedBy"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="threatAllocations" upperBound="-1"
         eType="#//ThreatAllocationRelation" containment="true" eOpposite="#//ThreatAllocationRelation/component"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="analysis" upperBound="-1"
-        eType="#//Analysis" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="affectrelation" upperBound="-1"
         eType="#//AffectRelation" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="threat" upperBound="-1"

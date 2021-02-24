@@ -439,22 +439,13 @@ public interface TRADESPackage extends EPackage {
 	int COMPONENT__THREAT_ALLOCATIONS = COMPONENT_OWNER_FEATURE_COUNT + 5;
 
 	/**
-	 * The feature id for the '<em><b>Analysis</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT__ANALYSIS = COMPONENT_OWNER_FEATURE_COUNT + 6;
-
-	/**
 	 * The feature id for the '<em><b>Affectrelation</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__AFFECTRELATION = COMPONENT_OWNER_FEATURE_COUNT + 7;
+	int COMPONENT__AFFECTRELATION = COMPONENT_OWNER_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Threat</b></em>' containment reference list.
@@ -463,7 +454,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__THREAT = COMPONENT_OWNER_FEATURE_COUNT + 8;
+	int COMPONENT__THREAT = COMPONENT_OWNER_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of structural features of the '<em>Component</em>' class.
@@ -472,7 +463,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_FEATURE_COUNT = COMPONENT_OWNER_FEATURE_COUNT + 9;
+	int COMPONENT_FEATURE_COUNT = COMPONENT_OWNER_FEATURE_COUNT + 8;
 
 	/**
 	 * The operation id for the '<em>Get Datas</em>' operation.
@@ -1966,17 +1957,6 @@ public interface TRADESPackage extends EPackage {
 	EReference getComponent_ThreatAllocations();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link dsm.TRADES.Component#getAnalysis <em>Analysis</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Analysis</em>'.
-	 * @see dsm.TRADES.Component#getAnalysis()
-	 * @see #getComponent()
-	 * @generated
-	 */
-	EReference getComponent_Analysis();
-
-	/**
 	 * Returns the meta object for the containment reference list '{@link dsm.TRADES.Component#getAffectrelation <em>Affectrelation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3003,14 +2983,6 @@ public interface TRADESPackage extends EPackage {
 		 * @generated
 		 */
 		EReference COMPONENT__THREAT_ALLOCATIONS = eINSTANCE.getComponent_ThreatAllocations();
-
-		/**
-		 * The meta object literal for the '<em><b>Analysis</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference COMPONENT__ANALYSIS = eINSTANCE.getComponent_Analysis();
 
 		/**
 		 * The meta object literal for the '<em><b>Affectrelation</b></em>' containment reference list feature.

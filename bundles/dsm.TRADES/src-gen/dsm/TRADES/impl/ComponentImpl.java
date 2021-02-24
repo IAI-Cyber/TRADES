@@ -4,7 +4,6 @@ package dsm.TRADES.impl;
 
 import dsm.TRADES.AbstractControlOwner;
 import dsm.TRADES.AffectRelation;
-import dsm.TRADES.Analysis;
 import dsm.TRADES.Component;
 import dsm.TRADES.Control;
 import dsm.TRADES.ControlOwner;
@@ -49,7 +48,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dsm.TRADES.impl.ComponentImpl#getAllocatedThreat <em>Allocated Threat</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ComponentImpl#getImplements <em>Implements</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ComponentImpl#getThreatAllocations <em>Threat Allocations</em>}</li>
- *   <li>{@link dsm.TRADES.impl.ComponentImpl#getAnalysis <em>Analysis</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ComponentImpl#getAffectrelation <em>Affectrelation</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ComponentImpl#getThreat <em>Threat</em>}</li>
  * </ul>
@@ -126,16 +124,6 @@ public class ComponentImpl extends ComponentOwnerImpl implements Component {
 	 * @ordered
 	 */
 	protected EList<ThreatAllocationRelation> threatAllocations;
-
-	/**
-	 * The cached value of the '{@link #getAnalysis() <em>Analysis</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAnalysis()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Analysis> analysis;
 
 	/**
 	 * The cached value of the '{@link #getAffectrelation() <em>Affectrelation</em>}' containment reference list.
@@ -352,19 +340,6 @@ public class ComponentImpl extends ComponentOwnerImpl implements Component {
 	 * @generated
 	 */
 	@Override
-	public EList<Analysis> getAnalysis() {
-		if (analysis == null) {
-			analysis = new EObjectContainmentEList<Analysis>(Analysis.class, this, TRADESPackage.COMPONENT__ANALYSIS);
-		}
-		return analysis;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EList<AffectRelation> getAffectrelation() {
 		if (affectrelation == null) {
 			affectrelation = new EObjectContainmentEList<AffectRelation>(AffectRelation.class, this,
@@ -472,8 +447,6 @@ public class ComponentImpl extends ComponentOwnerImpl implements Component {
 			return ((InternalEList<?>) getImplements()).basicRemove(otherEnd, msgs);
 		case TRADESPackage.COMPONENT__THREAT_ALLOCATIONS:
 			return ((InternalEList<?>) getThreatAllocations()).basicRemove(otherEnd, msgs);
-		case TRADESPackage.COMPONENT__ANALYSIS:
-			return ((InternalEList<?>) getAnalysis()).basicRemove(otherEnd, msgs);
 		case TRADESPackage.COMPONENT__AFFECTRELATION:
 			return ((InternalEList<?>) getAffectrelation()).basicRemove(otherEnd, msgs);
 		case TRADESPackage.COMPONENT__THREAT:
@@ -502,8 +475,6 @@ public class ComponentImpl extends ComponentOwnerImpl implements Component {
 			return getImplements();
 		case TRADESPackage.COMPONENT__THREAT_ALLOCATIONS:
 			return getThreatAllocations();
-		case TRADESPackage.COMPONENT__ANALYSIS:
-			return getAnalysis();
 		case TRADESPackage.COMPONENT__AFFECTRELATION:
 			return getAffectrelation();
 		case TRADESPackage.COMPONENT__THREAT:
@@ -541,10 +512,6 @@ public class ComponentImpl extends ComponentOwnerImpl implements Component {
 		case TRADESPackage.COMPONENT__THREAT_ALLOCATIONS:
 			getThreatAllocations().clear();
 			getThreatAllocations().addAll((Collection<? extends ThreatAllocationRelation>) newValue);
-			return;
-		case TRADESPackage.COMPONENT__ANALYSIS:
-			getAnalysis().clear();
-			getAnalysis().addAll((Collection<? extends Analysis>) newValue);
 			return;
 		case TRADESPackage.COMPONENT__AFFECTRELATION:
 			getAffectrelation().clear();
@@ -584,9 +551,6 @@ public class ComponentImpl extends ComponentOwnerImpl implements Component {
 		case TRADESPackage.COMPONENT__THREAT_ALLOCATIONS:
 			getThreatAllocations().clear();
 			return;
-		case TRADESPackage.COMPONENT__ANALYSIS:
-			getAnalysis().clear();
-			return;
 		case TRADESPackage.COMPONENT__AFFECTRELATION:
 			getAffectrelation().clear();
 			return;
@@ -617,8 +581,6 @@ public class ComponentImpl extends ComponentOwnerImpl implements Component {
 			return implements_ != null && !implements_.isEmpty();
 		case TRADESPackage.COMPONENT__THREAT_ALLOCATIONS:
 			return threatAllocations != null && !threatAllocations.isEmpty();
-		case TRADESPackage.COMPONENT__ANALYSIS:
-			return analysis != null && !analysis.isEmpty();
 		case TRADESPackage.COMPONENT__AFFECTRELATION:
 			return affectrelation != null && !affectrelation.isEmpty();
 		case TRADESPackage.COMPONENT__THREAT:
