@@ -41,7 +41,7 @@ public class ComponentItemProviderCustomImpl extends ComponentItemProvider {
 							.forEach(
 									rel2 -> fireNotifyChanged(new ViewerNotification(notification, rel2, false, true)));
 				}
-				for (AffectRelation affect : new_name.getAffectrelation()) {
+				for (AffectRelation affect : new_name.getAffectRelations()) {
 					fireNotifyChanged(new ViewerNotification(notification, affect, false, true));
 				}
 

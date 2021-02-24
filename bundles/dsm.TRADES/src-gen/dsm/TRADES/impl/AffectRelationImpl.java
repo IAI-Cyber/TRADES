@@ -159,8 +159,8 @@ public class AffectRelationImpl extends NamedElementImpl implements AffectRelati
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newSourceComponent != null)
-				msgs = ((InternalEObject) newSourceComponent).eInverseAdd(this, TRADESPackage.COMPONENT__AFFECTRELATION,
-						Component.class, msgs);
+				msgs = ((InternalEObject) newSourceComponent).eInverseAdd(this,
+						TRADESPackage.COMPONENT__AFFECT_RELATIONS, Component.class, msgs);
 			msgs = basicSetSourceComponent(newSourceComponent, msgs);
 			if (msgs != null)
 				msgs.dispatch();
@@ -298,7 +298,7 @@ public class AffectRelationImpl extends NamedElementImpl implements AffectRelati
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 		case TRADESPackage.AFFECT_RELATION__SOURCE_COMPONENT:
-			return eInternalContainer().eInverseRemove(this, TRADESPackage.COMPONENT__AFFECTRELATION, Component.class,
+			return eInternalContainer().eInverseRemove(this, TRADESPackage.COMPONENT__AFFECT_RELATIONS, Component.class,
 					msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);

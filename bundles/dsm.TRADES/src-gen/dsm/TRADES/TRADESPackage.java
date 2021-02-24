@@ -430,13 +430,13 @@ public interface TRADESPackage extends EPackage {
 	int COMPONENT__THREAT_ALLOCATIONS = COMPONENT_OWNER_FEATURE_COUNT + 5;
 
 	/**
-	 * The feature id for the '<em><b>Affectrelation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Affect Relations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__AFFECTRELATION = COMPONENT_OWNER_FEATURE_COUNT + 6;
+	int COMPONENT__AFFECT_RELATIONS = COMPONENT_OWNER_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Threat</b></em>' containment reference list.
@@ -1937,15 +1937,15 @@ public interface TRADESPackage extends EPackage {
 	EReference getComponent_ThreatAllocations();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link dsm.TRADES.Component#getAffectrelation <em>Affectrelation</em>}'.
+	 * Returns the meta object for the containment reference list '{@link dsm.TRADES.Component#getAffectRelations <em>Affect Relations</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Affectrelation</em>'.
-	 * @see dsm.TRADES.Component#getAffectrelation()
+	 * @return the meta object for the containment reference list '<em>Affect Relations</em>'.
+	 * @see dsm.TRADES.Component#getAffectRelations()
 	 * @see #getComponent()
 	 * @generated
 	 */
-	EReference getComponent_Affectrelation();
+	EReference getComponent_AffectRelations();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link dsm.TRADES.Component#getThreat <em>Threat</em>}'.
@@ -2957,12 +2957,12 @@ public interface TRADESPackage extends EPackage {
 		EReference COMPONENT__THREAT_ALLOCATIONS = eINSTANCE.getComponent_ThreatAllocations();
 
 		/**
-		 * The meta object literal for the '<em><b>Affectrelation</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Affect Relations</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference COMPONENT__AFFECTRELATION = eINSTANCE.getComponent_Affectrelation();
+		EReference COMPONENT__AFFECT_RELATIONS = eINSTANCE.getComponent_AffectRelations();
 
 		/**
 		 * The meta object literal for the '<em><b>Threat</b></em>' containment reference list feature.

@@ -48,7 +48,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dsm.TRADES.impl.ComponentImpl#getAllocatedThreat <em>Allocated Threat</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ComponentImpl#getImplements <em>Implements</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ComponentImpl#getThreatAllocations <em>Threat Allocations</em>}</li>
- *   <li>{@link dsm.TRADES.impl.ComponentImpl#getAffectrelation <em>Affectrelation</em>}</li>
+ *   <li>{@link dsm.TRADES.impl.ComponentImpl#getAffectRelations <em>Affect Relations</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ComponentImpl#getThreat <em>Threat</em>}</li>
  * </ul>
  *
@@ -126,14 +126,14 @@ public class ComponentImpl extends ComponentOwnerImpl implements Component {
 	protected EList<ThreatAllocationRelation> threatAllocations;
 
 	/**
-	 * The cached value of the '{@link #getAffectrelation() <em>Affectrelation</em>}' containment reference list.
+	 * The cached value of the '{@link #getAffectRelations() <em>Affect Relations</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAffectrelation()
+	 * @see #getAffectRelations()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<AffectRelation> affectrelation;
+	protected EList<AffectRelation> affectRelations;
 
 	/**
 	 * The cached value of the '{@link #getThreat() <em>Threat</em>}' containment reference list.
@@ -340,12 +340,12 @@ public class ComponentImpl extends ComponentOwnerImpl implements Component {
 	 * @generated
 	 */
 	@Override
-	public EList<AffectRelation> getAffectrelation() {
-		if (affectrelation == null) {
-			affectrelation = new EObjectContainmentWithInverseEList<AffectRelation>(AffectRelation.class, this,
-					TRADESPackage.COMPONENT__AFFECTRELATION, TRADESPackage.AFFECT_RELATION__SOURCE_COMPONENT);
+	public EList<AffectRelation> getAffectRelations() {
+		if (affectRelations == null) {
+			affectRelations = new EObjectContainmentWithInverseEList<AffectRelation>(AffectRelation.class, this,
+					TRADESPackage.COMPONENT__AFFECT_RELATIONS, TRADESPackage.AFFECT_RELATION__SOURCE_COMPONENT);
 		}
-		return affectrelation;
+		return affectRelations;
 	}
 
 	/**
@@ -425,8 +425,8 @@ public class ComponentImpl extends ComponentOwnerImpl implements Component {
 		case TRADESPackage.COMPONENT__THREAT_ALLOCATIONS:
 			return ((InternalEList<InternalEObject>) (InternalEList<?>) getThreatAllocations()).basicAdd(otherEnd,
 					msgs);
-		case TRADESPackage.COMPONENT__AFFECTRELATION:
-			return ((InternalEList<InternalEObject>) (InternalEList<?>) getAffectrelation()).basicAdd(otherEnd, msgs);
+		case TRADESPackage.COMPONENT__AFFECT_RELATIONS:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getAffectRelations()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -449,8 +449,8 @@ public class ComponentImpl extends ComponentOwnerImpl implements Component {
 			return ((InternalEList<?>) getImplements()).basicRemove(otherEnd, msgs);
 		case TRADESPackage.COMPONENT__THREAT_ALLOCATIONS:
 			return ((InternalEList<?>) getThreatAllocations()).basicRemove(otherEnd, msgs);
-		case TRADESPackage.COMPONENT__AFFECTRELATION:
-			return ((InternalEList<?>) getAffectrelation()).basicRemove(otherEnd, msgs);
+		case TRADESPackage.COMPONENT__AFFECT_RELATIONS:
+			return ((InternalEList<?>) getAffectRelations()).basicRemove(otherEnd, msgs);
 		case TRADESPackage.COMPONENT__THREAT:
 			return ((InternalEList<?>) getThreat()).basicRemove(otherEnd, msgs);
 		}
@@ -477,8 +477,8 @@ public class ComponentImpl extends ComponentOwnerImpl implements Component {
 			return getImplements();
 		case TRADESPackage.COMPONENT__THREAT_ALLOCATIONS:
 			return getThreatAllocations();
-		case TRADESPackage.COMPONENT__AFFECTRELATION:
-			return getAffectrelation();
+		case TRADESPackage.COMPONENT__AFFECT_RELATIONS:
+			return getAffectRelations();
 		case TRADESPackage.COMPONENT__THREAT:
 			return getThreat();
 		}
@@ -515,9 +515,9 @@ public class ComponentImpl extends ComponentOwnerImpl implements Component {
 			getThreatAllocations().clear();
 			getThreatAllocations().addAll((Collection<? extends ThreatAllocationRelation>) newValue);
 			return;
-		case TRADESPackage.COMPONENT__AFFECTRELATION:
-			getAffectrelation().clear();
-			getAffectrelation().addAll((Collection<? extends AffectRelation>) newValue);
+		case TRADESPackage.COMPONENT__AFFECT_RELATIONS:
+			getAffectRelations().clear();
+			getAffectRelations().addAll((Collection<? extends AffectRelation>) newValue);
 			return;
 		case TRADESPackage.COMPONENT__THREAT:
 			getThreat().clear();
@@ -553,8 +553,8 @@ public class ComponentImpl extends ComponentOwnerImpl implements Component {
 		case TRADESPackage.COMPONENT__THREAT_ALLOCATIONS:
 			getThreatAllocations().clear();
 			return;
-		case TRADESPackage.COMPONENT__AFFECTRELATION:
-			getAffectrelation().clear();
+		case TRADESPackage.COMPONENT__AFFECT_RELATIONS:
+			getAffectRelations().clear();
 			return;
 		case TRADESPackage.COMPONENT__THREAT:
 			getThreat().clear();
@@ -583,8 +583,8 @@ public class ComponentImpl extends ComponentOwnerImpl implements Component {
 			return implements_ != null && !implements_.isEmpty();
 		case TRADESPackage.COMPONENT__THREAT_ALLOCATIONS:
 			return threatAllocations != null && !threatAllocations.isEmpty();
-		case TRADESPackage.COMPONENT__AFFECTRELATION:
-			return affectrelation != null && !affectrelation.isEmpty();
+		case TRADESPackage.COMPONENT__AFFECT_RELATIONS:
+			return affectRelations != null && !affectRelations.isEmpty();
 		case TRADESPackage.COMPONENT__THREAT:
 			return threat != null && !threat.isEmpty();
 		}

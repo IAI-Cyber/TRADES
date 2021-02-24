@@ -40,14 +40,14 @@ public interface AffectRelation extends NamedElement {
 
 	/**
 	 * Returns the value of the '<em><b>Source Component</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link dsm.TRADES.Component#getAffectrelation <em>Affectrelation</em>}'.
+	 * It is bidirectional and its opposite is '{@link dsm.TRADES.Component#getAffectRelations <em>Affect Relations</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Source Component</em>' container reference.
 	 * @see #setSourceComponent(Component)
 	 * @see dsm.TRADES.TRADESPackage#getAffectRelation_SourceComponent()
-	 * @see dsm.TRADES.Component#getAffectrelation
-	 * @model opposite="affectrelation" required="true" transient="false"
+	 * @see dsm.TRADES.Component#getAffectRelations
+	 * @model opposite="affectRelations" required="true" transient="false"
 	 * @generated
 	 */
 	Component getSourceComponent();

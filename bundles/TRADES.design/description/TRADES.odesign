@@ -270,7 +270,7 @@
             <targetViewVariable name="targetView"/>
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql: source">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="TRADES::AffectRelation" referenceName="affectrelation">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="TRADES::AffectRelation" referenceName="affectRelations">
                   <subModelOperations xsi:type="tool_1:SetValue" featureName="sourceComponent" valueExpression="var:source"/>
                   <subModelOperations xsi:type="tool_1:SetValue" featureName="targetComponent" valueExpression="var:target"/>
                 </subModelOperations>
