@@ -29,8 +29,6 @@
         eType="#//ThreatAllocationRelation" containment="true" eOpposite="#//ThreatAllocationRelation/component"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="affectRelations" upperBound="-1"
         eType="#//AffectRelation" containment="true" eOpposite="#//AffectRelation/sourceComponent"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="threat" upperBound="-1"
-        eType="#//Threat" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Control" eSuperTypes="#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="mitigates" upperBound="-1"

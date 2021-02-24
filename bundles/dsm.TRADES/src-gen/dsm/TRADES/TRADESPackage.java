@@ -421,22 +421,13 @@ public interface TRADESPackage extends EPackage {
 	int COMPONENT__AFFECT_RELATIONS = COMPONENT_OWNER_FEATURE_COUNT + 5;
 
 	/**
-	 * The feature id for the '<em><b>Threat</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT__THREAT = COMPONENT_OWNER_FEATURE_COUNT + 6;
-
-	/**
 	 * The number of structural features of the '<em>Component</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_FEATURE_COUNT = COMPONENT_OWNER_FEATURE_COUNT + 7;
+	int COMPONENT_FEATURE_COUNT = COMPONENT_OWNER_FEATURE_COUNT + 6;
 
 	/**
 	 * The operation id for the '<em>Get Datas</em>' operation.
@@ -1899,17 +1890,6 @@ public interface TRADESPackage extends EPackage {
 	EReference getComponent_AffectRelations();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link dsm.TRADES.Component#getThreat <em>Threat</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Threat</em>'.
-	 * @see dsm.TRADES.Component#getThreat()
-	 * @see #getComponent()
-	 * @generated
-	 */
-	EReference getComponent_Threat();
-
-	/**
 	 * Returns the meta object for class '{@link dsm.TRADES.Control <em>Control</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2898,14 +2878,6 @@ public interface TRADESPackage extends EPackage {
 		 * @generated
 		 */
 		EReference COMPONENT__AFFECT_RELATIONS = eINSTANCE.getComponent_AffectRelations();
-
-		/**
-		 * The meta object literal for the '<em><b>Threat</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference COMPONENT__THREAT = eINSTANCE.getComponent_Threat();
 
 		/**
 		 * The meta object literal for the '{@link dsm.TRADES.impl.ControlImpl <em>Control</em>}' class.

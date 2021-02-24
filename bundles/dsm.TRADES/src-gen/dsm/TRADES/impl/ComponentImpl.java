@@ -12,7 +12,6 @@ import dsm.TRADES.DataOwner;
 import dsm.TRADES.DataOwnerElement;
 import dsm.TRADES.NamedElement;
 import dsm.TRADES.TRADESPackage;
-import dsm.TRADES.Threat;
 import dsm.TRADES.ThreatAllocationRelation;
 
 import java.lang.reflect.InvocationTargetException;
@@ -28,8 +27,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -48,7 +45,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dsm.TRADES.impl.ComponentImpl#getImplements <em>Implements</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ComponentImpl#getThreatAllocations <em>Threat Allocations</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ComponentImpl#getAffectRelations <em>Affect Relations</em>}</li>
- *   <li>{@link dsm.TRADES.impl.ComponentImpl#getThreat <em>Threat</em>}</li>
  * </ul>
  *
  * @generated
@@ -123,16 +119,6 @@ public class ComponentImpl extends ComponentOwnerImpl implements Component {
 	 * @ordered
 	 */
 	protected EList<AffectRelation> affectRelations;
-
-	/**
-	 * The cached value of the '{@link #getThreat() <em>Threat</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getThreat()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Threat> threat;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -329,19 +315,6 @@ public class ComponentImpl extends ComponentOwnerImpl implements Component {
 	 * @generated
 	 */
 	@Override
-	public EList<Threat> getThreat() {
-		if (threat == null) {
-			threat = new EObjectContainmentEList<Threat>(Threat.class, this, TRADESPackage.COMPONENT__THREAT);
-		}
-		return threat;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EList<Control> getAllControls() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -422,8 +395,6 @@ public class ComponentImpl extends ComponentOwnerImpl implements Component {
 			return ((InternalEList<?>) getThreatAllocations()).basicRemove(otherEnd, msgs);
 		case TRADESPackage.COMPONENT__AFFECT_RELATIONS:
 			return ((InternalEList<?>) getAffectRelations()).basicRemove(otherEnd, msgs);
-		case TRADESPackage.COMPONENT__THREAT:
-			return ((InternalEList<?>) getThreat()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -448,8 +419,6 @@ public class ComponentImpl extends ComponentOwnerImpl implements Component {
 			return getThreatAllocations();
 		case TRADESPackage.COMPONENT__AFFECT_RELATIONS:
 			return getAffectRelations();
-		case TRADESPackage.COMPONENT__THREAT:
-			return getThreat();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -484,10 +453,6 @@ public class ComponentImpl extends ComponentOwnerImpl implements Component {
 			getAffectRelations().clear();
 			getAffectRelations().addAll((Collection<? extends AffectRelation>) newValue);
 			return;
-		case TRADESPackage.COMPONENT__THREAT:
-			getThreat().clear();
-			getThreat().addAll((Collection<? extends Threat>) newValue);
-			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -518,9 +483,6 @@ public class ComponentImpl extends ComponentOwnerImpl implements Component {
 		case TRADESPackage.COMPONENT__AFFECT_RELATIONS:
 			getAffectRelations().clear();
 			return;
-		case TRADESPackage.COMPONENT__THREAT:
-			getThreat().clear();
-			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -545,8 +507,6 @@ public class ComponentImpl extends ComponentOwnerImpl implements Component {
 			return threatAllocations != null && !threatAllocations.isEmpty();
 		case TRADESPackage.COMPONENT__AFFECT_RELATIONS:
 			return affectRelations != null && !affectRelations.isEmpty();
-		case TRADESPackage.COMPONENT__THREAT:
-			return threat != null && !threat.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

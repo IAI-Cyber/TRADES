@@ -16,7 +16,6 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link dsm.TRADES.Component#getImplements <em>Implements</em>}</li>
  *   <li>{@link dsm.TRADES.Component#getThreatAllocations <em>Threat Allocations</em>}</li>
  *   <li>{@link dsm.TRADES.Component#getAffectRelations <em>Affect Relations</em>}</li>
- *   <li>{@link dsm.TRADES.Component#getThreat <em>Threat</em>}</li>
  * </ul>
  *
  * @see dsm.TRADES.TRADESPackage#getComponent()
@@ -65,17 +64,5 @@ public interface Component extends ComponentOwner, DataOwnerElement, NamedElemen
 	 * @generated
 	 */
 	EList<AffectRelation> getAffectRelations();
-
-	/**
-	 * Returns the value of the '<em><b>Threat</b></em>' containment reference list.
-	 * The list contents are of type {@link dsm.TRADES.Threat}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Threat</em>' containment reference list.
-	 * @see dsm.TRADES.TRADESPackage#getComponent_Threat()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<Threat> getThreat();
 
 } // Component

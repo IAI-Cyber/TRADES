@@ -466,16 +466,6 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getComponent_Threat() {
-		return (EReference) componentEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getControl() {
 		return controlEClass;
 	}
@@ -1316,7 +1306,6 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		createEReference(componentEClass, COMPONENT__IMPLEMENTS);
 		createEReference(componentEClass, COMPONENT__THREAT_ALLOCATIONS);
 		createEReference(componentEClass, COMPONENT__AFFECT_RELATIONS);
-		createEReference(componentEClass, COMPONENT__THREAT);
 
 		controlEClass = createEClass(CONTROL);
 		createEReference(controlEClass, CONTROL__MITIGATES);
@@ -1515,9 +1504,6 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getComponent_AffectRelations(), this.getAffectRelation(),
 				this.getAffectRelation_SourceComponent(), "affectRelations", null, 0, -1, Component.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getComponent_Threat(), this.getThreat(), null, "threat", null, 0, -1, Component.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
