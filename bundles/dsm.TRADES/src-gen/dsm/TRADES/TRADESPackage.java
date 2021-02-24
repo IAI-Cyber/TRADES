@@ -276,22 +276,13 @@ public interface TRADESPackage extends EPackage {
 	int THREAT__NAME = NAMED_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Allocated</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int THREAT__ALLOCATED = NAMED_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Threatallocation</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int THREAT__THREATALLOCATION = NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int THREAT__THREATALLOCATION = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Threat Type</b></em>' attribute.
@@ -300,7 +291,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int THREAT__THREAT_TYPE = NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int THREAT__THREAT_TYPE = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>ID</b></em>' attribute.
@@ -309,7 +300,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int THREAT__ID = NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int THREAT__ID = NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -318,7 +309,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int THREAT__DESCRIPTION = NAMED_ELEMENT_FEATURE_COUNT + 4;
+	int THREAT__DESCRIPTION = NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Applicability</b></em>' attribute.
@@ -327,7 +318,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int THREAT__APPLICABILITY = NAMED_ELEMENT_FEATURE_COUNT + 5;
+	int THREAT__APPLICABILITY = NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Threat</em>' class.
@@ -336,7 +327,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int THREAT_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 6;
+	int THREAT_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The operation id for the '<em>Check Is Used</em>' operation.
@@ -403,22 +394,13 @@ public interface TRADESPackage extends EPackage {
 	int COMPONENT__CONTROL_OWNER = COMPONENT_OWNER_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Allocated Threat</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT__ALLOCATED_THREAT = COMPONENT_OWNER_FEATURE_COUNT + 3;
-
-	/**
 	 * The feature id for the '<em><b>Implements</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__IMPLEMENTS = COMPONENT_OWNER_FEATURE_COUNT + 4;
+	int COMPONENT__IMPLEMENTS = COMPONENT_OWNER_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Threat Allocations</b></em>' containment reference list.
@@ -427,7 +409,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__THREAT_ALLOCATIONS = COMPONENT_OWNER_FEATURE_COUNT + 5;
+	int COMPONENT__THREAT_ALLOCATIONS = COMPONENT_OWNER_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Affect Relations</b></em>' containment reference list.
@@ -436,7 +418,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__AFFECT_RELATIONS = COMPONENT_OWNER_FEATURE_COUNT + 6;
+	int COMPONENT__AFFECT_RELATIONS = COMPONENT_OWNER_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Threat</b></em>' containment reference list.
@@ -445,7 +427,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__THREAT = COMPONENT_OWNER_FEATURE_COUNT + 7;
+	int COMPONENT__THREAT = COMPONENT_OWNER_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of structural features of the '<em>Component</em>' class.
@@ -454,7 +436,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_FEATURE_COUNT = COMPONENT_OWNER_FEATURE_COUNT + 8;
+	int COMPONENT_FEATURE_COUNT = COMPONENT_OWNER_FEATURE_COUNT + 7;
 
 	/**
 	 * The operation id for the '<em>Get Datas</em>' operation.
@@ -1261,15 +1243,6 @@ public interface TRADESPackage extends EPackage {
 	int EXTERNAL_THREAT__NAME = THREAT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Allocated</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXTERNAL_THREAT__ALLOCATED = THREAT__ALLOCATED;
-
-	/**
 	 * The feature id for the '<em><b>Threatallocation</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1818,17 +1791,6 @@ public interface TRADESPackage extends EPackage {
 	EClass getThreat();
 
 	/**
-	 * Returns the meta object for the reference list '{@link dsm.TRADES.Threat#getAllocated <em>Allocated</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Allocated</em>'.
-	 * @see dsm.TRADES.Threat#getAllocated()
-	 * @see #getThreat()
-	 * @generated
-	 */
-	EReference getThreat_Allocated();
-
-	/**
 	 * Returns the meta object for the reference list '{@link dsm.TRADES.Threat#getThreatallocation <em>Threatallocation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1902,17 +1864,6 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getComponent();
-
-	/**
-	 * Returns the meta object for the reference list '{@link dsm.TRADES.Component#getAllocatedThreat <em>Allocated Threat</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Allocated Threat</em>'.
-	 * @see dsm.TRADES.Component#getAllocatedThreat()
-	 * @see #getComponent()
-	 * @generated
-	 */
-	EReference getComponent_AllocatedThreat();
 
 	/**
 	 * Returns the meta object for the reference list '{@link dsm.TRADES.Component#getImplements <em>Implements</em>}'.
@@ -2866,14 +2817,6 @@ public interface TRADESPackage extends EPackage {
 		EClass THREAT = eINSTANCE.getThreat();
 
 		/**
-		 * The meta object literal for the '<em><b>Allocated</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference THREAT__ALLOCATED = eINSTANCE.getThreat_Allocated();
-
-		/**
 		 * The meta object literal for the '<em><b>Threatallocation</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2931,14 +2874,6 @@ public interface TRADESPackage extends EPackage {
 		 * @generated
 		 */
 		EClass COMPONENT = eINSTANCE.getComponent();
-
-		/**
-		 * The meta object literal for the '<em><b>Allocated Threat</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference COMPONENT__ALLOCATED_THREAT = eINSTANCE.getComponent_AllocatedThreat();
 
 		/**
 		 * The meta object literal for the '<em><b>Implements</b></em>' reference list feature.

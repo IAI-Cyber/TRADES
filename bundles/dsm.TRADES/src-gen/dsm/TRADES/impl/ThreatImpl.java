@@ -2,7 +2,6 @@
  */
 package dsm.TRADES.impl;
 
-import dsm.TRADES.Component;
 import dsm.TRADES.TRADESPackage;
 import dsm.TRADES.Threat;
 import dsm.TRADES.ThreatAllocationRelation;
@@ -39,7 +38,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link dsm.TRADES.impl.ThreatImpl#getAllocated <em>Allocated</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ThreatImpl#getThreatallocation <em>Threatallocation</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ThreatImpl#getThreatType <em>Threat Type</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ThreatImpl#getID <em>ID</em>}</li>
@@ -50,16 +48,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * @generated
  */
 public class ThreatImpl extends NamedElementImpl implements Threat {
-	/**
-	 * The cached value of the '{@link #getAllocated() <em>Allocated</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAllocated()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Component> allocated;
-
 	/**
 	 * The cached value of the '{@link #getThreatallocation() <em>Threatallocation</em>}' reference list.
 	 * <!-- begin-user-doc -->
@@ -167,20 +155,6 @@ public class ThreatImpl extends NamedElementImpl implements Threat {
 	@Override
 	protected EClass eStaticClass() {
 		return TRADESPackage.Literals.THREAT;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EList<Component> getAllocated() {
-		if (allocated == null) {
-			allocated = new EObjectWithInverseResolvingEList.ManyInverse<Component>(Component.class, this,
-					TRADESPackage.THREAT__ALLOCATED, TRADESPackage.COMPONENT__ALLOCATED_THREAT);
-		}
-		return allocated;
 	}
 
 	/**
@@ -326,8 +300,6 @@ public class ThreatImpl extends NamedElementImpl implements Threat {
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case TRADESPackage.THREAT__ALLOCATED:
-			return ((InternalEList<InternalEObject>) (InternalEList<?>) getAllocated()).basicAdd(otherEnd, msgs);
 		case TRADESPackage.THREAT__THREATALLOCATION:
 			return ((InternalEList<InternalEObject>) (InternalEList<?>) getThreatallocation()).basicAdd(otherEnd, msgs);
 		}
@@ -342,8 +314,6 @@ public class ThreatImpl extends NamedElementImpl implements Threat {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case TRADESPackage.THREAT__ALLOCATED:
-			return ((InternalEList<?>) getAllocated()).basicRemove(otherEnd, msgs);
 		case TRADESPackage.THREAT__THREATALLOCATION:
 			return ((InternalEList<?>) getThreatallocation()).basicRemove(otherEnd, msgs);
 		}
@@ -358,8 +328,6 @@ public class ThreatImpl extends NamedElementImpl implements Threat {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case TRADESPackage.THREAT__ALLOCATED:
-			return getAllocated();
 		case TRADESPackage.THREAT__THREATALLOCATION:
 			return getThreatallocation();
 		case TRADESPackage.THREAT__THREAT_TYPE:
@@ -383,10 +351,6 @@ public class ThreatImpl extends NamedElementImpl implements Threat {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case TRADESPackage.THREAT__ALLOCATED:
-			getAllocated().clear();
-			getAllocated().addAll((Collection<? extends Component>) newValue);
-			return;
 		case TRADESPackage.THREAT__THREATALLOCATION:
 			getThreatallocation().clear();
 			getThreatallocation().addAll((Collection<? extends ThreatAllocationRelation>) newValue);
@@ -415,9 +379,6 @@ public class ThreatImpl extends NamedElementImpl implements Threat {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case TRADESPackage.THREAT__ALLOCATED:
-			getAllocated().clear();
-			return;
 		case TRADESPackage.THREAT__THREATALLOCATION:
 			getThreatallocation().clear();
 			return;
@@ -445,8 +406,6 @@ public class ThreatImpl extends NamedElementImpl implements Threat {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case TRADESPackage.THREAT__ALLOCATED:
-			return allocated != null && !allocated.isEmpty();
 		case TRADESPackage.THREAT__THREATALLOCATION:
 			return threatallocation != null && !threatallocation.isEmpty();
 		case TRADESPackage.THREAT__THREAT_TYPE:

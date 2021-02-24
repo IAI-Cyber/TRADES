@@ -13,7 +13,6 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link dsm.TRADES.Component#getAllocatedThreat <em>Allocated Threat</em>}</li>
  *   <li>{@link dsm.TRADES.Component#getImplements <em>Implements</em>}</li>
  *   <li>{@link dsm.TRADES.Component#getThreatAllocations <em>Threat Allocations</em>}</li>
  *   <li>{@link dsm.TRADES.Component#getAffectRelations <em>Affect Relations</em>}</li>
@@ -25,20 +24,6 @@ import org.eclipse.emf.common.util.EList;
  * @generated
  */
 public interface Component extends ComponentOwner, DataOwnerElement, NamedElement, AbstractControlOwner {
-	/**
-	 * Returns the value of the '<em><b>Allocated Threat</b></em>' reference list.
-	 * The list contents are of type {@link dsm.TRADES.Threat}.
-	 * It is bidirectional and its opposite is '{@link dsm.TRADES.Threat#getAllocated <em>Allocated</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Allocated Threat</em>' reference list.
-	 * @see dsm.TRADES.TRADESPackage#getComponent_AllocatedThreat()
-	 * @see dsm.TRADES.Threat#getAllocated
-	 * @model opposite="allocated"
-	 * @generated
-	 */
-	EList<Threat> getAllocatedThreat();
-
 	/**
 	 * Returns the value of the '<em><b>Implements</b></em>' reference list.
 	 * The list contents are of type {@link dsm.TRADES.Control}.

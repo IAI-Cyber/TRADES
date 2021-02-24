@@ -45,7 +45,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dsm.TRADES.impl.ComponentImpl#getDataOwner <em>Data Owner</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ComponentImpl#getName <em>Name</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ComponentImpl#getControlOwner <em>Control Owner</em>}</li>
- *   <li>{@link dsm.TRADES.impl.ComponentImpl#getAllocatedThreat <em>Allocated Threat</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ComponentImpl#getImplements <em>Implements</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ComponentImpl#getThreatAllocations <em>Threat Allocations</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ComponentImpl#getAffectRelations <em>Affect Relations</em>}</li>
@@ -94,16 +93,6 @@ public class ComponentImpl extends ComponentOwnerImpl implements Component {
 	 * @ordered
 	 */
 	protected ControlOwner controlOwner;
-
-	/**
-	 * The cached value of the '{@link #getAllocatedThreat() <em>Allocated Threat</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAllocatedThreat()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Threat> allocatedThreat;
 
 	/**
 	 * The cached value of the '{@link #getImplements() <em>Implements</em>}' reference list.
@@ -297,20 +286,6 @@ public class ComponentImpl extends ComponentOwnerImpl implements Component {
 	 * @generated
 	 */
 	@Override
-	public EList<Threat> getAllocatedThreat() {
-		if (allocatedThreat == null) {
-			allocatedThreat = new EObjectWithInverseResolvingEList.ManyInverse<Threat>(Threat.class, this,
-					TRADESPackage.COMPONENT__ALLOCATED_THREAT, TRADESPackage.THREAT__ALLOCATED);
-		}
-		return allocatedThreat;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EList<Control> getImplements() {
 		if (implements_ == null) {
 			implements_ = new EObjectWithInverseResolvingEList.ManyInverse<Control>(Control.class, this,
@@ -418,8 +393,6 @@ public class ComponentImpl extends ComponentOwnerImpl implements Component {
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case TRADESPackage.COMPONENT__ALLOCATED_THREAT:
-			return ((InternalEList<InternalEObject>) (InternalEList<?>) getAllocatedThreat()).basicAdd(otherEnd, msgs);
 		case TRADESPackage.COMPONENT__IMPLEMENTS:
 			return ((InternalEList<InternalEObject>) (InternalEList<?>) getImplements()).basicAdd(otherEnd, msgs);
 		case TRADESPackage.COMPONENT__THREAT_ALLOCATIONS:
@@ -443,8 +416,6 @@ public class ComponentImpl extends ComponentOwnerImpl implements Component {
 			return basicSetDataOwner(null, msgs);
 		case TRADESPackage.COMPONENT__CONTROL_OWNER:
 			return basicSetControlOwner(null, msgs);
-		case TRADESPackage.COMPONENT__ALLOCATED_THREAT:
-			return ((InternalEList<?>) getAllocatedThreat()).basicRemove(otherEnd, msgs);
 		case TRADESPackage.COMPONENT__IMPLEMENTS:
 			return ((InternalEList<?>) getImplements()).basicRemove(otherEnd, msgs);
 		case TRADESPackage.COMPONENT__THREAT_ALLOCATIONS:
@@ -471,8 +442,6 @@ public class ComponentImpl extends ComponentOwnerImpl implements Component {
 			return getName();
 		case TRADESPackage.COMPONENT__CONTROL_OWNER:
 			return getControlOwner();
-		case TRADESPackage.COMPONENT__ALLOCATED_THREAT:
-			return getAllocatedThreat();
 		case TRADESPackage.COMPONENT__IMPLEMENTS:
 			return getImplements();
 		case TRADESPackage.COMPONENT__THREAT_ALLOCATIONS:
@@ -502,10 +471,6 @@ public class ComponentImpl extends ComponentOwnerImpl implements Component {
 			return;
 		case TRADESPackage.COMPONENT__CONTROL_OWNER:
 			setControlOwner((ControlOwner) newValue);
-			return;
-		case TRADESPackage.COMPONENT__ALLOCATED_THREAT:
-			getAllocatedThreat().clear();
-			getAllocatedThreat().addAll((Collection<? extends Threat>) newValue);
 			return;
 		case TRADESPackage.COMPONENT__IMPLEMENTS:
 			getImplements().clear();
@@ -544,9 +509,6 @@ public class ComponentImpl extends ComponentOwnerImpl implements Component {
 		case TRADESPackage.COMPONENT__CONTROL_OWNER:
 			setControlOwner((ControlOwner) null);
 			return;
-		case TRADESPackage.COMPONENT__ALLOCATED_THREAT:
-			getAllocatedThreat().clear();
-			return;
 		case TRADESPackage.COMPONENT__IMPLEMENTS:
 			getImplements().clear();
 			return;
@@ -577,8 +539,6 @@ public class ComponentImpl extends ComponentOwnerImpl implements Component {
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		case TRADESPackage.COMPONENT__CONTROL_OWNER:
 			return controlOwner != null;
-		case TRADESPackage.COMPONENT__ALLOCATED_THREAT:
-			return allocatedThreat != null && !allocatedThreat.isEmpty();
 		case TRADESPackage.COMPONENT__IMPLEMENTS:
 			return implements_ != null && !implements_.isEmpty();
 		case TRADESPackage.COMPONENT__THREAT_ALLOCATIONS:
