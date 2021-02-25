@@ -15,7 +15,7 @@
       <eParameters name="chain" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain"/>
       <eParameters name="context" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap"/>
     </eOperations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="threatallocation" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="threatAllocations" upperBound="-1"
         eType="#//ThreatAllocationRelation" eOpposite="#//ThreatAllocationRelation/threat"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="threatType" eType="#//threatTypeENUM"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -49,7 +49,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="component" lowerBound="1"
         eType="#//Component" eOpposite="#//Component/threatAllocations"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="threat" lowerBound="1"
-        eType="#//Threat" eOpposite="#//Threat/threatallocation"/>
+        eType="#//Threat" eOpposite="#//Threat/threatAllocations"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="impactscore" eType="#//ImpactScore"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="difficultyscore" eType="#//DifficultyScore"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="attackChain" eType="#//AttackChain"

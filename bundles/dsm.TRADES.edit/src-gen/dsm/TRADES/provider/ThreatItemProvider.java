@@ -44,7 +44,7 @@ public class ThreatItemProvider extends NamedElementItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addThreatallocationPropertyDescriptor(object);
+			addThreatAllocationsPropertyDescriptor(object);
 			addThreatTypePropertyDescriptor(object);
 			addIDPropertyDescriptor(object);
 			addDescriptionPropertyDescriptor(object);
@@ -54,18 +54,18 @@ public class ThreatItemProvider extends NamedElementItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Threatallocation feature.
+	 * This adds a property descriptor for the Threat Allocations feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addThreatallocationPropertyDescriptor(Object object) {
+	protected void addThreatAllocationsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Threat_threatallocation_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Threat_threatallocation_feature",
+						getResourceLocator(), getString("_UI_Threat_threatAllocations_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Threat_threatAllocations_feature",
 								"_UI_Threat_type"),
-						TRADESPackage.Literals.THREAT__THREATALLOCATION, true, false, true, null, null, null));
+						TRADESPackage.Literals.THREAT__THREAT_ALLOCATIONS, true, false, true, null, null, null));
 	}
 
 	/**

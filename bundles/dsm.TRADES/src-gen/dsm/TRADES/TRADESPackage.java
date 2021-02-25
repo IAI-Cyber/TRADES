@@ -276,13 +276,13 @@ public interface TRADESPackage extends EPackage {
 	int THREAT__NAME = NAMED_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Threatallocation</b></em>' reference list.
+	 * The feature id for the '<em><b>Threat Allocations</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int THREAT__THREATALLOCATION = NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int THREAT__THREAT_ALLOCATIONS = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Threat Type</b></em>' attribute.
@@ -1207,13 +1207,13 @@ public interface TRADESPackage extends EPackage {
 	int EXTERNAL_THREAT__NAME = THREAT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Threatallocation</b></em>' reference list.
+	 * The feature id for the '<em><b>Threat Allocations</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXTERNAL_THREAT__THREATALLOCATION = THREAT__THREATALLOCATION;
+	int EXTERNAL_THREAT__THREAT_ALLOCATIONS = THREAT__THREAT_ALLOCATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Threat Type</b></em>' attribute.
@@ -1746,15 +1746,15 @@ public interface TRADESPackage extends EPackage {
 	EClass getThreat();
 
 	/**
-	 * Returns the meta object for the reference list '{@link dsm.TRADES.Threat#getThreatallocation <em>Threatallocation</em>}'.
+	 * Returns the meta object for the reference list '{@link dsm.TRADES.Threat#getThreatAllocations <em>Threat Allocations</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Threatallocation</em>'.
-	 * @see dsm.TRADES.Threat#getThreatallocation()
+	 * @return the meta object for the reference list '<em>Threat Allocations</em>'.
+	 * @see dsm.TRADES.Threat#getThreatAllocations()
 	 * @see #getThreat()
 	 * @generated
 	 */
-	EReference getThreat_Threatallocation();
+	EReference getThreat_ThreatAllocations();
 
 	/**
 	 * Returns the meta object for the attribute '{@link dsm.TRADES.Threat#getThreatType <em>Threat Type</em>}'.
@@ -2728,12 +2728,12 @@ public interface TRADESPackage extends EPackage {
 		EClass THREAT = eINSTANCE.getThreat();
 
 		/**
-		 * The meta object literal for the '<em><b>Threatallocation</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Threat Allocations</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference THREAT__THREATALLOCATION = eINSTANCE.getThreat_Threatallocation();
+		EReference THREAT__THREAT_ALLOCATIONS = eINSTANCE.getThreat_ThreatAllocations();
 
 		/**
 		 * The meta object literal for the '<em><b>Threat Type</b></em>' attribute feature.

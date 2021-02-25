@@ -527,7 +527,7 @@
                   <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:view.target">
                     <subModelOperations xsi:type="tool_1:Switch">
                       <cases conditionExpression="aql:self.oclIsKindOf(TRADES::Threat)">
-                        <subModelOperations xsi:type="tool_1:For" expression="aql:self.threatallocation">
+                        <subModelOperations xsi:type="tool_1:For" expression="aql:self.threatAllocations">
                           <subModelOperations xsi:type="tool_1:RemoveElement"/>
                         </subModelOperations>
                       </cases>
@@ -1144,7 +1144,7 @@
         </controls>
       </groups>
       <groups name="ComponentGroup" label="Component Details" labelExpression="Component Details" domainClass="TRADES::Component" semanticCandidateExpression="var:self">
-        <controls xsi:type="properties:ListDescription" name="ThreatAllocationList" label="Threat Allocation" labelExpression="Alocated Threats" valueExpression="aql:self.threatallocation.threat" displayExpression="aql:value.name">
+        <controls xsi:type="properties:ListDescription" name="ThreatAllocationList" label="Threat Allocation" labelExpression="Alocated Threats" valueExpression="aql:self.threatAllocations.threat" displayExpression="aql:value.name">
           <onClickOperation>
             <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self"/>
           </onClickOperation>

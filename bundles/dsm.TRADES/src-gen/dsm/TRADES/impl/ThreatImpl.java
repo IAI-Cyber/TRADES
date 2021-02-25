@@ -38,7 +38,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link dsm.TRADES.impl.ThreatImpl#getThreatallocation <em>Threatallocation</em>}</li>
+ *   <li>{@link dsm.TRADES.impl.ThreatImpl#getThreatAllocations <em>Threat Allocations</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ThreatImpl#getThreatType <em>Threat Type</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ThreatImpl#getID <em>ID</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ThreatImpl#getDescription <em>Description</em>}</li>
@@ -49,14 +49,14 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class ThreatImpl extends NamedElementImpl implements Threat {
 	/**
-	 * The cached value of the '{@link #getThreatallocation() <em>Threatallocation</em>}' reference list.
+	 * The cached value of the '{@link #getThreatAllocations() <em>Threat Allocations</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getThreatallocation()
+	 * @see #getThreatAllocations()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<ThreatAllocationRelation> threatallocation;
+	protected EList<ThreatAllocationRelation> threatAllocations;
 
 	/**
 	 * The default value of the '{@link #getThreatType() <em>Threat Type</em>}' attribute.
@@ -163,13 +163,13 @@ public class ThreatImpl extends NamedElementImpl implements Threat {
 	 * @generated
 	 */
 	@Override
-	public EList<ThreatAllocationRelation> getThreatallocation() {
-		if (threatallocation == null) {
-			threatallocation = new EObjectWithInverseResolvingEList<ThreatAllocationRelation>(
-					ThreatAllocationRelation.class, this, TRADESPackage.THREAT__THREATALLOCATION,
+	public EList<ThreatAllocationRelation> getThreatAllocations() {
+		if (threatAllocations == null) {
+			threatAllocations = new EObjectWithInverseResolvingEList<ThreatAllocationRelation>(
+					ThreatAllocationRelation.class, this, TRADESPackage.THREAT__THREAT_ALLOCATIONS,
 					TRADESPackage.THREAT_ALLOCATION_RELATION__THREAT);
 		}
-		return threatallocation;
+		return threatAllocations;
 	}
 
 	/**
@@ -300,8 +300,9 @@ public class ThreatImpl extends NamedElementImpl implements Threat {
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case TRADESPackage.THREAT__THREATALLOCATION:
-			return ((InternalEList<InternalEObject>) (InternalEList<?>) getThreatallocation()).basicAdd(otherEnd, msgs);
+		case TRADESPackage.THREAT__THREAT_ALLOCATIONS:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getThreatAllocations()).basicAdd(otherEnd,
+					msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -314,8 +315,8 @@ public class ThreatImpl extends NamedElementImpl implements Threat {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case TRADESPackage.THREAT__THREATALLOCATION:
-			return ((InternalEList<?>) getThreatallocation()).basicRemove(otherEnd, msgs);
+		case TRADESPackage.THREAT__THREAT_ALLOCATIONS:
+			return ((InternalEList<?>) getThreatAllocations()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -328,8 +329,8 @@ public class ThreatImpl extends NamedElementImpl implements Threat {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case TRADESPackage.THREAT__THREATALLOCATION:
-			return getThreatallocation();
+		case TRADESPackage.THREAT__THREAT_ALLOCATIONS:
+			return getThreatAllocations();
 		case TRADESPackage.THREAT__THREAT_TYPE:
 			return getThreatType();
 		case TRADESPackage.THREAT__ID:
@@ -351,9 +352,9 @@ public class ThreatImpl extends NamedElementImpl implements Threat {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case TRADESPackage.THREAT__THREATALLOCATION:
-			getThreatallocation().clear();
-			getThreatallocation().addAll((Collection<? extends ThreatAllocationRelation>) newValue);
+		case TRADESPackage.THREAT__THREAT_ALLOCATIONS:
+			getThreatAllocations().clear();
+			getThreatAllocations().addAll((Collection<? extends ThreatAllocationRelation>) newValue);
 			return;
 		case TRADESPackage.THREAT__THREAT_TYPE:
 			setThreatType((threatTypeENUM) newValue);
@@ -379,8 +380,8 @@ public class ThreatImpl extends NamedElementImpl implements Threat {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case TRADESPackage.THREAT__THREATALLOCATION:
-			getThreatallocation().clear();
+		case TRADESPackage.THREAT__THREAT_ALLOCATIONS:
+			getThreatAllocations().clear();
 			return;
 		case TRADESPackage.THREAT__THREAT_TYPE:
 			setThreatType(THREAT_TYPE_EDEFAULT);
@@ -406,8 +407,8 @@ public class ThreatImpl extends NamedElementImpl implements Threat {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case TRADESPackage.THREAT__THREATALLOCATION:
-			return threatallocation != null && !threatallocation.isEmpty();
+		case TRADESPackage.THREAT__THREAT_ALLOCATIONS:
+			return threatAllocations != null && !threatAllocations.isEmpty();
 		case TRADESPackage.THREAT__THREAT_TYPE:
 			return threatType != THREAT_TYPE_EDEFAULT;
 		case TRADESPackage.THREAT__ID:

@@ -80,14 +80,14 @@ public interface ThreatAllocationRelation extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Threat</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link dsm.TRADES.Threat#getThreatallocation <em>Threatallocation</em>}'.
+	 * It is bidirectional and its opposite is '{@link dsm.TRADES.Threat#getThreatAllocations <em>Threat Allocations</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Threat</em>' reference.
 	 * @see #setThreat(Threat)
 	 * @see dsm.TRADES.TRADESPackage#getThreatAllocationRelation_Threat()
-	 * @see dsm.TRADES.Threat#getThreatallocation
-	 * @model opposite="threatallocation" required="true"
+	 * @see dsm.TRADES.Threat#getThreatAllocations
+	 * @model opposite="threatAllocations" required="true"
 	 * @generated
 	 */
 	Threat getThreat();

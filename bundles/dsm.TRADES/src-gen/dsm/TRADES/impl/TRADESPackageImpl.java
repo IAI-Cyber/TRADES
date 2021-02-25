@@ -366,7 +366,7 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getThreat_Threatallocation() {
+	public EReference getThreat_ThreatAllocations() {
 		return (EReference) threatEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -1265,7 +1265,7 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		createEReference(analysisEClass, ANALYSIS__THREAT_OWNER);
 
 		threatEClass = createEClass(THREAT);
-		createEReference(threatEClass, THREAT__THREATALLOCATION);
+		createEReference(threatEClass, THREAT__THREAT_ALLOCATIONS);
 		createEAttribute(threatEClass, THREAT__THREAT_TYPE);
 		createEAttribute(threatEClass, THREAT__ID);
 		createEAttribute(threatEClass, THREAT__DESCRIPTION);
@@ -1442,10 +1442,10 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(threatEClass, Threat.class, "Threat", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getThreat_Threatallocation(), this.getThreatAllocationRelation(),
-				this.getThreatAllocationRelation_Threat(), "threatallocation", null, 0, -1, Threat.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
+		initEReference(getThreat_ThreatAllocations(), this.getThreatAllocationRelation(),
+				this.getThreatAllocationRelation_Threat(), "threatAllocations", null, 0, -1, Threat.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getThreat_ThreatType(), this.getthreatTypeENUM(), "threatType", null, 0, 1, Threat.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getThreat_ID(), ecorePackage.getEString(), "ID", null, 0, 1, Threat.class, !IS_TRANSIENT,
@@ -1493,7 +1493,7 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 				this.getComponent_ThreatAllocations(), "component", null, 1, 1, ThreatAllocationRelation.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getThreatAllocationRelation_Threat(), this.getThreat(), this.getThreat_Threatallocation(),
+		initEReference(getThreatAllocationRelation_Threat(), this.getThreat(), this.getThreat_ThreatAllocations(),
 				"threat", null, 1, 1, ThreatAllocationRelation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
 				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getThreatAllocationRelation_Impactscore(), this.getImpactScore(), null, "impactscore", null, 0,

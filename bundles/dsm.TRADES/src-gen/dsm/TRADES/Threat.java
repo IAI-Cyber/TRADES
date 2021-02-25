@@ -15,7 +15,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link dsm.TRADES.Threat#getThreatallocation <em>Threatallocation</em>}</li>
+ *   <li>{@link dsm.TRADES.Threat#getThreatAllocations <em>Threat Allocations</em>}</li>
  *   <li>{@link dsm.TRADES.Threat#getThreatType <em>Threat Type</em>}</li>
  *   <li>{@link dsm.TRADES.Threat#getID <em>ID</em>}</li>
  *   <li>{@link dsm.TRADES.Threat#getDescription <em>Description</em>}</li>
@@ -28,18 +28,18 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface Threat extends NamedElement {
 	/**
-	 * Returns the value of the '<em><b>Threatallocation</b></em>' reference list.
+	 * Returns the value of the '<em><b>Threat Allocations</b></em>' reference list.
 	 * The list contents are of type {@link dsm.TRADES.ThreatAllocationRelation}.
 	 * It is bidirectional and its opposite is '{@link dsm.TRADES.ThreatAllocationRelation#getThreat <em>Threat</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Threatallocation</em>' reference list.
-	 * @see dsm.TRADES.TRADESPackage#getThreat_Threatallocation()
+	 * @return the value of the '<em>Threat Allocations</em>' reference list.
+	 * @see dsm.TRADES.TRADESPackage#getThreat_ThreatAllocations()
 	 * @see dsm.TRADES.ThreatAllocationRelation#getThreat
 	 * @model opposite="threat"
 	 * @generated
 	 */
-	EList<ThreatAllocationRelation> getThreatallocation();
+	EList<ThreatAllocationRelation> getThreatAllocations();
 
 	/**
 	 * Returns the value of the '<em><b>Threat Type</b></em>' attribute.

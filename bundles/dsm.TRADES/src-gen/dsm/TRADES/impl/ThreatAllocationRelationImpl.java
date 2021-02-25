@@ -259,10 +259,10 @@ public class ThreatAllocationRelationImpl extends MinimalEObjectImpl.Container i
 		if (newThreat != threat) {
 			NotificationChain msgs = null;
 			if (threat != null)
-				msgs = ((InternalEObject) threat).eInverseRemove(this, TRADESPackage.THREAT__THREATALLOCATION,
+				msgs = ((InternalEObject) threat).eInverseRemove(this, TRADESPackage.THREAT__THREAT_ALLOCATIONS,
 						Threat.class, msgs);
 			if (newThreat != null)
-				msgs = ((InternalEObject) newThreat).eInverseAdd(this, TRADESPackage.THREAT__THREATALLOCATION,
+				msgs = ((InternalEObject) newThreat).eInverseAdd(this, TRADESPackage.THREAT__THREAT_ALLOCATIONS,
 						Threat.class, msgs);
 			msgs = basicSetThreat(newThreat, msgs);
 			if (msgs != null)
@@ -449,7 +449,7 @@ public class ThreatAllocationRelationImpl extends MinimalEObjectImpl.Container i
 			return basicSetComponent((Component) otherEnd, msgs);
 		case TRADESPackage.THREAT_ALLOCATION_RELATION__THREAT:
 			if (threat != null)
-				msgs = ((InternalEObject) threat).eInverseRemove(this, TRADESPackage.THREAT__THREATALLOCATION,
+				msgs = ((InternalEObject) threat).eInverseRemove(this, TRADESPackage.THREAT__THREAT_ALLOCATIONS,
 						Threat.class, msgs);
 			return basicSetThreat((Threat) otherEnd, msgs);
 		}
