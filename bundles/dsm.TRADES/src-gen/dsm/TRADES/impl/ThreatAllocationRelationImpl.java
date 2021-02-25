@@ -13,8 +13,6 @@ import dsm.TRADES.ThreatAllocationRelation;
 
 import dsm.TRADES.util.TRADESValidator;
 import java.lang.reflect.InvocationTargetException;
-import java.util.Collection;
-
 import java.util.Map;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -30,7 +28,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EObjectValidator;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
@@ -47,7 +44,6 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  *   <li>{@link dsm.TRADES.impl.ThreatAllocationRelationImpl#getThreat <em>Threat</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ThreatAllocationRelationImpl#getImpactscore <em>Impactscore</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ThreatAllocationRelationImpl#getDifficultyscore <em>Difficultyscore</em>}</li>
- *   <li>{@link dsm.TRADES.impl.ThreatAllocationRelationImpl#getThreatRelated <em>Threat Related</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ThreatAllocationRelationImpl#getAttackChain <em>Attack Chain</em>}</li>
  * </ul>
  *
@@ -103,16 +99,6 @@ public class ThreatAllocationRelationImpl extends MinimalEObjectImpl.Container i
 	 * @ordered
 	 */
 	protected DifficultyScore difficultyscore;
-
-	/**
-	 * The cached value of the '{@link #getThreatRelated() <em>Threat Related</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getThreatRelated()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<ThreatAllocationRelation> threatRelated;
 
 	/**
 	 * The cached value of the '{@link #getAttackChain() <em>Attack Chain</em>}' containment reference.
@@ -377,20 +363,6 @@ public class ThreatAllocationRelationImpl extends MinimalEObjectImpl.Container i
 	 * @generated
 	 */
 	@Override
-	public EList<ThreatAllocationRelation> getThreatRelated() {
-		if (threatRelated == null) {
-			threatRelated = new EObjectResolvingEList<ThreatAllocationRelation>(ThreatAllocationRelation.class, this,
-					TRADESPackage.THREAT_ALLOCATION_RELATION__THREAT_RELATED);
-		}
-		return threatRelated;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public AttackChain getAttackChain() {
 		return attackChain;
 	}
@@ -541,8 +513,6 @@ public class ThreatAllocationRelationImpl extends MinimalEObjectImpl.Container i
 			if (resolve)
 				return getDifficultyscore();
 			return basicGetDifficultyscore();
-		case TRADESPackage.THREAT_ALLOCATION_RELATION__THREAT_RELATED:
-			return getThreatRelated();
 		case TRADESPackage.THREAT_ALLOCATION_RELATION__ATTACK_CHAIN:
 			return getAttackChain();
 		}
@@ -572,10 +542,6 @@ public class ThreatAllocationRelationImpl extends MinimalEObjectImpl.Container i
 			return;
 		case TRADESPackage.THREAT_ALLOCATION_RELATION__DIFFICULTYSCORE:
 			setDifficultyscore((DifficultyScore) newValue);
-			return;
-		case TRADESPackage.THREAT_ALLOCATION_RELATION__THREAT_RELATED:
-			getThreatRelated().clear();
-			getThreatRelated().addAll((Collection<? extends ThreatAllocationRelation>) newValue);
 			return;
 		case TRADESPackage.THREAT_ALLOCATION_RELATION__ATTACK_CHAIN:
 			setAttackChain((AttackChain) newValue);
@@ -607,9 +573,6 @@ public class ThreatAllocationRelationImpl extends MinimalEObjectImpl.Container i
 		case TRADESPackage.THREAT_ALLOCATION_RELATION__DIFFICULTYSCORE:
 			setDifficultyscore((DifficultyScore) null);
 			return;
-		case TRADESPackage.THREAT_ALLOCATION_RELATION__THREAT_RELATED:
-			getThreatRelated().clear();
-			return;
 		case TRADESPackage.THREAT_ALLOCATION_RELATION__ATTACK_CHAIN:
 			setAttackChain((AttackChain) null);
 			return;
@@ -635,8 +598,6 @@ public class ThreatAllocationRelationImpl extends MinimalEObjectImpl.Container i
 			return impactscore != null;
 		case TRADESPackage.THREAT_ALLOCATION_RELATION__DIFFICULTYSCORE:
 			return difficultyscore != null;
-		case TRADESPackage.THREAT_ALLOCATION_RELATION__THREAT_RELATED:
-			return threatRelated != null && !threatRelated.isEmpty();
 		case TRADESPackage.THREAT_ALLOCATION_RELATION__ATTACK_CHAIN:
 			return attackChain != null;
 		}

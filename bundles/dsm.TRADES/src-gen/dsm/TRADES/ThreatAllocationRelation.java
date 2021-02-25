@@ -4,8 +4,6 @@ package dsm.TRADES;
 
 import java.util.Map;
 import org.eclipse.emf.common.util.DiagnosticChain;
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -22,7 +20,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link dsm.TRADES.ThreatAllocationRelation#getThreat <em>Threat</em>}</li>
  *   <li>{@link dsm.TRADES.ThreatAllocationRelation#getImpactscore <em>Impactscore</em>}</li>
  *   <li>{@link dsm.TRADES.ThreatAllocationRelation#getDifficultyscore <em>Difficultyscore</em>}</li>
- *   <li>{@link dsm.TRADES.ThreatAllocationRelation#getThreatRelated <em>Threat Related</em>}</li>
  *   <li>{@link dsm.TRADES.ThreatAllocationRelation#getAttackChain <em>Attack Chain</em>}</li>
  * </ul>
  *
@@ -148,18 +145,6 @@ public interface ThreatAllocationRelation extends EObject {
 	 * @generated
 	 */
 	void setDifficultyscore(DifficultyScore value);
-
-	/**
-	 * Returns the value of the '<em><b>Threat Related</b></em>' reference list.
-	 * The list contents are of type {@link dsm.TRADES.ThreatAllocationRelation}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Threat Related</em>' reference list.
-	 * @see dsm.TRADES.TRADESPackage#getThreatAllocationRelation_ThreatRelated()
-	 * @model
-	 * @generated
-	 */
-	EList<ThreatAllocationRelation> getThreatRelated();
 
 	/**
 	 * Returns the value of the '<em><b>Attack Chain</b></em>' containment reference.

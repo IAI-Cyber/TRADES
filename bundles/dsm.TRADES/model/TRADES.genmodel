@@ -56,7 +56,6 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TRADES.ecore#//ThreatAllocationRelation/threat"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TRADES.ecore#//ThreatAllocationRelation/impactscore"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TRADES.ecore#//ThreatAllocationRelation/difficultyscore"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TRADES.ecore#//ThreatAllocationRelation/threatRelated"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//ThreatAllocationRelation/attackChain"/>
       <genOperations ecoreOperation="TRADES.ecore#//ThreatAllocationRelation/checkComputedDifficultyConstraint">
         <genParameters ecoreParameter="TRADES.ecore#//ThreatAllocationRelation/checkComputedDifficultyConstraint/chain"/>

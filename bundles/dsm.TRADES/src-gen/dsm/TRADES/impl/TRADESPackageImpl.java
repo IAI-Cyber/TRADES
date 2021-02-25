@@ -566,18 +566,8 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getThreatAllocationRelation_ThreatRelated() {
-		return (EReference) threatAllocationRelationEClass.getEStructuralFeatures().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EReference getThreatAllocationRelation_AttackChain() {
-		return (EReference) threatAllocationRelationEClass.getEStructuralFeatures().get(6);
+		return (EReference) threatAllocationRelationEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -1298,7 +1288,6 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		createEReference(threatAllocationRelationEClass, THREAT_ALLOCATION_RELATION__THREAT);
 		createEReference(threatAllocationRelationEClass, THREAT_ALLOCATION_RELATION__IMPACTSCORE);
 		createEReference(threatAllocationRelationEClass, THREAT_ALLOCATION_RELATION__DIFFICULTYSCORE);
-		createEReference(threatAllocationRelationEClass, THREAT_ALLOCATION_RELATION__THREAT_RELATED);
 		createEReference(threatAllocationRelationEClass, THREAT_ALLOCATION_RELATION__ATTACK_CHAIN);
 		createEOperation(threatAllocationRelationEClass,
 				THREAT_ALLOCATION_RELATION___CHECK_COMPUTED_DIFFICULTY_CONSTRAINT__DIAGNOSTICCHAIN_MAP);
@@ -1512,9 +1501,6 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getThreatAllocationRelation_Difficultyscore(), this.getDifficultyScore(), null,
 				"difficultyscore", null, 0, 1, ThreatAllocationRelation.class, !IS_TRANSIENT, !IS_VOLATILE,
-				IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getThreatAllocationRelation_ThreatRelated(), this.getThreatAllocationRelation(), null,
-				"threatRelated", null, 0, -1, ThreatAllocationRelation.class, !IS_TRANSIENT, !IS_VOLATILE,
 				IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getThreatAllocationRelation_AttackChain(), this.getAttackChain(), null, "attackChain", null, 0,
 				1, ThreatAllocationRelation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,

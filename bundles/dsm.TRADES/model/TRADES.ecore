@@ -52,8 +52,6 @@
         eType="#//Threat" eOpposite="#//Threat/threatallocation"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="impactscore" eType="#//ImpactScore"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="difficultyscore" eType="#//DifficultyScore"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="threatRelated" upperBound="-1"
-        eType="#//ThreatAllocationRelation"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="attackChain" eType="#//AttackChain"
         containment="true"/>
   </eClassifiers>

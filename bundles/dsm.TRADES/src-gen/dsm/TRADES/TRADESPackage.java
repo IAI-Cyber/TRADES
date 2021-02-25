@@ -594,22 +594,13 @@ public interface TRADESPackage extends EPackage {
 	int THREAT_ALLOCATION_RELATION__DIFFICULTYSCORE = 4;
 
 	/**
-	 * The feature id for the '<em><b>Threat Related</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int THREAT_ALLOCATION_RELATION__THREAT_RELATED = 5;
-
-	/**
 	 * The feature id for the '<em><b>Attack Chain</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int THREAT_ALLOCATION_RELATION__ATTACK_CHAIN = 6;
+	int THREAT_ALLOCATION_RELATION__ATTACK_CHAIN = 5;
 
 	/**
 	 * The number of structural features of the '<em>Threat Allocation Relation</em>' class.
@@ -618,7 +609,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int THREAT_ALLOCATION_RELATION_FEATURE_COUNT = 7;
+	int THREAT_ALLOCATION_RELATION_FEATURE_COUNT = 6;
 
 	/**
 	 * The operation id for the '<em>Check Computed Difficulty Constraint</em>' operation.
@@ -1971,17 +1962,6 @@ public interface TRADESPackage extends EPackage {
 	EReference getThreatAllocationRelation_Difficultyscore();
 
 	/**
-	 * Returns the meta object for the reference list '{@link dsm.TRADES.ThreatAllocationRelation#getThreatRelated <em>Threat Related</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Threat Related</em>'.
-	 * @see dsm.TRADES.ThreatAllocationRelation#getThreatRelated()
-	 * @see #getThreatAllocationRelation()
-	 * @generated
-	 */
-	EReference getThreatAllocationRelation_ThreatRelated();
-
-	/**
 	 * Returns the meta object for the containment reference '{@link dsm.TRADES.ThreatAllocationRelation#getAttackChain <em>Attack Chain</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2914,14 +2894,6 @@ public interface TRADESPackage extends EPackage {
 		 */
 		EReference THREAT_ALLOCATION_RELATION__DIFFICULTYSCORE = eINSTANCE
 				.getThreatAllocationRelation_Difficultyscore();
-
-		/**
-		 * The meta object literal for the '<em><b>Threat Related</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference THREAT_ALLOCATION_RELATION__THREAT_RELATED = eINSTANCE.getThreatAllocationRelation_ThreatRelated();
 
 		/**
 		 * The meta object literal for the '<em><b>Attack Chain</b></em>' containment reference feature.
