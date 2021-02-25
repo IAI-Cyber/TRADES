@@ -16,36 +16,55 @@ public class BaseResourceExtendedMetadata extends BasicExtendedMetaData {
 	private static final List<Renamer> RENAMERS = new ArrayList<>();
 
 	static {
+
+		// On component
 		RENAMERS.add(new Renamer(TRADESPackage.eINSTANCE.getComponent_AffectRelations(),
 				TRADESPackage.eINSTANCE.getComponent(), "affectrelation"));
+
+		// On Score system
 		RENAMERS.add(new Renamer(TRADESPackage.eINSTANCE.getScoreSystem_ImpactScores(),
 				TRADESPackage.eINSTANCE.getScoreSystem(), "impactscore"));
 		RENAMERS.add(new Renamer(TRADESPackage.eINSTANCE.getScoreSystem_DifficultyScores(),
 				TRADESPackage.eINSTANCE.getScoreSystem(), "difficultyscore"));
+
+		// On component owner
 		RENAMERS.add(new Renamer(TRADESPackage.eINSTANCE.getComponentOwner_Components(),
 				TRADESPackage.eINSTANCE.getComponentOwner(), "component"));
+
+		// On Threat
 		RENAMERS.add(new Renamer(TRADESPackage.eINSTANCE.getThreat_ThreatAllocations(),
 				TRADESPackage.eINSTANCE.getThreat(), "threatallocation"));
-		RENAMERS.add(new Renamer(TRADESPackage.eINSTANCE.getThreatMitigationRelation_MitigatedAllocation(),
-				TRADESPackage.eINSTANCE.getThreatMitigationRelation(), "mitigates"));
-		RENAMERS.add(new Renamer(TRADESPackage.eINSTANCE.getControl_MitigatedThreats(),
-				TRADESPackage.eINSTANCE.getControl(), "mitigates"));
-		RENAMERS.add(new Renamer(TRADESPackage.eINSTANCE.getThreatAllocationRelation_DifficultyScore(),
-				TRADESPackage.eINSTANCE.getThreatAllocationRelation(), "difficultyscore"));
-		RENAMERS.add(new Renamer(TRADESPackage.eINSTANCE.getThreatAllocationRelation_ImpactScore(),
-				TRADESPackage.eINSTANCE.getThreatAllocationRelation(), "impactscore"));
-		RENAMERS.add(new Renamer(TRADESPackage.eINSTANCE.getAnalysis_ScoreSystem(),
-				TRADESPackage.eINSTANCE.getAnalysis(), "scoresystem"));
-		RENAMERS.add(new Renamer(TRADESPackage.eINSTANCE.getControl_Id(), TRADESPackage.eINSTANCE.getControl(), "ID"));
-		RENAMERS.add(new Renamer(TRADESPackage.eINSTANCE.getControl_Description(), TRADESPackage.eINSTANCE.getControl(),
-				"Description"));
-		RENAMERS.add(new Renamer(TRADESPackage.eINSTANCE.getControl_MitigationRelations(),
-				TRADESPackage.eINSTANCE.getControl(), "mitigationrRelations"));
 		RENAMERS.add(new Renamer(TRADESPackage.eINSTANCE.getThreat_Id(), TRADESPackage.eINSTANCE.getThreat(), "ID"));
 		RENAMERS.add(new Renamer(TRADESPackage.eINSTANCE.getThreat_Description(), TRADESPackage.eINSTANCE.getThreat(),
 				"Description"));
 		RENAMERS.add(new Renamer(TRADESPackage.eINSTANCE.getThreat_Applicability(), TRADESPackage.eINSTANCE.getThreat(),
 				"Applicability"));
+
+		// On ThreatMitifationRelation
+		RENAMERS.add(new Renamer(TRADESPackage.eINSTANCE.getThreatMitigationRelation_MitigatedAllocation(),
+				TRADESPackage.eINSTANCE.getThreatMitigationRelation(), "mitigates"));
+		RENAMERS.add(new Renamer(TRADESPackage.eINSTANCE.getControl_MitigationRelations(),
+				TRADESPackage.eINSTANCE.getControl(), "mitigationrRelations"));
+
+		// On control
+		RENAMERS.add(new Renamer(TRADESPackage.eINSTANCE.getControl_MitigatedThreats(),
+				TRADESPackage.eINSTANCE.getControl(), "mitigates"));
+		RENAMERS.add(new Renamer(TRADESPackage.eINSTANCE.getControl_Id(), TRADESPackage.eINSTANCE.getControl(), "ID"));
+		RENAMERS.add(new Renamer(TRADESPackage.eINSTANCE.getControl_Description(), TRADESPackage.eINSTANCE.getControl(),
+				"Description"));
+
+		// On threat allocation relation
+		RENAMERS.add(new Renamer(TRADESPackage.eINSTANCE.getThreatAllocationRelation_DifficultyScore(),
+				TRADESPackage.eINSTANCE.getThreatAllocationRelation(), "difficultyscore"));
+		RENAMERS.add(new Renamer(TRADESPackage.eINSTANCE.getThreatAllocationRelation_ImpactScore(),
+				TRADESPackage.eINSTANCE.getThreatAllocationRelation(), "impactscore"));
+
+		// On analysis
+		RENAMERS.add(new Renamer(TRADESPackage.eINSTANCE.getAnalysis_ScoreSystem(),
+				TRADESPackage.eINSTANCE.getAnalysis(), "scoresystem"));
+
+
+
 	}
 
 	@Override
