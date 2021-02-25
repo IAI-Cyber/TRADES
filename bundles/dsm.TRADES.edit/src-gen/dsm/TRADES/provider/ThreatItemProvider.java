@@ -46,7 +46,7 @@ public class ThreatItemProvider extends NamedElementItemProvider {
 
 			addThreatAllocationsPropertyDescriptor(object);
 			addThreatTypePropertyDescriptor(object);
-			addIDPropertyDescriptor(object);
+			addIdPropertyDescriptor(object);
 			addDescriptionPropertyDescriptor(object);
 			addApplicabilityPropertyDescriptor(object);
 		}
@@ -85,16 +85,16 @@ public class ThreatItemProvider extends NamedElementItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the ID feature.
+	 * This adds a property descriptor for the Id feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addIDPropertyDescriptor(Object object) {
+	protected void addIdPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Threat_ID_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Threat_ID_feature", "_UI_Threat_type"),
+						getResourceLocator(), getString("_UI_Threat_id_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Threat_id_feature", "_UI_Threat_type"),
 						TRADESPackage.Literals.THREAT__ID, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
@@ -108,8 +108,8 @@ public class ThreatItemProvider extends NamedElementItemProvider {
 	protected void addDescriptionPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Threat_Description_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Threat_Description_feature",
+						getResourceLocator(), getString("_UI_Threat_description_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Threat_description_feature",
 								"_UI_Threat_type"),
 						TRADESPackage.Literals.THREAT__DESCRIPTION, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
@@ -124,8 +124,8 @@ public class ThreatItemProvider extends NamedElementItemProvider {
 	protected void addApplicabilityPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Threat_Applicability_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Threat_Applicability_feature",
+						getResourceLocator(), getString("_UI_Threat_applicability_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Threat_applicability_feature",
 								"_UI_Threat_type"),
 						TRADESPackage.Literals.THREAT__APPLICABILITY, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));

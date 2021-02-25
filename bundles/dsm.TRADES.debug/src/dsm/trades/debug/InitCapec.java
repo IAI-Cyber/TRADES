@@ -104,7 +104,7 @@ public class InitCapec implements IApplication {
 		ExternalThreat extPattern = TRADESFactory.eINSTANCE.createExternalThreat();
 		extPattern.setName(parent.getAttribute("Name"));
 		String oritinalId = parent.getAttribute("ID");
-		extPattern.setID("Capec_" + oritinalId);
+		extPattern.setId("Capec_" + oritinalId);
 		extPattern.setSource("Capec");
 		extPattern.setLink(SITE_PREFIX + oritinalId + ".html");
 		NodeList descriptionNodes = parent.getElementsByTagName("Description");

@@ -84,11 +84,11 @@ public class ExtThreatServices {
 			ExternalControl newControl = TRADESFactory.eINSTANCE.createExternalControl();
 			newControl.setName(source.getName());
 			newControl.setSource(source.getSource());
-			newControl.setID(source.getID());
+			newControl.setId(source.getId());
 			newControl.setDescription(source.getDescription());
 
 			// Copy all existing mitigation
-			source.getMitigationrRelations().stream().filter(rel -> rel.getThreat().getID().equals(threat.getID()))
+			source.getMitigationrRelations().stream().filter(rel -> rel.getThreat().getId().equals(threat.getId()))
 					.forEach(rel -> {
 						ThreatMitigationRelation controlMitigation = TRADESFactory.eINSTANCE
 								.createThreatMitigationRelation();
@@ -120,7 +120,7 @@ public class ExtThreatServices {
 		ResourceSet rs = Session.of(ext).get().getTransactionalEditingDomain().getResourceSet();
 
 		String source = ext.getSource();
-		String id = ext.getID();
+		String id = ext.getId();
 		if (id == null) {
 			return Collections.emptyList();
 		}
@@ -136,7 +136,7 @@ public class ExtThreatServices {
 					if (eObject instanceof ThreatMitigationRelation) {
 						ThreatMitigationRelation miti = (ThreatMitigationRelation) eObject;
 						Threat linkedThreat = miti.getThreat();
-						if (id.equals(linkedThreat.getID())) {
+						if (id.equals(linkedThreat.getId())) {
 							controls.add((ExternalControl) miti.getControl());
 						}
 					}

@@ -7,7 +7,7 @@
     <eAnnotations xmi:type="description:DAnnotationEntry" uid="_3xruUBk0Eeu_b_FWDsJtqQ" source="FIRST_SESSION_OPENNING_PERFORMED"/>
     <ownedViews xmi:type="viewpoint:DView" uid="_D9XOQPWAEemZc42BBVcGEg">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_D_zeQPWAEemZc42BBVcGEg" name="TRADES" repPath="#_D9-5UPWAEemZc42BBVcGEg" changeId="961fb54e-b325-4a42-848f-7432c5618edc">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_D_zeQPWAEemZc42BBVcGEg" name="TRADES" repPath="#_D9-5UPWAEemZc42BBVcGEg" changeId="62e9c157-e1a3-4038-a3ed-314c49f4f0d6">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="TRADES.ecore#/"/>
       </ownedRepresentationDescriptors>
@@ -813,25 +813,25 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
       </ownedElements>
-      <ownedElements xmi:type="diagram:DNodeListElement" uid="_IpZ7wigPEeuNv5MVaTdRBg" name="ID : EString" tooltipText="">
-        <target xmi:type="ecore:EAttribute" href="TRADES.ecore#//Threat/ID"/>
-        <semanticElements xmi:type="ecore:EAttribute" href="TRADES.ecore#//Threat/ID"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_IpZ7wigPEeuNv5MVaTdRBg" name="id : EString" tooltipText="">
+        <target xmi:type="ecore:EAttribute" href="TRADES.ecore#//Threat/id"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="TRADES.ecore#//Threat/id"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_Ipai0CgPEeuNv5MVaTdRBg" labelAlignment="LEFT">
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
       </ownedElements>
-      <ownedElements xmi:type="diagram:DNodeListElement" uid="_Ipai0SgPEeuNv5MVaTdRBg" name="Description : EString" tooltipText="">
-        <target xmi:type="ecore:EAttribute" href="TRADES.ecore#//Threat/Description"/>
-        <semanticElements xmi:type="ecore:EAttribute" href="TRADES.ecore#//Threat/Description"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_Ipai0SgPEeuNv5MVaTdRBg" name="description : EString" tooltipText="">
+        <target xmi:type="ecore:EAttribute" href="TRADES.ecore#//Threat/description"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="TRADES.ecore#//Threat/description"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_IpbJ4CgPEeuNv5MVaTdRBg" labelAlignment="LEFT">
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
       </ownedElements>
-      <ownedElements xmi:type="diagram:DNodeListElement" uid="_IpbJ4SgPEeuNv5MVaTdRBg" name="Applicability : EString" tooltipText="">
-        <target xmi:type="ecore:EAttribute" href="TRADES.ecore#//Threat/Applicability"/>
-        <semanticElements xmi:type="ecore:EAttribute" href="TRADES.ecore#//Threat/Applicability"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_IpbJ4SgPEeuNv5MVaTdRBg" name="applicability : EString" tooltipText="">
+        <target xmi:type="ecore:EAttribute" href="TRADES.ecore#//Threat/applicability"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="TRADES.ecore#//Threat/applicability"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_IpbJ4igPEeuNv5MVaTdRBg" labelAlignment="LEFT">
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
         </ownedStyle>
@@ -889,17 +889,17 @@
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
-      <ownedElements xmi:type="diagram:DNodeListElement" uid="_Ipbw8igPEeuNv5MVaTdRBg" name="ID : EString" tooltipText="">
-        <target xmi:type="ecore:EAttribute" href="TRADES.ecore#//Control/ID"/>
-        <semanticElements xmi:type="ecore:EAttribute" href="TRADES.ecore#//Control/ID"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_Ipbw8igPEeuNv5MVaTdRBg" name="id : EString" tooltipText="">
+        <target xmi:type="ecore:EAttribute" href="TRADES.ecore#//Control/id"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="TRADES.ecore#//Control/id"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_Ipbw8ygPEeuNv5MVaTdRBg" labelAlignment="LEFT">
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
       </ownedElements>
-      <ownedElements xmi:type="diagram:DNodeListElement" uid="_IpcYACgPEeuNv5MVaTdRBg" name="Description : EString" tooltipText="">
-        <target xmi:type="ecore:EAttribute" href="TRADES.ecore#//Control/Description"/>
-        <semanticElements xmi:type="ecore:EAttribute" href="TRADES.ecore#//Control/Description"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_IpcYACgPEeuNv5MVaTdRBg" name="description : EString" tooltipText="">
+        <target xmi:type="ecore:EAttribute" href="TRADES.ecore#//Control/description"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="TRADES.ecore#//Control/description"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_IpcYASgPEeuNv5MVaTdRBg" labelAlignment="LEFT">
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
         </ownedStyle>
@@ -2953,24 +2953,24 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_cJNlMSpFEeuh44JT6bu1tg" name="ID : EString" tooltipText="">
-        <target xmi:type="ecore:EAttribute" href="TRADES.ecore#//Threat/ID"/>
-        <semanticElements xmi:type="ecore:EAttribute" href="TRADES.ecore#//Threat/ID"/>
+        <target xmi:type="ecore:EAttribute" href="TRADES.ecore#//Threat/id"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="TRADES.ecore#//Threat/id"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_cJNlMipFEeuh44JT6bu1tg" labelAlignment="LEFT">
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_cJNlMypFEeuh44JT6bu1tg" name="Description : EString" tooltipText="">
-        <target xmi:type="ecore:EAttribute" href="TRADES.ecore#//Threat/Description"/>
-        <semanticElements xmi:type="ecore:EAttribute" href="TRADES.ecore#//Threat/Description"/>
+        <target xmi:type="ecore:EAttribute" href="TRADES.ecore#//Threat/description"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="TRADES.ecore#//Threat/description"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_cJNlNCpFEeuh44JT6bu1tg" labelAlignment="LEFT">
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_cJOMQCpFEeuh44JT6bu1tg" name="Applicability : EString" tooltipText="">
-        <target xmi:type="ecore:EAttribute" href="TRADES.ecore#//Threat/Applicability"/>
-        <semanticElements xmi:type="ecore:EAttribute" href="TRADES.ecore#//Threat/Applicability"/>
+        <target xmi:type="ecore:EAttribute" href="TRADES.ecore#//Threat/applicability"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="TRADES.ecore#//Threat/applicability"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_cJOMQSpFEeuh44JT6bu1tg" labelAlignment="LEFT">
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
         </ownedStyle>
@@ -3042,16 +3042,16 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_cJPaYypFEeuh44JT6bu1tg" name="ID : EString" tooltipText="">
-        <target xmi:type="ecore:EAttribute" href="TRADES.ecore#//Control/ID"/>
-        <semanticElements xmi:type="ecore:EAttribute" href="TRADES.ecore#//Control/ID"/>
+        <target xmi:type="ecore:EAttribute" href="TRADES.ecore#//Control/id"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="TRADES.ecore#//Control/id"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_cJPaZCpFEeuh44JT6bu1tg" labelAlignment="LEFT">
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_cJQBcCpFEeuh44JT6bu1tg" name="Description : EString" tooltipText="">
-        <target xmi:type="ecore:EAttribute" href="TRADES.ecore#//Control/Description"/>
-        <semanticElements xmi:type="ecore:EAttribute" href="TRADES.ecore#//Control/Description"/>
+        <target xmi:type="ecore:EAttribute" href="TRADES.ecore#//Control/description"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="TRADES.ecore#//Control/description"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_cJQBcSpFEeuh44JT6bu1tg" labelAlignment="LEFT">
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
         </ownedStyle>
@@ -5459,16 +5459,16 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_SS-CYi8zEeuVmdV6Ldl59Q" name="ID : EString" tooltipText="">
-        <target xmi:type="ecore:EAttribute" href="TRADES.ecore#//Control/ID"/>
-        <semanticElements xmi:type="ecore:EAttribute" href="TRADES.ecore#//Control/ID"/>
+        <target xmi:type="ecore:EAttribute" href="TRADES.ecore#//Control/id"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="TRADES.ecore#//Control/id"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_SS-pcC8zEeuVmdV6Ldl59Q" labelAlignment="LEFT">
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_SS-pcS8zEeuVmdV6Ldl59Q" name="Description : EString" tooltipText="">
-        <target xmi:type="ecore:EAttribute" href="TRADES.ecore#//Control/Description"/>
-        <semanticElements xmi:type="ecore:EAttribute" href="TRADES.ecore#//Control/Description"/>
+        <target xmi:type="ecore:EAttribute" href="TRADES.ecore#//Control/description"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="TRADES.ecore#//Control/description"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_SS_QgC8zEeuVmdV6Ldl59Q" labelAlignment="LEFT">
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
         </ownedStyle>
@@ -5539,24 +5539,24 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_STCT0i8zEeuVmdV6Ldl59Q" name="ID : EString" tooltipText="">
-        <target xmi:type="ecore:EAttribute" href="TRADES.ecore#//Threat/ID"/>
-        <semanticElements xmi:type="ecore:EAttribute" href="TRADES.ecore#//Threat/ID"/>
+        <target xmi:type="ecore:EAttribute" href="TRADES.ecore#//Threat/id"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="TRADES.ecore#//Threat/id"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_STCT0y8zEeuVmdV6Ldl59Q" labelAlignment="LEFT">
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_STC64C8zEeuVmdV6Ldl59Q" name="Description : EString" tooltipText="">
-        <target xmi:type="ecore:EAttribute" href="TRADES.ecore#//Threat/Description"/>
-        <semanticElements xmi:type="ecore:EAttribute" href="TRADES.ecore#//Threat/Description"/>
+        <target xmi:type="ecore:EAttribute" href="TRADES.ecore#//Threat/description"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="TRADES.ecore#//Threat/description"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_STC64S8zEeuVmdV6Ldl59Q" labelAlignment="LEFT">
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_STC64i8zEeuVmdV6Ldl59Q" name="Applicability : EString" tooltipText="">
-        <target xmi:type="ecore:EAttribute" href="TRADES.ecore#//Threat/Applicability"/>
-        <semanticElements xmi:type="ecore:EAttribute" href="TRADES.ecore#//Threat/Applicability"/>
+        <target xmi:type="ecore:EAttribute" href="TRADES.ecore#//Threat/applicability"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="TRADES.ecore#//Threat/applicability"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_STC64y8zEeuVmdV6Ldl59Q" labelAlignment="LEFT">
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
         </ownedStyle>
@@ -6380,24 +6380,24 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_hPy-sTRwEeuYBtVAWM4Mqw" name="ID : EString" tooltipText="">
-        <target xmi:type="ecore:EAttribute" href="TRADES.ecore#//Threat/ID"/>
-        <semanticElements xmi:type="ecore:EAttribute" href="TRADES.ecore#//Threat/ID"/>
+        <target xmi:type="ecore:EAttribute" href="TRADES.ecore#//Threat/id"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="TRADES.ecore#//Threat/id"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_hPzlwDRwEeuYBtVAWM4Mqw" labelAlignment="LEFT">
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_hP0M0DRwEeuYBtVAWM4Mqw" name="Description : EString" tooltipText="">
-        <target xmi:type="ecore:EAttribute" href="TRADES.ecore#//Threat/Description"/>
-        <semanticElements xmi:type="ecore:EAttribute" href="TRADES.ecore#//Threat/Description"/>
+        <target xmi:type="ecore:EAttribute" href="TRADES.ecore#//Threat/description"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="TRADES.ecore#//Threat/description"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_hP0M0TRwEeuYBtVAWM4Mqw" labelAlignment="LEFT">
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_hP0z4DRwEeuYBtVAWM4Mqw" name="Applicability : EString" tooltipText="">
-        <target xmi:type="ecore:EAttribute" href="TRADES.ecore#//Threat/Applicability"/>
-        <semanticElements xmi:type="ecore:EAttribute" href="TRADES.ecore#//Threat/Applicability"/>
+        <target xmi:type="ecore:EAttribute" href="TRADES.ecore#//Threat/applicability"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="TRADES.ecore#//Threat/applicability"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_hP1a8DRwEeuYBtVAWM4Mqw" labelAlignment="LEFT">
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
         </ownedStyle>
@@ -6492,16 +6492,16 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_RAQXMDrBEeuf2NKselFr9Q" name="ID : EString" tooltipText="">
-        <target xmi:type="ecore:EAttribute" href="TRADES.ecore#//Control/ID"/>
-        <semanticElements xmi:type="ecore:EAttribute" href="TRADES.ecore#//Control/ID"/>
+        <target xmi:type="ecore:EAttribute" href="TRADES.ecore#//Control/id"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="TRADES.ecore#//Control/id"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_RAQXMTrBEeuf2NKselFr9Q" labelAlignment="LEFT">
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_RAQXMjrBEeuf2NKselFr9Q" name="Description : EString" tooltipText="">
-        <target xmi:type="ecore:EAttribute" href="TRADES.ecore#//Control/Description"/>
-        <semanticElements xmi:type="ecore:EAttribute" href="TRADES.ecore#//Control/Description"/>
+        <target xmi:type="ecore:EAttribute" href="TRADES.ecore#//Control/description"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="TRADES.ecore#//Control/description"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_RAQ-QDrBEeuf2NKselFr9Q" labelAlignment="LEFT">
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
         </ownedStyle>
@@ -7003,24 +7003,24 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_j7KNIDU-Eeu66YY-LpaXBA" name="ID : EString" tooltipText="">
-        <target xmi:type="ecore:EAttribute" href="TRADES.ecore#//Threat/ID"/>
-        <semanticElements xmi:type="ecore:EAttribute" href="TRADES.ecore#//Threat/ID"/>
+        <target xmi:type="ecore:EAttribute" href="TRADES.ecore#//Threat/id"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="TRADES.ecore#//Threat/id"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_j7K0MDU-Eeu66YY-LpaXBA" labelAlignment="LEFT">
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_j7K0MTU-Eeu66YY-LpaXBA" name="Description : EString" tooltipText="">
-        <target xmi:type="ecore:EAttribute" href="TRADES.ecore#//Threat/Description"/>
-        <semanticElements xmi:type="ecore:EAttribute" href="TRADES.ecore#//Threat/Description"/>
+        <target xmi:type="ecore:EAttribute" href="TRADES.ecore#//Threat/description"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="TRADES.ecore#//Threat/description"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_j7NQcDU-Eeu66YY-LpaXBA" labelAlignment="LEFT">
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_j7N3gDU-Eeu66YY-LpaXBA" name="Applicability : EString" tooltipText="">
-        <target xmi:type="ecore:EAttribute" href="TRADES.ecore#//Threat/Applicability"/>
-        <semanticElements xmi:type="ecore:EAttribute" href="TRADES.ecore#//Threat/Applicability"/>
+        <target xmi:type="ecore:EAttribute" href="TRADES.ecore#//Threat/applicability"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="TRADES.ecore#//Threat/applicability"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_j7OekDU-Eeu66YY-LpaXBA" labelAlignment="LEFT">
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
         </ownedStyle>

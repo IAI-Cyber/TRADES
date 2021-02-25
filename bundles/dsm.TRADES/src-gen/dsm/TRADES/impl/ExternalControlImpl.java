@@ -35,7 +35,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link dsm.TRADES.impl.ExternalControlImpl#getName <em>Name</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ExternalControlImpl#getMitigatedThreats <em>Mitigated Threats</em>}</li>
- *   <li>{@link dsm.TRADES.impl.ExternalControlImpl#getID <em>ID</em>}</li>
+ *   <li>{@link dsm.TRADES.impl.ExternalControlImpl#getId <em>Id</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ExternalControlImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ExternalControlImpl#getMitigationrRelations <em>Mitigationr Relations</em>}</li>
  * </ul>
@@ -74,20 +74,20 @@ public class ExternalControlImpl extends ExternalElementImpl implements External
 	protected EList<Threat> mitigatedThreats;
 
 	/**
-	 * The default value of the '{@link #getID() <em>ID</em>}' attribute.
+	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getID()
+	 * @see #getId()
 	 * @generated
 	 * @ordered
 	 */
 	protected static final String ID_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getID() <em>ID</em>}' attribute.
+	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getID()
+	 * @see #getId()
 	 * @generated
 	 * @ordered
 	 */
@@ -185,7 +185,7 @@ public class ExternalControlImpl extends ExternalElementImpl implements External
 	 * @generated
 	 */
 	@Override
-	public String getID() {
+	public String getId() {
 		return id;
 	}
 
@@ -195,11 +195,11 @@ public class ExternalControlImpl extends ExternalElementImpl implements External
 	 * @generated
 	 */
 	@Override
-	public void setID(String newID) {
-		String oldID = id;
-		id = newID;
+	public void setId(String newId) {
+		String oldId = id;
+		id = newId;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TRADESPackage.EXTERNAL_CONTROL__ID, oldID, id));
+			eNotify(new ENotificationImpl(this, Notification.SET, TRADESPackage.EXTERNAL_CONTROL__ID, oldId, id));
 	}
 
 	/**
@@ -284,7 +284,7 @@ public class ExternalControlImpl extends ExternalElementImpl implements External
 		case TRADESPackage.EXTERNAL_CONTROL__MITIGATED_THREATS:
 			return getMitigatedThreats();
 		case TRADESPackage.EXTERNAL_CONTROL__ID:
-			return getID();
+			return getId();
 		case TRADESPackage.EXTERNAL_CONTROL__DESCRIPTION:
 			return getDescription();
 		case TRADESPackage.EXTERNAL_CONTROL__MITIGATIONR_RELATIONS:
@@ -310,7 +310,7 @@ public class ExternalControlImpl extends ExternalElementImpl implements External
 			getMitigatedThreats().addAll((Collection<? extends Threat>) newValue);
 			return;
 		case TRADESPackage.EXTERNAL_CONTROL__ID:
-			setID((String) newValue);
+			setId((String) newValue);
 			return;
 		case TRADESPackage.EXTERNAL_CONTROL__DESCRIPTION:
 			setDescription((String) newValue);
@@ -338,7 +338,7 @@ public class ExternalControlImpl extends ExternalElementImpl implements External
 			getMitigatedThreats().clear();
 			return;
 		case TRADESPackage.EXTERNAL_CONTROL__ID:
-			setID(ID_EDEFAULT);
+			setId(ID_EDEFAULT);
 			return;
 		case TRADESPackage.EXTERNAL_CONTROL__DESCRIPTION:
 			setDescription(DESCRIPTION_EDEFAULT);
@@ -449,9 +449,9 @@ public class ExternalControlImpl extends ExternalElementImpl implements External
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
-		result.append(", ID: ");
+		result.append(", id: ");
 		result.append(id);
-		result.append(", Description: ");
+		result.append(", description: ");
 		result.append(description);
 		result.append(')');
 		return result.toString();

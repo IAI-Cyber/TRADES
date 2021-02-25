@@ -18,9 +18,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="threatAllocations" upperBound="-1"
         eType="#//ThreatAllocationRelation" eOpposite="#//ThreatAllocationRelation/threat"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="threatType" eType="#//threatTypeENUM"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Applicability" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="applicability" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Component" eSuperTypes="#//ComponentOwner #//DataOwnerElement #//NamedElement #//AbstractControlOwner">
     <eStructuralFeatures xsi:type="ecore:EReference" name="threatAllocations" upperBound="-1"
@@ -31,8 +31,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="Control" eSuperTypes="#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="mitigatedThreats" upperBound="-1"
         eType="#//Threat"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="mitigationrRelations" upperBound="-1"
         eType="#//ThreatMitigationRelation" containment="true" eOpposite="#//ThreatMitigationRelation/control"/>
   </eClassifiers>

@@ -36,8 +36,15 @@ public class BaseResourceExtendedMetadata extends BasicExtendedMetaData {
 				TRADESPackage.eINSTANCE.getThreatAllocationRelation(), "impactscore"));
 		RENAMERS.add(new Renamer(TRADESPackage.eINSTANCE.getAnalysis_ScoreSystem(),
 				TRADESPackage.eINSTANCE.getAnalysis(), "scoresystem"));
+		RENAMERS.add(new Renamer(TRADESPackage.eINSTANCE.getControl_Id(), TRADESPackage.eINSTANCE.getControl(), "ID"));
+		RENAMERS.add(new Renamer(TRADESPackage.eINSTANCE.getControl_Description(), TRADESPackage.eINSTANCE.getControl(),
+				"Description"));
+		RENAMERS.add(new Renamer(TRADESPackage.eINSTANCE.getThreat_Id(), TRADESPackage.eINSTANCE.getThreat(), "ID"));
+		RENAMERS.add(new Renamer(TRADESPackage.eINSTANCE.getThreat_Description(), TRADESPackage.eINSTANCE.getThreat(),
+				"Description"));
+		RENAMERS.add(new Renamer(TRADESPackage.eINSTANCE.getThreat_Applicability(), TRADESPackage.eINSTANCE.getThreat(),
+				"Applicability"));
 	}
-
 
 	@Override
 	public EStructuralFeature getAttribute(EClass eClass, String namespace, String name) {
@@ -91,6 +98,5 @@ public class BaseResourceExtendedMetadata extends BasicExtendedMetaData {
 
 		}
 	}
-
 
 }

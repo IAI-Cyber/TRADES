@@ -91,7 +91,7 @@ public class InitMitre implements IApplication {
 								.filter(ext -> ext.getSource_name() != null && (ext.getSource_name().endsWith("attack")
 										|| ext.getSource_name().equals("capec")))
 								.findFirst().ifPresentOrElse(ext -> {
-									threat.setID(ext.getExternal_id());
+									threat.setId(ext.getExternal_id());
 									threat.setSource(analysisName);
 									threat.setLink(ext.getUrl());
 								}, () -> {
@@ -112,7 +112,7 @@ public class InitMitre implements IApplication {
 									ext -> ext.getSource_name() != null && (ext.getSource_name().endsWith("attack")
 											|| ext.getSource_name().equals("capec")))
 									.findFirst().ifPresentOrElse(ext -> {
-										control.setID(ext.getExternal_id());
+										control.setId(ext.getExternal_id());
 										control.setSource(analysisName);
 										control.setLink(ext.getUrl());
 									}, () -> {

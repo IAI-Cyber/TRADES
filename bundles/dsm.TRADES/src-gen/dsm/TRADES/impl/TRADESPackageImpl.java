@@ -386,7 +386,7 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getThreat_ID() {
+	public EAttribute getThreat_Id() {
 		return (EAttribute) threatEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -476,7 +476,7 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getControl_ID() {
+	public EAttribute getControl_Id() {
 		return (EAttribute) controlEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -1448,11 +1448,11 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getThreat_ThreatType(), this.getthreatTypeENUM(), "threatType", null, 0, 1, Threat.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getThreat_ID(), ecorePackage.getEString(), "ID", null, 0, 1, Threat.class, !IS_TRANSIENT,
+		initEAttribute(getThreat_Id(), ecorePackage.getEString(), "id", null, 0, 1, Threat.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getThreat_Description(), ecorePackage.getEString(), "Description", null, 0, 1, Threat.class,
+		initEAttribute(getThreat_Description(), ecorePackage.getEString(), "description", null, 0, 1, Threat.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getThreat_Applicability(), ecorePackage.getEString(), "Applicability", null, 0, 1, Threat.class,
+		initEAttribute(getThreat_Applicability(), ecorePackage.getEString(), "applicability", null, 0, 1, Threat.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		EOperation op = initEOperation(getThreat__CheckIsUsed__DiagnosticChain_Map(), ecorePackage.getEBoolean(),
@@ -1475,9 +1475,9 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		initEReference(getControl_MitigatedThreats(), this.getThreat(), null, "mitigatedThreats", null, 0, -1,
 				Control.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getControl_ID(), ecorePackage.getEString(), "ID", null, 0, 1, Control.class, !IS_TRANSIENT,
+		initEAttribute(getControl_Id(), ecorePackage.getEString(), "id", null, 0, 1, Control.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getControl_Description(), ecorePackage.getEString(), "Description", null, 0, 1, Control.class,
+		initEAttribute(getControl_Description(), ecorePackage.getEString(), "description", null, 0, 1, Control.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getControl_MitigationrRelations(), this.getThreatMitigationRelation(),
 				this.getThreatMitigationRelation_Control(), "mitigationrRelations", null, 0, -1, Control.class,

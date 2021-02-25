@@ -294,7 +294,7 @@ public interface TRADESPackage extends EPackage {
 	int THREAT__THREAT_TYPE = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>ID</b></em>' attribute.
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -494,7 +494,7 @@ public interface TRADESPackage extends EPackage {
 	int CONTROL__MITIGATED_THREATS = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>ID</b></em>' attribute.
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1225,7 +1225,7 @@ public interface TRADESPackage extends EPackage {
 	int EXTERNAL_THREAT__THREAT_TYPE = THREAT__THREAT_TYPE;
 
 	/**
-	 * The feature id for the '<em><b>ID</b></em>' attribute.
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1444,7 +1444,7 @@ public interface TRADESPackage extends EPackage {
 	int EXTERNAL_CONTROL__MITIGATED_THREATS = EXTERNAL_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>ID</b></em>' attribute.
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1768,15 +1768,15 @@ public interface TRADESPackage extends EPackage {
 	EAttribute getThreat_ThreatType();
 
 	/**
-	 * Returns the meta object for the attribute '{@link dsm.TRADES.Threat#getID <em>ID</em>}'.
+	 * Returns the meta object for the attribute '{@link dsm.TRADES.Threat#getId <em>Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>ID</em>'.
-	 * @see dsm.TRADES.Threat#getID()
+	 * @return the meta object for the attribute '<em>Id</em>'.
+	 * @see dsm.TRADES.Threat#getId()
 	 * @see #getThreat()
 	 * @generated
 	 */
-	EAttribute getThreat_ID();
+	EAttribute getThreat_Id();
 
 	/**
 	 * Returns the meta object for the attribute '{@link dsm.TRADES.Threat#getDescription <em>Description</em>}'.
@@ -1864,15 +1864,15 @@ public interface TRADESPackage extends EPackage {
 	EReference getControl_MitigatedThreats();
 
 	/**
-	 * Returns the meta object for the attribute '{@link dsm.TRADES.Control#getID <em>ID</em>}'.
+	 * Returns the meta object for the attribute '{@link dsm.TRADES.Control#getId <em>Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>ID</em>'.
-	 * @see dsm.TRADES.Control#getID()
+	 * @return the meta object for the attribute '<em>Id</em>'.
+	 * @see dsm.TRADES.Control#getId()
 	 * @see #getControl()
 	 * @generated
 	 */
-	EAttribute getControl_ID();
+	EAttribute getControl_Id();
 
 	/**
 	 * Returns the meta object for the attribute '{@link dsm.TRADES.Control#getDescription <em>Description</em>}'.
@@ -2744,12 +2744,12 @@ public interface TRADESPackage extends EPackage {
 		EAttribute THREAT__THREAT_TYPE = eINSTANCE.getThreat_ThreatType();
 
 		/**
-		 * The meta object literal for the '<em><b>ID</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute THREAT__ID = eINSTANCE.getThreat_ID();
+		EAttribute THREAT__ID = eINSTANCE.getThreat_Id();
 
 		/**
 		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
@@ -2821,12 +2821,12 @@ public interface TRADESPackage extends EPackage {
 		EReference CONTROL__MITIGATED_THREATS = eINSTANCE.getControl_MitigatedThreats();
 
 		/**
-		 * The meta object literal for the '<em><b>ID</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CONTROL__ID = eINSTANCE.getControl_ID();
+		EAttribute CONTROL__ID = eINSTANCE.getControl_Id();
 
 		/**
 		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.

@@ -49,7 +49,7 @@ public class ExternalControlItemProvider extends ExternalElementItemProvider {
 
 			addNamePropertyDescriptor(object);
 			addMitigatedThreatsPropertyDescriptor(object);
-			addIDPropertyDescriptor(object);
+			addIdPropertyDescriptor(object);
 			addDescriptionPropertyDescriptor(object);
 			addMitigationrRelationsPropertyDescriptor(object);
 		}
@@ -88,16 +88,16 @@ public class ExternalControlItemProvider extends ExternalElementItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the ID feature.
+	 * This adds a property descriptor for the Id feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addIDPropertyDescriptor(Object object) {
+	protected void addIdPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Control_ID_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Control_ID_feature", "_UI_Control_type"),
+						getResourceLocator(), getString("_UI_Control_id_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Control_id_feature", "_UI_Control_type"),
 						TRADESPackage.Literals.CONTROL__ID, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
@@ -111,8 +111,8 @@ public class ExternalControlItemProvider extends ExternalElementItemProvider {
 	protected void addDescriptionPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Control_Description_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Control_Description_feature",
+						getResourceLocator(), getString("_UI_Control_description_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Control_description_feature",
 								"_UI_Control_type"),
 						TRADESPackage.Literals.CONTROL__DESCRIPTION, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));

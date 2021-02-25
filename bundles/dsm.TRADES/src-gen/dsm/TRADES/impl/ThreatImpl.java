@@ -40,7 +40,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link dsm.TRADES.impl.ThreatImpl#getThreatAllocations <em>Threat Allocations</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ThreatImpl#getThreatType <em>Threat Type</em>}</li>
- *   <li>{@link dsm.TRADES.impl.ThreatImpl#getID <em>ID</em>}</li>
+ *   <li>{@link dsm.TRADES.impl.ThreatImpl#getId <em>Id</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ThreatImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ThreatImpl#getApplicability <em>Applicability</em>}</li>
  * </ul>
@@ -79,20 +79,20 @@ public class ThreatImpl extends NamedElementImpl implements Threat {
 	protected threatTypeENUM threatType = THREAT_TYPE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getID() <em>ID</em>}' attribute.
+	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getID()
+	 * @see #getId()
 	 * @generated
 	 * @ordered
 	 */
 	protected static final String ID_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getID() <em>ID</em>}' attribute.
+	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getID()
+	 * @see #getId()
 	 * @generated
 	 * @ordered
 	 */
@@ -202,7 +202,7 @@ public class ThreatImpl extends NamedElementImpl implements Threat {
 	 * @generated
 	 */
 	@Override
-	public String getID() {
+	public String getId() {
 		return id;
 	}
 
@@ -212,11 +212,11 @@ public class ThreatImpl extends NamedElementImpl implements Threat {
 	 * @generated
 	 */
 	@Override
-	public void setID(String newID) {
-		String oldID = id;
-		id = newID;
+	public void setId(String newId) {
+		String oldId = id;
+		id = newId;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TRADESPackage.THREAT__ID, oldID, id));
+			eNotify(new ENotificationImpl(this, Notification.SET, TRADESPackage.THREAT__ID, oldId, id));
 	}
 
 	/**
@@ -334,7 +334,7 @@ public class ThreatImpl extends NamedElementImpl implements Threat {
 		case TRADESPackage.THREAT__THREAT_TYPE:
 			return getThreatType();
 		case TRADESPackage.THREAT__ID:
-			return getID();
+			return getId();
 		case TRADESPackage.THREAT__DESCRIPTION:
 			return getDescription();
 		case TRADESPackage.THREAT__APPLICABILITY:
@@ -360,7 +360,7 @@ public class ThreatImpl extends NamedElementImpl implements Threat {
 			setThreatType((threatTypeENUM) newValue);
 			return;
 		case TRADESPackage.THREAT__ID:
-			setID((String) newValue);
+			setId((String) newValue);
 			return;
 		case TRADESPackage.THREAT__DESCRIPTION:
 			setDescription((String) newValue);
@@ -387,7 +387,7 @@ public class ThreatImpl extends NamedElementImpl implements Threat {
 			setThreatType(THREAT_TYPE_EDEFAULT);
 			return;
 		case TRADESPackage.THREAT__ID:
-			setID(ID_EDEFAULT);
+			setId(ID_EDEFAULT);
 			return;
 		case TRADESPackage.THREAT__DESCRIPTION:
 			setDescription(DESCRIPTION_EDEFAULT);
@@ -449,11 +449,11 @@ public class ThreatImpl extends NamedElementImpl implements Threat {
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (threatType: ");
 		result.append(threatType);
-		result.append(", ID: ");
+		result.append(", id: ");
 		result.append(id);
-		result.append(", Description: ");
+		result.append(", description: ");
 		result.append(description);
-		result.append(", Applicability: ");
+		result.append(", applicability: ");
 		result.append(applicability);
 		result.append(')');
 		return result.toString();
