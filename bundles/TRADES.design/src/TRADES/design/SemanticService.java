@@ -80,7 +80,7 @@ public class SemanticService {
 			score.setImpact(scoreSystem.getImpactScores().get(index - 1).getImpact() + 1);
 		}
 
-		for (DifficultyScore dif : scoreSystem.getDifficultyscore()) {
+		for (DifficultyScore dif : scoreSystem.getDifficultyScores()) {
 			ImpactConfiguration conf = TRADESFactory.eINSTANCE.createImpactConfiguration();
 			score.getConfigurations().add(conf);
 			conf.setDifficulty(dif);
@@ -96,10 +96,10 @@ public class SemanticService {
 
 			if (rel.getDifficultyscore() == null || rel.getDifficultyscore().getDifficulty() != cmpDiff) {
 				ScoreSystem scoresystem = EcoreUtils.getAncestor(rel, Analysis.class).getScoresystem();
-				DifficultyScore diffScore = scoresystem.getDifficultyscore().stream()
+				DifficultyScore diffScore = scoresystem.getDifficultyScores().stream()
 						.filter(d -> d.getDifficulty() == cmpDiff).findFirst().orElseGet(() -> {
 							DifficultyScore diff = TRADESFactory.eINSTANCE.createDifficultyScore();
-							scoresystem.getDifficultyscore().add(diff);
+							scoresystem.getDifficultyScores().add(diff);
 							diff.setDifficulty(cmpDiff);
 							updateImpactWithNewDifficulty(diff, scoresystem);
 							return diff;
@@ -125,7 +125,7 @@ public class SemanticService {
 	}
 
 	private void getSubDataOwners(ComponentOwner o, List<DataOwnerElement> collector) {
-		for (Component sub : o.getComponent()) {
+		for (Component sub : o.getComponents()) {
 			collector.add(sub);
 			getSubDataOwners(sub, collector);
 		}
@@ -227,9 +227,9 @@ public class SemanticService {
 	public void initDifficulty(DifficultyScore diff) {
 		ScoreSystem scoreSystem = (ScoreSystem) diff.eContainer();
 
-		int index = scoreSystem.getDifficultyscore().indexOf(diff);
+		int index = scoreSystem.getDifficultyScores().indexOf(diff);
 		if (index > 0) {
-			diff.setDifficulty(scoreSystem.getDifficultyscore().get(index - 1).getDifficulty() + 1);
+			diff.setDifficulty(scoreSystem.getDifficultyScores().get(index - 1).getDifficulty() + 1);
 		}
 
 		updateImpactWithNewDifficulty(diff, scoreSystem);
@@ -326,7 +326,7 @@ public class SemanticService {
 		ECrossReferenceAdapter crossRef = SessionManager.INSTANCE.getSession(scoreSystem).getSemanticCrossReferencer();
 		List<EObject> toRemove = new ArrayList<>();
 
-		for (DifficultyScore diff : scoreSystem.getDifficultyscore()) {
+		for (DifficultyScore diff : scoreSystem.getDifficultyScores()) {
 
 			if (!isSemanticallyUsed(diff, crossRef, USAGE_REF_TO_IGNORE_DIFF_SCORE)) {
 				toRemove.add(diff);
@@ -457,7 +457,7 @@ public class SemanticService {
 				.flatMap(affect -> Stream.of(affect.getSourceComponent(), affect.getTargetComponent()))
 				.filter(c -> c != null).collect(toSet());
 
-		return parent.getComponent().stream().filter(child -> contains(child, allComponents)).collect(toList());
+		return parent.getComponents().stream().filter(child -> contains(child, allComponents)).collect(toList());
 
 	}
 
@@ -473,7 +473,7 @@ public class SemanticService {
 		if (components.contains(c)) {
 			return true;
 		}
-		for (Component child : c.getComponent()) {
+		for (Component child : c.getComponents()) {
 			if (contains(child, components)) {
 				return true;
 			}

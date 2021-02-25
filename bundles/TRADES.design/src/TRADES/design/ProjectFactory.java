@@ -51,7 +51,7 @@ public class ProjectFactory {
 
 	private static void createDifficulty(String name, int score, ScoreSystem system) {
 		DifficultyScore diff = TRADESFactory.eINSTANCE.createDifficultyScore();
-		system.getDifficultyscore().add(diff);
+		system.getDifficultyScores().add(diff);
 		diff.setName(name);
 		diff.setDifficulty(score);
 
@@ -62,7 +62,7 @@ public class ProjectFactory {
 		system.getImpactScores().add(impact);
 		impact.setName(name);
 		impact.setImpact(score);
-		for (DifficultyScore dif : system.getDifficultyscore()) {
+		for (DifficultyScore dif : system.getDifficultyScores()) {
 			ImpactConfiguration conf = TRADESFactory.eINSTANCE.createImpactConfiguration();
 			impact.getConfigurations().add(conf);
 			conf.setDifficulty(dif);

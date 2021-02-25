@@ -192,7 +192,7 @@
             </style>
           </conditionnalStyles>
         </edgeMappings>
-        <containerMappings name="ComponentPackage" detailDescriptions="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='SubComponentDiagramCreation']" navigationDescriptions="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='ComponentDiagNavTool']" preconditionExpression="aql: self->notEmpty() = true" labelDirectEdit="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Change%20name']" semanticCandidatesExpression="aql: self.component" domainClass="TRADES::ComponentOwner" dropDescriptions="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='ExternalControlDrop_TD'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='DnDThreatOnComponent_TD']" reusedNodeMappings="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@nodeMappings[name='ControlNode']" reusedContainerMappings="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage']">
+        <containerMappings name="ComponentPackage" detailDescriptions="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='SubComponentDiagramCreation']" navigationDescriptions="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='ComponentDiagNavTool']" preconditionExpression="aql: self->notEmpty() = true" labelDirectEdit="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Change%20name']" semanticCandidatesExpression="aql:self.components" domainClass="TRADES::ComponentOwner" dropDescriptions="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='ExternalControlDrop_TD'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='DnDThreatOnComponent_TD']" reusedNodeMappings="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@nodeMappings[name='ControlNode']" reusedContainerMappings="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage']">
           <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12" showIcon="false" backgroundStyle="GradientTopToBottom" backgroundColor="//@userColorsPalettes[name='Colors']/@entries[name='ComponetBGColor']" foregroundColor="//@userColorsPalettes[name='Colors']/@entries[name='ComponetBGColor']">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelFormat>bold</labelFormat>
@@ -224,7 +224,7 @@
             <viewVariable name="containerView"/>
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="TRADES::Component" referenceName="component"/>
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="TRADES::Component" referenceName="components"/>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
@@ -392,7 +392,7 @@
           </ownedTools>
         </toolSections>
         <toolSections name="Representation Tools">
-          <ownedTools xsi:type="tool_1:SelectionWizardDescription" name="Hide details" precondition="aql:self.oclAsType(TRADES::ComponentOwner)" candidatesExpression="aql:self.oclAsType(TRADES::ComponentOwner).component" multiple="true" message="Select components to hide in this diagram" iconPath="/TRADES.design/Images/inspectEncapSmall.png" windowTitle="Component encapsulation">
+          <ownedTools xsi:type="tool_1:SelectionWizardDescription" name="Hide details" precondition="aql:self.oclAsType(TRADES::ComponentOwner)" candidatesExpression="aql:self.oclAsType(TRADES::ComponentOwner).components" multiple="true" message="Select components to hide in this diagram" iconPath="/TRADES.design/Images/inspectEncapSmall.png" windowTitle="Component encapsulation">
             <element name="element"/>
             <containerView name="containerView"/>
             <container name="container"/>
@@ -400,7 +400,7 @@
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:element->filter(TRADES::Component).encapsulateElements(containerView)"/>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool_1:SelectionWizardDescription" name="Unhide details" precondition="aql:self.oclAsType(TRADES::ComponentOwner)" candidatesExpression="aql:self.oclAsType(TRADES::ComponentOwner).component" multiple="true" message="Select components to show in this diagram" iconPath="/TRADES.design/Images/inspectDeEncapSmall.png" windowTitle="Cancel Component Encapsulation">
+          <ownedTools xsi:type="tool_1:SelectionWizardDescription" name="Unhide details" precondition="aql:self.oclAsType(TRADES::ComponentOwner)" candidatesExpression="aql:self.oclAsType(TRADES::ComponentOwner).components" multiple="true" message="Select components to show in this diagram" iconPath="/TRADES.design/Images/inspectDeEncapSmall.png" windowTitle="Cancel Component Encapsulation">
             <element name="element"/>
             <containerView name="containerView"/>
             <container name="container"/>
@@ -624,7 +624,7 @@
           </subModelOperations>
         </firstModelOperation>
       </ownedCreateLine>
-      <ownedColumnMappings name="DifficultyColumn_RMS" label="Difficulty column" headerLabelExpression="aql:self.getLabelProviderText()" domainClass="TRADES::DifficultyScore" semanticCandidatesExpression="aql:self.scoresystem.difficultyscore">
+      <ownedColumnMappings name="DifficultyColumn_RMS" label="Difficulty column" headerLabelExpression="aql:self.getLabelProviderText()" domainClass="TRADES::DifficultyScore" semanticCandidatesExpression="aql:self.scoresystem.difficultyScores">
         <defaultBackground>
           <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
         </defaultBackground>
@@ -648,7 +648,7 @@
         <variables name="element" documentation="The semantic currently edited element."/>
         <variables name="container" documentation="The semantic element corresponding to the view container."/>
         <firstModelOperation xsi:type="tool_1:ChangeContext" browseExpression="aql:self.scoresystem">
-          <subModelOperations xsi:type="tool_1:CreateInstance" typeName="TRADES::DifficultyScore" referenceName="difficultyscore">
+          <subModelOperations xsi:type="tool_1:CreateInstance" typeName="TRADES::DifficultyScore" referenceName="difficultyScores">
             <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:instance.initDifficulty()"/>
           </subModelOperations>
         </firstModelOperation>
@@ -1203,7 +1203,7 @@
                 </firstModelOperations>
               </initialOperation>
             </controls>
-            <controls xsi:type="properties:SelectDescription" name="DifficultyScoreField" label="Difficulty Score Field" labelExpression="Difficulty" helpExpression="The difficulty of the threat from declered impacts in scoring system (can be added/changed)" valueExpression="aql:self.difficultyscore" candidatesExpression="aql:self.eContainer(TRADES::Analysis).scoresystem.difficultyscore" candidateDisplayExpression="aql:candidate.getLabelProviderText()">
+            <controls xsi:type="properties:SelectDescription" name="DifficultyScoreField" label="Difficulty Score Field" labelExpression="Difficulty" helpExpression="The difficulty of the threat from declered impacts in scoring system (can be added/changed)" valueExpression="aql:self.difficultyscore" candidatesExpression="aql:self.eContainer(TRADES::Analysis).scoresystem.difficultyScores" candidateDisplayExpression="aql:candidate.getLabelProviderText()">
               <initialOperation>
                 <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
                   <subModelOperations xsi:type="tool_1:SetValue" featureName="difficultyscore" valueExpression="aql:newValue"/>
@@ -1216,7 +1216,7 @@
                   <subModelOperations xsi:type="tool_1:Let" variableName="threatAlloc" valueExpression="var:self"/>
                   <subModelOperations xsi:type="tool_1:Let" variableName="scoreSystem" valueExpression="aql:self.eContainerOrSelf(TRADES::Analysis).scoresystem"/>
                   <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:scoreSystem">
-                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="TRADES::DifficultyScore" referenceName="difficultyscore" variableName="newDifficulty">
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="TRADES::DifficultyScore" referenceName="difficultyScores" variableName="newDifficulty">
                       <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:newDifficulty.initDifficulty()">
                         <subModelOperations xsi:type="tool_1:Let" variableName="newDifficultyScore" valueExpression="var:newDifficulty"/>
                         <subModelOperations xsi:type="properties:DialogModelOperation" titleExpression="New difficulty score">

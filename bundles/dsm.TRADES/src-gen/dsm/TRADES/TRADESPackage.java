@@ -75,13 +75,13 @@ public interface TRADESPackage extends EPackage {
 	int COMPONENT_OWNER = 14;
 
 	/**
-	 * The feature id for the '<em><b>Component</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Components</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_OWNER__COMPONENT = 0;
+	int COMPONENT_OWNER__COMPONENTS = 0;
 
 	/**
 	 * The number of structural features of the '<em>Component Owner</em>' class.
@@ -112,13 +112,13 @@ public interface TRADESPackage extends EPackage {
 	int ANALYSIS = 0;
 
 	/**
-	 * The feature id for the '<em><b>Component</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Components</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ANALYSIS__COMPONENT = COMPONENT_OWNER__COMPONENT;
+	int ANALYSIS__COMPONENTS = COMPONENT_OWNER__COMPONENTS;
 
 	/**
 	 * The feature id for the '<em><b>Data Owner</b></em>' containment reference.
@@ -358,13 +358,13 @@ public interface TRADESPackage extends EPackage {
 	int COMPONENT = 2;
 
 	/**
-	 * The feature id for the '<em><b>Component</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Components</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__COMPONENT = COMPONENT_OWNER__COMPONENT;
+	int COMPONENT__COMPONENTS = COMPONENT_OWNER__COMPONENTS;
 
 	/**
 	 * The feature id for the '<em><b>Data Owner</b></em>' containment reference.
@@ -1023,13 +1023,13 @@ public interface TRADESPackage extends EPackage {
 	int SCORE_SYSTEM__IMPACT_SCORES = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Difficultyscore</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Difficulty Scores</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SCORE_SYSTEM__DIFFICULTYSCORE = NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int SCORE_SYSTEM__DIFFICULTY_SCORES = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Score System</em>' class.
@@ -2329,15 +2329,15 @@ public interface TRADESPackage extends EPackage {
 	EReference getScoreSystem_ImpactScores();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link dsm.TRADES.ScoreSystem#getDifficultyscore <em>Difficultyscore</em>}'.
+	 * Returns the meta object for the containment reference list '{@link dsm.TRADES.ScoreSystem#getDifficultyScores <em>Difficulty Scores</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Difficultyscore</em>'.
-	 * @see dsm.TRADES.ScoreSystem#getDifficultyscore()
+	 * @return the meta object for the containment reference list '<em>Difficulty Scores</em>'.
+	 * @see dsm.TRADES.ScoreSystem#getDifficultyScores()
 	 * @see #getScoreSystem()
 	 * @generated
 	 */
-	EReference getScoreSystem_Difficultyscore();
+	EReference getScoreSystem_DifficultyScores();
 
 	/**
 	 * Returns the meta object for class '{@link dsm.TRADES.ImpactScore <em>Impact Score</em>}'.
@@ -2454,15 +2454,15 @@ public interface TRADESPackage extends EPackage {
 	EClass getComponentOwner();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link dsm.TRADES.ComponentOwner#getComponent <em>Component</em>}'.
+	 * Returns the meta object for the containment reference list '{@link dsm.TRADES.ComponentOwner#getComponents <em>Components</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Component</em>'.
-	 * @see dsm.TRADES.ComponentOwner#getComponent()
+	 * @return the meta object for the containment reference list '<em>Components</em>'.
+	 * @see dsm.TRADES.ComponentOwner#getComponents()
 	 * @see #getComponentOwner()
 	 * @generated
 	 */
-	EReference getComponentOwner_Component();
+	EReference getComponentOwner_Components();
 
 	/**
 	 * Returns the meta object for class '{@link dsm.TRADES.NamedElement <em>Named Element</em>}'.
@@ -3230,12 +3230,12 @@ public interface TRADESPackage extends EPackage {
 		EReference SCORE_SYSTEM__IMPACT_SCORES = eINSTANCE.getScoreSystem_ImpactScores();
 
 		/**
-		 * The meta object literal for the '<em><b>Difficultyscore</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Difficulty Scores</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference SCORE_SYSTEM__DIFFICULTYSCORE = eINSTANCE.getScoreSystem_Difficultyscore();
+		EReference SCORE_SYSTEM__DIFFICULTY_SCORES = eINSTANCE.getScoreSystem_DifficultyScores();
 
 		/**
 		 * The meta object literal for the '{@link dsm.TRADES.impl.ImpactScoreImpl <em>Impact Score</em>}' class.
@@ -3334,12 +3334,12 @@ public interface TRADESPackage extends EPackage {
 		EClass COMPONENT_OWNER = eINSTANCE.getComponentOwner();
 
 		/**
-		 * The meta object literal for the '<em><b>Component</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Components</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference COMPONENT_OWNER__COMPONENT = eINSTANCE.getComponentOwner_Component();
+		EReference COMPONENT_OWNER__COMPONENTS = eINSTANCE.getComponentOwner_Components();
 
 		/**
 		 * The meta object literal for the '{@link dsm.TRADES.impl.NamedElementImpl <em>Named Element</em>}' class.

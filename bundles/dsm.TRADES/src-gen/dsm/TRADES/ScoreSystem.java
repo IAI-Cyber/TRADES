@@ -14,7 +14,7 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link dsm.TRADES.ScoreSystem#getImpactScores <em>Impact Scores</em>}</li>
- *   <li>{@link dsm.TRADES.ScoreSystem#getDifficultyscore <em>Difficultyscore</em>}</li>
+ *   <li>{@link dsm.TRADES.ScoreSystem#getDifficultyScores <em>Difficulty Scores</em>}</li>
  * </ul>
  *
  * @see dsm.TRADES.TRADESPackage#getScoreSystem()
@@ -35,15 +35,15 @@ public interface ScoreSystem extends NamedElement {
 	EList<ImpactScore> getImpactScores();
 
 	/**
-	 * Returns the value of the '<em><b>Difficultyscore</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Difficulty Scores</b></em>' containment reference list.
 	 * The list contents are of type {@link dsm.TRADES.DifficultyScore}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Difficultyscore</em>' containment reference list.
-	 * @see dsm.TRADES.TRADESPackage#getScoreSystem_Difficultyscore()
+	 * @return the value of the '<em>Difficulty Scores</em>' containment reference list.
+	 * @see dsm.TRADES.TRADESPackage#getScoreSystem_DifficultyScores()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<DifficultyScore> getDifficultyscore();
+	EList<DifficultyScore> getDifficultyScores();
 
 } // ScoreSystem

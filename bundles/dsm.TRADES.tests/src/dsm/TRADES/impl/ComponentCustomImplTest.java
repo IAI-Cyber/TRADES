@@ -35,7 +35,7 @@ public class ComponentCustomImplTest extends AbstractTest {
 
 		// Add sub components
 		Component subCmp = fact.createComponent();
-		cmp.getComponent().add(subCmp);
+		cmp.getComponents().add(subCmp);
 
 		assertThat(subCmp.getDatas()).isEmpty();
 		assertThat(subCmp.getAllDatas()).containsExactly(data1);
@@ -57,7 +57,7 @@ public class ComponentCustomImplTest extends AbstractTest {
 		analysis.setDataOwner(anDataOwner);
 		Data data3 = fact.createData();
 		anDataOwner.getData().add(data3);
-		analysis.getComponent().add(cmp);
+		analysis.getComponents().add(cmp);
 
 		assertThat(cmp.getDatas()).containsExactly(data1);
 		assertThat(cmp.getAllDatas()).containsExactly(data1, data3);

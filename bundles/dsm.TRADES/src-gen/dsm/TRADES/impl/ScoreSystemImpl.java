@@ -28,7 +28,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link dsm.TRADES.impl.ScoreSystemImpl#getImpactScores <em>Impact Scores</em>}</li>
- *   <li>{@link dsm.TRADES.impl.ScoreSystemImpl#getDifficultyscore <em>Difficultyscore</em>}</li>
+ *   <li>{@link dsm.TRADES.impl.ScoreSystemImpl#getDifficultyScores <em>Difficulty Scores</em>}</li>
  * </ul>
  *
  * @generated
@@ -45,14 +45,14 @@ public class ScoreSystemImpl extends NamedElementImpl implements ScoreSystem {
 	protected EList<ImpactScore> impactScores;
 
 	/**
-	 * The cached value of the '{@link #getDifficultyscore() <em>Difficultyscore</em>}' containment reference list.
+	 * The cached value of the '{@link #getDifficultyScores() <em>Difficulty Scores</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getDifficultyscore()
+	 * @see #getDifficultyScores()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<DifficultyScore> difficultyscore;
+	protected EList<DifficultyScore> difficultyScores;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -93,12 +93,12 @@ public class ScoreSystemImpl extends NamedElementImpl implements ScoreSystem {
 	 * @generated
 	 */
 	@Override
-	public EList<DifficultyScore> getDifficultyscore() {
-		if (difficultyscore == null) {
-			difficultyscore = new EObjectContainmentEList<DifficultyScore>(DifficultyScore.class, this,
-					TRADESPackage.SCORE_SYSTEM__DIFFICULTYSCORE);
+	public EList<DifficultyScore> getDifficultyScores() {
+		if (difficultyScores == null) {
+			difficultyScores = new EObjectContainmentEList<DifficultyScore>(DifficultyScore.class, this,
+					TRADESPackage.SCORE_SYSTEM__DIFFICULTY_SCORES);
 		}
-		return difficultyscore;
+		return difficultyScores;
 	}
 
 	/**
@@ -111,8 +111,8 @@ public class ScoreSystemImpl extends NamedElementImpl implements ScoreSystem {
 		switch (featureID) {
 		case TRADESPackage.SCORE_SYSTEM__IMPACT_SCORES:
 			return ((InternalEList<?>) getImpactScores()).basicRemove(otherEnd, msgs);
-		case TRADESPackage.SCORE_SYSTEM__DIFFICULTYSCORE:
-			return ((InternalEList<?>) getDifficultyscore()).basicRemove(otherEnd, msgs);
+		case TRADESPackage.SCORE_SYSTEM__DIFFICULTY_SCORES:
+			return ((InternalEList<?>) getDifficultyScores()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -127,8 +127,8 @@ public class ScoreSystemImpl extends NamedElementImpl implements ScoreSystem {
 		switch (featureID) {
 		case TRADESPackage.SCORE_SYSTEM__IMPACT_SCORES:
 			return getImpactScores();
-		case TRADESPackage.SCORE_SYSTEM__DIFFICULTYSCORE:
-			return getDifficultyscore();
+		case TRADESPackage.SCORE_SYSTEM__DIFFICULTY_SCORES:
+			return getDifficultyScores();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -146,9 +146,9 @@ public class ScoreSystemImpl extends NamedElementImpl implements ScoreSystem {
 			getImpactScores().clear();
 			getImpactScores().addAll((Collection<? extends ImpactScore>) newValue);
 			return;
-		case TRADESPackage.SCORE_SYSTEM__DIFFICULTYSCORE:
-			getDifficultyscore().clear();
-			getDifficultyscore().addAll((Collection<? extends DifficultyScore>) newValue);
+		case TRADESPackage.SCORE_SYSTEM__DIFFICULTY_SCORES:
+			getDifficultyScores().clear();
+			getDifficultyScores().addAll((Collection<? extends DifficultyScore>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -165,8 +165,8 @@ public class ScoreSystemImpl extends NamedElementImpl implements ScoreSystem {
 		case TRADESPackage.SCORE_SYSTEM__IMPACT_SCORES:
 			getImpactScores().clear();
 			return;
-		case TRADESPackage.SCORE_SYSTEM__DIFFICULTYSCORE:
-			getDifficultyscore().clear();
+		case TRADESPackage.SCORE_SYSTEM__DIFFICULTY_SCORES:
+			getDifficultyScores().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -182,8 +182,8 @@ public class ScoreSystemImpl extends NamedElementImpl implements ScoreSystem {
 		switch (featureID) {
 		case TRADESPackage.SCORE_SYSTEM__IMPACT_SCORES:
 			return impactScores != null && !impactScores.isEmpty();
-		case TRADESPackage.SCORE_SYSTEM__DIFFICULTYSCORE:
-			return difficultyscore != null && !difficultyscore.isEmpty();
+		case TRADESPackage.SCORE_SYSTEM__DIFFICULTY_SCORES:
+			return difficultyScores != null && !difficultyScores.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

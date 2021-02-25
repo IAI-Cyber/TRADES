@@ -129,7 +129,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="ScoreSystem" eSuperTypes="#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="impactScores" upperBound="-1"
         eType="#//ImpactScore" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="difficultyscore" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="difficultyScores" upperBound="-1"
         eType="#//DifficultyScore" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ImpactScore" eSuperTypes="#//NamedElement">
@@ -148,7 +148,7 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ComponentOwner" abstract="true">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="component" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="components" upperBound="-1"
         eType="#//Component" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="NamedElement" abstract="true">

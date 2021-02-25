@@ -101,7 +101,7 @@
     </genClasses>
     <genClasses ecoreClass="TRADES.ecore#//ScoreSystem">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//ScoreSystem/impactScores"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//ScoreSystem/difficultyscore"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//ScoreSystem/difficultyScores"/>
     </genClasses>
     <genClasses ecoreClass="TRADES.ecore#//ImpactScore">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//ImpactScore/impact"/>
@@ -117,7 +117,7 @@
       <genOperations ecoreOperation="TRADES.ecore#//DataOwnerElement/getAllDatas"/>
     </genClasses>
     <genClasses image="false" ecoreClass="TRADES.ecore#//ComponentOwner">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//ComponentOwner/component"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//ComponentOwner/components"/>
     </genClasses>
     <genClasses image="false" ecoreClass="TRADES.ecore#//NamedElement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//NamedElement/name"/>
@@ -142,7 +142,6 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//ControlOwner/externals"/>
     </genClasses>
     <genClasses ecoreClass="TRADES.ecore#//AbstractControlOwner">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//AbstractControlOwner/controlOwner"/>
       <genOperations ecoreOperation="TRADES.ecore#//AbstractControlOwner/getAllControls"/>
     </genClasses>
     <genClasses ecoreClass="TRADES.ecore#//DataOwner">
