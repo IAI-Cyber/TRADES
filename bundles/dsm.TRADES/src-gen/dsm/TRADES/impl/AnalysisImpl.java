@@ -36,7 +36,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getDataOwner <em>Data Owner</em>}</li>
  *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getName <em>Name</em>}</li>
  *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getControlOwner <em>Control Owner</em>}</li>
- *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getScoresystem <em>Scoresystem</em>}</li>
+ *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getScoreSystem <em>Score System</em>}</li>
  *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getThreatOwner <em>Threat Owner</em>}</li>
  * </ul>
  *
@@ -84,14 +84,14 @@ public class AnalysisImpl extends ComponentOwnerImpl implements Analysis {
 	protected ControlOwner controlOwner;
 
 	/**
-	 * The cached value of the '{@link #getScoresystem() <em>Scoresystem</em>}' containment reference.
+	 * The cached value of the '{@link #getScoreSystem() <em>Score System</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getScoresystem()
+	 * @see #getScoreSystem()
 	 * @generated
 	 * @ordered
 	 */
-	protected ScoreSystem scoresystem;
+	protected ScoreSystem scoreSystem;
 
 	/**
 	 * The cached value of the '{@link #getThreatOwner() <em>Threat Owner</em>}' containment reference.
@@ -255,8 +255,8 @@ public class AnalysisImpl extends ComponentOwnerImpl implements Analysis {
 	 * @generated
 	 */
 	@Override
-	public ScoreSystem getScoresystem() {
-		return scoresystem;
+	public ScoreSystem getScoreSystem() {
+		return scoreSystem;
 	}
 
 	/**
@@ -264,12 +264,12 @@ public class AnalysisImpl extends ComponentOwnerImpl implements Analysis {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetScoresystem(ScoreSystem newScoresystem, NotificationChain msgs) {
-		ScoreSystem oldScoresystem = scoresystem;
-		scoresystem = newScoresystem;
+	public NotificationChain basicSetScoreSystem(ScoreSystem newScoreSystem, NotificationChain msgs) {
+		ScoreSystem oldScoreSystem = scoreSystem;
+		scoreSystem = newScoreSystem;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					TRADESPackage.ANALYSIS__SCORESYSTEM, oldScoresystem, newScoresystem);
+					TRADESPackage.ANALYSIS__SCORE_SYSTEM, oldScoreSystem, newScoreSystem);
 			if (msgs == null)
 				msgs = notification;
 			else
@@ -284,21 +284,21 @@ public class AnalysisImpl extends ComponentOwnerImpl implements Analysis {
 	 * @generated
 	 */
 	@Override
-	public void setScoresystem(ScoreSystem newScoresystem) {
-		if (newScoresystem != scoresystem) {
+	public void setScoreSystem(ScoreSystem newScoreSystem) {
+		if (newScoreSystem != scoreSystem) {
 			NotificationChain msgs = null;
-			if (scoresystem != null)
-				msgs = ((InternalEObject) scoresystem).eInverseRemove(this,
-						EOPPOSITE_FEATURE_BASE - TRADESPackage.ANALYSIS__SCORESYSTEM, null, msgs);
-			if (newScoresystem != null)
-				msgs = ((InternalEObject) newScoresystem).eInverseAdd(this,
-						EOPPOSITE_FEATURE_BASE - TRADESPackage.ANALYSIS__SCORESYSTEM, null, msgs);
-			msgs = basicSetScoresystem(newScoresystem, msgs);
+			if (scoreSystem != null)
+				msgs = ((InternalEObject) scoreSystem).eInverseRemove(this,
+						EOPPOSITE_FEATURE_BASE - TRADESPackage.ANALYSIS__SCORE_SYSTEM, null, msgs);
+			if (newScoreSystem != null)
+				msgs = ((InternalEObject) newScoreSystem).eInverseAdd(this,
+						EOPPOSITE_FEATURE_BASE - TRADESPackage.ANALYSIS__SCORE_SYSTEM, null, msgs);
+			msgs = basicSetScoreSystem(newScoreSystem, msgs);
 			if (msgs != null)
 				msgs.dispatch();
 		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TRADESPackage.ANALYSIS__SCORESYSTEM, newScoresystem,
-					newScoresystem));
+			eNotify(new ENotificationImpl(this, Notification.SET, TRADESPackage.ANALYSIS__SCORE_SYSTEM, newScoreSystem,
+					newScoreSystem));
 	}
 
 	/**
@@ -413,8 +413,8 @@ public class AnalysisImpl extends ComponentOwnerImpl implements Analysis {
 			return basicSetDataOwner(null, msgs);
 		case TRADESPackage.ANALYSIS__CONTROL_OWNER:
 			return basicSetControlOwner(null, msgs);
-		case TRADESPackage.ANALYSIS__SCORESYSTEM:
-			return basicSetScoresystem(null, msgs);
+		case TRADESPackage.ANALYSIS__SCORE_SYSTEM:
+			return basicSetScoreSystem(null, msgs);
 		case TRADESPackage.ANALYSIS__THREAT_OWNER:
 			return basicSetThreatOwner(null, msgs);
 		}
@@ -435,8 +435,8 @@ public class AnalysisImpl extends ComponentOwnerImpl implements Analysis {
 			return getName();
 		case TRADESPackage.ANALYSIS__CONTROL_OWNER:
 			return getControlOwner();
-		case TRADESPackage.ANALYSIS__SCORESYSTEM:
-			return getScoresystem();
+		case TRADESPackage.ANALYSIS__SCORE_SYSTEM:
+			return getScoreSystem();
 		case TRADESPackage.ANALYSIS__THREAT_OWNER:
 			return getThreatOwner();
 		}
@@ -461,8 +461,8 @@ public class AnalysisImpl extends ComponentOwnerImpl implements Analysis {
 		case TRADESPackage.ANALYSIS__CONTROL_OWNER:
 			setControlOwner((ControlOwner) newValue);
 			return;
-		case TRADESPackage.ANALYSIS__SCORESYSTEM:
-			setScoresystem((ScoreSystem) newValue);
+		case TRADESPackage.ANALYSIS__SCORE_SYSTEM:
+			setScoreSystem((ScoreSystem) newValue);
 			return;
 		case TRADESPackage.ANALYSIS__THREAT_OWNER:
 			setThreatOwner((ThreatsOwner) newValue);
@@ -488,8 +488,8 @@ public class AnalysisImpl extends ComponentOwnerImpl implements Analysis {
 		case TRADESPackage.ANALYSIS__CONTROL_OWNER:
 			setControlOwner((ControlOwner) null);
 			return;
-		case TRADESPackage.ANALYSIS__SCORESYSTEM:
-			setScoresystem((ScoreSystem) null);
+		case TRADESPackage.ANALYSIS__SCORE_SYSTEM:
+			setScoreSystem((ScoreSystem) null);
 			return;
 		case TRADESPackage.ANALYSIS__THREAT_OWNER:
 			setThreatOwner((ThreatsOwner) null);
@@ -512,8 +512,8 @@ public class AnalysisImpl extends ComponentOwnerImpl implements Analysis {
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		case TRADESPackage.ANALYSIS__CONTROL_OWNER:
 			return controlOwner != null;
-		case TRADESPackage.ANALYSIS__SCORESYSTEM:
-			return scoresystem != null;
+		case TRADESPackage.ANALYSIS__SCORE_SYSTEM:
+			return scoreSystem != null;
 		case TRADESPackage.ANALYSIS__THREAT_OWNER:
 			return threatOwner != null;
 		}

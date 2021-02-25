@@ -11,7 +11,7 @@ package dsm.TRADES;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link dsm.TRADES.Analysis#getScoresystem <em>Scoresystem</em>}</li>
+ *   <li>{@link dsm.TRADES.Analysis#getScoreSystem <em>Score System</em>}</li>
  *   <li>{@link dsm.TRADES.Analysis#getThreatOwner <em>Threat Owner</em>}</li>
  * </ul>
  *
@@ -21,26 +21,26 @@ package dsm.TRADES;
  */
 public interface Analysis extends ComponentOwner, DataOwnerElement, NamedElement, AbstractControlOwner {
 	/**
-	 * Returns the value of the '<em><b>Scoresystem</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Score System</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Scoresystem</em>' containment reference.
-	 * @see #setScoresystem(ScoreSystem)
-	 * @see dsm.TRADES.TRADESPackage#getAnalysis_Scoresystem()
+	 * @return the value of the '<em>Score System</em>' containment reference.
+	 * @see #setScoreSystem(ScoreSystem)
+	 * @see dsm.TRADES.TRADESPackage#getAnalysis_ScoreSystem()
 	 * @model containment="true"
 	 * @generated
 	 */
-	ScoreSystem getScoresystem();
+	ScoreSystem getScoreSystem();
 
 	/**
-	 * Sets the value of the '{@link dsm.TRADES.Analysis#getScoresystem <em>Scoresystem</em>}' containment reference.
+	 * Sets the value of the '{@link dsm.TRADES.Analysis#getScoreSystem <em>Score System</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Scoresystem</em>' containment reference.
-	 * @see #getScoresystem()
+	 * @param value the new value of the '<em>Score System</em>' containment reference.
+	 * @see #getScoreSystem()
 	 * @generated
 	 */
-	void setScoresystem(ScoreSystem value);
+	void setScoreSystem(ScoreSystem value);
 
 	/**
 	 * Returns the value of the '<em><b>Threat Owner</b></em>' containment reference.

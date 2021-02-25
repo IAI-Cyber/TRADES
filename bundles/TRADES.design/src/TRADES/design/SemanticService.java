@@ -95,7 +95,7 @@ public class SemanticService {
 			int cmpDiff = attackChain.getComputedDifficulty();
 
 			if (rel.getDifficultyScore() == null || rel.getDifficultyScore().getDifficulty() != cmpDiff) {
-				ScoreSystem scoresystem = EcoreUtils.getAncestor(rel, Analysis.class).getScoresystem();
+				ScoreSystem scoresystem = EcoreUtils.getAncestor(rel, Analysis.class).getScoreSystem();
 				DifficultyScore diffScore = scoresystem.getDifficultyScores().stream()
 						.filter(d -> d.getDifficulty() == cmpDiff).findFirst().orElseGet(() -> {
 							DifficultyScore diff = TRADESFactory.eINSTANCE.createDifficultyScore();

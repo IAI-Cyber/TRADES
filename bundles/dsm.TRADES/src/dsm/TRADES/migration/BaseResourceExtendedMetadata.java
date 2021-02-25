@@ -34,6 +34,8 @@ public class BaseResourceExtendedMetadata extends BasicExtendedMetaData {
 				TRADESPackage.eINSTANCE.getThreatAllocationRelation(), "difficultyscore"));
 		RENAMERS.add(new Renamer(TRADESPackage.eINSTANCE.getThreatAllocationRelation_ImpactScore(),
 				TRADESPackage.eINSTANCE.getThreatAllocationRelation(), "impactscore"));
+		RENAMERS.add(new Renamer(TRADESPackage.eINSTANCE.getAnalysis_ScoreSystem(),
+				TRADESPackage.eINSTANCE.getAnalysis(), "scoresystem"));
 	}
 
 

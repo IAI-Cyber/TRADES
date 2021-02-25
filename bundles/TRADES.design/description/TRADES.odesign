@@ -321,7 +321,7 @@
             </initialOperation>
           </ownedTools>
           <ownedTools xsi:type="tool_1:PopupMenu" name="NewMenu_TD" label="New">
-            <menuItemDescription xsi:type="tool_1:OperationAction" name="CreateScoreSystemTool_TD" label="New score system" precondition="aql:self.scoresystem = null">
+            <menuItemDescription xsi:type="tool_1:OperationAction" name="CreateScoreSystemTool_TD" label="New score system" precondition="aql:self.scoreSystem = null">
               <view name="views"/>
               <initialOperation>
                 <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="TRADES::ScoreSystem" referenceName="scoresystem"/>

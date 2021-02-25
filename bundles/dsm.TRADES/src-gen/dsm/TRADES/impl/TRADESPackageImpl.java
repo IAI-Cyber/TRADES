@@ -336,7 +336,7 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getAnalysis_Scoresystem() {
+	public EReference getAnalysis_ScoreSystem() {
 		return (EReference) analysisEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -1261,7 +1261,7 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 
 		// Create classes and their features
 		analysisEClass = createEClass(ANALYSIS);
-		createEReference(analysisEClass, ANALYSIS__SCORESYSTEM);
+		createEReference(analysisEClass, ANALYSIS__SCORE_SYSTEM);
 		createEReference(analysisEClass, ANALYSIS__THREAT_OWNER);
 
 		threatEClass = createEClass(THREAT);
@@ -1434,7 +1434,7 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		// Initialize classes, features, and operations; add parameters
 		initEClass(analysisEClass, Analysis.class, "Analysis", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAnalysis_Scoresystem(), this.getScoreSystem(), null, "scoresystem", null, 0, 1,
+		initEReference(getAnalysis_ScoreSystem(), this.getScoreSystem(), null, "scoreSystem", null, 0, 1,
 				Analysis.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAnalysis_ThreatOwner(), this.getThreatsOwner(), null, "threatOwner", null, 1, 1,

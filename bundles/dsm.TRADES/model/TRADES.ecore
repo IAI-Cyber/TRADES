@@ -5,7 +5,7 @@
     <details key="documentation" value="TRADES model, by Israel Aerospace Industries. All rights reserved.&#xD;&#xA;&#xD;&#xA;The TRADES model, based on Threat and Risk assessment ontology and the TRADES model-based methodology."/>
   </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="Analysis" eSuperTypes="#//ComponentOwner #//DataOwnerElement #//NamedElement #//AbstractControlOwner">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="scoresystem" eType="#//ScoreSystem"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scoreSystem" eType="#//ScoreSystem"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="threatOwner" lowerBound="1"
         eType="#//ThreatsOwner" containment="true"/>

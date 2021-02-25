@@ -148,13 +148,13 @@ public interface TRADESPackage extends EPackage {
 	int ANALYSIS__CONTROL_OWNER = COMPONENT_OWNER_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Scoresystem</b></em>' containment reference.
+	 * The feature id for the '<em><b>Score System</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ANALYSIS__SCORESYSTEM = COMPONENT_OWNER_FEATURE_COUNT + 3;
+	int ANALYSIS__SCORE_SYSTEM = COMPONENT_OWNER_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Threat Owner</b></em>' containment reference.
@@ -1714,15 +1714,15 @@ public interface TRADESPackage extends EPackage {
 	EClass getAnalysis();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link dsm.TRADES.Analysis#getScoresystem <em>Scoresystem</em>}'.
+	 * Returns the meta object for the containment reference '{@link dsm.TRADES.Analysis#getScoreSystem <em>Score System</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Scoresystem</em>'.
-	 * @see dsm.TRADES.Analysis#getScoresystem()
+	 * @return the meta object for the containment reference '<em>Score System</em>'.
+	 * @see dsm.TRADES.Analysis#getScoreSystem()
 	 * @see #getAnalysis()
 	 * @generated
 	 */
-	EReference getAnalysis_Scoresystem();
+	EReference getAnalysis_ScoreSystem();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link dsm.TRADES.Analysis#getThreatOwner <em>Threat Owner</em>}'.
@@ -2702,12 +2702,12 @@ public interface TRADESPackage extends EPackage {
 		EClass ANALYSIS = eINSTANCE.getAnalysis();
 
 		/**
-		 * The meta object literal for the '<em><b>Scoresystem</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Score System</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ANALYSIS__SCORESYSTEM = eINSTANCE.getAnalysis_Scoresystem();
+		EReference ANALYSIS__SCORE_SYSTEM = eINSTANCE.getAnalysis_ScoreSystem();
 
 		/**
 		 * The meta object literal for the '<em><b>Threat Owner</b></em>' containment reference feature.

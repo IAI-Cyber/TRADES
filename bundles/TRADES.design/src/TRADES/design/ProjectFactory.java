@@ -18,7 +18,7 @@ public class ProjectFactory {
 		analysis.setName(rootObjectName);
 
 		ScoreSystem scoreSystem = TRADESFactory.eINSTANCE.createScoreSystem();
-		analysis.setScoresystem(scoreSystem);
+		analysis.setScoreSystem(scoreSystem);
 
 		ThreatsOwner threatOwner = TRADESFactory.eINSTANCE.createThreatsOwner();
 		analysis.setThreatOwner(threatOwner);
