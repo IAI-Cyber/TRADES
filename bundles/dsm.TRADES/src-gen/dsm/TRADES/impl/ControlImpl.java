@@ -2,7 +2,6 @@
  */
 package dsm.TRADES.impl;
 
-import dsm.TRADES.Component;
 import dsm.TRADES.Control;
 import dsm.TRADES.TRADESPackage;
 import dsm.TRADES.Threat;
@@ -22,7 +21,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -34,7 +32,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link dsm.TRADES.impl.ControlImpl#getMitigates <em>Mitigates</em>}</li>
- *   <li>{@link dsm.TRADES.impl.ControlImpl#getImplementedBy <em>Implemented By</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ControlImpl#getID <em>ID</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ControlImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ControlImpl#getMitigationrRelations <em>Mitigationr Relations</em>}</li>
@@ -52,16 +49,6 @@ public class ControlImpl extends NamedElementImpl implements Control {
 	 * @ordered
 	 */
 	protected EList<Threat> mitigates;
-
-	/**
-	 * The cached value of the '{@link #getImplementedBy() <em>Implemented By</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getImplementedBy()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Component> implementedBy;
 
 	/**
 	 * The default value of the '{@link #getID() <em>ID</em>}' attribute.
@@ -151,20 +138,6 @@ public class ControlImpl extends NamedElementImpl implements Control {
 	 * @generated
 	 */
 	@Override
-	public EList<Component> getImplementedBy() {
-		if (implementedBy == null) {
-			implementedBy = new EObjectWithInverseResolvingEList.ManyInverse<Component>(Component.class, this,
-					TRADESPackage.CONTROL__IMPLEMENTED_BY, TRADESPackage.COMPONENT__IMPLEMENTS);
-		}
-		return implementedBy;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public String getID() {
 		return id;
 	}
@@ -230,8 +203,6 @@ public class ControlImpl extends NamedElementImpl implements Control {
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case TRADESPackage.CONTROL__IMPLEMENTED_BY:
-			return ((InternalEList<InternalEObject>) (InternalEList<?>) getImplementedBy()).basicAdd(otherEnd, msgs);
 		case TRADESPackage.CONTROL__MITIGATIONR_RELATIONS:
 			return ((InternalEList<InternalEObject>) (InternalEList<?>) getMitigationrRelations()).basicAdd(otherEnd,
 					msgs);
@@ -247,8 +218,6 @@ public class ControlImpl extends NamedElementImpl implements Control {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case TRADESPackage.CONTROL__IMPLEMENTED_BY:
-			return ((InternalEList<?>) getImplementedBy()).basicRemove(otherEnd, msgs);
 		case TRADESPackage.CONTROL__MITIGATIONR_RELATIONS:
 			return ((InternalEList<?>) getMitigationrRelations()).basicRemove(otherEnd, msgs);
 		}
@@ -265,8 +234,6 @@ public class ControlImpl extends NamedElementImpl implements Control {
 		switch (featureID) {
 		case TRADESPackage.CONTROL__MITIGATES:
 			return getMitigates();
-		case TRADESPackage.CONTROL__IMPLEMENTED_BY:
-			return getImplementedBy();
 		case TRADESPackage.CONTROL__ID:
 			return getID();
 		case TRADESPackage.CONTROL__DESCRIPTION:
@@ -289,10 +256,6 @@ public class ControlImpl extends NamedElementImpl implements Control {
 		case TRADESPackage.CONTROL__MITIGATES:
 			getMitigates().clear();
 			getMitigates().addAll((Collection<? extends Threat>) newValue);
-			return;
-		case TRADESPackage.CONTROL__IMPLEMENTED_BY:
-			getImplementedBy().clear();
-			getImplementedBy().addAll((Collection<? extends Component>) newValue);
 			return;
 		case TRADESPackage.CONTROL__ID:
 			setID((String) newValue);
@@ -319,9 +282,6 @@ public class ControlImpl extends NamedElementImpl implements Control {
 		case TRADESPackage.CONTROL__MITIGATES:
 			getMitigates().clear();
 			return;
-		case TRADESPackage.CONTROL__IMPLEMENTED_BY:
-			getImplementedBy().clear();
-			return;
 		case TRADESPackage.CONTROL__ID:
 			setID(ID_EDEFAULT);
 			return;
@@ -345,8 +305,6 @@ public class ControlImpl extends NamedElementImpl implements Control {
 		switch (featureID) {
 		case TRADESPackage.CONTROL__MITIGATES:
 			return mitigates != null && !mitigates.isEmpty();
-		case TRADESPackage.CONTROL__IMPLEMENTED_BY:
-			return implementedBy != null && !implementedBy.isEmpty();
 		case TRADESPackage.CONTROL__ID:
 			return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
 		case TRADESPackage.CONTROL__DESCRIPTION:

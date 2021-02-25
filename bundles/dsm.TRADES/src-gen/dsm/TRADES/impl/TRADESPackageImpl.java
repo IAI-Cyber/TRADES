@@ -436,7 +436,7 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getComponent_Implements() {
+	public EReference getComponent_ThreatAllocations() {
 		return (EReference) componentEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -446,18 +446,8 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getComponent_ThreatAllocations() {
-		return (EReference) componentEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EReference getComponent_AffectRelations() {
-		return (EReference) componentEClass.getEStructuralFeatures().get(2);
+		return (EReference) componentEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -486,18 +476,8 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getControl_ImplementedBy() {
-		return (EReference) controlEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EAttribute getControl_ID() {
-		return (EAttribute) controlEClass.getEStructuralFeatures().get(2);
+		return (EAttribute) controlEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -507,7 +487,7 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 */
 	@Override
 	public EAttribute getControl_Description() {
-		return (EAttribute) controlEClass.getEStructuralFeatures().get(3);
+		return (EAttribute) controlEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -517,7 +497,7 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 */
 	@Override
 	public EReference getControl_MitigationrRelations() {
-		return (EReference) controlEClass.getEStructuralFeatures().get(4);
+		return (EReference) controlEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1303,13 +1283,11 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		createEOperation(threatEClass, THREAT___CHECK_IS_USED__DIAGNOSTICCHAIN_MAP);
 
 		componentEClass = createEClass(COMPONENT);
-		createEReference(componentEClass, COMPONENT__IMPLEMENTS);
 		createEReference(componentEClass, COMPONENT__THREAT_ALLOCATIONS);
 		createEReference(componentEClass, COMPONENT__AFFECT_RELATIONS);
 
 		controlEClass = createEClass(CONTROL);
 		createEReference(controlEClass, CONTROL__MITIGATES);
-		createEReference(controlEClass, CONTROL__IMPLEMENTED_BY);
 		createEAttribute(controlEClass, CONTROL__ID);
 		createEAttribute(controlEClass, CONTROL__DESCRIPTION);
 		createEReference(controlEClass, CONTROL__MITIGATIONR_RELATIONS);
@@ -1495,9 +1473,6 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 
 		initEClass(componentEClass, Component.class, "Component", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getComponent_Implements(), this.getControl(), this.getControl_ImplementedBy(), "implements",
-				null, 0, -1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
-				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getComponent_ThreatAllocations(), this.getThreatAllocationRelation(),
 				this.getThreatAllocationRelation_Component(), "threatAllocations", null, 0, -1, Component.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
@@ -1511,9 +1486,6 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		initEReference(getControl_Mitigates(), this.getThreat(), null, "mitigates", null, 0, -1, Control.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getControl_ImplementedBy(), this.getComponent(), this.getComponent_Implements(), "implementedBy",
-				null, 0, -1, Control.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
-				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getControl_ID(), ecorePackage.getEString(), "ID", null, 0, 1, Control.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getControl_Description(), ecorePackage.getEString(), "Description", null, 0, 1, Control.class,

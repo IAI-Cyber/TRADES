@@ -23,8 +23,6 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Applicability" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Component" eSuperTypes="#//ComponentOwner #//DataOwnerElement #//NamedElement #//AbstractControlOwner">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="implements" upperBound="-1"
-        eType="#//Control" eOpposite="#//Control/implementedBy"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="threatAllocations" upperBound="-1"
         eType="#//ThreatAllocationRelation" containment="true" eOpposite="#//ThreatAllocationRelation/component"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="affectRelations" upperBound="-1"
@@ -33,8 +31,6 @@
   <eClassifiers xsi:type="ecore:EClass" name="Control" eSuperTypes="#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="mitigates" upperBound="-1"
         eType="#//Threat"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="implementedBy" upperBound="-1"
-        eType="#//Component" eOpposite="#//Component/implements"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="mitigationrRelations" upperBound="-1"

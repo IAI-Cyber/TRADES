@@ -394,22 +394,13 @@ public interface TRADESPackage extends EPackage {
 	int COMPONENT__CONTROL_OWNER = COMPONENT_OWNER_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Implements</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT__IMPLEMENTS = COMPONENT_OWNER_FEATURE_COUNT + 3;
-
-	/**
 	 * The feature id for the '<em><b>Threat Allocations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__THREAT_ALLOCATIONS = COMPONENT_OWNER_FEATURE_COUNT + 4;
+	int COMPONENT__THREAT_ALLOCATIONS = COMPONENT_OWNER_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Affect Relations</b></em>' containment reference list.
@@ -418,7 +409,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__AFFECT_RELATIONS = COMPONENT_OWNER_FEATURE_COUNT + 5;
+	int COMPONENT__AFFECT_RELATIONS = COMPONENT_OWNER_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Component</em>' class.
@@ -427,7 +418,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_FEATURE_COUNT = COMPONENT_OWNER_FEATURE_COUNT + 6;
+	int COMPONENT_FEATURE_COUNT = COMPONENT_OWNER_FEATURE_COUNT + 5;
 
 	/**
 	 * The operation id for the '<em>Get Datas</em>' operation.
@@ -503,22 +494,13 @@ public interface TRADESPackage extends EPackage {
 	int CONTROL__MITIGATES = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Implemented By</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTROL__IMPLEMENTED_BY = NAMED_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>ID</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL__ID = NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int CONTROL__ID = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -527,7 +509,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL__DESCRIPTION = NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int CONTROL__DESCRIPTION = NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Mitigationr Relations</b></em>' containment reference list.
@@ -536,7 +518,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL__MITIGATIONR_RELATIONS = NAMED_ELEMENT_FEATURE_COUNT + 4;
+	int CONTROL__MITIGATIONR_RELATIONS = NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Control</em>' class.
@@ -545,7 +527,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 5;
+	int CONTROL_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of operations of the '<em>Control</em>' class.
@@ -1471,22 +1453,13 @@ public interface TRADESPackage extends EPackage {
 	int EXTERNAL_CONTROL__MITIGATES = EXTERNAL_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Implemented By</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXTERNAL_CONTROL__IMPLEMENTED_BY = EXTERNAL_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
 	 * The feature id for the '<em><b>ID</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXTERNAL_CONTROL__ID = EXTERNAL_ELEMENT_FEATURE_COUNT + 3;
+	int EXTERNAL_CONTROL__ID = EXTERNAL_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -1495,7 +1468,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXTERNAL_CONTROL__DESCRIPTION = EXTERNAL_ELEMENT_FEATURE_COUNT + 4;
+	int EXTERNAL_CONTROL__DESCRIPTION = EXTERNAL_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Mitigationr Relations</b></em>' containment reference list.
@@ -1504,7 +1477,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXTERNAL_CONTROL__MITIGATIONR_RELATIONS = EXTERNAL_ELEMENT_FEATURE_COUNT + 5;
+	int EXTERNAL_CONTROL__MITIGATIONR_RELATIONS = EXTERNAL_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>External Control</em>' class.
@@ -1513,7 +1486,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXTERNAL_CONTROL_FEATURE_COUNT = EXTERNAL_ELEMENT_FEATURE_COUNT + 6;
+	int EXTERNAL_CONTROL_FEATURE_COUNT = EXTERNAL_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of operations of the '<em>External Control</em>' class.
@@ -1857,17 +1830,6 @@ public interface TRADESPackage extends EPackage {
 	EClass getComponent();
 
 	/**
-	 * Returns the meta object for the reference list '{@link dsm.TRADES.Component#getImplements <em>Implements</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Implements</em>'.
-	 * @see dsm.TRADES.Component#getImplements()
-	 * @see #getComponent()
-	 * @generated
-	 */
-	EReference getComponent_Implements();
-
-	/**
 	 * Returns the meta object for the containment reference list '{@link dsm.TRADES.Component#getThreatAllocations <em>Threat Allocations</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1909,17 +1871,6 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getControl_Mitigates();
-
-	/**
-	 * Returns the meta object for the reference list '{@link dsm.TRADES.Control#getImplementedBy <em>Implemented By</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Implemented By</em>'.
-	 * @see dsm.TRADES.Control#getImplementedBy()
-	 * @see #getControl()
-	 * @generated
-	 */
-	EReference getControl_ImplementedBy();
 
 	/**
 	 * Returns the meta object for the attribute '{@link dsm.TRADES.Control#getID <em>ID</em>}'.
@@ -2856,14 +2807,6 @@ public interface TRADESPackage extends EPackage {
 		EClass COMPONENT = eINSTANCE.getComponent();
 
 		/**
-		 * The meta object literal for the '<em><b>Implements</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference COMPONENT__IMPLEMENTS = eINSTANCE.getComponent_Implements();
-
-		/**
 		 * The meta object literal for the '<em><b>Threat Allocations</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2896,14 +2839,6 @@ public interface TRADESPackage extends EPackage {
 		 * @generated
 		 */
 		EReference CONTROL__MITIGATES = eINSTANCE.getControl_Mitigates();
-
-		/**
-		 * The meta object literal for the '<em><b>Implemented By</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference CONTROL__IMPLEMENTED_BY = eINSTANCE.getControl_ImplementedBy();
 
 		/**
 		 * The meta object literal for the '<em><b>ID</b></em>' attribute feature.

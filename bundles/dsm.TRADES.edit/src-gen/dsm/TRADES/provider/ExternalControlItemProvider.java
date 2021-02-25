@@ -49,7 +49,6 @@ public class ExternalControlItemProvider extends ExternalElementItemProvider {
 
 			addNamePropertyDescriptor(object);
 			addMitigatesPropertyDescriptor(object);
-			addImplementedByPropertyDescriptor(object);
 			addIDPropertyDescriptor(object);
 			addDescriptionPropertyDescriptor(object);
 			addMitigationrRelationsPropertyDescriptor(object);
@@ -86,21 +85,6 @@ public class ExternalControlItemProvider extends ExternalElementItemProvider {
 						getString("_UI_PropertyDescriptor_description", "_UI_Control_mitigates_feature",
 								"_UI_Control_type"),
 						TRADESPackage.Literals.CONTROL__MITIGATES, true, false, true, null, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Implemented By feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addImplementedByPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Control_implementedBy_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Control_implementedBy_feature",
-								"_UI_Control_type"),
-						TRADESPackage.Literals.CONTROL__IMPLEMENTED_BY, true, false, true, null, null, null));
 	}
 
 	/**

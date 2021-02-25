@@ -13,7 +13,6 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link dsm.TRADES.Component#getImplements <em>Implements</em>}</li>
  *   <li>{@link dsm.TRADES.Component#getThreatAllocations <em>Threat Allocations</em>}</li>
  *   <li>{@link dsm.TRADES.Component#getAffectRelations <em>Affect Relations</em>}</li>
  * </ul>
@@ -23,20 +22,6 @@ import org.eclipse.emf.common.util.EList;
  * @generated
  */
 public interface Component extends ComponentOwner, DataOwnerElement, NamedElement, AbstractControlOwner {
-	/**
-	 * Returns the value of the '<em><b>Implements</b></em>' reference list.
-	 * The list contents are of type {@link dsm.TRADES.Control}.
-	 * It is bidirectional and its opposite is '{@link dsm.TRADES.Control#getImplementedBy <em>Implemented By</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Implements</em>' reference list.
-	 * @see dsm.TRADES.TRADESPackage#getComponent_Implements()
-	 * @see dsm.TRADES.Control#getImplementedBy
-	 * @model opposite="implementedBy"
-	 * @generated
-	 */
-	EList<Control> getImplements();
-
 	/**
 	 * Returns the value of the '<em><b>Threat Allocations</b></em>' containment reference list.
 	 * The list contents are of type {@link dsm.TRADES.ThreatAllocationRelation}.

@@ -2,7 +2,6 @@
  */
 package dsm.TRADES.impl;
 
-import dsm.TRADES.Component;
 import dsm.TRADES.Control;
 import dsm.TRADES.ExternalControl;
 import dsm.TRADES.NamedElement;
@@ -24,7 +23,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -37,7 +35,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link dsm.TRADES.impl.ExternalControlImpl#getName <em>Name</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ExternalControlImpl#getMitigates <em>Mitigates</em>}</li>
- *   <li>{@link dsm.TRADES.impl.ExternalControlImpl#getImplementedBy <em>Implemented By</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ExternalControlImpl#getID <em>ID</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ExternalControlImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ExternalControlImpl#getMitigationrRelations <em>Mitigationr Relations</em>}</li>
@@ -75,16 +72,6 @@ public class ExternalControlImpl extends ExternalElementImpl implements External
 	 * @ordered
 	 */
 	protected EList<Threat> mitigates;
-
-	/**
-	 * The cached value of the '{@link #getImplementedBy() <em>Implemented By</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getImplementedBy()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Component> implementedBy;
 
 	/**
 	 * The default value of the '{@link #getID() <em>ID</em>}' attribute.
@@ -198,20 +185,6 @@ public class ExternalControlImpl extends ExternalElementImpl implements External
 	 * @generated
 	 */
 	@Override
-	public EList<Component> getImplementedBy() {
-		if (implementedBy == null) {
-			implementedBy = new EObjectWithInverseResolvingEList.ManyInverse<Component>(Component.class, this,
-					TRADESPackage.EXTERNAL_CONTROL__IMPLEMENTED_BY, TRADESPackage.COMPONENT__IMPLEMENTS);
-		}
-		return implementedBy;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public String getID() {
 		return id;
 	}
@@ -277,8 +250,6 @@ public class ExternalControlImpl extends ExternalElementImpl implements External
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case TRADESPackage.EXTERNAL_CONTROL__IMPLEMENTED_BY:
-			return ((InternalEList<InternalEObject>) (InternalEList<?>) getImplementedBy()).basicAdd(otherEnd, msgs);
 		case TRADESPackage.EXTERNAL_CONTROL__MITIGATIONR_RELATIONS:
 			return ((InternalEList<InternalEObject>) (InternalEList<?>) getMitigationrRelations()).basicAdd(otherEnd,
 					msgs);
@@ -294,8 +265,6 @@ public class ExternalControlImpl extends ExternalElementImpl implements External
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case TRADESPackage.EXTERNAL_CONTROL__IMPLEMENTED_BY:
-			return ((InternalEList<?>) getImplementedBy()).basicRemove(otherEnd, msgs);
 		case TRADESPackage.EXTERNAL_CONTROL__MITIGATIONR_RELATIONS:
 			return ((InternalEList<?>) getMitigationrRelations()).basicRemove(otherEnd, msgs);
 		}
@@ -314,8 +283,6 @@ public class ExternalControlImpl extends ExternalElementImpl implements External
 			return getName();
 		case TRADESPackage.EXTERNAL_CONTROL__MITIGATES:
 			return getMitigates();
-		case TRADESPackage.EXTERNAL_CONTROL__IMPLEMENTED_BY:
-			return getImplementedBy();
 		case TRADESPackage.EXTERNAL_CONTROL__ID:
 			return getID();
 		case TRADESPackage.EXTERNAL_CONTROL__DESCRIPTION:
@@ -341,10 +308,6 @@ public class ExternalControlImpl extends ExternalElementImpl implements External
 		case TRADESPackage.EXTERNAL_CONTROL__MITIGATES:
 			getMitigates().clear();
 			getMitigates().addAll((Collection<? extends Threat>) newValue);
-			return;
-		case TRADESPackage.EXTERNAL_CONTROL__IMPLEMENTED_BY:
-			getImplementedBy().clear();
-			getImplementedBy().addAll((Collection<? extends Component>) newValue);
 			return;
 		case TRADESPackage.EXTERNAL_CONTROL__ID:
 			setID((String) newValue);
@@ -374,9 +337,6 @@ public class ExternalControlImpl extends ExternalElementImpl implements External
 		case TRADESPackage.EXTERNAL_CONTROL__MITIGATES:
 			getMitigates().clear();
 			return;
-		case TRADESPackage.EXTERNAL_CONTROL__IMPLEMENTED_BY:
-			getImplementedBy().clear();
-			return;
 		case TRADESPackage.EXTERNAL_CONTROL__ID:
 			setID(ID_EDEFAULT);
 			return;
@@ -402,8 +362,6 @@ public class ExternalControlImpl extends ExternalElementImpl implements External
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		case TRADESPackage.EXTERNAL_CONTROL__MITIGATES:
 			return mitigates != null && !mitigates.isEmpty();
-		case TRADESPackage.EXTERNAL_CONTROL__IMPLEMENTED_BY:
-			return implementedBy != null && !implementedBy.isEmpty();
 		case TRADESPackage.EXTERNAL_CONTROL__ID:
 			return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
 		case TRADESPackage.EXTERNAL_CONTROL__DESCRIPTION:
@@ -433,8 +391,6 @@ public class ExternalControlImpl extends ExternalElementImpl implements External
 			switch (derivedFeatureID) {
 			case TRADESPackage.EXTERNAL_CONTROL__MITIGATES:
 				return TRADESPackage.CONTROL__MITIGATES;
-			case TRADESPackage.EXTERNAL_CONTROL__IMPLEMENTED_BY:
-				return TRADESPackage.CONTROL__IMPLEMENTED_BY;
 			case TRADESPackage.EXTERNAL_CONTROL__ID:
 				return TRADESPackage.CONTROL__ID;
 			case TRADESPackage.EXTERNAL_CONTROL__DESCRIPTION:
@@ -467,8 +423,6 @@ public class ExternalControlImpl extends ExternalElementImpl implements External
 			switch (baseFeatureID) {
 			case TRADESPackage.CONTROL__MITIGATES:
 				return TRADESPackage.EXTERNAL_CONTROL__MITIGATES;
-			case TRADESPackage.CONTROL__IMPLEMENTED_BY:
-				return TRADESPackage.EXTERNAL_CONTROL__IMPLEMENTED_BY;
 			case TRADESPackage.CONTROL__ID:
 				return TRADESPackage.EXTERNAL_CONTROL__ID;
 			case TRADESPackage.CONTROL__DESCRIPTION:

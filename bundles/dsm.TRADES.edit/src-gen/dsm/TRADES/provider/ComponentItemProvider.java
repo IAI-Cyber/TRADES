@@ -48,7 +48,6 @@ public class ComponentItemProvider extends ComponentOwnerItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
-			addImplementsPropertyDescriptor(object);
 			addThreatAllocationsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -68,21 +67,6 @@ public class ComponentItemProvider extends ComponentOwnerItemProvider {
 								"_UI_NamedElement_type"),
 						TRADESPackage.Literals.NAMED_ELEMENT__NAME, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Implements feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addImplementsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Component_implements_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Component_implements_feature",
-								"_UI_Component_type"),
-						TRADESPackage.Literals.COMPONENT__IMPLEMENTS, true, false, true, null, null, null));
 	}
 
 	/**
