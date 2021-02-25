@@ -94,7 +94,7 @@ public class SemanticService {
 		if (attackChain != null) {
 			int cmpDiff = attackChain.getComputedDifficulty();
 
-			if (rel.getDifficultyscore() == null || rel.getDifficultyscore().getDifficulty() != cmpDiff) {
+			if (rel.getDifficultyScore() == null || rel.getDifficultyScore().getDifficulty() != cmpDiff) {
 				ScoreSystem scoresystem = EcoreUtils.getAncestor(rel, Analysis.class).getScoresystem();
 				DifficultyScore diffScore = scoresystem.getDifficultyScores().stream()
 						.filter(d -> d.getDifficulty() == cmpDiff).findFirst().orElseGet(() -> {
@@ -104,7 +104,7 @@ public class SemanticService {
 							updateImpactWithNewDifficulty(diff, scoresystem);
 							return diff;
 						});
-				rel.setDifficultyscore(diffScore);
+				rel.setDifficultyScore(diffScore);
 			}
 		}
 

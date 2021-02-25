@@ -42,8 +42,8 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  *   <li>{@link dsm.TRADES.impl.ThreatAllocationRelationImpl#getAssessment <em>Assessment</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ThreatAllocationRelationImpl#getComponent <em>Component</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ThreatAllocationRelationImpl#getThreat <em>Threat</em>}</li>
- *   <li>{@link dsm.TRADES.impl.ThreatAllocationRelationImpl#getImpactscore <em>Impactscore</em>}</li>
- *   <li>{@link dsm.TRADES.impl.ThreatAllocationRelationImpl#getDifficultyscore <em>Difficultyscore</em>}</li>
+ *   <li>{@link dsm.TRADES.impl.ThreatAllocationRelationImpl#getImpactScore <em>Impact Score</em>}</li>
+ *   <li>{@link dsm.TRADES.impl.ThreatAllocationRelationImpl#getDifficultyScore <em>Difficulty Score</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ThreatAllocationRelationImpl#getAttackChain <em>Attack Chain</em>}</li>
  * </ul>
  *
@@ -81,24 +81,24 @@ public class ThreatAllocationRelationImpl extends MinimalEObjectImpl.Container i
 	protected Threat threat;
 
 	/**
-	 * The cached value of the '{@link #getImpactscore() <em>Impactscore</em>}' reference.
+	 * The cached value of the '{@link #getImpactScore() <em>Impact Score</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getImpactscore()
+	 * @see #getImpactScore()
 	 * @generated
 	 * @ordered
 	 */
-	protected ImpactScore impactscore;
+	protected ImpactScore impactScore;
 
 	/**
-	 * The cached value of the '{@link #getDifficultyscore() <em>Difficultyscore</em>}' reference.
+	 * The cached value of the '{@link #getDifficultyScore() <em>Difficulty Score</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getDifficultyscore()
+	 * @see #getDifficultyScore()
 	 * @generated
 	 * @ordered
 	 */
-	protected DifficultyScore difficultyscore;
+	protected DifficultyScore difficultyScore;
 
 	/**
 	 * The cached value of the '{@link #getAttackChain() <em>Attack Chain</em>}' containment reference.
@@ -278,17 +278,17 @@ public class ThreatAllocationRelationImpl extends MinimalEObjectImpl.Container i
 	 * @generated
 	 */
 	@Override
-	public ImpactScore getImpactscore() {
-		if (impactscore != null && impactscore.eIsProxy()) {
-			InternalEObject oldImpactscore = (InternalEObject) impactscore;
-			impactscore = (ImpactScore) eResolveProxy(oldImpactscore);
-			if (impactscore != oldImpactscore) {
+	public ImpactScore getImpactScore() {
+		if (impactScore != null && impactScore.eIsProxy()) {
+			InternalEObject oldImpactScore = (InternalEObject) impactScore;
+			impactScore = (ImpactScore) eResolveProxy(oldImpactScore);
+			if (impactScore != oldImpactScore) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							TRADESPackage.THREAT_ALLOCATION_RELATION__IMPACTSCORE, oldImpactscore, impactscore));
+							TRADESPackage.THREAT_ALLOCATION_RELATION__IMPACT_SCORE, oldImpactScore, impactScore));
 			}
 		}
-		return impactscore;
+		return impactScore;
 	}
 
 	/**
@@ -296,22 +296,8 @@ public class ThreatAllocationRelationImpl extends MinimalEObjectImpl.Container i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ImpactScore basicGetImpactscore() {
-		return impactscore;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setImpactscore(ImpactScore newImpactscore) {
-		ImpactScore oldImpactscore = impactscore;
-		impactscore = newImpactscore;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TRADESPackage.THREAT_ALLOCATION_RELATION__IMPACTSCORE,
-					oldImpactscore, impactscore));
+	public ImpactScore basicGetImpactScore() {
+		return impactScore;
 	}
 
 	/**
@@ -320,41 +306,55 @@ public class ThreatAllocationRelationImpl extends MinimalEObjectImpl.Container i
 	 * @generated
 	 */
 	@Override
-	public DifficultyScore getDifficultyscore() {
-		if (difficultyscore != null && difficultyscore.eIsProxy()) {
-			InternalEObject oldDifficultyscore = (InternalEObject) difficultyscore;
-			difficultyscore = (DifficultyScore) eResolveProxy(oldDifficultyscore);
-			if (difficultyscore != oldDifficultyscore) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							TRADESPackage.THREAT_ALLOCATION_RELATION__DIFFICULTYSCORE, oldDifficultyscore,
-							difficultyscore));
-			}
-		}
-		return difficultyscore;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public DifficultyScore basicGetDifficultyscore() {
-		return difficultyscore;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setDifficultyscore(DifficultyScore newDifficultyscore) {
-		DifficultyScore oldDifficultyscore = difficultyscore;
-		difficultyscore = newDifficultyscore;
+	public void setImpactScore(ImpactScore newImpactScore) {
+		ImpactScore oldImpactScore = impactScore;
+		impactScore = newImpactScore;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET,
-					TRADESPackage.THREAT_ALLOCATION_RELATION__DIFFICULTYSCORE, oldDifficultyscore, difficultyscore));
+					TRADESPackage.THREAT_ALLOCATION_RELATION__IMPACT_SCORE, oldImpactScore, impactScore));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public DifficultyScore getDifficultyScore() {
+		if (difficultyScore != null && difficultyScore.eIsProxy()) {
+			InternalEObject oldDifficultyScore = (InternalEObject) difficultyScore;
+			difficultyScore = (DifficultyScore) eResolveProxy(oldDifficultyScore);
+			if (difficultyScore != oldDifficultyScore) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+							TRADESPackage.THREAT_ALLOCATION_RELATION__DIFFICULTY_SCORE, oldDifficultyScore,
+							difficultyScore));
+			}
+		}
+		return difficultyScore;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DifficultyScore basicGetDifficultyScore() {
+		return difficultyScore;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setDifficultyScore(DifficultyScore newDifficultyScore) {
+		DifficultyScore oldDifficultyScore = difficultyScore;
+		difficultyScore = newDifficultyScore;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					TRADESPackage.THREAT_ALLOCATION_RELATION__DIFFICULTY_SCORE, oldDifficultyScore, difficultyScore));
 	}
 
 	/**
@@ -505,14 +505,14 @@ public class ThreatAllocationRelationImpl extends MinimalEObjectImpl.Container i
 			if (resolve)
 				return getThreat();
 			return basicGetThreat();
-		case TRADESPackage.THREAT_ALLOCATION_RELATION__IMPACTSCORE:
+		case TRADESPackage.THREAT_ALLOCATION_RELATION__IMPACT_SCORE:
 			if (resolve)
-				return getImpactscore();
-			return basicGetImpactscore();
-		case TRADESPackage.THREAT_ALLOCATION_RELATION__DIFFICULTYSCORE:
+				return getImpactScore();
+			return basicGetImpactScore();
+		case TRADESPackage.THREAT_ALLOCATION_RELATION__DIFFICULTY_SCORE:
 			if (resolve)
-				return getDifficultyscore();
-			return basicGetDifficultyscore();
+				return getDifficultyScore();
+			return basicGetDifficultyScore();
 		case TRADESPackage.THREAT_ALLOCATION_RELATION__ATTACK_CHAIN:
 			return getAttackChain();
 		}
@@ -537,11 +537,11 @@ public class ThreatAllocationRelationImpl extends MinimalEObjectImpl.Container i
 		case TRADESPackage.THREAT_ALLOCATION_RELATION__THREAT:
 			setThreat((Threat) newValue);
 			return;
-		case TRADESPackage.THREAT_ALLOCATION_RELATION__IMPACTSCORE:
-			setImpactscore((ImpactScore) newValue);
+		case TRADESPackage.THREAT_ALLOCATION_RELATION__IMPACT_SCORE:
+			setImpactScore((ImpactScore) newValue);
 			return;
-		case TRADESPackage.THREAT_ALLOCATION_RELATION__DIFFICULTYSCORE:
-			setDifficultyscore((DifficultyScore) newValue);
+		case TRADESPackage.THREAT_ALLOCATION_RELATION__DIFFICULTY_SCORE:
+			setDifficultyScore((DifficultyScore) newValue);
 			return;
 		case TRADESPackage.THREAT_ALLOCATION_RELATION__ATTACK_CHAIN:
 			setAttackChain((AttackChain) newValue);
@@ -567,11 +567,11 @@ public class ThreatAllocationRelationImpl extends MinimalEObjectImpl.Container i
 		case TRADESPackage.THREAT_ALLOCATION_RELATION__THREAT:
 			setThreat((Threat) null);
 			return;
-		case TRADESPackage.THREAT_ALLOCATION_RELATION__IMPACTSCORE:
-			setImpactscore((ImpactScore) null);
+		case TRADESPackage.THREAT_ALLOCATION_RELATION__IMPACT_SCORE:
+			setImpactScore((ImpactScore) null);
 			return;
-		case TRADESPackage.THREAT_ALLOCATION_RELATION__DIFFICULTYSCORE:
-			setDifficultyscore((DifficultyScore) null);
+		case TRADESPackage.THREAT_ALLOCATION_RELATION__DIFFICULTY_SCORE:
+			setDifficultyScore((DifficultyScore) null);
 			return;
 		case TRADESPackage.THREAT_ALLOCATION_RELATION__ATTACK_CHAIN:
 			setAttackChain((AttackChain) null);
@@ -594,10 +594,10 @@ public class ThreatAllocationRelationImpl extends MinimalEObjectImpl.Container i
 			return getComponent() != null;
 		case TRADESPackage.THREAT_ALLOCATION_RELATION__THREAT:
 			return threat != null;
-		case TRADESPackage.THREAT_ALLOCATION_RELATION__IMPACTSCORE:
-			return impactscore != null;
-		case TRADESPackage.THREAT_ALLOCATION_RELATION__DIFFICULTYSCORE:
-			return difficultyscore != null;
+		case TRADESPackage.THREAT_ALLOCATION_RELATION__IMPACT_SCORE:
+			return impactScore != null;
+		case TRADESPackage.THREAT_ALLOCATION_RELATION__DIFFICULTY_SCORE:
+			return difficultyScore != null;
 		case TRADESPackage.THREAT_ALLOCATION_RELATION__ATTACK_CHAIN:
 			return attackChain != null;
 		}

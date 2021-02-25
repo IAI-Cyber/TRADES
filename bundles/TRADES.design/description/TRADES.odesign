@@ -639,7 +639,7 @@
           </firstModelOperation>
         </delete>
       </ownedColumnMappings>
-      <intersection name="ImpactConfiguration_RMS" semanticElements="aql:self.makeUnion(self, self.eContainer())" canEdit="aql:false" lineMapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='RiskManagementSummaryTable']/@ownedLineMappings[name='ImpactRow_RMS']" columnMapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='RiskManagementSummaryTable']/@ownedColumnMappings.0" labelExpression="aql:lineSemantic.eInverse(TRADES::ThreatAllocationRelation)->select(r | r.difficultyscore = columnSemantic).getLabelProviderText()" useDomainClass="true" columnFinderExpression="aql:self.difficulty" lineFinderExpression="aql:self.impact" semanticCandidatesExpression="aql:self.scoresystem.impactScores.configurations" domainClass="TRADES::ImpactConfiguration">
+      <intersection name="ImpactConfiguration_RMS" semanticElements="aql:self.makeUnion(self, self.eContainer())" canEdit="aql:false" lineMapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='RiskManagementSummaryTable']/@ownedLineMappings[name='ImpactRow_RMS']" columnMapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='RiskManagementSummaryTable']/@ownedColumnMappings.0" labelExpression="aql:lineSemantic.eInverse(TRADES::ThreatAllocationRelation)->select(r | r.difficultyScore = columnSemantic).getLabelProviderText()" useDomainClass="true" columnFinderExpression="aql:self.difficulty" lineFinderExpression="aql:self.impact" semanticCandidatesExpression="aql:self.scoresystem.impactScores.configurations" domainClass="TRADES::ImpactConfiguration">
         <defaultForeground labelSize="10" foreGroundColor="//@userColorsPalettes[name='Colors']/@entries[name='HeatMapColorForeground']"/>
         <defaultBackground backgroundColor="//@userColorsPalettes[name='Colors']/@entries[name='HeatMapColorBackGround']"/>
       </intersection>
@@ -1153,10 +1153,10 @@
       <groups name="ThreatAllocationGroup" label="Threat Allocation Details" labelExpression="Details" domainClass="TRADES::ThreatAllocationRelation" semanticCandidateExpression="var:self">
         <controls xsi:type="properties:ContainerDescription" name="ThreatAlocationContainer_DiffImapct">
           <controls xsi:type="properties:ContainerDescription" name="ImpactDiff_Container">
-            <controls xsi:type="properties:SelectDescription" name="ImpactField" label="Impact Field" labelExpression="Impact" helpExpression="The Impact of the threat from declered impacts in scoring system (can be added/changed)" valueExpression="aql:self.impactscore" candidatesExpression="aql:self.eContainer(TRADES::Analysis).scoresystem.impactScores" candidateDisplayExpression="aql:candidate.getLabelProviderText()">
+            <controls xsi:type="properties:SelectDescription" name="ImpactField" label="Impact Field" labelExpression="Impact" helpExpression="The Impact of the threat from declered impacts in scoring system (can be added/changed)" valueExpression="aql:self.impactScore" candidatesExpression="aql:self.eContainer(TRADES::Analysis).scoresystem.impactScores" candidateDisplayExpression="aql:candidate.getLabelProviderText()">
               <initialOperation>
                 <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="impactscore" valueExpression="aql:newValue"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="impactScore" valueExpression="aql:newValue"/>
                 </firstModelOperations>
               </initialOperation>
             </controls>
@@ -1180,7 +1180,7 @@
                               <buttons labelExpression="OK" default="true" closeDialogOnClick="true">
                                 <initialOperation>
                                   <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:threatAlloc">
-                                    <subModelOperations xsi:type="tool_1:SetValue" featureName="impactscore" valueExpression="var:newImpactScore"/>
+                                    <subModelOperations xsi:type="tool_1:SetValue" featureName="impactScore" valueExpression="var:newImpactScore"/>
                                   </firstModelOperations>
                                 </initialOperation>
                               </buttons>
@@ -1203,10 +1203,10 @@
                 </firstModelOperations>
               </initialOperation>
             </controls>
-            <controls xsi:type="properties:SelectDescription" name="DifficultyScoreField" label="Difficulty Score Field" labelExpression="Difficulty" helpExpression="The difficulty of the threat from declered impacts in scoring system (can be added/changed)" valueExpression="aql:self.difficultyscore" candidatesExpression="aql:self.eContainer(TRADES::Analysis).scoresystem.difficultyScores" candidateDisplayExpression="aql:candidate.getLabelProviderText()">
+            <controls xsi:type="properties:SelectDescription" name="DifficultyScoreField" label="Difficulty Score Field" labelExpression="Difficulty" helpExpression="The difficulty of the threat from declered impacts in scoring system (can be added/changed)" valueExpression="aql:self.difficultyScore" candidatesExpression="aql:self.eContainer(TRADES::Analysis).scoresystem.difficultyScores" candidateDisplayExpression="aql:candidate.getLabelProviderText()">
               <initialOperation>
                 <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="difficultyscore" valueExpression="aql:newValue"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="difficultyScore" valueExpression="aql:newValue"/>
                 </firstModelOperations>
               </initialOperation>
             </controls>
@@ -1230,7 +1230,7 @@
                           <buttons labelExpression="OK" default="true" closeDialogOnClick="true">
                             <initialOperation>
                               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:threatAlloc">
-                                <subModelOperations xsi:type="tool_1:SetValue" featureName="difficultyscore" valueExpression="var:newDifficultyScore"/>
+                                <subModelOperations xsi:type="tool_1:SetValue" featureName="difficultyScore" valueExpression="var:newDifficultyScore"/>
                               </firstModelOperations>
                             </initialOperation>
                           </buttons>

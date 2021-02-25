@@ -576,22 +576,22 @@ public interface TRADESPackage extends EPackage {
 	int THREAT_ALLOCATION_RELATION__THREAT = 2;
 
 	/**
-	 * The feature id for the '<em><b>Impactscore</b></em>' reference.
+	 * The feature id for the '<em><b>Impact Score</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int THREAT_ALLOCATION_RELATION__IMPACTSCORE = 3;
+	int THREAT_ALLOCATION_RELATION__IMPACT_SCORE = 3;
 
 	/**
-	 * The feature id for the '<em><b>Difficultyscore</b></em>' reference.
+	 * The feature id for the '<em><b>Difficulty Score</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int THREAT_ALLOCATION_RELATION__DIFFICULTYSCORE = 4;
+	int THREAT_ALLOCATION_RELATION__DIFFICULTY_SCORE = 4;
 
 	/**
 	 * The feature id for the '<em><b>Attack Chain</b></em>' containment reference.
@@ -1940,26 +1940,26 @@ public interface TRADESPackage extends EPackage {
 	EReference getThreatAllocationRelation_Threat();
 
 	/**
-	 * Returns the meta object for the reference '{@link dsm.TRADES.ThreatAllocationRelation#getImpactscore <em>Impactscore</em>}'.
+	 * Returns the meta object for the reference '{@link dsm.TRADES.ThreatAllocationRelation#getImpactScore <em>Impact Score</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Impactscore</em>'.
-	 * @see dsm.TRADES.ThreatAllocationRelation#getImpactscore()
+	 * @return the meta object for the reference '<em>Impact Score</em>'.
+	 * @see dsm.TRADES.ThreatAllocationRelation#getImpactScore()
 	 * @see #getThreatAllocationRelation()
 	 * @generated
 	 */
-	EReference getThreatAllocationRelation_Impactscore();
+	EReference getThreatAllocationRelation_ImpactScore();
 
 	/**
-	 * Returns the meta object for the reference '{@link dsm.TRADES.ThreatAllocationRelation#getDifficultyscore <em>Difficultyscore</em>}'.
+	 * Returns the meta object for the reference '{@link dsm.TRADES.ThreatAllocationRelation#getDifficultyScore <em>Difficulty Score</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Difficultyscore</em>'.
-	 * @see dsm.TRADES.ThreatAllocationRelation#getDifficultyscore()
+	 * @return the meta object for the reference '<em>Difficulty Score</em>'.
+	 * @see dsm.TRADES.ThreatAllocationRelation#getDifficultyScore()
 	 * @see #getThreatAllocationRelation()
 	 * @generated
 	 */
-	EReference getThreatAllocationRelation_Difficultyscore();
+	EReference getThreatAllocationRelation_DifficultyScore();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link dsm.TRADES.ThreatAllocationRelation#getAttackChain <em>Attack Chain</em>}'.
@@ -2879,21 +2879,21 @@ public interface TRADESPackage extends EPackage {
 		EReference THREAT_ALLOCATION_RELATION__THREAT = eINSTANCE.getThreatAllocationRelation_Threat();
 
 		/**
-		 * The meta object literal for the '<em><b>Impactscore</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Impact Score</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference THREAT_ALLOCATION_RELATION__IMPACTSCORE = eINSTANCE.getThreatAllocationRelation_Impactscore();
+		EReference THREAT_ALLOCATION_RELATION__IMPACT_SCORE = eINSTANCE.getThreatAllocationRelation_ImpactScore();
 
 		/**
-		 * The meta object literal for the '<em><b>Difficultyscore</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Difficulty Score</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference THREAT_ALLOCATION_RELATION__DIFFICULTYSCORE = eINSTANCE
-				.getThreatAllocationRelation_Difficultyscore();
+		EReference THREAT_ALLOCATION_RELATION__DIFFICULTY_SCORE = eINSTANCE
+				.getThreatAllocationRelation_DifficultyScore();
 
 		/**
 		 * The meta object literal for the '<em><b>Attack Chain</b></em>' containment reference feature.

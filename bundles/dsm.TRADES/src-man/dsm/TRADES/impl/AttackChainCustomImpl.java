@@ -14,8 +14,8 @@ public class AttackChainCustomImpl extends AttackChainImpl {
 
 		for (AttackChainStep step : getAttackchainSteps()) {
 			ThreatAllocationRelation rel = step.getThreatAllocationRelation();
-			if (rel != null && rel.getDifficultyscore() != null) {
-				int difficulty = rel.getDifficultyscore().getDifficulty();
+			if (rel != null && rel.getDifficultyScore() != null) {
+				int difficulty = rel.getDifficultyScore().getDifficulty();
 				collectors.merge(((AttackChainStepCustomImpl) step).getNum(), difficulty, (a, b) -> Math.max(a, b));
 			}
 		}

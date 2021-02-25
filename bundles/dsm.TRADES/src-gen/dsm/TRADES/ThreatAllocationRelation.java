@@ -18,8 +18,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link dsm.TRADES.ThreatAllocationRelation#getAssessment <em>Assessment</em>}</li>
  *   <li>{@link dsm.TRADES.ThreatAllocationRelation#getComponent <em>Component</em>}</li>
  *   <li>{@link dsm.TRADES.ThreatAllocationRelation#getThreat <em>Threat</em>}</li>
- *   <li>{@link dsm.TRADES.ThreatAllocationRelation#getImpactscore <em>Impactscore</em>}</li>
- *   <li>{@link dsm.TRADES.ThreatAllocationRelation#getDifficultyscore <em>Difficultyscore</em>}</li>
+ *   <li>{@link dsm.TRADES.ThreatAllocationRelation#getImpactScore <em>Impact Score</em>}</li>
+ *   <li>{@link dsm.TRADES.ThreatAllocationRelation#getDifficultyScore <em>Difficulty Score</em>}</li>
  *   <li>{@link dsm.TRADES.ThreatAllocationRelation#getAttackChain <em>Attack Chain</em>}</li>
  * </ul>
  *
@@ -103,48 +103,48 @@ public interface ThreatAllocationRelation extends EObject {
 	void setThreat(Threat value);
 
 	/**
-	 * Returns the value of the '<em><b>Impactscore</b></em>' reference.
+	 * Returns the value of the '<em><b>Impact Score</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Impactscore</em>' reference.
-	 * @see #setImpactscore(ImpactScore)
-	 * @see dsm.TRADES.TRADESPackage#getThreatAllocationRelation_Impactscore()
+	 * @return the value of the '<em>Impact Score</em>' reference.
+	 * @see #setImpactScore(ImpactScore)
+	 * @see dsm.TRADES.TRADESPackage#getThreatAllocationRelation_ImpactScore()
 	 * @model
 	 * @generated
 	 */
-	ImpactScore getImpactscore();
+	ImpactScore getImpactScore();
 
 	/**
-	 * Sets the value of the '{@link dsm.TRADES.ThreatAllocationRelation#getImpactscore <em>Impactscore</em>}' reference.
+	 * Sets the value of the '{@link dsm.TRADES.ThreatAllocationRelation#getImpactScore <em>Impact Score</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Impactscore</em>' reference.
-	 * @see #getImpactscore()
+	 * @param value the new value of the '<em>Impact Score</em>' reference.
+	 * @see #getImpactScore()
 	 * @generated
 	 */
-	void setImpactscore(ImpactScore value);
+	void setImpactScore(ImpactScore value);
 
 	/**
-	 * Returns the value of the '<em><b>Difficultyscore</b></em>' reference.
+	 * Returns the value of the '<em><b>Difficulty Score</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Difficultyscore</em>' reference.
-	 * @see #setDifficultyscore(DifficultyScore)
-	 * @see dsm.TRADES.TRADESPackage#getThreatAllocationRelation_Difficultyscore()
+	 * @return the value of the '<em>Difficulty Score</em>' reference.
+	 * @see #setDifficultyScore(DifficultyScore)
+	 * @see dsm.TRADES.TRADESPackage#getThreatAllocationRelation_DifficultyScore()
 	 * @model
 	 * @generated
 	 */
-	DifficultyScore getDifficultyscore();
+	DifficultyScore getDifficultyScore();
 
 	/**
-	 * Sets the value of the '{@link dsm.TRADES.ThreatAllocationRelation#getDifficultyscore <em>Difficultyscore</em>}' reference.
+	 * Sets the value of the '{@link dsm.TRADES.ThreatAllocationRelation#getDifficultyScore <em>Difficulty Score</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Difficultyscore</em>' reference.
-	 * @see #getDifficultyscore()
+	 * @param value the new value of the '<em>Difficulty Score</em>' reference.
+	 * @see #getDifficultyScore()
 	 * @generated
 	 */
-	void setDifficultyscore(DifficultyScore value);
+	void setDifficultyScore(DifficultyScore value);
 
 	/**
 	 * Returns the value of the '<em><b>Attack Chain</b></em>' containment reference.

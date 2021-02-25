@@ -17,7 +17,7 @@ public class ThreatAllocationRelationCustomImpl extends ThreatAllocationRelation
 	public boolean checkComputedDifficultyConstraint(DiagnosticChain chain, @SuppressWarnings("rawtypes") Map context) {
 		AttackChain attackChain = getAttackChain();
 		if (attackChain != null) {
-			DifficultyScore diffElement = getDifficultyscore();
+			DifficultyScore diffElement = getDifficultyScore();
 			int diff = diffElement != null ? diffElement.getDifficulty() : 0;
 			int cmpDiff = attackChain.getComputedDifficulty();
 			if (diff != cmpDiff) {
