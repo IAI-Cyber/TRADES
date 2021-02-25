@@ -75,9 +75,9 @@ public class SemanticService {
 	public void initImpactScore(ImpactScore score) {
 		ScoreSystem scoreSystem = (ScoreSystem) score.eContainer();
 
-		int index = scoreSystem.getImpactscore().indexOf(score);
+		int index = scoreSystem.getImpactScores().indexOf(score);
 		if (index > 0) {
-			score.setImpact(scoreSystem.getImpactscore().get(index - 1).getImpact() + 1);
+			score.setImpact(scoreSystem.getImpactScores().get(index - 1).getImpact() + 1);
 		}
 
 		for (DifficultyScore dif : scoreSystem.getDifficultyscore()) {
@@ -236,7 +236,7 @@ public class SemanticService {
 	}
 
 	private void updateImpactWithNewDifficulty(DifficultyScore diff, ScoreSystem scoreSystem) {
-		for (ImpactScore impact : scoreSystem.getImpactscore()) {
+		for (ImpactScore impact : scoreSystem.getImpactScores()) {
 			ImpactConfiguration conf = TRADESFactory.eINSTANCE.createImpactConfiguration();
 			impact.getConfigurations().add(conf);
 			conf.setDifficulty(diff);
@@ -261,7 +261,7 @@ public class SemanticService {
 		double minDiff = Double.MAX_VALUE;
 		double maxDiff = 0;
 
-		for (ImpactScore impact : scoreSystem.getImpactscore()) {
+		for (ImpactScore impact : scoreSystem.getImpactScores()) {
 			int impact2 = impact.getImpact();
 			minImpact = Math.min(minImpact, impact2);
 			maxImpact = Math.max(maxImpact, impact2);
@@ -272,7 +272,7 @@ public class SemanticService {
 			}
 		}
 
-		for (ImpactScore impact : scoreSystem.getImpactscore()) {
+		for (ImpactScore impact : scoreSystem.getImpactScores()) {
 			int impact2 = impact.getImpact();
 			RGBColor impactColor = ColorService.computeColor(new RGBColor(154, 255, 77), new RGBColor(252, 86, 86),
 					minImpact, maxImpact, impact2);
@@ -344,7 +344,7 @@ public class SemanticService {
 		ECrossReferenceAdapter crossRef = SessionManager.INSTANCE.getSession(scoreSystem).getSemanticCrossReferencer();
 		List<EObject> toRemove = new ArrayList<>();
 
-		for (ImpactScore impact : scoreSystem.getImpactscore()) {
+		for (ImpactScore impact : scoreSystem.getImpactScores()) {
 
 			if (!isSemanticallyUsed(impact, crossRef, USAGE_REF_TO_IGNORE_IMPACT_SCORE)) {
 				toRemove.add(impact);

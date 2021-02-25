@@ -1014,13 +1014,13 @@ public interface TRADESPackage extends EPackage {
 	int SCORE_SYSTEM__NAME = NAMED_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Impactscore</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Impact Scores</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SCORE_SYSTEM__IMPACTSCORE = NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int SCORE_SYSTEM__IMPACT_SCORES = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Difficultyscore</b></em>' containment reference list.
@@ -2318,15 +2318,15 @@ public interface TRADESPackage extends EPackage {
 	EClass getScoreSystem();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link dsm.TRADES.ScoreSystem#getImpactscore <em>Impactscore</em>}'.
+	 * Returns the meta object for the containment reference list '{@link dsm.TRADES.ScoreSystem#getImpactScores <em>Impact Scores</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Impactscore</em>'.
-	 * @see dsm.TRADES.ScoreSystem#getImpactscore()
+	 * @return the meta object for the containment reference list '<em>Impact Scores</em>'.
+	 * @see dsm.TRADES.ScoreSystem#getImpactScores()
 	 * @see #getScoreSystem()
 	 * @generated
 	 */
-	EReference getScoreSystem_Impactscore();
+	EReference getScoreSystem_ImpactScores();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link dsm.TRADES.ScoreSystem#getDifficultyscore <em>Difficultyscore</em>}'.
@@ -3222,12 +3222,12 @@ public interface TRADESPackage extends EPackage {
 		EClass SCORE_SYSTEM = eINSTANCE.getScoreSystem();
 
 		/**
-		 * The meta object literal for the '<em><b>Impactscore</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Impact Scores</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference SCORE_SYSTEM__IMPACTSCORE = eINSTANCE.getScoreSystem_Impactscore();
+		EReference SCORE_SYSTEM__IMPACT_SCORES = eINSTANCE.getScoreSystem_ImpactScores();
 
 		/**
 		 * The meta object literal for the '<em><b>Difficultyscore</b></em>' containment reference list feature.

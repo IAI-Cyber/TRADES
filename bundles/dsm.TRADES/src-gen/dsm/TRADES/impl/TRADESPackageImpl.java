@@ -866,7 +866,7 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getScoreSystem_Impactscore() {
+	public EReference getScoreSystem_ImpactScores() {
 		return (EReference) scoreSystemEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -1355,7 +1355,7 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		createEOperation(attackChainStepEClass, ATTACK_CHAIN_STEP___CHECK_ALLOCATION_VALUE__DIAGNOSTICCHAIN_MAP);
 
 		scoreSystemEClass = createEClass(SCORE_SYSTEM);
-		createEReference(scoreSystemEClass, SCORE_SYSTEM__IMPACTSCORE);
+		createEReference(scoreSystemEClass, SCORE_SYSTEM__IMPACT_SCORES);
 		createEReference(scoreSystemEClass, SCORE_SYSTEM__DIFFICULTYSCORE);
 
 		impactScoreEClass = createEClass(IMPACT_SCORE);
@@ -1630,7 +1630,7 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 
 		initEClass(scoreSystemEClass, ScoreSystem.class, "ScoreSystem", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getScoreSystem_Impactscore(), this.getImpactScore(), null, "impactscore", null, 0, -1,
+		initEReference(getScoreSystem_ImpactScores(), this.getImpactScore(), null, "impactScores", null, 0, -1,
 				ScoreSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getScoreSystem_Difficultyscore(), this.getDifficultyScore(), null, "difficultyscore", null, 0,

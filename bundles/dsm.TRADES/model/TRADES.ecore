@@ -127,7 +127,7 @@
         eType="#//AttackChainStep" eOpposite="#//AttackChainStep/next"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ScoreSystem" eSuperTypes="#//NamedElement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="impactscore" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="impactScores" upperBound="-1"
         eType="#//ImpactScore" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="difficultyscore" upperBound="-1"
         eType="#//DifficultyScore" containment="true"/>

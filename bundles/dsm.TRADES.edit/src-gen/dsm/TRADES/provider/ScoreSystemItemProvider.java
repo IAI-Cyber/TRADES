@@ -61,7 +61,7 @@ public class ScoreSystemItemProvider extends NamedElementItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(TRADESPackage.Literals.SCORE_SYSTEM__IMPACTSCORE);
+			childrenFeatures.add(TRADESPackage.Literals.SCORE_SYSTEM__IMPACT_SCORES);
 			childrenFeatures.add(TRADESPackage.Literals.SCORE_SYSTEM__DIFFICULTYSCORE);
 		}
 		return childrenFeatures;
@@ -126,7 +126,7 @@ public class ScoreSystemItemProvider extends NamedElementItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ScoreSystem.class)) {
-		case TRADESPackage.SCORE_SYSTEM__IMPACTSCORE:
+		case TRADESPackage.SCORE_SYSTEM__IMPACT_SCORES:
 		case TRADESPackage.SCORE_SYSTEM__DIFFICULTYSCORE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
@@ -145,7 +145,7 @@ public class ScoreSystemItemProvider extends NamedElementItemProvider {
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(TRADESPackage.Literals.SCORE_SYSTEM__IMPACTSCORE,
+		newChildDescriptors.add(createChildParameter(TRADESPackage.Literals.SCORE_SYSTEM__IMPACT_SCORES,
 				TRADESFactory.eINSTANCE.createImpactScore()));
 
 		newChildDescriptors.add(createChildParameter(TRADESPackage.Literals.SCORE_SYSTEM__DIFFICULTYSCORE,

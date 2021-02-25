@@ -27,7 +27,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link dsm.TRADES.impl.ScoreSystemImpl#getImpactscore <em>Impactscore</em>}</li>
+ *   <li>{@link dsm.TRADES.impl.ScoreSystemImpl#getImpactScores <em>Impact Scores</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ScoreSystemImpl#getDifficultyscore <em>Difficultyscore</em>}</li>
  * </ul>
  *
@@ -35,14 +35,14 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class ScoreSystemImpl extends NamedElementImpl implements ScoreSystem {
 	/**
-	 * The cached value of the '{@link #getImpactscore() <em>Impactscore</em>}' containment reference list.
+	 * The cached value of the '{@link #getImpactScores() <em>Impact Scores</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getImpactscore()
+	 * @see #getImpactScores()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<ImpactScore> impactscore;
+	protected EList<ImpactScore> impactScores;
 
 	/**
 	 * The cached value of the '{@link #getDifficultyscore() <em>Difficultyscore</em>}' containment reference list.
@@ -79,12 +79,12 @@ public class ScoreSystemImpl extends NamedElementImpl implements ScoreSystem {
 	 * @generated
 	 */
 	@Override
-	public EList<ImpactScore> getImpactscore() {
-		if (impactscore == null) {
-			impactscore = new EObjectContainmentEList<ImpactScore>(ImpactScore.class, this,
-					TRADESPackage.SCORE_SYSTEM__IMPACTSCORE);
+	public EList<ImpactScore> getImpactScores() {
+		if (impactScores == null) {
+			impactScores = new EObjectContainmentEList<ImpactScore>(ImpactScore.class, this,
+					TRADESPackage.SCORE_SYSTEM__IMPACT_SCORES);
 		}
-		return impactscore;
+		return impactScores;
 	}
 
 	/**
@@ -109,8 +109,8 @@ public class ScoreSystemImpl extends NamedElementImpl implements ScoreSystem {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case TRADESPackage.SCORE_SYSTEM__IMPACTSCORE:
-			return ((InternalEList<?>) getImpactscore()).basicRemove(otherEnd, msgs);
+		case TRADESPackage.SCORE_SYSTEM__IMPACT_SCORES:
+			return ((InternalEList<?>) getImpactScores()).basicRemove(otherEnd, msgs);
 		case TRADESPackage.SCORE_SYSTEM__DIFFICULTYSCORE:
 			return ((InternalEList<?>) getDifficultyscore()).basicRemove(otherEnd, msgs);
 		}
@@ -125,8 +125,8 @@ public class ScoreSystemImpl extends NamedElementImpl implements ScoreSystem {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case TRADESPackage.SCORE_SYSTEM__IMPACTSCORE:
-			return getImpactscore();
+		case TRADESPackage.SCORE_SYSTEM__IMPACT_SCORES:
+			return getImpactScores();
 		case TRADESPackage.SCORE_SYSTEM__DIFFICULTYSCORE:
 			return getDifficultyscore();
 		}
@@ -142,9 +142,9 @@ public class ScoreSystemImpl extends NamedElementImpl implements ScoreSystem {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case TRADESPackage.SCORE_SYSTEM__IMPACTSCORE:
-			getImpactscore().clear();
-			getImpactscore().addAll((Collection<? extends ImpactScore>) newValue);
+		case TRADESPackage.SCORE_SYSTEM__IMPACT_SCORES:
+			getImpactScores().clear();
+			getImpactScores().addAll((Collection<? extends ImpactScore>) newValue);
 			return;
 		case TRADESPackage.SCORE_SYSTEM__DIFFICULTYSCORE:
 			getDifficultyscore().clear();
@@ -162,8 +162,8 @@ public class ScoreSystemImpl extends NamedElementImpl implements ScoreSystem {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case TRADESPackage.SCORE_SYSTEM__IMPACTSCORE:
-			getImpactscore().clear();
+		case TRADESPackage.SCORE_SYSTEM__IMPACT_SCORES:
+			getImpactScores().clear();
 			return;
 		case TRADESPackage.SCORE_SYSTEM__DIFFICULTYSCORE:
 			getDifficultyscore().clear();
@@ -180,8 +180,8 @@ public class ScoreSystemImpl extends NamedElementImpl implements ScoreSystem {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case TRADESPackage.SCORE_SYSTEM__IMPACTSCORE:
-			return impactscore != null && !impactscore.isEmpty();
+		case TRADESPackage.SCORE_SYSTEM__IMPACT_SCORES:
+			return impactScores != null && !impactScores.isEmpty();
 		case TRADESPackage.SCORE_SYSTEM__DIFFICULTYSCORE:
 			return difficultyscore != null && !difficultyscore.isEmpty();
 		}

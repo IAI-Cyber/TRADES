@@ -59,7 +59,7 @@ public class ProjectFactory {
 
 	private static void createImpact(String name, int score, ScoreSystem system) {
 		ImpactScore impact = TRADESFactory.eINSTANCE.createImpactScore();
-		system.getImpactscore().add(impact);
+		system.getImpactScores().add(impact);
 		impact.setName(name);
 		impact.setImpact(score);
 		for (DifficultyScore dif : system.getDifficultyscore()) {

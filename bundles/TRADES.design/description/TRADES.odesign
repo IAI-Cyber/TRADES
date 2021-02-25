@@ -606,7 +606,7 @@
     </ownedRepresentations>
     <ownedRepresentations xsi:type="description_2:CrossTableDescription" name="RiskManagementSummaryTable" label="Risk Management Summary" titleExpression="aql: self.name + ' Risk Management Summary'" initialisation="true" domainClass="TRADES::Analysis">
       <metamodel href="dsm.TRADES#/"/>
-      <ownedLineMappings name="ImpactRow_RMS" label="Impac Row" domainClass="TRADES::ImpactScore" semanticCandidatesExpression="aql:self.scoresystem.impactscore" headerLabelExpression="aql:self.getLabelProviderText()">
+      <ownedLineMappings name="ImpactRow_RMS" label="Impac Row" domainClass="TRADES::ImpactScore" semanticCandidatesExpression="aql:self.scoresystem.impactScores" headerLabelExpression="aql:self.getLabelProviderText()">
         <defaultForeground labelSize="15">
           <foreGroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
         </defaultForeground>
@@ -619,7 +619,7 @@
         <variables name="element" documentation="The semantic currently edited element."/>
         <variables name="container" documentation="The semantic element corresponding to the view container."/>
         <firstModelOperation xsi:type="tool_1:ChangeContext" browseExpression="aql:self.scoresystem">
-          <subModelOperations xsi:type="tool_1:CreateInstance" typeName="TRADES::ImpactScore" referenceName="impactscore">
+          <subModelOperations xsi:type="tool_1:CreateInstance" typeName="TRADES::ImpactScore" referenceName="impactScores">
             <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:instance.initImpactScore()"/>
           </subModelOperations>
         </firstModelOperation>
@@ -639,7 +639,7 @@
           </firstModelOperation>
         </delete>
       </ownedColumnMappings>
-      <intersection name="ImpactConfiguration_RMS" semanticElements="aql:self.makeUnion(self, self.eContainer())" canEdit="aql:false" lineMapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='RiskManagementSummaryTable']/@ownedLineMappings[name='ImpactRow_RMS']" columnMapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='RiskManagementSummaryTable']/@ownedColumnMappings.0" labelExpression="aql:lineSemantic.eInverse(TRADES::ThreatAllocationRelation)->select(r | r.difficultyscore = columnSemantic).getLabelProviderText()" useDomainClass="true" columnFinderExpression="aql:self.difficulty" lineFinderExpression="aql:self.impact" semanticCandidatesExpression="aql:self.scoresystem.impactscore.configurations" domainClass="TRADES::ImpactConfiguration">
+      <intersection name="ImpactConfiguration_RMS" semanticElements="aql:self.makeUnion(self, self.eContainer())" canEdit="aql:false" lineMapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='RiskManagementSummaryTable']/@ownedLineMappings[name='ImpactRow_RMS']" columnMapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='RiskManagementSummaryTable']/@ownedColumnMappings.0" labelExpression="aql:lineSemantic.eInverse(TRADES::ThreatAllocationRelation)->select(r | r.difficultyscore = columnSemantic).getLabelProviderText()" useDomainClass="true" columnFinderExpression="aql:self.difficulty" lineFinderExpression="aql:self.impact" semanticCandidatesExpression="aql:self.scoresystem.impactScores.configurations" domainClass="TRADES::ImpactConfiguration">
         <defaultForeground labelSize="10" foreGroundColor="//@userColorsPalettes[name='Colors']/@entries[name='HeatMapColorForeground']"/>
         <defaultBackground backgroundColor="//@userColorsPalettes[name='Colors']/@entries[name='HeatMapColorBackGround']"/>
       </intersection>
@@ -1153,7 +1153,7 @@
       <groups name="ThreatAllocationGroup" label="Threat Allocation Details" labelExpression="Details" domainClass="TRADES::ThreatAllocationRelation" semanticCandidateExpression="var:self">
         <controls xsi:type="properties:ContainerDescription" name="ThreatAlocationContainer_DiffImapct">
           <controls xsi:type="properties:ContainerDescription" name="ImpactDiff_Container">
-            <controls xsi:type="properties:SelectDescription" name="ImpactField" label="Impact Field" labelExpression="Impact" helpExpression="The Impact of the threat from declered impacts in scoring system (can be added/changed)" valueExpression="aql:self.impactscore" candidatesExpression="aql:self.eContainer(TRADES::Analysis).scoresystem.impactscore" candidateDisplayExpression="aql:candidate.getLabelProviderText()">
+            <controls xsi:type="properties:SelectDescription" name="ImpactField" label="Impact Field" labelExpression="Impact" helpExpression="The Impact of the threat from declered impacts in scoring system (can be added/changed)" valueExpression="aql:self.impactscore" candidatesExpression="aql:self.eContainer(TRADES::Analysis).scoresystem.impactScores" candidateDisplayExpression="aql:candidate.getLabelProviderText()">
               <initialOperation>
                 <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
                   <subModelOperations xsi:type="tool_1:SetValue" featureName="impactscore" valueExpression="aql:newValue"/>
@@ -1166,7 +1166,7 @@
                   <subModelOperations xsi:type="tool_1:Let" variableName="threatAlloc" valueExpression="var:self"/>
                   <subModelOperations xsi:type="tool_1:Let" variableName="scoreSystem" valueExpression="aql:self.eContainerOrSelf(TRADES::Analysis).scoresystem">
                     <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:scoreSystem">
-                      <subModelOperations xsi:type="tool_1:CreateInstance" typeName="TRADES::ImpactScore" referenceName="impactscore" variableName="newImpact">
+                      <subModelOperations xsi:type="tool_1:CreateInstance" typeName="TRADES::ImpactScore" referenceName="impactScores" variableName="newImpact">
                         <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:newImpact.initImpactScore()">
                           <subModelOperations xsi:type="tool_1:Let" variableName="newImpactScore" valueExpression="var:newImpact">
                             <subModelOperations xsi:type="properties:DialogModelOperation" titleExpression="New impact score">

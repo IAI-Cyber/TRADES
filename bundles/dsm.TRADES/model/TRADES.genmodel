@@ -100,7 +100,7 @@
       </genOperations>
     </genClasses>
     <genClasses ecoreClass="TRADES.ecore#//ScoreSystem">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//ScoreSystem/impactscore"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//ScoreSystem/impactScores"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//ScoreSystem/difficultyscore"/>
     </genClasses>
     <genClasses ecoreClass="TRADES.ecore#//ImpactScore">
