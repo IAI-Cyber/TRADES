@@ -179,7 +179,7 @@ public class ThreatMitigationRelationImpl extends MinimalEObjectImpl.Container i
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newControl != null)
-				msgs = ((InternalEObject) newControl).eInverseAdd(this, TRADESPackage.CONTROL__MITIGATIONR_RELATIONS,
+				msgs = ((InternalEObject) newControl).eInverseAdd(this, TRADESPackage.CONTROL__MITIGATION_RELATIONS,
 						Control.class, msgs);
 			msgs = basicSetControl(newControl, msgs);
 			if (msgs != null)
@@ -338,8 +338,8 @@ public class ThreatMitigationRelationImpl extends MinimalEObjectImpl.Container i
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 		case TRADESPackage.THREAT_MITIGATION_RELATION__CONTROL:
-			return eInternalContainer().eInverseRemove(this, TRADESPackage.CONTROL__MITIGATIONR_RELATIONS,
-					Control.class, msgs);
+			return eInternalContainer().eInverseRemove(this, TRADESPackage.CONTROL__MITIGATION_RELATIONS, Control.class,
+					msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}

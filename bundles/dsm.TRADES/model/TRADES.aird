@@ -7,7 +7,7 @@
     <eAnnotations xmi:type="description:DAnnotationEntry" uid="_3xruUBk0Eeu_b_FWDsJtqQ" source="FIRST_SESSION_OPENNING_PERFORMED"/>
     <ownedViews xmi:type="viewpoint:DView" uid="_D9XOQPWAEemZc42BBVcGEg">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_D_zeQPWAEemZc42BBVcGEg" name="TRADES" repPath="#_D9-5UPWAEemZc42BBVcGEg" changeId="62e9c157-e1a3-4038-a3ed-314c49f4f0d6">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_D_zeQPWAEemZc42BBVcGEg" name="TRADES" repPath="#_D9-5UPWAEemZc42BBVcGEg" changeId="e160661a-3ef2-4f2c-9a21-44808946ab66">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="TRADES.ecore#/"/>
       </ownedRepresentationDescriptors>
@@ -1482,10 +1482,10 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_itBFAD7AEeuOm6ofYLV8hA" sourceNode="_IKVlAPWAEemZc42BBVcGEg" targetNode="_9JO94PiGEemZc42BBVcGEg" beginLabel="[1..1] control" endLabel="[0..*] mitigationrRelations">
-      <target xmi:type="ecore:EReference" href="TRADES.ecore#//Control/mitigationrRelations"/>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_itBFAD7AEeuOm6ofYLV8hA" sourceNode="_IKVlAPWAEemZc42BBVcGEg" targetNode="_9JO94PiGEemZc42BBVcGEg" beginLabel="[1..1] control" endLabel="[0..*] mitigationRelations">
+      <target xmi:type="ecore:EReference" href="TRADES.ecore#//Control/mitigationRelations"/>
       <semanticElements xmi:type="ecore:EReference" href="TRADES.ecore#//ThreatMitigationRelation/control"/>
-      <semanticElements xmi:type="ecore:EReference" href="TRADES.ecore#//Control/mitigationrRelations"/>
+      <semanticElements xmi:type="ecore:EReference" href="TRADES.ecore#//Control/mitigationRelations"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_itBsED7AEeuOm6ofYLV8hA" description="_C3CIwD3tEeubsImuBJKWqg" sourceArrow="FillDiamond" routingStyle="manhattan" strokeColor="0,0,0">
         <beginLabelStyle xmi:type="diagram:BeginLabelStyle" uid="_itBsET7AEeuOm6ofYLV8hA" showIcon="false"/>
         <endLabelStyle xmi:type="diagram:EndLabelStyle" uid="_itBsEj7AEeuOm6ofYLV8hA" showIcon="false"/>
@@ -3397,9 +3397,9 @@
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DEdge" uid="_1wUF8D3zEeu8mbx8Ccpt9g" sourceNode="_cJJ60CpFEeuh44JT6bu1tg" targetNode="_cJJ61ipFEeuh44JT6bu1tg" beginLabel="[1..1] control" endLabel="[0..*] mitigationrRelations">
-      <target xmi:type="ecore:EReference" href="TRADES.ecore#//Control/mitigationrRelations"/>
+      <target xmi:type="ecore:EReference" href="TRADES.ecore#//Control/mitigationRelations"/>
       <semanticElements xmi:type="ecore:EReference" href="TRADES.ecore#//ThreatMitigationRelation/control"/>
-      <semanticElements xmi:type="ecore:EReference" href="TRADES.ecore#//Control/mitigationrRelations"/>
+      <semanticElements xmi:type="ecore:EReference" href="TRADES.ecore#//Control/mitigationRelations"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_1wUF8T3zEeu8mbx8Ccpt9g" description="_C2sxkD3tEeubsImuBJKWqg" sourceArrow="FillDiamond" routingStyle="manhattan" strokeColor="0,0,0">
         <beginLabelStyle xmi:type="diagram:BeginLabelStyle" uid="_1wUF8j3zEeu8mbx8Ccpt9g" showIcon="false"/>
         <endLabelStyle xmi:type="diagram:EndLabelStyle" uid="_1wUF8z3zEeu8mbx8Ccpt9g" showIcon="false"/>

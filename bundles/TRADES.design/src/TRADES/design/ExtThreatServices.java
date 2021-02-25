@@ -88,7 +88,7 @@ public class ExtThreatServices {
 			newControl.setDescription(source.getDescription());
 
 			// Copy all existing mitigation
-			source.getMitigationrRelations().stream().filter(rel -> rel.getThreat().getId().equals(threat.getId()))
+			source.getMitigationRelations().stream().filter(rel -> rel.getThreat().getId().equals(threat.getId()))
 					.forEach(rel -> {
 						ThreatMitigationRelation controlMitigation = TRADESFactory.eINSTANCE
 								.createThreatMitigationRelation();

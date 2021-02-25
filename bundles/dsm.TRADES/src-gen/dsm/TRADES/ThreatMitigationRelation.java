@@ -53,14 +53,14 @@ public interface ThreatMitigationRelation extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Control</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link dsm.TRADES.Control#getMitigationrRelations <em>Mitigationr Relations</em>}'.
+	 * It is bidirectional and its opposite is '{@link dsm.TRADES.Control#getMitigationRelations <em>Mitigation Relations</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Control</em>' container reference.
 	 * @see #setControl(Control)
 	 * @see dsm.TRADES.TRADESPackage#getThreatMitigationRelation_Control()
-	 * @see dsm.TRADES.Control#getMitigationrRelations
-	 * @model opposite="mitigationrRelations" required="true" transient="false"
+	 * @see dsm.TRADES.Control#getMitigationRelations
+	 * @model opposite="mitigationRelations" required="true" transient="false"
 	 * @generated
 	 */
 	Control getControl();

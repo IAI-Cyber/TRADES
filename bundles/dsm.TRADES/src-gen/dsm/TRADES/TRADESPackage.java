@@ -512,13 +512,13 @@ public interface TRADESPackage extends EPackage {
 	int CONTROL__DESCRIPTION = NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Mitigationr Relations</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Mitigation Relations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL__MITIGATIONR_RELATIONS = NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int CONTROL__MITIGATION_RELATIONS = NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Control</em>' class.
@@ -1462,13 +1462,13 @@ public interface TRADESPackage extends EPackage {
 	int EXTERNAL_CONTROL__DESCRIPTION = EXTERNAL_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Mitigationr Relations</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Mitigation Relations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXTERNAL_CONTROL__MITIGATIONR_RELATIONS = EXTERNAL_ELEMENT_FEATURE_COUNT + 4;
+	int EXTERNAL_CONTROL__MITIGATION_RELATIONS = EXTERNAL_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>External Control</em>' class.
@@ -1886,15 +1886,15 @@ public interface TRADESPackage extends EPackage {
 	EAttribute getControl_Description();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link dsm.TRADES.Control#getMitigationrRelations <em>Mitigationr Relations</em>}'.
+	 * Returns the meta object for the containment reference list '{@link dsm.TRADES.Control#getMitigationRelations <em>Mitigation Relations</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Mitigationr Relations</em>'.
-	 * @see dsm.TRADES.Control#getMitigationrRelations()
+	 * @return the meta object for the containment reference list '<em>Mitigation Relations</em>'.
+	 * @see dsm.TRADES.Control#getMitigationRelations()
 	 * @see #getControl()
 	 * @generated
 	 */
-	EReference getControl_MitigationrRelations();
+	EReference getControl_MitigationRelations();
 
 	/**
 	 * Returns the meta object for class '{@link dsm.TRADES.ThreatAllocationRelation <em>Threat Allocation Relation</em>}'.
@@ -2837,12 +2837,12 @@ public interface TRADESPackage extends EPackage {
 		EAttribute CONTROL__DESCRIPTION = eINSTANCE.getControl_Description();
 
 		/**
-		 * The meta object literal for the '<em><b>Mitigationr Relations</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Mitigation Relations</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference CONTROL__MITIGATIONR_RELATIONS = eINSTANCE.getControl_MitigationrRelations();
+		EReference CONTROL__MITIGATION_RELATIONS = eINSTANCE.getControl_MitigationRelations();
 
 		/**
 		 * The meta object literal for the '{@link dsm.TRADES.impl.ThreatAllocationRelationImpl <em>Threat Allocation Relation</em>}' class.

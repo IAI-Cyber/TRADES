@@ -39,6 +39,8 @@ public class BaseResourceExtendedMetadata extends BasicExtendedMetaData {
 		RENAMERS.add(new Renamer(TRADESPackage.eINSTANCE.getControl_Id(), TRADESPackage.eINSTANCE.getControl(), "ID"));
 		RENAMERS.add(new Renamer(TRADESPackage.eINSTANCE.getControl_Description(), TRADESPackage.eINSTANCE.getControl(),
 				"Description"));
+		RENAMERS.add(new Renamer(TRADESPackage.eINSTANCE.getControl_MitigationRelations(),
+				TRADESPackage.eINSTANCE.getControl(), "mitigationrRelations"));
 		RENAMERS.add(new Renamer(TRADESPackage.eINSTANCE.getThreat_Id(), TRADESPackage.eINSTANCE.getThreat(), "ID"));
 		RENAMERS.add(new Renamer(TRADESPackage.eINSTANCE.getThreat_Description(), TRADESPackage.eINSTANCE.getThreat(),
 				"Description"));

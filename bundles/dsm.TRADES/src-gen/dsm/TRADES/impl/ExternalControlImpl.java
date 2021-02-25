@@ -37,7 +37,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dsm.TRADES.impl.ExternalControlImpl#getMitigatedThreats <em>Mitigated Threats</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ExternalControlImpl#getId <em>Id</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ExternalControlImpl#getDescription <em>Description</em>}</li>
- *   <li>{@link dsm.TRADES.impl.ExternalControlImpl#getMitigationrRelations <em>Mitigationr Relations</em>}</li>
+ *   <li>{@link dsm.TRADES.impl.ExternalControlImpl#getMitigationRelations <em>Mitigation Relations</em>}</li>
  * </ul>
  *
  * @generated
@@ -114,14 +114,14 @@ public class ExternalControlImpl extends ExternalElementImpl implements External
 	protected String description = DESCRIPTION_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getMitigationrRelations() <em>Mitigationr Relations</em>}' containment reference list.
+	 * The cached value of the '{@link #getMitigationRelations() <em>Mitigation Relations</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getMitigationrRelations()
+	 * @see #getMitigationRelations()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<ThreatMitigationRelation> mitigationrRelations;
+	protected EList<ThreatMitigationRelation> mitigationRelations;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -232,13 +232,13 @@ public class ExternalControlImpl extends ExternalElementImpl implements External
 	 * @generated
 	 */
 	@Override
-	public EList<ThreatMitigationRelation> getMitigationrRelations() {
-		if (mitigationrRelations == null) {
-			mitigationrRelations = new EObjectContainmentWithInverseEList<ThreatMitigationRelation>(
-					ThreatMitigationRelation.class, this, TRADESPackage.EXTERNAL_CONTROL__MITIGATIONR_RELATIONS,
+	public EList<ThreatMitigationRelation> getMitigationRelations() {
+		if (mitigationRelations == null) {
+			mitigationRelations = new EObjectContainmentWithInverseEList<ThreatMitigationRelation>(
+					ThreatMitigationRelation.class, this, TRADESPackage.EXTERNAL_CONTROL__MITIGATION_RELATIONS,
 					TRADESPackage.THREAT_MITIGATION_RELATION__CONTROL);
 		}
-		return mitigationrRelations;
+		return mitigationRelations;
 	}
 
 	/**
@@ -250,8 +250,8 @@ public class ExternalControlImpl extends ExternalElementImpl implements External
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case TRADESPackage.EXTERNAL_CONTROL__MITIGATIONR_RELATIONS:
-			return ((InternalEList<InternalEObject>) (InternalEList<?>) getMitigationrRelations()).basicAdd(otherEnd,
+		case TRADESPackage.EXTERNAL_CONTROL__MITIGATION_RELATIONS:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getMitigationRelations()).basicAdd(otherEnd,
 					msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
@@ -265,8 +265,8 @@ public class ExternalControlImpl extends ExternalElementImpl implements External
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case TRADESPackage.EXTERNAL_CONTROL__MITIGATIONR_RELATIONS:
-			return ((InternalEList<?>) getMitigationrRelations()).basicRemove(otherEnd, msgs);
+		case TRADESPackage.EXTERNAL_CONTROL__MITIGATION_RELATIONS:
+			return ((InternalEList<?>) getMitigationRelations()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -287,8 +287,8 @@ public class ExternalControlImpl extends ExternalElementImpl implements External
 			return getId();
 		case TRADESPackage.EXTERNAL_CONTROL__DESCRIPTION:
 			return getDescription();
-		case TRADESPackage.EXTERNAL_CONTROL__MITIGATIONR_RELATIONS:
-			return getMitigationrRelations();
+		case TRADESPackage.EXTERNAL_CONTROL__MITIGATION_RELATIONS:
+			return getMitigationRelations();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -315,9 +315,9 @@ public class ExternalControlImpl extends ExternalElementImpl implements External
 		case TRADESPackage.EXTERNAL_CONTROL__DESCRIPTION:
 			setDescription((String) newValue);
 			return;
-		case TRADESPackage.EXTERNAL_CONTROL__MITIGATIONR_RELATIONS:
-			getMitigationrRelations().clear();
-			getMitigationrRelations().addAll((Collection<? extends ThreatMitigationRelation>) newValue);
+		case TRADESPackage.EXTERNAL_CONTROL__MITIGATION_RELATIONS:
+			getMitigationRelations().clear();
+			getMitigationRelations().addAll((Collection<? extends ThreatMitigationRelation>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -343,8 +343,8 @@ public class ExternalControlImpl extends ExternalElementImpl implements External
 		case TRADESPackage.EXTERNAL_CONTROL__DESCRIPTION:
 			setDescription(DESCRIPTION_EDEFAULT);
 			return;
-		case TRADESPackage.EXTERNAL_CONTROL__MITIGATIONR_RELATIONS:
-			getMitigationrRelations().clear();
+		case TRADESPackage.EXTERNAL_CONTROL__MITIGATION_RELATIONS:
+			getMitigationRelations().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -366,8 +366,8 @@ public class ExternalControlImpl extends ExternalElementImpl implements External
 			return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
 		case TRADESPackage.EXTERNAL_CONTROL__DESCRIPTION:
 			return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-		case TRADESPackage.EXTERNAL_CONTROL__MITIGATIONR_RELATIONS:
-			return mitigationrRelations != null && !mitigationrRelations.isEmpty();
+		case TRADESPackage.EXTERNAL_CONTROL__MITIGATION_RELATIONS:
+			return mitigationRelations != null && !mitigationRelations.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -395,8 +395,8 @@ public class ExternalControlImpl extends ExternalElementImpl implements External
 				return TRADESPackage.CONTROL__ID;
 			case TRADESPackage.EXTERNAL_CONTROL__DESCRIPTION:
 				return TRADESPackage.CONTROL__DESCRIPTION;
-			case TRADESPackage.EXTERNAL_CONTROL__MITIGATIONR_RELATIONS:
-				return TRADESPackage.CONTROL__MITIGATIONR_RELATIONS;
+			case TRADESPackage.EXTERNAL_CONTROL__MITIGATION_RELATIONS:
+				return TRADESPackage.CONTROL__MITIGATION_RELATIONS;
 			default:
 				return -1;
 			}
@@ -427,8 +427,8 @@ public class ExternalControlImpl extends ExternalElementImpl implements External
 				return TRADESPackage.EXTERNAL_CONTROL__ID;
 			case TRADESPackage.CONTROL__DESCRIPTION:
 				return TRADESPackage.EXTERNAL_CONTROL__DESCRIPTION;
-			case TRADESPackage.CONTROL__MITIGATIONR_RELATIONS:
-				return TRADESPackage.EXTERNAL_CONTROL__MITIGATIONR_RELATIONS;
+			case TRADESPackage.CONTROL__MITIGATION_RELATIONS:
+				return TRADESPackage.EXTERNAL_CONTROL__MITIGATION_RELATIONS;
 			default:
 				return -1;
 			}
