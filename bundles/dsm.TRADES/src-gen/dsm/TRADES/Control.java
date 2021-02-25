@@ -13,7 +13,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link dsm.TRADES.Control#getMitigates <em>Mitigates</em>}</li>
+ *   <li>{@link dsm.TRADES.Control#getMitigatedThreats <em>Mitigated Threats</em>}</li>
  *   <li>{@link dsm.TRADES.Control#getID <em>ID</em>}</li>
  *   <li>{@link dsm.TRADES.Control#getDescription <em>Description</em>}</li>
  *   <li>{@link dsm.TRADES.Control#getMitigationrRelations <em>Mitigationr Relations</em>}</li>
@@ -25,16 +25,16 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface Control extends NamedElement {
 	/**
-	 * Returns the value of the '<em><b>Mitigates</b></em>' reference list.
+	 * Returns the value of the '<em><b>Mitigated Threats</b></em>' reference list.
 	 * The list contents are of type {@link dsm.TRADES.Threat}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Mitigates</em>' reference list.
-	 * @see dsm.TRADES.TRADESPackage#getControl_Mitigates()
+	 * @return the value of the '<em>Mitigated Threats</em>' reference list.
+	 * @see dsm.TRADES.TRADESPackage#getControl_MitigatedThreats()
 	 * @model
 	 * @generated
 	 */
-	EList<Threat> getMitigates();
+	EList<Threat> getMitigatedThreats();
 
 	/**
 	 * Returns the value of the '<em><b>ID</b></em>' attribute.

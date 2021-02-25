@@ -43,7 +43,7 @@ public class ThreatAllocationRelationItemProviderCustomImpl extends ThreatAlloca
 			// Threat mitigation can use the label of the ThreatAllocation so also refresh the label
 			EcoreUtils
 					.getInverse((EObject) notification.getNotifier(), ThreatMitigationRelation.class,
-							TRADESPackage.eINSTANCE.getThreatMitigationRelation_Mitigates())
+							TRADESPackage.eINSTANCE.getThreatMitigationRelation_MitigatedAllocation())
 					.forEach(rel -> fireNotifyChanged(new ViewerNotification(notification, rel, false, true)));
 			return;
 		}

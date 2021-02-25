@@ -31,7 +31,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link dsm.TRADES.impl.ControlImpl#getMitigates <em>Mitigates</em>}</li>
+ *   <li>{@link dsm.TRADES.impl.ControlImpl#getMitigatedThreats <em>Mitigated Threats</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ControlImpl#getID <em>ID</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ControlImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ControlImpl#getMitigationrRelations <em>Mitigationr Relations</em>}</li>
@@ -41,14 +41,14 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class ControlImpl extends NamedElementImpl implements Control {
 	/**
-	 * The cached value of the '{@link #getMitigates() <em>Mitigates</em>}' reference list.
+	 * The cached value of the '{@link #getMitigatedThreats() <em>Mitigated Threats</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getMitigates()
+	 * @see #getMitigatedThreats()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Threat> mitigates;
+	protected EList<Threat> mitigatedThreats;
 
 	/**
 	 * The default value of the '{@link #getID() <em>ID</em>}' attribute.
@@ -125,11 +125,12 @@ public class ControlImpl extends NamedElementImpl implements Control {
 	 * @generated
 	 */
 	@Override
-	public EList<Threat> getMitigates() {
-		if (mitigates == null) {
-			mitigates = new EObjectResolvingEList<Threat>(Threat.class, this, TRADESPackage.CONTROL__MITIGATES);
+	public EList<Threat> getMitigatedThreats() {
+		if (mitigatedThreats == null) {
+			mitigatedThreats = new EObjectResolvingEList<Threat>(Threat.class, this,
+					TRADESPackage.CONTROL__MITIGATED_THREATS);
 		}
-		return mitigates;
+		return mitigatedThreats;
 	}
 
 	/**
@@ -232,8 +233,8 @@ public class ControlImpl extends NamedElementImpl implements Control {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case TRADESPackage.CONTROL__MITIGATES:
-			return getMitigates();
+		case TRADESPackage.CONTROL__MITIGATED_THREATS:
+			return getMitigatedThreats();
 		case TRADESPackage.CONTROL__ID:
 			return getID();
 		case TRADESPackage.CONTROL__DESCRIPTION:
@@ -253,9 +254,9 @@ public class ControlImpl extends NamedElementImpl implements Control {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case TRADESPackage.CONTROL__MITIGATES:
-			getMitigates().clear();
-			getMitigates().addAll((Collection<? extends Threat>) newValue);
+		case TRADESPackage.CONTROL__MITIGATED_THREATS:
+			getMitigatedThreats().clear();
+			getMitigatedThreats().addAll((Collection<? extends Threat>) newValue);
 			return;
 		case TRADESPackage.CONTROL__ID:
 			setID((String) newValue);
@@ -279,8 +280,8 @@ public class ControlImpl extends NamedElementImpl implements Control {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case TRADESPackage.CONTROL__MITIGATES:
-			getMitigates().clear();
+		case TRADESPackage.CONTROL__MITIGATED_THREATS:
+			getMitigatedThreats().clear();
 			return;
 		case TRADESPackage.CONTROL__ID:
 			setID(ID_EDEFAULT);
@@ -303,8 +304,8 @@ public class ControlImpl extends NamedElementImpl implements Control {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case TRADESPackage.CONTROL__MITIGATES:
-			return mitigates != null && !mitigates.isEmpty();
+		case TRADESPackage.CONTROL__MITIGATED_THREATS:
+			return mitigatedThreats != null && !mitigatedThreats.isEmpty();
 		case TRADESPackage.CONTROL__ID:
 			return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
 		case TRADESPackage.CONTROL__DESCRIPTION:

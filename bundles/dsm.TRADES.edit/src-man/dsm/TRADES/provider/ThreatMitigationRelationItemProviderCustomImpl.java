@@ -24,7 +24,7 @@ public class ThreatMitigationRelationItemProviderCustomImpl extends ThreatMitiga
 		if (threat != null) {
 			return "Mitigates '" + threat.getName() + "'";
 		} else {
-			ThreatAllocationRelation threatAlloRel = relation.getMitigates();
+			ThreatAllocationRelation threatAlloRel = relation.getMitigatedAllocation();
 			return "Mitigate '"
 					+ ((IItemLabelProvider) getAdapterFactory().adapt(threatAlloRel, IItemLabelProvider.class))
 							.getText(threatAlloRel)
@@ -38,7 +38,7 @@ public class ThreatMitigationRelationItemProviderCustomImpl extends ThreatMitiga
 
 		switch (notification.getFeatureID(ThreatMitigationRelation.class)) {
 		case TRADESPackage.THREAT_MITIGATION_RELATION__THREAT:
-		case TRADESPackage.THREAT_MITIGATION_RELATION__MITIGATES:
+		case TRADESPackage.THREAT_MITIGATION_RELATION__MITIGATED_ALLOCATION:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}

@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link dsm.TRADES.ThreatMitigationRelation#getAssessment <em>Assessment</em>}</li>
  *   <li>{@link dsm.TRADES.ThreatMitigationRelation#getControl <em>Control</em>}</li>
  *   <li>{@link dsm.TRADES.ThreatMitigationRelation#getThreat <em>Threat</em>}</li>
- *   <li>{@link dsm.TRADES.ThreatMitigationRelation#getMitigates <em>Mitigates</em>}</li>
+ *   <li>{@link dsm.TRADES.ThreatMitigationRelation#getMitigatedAllocation <em>Mitigated Allocation</em>}</li>
  *   <li>{@link dsm.TRADES.ThreatMitigationRelation#getDescription <em>Description</em>}</li>
  * </ul>
  *
@@ -98,26 +98,26 @@ public interface ThreatMitigationRelation extends EObject {
 	void setThreat(Threat value);
 
 	/**
-	 * Returns the value of the '<em><b>Mitigates</b></em>' reference.
+	 * Returns the value of the '<em><b>Mitigated Allocation</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Mitigates</em>' reference.
-	 * @see #setMitigates(ThreatAllocationRelation)
-	 * @see dsm.TRADES.TRADESPackage#getThreatMitigationRelation_Mitigates()
+	 * @return the value of the '<em>Mitigated Allocation</em>' reference.
+	 * @see #setMitigatedAllocation(ThreatAllocationRelation)
+	 * @see dsm.TRADES.TRADESPackage#getThreatMitigationRelation_MitigatedAllocation()
 	 * @model
 	 * @generated
 	 */
-	ThreatAllocationRelation getMitigates();
+	ThreatAllocationRelation getMitigatedAllocation();
 
 	/**
-	 * Sets the value of the '{@link dsm.TRADES.ThreatMitigationRelation#getMitigates <em>Mitigates</em>}' reference.
+	 * Sets the value of the '{@link dsm.TRADES.ThreatMitigationRelation#getMitigatedAllocation <em>Mitigated Allocation</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Mitigates</em>' reference.
-	 * @see #getMitigates()
+	 * @param value the new value of the '<em>Mitigated Allocation</em>' reference.
+	 * @see #getMitigatedAllocation()
 	 * @generated
 	 */
-	void setMitigates(ThreatAllocationRelation value);
+	void setMitigatedAllocation(ThreatAllocationRelation value);
 
 	/**
 	 * Returns the value of the '<em><b>Description</b></em>' attribute.

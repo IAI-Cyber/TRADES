@@ -29,7 +29,7 @@
         eType="#//AffectRelation" containment="true" eOpposite="#//AffectRelation/sourceComponent"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Control" eSuperTypes="#//NamedElement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="mitigates" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mitigatedThreats" upperBound="-1"
         eType="#//Threat"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -66,7 +66,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="control" lowerBound="1"
         eType="#//Control" eOpposite="#//Control/mitigationrRelations"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="threat" eType="#//Threat"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="mitigates" eType="#//ThreatAllocationRelation"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mitigatedAllocation" eType="#//ThreatAllocationRelation"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Data" eSuperTypes="#//NamedElement"/>

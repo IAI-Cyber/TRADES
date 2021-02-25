@@ -35,7 +35,7 @@ public class ThreatItemProviderCustomImpl extends ThreatItemProvider {
 					// Threat name can be used in the label of ThreatMitigationRelation so refresh them also
 					EcoreUtils
 							.getInverse(rel, ThreatMitigationRelation.class,
-									TRADESPackage.eINSTANCE.getThreatMitigationRelation_Mitigates())
+									TRADESPackage.eINSTANCE.getThreatMitigationRelation_MitigatedAllocation())
 							.forEach(
 									rel2 -> fireNotifyChanged(new ViewerNotification(notification, rel2, false, true)));
 				}

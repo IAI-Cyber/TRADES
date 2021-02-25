@@ -485,13 +485,13 @@ public interface TRADESPackage extends EPackage {
 	int CONTROL__NAME = NAMED_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Mitigates</b></em>' reference list.
+	 * The feature id for the '<em><b>Mitigated Threats</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL__MITIGATES = NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int CONTROL__MITIGATED_THREATS = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>ID</b></em>' attribute.
@@ -667,13 +667,13 @@ public interface TRADESPackage extends EPackage {
 	int THREAT_MITIGATION_RELATION__THREAT = 2;
 
 	/**
-	 * The feature id for the '<em><b>Mitigates</b></em>' reference.
+	 * The feature id for the '<em><b>Mitigated Allocation</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int THREAT_MITIGATION_RELATION__MITIGATES = 3;
+	int THREAT_MITIGATION_RELATION__MITIGATED_ALLOCATION = 3;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -1435,13 +1435,13 @@ public interface TRADESPackage extends EPackage {
 	int EXTERNAL_CONTROL__NAME = EXTERNAL_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Mitigates</b></em>' reference list.
+	 * The feature id for the '<em><b>Mitigated Threats</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXTERNAL_CONTROL__MITIGATES = EXTERNAL_ELEMENT_FEATURE_COUNT + 1;
+	int EXTERNAL_CONTROL__MITIGATED_THREATS = EXTERNAL_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>ID</b></em>' attribute.
@@ -1853,15 +1853,15 @@ public interface TRADESPackage extends EPackage {
 	EClass getControl();
 
 	/**
-	 * Returns the meta object for the reference list '{@link dsm.TRADES.Control#getMitigates <em>Mitigates</em>}'.
+	 * Returns the meta object for the reference list '{@link dsm.TRADES.Control#getMitigatedThreats <em>Mitigated Threats</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Mitigates</em>'.
-	 * @see dsm.TRADES.Control#getMitigates()
+	 * @return the meta object for the reference list '<em>Mitigated Threats</em>'.
+	 * @see dsm.TRADES.Control#getMitigatedThreats()
 	 * @see #getControl()
 	 * @generated
 	 */
-	EReference getControl_Mitigates();
+	EReference getControl_MitigatedThreats();
 
 	/**
 	 * Returns the meta object for the attribute '{@link dsm.TRADES.Control#getID <em>ID</em>}'.
@@ -2026,15 +2026,15 @@ public interface TRADESPackage extends EPackage {
 	EReference getThreatMitigationRelation_Threat();
 
 	/**
-	 * Returns the meta object for the reference '{@link dsm.TRADES.ThreatMitigationRelation#getMitigates <em>Mitigates</em>}'.
+	 * Returns the meta object for the reference '{@link dsm.TRADES.ThreatMitigationRelation#getMitigatedAllocation <em>Mitigated Allocation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Mitigates</em>'.
-	 * @see dsm.TRADES.ThreatMitigationRelation#getMitigates()
+	 * @return the meta object for the reference '<em>Mitigated Allocation</em>'.
+	 * @see dsm.TRADES.ThreatMitigationRelation#getMitigatedAllocation()
 	 * @see #getThreatMitigationRelation()
 	 * @generated
 	 */
-	EReference getThreatMitigationRelation_Mitigates();
+	EReference getThreatMitigationRelation_MitigatedAllocation();
 
 	/**
 	 * Returns the meta object for the attribute '{@link dsm.TRADES.ThreatMitigationRelation#getDescription <em>Description</em>}'.
@@ -2813,12 +2813,12 @@ public interface TRADESPackage extends EPackage {
 		EClass CONTROL = eINSTANCE.getControl();
 
 		/**
-		 * The meta object literal for the '<em><b>Mitigates</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Mitigated Threats</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference CONTROL__MITIGATES = eINSTANCE.getControl_Mitigates();
+		EReference CONTROL__MITIGATED_THREATS = eINSTANCE.getControl_MitigatedThreats();
 
 		/**
 		 * The meta object literal for the '<em><b>ID</b></em>' attribute feature.
@@ -2947,12 +2947,13 @@ public interface TRADESPackage extends EPackage {
 		EReference THREAT_MITIGATION_RELATION__THREAT = eINSTANCE.getThreatMitigationRelation_Threat();
 
 		/**
-		 * The meta object literal for the '<em><b>Mitigates</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Mitigated Allocation</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference THREAT_MITIGATION_RELATION__MITIGATES = eINSTANCE.getThreatMitigationRelation_Mitigates();
+		EReference THREAT_MITIGATION_RELATION__MITIGATED_ALLOCATION = eINSTANCE
+				.getThreatMitigationRelation_MitigatedAllocation();
 
 		/**
 		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.

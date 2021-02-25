@@ -57,7 +57,7 @@ public class ThreatMitigationRelationItemProvider extends ItemProviderAdapter im
 			addAssessmentPropertyDescriptor(object);
 			addControlPropertyDescriptor(object);
 			addThreatPropertyDescriptor(object);
-			addMitigatesPropertyDescriptor(object);
+			addMitigatedAllocationPropertyDescriptor(object);
 			addDescriptionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -110,18 +110,20 @@ public class ThreatMitigationRelationItemProvider extends ItemProviderAdapter im
 	}
 
 	/**
-	 * This adds a property descriptor for the Mitigates feature.
+	 * This adds a property descriptor for the Mitigated Allocation feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addMitigatesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-				getString("_UI_ThreatMitigationRelation_mitigates_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_ThreatMitigationRelation_mitigates_feature",
-						"_UI_ThreatMitigationRelation_type"),
-				TRADESPackage.Literals.THREAT_MITIGATION_RELATION__MITIGATES, true, false, true, null, null, null));
+	protected void addMitigatedAllocationPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_ThreatMitigationRelation_mitigatedAllocation_feature"),
+						getString("_UI_PropertyDescriptor_description",
+								"_UI_ThreatMitigationRelation_mitigatedAllocation_feature",
+								"_UI_ThreatMitigationRelation_type"),
+						TRADESPackage.Literals.THREAT_MITIGATION_RELATION__MITIGATED_ALLOCATION, true, false, true,
+						null, null, null));
 	}
 
 	/**

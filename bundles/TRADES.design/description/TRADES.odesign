@@ -168,7 +168,7 @@
             </style>
           </conditionnalStyles>
         </edgeMappings>
-        <edgeMappings name="mitigatesThreatAllocation" labelDirectEdit="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Change%20name']" sourceMapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@nodeMappings[name='ControlNode']" targetMapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@edgeMappings[name='allocatedThreat']" targetFinderExpression="feature:mitigates" sourceFinderExpression="feature:control" targetExpression="var:self" domainClass="TRADES::ThreatMitigationRelation" useDomainElement="true">
+        <edgeMappings name="mitigatesThreatAllocation" labelDirectEdit="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Change%20name']" sourceMapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@nodeMappings[name='ControlNode']" targetMapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@edgeMappings[name='allocatedThreat']" targetFinderExpression="feature:mitigatedThreats" sourceFinderExpression="feature:control" targetExpression="var:self" domainClass="TRADES::ThreatMitigationRelation" useDomainElement="true">
           <style lineStyle="dash" sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <centerLabelStyleDescription labelSize="12">
@@ -256,7 +256,7 @@
                       <subModelOperations xsi:type="tool_1:SetValue" featureName="threat" valueExpression="var:target"/>
                     </subModelOperations>
                     <subModelOperations xsi:type="tool_1:If" conditionExpression="aql: target.oclIsTypeOf(TRADES::ThreatAllocationRelation)">
-                      <subModelOperations xsi:type="tool_1:SetValue" featureName="mitigates" valueExpression="var:target"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="mitigatedAllocation" valueExpression="var:target"/>
                     </subModelOperations>
                   </subModelOperations>
                 </subModelOperations>

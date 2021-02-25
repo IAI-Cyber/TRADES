@@ -31,7 +31,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  *   <li>{@link dsm.TRADES.impl.ThreatMitigationRelationImpl#getAssessment <em>Assessment</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ThreatMitigationRelationImpl#getControl <em>Control</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ThreatMitigationRelationImpl#getThreat <em>Threat</em>}</li>
- *   <li>{@link dsm.TRADES.impl.ThreatMitigationRelationImpl#getMitigates <em>Mitigates</em>}</li>
+ *   <li>{@link dsm.TRADES.impl.ThreatMitigationRelationImpl#getMitigatedAllocation <em>Mitigated Allocation</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ThreatMitigationRelationImpl#getDescription <em>Description</em>}</li>
  * </ul>
  *
@@ -69,14 +69,14 @@ public class ThreatMitigationRelationImpl extends MinimalEObjectImpl.Container i
 	protected Threat threat;
 
 	/**
-	 * The cached value of the '{@link #getMitigates() <em>Mitigates</em>}' reference.
+	 * The cached value of the '{@link #getMitigatedAllocation() <em>Mitigated Allocation</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getMitigates()
+	 * @see #getMitigatedAllocation()
 	 * @generated
 	 * @ordered
 	 */
-	protected ThreatAllocationRelation mitigates;
+	protected ThreatAllocationRelation mitigatedAllocation;
 
 	/**
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
@@ -237,17 +237,18 @@ public class ThreatMitigationRelationImpl extends MinimalEObjectImpl.Container i
 	 * @generated
 	 */
 	@Override
-	public ThreatAllocationRelation getMitigates() {
-		if (mitigates != null && mitigates.eIsProxy()) {
-			InternalEObject oldMitigates = (InternalEObject) mitigates;
-			mitigates = (ThreatAllocationRelation) eResolveProxy(oldMitigates);
-			if (mitigates != oldMitigates) {
+	public ThreatAllocationRelation getMitigatedAllocation() {
+		if (mitigatedAllocation != null && mitigatedAllocation.eIsProxy()) {
+			InternalEObject oldMitigatedAllocation = (InternalEObject) mitigatedAllocation;
+			mitigatedAllocation = (ThreatAllocationRelation) eResolveProxy(oldMitigatedAllocation);
+			if (mitigatedAllocation != oldMitigatedAllocation) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							TRADESPackage.THREAT_MITIGATION_RELATION__MITIGATES, oldMitigates, mitigates));
+							TRADESPackage.THREAT_MITIGATION_RELATION__MITIGATED_ALLOCATION, oldMitigatedAllocation,
+							mitigatedAllocation));
 			}
 		}
-		return mitigates;
+		return mitigatedAllocation;
 	}
 
 	/**
@@ -255,8 +256,8 @@ public class ThreatMitigationRelationImpl extends MinimalEObjectImpl.Container i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ThreatAllocationRelation basicGetMitigates() {
-		return mitigates;
+	public ThreatAllocationRelation basicGetMitigatedAllocation() {
+		return mitigatedAllocation;
 	}
 
 	/**
@@ -265,12 +266,13 @@ public class ThreatMitigationRelationImpl extends MinimalEObjectImpl.Container i
 	 * @generated
 	 */
 	@Override
-	public void setMitigates(ThreatAllocationRelation newMitigates) {
-		ThreatAllocationRelation oldMitigates = mitigates;
-		mitigates = newMitigates;
+	public void setMitigatedAllocation(ThreatAllocationRelation newMitigatedAllocation) {
+		ThreatAllocationRelation oldMitigatedAllocation = mitigatedAllocation;
+		mitigatedAllocation = newMitigatedAllocation;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TRADESPackage.THREAT_MITIGATION_RELATION__MITIGATES,
-					oldMitigates, mitigates));
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					TRADESPackage.THREAT_MITIGATION_RELATION__MITIGATED_ALLOCATION, oldMitigatedAllocation,
+					mitigatedAllocation));
 	}
 
 	/**
@@ -358,10 +360,10 @@ public class ThreatMitigationRelationImpl extends MinimalEObjectImpl.Container i
 			if (resolve)
 				return getThreat();
 			return basicGetThreat();
-		case TRADESPackage.THREAT_MITIGATION_RELATION__MITIGATES:
+		case TRADESPackage.THREAT_MITIGATION_RELATION__MITIGATED_ALLOCATION:
 			if (resolve)
-				return getMitigates();
-			return basicGetMitigates();
+				return getMitigatedAllocation();
+			return basicGetMitigatedAllocation();
 		case TRADESPackage.THREAT_MITIGATION_RELATION__DESCRIPTION:
 			return getDescription();
 		}
@@ -385,8 +387,8 @@ public class ThreatMitigationRelationImpl extends MinimalEObjectImpl.Container i
 		case TRADESPackage.THREAT_MITIGATION_RELATION__THREAT:
 			setThreat((Threat) newValue);
 			return;
-		case TRADESPackage.THREAT_MITIGATION_RELATION__MITIGATES:
-			setMitigates((ThreatAllocationRelation) newValue);
+		case TRADESPackage.THREAT_MITIGATION_RELATION__MITIGATED_ALLOCATION:
+			setMitigatedAllocation((ThreatAllocationRelation) newValue);
 			return;
 		case TRADESPackage.THREAT_MITIGATION_RELATION__DESCRIPTION:
 			setDescription((String) newValue);
@@ -412,8 +414,8 @@ public class ThreatMitigationRelationImpl extends MinimalEObjectImpl.Container i
 		case TRADESPackage.THREAT_MITIGATION_RELATION__THREAT:
 			setThreat((Threat) null);
 			return;
-		case TRADESPackage.THREAT_MITIGATION_RELATION__MITIGATES:
-			setMitigates((ThreatAllocationRelation) null);
+		case TRADESPackage.THREAT_MITIGATION_RELATION__MITIGATED_ALLOCATION:
+			setMitigatedAllocation((ThreatAllocationRelation) null);
 			return;
 		case TRADESPackage.THREAT_MITIGATION_RELATION__DESCRIPTION:
 			setDescription(DESCRIPTION_EDEFAULT);
@@ -436,8 +438,8 @@ public class ThreatMitigationRelationImpl extends MinimalEObjectImpl.Container i
 			return getControl() != null;
 		case TRADESPackage.THREAT_MITIGATION_RELATION__THREAT:
 			return threat != null;
-		case TRADESPackage.THREAT_MITIGATION_RELATION__MITIGATES:
-			return mitigates != null;
+		case TRADESPackage.THREAT_MITIGATION_RELATION__MITIGATED_ALLOCATION:
+			return mitigatedAllocation != null;
 		case TRADESPackage.THREAT_MITIGATION_RELATION__DESCRIPTION:
 			return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 		}

@@ -47,7 +47,7 @@ public class ControlItemProvider extends NamedElementItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addMitigatesPropertyDescriptor(object);
+			addMitigatedThreatsPropertyDescriptor(object);
 			addIDPropertyDescriptor(object);
 			addDescriptionPropertyDescriptor(object);
 			addMitigationrRelationsPropertyDescriptor(object);
@@ -56,18 +56,18 @@ public class ControlItemProvider extends NamedElementItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Mitigates feature.
+	 * This adds a property descriptor for the Mitigated Threats feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addMitigatesPropertyDescriptor(Object object) {
+	protected void addMitigatedThreatsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Control_mitigates_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Control_mitigates_feature",
+						getResourceLocator(), getString("_UI_Control_mitigatedThreats_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Control_mitigatedThreats_feature",
 								"_UI_Control_type"),
-						TRADESPackage.Literals.CONTROL__MITIGATES, true, false, true, null, null, null));
+						TRADESPackage.Literals.CONTROL__MITIGATED_THREATS, true, false, true, null, null, null));
 	}
 
 	/**

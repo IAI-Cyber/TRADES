@@ -34,7 +34,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link dsm.TRADES.impl.ExternalControlImpl#getName <em>Name</em>}</li>
- *   <li>{@link dsm.TRADES.impl.ExternalControlImpl#getMitigates <em>Mitigates</em>}</li>
+ *   <li>{@link dsm.TRADES.impl.ExternalControlImpl#getMitigatedThreats <em>Mitigated Threats</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ExternalControlImpl#getID <em>ID</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ExternalControlImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ExternalControlImpl#getMitigationrRelations <em>Mitigationr Relations</em>}</li>
@@ -64,14 +64,14 @@ public class ExternalControlImpl extends ExternalElementImpl implements External
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getMitigates() <em>Mitigates</em>}' reference list.
+	 * The cached value of the '{@link #getMitigatedThreats() <em>Mitigated Threats</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getMitigates()
+	 * @see #getMitigatedThreats()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Threat> mitigates;
+	protected EList<Threat> mitigatedThreats;
 
 	/**
 	 * The default value of the '{@link #getID() <em>ID</em>}' attribute.
@@ -171,12 +171,12 @@ public class ExternalControlImpl extends ExternalElementImpl implements External
 	 * @generated
 	 */
 	@Override
-	public EList<Threat> getMitigates() {
-		if (mitigates == null) {
-			mitigates = new EObjectResolvingEList<Threat>(Threat.class, this,
-					TRADESPackage.EXTERNAL_CONTROL__MITIGATES);
+	public EList<Threat> getMitigatedThreats() {
+		if (mitigatedThreats == null) {
+			mitigatedThreats = new EObjectResolvingEList<Threat>(Threat.class, this,
+					TRADESPackage.EXTERNAL_CONTROL__MITIGATED_THREATS);
 		}
-		return mitigates;
+		return mitigatedThreats;
 	}
 
 	/**
@@ -281,8 +281,8 @@ public class ExternalControlImpl extends ExternalElementImpl implements External
 		switch (featureID) {
 		case TRADESPackage.EXTERNAL_CONTROL__NAME:
 			return getName();
-		case TRADESPackage.EXTERNAL_CONTROL__MITIGATES:
-			return getMitigates();
+		case TRADESPackage.EXTERNAL_CONTROL__MITIGATED_THREATS:
+			return getMitigatedThreats();
 		case TRADESPackage.EXTERNAL_CONTROL__ID:
 			return getID();
 		case TRADESPackage.EXTERNAL_CONTROL__DESCRIPTION:
@@ -305,9 +305,9 @@ public class ExternalControlImpl extends ExternalElementImpl implements External
 		case TRADESPackage.EXTERNAL_CONTROL__NAME:
 			setName((String) newValue);
 			return;
-		case TRADESPackage.EXTERNAL_CONTROL__MITIGATES:
-			getMitigates().clear();
-			getMitigates().addAll((Collection<? extends Threat>) newValue);
+		case TRADESPackage.EXTERNAL_CONTROL__MITIGATED_THREATS:
+			getMitigatedThreats().clear();
+			getMitigatedThreats().addAll((Collection<? extends Threat>) newValue);
 			return;
 		case TRADESPackage.EXTERNAL_CONTROL__ID:
 			setID((String) newValue);
@@ -334,8 +334,8 @@ public class ExternalControlImpl extends ExternalElementImpl implements External
 		case TRADESPackage.EXTERNAL_CONTROL__NAME:
 			setName(NAME_EDEFAULT);
 			return;
-		case TRADESPackage.EXTERNAL_CONTROL__MITIGATES:
-			getMitigates().clear();
+		case TRADESPackage.EXTERNAL_CONTROL__MITIGATED_THREATS:
+			getMitigatedThreats().clear();
 			return;
 		case TRADESPackage.EXTERNAL_CONTROL__ID:
 			setID(ID_EDEFAULT);
@@ -360,8 +360,8 @@ public class ExternalControlImpl extends ExternalElementImpl implements External
 		switch (featureID) {
 		case TRADESPackage.EXTERNAL_CONTROL__NAME:
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-		case TRADESPackage.EXTERNAL_CONTROL__MITIGATES:
-			return mitigates != null && !mitigates.isEmpty();
+		case TRADESPackage.EXTERNAL_CONTROL__MITIGATED_THREATS:
+			return mitigatedThreats != null && !mitigatedThreats.isEmpty();
 		case TRADESPackage.EXTERNAL_CONTROL__ID:
 			return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
 		case TRADESPackage.EXTERNAL_CONTROL__DESCRIPTION:
@@ -389,8 +389,8 @@ public class ExternalControlImpl extends ExternalElementImpl implements External
 		}
 		if (baseClass == Control.class) {
 			switch (derivedFeatureID) {
-			case TRADESPackage.EXTERNAL_CONTROL__MITIGATES:
-				return TRADESPackage.CONTROL__MITIGATES;
+			case TRADESPackage.EXTERNAL_CONTROL__MITIGATED_THREATS:
+				return TRADESPackage.CONTROL__MITIGATED_THREATS;
 			case TRADESPackage.EXTERNAL_CONTROL__ID:
 				return TRADESPackage.CONTROL__ID;
 			case TRADESPackage.EXTERNAL_CONTROL__DESCRIPTION:
@@ -421,8 +421,8 @@ public class ExternalControlImpl extends ExternalElementImpl implements External
 		}
 		if (baseClass == Control.class) {
 			switch (baseFeatureID) {
-			case TRADESPackage.CONTROL__MITIGATES:
-				return TRADESPackage.EXTERNAL_CONTROL__MITIGATES;
+			case TRADESPackage.CONTROL__MITIGATED_THREATS:
+				return TRADESPackage.EXTERNAL_CONTROL__MITIGATED_THREATS;
 			case TRADESPackage.CONTROL__ID:
 				return TRADESPackage.EXTERNAL_CONTROL__ID;
 			case TRADESPackage.CONTROL__DESCRIPTION:
