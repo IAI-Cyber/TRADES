@@ -72,8 +72,9 @@ public class SemanticService {
 	 * 
 	 * @param score the context
 	 */
-	public void initImpactScore(ImpactScore score) {
+	public static void initImpactScore(ImpactScore score) {
 		ScoreSystem scoreSystem = (ScoreSystem) score.eContainer();
+
 
 		int index = scoreSystem.getImpactScores().indexOf(score);
 		if (index > 0) {
@@ -87,7 +88,7 @@ public class SemanticService {
 		}
 	}
 
-	public void synchronizeDifficulty(ThreatAllocationRelation rel) {
+	public static void synchronizeDifficulty(ThreatAllocationRelation rel) {
 
 		AttackChain attackChain = rel.getAttackChain();
 
@@ -116,7 +117,7 @@ public class SemanticService {
 	 * @param analysis the root analysis
 	 * @return a list of container
 	 */
-	public List<DataOwnerElement> getDataOwnerElements(Analysis analysis) {
+	public static List<DataOwnerElement> getDataOwnerElements(Analysis analysis) {
 		List<DataOwnerElement> results = new ArrayList<>();
 		results.add(analysis);
 		getSubDataOwners(analysis, results);
@@ -124,20 +125,20 @@ public class SemanticService {
 
 	}
 
-	private void getSubDataOwners(ComponentOwner o, List<DataOwnerElement> collector) {
+	private static void getSubDataOwners(ComponentOwner o, List<DataOwnerElement> collector) {
 		for (Component sub : o.getComponents()) {
 			collector.add(sub);
 			getSubDataOwners(sub, collector);
 		}
 	}
 
-	public List<Data> getInheritedData(DataOwnerElement owner) {
+	public static List<Data> getInheritedData(DataOwnerElement owner) {
 		List<Data> results = new ArrayList<>();
 		collectData(owner.eContainer(), results);
 		return results;
 	}
 
-	public void collectData(EObject object, List<Data> collector) {
+	public static void collectData(EObject object, List<Data> collector) {
 		if (object == null) {
 			return;
 		}
@@ -149,7 +150,7 @@ public class SemanticService {
 
 	}
 
-	public void moveData(Data toMove, DataOwnerElement owner) {
+	public static void moveData(Data toMove, DataOwnerElement owner) {
 		DataOwner dataOwner = owner.getDataOwner();
 		if (dataOwner == null) {
 			dataOwner = TRADESFactory.eINSTANCE.createDataOwner();
@@ -158,7 +159,7 @@ public class SemanticService {
 		dataOwner.getData().add(toMove);
 	}
 
-	public void createInternalControl(AbstractControlOwner cmp) {
+	public static void createInternalControl(AbstractControlOwner cmp) {
 		Control control = TRADESFactory.eINSTANCE.createControl();
 
 		ControlOwner owner = cmp.getControlOwner();
@@ -170,7 +171,7 @@ public class SemanticService {
 		owner.getInternals().add(control);
 	}
 
-	public Data createData(DataOwnerElement element) {
+	public static Data createData(DataOwnerElement element) {
 		DataOwner owner = element.getDataOwner();
 
 		if (owner == null) {
@@ -186,7 +187,7 @@ public class SemanticService {
 
 	}
 
-	public DataOwner getOrCreateDataOwner(DataOwnerElement element) {
+	public static DataOwner getOrCreateDataOwner(DataOwnerElement element) {
 
 		DataOwner owner = element.getDataOwner();
 		if (owner == null) {
@@ -203,7 +204,7 @@ public class SemanticService {
 	 * @param diff the context
 	 * @return a list of {@link ImpactConfiguration}
 	 */
-	public List<ImpactConfiguration> getLinkedConfigurations(DifficultyScore diff) {
+	public static List<ImpactConfiguration> getLinkedConfigurations(DifficultyScore diff) {
 		return Session.of(diff).get().getSemanticCrossReferencer()
 				.getInverseReferences(diff, TRADESPackage.eINSTANCE.getImpactConfiguration_Difficulty(), true).stream()
 				.map(s -> (ImpactConfiguration) s.getEObject()).collect(Collectors.toList());
@@ -224,7 +225,7 @@ public class SemanticService {
 	 * 
 	 * @param diff the context
 	 */
-	public void initDifficulty(DifficultyScore diff) {
+	public static void initDifficulty(DifficultyScore diff) {
 		ScoreSystem scoreSystem = (ScoreSystem) diff.eContainer();
 
 		int index = scoreSystem.getDifficultyScores().indexOf(diff);
@@ -235,7 +236,7 @@ public class SemanticService {
 		updateImpactWithNewDifficulty(diff, scoreSystem);
 	}
 
-	private void updateImpactWithNewDifficulty(DifficultyScore diff, ScoreSystem scoreSystem) {
+	private static void updateImpactWithNewDifficulty(DifficultyScore diff, ScoreSystem scoreSystem) {
 		for (ImpactScore impact : scoreSystem.getImpactScores()) {
 			ImpactConfiguration conf = TRADESFactory.eINSTANCE.createImpactConfiguration();
 			impact.getConfigurations().add(conf);
@@ -249,7 +250,7 @@ public class SemanticService {
 	 * 
 	 * @param scoreSystem the context
 	 */
-	public void initColors(ScoreSystem scoreSystem) {
+	public static void initColors(ScoreSystem scoreSystem) {
 
 		if (!MessageDialog.openConfirm(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(),
 				"Override colors",
@@ -286,7 +287,7 @@ public class SemanticService {
 		}
 	}
 
-	public Control moveControl(AbstractControlOwner newOnwer, Control control) {
+	public static Control moveControl(AbstractControlOwner newOnwer, Control control) {
 		ControlOwner owner = newOnwer.getControlOwner();
 		if (owner == null) {
 			owner = TRADESFactory.eINSTANCE.createControlOwner();
@@ -301,7 +302,7 @@ public class SemanticService {
 		return control;
 	}
 
-	public void affectThreatToComponent(Component owner, Threat threat) {
+	public static void affectThreatToComponent(Component owner, Threat threat) {
 
 		if (owner.getThreatAllocations().stream().noneMatch(rel -> rel.getThreat() == threat)) {
 			ThreatAllocationRelation rel = TRADESFactory.eINSTANCE.createThreatAllocationRelation();
@@ -322,7 +323,7 @@ public class SemanticService {
 	private static FixedSizeSet<EReference> USAGE_REF_TO_IGNORE_IMPACT_SCORE = Sets.fixedSize
 			.of(TRADESPackage.eINSTANCE.getImpactConfiguration_Impact());
 
-	public void clearUnusedDifficulties(ScoreSystem scoreSystem) {
+	public static void clearUnusedDifficulties(ScoreSystem scoreSystem) {
 		ECrossReferenceAdapter crossRef = SessionManager.INSTANCE.getSession(scoreSystem).getSemanticCrossReferencer();
 		List<EObject> toRemove = new ArrayList<>();
 
@@ -340,7 +341,7 @@ public class SemanticService {
 		}
 	}
 
-	public void clearUnusedImpacts(ScoreSystem scoreSystem) {
+	public static void clearUnusedImpacts(ScoreSystem scoreSystem) {
 		ECrossReferenceAdapter crossRef = SessionManager.INSTANCE.getSession(scoreSystem).getSemanticCrossReferencer();
 		List<EObject> toRemove = new ArrayList<>();
 
@@ -356,7 +357,8 @@ public class SemanticService {
 		}
 	}
 
-	public boolean isSemanticallyUsed(EObject o, ECrossReferenceAdapter crossRef, Collection<EReference> toIgnore) {
+	public static boolean isSemanticallyUsed(EObject o, ECrossReferenceAdapter crossRef,
+			Collection<EReference> toIgnore) {
 		return crossRef.getInverseReferences(o).stream().anyMatch(s -> {
 			EStructuralFeature feature = s.getEStructuralFeature();
 
@@ -382,7 +384,7 @@ public class SemanticService {
 		});
 	}
 
-	public List<AffectRelation> getAffectRelationsBy(Data data) {
+	public static List<AffectRelation> getAffectRelationsBy(Data data) {
 		return EcoreUtils.getInverse(data, AffectRelation.class, TRADESPackage.eINSTANCE.getAffectRelation_Data());
 	}
 
@@ -395,7 +397,7 @@ public class SemanticService {
 	 *                  linked to a data
 	 * @return
 	 */
-	public boolean isComponentDataPassThrough(Component component, AbstractDNode node) {
+	public static boolean isComponentDataPassThrough(Component component, AbstractDNode node) {
 		DSemanticDiagram diagram = DiagramService.getContainingDiagram(node);
 		if (diagram == null) {
 			return false;
@@ -421,7 +423,7 @@ public class SemanticService {
 	 * @param data the queried data
 	 * @return a list of component
 	 */
-	public List<Component> getRootAffectedComponentsByData(Data data) {
+	public static List<Component> getRootAffectedComponentsByData(Data data) {
 
 		List<AffectRelation> affectRelations = getAffectRelationsBy(data);
 		Set<Component> allComponents = affectRelations.stream()
@@ -450,7 +452,7 @@ public class SemanticService {
 	 * @param data   the current data
 	 * @return a list of children
 	 */
-	public List<Component> getSubComponentAffectBy(Component parent, Data data) {
+	public static List<Component> getSubComponentAffectBy(Component parent, Data data) {
 
 		List<AffectRelation> affectRelations = getAffectRelationsBy(data);
 		Set<Component> allComponents = affectRelations.stream()
@@ -469,7 +471,7 @@ public class SemanticService {
 	 * @return <code>true</code> if the component or one of its children belongs to
 	 *         the given set
 	 */
-	private boolean contains(Component c, Set<Component> components) {
+	private static boolean contains(Component c, Set<Component> components) {
 		if (components.contains(c)) {
 			return true;
 		}
@@ -491,7 +493,7 @@ public class SemanticService {
 	 * @param components the set of potential container
 	 * @return <code>true</code> if contained by at least of of the given component
 	 */
-	private boolean isContainedBy(Component c, Set<Component> components) {
+	private static boolean isContainedBy(Component c, Set<Component> components) {
 		EObject container = c.eContainer();
 		while (container != null) {
 			if (components.contains(container)) {

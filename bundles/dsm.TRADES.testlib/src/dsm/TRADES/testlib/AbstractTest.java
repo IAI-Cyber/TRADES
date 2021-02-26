@@ -7,4 +7,5 @@ public class AbstractTest {
 	protected TRADESFactory fact = TRADESFactory.eINSTANCE;
 
 
+
 }

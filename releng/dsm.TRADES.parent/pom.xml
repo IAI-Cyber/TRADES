@@ -137,6 +137,7 @@
 		<module>../../bundles/dsm.TRADES.rcp/</module>
 		<module>../../bundles/dsm.TRADES.testlib/</module>
 		<module>../../bundles/dsm.TRADES.tests/</module>
+		<module>../../bundles/TRADES.design.test/</module>
 
 		<!-- This plugin holdd all information about the product branding -->
 		<module>../../bundles/dsm.TRADES.branding/</module>
