@@ -31,6 +31,7 @@
     <genClasses ecoreClass="TRADES.ecore#//Analysis">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Analysis/scoreSystem"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Analysis/threatOwner"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Analysis/catalogs"/>
     </genClasses>
     <genClasses ecoreClass="TRADES.ecore#//Threat">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TRADES.ecore#//Threat/threatAllocations"/>
@@ -165,11 +166,11 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Parameter/value"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Parameter/select"/>
     </genClasses>
-    <genClasses ecoreClass="TRADES.ecore#//OscalControl">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//OscalControl/id"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//OscalControl/title"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//OscalControl/parts"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//OscalControl/oscalcontrols"/>
+    <genClasses ecoreClass="TRADES.ecore#//ControlDefinition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//ControlDefinition/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//ControlDefinition/title"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//ControlDefinition/parts"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//ControlDefinition/oscalcontrols"/>
     </genClasses>
     <genClasses ecoreClass="TRADES.ecore#//Address">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Address/addrLine"/>

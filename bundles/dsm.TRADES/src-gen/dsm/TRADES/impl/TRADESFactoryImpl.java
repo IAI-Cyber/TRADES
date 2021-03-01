@@ -95,6 +95,64 @@ public class TRADESFactoryImpl extends EFactoryImpl implements TRADESFactory {
 			return createControlOwner();
 		case TRADESPackage.DATA_OWNER:
 			return createDataOwner();
+		case TRADESPackage.LINK:
+			return createLink();
+		case TRADESPackage.PARAMETER:
+			return createParameter();
+		case TRADESPackage.CONTROL_DEFINITION:
+			return createControlDefinition();
+		case TRADESPackage.ADDRESS:
+			return createAddress();
+		case TRADESPackage.ROLE:
+			return createRole();
+		case TRADESPackage.REMARK:
+			return createRemark();
+		case TRADESPackage.CATALOG:
+			return createCatalog();
+		case TRADESPackage.BACK_MATTER:
+			return createBackMatter();
+		case TRADESPackage.REVISION:
+			return createRevision();
+		case TRADESPackage.GROUP:
+			return createGroup();
+		case TRADESPackage.LOCATION:
+			return createLocation();
+		case TRADESPackage.ANNOTATION:
+			return createAnnotation();
+		case TRADESPackage.DOCUMENT_ID:
+			return createDocumentId();
+		case TRADESPackage.PROPERTY:
+			return createProperty();
+		case TRADESPackage.METADATA:
+			return createMetadata();
+		case TRADESPackage.REVISIONS:
+			return createRevisions();
+		case TRADESPackage.TELEPHONE_NUMBER:
+			return createTelephoneNumber();
+		case TRADESPackage.PARTY:
+			return createParty();
+		case TRADESPackage.EXTERNAL_ID:
+			return createExternalId();
+		case TRADESPackage.RESPONSIBLE_PARTY:
+			return createResponsibleParty();
+		case TRADESPackage.CONSTRAINT:
+			return createConstraint();
+		case TRADESPackage.TEST:
+			return createTest();
+		case TRADESPackage.PARTITION:
+			return createPartition();
+		case TRADESPackage.SELECT:
+			return createSelect();
+		case TRADESPackage.RESOURCE:
+			return createResource();
+		case TRADESPackage.CITATION:
+			return createCitation();
+		case TRADESPackage.RLINK:
+			return createRlink();
+		case TRADESPackage.HASH:
+			return createHash();
+		case TRADESPackage.BASE64:
+			return createBase64();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -116,6 +174,12 @@ public class TRADESFactoryImpl extends EFactoryImpl implements TRADESFactory {
 			return createthreatTypeENUMFromString(eDataType, initialValue);
 		case TRADESPackage.RGB_COLOR:
 			return createRGBColorFromString(eDataType, initialValue);
+		case TRADESPackage.MARKUP_LINE:
+			return createMarkupLineFromString(eDataType, initialValue);
+		case TRADESPackage.MARKUP_MULTILINE:
+			return createMarkupMultilineFromString(eDataType, initialValue);
+		case TRADESPackage.BASE64_BINARY:
+			return createBase64BinaryFromString(eDataType, initialValue);
 		default:
 			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -137,6 +201,12 @@ public class TRADESFactoryImpl extends EFactoryImpl implements TRADESFactory {
 			return convertthreatTypeENUMToString(eDataType, instanceValue);
 		case TRADESPackage.RGB_COLOR:
 			return convertRGBColorToString(eDataType, instanceValue);
+		case TRADESPackage.MARKUP_LINE:
+			return convertMarkupLineToString(eDataType, instanceValue);
+		case TRADESPackage.MARKUP_MULTILINE:
+			return convertMarkupMultilineToString(eDataType, instanceValue);
+		case TRADESPackage.BASE64_BINARY:
+			return convertBase64BinaryToString(eDataType, instanceValue);
 		default:
 			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -356,6 +426,325 @@ public class TRADESFactoryImpl extends EFactoryImpl implements TRADESFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public Link createLink() {
+		LinkImpl link = new LinkImpl();
+		return link;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Parameter createParameter() {
+		ParameterImpl parameter = new ParameterImpl();
+		return parameter;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ControlDefinition createControlDefinition() {
+		ControlDefinitionImpl controlDefinition = new ControlDefinitionImpl();
+		return controlDefinition;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Address createAddress() {
+		AddressImpl address = new AddressImpl();
+		return address;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Role createRole() {
+		RoleImpl role = new RoleImpl();
+		return role;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Remark createRemark() {
+		RemarkImpl remark = new RemarkImpl();
+		return remark;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Catalog createCatalog() {
+		CatalogImpl catalog = new CatalogImpl();
+		return catalog;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public BackMatter createBackMatter() {
+		BackMatterImpl backMatter = new BackMatterImpl();
+		return backMatter;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Revision createRevision() {
+		RevisionImpl revision = new RevisionImpl();
+		return revision;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Group createGroup() {
+		GroupImpl group = new GroupImpl();
+		return group;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Location createLocation() {
+		LocationImpl location = new LocationImpl();
+		return location;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Annotation createAnnotation() {
+		AnnotationImpl annotation = new AnnotationImpl();
+		return annotation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public DocumentId createDocumentId() {
+		DocumentIdImpl documentId = new DocumentIdImpl();
+		return documentId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Property createProperty() {
+		PropertyImpl property = new PropertyImpl();
+		return property;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Metadata createMetadata() {
+		MetadataImpl metadata = new MetadataImpl();
+		return metadata;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Revisions createRevisions() {
+		RevisionsImpl revisions = new RevisionsImpl();
+		return revisions;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public TelephoneNumber createTelephoneNumber() {
+		TelephoneNumberImpl telephoneNumber = new TelephoneNumberImpl();
+		return telephoneNumber;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Party createParty() {
+		PartyImpl party = new PartyImpl();
+		return party;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ExternalId createExternalId() {
+		ExternalIdImpl externalId = new ExternalIdImpl();
+		return externalId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ResponsibleParty createResponsibleParty() {
+		ResponsiblePartyImpl responsibleParty = new ResponsiblePartyImpl();
+		return responsibleParty;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Constraint createConstraint() {
+		ConstraintImpl constraint = new ConstraintImpl();
+		return constraint;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Test createTest() {
+		TestImpl test = new TestImpl();
+		return test;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Partition createPartition() {
+		PartitionImpl partition = new PartitionImpl();
+		return partition;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Select createSelect() {
+		SelectImpl select = new SelectImpl();
+		return select;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Resource createResource() {
+		ResourceImpl resource = new ResourceImpl();
+		return resource;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Citation createCitation() {
+		CitationImpl citation = new CitationImpl();
+		return citation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Rlink createRlink() {
+		RlinkImpl rlink = new RlinkImpl();
+		return rlink;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Hash createHash() {
+		HashImpl hash = new HashImpl();
+		return hash;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Base64 createBase64() {
+		Base64Impl base64 = new Base64Impl();
+		return base64;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public AssessmentENUM createAssessmentENUMFromString(EDataType eDataType, String initialValue) {
 		AssessmentENUM result = AssessmentENUM.get(initialValue);
 		if (result == null)
@@ -451,6 +840,60 @@ public class TRADESFactoryImpl extends EFactoryImpl implements TRADESFactory {
 	 */
 	public String convertRGBColorToString(EDataType eDataType, Object instanceValue) {
 		return convertRGBColor((RGBColor) instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String createMarkupLineFromString(EDataType eDataType, String initialValue) {
+		return (String) super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertMarkupLineToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String createMarkupMultilineFromString(EDataType eDataType, String initialValue) {
+		return (String) super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertMarkupMultilineToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public byte[] createBase64BinaryFromString(EDataType eDataType, String initialValue) {
+		return (byte[]) super.createFromString(initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertBase64BinaryToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(instanceValue);
 	}
 
 	/**

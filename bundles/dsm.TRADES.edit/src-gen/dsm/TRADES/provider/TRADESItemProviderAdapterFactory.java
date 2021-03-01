@@ -528,6 +528,673 @@ public class TRADESItemProviderAdapterFactory extends TRADESAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link dsm.TRADES.Link} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected LinkItemProvider linkItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link dsm.TRADES.Link}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createLinkAdapter() {
+		if (linkItemProvider == null) {
+			linkItemProvider = new LinkItemProvider(this);
+		}
+
+		return linkItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link dsm.TRADES.Parameter} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ParameterItemProvider parameterItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link dsm.TRADES.Parameter}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createParameterAdapter() {
+		if (parameterItemProvider == null) {
+			parameterItemProvider = new ParameterItemProvider(this);
+		}
+
+		return parameterItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link dsm.TRADES.ControlDefinition} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ControlDefinitionItemProvider controlDefinitionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link dsm.TRADES.ControlDefinition}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createControlDefinitionAdapter() {
+		if (controlDefinitionItemProvider == null) {
+			controlDefinitionItemProvider = new ControlDefinitionItemProvider(this);
+		}
+
+		return controlDefinitionItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link dsm.TRADES.Address} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected AddressItemProvider addressItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link dsm.TRADES.Address}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createAddressAdapter() {
+		if (addressItemProvider == null) {
+			addressItemProvider = new AddressItemProvider(this);
+		}
+
+		return addressItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link dsm.TRADES.Role} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected RoleItemProvider roleItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link dsm.TRADES.Role}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createRoleAdapter() {
+		if (roleItemProvider == null) {
+			roleItemProvider = new RoleItemProvider(this);
+		}
+
+		return roleItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link dsm.TRADES.Remark} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected RemarkItemProvider remarkItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link dsm.TRADES.Remark}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createRemarkAdapter() {
+		if (remarkItemProvider == null) {
+			remarkItemProvider = new RemarkItemProvider(this);
+		}
+
+		return remarkItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link dsm.TRADES.Catalog} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected CatalogItemProvider catalogItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link dsm.TRADES.Catalog}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createCatalogAdapter() {
+		if (catalogItemProvider == null) {
+			catalogItemProvider = new CatalogItemProvider(this);
+		}
+
+		return catalogItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link dsm.TRADES.BackMatter} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected BackMatterItemProvider backMatterItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link dsm.TRADES.BackMatter}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createBackMatterAdapter() {
+		if (backMatterItemProvider == null) {
+			backMatterItemProvider = new BackMatterItemProvider(this);
+		}
+
+		return backMatterItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link dsm.TRADES.Revision} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected RevisionItemProvider revisionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link dsm.TRADES.Revision}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createRevisionAdapter() {
+		if (revisionItemProvider == null) {
+			revisionItemProvider = new RevisionItemProvider(this);
+		}
+
+		return revisionItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link dsm.TRADES.Group} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected GroupItemProvider groupItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link dsm.TRADES.Group}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createGroupAdapter() {
+		if (groupItemProvider == null) {
+			groupItemProvider = new GroupItemProvider(this);
+		}
+
+		return groupItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link dsm.TRADES.Location} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected LocationItemProvider locationItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link dsm.TRADES.Location}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createLocationAdapter() {
+		if (locationItemProvider == null) {
+			locationItemProvider = new LocationItemProvider(this);
+		}
+
+		return locationItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link dsm.TRADES.Annotation} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected AnnotationItemProvider annotationItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link dsm.TRADES.Annotation}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createAnnotationAdapter() {
+		if (annotationItemProvider == null) {
+			annotationItemProvider = new AnnotationItemProvider(this);
+		}
+
+		return annotationItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link dsm.TRADES.DocumentId} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected DocumentIdItemProvider documentIdItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link dsm.TRADES.DocumentId}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createDocumentIdAdapter() {
+		if (documentIdItemProvider == null) {
+			documentIdItemProvider = new DocumentIdItemProvider(this);
+		}
+
+		return documentIdItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link dsm.TRADES.Property} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected PropertyItemProvider propertyItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link dsm.TRADES.Property}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createPropertyAdapter() {
+		if (propertyItemProvider == null) {
+			propertyItemProvider = new PropertyItemProvider(this);
+		}
+
+		return propertyItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link dsm.TRADES.Metadata} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected MetadataItemProvider metadataItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link dsm.TRADES.Metadata}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createMetadataAdapter() {
+		if (metadataItemProvider == null) {
+			metadataItemProvider = new MetadataItemProvider(this);
+		}
+
+		return metadataItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link dsm.TRADES.Revisions} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected RevisionsItemProvider revisionsItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link dsm.TRADES.Revisions}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createRevisionsAdapter() {
+		if (revisionsItemProvider == null) {
+			revisionsItemProvider = new RevisionsItemProvider(this);
+		}
+
+		return revisionsItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link dsm.TRADES.TelephoneNumber} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected TelephoneNumberItemProvider telephoneNumberItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link dsm.TRADES.TelephoneNumber}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createTelephoneNumberAdapter() {
+		if (telephoneNumberItemProvider == null) {
+			telephoneNumberItemProvider = new TelephoneNumberItemProvider(this);
+		}
+
+		return telephoneNumberItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link dsm.TRADES.Party} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected PartyItemProvider partyItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link dsm.TRADES.Party}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createPartyAdapter() {
+		if (partyItemProvider == null) {
+			partyItemProvider = new PartyItemProvider(this);
+		}
+
+		return partyItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link dsm.TRADES.ExternalId} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ExternalIdItemProvider externalIdItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link dsm.TRADES.ExternalId}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createExternalIdAdapter() {
+		if (externalIdItemProvider == null) {
+			externalIdItemProvider = new ExternalIdItemProvider(this);
+		}
+
+		return externalIdItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link dsm.TRADES.ResponsibleParty} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ResponsiblePartyItemProvider responsiblePartyItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link dsm.TRADES.ResponsibleParty}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createResponsiblePartyAdapter() {
+		if (responsiblePartyItemProvider == null) {
+			responsiblePartyItemProvider = new ResponsiblePartyItemProvider(this);
+		}
+
+		return responsiblePartyItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link dsm.TRADES.Constraint} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ConstraintItemProvider constraintItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link dsm.TRADES.Constraint}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createConstraintAdapter() {
+		if (constraintItemProvider == null) {
+			constraintItemProvider = new ConstraintItemProvider(this);
+		}
+
+		return constraintItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link dsm.TRADES.Test} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected TestItemProvider testItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link dsm.TRADES.Test}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createTestAdapter() {
+		if (testItemProvider == null) {
+			testItemProvider = new TestItemProvider(this);
+		}
+
+		return testItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link dsm.TRADES.Partition} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected PartitionItemProvider partitionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link dsm.TRADES.Partition}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createPartitionAdapter() {
+		if (partitionItemProvider == null) {
+			partitionItemProvider = new PartitionItemProvider(this);
+		}
+
+		return partitionItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link dsm.TRADES.Select} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected SelectItemProvider selectItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link dsm.TRADES.Select}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createSelectAdapter() {
+		if (selectItemProvider == null) {
+			selectItemProvider = new SelectItemProvider(this);
+		}
+
+		return selectItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link dsm.TRADES.Resource} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ResourceItemProvider resourceItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link dsm.TRADES.Resource}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createResourceAdapter() {
+		if (resourceItemProvider == null) {
+			resourceItemProvider = new ResourceItemProvider(this);
+		}
+
+		return resourceItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link dsm.TRADES.Citation} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected CitationItemProvider citationItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link dsm.TRADES.Citation}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createCitationAdapter() {
+		if (citationItemProvider == null) {
+			citationItemProvider = new CitationItemProvider(this);
+		}
+
+		return citationItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link dsm.TRADES.Rlink} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected RlinkItemProvider rlinkItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link dsm.TRADES.Rlink}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createRlinkAdapter() {
+		if (rlinkItemProvider == null) {
+			rlinkItemProvider = new RlinkItemProvider(this);
+		}
+
+		return rlinkItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link dsm.TRADES.Hash} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected HashItemProvider hashItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link dsm.TRADES.Hash}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createHashAdapter() {
+		if (hashItemProvider == null) {
+			hashItemProvider = new HashItemProvider(this);
+		}
+
+		return hashItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link dsm.TRADES.Base64} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected Base64ItemProvider base64ItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link dsm.TRADES.Base64}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createBase64Adapter() {
+		if (base64ItemProvider == null) {
+			base64ItemProvider = new Base64ItemProvider(this);
+		}
+
+		return base64ItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -691,6 +1358,64 @@ public class TRADESItemProviderAdapterFactory extends TRADESAdapterFactory
 			controlOwnerItemProvider.dispose();
 		if (dataOwnerItemProvider != null)
 			dataOwnerItemProvider.dispose();
+		if (linkItemProvider != null)
+			linkItemProvider.dispose();
+		if (parameterItemProvider != null)
+			parameterItemProvider.dispose();
+		if (controlDefinitionItemProvider != null)
+			controlDefinitionItemProvider.dispose();
+		if (addressItemProvider != null)
+			addressItemProvider.dispose();
+		if (roleItemProvider != null)
+			roleItemProvider.dispose();
+		if (remarkItemProvider != null)
+			remarkItemProvider.dispose();
+		if (catalogItemProvider != null)
+			catalogItemProvider.dispose();
+		if (backMatterItemProvider != null)
+			backMatterItemProvider.dispose();
+		if (revisionItemProvider != null)
+			revisionItemProvider.dispose();
+		if (groupItemProvider != null)
+			groupItemProvider.dispose();
+		if (locationItemProvider != null)
+			locationItemProvider.dispose();
+		if (annotationItemProvider != null)
+			annotationItemProvider.dispose();
+		if (documentIdItemProvider != null)
+			documentIdItemProvider.dispose();
+		if (propertyItemProvider != null)
+			propertyItemProvider.dispose();
+		if (metadataItemProvider != null)
+			metadataItemProvider.dispose();
+		if (revisionsItemProvider != null)
+			revisionsItemProvider.dispose();
+		if (telephoneNumberItemProvider != null)
+			telephoneNumberItemProvider.dispose();
+		if (partyItemProvider != null)
+			partyItemProvider.dispose();
+		if (externalIdItemProvider != null)
+			externalIdItemProvider.dispose();
+		if (responsiblePartyItemProvider != null)
+			responsiblePartyItemProvider.dispose();
+		if (constraintItemProvider != null)
+			constraintItemProvider.dispose();
+		if (testItemProvider != null)
+			testItemProvider.dispose();
+		if (partitionItemProvider != null)
+			partitionItemProvider.dispose();
+		if (selectItemProvider != null)
+			selectItemProvider.dispose();
+		if (resourceItemProvider != null)
+			resourceItemProvider.dispose();
+		if (citationItemProvider != null)
+			citationItemProvider.dispose();
+		if (rlinkItemProvider != null)
+			rlinkItemProvider.dispose();
+		if (hashItemProvider != null)
+			hashItemProvider.dispose();
+		if (base64ItemProvider != null)
+			base64ItemProvider.dispose();
 	}
 
 }

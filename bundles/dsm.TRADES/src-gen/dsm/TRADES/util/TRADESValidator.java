@@ -166,6 +166,72 @@ public class TRADESValidator extends EObjectValidator {
 			return validateAbstractControlOwner((AbstractControlOwner) value, diagnostics, context);
 		case TRADESPackage.DATA_OWNER:
 			return validateDataOwner((DataOwner) value, diagnostics, context);
+		case TRADESPackage.LINK:
+			return validateLink((Link) value, diagnostics, context);
+		case TRADESPackage.PARAMETER:
+			return validateParameter((Parameter) value, diagnostics, context);
+		case TRADESPackage.CONTROL_DEFINITION:
+			return validateControlDefinition((ControlDefinition) value, diagnostics, context);
+		case TRADESPackage.ADDRESS:
+			return validateAddress((Address) value, diagnostics, context);
+		case TRADESPackage.ROLE:
+			return validateRole((Role) value, diagnostics, context);
+		case TRADESPackage.REMARK:
+			return validateRemark((Remark) value, diagnostics, context);
+		case TRADESPackage.CATALOG:
+			return validateCatalog((Catalog) value, diagnostics, context);
+		case TRADESPackage.BACK_MATTER:
+			return validateBackMatter((BackMatter) value, diagnostics, context);
+		case TRADESPackage.REVISION:
+			return validateRevision((Revision) value, diagnostics, context);
+		case TRADESPackage.GROUP:
+			return validateGroup((Group) value, diagnostics, context);
+		case TRADESPackage.LOCATION:
+			return validateLocation((Location) value, diagnostics, context);
+		case TRADESPackage.ANNOTATION:
+			return validateAnnotation((Annotation) value, diagnostics, context);
+		case TRADESPackage.DOCUMENT_ID:
+			return validateDocumentId((DocumentId) value, diagnostics, context);
+		case TRADESPackage.PROPERTY:
+			return validateProperty((Property) value, diagnostics, context);
+		case TRADESPackage.METADATA:
+			return validateMetadata((Metadata) value, diagnostics, context);
+		case TRADESPackage.REVISIONS:
+			return validateRevisions((Revisions) value, diagnostics, context);
+		case TRADESPackage.TELEPHONE_NUMBER:
+			return validateTelephoneNumber((TelephoneNumber) value, diagnostics, context);
+		case TRADESPackage.PARTY:
+			return validateParty((Party) value, diagnostics, context);
+		case TRADESPackage.EXTERNAL_ID:
+			return validateExternalId((ExternalId) value, diagnostics, context);
+		case TRADESPackage.RESPONSIBLE_PARTY:
+			return validateResponsibleParty((ResponsibleParty) value, diagnostics, context);
+		case TRADESPackage.CONSTRAINT:
+			return validateConstraint((Constraint) value, diagnostics, context);
+		case TRADESPackage.TEST:
+			return validateTest((Test) value, diagnostics, context);
+		case TRADESPackage.PARTITION:
+			return validatePartition((Partition) value, diagnostics, context);
+		case TRADESPackage.SELECT:
+			return validateSelect((Select) value, diagnostics, context);
+		case TRADESPackage.RESOURCE:
+			return validateResource((Resource) value, diagnostics, context);
+		case TRADESPackage.CITATION:
+			return validateCitation((Citation) value, diagnostics, context);
+		case TRADESPackage.RLINK:
+			return validateRlink((Rlink) value, diagnostics, context);
+		case TRADESPackage.HASH:
+			return validateHash((Hash) value, diagnostics, context);
+		case TRADESPackage.PROPERTY_OWNER:
+			return validatePropertyOwner((PropertyOwner) value, diagnostics, context);
+		case TRADESPackage.PARAMETER_OWNER:
+			return validateParameterOwner((ParameterOwner) value, diagnostics, context);
+		case TRADESPackage.ANNOTATION_OWNER:
+			return validateAnnotationOwner((AnnotationOwner) value, diagnostics, context);
+		case TRADESPackage.LINK_OWNER:
+			return validateLinkOwner((LinkOwner) value, diagnostics, context);
+		case TRADESPackage.BASE64:
+			return validateBase64((Base64) value, diagnostics, context);
 		case TRADESPackage.ASSESSMENT_ENUM:
 			return validateAssessmentENUM((AssessmentENUM) value, diagnostics, context);
 		case TRADESPackage.AFFECTED_ENUM:
@@ -174,6 +240,12 @@ public class TRADESValidator extends EObjectValidator {
 			return validatethreatTypeENUM((threatTypeENUM) value, diagnostics, context);
 		case TRADESPackage.RGB_COLOR:
 			return validateRGBColor((RGBColor) value, diagnostics, context);
+		case TRADESPackage.MARKUP_LINE:
+			return validateMarkupLine((String) value, diagnostics, context);
+		case TRADESPackage.MARKUP_MULTILINE:
+			return validateMarkupMultiline((String) value, diagnostics, context);
+		case TRADESPackage.BASE64_BINARY:
+			return validateBase64Binary((byte[]) value, diagnostics, context);
 		default:
 			return true;
 		}
@@ -558,6 +630,309 @@ public class TRADESValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validateLink(Link link, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(link, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateParameter(Parameter parameter, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(parameter, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateControlDefinition(ControlDefinition controlDefinition, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(controlDefinition, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateAddress(Address address, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(address, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateRole(Role role, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(role, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateRemark(Remark remark, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(remark, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateCatalog(Catalog catalog, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(catalog, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateBackMatter(BackMatter backMatter, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(backMatter, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateRevision(Revision revision, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(revision, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateGroup(Group group, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(group, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateLocation(Location location, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(location, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateAnnotation(Annotation annotation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(annotation, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateDocumentId(DocumentId documentId, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(documentId, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateProperty(Property property, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(property, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateMetadata(Metadata metadata, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(metadata, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateRevisions(Revisions revisions, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(revisions, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateTelephoneNumber(TelephoneNumber telephoneNumber, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(telephoneNumber, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateParty(Party party, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(party, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateExternalId(ExternalId externalId, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(externalId, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateResponsibleParty(ResponsibleParty responsibleParty, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(responsibleParty, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateConstraint(Constraint constraint, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(constraint, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateTest(Test test, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(test, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validatePartition(Partition partition, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(partition, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateSelect(Select select, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(select, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateResource(Resource resource, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(resource, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateCitation(Citation citation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(citation, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateRlink(Rlink rlink, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(rlink, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateHash(Hash hash, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(hash, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validatePropertyOwner(PropertyOwner propertyOwner, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(propertyOwner, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateParameterOwner(ParameterOwner parameterOwner, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(parameterOwner, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateAnnotationOwner(AnnotationOwner annotationOwner, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(annotationOwner, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateLinkOwner(LinkOwner linkOwner, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(linkOwner, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateBase64(Base64 base64, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(base64, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean validateAssessmentENUM(AssessmentENUM assessmentENUM, DiagnosticChain diagnostics,
 			Map<Object, Object> context) {
 		return true;
@@ -589,6 +964,34 @@ public class TRADESValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateRGBColor(RGBColor rgbColor, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return true;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateMarkupLine(String markupLine, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return true;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateMarkupMultiline(String markupMultiline, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
+		return true;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateBase64Binary(byte[] base64Binary, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return true;
 	}
 

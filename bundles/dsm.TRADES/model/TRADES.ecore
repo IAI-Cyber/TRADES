@@ -9,6 +9,8 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="threatOwner" lowerBound="1"
         eType="#//ThreatsOwner" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="catalogs" upperBound="-1"
+        eType="#//Catalog" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Threat" eSuperTypes="#//NamedElement">
     <eOperations name="checkIsUsed" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
@@ -242,7 +244,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="select" eType="#//Select"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="OscalControl" eSuperTypes="#//PropertyOwner #//ParameterOwner #//NamedElement #//AnnotationOwner #//LinkOwner">
+  <eClassifiers xsi:type="ecore:EClass" name="ControlDefinition" eSuperTypes="#//PropertyOwner #//ParameterOwner #//NamedElement #//AnnotationOwner #//LinkOwner">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="A structured information object representing a security or privacy control. Each security or privacy control within the Catalog is defined by a distinct control instance"/>
     </eAnnotations>
@@ -255,7 +257,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="parts" upperBound="-1"
         eType="#//Partition" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="oscalcontrols" upperBound="-1"
-        eType="#//OscalControl" containment="true"/>
+        eType="#//ControlDefinition" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Address">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -327,7 +329,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="backmatter" eType="#//BackMatter"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="oscalcontrols" upperBound="-1"
-        eType="#//OscalControl" containment="true"/>
+        eType="#//ControlDefinition" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BackMatter">
     <eStructuralFeatures xsi:type="ecore:EReference" name="resources" upperBound="-1"
@@ -360,7 +362,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="groups" upperBound="-1"
         eType="#//Group" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="oscalcontrols" upperBound="-1"
-        eType="#//OscalControl" containment="true"/>
+        eType="#//ControlDefinition" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Location" eSuperTypes="#//PropertyOwner #//AnnotationOwner #//LinkOwner">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
