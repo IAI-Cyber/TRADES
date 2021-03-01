@@ -15,9 +15,9 @@ import org.eclipse.sirius.business.api.session.Session;
 
 import dsm.TRADES.Analysis;
 import dsm.TRADES.Control;
-import dsm.TRADES.ControlOwner;
 import dsm.TRADES.ExternalControl;
 import dsm.TRADES.ExternalThreat;
+import dsm.TRADES.SemanticUtil;
 import dsm.TRADES.TRADESFactory;
 import dsm.TRADES.Threat;
 import dsm.TRADES.ThreatMitigationRelation;
@@ -103,13 +103,8 @@ public class ExtThreatServices {
 			}
 
 			Analysis realAnalysis = ((Analysis) analysis);
-			ControlOwner controlOwner = realAnalysis.getControlOwner();
-			if (controlOwner == null) {
-				controlOwner = TRADESFactory.eINSTANCE.createControlOwner();
-				realAnalysis.setControlOwner(controlOwner);
-			}
 
-			controlOwner.getExternals().add(newControl);
+			SemanticUtil.addControl(realAnalysis, newControl, false);
 
 			result.add(newControl);
 		}

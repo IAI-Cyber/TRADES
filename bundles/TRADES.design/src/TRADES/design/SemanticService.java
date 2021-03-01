@@ -44,6 +44,7 @@ import dsm.TRADES.ImpactConfiguration;
 import dsm.TRADES.ImpactScore;
 import dsm.TRADES.RGBColor;
 import dsm.TRADES.ScoreSystem;
+import dsm.TRADES.SemanticUtil;
 import dsm.TRADES.TRADESFactory;
 import dsm.TRADES.TRADESPackage;
 import dsm.TRADES.Threat;
@@ -74,7 +75,6 @@ public class SemanticService {
 	 */
 	public static void initImpactScore(ImpactScore score) {
 		ScoreSystem scoreSystem = (ScoreSystem) score.eContainer();
-
 
 		int index = scoreSystem.getImpactScores().indexOf(score);
 		if (index > 0) {
@@ -159,16 +159,8 @@ public class SemanticService {
 		dataOwner.getData().add(toMove);
 	}
 
-	public static void createInternalControl(AbstractControlOwner cmp) {
-		Control control = TRADESFactory.eINSTANCE.createControl();
-
-		ControlOwner owner = cmp.getControlOwner();
-		if (owner == null) {
-			owner = TRADESFactory.eINSTANCE.createControlOwner();
-			cmp.setControlOwner(owner);
-		}
-
-		owner.getInternals().add(control);
+	public static Control createInternalControl(AbstractControlOwner cmp) {
+		return SemanticUtil.addControl(cmp, TRADESFactory.eINSTANCE.createControl(), true);
 	}
 
 	public static Data createData(DataOwnerElement element) {

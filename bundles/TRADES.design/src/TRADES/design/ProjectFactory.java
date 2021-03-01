@@ -38,7 +38,7 @@ public class ProjectFactory {
 		return analysis;
 	}
 
-	private static void createDataOwner(Analysis analysis) {
+	public static void createDataOwner(Analysis analysis) {
 		DataOwner dataOwner = TRADESFactory.eINSTANCE.createDataOwner();
 		analysis.setDataOwner(dataOwner);
 	}
