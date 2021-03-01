@@ -40,7 +40,7 @@ public class AffectRelationCustomImpl extends AffectRelationImpl {
 		} else if (!datas.isEmpty()) {
 			chain.add(new BasicDiagnostic(Diagnostic.WARNING, TRADESValidator.DIAGNOSTIC_SOURCE,
 					TRADESValidator.AFFECT_RELATION__CHECK_DATA_SCOPE,
-					MessageFormat.format("[{0}] has no source. It should reference any data", name),
+					MessageFormat.format("[{0}] has no source. It should not reference any data", name),
 					new Object[] { this }));
 			isValid = false;
 		} else {

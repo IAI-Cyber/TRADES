@@ -1051,7 +1051,6 @@
         </containerMappings>
       </defaultLayer>
     </ownedRepresentations>
-    <ownedJavaExtensions qualifiedClassName="TRADES.design.Services"/>
     <ownedJavaExtensions qualifiedClassName="TRADES.design.DiagramService"/>
     <ownedJavaExtensions qualifiedClassName="TRADES.design.ExtThreatServices"/>
     <ownedJavaExtensions qualifiedClassName="org.eclipse.sirius.ext.emf.edit.EditingDomainServices"/>

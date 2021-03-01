@@ -3,6 +3,9 @@ package TRADES.design;
 import static java.util.stream.Collectors.toList;
 import static java.util.stream.Collectors.toSet;
 
+import java.awt.Desktop;
+import java.io.IOException;
+import java.net.URI;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
@@ -286,4 +289,16 @@ public class DiagramService {
 		}
 	}
 
+	/**
+	 * Open the given URL in the default browser
+	 * 
+	 * @param link a valid URL
+	 */
+	public void openInBrowser(String link) {
+		try {
+			Desktop.getDesktop().browse(URI.create(link));
+		} catch (IOException e) {
+			Activator.logError("Problem while open link " + link, e);
+		}
+	}
 }
