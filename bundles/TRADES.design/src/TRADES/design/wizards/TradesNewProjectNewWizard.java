@@ -35,7 +35,7 @@ import org.eclipse.ui.dialogs.WizardNewProjectCreationPage;
 import org.eclipse.ui.wizards.newresource.BasicNewProjectResourceWizard;
 
 import TRADES.design.Activator;
-import TRADES.design.ProjectFactory;
+import dsm.TRADES.SemanticUtil;
 
 /**
  * TRADES new project creation wizard
@@ -157,7 +157,7 @@ public class TradesNewProjectNewWizard extends BasicNewProjectResourceWizard imp
 						final Resource res = new ResourceSetImpl().createResource(semanticModelURI);
 
 						/* Add the initial model object to the contents. */
-						final EObject rootObject = ProjectFactory.createInitialModel(rootObjectName);
+						final EObject rootObject = SemanticUtil.createInitialModel(rootObjectName);
 
 						if (rootObject != null) {
 							res.getContents().add(rootObject);

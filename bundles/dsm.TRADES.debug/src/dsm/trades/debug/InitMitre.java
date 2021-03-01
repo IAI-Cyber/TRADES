@@ -20,12 +20,12 @@ import org.eclipse.equinox.app.IApplicationContext;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import TRADES.design.ProjectFactory;
 import dsm.TRADES.Analysis;
 import dsm.TRADES.Control;
 import dsm.TRADES.ControlOwner;
 import dsm.TRADES.ExternalControl;
 import dsm.TRADES.ExternalThreat;
+import dsm.TRADES.SemanticUtil;
 import dsm.TRADES.TRADESFactory;
 import dsm.TRADES.Threat;
 import dsm.TRADES.ThreatMitigationRelation;
@@ -64,7 +64,7 @@ public class InitMitre implements IApplication {
 			Resource resource = rs.createResource(URI.createFileURI(targetModelFile + "_" + modelName + ".trades"));
 
 			String analysisName = "Mitre Att&ck : " + modelName;
-			Analysis analysis = ProjectFactory.createInitialModel(analysisName);
+			Analysis analysis = SemanticUtil.createInitialModel(analysisName);
 
 			ThreatsOwner threatOwner = analysis.getThreatOwner();
 			ControlOwner controlOwnedr = analysis.getControlOwner();

@@ -3,9 +3,9 @@ package dsm.TRADES.testlib;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.sirius.common.tools.api.util.SiriusCrossReferenceAdapter;
 
-import TRADES.design.ProjectFactory;
 import dsm.TRADES.Analysis;
 import dsm.TRADES.ScoreSystem;
+import dsm.TRADES.SemanticUtil;
 import dsm.TRADES.TRADESFactory;
 import dsm.TRADES.ThreatsOwner;
 
@@ -31,9 +31,9 @@ public class AbstractTest {
 		ThreatsOwner threatOwner = TRADESFactory.eINSTANCE.createThreatsOwner();
 		analysis.setThreatOwner(threatOwner);
 
-		ProjectFactory.createControlOwner(analysis);
+		SemanticUtil.createControlOwner(analysis);
 
-		ProjectFactory.createDataOwner(analysis);
+		SemanticUtil.createDataOwner(analysis);
 
 		return installCrossRef(analysis);
 	}
