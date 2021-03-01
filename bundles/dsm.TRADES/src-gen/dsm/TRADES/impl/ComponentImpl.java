@@ -4,15 +4,14 @@ package dsm.TRADES.impl;
 
 import dsm.TRADES.AbstractControlOwner;
 import dsm.TRADES.AffectRelation;
-import dsm.TRADES.Analysis;
 import dsm.TRADES.Component;
 import dsm.TRADES.Control;
 import dsm.TRADES.ControlOwner;
+import dsm.TRADES.Data;
 import dsm.TRADES.DataOwner;
 import dsm.TRADES.DataOwnerElement;
 import dsm.TRADES.NamedElement;
 import dsm.TRADES.TRADESPackage;
-import dsm.TRADES.Threat;
 import dsm.TRADES.ThreatAllocationRelation;
 
 import java.lang.reflect.InvocationTargetException;
@@ -28,10 +27,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
-import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -45,12 +41,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dsm.TRADES.impl.ComponentImpl#getDataOwner <em>Data Owner</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ComponentImpl#getName <em>Name</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ComponentImpl#getControlOwner <em>Control Owner</em>}</li>
- *   <li>{@link dsm.TRADES.impl.ComponentImpl#getAllocatedThreat <em>Allocated Threat</em>}</li>
- *   <li>{@link dsm.TRADES.impl.ComponentImpl#getImplements <em>Implements</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ComponentImpl#getThreatAllocations <em>Threat Allocations</em>}</li>
- *   <li>{@link dsm.TRADES.impl.ComponentImpl#getAnalysis <em>Analysis</em>}</li>
- *   <li>{@link dsm.TRADES.impl.ComponentImpl#getAffectrelation <em>Affectrelation</em>}</li>
- *   <li>{@link dsm.TRADES.impl.ComponentImpl#getThreat <em>Threat</em>}</li>
+ *   <li>{@link dsm.TRADES.impl.ComponentImpl#getAffectRelations <em>Affect Relations</em>}</li>
  * </ul>
  *
  * @generated
@@ -97,26 +89,6 @@ public class ComponentImpl extends ComponentOwnerImpl implements Component {
 	protected ControlOwner controlOwner;
 
 	/**
-	 * The cached value of the '{@link #getAllocatedThreat() <em>Allocated Threat</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAllocatedThreat()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Threat> allocatedThreat;
-
-	/**
-	 * The cached value of the '{@link #getImplements() <em>Implements</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getImplements()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Control> implements_;
-
-	/**
 	 * The cached value of the '{@link #getThreatAllocations() <em>Threat Allocations</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -127,34 +99,14 @@ public class ComponentImpl extends ComponentOwnerImpl implements Component {
 	protected EList<ThreatAllocationRelation> threatAllocations;
 
 	/**
-	 * The cached value of the '{@link #getAnalysis() <em>Analysis</em>}' containment reference list.
+	 * The cached value of the '{@link #getAffectRelations() <em>Affect Relations</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAnalysis()
+	 * @see #getAffectRelations()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Analysis> analysis;
-
-	/**
-	 * The cached value of the '{@link #getAffectrelation() <em>Affectrelation</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAffectrelation()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<AffectRelation> affectrelation;
-
-	/**
-	 * The cached value of the '{@link #getThreat() <em>Threat</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getThreat()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Threat> threat;
+	protected EList<AffectRelation> affectRelations;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -308,34 +260,6 @@ public class ComponentImpl extends ComponentOwnerImpl implements Component {
 	 * @generated
 	 */
 	@Override
-	public EList<Threat> getAllocatedThreat() {
-		if (allocatedThreat == null) {
-			allocatedThreat = new EObjectWithInverseResolvingEList.ManyInverse<Threat>(Threat.class, this,
-					TRADESPackage.COMPONENT__ALLOCATED_THREAT, TRADESPackage.THREAT__ALLOCATED);
-		}
-		return allocatedThreat;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EList<Control> getImplements() {
-		if (implements_ == null) {
-			implements_ = new EObjectWithInverseResolvingEList.ManyInverse<Control>(Control.class, this,
-					TRADESPackage.COMPONENT__IMPLEMENTS, TRADESPackage.CONTROL__IMPLEMENTED_BY);
-		}
-		return implements_;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EList<ThreatAllocationRelation> getThreatAllocations() {
 		if (threatAllocations == null) {
 			threatAllocations = new EObjectContainmentWithInverseEList<ThreatAllocationRelation>(
@@ -351,38 +275,12 @@ public class ComponentImpl extends ComponentOwnerImpl implements Component {
 	 * @generated
 	 */
 	@Override
-	public EList<Analysis> getAnalysis() {
-		if (analysis == null) {
-			analysis = new EObjectContainmentEList<Analysis>(Analysis.class, this, TRADESPackage.COMPONENT__ANALYSIS);
+	public EList<AffectRelation> getAffectRelations() {
+		if (affectRelations == null) {
+			affectRelations = new EObjectContainmentWithInverseEList<AffectRelation>(AffectRelation.class, this,
+					TRADESPackage.COMPONENT__AFFECT_RELATIONS, TRADESPackage.AFFECT_RELATION__SOURCE_COMPONENT);
 		}
-		return analysis;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EList<AffectRelation> getAffectrelation() {
-		if (affectrelation == null) {
-			affectrelation = new EObjectContainmentEList<AffectRelation>(AffectRelation.class, this,
-					TRADESPackage.COMPONENT__AFFECTRELATION);
-		}
-		return affectrelation;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EList<Threat> getThreat() {
-		if (threat == null) {
-			threat = new EObjectContainmentEList<Threat>(Threat.class, this, TRADESPackage.COMPONENT__THREAT);
-		}
-		return threat;
+		return affectRelations;
 	}
 
 	/**
@@ -402,17 +300,51 @@ public class ComponentImpl extends ComponentOwnerImpl implements Component {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public EList<Data> getDatas() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<Data> getInheritedDatas() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<Data> getAllDatas() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case TRADESPackage.COMPONENT__ALLOCATED_THREAT:
-			return ((InternalEList<InternalEObject>) (InternalEList<?>) getAllocatedThreat()).basicAdd(otherEnd, msgs);
-		case TRADESPackage.COMPONENT__IMPLEMENTS:
-			return ((InternalEList<InternalEObject>) (InternalEList<?>) getImplements()).basicAdd(otherEnd, msgs);
 		case TRADESPackage.COMPONENT__THREAT_ALLOCATIONS:
 			return ((InternalEList<InternalEObject>) (InternalEList<?>) getThreatAllocations()).basicAdd(otherEnd,
 					msgs);
+		case TRADESPackage.COMPONENT__AFFECT_RELATIONS:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getAffectRelations()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -429,18 +361,10 @@ public class ComponentImpl extends ComponentOwnerImpl implements Component {
 			return basicSetDataOwner(null, msgs);
 		case TRADESPackage.COMPONENT__CONTROL_OWNER:
 			return basicSetControlOwner(null, msgs);
-		case TRADESPackage.COMPONENT__ALLOCATED_THREAT:
-			return ((InternalEList<?>) getAllocatedThreat()).basicRemove(otherEnd, msgs);
-		case TRADESPackage.COMPONENT__IMPLEMENTS:
-			return ((InternalEList<?>) getImplements()).basicRemove(otherEnd, msgs);
 		case TRADESPackage.COMPONENT__THREAT_ALLOCATIONS:
 			return ((InternalEList<?>) getThreatAllocations()).basicRemove(otherEnd, msgs);
-		case TRADESPackage.COMPONENT__ANALYSIS:
-			return ((InternalEList<?>) getAnalysis()).basicRemove(otherEnd, msgs);
-		case TRADESPackage.COMPONENT__AFFECTRELATION:
-			return ((InternalEList<?>) getAffectrelation()).basicRemove(otherEnd, msgs);
-		case TRADESPackage.COMPONENT__THREAT:
-			return ((InternalEList<?>) getThreat()).basicRemove(otherEnd, msgs);
+		case TRADESPackage.COMPONENT__AFFECT_RELATIONS:
+			return ((InternalEList<?>) getAffectRelations()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -459,18 +383,10 @@ public class ComponentImpl extends ComponentOwnerImpl implements Component {
 			return getName();
 		case TRADESPackage.COMPONENT__CONTROL_OWNER:
 			return getControlOwner();
-		case TRADESPackage.COMPONENT__ALLOCATED_THREAT:
-			return getAllocatedThreat();
-		case TRADESPackage.COMPONENT__IMPLEMENTS:
-			return getImplements();
 		case TRADESPackage.COMPONENT__THREAT_ALLOCATIONS:
 			return getThreatAllocations();
-		case TRADESPackage.COMPONENT__ANALYSIS:
-			return getAnalysis();
-		case TRADESPackage.COMPONENT__AFFECTRELATION:
-			return getAffectrelation();
-		case TRADESPackage.COMPONENT__THREAT:
-			return getThreat();
+		case TRADESPackage.COMPONENT__AFFECT_RELATIONS:
+			return getAffectRelations();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -493,29 +409,13 @@ public class ComponentImpl extends ComponentOwnerImpl implements Component {
 		case TRADESPackage.COMPONENT__CONTROL_OWNER:
 			setControlOwner((ControlOwner) newValue);
 			return;
-		case TRADESPackage.COMPONENT__ALLOCATED_THREAT:
-			getAllocatedThreat().clear();
-			getAllocatedThreat().addAll((Collection<? extends Threat>) newValue);
-			return;
-		case TRADESPackage.COMPONENT__IMPLEMENTS:
-			getImplements().clear();
-			getImplements().addAll((Collection<? extends Control>) newValue);
-			return;
 		case TRADESPackage.COMPONENT__THREAT_ALLOCATIONS:
 			getThreatAllocations().clear();
 			getThreatAllocations().addAll((Collection<? extends ThreatAllocationRelation>) newValue);
 			return;
-		case TRADESPackage.COMPONENT__ANALYSIS:
-			getAnalysis().clear();
-			getAnalysis().addAll((Collection<? extends Analysis>) newValue);
-			return;
-		case TRADESPackage.COMPONENT__AFFECTRELATION:
-			getAffectrelation().clear();
-			getAffectrelation().addAll((Collection<? extends AffectRelation>) newValue);
-			return;
-		case TRADESPackage.COMPONENT__THREAT:
-			getThreat().clear();
-			getThreat().addAll((Collection<? extends Threat>) newValue);
+		case TRADESPackage.COMPONENT__AFFECT_RELATIONS:
+			getAffectRelations().clear();
+			getAffectRelations().addAll((Collection<? extends AffectRelation>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -538,23 +438,11 @@ public class ComponentImpl extends ComponentOwnerImpl implements Component {
 		case TRADESPackage.COMPONENT__CONTROL_OWNER:
 			setControlOwner((ControlOwner) null);
 			return;
-		case TRADESPackage.COMPONENT__ALLOCATED_THREAT:
-			getAllocatedThreat().clear();
-			return;
-		case TRADESPackage.COMPONENT__IMPLEMENTS:
-			getImplements().clear();
-			return;
 		case TRADESPackage.COMPONENT__THREAT_ALLOCATIONS:
 			getThreatAllocations().clear();
 			return;
-		case TRADESPackage.COMPONENT__ANALYSIS:
-			getAnalysis().clear();
-			return;
-		case TRADESPackage.COMPONENT__AFFECTRELATION:
-			getAffectrelation().clear();
-			return;
-		case TRADESPackage.COMPONENT__THREAT:
-			getThreat().clear();
+		case TRADESPackage.COMPONENT__AFFECT_RELATIONS:
+			getAffectRelations().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -574,18 +462,10 @@ public class ComponentImpl extends ComponentOwnerImpl implements Component {
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		case TRADESPackage.COMPONENT__CONTROL_OWNER:
 			return controlOwner != null;
-		case TRADESPackage.COMPONENT__ALLOCATED_THREAT:
-			return allocatedThreat != null && !allocatedThreat.isEmpty();
-		case TRADESPackage.COMPONENT__IMPLEMENTS:
-			return implements_ != null && !implements_.isEmpty();
 		case TRADESPackage.COMPONENT__THREAT_ALLOCATIONS:
 			return threatAllocations != null && !threatAllocations.isEmpty();
-		case TRADESPackage.COMPONENT__ANALYSIS:
-			return analysis != null && !analysis.isEmpty();
-		case TRADESPackage.COMPONENT__AFFECTRELATION:
-			return affectrelation != null && !affectrelation.isEmpty();
-		case TRADESPackage.COMPONENT__THREAT:
-			return threat != null && !threat.isEmpty();
+		case TRADESPackage.COMPONENT__AFFECT_RELATIONS:
+			return affectRelations != null && !affectRelations.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -667,6 +547,12 @@ public class ComponentImpl extends ComponentOwnerImpl implements Component {
 	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
 		if (baseClass == DataOwnerElement.class) {
 			switch (baseOperationID) {
+			case TRADESPackage.DATA_OWNER_ELEMENT___GET_DATAS:
+				return TRADESPackage.COMPONENT___GET_DATAS;
+			case TRADESPackage.DATA_OWNER_ELEMENT___GET_INHERITED_DATAS:
+				return TRADESPackage.COMPONENT___GET_INHERITED_DATAS;
+			case TRADESPackage.DATA_OWNER_ELEMENT___GET_ALL_DATAS:
+				return TRADESPackage.COMPONENT___GET_ALL_DATAS;
 			default:
 				return -1;
 			}
@@ -698,6 +584,12 @@ public class ComponentImpl extends ComponentOwnerImpl implements Component {
 		switch (operationID) {
 		case TRADESPackage.COMPONENT___GET_ALL_CONTROLS:
 			return getAllControls();
+		case TRADESPackage.COMPONENT___GET_DATAS:
+			return getDatas();
+		case TRADESPackage.COMPONENT___GET_INHERITED_DATAS:
+			return getInheritedDatas();
+		case TRADESPackage.COMPONENT___GET_ALL_DATAS:
+			return getAllDatas();
 		}
 		return super.eInvoke(operationID, arguments);
 	}

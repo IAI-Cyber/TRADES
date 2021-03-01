@@ -1,5 +1,7 @@
 target "TRADES"
 
+environment JavaSE-14
+
 with requirements,source
 
 location "https://download.eclipse.org/releases/2020-06/" {
@@ -21,6 +23,10 @@ location "https://s3-eu-west-1.amazonaws.com/obeo-m2doc-releases/3.1.1/repositor
 	org.eclipse.acceleo.query.feature.group lazy
 	org.apache.poi lazy
 	
+}
+
+location "https://download.eclipse.org/tools/orbit/downloads/drops/R20200529191137/repository" {
+	org.assertj lazy
 }
 
 location "http://download.eclipse.org/e4/snapshots/org.eclipse.e4.tools/latest/" {

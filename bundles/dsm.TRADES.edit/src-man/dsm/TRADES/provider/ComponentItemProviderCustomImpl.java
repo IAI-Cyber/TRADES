@@ -37,11 +37,11 @@ public class ComponentItemProviderCustomImpl extends ComponentItemProvider {
 					// label too
 					EcoreUtils
 							.getInverse(rel, ThreatMitigationRelation.class,
-									TRADESPackage.eINSTANCE.getThreatMitigationRelation_Mitigates())
+									TRADESPackage.eINSTANCE.getThreatMitigationRelation_MitigatedAllocation())
 							.forEach(
 									rel2 -> fireNotifyChanged(new ViewerNotification(notification, rel2, false, true)));
 				}
-				for (AffectRelation affect : new_name.getAffectrelation()) {
+				for (AffectRelation affect : new_name.getAffectRelations()) {
 					fireNotifyChanged(new ViewerNotification(notification, affect, false, true));
 				}
 

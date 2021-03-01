@@ -48,8 +48,6 @@ public class ComponentItemProvider extends ComponentOwnerItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
-			addAllocatedThreatPropertyDescriptor(object);
-			addImplementsPropertyDescriptor(object);
 			addThreatAllocationsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -69,36 +67,6 @@ public class ComponentItemProvider extends ComponentOwnerItemProvider {
 								"_UI_NamedElement_type"),
 						TRADESPackage.Literals.NAMED_ELEMENT__NAME, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Allocated Threat feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addAllocatedThreatPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Component_allocatedThreat_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Component_allocatedThreat_feature",
-								"_UI_Component_type"),
-						TRADESPackage.Literals.COMPONENT__ALLOCATED_THREAT, true, false, true, null, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Implements feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addImplementsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Component_implements_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Component_implements_feature",
-								"_UI_Component_type"),
-						TRADESPackage.Literals.COMPONENT__IMPLEMENTS, true, false, true, null, null, null));
 	}
 
 	/**
@@ -131,9 +99,7 @@ public class ComponentItemProvider extends ComponentOwnerItemProvider {
 			childrenFeatures.add(TRADESPackage.Literals.DATA_OWNER_ELEMENT__DATA_OWNER);
 			childrenFeatures.add(TRADESPackage.Literals.ABSTRACT_CONTROL_OWNER__CONTROL_OWNER);
 			childrenFeatures.add(TRADESPackage.Literals.COMPONENT__THREAT_ALLOCATIONS);
-			childrenFeatures.add(TRADESPackage.Literals.COMPONENT__ANALYSIS);
-			childrenFeatures.add(TRADESPackage.Literals.COMPONENT__AFFECTRELATION);
-			childrenFeatures.add(TRADESPackage.Literals.COMPONENT__THREAT);
+			childrenFeatures.add(TRADESPackage.Literals.COMPONENT__AFFECT_RELATIONS);
 		}
 		return childrenFeatures;
 	}
@@ -203,9 +169,7 @@ public class ComponentItemProvider extends ComponentOwnerItemProvider {
 		case TRADESPackage.COMPONENT__DATA_OWNER:
 		case TRADESPackage.COMPONENT__CONTROL_OWNER:
 		case TRADESPackage.COMPONENT__THREAT_ALLOCATIONS:
-		case TRADESPackage.COMPONENT__ANALYSIS:
-		case TRADESPackage.COMPONENT__AFFECTRELATION:
-		case TRADESPackage.COMPONENT__THREAT:
+		case TRADESPackage.COMPONENT__AFFECT_RELATIONS:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -232,17 +196,8 @@ public class ComponentItemProvider extends ComponentOwnerItemProvider {
 		newChildDescriptors.add(createChildParameter(TRADESPackage.Literals.COMPONENT__THREAT_ALLOCATIONS,
 				TRADESFactory.eINSTANCE.createThreatAllocationRelation()));
 
-		newChildDescriptors.add(createChildParameter(TRADESPackage.Literals.COMPONENT__ANALYSIS,
-				TRADESFactory.eINSTANCE.createAnalysis()));
-
-		newChildDescriptors.add(createChildParameter(TRADESPackage.Literals.COMPONENT__AFFECTRELATION,
+		newChildDescriptors.add(createChildParameter(TRADESPackage.Literals.COMPONENT__AFFECT_RELATIONS,
 				TRADESFactory.eINSTANCE.createAffectRelation()));
-
-		newChildDescriptors.add(
-				createChildParameter(TRADESPackage.Literals.COMPONENT__THREAT, TRADESFactory.eINSTANCE.createThreat()));
-
-		newChildDescriptors.add(createChildParameter(TRADESPackage.Literals.COMPONENT__THREAT,
-				TRADESFactory.eINSTANCE.createExternalThreat()));
 	}
 
 }

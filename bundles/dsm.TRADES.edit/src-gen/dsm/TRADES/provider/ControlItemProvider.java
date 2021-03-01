@@ -47,56 +47,40 @@ public class ControlItemProvider extends NamedElementItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addMitigatesPropertyDescriptor(object);
-			addImplementedByPropertyDescriptor(object);
-			addIDPropertyDescriptor(object);
+			addMitigatedThreatsPropertyDescriptor(object);
+			addIdPropertyDescriptor(object);
 			addDescriptionPropertyDescriptor(object);
-			addMitigationrRelationsPropertyDescriptor(object);
+			addMitigationRelationsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Mitigates feature.
+	 * This adds a property descriptor for the Mitigated Threats feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addMitigatesPropertyDescriptor(Object object) {
+	protected void addMitigatedThreatsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Control_mitigates_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Control_mitigates_feature",
+						getResourceLocator(), getString("_UI_Control_mitigatedThreats_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Control_mitigatedThreats_feature",
 								"_UI_Control_type"),
-						TRADESPackage.Literals.CONTROL__MITIGATES, true, false, true, null, null, null));
+						TRADESPackage.Literals.CONTROL__MITIGATED_THREATS, true, false, true, null, null, null));
 	}
 
 	/**
-	 * This adds a property descriptor for the Implemented By feature.
+	 * This adds a property descriptor for the Id feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addImplementedByPropertyDescriptor(Object object) {
+	protected void addIdPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Control_implementedBy_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Control_implementedBy_feature",
-								"_UI_Control_type"),
-						TRADESPackage.Literals.CONTROL__IMPLEMENTED_BY, true, false, true, null, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the ID feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addIDPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Control_ID_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Control_ID_feature", "_UI_Control_type"),
+						getResourceLocator(), getString("_UI_Control_id_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Control_id_feature", "_UI_Control_type"),
 						TRADESPackage.Literals.CONTROL__ID, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
@@ -110,26 +94,26 @@ public class ControlItemProvider extends NamedElementItemProvider {
 	protected void addDescriptionPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Control_Description_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Control_Description_feature",
+						getResourceLocator(), getString("_UI_Control_description_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Control_description_feature",
 								"_UI_Control_type"),
 						TRADESPackage.Literals.CONTROL__DESCRIPTION, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
-	 * This adds a property descriptor for the Mitigationr Relations feature.
+	 * This adds a property descriptor for the Mitigation Relations feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addMitigationrRelationsPropertyDescriptor(Object object) {
+	protected void addMitigationRelationsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Control_mitigationrRelations_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Control_mitigationrRelations_feature",
+						getResourceLocator(), getString("_UI_Control_mitigationRelations_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Control_mitigationRelations_feature",
 								"_UI_Control_type"),
-						TRADESPackage.Literals.CONTROL__MITIGATIONR_RELATIONS, true, false, true, null, null, null));
+						TRADESPackage.Literals.CONTROL__MITIGATION_RELATIONS, true, false, true, null, null, null));
 	}
 
 	/**
@@ -144,7 +128,7 @@ public class ControlItemProvider extends NamedElementItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(TRADESPackage.Literals.CONTROL__MITIGATIONR_RELATIONS);
+			childrenFeatures.add(TRADESPackage.Literals.CONTROL__MITIGATION_RELATIONS);
 		}
 		return childrenFeatures;
 	}
@@ -212,7 +196,7 @@ public class ControlItemProvider extends NamedElementItemProvider {
 		case TRADESPackage.CONTROL__DESCRIPTION:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
-		case TRADESPackage.CONTROL__MITIGATIONR_RELATIONS:
+		case TRADESPackage.CONTROL__MITIGATION_RELATIONS:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -230,7 +214,7 @@ public class ControlItemProvider extends NamedElementItemProvider {
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(TRADESPackage.Literals.CONTROL__MITIGATIONR_RELATIONS,
+		newChildDescriptors.add(createChildParameter(TRADESPackage.Literals.CONTROL__MITIGATION_RELATIONS,
 				TRADESFactory.eINSTANCE.createThreatMitigationRelation()));
 	}
 

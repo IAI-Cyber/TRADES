@@ -3,16 +3,26 @@ package TRADES.design;
 import static java.util.stream.Collectors.toList;
 import static java.util.stream.Collectors.toSet;
 
+import java.awt.Desktop;
+import java.io.IOException;
+import java.net.URI;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
+import java.util.stream.Collectors;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.sirius.business.api.query.EObjectQuery;
+import org.eclipse.sirius.diagram.DNodeContainer;
 import org.eclipse.sirius.diagram.DSemanticDiagram;
+import org.eclipse.sirius.diagram.business.api.helper.graphicalfilters.HideFilterHelper;
 import org.eclipse.sirius.viewpoint.DRepresentationElement;
 import org.eclipse.sirius.viewpoint.DSemanticDecorator;
+import org.eclipse.sirius.viewpoint.ViewpointPackage;
 
 import dsm.TRADES.AffectRelation;
 import dsm.TRADES.Analysis;
@@ -21,13 +31,21 @@ import dsm.TRADES.Component;
 import dsm.TRADES.ComponentOwner;
 import dsm.TRADES.ControlOwner;
 import dsm.TRADES.Data;
-import dsm.TRADES.DataOwner;
-import dsm.TRADES.DataOwnerElement;
 import dsm.TRADES.Threat;
 import dsm.TRADES.ThreatAllocationRelation;
 import dsm.TRADES.util.EcoreUtils;
 
 public class DiagramService {
+
+	/**
+	 * Retrieve the containing {@link DSemanticDiagram} from any node in it
+	 * 
+	 * @param node a node
+	 * @return a {@link DSemanticDiagram} or <code>null</code>
+	 */
+	public static DSemanticDiagram getContainingDiagram(DSemanticDecorator node) {
+		return EcoreUtils.getAncestor(node, DSemanticDiagram.class);
+	}
 
 	public String getAttackChainLabel(AttackChainStep step) {
 
@@ -61,7 +79,6 @@ public class DiagramService {
 		DSemanticDiagram diagram = EcoreUtils.getAncestor(node, DSemanticDiagram.class);
 
 		if (diagram != null) {
-
 			return EcoreUtils.allContainedObjectOfType(diagram, DSemanticDecorator.class)
 					.filter(n -> n.getTarget() instanceof Threat).map(n -> (Threat) n.getTarget()).collect(toSet());
 		} else {
@@ -76,7 +93,7 @@ public class DiagramService {
 		}
 
 		if (o instanceof ComponentOwner) {
-			for (Component c : ((ComponentOwner) o).getComponent()) {
+			for (Component c : ((ComponentOwner) o).getComponents()) {
 				getLinkedThreat(c, collector);
 			}
 		}
@@ -171,25 +188,16 @@ public class DiagramService {
 	}
 
 	public List<Data> availableData(AffectRelation affect) {
-		List<Data> result = new ArrayList<Data>();
 
-		collectData(affect.eContainer(), result, new HashSet<>(affect.getData()));
-
-		return result;
-	}
-
-	private void collectData(EObject from, List<Data> datas, Set<Data> relatedData) {
-		if (from instanceof DataOwnerElement) {
-			DataOwner owner = ((DataOwnerElement) from).getDataOwner();
-			if (owner != null) {
-				datas.addAll(owner.getData().stream().filter(d -> !relatedData.contains(d)).collect(toList()));
-			}
+		Component source = affect.getSourceComponent();
+		if (source == null) {
+			return Collections.emptyList();
 		}
 
-		EObject eContainer = from.eContainer();
-		if (eContainer != null) {
-			collectData(eContainer, datas, relatedData);
-		}
+		List<Data> availableData = new ArrayList<>(source.getAllDatas());
+		availableData.removeAll(affect.getData());
+		return availableData;
+
 	}
 
 	public String dataLabelOnAffect(AffectRelation affect) {
@@ -206,16 +214,91 @@ public class DiagramService {
 
 		return label;
 	}
-	
-	public String editAffectLabel(AffectRelation affect, String newLabel) {
-		
-		List<Data> relatedData = availableData(affect);
-		String[] labelData = newLabel.split(",");
-		
-		System.out.print("ppp");
-		
-		
-		return "dd";
+
+	public void editAffectLabel(AffectRelation affect, String newLabel) {
+
+		Component source = affect.getSourceComponent();
+		if (source == null) {
+			return;
+		}
+
+		Map<String, List<Data>> datas = source.getAllDatas().stream().filter(d -> d.getName() != null)//
+				.collect(Collectors.groupingBy(d -> d.getName().trim()));
+
+		EList<Data> data = affect.getData();
+		data.clear();
+
+		String[] labels = newLabel.split(",");
+		for (String dataName : labels) {
+			String dName = dataName.trim();
+			List<Data> existingData = datas.get(dName);
+
+			if (existingData != null && !existingData.isEmpty()) {
+
+				if (existingData.size() > 1) {
+					Activator.logInfo("More than one data has the following name " + dName);
+				}
+				data.add(existingData.get(0));
+			}
+		}
 	}
 
+	/**
+	 * Function that hides the detail of a component in a diagram
+	 * 
+	 * @param component                the component to hide details from
+	 * @param anyRepresentationElement any element that belong a diagram (or the
+	 *                                 diagram itself)
+	 */
+	public void encapsulateElements(Component component, EObject anyRepresentationElement) {
+
+		if (!(anyRepresentationElement instanceof DSemanticDecorator)) {
+			return;
+		}
+		DSemanticDiagram diagram = getContainingDiagram((DSemanticDecorator) anyRepresentationElement);
+		if (diagram != null) {
+			new EObjectQuery(component)
+					.getInverseReferences(ViewpointPackage.Literals.DREPRESENTATION_ELEMENT__SEMANTIC_ELEMENTS).stream()//
+					.filter(e -> e instanceof DNodeContainer)//
+					.map(e -> (DNodeContainer) e)//
+					.filter(e -> e.getParentDiagram() == diagram)//
+					.forEach(diagramElement -> HideFilterHelper.INSTANCE.hide(diagramElement));
+		}
+
+	}
+
+	/**
+	 * A function to show (cancel hiding) elements from diagram
+	 * 
+	 * @param component                the component to hide details from
+	 * @param anyRepresentationElement any element that belong a diagram (or the
+	 *                                 diagram itself)
+	 */
+	public void decapsulateElements(Component component, EObject anyElement) {
+		if (!(anyElement instanceof DSemanticDecorator)) {
+			return;
+		}
+		DSemanticDiagram diagram = getContainingDiagram((DSemanticDecorator) anyElement);
+		if (diagram != null) {
+			new EObjectQuery(component)
+					.getInverseReferences(ViewpointPackage.Literals.DREPRESENTATION_ELEMENT__SEMANTIC_ELEMENTS).stream()//
+					.filter(e -> e instanceof DNodeContainer)//
+					.map(e -> (DNodeContainer) e)//
+					.filter(e -> e.getParentDiagram() == diagram)//
+					.forEach(diagramElement -> HideFilterHelper.INSTANCE.reveal(diagramElement));
+		}
+	}
+
+	/**
+	 * Open the given URL in the default browser
+	 * 
+	 * @param link a valid URL
+	 */
+	public void openInBrowser(String link) {
+		try {
+			Desktop.getDesktop().browse(URI.create(link));
+		} catch (IOException e) {
+			Activator.logError("Problem while open link " + link, e);
+		}
+	}
 }

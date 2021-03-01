@@ -2,6 +2,8 @@
  */
 package dsm.TRADES;
 
+import java.util.Map;
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
 
 /**
@@ -37,22 +39,24 @@ public interface AffectRelation extends NamedElement {
 	EList<Data> getData();
 
 	/**
-	 * Returns the value of the '<em><b>Source Component</b></em>' reference.
+	 * Returns the value of the '<em><b>Source Component</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link dsm.TRADES.Component#getAffectRelations <em>Affect Relations</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Source Component</em>' reference.
+	 * @return the value of the '<em>Source Component</em>' container reference.
 	 * @see #setSourceComponent(Component)
 	 * @see dsm.TRADES.TRADESPackage#getAffectRelation_SourceComponent()
-	 * @model required="true"
+	 * @see dsm.TRADES.Component#getAffectRelations
+	 * @model opposite="affectRelations" required="true" transient="false"
 	 * @generated
 	 */
 	Component getSourceComponent();
 
 	/**
-	 * Sets the value of the '{@link dsm.TRADES.AffectRelation#getSourceComponent <em>Source Component</em>}' reference.
+	 * Sets the value of the '{@link dsm.TRADES.AffectRelation#getSourceComponent <em>Source Component</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Source Component</em>' reference.
+	 * @param value the new value of the '<em>Source Component</em>' container reference.
 	 * @see #getSourceComponent()
 	 * @generated
 	 */
@@ -104,5 +108,16 @@ public interface AffectRelation extends NamedElement {
 	 * @generated
 	 */
 	void setAnalysisStatus(AffectedENUM value);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Check that the referenced data belong to correct scope.
+	 * <!-- end-model-doc -->
+	 * @model
+	 * @generated
+	 */
+	boolean checkDataScope(DiagnosticChain chain, Map context);
 
 } // AffectRelation

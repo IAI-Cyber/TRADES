@@ -1,7 +1,10 @@
 package dsm.TRADES.util;
 
+import static java.util.stream.Collectors.toSet;
+
 import java.util.Collections;
 import java.util.List;
+import java.util.Set;
 import java.util.Spliterator;
 import java.util.Spliterators;
 import java.util.stream.Collectors;
@@ -104,11 +107,45 @@ public class EcoreUtils {
 				.stream(Spliterators.spliteratorUnknownSize(o.eAllContents(), Spliterator.NONNULL), false));
 	}
 
+	/**
+	 * Gets all {@link EObject} targeting the source object of the given type using
+	 * an optional {@link EReference}
+	 * 
+	 * @param <T>          type of expected result
+	 * @param source       source object (not <code>null</code>)
+	 * @param expectedType the expected result type
+	 * @param crossRef     a {@link ECrossReferenceAdapter}
+	 * @param reference    a optional reference (<code>null</code> of all
+	 *                     references)
+	 * @return a list of object of the expected type
+	 */
 	public static <T extends EObject> List<T> getInverse(EObject source, Class<T> expectedType,
 			ECrossReferenceAdapter crossRef, EReference reference) {
+		if (reference == null) {
+			return getInverse(source, expectedType, crossRef, (Set<EReference>) null);
+		} else {
+			return getInverse(source, expectedType, crossRef, Collections.singleton(reference));
+		}
+	}
+
+	/**
+	 * Gets all {@link EObject} targeting the source object of the given type using
+	 * an optional {@link EReference}
+	 * 
+	 * @param <T>          type of expected result
+	 * @param source       source object (not <code>null</code>)
+	 * @param expectedType the expected result type
+	 * @param crossRef     a {@link ECrossReferenceAdapter}
+	 * @param reference    a optional set of reference (<code>null</code> of all
+	 *                     references)
+	 * @return a list of object of the expected type
+	 */
+	public static <T extends EObject> List<T> getInverse(EObject source, Class<T> expectedType,
+			ECrossReferenceAdapter crossRef, Set<EReference> references) {
 		if (crossRef != null) {
 			return crossRef.getInverseReferences(source).stream()//
-					.filter(s -> expectedType.isInstance(s.getEObject()) && s.getEStructuralFeature() == reference)//
+					.filter(s -> expectedType.isInstance(s.getEObject()) //
+							&& (references == null || references.contains(s.getEStructuralFeature())))//
 					.map(s -> ((T) s.getEObject())).collect(Collectors.toList());
 
 		} else {
@@ -123,14 +160,53 @@ public class EcoreUtils {
 	 * @param <T>          type of the result
 	 * @param source       the source object
 	 * @param expectedType the type of the element returned
-	 * @param reference    the reference use to link the objects
+	 * @param reference    the reference use to link the objects (optional)
 	 * @return a list of T
 	 */
 	public static <T extends EObject> List<T> getInverse(EObject source, Class<T> expectedType, EReference reference) {
+		if (reference == null) {
+			return getInverse(source, expectedType, (Set<EReference>) null);
+		} else {
+
+			return getInverse(source, expectedType, Collections.singleton(reference));
+		}
+	}
+
+	/**
+	 * Gets all {@link EObject} of the given type that are link to the given source
+	 * using a given feature
+	 * 
+	 * @param <T>          type of the result
+	 * @param source       the source object
+	 * @param expectedType the type of the element returned
+	 * @param references   the references use to link the objects (optional)
+	 * @return a list of T
+	 */
+	public static <T extends EObject> List<T> getInverse(EObject source, Class<T> expectedType,
+			EReference... references) {
+		if (references.length == 0) {
+			return getInverse(source, expectedType, (Set<EReference>) null);
+		} else {
+			return getInverse(source, expectedType, Stream.of(references).collect(toSet()));
+		}
+	}
+
+	/**
+	 * Gets all {@link EObject} of the given type that are link to the given source
+	 * using a given feature
+	 * 
+	 * @param <T>          type of the result
+	 * @param source       the source object
+	 * @param expectedType the type of the element returned
+	 * @param references   the references use to link the objects (optional)
+	 * @return a list of T
+	 */
+	public static <T extends EObject> List<T> getInverse(EObject source, Class<T> expectedType,
+			Set<EReference> references) {
 		ECrossReferenceAdapter crossRef = source.eAdapters().stream().filter(e -> e instanceof ECrossReferenceAdapter)
 				.findAny().map(opt -> (ECrossReferenceAdapter) opt).orElse(null);
 		if (crossRef != null) {
-			return EcoreUtils.getInverse(source, expectedType, crossRef, reference);
+			return getInverse(source, expectedType, crossRef, references);
 
 		} else {
 			return Collections.emptyList();

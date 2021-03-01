@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: TRADES M2doc
 Bundle-SymbolicName: dsm.TRADES.m2doc;singleton:=true
 Bundle-Version: 2.5.0.qualifier
-Bundle-Activator: dsm.trades.m2doc.Activator
+Bundle-Activator: dsm.trades.m2doc.TradesM2docActivator
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  org.obeonetwork.m2doc;bundle-version="3.1.0",
@@ -20,3 +20,5 @@ Require-Bundle: org.eclipse.ui,
 Bundle-RequiredExecutionEnvironment: JavaSE-14
 Automatic-Module-Name: dsm.TRADES.m2doc
 Bundle-ActivationPolicy: lazy
+Export-Package: dsm.trades.m2doc,
+ dsm.trades.m2doc.utils

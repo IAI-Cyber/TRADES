@@ -30,12 +30,12 @@ public class ThreatItemProviderCustomImpl extends ThreatItemProvider {
 			Object notifier = notification.getNotifier();
 			if (notifier instanceof Threat) {
 				Threat new_name = (Threat) notifier;
-				for (ThreatAllocationRelation rel : new_name.getThreatallocation()) {
+				for (ThreatAllocationRelation rel : new_name.getThreatAllocations()) {
 					fireNotifyChanged(new ViewerNotification(notification, rel, false, true));
 					// Threat name can be used in the label of ThreatMitigationRelation so refresh them also
 					EcoreUtils
 							.getInverse(rel, ThreatMitigationRelation.class,
-									TRADESPackage.eINSTANCE.getThreatMitigationRelation_Mitigates())
+									TRADESPackage.eINSTANCE.getThreatMitigationRelation_MitigatedAllocation())
 							.forEach(
 									rel2 -> fireNotifyChanged(new ViewerNotification(notification, rel2, false, true)));
 				}

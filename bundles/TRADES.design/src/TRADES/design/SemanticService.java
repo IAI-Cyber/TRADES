@@ -1,9 +1,17 @@
 package TRADES.design;
 
+import static java.util.stream.Collectors.toCollection;
+import static java.util.stream.Collectors.toList;
+import static java.util.stream.Collectors.toSet;
+
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Iterator;
+import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import org.eclipse.collections.api.factory.Sets;
 import org.eclipse.collections.api.set.FixedSizeSet;
@@ -14,13 +22,17 @@ import org.eclipse.emf.ecore.util.ECrossReferenceAdapter;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.sirius.business.api.session.SessionManager;
+import org.eclipse.sirius.diagram.AbstractDNode;
+import org.eclipse.sirius.diagram.DSemanticDiagram;
 import org.eclipse.sirius.viewpoint.SiriusPlugin;
 import org.eclipse.ui.PlatformUI;
 
 import dsm.TRADES.AbstractControlOwner;
+import dsm.TRADES.AffectRelation;
 import dsm.TRADES.Analysis;
 import dsm.TRADES.AttackChain;
 import dsm.TRADES.Component;
+import dsm.TRADES.ComponentOwner;
 import dsm.TRADES.Control;
 import dsm.TRADES.ControlOwner;
 import dsm.TRADES.Data;
@@ -32,6 +44,7 @@ import dsm.TRADES.ImpactConfiguration;
 import dsm.TRADES.ImpactScore;
 import dsm.TRADES.RGBColor;
 import dsm.TRADES.ScoreSystem;
+import dsm.TRADES.SemanticUtil;
 import dsm.TRADES.TRADESFactory;
 import dsm.TRADES.TRADESPackage;
 import dsm.TRADES.Threat;
@@ -60,57 +73,97 @@ public class SemanticService {
 	 * 
 	 * @param score the context
 	 */
-	public void initImpactScore(ImpactScore score) {
+	public static void initImpactScore(ImpactScore score) {
 		ScoreSystem scoreSystem = (ScoreSystem) score.eContainer();
 
-		int index = scoreSystem.getImpactscore().indexOf(score);
+		int index = scoreSystem.getImpactScores().indexOf(score);
 		if (index > 0) {
-			score.setImpact(scoreSystem.getImpactscore().get(index - 1).getImpact() + 1);
+			score.setImpact(scoreSystem.getImpactScores().get(index - 1).getImpact() + 1);
 		}
 
-		for (DifficultyScore dif : scoreSystem.getDifficultyscore()) {
+		for (DifficultyScore dif : scoreSystem.getDifficultyScores()) {
 			ImpactConfiguration conf = TRADESFactory.eINSTANCE.createImpactConfiguration();
 			score.getConfigurations().add(conf);
 			conf.setDifficulty(dif);
 		}
 	}
 
-	public void synchronizeDifficulty(ThreatAllocationRelation rel) {
+	public static void synchronizeDifficulty(ThreatAllocationRelation rel) {
 
 		AttackChain attackChain = rel.getAttackChain();
 
 		if (attackChain != null) {
 			int cmpDiff = attackChain.getComputedDifficulty();
 
-			if (rel.getDifficultyscore() == null || rel.getDifficultyscore().getDifficulty() != cmpDiff) {
-				ScoreSystem scoresystem = EcoreUtils.getAncestor(rel, Analysis.class).getScoresystem();
-				DifficultyScore diffScore = scoresystem.getDifficultyscore().stream()
+			if (rel.getDifficultyScore() == null || rel.getDifficultyScore().getDifficulty() != cmpDiff) {
+				ScoreSystem scoresystem = EcoreUtils.getAncestor(rel, Analysis.class).getScoreSystem();
+				DifficultyScore diffScore = scoresystem.getDifficultyScores().stream()
 						.filter(d -> d.getDifficulty() == cmpDiff).findFirst().orElseGet(() -> {
 							DifficultyScore diff = TRADESFactory.eINSTANCE.createDifficultyScore();
-							scoresystem.getDifficultyscore().add(diff);
+							scoresystem.getDifficultyScores().add(diff);
 							diff.setDifficulty(cmpDiff);
 							updateImpactWithNewDifficulty(diff, scoresystem);
 							return diff;
 						});
-				rel.setDifficultyscore(diffScore);
+				rel.setDifficultyScore(diffScore);
 			}
 		}
 
 	}
 
-	public void createInternalControl(AbstractControlOwner cmp) {
-		Control control = TRADESFactory.eINSTANCE.createControl();
+	/**
+	 * Gets all the element that can contain data
+	 * 
+	 * @param analysis the root analysis
+	 * @return a list of container
+	 */
+	public static List<DataOwnerElement> getDataOwnerElements(Analysis analysis) {
+		List<DataOwnerElement> results = new ArrayList<>();
+		results.add(analysis);
+		getSubDataOwners(analysis, results);
+		return results;
 
-		ControlOwner owner = cmp.getControlOwner();
-		if (owner == null) {
-			owner = TRADESFactory.eINSTANCE.createControlOwner();
-			cmp.setControlOwner(owner);
-		}
-
-		owner.getInternals().add(control);
 	}
 
-	public Data createData(DataOwnerElement element) {
+	private static void getSubDataOwners(ComponentOwner o, List<DataOwnerElement> collector) {
+		for (Component sub : o.getComponents()) {
+			collector.add(sub);
+			getSubDataOwners(sub, collector);
+		}
+	}
+
+	public static List<Data> getInheritedData(DataOwnerElement owner) {
+		List<Data> results = new ArrayList<>();
+		collectData(owner.eContainer(), results);
+		return results;
+	}
+
+	public static void collectData(EObject object, List<Data> collector) {
+		if (object == null) {
+			return;
+		}
+		if (object instanceof DataOwnerElement) {
+			collector.addAll(((DataOwnerElement) object).getDatas());
+		}
+
+		collectData(object.eContainer(), collector);
+
+	}
+
+	public static void moveData(Data toMove, DataOwnerElement owner) {
+		DataOwner dataOwner = owner.getDataOwner();
+		if (dataOwner == null) {
+			dataOwner = TRADESFactory.eINSTANCE.createDataOwner();
+			owner.setDataOwner(dataOwner);
+		}
+		dataOwner.getData().add(toMove);
+	}
+
+	public static Control createInternalControl(AbstractControlOwner cmp) {
+		return SemanticUtil.addControl(cmp, TRADESFactory.eINSTANCE.createControl(), true);
+	}
+
+	public static Data createData(DataOwnerElement element) {
 		DataOwner owner = element.getDataOwner();
 
 		if (owner == null) {
@@ -119,13 +172,14 @@ public class SemanticService {
 		}
 
 		Data result = TRADESFactory.eINSTANCE.createData();
+		result.setName("New data");
 		owner.getData().add(result);
 
 		return result;
 
 	}
 
-	public DataOwner getOrCreateDataOwner(DataOwnerElement element) {
+	public static DataOwner getOrCreateDataOwner(DataOwnerElement element) {
 
 		DataOwner owner = element.getDataOwner();
 		if (owner == null) {
@@ -142,7 +196,7 @@ public class SemanticService {
 	 * @param diff the context
 	 * @return a list of {@link ImpactConfiguration}
 	 */
-	public List<ImpactConfiguration> getLinkedConfigurations(DifficultyScore diff) {
+	public static List<ImpactConfiguration> getLinkedConfigurations(DifficultyScore diff) {
 		return Session.of(diff).get().getSemanticCrossReferencer()
 				.getInverseReferences(diff, TRADESPackage.eINSTANCE.getImpactConfiguration_Difficulty(), true).stream()
 				.map(s -> (ImpactConfiguration) s.getEObject()).collect(Collectors.toList());
@@ -163,19 +217,19 @@ public class SemanticService {
 	 * 
 	 * @param diff the context
 	 */
-	public void initDifficulty(DifficultyScore diff) {
+	public static void initDifficulty(DifficultyScore diff) {
 		ScoreSystem scoreSystem = (ScoreSystem) diff.eContainer();
 
-		int index = scoreSystem.getDifficultyscore().indexOf(diff);
+		int index = scoreSystem.getDifficultyScores().indexOf(diff);
 		if (index > 0) {
-			diff.setDifficulty(scoreSystem.getDifficultyscore().get(index - 1).getDifficulty() + 1);
+			diff.setDifficulty(scoreSystem.getDifficultyScores().get(index - 1).getDifficulty() + 1);
 		}
 
 		updateImpactWithNewDifficulty(diff, scoreSystem);
 	}
 
-	private void updateImpactWithNewDifficulty(DifficultyScore diff, ScoreSystem scoreSystem) {
-		for (ImpactScore impact : scoreSystem.getImpactscore()) {
+	private static void updateImpactWithNewDifficulty(DifficultyScore diff, ScoreSystem scoreSystem) {
+		for (ImpactScore impact : scoreSystem.getImpactScores()) {
 			ImpactConfiguration conf = TRADESFactory.eINSTANCE.createImpactConfiguration();
 			impact.getConfigurations().add(conf);
 			conf.setDifficulty(diff);
@@ -188,7 +242,7 @@ public class SemanticService {
 	 * 
 	 * @param scoreSystem the context
 	 */
-	public void initColors(ScoreSystem scoreSystem) {
+	public static void initColors(ScoreSystem scoreSystem) {
 
 		if (!MessageDialog.openConfirm(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(),
 				"Override colors",
@@ -200,7 +254,7 @@ public class SemanticService {
 		double minDiff = Double.MAX_VALUE;
 		double maxDiff = 0;
 
-		for (ImpactScore impact : scoreSystem.getImpactscore()) {
+		for (ImpactScore impact : scoreSystem.getImpactScores()) {
 			int impact2 = impact.getImpact();
 			minImpact = Math.min(minImpact, impact2);
 			maxImpact = Math.max(maxImpact, impact2);
@@ -211,7 +265,7 @@ public class SemanticService {
 			}
 		}
 
-		for (ImpactScore impact : scoreSystem.getImpactscore()) {
+		for (ImpactScore impact : scoreSystem.getImpactScores()) {
 			int impact2 = impact.getImpact();
 			RGBColor impactColor = ColorService.computeColor(new RGBColor(154, 255, 77), new RGBColor(252, 86, 86),
 					minImpact, maxImpact, impact2);
@@ -225,7 +279,7 @@ public class SemanticService {
 		}
 	}
 
-	public Control moveControl(AbstractControlOwner newOnwer, Control control) {
+	public static Control moveControl(AbstractControlOwner newOnwer, Control control) {
 		ControlOwner owner = newOnwer.getControlOwner();
 		if (owner == null) {
 			owner = TRADESFactory.eINSTANCE.createControlOwner();
@@ -240,7 +294,7 @@ public class SemanticService {
 		return control;
 	}
 
-	public void affectThreatToComponent(Component owner, Threat threat) {
+	public static void affectThreatToComponent(Component owner, Threat threat) {
 
 		if (owner.getThreatAllocations().stream().noneMatch(rel -> rel.getThreat() == threat)) {
 			ThreatAllocationRelation rel = TRADESFactory.eINSTANCE.createThreatAllocationRelation();
@@ -261,11 +315,11 @@ public class SemanticService {
 	private static FixedSizeSet<EReference> USAGE_REF_TO_IGNORE_IMPACT_SCORE = Sets.fixedSize
 			.of(TRADESPackage.eINSTANCE.getImpactConfiguration_Impact());
 
-	public void clearUnusedDifficulties(ScoreSystem scoreSystem) {
+	public static void clearUnusedDifficulties(ScoreSystem scoreSystem) {
 		ECrossReferenceAdapter crossRef = SessionManager.INSTANCE.getSession(scoreSystem).getSemanticCrossReferencer();
 		List<EObject> toRemove = new ArrayList<>();
 
-		for (DifficultyScore diff : scoreSystem.getDifficultyscore()) {
+		for (DifficultyScore diff : scoreSystem.getDifficultyScores()) {
 
 			if (!isSemanticallyUsed(diff, crossRef, USAGE_REF_TO_IGNORE_DIFF_SCORE)) {
 				toRemove.add(diff);
@@ -279,11 +333,11 @@ public class SemanticService {
 		}
 	}
 
-	public void clearUnusedImpacts(ScoreSystem scoreSystem) {
+	public static void clearUnusedImpacts(ScoreSystem scoreSystem) {
 		ECrossReferenceAdapter crossRef = SessionManager.INSTANCE.getSession(scoreSystem).getSemanticCrossReferencer();
 		List<EObject> toRemove = new ArrayList<>();
 
-		for (ImpactScore impact : scoreSystem.getImpactscore()) {
+		for (ImpactScore impact : scoreSystem.getImpactScores()) {
 
 			if (!isSemanticallyUsed(impact, crossRef, USAGE_REF_TO_IGNORE_IMPACT_SCORE)) {
 				toRemove.add(impact);
@@ -295,7 +349,8 @@ public class SemanticService {
 		}
 	}
 
-	public boolean isSemanticallyUsed(EObject o, ECrossReferenceAdapter crossRef, Collection<EReference> toIgnore) {
+	public static boolean isSemanticallyUsed(EObject o, ECrossReferenceAdapter crossRef,
+			Collection<EReference> toIgnore) {
 		return crossRef.getInverseReferences(o).stream().anyMatch(s -> {
 			EStructuralFeature feature = s.getEStructuralFeature();
 
@@ -319,6 +374,126 @@ public class SemanticService {
 
 			return true;
 		});
+	}
+
+	public static List<AffectRelation> getAffectRelationsBy(Data data) {
+		return EcoreUtils.getInverse(data, AffectRelation.class, TRADESPackage.eINSTANCE.getAffectRelation_Data());
+	}
+
+	/**
+	 * Check if the given component is affected by a data. The data is retrieve by
+	 * accessing the {@link DSemanticDiagram#getTarget()} value
+	 * 
+	 * @param component the component to test
+	 * @param node      the node that belong to a {@link DSemanticDiagram} that is
+	 *                  linked to a data
+	 * @return
+	 */
+	public static boolean isComponentDataPassThrough(Component component, AbstractDNode node) {
+		DSemanticDiagram diagram = DiagramService.getContainingDiagram(node);
+		if (diagram == null) {
+			return false;
+		}
+
+		EObject target = diagram.getTarget();
+		if (!(target instanceof Data)) {
+			return false;
+		}
+
+		Data data = (Data) target;
+		List<AffectRelation> affectRelations = getAffectRelationsBy(data);
+		return affectRelations.stream()
+				.flatMap(affect -> Stream.of(affect.getSourceComponent(), affect.getTargetComponent()))
+				.noneMatch(c -> c == component);
+	}
+
+	/**
+	 * Gets the root components affected by the data. A root component is defined by
+	 * a component that is affected by the date but which is not contained by
+	 * another affected component
+	 * 
+	 * @param data the queried data
+	 * @return a list of component
+	 */
+	public static List<Component> getRootAffectedComponentsByData(Data data) {
+
+		List<AffectRelation> affectRelations = getAffectRelationsBy(data);
+		Set<Component> allComponents = affectRelations.stream()
+				.flatMap(affect -> Stream.of(affect.getSourceComponent(), affect.getTargetComponent()))
+				.filter(c -> c != null).collect(toCollection(LinkedHashSet::new));
+
+		// Filter sub components
+
+		List<Component> rootComponents = new ArrayList<>();
+		Iterator<Component> cmpItge = allComponents.iterator();
+		while (cmpItge.hasNext()) {
+			Component component = cmpItge.next();
+			if (!isContainedBy(component, allComponents)) {
+				rootComponents.add(component);
+			}
+		}
+
+		return rootComponents;
+	}
+
+	/**
+	 * Gets the list of children component that are either affected by the given
+	 * data or owning another affected component
+	 * 
+	 * @param parent the parent component
+	 * @param data   the current data
+	 * @return a list of children
+	 */
+	public static List<Component> getSubComponentAffectBy(Component parent, Data data) {
+
+		List<AffectRelation> affectRelations = getAffectRelationsBy(data);
+		Set<Component> allComponents = affectRelations.stream()
+				.flatMap(affect -> Stream.of(affect.getSourceComponent(), affect.getTargetComponent()))
+				.filter(c -> c != null).collect(toSet());
+
+		return parent.getComponents().stream().filter(child -> contains(child, allComponents)).collect(toList());
+
+	}
+
+	/**
+	 * Checks if the given component contains at least one of the given components
+	 * 
+	 * @param c          the component to test
+	 * @param components list of possible children (or itself)
+	 * @return <code>true</code> if the component or one of its children belongs to
+	 *         the given set
+	 */
+	private static boolean contains(Component c, Set<Component> components) {
+		if (components.contains(c)) {
+			return true;
+		}
+		for (Component child : c.getComponents()) {
+			if (contains(child, components)) {
+				return true;
+			}
+		}
+
+		return false;
+
+	}
+
+	/**
+	 * Checks if the given component is contained by at least on of the given
+	 * component (returns false if c belongs to the given set)
+	 * 
+	 * @param c          the component to test
+	 * @param components the set of potential container
+	 * @return <code>true</code> if contained by at least of of the given component
+	 */
+	private static boolean isContainedBy(Component c, Set<Component> components) {
+		EObject container = c.eContainer();
+		while (container != null) {
+			if (components.contains(container)) {
+				return true;
+			}
+			container = container.eContainer();
+		}
+		return false;
 	}
 
 }

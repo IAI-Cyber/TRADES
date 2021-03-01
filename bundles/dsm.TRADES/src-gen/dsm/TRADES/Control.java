@@ -13,11 +13,10 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link dsm.TRADES.Control#getMitigates <em>Mitigates</em>}</li>
- *   <li>{@link dsm.TRADES.Control#getImplementedBy <em>Implemented By</em>}</li>
- *   <li>{@link dsm.TRADES.Control#getID <em>ID</em>}</li>
+ *   <li>{@link dsm.TRADES.Control#getMitigatedThreats <em>Mitigated Threats</em>}</li>
+ *   <li>{@link dsm.TRADES.Control#getId <em>Id</em>}</li>
  *   <li>{@link dsm.TRADES.Control#getDescription <em>Description</em>}</li>
- *   <li>{@link dsm.TRADES.Control#getMitigationrRelations <em>Mitigationr Relations</em>}</li>
+ *   <li>{@link dsm.TRADES.Control#getMitigationRelations <em>Mitigation Relations</em>}</li>
  * </ul>
  *
  * @see dsm.TRADES.TRADESPackage#getControl()
@@ -26,52 +25,38 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface Control extends NamedElement {
 	/**
-	 * Returns the value of the '<em><b>Mitigates</b></em>' reference list.
+	 * Returns the value of the '<em><b>Mitigated Threats</b></em>' reference list.
 	 * The list contents are of type {@link dsm.TRADES.Threat}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Mitigates</em>' reference list.
-	 * @see dsm.TRADES.TRADESPackage#getControl_Mitigates()
+	 * @return the value of the '<em>Mitigated Threats</em>' reference list.
+	 * @see dsm.TRADES.TRADESPackage#getControl_MitigatedThreats()
 	 * @model
 	 * @generated
 	 */
-	EList<Threat> getMitigates();
+	EList<Threat> getMitigatedThreats();
 
 	/**
-	 * Returns the value of the '<em><b>Implemented By</b></em>' reference list.
-	 * The list contents are of type {@link dsm.TRADES.Component}.
-	 * It is bidirectional and its opposite is '{@link dsm.TRADES.Component#getImplements <em>Implements</em>}'.
+	 * Returns the value of the '<em><b>Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Implemented By</em>' reference list.
-	 * @see dsm.TRADES.TRADESPackage#getControl_ImplementedBy()
-	 * @see dsm.TRADES.Component#getImplements
-	 * @model opposite="implements"
-	 * @generated
-	 */
-	EList<Component> getImplementedBy();
-
-	/**
-	 * Returns the value of the '<em><b>ID</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>ID</em>' attribute.
-	 * @see #setID(String)
-	 * @see dsm.TRADES.TRADESPackage#getControl_ID()
+	 * @return the value of the '<em>Id</em>' attribute.
+	 * @see #setId(String)
+	 * @see dsm.TRADES.TRADESPackage#getControl_Id()
 	 * @model
 	 * @generated
 	 */
-	String getID();
+	String getId();
 
 	/**
-	 * Sets the value of the '{@link dsm.TRADES.Control#getID <em>ID</em>}' attribute.
+	 * Sets the value of the '{@link dsm.TRADES.Control#getId <em>Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>ID</em>' attribute.
-	 * @see #getID()
+	 * @param value the new value of the '<em>Id</em>' attribute.
+	 * @see #getId()
 	 * @generated
 	 */
-	void setID(String value);
+	void setId(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Description</b></em>' attribute.
@@ -96,17 +81,17 @@ public interface Control extends NamedElement {
 	void setDescription(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Mitigationr Relations</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Mitigation Relations</b></em>' containment reference list.
 	 * The list contents are of type {@link dsm.TRADES.ThreatMitigationRelation}.
 	 * It is bidirectional and its opposite is '{@link dsm.TRADES.ThreatMitigationRelation#getControl <em>Control</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Mitigationr Relations</em>' containment reference list.
-	 * @see dsm.TRADES.TRADESPackage#getControl_MitigationrRelations()
+	 * @return the value of the '<em>Mitigation Relations</em>' containment reference list.
+	 * @see dsm.TRADES.TRADESPackage#getControl_MitigationRelations()
 	 * @see dsm.TRADES.ThreatMitigationRelation#getControl
 	 * @model opposite="control" containment="true"
 	 * @generated
 	 */
-	EList<ThreatMitigationRelation> getMitigationrRelations();
+	EList<ThreatMitigationRelation> getMitigationRelations();
 
 } // Control

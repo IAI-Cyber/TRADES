@@ -4,8 +4,6 @@ package dsm.TRADES;
 
 import java.util.Map;
 import org.eclipse.emf.common.util.DiagnosticChain;
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -20,9 +18,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link dsm.TRADES.ThreatAllocationRelation#getAssessment <em>Assessment</em>}</li>
  *   <li>{@link dsm.TRADES.ThreatAllocationRelation#getComponent <em>Component</em>}</li>
  *   <li>{@link dsm.TRADES.ThreatAllocationRelation#getThreat <em>Threat</em>}</li>
- *   <li>{@link dsm.TRADES.ThreatAllocationRelation#getImpactscore <em>Impactscore</em>}</li>
- *   <li>{@link dsm.TRADES.ThreatAllocationRelation#getDifficultyscore <em>Difficultyscore</em>}</li>
- *   <li>{@link dsm.TRADES.ThreatAllocationRelation#getThreatRelated <em>Threat Related</em>}</li>
+ *   <li>{@link dsm.TRADES.ThreatAllocationRelation#getImpactScore <em>Impact Score</em>}</li>
+ *   <li>{@link dsm.TRADES.ThreatAllocationRelation#getDifficultyScore <em>Difficulty Score</em>}</li>
  *   <li>{@link dsm.TRADES.ThreatAllocationRelation#getAttackChain <em>Attack Chain</em>}</li>
  * </ul>
  *
@@ -83,14 +80,14 @@ public interface ThreatAllocationRelation extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Threat</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link dsm.TRADES.Threat#getThreatallocation <em>Threatallocation</em>}'.
+	 * It is bidirectional and its opposite is '{@link dsm.TRADES.Threat#getThreatAllocations <em>Threat Allocations</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Threat</em>' reference.
 	 * @see #setThreat(Threat)
 	 * @see dsm.TRADES.TRADESPackage#getThreatAllocationRelation_Threat()
-	 * @see dsm.TRADES.Threat#getThreatallocation
-	 * @model opposite="threatallocation" required="true"
+	 * @see dsm.TRADES.Threat#getThreatAllocations
+	 * @model opposite="threatAllocations" required="true"
 	 * @generated
 	 */
 	Threat getThreat();
@@ -106,60 +103,48 @@ public interface ThreatAllocationRelation extends EObject {
 	void setThreat(Threat value);
 
 	/**
-	 * Returns the value of the '<em><b>Impactscore</b></em>' reference.
+	 * Returns the value of the '<em><b>Impact Score</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Impactscore</em>' reference.
-	 * @see #setImpactscore(ImpactScore)
-	 * @see dsm.TRADES.TRADESPackage#getThreatAllocationRelation_Impactscore()
+	 * @return the value of the '<em>Impact Score</em>' reference.
+	 * @see #setImpactScore(ImpactScore)
+	 * @see dsm.TRADES.TRADESPackage#getThreatAllocationRelation_ImpactScore()
 	 * @model
 	 * @generated
 	 */
-	ImpactScore getImpactscore();
+	ImpactScore getImpactScore();
 
 	/**
-	 * Sets the value of the '{@link dsm.TRADES.ThreatAllocationRelation#getImpactscore <em>Impactscore</em>}' reference.
+	 * Sets the value of the '{@link dsm.TRADES.ThreatAllocationRelation#getImpactScore <em>Impact Score</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Impactscore</em>' reference.
-	 * @see #getImpactscore()
+	 * @param value the new value of the '<em>Impact Score</em>' reference.
+	 * @see #getImpactScore()
 	 * @generated
 	 */
-	void setImpactscore(ImpactScore value);
+	void setImpactScore(ImpactScore value);
 
 	/**
-	 * Returns the value of the '<em><b>Difficultyscore</b></em>' reference.
+	 * Returns the value of the '<em><b>Difficulty Score</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Difficultyscore</em>' reference.
-	 * @see #setDifficultyscore(DifficultyScore)
-	 * @see dsm.TRADES.TRADESPackage#getThreatAllocationRelation_Difficultyscore()
+	 * @return the value of the '<em>Difficulty Score</em>' reference.
+	 * @see #setDifficultyScore(DifficultyScore)
+	 * @see dsm.TRADES.TRADESPackage#getThreatAllocationRelation_DifficultyScore()
 	 * @model
 	 * @generated
 	 */
-	DifficultyScore getDifficultyscore();
+	DifficultyScore getDifficultyScore();
 
 	/**
-	 * Sets the value of the '{@link dsm.TRADES.ThreatAllocationRelation#getDifficultyscore <em>Difficultyscore</em>}' reference.
+	 * Sets the value of the '{@link dsm.TRADES.ThreatAllocationRelation#getDifficultyScore <em>Difficulty Score</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Difficultyscore</em>' reference.
-	 * @see #getDifficultyscore()
+	 * @param value the new value of the '<em>Difficulty Score</em>' reference.
+	 * @see #getDifficultyScore()
 	 * @generated
 	 */
-	void setDifficultyscore(DifficultyScore value);
-
-	/**
-	 * Returns the value of the '<em><b>Threat Related</b></em>' reference list.
-	 * The list contents are of type {@link dsm.TRADES.ThreatAllocationRelation}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Threat Related</em>' reference list.
-	 * @see dsm.TRADES.TRADESPackage#getThreatAllocationRelation_ThreatRelated()
-	 * @model
-	 * @generated
-	 */
-	EList<ThreatAllocationRelation> getThreatRelated();
+	void setDifficultyScore(DifficultyScore value);
 
 	/**
 	 * Returns the value of the '<em><b>Attack Chain</b></em>' containment reference.

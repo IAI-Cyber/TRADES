@@ -37,7 +37,7 @@ import org.obeonetwork.m2doc.template.DocumentTemplate;
 import org.obeonetwork.m2doc.util.ClassProvider;
 import org.obeonetwork.m2doc.util.M2DocUtils;
 
-import dsm.trades.m2doc.Activator;
+import dsm.trades.m2doc.TradesM2docActivator;
 import dsm.trades.m2doc.IM2DocTemplate;
 
 /**
@@ -102,7 +102,7 @@ public class GenerationTemplate implements IM2DocTemplate {
 				try {
 					reportFolder.create(true, true, new NullProgressMonitor());
 				} catch (CoreException e) {
-					return Activator.createErrorStatus("Unable to create report folder", e);
+					return TradesM2docActivator.createErrorStatus("Unable to create report folder", e);
 				}
 			}
 
@@ -117,7 +117,7 @@ public class GenerationTemplate implements IM2DocTemplate {
 					M2DocUtils.generate(template, queryEnvironment, variables, resourceSet, outputURI, true, monitor);
 				} else {
 					M2DocUtils.serializeValidatedDocumentTemplate(resourceSet.getURIConverter(), template, outputURI);
-					return Activator.createErrorStatus(
+					return TradesM2docActivator.createErrorStatus(
 							MessageFormat.format("Error during template validation at {0}", outputURI));
 				}
 				reportFolder.refreshLocal(1, new NullProgressMonitor());
@@ -126,13 +126,13 @@ public class GenerationTemplate implements IM2DocTemplate {
 					try {
 						java.awt.Desktop.getDesktop().open(targetFile.toFile());
 					} catch (IOException e) {
-						return Activator.createErrorStatus(MessageFormat.format("Error while opening target file",
+						return TradesM2docActivator.createErrorStatus(MessageFormat.format("Error while opening target file",
 								generatedFile.getAbsolutePath()), e);
 					}
 				}
 
 			} catch (IOException | DocumentParserException | DocumentGenerationException | CoreException e) {
-				return Activator
+				return TradesM2docActivator
 						.createErrorStatus(MessageFormat.format("Error during generation : {0}", e.getMessage()), e);
 			}
 		}

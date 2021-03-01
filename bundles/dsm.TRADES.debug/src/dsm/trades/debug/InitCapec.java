@@ -23,11 +23,11 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
-import TRADES.design.ProjectFactory;
 import dsm.TRADES.Analysis;
 import dsm.TRADES.ControlOwner;
 import dsm.TRADES.ExternalControl;
 import dsm.TRADES.ExternalThreat;
+import dsm.TRADES.SemanticUtil;
 import dsm.TRADES.TRADESFactory;
 import dsm.TRADES.ThreatMitigationRelation;
 import dsm.TRADES.ThreatsOwner;
@@ -51,7 +51,7 @@ public class InitCapec implements IApplication {
 
 		Resource resource = rs.createResource(URI.createFileURI(targetModelFile));
 
-		Analysis analysis = ProjectFactory.createInitialModel("Capec");
+		Analysis analysis = SemanticUtil.createInitialModel("Capec");
 
 		ThreatsOwner threatOwner = analysis.getThreatOwner();
 
@@ -104,7 +104,7 @@ public class InitCapec implements IApplication {
 		ExternalThreat extPattern = TRADESFactory.eINSTANCE.createExternalThreat();
 		extPattern.setName(parent.getAttribute("Name"));
 		String oritinalId = parent.getAttribute("ID");
-		extPattern.setID("Capec_" + oritinalId);
+		extPattern.setId("Capec_" + oritinalId);
 		extPattern.setSource("Capec");
 		extPattern.setLink(SITE_PREFIX + oritinalId + ".html");
 		NodeList descriptionNodes = parent.getElementsByTagName("Description");

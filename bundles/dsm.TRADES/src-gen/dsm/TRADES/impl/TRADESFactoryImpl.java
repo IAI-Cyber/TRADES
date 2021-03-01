@@ -226,7 +226,7 @@ public class TRADESFactoryImpl extends EFactoryImpl implements TRADESFactory {
 	 */
 	@Override
 	public AffectRelation createAffectRelation() {
-		AffectRelationImpl affectRelation = new AffectRelationImpl();
+		AffectRelationCustomImpl affectRelation = new AffectRelationCustomImpl();
 		return affectRelation;
 	}
 

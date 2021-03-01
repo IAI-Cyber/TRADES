@@ -2,13 +2,16 @@
  */
 package dsm.TRADES.impl;
 
+import dsm.TRADES.Data;
 import dsm.TRADES.DataOwner;
 import dsm.TRADES.DataOwnerElement;
 import dsm.TRADES.TRADESPackage;
 
+import java.lang.reflect.InvocationTargetException;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
@@ -116,6 +119,42 @@ public abstract class DataOwnerElementImpl extends MinimalEObjectImpl.Container 
 	 * @generated
 	 */
 	@Override
+	public EList<Data> getDatas() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<Data> getInheritedDatas() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<Data> getAllDatas() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case TRADESPackage.DATA_OWNER_ELEMENT__DATA_OWNER:
@@ -180,6 +219,24 @@ public abstract class DataOwnerElementImpl extends MinimalEObjectImpl.Container 
 			return dataOwner != null;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+		case TRADESPackage.DATA_OWNER_ELEMENT___GET_DATAS:
+			return getDatas();
+		case TRADESPackage.DATA_OWNER_ELEMENT___GET_INHERITED_DATAS:
+			return getInheritedDatas();
+		case TRADESPackage.DATA_OWNER_ELEMENT___GET_ALL_DATAS:
+			return getAllDatas();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 } //DataOwnerElementImpl

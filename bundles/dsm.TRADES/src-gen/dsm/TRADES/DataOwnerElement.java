@@ -2,6 +2,7 @@
  */
 package dsm.TRADES;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -42,5 +43,29 @@ public interface DataOwnerElement extends EObject {
 	 * @generated
 	 */
 	void setDataOwner(DataOwner value);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation"
+	 * @generated
+	 */
+	EList<Data> getDatas();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation"
+	 * @generated
+	 */
+	EList<Data> getInheritedDatas();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation"
+	 * @generated
+	 */
+	EList<Data> getAllDatas();
 
 } // DataOwnerElement

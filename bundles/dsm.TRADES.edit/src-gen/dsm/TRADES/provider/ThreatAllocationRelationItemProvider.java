@@ -61,9 +61,8 @@ public class ThreatAllocationRelationItemProvider extends ItemProviderAdapter im
 			addAssessmentPropertyDescriptor(object);
 			addComponentPropertyDescriptor(object);
 			addThreatPropertyDescriptor(object);
-			addImpactscorePropertyDescriptor(object);
-			addDifficultyscorePropertyDescriptor(object);
-			addThreatRelatedPropertyDescriptor(object);
+			addImpactScorePropertyDescriptor(object);
+			addDifficultyScorePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -115,49 +114,33 @@ public class ThreatAllocationRelationItemProvider extends ItemProviderAdapter im
 	}
 
 	/**
-	 * This adds a property descriptor for the Impactscore feature.
+	 * This adds a property descriptor for the Impact Score feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addImpactscorePropertyDescriptor(Object object) {
+	protected void addImpactScorePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(
 				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-				getString("_UI_ThreatAllocationRelation_impactscore_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_ThreatAllocationRelation_impactscore_feature",
+				getString("_UI_ThreatAllocationRelation_impactScore_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_ThreatAllocationRelation_impactScore_feature",
 						"_UI_ThreatAllocationRelation_type"),
-				TRADESPackage.Literals.THREAT_ALLOCATION_RELATION__IMPACTSCORE, true, false, true, null, null, null));
+				TRADESPackage.Literals.THREAT_ALLOCATION_RELATION__IMPACT_SCORE, true, false, true, null, null, null));
 	}
 
 	/**
-	 * This adds a property descriptor for the Difficultyscore feature.
+	 * This adds a property descriptor for the Difficulty Score feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addDifficultyscorePropertyDescriptor(Object object) {
+	protected void addDifficultyScorePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(
 				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-				getString("_UI_ThreatAllocationRelation_difficultyscore_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_ThreatAllocationRelation_difficultyscore_feature",
+				getString("_UI_ThreatAllocationRelation_difficultyScore_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_ThreatAllocationRelation_difficultyScore_feature",
 						"_UI_ThreatAllocationRelation_type"),
-				TRADESPackage.Literals.THREAT_ALLOCATION_RELATION__DIFFICULTYSCORE, true, false, true, null, null,
-				null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Threat Related feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addThreatRelatedPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-				getString("_UI_ThreatAllocationRelation_threatRelated_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_ThreatAllocationRelation_threatRelated_feature",
-						"_UI_ThreatAllocationRelation_type"),
-				TRADESPackage.Literals.THREAT_ALLOCATION_RELATION__THREAT_RELATED, true, false, true, null, null,
+				TRADESPackage.Literals.THREAT_ALLOCATION_RELATION__DIFFICULTY_SCORE, true, false, true, null, null,
 				null));
 	}
 

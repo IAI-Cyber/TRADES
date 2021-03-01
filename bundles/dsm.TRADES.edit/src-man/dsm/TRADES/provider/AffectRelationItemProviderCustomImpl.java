@@ -5,6 +5,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import dsm.TRADES.AffectRelation;
+import dsm.TRADES.Component;
 import dsm.TRADES.TRADESPackage;
 
 public class AffectRelationItemProviderCustomImpl extends AffectRelationItemProvider {
@@ -17,7 +18,10 @@ public class AffectRelationItemProviderCustomImpl extends AffectRelationItemProv
 	public String getText(Object object) {
 		AffectRelation rel = (AffectRelation) object;
 		String name = rel.getName();
-		String targetNames = rel.getSourceComponent().getName() + "->" + rel.getTargetComponent().getName();
+		Component sourceComponent = rel.getSourceComponent();
+		Component targetComponent = rel.getTargetComponent();
+		String targetNames = sourceComponent != null ? sourceComponent.getName()
+				: "" + "->" + targetComponent != null ? targetComponent.getName() : "";
 		if (name == null || name.isEmpty()) {
 			return targetNames;
 		} else {

@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.resource.impl.ExtensibleURIConverterImpl;
 import org.obeonetwork.m2doc.properties.TemplateCustomProperties;
 
 import dsm.TRADES.TRADESPackage;
-import dsm.trades.m2doc.Activator;
+import dsm.trades.m2doc.TradesM2docActivator;
 import dsm.trades.m2doc.IM2DocTemplate;
 import dsm.trades.m2doc.IM2DocTemplateRegistry;
 
@@ -45,14 +45,14 @@ public class M2DocTemplateRegistry implements IM2DocTemplateRegistry {
 				final TemplateCustomProperties customProperties = new TemplateCustomProperties(res);
 				String selfType = customProperties.getVariables().get(IM2DocTemplate.SELF_VAR);
 				if (selfType == null) {
-					Activator.logError("Unkown type of self for the template" + newTemplate);
+					TradesM2docActivator.logError("Unkown type of self for the template" + newTemplate);
 					return this;
 				}
 
 				EClassifier selfTypeEClass = TRADESPackage.eINSTANCE
 						.getEClassifier(selfType.replace(TRADES_PKG_PREFIX, ""));
 				if (!(selfTypeEClass instanceof EClass)) {
-					Activator.logError("Unkown type of self for the template" + newTemplate);
+					TradesM2docActivator.logError("Unkown type of self for the template" + newTemplate);
 					return this;
 				}
 
@@ -64,7 +64,7 @@ public class M2DocTemplateRegistry implements IM2DocTemplateRegistry {
 			}
 
 		} catch (RuntimeException | IOException | InvalidFormatException e2) {
-			Activator.logError("Error while reading template " + newTemplate, e2);
+			TradesM2docActivator.logError("Error while reading template " + newTemplate, e2);
 		}
 		return this;
 	}

@@ -20,12 +20,12 @@ import org.eclipse.equinox.app.IApplicationContext;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import TRADES.design.ProjectFactory;
 import dsm.TRADES.Analysis;
 import dsm.TRADES.Control;
 import dsm.TRADES.ControlOwner;
 import dsm.TRADES.ExternalControl;
 import dsm.TRADES.ExternalThreat;
+import dsm.TRADES.SemanticUtil;
 import dsm.TRADES.TRADESFactory;
 import dsm.TRADES.Threat;
 import dsm.TRADES.ThreatMitigationRelation;
@@ -64,7 +64,7 @@ public class InitMitre implements IApplication {
 			Resource resource = rs.createResource(URI.createFileURI(targetModelFile + "_" + modelName + ".trades"));
 
 			String analysisName = "Mitre Att&ck : " + modelName;
-			Analysis analysis = ProjectFactory.createInitialModel(analysisName);
+			Analysis analysis = SemanticUtil.createInitialModel(analysisName);
 
 			ThreatsOwner threatOwner = analysis.getThreatOwner();
 			ControlOwner controlOwnedr = analysis.getControlOwner();
@@ -91,7 +91,7 @@ public class InitMitre implements IApplication {
 								.filter(ext -> ext.getSource_name() != null && (ext.getSource_name().endsWith("attack")
 										|| ext.getSource_name().equals("capec")))
 								.findFirst().ifPresentOrElse(ext -> {
-									threat.setID(ext.getExternal_id());
+									threat.setId(ext.getExternal_id());
 									threat.setSource(analysisName);
 									threat.setLink(ext.getUrl());
 								}, () -> {
@@ -112,7 +112,7 @@ public class InitMitre implements IApplication {
 									ext -> ext.getSource_name() != null && (ext.getSource_name().endsWith("attack")
 											|| ext.getSource_name().equals("capec")))
 									.findFirst().ifPresentOrElse(ext -> {
-										control.setID(ext.getExternal_id());
+										control.setId(ext.getExternal_id());
 										control.setSource(analysisName);
 										control.setLink(ext.getUrl());
 									}, () -> {

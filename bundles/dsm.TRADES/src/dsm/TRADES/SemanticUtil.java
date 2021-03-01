@@ -1,24 +1,29 @@
-package TRADES.design;
+package dsm.TRADES;
 
-import dsm.TRADES.AbstractControlOwner;
-import dsm.TRADES.Analysis;
-import dsm.TRADES.ControlOwner;
-import dsm.TRADES.DataOwner;
-import dsm.TRADES.DifficultyScore;
-import dsm.TRADES.ImpactConfiguration;
-import dsm.TRADES.ImpactScore;
-import dsm.TRADES.ScoreSystem;
-import dsm.TRADES.TRADESFactory;
-import dsm.TRADES.ThreatsOwner;
+public class SemanticUtil {
 
-public class ProjectFactory {
+	public static <T extends Control> T addControl(AbstractControlOwner cmp, T control, boolean internal) {
+
+		ControlOwner owner = cmp.getControlOwner();
+		if (owner == null) {
+			owner = TRADESFactory.eINSTANCE.createControlOwner();
+			cmp.setControlOwner(owner);
+		}
+		if (internal) {
+			owner.getInternals().add(control);
+		} else {
+			owner.getExternals().add(control);
+		}
+
+		return control;
+	}
 
 	public static Analysis createInitialModel(String rootObjectName) {
 		Analysis analysis = TRADESFactory.eINSTANCE.createAnalysis();
 		analysis.setName(rootObjectName);
 
 		ScoreSystem scoreSystem = TRADESFactory.eINSTANCE.createScoreSystem();
-		analysis.setScoresystem(scoreSystem);
+		analysis.setScoreSystem(scoreSystem);
 
 		ThreatsOwner threatOwner = TRADESFactory.eINSTANCE.createThreatsOwner();
 		analysis.setThreatOwner(threatOwner);
@@ -38,7 +43,7 @@ public class ProjectFactory {
 		return analysis;
 	}
 
-	private static void createDataOwner(Analysis analysis) {
+	public static void createDataOwner(Analysis analysis) {
 		DataOwner dataOwner = TRADESFactory.eINSTANCE.createDataOwner();
 		analysis.setDataOwner(dataOwner);
 	}
@@ -51,7 +56,7 @@ public class ProjectFactory {
 
 	private static void createDifficulty(String name, int score, ScoreSystem system) {
 		DifficultyScore diff = TRADESFactory.eINSTANCE.createDifficultyScore();
-		system.getDifficultyscore().add(diff);
+		system.getDifficultyScores().add(diff);
 		diff.setName(name);
 		diff.setDifficulty(score);
 
@@ -59,13 +64,14 @@ public class ProjectFactory {
 
 	private static void createImpact(String name, int score, ScoreSystem system) {
 		ImpactScore impact = TRADESFactory.eINSTANCE.createImpactScore();
-		system.getImpactscore().add(impact);
+		system.getImpactScores().add(impact);
 		impact.setName(name);
 		impact.setImpact(score);
-		for (DifficultyScore dif : system.getDifficultyscore()) {
+		for (DifficultyScore dif : system.getDifficultyScores()) {
 			ImpactConfiguration conf = TRADESFactory.eINSTANCE.createImpactConfiguration();
 			impact.getConfigurations().add(conf);
 			conf.setDifficulty(dif);
 		}
 	}
+
 }

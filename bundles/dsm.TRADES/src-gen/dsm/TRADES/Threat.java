@@ -15,10 +15,9 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link dsm.TRADES.Threat#getAllocated <em>Allocated</em>}</li>
- *   <li>{@link dsm.TRADES.Threat#getThreatallocation <em>Threatallocation</em>}</li>
+ *   <li>{@link dsm.TRADES.Threat#getThreatAllocations <em>Threat Allocations</em>}</li>
  *   <li>{@link dsm.TRADES.Threat#getThreatType <em>Threat Type</em>}</li>
- *   <li>{@link dsm.TRADES.Threat#getID <em>ID</em>}</li>
+ *   <li>{@link dsm.TRADES.Threat#getId <em>Id</em>}</li>
  *   <li>{@link dsm.TRADES.Threat#getDescription <em>Description</em>}</li>
  *   <li>{@link dsm.TRADES.Threat#getApplicability <em>Applicability</em>}</li>
  * </ul>
@@ -29,32 +28,18 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface Threat extends NamedElement {
 	/**
-	 * Returns the value of the '<em><b>Allocated</b></em>' reference list.
-	 * The list contents are of type {@link dsm.TRADES.Component}.
-	 * It is bidirectional and its opposite is '{@link dsm.TRADES.Component#getAllocatedThreat <em>Allocated Threat</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Allocated</em>' reference list.
-	 * @see dsm.TRADES.TRADESPackage#getThreat_Allocated()
-	 * @see dsm.TRADES.Component#getAllocatedThreat
-	 * @model opposite="allocatedThreat"
-	 * @generated
-	 */
-	EList<Component> getAllocated();
-
-	/**
-	 * Returns the value of the '<em><b>Threatallocation</b></em>' reference list.
+	 * Returns the value of the '<em><b>Threat Allocations</b></em>' reference list.
 	 * The list contents are of type {@link dsm.TRADES.ThreatAllocationRelation}.
 	 * It is bidirectional and its opposite is '{@link dsm.TRADES.ThreatAllocationRelation#getThreat <em>Threat</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Threatallocation</em>' reference list.
-	 * @see dsm.TRADES.TRADESPackage#getThreat_Threatallocation()
+	 * @return the value of the '<em>Threat Allocations</em>' reference list.
+	 * @see dsm.TRADES.TRADESPackage#getThreat_ThreatAllocations()
 	 * @see dsm.TRADES.ThreatAllocationRelation#getThreat
 	 * @model opposite="threat"
 	 * @generated
 	 */
-	EList<ThreatAllocationRelation> getThreatallocation();
+	EList<ThreatAllocationRelation> getThreatAllocations();
 
 	/**
 	 * Returns the value of the '<em><b>Threat Type</b></em>' attribute.
@@ -82,26 +67,26 @@ public interface Threat extends NamedElement {
 	void setThreatType(threatTypeENUM value);
 
 	/**
-	 * Returns the value of the '<em><b>ID</b></em>' attribute.
+	 * Returns the value of the '<em><b>Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>ID</em>' attribute.
-	 * @see #setID(String)
-	 * @see dsm.TRADES.TRADESPackage#getThreat_ID()
+	 * @return the value of the '<em>Id</em>' attribute.
+	 * @see #setId(String)
+	 * @see dsm.TRADES.TRADESPackage#getThreat_Id()
 	 * @model
 	 * @generated
 	 */
-	String getID();
+	String getId();
 
 	/**
-	 * Sets the value of the '{@link dsm.TRADES.Threat#getID <em>ID</em>}' attribute.
+	 * Sets the value of the '{@link dsm.TRADES.Threat#getId <em>Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>ID</em>' attribute.
-	 * @see #getID()
+	 * @param value the new value of the '<em>Id</em>' attribute.
+	 * @see #getId()
 	 * @generated
 	 */
-	void setID(String value);
+	void setId(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Description</b></em>' attribute.

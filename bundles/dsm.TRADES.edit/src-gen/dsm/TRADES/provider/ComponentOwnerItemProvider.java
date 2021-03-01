@@ -71,7 +71,7 @@ public class ComponentOwnerItemProvider extends ItemProviderAdapter implements I
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(TRADESPackage.Literals.COMPONENT_OWNER__COMPONENT);
+			childrenFeatures.add(TRADESPackage.Literals.COMPONENT_OWNER__COMPONENTS);
 		}
 		return childrenFeatures;
 	}
@@ -122,7 +122,7 @@ public class ComponentOwnerItemProvider extends ItemProviderAdapter implements I
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ComponentOwner.class)) {
-		case TRADESPackage.COMPONENT_OWNER__COMPONENT:
+		case TRADESPackage.COMPONENT_OWNER__COMPONENTS:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -140,7 +140,7 @@ public class ComponentOwnerItemProvider extends ItemProviderAdapter implements I
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(TRADESPackage.Literals.COMPONENT_OWNER__COMPONENT,
+		newChildDescriptors.add(createChildParameter(TRADESPackage.Literals.COMPONENT_OWNER__COMPONENTS,
 				TRADESFactory.eINSTANCE.createComponent()));
 	}
 
