@@ -203,9 +203,9 @@
         <details key="documentation" value="Specifies a media type as defined by the Internet Assigned Numbers Authority (IANA)"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" eType="#//MarkupMultiline"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Parameter" eSuperTypes="#//PropertyOwner">
+  <eClassifiers xsi:type="ecore:EClass" name="Parameter" eSuperTypes="#//PropertyOwner #//AnnotationOwner #//LinkOwner">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Parameters provide a mechanism for the dynamic assignment of value(s) in a control"/>
     </eAnnotations>
@@ -214,26 +214,22 @@
         <details key="documentation" value="A unique identifier for a specific parameter instance. This identifier's uniqueness is document scoped and is intended to be consistent for the same parameter across minor revisions of the document"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="calss" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="class" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="A textual label that provides a characterization of the parameter"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="DependsOn" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dependsOn" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Another parameter invoking this one"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="links" upperBound="-1"
-        eType="#//Link" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="annotations" upperBound="-1"
-        eType="#//Annotation" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="usage" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" eType="#//MarkupLine"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="usage" eType="#//MarkupMultiline"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="constraints" upperBound="-1"
         eType="#//Constraint" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="guideline" upperBound="-1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        eType="#//MarkupMultiline">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="A prose statement that provides a recommendation for the use of a parameter"/>
       </eAnnotations>
@@ -246,7 +242,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="select" eType="#//Select"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="OscalControl" eSuperTypes="#//PropertyOwner">
+  <eClassifiers xsi:type="ecore:EClass" name="OscalControl" eSuperTypes="#//PropertyOwner #//ParameterOwner #//NamedElement #//AnnotationOwner #//LinkOwner">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="A structured information object representing a security or privacy control. Each security or privacy control within the Catalog is defined by a distinct control instance"/>
     </eAnnotations>
@@ -255,18 +251,7 @@
         <details key="documentation" value="A unique identifier for a specific control instance that can be used to reference the control in other OSCAL documents. This identifier's uniqueness is document scoped and is intended to be consistent for the same control across minor revisions of the document"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="A textual label that provides a sub-type or characterization of the control"/>
-      </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
-        eType="#//Parameter" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="annotations" upperBound="-1"
-        eType="#//Annotation" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="links" upperBound="-1"
-        eType="#//Link" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" lowerBound="1" eType="#//MarkupLine"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="parts" upperBound="-1"
         eType="#//Partition" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="oscalcontrols" upperBound="-1"
@@ -300,7 +285,7 @@
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Role" eSuperTypes="#//PropertyOwner">
+  <eClassifiers xsi:type="ecore:EClass" name="Role" eSuperTypes="#//PropertyOwner #//AnnotationOwner #//LinkOwner">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Defines a function assumed or expected to be assumed by a party in a specific situation"/>
     </eAnnotations>
@@ -311,10 +296,6 @@
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="annotations" upperBound="-1"
-        eType="#//Annotation" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="links" upperBound="-1"
-        eType="#//Link" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="remark" eType="#//Remark"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
@@ -327,9 +308,9 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Additional commentary on the containing object"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="#//MarkupMultiline"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Catalog">
+  <eClassifiers xsi:type="ecore:EClass" name="Catalog" eSuperTypes="#//ParameterOwner">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="A collection of controls"/>
     </eAnnotations>
@@ -341,8 +322,6 @@
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="metadata" lowerBound="1"
         eType="#//Metadata" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="params" upperBound="-1"
-        eType="#//Parameter" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="groups" upperBound="-1"
         eType="#//Group" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="backmatter" eType="#//BackMatter"
@@ -350,44 +329,32 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="oscalcontrols" upperBound="-1"
         eType="#//OscalControl" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="BackMatter"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Revision" eSuperTypes="#//PropertyOwner">
+  <eClassifiers xsi:type="ecore:EClass" name="BackMatter">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="resources" upperBound="-1"
+        eType="#//Resource" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Revision" eSuperTypes="#//PropertyOwner #//AnnotationOwner #//LinkOwner">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Revision History Entry&#xD;&#xA;&#xD;&#xA;An entry in a sequential list of revisions to the containing document in reverse chronological order (i.e., most recent previous revision first)."/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" eType="#//MarkupLine"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="published" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="lastModified" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="version" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="oscalVersion" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="annotations" upperBound="-1"
-        eType="#//Annotation" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="links" upperBound="-1"
-        eType="#//Link" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="remark" eType="#//Remark"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Group" eSuperTypes="#//PropertyOwner">
+  <eClassifiers xsi:type="ecore:EClass" name="Group" eSuperTypes="#//PropertyOwner #//ParameterOwner #//NamedElement #//AnnotationOwner #//LinkOwner">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="A textual label that provides a sub-type or characterization of the group"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="A textual label that provides a sub-type or characterization of the group"/>
-      </eAnnotations>
-    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="A unique identifier for a specific group instance that can be used to reference the group within this and in other OSCAL documents. This identifier's uniqueness is document scoped and is intended to be consistent for the same group across minor revisions of the document"/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
-        eType="#//Parameter" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="annotations" upperBound="-1"
-        eType="#//Annotation" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="links" upperBound="-1"
-        eType="#//Link" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="partitions" upperBound="-1"
         eType="#//Partition" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="groups" upperBound="-1"
@@ -395,23 +362,19 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="oscalcontrols" upperBound="-1"
         eType="#//OscalControl" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Location" eSuperTypes="#//PropertyOwner">
+  <eClassifiers xsi:type="ecore:EClass" name="Location" eSuperTypes="#//PropertyOwner #//AnnotationOwner #//LinkOwner">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="A location, with associated metadata that can be referenced"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="addres" lowerBound="1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="address" lowerBound="1"
         eType="#//Address" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="emailAddress" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="emailAddresses" upperBound="-1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="uuid" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="telephonenumbers" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="telephoneNumbers" upperBound="-1"
         eType="#//TelephoneNumber" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="url" upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="annotations" upperBound="-1"
-        eType="#//Annotation" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="links" upperBound="-1"
-        eType="#//Link" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="remark" eType="#//Remark"
         containment="true"/>
   </eClassifiers>
@@ -475,11 +438,10 @@
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Metadata">
+  <eClassifiers xsi:type="ecore:EClass" name="Metadata" eSuperTypes="#//AnnotationOwner #//LinkOwner">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Provides information about the publication and availability of the containing document"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="published" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="lastModified" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
@@ -487,14 +449,10 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="oscalVersion" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="documentid" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="documentId" upperBound="-1"
         eType="#//DocumentId" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="properties" upperBound="-1"
         eType="#//Property" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="annotations" upperBound="-1"
-        eType="#//Annotation" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="links" upperBound="-1"
-        eType="#//Link" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="roles" upperBound="-1"
         eType="#//Role" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="revision" eType="#//Revisions"
@@ -503,10 +461,11 @@
         eType="#//Location" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="parties" upperBound="-1"
         eType="#//Party" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="responsibleparties" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="responsibleParties" upperBound="-1"
         eType="#//ResponsibleParty" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="remark" eType="#//Remark"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" lowerBound="1" eType="#//MarkupLine"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Revisions">
     <eStructuralFeatures xsi:type="ecore:EReference" name="revisions" upperBound="-1"
@@ -516,7 +475,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="number" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Party" eSuperTypes="#//PropertyOwner">
+  <eClassifiers xsi:type="ecore:EClass" name="Party" eSuperTypes="#//PropertyOwner #//AnnotationOwner #//NamedElement #//LinkOwner">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="A responsible entity which is either a person or an organization"/>
     </eAnnotations>
@@ -527,31 +486,26 @@
         <details key="documentation" value="A category describing the kind of party the object describes"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="shortName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="externalids" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="externalIds" upperBound="-1"
         eType="#//ExternalId" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="annotations" upperBound="-1"
-        eType="#//Annotation" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="links" upperBound="-1"
-        eType="#//Link" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="emailAddress" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="emailAddresses" upperBound="-1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="telephonenumbers" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="telephoneNumbers" upperBound="-1"
         eType="#//TelephoneNumber" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="address" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="addresses" upperBound="-1"
         eType="#//Address" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="locationUuid" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="locationUuids" upperBound="-1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="memberOfOrganization" upperBound="-1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="memberOfOrganizations"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ExternalId">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="scheme" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ResponsibleParty" eSuperTypes="#//PropertyOwner">
+  <eClassifiers xsi:type="ecore:EClass" name="ResponsibleParty" eSuperTypes="#//PropertyOwner #//AnnotationOwner #//LinkOwner">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="A reference to a set of organizations or persons that have responsibility for performing a referenced role in the context of the containing object"/>
     </eAnnotations>
@@ -563,10 +517,6 @@
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="partyUuid" upperBound="-1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="annotations" upperBound="-1"
-        eType="#//Annotation" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="links" upperBound="-1"
-        eType="#//Link" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="remark" eType="#//Remark"
         containment="true"/>
   </eClassifiers>
@@ -594,7 +544,7 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Partition" eSuperTypes="#//PropertyOwner">
+  <eClassifiers xsi:type="ecore:EClass" name="Partition" eSuperTypes="#//PropertyOwner #//AnnotationOwner #//LinkOwner">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="A partition of a control's definition or a child of another part"/>
     </eAnnotations>
@@ -613,19 +563,15 @@
         <details key="documentation" value="A namespace qualifying the part's name. This allows different organizations to associate distinct semantics with the same name"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="calss" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="class" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="annotations" upperBound="-1"
-        eType="#//Annotation" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="links" upperBound="-1"
-        eType="#//Link" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Select">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="howMany" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="choice" upperBound="-1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Resource" eSuperTypes="#//PropertyOwner">
+  <eClassifiers xsi:type="ecore:EClass" name="Resource" eSuperTypes="#//PropertyOwner #//AnnotationOwner">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="A resource associated with content in the containing document. A resource may be directly included in the document base64 encoded or may point to one or more equavalent internet resources"/>
     </eAnnotations>
@@ -634,19 +580,20 @@
         <details key="documentation" value="A globally unique identifier that can be used to reference this defined resource elsewhere in an OSCAL document. A UUID should be consistantly used for a given resource across revisions of the document"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="annotations" upperBound="-1"
-        eType="#//Annotation" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="documentids" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" eType="#//MarkupLine"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="#//MarkupMultiline"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="documentIds" upperBound="-1"
         eType="#//DocumentId" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="citation" eType="#//Citation"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="remarks" eType="#//MarkupMultiline"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="base64" eType="#//Base64"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rLinks" upperBound="-1"
+        eType="#//Rlink" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Citation" eSuperTypes="#//PropertyOwner">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="annotation" upperBound="-1"
-        eType="#//Annotation" containment="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Citation" eSuperTypes="#//PropertyOwner #//AnnotationOwner">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" lowerBound="1" eType="#//MarkupLine"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="biblio" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="A container for structured bibliographic information. The model of this information is undefined by OSCAL"/>
@@ -667,10 +614,35 @@
         <details key="documentation" value="Specifies a media type as defined by the Internet Assigned Numbers Authority (IANA)"/>
       </eAnnotations>
     </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hashes" upperBound="-1"
+        eType="#//Hash" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Hash"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Hash">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="algorithm" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="content" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PropertyOwner" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EReference" name="properties" upperBound="-1"
         eType="#//Property" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ParameterOwner" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
+        eType="#//Parameter" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AnnotationOwner" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="annotations" upperBound="-1"
+        eType="#//Annotation" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LinkOwner" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="links" upperBound="-1"
+        eType="#//Link" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="MarkupLine" instanceClassName="java.lang.String"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="MarkupMultiline" instanceClassName="java.lang.String"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="Base64Binary" instanceClassName="byte[]"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Base64">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fileName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mediaType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="content" eType="#//Base64Binary"/>
   </eClassifiers>
 </ecore:EPackage>
