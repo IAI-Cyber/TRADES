@@ -333,5 +333,25 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Select/howMany"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Select/choice"/>
     </genClasses>
+    <genClasses ecoreClass="TRADES.ecore#//Resource">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Resource/uuid"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Resource/title"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Resource/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Resource/properties"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Resource/annotations"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Resource/documentids"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Resource/citation"/>
+    </genClasses>
+    <genClasses ecoreClass="TRADES.ecore#//Citation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Citation/text"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Citation/properties"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Citation/annotation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Citation/biblio"/>
+    </genClasses>
+    <genClasses ecoreClass="TRADES.ecore#//Rlink">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Rlink/href"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Rlink/mediaType"/>
+    </genClasses>
+    <genClasses ecoreClass="TRADES.ecore#//Hash"/>
   </genPackages>
 </genmodel:GenModel>
