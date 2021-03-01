@@ -170,7 +170,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//ControlDefinition/id"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//ControlDefinition/title"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//ControlDefinition/parts"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//ControlDefinition/oscalcontrols"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//ControlDefinition/ControlsDefinition"/>
     </genClasses>
     <genClasses ecoreClass="TRADES.ecore#//Address">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Address/addrLine"/>
@@ -195,7 +195,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Catalog/metadata"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Catalog/groups"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Catalog/backmatter"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Catalog/oscalcontrols"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Catalog/ControlsDefinition"/>
     </genClasses>
     <genClasses ecoreClass="TRADES.ecore#//BackMatter">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//BackMatter/resources"/>
@@ -213,7 +213,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Group/title"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Group/partitions"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Group/groups"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Group/oscalcontrols"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Group/ControlsDefinition"/>
     </genClasses>
     <genClasses ecoreClass="TRADES.ecore#//Location">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Location/title"/>

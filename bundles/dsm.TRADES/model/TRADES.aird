@@ -55,7 +55,7 @@
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="TRADES.ecore#/"/>
       </ownedRepresentationDescriptors>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_sSkhEHaGEeuqwLyTK-HyHw" name="Catalog definition -Catalog" repPath="#_sRwowHaGEeuqwLyTK-HyHw" changeId="250e4a32-68ac-404d-b8c2-e5d86e4236b6">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_sSkhEHaGEeuqwLyTK-HyHw" name="Catalog definition -Catalog" repPath="#_sRwowHaGEeuqwLyTK-HyHw" changeId="262d5396-2330-482e-8290-3ccc2bd8ea62">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="TRADES.ecore#/"/>
       </ownedRepresentationDescriptors>
@@ -79,7 +79,7 @@
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="TRADES.ecore#/"/>
       </ownedRepresentationDescriptors>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_-6auYXqWEeu5ZJStTCqOuw" name="Catalog definition - Annotation Owner" repPath="#_-6aHUHqWEeu5ZJStTCqOuw" changeId="f86d0080-6793-4a70-9846-a70f10b80955">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_-6auYXqWEeu5ZJStTCqOuw" name="Catalog definition - Annotation Owner" repPath="#_-6aHUHqWEeu5ZJStTCqOuw" changeId="f7b4c01a-cd89-4011-ab68-f6af797dcf49">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="TRADES.ecore#/"/>
       </ownedRepresentationDescriptors>
@@ -1737,8 +1737,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_smVAFnqjEeu5ZJStTCqOuw" name=" oscalcontrols : OscalControl" tooltipText="">
-        <target xmi:type="ecore:EReference" href="TRADES.ecore#//Catalog/oscalcontrols"/>
-        <semanticElements xmi:type="ecore:EReference" href="TRADES.ecore#//Catalog/oscalcontrols"/>
+        <target xmi:type="ecore:EReference" href="TRADES.ecore#//Catalog/ControlsDefinition"/>
+        <semanticElements xmi:type="ecore:EReference" href="TRADES.ecore#//Catalog/ControlsDefinition"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_smVnIHqjEeu5ZJStTCqOuw" labelAlignment="LEFT" color="114,159,207">
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@style"/>
         </ownedStyle>
@@ -10344,7 +10344,7 @@
         </computedStyleDescriptions>
       </data>
     </ownedAnnotationEntries>
-    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_wdXGgHaGEeuqwLyTK-HyHw" name="OscalControl" tooltipText="" outgoingEdges="_bZkyUnp5EeuqwLyTK-HyHw _Q39AQ3qZEeu5ZJStTCqOuw" incomingEdges="_-sISUHaGEeuqwLyTK-HyHw _bZkyUnp5EeuqwLyTK-HyHw _bZlZYXp5EeuqwLyTK-HyHw" width="12" height="10">
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_wdXGgHaGEeuqwLyTK-HyHw" name="ControlDefinition" tooltipText="" outgoingEdges="_bZkyUnp5EeuqwLyTK-HyHw _Q39AQ3qZEeu5ZJStTCqOuw" incomingEdges="_-sISUHaGEeuqwLyTK-HyHw _bZkyUnp5EeuqwLyTK-HyHw _bZlZYXp5EeuqwLyTK-HyHw" width="12" height="10">
       <target xmi:type="ecore:EClass" href="TRADES.ecore#//ControlDefinition"/>
       <semanticElements xmi:type="ecore:EClass" href="TRADES.ecore#//ControlDefinition"/>
       <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_7aBe4XqYEeu5ZJStTCqOuw" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="Liquid" backgroundColor="253,206,137" foregroundColor="253,206,137">
@@ -10431,9 +10431,9 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_-sISUHaGEeuqwLyTK-HyHw" name="[0..*] oscalcontrols" sourceNode="_6b82kHaGEeuqwLyTK-HyHw" targetNode="_wdXGgHaGEeuqwLyTK-HyHw">
-      <target xmi:type="ecore:EReference" href="TRADES.ecore#//Catalog/oscalcontrols"/>
-      <semanticElements xmi:type="ecore:EReference" href="TRADES.ecore#//Catalog/oscalcontrols"/>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_-sISUHaGEeuqwLyTK-HyHw" name="[0..*] ControlsDefinition" sourceNode="_6b82kHaGEeuqwLyTK-HyHw" targetNode="_wdXGgHaGEeuqwLyTK-HyHw">
+      <target xmi:type="ecore:EReference" href="TRADES.ecore#//Catalog/ControlsDefinition"/>
+      <semanticElements xmi:type="ecore:EReference" href="TRADES.ecore#//Catalog/ControlsDefinition"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_-sI5Y3aGEeuqwLyTK-HyHw" description="_-sI5YHaGEeuqwLyTK-HyHw" sourceArrow="FillDiamond" routingStyle="manhattan" strokeColor="0,0,0">
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_-sI5ZXaGEeuqwLyTK-HyHw" showIcon="false">
           <customFeatures>labelSize</customFeatures>
@@ -10783,9 +10783,9 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_bZkyUnp5EeuqwLyTK-HyHw" name="[0..*] oscalcontrols" sourceNode="_wdXGgHaGEeuqwLyTK-HyHw" targetNode="_wdXGgHaGEeuqwLyTK-HyHw">
-      <target xmi:type="ecore:EReference" href="TRADES.ecore#//ControlDefinition/oscalcontrols"/>
-      <semanticElements xmi:type="ecore:EReference" href="TRADES.ecore#//ControlDefinition/oscalcontrols"/>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_bZkyUnp5EeuqwLyTK-HyHw" name="[0..*] ControlsDefinition" sourceNode="_wdXGgHaGEeuqwLyTK-HyHw" targetNode="_wdXGgHaGEeuqwLyTK-HyHw">
+      <target xmi:type="ecore:EReference" href="TRADES.ecore#//ControlDefinition/ControlsDefinition"/>
+      <semanticElements xmi:type="ecore:EReference" href="TRADES.ecore#//ControlDefinition/ControlsDefinition"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_bZkyU3p5EeuqwLyTK-HyHw" description="_-sI5YHaGEeuqwLyTK-HyHw" sourceArrow="FillDiamond" routingStyle="manhattan" strokeColor="0,0,0">
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_bZkyVXp5EeuqwLyTK-HyHw" showIcon="false">
           <customFeatures>labelSize</customFeatures>
@@ -10809,9 +10809,9 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_bZlZYXp5EeuqwLyTK-HyHw" name="[0..*] oscalcontrols" sourceNode="_TWKRYHaHEeuqwLyTK-HyHw" targetNode="_wdXGgHaGEeuqwLyTK-HyHw">
-      <target xmi:type="ecore:EReference" href="TRADES.ecore#//Group/oscalcontrols"/>
-      <semanticElements xmi:type="ecore:EReference" href="TRADES.ecore#//Group/oscalcontrols"/>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_bZlZYXp5EeuqwLyTK-HyHw" name="[0..*] ControlsDefinition" sourceNode="_TWKRYHaHEeuqwLyTK-HyHw" targetNode="_wdXGgHaGEeuqwLyTK-HyHw">
+      <target xmi:type="ecore:EReference" href="TRADES.ecore#//Group/ControlsDefinition"/>
+      <semanticElements xmi:type="ecore:EReference" href="TRADES.ecore#//Group/ControlsDefinition"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_bZmAYHp5EeuqwLyTK-HyHw" description="_-sI5YHaGEeuqwLyTK-HyHw" sourceArrow="FillDiamond" routingStyle="manhattan" strokeColor="0,0,0">
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_bZmAYnp5EeuqwLyTK-HyHw" showIcon="false">
           <customFeatures>labelSize</customFeatures>
@@ -12080,8 +12080,8 @@
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DEdge" uid="_7an50naQEeuqwLyTK-HyHw" name="[0..*] oscalcontrols" sourceNode="_navaAHaHEeuqwLyTK-HyHw" targetNode="_navaAHaHEeuqwLyTK-HyHw">
-      <target xmi:type="ecore:EReference" href="TRADES.ecore#//ControlDefinition/oscalcontrols"/>
-      <semanticElements xmi:type="ecore:EReference" href="TRADES.ecore#//ControlDefinition/oscalcontrols"/>
+      <target xmi:type="ecore:EReference" href="TRADES.ecore#//ControlDefinition/ControlsDefinition"/>
+      <semanticElements xmi:type="ecore:EReference" href="TRADES.ecore#//ControlDefinition/ControlsDefinition"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_7an503aQEeuqwLyTK-HyHw" description="_JHmgwHaJEeuqwLyTK-HyHw" sourceArrow="FillDiamond" routingStyle="manhattan" strokeColor="0,0,0">
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_7an51XaQEeuqwLyTK-HyHw" showIcon="false">
           <customFeatures>labelSize</customFeatures>
@@ -13164,8 +13164,8 @@
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DEdge" uid="_qle2t3aSEeuqwLyTK-HyHw" name="[0..*] oscalcontrols" sourceNode="_qlYJAHaSEeuqwLyTK-HyHw" targetNode="_qlYJAHaSEeuqwLyTK-HyHw">
-      <target xmi:type="ecore:EReference" href="TRADES.ecore#//ControlDefinition/oscalcontrols"/>
-      <semanticElements xmi:type="ecore:EReference" href="TRADES.ecore#//ControlDefinition/oscalcontrols"/>
+      <target xmi:type="ecore:EReference" href="TRADES.ecore#//ControlDefinition/ControlsDefinition"/>
+      <semanticElements xmi:type="ecore:EReference" href="TRADES.ecore#//ControlDefinition/ControlsDefinition"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_qle2uHaSEeuqwLyTK-HyHw" description="_J5VwoHaSEeuqwLyTK-HyHw" sourceArrow="FillDiamond" routingStyle="manhattan" strokeColor="0,0,0">
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_qle2unaSEeuqwLyTK-HyHw" showIcon="false">
           <customFeatures>labelSize</customFeatures>
@@ -13177,8 +13177,8 @@
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DEdge" uid="_1oUSBnaSEeuqwLyTK-HyHw" name="[0..*] oscalcontrols" sourceNode="_yNLSwHaQEeuqwLyTK-HyHw" targetNode="_qlYJAHaSEeuqwLyTK-HyHw">
-      <target xmi:type="ecore:EReference" href="TRADES.ecore#//Group/oscalcontrols"/>
-      <semanticElements xmi:type="ecore:EReference" href="TRADES.ecore#//Group/oscalcontrols"/>
+      <target xmi:type="ecore:EReference" href="TRADES.ecore#//Group/ControlsDefinition"/>
+      <semanticElements xmi:type="ecore:EReference" href="TRADES.ecore#//Group/ControlsDefinition"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_1oUSB3aSEeuqwLyTK-HyHw" description="_J5VwoHaSEeuqwLyTK-HyHw" sourceArrow="FillDiamond" routingStyle="manhattan" strokeColor="0,0,0">
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_1oUSCXaSEeuqwLyTK-HyHw" showIcon="false">
           <customFeatures>labelSize</customFeatures>
@@ -15688,8 +15688,8 @@
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DEdge" uid="_x2IDnXqUEeu5ZJStTCqOuw" name="[0..*] oscalcontrols" visible="false" sourceNode="_x11vsnqUEeu5ZJStTCqOuw" targetNode="_x12903qUEeu5ZJStTCqOuw">
-      <target xmi:type="ecore:EReference" href="TRADES.ecore#//Group/oscalcontrols"/>
-      <semanticElements xmi:type="ecore:EReference" href="TRADES.ecore#//Group/oscalcontrols"/>
+      <target xmi:type="ecore:EReference" href="TRADES.ecore#//Group/ControlsDefinition"/>
+      <semanticElements xmi:type="ecore:EReference" href="TRADES.ecore#//Group/ControlsDefinition"/>
       <graphicalFilters xmi:type="diagram:HideFilter" uid="_XKw-wHqVEeu5ZJStTCqOuw"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_x2IDnnqUEeu5ZJStTCqOuw" description="_x2G1c3qUEeu5ZJStTCqOuw" sourceArrow="FillDiamond" routingStyle="manhattan" strokeColor="0,0,0">
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_x2IDoHqUEeu5ZJStTCqOuw" showIcon="false">
@@ -15716,8 +15716,8 @@
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DEdge" uid="_x2JRzHqUEeu5ZJStTCqOuw" name="[0..*] oscalcontrols" visible="false" sourceNode="_x12903qUEeu5ZJStTCqOuw" targetNode="_x12903qUEeu5ZJStTCqOuw">
-      <target xmi:type="ecore:EReference" href="TRADES.ecore#//ControlDefinition/oscalcontrols"/>
-      <semanticElements xmi:type="ecore:EReference" href="TRADES.ecore#//ControlDefinition/oscalcontrols"/>
+      <target xmi:type="ecore:EReference" href="TRADES.ecore#//ControlDefinition/ControlsDefinition"/>
+      <semanticElements xmi:type="ecore:EReference" href="TRADES.ecore#//ControlDefinition/ControlsDefinition"/>
       <graphicalFilters xmi:type="diagram:HideFilter" uid="_lDlvwHqVEeu5ZJStTCqOuw"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_x2J4wHqUEeu5ZJStTCqOuw" description="_x2G1c3qUEeu5ZJStTCqOuw" sourceArrow="FillDiamond" routingStyle="manhattan" strokeColor="0,0,0">
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_x2J4wnqUEeu5ZJStTCqOuw" showIcon="false">
@@ -16513,8 +16513,8 @@
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DEdge" uid="_xEsxQHqVEeu5ZJStTCqOuw" name="[0..*] oscalcontrols" visible="false" sourceNode="_xEpt4HqVEeu5ZJStTCqOuw" targetNode="_xEpt5nqVEeu5ZJStTCqOuw">
-      <target xmi:type="ecore:EReference" href="TRADES.ecore#//Catalog/oscalcontrols"/>
-      <semanticElements xmi:type="ecore:EReference" href="TRADES.ecore#//Catalog/oscalcontrols"/>
+      <target xmi:type="ecore:EReference" href="TRADES.ecore#//Catalog/ControlsDefinition"/>
+      <semanticElements xmi:type="ecore:EReference" href="TRADES.ecore#//Catalog/ControlsDefinition"/>
       <graphicalFilters xmi:type="diagram:HideFilter" uid="_yhzoYHqVEeu5ZJStTCqOuw"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_xEsxQXqVEeu5ZJStTCqOuw" description="_xEsxMHqVEeu5ZJStTCqOuw" sourceArrow="FillDiamond" routingStyle="manhattan" strokeColor="0,0,0">
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_xEsxQ3qVEeu5ZJStTCqOuw" showIcon="false">
@@ -16541,8 +16541,8 @@
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DEdge" uid="_xEtYRnqVEeu5ZJStTCqOuw" name="[0..*] oscalcontrols" visible="false" sourceNode="_xEpt43qVEeu5ZJStTCqOuw" targetNode="_xEpt5nqVEeu5ZJStTCqOuw">
-      <target xmi:type="ecore:EReference" href="TRADES.ecore#//Group/oscalcontrols"/>
-      <semanticElements xmi:type="ecore:EReference" href="TRADES.ecore#//Group/oscalcontrols"/>
+      <target xmi:type="ecore:EReference" href="TRADES.ecore#//Group/ControlsDefinition"/>
+      <semanticElements xmi:type="ecore:EReference" href="TRADES.ecore#//Group/ControlsDefinition"/>
       <graphicalFilters xmi:type="diagram:HideFilter" uid="_zncawHqVEeu5ZJStTCqOuw"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_xEtYR3qVEeu5ZJStTCqOuw" description="_xEsxMHqVEeu5ZJStTCqOuw" sourceArrow="FillDiamond" routingStyle="manhattan" strokeColor="0,0,0">
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_xEtYSXqVEeu5ZJStTCqOuw" showIcon="false">
@@ -16568,8 +16568,8 @@
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DEdge" uid="_xEtYVHqVEeu5ZJStTCqOuw" name="[0..*] oscalcontrols" visible="false" sourceNode="_xEpt5nqVEeu5ZJStTCqOuw" targetNode="_xEpt5nqVEeu5ZJStTCqOuw">
-      <target xmi:type="ecore:EReference" href="TRADES.ecore#//ControlDefinition/oscalcontrols"/>
-      <semanticElements xmi:type="ecore:EReference" href="TRADES.ecore#//ControlDefinition/oscalcontrols"/>
+      <target xmi:type="ecore:EReference" href="TRADES.ecore#//ControlDefinition/ControlsDefinition"/>
+      <semanticElements xmi:type="ecore:EReference" href="TRADES.ecore#//ControlDefinition/ControlsDefinition"/>
       <graphicalFilters xmi:type="diagram:HideFilter" uid="_zwb-sHqVEeu5ZJStTCqOuw"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_xEtYVXqVEeu5ZJStTCqOuw" description="_xEsxMHqVEeu5ZJStTCqOuw" sourceArrow="FillDiamond" routingStyle="manhattan" strokeColor="0,0,0">
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_xEtYV3qVEeu5ZJStTCqOuw" showIcon="false">
@@ -17837,7 +17837,7 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_BUEtY3qXEeu5ZJStTCqOuw" name="OscalControl" tooltipText="" outgoingEdges="_BUPsmHqXEeu5ZJStTCqOuw _BUQTkHqXEeu5ZJStTCqOuw _hQRkdnqXEeu5ZJStTCqOuw" incomingEdges="_BUPFd3qXEeu5ZJStTCqOuw _BUQTkHqXEeu5ZJStTCqOuw" width="12" height="10">
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_BUEtY3qXEeu5ZJStTCqOuw" name="ControlDefinition" tooltipText="" outgoingEdges="_BUPsmHqXEeu5ZJStTCqOuw _BUQTkHqXEeu5ZJStTCqOuw _hQRkdnqXEeu5ZJStTCqOuw" incomingEdges="_BUPFd3qXEeu5ZJStTCqOuw _BUQTkHqXEeu5ZJStTCqOuw" width="12" height="10">
       <target xmi:type="ecore:EClass" href="TRADES.ecore#//ControlDefinition"/>
       <semanticElements xmi:type="ecore:EClass" href="TRADES.ecore#//ControlDefinition"/>
       <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_7aGXa3qYEeu5ZJStTCqOuw" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="Liquid" foregroundColor="255,252,216">
@@ -18442,8 +18442,8 @@
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DEdge" uid="_BUPFd3qXEeu5ZJStTCqOuw" name="[0..*] oscalcontrols" visible="false" sourceNode="_BUEGUHqXEeu5ZJStTCqOuw" targetNode="_BUEtY3qXEeu5ZJStTCqOuw">
-      <target xmi:type="ecore:EReference" href="TRADES.ecore#//Group/oscalcontrols"/>
-      <semanticElements xmi:type="ecore:EReference" href="TRADES.ecore#//Group/oscalcontrols"/>
+      <target xmi:type="ecore:EReference" href="TRADES.ecore#//Group/ControlsDefinition"/>
+      <semanticElements xmi:type="ecore:EReference" href="TRADES.ecore#//Group/ControlsDefinition"/>
       <graphicalFilters xmi:type="diagram:HideFilter" uid="_DRs3sHqXEeu5ZJStTCqOuw"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_BUPFeHqXEeu5ZJStTCqOuw" description="_BUOeYXqXEeu5ZJStTCqOuw" sourceArrow="FillDiamond" routingStyle="manhattan" strokeColor="0,0,0">
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_BUPFenqXEeu5ZJStTCqOuw" showIcon="false">
@@ -18526,8 +18526,8 @@
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DEdge" uid="_BUQTkHqXEeu5ZJStTCqOuw" name="[0..*] oscalcontrols" visible="false" sourceNode="_BUEtY3qXEeu5ZJStTCqOuw" targetNode="_BUEtY3qXEeu5ZJStTCqOuw">
-      <target xmi:type="ecore:EReference" href="TRADES.ecore#//ControlDefinition/oscalcontrols"/>
-      <semanticElements xmi:type="ecore:EReference" href="TRADES.ecore#//ControlDefinition/oscalcontrols"/>
+      <target xmi:type="ecore:EReference" href="TRADES.ecore#//ControlDefinition/ControlsDefinition"/>
+      <semanticElements xmi:type="ecore:EReference" href="TRADES.ecore#//ControlDefinition/ControlsDefinition"/>
       <graphicalFilters xmi:type="diagram:HideFilter" uid="_DkOLEHqXEeu5ZJStTCqOuw"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_BUQTkXqXEeu5ZJStTCqOuw" description="_BUOeYXqXEeu5ZJStTCqOuw" sourceArrow="FillDiamond" routingStyle="manhattan" strokeColor="0,0,0">
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_BUQTk3qXEeu5ZJStTCqOuw" showIcon="false">
@@ -20310,8 +20310,8 @@
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DEdge" uid="_sk3ojnqYEeu5ZJStTCqOuw" name="[0..*] oscalcontrols" visible="false" sourceNode="_sktQcHqYEeu5ZJStTCqOuw" targetNode="_skt3g3qYEeu5ZJStTCqOuw">
-      <target xmi:type="ecore:EReference" href="TRADES.ecore#//Group/oscalcontrols"/>
-      <semanticElements xmi:type="ecore:EReference" href="TRADES.ecore#//Group/oscalcontrols"/>
+      <target xmi:type="ecore:EReference" href="TRADES.ecore#//Group/ControlsDefinition"/>
+      <semanticElements xmi:type="ecore:EReference" href="TRADES.ecore#//Group/ControlsDefinition"/>
       <graphicalFilters xmi:type="diagram:HideFilter" uid="_w4sOIHqYEeu5ZJStTCqOuw"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_sk3oj3qYEeu5ZJStTCqOuw" description="_sk3BdnqYEeu5ZJStTCqOuw" sourceArrow="FillDiamond" routingStyle="manhattan" strokeColor="0,0,0">
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_sk3okXqYEeu5ZJStTCqOuw" showIcon="false">
@@ -20394,8 +20394,8 @@
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DEdge" uid="_sk4PuXqYEeu5ZJStTCqOuw" name="[0..*] oscalcontrols" visible="false" sourceNode="_skt3g3qYEeu5ZJStTCqOuw" targetNode="_skt3g3qYEeu5ZJStTCqOuw">
-      <target xmi:type="ecore:EReference" href="TRADES.ecore#//ControlDefinition/oscalcontrols"/>
-      <semanticElements xmi:type="ecore:EReference" href="TRADES.ecore#//ControlDefinition/oscalcontrols"/>
+      <target xmi:type="ecore:EReference" href="TRADES.ecore#//ControlDefinition/ControlsDefinition"/>
+      <semanticElements xmi:type="ecore:EReference" href="TRADES.ecore#//ControlDefinition/ControlsDefinition"/>
       <graphicalFilters xmi:type="diagram:HideFilter" uid="_xC5TAHqYEeu5ZJStTCqOuw"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_sk42oHqYEeu5ZJStTCqOuw" description="_sk3BdnqYEeu5ZJStTCqOuw" sourceArrow="FillDiamond" routingStyle="manhattan" strokeColor="0,0,0">
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_sk42onqYEeu5ZJStTCqOuw" showIcon="false">
@@ -21212,8 +21212,8 @@
       </ownedElements>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DEdge" uid="__uwYm3qaEeu5ZJStTCqOuw" name="[0..*] oscalcontrols" sourceNode="__uujYHqaEeu5ZJStTCqOuw" targetNode="__uujYHqaEeu5ZJStTCqOuw">
-      <target xmi:type="ecore:EReference" href="TRADES.ecore#//ControlDefinition/oscalcontrols"/>
-      <semanticElements xmi:type="ecore:EReference" href="TRADES.ecore#//ControlDefinition/oscalcontrols"/>
+      <target xmi:type="ecore:EReference" href="TRADES.ecore#//ControlDefinition/ControlsDefinition"/>
+      <semanticElements xmi:type="ecore:EReference" href="TRADES.ecore#//ControlDefinition/ControlsDefinition"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="__uwYn3qaEeu5ZJStTCqOuw" description="__uwYnHqaEeu5ZJStTCqOuw" sourceArrow="FillDiamond" routingStyle="manhattan" strokeColor="0,0,0">
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="__uwYoXqaEeu5ZJStTCqOuw" showIcon="false">
           <customFeatures>labelSize</customFeatures>

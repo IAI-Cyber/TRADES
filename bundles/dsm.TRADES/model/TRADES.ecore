@@ -256,7 +256,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" lowerBound="1" eType="#//MarkupLine"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="parts" upperBound="-1"
         eType="#//Partition" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="oscalcontrols" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ControlsDefinition" upperBound="-1"
         eType="#//ControlDefinition" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Address">
@@ -328,7 +328,7 @@
         eType="#//Group" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="backmatter" eType="#//BackMatter"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="oscalcontrols" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ControlsDefinition" upperBound="-1"
         eType="#//ControlDefinition" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BackMatter">
@@ -361,7 +361,7 @@
         eType="#//Partition" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="groups" upperBound="-1"
         eType="#//Group" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="oscalcontrols" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ControlsDefinition" upperBound="-1"
         eType="#//ControlDefinition" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Location" eSuperTypes="#//PropertyOwner #//AnnotationOwner #//LinkOwner">
