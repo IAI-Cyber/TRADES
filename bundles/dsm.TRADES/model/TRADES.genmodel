@@ -356,7 +356,9 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Import/include"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Import/exclude"/>
     </genClasses>
-    <genClasses ecoreClass="TRADES.ecore#//Merge"/>
+    <genClasses ecoreClass="TRADES.ecore#//Merge">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Merge/combine"/>
+    </genClasses>
     <genClasses ecoreClass="TRADES.ecore#//Modify"/>
     <genClasses ecoreClass="TRADES.ecore#//Include">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Include/all"/>
@@ -377,6 +379,16 @@
     <genClasses ecoreClass="TRADES.ecore#//Match">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Match/pattern"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Match/order"/>
+    </genClasses>
+    <genClasses ecoreClass="TRADES.ecore#//Combine">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Combine/method"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Combine/asIs"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Combine/custom"/>
+    </genClasses>
+    <genClasses ecoreClass="TRADES.ecore#//Custom">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Custom/groups"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Custom/calls"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Custom/matchs"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>
