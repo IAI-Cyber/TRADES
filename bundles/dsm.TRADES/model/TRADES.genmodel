@@ -351,8 +351,32 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Profile/backmatter"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Profile/uuid"/>
     </genClasses>
-    <genClasses ecoreClass="TRADES.ecore#//Import"/>
+    <genClasses ecoreClass="TRADES.ecore#//Import">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Import/herf"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Import/include"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Import/exclude"/>
+    </genClasses>
     <genClasses ecoreClass="TRADES.ecore#//Merge"/>
     <genClasses ecoreClass="TRADES.ecore#//Modify"/>
+    <genClasses ecoreClass="TRADES.ecore#//Include">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Include/all"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Include/calls"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Include/matchs"/>
+    </genClasses>
+    <genClasses ecoreClass="TRADES.ecore#//Exclude">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Exclude/calls"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Exclude/matchs"/>
+    </genClasses>
+    <genClasses ecoreClass="TRADES.ecore#//WithChildControls">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//WithChildControls/text"/>
+    </genClasses>
+    <genClasses ecoreClass="TRADES.ecore#//All"/>
+    <genClasses ecoreClass="TRADES.ecore#//Call">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Call/controId"/>
+    </genClasses>
+    <genClasses ecoreClass="TRADES.ecore#//Match">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Match/pattern"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Match/order"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>
