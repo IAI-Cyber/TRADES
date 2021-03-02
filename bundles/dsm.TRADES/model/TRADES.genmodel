@@ -343,5 +343,16 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Base64/mediaType"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Base64/content"/>
     </genClasses>
+    <genClasses ecoreClass="TRADES.ecore#//Profile">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Profile/metadata"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Profile/imports"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Profile/merge"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Profile/modify"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Profile/backmatter"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Profile/uuid"/>
+    </genClasses>
+    <genClasses ecoreClass="TRADES.ecore#//Import"/>
+    <genClasses ecoreClass="TRADES.ecore#//Merge"/>
+    <genClasses ecoreClass="TRADES.ecore#//Modify"/>
   </genPackages>
 </genmodel:GenModel>

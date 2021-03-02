@@ -658,4 +658,35 @@
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="content" eType="#//Base64Binary"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Profile">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Each OSCAL profile is defined by a Profile element"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="metadata" lowerBound="1"
+        eType="#//Metadata" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="imports" upperBound="-1"
+        eType="#//Import" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="merge" eType="#//Merge"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="modify" eType="#//Modify"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="backmatter" eType="#//BackMatter"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="uuid" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Import">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="An Import element designates a catalog, profile, or other resource to be included (referenced and potentially modified) by this profile"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Merge">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A Merge element merges controls in resolution"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Modify">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Set parameters or amend controls in resolution"/>
+    </eAnnotations>
+  </eClassifiers>
 </ecore:EPackage>
