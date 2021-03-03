@@ -359,7 +359,10 @@
     <genClasses ecoreClass="TRADES.ecore#//Merge">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Merge/combine"/>
     </genClasses>
-    <genClasses ecoreClass="TRADES.ecore#//Modify"/>
+    <genClasses ecoreClass="TRADES.ecore#//Modify">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Modify/setparameters"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Modify/alters"/>
+    </genClasses>
     <genClasses ecoreClass="TRADES.ecore#//Include">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Include/all"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Include/calls"/>
@@ -389,6 +392,38 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Custom/groups"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Custom/calls"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Custom/matchs"/>
+    </genClasses>
+    <genClasses ecoreClass="TRADES.ecore#//SetParameter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//SetParameter/paramId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//SetParameter/class"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//SetParameter/dependsOn"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//SetParameter/label"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//SetParameter/usage"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//SetParameter/constraints"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//SetParameter/guideline"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//SetParameter/value"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//SetParameter/select"/>
+    </genClasses>
+    <genClasses ecoreClass="TRADES.ecore#//Constraint.1">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Constraint.1/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Constraint.1/tests"/>
+    </genClasses>
+    <genClasses ecoreClass="TRADES.ecore#//Alter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Alter/controlId"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Alter/removes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Alter/adds"/>
+    </genClasses>
+    <genClasses ecoreClass="TRADES.ecore#//Remove">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Remove/nameRef"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Remove/classRef"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Remove/idRef"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Remove/itemName"/>
+    </genClasses>
+    <genClasses ecoreClass="TRADES.ecore#//Addition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Addition/position"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Addition/idRef"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Addition/title"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Addition/partitions"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>
