@@ -248,7 +248,6 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Metadata/version"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Metadata/oscalVersion"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Metadata/documentId"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Metadata/properties"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Metadata/roles"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Metadata/revision"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Metadata/locations"/>
@@ -372,16 +371,15 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Exclude/calls"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Exclude/matchs"/>
     </genClasses>
-    <genClasses ecoreClass="TRADES.ecore#//WithChildControls">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//WithChildControls/text"/>
-    </genClasses>
     <genClasses ecoreClass="TRADES.ecore#//All"/>
     <genClasses ecoreClass="TRADES.ecore#//Call">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Call/controId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Call/withChildControls"/>
     </genClasses>
     <genClasses ecoreClass="TRADES.ecore#//Match">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Match/pattern"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Match/order"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Match/withChildControls"/>
     </genClasses>
     <genClasses ecoreClass="TRADES.ecore#//Combine">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Combine/method"/>
