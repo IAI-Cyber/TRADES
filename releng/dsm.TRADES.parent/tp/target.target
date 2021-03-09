@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?pde?>
 <!-- generated with https://github.com/eclipse-cbi/targetplatform-dsl -->
-<target name="TRADES" sequenceNumber="1614011875">
+<target name="TRADES" sequenceNumber="1614699768">
   <locations>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.platform.sdk" version="0.0.0"/>
@@ -57,6 +57,9 @@
       <unit id="com.fasterxml.jackson.core.jackson-databind" version="0.0.0"/>
       <unit id="com.fasterxml.jackson.core.jackson-annotations" version="0.0.0"/>
       <unit id="com.fasterxml.jackson.jaxrs.jackson-jaxrs-json-provider" version="0.0.0"/>
+      <unit id="javax.xml" version="0.0.0"/>
+      <unit id="javax.annotation" version="0.0.0"/>
+      <unit id="javax.xml.bind" version="0.0.0"/>
       <unit id="org.assertj" version="0.0.0"/>
       <repository location="https://download.eclipse.org/tools/orbit/downloads/drops/R20200529191137/repository"/>
     </location>

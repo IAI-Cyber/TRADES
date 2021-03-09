@@ -4,7 +4,6 @@ package dsm.TRADES.impl;
 
 import dsm.TRADES.AbstractControlOwner;
 import dsm.TRADES.Analysis;
-import dsm.TRADES.Catalog;
 import dsm.TRADES.Control;
 import dsm.TRADES.ControlOwner;
 import dsm.TRADES.Data;
@@ -15,8 +14,12 @@ import dsm.TRADES.ScoreSystem;
 import dsm.TRADES.TRADESPackage;
 import dsm.TRADES.ThreatsOwner;
 
+import dsm.oscal.model.Oscal.Catalog;
+
 import java.lang.reflect.InvocationTargetException;
+
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -26,6 +29,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 

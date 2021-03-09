@@ -2,6 +2,8 @@
  */
 package dsm.TRADES.provider;
 
+import dsm.oscal.model.Oscal.provider.OscalEditPlugin;
+
 import org.eclipse.emf.common.EMFPlugin;
 
 import org.eclipse.emf.common.util.ResourceLocator;
@@ -36,7 +38,7 @@ public final class TRADESEditPlugin extends EMFPlugin {
 	 * @generated
 	 */
 	public TRADESEditPlugin() {
-		super(new ResourceLocator[] {});
+		super(new ResourceLocator[] { OscalEditPlugin.INSTANCE, });
 	}
 
 	/**

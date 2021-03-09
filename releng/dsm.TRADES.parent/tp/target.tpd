@@ -70,6 +70,9 @@ location  "https://download.eclipse.org/tools/orbit/downloads/drops/R20200529191
 	com.fasterxml.jackson.core.jackson-databind lazy
 	com.fasterxml.jackson.core.jackson-annotations lazy
 	com.fasterxml.jackson.jaxrs.jackson-jaxrs-json-provider lazy
+	javax.xml lazy
+	javax.annotation lazy
+	javax.xml.bind lazy
 }
 
 

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<loophole:GenGapModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:loophole="org.eclipselabs.emf.loophole:1.0.0" customModelDirectory="/dsm.oscal.model/src-man" customEditDirectory="/dsm.oscal.model.edit/src-man">
+  <genModel href="oscal.genmodel#/"/>
+  <genGapPackages customClassPackageSuffix="impl" customProviderPackageSuffix="provider">
+    <genPackage href="oscal.genmodel#//oscal"/>
+  </genGapPackages>
+</loophole:GenGapModel>

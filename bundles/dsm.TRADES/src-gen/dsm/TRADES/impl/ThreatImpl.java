@@ -8,10 +8,12 @@ import dsm.TRADES.ThreatAllocationRelation;
 import dsm.TRADES.threatTypeENUM;
 
 import dsm.TRADES.util.TRADESValidator;
-import java.lang.reflect.InvocationTargetException;
-import java.util.Collection;
 
+import java.lang.reflect.InvocationTargetException;
+
+import java.util.Collection;
 import java.util.Map;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -26,6 +28,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+
 import org.eclipse.emf.ecore.util.EObjectValidator;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;

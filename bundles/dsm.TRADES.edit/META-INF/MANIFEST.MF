@@ -12,5 +12,7 @@ Bundle-RequiredExecutionEnvironment: JavaSE-14
 Export-Package: dsm.TRADES.provider
 Require-Bundle: org.eclipse.core.runtime,
  dsm.TRADES;visibility:=reexport,
- org.eclipse.emf.edit;visibility:=reexport
+ org.eclipse.emf.edit;visibility:=reexport,
+ dsm.oscal.model;visibility:=reexport,
+ dsm.oscal.model.edit;visibility:=reexport
 Bundle-ActivationPolicy: lazy
