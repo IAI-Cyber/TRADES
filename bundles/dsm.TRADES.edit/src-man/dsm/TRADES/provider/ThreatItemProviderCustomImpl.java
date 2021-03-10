@@ -23,6 +23,11 @@ public class ThreatItemProviderCustomImpl extends ThreatItemProvider {
 	}
 
 	@Override
+	public Object getImage(Object object) {
+		return overlayImage(object, getResourceLocator().getImage("custom/Threat.png"));
+	}
+
+	@Override
 	public void notifyChanged(Notification notification) {
 		super.notifyChanged(notification);
 
@@ -32,7 +37,8 @@ public class ThreatItemProviderCustomImpl extends ThreatItemProvider {
 				Threat new_name = (Threat) notifier;
 				for (ThreatAllocationRelation rel : new_name.getThreatAllocations()) {
 					fireNotifyChanged(new ViewerNotification(notification, rel, false, true));
-					// Threat name can be used in the label of ThreatMitigationRelation so refresh them also
+					// Threat name can be used in the label of ThreatMitigationRelation so refresh
+					// them also
 					EcoreUtils
 							.getInverse(rel, ThreatMitigationRelation.class,
 									TRADESPackage.eINSTANCE.getThreatMitigationRelation_MitigatedAllocation())

@@ -13,4 +13,9 @@ public class ControlOwnerItemProviderCustomImpl extends ControlOwnerItemProvider
 		return "Controls";
 	}
 
+	@Override
+	public Object getImage(Object object) {
+		return overlayImage(object, getResourceLocator().getImage("custom/Control.png"));
+	}
+
 }
