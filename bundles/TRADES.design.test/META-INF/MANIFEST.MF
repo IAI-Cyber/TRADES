@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: TRADES Design Test
 Bundle-SymbolicName: TRADES.design.test
-Bundle-Version: 2.5.0.qualifier
+Bundle-Version: 2.5.1.qualifier
 Fragment-Host: TRADES.design;bundle-version="2.5.0"
 Automatic-Module-Name: TRADES.design.test
 Bundle-RequiredExecutionEnvironment: JavaSE-14

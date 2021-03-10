@@ -2,7 +2,7 @@
 <feature
       id="TRADES.feature"
       label="TRADES Tool feature"
-      version="2.5.0.qualifier"
+      version="2.5.1.qualifier"
       provider-name="IAI Cyber Division">
 
    <description url="www.iai.co.il">
