@@ -13,7 +13,11 @@ public class ExternalThreatItemProviderCustomImpl extends ExternalThreatItemProv
 	@Override
 	public String getText(Object object) {
 		String label = ((ExternalThreat) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_ExternalThreat_type") : "Ex " + label;
+		return label == null || label.length() == 0 ? getString("_UI_ExternalThreat_type") : label;
 	}
 
+	@Override
+	public Object getImage(Object object) {
+		return overlayImage(object, getResourceLocator().getImage("custom/ExternalThreat.png"));
+	}
 }
