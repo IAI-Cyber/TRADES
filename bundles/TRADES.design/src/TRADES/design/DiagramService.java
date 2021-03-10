@@ -13,10 +13,14 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.util.ECrossReferenceAdapter;
 import org.eclipse.sirius.business.api.query.EObjectQuery;
+import org.eclipse.sirius.business.api.session.Session;
+import org.eclipse.sirius.diagram.DDiagram;
 import org.eclipse.sirius.diagram.DNodeContainer;
 import org.eclipse.sirius.diagram.DSemanticDiagram;
 import org.eclipse.sirius.diagram.business.api.helper.graphicalfilters.HideFilterHelper;
@@ -29,10 +33,13 @@ import dsm.TRADES.Analysis;
 import dsm.TRADES.AttackChainStep;
 import dsm.TRADES.Component;
 import dsm.TRADES.ComponentOwner;
+import dsm.TRADES.Control;
 import dsm.TRADES.ControlOwner;
 import dsm.TRADES.Data;
+import dsm.TRADES.TRADESPackage;
 import dsm.TRADES.Threat;
 import dsm.TRADES.ThreatAllocationRelation;
+import dsm.TRADES.ThreatMitigationRelation;
 import dsm.TRADES.util.EcoreUtils;
 
 public class DiagramService {
@@ -48,15 +55,121 @@ public class DiagramService {
 	}
 
 	public String getAttackChainLabel(AttackChainStep step) {
-
 		String label = step.getStepNum();
-
 		ThreatAllocationRelation allocation = step.getThreatAllocationRelation();
-
 		label += " : " + getAllocLabel(allocation);
-
 		return label;
+	}
 
+	public List<Control> getRelatedControls(DDiagram diagram) {
+		return getDisplayed(diagram, Threat.class) //
+				.flatMap(th -> getLinkedControl(th).stream()).collect(toList());
+	}
+
+	public List<Control> getRelatedControls(DSemanticDecorator view) {
+		return getDisplayed(view, Threat.class) //
+				.flatMap(th -> getLinkedControl(th).stream()).collect(toList());
+	}
+
+	private <T extends EObject> Stream<T> getDisplayed(EObject diagram, Class<T> type) {
+		return EcoreUtils.allContainedObjectOfType(diagram, DSemanticDecorator.class)//
+				.map(sd -> sd.getTarget())//
+				.filter(t -> type.isInstance(t))//
+				.map(t -> type.cast(t));
+	}
+
+	public boolean canImportLinkedControlOn(List<EObject> selection) {
+		return selection != null && selection.stream()//
+				.allMatch(e -> e instanceof DDiagram // The diagram is selected => Import all control for all displayed
+														// threats
+						|| isRepresentation(e, Threat.class)); // Only threat selected
+	}
+
+	private <T extends EObject> boolean isRepresentation(EObject o, Class<T> type) {
+		if (o instanceof DSemanticDecorator) {
+			DSemanticDecorator decorator = (DSemanticDecorator) o;
+			EObject target = decorator.getTarget();
+			return target != null && type.isInstance(target);
+		}
+		return false;
+	}
+
+	/**
+	 * Gets all the control connected to the given threat
+	 * 
+	 * @param th                 a {@link Threat}
+	 * @param displayMitigations
+	 * @return a list of {@link Control}
+	 */
+	private List<Control> getLinkedControl(Threat th) {
+
+		List<Control> result = new ArrayList<>();
+
+		ECrossReferenceAdapter semanticCrossReferencer = Session.of(th).get().getSemanticCrossReferencer();
+
+		// Mitigated through threat allocation relation
+		List<Control> indirectControls = getLinkedThreatAllocationRelations(th, semanticCrossReferencer)
+				.flatMap(tar -> getLinkedThreatMitigations(tar, semanticCrossReferencer))
+				.map(ThreatMitigationRelation::getControl)//
+				.filter(c -> c != null)//
+				.collect(toList());
+		result.addAll(indirectControls);
+
+		// Direct mitigation
+		List<Control> directControls = getLinkedThreatMitigationRelation(th, semanticCrossReferencer)//
+				.map(tm -> tm.getControl())//
+				.collect(toList());
+		result.addAll(directControls);
+
+		return result;
+	}
+
+	/**
+	 * Gets all {@link ThreatMitigationRelation}s linked to the given {@link Threat}
+	 * by {@link TRADESPackage#getThreatMitigationRelation_Threat()}
+	 * 
+	 * @param th                      a Threat
+	 * @param semanticCrossReferencer a cross referencer
+	 * @return a stream
+	 */
+	private Stream<ThreatMitigationRelation> getLinkedThreatMitigationRelation(Threat th,
+			ECrossReferenceAdapter semanticCrossReferencer) {
+		return semanticCrossReferencer
+				.getInverseReferences(th, TRADESPackage.eINSTANCE.getThreatMitigationRelation_Threat(), true).stream()
+				.map(s -> (ThreatMitigationRelation) s.getEObject());
+	}
+
+	/**
+	 * Gets all {@link ThreatMitigationRelation}s linked to the given
+	 * {@link ThreatAllocationRelation} by
+	 * {@link TRADESPackage#getThreatMitigationRelation_MitigatedAllocation()}
+	 * 
+	 * @param tar                     a {@link ThreatAllocationRelation}
+	 * @param semanticCrossReferencer a cross referencer
+	 * @return a stream
+	 */
+	private Stream<ThreatMitigationRelation> getLinkedThreatMitigations(ThreatAllocationRelation tar,
+			ECrossReferenceAdapter semanticCrossReferencer) {
+		return semanticCrossReferencer
+				.getInverseReferences(tar, TRADESPackage.eINSTANCE.getThreatMitigationRelation_MitigatedAllocation(),
+						true)
+				.stream().filter(tmr -> tmr.getEObject() instanceof ThreatMitigationRelation)
+				.map(tmr -> ((ThreatMitigationRelation) tmr.getEObject()));
+	}
+
+	/**
+	 * Gets all {@link ThreatAllocationRelation}s linked to the given Threat
+	 * 
+	 * @param th
+	 * @param semanticCrossReferencer
+	 * @return
+	 */
+	private Stream<ThreatAllocationRelation> getLinkedThreatAllocationRelations(Threat th,
+			ECrossReferenceAdapter semanticCrossReferencer) {
+		return semanticCrossReferencer
+				.getInverseReferences(th, TRADESPackage.eINSTANCE.getThreatAllocationRelation_Threat(), true).stream()
+				.filter(s -> s.getEObject() instanceof ThreatAllocationRelation)
+				.map(s -> (ThreatAllocationRelation) s.getEObject());
 	}
 
 	/**
