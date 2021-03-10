@@ -1402,7 +1402,7 @@
                             </firstModelOperations>
                           </initialOperation>
                         </controls>
-                        <controls xsi:type="properties:SelectDescription" name="DataOwnerSelectWidget" labelExpression="aql:'Select the data owner'" valueExpression="aql:self.eContainer().eContainer()" candidatesExpression="aql:affectRelation.ancestors()->filter(TRADES::DataOwnerElement)" candidateDisplayExpression="aql:candidate.name">
+                        <controls xsi:type="properties:SelectDescription" name="DataOwnerSelectWidget" labelExpression="aql:'Data Owner'" valueExpression="aql:self.eContainer().eContainer()" candidatesExpression="aql:affectRelation.ancestors()->filter(TRADES::DataOwnerElement)" candidateDisplayExpression="aql:candidate.name">
                           <initialOperation>
                             <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self">
                               <subModelOperations xsi:type="tool_1:MoveElement" newContainerExpression="aql:newValue.oclAsType(TRADES::DataOwnerElement) .getOrCreateDataOwner()" featureName="data"/>
