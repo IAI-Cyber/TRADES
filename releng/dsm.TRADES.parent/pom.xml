@@ -131,7 +131,6 @@
 		<!-- Oscal -->
 		<module>../../bundles/dsm.oscal.model/</module>
 		<module>../../bundles/dsm.oscal.model.edit/</module>
-		<module>../../bundles/dsm.oscal.tool/</module>
 		
 		<!-- Base plugins -->
 		<module>../../bundles/dsm.TRADES/</module>
