@@ -55,6 +55,32 @@ public class EcoreUtils {
 	}
 
 	/**
+	 * Get the last ancestor (closest to the root) of the given type that match the
+	 * given type
+	 * 
+	 * @param <T>  type of the result
+	 * @param self the source element
+	 * @param type the searched type
+	 * @return an element or <code>null</code>
+	 */
+	public static <T extends EObject> T getLastAncestor(EObject self, Class<T> type) {
+		EObject current = self;
+		EObject result = null;
+		while (current != null) {
+			if (type.isInstance(current)) {
+				result = current;
+			}
+			current = current.eContainer();
+		}
+		if (result != null) {
+			return type.cast(result);
+		} else {
+			return null;
+		}
+
+	}
+
+	/**
 	 * Gets a stream composed from the object itself and all its content
 	 * 
 	 * @param rs a resource set

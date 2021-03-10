@@ -1375,7 +1375,7 @@
               <initialOperation>
                 <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
                   <subModelOperations xsi:type="tool_1:Let" variableName="affectRelation" valueExpression="var:self"/>
-                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.eContainer().oclAsType(TRADES::DataOwnerElement).createData()">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.eContainer().oclAsType(TRADES::DataOwnerElement).createDataInRoot()">
                     <subModelOperations xsi:type="properties:DialogModelOperation" titleExpression="Add New Data">
                       <buttons labelExpression="Cancel" closeDialogOnClick="true" rollbackChangesOnClose="true">
                         <initialOperation>

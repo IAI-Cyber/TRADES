@@ -179,6 +179,29 @@ public class SemanticService {
 
 	}
 
+	/**
+	 * Creates a new data in the root component holding the given element (if given
+	 * analysis add the data to analysis
+	 * 
+	 * @param element the future owner
+	 * @return a new data or <code>null</code> if enable to create the data
+	 */
+	public static Data createDataInRoot(DataOwnerElement element) {
+
+		if (element instanceof Analysis) {
+			return createData(element);
+		} else {
+			final Component rootDataOwner = EcoreUtils.getLastAncestor(element, Component.class);
+
+			if (rootDataOwner == null) {
+				return null;
+			} else {
+				return createData(rootDataOwner);
+			}
+		}
+
+	}
+
 	public static DataOwner getOrCreateDataOwner(DataOwnerElement element) {
 
 		DataOwner owner = element.getDataOwner();
