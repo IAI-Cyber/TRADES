@@ -2,10 +2,10 @@
 <feature
       id="TRADES.feature"
       label="TRADES Tool feature"
-      version="2.5.1.qualifier"
+      version="2.5.2.qualifier"
       provider-name="IAI Cyber Division"
       license-feature="org.eclipse.license"
-      license-feature-version="2.0.0">
+      license-feature-version="0.0.0">
 
    <description url="www.iai.co.il">
       TRADES Tool

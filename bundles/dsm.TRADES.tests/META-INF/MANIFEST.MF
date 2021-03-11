@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: DSM TRADES Tests
 Bundle-SymbolicName: dsm.TRADES.tests
-Bundle-Version: 2.5.1.qualifier
+Bundle-Version: 2.5.2.qualifier
 Fragment-Host: dsm.TRADES;bundle-version="2.5.0"
 Automatic-Module-Name: dsm.TRADES.tests
 Bundle-RequiredExecutionEnvironment: JavaSE-14
