@@ -1,3 +1,16 @@
+/******************************************************************************************************
+* Copyright Israel Aerospace Industries, Eclipse contributors and others 2021. All rights reserved.
+* This program and the accompanying materials
+* are made available under the terms of the Eclipse Public License 2.0
+* which accompanies this distribution, and is available at
+* https://www.eclipse.org/legal/epl-2.0/
+* 
+* SPDX-License-Identifier: EPL-2.0
+* 
+* Contributors:
+*     ELTA Ltd - initial API and implementation
+* 
+*******************************************************************************************************/
 package dsm.trades.m2doc.internal;
 
 import java.io.IOException;
@@ -16,9 +29,9 @@ import org.eclipse.emf.ecore.resource.impl.ExtensibleURIConverterImpl;
 import org.obeonetwork.m2doc.properties.TemplateCustomProperties;
 
 import dsm.TRADES.TRADESPackage;
-import dsm.trades.m2doc.TradesM2docActivator;
 import dsm.trades.m2doc.IM2DocTemplate;
 import dsm.trades.m2doc.IM2DocTemplateRegistry;
+import dsm.trades.m2doc.TradesM2docActivator;
 
 /**
  * Registry used to keep tracks of all available {@link IM2DocTemplate}
