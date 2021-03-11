@@ -700,8 +700,8 @@
     </ownedRepresentations>
     <ownedRepresentations xsi:type="description_2:CrossTableDescription" name="Controls to Components " domainClass="TRADES::Analysis">
       <metamodel href="dsm.TRADES#/"/>
-      <ownedLineMappings name="Component Row" reusedInMappings="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Controls%20to%20Components%20']/@ownedLineMappings[name='Component%20Row']/@ownedSubLines[name='subComp%20Row']" domainClass="TRADES::Component" semanticCandidatesExpression="aql:self.component">
-        <ownedSubLines name="subComp Row" reusedSubLines="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Controls%20to%20Components%20']/@ownedLineMappings[name='Component%20Row']" domainClass="TRADES::Component" semanticCandidatesExpression="aql:self.component"/>
+      <ownedLineMappings name="Component Row" reusedInMappings="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Controls%20to%20Components%20']/@ownedLineMappings[name='Component%20Row']/@ownedSubLines[name='subComp%20Row']" domainClass="TRADES::Component" semanticCandidatesExpression="aql:self.components">
+        <ownedSubLines name="subComp Row" reusedSubLines="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Controls%20to%20Components%20']/@ownedLineMappings[name='Component%20Row']" domainClass="TRADES::Component" semanticCandidatesExpression="aql:self.components"/>
       </ownedLineMappings>
       <ownedColumnMappings name="Control Column" domainClass="TRADES::Control"/>
       <intersection name="Controls to Components Mapping" lineMapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Controls%20to%20Components%20']/@ownedLineMappings[name='Component%20Row'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Controls%20to%20Components%20']/@ownedLineMappings[name='Component%20Row']/@ownedSubLines[name='subComp%20Row']" columnMapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Controls%20to%20Components%20']/@ownedColumnMappings.0" labelExpression="V" columnFinderExpression="aql:self.controlOwner.eAllContents(TRADES::Control)">
