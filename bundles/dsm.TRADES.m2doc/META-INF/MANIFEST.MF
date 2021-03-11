@@ -22,3 +22,4 @@ Automatic-Module-Name: dsm.TRADES.m2doc
 Bundle-ActivationPolicy: lazy
 Export-Package: dsm.trades.m2doc,
  dsm.trades.m2doc.utils
+Bundle-Vendor: IAI Cyber Division

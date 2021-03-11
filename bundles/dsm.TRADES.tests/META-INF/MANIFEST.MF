@@ -10,3 +10,4 @@ Require-Bundle: com.google.guava,
  org.junit;bundle-version="4.13.0",
  dsm.TRADES.testlib;bundle-version="2.5.0",
  org.assertj;bundle-version="3.14.0"
+Bundle-Vendor: IAI Cyber Division

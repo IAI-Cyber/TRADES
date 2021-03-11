@@ -10,3 +10,4 @@ Require-Bundle: org.eclipse.ui,
 Bundle-RequiredExecutionEnvironment: JavaSE-14
 Automatic-Module-Name: dsm.TRADES.rcp
 Bundle-ActivationPolicy: lazy
+Bundle-Vendor: IAI Cyber Division

@@ -20,3 +20,4 @@ Bundle-RequiredExecutionEnvironment: JavaSE-14
 Automatic-Module-Name: dsm.TRADES.debug
 Import-Package: javax.inject;version="1.0.0"
 Bundle-ActivationPolicy: lazy
+Bundle-Vendor: IAI Cyber Division
