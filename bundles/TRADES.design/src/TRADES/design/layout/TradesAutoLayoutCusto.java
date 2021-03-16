@@ -46,6 +46,12 @@ public class TradesAutoLayoutCusto implements IELKLayoutExtension {
 
 	private static final String TRADES_DIAGRAM = "TRADES diagram";
 
+    /** The identifier of the node mapping for Control. */
+    private static final String CONTROL_MAPPING_NAME = "ControlNode";
+
+    /** The identifier of the node mapping for Threat. */
+    private static final String THREAT_MAPPING_NAME = "ThreatNode_TD";
+
 //	private List<ElkEdge> modifiedMitigationRelations;
 
 	@Override
@@ -88,6 +94,23 @@ public class TradesAutoLayoutCusto implements IELKLayoutExtension {
 				}
 			}
 		});
+        // Force the location, of label of Control/Threat, to be centered below the node (with
+        // NodeLabelPlacement.outsideBottomCenter() value for NODE_LABELS_PLACEMENT property)
+        EcoreUtils.allContainedObjectOfType(layoutGraph, ElkNode.class).forEach(node -> {
+            Object objectEditPart = graphMap.get(node);
+            if (objectEditPart instanceof IGraphicalEditPart) {
+                IGraphicalEditPart editpart = (IGraphicalEditPart) objectEditPart;
+                EObject sElement = editpart.resolveSemanticElement();
+                if (sElement instanceof DDiagramElement) {
+                    DDiagramElement dde = (DDiagramElement) sElement;
+                    if (CONTROL_MAPPING_NAME.equals(dde.getMapping().getName()) || THREAT_MAPPING_NAME.equals(dde.getMapping().getName())) {
+                        if (node.getLabels().size() > 0) {
+                            node.getLabels().get(0).setProperty(CoreOptions.NODE_LABELS_PLACEMENT, NodeLabelPlacement.outsideBottomCenter());
+                        }
+                    }
+                }
+            }
+        });
 
 		// Attempt to handle edge that connect node to another edge
 //
