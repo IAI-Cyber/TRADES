@@ -41,7 +41,7 @@ class ItemProviderGenerator {
 	Path manFolder
 
 	String header
-	
+
 	BiFunction<String, String, String> imageProvider
 
 	/**
@@ -49,7 +49,7 @@ class ItemProviderGenerator {
 	 * @param manFolder path to the src-man folder
 	 * @param header optional header to add in the generated sources
 	 */
-	new(Path genFolder, Path manFolder, String header,BiFunction<String,String,String> imageProvider) {
+	new(Path genFolder, Path manFolder, String header, BiFunction<String, String, String> imageProvider) {
 		this.genFolder = genFolder;
 		this.manFolder = manFolder;
 		this.header = header;
@@ -62,22 +62,20 @@ class ItemProviderGenerator {
 	 * @param genClass the GenClass to generate the item from
 	 */
 	def void generate(GenClassImpl genClass) {
-		
+
 		val labelFeature = genClass.getLabelGenFeature;
 		val imagePath = imageProvider.apply(genClass.genPackage.getEcorePackage().getName(), genClass.getName())
-		
-		if(labelFeature === null && imagePath === null){
+
+		if (labelFeature === null && imagePath === null) {
 			// Nothing to generate
 			return
 		}
-		
-		
-		
+
 		val classQName = genClass.qualifiedProviderClassName
 		val packageName = classQName.substring(0, classQName.lastIndexOf('.'));
-		
+
 		val pathString = packageName.replace('.', '/');
-		
+
 		// Generate the BaseCustom imple class
 		val baseCustomClassName = genClass.providerClassName + "BaseCustomImpl"
 		val targetPath = genFolder.resolve(pathString).resolve(baseCustomClassName + ".java");
@@ -181,13 +179,10 @@ class ItemProviderGenerator {
 		.orElse(genClass.getFeature("id") //
 		.orElse(genClass.getFirstLineOfType(MARKUP_LINE) //
 		.orElse(null)))))
-		
-		if (genFeature !== null) {
-			println("Using " + genFeature.name + " for eclass " + genClass.name)
-		} else {
+
+		if (genFeature === null) {
 			println("No label feature found for " + genClass.name)
 		}
-
 		return genFeature;
 
 	}

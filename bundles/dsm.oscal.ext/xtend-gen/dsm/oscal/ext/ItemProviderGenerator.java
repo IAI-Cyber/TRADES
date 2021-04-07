@@ -346,17 +346,10 @@ public class ItemProviderGenerator {
         this.getFeature(genClass, "label").orElse(
           this.getFeature(genClass, "id").orElse(
             this.getFirstLineOfType(genClass, ItemProviderGenerator.MARKUP_LINE).orElse(null)))));
-    if ((genFeature != null)) {
-      String _name = genFeature.getName();
-      String _plus = ("Using " + _name);
-      String _plus_1 = (_plus + " for eclass ");
-      String _name_1 = genClass.getName();
-      String _plus_2 = (_plus_1 + _name_1);
-      InputOutput.<String>println(_plus_2);
-    } else {
-      String _name_2 = genClass.getName();
-      String _plus_3 = ("No label feature found for " + _name_2);
-      InputOutput.<String>println(_plus_3);
+    if ((genFeature == null)) {
+      String _name = genClass.getName();
+      String _plus = ("No label feature found for " + _name);
+      InputOutput.<String>println(_plus);
     }
     return genFeature;
   }
