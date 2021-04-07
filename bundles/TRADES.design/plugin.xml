@@ -48,4 +48,31 @@
            class="TRADES.design.layout.TradesAutoLayoutCusto">
      </layoutExtension>
   </extension>
+  <extension
+        point="org.eclipse.ui.menus">
+     <menuContribution
+           allPopups="false"
+           locationURI="popup:org.eclipse.ui.popup.any?after=additions">
+        <dynamic
+              class="TRADES.design.menu.MenuFiller"
+              id="TRADES.design.dynamic.manager">
+           <visibleWhen
+                 checkEnabled="false">
+              <test
+                    property="TRADES.design.tradesselection.semanticSelection">
+              </test>
+           </visibleWhen>
+        </dynamic>
+     </menuContribution>
+  </extension>
+  <extension
+        point="org.eclipse.core.expressions.propertyTesters">
+     <propertyTester
+           class="TRADES.design.handlers.SemanticSelectionPropertyTester"
+           id="TRADES.design.tradesselection"
+           namespace="TRADES.design.tradesselection"
+           properties="semanticSelection"
+           type="java.lang.Object">
+     </propertyTester>
+  </extension>
 </plugin>

@@ -28,7 +28,11 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.gmf.runtime.diagram.ui,
  com.google.guava,
  org.eclipse.collections;bundle-version="10.1.0",
- org.eclipse.sirius.ecore.extender;bundle-version="6.4.0"
+ org.eclipse.sirius.ecore.extender;bundle-version="6.4.0",
+ dsm.TRADES.rcp;bundle-version="2.5.2",
+ dsm.oscal.model,
+ org.eclipse.core.expressions,
+ org.eclipse.core.expressions
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-14
 Bundle-Vendor: %providerName
