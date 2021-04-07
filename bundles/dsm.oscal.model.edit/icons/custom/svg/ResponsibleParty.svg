@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="16px"
+   height="16px"
+   viewBox="0 0 16 16"
+   version="1.1"
+   id="SVGRoot"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
+   sodipodi:docname="ResponsibleParty.svg"
+   inkscape:export-filename="C:\dev\ELTA\GitClones\TRADES\bundles\dsm.oscal.model.edit\icons\custom\ResponsibleParty.png"
+   inkscape:export-xdpi="95"
+   inkscape:export-ydpi="95">
+  <defs
+     id="defs815" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="16"
+     inkscape:cx="8"
+     inkscape:cy="8"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="1072"
+     inkscape:window-maximized="1"
+     inkscape:grid-bbox="true" />
+  <metadata
+     id="metadata818">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Calque 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       style="fill:none;stroke:#b7b7b7;stroke-width:0.81363702px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 1.4339717,14.94077 14.128528,1.7467304"
+       id="path1393"
+       inkscape:connector-curvature="0" />
+    <image
+       y="4.0625"
+       x="7"
+       id="image1379"
+       xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABHNCSVQICAgIfAhkiAAAAS1JREFU
+OI2lk7FKA0EQQN/GM1eJQrDyB2z8AUs7iX6AYGMlIggBCysVLGwsJIWNKBYWYmOnaSwMWAkKFkFU
+EOQIaowGJLmc2d2xSLt7qFnYZmf2zcxbVokIvaxMWnDr8FrmN0qpFbyAzYMryY8PkRseYG7tzAvx
+ArSxPH8YAN5rL/4WRMS7V3YuZXrpWNJyvIHlYlmi+pvslSoytbDvhThHKGxfSGF2FK0VAJMTY+QX
+j5wenABturnnNzXqjRa2P0Qb83uJ2hheGwkASimiagOtrRMQuA6bbU2cNBnJZcn2BYTZkHL84AR4
+Jc6snspj9V6KJ7d/lwhgrRBkBkmSDt8dd/teB12ABSsYo4jb/wAYgc/WF9YKceJ+AfBIBLBGWN+t
+8HQXgfLeR/X6nX8Atav3HxwmX3cAAAAASUVORK5CYII=
+"
+       preserveAspectRatio="none"
+       height="12"
+       width="12" />
+    <image
+       y="0"
+       x="-2.5625"
+       id="image1390"
+       xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABHNCSVQICAgIfAhkiAAAASVJREFU
+OI2lk79KA0EQh7/LHWiMgkERRWJjxFrwDXwACysb8QWsRCzsBMHCxs7KyjSKlfinUFOKCDH4AELQ
+pAkeognc5XZvbLTbOZAsLFvMzDezv5nxRIR+Ti7L+Hg8K9dbhcwMKuDhqCSlpXXy43muNodUiApI
+e5Zuqw7AZyPWSxAR9Vb3x+RsLZAsH9Vwv1eUL1OX5/MFqazkVIjzC3e7o7K4fYuJWwDMLZc5XQ2c
+OjgBaZIC0LjZIfoI8XIeJnHr6ARIKny/XwLg+T6dtzZW0dEJSLqGKHxleLpMYXKKkZkJkkjppCbO
+xcagtMOKPJ3M/1/EP7A/UMTGCSbSvDIGSdLf11pMrE+zvgtW6DSriLUkGYBArUCgdnBI86WnBgN4
+/a7zD3eU7GPXTmm3AAAAAElFTkSuQmCC
+"
+       preserveAspectRatio="none"
+       height="12"
+       width="12" />
+  </g>
+</svg>

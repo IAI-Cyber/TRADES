@@ -14,33 +14,19 @@
 package dsm.oscal.model.OscalMetadata.provider;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
-import dsm.oscal.model.OscalMetadata.Role;
 
-public class RoleItemProviderBaseCustomImpl extends RoleItemProvider {
-	
-	public RoleItemProviderBaseCustomImpl(AdapterFactory adapterFactory) {
+import dsm.oscal.model.OscalMetadata.Address;
+
+public class AddressItemProviderCustomImpl extends AddressItemProvider {
+
+	public AddressItemProviderCustomImpl(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
-	
-	/**
-	 * @generated
-	 */
+
 	@Override
 	public String getText(Object object) {
-		Role element = (Role) object;
-		if(element.getTitle() != null){
-			return element.getTitle().toMarkdown();
-		}else {
-			return "";
-		}
+		Address address = (Address) object;
+		return address.getCity();
 	}
-	
-	/**
-	   * @generated
-	   */
-	@Override
-	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("custom/person-me.gif"));
-	}
-	
+
 }

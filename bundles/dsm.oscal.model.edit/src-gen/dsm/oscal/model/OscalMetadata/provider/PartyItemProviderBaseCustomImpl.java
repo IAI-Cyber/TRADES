@@ -31,5 +31,12 @@ public class PartyItemProviderBaseCustomImpl extends PartyItemProvider {
 		return element.getName();
 	}
 	
+	/**
+	   * @generated
+	   */
+	@Override
+	public Object getImage(Object object) {
+		return overlayImage(object, getResourceLocator().getImage("custom/person.gif"));
+	}
 	
 }

@@ -37,6 +37,10 @@ public class OSCALImageProvider implements BiFunction<String, String, String> {
 		conceptToImage.put("OscalMetadata.BackMatter", "custom/ctxhelp_context_obj.png");
 		conceptToImage.put("OscalMetadata.ResourceRlink", "custom/link_obj.png");
 		conceptToImage.put("OscalMetadata.ResourceCitation", "custom/quote.png");
+		conceptToImage.put("OscalMetadata.Party", "custom/person.gif");
+		conceptToImage.put("OscalMetadata.Role", "custom/person-me.gif");
+		conceptToImage.put("OscalMetadata.ResponsibleParty", "custom/ResponsibleParty.png");
+		conceptToImage.put("OscalMetadata.Metadata", "custom/Metadata.png");
 	}
 
 	@Override

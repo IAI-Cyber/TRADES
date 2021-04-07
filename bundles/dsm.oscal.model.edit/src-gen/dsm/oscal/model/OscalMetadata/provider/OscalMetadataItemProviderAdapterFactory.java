@@ -90,7 +90,7 @@ public class OscalMetadataItemProviderAdapterFactory extends OscalMetadataAdapte
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected AddressItemProvider addressItemProvider;
+	protected AddressItemProviderCustomImpl addressItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link dsm.oscal.model.OscalMetadata.Address}.
@@ -101,7 +101,7 @@ public class OscalMetadataItemProviderAdapterFactory extends OscalMetadataAdapte
 	@Override
 	public Adapter createAddressAdapter() {
 		if (addressItemProvider == null) {
-			addressItemProvider = new AddressItemProvider(this);
+			addressItemProvider = new AddressItemProviderCustomImpl(this);
 		}
 
 		return addressItemProvider;
@@ -435,7 +435,7 @@ public class OscalMetadataItemProviderAdapterFactory extends OscalMetadataAdapte
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ResponsiblePartyItemProvider responsiblePartyItemProvider;
+	protected ResponsiblePartyItemProviderCustomImpl responsiblePartyItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link dsm.oscal.model.OscalMetadata.ResponsibleParty}.
@@ -446,7 +446,7 @@ public class OscalMetadataItemProviderAdapterFactory extends OscalMetadataAdapte
 	@Override
 	public Adapter createResponsiblePartyAdapter() {
 		if (responsiblePartyItemProvider == null) {
-			responsiblePartyItemProvider = new ResponsiblePartyItemProvider(this);
+			responsiblePartyItemProvider = new ResponsiblePartyItemProviderCustomImpl(this);
 		}
 
 		return responsiblePartyItemProvider;

@@ -35,5 +35,12 @@ public class MetadataItemProviderBaseCustomImpl extends MetadataItemProvider {
 		}
 	}
 	
+	/**
+	   * @generated
+	   */
+	@Override
+	public Object getImage(Object object) {
+		return overlayImage(object, getResourceLocator().getImage("custom/Metadata.png"));
+	}
 	
 }
