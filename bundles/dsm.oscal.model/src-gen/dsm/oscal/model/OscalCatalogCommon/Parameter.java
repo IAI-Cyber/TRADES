@@ -15,7 +15,7 @@
  */
 package dsm.oscal.model.OscalCatalogCommon;
 
-import dsm.oscal.model.OscalMetadata.Annotation;
+import dsm.oscal.model.OscalMetadata.AnnotationOwner;
 import dsm.oscal.model.OscalMetadata.Link;
 import dsm.oscal.model.OscalMetadata.OscalElement;
 import dsm.oscal.model.OscalMetadata.Property;
@@ -51,7 +51,6 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link dsm.oscal.model.OscalCatalogCommon.Parameter#getUsage <em>Usage</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalogCommon.Parameter#getValues <em>Values</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalogCommon.Parameter#getRemarks <em>Remarks</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalCatalogCommon.Parameter#getAnnotations <em>Annotations</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalogCommon.Parameter#getSelect <em>Select</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalogCommon.Parameter#getGuidelines <em>Guidelines</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalogCommon.Parameter#getLinks <em>Links</em>}</li>
@@ -63,7 +62,7 @@ import org.eclipse.emf.common.util.EList;
  * @model annotation="Metaschema source='&lt;Metaschema&gt;oscal-catalog-common.&lt;AssemblyDefinition&gt;parameter'"
  * @generated
  */
-public interface Parameter extends OscalElement {
+public interface Parameter extends OscalElement, AnnotationOwner {
 	/**
 	 * Returns the value of the '<em><b>Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -257,19 +256,6 @@ public interface Parameter extends OscalElement {
 	 * @generated
 	 */
 	void setRemarks(MarkupMultiline value);
-
-	/**
-	 * Returns the value of the '<em><b>Annotations</b></em>' containment reference list.
-	 * The list contents are of type {@link dsm.oscal.model.OscalMetadata.Annotation}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Annotations</em>' containment reference list.
-	 * @see dsm.oscal.model.OscalCatalogCommon.OscalCatalogCommonPackage#getParameter_Annotations()
-	 * @model containment="true"
-	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;AssemblyDefinition&gt;annotation'"
-	 * @generated
-	 */
-	EList<Annotation> getAnnotations();
 
 	/**
 	 * Returns the value of the '<em><b>Select</b></em>' containment reference.

@@ -17,6 +17,7 @@ package dsm.oscal.model.OscalMetadata.impl;
 
 import dsm.oscal.model.OscalMetadata.Address;
 import dsm.oscal.model.OscalMetadata.Annotation;
+import dsm.oscal.model.OscalMetadata.AnnotationOwner;
 import dsm.oscal.model.OscalMetadata.ExternalId;
 import dsm.oscal.model.OscalMetadata.Link;
 import dsm.oscal.model.OscalMetadata.OscalMetadataPackage;
@@ -43,6 +44,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -54,6 +56,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.PartyImpl#getUuid <em>Uuid</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.impl.PartyImpl#getAnnotations <em>Annotations</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.PartyImpl#getType <em>Type</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.PartyImpl#getName <em>Name</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.PartyImpl#getShortName <em>Short Name</em>}</li>
@@ -61,7 +64,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.PartyImpl#getLocationUuids <em>Location Uuids</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.PartyImpl#getMemberOfOrganizations <em>Member Of Organizations</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.PartyImpl#getRemarks <em>Remarks</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.impl.PartyImpl#getAnnotations <em>Annotations</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.PartyImpl#getAddresses <em>Addresses</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.PartyImpl#getLinks <em>Links</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.PartyImpl#getExternalIds <em>External Ids</em>}</li>
@@ -91,6 +93,16 @@ public class PartyImpl extends MinimalEObjectImpl.Container implements Party {
 	 * @ordered
 	 */
 	protected UUID uuid = UUID_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getAnnotations() <em>Annotations</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAnnotations()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Annotation> annotations;
 
 	/**
 	 * The default value of the '{@link #getType() <em>Type</em>}' attribute.
@@ -201,16 +213,6 @@ public class PartyImpl extends MinimalEObjectImpl.Container implements Party {
 	 * @ordered
 	 */
 	protected MarkupMultiline remarks = REMARKS_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getAnnotations() <em>Annotations</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAnnotations()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Annotation> annotations;
 
 	/**
 	 * The cached value of the '{@link #getAddresses() <em>Addresses</em>}' containment reference list.
@@ -443,7 +445,7 @@ public class PartyImpl extends MinimalEObjectImpl.Container implements Party {
 	@Override
 	public EList<Annotation> getAnnotations() {
 		if (annotations == null) {
-			annotations = new EObjectContainmentEList<Annotation>(Annotation.class, this, OscalMetadataPackage.PARTY__ANNOTATIONS);
+			annotations = new EObjectResolvingEList<Annotation>(Annotation.class, this, OscalMetadataPackage.PARTY__ANNOTATIONS);
 		}
 		return annotations;
 	}
@@ -521,8 +523,6 @@ public class PartyImpl extends MinimalEObjectImpl.Container implements Party {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case OscalMetadataPackage.PARTY__ANNOTATIONS:
-				return ((InternalEList<?>)getAnnotations()).basicRemove(otherEnd, msgs);
 			case OscalMetadataPackage.PARTY__ADDRESSES:
 				return ((InternalEList<?>)getAddresses()).basicRemove(otherEnd, msgs);
 			case OscalMetadataPackage.PARTY__LINKS:
@@ -547,6 +547,8 @@ public class PartyImpl extends MinimalEObjectImpl.Container implements Party {
 		switch (featureID) {
 			case OscalMetadataPackage.PARTY__UUID:
 				return getUuid();
+			case OscalMetadataPackage.PARTY__ANNOTATIONS:
+				return getAnnotations();
 			case OscalMetadataPackage.PARTY__TYPE:
 				return getType();
 			case OscalMetadataPackage.PARTY__NAME:
@@ -561,8 +563,6 @@ public class PartyImpl extends MinimalEObjectImpl.Container implements Party {
 				return getMemberOfOrganizations();
 			case OscalMetadataPackage.PARTY__REMARKS:
 				return getRemarks();
-			case OscalMetadataPackage.PARTY__ANNOTATIONS:
-				return getAnnotations();
 			case OscalMetadataPackage.PARTY__ADDRESSES:
 				return getAddresses();
 			case OscalMetadataPackage.PARTY__LINKS:
@@ -589,6 +589,10 @@ public class PartyImpl extends MinimalEObjectImpl.Container implements Party {
 			case OscalMetadataPackage.PARTY__UUID:
 				setUuid((UUID)newValue);
 				return;
+			case OscalMetadataPackage.PARTY__ANNOTATIONS:
+				getAnnotations().clear();
+				getAnnotations().addAll((Collection<? extends Annotation>)newValue);
+				return;
 			case OscalMetadataPackage.PARTY__TYPE:
 				setType((String)newValue);
 				return;
@@ -612,10 +616,6 @@ public class PartyImpl extends MinimalEObjectImpl.Container implements Party {
 				return;
 			case OscalMetadataPackage.PARTY__REMARKS:
 				setRemarks((MarkupMultiline)newValue);
-				return;
-			case OscalMetadataPackage.PARTY__ANNOTATIONS:
-				getAnnotations().clear();
-				getAnnotations().addAll((Collection<? extends Annotation>)newValue);
 				return;
 			case OscalMetadataPackage.PARTY__ADDRESSES:
 				getAddresses().clear();
@@ -652,6 +652,9 @@ public class PartyImpl extends MinimalEObjectImpl.Container implements Party {
 			case OscalMetadataPackage.PARTY__UUID:
 				setUuid(UUID_EDEFAULT);
 				return;
+			case OscalMetadataPackage.PARTY__ANNOTATIONS:
+				getAnnotations().clear();
+				return;
 			case OscalMetadataPackage.PARTY__TYPE:
 				setType(TYPE_EDEFAULT);
 				return;
@@ -672,9 +675,6 @@ public class PartyImpl extends MinimalEObjectImpl.Container implements Party {
 				return;
 			case OscalMetadataPackage.PARTY__REMARKS:
 				setRemarks(REMARKS_EDEFAULT);
-				return;
-			case OscalMetadataPackage.PARTY__ANNOTATIONS:
-				getAnnotations().clear();
 				return;
 			case OscalMetadataPackage.PARTY__ADDRESSES:
 				getAddresses().clear();
@@ -705,6 +705,8 @@ public class PartyImpl extends MinimalEObjectImpl.Container implements Party {
 		switch (featureID) {
 			case OscalMetadataPackage.PARTY__UUID:
 				return UUID_EDEFAULT == null ? uuid != null : !UUID_EDEFAULT.equals(uuid);
+			case OscalMetadataPackage.PARTY__ANNOTATIONS:
+				return annotations != null && !annotations.isEmpty();
 			case OscalMetadataPackage.PARTY__TYPE:
 				return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
 			case OscalMetadataPackage.PARTY__NAME:
@@ -719,8 +721,6 @@ public class PartyImpl extends MinimalEObjectImpl.Container implements Party {
 				return memberOfOrganizations != null && !memberOfOrganizations.isEmpty();
 			case OscalMetadataPackage.PARTY__REMARKS:
 				return REMARKS_EDEFAULT == null ? remarks != null : !REMARKS_EDEFAULT.equals(remarks);
-			case OscalMetadataPackage.PARTY__ANNOTATIONS:
-				return annotations != null && !annotations.isEmpty();
 			case OscalMetadataPackage.PARTY__ADDRESSES:
 				return addresses != null && !addresses.isEmpty();
 			case OscalMetadataPackage.PARTY__LINKS:
@@ -748,6 +748,12 @@ public class PartyImpl extends MinimalEObjectImpl.Container implements Party {
 				default: return -1;
 			}
 		}
+		if (baseClass == AnnotationOwner.class) {
+			switch (derivedFeatureID) {
+				case OscalMetadataPackage.PARTY__ANNOTATIONS: return OscalMetadataPackage.ANNOTATION_OWNER__ANNOTATIONS;
+				default: return -1;
+			}
+		}
 		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
 	}
 
@@ -761,6 +767,12 @@ public class PartyImpl extends MinimalEObjectImpl.Container implements Party {
 		if (baseClass == UUIDElement.class) {
 			switch (baseFeatureID) {
 				case OscalMetadataPackage.UUID_ELEMENT__UUID: return OscalMetadataPackage.PARTY__UUID;
+				default: return -1;
+			}
+		}
+		if (baseClass == AnnotationOwner.class) {
+			switch (baseFeatureID) {
+				case OscalMetadataPackage.ANNOTATION_OWNER__ANNOTATIONS: return OscalMetadataPackage.PARTY__ANNOTATIONS;
 				default: return -1;
 			}
 		}

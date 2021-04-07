@@ -24,6 +24,7 @@ import dsm.oscal.model.OscalCatalogCommon.OscalCatalogCommonFactory;
 
 import dsm.oscal.model.OscalMetadata.OscalMetadataFactory;
 
+import dsm.oscal.model.OscalMetadata.OscalMetadataPackage;
 import dsm.oscal.model.OscalMetadata.provider.OscalEditPlugin;
 
 import java.util.Collection;
@@ -82,11 +83,34 @@ public class GroupItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addAnnotationsPropertyDescriptor(object);
 			addIdPropertyDescriptor(object);
 			addClazzPropertyDescriptor(object);
 			addTitlePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Annotations feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAnnotationsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_AnnotationOwner_annotations_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_AnnotationOwner_annotations_feature", "_UI_AnnotationOwner_type"),
+				 OscalMetadataPackage.Literals.ANNOTATION_OWNER__ANNOTATIONS,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
@@ -167,7 +191,6 @@ public class GroupItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(OscalCatalogPackage.Literals.GROUP__ANNOTATIONS);
 			childrenFeatures.add(OscalCatalogPackage.Literals.GROUP__PARAMS);
 			childrenFeatures.add(OscalCatalogPackage.Literals.GROUP__PARTS);
 			childrenFeatures.add(OscalCatalogPackage.Literals.GROUP__LINKS);
@@ -234,7 +257,6 @@ public class GroupItemProvider
 			case OscalCatalogPackage.GROUP__TITLE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case OscalCatalogPackage.GROUP__ANNOTATIONS:
 			case OscalCatalogPackage.GROUP__PARAMS:
 			case OscalCatalogPackage.GROUP__PARTS:
 			case OscalCatalogPackage.GROUP__LINKS:
@@ -257,11 +279,6 @@ public class GroupItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OscalCatalogPackage.Literals.GROUP__ANNOTATIONS,
-				 OscalMetadataFactory.eINSTANCE.createAnnotation()));
 
 		newChildDescriptors.add
 			(createChildParameter

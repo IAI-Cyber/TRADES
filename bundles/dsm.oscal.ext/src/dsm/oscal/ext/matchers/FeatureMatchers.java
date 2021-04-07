@@ -16,6 +16,7 @@ package dsm.oscal.ext.matchers;
 import java.util.function.Predicate;
 
 import org.eclipse.emf.ecore.EAttribute;
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 
 public class FeatureMatchers {
@@ -31,10 +32,19 @@ public class FeatureMatchers {
 	public static Predicate<EStructuralFeature> isUnique() {
 		return f -> f.getUpperBound() == 1;
 	}
+	
+	public static Predicate<EStructuralFeature> isMany() {
+		return f -> f.getUpperBound() > 1 || f.getUpperBound() == -1;
+	}
 
 	public static Predicate<EStructuralFeature> isAttributeTyped(String instanceClassName) {
 		return f -> f instanceof EAttribute
 				&& instanceClassName.equals(((EAttribute) f).getEAttributeType().getInstanceClassName());
+	}
+	public static Predicate<EStructuralFeature> isContainmentTyped(String eClassName) {
+		return f -> f instanceof EReference //
+				&& ((EReference)f).isContainment() //
+				&& eClassName.equals(((EReference)f).getEReferenceType().getName());
 	}
 
 }

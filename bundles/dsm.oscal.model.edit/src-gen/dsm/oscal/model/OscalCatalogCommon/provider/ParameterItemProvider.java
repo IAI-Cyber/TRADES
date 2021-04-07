@@ -22,6 +22,7 @@ import dsm.oscal.model.OscalCatalogCommon.Parameter;
 
 import dsm.oscal.model.OscalMetadata.OscalMetadataFactory;
 
+import dsm.oscal.model.OscalMetadata.OscalMetadataPackage;
 import dsm.oscal.model.OscalMetadata.provider.OscalEditPlugin;
 
 import java.util.Collection;
@@ -80,6 +81,7 @@ public class ParameterItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addAnnotationsPropertyDescriptor(object);
 			addIdPropertyDescriptor(object);
 			addClazzPropertyDescriptor(object);
 			addDependsOnPropertyDescriptor(object);
@@ -89,6 +91,28 @@ public class ParameterItemProvider
 			addRemarksPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Annotations feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAnnotationsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_AnnotationOwner_annotations_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_AnnotationOwner_annotations_feature", "_UI_AnnotationOwner_type"),
+				 OscalMetadataPackage.Literals.ANNOTATION_OWNER__ANNOTATIONS,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
@@ -257,7 +281,6 @@ public class ParameterItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(OscalCatalogCommonPackage.Literals.PARAMETER__ANNOTATIONS);
 			childrenFeatures.add(OscalCatalogCommonPackage.Literals.PARAMETER__SELECT);
 			childrenFeatures.add(OscalCatalogCommonPackage.Literals.PARAMETER__GUIDELINES);
 			childrenFeatures.add(OscalCatalogCommonPackage.Literals.PARAMETER__LINKS);
@@ -327,7 +350,6 @@ public class ParameterItemProvider
 			case OscalCatalogCommonPackage.PARAMETER__REMARKS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case OscalCatalogCommonPackage.PARAMETER__ANNOTATIONS:
 			case OscalCatalogCommonPackage.PARAMETER__SELECT:
 			case OscalCatalogCommonPackage.PARAMETER__GUIDELINES:
 			case OscalCatalogCommonPackage.PARAMETER__LINKS:
@@ -349,11 +371,6 @@ public class ParameterItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OscalCatalogCommonPackage.Literals.PARAMETER__ANNOTATIONS,
-				 OscalMetadataFactory.eINSTANCE.createAnnotation()));
 
 		newChildDescriptors.add
 			(createChildParameter

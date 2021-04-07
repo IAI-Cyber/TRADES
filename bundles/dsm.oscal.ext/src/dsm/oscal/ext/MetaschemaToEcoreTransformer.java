@@ -197,7 +197,7 @@ public class MetaschemaToEcoreTransformer {
 			eClass.getESuperTypes().add(oscalElement);
 		}
 		
-		new SemanticRefactoring(rootEPackage).refactor(defToEClass.values());
+		new SemanticRefactoring(rootEPackage,defToEClass.values()).refactor();
 
 		for (Resource r : rs.getResources()) {
 			try {

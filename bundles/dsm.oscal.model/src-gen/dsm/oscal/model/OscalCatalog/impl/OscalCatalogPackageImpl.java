@@ -240,7 +240,7 @@ public class OscalCatalogPackageImpl extends EPackageImpl implements OscalCatalo
 	 * @generated
 	 */
 	@Override
-	public EReference getControl_Annotations() {
+	public EReference getControl_Params() {
 		return (EReference)controlEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -250,7 +250,7 @@ public class OscalCatalogPackageImpl extends EPackageImpl implements OscalCatalo
 	 * @generated
 	 */
 	@Override
-	public EReference getControl_Params() {
+	public EReference getControl_Parts() {
 		return (EReference)controlEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -260,7 +260,7 @@ public class OscalCatalogPackageImpl extends EPackageImpl implements OscalCatalo
 	 * @generated
 	 */
 	@Override
-	public EReference getControl_Parts() {
+	public EReference getControl_Links() {
 		return (EReference)controlEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -270,7 +270,7 @@ public class OscalCatalogPackageImpl extends EPackageImpl implements OscalCatalo
 	 * @generated
 	 */
 	@Override
-	public EReference getControl_Links() {
+	public EReference getControl_Controls() {
 		return (EReference)controlEClass.getEStructuralFeatures().get(6);
 	}
 
@@ -280,18 +280,8 @@ public class OscalCatalogPackageImpl extends EPackageImpl implements OscalCatalo
 	 * @generated
 	 */
 	@Override
-	public EReference getControl_Controls() {
-		return (EReference)controlEClass.getEStructuralFeatures().get(7);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EReference getControl_Props() {
-		return (EReference)controlEClass.getEStructuralFeatures().get(8);
+		return (EReference)controlEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -340,7 +330,7 @@ public class OscalCatalogPackageImpl extends EPackageImpl implements OscalCatalo
 	 * @generated
 	 */
 	@Override
-	public EReference getGroup_Annotations() {
+	public EReference getGroup_Params() {
 		return (EReference)groupEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -350,7 +340,7 @@ public class OscalCatalogPackageImpl extends EPackageImpl implements OscalCatalo
 	 * @generated
 	 */
 	@Override
-	public EReference getGroup_Params() {
+	public EReference getGroup_Parts() {
 		return (EReference)groupEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -360,7 +350,7 @@ public class OscalCatalogPackageImpl extends EPackageImpl implements OscalCatalo
 	 * @generated
 	 */
 	@Override
-	public EReference getGroup_Parts() {
+	public EReference getGroup_Links() {
 		return (EReference)groupEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -370,7 +360,7 @@ public class OscalCatalogPackageImpl extends EPackageImpl implements OscalCatalo
 	 * @generated
 	 */
 	@Override
-	public EReference getGroup_Links() {
+	public EReference getGroup_Controls() {
 		return (EReference)groupEClass.getEStructuralFeatures().get(6);
 	}
 
@@ -380,7 +370,7 @@ public class OscalCatalogPackageImpl extends EPackageImpl implements OscalCatalo
 	 * @generated
 	 */
 	@Override
-	public EReference getGroup_Controls() {
+	public EReference getGroup_Groups() {
 		return (EReference)groupEClass.getEStructuralFeatures().get(7);
 	}
 
@@ -390,18 +380,8 @@ public class OscalCatalogPackageImpl extends EPackageImpl implements OscalCatalo
 	 * @generated
 	 */
 	@Override
-	public EReference getGroup_Groups() {
-		return (EReference)groupEClass.getEStructuralFeatures().get(8);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EReference getGroup_Props() {
-		return (EReference)groupEClass.getEStructuralFeatures().get(9);
+		return (EReference)groupEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -444,7 +424,6 @@ public class OscalCatalogPackageImpl extends EPackageImpl implements OscalCatalo
 		createEAttribute(controlEClass, CONTROL__ID);
 		createEAttribute(controlEClass, CONTROL__CLAZZ);
 		createEAttribute(controlEClass, CONTROL__TITLE);
-		createEReference(controlEClass, CONTROL__ANNOTATIONS);
 		createEReference(controlEClass, CONTROL__PARAMS);
 		createEReference(controlEClass, CONTROL__PARTS);
 		createEReference(controlEClass, CONTROL__LINKS);
@@ -455,7 +434,6 @@ public class OscalCatalogPackageImpl extends EPackageImpl implements OscalCatalo
 		createEAttribute(groupEClass, GROUP__ID);
 		createEAttribute(groupEClass, GROUP__CLAZZ);
 		createEAttribute(groupEClass, GROUP__TITLE);
-		createEReference(groupEClass, GROUP__ANNOTATIONS);
 		createEReference(groupEClass, GROUP__PARAMS);
 		createEReference(groupEClass, GROUP__PARTS);
 		createEReference(groupEClass, GROUP__LINKS);
@@ -499,7 +477,9 @@ public class OscalCatalogPackageImpl extends EPackageImpl implements OscalCatalo
 		catalogEClass.getESuperTypes().add(theOscalMetadataPackage.getOscalElement());
 		catalogEClass.getESuperTypes().add(theOscalMetadataPackage.getUUIDElement());
 		controlEClass.getESuperTypes().add(theOscalMetadataPackage.getOscalElement());
+		controlEClass.getESuperTypes().add(theOscalMetadataPackage.getAnnotationOwner());
 		groupEClass.getESuperTypes().add(theOscalMetadataPackage.getOscalElement());
+		groupEClass.getESuperTypes().add(theOscalMetadataPackage.getAnnotationOwner());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(catalogEClass, Catalog.class, "Catalog", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -513,7 +493,6 @@ public class OscalCatalogPackageImpl extends EPackageImpl implements OscalCatalo
 		initEAttribute(getControl_Id(), ecorePackage.getEString(), "id", null, 1, 1, Control.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getControl_Clazz(), ecorePackage.getEString(), "clazz", null, 0, 1, Control.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getControl_Title(), theOscalMetadataPackage.getMarkupLineType(), "title", null, 1, 1, Control.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getControl_Annotations(), theOscalMetadataPackage.getAnnotation(), null, "annotations", null, 0, -1, Control.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getControl_Params(), theOscalCatalogCommonPackage.getParameter(), null, "params", null, 0, -1, Control.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getControl_Parts(), theOscalCatalogCommonPackage.getPart(), null, "parts", null, 0, -1, Control.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getControl_Links(), theOscalMetadataPackage.getLink(), null, "links", null, 0, -1, Control.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -524,7 +503,6 @@ public class OscalCatalogPackageImpl extends EPackageImpl implements OscalCatalo
 		initEAttribute(getGroup_Id(), ecorePackage.getEString(), "id", null, 0, 1, Group.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getGroup_Clazz(), ecorePackage.getEString(), "clazz", null, 0, 1, Group.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getGroup_Title(), theOscalMetadataPackage.getMarkupLineType(), "title", null, 1, 1, Group.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getGroup_Annotations(), theOscalMetadataPackage.getAnnotation(), null, "annotations", null, 0, -1, Group.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getGroup_Params(), theOscalCatalogCommonPackage.getParameter(), null, "params", null, 0, -1, Group.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getGroup_Parts(), theOscalCatalogCommonPackage.getPart(), null, "parts", null, 0, -1, Group.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getGroup_Links(), theOscalMetadataPackage.getLink(), null, "links", null, 0, -1, Group.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -609,12 +587,6 @@ public class OscalCatalogPackageImpl extends EPackageImpl implements OscalCatalo
 			   "source", "<Metaschema>oscal-catalog.<AssemblyDefinition>control.<FieldInstance>title"
 		   });
 		addAnnotation
-		  (getControl_Annotations(),
-		   source,
-		   new String[] {
-			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>annotation"
-		   });
-		addAnnotation
 		  (getControl_Params(),
 		   source,
 		   new String[] {
@@ -667,12 +639,6 @@ public class OscalCatalogPackageImpl extends EPackageImpl implements OscalCatalo
 		   source,
 		   new String[] {
 			   "source", "<Metaschema>oscal-catalog.<AssemblyDefinition>group.<FieldInstance>title"
-		   });
-		addAnnotation
-		  (getGroup_Annotations(),
-		   source,
-		   new String[] {
-			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>annotation"
 		   });
 		addAnnotation
 		  (getGroup_Params(),

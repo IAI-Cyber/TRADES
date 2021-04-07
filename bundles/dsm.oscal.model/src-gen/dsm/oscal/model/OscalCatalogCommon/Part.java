@@ -15,7 +15,7 @@
  */
 package dsm.oscal.model.OscalCatalogCommon;
 
-import dsm.oscal.model.OscalMetadata.Annotation;
+import dsm.oscal.model.OscalMetadata.AnnotationOwner;
 import dsm.oscal.model.OscalMetadata.Link;
 import dsm.oscal.model.OscalMetadata.OscalElement;
 import dsm.oscal.model.OscalMetadata.Property;
@@ -55,7 +55,6 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link dsm.oscal.model.OscalCatalogCommon.Part#getClazz <em>Clazz</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalogCommon.Part#getTitle <em>Title</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalogCommon.Part#getProse <em>Prose</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalCatalogCommon.Part#getAnnotations <em>Annotations</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalogCommon.Part#getParts <em>Parts</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalogCommon.Part#getLinks <em>Links</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalogCommon.Part#getProps <em>Props</em>}</li>
@@ -65,7 +64,7 @@ import org.eclipse.emf.common.util.EList;
  * @model annotation="Metaschema source='&lt;Metaschema&gt;oscal-catalog-common.&lt;AssemblyDefinition&gt;part'"
  * @generated
  */
-public interface Part extends OscalElement {
+public interface Part extends OscalElement, AnnotationOwner {
 	/**
 	 * Returns the value of the '<em><b>Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -244,19 +243,6 @@ public interface Part extends OscalElement {
 	 * @generated
 	 */
 	void setProse(MarkupMultiline value);
-
-	/**
-	 * Returns the value of the '<em><b>Annotations</b></em>' containment reference list.
-	 * The list contents are of type {@link dsm.oscal.model.OscalMetadata.Annotation}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Annotations</em>' containment reference list.
-	 * @see dsm.oscal.model.OscalCatalogCommon.OscalCatalogCommonPackage#getPart_Annotations()
-	 * @model containment="true"
-	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;AssemblyDefinition&gt;annotation'"
-	 * @generated
-	 */
-	EList<Annotation> getAnnotations();
 
 	/**
 	 * Returns the value of the '<em><b>Parts</b></em>' containment reference list.

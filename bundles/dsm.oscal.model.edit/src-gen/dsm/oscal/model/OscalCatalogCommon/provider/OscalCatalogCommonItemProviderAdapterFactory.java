@@ -90,7 +90,7 @@ public class OscalCatalogCommonItemProviderAdapterFactory extends OscalCatalogCo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ParameterItemProvider parameterItemProvider;
+	protected ParameterItemProviderCustomImpl parameterItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link dsm.oscal.model.OscalCatalogCommon.Parameter}.
@@ -101,7 +101,7 @@ public class OscalCatalogCommonItemProviderAdapterFactory extends OscalCatalogCo
 	@Override
 	public Adapter createParameterAdapter() {
 		if (parameterItemProvider == null) {
-			parameterItemProvider = new ParameterItemProvider(this);
+			parameterItemProvider = new ParameterItemProviderCustomImpl(this);
 		}
 
 		return parameterItemProvider;
@@ -205,7 +205,7 @@ public class OscalCatalogCommonItemProviderAdapterFactory extends OscalCatalogCo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected PartItemProvider partItemProvider;
+	protected PartItemProviderCustomImpl partItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link dsm.oscal.model.OscalCatalogCommon.Part}.
@@ -216,7 +216,7 @@ public class OscalCatalogCommonItemProviderAdapterFactory extends OscalCatalogCo
 	@Override
 	public Adapter createPartAdapter() {
 		if (partItemProvider == null) {
-			partItemProvider = new PartItemProvider(this);
+			partItemProvider = new PartItemProviderCustomImpl(this);
 		}
 
 		return partItemProvider;

@@ -19,7 +19,9 @@ import dsm.oscal.model.OscalCatalogCommon.OscalCatalogCommonPackage;
 import dsm.oscal.model.OscalCatalogCommon.Part;
 
 import dsm.oscal.model.OscalMetadata.Annotation;
+import dsm.oscal.model.OscalMetadata.AnnotationOwner;
 import dsm.oscal.model.OscalMetadata.Link;
+import dsm.oscal.model.OscalMetadata.OscalMetadataPackage;
 import dsm.oscal.model.OscalMetadata.Property;
 
 import gov.nist.secauto.metaschema.datatypes.markup.MarkupLine;
@@ -41,6 +43,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -51,13 +54,13 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link dsm.oscal.model.OscalCatalogCommon.impl.PartImpl#getAnnotations <em>Annotations</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalogCommon.impl.PartImpl#getId <em>Id</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalogCommon.impl.PartImpl#getName <em>Name</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalogCommon.impl.PartImpl#getNs <em>Ns</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalogCommon.impl.PartImpl#getClazz <em>Clazz</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalogCommon.impl.PartImpl#getTitle <em>Title</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalogCommon.impl.PartImpl#getProse <em>Prose</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalCatalogCommon.impl.PartImpl#getAnnotations <em>Annotations</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalogCommon.impl.PartImpl#getParts <em>Parts</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalogCommon.impl.PartImpl#getLinks <em>Links</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalogCommon.impl.PartImpl#getProps <em>Props</em>}</li>
@@ -66,6 +69,16 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * @generated
  */
 public class PartImpl extends MinimalEObjectImpl.Container implements Part {
+	/**
+	 * The cached value of the '{@link #getAnnotations() <em>Annotations</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAnnotations()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Annotation> annotations;
+
 	/**
 	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -185,16 +198,6 @@ public class PartImpl extends MinimalEObjectImpl.Container implements Part {
 	 * @ordered
 	 */
 	protected MarkupMultiline prose = PROSE_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getAnnotations() <em>Annotations</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAnnotations()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Annotation> annotations;
 
 	/**
 	 * The cached value of the '{@link #getParts() <em>Parts</em>}' containment reference list.
@@ -391,7 +394,7 @@ public class PartImpl extends MinimalEObjectImpl.Container implements Part {
 	@Override
 	public EList<Annotation> getAnnotations() {
 		if (annotations == null) {
-			annotations = new EObjectContainmentEList<Annotation>(Annotation.class, this, OscalCatalogCommonPackage.PART__ANNOTATIONS);
+			annotations = new EObjectResolvingEList<Annotation>(Annotation.class, this, OscalCatalogCommonPackage.PART__ANNOTATIONS);
 		}
 		return annotations;
 	}
@@ -443,8 +446,6 @@ public class PartImpl extends MinimalEObjectImpl.Container implements Part {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case OscalCatalogCommonPackage.PART__ANNOTATIONS:
-				return ((InternalEList<?>)getAnnotations()).basicRemove(otherEnd, msgs);
 			case OscalCatalogCommonPackage.PART__PARTS:
 				return ((InternalEList<?>)getParts()).basicRemove(otherEnd, msgs);
 			case OscalCatalogCommonPackage.PART__LINKS:
@@ -463,6 +464,8 @@ public class PartImpl extends MinimalEObjectImpl.Container implements Part {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case OscalCatalogCommonPackage.PART__ANNOTATIONS:
+				return getAnnotations();
 			case OscalCatalogCommonPackage.PART__ID:
 				return getId();
 			case OscalCatalogCommonPackage.PART__NAME:
@@ -475,8 +478,6 @@ public class PartImpl extends MinimalEObjectImpl.Container implements Part {
 				return getTitle();
 			case OscalCatalogCommonPackage.PART__PROSE:
 				return getProse();
-			case OscalCatalogCommonPackage.PART__ANNOTATIONS:
-				return getAnnotations();
 			case OscalCatalogCommonPackage.PART__PARTS:
 				return getParts();
 			case OscalCatalogCommonPackage.PART__LINKS:
@@ -496,6 +497,10 @@ public class PartImpl extends MinimalEObjectImpl.Container implements Part {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case OscalCatalogCommonPackage.PART__ANNOTATIONS:
+				getAnnotations().clear();
+				getAnnotations().addAll((Collection<? extends Annotation>)newValue);
+				return;
 			case OscalCatalogCommonPackage.PART__ID:
 				setId((String)newValue);
 				return;
@@ -513,10 +518,6 @@ public class PartImpl extends MinimalEObjectImpl.Container implements Part {
 				return;
 			case OscalCatalogCommonPackage.PART__PROSE:
 				setProse((MarkupMultiline)newValue);
-				return;
-			case OscalCatalogCommonPackage.PART__ANNOTATIONS:
-				getAnnotations().clear();
-				getAnnotations().addAll((Collection<? extends Annotation>)newValue);
 				return;
 			case OscalCatalogCommonPackage.PART__PARTS:
 				getParts().clear();
@@ -542,6 +543,9 @@ public class PartImpl extends MinimalEObjectImpl.Container implements Part {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case OscalCatalogCommonPackage.PART__ANNOTATIONS:
+				getAnnotations().clear();
+				return;
 			case OscalCatalogCommonPackage.PART__ID:
 				setId(ID_EDEFAULT);
 				return;
@@ -559,9 +563,6 @@ public class PartImpl extends MinimalEObjectImpl.Container implements Part {
 				return;
 			case OscalCatalogCommonPackage.PART__PROSE:
 				setProse(PROSE_EDEFAULT);
-				return;
-			case OscalCatalogCommonPackage.PART__ANNOTATIONS:
-				getAnnotations().clear();
 				return;
 			case OscalCatalogCommonPackage.PART__PARTS:
 				getParts().clear();
@@ -584,6 +585,8 @@ public class PartImpl extends MinimalEObjectImpl.Container implements Part {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case OscalCatalogCommonPackage.PART__ANNOTATIONS:
+				return annotations != null && !annotations.isEmpty();
 			case OscalCatalogCommonPackage.PART__ID:
 				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
 			case OscalCatalogCommonPackage.PART__NAME:
@@ -596,8 +599,6 @@ public class PartImpl extends MinimalEObjectImpl.Container implements Part {
 				return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
 			case OscalCatalogCommonPackage.PART__PROSE:
 				return PROSE_EDEFAULT == null ? prose != null : !PROSE_EDEFAULT.equals(prose);
-			case OscalCatalogCommonPackage.PART__ANNOTATIONS:
-				return annotations != null && !annotations.isEmpty();
 			case OscalCatalogCommonPackage.PART__PARTS:
 				return parts != null && !parts.isEmpty();
 			case OscalCatalogCommonPackage.PART__LINKS:
@@ -606,6 +607,38 @@ public class PartImpl extends MinimalEObjectImpl.Container implements Part {
 				return props != null && !props.isEmpty();
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == AnnotationOwner.class) {
+			switch (derivedFeatureID) {
+				case OscalCatalogCommonPackage.PART__ANNOTATIONS: return OscalMetadataPackage.ANNOTATION_OWNER__ANNOTATIONS;
+				default: return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == AnnotationOwner.class) {
+			switch (baseFeatureID) {
+				case OscalMetadataPackage.ANNOTATION_OWNER__ANNOTATIONS: return OscalCatalogCommonPackage.PART__ANNOTATIONS;
+				default: return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
 	/**

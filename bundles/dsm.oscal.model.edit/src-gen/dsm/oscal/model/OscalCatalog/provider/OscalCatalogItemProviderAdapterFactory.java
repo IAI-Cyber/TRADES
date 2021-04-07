@@ -90,7 +90,7 @@ public class OscalCatalogItemProviderAdapterFactory extends OscalCatalogAdapterF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected CatalogItemProvider catalogItemProvider;
+	protected CatalogItemProviderCustomImpl catalogItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link dsm.oscal.model.OscalCatalog.Catalog}.
@@ -101,7 +101,7 @@ public class OscalCatalogItemProviderAdapterFactory extends OscalCatalogAdapterF
 	@Override
 	public Adapter createCatalogAdapter() {
 		if (catalogItemProvider == null) {
-			catalogItemProvider = new CatalogItemProvider(this);
+			catalogItemProvider = new CatalogItemProviderCustomImpl(this);
 		}
 
 		return catalogItemProvider;
@@ -113,7 +113,7 @@ public class OscalCatalogItemProviderAdapterFactory extends OscalCatalogAdapterF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ControlItemProvider controlItemProvider;
+	protected ControlItemProviderCustomImpl controlItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link dsm.oscal.model.OscalCatalog.Control}.
@@ -124,7 +124,7 @@ public class OscalCatalogItemProviderAdapterFactory extends OscalCatalogAdapterF
 	@Override
 	public Adapter createControlAdapter() {
 		if (controlItemProvider == null) {
-			controlItemProvider = new ControlItemProvider(this);
+			controlItemProvider = new ControlItemProviderCustomImpl(this);
 		}
 
 		return controlItemProvider;
@@ -136,7 +136,7 @@ public class OscalCatalogItemProviderAdapterFactory extends OscalCatalogAdapterF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected GroupItemProvider groupItemProvider;
+	protected GroupItemProviderCustomImpl groupItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link dsm.oscal.model.OscalCatalog.Group}.
@@ -147,7 +147,7 @@ public class OscalCatalogItemProviderAdapterFactory extends OscalCatalogAdapterF
 	@Override
 	public Adapter createGroupAdapter() {
 		if (groupItemProvider == null) {
-			groupItemProvider = new GroupItemProvider(this);
+			groupItemProvider = new GroupItemProviderCustomImpl(this);
 		}
 
 		return groupItemProvider;

@@ -105,6 +105,7 @@ public class OscalMetadataFactoryImpl extends EFactoryImpl implements OscalMetad
 			case OscalMetadataPackage.ROLE: return createRole();
 			case OscalMetadataPackage.TELEPHONE_NUMBER: return createTelephoneNumber();
 			case OscalMetadataPackage.UUID_ELEMENT: return createUUIDElement();
+			case OscalMetadataPackage.ANNOTATION_OWNER: return createAnnotationOwner();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -417,6 +418,17 @@ public class OscalMetadataFactoryImpl extends EFactoryImpl implements OscalMetad
 	public UUIDElement createUUIDElement() {
 		UUIDElementImpl uuidElement = new UUIDElementImpl();
 		return uuidElement;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public AnnotationOwner createAnnotationOwner() {
+		AnnotationOwnerImpl annotationOwner = new AnnotationOwnerImpl();
+		return annotationOwner;
 	}
 
 	/**

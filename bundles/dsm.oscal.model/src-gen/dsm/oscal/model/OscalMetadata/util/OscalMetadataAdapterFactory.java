@@ -169,6 +169,10 @@ public class OscalMetadataAdapterFactory extends AdapterFactoryImpl {
 				return createUUIDElementAdapter();
 			}
 			@Override
+			public Adapter caseAnnotationOwner(AnnotationOwner object) {
+				return createAnnotationOwnerAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -493,6 +497,20 @@ public class OscalMetadataAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createUUIDElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link dsm.oscal.model.OscalMetadata.AnnotationOwner <em>Annotation Owner</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see dsm.oscal.model.OscalMetadata.AnnotationOwner
+	 * @generated
+	 */
+	public Adapter createAnnotationOwnerAdapter() {
 		return null;
 	}
 

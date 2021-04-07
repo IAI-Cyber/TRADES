@@ -1,651 +1,266 @@
 <?xml version="1.0" encoding="ASCII"?>
-<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="&#xD;&#xA; Copyright Israel Aerospace Industries, Eclipse contributors and others 2021. All rights reserved.&#xD;&#xA; This program and the accompanying materials&#xD;&#xA; are made available under the terms of the Eclipse Public License 2.0&#xD;&#xA; which accompanies this distribution, and is available at&#xD;&#xA; https://www.eclipse.org/legal/epl-2.0/&#xD;&#xA; &#xD;&#xA; SPDX-License-Identifier: EPL-2.0&#xD;&#xA; &#xD;&#xA; Contributors:&#xD;&#xA;     ELTA Ltd - initial API and implementation&#xD;&#xA; &#xD;&#xA;" modelDirectory="/dsm.oscal.model/src-gen" editDirectory="/dsm.oscal.model.edit/src-gen" editorDirectory="/dsm.oscal.model.editor/src-gen" modelPluginID="dsm.oscal.model" modelName="Oscal" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="&#xD;&#xA; Copyright Israel Aerospace Industries, Eclipse contributors and others 2021. All rights reserved.&#xD;&#xA; This program and the accompanying materials&#xD;&#xA; are made available under the terms of the Eclipse Public License 2.0&#xD;&#xA; which accompanies this distribution, and is available at&#xD;&#xA; https://www.eclipse.org/legal/epl-2.0/&#xD;&#xA; &#xD;&#xA; SPDX-License-Identifier: EPL-2.0&#xD;&#xA; &#xD;&#xA; Contributors:&#xD;&#xA;     ELTA Ltd - initial API and implementation&#xD;&#xA; &#xD;&#xA;"
+    modelDirectory="/dsm.oscal.model/src-gen" editDirectory="/dsm.oscal.model.edit/src-gen"
+    editorDirectory="/dsm.oscal.model.editor/src-gen" modelPluginID="dsm.oscal.model"
+    modelName="Oscal" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
   <foreignModel>oscal-metadata.ecore</foreignModel>
   <foreignModel>oscal-catalog-common.ecore</foreignModel>
   <foreignModel>oscal-catalog.ecore</foreignModel>
-  <genPackages prefix="OscalMetadata" basePackage="dsm.oscal.model" disposableProviderFactory="true">
-    <ecorePackage href="oscal-metadata.ecore#/"/>
-    <genDataTypes create="return dsm.oscal.model.OSCALDataTypeHandler.INSTANCE.loadDateTypeFromString(it);" convert="return dsm.oscal.model.OSCALDataTypeHandler.INSTANCE.saveDateTypeToString(it);">
-      <ecoreDataType href="oscal-metadata.ecore#//DateType"/>
-    </genDataTypes>
-    <genDataTypes create="return dsm.oscal.model.OSCALDataTypeHandler.INSTANCE.loadDateWithTzTypeFromString(it);" convert="return dsm.oscal.model.OSCALDataTypeHandler.INSTANCE.saveDateWithTzTypeToString(it);">
-      <ecoreDataType href="oscal-metadata.ecore#//DateWithTzType"/>
-    </genDataTypes>
-    <genDataTypes create="return dsm.oscal.model.OSCALDataTypeHandler.INSTANCE.loadIpV4AddressTypeFromString(it);" convert="return dsm.oscal.model.OSCALDataTypeHandler.INSTANCE.saveIpV4AddressTypeToString(it);">
-      <ecoreDataType href="oscal-metadata.ecore#//IpV4AddressType"/>
-    </genDataTypes>
-    <genDataTypes create="return dsm.oscal.model.OSCALDataTypeHandler.INSTANCE.loadDateTimeTypeFromString(it);" convert="return dsm.oscal.model.OSCALDataTypeHandler.INSTANCE.saveDateTimeTypeToString(it);">
-      <ecoreDataType href="oscal-metadata.ecore#//DateTimeType"/>
-    </genDataTypes>
-    <genDataTypes create="return dsm.oscal.model.OSCALDataTypeHandler.INSTANCE.loadUriReferenceTypeFromString(it);" convert="return dsm.oscal.model.OSCALDataTypeHandler.INSTANCE.saveUriReferenceTypeToString(it);">
-      <ecoreDataType href="oscal-metadata.ecore#//UriReferenceType"/>
-    </genDataTypes>
-    <genDataTypes create="return dsm.oscal.model.OSCALDataTypeHandler.INSTANCE.loadUuidTypeFromString(it);" convert="return dsm.oscal.model.OSCALDataTypeHandler.INSTANCE.saveUuidTypeToString(it);">
-      <ecoreDataType href="oscal-metadata.ecore#//UuidType"/>
-    </genDataTypes>
-    <genDataTypes create="return dsm.oscal.model.OSCALDataTypeHandler.INSTANCE.loadBase64TypeFromString(it);" convert="return dsm.oscal.model.OSCALDataTypeHandler.INSTANCE.saveBase64TypeToString(it);">
-      <ecoreDataType href="oscal-metadata.ecore#//Base64Type"/>
-    </genDataTypes>
-    <genDataTypes create="return dsm.oscal.model.OSCALDataTypeHandler.INSTANCE.loadUriTypeFromString(it);" convert="return dsm.oscal.model.OSCALDataTypeHandler.INSTANCE.saveUriTypeToString(it);">
-      <ecoreDataType href="oscal-metadata.ecore#//UriType"/>
-    </genDataTypes>
-    <genDataTypes create="return dsm.oscal.model.OSCALDataTypeHandler.INSTANCE.loadMarkupLineTypeFromString(it);" convert="return dsm.oscal.model.OSCALDataTypeHandler.INSTANCE.saveMarkupLineTypeToString(it);">
-      <ecoreDataType href="oscal-metadata.ecore#//MarkupLineType"/>
-    </genDataTypes>
-    <genDataTypes create="return dsm.oscal.model.OSCALDataTypeHandler.INSTANCE.loadMarkupMultilineTypeFromString(it);" convert="return dsm.oscal.model.OSCALDataTypeHandler.INSTANCE.saveMarkupMultilineTypeToString(it);">
-      <ecoreDataType href="oscal-metadata.ecore#//MarkupMultilineType"/>
-    </genDataTypes>
-    <genDataTypes create="return null;" convert="return null;">
-      <ecoreDataType href="oscal-metadata.ecore#//EmptyType"/>
-    </genDataTypes>
-    <genDataTypes create="return dsm.oscal.model.OSCALDataTypeHandler.INSTANCE.loadDateTimeWithTzTypeFromString(it);" convert="return dsm.oscal.model.OSCALDataTypeHandler.INSTANCE.saveDateTimeWithTzTypeToString(it);">
-      <ecoreDataType href="oscal-metadata.ecore#//DateTimeWithTzType"/>
-    </genDataTypes>
-    <genDataTypes create="return dsm.oscal.model.OSCALDataTypeHandler.INSTANCE.loadIpV6AddressTypeFromString(it);" convert="return dsm.oscal.model.OSCALDataTypeHandler.INSTANCE.saveIpV6AddressTypeToString(it);">
-      <ecoreDataType href="oscal-metadata.ecore#//IpV6AddressType"/>
-    </genDataTypes>
-    <genClasses>
-      <ecoreClass href="oscal-metadata.ecore#//Address"/>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//Address/type"/>
-      </genFeatures>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//Address/addrLines"/>
-      </genFeatures>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//Address/city"/>
-      </genFeatures>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//Address/state"/>
-      </genFeatures>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//Address/postalCode"/>
-      </genFeatures>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//Address/country"/>
-      </genFeatures>
+  <genPackages prefix="OscalMetadata" basePackage="dsm.oscal.model" disposableProviderFactory="true"
+      ecorePackage="oscal-metadata.ecore#/">
+    <genDataTypes ecoreDataType="oscal-metadata.ecore#//DateTimeWithTzType" create="return dsm.oscal.model.OSCALDataTypeHandler.INSTANCE.loadDateTimeWithTzTypeFromString(it);"
+        convert="return dsm.oscal.model.OSCALDataTypeHandler.INSTANCE.saveDateTimeWithTzTypeToString(it);"/>
+    <genDataTypes ecoreDataType="oscal-metadata.ecore#//MarkupLineType" create="return dsm.oscal.model.OSCALDataTypeHandler.INSTANCE.loadMarkupLineTypeFromString(it);"
+        convert="return dsm.oscal.model.OSCALDataTypeHandler.INSTANCE.saveMarkupLineTypeToString(it);"/>
+    <genDataTypes ecoreDataType="oscal-metadata.ecore#//EmptyType" create="return null;"
+        convert="return null;"/>
+    <genDataTypes ecoreDataType="oscal-metadata.ecore#//UriType" create="return dsm.oscal.model.OSCALDataTypeHandler.INSTANCE.loadUriTypeFromString(it);"
+        convert="return dsm.oscal.model.OSCALDataTypeHandler.INSTANCE.saveUriTypeToString(it);"/>
+    <genDataTypes ecoreDataType="oscal-metadata.ecore#//DateTimeType" create="return dsm.oscal.model.OSCALDataTypeHandler.INSTANCE.loadDateTimeTypeFromString(it);"
+        convert="return dsm.oscal.model.OSCALDataTypeHandler.INSTANCE.saveDateTimeTypeToString(it);"/>
+    <genDataTypes ecoreDataType="oscal-metadata.ecore#//DateType" create="return dsm.oscal.model.OSCALDataTypeHandler.INSTANCE.loadDateTypeFromString(it);"
+        convert="return dsm.oscal.model.OSCALDataTypeHandler.INSTANCE.saveDateTypeToString(it);"/>
+    <genDataTypes ecoreDataType="oscal-metadata.ecore#//UuidType" create="return dsm.oscal.model.OSCALDataTypeHandler.INSTANCE.loadUuidTypeFromString(it);"
+        convert="return dsm.oscal.model.OSCALDataTypeHandler.INSTANCE.saveUuidTypeToString(it);"/>
+    <genDataTypes ecoreDataType="oscal-metadata.ecore#//UriReferenceType" create="return dsm.oscal.model.OSCALDataTypeHandler.INSTANCE.loadUriReferenceTypeFromString(it);"
+        convert="return dsm.oscal.model.OSCALDataTypeHandler.INSTANCE.saveUriReferenceTypeToString(it);"/>
+    <genDataTypes ecoreDataType="oscal-metadata.ecore#//DateWithTzType" create="return dsm.oscal.model.OSCALDataTypeHandler.INSTANCE.loadDateWithTzTypeFromString(it);"
+        convert="return dsm.oscal.model.OSCALDataTypeHandler.INSTANCE.saveDateWithTzTypeToString(it);"/>
+    <genDataTypes ecoreDataType="oscal-metadata.ecore#//Base64Type" create="return dsm.oscal.model.OSCALDataTypeHandler.INSTANCE.loadBase64TypeFromString(it);"
+        convert="return dsm.oscal.model.OSCALDataTypeHandler.INSTANCE.saveBase64TypeToString(it);"/>
+    <genDataTypes ecoreDataType="oscal-metadata.ecore#//MarkupMultilineType" create="return dsm.oscal.model.OSCALDataTypeHandler.INSTANCE.loadMarkupMultilineTypeFromString(it);"
+        convert="return dsm.oscal.model.OSCALDataTypeHandler.INSTANCE.saveMarkupMultilineTypeToString(it);"/>
+    <genDataTypes ecoreDataType="oscal-metadata.ecore#//IpV4AddressType" create="return dsm.oscal.model.OSCALDataTypeHandler.INSTANCE.loadIpV4AddressTypeFromString(it);"
+        convert="return dsm.oscal.model.OSCALDataTypeHandler.INSTANCE.saveIpV4AddressTypeToString(it);"/>
+    <genDataTypes ecoreDataType="oscal-metadata.ecore#//IpV6AddressType" create="return dsm.oscal.model.OSCALDataTypeHandler.INSTANCE.loadIpV6AddressTypeFromString(it);"
+        convert="return dsm.oscal.model.OSCALDataTypeHandler.INSTANCE.saveIpV6AddressTypeToString(it);"/>
+    <genClasses ecoreClass="oscal-metadata.ecore#//Address">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oscal-metadata.ecore#//Address/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oscal-metadata.ecore#//Address/addrLines"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oscal-metadata.ecore#//Address/city"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oscal-metadata.ecore#//Address/state"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oscal-metadata.ecore#//Address/postalCode"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oscal-metadata.ecore#//Address/country"/>
     </genClasses>
-    <genClasses>
-      <ecoreClass href="oscal-metadata.ecore#//Annotation"/>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//Annotation/name"/>
-      </genFeatures>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//Annotation/uuid"/>
-      </genFeatures>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//Annotation/ns"/>
-      </genFeatures>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//Annotation/value"/>
-      </genFeatures>
-      <genFeatures createChild="false" propertyMultiLine="true">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//Annotation/remarks"/>
-      </genFeatures>
+    <genClasses ecoreClass="oscal-metadata.ecore#//Annotation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oscal-metadata.ecore#//Annotation/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oscal-metadata.ecore#//Annotation/uuid"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oscal-metadata.ecore#//Annotation/ns"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oscal-metadata.ecore#//Annotation/value"/>
+      <genFeatures createChild="false" propertyMultiLine="true" ecoreFeature="ecore:EAttribute oscal-metadata.ecore#//Annotation/remarks"/>
     </genClasses>
-    <genClasses>
-      <ecoreClass href="oscal-metadata.ecore#//BackMatter"/>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-metadata.ecore#//BackMatter/resources"/>
-      </genFeatures>
+    <genClasses ecoreClass="oscal-metadata.ecore#//BackMatter">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oscal-metadata.ecore#//BackMatter/resources"/>
     </genClasses>
-    <genClasses>
-      <ecoreClass href="oscal-metadata.ecore#//BackMatterResource"/>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//BackMatterResource/title"/>
-      </genFeatures>
-      <genFeatures createChild="false" propertyMultiLine="true">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//BackMatterResource/description"/>
-      </genFeatures>
-      <genFeatures createChild="false" propertyMultiLine="true">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//BackMatterResource/remarks"/>
-      </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-metadata.ecore#//BackMatterResource/annotations"/>
-      </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-metadata.ecore#//BackMatterResource/citation"/>
-      </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-metadata.ecore#//BackMatterResource/rlinks"/>
-      </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-metadata.ecore#//BackMatterResource/props"/>
-      </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-metadata.ecore#//BackMatterResource/documentIds"/>
-      </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-metadata.ecore#//BackMatterResource/base64"/>
-      </genFeatures>
+    <genClasses ecoreClass="oscal-metadata.ecore#//BackMatterResource">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oscal-metadata.ecore#//BackMatterResource/title"/>
+      <genFeatures createChild="false" propertyMultiLine="true" ecoreFeature="ecore:EAttribute oscal-metadata.ecore#//BackMatterResource/description"/>
+      <genFeatures createChild="false" propertyMultiLine="true" ecoreFeature="ecore:EAttribute oscal-metadata.ecore#//BackMatterResource/remarks"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oscal-metadata.ecore#//BackMatterResource/citation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oscal-metadata.ecore#//BackMatterResource/rlinks"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oscal-metadata.ecore#//BackMatterResource/props"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oscal-metadata.ecore#//BackMatterResource/documentIds"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oscal-metadata.ecore#//BackMatterResource/base64"/>
     </genClasses>
-    <genClasses>
-      <ecoreClass href="oscal-metadata.ecore#//Base64"/>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//Base64/value"/>
-      </genFeatures>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//Base64/filename"/>
-      </genFeatures>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//Base64/mediaType"/>
-      </genFeatures>
+    <genClasses ecoreClass="oscal-metadata.ecore#//Base64">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oscal-metadata.ecore#//Base64/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oscal-metadata.ecore#//Base64/filename"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oscal-metadata.ecore#//Base64/mediaType"/>
     </genClasses>
-    <genClasses>
-      <ecoreClass href="oscal-metadata.ecore#//DocumentId"/>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//DocumentId/value"/>
-      </genFeatures>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//DocumentId/scheme"/>
-      </genFeatures>
+    <genClasses ecoreClass="oscal-metadata.ecore#//DocumentId">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oscal-metadata.ecore#//DocumentId/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oscal-metadata.ecore#//DocumentId/scheme"/>
     </genClasses>
-    <genClasses>
-      <ecoreClass href="oscal-metadata.ecore#//ExternalId"/>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//ExternalId/value"/>
-      </genFeatures>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//ExternalId/scheme"/>
-      </genFeatures>
+    <genClasses ecoreClass="oscal-metadata.ecore#//ExternalId">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oscal-metadata.ecore#//ExternalId/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oscal-metadata.ecore#//ExternalId/scheme"/>
     </genClasses>
-    <genClasses>
-      <ecoreClass href="oscal-metadata.ecore#//Hash"/>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//Hash/value"/>
-      </genFeatures>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//Hash/algorithm"/>
-      </genFeatures>
+    <genClasses ecoreClass="oscal-metadata.ecore#//Hash">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oscal-metadata.ecore#//Hash/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oscal-metadata.ecore#//Hash/algorithm"/>
     </genClasses>
-    <genClasses>
-      <ecoreClass href="oscal-metadata.ecore#//Link"/>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//Link/eHref"/>
-      </genFeatures>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//Link/rel"/>
-      </genFeatures>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//Link/mediaType"/>
-      </genFeatures>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//Link/text"/>
-      </genFeatures>
+    <genClasses ecoreClass="oscal-metadata.ecore#//Link">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oscal-metadata.ecore#//Link/eHref"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oscal-metadata.ecore#//Link/rel"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oscal-metadata.ecore#//Link/mediaType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oscal-metadata.ecore#//Link/text"/>
     </genClasses>
-    <genClasses>
-      <ecoreClass href="oscal-metadata.ecore#//Location"/>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//Location/title"/>
-      </genFeatures>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//Location/emailAddresses"/>
-      </genFeatures>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//Location/urls"/>
-      </genFeatures>
-      <genFeatures createChild="false" propertyMultiLine="true">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//Location/remarks"/>
-      </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-metadata.ecore#//Location/annotations"/>
-      </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-metadata.ecore#//Location/address"/>
-      </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-metadata.ecore#//Location/links"/>
-      </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-metadata.ecore#//Location/telephoneNumbers"/>
-      </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-metadata.ecore#//Location/props"/>
-      </genFeatures>
+    <genClasses ecoreClass="oscal-metadata.ecore#//Location">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oscal-metadata.ecore#//Location/title"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oscal-metadata.ecore#//Location/emailAddresses"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oscal-metadata.ecore#//Location/urls"/>
+      <genFeatures createChild="false" propertyMultiLine="true" ecoreFeature="ecore:EAttribute oscal-metadata.ecore#//Location/remarks"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oscal-metadata.ecore#//Location/address"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oscal-metadata.ecore#//Location/links"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oscal-metadata.ecore#//Location/telephoneNumbers"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oscal-metadata.ecore#//Location/props"/>
     </genClasses>
-    <genClasses>
-      <ecoreClass href="oscal-metadata.ecore#//Metadata"/>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//Metadata/title"/>
-      </genFeatures>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//Metadata/published"/>
-      </genFeatures>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//Metadata/lastModified"/>
-      </genFeatures>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//Metadata/version"/>
-      </genFeatures>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//Metadata/oscalVersion"/>
-      </genFeatures>
-      <genFeatures createChild="false" propertyMultiLine="true">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//Metadata/remarks"/>
-      </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-metadata.ecore#//Metadata/annotations"/>
-      </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-metadata.ecore#//Metadata/roles"/>
-      </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-metadata.ecore#//Metadata/links"/>
-      </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-metadata.ecore#//Metadata/locations"/>
-      </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-metadata.ecore#//Metadata/responsibleParties"/>
-      </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-metadata.ecore#//Metadata/parties"/>
-      </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-metadata.ecore#//Metadata/revisions"/>
-      </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-metadata.ecore#//Metadata/documentIds"/>
-      </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-metadata.ecore#//Metadata/props"/>
-      </genFeatures>
+    <genClasses ecoreClass="oscal-metadata.ecore#//Metadata">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oscal-metadata.ecore#//Metadata/title"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oscal-metadata.ecore#//Metadata/published"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oscal-metadata.ecore#//Metadata/lastModified"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oscal-metadata.ecore#//Metadata/version"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oscal-metadata.ecore#//Metadata/oscalVersion"/>
+      <genFeatures createChild="false" propertyMultiLine="true" ecoreFeature="ecore:EAttribute oscal-metadata.ecore#//Metadata/remarks"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oscal-metadata.ecore#//Metadata/roles"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oscal-metadata.ecore#//Metadata/links"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oscal-metadata.ecore#//Metadata/locations"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oscal-metadata.ecore#//Metadata/responsibleParties"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oscal-metadata.ecore#//Metadata/parties"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oscal-metadata.ecore#//Metadata/revisions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oscal-metadata.ecore#//Metadata/documentIds"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oscal-metadata.ecore#//Metadata/props"/>
     </genClasses>
-    <genClasses>
-      <ecoreClass href="oscal-metadata.ecore#//Party"/>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//Party/type"/>
-      </genFeatures>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//Party/name"/>
-      </genFeatures>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//Party/shortName"/>
-      </genFeatures>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//Party/emailAddresses"/>
-      </genFeatures>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//Party/locationUuids"/>
-      </genFeatures>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//Party/memberOfOrganizations"/>
-      </genFeatures>
-      <genFeatures createChild="false" propertyMultiLine="true">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//Party/remarks"/>
-      </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-metadata.ecore#//Party/annotations"/>
-      </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-metadata.ecore#//Party/addresses"/>
-      </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-metadata.ecore#//Party/links"/>
-      </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-metadata.ecore#//Party/externalIds"/>
-      </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-metadata.ecore#//Party/props"/>
-      </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-metadata.ecore#//Party/telephoneNumbers"/>
-      </genFeatures>
+    <genClasses ecoreClass="oscal-metadata.ecore#//Party">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oscal-metadata.ecore#//Party/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oscal-metadata.ecore#//Party/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oscal-metadata.ecore#//Party/shortName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oscal-metadata.ecore#//Party/emailAddresses"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oscal-metadata.ecore#//Party/locationUuids"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oscal-metadata.ecore#//Party/memberOfOrganizations"/>
+      <genFeatures createChild="false" propertyMultiLine="true" ecoreFeature="ecore:EAttribute oscal-metadata.ecore#//Party/remarks"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oscal-metadata.ecore#//Party/addresses"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oscal-metadata.ecore#//Party/links"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oscal-metadata.ecore#//Party/externalIds"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oscal-metadata.ecore#//Party/props"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oscal-metadata.ecore#//Party/telephoneNumbers"/>
     </genClasses>
-    <genClasses>
-      <ecoreClass href="oscal-metadata.ecore#//Property"/>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//Property/value"/>
-      </genFeatures>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//Property/uuid"/>
-      </genFeatures>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//Property/name"/>
-      </genFeatures>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//Property/ns"/>
-      </genFeatures>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//Property/clazz"/>
-      </genFeatures>
+    <genClasses ecoreClass="oscal-metadata.ecore#//Property">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oscal-metadata.ecore#//Property/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oscal-metadata.ecore#//Property/uuid"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oscal-metadata.ecore#//Property/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oscal-metadata.ecore#//Property/ns"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oscal-metadata.ecore#//Property/clazz"/>
     </genClasses>
-    <genClasses>
-      <ecoreClass href="oscal-metadata.ecore#//ResourceCitation"/>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//ResourceCitation/text"/>
-      </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-metadata.ecore#//ResourceCitation/annotations"/>
-      </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-metadata.ecore#//ResourceCitation/props"/>
-      </genFeatures>
+    <genClasses ecoreClass="oscal-metadata.ecore#//ResourceCitation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oscal-metadata.ecore#//ResourceCitation/text"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oscal-metadata.ecore#//ResourceCitation/props"/>
     </genClasses>
-    <genClasses>
-      <ecoreClass href="oscal-metadata.ecore#//ResourceRlink"/>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//ResourceRlink/eHref"/>
-      </genFeatures>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//ResourceRlink/mediaType"/>
-      </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-metadata.ecore#//ResourceRlink/hashes"/>
-      </genFeatures>
+    <genClasses ecoreClass="oscal-metadata.ecore#//ResourceRlink">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oscal-metadata.ecore#//ResourceRlink/eHref"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oscal-metadata.ecore#//ResourceRlink/mediaType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oscal-metadata.ecore#//ResourceRlink/hashes"/>
     </genClasses>
-    <genClasses>
-      <ecoreClass href="oscal-metadata.ecore#//ResponsibleParty"/>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//ResponsibleParty/roleId"/>
-      </genFeatures>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//ResponsibleParty/partyUuids"/>
-      </genFeatures>
-      <genFeatures createChild="false" propertyMultiLine="true">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//ResponsibleParty/remarks"/>
-      </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-metadata.ecore#//ResponsibleParty/annotations"/>
-      </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-metadata.ecore#//ResponsibleParty/links"/>
-      </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-metadata.ecore#//ResponsibleParty/props"/>
-      </genFeatures>
+    <genClasses ecoreClass="oscal-metadata.ecore#//ResponsibleParty">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oscal-metadata.ecore#//ResponsibleParty/roleId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oscal-metadata.ecore#//ResponsibleParty/partyUuids"/>
+      <genFeatures createChild="false" propertyMultiLine="true" ecoreFeature="ecore:EAttribute oscal-metadata.ecore#//ResponsibleParty/remarks"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oscal-metadata.ecore#//ResponsibleParty/links"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oscal-metadata.ecore#//ResponsibleParty/props"/>
     </genClasses>
-    <genClasses>
-      <ecoreClass href="oscal-metadata.ecore#//ResponsibleRole"/>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//ResponsibleRole/roleId"/>
-      </genFeatures>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//ResponsibleRole/partyUuids"/>
-      </genFeatures>
-      <genFeatures createChild="false" propertyMultiLine="true">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//ResponsibleRole/remarks"/>
-      </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-metadata.ecore#//ResponsibleRole/annotations"/>
-      </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-metadata.ecore#//ResponsibleRole/links"/>
-      </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-metadata.ecore#//ResponsibleRole/props"/>
-      </genFeatures>
+    <genClasses ecoreClass="oscal-metadata.ecore#//ResponsibleRole">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oscal-metadata.ecore#//ResponsibleRole/roleId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oscal-metadata.ecore#//ResponsibleRole/partyUuids"/>
+      <genFeatures createChild="false" propertyMultiLine="true" ecoreFeature="ecore:EAttribute oscal-metadata.ecore#//ResponsibleRole/remarks"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oscal-metadata.ecore#//ResponsibleRole/links"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oscal-metadata.ecore#//ResponsibleRole/props"/>
     </genClasses>
-    <genClasses>
-      <ecoreClass href="oscal-metadata.ecore#//Revision"/>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//Revision/title"/>
-      </genFeatures>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//Revision/published"/>
-      </genFeatures>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//Revision/lastModified"/>
-      </genFeatures>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//Revision/version"/>
-      </genFeatures>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//Revision/oscalVersion"/>
-      </genFeatures>
-      <genFeatures createChild="false" propertyMultiLine="true">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//Revision/remarks"/>
-      </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-metadata.ecore#//Revision/annotations"/>
-      </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-metadata.ecore#//Revision/links"/>
-      </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-metadata.ecore#//Revision/props"/>
-      </genFeatures>
+    <genClasses ecoreClass="oscal-metadata.ecore#//Revision">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oscal-metadata.ecore#//Revision/title"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oscal-metadata.ecore#//Revision/published"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oscal-metadata.ecore#//Revision/lastModified"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oscal-metadata.ecore#//Revision/version"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oscal-metadata.ecore#//Revision/oscalVersion"/>
+      <genFeatures createChild="false" propertyMultiLine="true" ecoreFeature="ecore:EAttribute oscal-metadata.ecore#//Revision/remarks"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oscal-metadata.ecore#//Revision/links"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oscal-metadata.ecore#//Revision/props"/>
     </genClasses>
-    <genClasses>
-      <ecoreClass href="oscal-metadata.ecore#//Role"/>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//Role/id"/>
-      </genFeatures>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//Role/title"/>
-      </genFeatures>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//Role/shortName"/>
-      </genFeatures>
-      <genFeatures createChild="false" propertyMultiLine="true">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//Role/description"/>
-      </genFeatures>
-      <genFeatures createChild="false" propertyMultiLine="true">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//Role/remarks"/>
-      </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-metadata.ecore#//Role/annotations"/>
-      </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-metadata.ecore#//Role/links"/>
-      </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-metadata.ecore#//Role/props"/>
-      </genFeatures>
+    <genClasses ecoreClass="oscal-metadata.ecore#//Role">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oscal-metadata.ecore#//Role/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oscal-metadata.ecore#//Role/title"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oscal-metadata.ecore#//Role/shortName"/>
+      <genFeatures createChild="false" propertyMultiLine="true" ecoreFeature="ecore:EAttribute oscal-metadata.ecore#//Role/description"/>
+      <genFeatures createChild="false" propertyMultiLine="true" ecoreFeature="ecore:EAttribute oscal-metadata.ecore#//Role/remarks"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oscal-metadata.ecore#//Role/links"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oscal-metadata.ecore#//Role/props"/>
     </genClasses>
-    <genClasses>
-      <ecoreClass href="oscal-metadata.ecore#//TelephoneNumber"/>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//TelephoneNumber/value"/>
-      </genFeatures>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//TelephoneNumber/type"/>
-      </genFeatures>
+    <genClasses ecoreClass="oscal-metadata.ecore#//TelephoneNumber">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oscal-metadata.ecore#//TelephoneNumber/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oscal-metadata.ecore#//TelephoneNumber/type"/>
     </genClasses>
-    <genClasses image="false">
-      <ecoreClass href="oscal-metadata.ecore#//OscalElement"/>
+    <genClasses image="false" ecoreClass="oscal-metadata.ecore#//OscalElement"/>
+    <genClasses ecoreClass="oscal-metadata.ecore#//UUIDElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oscal-metadata.ecore#//UUIDElement/uuid"/>
     </genClasses>
-    <genClasses>
-      <ecoreClass href="oscal-metadata.ecore#//UUIDElement"/>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//UUIDElement/uuid"/>
-      </genFeatures>
+    <genClasses ecoreClass="oscal-metadata.ecore#//AnnotationOwner">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference oscal-metadata.ecore#//AnnotationOwner/annotations"/>
     </genClasses>
   </genPackages>
-  <genPackages prefix="OscalCatalogCommon" basePackage="dsm.oscal.model" disposableProviderFactory="true">
-    <ecorePackage href="oscal-catalog-common.ecore#/"/>
-    <genClasses>
-      <ecoreClass href="oscal-catalog-common.ecore#//Parameter"/>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-catalog-common.ecore#//Parameter/id"/>
-      </genFeatures>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-catalog-common.ecore#//Parameter/clazz"/>
-      </genFeatures>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-catalog-common.ecore#//Parameter/dependsOn"/>
-      </genFeatures>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-catalog-common.ecore#//Parameter/label"/>
-      </genFeatures>
-      <genFeatures createChild="false" propertyMultiLine="true">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-catalog-common.ecore#//Parameter/usage"/>
-      </genFeatures>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-catalog-common.ecore#//Parameter/values"/>
-      </genFeatures>
-      <genFeatures createChild="false" propertyMultiLine="true">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-catalog-common.ecore#//Parameter/remarks"/>
-      </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-catalog-common.ecore#//Parameter/annotations"/>
-      </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-catalog-common.ecore#//Parameter/select"/>
-      </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-catalog-common.ecore#//Parameter/guidelines"/>
-      </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-catalog-common.ecore#//Parameter/links"/>
-      </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-catalog-common.ecore#//Parameter/constraints"/>
-      </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-catalog-common.ecore#//Parameter/props"/>
-      </genFeatures>
+  <genPackages prefix="OscalCatalogCommon" basePackage="dsm.oscal.model" disposableProviderFactory="true"
+      ecorePackage="oscal-catalog-common.ecore#/">
+    <genClasses ecoreClass="oscal-catalog-common.ecore#//Parameter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oscal-catalog-common.ecore#//Parameter/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oscal-catalog-common.ecore#//Parameter/clazz"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oscal-catalog-common.ecore#//Parameter/dependsOn"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oscal-catalog-common.ecore#//Parameter/label"/>
+      <genFeatures createChild="false" propertyMultiLine="true" ecoreFeature="ecore:EAttribute oscal-catalog-common.ecore#//Parameter/usage"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oscal-catalog-common.ecore#//Parameter/values"/>
+      <genFeatures createChild="false" propertyMultiLine="true" ecoreFeature="ecore:EAttribute oscal-catalog-common.ecore#//Parameter/remarks"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oscal-catalog-common.ecore#//Parameter/select"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oscal-catalog-common.ecore#//Parameter/guidelines"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oscal-catalog-common.ecore#//Parameter/links"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oscal-catalog-common.ecore#//Parameter/constraints"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oscal-catalog-common.ecore#//Parameter/props"/>
     </genClasses>
-    <genClasses>
-      <ecoreClass href="oscal-catalog-common.ecore#//ParameterConstraint"/>
-      <genFeatures createChild="false" propertyMultiLine="true">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-catalog-common.ecore#//ParameterConstraint/description"/>
-      </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-catalog-common.ecore#//ParameterConstraint/tests"/>
-      </genFeatures>
+    <genClasses ecoreClass="oscal-catalog-common.ecore#//ParameterConstraint">
+      <genFeatures createChild="false" propertyMultiLine="true" ecoreFeature="ecore:EAttribute oscal-catalog-common.ecore#//ParameterConstraint/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oscal-catalog-common.ecore#//ParameterConstraint/tests"/>
     </genClasses>
-    <genClasses>
-      <ecoreClass href="oscal-catalog-common.ecore#//ParameterConstraintTest"/>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-catalog-common.ecore#//ParameterConstraintTest/expression"/>
-      </genFeatures>
-      <genFeatures createChild="false" propertyMultiLine="true">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-catalog-common.ecore#//ParameterConstraintTest/remarks"/>
-      </genFeatures>
+    <genClasses ecoreClass="oscal-catalog-common.ecore#//ParameterConstraintTest">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oscal-catalog-common.ecore#//ParameterConstraintTest/expression"/>
+      <genFeatures createChild="false" propertyMultiLine="true" ecoreFeature="ecore:EAttribute oscal-catalog-common.ecore#//ParameterConstraintTest/remarks"/>
     </genClasses>
-    <genClasses>
-      <ecoreClass href="oscal-catalog-common.ecore#//ParameterGuideline"/>
-      <genFeatures createChild="false" propertyMultiLine="true">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-catalog-common.ecore#//ParameterGuideline/prose"/>
-      </genFeatures>
+    <genClasses ecoreClass="oscal-catalog-common.ecore#//ParameterGuideline">
+      <genFeatures createChild="false" propertyMultiLine="true" ecoreFeature="ecore:EAttribute oscal-catalog-common.ecore#//ParameterGuideline/prose"/>
     </genClasses>
-    <genClasses>
-      <ecoreClass href="oscal-catalog-common.ecore#//ParameterSelection"/>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-catalog-common.ecore#//ParameterSelection/howMany"/>
-      </genFeatures>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-catalog-common.ecore#//ParameterSelection/choice"/>
-      </genFeatures>
+    <genClasses ecoreClass="oscal-catalog-common.ecore#//ParameterSelection">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oscal-catalog-common.ecore#//ParameterSelection/howMany"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oscal-catalog-common.ecore#//ParameterSelection/choice"/>
     </genClasses>
-    <genClasses>
-      <ecoreClass href="oscal-catalog-common.ecore#//Part"/>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-catalog-common.ecore#//Part/id"/>
-      </genFeatures>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-catalog-common.ecore#//Part/name"/>
-      </genFeatures>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-catalog-common.ecore#//Part/ns"/>
-      </genFeatures>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-catalog-common.ecore#//Part/clazz"/>
-      </genFeatures>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-catalog-common.ecore#//Part/title"/>
-      </genFeatures>
-      <genFeatures createChild="false" propertyMultiLine="true">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-catalog-common.ecore#//Part/prose"/>
-      </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-catalog-common.ecore#//Part/annotations"/>
-      </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-catalog-common.ecore#//Part/parts"/>
-      </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-catalog-common.ecore#//Part/links"/>
-      </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-catalog-common.ecore#//Part/props"/>
-      </genFeatures>
+    <genClasses ecoreClass="oscal-catalog-common.ecore#//Part">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oscal-catalog-common.ecore#//Part/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oscal-catalog-common.ecore#//Part/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oscal-catalog-common.ecore#//Part/ns"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oscal-catalog-common.ecore#//Part/clazz"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oscal-catalog-common.ecore#//Part/title"/>
+      <genFeatures createChild="false" propertyMultiLine="true" ecoreFeature="ecore:EAttribute oscal-catalog-common.ecore#//Part/prose"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oscal-catalog-common.ecore#//Part/parts"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oscal-catalog-common.ecore#//Part/links"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oscal-catalog-common.ecore#//Part/props"/>
     </genClasses>
   </genPackages>
-  <genPackages prefix="OscalCatalog" basePackage="dsm.oscal.model" disposableProviderFactory="true">
-    <ecorePackage href="oscal-catalog.ecore#/"/>
-    <genClasses>
-      <ecoreClass href="oscal-catalog.ecore#//Catalog"/>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-catalog.ecore#//Catalog/metadata"/>
-      </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-catalog.ecore#//Catalog/params"/>
-      </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-catalog.ecore#//Catalog/controls"/>
-      </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-catalog.ecore#//Catalog/backMatter"/>
-      </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-catalog.ecore#//Catalog/groups"/>
-      </genFeatures>
+  <genPackages prefix="OscalCatalog" basePackage="dsm.oscal.model" disposableProviderFactory="true"
+      ecorePackage="oscal-catalog.ecore#/">
+    <genClasses ecoreClass="oscal-catalog.ecore#//Catalog">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oscal-catalog.ecore#//Catalog/metadata"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oscal-catalog.ecore#//Catalog/params"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oscal-catalog.ecore#//Catalog/controls"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oscal-catalog.ecore#//Catalog/backMatter"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oscal-catalog.ecore#//Catalog/groups"/>
     </genClasses>
-    <genClasses>
-      <ecoreClass href="oscal-catalog.ecore#//Control"/>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-catalog.ecore#//Control/id"/>
-      </genFeatures>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-catalog.ecore#//Control/clazz"/>
-      </genFeatures>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-catalog.ecore#//Control/title"/>
-      </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-catalog.ecore#//Control/annotations"/>
-      </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-catalog.ecore#//Control/params"/>
-      </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-catalog.ecore#//Control/parts"/>
-      </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-catalog.ecore#//Control/links"/>
-      </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-catalog.ecore#//Control/controls"/>
-      </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-catalog.ecore#//Control/props"/>
-      </genFeatures>
+    <genClasses ecoreClass="oscal-catalog.ecore#//Control">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oscal-catalog.ecore#//Control/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oscal-catalog.ecore#//Control/clazz"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oscal-catalog.ecore#//Control/title"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oscal-catalog.ecore#//Control/params"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oscal-catalog.ecore#//Control/parts"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oscal-catalog.ecore#//Control/links"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oscal-catalog.ecore#//Control/controls"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oscal-catalog.ecore#//Control/props"/>
     </genClasses>
-    <genClasses>
-      <ecoreClass href="oscal-catalog.ecore#//Group"/>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-catalog.ecore#//Group/id"/>
-      </genFeatures>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-catalog.ecore#//Group/clazz"/>
-      </genFeatures>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-catalog.ecore#//Group/title"/>
-      </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-catalog.ecore#//Group/annotations"/>
-      </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-catalog.ecore#//Group/params"/>
-      </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-catalog.ecore#//Group/parts"/>
-      </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-catalog.ecore#//Group/links"/>
-      </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-catalog.ecore#//Group/controls"/>
-      </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-catalog.ecore#//Group/groups"/>
-      </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-catalog.ecore#//Group/props"/>
-      </genFeatures>
+    <genClasses ecoreClass="oscal-catalog.ecore#//Group">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oscal-catalog.ecore#//Group/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oscal-catalog.ecore#//Group/clazz"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oscal-catalog.ecore#//Group/title"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oscal-catalog.ecore#//Group/params"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oscal-catalog.ecore#//Group/parts"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oscal-catalog.ecore#//Group/links"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oscal-catalog.ecore#//Group/controls"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oscal-catalog.ecore#//Group/groups"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oscal-catalog.ecore#//Group/props"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

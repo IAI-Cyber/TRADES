@@ -22,6 +22,7 @@ import dsm.oscal.model.OscalCatalogCommon.Part;
 
 import dsm.oscal.model.OscalMetadata.OscalMetadataFactory;
 
+import dsm.oscal.model.OscalMetadata.OscalMetadataPackage;
 import dsm.oscal.model.OscalMetadata.provider.OscalEditPlugin;
 
 import java.util.Collection;
@@ -80,6 +81,7 @@ public class PartItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addAnnotationsPropertyDescriptor(object);
 			addIdPropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
 			addNsPropertyDescriptor(object);
@@ -88,6 +90,28 @@ public class PartItemProvider
 			addProsePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Annotations feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAnnotationsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_AnnotationOwner_annotations_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_AnnotationOwner_annotations_feature", "_UI_AnnotationOwner_type"),
+				 OscalMetadataPackage.Literals.ANNOTATION_OWNER__ANNOTATIONS,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
@@ -234,7 +258,6 @@ public class PartItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(OscalCatalogCommonPackage.Literals.PART__ANNOTATIONS);
 			childrenFeatures.add(OscalCatalogCommonPackage.Literals.PART__PARTS);
 			childrenFeatures.add(OscalCatalogCommonPackage.Literals.PART__LINKS);
 			childrenFeatures.add(OscalCatalogCommonPackage.Literals.PART__PROPS);
@@ -301,7 +324,6 @@ public class PartItemProvider
 			case OscalCatalogCommonPackage.PART__PROSE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case OscalCatalogCommonPackage.PART__ANNOTATIONS:
 			case OscalCatalogCommonPackage.PART__PARTS:
 			case OscalCatalogCommonPackage.PART__LINKS:
 			case OscalCatalogCommonPackage.PART__PROPS:
@@ -321,11 +343,6 @@ public class PartItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OscalCatalogCommonPackage.Literals.PART__ANNOTATIONS,
-				 OscalMetadataFactory.eINSTANCE.createAnnotation()));
 
 		newChildDescriptors.add
 			(createChildParameter

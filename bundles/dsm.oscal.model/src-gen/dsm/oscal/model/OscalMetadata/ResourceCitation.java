@@ -39,7 +39,6 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link dsm.oscal.model.OscalMetadata.ResourceCitation#getText <em>Text</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.ResourceCitation#getAnnotations <em>Annotations</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.ResourceCitation#getProps <em>Props</em>}</li>
  * </ul>
  *
@@ -47,7 +46,7 @@ import org.eclipse.emf.common.util.EList;
  * @model annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;AssemblyDefinition&gt;citation'"
  * @generated
  */
-public interface ResourceCitation extends OscalElement {
+public interface ResourceCitation extends OscalElement, AnnotationOwner {
 	/**
 	 * Returns the value of the '<em><b>Text</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -76,19 +75,6 @@ public interface ResourceCitation extends OscalElement {
 	 * @generated
 	 */
 	void setText(MarkupLine value);
-
-	/**
-	 * Returns the value of the '<em><b>Annotations</b></em>' containment reference list.
-	 * The list contents are of type {@link dsm.oscal.model.OscalMetadata.Annotation}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Annotations</em>' containment reference list.
-	 * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getResourceCitation_Annotations()
-	 * @model containment="true"
-	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;AssemblyDefinition&gt;annotation'"
-	 * @generated
-	 */
-	EList<Annotation> getAnnotations();
 
 	/**
 	 * Returns the value of the '<em><b>Props</b></em>' containment reference list.

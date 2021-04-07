@@ -310,13 +310,22 @@ public interface OscalMetadataPackage extends EPackage {
 	int BACK_MATTER_RESOURCE__UUID = OSCAL_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BACK_MATTER_RESOURCE__ANNOTATIONS = OSCAL_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
 	 * The feature id for the '<em><b>Title</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BACK_MATTER_RESOURCE__TITLE = OSCAL_ELEMENT_FEATURE_COUNT + 1;
+	int BACK_MATTER_RESOURCE__TITLE = OSCAL_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -325,7 +334,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BACK_MATTER_RESOURCE__DESCRIPTION = OSCAL_ELEMENT_FEATURE_COUNT + 2;
+	int BACK_MATTER_RESOURCE__DESCRIPTION = OSCAL_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Remarks</b></em>' attribute.
@@ -334,16 +343,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BACK_MATTER_RESOURCE__REMARKS = OSCAL_ELEMENT_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BACK_MATTER_RESOURCE__ANNOTATIONS = OSCAL_ELEMENT_FEATURE_COUNT + 4;
+	int BACK_MATTER_RESOURCE__REMARKS = OSCAL_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Citation</b></em>' containment reference.
@@ -685,13 +685,22 @@ public interface OscalMetadataPackage extends EPackage {
 	int LOCATION__UUID = OSCAL_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOCATION__ANNOTATIONS = OSCAL_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
 	 * The feature id for the '<em><b>Title</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LOCATION__TITLE = OSCAL_ELEMENT_FEATURE_COUNT + 1;
+	int LOCATION__TITLE = OSCAL_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Email Addresses</b></em>' attribute list.
@@ -700,7 +709,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOCATION__EMAIL_ADDRESSES = OSCAL_ELEMENT_FEATURE_COUNT + 2;
+	int LOCATION__EMAIL_ADDRESSES = OSCAL_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Urls</b></em>' attribute list.
@@ -709,7 +718,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOCATION__URLS = OSCAL_ELEMENT_FEATURE_COUNT + 3;
+	int LOCATION__URLS = OSCAL_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Remarks</b></em>' attribute.
@@ -718,16 +727,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOCATION__REMARKS = OSCAL_ELEMENT_FEATURE_COUNT + 4;
-
-	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LOCATION__ANNOTATIONS = OSCAL_ELEMENT_FEATURE_COUNT + 5;
+	int LOCATION__REMARKS = OSCAL_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Address</b></em>' containment reference.
@@ -794,13 +794,22 @@ public interface OscalMetadataPackage extends EPackage {
 	int METADATA = 10;
 
 	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int METADATA__ANNOTATIONS = OSCAL_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Title</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int METADATA__TITLE = OSCAL_ELEMENT_FEATURE_COUNT + 0;
+	int METADATA__TITLE = OSCAL_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Published</b></em>' attribute.
@@ -809,7 +818,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int METADATA__PUBLISHED = OSCAL_ELEMENT_FEATURE_COUNT + 1;
+	int METADATA__PUBLISHED = OSCAL_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Last Modified</b></em>' attribute.
@@ -818,7 +827,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int METADATA__LAST_MODIFIED = OSCAL_ELEMENT_FEATURE_COUNT + 2;
+	int METADATA__LAST_MODIFIED = OSCAL_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Version</b></em>' attribute.
@@ -827,7 +836,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int METADATA__VERSION = OSCAL_ELEMENT_FEATURE_COUNT + 3;
+	int METADATA__VERSION = OSCAL_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Oscal Version</b></em>' attribute.
@@ -836,7 +845,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int METADATA__OSCAL_VERSION = OSCAL_ELEMENT_FEATURE_COUNT + 4;
+	int METADATA__OSCAL_VERSION = OSCAL_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Remarks</b></em>' attribute.
@@ -845,16 +854,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int METADATA__REMARKS = OSCAL_ELEMENT_FEATURE_COUNT + 5;
-
-	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int METADATA__ANNOTATIONS = OSCAL_ELEMENT_FEATURE_COUNT + 6;
+	int METADATA__REMARKS = OSCAL_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Roles</b></em>' containment reference list.
@@ -966,13 +966,22 @@ public interface OscalMetadataPackage extends EPackage {
 	int PARTY__UUID = OSCAL_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY__ANNOTATIONS = OSCAL_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY__TYPE = OSCAL_ELEMENT_FEATURE_COUNT + 1;
+	int PARTY__TYPE = OSCAL_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -981,7 +990,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY__NAME = OSCAL_ELEMENT_FEATURE_COUNT + 2;
+	int PARTY__NAME = OSCAL_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Short Name</b></em>' attribute.
@@ -990,7 +999,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY__SHORT_NAME = OSCAL_ELEMENT_FEATURE_COUNT + 3;
+	int PARTY__SHORT_NAME = OSCAL_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Email Addresses</b></em>' attribute list.
@@ -999,7 +1008,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY__EMAIL_ADDRESSES = OSCAL_ELEMENT_FEATURE_COUNT + 4;
+	int PARTY__EMAIL_ADDRESSES = OSCAL_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Location Uuids</b></em>' attribute list.
@@ -1008,7 +1017,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY__LOCATION_UUIDS = OSCAL_ELEMENT_FEATURE_COUNT + 5;
+	int PARTY__LOCATION_UUIDS = OSCAL_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Member Of Organizations</b></em>' attribute list.
@@ -1017,7 +1026,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY__MEMBER_OF_ORGANIZATIONS = OSCAL_ELEMENT_FEATURE_COUNT + 6;
+	int PARTY__MEMBER_OF_ORGANIZATIONS = OSCAL_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Remarks</b></em>' attribute.
@@ -1026,16 +1035,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY__REMARKS = OSCAL_ELEMENT_FEATURE_COUNT + 7;
-
-	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PARTY__ANNOTATIONS = OSCAL_ELEMENT_FEATURE_COUNT + 8;
+	int PARTY__REMARKS = OSCAL_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Addresses</b></em>' containment reference list.
@@ -1184,22 +1184,22 @@ public interface OscalMetadataPackage extends EPackage {
 	int RESOURCE_CITATION = 13;
 
 	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_CITATION__ANNOTATIONS = OSCAL_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Text</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_CITATION__TEXT = OSCAL_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RESOURCE_CITATION__ANNOTATIONS = OSCAL_ELEMENT_FEATURE_COUNT + 1;
+	int RESOURCE_CITATION__TEXT = OSCAL_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Props</b></em>' containment reference list.
@@ -1294,13 +1294,22 @@ public interface OscalMetadataPackage extends EPackage {
 	int RESPONSIBLE_PARTY = 15;
 
 	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESPONSIBLE_PARTY__ANNOTATIONS = OSCAL_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Role Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RESPONSIBLE_PARTY__ROLE_ID = OSCAL_ELEMENT_FEATURE_COUNT + 0;
+	int RESPONSIBLE_PARTY__ROLE_ID = OSCAL_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Party Uuids</b></em>' attribute list.
@@ -1309,7 +1318,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESPONSIBLE_PARTY__PARTY_UUIDS = OSCAL_ELEMENT_FEATURE_COUNT + 1;
+	int RESPONSIBLE_PARTY__PARTY_UUIDS = OSCAL_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Remarks</b></em>' attribute.
@@ -1318,16 +1327,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESPONSIBLE_PARTY__REMARKS = OSCAL_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RESPONSIBLE_PARTY__ANNOTATIONS = OSCAL_ELEMENT_FEATURE_COUNT + 3;
+	int RESPONSIBLE_PARTY__REMARKS = OSCAL_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Links</b></em>' containment reference list.
@@ -1376,13 +1376,22 @@ public interface OscalMetadataPackage extends EPackage {
 	int RESPONSIBLE_ROLE = 16;
 
 	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESPONSIBLE_ROLE__ANNOTATIONS = OSCAL_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Role Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RESPONSIBLE_ROLE__ROLE_ID = OSCAL_ELEMENT_FEATURE_COUNT + 0;
+	int RESPONSIBLE_ROLE__ROLE_ID = OSCAL_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Party Uuids</b></em>' attribute list.
@@ -1391,7 +1400,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESPONSIBLE_ROLE__PARTY_UUIDS = OSCAL_ELEMENT_FEATURE_COUNT + 1;
+	int RESPONSIBLE_ROLE__PARTY_UUIDS = OSCAL_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Remarks</b></em>' attribute.
@@ -1400,16 +1409,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESPONSIBLE_ROLE__REMARKS = OSCAL_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RESPONSIBLE_ROLE__ANNOTATIONS = OSCAL_ELEMENT_FEATURE_COUNT + 3;
+	int RESPONSIBLE_ROLE__REMARKS = OSCAL_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Links</b></em>' containment reference list.
@@ -1458,13 +1458,22 @@ public interface OscalMetadataPackage extends EPackage {
 	int REVISION = 17;
 
 	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REVISION__ANNOTATIONS = OSCAL_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Title</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REVISION__TITLE = OSCAL_ELEMENT_FEATURE_COUNT + 0;
+	int REVISION__TITLE = OSCAL_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Published</b></em>' attribute.
@@ -1473,7 +1482,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REVISION__PUBLISHED = OSCAL_ELEMENT_FEATURE_COUNT + 1;
+	int REVISION__PUBLISHED = OSCAL_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Last Modified</b></em>' attribute.
@@ -1482,7 +1491,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REVISION__LAST_MODIFIED = OSCAL_ELEMENT_FEATURE_COUNT + 2;
+	int REVISION__LAST_MODIFIED = OSCAL_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Version</b></em>' attribute.
@@ -1491,7 +1500,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REVISION__VERSION = OSCAL_ELEMENT_FEATURE_COUNT + 3;
+	int REVISION__VERSION = OSCAL_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Oscal Version</b></em>' attribute.
@@ -1500,7 +1509,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REVISION__OSCAL_VERSION = OSCAL_ELEMENT_FEATURE_COUNT + 4;
+	int REVISION__OSCAL_VERSION = OSCAL_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Remarks</b></em>' attribute.
@@ -1509,16 +1518,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REVISION__REMARKS = OSCAL_ELEMENT_FEATURE_COUNT + 5;
-
-	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REVISION__ANNOTATIONS = OSCAL_ELEMENT_FEATURE_COUNT + 6;
+	int REVISION__REMARKS = OSCAL_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Links</b></em>' containment reference list.
@@ -1567,13 +1567,22 @@ public interface OscalMetadataPackage extends EPackage {
 	int ROLE = 18;
 
 	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE__ANNOTATIONS = OSCAL_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__ID = OSCAL_ELEMENT_FEATURE_COUNT + 0;
+	int ROLE__ID = OSCAL_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Title</b></em>' attribute.
@@ -1582,7 +1591,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__TITLE = OSCAL_ELEMENT_FEATURE_COUNT + 1;
+	int ROLE__TITLE = OSCAL_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Short Name</b></em>' attribute.
@@ -1591,7 +1600,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__SHORT_NAME = OSCAL_ELEMENT_FEATURE_COUNT + 2;
+	int ROLE__SHORT_NAME = OSCAL_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -1600,7 +1609,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__DESCRIPTION = OSCAL_ELEMENT_FEATURE_COUNT + 3;
+	int ROLE__DESCRIPTION = OSCAL_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Remarks</b></em>' attribute.
@@ -1609,16 +1618,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__REMARKS = OSCAL_ELEMENT_FEATURE_COUNT + 4;
-
-	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROLE__ANNOTATIONS = OSCAL_ELEMENT_FEATURE_COUNT + 5;
+	int ROLE__REMARKS = OSCAL_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Links</b></em>' containment reference list.
@@ -1740,6 +1740,43 @@ public interface OscalMetadataPackage extends EPackage {
 	int UUID_ELEMENT_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link dsm.oscal.model.OscalMetadata.impl.AnnotationOwnerImpl <em>Annotation Owner</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see dsm.oscal.model.OscalMetadata.impl.AnnotationOwnerImpl
+	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getAnnotationOwner()
+	 * @generated
+	 */
+	int ANNOTATION_OWNER = 22;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ANNOTATION_OWNER__ANNOTATIONS = 0;
+
+	/**
+	 * The number of structural features of the '<em>Annotation Owner</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ANNOTATION_OWNER_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Annotation Owner</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ANNOTATION_OWNER_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '<em>Date Time Type</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1747,7 +1784,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getDateTimeType()
 	 * @generated
 	 */
-	int DATE_TIME_TYPE = 25;
+	int DATE_TIME_TYPE = 26;
 
 	/**
 	 * The meta object id for the '<em>Date Time With Tz Type</em>' data type.
@@ -1757,7 +1794,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getDateTimeWithTzType()
 	 * @generated
 	 */
-	int DATE_TIME_WITH_TZ_TYPE = 33;
+	int DATE_TIME_WITH_TZ_TYPE = 34;
 
 	/**
 	 * The meta object id for the '<em>Ip V6 Address Type</em>' data type.
@@ -1767,7 +1804,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getIpV6AddressType()
 	 * @generated
 	 */
-	int IP_V6_ADDRESS_TYPE = 34;
+	int IP_V6_ADDRESS_TYPE = 35;
 
 	/**
 	 * The meta object id for the '<em>Ip V4 Address Type</em>' data type.
@@ -1777,7 +1814,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getIpV4AddressType()
 	 * @generated
 	 */
-	int IP_V4_ADDRESS_TYPE = 24;
+	int IP_V4_ADDRESS_TYPE = 25;
 
 	/**
 	 * The meta object id for the '<em>Date With Tz Type</em>' data type.
@@ -1787,7 +1824,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getDateWithTzType()
 	 * @generated
 	 */
-	int DATE_WITH_TZ_TYPE = 23;
+	int DATE_WITH_TZ_TYPE = 24;
 
 	/**
 	 * The meta object id for the '<em>Uuid Type</em>' data type.
@@ -1797,7 +1834,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getUuidType()
 	 * @generated
 	 */
-	int UUID_TYPE = 27;
+	int UUID_TYPE = 28;
 
 	/**
 	 * The meta object id for the '<em>Markup Line Type</em>' data type.
@@ -1807,7 +1844,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getMarkupLineType()
 	 * @generated
 	 */
-	int MARKUP_LINE_TYPE = 30;
+	int MARKUP_LINE_TYPE = 31;
 
 	/**
 	 * The meta object id for the '<em>Date Type</em>' data type.
@@ -1817,7 +1854,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getDateType()
 	 * @generated
 	 */
-	int DATE_TYPE = 22;
+	int DATE_TYPE = 23;
 
 	/**
 	 * The meta object id for the '<em>Uri Reference Type</em>' data type.
@@ -1827,7 +1864,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getUriReferenceType()
 	 * @generated
 	 */
-	int URI_REFERENCE_TYPE = 26;
+	int URI_REFERENCE_TYPE = 27;
 
 	/**
 	 * The meta object id for the '<em>Markup Multiline Type</em>' data type.
@@ -1837,7 +1874,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getMarkupMultilineType()
 	 * @generated
 	 */
-	int MARKUP_MULTILINE_TYPE = 31;
+	int MARKUP_MULTILINE_TYPE = 32;
 
 	/**
 	 * The meta object id for the '<em>Empty Type</em>' data type.
@@ -1847,7 +1884,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getEmptyType()
 	 * @generated
 	 */
-	int EMPTY_TYPE = 32;
+	int EMPTY_TYPE = 33;
 
 	/**
 	 * The meta object id for the '<em>Base64 Type</em>' data type.
@@ -1857,7 +1894,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getBase64Type()
 	 * @generated
 	 */
-	int BASE64_TYPE = 28;
+	int BASE64_TYPE = 29;
 
 	/**
 	 * The meta object id for the '<em>Uri Type</em>' data type.
@@ -1867,7 +1904,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getUriType()
 	 * @generated
 	 */
-	int URI_TYPE = 29;
+	int URI_TYPE = 30;
 
 
 	/**
@@ -2074,17 +2111,6 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getBackMatterResource_Remarks();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link dsm.oscal.model.OscalMetadata.BackMatterResource#getAnnotations <em>Annotations</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Annotations</em>'.
-	 * @see dsm.oscal.model.OscalMetadata.BackMatterResource#getAnnotations()
-	 * @see #getBackMatterResource()
-	 * @generated
-	 */
-	EReference getBackMatterResource_Annotations();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link dsm.oscal.model.OscalMetadata.BackMatterResource#getCitation <em>Citation</em>}'.
@@ -2389,17 +2415,6 @@ public interface OscalMetadataPackage extends EPackage {
 	EAttribute getLocation_Remarks();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link dsm.oscal.model.OscalMetadata.Location#getAnnotations <em>Annotations</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Annotations</em>'.
-	 * @see dsm.oscal.model.OscalMetadata.Location#getAnnotations()
-	 * @see #getLocation()
-	 * @generated
-	 */
-	EReference getLocation_Annotations();
-
-	/**
 	 * Returns the meta object for the containment reference '{@link dsm.oscal.model.OscalMetadata.Location#getAddress <em>Address</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2518,17 +2533,6 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getMetadata_Remarks();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link dsm.oscal.model.OscalMetadata.Metadata#getAnnotations <em>Annotations</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Annotations</em>'.
-	 * @see dsm.oscal.model.OscalMetadata.Metadata#getAnnotations()
-	 * @see #getMetadata()
-	 * @generated
-	 */
-	EReference getMetadata_Annotations();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link dsm.oscal.model.OscalMetadata.Metadata#getRoles <em>Roles</em>}'.
@@ -2706,17 +2710,6 @@ public interface OscalMetadataPackage extends EPackage {
 	EAttribute getParty_Remarks();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link dsm.oscal.model.OscalMetadata.Party#getAnnotations <em>Annotations</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Annotations</em>'.
-	 * @see dsm.oscal.model.OscalMetadata.Party#getAnnotations()
-	 * @see #getParty()
-	 * @generated
-	 */
-	EReference getParty_Annotations();
-
-	/**
 	 * Returns the meta object for the containment reference list '{@link dsm.oscal.model.OscalMetadata.Party#getAddresses <em>Addresses</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2858,17 +2851,6 @@ public interface OscalMetadataPackage extends EPackage {
 	EAttribute getResourceCitation_Text();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link dsm.oscal.model.OscalMetadata.ResourceCitation#getAnnotations <em>Annotations</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Annotations</em>'.
-	 * @see dsm.oscal.model.OscalMetadata.ResourceCitation#getAnnotations()
-	 * @see #getResourceCitation()
-	 * @generated
-	 */
-	EReference getResourceCitation_Annotations();
-
-	/**
 	 * Returns the meta object for the containment reference list '{@link dsm.oscal.model.OscalMetadata.ResourceCitation#getProps <em>Props</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2966,17 +2948,6 @@ public interface OscalMetadataPackage extends EPackage {
 	EAttribute getResponsibleParty_Remarks();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link dsm.oscal.model.OscalMetadata.ResponsibleParty#getAnnotations <em>Annotations</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Annotations</em>'.
-	 * @see dsm.oscal.model.OscalMetadata.ResponsibleParty#getAnnotations()
-	 * @see #getResponsibleParty()
-	 * @generated
-	 */
-	EReference getResponsibleParty_Annotations();
-
-	/**
 	 * Returns the meta object for the containment reference list '{@link dsm.oscal.model.OscalMetadata.ResponsibleParty#getLinks <em>Links</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3040,17 +3011,6 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getResponsibleRole_Remarks();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link dsm.oscal.model.OscalMetadata.ResponsibleRole#getAnnotations <em>Annotations</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Annotations</em>'.
-	 * @see dsm.oscal.model.OscalMetadata.ResponsibleRole#getAnnotations()
-	 * @see #getResponsibleRole()
-	 * @generated
-	 */
-	EReference getResponsibleRole_Annotations();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link dsm.oscal.model.OscalMetadata.ResponsibleRole#getLinks <em>Links</em>}'.
@@ -3151,17 +3111,6 @@ public interface OscalMetadataPackage extends EPackage {
 	EAttribute getRevision_Remarks();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link dsm.oscal.model.OscalMetadata.Revision#getAnnotations <em>Annotations</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Annotations</em>'.
-	 * @see dsm.oscal.model.OscalMetadata.Revision#getAnnotations()
-	 * @see #getRevision()
-	 * @generated
-	 */
-	EReference getRevision_Annotations();
-
-	/**
 	 * Returns the meta object for the containment reference list '{@link dsm.oscal.model.OscalMetadata.Revision#getLinks <em>Links</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3249,17 +3198,6 @@ public interface OscalMetadataPackage extends EPackage {
 	EAttribute getRole_Remarks();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link dsm.oscal.model.OscalMetadata.Role#getAnnotations <em>Annotations</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Annotations</em>'.
-	 * @see dsm.oscal.model.OscalMetadata.Role#getAnnotations()
-	 * @see #getRole()
-	 * @generated
-	 */
-	EReference getRole_Annotations();
-
-	/**
 	 * Returns the meta object for the containment reference list '{@link dsm.oscal.model.OscalMetadata.Role#getLinks <em>Links</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3343,6 +3281,27 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getUUIDElement_Uuid();
+
+	/**
+	 * Returns the meta object for class '{@link dsm.oscal.model.OscalMetadata.AnnotationOwner <em>Annotation Owner</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Annotation Owner</em>'.
+	 * @see dsm.oscal.model.OscalMetadata.AnnotationOwner
+	 * @generated
+	 */
+	EClass getAnnotationOwner();
+
+	/**
+	 * Returns the meta object for the reference list '{@link dsm.oscal.model.OscalMetadata.AnnotationOwner#getAnnotations <em>Annotations</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Annotations</em>'.
+	 * @see dsm.oscal.model.OscalMetadata.AnnotationOwner#getAnnotations()
+	 * @see #getAnnotationOwner()
+	 * @generated
+	 */
+	EReference getAnnotationOwner_Annotations();
 
 	/**
 	 * Returns the meta object for data type '{@link gov.nist.secauto.metaschema.datatypes.DateTime <em>Date Time Type</em>}'.
@@ -3671,14 +3630,6 @@ public interface OscalMetadataPackage extends EPackage {
 		EAttribute BACK_MATTER_RESOURCE__REMARKS = eINSTANCE.getBackMatterResource_Remarks();
 
 		/**
-		 * The meta object literal for the '<em><b>Annotations</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference BACK_MATTER_RESOURCE__ANNOTATIONS = eINSTANCE.getBackMatterResource_Annotations();
-
-		/**
 		 * The meta object literal for the '<em><b>Citation</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3915,14 +3866,6 @@ public interface OscalMetadataPackage extends EPackage {
 		EAttribute LOCATION__REMARKS = eINSTANCE.getLocation_Remarks();
 
 		/**
-		 * The meta object literal for the '<em><b>Annotations</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference LOCATION__ANNOTATIONS = eINSTANCE.getLocation_Annotations();
-
-		/**
 		 * The meta object literal for the '<em><b>Address</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4011,14 +3954,6 @@ public interface OscalMetadataPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute METADATA__REMARKS = eINSTANCE.getMetadata_Remarks();
-
-		/**
-		 * The meta object literal for the '<em><b>Annotations</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference METADATA__ANNOTATIONS = eINSTANCE.getMetadata_Annotations();
 
 		/**
 		 * The meta object literal for the '<em><b>Roles</b></em>' containment reference list feature.
@@ -4151,14 +4086,6 @@ public interface OscalMetadataPackage extends EPackage {
 		EAttribute PARTY__REMARKS = eINSTANCE.getParty_Remarks();
 
 		/**
-		 * The meta object literal for the '<em><b>Annotations</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference PARTY__ANNOTATIONS = eINSTANCE.getParty_Annotations();
-
-		/**
 		 * The meta object literal for the '<em><b>Addresses</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4267,14 +4194,6 @@ public interface OscalMetadataPackage extends EPackage {
 		EAttribute RESOURCE_CITATION__TEXT = eINSTANCE.getResourceCitation_Text();
 
 		/**
-		 * The meta object literal for the '<em><b>Annotations</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference RESOURCE_CITATION__ANNOTATIONS = eINSTANCE.getResourceCitation_Annotations();
-
-		/**
 		 * The meta object literal for the '<em><b>Props</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4351,14 +4270,6 @@ public interface OscalMetadataPackage extends EPackage {
 		EAttribute RESPONSIBLE_PARTY__REMARKS = eINSTANCE.getResponsibleParty_Remarks();
 
 		/**
-		 * The meta object literal for the '<em><b>Annotations</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference RESPONSIBLE_PARTY__ANNOTATIONS = eINSTANCE.getResponsibleParty_Annotations();
-
-		/**
 		 * The meta object literal for the '<em><b>Links</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4407,14 +4318,6 @@ public interface OscalMetadataPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute RESPONSIBLE_ROLE__REMARKS = eINSTANCE.getResponsibleRole_Remarks();
-
-		/**
-		 * The meta object literal for the '<em><b>Annotations</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference RESPONSIBLE_ROLE__ANNOTATIONS = eINSTANCE.getResponsibleRole_Annotations();
 
 		/**
 		 * The meta object literal for the '<em><b>Links</b></em>' containment reference list feature.
@@ -4491,14 +4394,6 @@ public interface OscalMetadataPackage extends EPackage {
 		EAttribute REVISION__REMARKS = eINSTANCE.getRevision_Remarks();
 
 		/**
-		 * The meta object literal for the '<em><b>Annotations</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference REVISION__ANNOTATIONS = eINSTANCE.getRevision_Annotations();
-
-		/**
 		 * The meta object literal for the '<em><b>Links</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4563,14 +4458,6 @@ public interface OscalMetadataPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ROLE__REMARKS = eINSTANCE.getRole_Remarks();
-
-		/**
-		 * The meta object literal for the '<em><b>Annotations</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ROLE__ANNOTATIONS = eINSTANCE.getRole_Annotations();
 
 		/**
 		 * The meta object literal for the '<em><b>Links</b></em>' containment reference list feature.
@@ -4641,6 +4528,24 @@ public interface OscalMetadataPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute UUID_ELEMENT__UUID = eINSTANCE.getUUIDElement_Uuid();
+
+		/**
+		 * The meta object literal for the '{@link dsm.oscal.model.OscalMetadata.impl.AnnotationOwnerImpl <em>Annotation Owner</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see dsm.oscal.model.OscalMetadata.impl.AnnotationOwnerImpl
+		 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getAnnotationOwner()
+		 * @generated
+		 */
+		EClass ANNOTATION_OWNER = eINSTANCE.getAnnotationOwner();
+
+		/**
+		 * The meta object literal for the '<em><b>Annotations</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ANNOTATION_OWNER__ANNOTATIONS = eINSTANCE.getAnnotationOwner_Annotations();
 
 		/**
 		 * The meta object literal for the '<em>Date Time Type</em>' data type.

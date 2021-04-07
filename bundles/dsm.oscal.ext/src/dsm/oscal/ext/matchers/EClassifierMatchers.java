@@ -17,10 +17,13 @@ import java.util.function.Predicate;
 
 import org.eclipse.emf.ecore.EClassifier;
 
-public class DataTypeMatchers {
+public class EClassifierMatchers {
 
-	
 	public static Predicate<EClassifier> hasInstanceClass(String instanceName) {
 		return d -> instanceName.equals(d.getInstanceClassName());
+	}
+
+	public static Predicate<EClassifier> hasName(String instanceName) {
+		return d -> instanceName.equals(d.getName());
 	}
 }

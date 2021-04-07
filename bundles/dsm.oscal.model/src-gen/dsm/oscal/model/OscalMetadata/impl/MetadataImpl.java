@@ -16,6 +16,7 @@
 package dsm.oscal.model.OscalMetadata.impl;
 
 import dsm.oscal.model.OscalMetadata.Annotation;
+import dsm.oscal.model.OscalMetadata.AnnotationOwner;
 import dsm.oscal.model.OscalMetadata.DocumentId;
 import dsm.oscal.model.OscalMetadata.Link;
 import dsm.oscal.model.OscalMetadata.Location;
@@ -46,6 +47,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -56,13 +58,13 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.impl.MetadataImpl#getAnnotations <em>Annotations</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.MetadataImpl#getTitle <em>Title</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.MetadataImpl#getPublished <em>Published</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.MetadataImpl#getLastModified <em>Last Modified</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.MetadataImpl#getVersion <em>Version</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.MetadataImpl#getOscalVersion <em>Oscal Version</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.MetadataImpl#getRemarks <em>Remarks</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.impl.MetadataImpl#getAnnotations <em>Annotations</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.MetadataImpl#getRoles <em>Roles</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.MetadataImpl#getLinks <em>Links</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.MetadataImpl#getLocations <em>Locations</em>}</li>
@@ -76,6 +78,16 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * @generated
  */
 public class MetadataImpl extends MinimalEObjectImpl.Container implements Metadata {
+	/**
+	 * The cached value of the '{@link #getAnnotations() <em>Annotations</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAnnotations()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Annotation> annotations;
+
 	/**
 	 * The default value of the '{@link #getTitle() <em>Title</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -195,16 +207,6 @@ public class MetadataImpl extends MinimalEObjectImpl.Container implements Metada
 	 * @ordered
 	 */
 	protected MarkupMultiline remarks = REMARKS_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getAnnotations() <em>Annotations</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAnnotations()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Annotation> annotations;
 
 	/**
 	 * The cached value of the '{@link #getRoles() <em>Roles</em>}' containment reference list.
@@ -451,7 +453,7 @@ public class MetadataImpl extends MinimalEObjectImpl.Container implements Metada
 	@Override
 	public EList<Annotation> getAnnotations() {
 		if (annotations == null) {
-			annotations = new EObjectContainmentEList<Annotation>(Annotation.class, this, OscalMetadataPackage.METADATA__ANNOTATIONS);
+			annotations = new EObjectResolvingEList<Annotation>(Annotation.class, this, OscalMetadataPackage.METADATA__ANNOTATIONS);
 		}
 		return annotations;
 	}
@@ -568,8 +570,6 @@ public class MetadataImpl extends MinimalEObjectImpl.Container implements Metada
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case OscalMetadataPackage.METADATA__ANNOTATIONS:
-				return ((InternalEList<?>)getAnnotations()).basicRemove(otherEnd, msgs);
 			case OscalMetadataPackage.METADATA__ROLES:
 				return ((InternalEList<?>)getRoles()).basicRemove(otherEnd, msgs);
 			case OscalMetadataPackage.METADATA__LINKS:
@@ -598,6 +598,8 @@ public class MetadataImpl extends MinimalEObjectImpl.Container implements Metada
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case OscalMetadataPackage.METADATA__ANNOTATIONS:
+				return getAnnotations();
 			case OscalMetadataPackage.METADATA__TITLE:
 				return getTitle();
 			case OscalMetadataPackage.METADATA__PUBLISHED:
@@ -610,8 +612,6 @@ public class MetadataImpl extends MinimalEObjectImpl.Container implements Metada
 				return getOscalVersion();
 			case OscalMetadataPackage.METADATA__REMARKS:
 				return getRemarks();
-			case OscalMetadataPackage.METADATA__ANNOTATIONS:
-				return getAnnotations();
 			case OscalMetadataPackage.METADATA__ROLES:
 				return getRoles();
 			case OscalMetadataPackage.METADATA__LINKS:
@@ -641,6 +641,10 @@ public class MetadataImpl extends MinimalEObjectImpl.Container implements Metada
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case OscalMetadataPackage.METADATA__ANNOTATIONS:
+				getAnnotations().clear();
+				getAnnotations().addAll((Collection<? extends Annotation>)newValue);
+				return;
 			case OscalMetadataPackage.METADATA__TITLE:
 				setTitle((MarkupLine)newValue);
 				return;
@@ -658,10 +662,6 @@ public class MetadataImpl extends MinimalEObjectImpl.Container implements Metada
 				return;
 			case OscalMetadataPackage.METADATA__REMARKS:
 				setRemarks((MarkupMultiline)newValue);
-				return;
-			case OscalMetadataPackage.METADATA__ANNOTATIONS:
-				getAnnotations().clear();
-				getAnnotations().addAll((Collection<? extends Annotation>)newValue);
 				return;
 			case OscalMetadataPackage.METADATA__ROLES:
 				getRoles().clear();
@@ -707,6 +707,9 @@ public class MetadataImpl extends MinimalEObjectImpl.Container implements Metada
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case OscalMetadataPackage.METADATA__ANNOTATIONS:
+				getAnnotations().clear();
+				return;
 			case OscalMetadataPackage.METADATA__TITLE:
 				setTitle(TITLE_EDEFAULT);
 				return;
@@ -724,9 +727,6 @@ public class MetadataImpl extends MinimalEObjectImpl.Container implements Metada
 				return;
 			case OscalMetadataPackage.METADATA__REMARKS:
 				setRemarks(REMARKS_EDEFAULT);
-				return;
-			case OscalMetadataPackage.METADATA__ANNOTATIONS:
-				getAnnotations().clear();
 				return;
 			case OscalMetadataPackage.METADATA__ROLES:
 				getRoles().clear();
@@ -764,6 +764,8 @@ public class MetadataImpl extends MinimalEObjectImpl.Container implements Metada
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case OscalMetadataPackage.METADATA__ANNOTATIONS:
+				return annotations != null && !annotations.isEmpty();
 			case OscalMetadataPackage.METADATA__TITLE:
 				return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
 			case OscalMetadataPackage.METADATA__PUBLISHED:
@@ -776,8 +778,6 @@ public class MetadataImpl extends MinimalEObjectImpl.Container implements Metada
 				return OSCAL_VERSION_EDEFAULT == null ? oscalVersion != null : !OSCAL_VERSION_EDEFAULT.equals(oscalVersion);
 			case OscalMetadataPackage.METADATA__REMARKS:
 				return REMARKS_EDEFAULT == null ? remarks != null : !REMARKS_EDEFAULT.equals(remarks);
-			case OscalMetadataPackage.METADATA__ANNOTATIONS:
-				return annotations != null && !annotations.isEmpty();
 			case OscalMetadataPackage.METADATA__ROLES:
 				return roles != null && !roles.isEmpty();
 			case OscalMetadataPackage.METADATA__LINKS:
@@ -796,6 +796,38 @@ public class MetadataImpl extends MinimalEObjectImpl.Container implements Metada
 				return props != null && !props.isEmpty();
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == AnnotationOwner.class) {
+			switch (derivedFeatureID) {
+				case OscalMetadataPackage.METADATA__ANNOTATIONS: return OscalMetadataPackage.ANNOTATION_OWNER__ANNOTATIONS;
+				default: return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == AnnotationOwner.class) {
+			switch (baseFeatureID) {
+				case OscalMetadataPackage.ANNOTATION_OWNER__ANNOTATIONS: return OscalMetadataPackage.METADATA__ANNOTATIONS;
+				default: return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
 	/**

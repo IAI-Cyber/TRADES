@@ -16,11 +16,7 @@
 package dsm.oscal.model.OscalMetadata.provider;
 
 
-import dsm.oscal.model.OscalMetadata.OscalMetadataFactory;
 import dsm.oscal.model.OscalMetadata.OscalMetadataPackage;
-import dsm.oscal.model.OscalMetadata.ResourceCitation;
-
-import gov.nist.secauto.metaschema.datatypes.markup.MarkupLine;
 
 import java.util.Collection;
 import java.util.List;
@@ -30,8 +26,6 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 
-import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -39,17 +33,15 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
-import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link dsm.oscal.model.OscalMetadata.ResourceCitation} object.
+ * This is the item provider adapter for a {@link dsm.oscal.model.OscalMetadata.AnnotationOwner} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ResourceCitationItemProvider 
+public class AnnotationOwnerItemProvider 
 	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
@@ -63,7 +55,7 @@ public class ResourceCitationItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ResourceCitationItemProvider(AdapterFactory adapterFactory) {
+	public AnnotationOwnerItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -79,7 +71,6 @@ public class ResourceCitationItemProvider
 			super.getPropertyDescriptors(object);
 
 			addAnnotationsPropertyDescriptor(object);
-			addTextPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -107,66 +98,14 @@ public class ResourceCitationItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Text feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addTextPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ResourceCitation_text_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ResourceCitation_text_feature", "_UI_ResourceCitation_type"),
-				 OscalMetadataPackage.Literals.RESOURCE_CITATION__TEXT,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
-	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null) {
-			super.getChildrenFeatures(object);
-			childrenFeatures.add(OscalMetadataPackage.Literals.RESOURCE_CITATION__PROPS);
-		}
-		return childrenFeatures;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected EStructuralFeature getChildFeature(Object object, Object child) {
-		// Check the type of the specified child object and return the proper feature to use for
-		// adding (see {@link AddCommand}) it as a child.
-
-		return super.getChildFeature(object, child);
-	}
-
-	/**
-	 * This returns ResourceCitation.gif.
+	 * This returns AnnotationOwner.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/ResourceCitation"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/AnnotationOwner"));
 	}
 
 	/**
@@ -177,11 +116,7 @@ public class ResourceCitationItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		MarkupLine labelValue = ((ResourceCitation)object).getText();
-		String label = labelValue == null ? null : labelValue.toString();
-		return label == null || label.length() == 0 ?
-			getString("_UI_ResourceCitation_type") :
-			getString("_UI_ResourceCitation_type") + " " + label;
+		return getString("_UI_AnnotationOwner_type");
 	}
 
 
@@ -195,15 +130,6 @@ public class ResourceCitationItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-
-		switch (notification.getFeatureID(ResourceCitation.class)) {
-			case OscalMetadataPackage.RESOURCE_CITATION__TEXT:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-			case OscalMetadataPackage.RESOURCE_CITATION__PROPS:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
-		}
 		super.notifyChanged(notification);
 	}
 
@@ -217,11 +143,6 @@ public class ResourceCitationItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OscalMetadataPackage.Literals.RESOURCE_CITATION__PROPS,
-				 OscalMetadataFactory.eINSTANCE.createProperty()));
 	}
 
 	/**

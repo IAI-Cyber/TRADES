@@ -22,7 +22,9 @@ import dsm.oscal.model.OscalCatalogCommon.Parameter;
 import dsm.oscal.model.OscalCatalogCommon.Part;
 
 import dsm.oscal.model.OscalMetadata.Annotation;
+import dsm.oscal.model.OscalMetadata.AnnotationOwner;
 import dsm.oscal.model.OscalMetadata.Link;
+import dsm.oscal.model.OscalMetadata.OscalMetadataPackage;
 import dsm.oscal.model.OscalMetadata.Property;
 
 import gov.nist.secauto.metaschema.datatypes.markup.MarkupLine;
@@ -41,6 +43,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -51,10 +54,10 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link dsm.oscal.model.OscalCatalog.impl.ControlImpl#getAnnotations <em>Annotations</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalog.impl.ControlImpl#getId <em>Id</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalog.impl.ControlImpl#getClazz <em>Clazz</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalog.impl.ControlImpl#getTitle <em>Title</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalCatalog.impl.ControlImpl#getAnnotations <em>Annotations</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalog.impl.ControlImpl#getParams <em>Params</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalog.impl.ControlImpl#getParts <em>Parts</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalog.impl.ControlImpl#getLinks <em>Links</em>}</li>
@@ -65,6 +68,16 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * @generated
  */
 public class ControlImpl extends MinimalEObjectImpl.Container implements Control {
+	/**
+	 * The cached value of the '{@link #getAnnotations() <em>Annotations</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAnnotations()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Annotation> annotations;
+
 	/**
 	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -124,16 +137,6 @@ public class ControlImpl extends MinimalEObjectImpl.Container implements Control
 	 * @ordered
 	 */
 	protected MarkupLine title = TITLE_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getAnnotations() <em>Annotations</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAnnotations()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Annotation> annotations;
 
 	/**
 	 * The cached value of the '{@link #getParams() <em>Params</em>}' containment reference list.
@@ -281,7 +284,7 @@ public class ControlImpl extends MinimalEObjectImpl.Container implements Control
 	@Override
 	public EList<Annotation> getAnnotations() {
 		if (annotations == null) {
-			annotations = new EObjectContainmentEList<Annotation>(Annotation.class, this, OscalCatalogPackage.CONTROL__ANNOTATIONS);
+			annotations = new EObjectResolvingEList<Annotation>(Annotation.class, this, OscalCatalogPackage.CONTROL__ANNOTATIONS);
 		}
 		return annotations;
 	}
@@ -359,8 +362,6 @@ public class ControlImpl extends MinimalEObjectImpl.Container implements Control
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case OscalCatalogPackage.CONTROL__ANNOTATIONS:
-				return ((InternalEList<?>)getAnnotations()).basicRemove(otherEnd, msgs);
 			case OscalCatalogPackage.CONTROL__PARAMS:
 				return ((InternalEList<?>)getParams()).basicRemove(otherEnd, msgs);
 			case OscalCatalogPackage.CONTROL__PARTS:
@@ -383,14 +384,14 @@ public class ControlImpl extends MinimalEObjectImpl.Container implements Control
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case OscalCatalogPackage.CONTROL__ANNOTATIONS:
+				return getAnnotations();
 			case OscalCatalogPackage.CONTROL__ID:
 				return getId();
 			case OscalCatalogPackage.CONTROL__CLAZZ:
 				return getClazz();
 			case OscalCatalogPackage.CONTROL__TITLE:
 				return getTitle();
-			case OscalCatalogPackage.CONTROL__ANNOTATIONS:
-				return getAnnotations();
 			case OscalCatalogPackage.CONTROL__PARAMS:
 				return getParams();
 			case OscalCatalogPackage.CONTROL__PARTS:
@@ -414,6 +415,10 @@ public class ControlImpl extends MinimalEObjectImpl.Container implements Control
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case OscalCatalogPackage.CONTROL__ANNOTATIONS:
+				getAnnotations().clear();
+				getAnnotations().addAll((Collection<? extends Annotation>)newValue);
+				return;
 			case OscalCatalogPackage.CONTROL__ID:
 				setId((String)newValue);
 				return;
@@ -422,10 +427,6 @@ public class ControlImpl extends MinimalEObjectImpl.Container implements Control
 				return;
 			case OscalCatalogPackage.CONTROL__TITLE:
 				setTitle((MarkupLine)newValue);
-				return;
-			case OscalCatalogPackage.CONTROL__ANNOTATIONS:
-				getAnnotations().clear();
-				getAnnotations().addAll((Collection<? extends Annotation>)newValue);
 				return;
 			case OscalCatalogPackage.CONTROL__PARAMS:
 				getParams().clear();
@@ -459,6 +460,9 @@ public class ControlImpl extends MinimalEObjectImpl.Container implements Control
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case OscalCatalogPackage.CONTROL__ANNOTATIONS:
+				getAnnotations().clear();
+				return;
 			case OscalCatalogPackage.CONTROL__ID:
 				setId(ID_EDEFAULT);
 				return;
@@ -467,9 +471,6 @@ public class ControlImpl extends MinimalEObjectImpl.Container implements Control
 				return;
 			case OscalCatalogPackage.CONTROL__TITLE:
 				setTitle(TITLE_EDEFAULT);
-				return;
-			case OscalCatalogPackage.CONTROL__ANNOTATIONS:
-				getAnnotations().clear();
 				return;
 			case OscalCatalogPackage.CONTROL__PARAMS:
 				getParams().clear();
@@ -498,14 +499,14 @@ public class ControlImpl extends MinimalEObjectImpl.Container implements Control
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case OscalCatalogPackage.CONTROL__ANNOTATIONS:
+				return annotations != null && !annotations.isEmpty();
 			case OscalCatalogPackage.CONTROL__ID:
 				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
 			case OscalCatalogPackage.CONTROL__CLAZZ:
 				return CLAZZ_EDEFAULT == null ? clazz != null : !CLAZZ_EDEFAULT.equals(clazz);
 			case OscalCatalogPackage.CONTROL__TITLE:
 				return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
-			case OscalCatalogPackage.CONTROL__ANNOTATIONS:
-				return annotations != null && !annotations.isEmpty();
 			case OscalCatalogPackage.CONTROL__PARAMS:
 				return params != null && !params.isEmpty();
 			case OscalCatalogPackage.CONTROL__PARTS:
@@ -518,6 +519,38 @@ public class ControlImpl extends MinimalEObjectImpl.Container implements Control
 				return props != null && !props.isEmpty();
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == AnnotationOwner.class) {
+			switch (derivedFeatureID) {
+				case OscalCatalogPackage.CONTROL__ANNOTATIONS: return OscalMetadataPackage.ANNOTATION_OWNER__ANNOTATIONS;
+				default: return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == AnnotationOwner.class) {
+			switch (baseFeatureID) {
+				case OscalMetadataPackage.ANNOTATION_OWNER__ANNOTATIONS: return OscalCatalogPackage.CONTROL__ANNOTATIONS;
+				default: return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
 	/**

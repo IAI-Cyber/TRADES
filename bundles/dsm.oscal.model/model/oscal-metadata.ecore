@@ -138,7 +138,7 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="BackMatterResource" eSuperTypes="//OscalElement //UUIDElement">
+  <eClassifiers xsi:type="ecore:EClass" name="BackMatterResource" eSuperTypes="//OscalElement //UUIDElement //AnnotationOwner">
     <eAnnotations source="Metaschema">
       <details key="source" value="&lt;Metaschema>oscal-metadata.&lt;AssemblyDefinition>resource"/>
     </eAnnotations>
@@ -167,11 +167,6 @@
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="&lt;h1>Remarks&lt;/h1>&#xA;&lt;h2>Description&lt;/h2>&#xA;&lt;p>Additional commentary on the containing object.&lt;/p>&#xA;"/>
-      </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="annotations" upperBound="-1" eType="//Annotation" containment="true">
-      <eAnnotations source="Metaschema">
-        <details key="source" value="&lt;Metaschema>oscal-metadata.&lt;AssemblyDefinition>annotation"/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="citation" eType="//ResourceCitation" containment="true">
@@ -326,7 +321,7 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Location" eSuperTypes="//OscalElement //UUIDElement">
+  <eClassifiers xsi:type="ecore:EClass" name="Location" eSuperTypes="//OscalElement //UUIDElement //AnnotationOwner">
     <eAnnotations source="Metaschema">
       <details key="source" value="&lt;Metaschema>oscal-metadata.&lt;AssemblyDefinition>location"/>
     </eAnnotations>
@@ -366,11 +361,6 @@
         <details key="documentation" value="&lt;h1>Remarks&lt;/h1>&#xA;&lt;h2>Description&lt;/h2>&#xA;&lt;p>Additional commentary on the containing object.&lt;/p>&#xA;"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="annotations" upperBound="-1" eType="//Annotation" containment="true">
-      <eAnnotations source="Metaschema">
-        <details key="source" value="&lt;Metaschema>oscal-metadata.&lt;AssemblyDefinition>annotation"/>
-      </eAnnotations>
-    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="address" lowerBound="1" eType="//Address" containment="true">
       <eAnnotations source="Metaschema">
         <details key="source" value="&lt;Metaschema>oscal-metadata.&lt;AssemblyDefinition>address"/>
@@ -392,7 +382,7 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Metadata" eSuperTypes="//OscalElement">
+  <eClassifiers xsi:type="ecore:EClass" name="Metadata" eSuperTypes="//OscalElement //AnnotationOwner">
     <eAnnotations source="Metaschema">
       <details key="source" value="&lt;Metaschema>oscal-metadata.&lt;AssemblyDefinition>metadata"/>
     </eAnnotations>
@@ -449,11 +439,6 @@
         <details key="documentation" value="&lt;h1>Remarks&lt;/h1>&#xA;&lt;h2>Description&lt;/h2>&#xA;&lt;p>Additional commentary on the containing object.&lt;/p>&#xA;"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="annotations" upperBound="-1" eType="//Annotation" containment="true">
-      <eAnnotations source="Metaschema">
-        <details key="source" value="&lt;Metaschema>oscal-metadata.&lt;AssemblyDefinition>annotation"/>
-      </eAnnotations>
-    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="roles" upperBound="-1" eType="//Role" containment="true">
       <eAnnotations source="Metaschema">
         <details key="source" value="&lt;Metaschema>oscal-metadata.&lt;AssemblyDefinition>role"/>
@@ -495,7 +480,7 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Party" eSuperTypes="//OscalElement //UUIDElement">
+  <eClassifiers xsi:type="ecore:EClass" name="Party" eSuperTypes="//OscalElement //UUIDElement //AnnotationOwner">
     <eAnnotations source="Metaschema">
       <details key="source" value="&lt;Metaschema>oscal-metadata.&lt;AssemblyDefinition>party"/>
     </eAnnotations>
@@ -560,11 +545,6 @@
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="&lt;h1>Remarks&lt;/h1>&#xA;&lt;h2>Description&lt;/h2>&#xA;&lt;p>Additional commentary on the containing object.&lt;/p>&#xA;"/>
-      </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="annotations" upperBound="-1" eType="//Annotation" containment="true">
-      <eAnnotations source="Metaschema">
-        <details key="source" value="&lt;Metaschema>oscal-metadata.&lt;AssemblyDefinition>annotation"/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="addresses" upperBound="-1" eType="//Address" containment="true">
@@ -638,7 +618,7 @@
       <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ResourceCitation" eSuperTypes="//OscalElement">
+  <eClassifiers xsi:type="ecore:EClass" name="ResourceCitation" eSuperTypes="//OscalElement //AnnotationOwner">
     <eAnnotations source="Metaschema">
       <details key="source" value="&lt;Metaschema>oscal-metadata.&lt;AssemblyDefinition>citation"/>
     </eAnnotations>
@@ -651,11 +631,6 @@
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="&lt;h1>Citation Text&lt;/h1>&#xA;&lt;h2>Description&lt;/h2>&#xA;&lt;p>A line of citation text.&lt;/p>&#xA;"/>
-      </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="annotations" upperBound="-1" eType="//Annotation" containment="true">
-      <eAnnotations source="Metaschema">
-        <details key="source" value="&lt;Metaschema>oscal-metadata.&lt;AssemblyDefinition>annotation"/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="props" upperBound="-1" eType="//Property" containment="true">
@@ -694,7 +669,7 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ResponsibleParty" eSuperTypes="//OscalElement">
+  <eClassifiers xsi:type="ecore:EClass" name="ResponsibleParty" eSuperTypes="//OscalElement //AnnotationOwner">
     <eAnnotations source="Metaschema">
       <details key="source" value="&lt;Metaschema>oscal-metadata.&lt;AssemblyDefinition>responsible-party"/>
     </eAnnotations>
@@ -726,11 +701,6 @@
         <details key="documentation" value="&lt;h1>Remarks&lt;/h1>&#xA;&lt;h2>Description&lt;/h2>&#xA;&lt;p>Additional commentary on the containing object.&lt;/p>&#xA;"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="annotations" upperBound="-1" eType="//Annotation" containment="true">
-      <eAnnotations source="Metaschema">
-        <details key="source" value="&lt;Metaschema>oscal-metadata.&lt;AssemblyDefinition>annotation"/>
-      </eAnnotations>
-    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="links" upperBound="-1" eType="//Link" containment="true">
       <eAnnotations source="Metaschema">
         <details key="source" value="&lt;Metaschema>oscal-metadata.&lt;AssemblyDefinition>link"/>
@@ -742,7 +712,7 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ResponsibleRole" eSuperTypes="//OscalElement">
+  <eClassifiers xsi:type="ecore:EClass" name="ResponsibleRole" eSuperTypes="//OscalElement //AnnotationOwner">
     <eAnnotations source="Metaschema">
       <details key="source" value="&lt;Metaschema>oscal-metadata.&lt;AssemblyDefinition>responsible-role"/>
     </eAnnotations>
@@ -774,11 +744,6 @@
         <details key="documentation" value="&lt;h1>Remarks&lt;/h1>&#xA;&lt;h2>Description&lt;/h2>&#xA;&lt;p>Additional commentary on the containing object.&lt;/p>&#xA;"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="annotations" upperBound="-1" eType="//Annotation" containment="true">
-      <eAnnotations source="Metaschema">
-        <details key="source" value="&lt;Metaschema>oscal-metadata.&lt;AssemblyDefinition>annotation"/>
-      </eAnnotations>
-    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="links" upperBound="-1" eType="//Link" containment="true">
       <eAnnotations source="Metaschema">
         <details key="source" value="&lt;Metaschema>oscal-metadata.&lt;AssemblyDefinition>link"/>
@@ -790,7 +755,7 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Revision" eSuperTypes="//OscalElement">
+  <eClassifiers xsi:type="ecore:EClass" name="Revision" eSuperTypes="//OscalElement //AnnotationOwner">
     <eAnnotations source="Metaschema">
       <details key="source" value="&lt;Metaschema>oscal-metadata.&lt;AssemblyDefinition>revision"/>
     </eAnnotations>
@@ -847,11 +812,6 @@
         <details key="documentation" value="&lt;h1>Remarks&lt;/h1>&#xA;&lt;h2>Description&lt;/h2>&#xA;&lt;p>Additional commentary on the containing object.&lt;/p>&#xA;"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="annotations" upperBound="-1" eType="//Annotation" containment="true">
-      <eAnnotations source="Metaschema">
-        <details key="source" value="&lt;Metaschema>oscal-metadata.&lt;AssemblyDefinition>annotation"/>
-      </eAnnotations>
-    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="links" upperBound="-1" eType="//Link" containment="true">
       <eAnnotations source="Metaschema">
         <details key="source" value="&lt;Metaschema>oscal-metadata.&lt;AssemblyDefinition>link"/>
@@ -863,7 +823,7 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Role" eSuperTypes="//OscalElement">
+  <eClassifiers xsi:type="ecore:EClass" name="Role" eSuperTypes="//OscalElement //AnnotationOwner">
     <eAnnotations source="Metaschema">
       <details key="source" value="&lt;Metaschema>oscal-metadata.&lt;AssemblyDefinition>role"/>
     </eAnnotations>
@@ -912,11 +872,6 @@
         <details key="documentation" value="&lt;h1>Remarks&lt;/h1>&#xA;&lt;h2>Description&lt;/h2>&#xA;&lt;p>Additional commentary on the containing object.&lt;/p>&#xA;"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="annotations" upperBound="-1" eType="//Annotation" containment="true">
-      <eAnnotations source="Metaschema">
-        <details key="source" value="&lt;Metaschema>oscal-metadata.&lt;AssemblyDefinition>annotation"/>
-      </eAnnotations>
-    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="links" upperBound="-1" eType="//Link" containment="true">
       <eAnnotations source="Metaschema">
         <details key="source" value="&lt;Metaschema>oscal-metadata.&lt;AssemblyDefinition>link"/>
@@ -955,5 +910,8 @@
         <details key="documentation" value="Unique UUID identifying this element"/>
       </eAnnotations>
     </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AnnotationOwner">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="annotations" upperBound="-1" eType="//Annotation"/>
   </eClassifiers>
 </ecore:EPackage>

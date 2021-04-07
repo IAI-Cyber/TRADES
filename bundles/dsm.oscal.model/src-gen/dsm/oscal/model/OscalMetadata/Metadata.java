@@ -44,7 +44,6 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link dsm.oscal.model.OscalMetadata.Metadata#getVersion <em>Version</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.Metadata#getOscalVersion <em>Oscal Version</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.Metadata#getRemarks <em>Remarks</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.Metadata#getAnnotations <em>Annotations</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.Metadata#getRoles <em>Roles</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.Metadata#getLinks <em>Links</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.Metadata#getLocations <em>Locations</em>}</li>
@@ -59,7 +58,7 @@ import org.eclipse.emf.common.util.EList;
  * @model annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;AssemblyDefinition&gt;metadata'"
  * @generated
  */
-public interface Metadata extends OscalElement {
+public interface Metadata extends OscalElement, AnnotationOwner {
 	/**
 	 * Returns the value of the '<em><b>Title</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -247,19 +246,6 @@ public interface Metadata extends OscalElement {
 	 * @generated
 	 */
 	void setRemarks(MarkupMultiline value);
-
-	/**
-	 * Returns the value of the '<em><b>Annotations</b></em>' containment reference list.
-	 * The list contents are of type {@link dsm.oscal.model.OscalMetadata.Annotation}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Annotations</em>' containment reference list.
-	 * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getMetadata_Annotations()
-	 * @model containment="true"
-	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;AssemblyDefinition&gt;annotation'"
-	 * @generated
-	 */
-	EList<Annotation> getAnnotations();
 
 	/**
 	 * Returns the value of the '<em><b>Roles</b></em>' containment reference list.

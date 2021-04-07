@@ -224,6 +224,15 @@ public interface OscalMetadataFactory extends EFactory {
 	UUIDElement createUUIDElement();
 
 	/**
+	 * Returns a new object of class '<em>Annotation Owner</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Annotation Owner</em>'.
+	 * @generated
+	 */
+	AnnotationOwner createAnnotationOwner();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

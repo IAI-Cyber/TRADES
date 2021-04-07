@@ -16,6 +16,7 @@
 package dsm.oscal.model.OscalMetadata.impl;
 
 import dsm.oscal.model.OscalMetadata.Annotation;
+import dsm.oscal.model.OscalMetadata.AnnotationOwner;
 import dsm.oscal.model.OscalMetadata.Link;
 import dsm.oscal.model.OscalMetadata.OscalMetadataPackage;
 import dsm.oscal.model.OscalMetadata.Property;
@@ -39,6 +40,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -49,10 +51,10 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.impl.ResponsibleRoleImpl#getAnnotations <em>Annotations</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.ResponsibleRoleImpl#getRoleId <em>Role Id</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.ResponsibleRoleImpl#getPartyUuids <em>Party Uuids</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.ResponsibleRoleImpl#getRemarks <em>Remarks</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.impl.ResponsibleRoleImpl#getAnnotations <em>Annotations</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.ResponsibleRoleImpl#getLinks <em>Links</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.ResponsibleRoleImpl#getProps <em>Props</em>}</li>
  * </ul>
@@ -60,6 +62,16 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * @generated
  */
 public class ResponsibleRoleImpl extends MinimalEObjectImpl.Container implements ResponsibleRole {
+	/**
+	 * The cached value of the '{@link #getAnnotations() <em>Annotations</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAnnotations()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Annotation> annotations;
+
 	/**
 	 * The default value of the '{@link #getRoleId() <em>Role Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -109,16 +121,6 @@ public class ResponsibleRoleImpl extends MinimalEObjectImpl.Container implements
 	 * @ordered
 	 */
 	protected MarkupMultiline remarks = REMARKS_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getAnnotations() <em>Annotations</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAnnotations()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Annotation> annotations;
 
 	/**
 	 * The cached value of the '{@link #getLinks() <em>Links</em>}' containment reference list.
@@ -226,7 +228,7 @@ public class ResponsibleRoleImpl extends MinimalEObjectImpl.Container implements
 	@Override
 	public EList<Annotation> getAnnotations() {
 		if (annotations == null) {
-			annotations = new EObjectContainmentEList<Annotation>(Annotation.class, this, OscalMetadataPackage.RESPONSIBLE_ROLE__ANNOTATIONS);
+			annotations = new EObjectResolvingEList<Annotation>(Annotation.class, this, OscalMetadataPackage.RESPONSIBLE_ROLE__ANNOTATIONS);
 		}
 		return annotations;
 	}
@@ -265,8 +267,6 @@ public class ResponsibleRoleImpl extends MinimalEObjectImpl.Container implements
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case OscalMetadataPackage.RESPONSIBLE_ROLE__ANNOTATIONS:
-				return ((InternalEList<?>)getAnnotations()).basicRemove(otherEnd, msgs);
 			case OscalMetadataPackage.RESPONSIBLE_ROLE__LINKS:
 				return ((InternalEList<?>)getLinks()).basicRemove(otherEnd, msgs);
 			case OscalMetadataPackage.RESPONSIBLE_ROLE__PROPS:
@@ -283,14 +283,14 @@ public class ResponsibleRoleImpl extends MinimalEObjectImpl.Container implements
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case OscalMetadataPackage.RESPONSIBLE_ROLE__ANNOTATIONS:
+				return getAnnotations();
 			case OscalMetadataPackage.RESPONSIBLE_ROLE__ROLE_ID:
 				return getRoleId();
 			case OscalMetadataPackage.RESPONSIBLE_ROLE__PARTY_UUIDS:
 				return getPartyUuids();
 			case OscalMetadataPackage.RESPONSIBLE_ROLE__REMARKS:
 				return getRemarks();
-			case OscalMetadataPackage.RESPONSIBLE_ROLE__ANNOTATIONS:
-				return getAnnotations();
 			case OscalMetadataPackage.RESPONSIBLE_ROLE__LINKS:
 				return getLinks();
 			case OscalMetadataPackage.RESPONSIBLE_ROLE__PROPS:
@@ -308,6 +308,10 @@ public class ResponsibleRoleImpl extends MinimalEObjectImpl.Container implements
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case OscalMetadataPackage.RESPONSIBLE_ROLE__ANNOTATIONS:
+				getAnnotations().clear();
+				getAnnotations().addAll((Collection<? extends Annotation>)newValue);
+				return;
 			case OscalMetadataPackage.RESPONSIBLE_ROLE__ROLE_ID:
 				setRoleId((String)newValue);
 				return;
@@ -317,10 +321,6 @@ public class ResponsibleRoleImpl extends MinimalEObjectImpl.Container implements
 				return;
 			case OscalMetadataPackage.RESPONSIBLE_ROLE__REMARKS:
 				setRemarks((MarkupMultiline)newValue);
-				return;
-			case OscalMetadataPackage.RESPONSIBLE_ROLE__ANNOTATIONS:
-				getAnnotations().clear();
-				getAnnotations().addAll((Collection<? extends Annotation>)newValue);
 				return;
 			case OscalMetadataPackage.RESPONSIBLE_ROLE__LINKS:
 				getLinks().clear();
@@ -342,6 +342,9 @@ public class ResponsibleRoleImpl extends MinimalEObjectImpl.Container implements
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case OscalMetadataPackage.RESPONSIBLE_ROLE__ANNOTATIONS:
+				getAnnotations().clear();
+				return;
 			case OscalMetadataPackage.RESPONSIBLE_ROLE__ROLE_ID:
 				setRoleId(ROLE_ID_EDEFAULT);
 				return;
@@ -350,9 +353,6 @@ public class ResponsibleRoleImpl extends MinimalEObjectImpl.Container implements
 				return;
 			case OscalMetadataPackage.RESPONSIBLE_ROLE__REMARKS:
 				setRemarks(REMARKS_EDEFAULT);
-				return;
-			case OscalMetadataPackage.RESPONSIBLE_ROLE__ANNOTATIONS:
-				getAnnotations().clear();
 				return;
 			case OscalMetadataPackage.RESPONSIBLE_ROLE__LINKS:
 				getLinks().clear();
@@ -372,20 +372,52 @@ public class ResponsibleRoleImpl extends MinimalEObjectImpl.Container implements
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case OscalMetadataPackage.RESPONSIBLE_ROLE__ANNOTATIONS:
+				return annotations != null && !annotations.isEmpty();
 			case OscalMetadataPackage.RESPONSIBLE_ROLE__ROLE_ID:
 				return ROLE_ID_EDEFAULT == null ? roleId != null : !ROLE_ID_EDEFAULT.equals(roleId);
 			case OscalMetadataPackage.RESPONSIBLE_ROLE__PARTY_UUIDS:
 				return partyUuids != null && !partyUuids.isEmpty();
 			case OscalMetadataPackage.RESPONSIBLE_ROLE__REMARKS:
 				return REMARKS_EDEFAULT == null ? remarks != null : !REMARKS_EDEFAULT.equals(remarks);
-			case OscalMetadataPackage.RESPONSIBLE_ROLE__ANNOTATIONS:
-				return annotations != null && !annotations.isEmpty();
 			case OscalMetadataPackage.RESPONSIBLE_ROLE__LINKS:
 				return links != null && !links.isEmpty();
 			case OscalMetadataPackage.RESPONSIBLE_ROLE__PROPS:
 				return props != null && !props.isEmpty();
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == AnnotationOwner.class) {
+			switch (derivedFeatureID) {
+				case OscalMetadataPackage.RESPONSIBLE_ROLE__ANNOTATIONS: return OscalMetadataPackage.ANNOTATION_OWNER__ANNOTATIONS;
+				default: return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == AnnotationOwner.class) {
+			switch (baseFeatureID) {
+				case OscalMetadataPackage.ANNOTATION_OWNER__ANNOTATIONS: return OscalMetadataPackage.RESPONSIBLE_ROLE__ANNOTATIONS;
+				default: return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
 	/**

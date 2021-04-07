@@ -16,6 +16,7 @@
 package dsm.oscal.model.OscalMetadata.impl;
 
 import dsm.oscal.model.OscalMetadata.Annotation;
+import dsm.oscal.model.OscalMetadata.AnnotationOwner;
 import dsm.oscal.model.OscalMetadata.Link;
 import dsm.oscal.model.OscalMetadata.OscalMetadataPackage;
 import dsm.oscal.model.OscalMetadata.Property;
@@ -38,6 +39,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -48,12 +50,12 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.impl.RoleImpl#getAnnotations <em>Annotations</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.RoleImpl#getId <em>Id</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.RoleImpl#getTitle <em>Title</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.RoleImpl#getShortName <em>Short Name</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.RoleImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.RoleImpl#getRemarks <em>Remarks</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.impl.RoleImpl#getAnnotations <em>Annotations</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.RoleImpl#getLinks <em>Links</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.RoleImpl#getProps <em>Props</em>}</li>
  * </ul>
@@ -61,6 +63,16 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * @generated
  */
 public class RoleImpl extends MinimalEObjectImpl.Container implements Role {
+	/**
+	 * The cached value of the '{@link #getAnnotations() <em>Annotations</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAnnotations()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Annotation> annotations;
+
 	/**
 	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -160,16 +172,6 @@ public class RoleImpl extends MinimalEObjectImpl.Container implements Role {
 	 * @ordered
 	 */
 	protected MarkupMultiline remarks = REMARKS_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getAnnotations() <em>Annotations</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAnnotations()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Annotation> annotations;
 
 	/**
 	 * The cached value of the '{@link #getLinks() <em>Links</em>}' containment reference list.
@@ -333,7 +335,7 @@ public class RoleImpl extends MinimalEObjectImpl.Container implements Role {
 	@Override
 	public EList<Annotation> getAnnotations() {
 		if (annotations == null) {
-			annotations = new EObjectContainmentEList<Annotation>(Annotation.class, this, OscalMetadataPackage.ROLE__ANNOTATIONS);
+			annotations = new EObjectResolvingEList<Annotation>(Annotation.class, this, OscalMetadataPackage.ROLE__ANNOTATIONS);
 		}
 		return annotations;
 	}
@@ -372,8 +374,6 @@ public class RoleImpl extends MinimalEObjectImpl.Container implements Role {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case OscalMetadataPackage.ROLE__ANNOTATIONS:
-				return ((InternalEList<?>)getAnnotations()).basicRemove(otherEnd, msgs);
 			case OscalMetadataPackage.ROLE__LINKS:
 				return ((InternalEList<?>)getLinks()).basicRemove(otherEnd, msgs);
 			case OscalMetadataPackage.ROLE__PROPS:
@@ -390,6 +390,8 @@ public class RoleImpl extends MinimalEObjectImpl.Container implements Role {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case OscalMetadataPackage.ROLE__ANNOTATIONS:
+				return getAnnotations();
 			case OscalMetadataPackage.ROLE__ID:
 				return getId();
 			case OscalMetadataPackage.ROLE__TITLE:
@@ -400,8 +402,6 @@ public class RoleImpl extends MinimalEObjectImpl.Container implements Role {
 				return getDescription();
 			case OscalMetadataPackage.ROLE__REMARKS:
 				return getRemarks();
-			case OscalMetadataPackage.ROLE__ANNOTATIONS:
-				return getAnnotations();
 			case OscalMetadataPackage.ROLE__LINKS:
 				return getLinks();
 			case OscalMetadataPackage.ROLE__PROPS:
@@ -419,6 +419,10 @@ public class RoleImpl extends MinimalEObjectImpl.Container implements Role {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case OscalMetadataPackage.ROLE__ANNOTATIONS:
+				getAnnotations().clear();
+				getAnnotations().addAll((Collection<? extends Annotation>)newValue);
+				return;
 			case OscalMetadataPackage.ROLE__ID:
 				setId((String)newValue);
 				return;
@@ -433,10 +437,6 @@ public class RoleImpl extends MinimalEObjectImpl.Container implements Role {
 				return;
 			case OscalMetadataPackage.ROLE__REMARKS:
 				setRemarks((MarkupMultiline)newValue);
-				return;
-			case OscalMetadataPackage.ROLE__ANNOTATIONS:
-				getAnnotations().clear();
-				getAnnotations().addAll((Collection<? extends Annotation>)newValue);
 				return;
 			case OscalMetadataPackage.ROLE__LINKS:
 				getLinks().clear();
@@ -458,6 +458,9 @@ public class RoleImpl extends MinimalEObjectImpl.Container implements Role {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case OscalMetadataPackage.ROLE__ANNOTATIONS:
+				getAnnotations().clear();
+				return;
 			case OscalMetadataPackage.ROLE__ID:
 				setId(ID_EDEFAULT);
 				return;
@@ -472,9 +475,6 @@ public class RoleImpl extends MinimalEObjectImpl.Container implements Role {
 				return;
 			case OscalMetadataPackage.ROLE__REMARKS:
 				setRemarks(REMARKS_EDEFAULT);
-				return;
-			case OscalMetadataPackage.ROLE__ANNOTATIONS:
-				getAnnotations().clear();
 				return;
 			case OscalMetadataPackage.ROLE__LINKS:
 				getLinks().clear();
@@ -494,6 +494,8 @@ public class RoleImpl extends MinimalEObjectImpl.Container implements Role {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case OscalMetadataPackage.ROLE__ANNOTATIONS:
+				return annotations != null && !annotations.isEmpty();
 			case OscalMetadataPackage.ROLE__ID:
 				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
 			case OscalMetadataPackage.ROLE__TITLE:
@@ -504,14 +506,44 @@ public class RoleImpl extends MinimalEObjectImpl.Container implements Role {
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 			case OscalMetadataPackage.ROLE__REMARKS:
 				return REMARKS_EDEFAULT == null ? remarks != null : !REMARKS_EDEFAULT.equals(remarks);
-			case OscalMetadataPackage.ROLE__ANNOTATIONS:
-				return annotations != null && !annotations.isEmpty();
 			case OscalMetadataPackage.ROLE__LINKS:
 				return links != null && !links.isEmpty();
 			case OscalMetadataPackage.ROLE__PROPS:
 				return props != null && !props.isEmpty();
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == AnnotationOwner.class) {
+			switch (derivedFeatureID) {
+				case OscalMetadataPackage.ROLE__ANNOTATIONS: return OscalMetadataPackage.ANNOTATION_OWNER__ANNOTATIONS;
+				default: return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == AnnotationOwner.class) {
+			switch (baseFeatureID) {
+				case OscalMetadataPackage.ANNOTATION_OWNER__ANNOTATIONS: return OscalMetadataPackage.ROLE__ANNOTATIONS;
+				default: return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
 	/**

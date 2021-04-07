@@ -16,6 +16,7 @@
 package dsm.oscal.model.OscalMetadata.impl;
 
 import dsm.oscal.model.OscalMetadata.Annotation;
+import dsm.oscal.model.OscalMetadata.AnnotationOwner;
 import dsm.oscal.model.OscalMetadata.Link;
 import dsm.oscal.model.OscalMetadata.OscalMetadataPackage;
 import dsm.oscal.model.OscalMetadata.Property;
@@ -40,6 +41,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -50,13 +52,13 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.impl.RevisionImpl#getAnnotations <em>Annotations</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.RevisionImpl#getTitle <em>Title</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.RevisionImpl#getPublished <em>Published</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.RevisionImpl#getLastModified <em>Last Modified</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.RevisionImpl#getVersion <em>Version</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.RevisionImpl#getOscalVersion <em>Oscal Version</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.RevisionImpl#getRemarks <em>Remarks</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.impl.RevisionImpl#getAnnotations <em>Annotations</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.RevisionImpl#getLinks <em>Links</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.RevisionImpl#getProps <em>Props</em>}</li>
  * </ul>
@@ -64,6 +66,16 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * @generated
  */
 public class RevisionImpl extends MinimalEObjectImpl.Container implements Revision {
+	/**
+	 * The cached value of the '{@link #getAnnotations() <em>Annotations</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAnnotations()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Annotation> annotations;
+
 	/**
 	 * The default value of the '{@link #getTitle() <em>Title</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -183,16 +195,6 @@ public class RevisionImpl extends MinimalEObjectImpl.Container implements Revisi
 	 * @ordered
 	 */
 	protected MarkupMultiline remarks = REMARKS_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getAnnotations() <em>Annotations</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAnnotations()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Annotation> annotations;
 
 	/**
 	 * The cached value of the '{@link #getLinks() <em>Links</em>}' containment reference list.
@@ -379,7 +381,7 @@ public class RevisionImpl extends MinimalEObjectImpl.Container implements Revisi
 	@Override
 	public EList<Annotation> getAnnotations() {
 		if (annotations == null) {
-			annotations = new EObjectContainmentEList<Annotation>(Annotation.class, this, OscalMetadataPackage.REVISION__ANNOTATIONS);
+			annotations = new EObjectResolvingEList<Annotation>(Annotation.class, this, OscalMetadataPackage.REVISION__ANNOTATIONS);
 		}
 		return annotations;
 	}
@@ -418,8 +420,6 @@ public class RevisionImpl extends MinimalEObjectImpl.Container implements Revisi
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case OscalMetadataPackage.REVISION__ANNOTATIONS:
-				return ((InternalEList<?>)getAnnotations()).basicRemove(otherEnd, msgs);
 			case OscalMetadataPackage.REVISION__LINKS:
 				return ((InternalEList<?>)getLinks()).basicRemove(otherEnd, msgs);
 			case OscalMetadataPackage.REVISION__PROPS:
@@ -436,6 +436,8 @@ public class RevisionImpl extends MinimalEObjectImpl.Container implements Revisi
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case OscalMetadataPackage.REVISION__ANNOTATIONS:
+				return getAnnotations();
 			case OscalMetadataPackage.REVISION__TITLE:
 				return getTitle();
 			case OscalMetadataPackage.REVISION__PUBLISHED:
@@ -448,8 +450,6 @@ public class RevisionImpl extends MinimalEObjectImpl.Container implements Revisi
 				return getOscalVersion();
 			case OscalMetadataPackage.REVISION__REMARKS:
 				return getRemarks();
-			case OscalMetadataPackage.REVISION__ANNOTATIONS:
-				return getAnnotations();
 			case OscalMetadataPackage.REVISION__LINKS:
 				return getLinks();
 			case OscalMetadataPackage.REVISION__PROPS:
@@ -467,6 +467,10 @@ public class RevisionImpl extends MinimalEObjectImpl.Container implements Revisi
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case OscalMetadataPackage.REVISION__ANNOTATIONS:
+				getAnnotations().clear();
+				getAnnotations().addAll((Collection<? extends Annotation>)newValue);
+				return;
 			case OscalMetadataPackage.REVISION__TITLE:
 				setTitle((MarkupLine)newValue);
 				return;
@@ -484,10 +488,6 @@ public class RevisionImpl extends MinimalEObjectImpl.Container implements Revisi
 				return;
 			case OscalMetadataPackage.REVISION__REMARKS:
 				setRemarks((MarkupMultiline)newValue);
-				return;
-			case OscalMetadataPackage.REVISION__ANNOTATIONS:
-				getAnnotations().clear();
-				getAnnotations().addAll((Collection<? extends Annotation>)newValue);
 				return;
 			case OscalMetadataPackage.REVISION__LINKS:
 				getLinks().clear();
@@ -509,6 +509,9 @@ public class RevisionImpl extends MinimalEObjectImpl.Container implements Revisi
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case OscalMetadataPackage.REVISION__ANNOTATIONS:
+				getAnnotations().clear();
+				return;
 			case OscalMetadataPackage.REVISION__TITLE:
 				setTitle(TITLE_EDEFAULT);
 				return;
@@ -526,9 +529,6 @@ public class RevisionImpl extends MinimalEObjectImpl.Container implements Revisi
 				return;
 			case OscalMetadataPackage.REVISION__REMARKS:
 				setRemarks(REMARKS_EDEFAULT);
-				return;
-			case OscalMetadataPackage.REVISION__ANNOTATIONS:
-				getAnnotations().clear();
 				return;
 			case OscalMetadataPackage.REVISION__LINKS:
 				getLinks().clear();
@@ -548,6 +548,8 @@ public class RevisionImpl extends MinimalEObjectImpl.Container implements Revisi
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case OscalMetadataPackage.REVISION__ANNOTATIONS:
+				return annotations != null && !annotations.isEmpty();
 			case OscalMetadataPackage.REVISION__TITLE:
 				return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
 			case OscalMetadataPackage.REVISION__PUBLISHED:
@@ -560,14 +562,44 @@ public class RevisionImpl extends MinimalEObjectImpl.Container implements Revisi
 				return OSCAL_VERSION_EDEFAULT == null ? oscalVersion != null : !OSCAL_VERSION_EDEFAULT.equals(oscalVersion);
 			case OscalMetadataPackage.REVISION__REMARKS:
 				return REMARKS_EDEFAULT == null ? remarks != null : !REMARKS_EDEFAULT.equals(remarks);
-			case OscalMetadataPackage.REVISION__ANNOTATIONS:
-				return annotations != null && !annotations.isEmpty();
 			case OscalMetadataPackage.REVISION__LINKS:
 				return links != null && !links.isEmpty();
 			case OscalMetadataPackage.REVISION__PROPS:
 				return props != null && !props.isEmpty();
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == AnnotationOwner.class) {
+			switch (derivedFeatureID) {
+				case OscalMetadataPackage.REVISION__ANNOTATIONS: return OscalMetadataPackage.ANNOTATION_OWNER__ANNOTATIONS;
+				default: return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == AnnotationOwner.class) {
+			switch (baseFeatureID) {
+				case OscalMetadataPackage.ANNOTATION_OWNER__ANNOTATIONS: return OscalMetadataPackage.REVISION__ANNOTATIONS;
+				default: return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
 	/**

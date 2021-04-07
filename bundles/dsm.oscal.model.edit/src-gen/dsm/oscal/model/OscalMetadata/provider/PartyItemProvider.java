@@ -77,6 +77,7 @@ public class PartyItemProvider
 			super.getPropertyDescriptors(object);
 
 			addUuidPropertyDescriptor(object);
+			addAnnotationsPropertyDescriptor(object);
 			addTypePropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
 			addShortNamePropertyDescriptor(object);
@@ -106,6 +107,28 @@ public class PartyItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Annotations feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAnnotationsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_AnnotationOwner_annotations_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_AnnotationOwner_annotations_feature", "_UI_AnnotationOwner_type"),
+				 OscalMetadataPackage.Literals.ANNOTATION_OWNER__ANNOTATIONS,
+				 true,
+				 false,
+				 true,
+				 null,
 				 null,
 				 null));
 	}
@@ -276,7 +299,6 @@ public class PartyItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(OscalMetadataPackage.Literals.PARTY__ANNOTATIONS);
 			childrenFeatures.add(OscalMetadataPackage.Literals.PARTY__ADDRESSES);
 			childrenFeatures.add(OscalMetadataPackage.Literals.PARTY__LINKS);
 			childrenFeatures.add(OscalMetadataPackage.Literals.PARTY__EXTERNAL_IDS);
@@ -347,7 +369,6 @@ public class PartyItemProvider
 			case OscalMetadataPackage.PARTY__REMARKS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case OscalMetadataPackage.PARTY__ANNOTATIONS:
 			case OscalMetadataPackage.PARTY__ADDRESSES:
 			case OscalMetadataPackage.PARTY__LINKS:
 			case OscalMetadataPackage.PARTY__EXTERNAL_IDS:
@@ -369,11 +390,6 @@ public class PartyItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OscalMetadataPackage.Literals.PARTY__ANNOTATIONS,
-				 OscalMetadataFactory.eINSTANCE.createAnnotation()));
 
 		newChildDescriptors.add
 			(createChildParameter

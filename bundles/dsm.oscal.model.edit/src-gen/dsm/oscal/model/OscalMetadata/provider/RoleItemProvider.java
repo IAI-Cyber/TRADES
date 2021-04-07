@@ -76,6 +76,7 @@ public class RoleItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addAnnotationsPropertyDescriptor(object);
 			addIdPropertyDescriptor(object);
 			addTitlePropertyDescriptor(object);
 			addShortNamePropertyDescriptor(object);
@@ -83,6 +84,28 @@ public class RoleItemProvider
 			addRemarksPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Annotations feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAnnotationsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_AnnotationOwner_annotations_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_AnnotationOwner_annotations_feature", "_UI_AnnotationOwner_type"),
+				 OscalMetadataPackage.Literals.ANNOTATION_OWNER__ANNOTATIONS,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
@@ -207,7 +230,6 @@ public class RoleItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(OscalMetadataPackage.Literals.ROLE__ANNOTATIONS);
 			childrenFeatures.add(OscalMetadataPackage.Literals.ROLE__LINKS);
 			childrenFeatures.add(OscalMetadataPackage.Literals.ROLE__PROPS);
 		}
@@ -272,7 +294,6 @@ public class RoleItemProvider
 			case OscalMetadataPackage.ROLE__REMARKS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case OscalMetadataPackage.ROLE__ANNOTATIONS:
 			case OscalMetadataPackage.ROLE__LINKS:
 			case OscalMetadataPackage.ROLE__PROPS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
@@ -291,11 +312,6 @@ public class RoleItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OscalMetadataPackage.Literals.ROLE__ANNOTATIONS,
-				 OscalMetadataFactory.eINSTANCE.createAnnotation()));
 
 		newChildDescriptors.add
 			(createChildParameter

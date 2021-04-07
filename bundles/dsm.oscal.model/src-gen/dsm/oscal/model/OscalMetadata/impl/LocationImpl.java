@@ -17,6 +17,7 @@ package dsm.oscal.model.OscalMetadata.impl;
 
 import dsm.oscal.model.OscalMetadata.Address;
 import dsm.oscal.model.OscalMetadata.Annotation;
+import dsm.oscal.model.OscalMetadata.AnnotationOwner;
 import dsm.oscal.model.OscalMetadata.Link;
 import dsm.oscal.model.OscalMetadata.Location;
 import dsm.oscal.model.OscalMetadata.OscalMetadataPackage;
@@ -44,6 +45,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -55,11 +57,11 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.LocationImpl#getUuid <em>Uuid</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.impl.LocationImpl#getAnnotations <em>Annotations</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.LocationImpl#getTitle <em>Title</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.LocationImpl#getEmailAddresses <em>Email Addresses</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.LocationImpl#getUrls <em>Urls</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.LocationImpl#getRemarks <em>Remarks</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.impl.LocationImpl#getAnnotations <em>Annotations</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.LocationImpl#getAddress <em>Address</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.LocationImpl#getLinks <em>Links</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.LocationImpl#getTelephoneNumbers <em>Telephone Numbers</em>}</li>
@@ -88,6 +90,16 @@ public class LocationImpl extends MinimalEObjectImpl.Container implements Locati
 	 * @ordered
 	 */
 	protected UUID uuid = UUID_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getAnnotations() <em>Annotations</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAnnotations()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Annotation> annotations;
 
 	/**
 	 * The default value of the '{@link #getTitle() <em>Title</em>}' attribute.
@@ -148,16 +160,6 @@ public class LocationImpl extends MinimalEObjectImpl.Container implements Locati
 	 * @ordered
 	 */
 	protected MarkupMultiline remarks = REMARKS_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getAnnotations() <em>Annotations</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAnnotations()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Annotation> annotations;
 
 	/**
 	 * The cached value of the '{@link #getAddress() <em>Address</em>}' containment reference.
@@ -321,7 +323,7 @@ public class LocationImpl extends MinimalEObjectImpl.Container implements Locati
 	@Override
 	public EList<Annotation> getAnnotations() {
 		if (annotations == null) {
-			annotations = new EObjectContainmentEList<Annotation>(Annotation.class, this, OscalMetadataPackage.LOCATION__ANNOTATIONS);
+			annotations = new EObjectResolvingEList<Annotation>(Annotation.class, this, OscalMetadataPackage.LOCATION__ANNOTATIONS);
 		}
 		return annotations;
 	}
@@ -418,8 +420,6 @@ public class LocationImpl extends MinimalEObjectImpl.Container implements Locati
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case OscalMetadataPackage.LOCATION__ANNOTATIONS:
-				return ((InternalEList<?>)getAnnotations()).basicRemove(otherEnd, msgs);
 			case OscalMetadataPackage.LOCATION__ADDRESS:
 				return basicSetAddress(null, msgs);
 			case OscalMetadataPackage.LOCATION__LINKS:
@@ -442,6 +442,8 @@ public class LocationImpl extends MinimalEObjectImpl.Container implements Locati
 		switch (featureID) {
 			case OscalMetadataPackage.LOCATION__UUID:
 				return getUuid();
+			case OscalMetadataPackage.LOCATION__ANNOTATIONS:
+				return getAnnotations();
 			case OscalMetadataPackage.LOCATION__TITLE:
 				return getTitle();
 			case OscalMetadataPackage.LOCATION__EMAIL_ADDRESSES:
@@ -450,8 +452,6 @@ public class LocationImpl extends MinimalEObjectImpl.Container implements Locati
 				return getUrls();
 			case OscalMetadataPackage.LOCATION__REMARKS:
 				return getRemarks();
-			case OscalMetadataPackage.LOCATION__ANNOTATIONS:
-				return getAnnotations();
 			case OscalMetadataPackage.LOCATION__ADDRESS:
 				return getAddress();
 			case OscalMetadataPackage.LOCATION__LINKS:
@@ -476,6 +476,10 @@ public class LocationImpl extends MinimalEObjectImpl.Container implements Locati
 			case OscalMetadataPackage.LOCATION__UUID:
 				setUuid((UUID)newValue);
 				return;
+			case OscalMetadataPackage.LOCATION__ANNOTATIONS:
+				getAnnotations().clear();
+				getAnnotations().addAll((Collection<? extends Annotation>)newValue);
+				return;
 			case OscalMetadataPackage.LOCATION__TITLE:
 				setTitle((MarkupLine)newValue);
 				return;
@@ -489,10 +493,6 @@ public class LocationImpl extends MinimalEObjectImpl.Container implements Locati
 				return;
 			case OscalMetadataPackage.LOCATION__REMARKS:
 				setRemarks((MarkupMultiline)newValue);
-				return;
-			case OscalMetadataPackage.LOCATION__ANNOTATIONS:
-				getAnnotations().clear();
-				getAnnotations().addAll((Collection<? extends Annotation>)newValue);
 				return;
 			case OscalMetadataPackage.LOCATION__ADDRESS:
 				setAddress((Address)newValue);
@@ -524,6 +524,9 @@ public class LocationImpl extends MinimalEObjectImpl.Container implements Locati
 			case OscalMetadataPackage.LOCATION__UUID:
 				setUuid(UUID_EDEFAULT);
 				return;
+			case OscalMetadataPackage.LOCATION__ANNOTATIONS:
+				getAnnotations().clear();
+				return;
 			case OscalMetadataPackage.LOCATION__TITLE:
 				setTitle(TITLE_EDEFAULT);
 				return;
@@ -535,9 +538,6 @@ public class LocationImpl extends MinimalEObjectImpl.Container implements Locati
 				return;
 			case OscalMetadataPackage.LOCATION__REMARKS:
 				setRemarks(REMARKS_EDEFAULT);
-				return;
-			case OscalMetadataPackage.LOCATION__ANNOTATIONS:
-				getAnnotations().clear();
 				return;
 			case OscalMetadataPackage.LOCATION__ADDRESS:
 				setAddress((Address)null);
@@ -565,6 +565,8 @@ public class LocationImpl extends MinimalEObjectImpl.Container implements Locati
 		switch (featureID) {
 			case OscalMetadataPackage.LOCATION__UUID:
 				return UUID_EDEFAULT == null ? uuid != null : !UUID_EDEFAULT.equals(uuid);
+			case OscalMetadataPackage.LOCATION__ANNOTATIONS:
+				return annotations != null && !annotations.isEmpty();
 			case OscalMetadataPackage.LOCATION__TITLE:
 				return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
 			case OscalMetadataPackage.LOCATION__EMAIL_ADDRESSES:
@@ -573,8 +575,6 @@ public class LocationImpl extends MinimalEObjectImpl.Container implements Locati
 				return urls != null && !urls.isEmpty();
 			case OscalMetadataPackage.LOCATION__REMARKS:
 				return REMARKS_EDEFAULT == null ? remarks != null : !REMARKS_EDEFAULT.equals(remarks);
-			case OscalMetadataPackage.LOCATION__ANNOTATIONS:
-				return annotations != null && !annotations.isEmpty();
 			case OscalMetadataPackage.LOCATION__ADDRESS:
 				return address != null;
 			case OscalMetadataPackage.LOCATION__LINKS:
@@ -600,6 +600,12 @@ public class LocationImpl extends MinimalEObjectImpl.Container implements Locati
 				default: return -1;
 			}
 		}
+		if (baseClass == AnnotationOwner.class) {
+			switch (derivedFeatureID) {
+				case OscalMetadataPackage.LOCATION__ANNOTATIONS: return OscalMetadataPackage.ANNOTATION_OWNER__ANNOTATIONS;
+				default: return -1;
+			}
+		}
 		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
 	}
 
@@ -613,6 +619,12 @@ public class LocationImpl extends MinimalEObjectImpl.Container implements Locati
 		if (baseClass == UUIDElement.class) {
 			switch (baseFeatureID) {
 				case OscalMetadataPackage.UUID_ELEMENT__UUID: return OscalMetadataPackage.LOCATION__UUID;
+				default: return -1;
+			}
+		}
+		if (baseClass == AnnotationOwner.class) {
+			switch (baseFeatureID) {
+				case OscalMetadataPackage.ANNOTATION_OWNER__ANNOTATIONS: return OscalMetadataPackage.LOCATION__ANNOTATIONS;
 				default: return -1;
 			}
 		}

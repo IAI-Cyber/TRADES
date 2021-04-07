@@ -76,6 +76,7 @@ public class BackMatterResourceItemProvider
 			super.getPropertyDescriptors(object);
 
 			addUuidPropertyDescriptor(object);
+			addAnnotationsPropertyDescriptor(object);
 			addTitlePropertyDescriptor(object);
 			addDescriptionPropertyDescriptor(object);
 			addRemarksPropertyDescriptor(object);
@@ -101,6 +102,28 @@ public class BackMatterResourceItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Annotations feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAnnotationsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_AnnotationOwner_annotations_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_AnnotationOwner_annotations_feature", "_UI_AnnotationOwner_type"),
+				 OscalMetadataPackage.Literals.ANNOTATION_OWNER__ANNOTATIONS,
+				 true,
+				 false,
+				 true,
+				 null,
 				 null,
 				 null));
 	}
@@ -183,7 +206,6 @@ public class BackMatterResourceItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(OscalMetadataPackage.Literals.BACK_MATTER_RESOURCE__ANNOTATIONS);
 			childrenFeatures.add(OscalMetadataPackage.Literals.BACK_MATTER_RESOURCE__CITATION);
 			childrenFeatures.add(OscalMetadataPackage.Literals.BACK_MATTER_RESOURCE__RLINKS);
 			childrenFeatures.add(OscalMetadataPackage.Literals.BACK_MATTER_RESOURCE__PROPS);
@@ -251,7 +273,6 @@ public class BackMatterResourceItemProvider
 			case OscalMetadataPackage.BACK_MATTER_RESOURCE__REMARKS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case OscalMetadataPackage.BACK_MATTER_RESOURCE__ANNOTATIONS:
 			case OscalMetadataPackage.BACK_MATTER_RESOURCE__CITATION:
 			case OscalMetadataPackage.BACK_MATTER_RESOURCE__RLINKS:
 			case OscalMetadataPackage.BACK_MATTER_RESOURCE__PROPS:
@@ -273,11 +294,6 @@ public class BackMatterResourceItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OscalMetadataPackage.Literals.BACK_MATTER_RESOURCE__ANNOTATIONS,
-				 OscalMetadataFactory.eINSTANCE.createAnnotation()));
 
 		newChildDescriptors.add
 			(createChildParameter

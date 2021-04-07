@@ -24,6 +24,7 @@ import dsm.oscal.model.OscalCatalogCommon.OscalCatalogCommonFactory;
 
 import dsm.oscal.model.OscalMetadata.OscalMetadataFactory;
 
+import dsm.oscal.model.OscalMetadata.OscalMetadataPackage;
 import dsm.oscal.model.OscalMetadata.provider.OscalEditPlugin;
 
 import java.util.Collection;
@@ -82,11 +83,34 @@ public class ControlItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addAnnotationsPropertyDescriptor(object);
 			addIdPropertyDescriptor(object);
 			addClazzPropertyDescriptor(object);
 			addTitlePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Annotations feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAnnotationsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_AnnotationOwner_annotations_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_AnnotationOwner_annotations_feature", "_UI_AnnotationOwner_type"),
+				 OscalMetadataPackage.Literals.ANNOTATION_OWNER__ANNOTATIONS,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
@@ -167,7 +191,6 @@ public class ControlItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(OscalCatalogPackage.Literals.CONTROL__ANNOTATIONS);
 			childrenFeatures.add(OscalCatalogPackage.Literals.CONTROL__PARAMS);
 			childrenFeatures.add(OscalCatalogPackage.Literals.CONTROL__PARTS);
 			childrenFeatures.add(OscalCatalogPackage.Literals.CONTROL__LINKS);
@@ -233,7 +256,6 @@ public class ControlItemProvider
 			case OscalCatalogPackage.CONTROL__TITLE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case OscalCatalogPackage.CONTROL__ANNOTATIONS:
 			case OscalCatalogPackage.CONTROL__PARAMS:
 			case OscalCatalogPackage.CONTROL__PARTS:
 			case OscalCatalogPackage.CONTROL__LINKS:
@@ -255,11 +277,6 @@ public class ControlItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OscalCatalogPackage.Literals.CONTROL__ANNOTATIONS,
-				 OscalMetadataFactory.eINSTANCE.createAnnotation()));
 
 		newChildDescriptors.add
 			(createChildParameter

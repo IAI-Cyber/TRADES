@@ -23,7 +23,9 @@ import dsm.oscal.model.OscalCatalogCommon.Parameter;
 import dsm.oscal.model.OscalCatalogCommon.Part;
 
 import dsm.oscal.model.OscalMetadata.Annotation;
+import dsm.oscal.model.OscalMetadata.AnnotationOwner;
 import dsm.oscal.model.OscalMetadata.Link;
+import dsm.oscal.model.OscalMetadata.OscalMetadataPackage;
 import dsm.oscal.model.OscalMetadata.Property;
 
 import gov.nist.secauto.metaschema.datatypes.markup.MarkupLine;
@@ -42,6 +44,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -52,10 +55,10 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link dsm.oscal.model.OscalCatalog.impl.GroupImpl#getAnnotations <em>Annotations</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalog.impl.GroupImpl#getId <em>Id</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalog.impl.GroupImpl#getClazz <em>Clazz</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalog.impl.GroupImpl#getTitle <em>Title</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalCatalog.impl.GroupImpl#getAnnotations <em>Annotations</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalog.impl.GroupImpl#getParams <em>Params</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalog.impl.GroupImpl#getParts <em>Parts</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalog.impl.GroupImpl#getLinks <em>Links</em>}</li>
@@ -67,6 +70,16 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * @generated
  */
 public class GroupImpl extends MinimalEObjectImpl.Container implements Group {
+	/**
+	 * The cached value of the '{@link #getAnnotations() <em>Annotations</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAnnotations()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Annotation> annotations;
+
 	/**
 	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -126,16 +139,6 @@ public class GroupImpl extends MinimalEObjectImpl.Container implements Group {
 	 * @ordered
 	 */
 	protected MarkupLine title = TITLE_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getAnnotations() <em>Annotations</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAnnotations()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Annotation> annotations;
 
 	/**
 	 * The cached value of the '{@link #getParams() <em>Params</em>}' containment reference list.
@@ -293,7 +296,7 @@ public class GroupImpl extends MinimalEObjectImpl.Container implements Group {
 	@Override
 	public EList<Annotation> getAnnotations() {
 		if (annotations == null) {
-			annotations = new EObjectContainmentEList<Annotation>(Annotation.class, this, OscalCatalogPackage.GROUP__ANNOTATIONS);
+			annotations = new EObjectResolvingEList<Annotation>(Annotation.class, this, OscalCatalogPackage.GROUP__ANNOTATIONS);
 		}
 		return annotations;
 	}
@@ -384,8 +387,6 @@ public class GroupImpl extends MinimalEObjectImpl.Container implements Group {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case OscalCatalogPackage.GROUP__ANNOTATIONS:
-				return ((InternalEList<?>)getAnnotations()).basicRemove(otherEnd, msgs);
 			case OscalCatalogPackage.GROUP__PARAMS:
 				return ((InternalEList<?>)getParams()).basicRemove(otherEnd, msgs);
 			case OscalCatalogPackage.GROUP__PARTS:
@@ -410,14 +411,14 @@ public class GroupImpl extends MinimalEObjectImpl.Container implements Group {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case OscalCatalogPackage.GROUP__ANNOTATIONS:
+				return getAnnotations();
 			case OscalCatalogPackage.GROUP__ID:
 				return getId();
 			case OscalCatalogPackage.GROUP__CLAZZ:
 				return getClazz();
 			case OscalCatalogPackage.GROUP__TITLE:
 				return getTitle();
-			case OscalCatalogPackage.GROUP__ANNOTATIONS:
-				return getAnnotations();
 			case OscalCatalogPackage.GROUP__PARAMS:
 				return getParams();
 			case OscalCatalogPackage.GROUP__PARTS:
@@ -443,6 +444,10 @@ public class GroupImpl extends MinimalEObjectImpl.Container implements Group {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case OscalCatalogPackage.GROUP__ANNOTATIONS:
+				getAnnotations().clear();
+				getAnnotations().addAll((Collection<? extends Annotation>)newValue);
+				return;
 			case OscalCatalogPackage.GROUP__ID:
 				setId((String)newValue);
 				return;
@@ -451,10 +456,6 @@ public class GroupImpl extends MinimalEObjectImpl.Container implements Group {
 				return;
 			case OscalCatalogPackage.GROUP__TITLE:
 				setTitle((MarkupLine)newValue);
-				return;
-			case OscalCatalogPackage.GROUP__ANNOTATIONS:
-				getAnnotations().clear();
-				getAnnotations().addAll((Collection<? extends Annotation>)newValue);
 				return;
 			case OscalCatalogPackage.GROUP__PARAMS:
 				getParams().clear();
@@ -492,6 +493,9 @@ public class GroupImpl extends MinimalEObjectImpl.Container implements Group {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case OscalCatalogPackage.GROUP__ANNOTATIONS:
+				getAnnotations().clear();
+				return;
 			case OscalCatalogPackage.GROUP__ID:
 				setId(ID_EDEFAULT);
 				return;
@@ -500,9 +504,6 @@ public class GroupImpl extends MinimalEObjectImpl.Container implements Group {
 				return;
 			case OscalCatalogPackage.GROUP__TITLE:
 				setTitle(TITLE_EDEFAULT);
-				return;
-			case OscalCatalogPackage.GROUP__ANNOTATIONS:
-				getAnnotations().clear();
 				return;
 			case OscalCatalogPackage.GROUP__PARAMS:
 				getParams().clear();
@@ -534,14 +535,14 @@ public class GroupImpl extends MinimalEObjectImpl.Container implements Group {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case OscalCatalogPackage.GROUP__ANNOTATIONS:
+				return annotations != null && !annotations.isEmpty();
 			case OscalCatalogPackage.GROUP__ID:
 				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
 			case OscalCatalogPackage.GROUP__CLAZZ:
 				return CLAZZ_EDEFAULT == null ? clazz != null : !CLAZZ_EDEFAULT.equals(clazz);
 			case OscalCatalogPackage.GROUP__TITLE:
 				return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
-			case OscalCatalogPackage.GROUP__ANNOTATIONS:
-				return annotations != null && !annotations.isEmpty();
 			case OscalCatalogPackage.GROUP__PARAMS:
 				return params != null && !params.isEmpty();
 			case OscalCatalogPackage.GROUP__PARTS:
@@ -556,6 +557,38 @@ public class GroupImpl extends MinimalEObjectImpl.Container implements Group {
 				return props != null && !props.isEmpty();
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == AnnotationOwner.class) {
+			switch (derivedFeatureID) {
+				case OscalCatalogPackage.GROUP__ANNOTATIONS: return OscalMetadataPackage.ANNOTATION_OWNER__ANNOTATIONS;
+				default: return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == AnnotationOwner.class) {
+			switch (baseFeatureID) {
+				case OscalMetadataPackage.ANNOTATION_OWNER__ANNOTATIONS: return OscalCatalogPackage.GROUP__ANNOTATIONS;
+				default: return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
 	/**

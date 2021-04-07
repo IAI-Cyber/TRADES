@@ -105,6 +105,7 @@ public class OscalMetadataSwitch<T> extends Switch<T> {
 				T result = caseBackMatterResource(backMatterResource);
 				if (result == null) result = caseOscalElement(backMatterResource);
 				if (result == null) result = caseUUIDElement(backMatterResource);
+				if (result == null) result = caseAnnotationOwner(backMatterResource);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -148,6 +149,7 @@ public class OscalMetadataSwitch<T> extends Switch<T> {
 				T result = caseLocation(location);
 				if (result == null) result = caseOscalElement(location);
 				if (result == null) result = caseUUIDElement(location);
+				if (result == null) result = caseAnnotationOwner(location);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -155,6 +157,7 @@ public class OscalMetadataSwitch<T> extends Switch<T> {
 				Metadata metadata = (Metadata)theEObject;
 				T result = caseMetadata(metadata);
 				if (result == null) result = caseOscalElement(metadata);
+				if (result == null) result = caseAnnotationOwner(metadata);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -163,6 +166,7 @@ public class OscalMetadataSwitch<T> extends Switch<T> {
 				T result = caseParty(party);
 				if (result == null) result = caseOscalElement(party);
 				if (result == null) result = caseUUIDElement(party);
+				if (result == null) result = caseAnnotationOwner(party);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -177,6 +181,7 @@ public class OscalMetadataSwitch<T> extends Switch<T> {
 				ResourceCitation resourceCitation = (ResourceCitation)theEObject;
 				T result = caseResourceCitation(resourceCitation);
 				if (result == null) result = caseOscalElement(resourceCitation);
+				if (result == null) result = caseAnnotationOwner(resourceCitation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -191,6 +196,7 @@ public class OscalMetadataSwitch<T> extends Switch<T> {
 				ResponsibleParty responsibleParty = (ResponsibleParty)theEObject;
 				T result = caseResponsibleParty(responsibleParty);
 				if (result == null) result = caseOscalElement(responsibleParty);
+				if (result == null) result = caseAnnotationOwner(responsibleParty);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -198,6 +204,7 @@ public class OscalMetadataSwitch<T> extends Switch<T> {
 				ResponsibleRole responsibleRole = (ResponsibleRole)theEObject;
 				T result = caseResponsibleRole(responsibleRole);
 				if (result == null) result = caseOscalElement(responsibleRole);
+				if (result == null) result = caseAnnotationOwner(responsibleRole);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -205,6 +212,7 @@ public class OscalMetadataSwitch<T> extends Switch<T> {
 				Revision revision = (Revision)theEObject;
 				T result = caseRevision(revision);
 				if (result == null) result = caseOscalElement(revision);
+				if (result == null) result = caseAnnotationOwner(revision);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -212,6 +220,7 @@ public class OscalMetadataSwitch<T> extends Switch<T> {
 				Role role = (Role)theEObject;
 				T result = caseRole(role);
 				if (result == null) result = caseOscalElement(role);
+				if (result == null) result = caseAnnotationOwner(role);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -231,6 +240,12 @@ public class OscalMetadataSwitch<T> extends Switch<T> {
 			case OscalMetadataPackage.UUID_ELEMENT: {
 				UUIDElement uuidElement = (UUIDElement)theEObject;
 				T result = caseUUIDElement(uuidElement);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case OscalMetadataPackage.ANNOTATION_OWNER: {
+				AnnotationOwner annotationOwner = (AnnotationOwner)theEObject;
+				T result = caseAnnotationOwner(annotationOwner);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -565,6 +580,21 @@ public class OscalMetadataSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseUUIDElement(UUIDElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Annotation Owner</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Annotation Owner</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAnnotationOwner(AnnotationOwner object) {
 		return null;
 	}
 
