@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry exported="true" kind="lib" path="lib/jakarta.activation-2.0.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/jakarta.xml.bind-api-3.0.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/javapoet-1.13.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/jaxb-core-3.0.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/jaxb-impl-3.0.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/metaschema-java-codegen-0.4.0-SNAPSHOT.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/annotations-15.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/commons-lang3-3.11.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/flexmark-0.62.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/flexmark-ext-emoji-0.62.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/flexmark-ext-escaped-character-0.62.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/flexmark-ext-gfm-strikethrough-0.62.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/flexmark-ext-ins-0.62.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/flexmark-ext-superscript-0.62.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/flexmark-ext-tables-0.62.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/flexmark-ext-typographic-0.62.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/flexmark-ext-wikilink-0.62.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/flexmark-html2md-converter-0.62.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/flexmark-jira-converter-0.62.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/flexmark-util-0.62.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/flexmark-util-ast-0.62.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/flexmark-util-builder-0.62.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/flexmark-util-collection-0.62.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/flexmark-util-data-0.62.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/flexmark-util-dependency-0.62.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/flexmark-util-format-0.62.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/flexmark-util-html-0.62.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/flexmark-util-misc-0.62.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/flexmark-util-options-0.62.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/flexmark-util-sequence-0.62.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/flexmark-util-visitor-0.62.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/jackson-annotations-2.12.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/jackson-core-2.12.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/jackson-databind-2.12.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/jackson-dataformat-xml-2.12.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/jackson-dataformat-yaml-2.12.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/jackson-module-jaxb-annotations-2.12.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/jakarta.activation-api-1.2.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/jakarta.xml.bind-api-2.3.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/jsoup-1.11.3.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/liboscal-java-1.0.0rc1-SNAPSHOT.jar" sourcepath="/liboscal-java"/>
+	<classpathentry exported="true" kind="lib" path="lib/log4j-api-2.14.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/log4j-core-2.14.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/log4j-jul-2.14.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/log4j-slf4j-impl-2.14.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/metaschema-java-binding-0.4.0-SNAPSHOT.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/metaschema-java-binding-annotations-0.4.0-SNAPSHOT.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/metaschema-java-datatypes-0.4.0-SNAPSHOT.jar" sourcepath="/metaschema-java-datatypes"/>
+	<classpathentry exported="true" kind="lib" path="lib/metaschema-model-0.4.0-SNAPSHOT.jar" sourcepath="/metaschema-model"/>
+	<classpathentry exported="true" kind="lib" path="lib/slf4j-api-1.7.25.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/snakeyaml-1.27.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/stax2-api-4.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/woodstox-core-6.2.3.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/xmlbeans-3.1.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/xml-resolver-1.2.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-14"/>
+	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="xtend-gen"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

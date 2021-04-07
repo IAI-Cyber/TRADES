@@ -1,0 +1,43 @@
+# Global information
+
+This plugin create and OSGi bundle of https://github.com/usnistgov/liboscal-java.
+
+
+
+[WARNING]
+====
+However since there no official working release this bundle package libraries build locally.
+Here are the reference of the commit and repository used to build the current version.
+When a first release is version use the maven artifacts that will be available online.
+====
+
+## oss-maven 
+
+* Repository: https://github.com/usnistgov/oss-maven
+* Commit: 03252eb24567a57296086e7574fa3016e3f693c4 
+* Command: `mvn clean install`
+
+## metaschema-java
+
+* Main repository; https://github.com/usnistgov/metaschema-java 
+* Repository used since it contains the current dev: https://github.com/david-waltermire-nist/metaschema-java
+* Commit id: 283a324e3bae9557f881458aa2ee4d574335debd
+* Command: `mvn clean install -DskipTests`
+
+[WARNING]
+====
+This is some test failing so I has to skip the tests.
+====
+
+
+## liboscal-jar
+
+* Main repository: https://github.com/usnistgov/liboscal-java
+* Dev repository: https://github.com/david-waltermire-nist/liboscal-java
+* Commit id: 3522903a90b8911d8a57742fc8c7af9d9393621f
+* Command: `mvn -Dlicense.skip clean install`
+
+[WARNING]
+====
+This repository has sub module so do not forget to clone them git submodule update --init --recursive`
+====
