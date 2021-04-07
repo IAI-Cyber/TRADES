@@ -43,8 +43,6 @@ import org.eclipse.xtext.xbase.lib.InputOutput;
 public class ItemProviderGenerator {
   private static final String MARKUP_LINE = "MarkupLineType";
   
-  private static final String MARKUP_MULTILINE = "MarkupMultilneType";
-  
   private Path genFolder;
   
   private Path manFolder;
@@ -399,7 +397,7 @@ public class ItemProviderGenerator {
     if (_tripleNotEquals) {
       final EStructuralFeature feature = genFeature.getEcoreFeature();
       final String featureType = feature.getEType().getName();
-      return (featureType.equals(ItemProviderGenerator.MARKUP_MULTILINE) || featureType.equals(ItemProviderGenerator.MARKUP_LINE));
+      return featureType.equals(ItemProviderGenerator.MARKUP_LINE);
     }
     return false;
   }

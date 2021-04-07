@@ -35,7 +35,6 @@ import java.util.function.BiFunction
 class ItemProviderGenerator {
 
 	static final String MARKUP_LINE = "MarkupLineType"
-	static final String MARKUP_MULTILINE = "MarkupMultilneType"
 
 	Path genFolder
 
@@ -216,7 +215,7 @@ class ItemProviderGenerator {
 		if (genFeature.typeGenDataType !== null) {
 			val feature = genFeature.ecoreFeature
 			val featureType = feature.EType.name;
-			return featureType.equals(MARKUP_MULTILINE) || featureType.equals(MARKUP_LINE);
+			return featureType.equals(MARKUP_LINE);
 		}
 		return false;
 	}
