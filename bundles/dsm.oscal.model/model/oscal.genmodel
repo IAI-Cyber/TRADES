@@ -92,9 +92,6 @@
     <genClasses>
       <ecoreClass href="oscal-metadata.ecore#//BackMatterResource"/>
       <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//BackMatterResource/uuid"/>
-      </genFeatures>
-      <genFeatures createChild="false">
         <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//BackMatterResource/title"/>
       </genFeatures>
       <genFeatures createChild="false" propertyMultiLine="true">
@@ -179,9 +176,6 @@
     <genClasses>
       <ecoreClass href="oscal-metadata.ecore#//Location"/>
       <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//Location/uuid"/>
-      </genFeatures>
-      <genFeatures createChild="false">
         <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//Location/title"/>
       </genFeatures>
       <genFeatures createChild="false">
@@ -259,9 +253,6 @@
     </genClasses>
     <genClasses>
       <ecoreClass href="oscal-metadata.ecore#//Party"/>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//Party/uuid"/>
-      </genFeatures>
       <genFeatures createChild="false">
         <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//Party/type"/>
       </genFeatures>
@@ -455,6 +446,12 @@
     <genClasses image="false">
       <ecoreClass href="oscal-metadata.ecore#//OscalElement"/>
     </genClasses>
+    <genClasses>
+      <ecoreClass href="oscal-metadata.ecore#//UUIDElement"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//UUIDElement/uuid"/>
+      </genFeatures>
+    </genClasses>
   </genPackages>
   <genPackages prefix="OscalCatalogCommon" basePackage="dsm.oscal.model" disposableProviderFactory="true">
     <ecorePackage href="oscal-catalog-common.ecore#/"/>
@@ -571,9 +568,6 @@
     <ecorePackage href="oscal-catalog.ecore#/"/>
     <genClasses>
       <ecoreClass href="oscal-catalog.ecore#//Catalog"/>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-catalog.ecore#//Catalog/uuid"/>
-      </genFeatures>
       <genFeatures property="None" children="true" createChild="true">
         <ecoreFeature xsi:type="ecore:EReference" href="oscal-catalog.ecore#//Catalog/metadata"/>
       </genFeatures>

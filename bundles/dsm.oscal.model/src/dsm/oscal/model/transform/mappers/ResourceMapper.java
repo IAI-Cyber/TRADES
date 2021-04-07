@@ -2,6 +2,7 @@ package dsm.oscal.model.transform.mappers;
 
 import dsm.oscal.model.OscalMetadata.BackMatterResource;
 import dsm.oscal.model.OscalMetadata.OscalMetadataFactory;
+import dsm.oscal.model.transform.MigrationUtils;
 
 public class ResourceMapper
 		extends AbstractObjectMapper<BackMatterResource, gov.nist.secauto.oscal.lib.BackMatter.Resource> {
@@ -52,7 +53,7 @@ public class ResourceMapper
 
 		buildChildList(RLinkMapper.getInstance(), oscalObject.getRlinks(), resource::getRlinks);
 		resource.setTitle(oscalObject.getTitle());
-		resource.setUuid(oscalObject.getUuid());
+		MigrationUtils.setUUID(oscalObject.getUuid(), resource);
 		return resource;
 	}
 

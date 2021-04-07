@@ -2,6 +2,7 @@ package dsm.oscal.model.transform.mappers;
 
 import dsm.oscal.model.OscalCatalog.Catalog;
 import dsm.oscal.model.OscalCatalog.OscalCatalogFactory;
+import dsm.oscal.model.transform.MigrationUtils;
 
 public class CatalogMapper extends AbstractObjectMapper<Catalog, gov.nist.secauto.oscal.lib.Catalog> {
 
@@ -24,7 +25,7 @@ public class CatalogMapper extends AbstractObjectMapper<Catalog, gov.nist.secaut
 
 		Catalog result = OscalCatalogFactory.eINSTANCE.createCatalog();
 
-		result.setUuid(oscalObject.getUuid());
+		MigrationUtils.setUUID(oscalObject.getUuid(), result);
 
 		buildChildList(ControlMapper.getInstance(), oscalObject.getControls(), result::getControls);
 		buildChildList(GroupMapper.getInstance(), oscalObject.getGroups(), result::getGroups);

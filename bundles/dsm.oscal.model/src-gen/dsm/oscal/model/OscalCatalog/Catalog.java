@@ -21,8 +21,7 @@ import dsm.oscal.model.OscalMetadata.BackMatter;
 import dsm.oscal.model.OscalMetadata.Metadata;
 
 import dsm.oscal.model.OscalMetadata.OscalElement;
-import java.util.UUID;
-
+import dsm.oscal.model.OscalMetadata.UUIDElement;
 import org.eclipse.emf.common.util.EList;
 
 /**
@@ -44,7 +43,6 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link dsm.oscal.model.OscalCatalog.Catalog#getUuid <em>Uuid</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalog.Catalog#getMetadata <em>Metadata</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalog.Catalog#getParams <em>Params</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalog.Catalog#getControls <em>Controls</em>}</li>
@@ -56,36 +54,7 @@ import org.eclipse.emf.common.util.EList;
  * @model annotation="Metaschema source='&lt;Metaschema&gt;oscal-catalog.&lt;AssemblyDefinition&gt;catalog'"
  * @generated
  */
-public interface Catalog extends OscalElement {
-	/**
-	 * Returns the value of the '<em><b>Uuid</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * <h1>Catalog Universally Unique Identifier</h1>
-	 * <h2>Description</h2>
-	 * <p>A globally unique identifier for this catalog instance. This UUID should be changed when this document is revised.</p>
-	 * 
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Uuid</em>' attribute.
-	 * @see #setUuid(UUID)
-	 * @see dsm.oscal.model.OscalCatalog.OscalCatalogPackage#getCatalog_Uuid()
-	 * @model dataType="dsm.oscal.model.OscalMetadata.UuidType" required="true"
-	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-catalog.&lt;AssemblyDefinition&gt;catalog.&lt;FlagInstance&gt;uuid'"
-	 * @generated
-	 */
-	UUID getUuid();
-
-	/**
-	 * Sets the value of the '{@link dsm.oscal.model.OscalCatalog.Catalog#getUuid <em>Uuid</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Uuid</em>' attribute.
-	 * @see #getUuid()
-	 * @generated
-	 */
-	void setUuid(UUID value);
-
+public interface Catalog extends OscalElement, UUIDElement {
 	/**
 	 * Returns the value of the '<em><b>Metadata</b></em>' containment reference.
 	 * <!-- begin-user-doc -->

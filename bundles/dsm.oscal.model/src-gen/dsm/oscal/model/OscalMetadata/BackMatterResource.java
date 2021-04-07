@@ -17,9 +17,6 @@ package dsm.oscal.model.OscalMetadata;
 
 import gov.nist.secauto.metaschema.datatypes.markup.MarkupLine;
 import gov.nist.secauto.metaschema.datatypes.markup.MarkupMultiline;
-
-import java.util.UUID;
-
 import org.eclipse.emf.common.util.EList;
 
 /**
@@ -41,7 +38,6 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link dsm.oscal.model.OscalMetadata.BackMatterResource#getUuid <em>Uuid</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.BackMatterResource#getTitle <em>Title</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.BackMatterResource#getDescription <em>Description</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.BackMatterResource#getRemarks <em>Remarks</em>}</li>
@@ -57,36 +53,7 @@ import org.eclipse.emf.common.util.EList;
  * @model annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;AssemblyDefinition&gt;resource'"
  * @generated
  */
-public interface BackMatterResource extends OscalElement {
-	/**
-	 * Returns the value of the '<em><b>Uuid</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * <h1>Resource Universally Unique Identifier</h1>
-	 * <h2>Description</h2>
-	 * <p>A globally unique identifier that can be used to reference this defined resource elsewhere in an OSCAL document. A UUID should be consistantly used for a given resource across revisions of the document.</p>
-	 * 
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Uuid</em>' attribute.
-	 * @see #setUuid(UUID)
-	 * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getBackMatterResource_Uuid()
-	 * @model dataType="dsm.oscal.model.OscalMetadata.UuidType" required="true"
-	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;AssemblyDefinition&gt;resource.&lt;FlagInstance&gt;uuid'"
-	 * @generated
-	 */
-	UUID getUuid();
-
-	/**
-	 * Sets the value of the '{@link dsm.oscal.model.OscalMetadata.BackMatterResource#getUuid <em>Uuid</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Uuid</em>' attribute.
-	 * @see #getUuid()
-	 * @generated
-	 */
-	void setUuid(UUID value);
-
+public interface BackMatterResource extends OscalElement, UUIDElement {
 	/**
 	 * Returns the value of the '<em><b>Title</b></em>' attribute.
 	 * <!-- begin-user-doc -->

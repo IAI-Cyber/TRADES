@@ -37,7 +37,6 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link dsm.oscal.model.OscalMetadata.Party#getUuid <em>Uuid</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.Party#getType <em>Type</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.Party#getName <em>Name</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.Party#getShortName <em>Short Name</em>}</li>
@@ -57,36 +56,7 @@ import org.eclipse.emf.common.util.EList;
  * @model annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;AssemblyDefinition&gt;party'"
  * @generated
  */
-public interface Party extends OscalElement {
-	/**
-	 * Returns the value of the '<em><b>Uuid</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * <h1>Party Universally Unique Identifier</h1>
-	 * <h2>Description</h2>
-	 * <p>A unique identifier that can be used to reference this defined location elsewhere in an OSCAL document. A UUID should be consistantly used for a given party across revisions of the document.</p>
-	 * 
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Uuid</em>' attribute.
-	 * @see #setUuid(UUID)
-	 * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getParty_Uuid()
-	 * @model dataType="dsm.oscal.model.OscalMetadata.UuidType" required="true"
-	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;AssemblyDefinition&gt;party.&lt;FlagInstance&gt;uuid'"
-	 * @generated
-	 */
-	UUID getUuid();
-
-	/**
-	 * Sets the value of the '{@link dsm.oscal.model.OscalMetadata.Party#getUuid <em>Uuid</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Uuid</em>' attribute.
-	 * @see #getUuid()
-	 * @generated
-	 */
-	void setUuid(UUID value);
-
+public interface Party extends OscalElement, UUIDElement {
 	/**
 	 * Returns the value of the '<em><b>Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->

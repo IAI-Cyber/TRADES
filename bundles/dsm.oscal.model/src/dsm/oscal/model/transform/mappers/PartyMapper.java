@@ -2,6 +2,7 @@ package dsm.oscal.model.transform.mappers;
 
 import dsm.oscal.model.OscalMetadata.OscalMetadataFactory;
 import dsm.oscal.model.OscalMetadata.Party;
+import dsm.oscal.model.transform.MigrationUtils;
 
 public class PartyMapper extends AbstractObjectMapper<Party, gov.nist.secauto.oscal.lib.Party> {
 
@@ -65,7 +66,7 @@ public class PartyMapper extends AbstractObjectMapper<Party, gov.nist.secauto.os
 		buildChildList(TelephoneNumberMapper.getInstance(), oscalObject.getTelephoneNumbers(),
 				party::getTelephoneNumbers);
 		party.setType(oscalObject.getType());
-		party.setUuid(oscalObject.getUuid());
+		MigrationUtils.setUUID(oscalObject.getUuid(), party);
 
 		return party;
 	}

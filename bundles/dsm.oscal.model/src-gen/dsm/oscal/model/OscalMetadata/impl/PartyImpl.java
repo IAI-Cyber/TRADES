@@ -24,6 +24,7 @@ import dsm.oscal.model.OscalMetadata.Party;
 import dsm.oscal.model.OscalMetadata.Property;
 import dsm.oscal.model.OscalMetadata.TelephoneNumber;
 
+import dsm.oscal.model.OscalMetadata.UUIDElement;
 import gov.nist.secauto.metaschema.datatypes.markup.MarkupMultiline;
 
 import java.util.Collection;
@@ -732,6 +733,38 @@ public class PartyImpl extends MinimalEObjectImpl.Container implements Party {
 				return telephoneNumbers != null && !telephoneNumbers.isEmpty();
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == UUIDElement.class) {
+			switch (derivedFeatureID) {
+				case OscalMetadataPackage.PARTY__UUID: return OscalMetadataPackage.UUID_ELEMENT__UUID;
+				default: return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == UUIDElement.class) {
+			switch (baseFeatureID) {
+				case OscalMetadataPackage.UUID_ELEMENT__UUID: return OscalMetadataPackage.PARTY__UUID;
+				default: return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
 	/**

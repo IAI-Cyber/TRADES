@@ -391,17 +391,6 @@ public interface OscalCatalogPackage extends EPackage {
 	EClass getCatalog();
 
 	/**
-	 * Returns the meta object for the attribute '{@link dsm.oscal.model.OscalCatalog.Catalog#getUuid <em>Uuid</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Uuid</em>'.
-	 * @see dsm.oscal.model.OscalCatalog.Catalog#getUuid()
-	 * @see #getCatalog()
-	 * @generated
-	 */
-	EAttribute getCatalog_Uuid();
-
-	/**
 	 * Returns the meta object for the containment reference '{@link dsm.oscal.model.OscalCatalog.Catalog#getMetadata <em>Metadata</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -717,14 +706,6 @@ public interface OscalCatalogPackage extends EPackage {
 		 * @generated
 		 */
 		EClass CATALOG = eINSTANCE.getCatalog();
-
-		/**
-		 * The meta object literal for the '<em><b>Uuid</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CATALOG__UUID = eINSTANCE.getCatalog_Uuid();
 
 		/**
 		 * The meta object literal for the '<em><b>Metadata</b></em>' containment reference feature.

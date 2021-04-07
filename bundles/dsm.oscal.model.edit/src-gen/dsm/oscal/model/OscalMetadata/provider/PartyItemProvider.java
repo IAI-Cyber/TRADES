@@ -99,9 +99,9 @@ public class PartyItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Party_uuid_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Party_uuid_feature", "_UI_Party_type"),
-				 OscalMetadataPackage.Literals.PARTY__UUID,
+				 getString("_UI_UUIDElement_uuid_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UUIDElement_uuid_feature", "_UI_UUIDElement_type"),
+				 OscalMetadataPackage.Literals.UUID_ELEMENT__UUID,
 				 true,
 				 false,
 				 false,

@@ -90,7 +90,7 @@ public class OscalMetadataItemProviderAdapterFactory extends OscalMetadataAdapte
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected AddressItemProviderCustomImpl addressItemProvider;
+	protected AddressItemProvider addressItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link dsm.oscal.model.OscalMetadata.Address}.
@@ -101,7 +101,7 @@ public class OscalMetadataItemProviderAdapterFactory extends OscalMetadataAdapte
 	@Override
 	public Adapter createAddressAdapter() {
 		if (addressItemProvider == null) {
-			addressItemProvider = new AddressItemProviderCustomImpl(this);
+			addressItemProvider = new AddressItemProvider(this);
 		}
 
 		return addressItemProvider;
@@ -113,7 +113,7 @@ public class OscalMetadataItemProviderAdapterFactory extends OscalMetadataAdapte
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected AnnotationItemProviderCustomImpl annotationItemProvider;
+	protected AnnotationItemProvider annotationItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link dsm.oscal.model.OscalMetadata.Annotation}.
@@ -124,7 +124,7 @@ public class OscalMetadataItemProviderAdapterFactory extends OscalMetadataAdapte
 	@Override
 	public Adapter createAnnotationAdapter() {
 		if (annotationItemProvider == null) {
-			annotationItemProvider = new AnnotationItemProviderCustomImpl(this);
+			annotationItemProvider = new AnnotationItemProvider(this);
 		}
 
 		return annotationItemProvider;
@@ -136,7 +136,7 @@ public class OscalMetadataItemProviderAdapterFactory extends OscalMetadataAdapte
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected BackMatterItemProviderCustomImpl backMatterItemProvider;
+	protected BackMatterItemProvider backMatterItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link dsm.oscal.model.OscalMetadata.BackMatter}.
@@ -147,7 +147,7 @@ public class OscalMetadataItemProviderAdapterFactory extends OscalMetadataAdapte
 	@Override
 	public Adapter createBackMatterAdapter() {
 		if (backMatterItemProvider == null) {
-			backMatterItemProvider = new BackMatterItemProviderCustomImpl(this);
+			backMatterItemProvider = new BackMatterItemProvider(this);
 		}
 
 		return backMatterItemProvider;
@@ -159,7 +159,7 @@ public class OscalMetadataItemProviderAdapterFactory extends OscalMetadataAdapte
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected BackMatterResourceItemProviderCustomImpl backMatterResourceItemProvider;
+	protected BackMatterResourceItemProvider backMatterResourceItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link dsm.oscal.model.OscalMetadata.BackMatterResource}.
@@ -170,7 +170,7 @@ public class OscalMetadataItemProviderAdapterFactory extends OscalMetadataAdapte
 	@Override
 	public Adapter createBackMatterResourceAdapter() {
 		if (backMatterResourceItemProvider == null) {
-			backMatterResourceItemProvider = new BackMatterResourceItemProviderCustomImpl(this);
+			backMatterResourceItemProvider = new BackMatterResourceItemProvider(this);
 		}
 
 		return backMatterResourceItemProvider;
@@ -274,7 +274,7 @@ public class OscalMetadataItemProviderAdapterFactory extends OscalMetadataAdapte
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected LinkItemProviderCustomImpl linkItemProvider;
+	protected LinkItemProvider linkItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link dsm.oscal.model.OscalMetadata.Link}.
@@ -285,7 +285,7 @@ public class OscalMetadataItemProviderAdapterFactory extends OscalMetadataAdapte
 	@Override
 	public Adapter createLinkAdapter() {
 		if (linkItemProvider == null) {
-			linkItemProvider = new LinkItemProviderCustomImpl(this);
+			linkItemProvider = new LinkItemProvider(this);
 		}
 
 		return linkItemProvider;
@@ -297,7 +297,7 @@ public class OscalMetadataItemProviderAdapterFactory extends OscalMetadataAdapte
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected LocationItemProviderCustomImpl locationItemProvider;
+	protected LocationItemProvider locationItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link dsm.oscal.model.OscalMetadata.Location}.
@@ -308,7 +308,7 @@ public class OscalMetadataItemProviderAdapterFactory extends OscalMetadataAdapte
 	@Override
 	public Adapter createLocationAdapter() {
 		if (locationItemProvider == null) {
-			locationItemProvider = new LocationItemProviderCustomImpl(this);
+			locationItemProvider = new LocationItemProvider(this);
 		}
 
 		return locationItemProvider;
@@ -320,7 +320,7 @@ public class OscalMetadataItemProviderAdapterFactory extends OscalMetadataAdapte
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected MetadataItemProviderCustomImpl metadataItemProvider;
+	protected MetadataItemProvider metadataItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link dsm.oscal.model.OscalMetadata.Metadata}.
@@ -331,7 +331,7 @@ public class OscalMetadataItemProviderAdapterFactory extends OscalMetadataAdapte
 	@Override
 	public Adapter createMetadataAdapter() {
 		if (metadataItemProvider == null) {
-			metadataItemProvider = new MetadataItemProviderCustomImpl(this);
+			metadataItemProvider = new MetadataItemProvider(this);
 		}
 
 		return metadataItemProvider;
@@ -343,7 +343,7 @@ public class OscalMetadataItemProviderAdapterFactory extends OscalMetadataAdapte
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected PartyItemProviderCustomImpl partyItemProvider;
+	protected PartyItemProvider partyItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link dsm.oscal.model.OscalMetadata.Party}.
@@ -354,7 +354,7 @@ public class OscalMetadataItemProviderAdapterFactory extends OscalMetadataAdapte
 	@Override
 	public Adapter createPartyAdapter() {
 		if (partyItemProvider == null) {
-			partyItemProvider = new PartyItemProviderCustomImpl(this);
+			partyItemProvider = new PartyItemProvider(this);
 		}
 
 		return partyItemProvider;
@@ -366,7 +366,7 @@ public class OscalMetadataItemProviderAdapterFactory extends OscalMetadataAdapte
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected PropertyItemProviderCustomImpl propertyItemProvider;
+	protected PropertyItemProvider propertyItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link dsm.oscal.model.OscalMetadata.Property}.
@@ -377,7 +377,7 @@ public class OscalMetadataItemProviderAdapterFactory extends OscalMetadataAdapte
 	@Override
 	public Adapter createPropertyAdapter() {
 		if (propertyItemProvider == null) {
-			propertyItemProvider = new PropertyItemProviderCustomImpl(this);
+			propertyItemProvider = new PropertyItemProvider(this);
 		}
 
 		return propertyItemProvider;
@@ -389,7 +389,7 @@ public class OscalMetadataItemProviderAdapterFactory extends OscalMetadataAdapte
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ResourceCitationItemProviderCustomImpl resourceCitationItemProvider;
+	protected ResourceCitationItemProvider resourceCitationItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link dsm.oscal.model.OscalMetadata.ResourceCitation}.
@@ -400,7 +400,7 @@ public class OscalMetadataItemProviderAdapterFactory extends OscalMetadataAdapte
 	@Override
 	public Adapter createResourceCitationAdapter() {
 		if (resourceCitationItemProvider == null) {
-			resourceCitationItemProvider = new ResourceCitationItemProviderCustomImpl(this);
+			resourceCitationItemProvider = new ResourceCitationItemProvider(this);
 		}
 
 		return resourceCitationItemProvider;
@@ -412,7 +412,7 @@ public class OscalMetadataItemProviderAdapterFactory extends OscalMetadataAdapte
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ResourceRlinkItemProviderCustomImpl resourceRlinkItemProvider;
+	protected ResourceRlinkItemProvider resourceRlinkItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link dsm.oscal.model.OscalMetadata.ResourceRlink}.
@@ -423,7 +423,7 @@ public class OscalMetadataItemProviderAdapterFactory extends OscalMetadataAdapte
 	@Override
 	public Adapter createResourceRlinkAdapter() {
 		if (resourceRlinkItemProvider == null) {
-			resourceRlinkItemProvider = new ResourceRlinkItemProviderCustomImpl(this);
+			resourceRlinkItemProvider = new ResourceRlinkItemProvider(this);
 		}
 
 		return resourceRlinkItemProvider;
@@ -435,7 +435,7 @@ public class OscalMetadataItemProviderAdapterFactory extends OscalMetadataAdapte
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ResponsiblePartyItemProviderCustomImpl responsiblePartyItemProvider;
+	protected ResponsiblePartyItemProvider responsiblePartyItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link dsm.oscal.model.OscalMetadata.ResponsibleParty}.
@@ -446,7 +446,7 @@ public class OscalMetadataItemProviderAdapterFactory extends OscalMetadataAdapte
 	@Override
 	public Adapter createResponsiblePartyAdapter() {
 		if (responsiblePartyItemProvider == null) {
-			responsiblePartyItemProvider = new ResponsiblePartyItemProviderCustomImpl(this);
+			responsiblePartyItemProvider = new ResponsiblePartyItemProvider(this);
 		}
 
 		return responsiblePartyItemProvider;
@@ -481,7 +481,7 @@ public class OscalMetadataItemProviderAdapterFactory extends OscalMetadataAdapte
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected RevisionItemProviderCustomImpl revisionItemProvider;
+	protected RevisionItemProvider revisionItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link dsm.oscal.model.OscalMetadata.Revision}.
@@ -492,7 +492,7 @@ public class OscalMetadataItemProviderAdapterFactory extends OscalMetadataAdapte
 	@Override
 	public Adapter createRevisionAdapter() {
 		if (revisionItemProvider == null) {
-			revisionItemProvider = new RevisionItemProviderCustomImpl(this);
+			revisionItemProvider = new RevisionItemProvider(this);
 		}
 
 		return revisionItemProvider;
@@ -504,7 +504,7 @@ public class OscalMetadataItemProviderAdapterFactory extends OscalMetadataAdapte
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected RoleItemProviderCustomImpl roleItemProvider;
+	protected RoleItemProvider roleItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link dsm.oscal.model.OscalMetadata.Role}.
@@ -515,7 +515,7 @@ public class OscalMetadataItemProviderAdapterFactory extends OscalMetadataAdapte
 	@Override
 	public Adapter createRoleAdapter() {
 		if (roleItemProvider == null) {
-			roleItemProvider = new RoleItemProviderCustomImpl(this);
+			roleItemProvider = new RoleItemProvider(this);
 		}
 
 		return roleItemProvider;
@@ -545,11 +545,35 @@ public class OscalMetadataItemProviderAdapterFactory extends OscalMetadataAdapte
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link dsm.oscal.model.OscalMetadata.UUIDElement} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected UUIDElementItemProvider uuidElementItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link dsm.oscal.model.OscalMetadata.UUIDElement}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createUUIDElementAdapter() {
+		if (uuidElementItemProvider == null) {
+			uuidElementItemProvider = new UUIDElementItemProvider(this);
+		}
+
+		return uuidElementItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ComposeableAdapterFactory getRootAdapterFactory() {
 		return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
 	}
@@ -560,6 +584,7 @@ public class OscalMetadataItemProviderAdapterFactory extends OscalMetadataAdapte
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory) {
 		this.parentAdapterFactory = parentAdapterFactory;
 	}
@@ -608,6 +633,7 @@ public class OscalMetadataItemProviderAdapterFactory extends OscalMetadataAdapte
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void addListener(INotifyChangedListener notifyChangedListener) {
 		changeNotifier.addListener(notifyChangedListener);
 	}
@@ -618,6 +644,7 @@ public class OscalMetadataItemProviderAdapterFactory extends OscalMetadataAdapte
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void removeListener(INotifyChangedListener notifyChangedListener) {
 		changeNotifier.removeListener(notifyChangedListener);
 	}
@@ -628,6 +655,7 @@ public class OscalMetadataItemProviderAdapterFactory extends OscalMetadataAdapte
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void fireNotifyChanged(Notification notification) {
 		changeNotifier.fireNotifyChanged(notification);
 
@@ -642,6 +670,7 @@ public class OscalMetadataItemProviderAdapterFactory extends OscalMetadataAdapte
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void dispose() {
 		if (addressItemProvider != null) addressItemProvider.dispose();
 		if (annotationItemProvider != null) annotationItemProvider.dispose();
@@ -663,6 +692,7 @@ public class OscalMetadataItemProviderAdapterFactory extends OscalMetadataAdapte
 		if (revisionItemProvider != null) revisionItemProvider.dispose();
 		if (roleItemProvider != null) roleItemProvider.dispose();
 		if (telephoneNumberItemProvider != null) telephoneNumberItemProvider.dispose();
+		if (uuidElementItemProvider != null) uuidElementItemProvider.dispose();
 	}
 
 }

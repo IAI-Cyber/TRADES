@@ -138,21 +138,13 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="BackMatterResource" eSuperTypes="//OscalElement">
+  <eClassifiers xsi:type="ecore:EClass" name="BackMatterResource" eSuperTypes="//OscalElement //UUIDElement">
     <eAnnotations source="Metaschema">
       <details key="source" value="&lt;Metaschema>oscal-metadata.&lt;AssemblyDefinition>resource"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="&lt;h1>Resource&lt;/h1>&#xA;&lt;h2>Description&lt;/h2>&#xA;&lt;p>A resource associated with content in the containing document. A resource may be directly included in the document base64 encoded or may point to one or more equavalent internet resources.&lt;/p>&#xA;&lt;h2>Remarks&lt;/h2>&#xA;&lt;p>A resource can be used in two ways. 1) it may point to an specific retrievable network resource using a &lt;code>rlink&lt;/code>, or 2) it may be included as an attachment using a &lt;code>base64&lt;/code>. A resource may contain multiple &lt;code>rlink&lt;/code> and &lt;code>base64&lt;/code> entries that represent alternative download locations (rlink) and attachments (base64) for the same resource. Both rlink and base64 allow for a &lt;code>media-type&lt;/code> to be specified, which is used to distiguish between different representations of the same resource (e.g., Microsoft Word, PDF). When multiple &lt;code>rlink&lt;/code> and &lt;code>base64&lt;/code> items are included for a given resource, all items must contain equivalent information. This allows the document consumer to choose a preferred item to process based on a the selected item's &lt;code>media-type&lt;/code>. This is extremely important when the items represent OSCAL content that is represented in alternate formats (i.e., XML, JSON, YAML), allowing the same OSCAL data to be processed from any of the available formats indicated by the items.&lt;/p>&#xA;&lt;p>When a resource includes a citation, then the &lt;code>title&lt;/code> and &lt;code>citation&lt;/code> properties must both be included.&lt;/p>&#xA;"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="uuid" lowerBound="1" eType="//UuidType">
-      <eAnnotations source="Metaschema">
-        <details key="source" value="&lt;Metaschema>oscal-metadata.&lt;AssemblyDefinition>resource.&lt;FlagInstance>uuid"/>
-      </eAnnotations>
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="&lt;h1>Resource Universally Unique Identifier&lt;/h1>&#xA;&lt;h2>Description&lt;/h2>&#xA;&lt;p>A globally unique identifier that can be used to reference this defined resource elsewhere in an OSCAL document. A UUID should be consistantly used for a given resource across revisions of the document.&lt;/p>&#xA;"/>
-      </eAnnotations>
-    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" eType="//MarkupLineType">
       <eAnnotations source="Metaschema">
         <details key="source" value="&lt;Metaschema>oscal-metadata.&lt;AssemblyDefinition>resource.&lt;FieldInstance>title"/>
@@ -334,21 +326,13 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Location" eSuperTypes="//OscalElement">
+  <eClassifiers xsi:type="ecore:EClass" name="Location" eSuperTypes="//OscalElement //UUIDElement">
     <eAnnotations source="Metaschema">
       <details key="source" value="&lt;Metaschema>oscal-metadata.&lt;AssemblyDefinition>location"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="&lt;h1>Location&lt;/h1>&#xA;&lt;h2>Description&lt;/h2>&#xA;&lt;p>A location, with associated metadata that can be referenced.&lt;/p>&#xA;"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="uuid" lowerBound="1" eType="//UuidType">
-      <eAnnotations source="Metaschema">
-        <details key="source" value="&lt;Metaschema>oscal-metadata.&lt;AssemblyDefinition>location.&lt;FlagInstance>uuid"/>
-      </eAnnotations>
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="&lt;h1>Location Universally Unique Identifier&lt;/h1>&#xA;&lt;h2>Description&lt;/h2>&#xA;&lt;p>A unique identifier that can be used to reference this defined location elsewhere in an OSCAL document. A UUID should be consistantly used for a given location across revisions of the document.&lt;/p>&#xA;"/>
-      </eAnnotations>
-    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" eType="//MarkupLineType">
       <eAnnotations source="Metaschema">
         <details key="source" value="&lt;Metaschema>oscal-metadata.&lt;AssemblyDefinition>location.&lt;FieldInstance>title"/>
@@ -511,21 +495,13 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Party" eSuperTypes="//OscalElement">
+  <eClassifiers xsi:type="ecore:EClass" name="Party" eSuperTypes="//OscalElement //UUIDElement">
     <eAnnotations source="Metaschema">
       <details key="source" value="&lt;Metaschema>oscal-metadata.&lt;AssemblyDefinition>party"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="&lt;h1>Party (organization or person)&lt;/h1>&#xA;&lt;h2>Description&lt;/h2>&#xA;&lt;p>A responsible entity which is either a person or an organization.&lt;/p>&#xA;"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="uuid" lowerBound="1" eType="//UuidType">
-      <eAnnotations source="Metaschema">
-        <details key="source" value="&lt;Metaschema>oscal-metadata.&lt;AssemblyDefinition>party.&lt;FlagInstance>uuid"/>
-      </eAnnotations>
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="&lt;h1>Party Universally Unique Identifier&lt;/h1>&#xA;&lt;h2>Description&lt;/h2>&#xA;&lt;p>A unique identifier that can be used to reference this defined location elsewhere in an OSCAL document. A UUID should be consistantly used for a given party across revisions of the document.&lt;/p>&#xA;"/>
-      </eAnnotations>
-    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1">
       <eAnnotations source="Metaschema">
         <details key="source" value="&lt;Metaschema>oscal-metadata.&lt;AssemblyDefinition>party.&lt;FlagInstance>type"/>
@@ -973,4 +949,11 @@
     </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="OscalElement" abstract="true" interface="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="UUIDElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="uuid" lowerBound="1" eType="//UuidType" iD="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Unique UUID identifying this element"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
 </ecore:EPackage>

@@ -46,6 +46,7 @@ import dsm.oscal.model.OscalMetadata.ResponsibleRole;
 import dsm.oscal.model.OscalMetadata.Revision;
 import dsm.oscal.model.OscalMetadata.Role;
 import dsm.oscal.model.OscalMetadata.TelephoneNumber;
+import dsm.oscal.model.OscalMetadata.UUIDElement;
 import gov.nist.secauto.metaschema.datatypes.Date;
 import gov.nist.secauto.metaschema.datatypes.DateTime;
 import gov.nist.secauto.metaschema.datatypes.IPv4;
@@ -221,6 +222,13 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 * @generated
 	 */
 	private EClass oscalElementEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass uuidElementEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -550,7 +558,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 * @generated
 	 */
 	@Override
-	public EAttribute getBackMatterResource_Uuid() {
+	public EAttribute getBackMatterResource_Title() {
 		return (EAttribute)backMatterResourceEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -560,7 +568,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 * @generated
 	 */
 	@Override
-	public EAttribute getBackMatterResource_Title() {
+	public EAttribute getBackMatterResource_Description() {
 		return (EAttribute)backMatterResourceEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -570,7 +578,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 * @generated
 	 */
 	@Override
-	public EAttribute getBackMatterResource_Description() {
+	public EAttribute getBackMatterResource_Remarks() {
 		return (EAttribute)backMatterResourceEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -580,18 +588,8 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 * @generated
 	 */
 	@Override
-	public EAttribute getBackMatterResource_Remarks() {
-		return (EAttribute)backMatterResourceEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EReference getBackMatterResource_Annotations() {
-		return (EReference)backMatterResourceEClass.getEStructuralFeatures().get(4);
+		return (EReference)backMatterResourceEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -601,7 +599,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 */
 	@Override
 	public EReference getBackMatterResource_Citation() {
-		return (EReference)backMatterResourceEClass.getEStructuralFeatures().get(5);
+		return (EReference)backMatterResourceEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -611,7 +609,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 */
 	@Override
 	public EReference getBackMatterResource_Rlinks() {
-		return (EReference)backMatterResourceEClass.getEStructuralFeatures().get(6);
+		return (EReference)backMatterResourceEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -621,7 +619,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 */
 	@Override
 	public EReference getBackMatterResource_Props() {
-		return (EReference)backMatterResourceEClass.getEStructuralFeatures().get(7);
+		return (EReference)backMatterResourceEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -631,7 +629,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 */
 	@Override
 	public EReference getBackMatterResource_DocumentIds() {
-		return (EReference)backMatterResourceEClass.getEStructuralFeatures().get(8);
+		return (EReference)backMatterResourceEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -641,7 +639,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 */
 	@Override
 	public EReference getBackMatterResource_Base64() {
-		return (EReference)backMatterResourceEClass.getEStructuralFeatures().get(9);
+		return (EReference)backMatterResourceEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -840,7 +838,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 * @generated
 	 */
 	@Override
-	public EAttribute getLocation_Uuid() {
+	public EAttribute getLocation_Title() {
 		return (EAttribute)locationEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -850,7 +848,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 * @generated
 	 */
 	@Override
-	public EAttribute getLocation_Title() {
+	public EAttribute getLocation_EmailAddresses() {
 		return (EAttribute)locationEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -860,7 +858,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 * @generated
 	 */
 	@Override
-	public EAttribute getLocation_EmailAddresses() {
+	public EAttribute getLocation_Urls() {
 		return (EAttribute)locationEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -870,7 +868,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 * @generated
 	 */
 	@Override
-	public EAttribute getLocation_Urls() {
+	public EAttribute getLocation_Remarks() {
 		return (EAttribute)locationEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -880,18 +878,8 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 * @generated
 	 */
 	@Override
-	public EAttribute getLocation_Remarks() {
-		return (EAttribute)locationEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EReference getLocation_Annotations() {
-		return (EReference)locationEClass.getEStructuralFeatures().get(5);
+		return (EReference)locationEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -901,7 +889,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 */
 	@Override
 	public EReference getLocation_Address() {
-		return (EReference)locationEClass.getEStructuralFeatures().get(6);
+		return (EReference)locationEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -911,7 +899,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 */
 	@Override
 	public EReference getLocation_Links() {
-		return (EReference)locationEClass.getEStructuralFeatures().get(7);
+		return (EReference)locationEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -921,7 +909,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 */
 	@Override
 	public EReference getLocation_TelephoneNumbers() {
-		return (EReference)locationEClass.getEStructuralFeatures().get(8);
+		return (EReference)locationEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -931,7 +919,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 */
 	@Override
 	public EReference getLocation_Props() {
-		return (EReference)locationEClass.getEStructuralFeatures().get(9);
+		return (EReference)locationEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -1110,7 +1098,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 * @generated
 	 */
 	@Override
-	public EAttribute getParty_Uuid() {
+	public EAttribute getParty_Type() {
 		return (EAttribute)partyEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -1120,7 +1108,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 * @generated
 	 */
 	@Override
-	public EAttribute getParty_Type() {
+	public EAttribute getParty_Name() {
 		return (EAttribute)partyEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -1130,7 +1118,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 * @generated
 	 */
 	@Override
-	public EAttribute getParty_Name() {
+	public EAttribute getParty_ShortName() {
 		return (EAttribute)partyEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -1140,7 +1128,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 * @generated
 	 */
 	@Override
-	public EAttribute getParty_ShortName() {
+	public EAttribute getParty_EmailAddresses() {
 		return (EAttribute)partyEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -1150,7 +1138,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 * @generated
 	 */
 	@Override
-	public EAttribute getParty_EmailAddresses() {
+	public EAttribute getParty_LocationUuids() {
 		return (EAttribute)partyEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -1160,7 +1148,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 * @generated
 	 */
 	@Override
-	public EAttribute getParty_LocationUuids() {
+	public EAttribute getParty_MemberOfOrganizations() {
 		return (EAttribute)partyEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -1170,7 +1158,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 * @generated
 	 */
 	@Override
-	public EAttribute getParty_MemberOfOrganizations() {
+	public EAttribute getParty_Remarks() {
 		return (EAttribute)partyEClass.getEStructuralFeatures().get(6);
 	}
 
@@ -1180,18 +1168,8 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 * @generated
 	 */
 	@Override
-	public EAttribute getParty_Remarks() {
-		return (EAttribute)partyEClass.getEStructuralFeatures().get(7);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EReference getParty_Annotations() {
-		return (EReference)partyEClass.getEStructuralFeatures().get(8);
+		return (EReference)partyEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -1201,7 +1179,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 */
 	@Override
 	public EReference getParty_Addresses() {
-		return (EReference)partyEClass.getEStructuralFeatures().get(9);
+		return (EReference)partyEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -1211,7 +1189,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 */
 	@Override
 	public EReference getParty_Links() {
-		return (EReference)partyEClass.getEStructuralFeatures().get(10);
+		return (EReference)partyEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -1221,7 +1199,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 */
 	@Override
 	public EReference getParty_ExternalIds() {
-		return (EReference)partyEClass.getEStructuralFeatures().get(11);
+		return (EReference)partyEClass.getEStructuralFeatures().get(10);
 	}
 
 	/**
@@ -1231,7 +1209,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 */
 	@Override
 	public EReference getParty_Props() {
-		return (EReference)partyEClass.getEStructuralFeatures().get(12);
+		return (EReference)partyEClass.getEStructuralFeatures().get(11);
 	}
 
 	/**
@@ -1241,7 +1219,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 */
 	@Override
 	public EReference getParty_TelephoneNumbers() {
-		return (EReference)partyEClass.getEStructuralFeatures().get(13);
+		return (EReference)partyEClass.getEStructuralFeatures().get(12);
 	}
 
 	/**
@@ -1760,6 +1738,26 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 * @generated
 	 */
 	@Override
+	public EClass getUUIDElement() {
+		return uuidElementEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getUUIDElement_Uuid() {
+		return (EAttribute)uuidElementEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EDataType getDateTimeType() {
 		return dateTimeTypeEDataType;
 	}
@@ -1932,7 +1930,6 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 		createEReference(backMatterEClass, BACK_MATTER__RESOURCES);
 
 		backMatterResourceEClass = createEClass(BACK_MATTER_RESOURCE);
-		createEAttribute(backMatterResourceEClass, BACK_MATTER_RESOURCE__UUID);
 		createEAttribute(backMatterResourceEClass, BACK_MATTER_RESOURCE__TITLE);
 		createEAttribute(backMatterResourceEClass, BACK_MATTER_RESOURCE__DESCRIPTION);
 		createEAttribute(backMatterResourceEClass, BACK_MATTER_RESOURCE__REMARKS);
@@ -1967,7 +1964,6 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 		createEAttribute(linkEClass, LINK__TEXT);
 
 		locationEClass = createEClass(LOCATION);
-		createEAttribute(locationEClass, LOCATION__UUID);
 		createEAttribute(locationEClass, LOCATION__TITLE);
 		createEAttribute(locationEClass, LOCATION__EMAIL_ADDRESSES);
 		createEAttribute(locationEClass, LOCATION__URLS);
@@ -1996,7 +1992,6 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 		createEReference(metadataEClass, METADATA__PROPS);
 
 		partyEClass = createEClass(PARTY);
-		createEAttribute(partyEClass, PARTY__UUID);
 		createEAttribute(partyEClass, PARTY__TYPE);
 		createEAttribute(partyEClass, PARTY__NAME);
 		createEAttribute(partyEClass, PARTY__SHORT_NAME);
@@ -2071,6 +2066,9 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 
 		oscalElementEClass = createEClass(OSCAL_ELEMENT);
 
+		uuidElementEClass = createEClass(UUID_ELEMENT);
+		createEAttribute(uuidElementEClass, UUID_ELEMENT__UUID);
+
 		// Create data types
 		dateTypeEDataType = createEDataType(DATE_TYPE);
 		dateWithTzTypeEDataType = createEDataType(DATE_WITH_TZ_TYPE);
@@ -2119,14 +2117,17 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 		annotationEClass.getESuperTypes().add(this.getOscalElement());
 		backMatterEClass.getESuperTypes().add(this.getOscalElement());
 		backMatterResourceEClass.getESuperTypes().add(this.getOscalElement());
+		backMatterResourceEClass.getESuperTypes().add(this.getUUIDElement());
 		base64EClass.getESuperTypes().add(this.getOscalElement());
 		documentIdEClass.getESuperTypes().add(this.getOscalElement());
 		externalIdEClass.getESuperTypes().add(this.getOscalElement());
 		hashEClass.getESuperTypes().add(this.getOscalElement());
 		linkEClass.getESuperTypes().add(this.getOscalElement());
 		locationEClass.getESuperTypes().add(this.getOscalElement());
+		locationEClass.getESuperTypes().add(this.getUUIDElement());
 		metadataEClass.getESuperTypes().add(this.getOscalElement());
 		partyEClass.getESuperTypes().add(this.getOscalElement());
+		partyEClass.getESuperTypes().add(this.getUUIDElement());
 		propertyEClass.getESuperTypes().add(this.getOscalElement());
 		resourceCitationEClass.getESuperTypes().add(this.getOscalElement());
 		resourceRlinkEClass.getESuperTypes().add(this.getOscalElement());
@@ -2156,7 +2157,6 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 		initEReference(getBackMatter_Resources(), this.getBackMatterResource(), null, "resources", null, 0, -1, BackMatter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(backMatterResourceEClass, BackMatterResource.class, "BackMatterResource", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getBackMatterResource_Uuid(), this.getUuidType(), "uuid", null, 1, 1, BackMatterResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getBackMatterResource_Title(), this.getMarkupLineType(), "title", null, 0, 1, BackMatterResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getBackMatterResource_Description(), this.getMarkupMultilineType(), "description", null, 0, 1, BackMatterResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getBackMatterResource_Remarks(), this.getMarkupMultilineType(), "remarks", null, 0, 1, BackMatterResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2191,7 +2191,6 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 		initEAttribute(getLink_Text(), this.getMarkupLineType(), "text", null, 0, 1, Link.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(locationEClass, Location.class, "Location", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getLocation_Uuid(), this.getUuidType(), "uuid", null, 1, 1, Location.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getLocation_Title(), this.getMarkupLineType(), "title", null, 0, 1, Location.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getLocation_EmailAddresses(), ecorePackage.getEString(), "emailAddresses", null, 0, -1, Location.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getLocation_Urls(), this.getUriType(), "urls", null, 0, -1, Location.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2220,7 +2219,6 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 		initEReference(getMetadata_Props(), this.getProperty(), null, "props", null, 0, -1, Metadata.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(partyEClass, Party.class, "Party", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getParty_Uuid(), this.getUuidType(), "uuid", null, 1, 1, Party.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getParty_Type(), ecorePackage.getEString(), "type", null, 1, 1, Party.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getParty_Name(), ecorePackage.getEString(), "name", null, 0, 1, Party.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getParty_ShortName(), ecorePackage.getEString(), "shortName", null, 0, 1, Party.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2294,6 +2292,9 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 		initEAttribute(getTelephoneNumber_Type(), ecorePackage.getEString(), "type", null, 0, 1, TelephoneNumber.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(oscalElementEClass, OscalElement.class, "OscalElement", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(uuidElementEClass, UUIDElement.class, "UUIDElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getUUIDElement_Uuid(), this.getUuidType(), "uuid", null, 1, 1, UUIDElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize data types
 		initEDataType(dateTypeEDataType, Date.class, "DateType", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
@@ -2421,12 +2422,6 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 		   source,
 		   new String[] {
 			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>resource"
-		   });
-		addAnnotation
-		  (getBackMatterResource_Uuid(),
-		   source,
-		   new String[] {
-			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>resource.<FlagInstance>uuid"
 		   });
 		addAnnotation
 		  (getBackMatterResource_Title(),
@@ -2571,12 +2566,6 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 		   source,
 		   new String[] {
 			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>location"
-		   });
-		addAnnotation
-		  (getLocation_Uuid(),
-		   source,
-		   new String[] {
-			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>location.<FlagInstance>uuid"
 		   });
 		addAnnotation
 		  (getLocation_Title(),
@@ -2733,12 +2722,6 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 		   source,
 		   new String[] {
 			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>party"
-		   });
-		addAnnotation
-		  (getParty_Uuid(),
-		   source,
-		   new String[] {
-			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>party.<FlagInstance>uuid"
 		   });
 		addAnnotation
 		  (getParty_Type(),

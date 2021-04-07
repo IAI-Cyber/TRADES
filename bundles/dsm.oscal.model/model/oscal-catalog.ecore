@@ -8,15 +8,7 @@
       <details key="documentation" value="&lt;h1>Catalog&lt;/h1>&#xA;&lt;h2>Description&lt;/h2>&#xA;&lt;p>A collection of controls.&lt;/p>&#xA;&lt;h2>Remarks&lt;/h2>&#xA;&lt;p>Catalogs may use one or more &lt;code>group&lt;/code> objects to subdivide the control contents of a catalog.&lt;/p>&#xA;&lt;p>An OSCAL catalog model provides a structured representation of control information.&lt;/p>&#xA;"/>
     </eAnnotations>
     <eSuperTypes href="oscal-metadata.ecore#//OscalElement"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="uuid" lowerBound="1">
-      <eAnnotations source="Metaschema">
-        <details key="source" value="&lt;Metaschema>oscal-catalog.&lt;AssemblyDefinition>catalog.&lt;FlagInstance>uuid"/>
-      </eAnnotations>
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="&lt;h1>Catalog Universally Unique Identifier&lt;/h1>&#xA;&lt;h2>Description&lt;/h2>&#xA;&lt;p>A globally unique identifier for this catalog instance. This UUID should be changed when this document is revised.&lt;/p>&#xA;"/>
-      </eAnnotations>
-      <eType xsi:type="ecore:EDataType" href="oscal-metadata.ecore#//UuidType"/>
-    </eStructuralFeatures>
+    <eSuperTypes href="oscal-metadata.ecore#//UUIDElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="metadata" lowerBound="1" containment="true">
       <eAnnotations source="Metaschema">
         <details key="source" value="&lt;Metaschema>oscal-metadata.&lt;AssemblyDefinition>metadata"/>

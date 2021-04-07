@@ -90,7 +90,7 @@ public class OscalCatalogCommonItemProviderAdapterFactory extends OscalCatalogCo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ParameterItemProviderCustomImpl parameterItemProvider;
+	protected ParameterItemProvider parameterItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link dsm.oscal.model.OscalCatalogCommon.Parameter}.
@@ -101,7 +101,7 @@ public class OscalCatalogCommonItemProviderAdapterFactory extends OscalCatalogCo
 	@Override
 	public Adapter createParameterAdapter() {
 		if (parameterItemProvider == null) {
-			parameterItemProvider = new ParameterItemProviderCustomImpl(this);
+			parameterItemProvider = new ParameterItemProvider(this);
 		}
 
 		return parameterItemProvider;
@@ -205,7 +205,7 @@ public class OscalCatalogCommonItemProviderAdapterFactory extends OscalCatalogCo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected PartItemProviderCustomImpl partItemProvider;
+	protected PartItemProvider partItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link dsm.oscal.model.OscalCatalogCommon.Part}.
@@ -216,7 +216,7 @@ public class OscalCatalogCommonItemProviderAdapterFactory extends OscalCatalogCo
 	@Override
 	public Adapter createPartAdapter() {
 		if (partItemProvider == null) {
-			partItemProvider = new PartItemProviderCustomImpl(this);
+			partItemProvider = new PartItemProvider(this);
 		}
 
 		return partItemProvider;
@@ -228,6 +228,7 @@ public class OscalCatalogCommonItemProviderAdapterFactory extends OscalCatalogCo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ComposeableAdapterFactory getRootAdapterFactory() {
 		return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
 	}
@@ -238,6 +239,7 @@ public class OscalCatalogCommonItemProviderAdapterFactory extends OscalCatalogCo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory) {
 		this.parentAdapterFactory = parentAdapterFactory;
 	}
@@ -286,6 +288,7 @@ public class OscalCatalogCommonItemProviderAdapterFactory extends OscalCatalogCo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void addListener(INotifyChangedListener notifyChangedListener) {
 		changeNotifier.addListener(notifyChangedListener);
 	}
@@ -296,6 +299,7 @@ public class OscalCatalogCommonItemProviderAdapterFactory extends OscalCatalogCo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void removeListener(INotifyChangedListener notifyChangedListener) {
 		changeNotifier.removeListener(notifyChangedListener);
 	}
@@ -306,6 +310,7 @@ public class OscalCatalogCommonItemProviderAdapterFactory extends OscalCatalogCo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void fireNotifyChanged(Notification notification) {
 		changeNotifier.fireNotifyChanged(notification);
 
@@ -320,6 +325,7 @@ public class OscalCatalogCommonItemProviderAdapterFactory extends OscalCatalogCo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void dispose() {
 		if (parameterItemProvider != null) parameterItemProvider.dispose();
 		if (parameterConstraintItemProvider != null) parameterConstraintItemProvider.dispose();

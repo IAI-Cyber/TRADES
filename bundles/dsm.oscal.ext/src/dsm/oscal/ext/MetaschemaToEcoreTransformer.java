@@ -102,7 +102,6 @@ public class MetaschemaToEcoreTransformer {
 
 	private static final String METASCHEMA_SOURCE = "Metaschema";
 
-	private static final String GEN_MODEL_ANNOT = "http://www.eclipse.org/emf/2002/GenModel";
 
 	private Map<DataType, EDataType> dataTypes = new HashMap<>();
 	private Map<EDataType, DataType> dataTypesReverse = new HashMap<>();
@@ -197,6 +196,8 @@ public class MetaschemaToEcoreTransformer {
 		for (EClass eClass : defToEClass.values()) {
 			eClass.getESuperTypes().add(oscalElement);
 		}
+		
+		new SemanticRefactoring(rootEPackage).refactor(defToEClass.values());
 
 		for (Resource r : rs.getResources()) {
 			try {
@@ -264,24 +265,22 @@ public class MetaschemaToEcoreTransformer {
 				}
 			}
 		}
-		
-		
+
 		System.out.println("* Customizing gen features");
 		for (GenPackage genPackage : genPacks) {
 			for (GenClass genClass : genPackage.getGenClasses()) {
 				if (!genClass.isAbstract() && !genClass.isInterface()) {
-					
+
 					for (GenFeature genFeature : genClass.getGenFeatures()) {
 						if (MarkupMultiline.class.getName().equals(genFeature.getType(genClass))) {
 							System.out.println(genClass.getName() + "." + genFeature.getName());
 							genFeature.setPropertyMultiLine(true);
 						}
 					}
-					
+
 				}
 			}
 		}
-
 
 		try {
 			Resource genModelResource = rs.createResource(
@@ -735,12 +734,6 @@ public class MetaschemaToEcoreTransformer {
 	 * @param def     the documentation owner
 	 */
 	private void setDocumentation(EModelElement element, InfoElementDefinition def) {
-		EAnnotation anotation = element.getEAnnotation(GEN_MODEL_ANNOT);
-		if (anotation == null) {
-			anotation = EcoreFactory.eINSTANCE.createEAnnotation();
-			anotation.setSource(GEN_MODEL_ANNOT);
-			element.getEAnnotations().add(anotation);
-		}
 		String doc = "";
 
 		doc += "<h1>" + def.getFormalName() + "</h1>\n";
@@ -754,8 +747,7 @@ public class MetaschemaToEcoreTransformer {
 			doc += "<h2>Remarks</h2>\n";
 			doc += remarks.toHtml();
 		}
-
-		anotation.getDetails().put("documentation", doc);
+		MigrationEcoreUtils.setDocumentation(element, doc);
 
 	}
 

@@ -24,12 +24,12 @@ import dsm.oscal.model.OscalMetadata.Property;
 import dsm.oscal.model.OscalMetadata.ResourceCitation;
 import dsm.oscal.model.OscalMetadata.ResourceRlink;
 
+import dsm.oscal.model.OscalMetadata.UUIDElement;
 import gov.nist.secauto.metaschema.datatypes.markup.MarkupLine;
 import gov.nist.secauto.metaschema.datatypes.markup.MarkupMultiline;
 
 import java.util.Collection;
 import java.util.UUID;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -635,6 +635,38 @@ public class BackMatterResourceImpl extends MinimalEObjectImpl.Container impleme
 				return base64 != null;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == UUIDElement.class) {
+			switch (derivedFeatureID) {
+				case OscalMetadataPackage.BACK_MATTER_RESOURCE__UUID: return OscalMetadataPackage.UUID_ELEMENT__UUID;
+				default: return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == UUIDElement.class) {
+			switch (baseFeatureID) {
+				case OscalMetadataPackage.UUID_ELEMENT__UUID: return OscalMetadataPackage.BACK_MATTER_RESOURCE__UUID;
+				default: return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
 	/**

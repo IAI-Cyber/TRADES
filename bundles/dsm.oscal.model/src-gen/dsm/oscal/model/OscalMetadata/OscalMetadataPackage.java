@@ -1703,6 +1703,43 @@ public interface OscalMetadataPackage extends EPackage {
 	int TELEPHONE_NUMBER_OPERATION_COUNT = OSCAL_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link dsm.oscal.model.OscalMetadata.impl.UUIDElementImpl <em>UUID Element</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see dsm.oscal.model.OscalMetadata.impl.UUIDElementImpl
+	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getUUIDElement()
+	 * @generated
+	 */
+	int UUID_ELEMENT = 21;
+
+	/**
+	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UUID_ELEMENT__UUID = 0;
+
+	/**
+	 * The number of structural features of the '<em>UUID Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UUID_ELEMENT_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>UUID Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UUID_ELEMENT_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '<em>Date Time Type</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1710,7 +1747,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getDateTimeType()
 	 * @generated
 	 */
-	int DATE_TIME_TYPE = 24;
+	int DATE_TIME_TYPE = 25;
 
 	/**
 	 * The meta object id for the '<em>Date Time With Tz Type</em>' data type.
@@ -1720,7 +1757,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getDateTimeWithTzType()
 	 * @generated
 	 */
-	int DATE_TIME_WITH_TZ_TYPE = 32;
+	int DATE_TIME_WITH_TZ_TYPE = 33;
 
 	/**
 	 * The meta object id for the '<em>Ip V6 Address Type</em>' data type.
@@ -1730,7 +1767,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getIpV6AddressType()
 	 * @generated
 	 */
-	int IP_V6_ADDRESS_TYPE = 33;
+	int IP_V6_ADDRESS_TYPE = 34;
 
 	/**
 	 * The meta object id for the '<em>Ip V4 Address Type</em>' data type.
@@ -1740,7 +1777,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getIpV4AddressType()
 	 * @generated
 	 */
-	int IP_V4_ADDRESS_TYPE = 23;
+	int IP_V4_ADDRESS_TYPE = 24;
 
 	/**
 	 * The meta object id for the '<em>Date With Tz Type</em>' data type.
@@ -1750,7 +1787,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getDateWithTzType()
 	 * @generated
 	 */
-	int DATE_WITH_TZ_TYPE = 22;
+	int DATE_WITH_TZ_TYPE = 23;
 
 	/**
 	 * The meta object id for the '<em>Uuid Type</em>' data type.
@@ -1760,7 +1797,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getUuidType()
 	 * @generated
 	 */
-	int UUID_TYPE = 26;
+	int UUID_TYPE = 27;
 
 	/**
 	 * The meta object id for the '<em>Markup Line Type</em>' data type.
@@ -1770,7 +1807,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getMarkupLineType()
 	 * @generated
 	 */
-	int MARKUP_LINE_TYPE = 29;
+	int MARKUP_LINE_TYPE = 30;
 
 	/**
 	 * The meta object id for the '<em>Date Type</em>' data type.
@@ -1780,7 +1817,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getDateType()
 	 * @generated
 	 */
-	int DATE_TYPE = 21;
+	int DATE_TYPE = 22;
 
 	/**
 	 * The meta object id for the '<em>Uri Reference Type</em>' data type.
@@ -1790,7 +1827,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getUriReferenceType()
 	 * @generated
 	 */
-	int URI_REFERENCE_TYPE = 25;
+	int URI_REFERENCE_TYPE = 26;
 
 	/**
 	 * The meta object id for the '<em>Markup Multiline Type</em>' data type.
@@ -1800,7 +1837,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getMarkupMultilineType()
 	 * @generated
 	 */
-	int MARKUP_MULTILINE_TYPE = 30;
+	int MARKUP_MULTILINE_TYPE = 31;
 
 	/**
 	 * The meta object id for the '<em>Empty Type</em>' data type.
@@ -1810,7 +1847,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getEmptyType()
 	 * @generated
 	 */
-	int EMPTY_TYPE = 31;
+	int EMPTY_TYPE = 32;
 
 	/**
 	 * The meta object id for the '<em>Base64 Type</em>' data type.
@@ -1820,7 +1857,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getBase64Type()
 	 * @generated
 	 */
-	int BASE64_TYPE = 27;
+	int BASE64_TYPE = 28;
 
 	/**
 	 * The meta object id for the '<em>Uri Type</em>' data type.
@@ -1830,7 +1867,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getUriType()
 	 * @generated
 	 */
-	int URI_TYPE = 28;
+	int URI_TYPE = 29;
 
 
 	/**
@@ -2004,17 +2041,6 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getBackMatterResource();
-
-	/**
-	 * Returns the meta object for the attribute '{@link dsm.oscal.model.OscalMetadata.BackMatterResource#getUuid <em>Uuid</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Uuid</em>'.
-	 * @see dsm.oscal.model.OscalMetadata.BackMatterResource#getUuid()
-	 * @see #getBackMatterResource()
-	 * @generated
-	 */
-	EAttribute getBackMatterResource_Uuid();
 
 	/**
 	 * Returns the meta object for the attribute '{@link dsm.oscal.model.OscalMetadata.BackMatterResource#getTitle <em>Title</em>}'.
@@ -2319,17 +2345,6 @@ public interface OscalMetadataPackage extends EPackage {
 	EClass getLocation();
 
 	/**
-	 * Returns the meta object for the attribute '{@link dsm.oscal.model.OscalMetadata.Location#getUuid <em>Uuid</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Uuid</em>'.
-	 * @see dsm.oscal.model.OscalMetadata.Location#getUuid()
-	 * @see #getLocation()
-	 * @generated
-	 */
-	EAttribute getLocation_Uuid();
-
-	/**
 	 * Returns the meta object for the attribute '{@link dsm.oscal.model.OscalMetadata.Location#getTitle <em>Title</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2612,17 +2627,6 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getParty();
-
-	/**
-	 * Returns the meta object for the attribute '{@link dsm.oscal.model.OscalMetadata.Party#getUuid <em>Uuid</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Uuid</em>'.
-	 * @see dsm.oscal.model.OscalMetadata.Party#getUuid()
-	 * @see #getParty()
-	 * @generated
-	 */
-	EAttribute getParty_Uuid();
 
 	/**
 	 * Returns the meta object for the attribute '{@link dsm.oscal.model.OscalMetadata.Party#getType <em>Type</em>}'.
@@ -3320,6 +3324,27 @@ public interface OscalMetadataPackage extends EPackage {
 	EClass getOscalElement();
 
 	/**
+	 * Returns the meta object for class '{@link dsm.oscal.model.OscalMetadata.UUIDElement <em>UUID Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>UUID Element</em>'.
+	 * @see dsm.oscal.model.OscalMetadata.UUIDElement
+	 * @generated
+	 */
+	EClass getUUIDElement();
+
+	/**
+	 * Returns the meta object for the attribute '{@link dsm.oscal.model.OscalMetadata.UUIDElement#getUuid <em>Uuid</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Uuid</em>'.
+	 * @see dsm.oscal.model.OscalMetadata.UUIDElement#getUuid()
+	 * @see #getUUIDElement()
+	 * @generated
+	 */
+	EAttribute getUUIDElement_Uuid();
+
+	/**
 	 * Returns the meta object for data type '{@link gov.nist.secauto.metaschema.datatypes.DateTime <em>Date Time Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3622,14 +3647,6 @@ public interface OscalMetadataPackage extends EPackage {
 		EClass BACK_MATTER_RESOURCE = eINSTANCE.getBackMatterResource();
 
 		/**
-		 * The meta object literal for the '<em><b>Uuid</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute BACK_MATTER_RESOURCE__UUID = eINSTANCE.getBackMatterResource_Uuid();
-
-		/**
 		 * The meta object literal for the '<em><b>Title</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3866,14 +3883,6 @@ public interface OscalMetadataPackage extends EPackage {
 		EClass LOCATION = eINSTANCE.getLocation();
 
 		/**
-		 * The meta object literal for the '<em><b>Uuid</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute LOCATION__UUID = eINSTANCE.getLocation_Uuid();
-
-		/**
 		 * The meta object literal for the '<em><b>Title</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4084,14 +4093,6 @@ public interface OscalMetadataPackage extends EPackage {
 		 * @generated
 		 */
 		EClass PARTY = eINSTANCE.getParty();
-
-		/**
-		 * The meta object literal for the '<em><b>Uuid</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute PARTY__UUID = eINSTANCE.getParty_Uuid();
 
 		/**
 		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
@@ -4622,6 +4623,24 @@ public interface OscalMetadataPackage extends EPackage {
 		 * @generated
 		 */
 		EClass OSCAL_ELEMENT = eINSTANCE.getOscalElement();
+
+		/**
+		 * The meta object literal for the '{@link dsm.oscal.model.OscalMetadata.impl.UUIDElementImpl <em>UUID Element</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see dsm.oscal.model.OscalMetadata.impl.UUIDElementImpl
+		 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getUUIDElement()
+		 * @generated
+		 */
+		EClass UUID_ELEMENT = eINSTANCE.getUUIDElement();
+
+		/**
+		 * The meta object literal for the '<em><b>Uuid</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute UUID_ELEMENT__UUID = eINSTANCE.getUUIDElement_Uuid();
 
 		/**
 		 * The meta object literal for the '<em>Date Time Type</em>' data type.

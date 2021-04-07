@@ -13,29 +13,20 @@
  *  
  * 
  */
-package dsm.oscal.model.OscalCatalog.provider;
+package dsm.oscal.model.OscalMetadata.provider;
 
-
-import dsm.oscal.model.OscalCatalog.Catalog;
-import dsm.oscal.model.OscalCatalog.OscalCatalogFactory;
-import dsm.oscal.model.OscalCatalog.OscalCatalogPackage;
-
-import dsm.oscal.model.OscalCatalogCommon.OscalCatalogCommonFactory;
-
-import dsm.oscal.model.OscalMetadata.OscalMetadataFactory;
 
 import dsm.oscal.model.OscalMetadata.OscalMetadataPackage;
-import dsm.oscal.model.OscalMetadata.provider.OscalEditPlugin;
-
+import dsm.oscal.model.OscalMetadata.UUIDElement;
 import java.util.Collection;
 import java.util.List;
+
 import java.util.UUID;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 
-import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -48,12 +39,12 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link dsm.oscal.model.OscalCatalog.Catalog} object.
+ * This is the item provider adapter for a {@link dsm.oscal.model.OscalMetadata.UUIDElement} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class CatalogItemProvider 
+public class UUIDElementItemProvider 
 	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
@@ -67,7 +58,7 @@ public class CatalogItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CatalogItemProvider(AdapterFactory adapterFactory) {
+	public UUIDElementItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -110,48 +101,14 @@ public class CatalogItemProvider
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
-	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null) {
-			super.getChildrenFeatures(object);
-			childrenFeatures.add(OscalCatalogPackage.Literals.CATALOG__METADATA);
-			childrenFeatures.add(OscalCatalogPackage.Literals.CATALOG__PARAMS);
-			childrenFeatures.add(OscalCatalogPackage.Literals.CATALOG__CONTROLS);
-			childrenFeatures.add(OscalCatalogPackage.Literals.CATALOG__BACK_MATTER);
-			childrenFeatures.add(OscalCatalogPackage.Literals.CATALOG__GROUPS);
-		}
-		return childrenFeatures;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected EStructuralFeature getChildFeature(Object object, Object child) {
-		// Check the type of the specified child object and return the proper feature to use for
-		// adding (see {@link AddCommand}) it as a child.
-
-		return super.getChildFeature(object, child);
-	}
-
-	/**
-	 * This returns Catalog.gif.
+	 * This returns UUIDElement.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Catalog"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/UUIDElement"));
 	}
 
 	/**
@@ -162,11 +119,11 @@ public class CatalogItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		UUID labelValue = ((Catalog)object).getUuid();
+		UUID labelValue = ((UUIDElement)object).getUuid();
 		String label = labelValue == null ? null : labelValue.toString();
 		return label == null || label.length() == 0 ?
-			getString("_UI_Catalog_type") :
-			getString("_UI_Catalog_type") + " " + label;
+			getString("_UI_UUIDElement_type") :
+			getString("_UI_UUIDElement_type") + " " + label;
 	}
 
 
@@ -181,16 +138,9 @@ public class CatalogItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Catalog.class)) {
-			case OscalCatalogPackage.CATALOG__UUID:
+		switch (notification.getFeatureID(UUIDElement.class)) {
+			case OscalMetadataPackage.UUID_ELEMENT__UUID:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-			case OscalCatalogPackage.CATALOG__METADATA:
-			case OscalCatalogPackage.CATALOG__PARAMS:
-			case OscalCatalogPackage.CATALOG__CONTROLS:
-			case OscalCatalogPackage.CATALOG__BACK_MATTER:
-			case OscalCatalogPackage.CATALOG__GROUPS:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
 		super.notifyChanged(notification);
@@ -206,31 +156,6 @@ public class CatalogItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OscalCatalogPackage.Literals.CATALOG__METADATA,
-				 OscalMetadataFactory.eINSTANCE.createMetadata()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OscalCatalogPackage.Literals.CATALOG__PARAMS,
-				 OscalCatalogCommonFactory.eINSTANCE.createParameter()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OscalCatalogPackage.Literals.CATALOG__CONTROLS,
-				 OscalCatalogFactory.eINSTANCE.createControl()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OscalCatalogPackage.Literals.CATALOG__BACK_MATTER,
-				 OscalMetadataFactory.eINSTANCE.createBackMatter()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OscalCatalogPackage.Literals.CATALOG__GROUPS,
-				 OscalCatalogFactory.eINSTANCE.createGroup()));
 	}
 
 	/**

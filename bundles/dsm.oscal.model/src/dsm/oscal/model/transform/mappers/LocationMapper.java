@@ -2,6 +2,7 @@ package dsm.oscal.model.transform.mappers;
 
 import dsm.oscal.model.OscalMetadata.Location;
 import dsm.oscal.model.OscalMetadata.OscalMetadataFactory;
+import dsm.oscal.model.transform.MigrationUtils;
 
 public class LocationMapper extends AbstractObjectMapper<Location, gov.nist.secauto.oscal.lib.Location> {
 
@@ -58,7 +59,7 @@ public class LocationMapper extends AbstractObjectMapper<Location, gov.nist.seca
 		location.setTitle(oscalObject.getTitle());
 
 		setList(oscalObject.getUrls(), location.getUrls());
-		location.setUuid(oscalObject.getUuid());
+		MigrationUtils.setUUID(oscalObject.getUuid(), location);
 		return location;
 	}
 

@@ -150,18 +150,8 @@ public class OscalCatalogPackageImpl extends EPackageImpl implements OscalCatalo
 	 * @generated
 	 */
 	@Override
-	public EAttribute getCatalog_Uuid() {
-		return (EAttribute)catalogEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EReference getCatalog_Metadata() {
-		return (EReference)catalogEClass.getEStructuralFeatures().get(1);
+		return (EReference)catalogEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -171,7 +161,7 @@ public class OscalCatalogPackageImpl extends EPackageImpl implements OscalCatalo
 	 */
 	@Override
 	public EReference getCatalog_Params() {
-		return (EReference)catalogEClass.getEStructuralFeatures().get(2);
+		return (EReference)catalogEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -181,7 +171,7 @@ public class OscalCatalogPackageImpl extends EPackageImpl implements OscalCatalo
 	 */
 	@Override
 	public EReference getCatalog_Controls() {
-		return (EReference)catalogEClass.getEStructuralFeatures().get(3);
+		return (EReference)catalogEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -191,7 +181,7 @@ public class OscalCatalogPackageImpl extends EPackageImpl implements OscalCatalo
 	 */
 	@Override
 	public EReference getCatalog_BackMatter() {
-		return (EReference)catalogEClass.getEStructuralFeatures().get(4);
+		return (EReference)catalogEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -201,7 +191,7 @@ public class OscalCatalogPackageImpl extends EPackageImpl implements OscalCatalo
 	 */
 	@Override
 	public EReference getCatalog_Groups() {
-		return (EReference)catalogEClass.getEStructuralFeatures().get(5);
+		return (EReference)catalogEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -444,7 +434,6 @@ public class OscalCatalogPackageImpl extends EPackageImpl implements OscalCatalo
 
 		// Create classes and their features
 		catalogEClass = createEClass(CATALOG);
-		createEAttribute(catalogEClass, CATALOG__UUID);
 		createEReference(catalogEClass, CATALOG__METADATA);
 		createEReference(catalogEClass, CATALOG__PARAMS);
 		createEReference(catalogEClass, CATALOG__CONTROLS);
@@ -508,12 +497,12 @@ public class OscalCatalogPackageImpl extends EPackageImpl implements OscalCatalo
 
 		// Add supertypes to classes
 		catalogEClass.getESuperTypes().add(theOscalMetadataPackage.getOscalElement());
+		catalogEClass.getESuperTypes().add(theOscalMetadataPackage.getUUIDElement());
 		controlEClass.getESuperTypes().add(theOscalMetadataPackage.getOscalElement());
 		groupEClass.getESuperTypes().add(theOscalMetadataPackage.getOscalElement());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(catalogEClass, Catalog.class, "Catalog", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getCatalog_Uuid(), theOscalMetadataPackage.getUuidType(), "uuid", null, 1, 1, Catalog.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCatalog_Metadata(), theOscalMetadataPackage.getMetadata(), null, "metadata", null, 1, 1, Catalog.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCatalog_Params(), theOscalCatalogCommonPackage.getParameter(), null, "params", null, 0, -1, Catalog.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCatalog_Controls(), this.getControl(), null, "controls", null, 0, -1, Catalog.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -564,12 +553,6 @@ public class OscalCatalogPackageImpl extends EPackageImpl implements OscalCatalo
 		   source,
 		   new String[] {
 			   "source", "<Metaschema>oscal-catalog.<AssemblyDefinition>catalog"
-		   });
-		addAnnotation
-		  (getCatalog_Uuid(),
-		   source,
-		   new String[] {
-			   "source", "<Metaschema>oscal-catalog.<AssemblyDefinition>catalog.<FlagInstance>uuid"
 		   });
 		addAnnotation
 		  (getCatalog_Metadata(),

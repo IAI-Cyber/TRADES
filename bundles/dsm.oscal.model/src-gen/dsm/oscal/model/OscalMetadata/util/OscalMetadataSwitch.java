@@ -104,6 +104,7 @@ public class OscalMetadataSwitch<T> extends Switch<T> {
 				BackMatterResource backMatterResource = (BackMatterResource)theEObject;
 				T result = caseBackMatterResource(backMatterResource);
 				if (result == null) result = caseOscalElement(backMatterResource);
+				if (result == null) result = caseUUIDElement(backMatterResource);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -146,6 +147,7 @@ public class OscalMetadataSwitch<T> extends Switch<T> {
 				Location location = (Location)theEObject;
 				T result = caseLocation(location);
 				if (result == null) result = caseOscalElement(location);
+				if (result == null) result = caseUUIDElement(location);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -160,6 +162,7 @@ public class OscalMetadataSwitch<T> extends Switch<T> {
 				Party party = (Party)theEObject;
 				T result = caseParty(party);
 				if (result == null) result = caseOscalElement(party);
+				if (result == null) result = caseUUIDElement(party);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -222,6 +225,12 @@ public class OscalMetadataSwitch<T> extends Switch<T> {
 			case OscalMetadataPackage.OSCAL_ELEMENT: {
 				OscalElement oscalElement = (OscalElement)theEObject;
 				T result = caseOscalElement(oscalElement);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case OscalMetadataPackage.UUID_ELEMENT: {
+				UUIDElement uuidElement = (UUIDElement)theEObject;
+				T result = caseUUIDElement(uuidElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -541,6 +550,21 @@ public class OscalMetadataSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseOscalElement(OscalElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>UUID Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>UUID Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseUUIDElement(UUIDElement object) {
 		return null;
 	}
 

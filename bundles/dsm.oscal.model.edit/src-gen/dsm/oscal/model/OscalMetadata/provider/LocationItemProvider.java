@@ -19,11 +19,9 @@ package dsm.oscal.model.OscalMetadata.provider;
 import dsm.oscal.model.OscalMetadata.Location;
 import dsm.oscal.model.OscalMetadata.OscalMetadataFactory;
 import dsm.oscal.model.OscalMetadata.OscalMetadataPackage;
-
 import java.util.Collection;
 import java.util.List;
 import java.util.UUID;
-
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
@@ -97,9 +95,9 @@ public class LocationItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Location_uuid_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Location_uuid_feature", "_UI_Location_type"),
-				 OscalMetadataPackage.Literals.LOCATION__UUID,
+				 getString("_UI_UUIDElement_uuid_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UUIDElement_uuid_feature", "_UI_UUIDElement_type"),
+				 OscalMetadataPackage.Literals.UUID_ELEMENT__UUID,
 				 true,
 				 false,
 				 false,
