@@ -189,7 +189,7 @@ public class LocationItemProvider
 				 getString("_UI_PropertyDescriptor_description", "_UI_Location_remarks_feature", "_UI_Location_type"),
 				 OscalMetadataPackage.Literals.LOCATION__REMARKS,
 				 true,
-				 false,
+				 true,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,

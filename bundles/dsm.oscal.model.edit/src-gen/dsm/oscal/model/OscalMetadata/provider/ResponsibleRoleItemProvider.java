@@ -142,7 +142,7 @@ public class ResponsibleRoleItemProvider
 				 getString("_UI_PropertyDescriptor_description", "_UI_ResponsibleRole_remarks_feature", "_UI_ResponsibleRole_type"),
 				 OscalMetadataPackage.Literals.RESPONSIBLE_ROLE__REMARKS,
 				 true,
-				 false,
+				 true,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,

@@ -79,7 +79,7 @@
       <genFeatures createChild="false">
         <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//Annotation/value"/>
       </genFeatures>
-      <genFeatures createChild="false">
+      <genFeatures createChild="false" propertyMultiLine="true">
         <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//Annotation/remarks"/>
       </genFeatures>
     </genClasses>
@@ -97,10 +97,10 @@
       <genFeatures createChild="false">
         <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//BackMatterResource/title"/>
       </genFeatures>
-      <genFeatures createChild="false">
+      <genFeatures createChild="false" propertyMultiLine="true">
         <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//BackMatterResource/description"/>
       </genFeatures>
-      <genFeatures createChild="false">
+      <genFeatures createChild="false" propertyMultiLine="true">
         <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//BackMatterResource/remarks"/>
       </genFeatures>
       <genFeatures property="None" children="true" createChild="true">
@@ -190,7 +190,7 @@
       <genFeatures createChild="false">
         <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//Location/urls"/>
       </genFeatures>
-      <genFeatures createChild="false">
+      <genFeatures createChild="false" propertyMultiLine="true">
         <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//Location/remarks"/>
       </genFeatures>
       <genFeatures property="None" children="true" createChild="true">
@@ -226,7 +226,7 @@
       <genFeatures createChild="false">
         <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//Metadata/oscalVersion"/>
       </genFeatures>
-      <genFeatures createChild="false">
+      <genFeatures createChild="false" propertyMultiLine="true">
         <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//Metadata/remarks"/>
       </genFeatures>
       <genFeatures property="None" children="true" createChild="true">
@@ -280,7 +280,7 @@
       <genFeatures createChild="false">
         <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//Party/memberOfOrganizations"/>
       </genFeatures>
-      <genFeatures createChild="false">
+      <genFeatures createChild="false" propertyMultiLine="true">
         <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//Party/remarks"/>
       </genFeatures>
       <genFeatures property="None" children="true" createChild="true">
@@ -352,7 +352,7 @@
       <genFeatures createChild="false">
         <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//ResponsibleParty/partyUuids"/>
       </genFeatures>
-      <genFeatures createChild="false">
+      <genFeatures createChild="false" propertyMultiLine="true">
         <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//ResponsibleParty/remarks"/>
       </genFeatures>
       <genFeatures property="None" children="true" createChild="true">
@@ -373,7 +373,7 @@
       <genFeatures createChild="false">
         <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//ResponsibleRole/partyUuids"/>
       </genFeatures>
-      <genFeatures createChild="false">
+      <genFeatures createChild="false" propertyMultiLine="true">
         <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//ResponsibleRole/remarks"/>
       </genFeatures>
       <genFeatures property="None" children="true" createChild="true">
@@ -403,7 +403,7 @@
       <genFeatures createChild="false">
         <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//Revision/oscalVersion"/>
       </genFeatures>
-      <genFeatures createChild="false">
+      <genFeatures createChild="false" propertyMultiLine="true">
         <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//Revision/remarks"/>
       </genFeatures>
       <genFeatures property="None" children="true" createChild="true">
@@ -427,10 +427,10 @@
       <genFeatures createChild="false">
         <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//Role/shortName"/>
       </genFeatures>
-      <genFeatures createChild="false">
+      <genFeatures createChild="false" propertyMultiLine="true">
         <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//Role/description"/>
       </genFeatures>
-      <genFeatures createChild="false">
+      <genFeatures createChild="false" propertyMultiLine="true">
         <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//Role/remarks"/>
       </genFeatures>
       <genFeatures property="None" children="true" createChild="true">
@@ -472,13 +472,13 @@
       <genFeatures createChild="false">
         <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-catalog-common.ecore#//Parameter/label"/>
       </genFeatures>
-      <genFeatures createChild="false">
+      <genFeatures createChild="false" propertyMultiLine="true">
         <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-catalog-common.ecore#//Parameter/usage"/>
       </genFeatures>
       <genFeatures createChild="false">
         <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-catalog-common.ecore#//Parameter/values"/>
       </genFeatures>
-      <genFeatures createChild="false">
+      <genFeatures createChild="false" propertyMultiLine="true">
         <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-catalog-common.ecore#//Parameter/remarks"/>
       </genFeatures>
       <genFeatures property="None" children="true" createChild="true">
@@ -502,7 +502,7 @@
     </genClasses>
     <genClasses>
       <ecoreClass href="oscal-catalog-common.ecore#//ParameterConstraint"/>
-      <genFeatures createChild="false">
+      <genFeatures createChild="false" propertyMultiLine="true">
         <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-catalog-common.ecore#//ParameterConstraint/description"/>
       </genFeatures>
       <genFeatures property="None" children="true" createChild="true">
@@ -514,13 +514,13 @@
       <genFeatures createChild="false">
         <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-catalog-common.ecore#//ParameterConstraintTest/expression"/>
       </genFeatures>
-      <genFeatures createChild="false">
+      <genFeatures createChild="false" propertyMultiLine="true">
         <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-catalog-common.ecore#//ParameterConstraintTest/remarks"/>
       </genFeatures>
     </genClasses>
     <genClasses>
       <ecoreClass href="oscal-catalog-common.ecore#//ParameterGuideline"/>
-      <genFeatures createChild="false">
+      <genFeatures createChild="false" propertyMultiLine="true">
         <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-catalog-common.ecore#//ParameterGuideline/prose"/>
       </genFeatures>
     </genClasses>
@@ -550,7 +550,7 @@
       <genFeatures createChild="false">
         <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-catalog-common.ecore#//Part/title"/>
       </genFeatures>
-      <genFeatures createChild="false">
+      <genFeatures createChild="false" propertyMultiLine="true">
         <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-catalog-common.ecore#//Part/prose"/>
       </genFeatures>
       <genFeatures property="None" children="true" createChild="true">

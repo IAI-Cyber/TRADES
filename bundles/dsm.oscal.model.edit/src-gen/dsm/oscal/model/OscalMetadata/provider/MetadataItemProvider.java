@@ -213,7 +213,7 @@ public class MetadataItemProvider
 				 getString("_UI_PropertyDescriptor_description", "_UI_Metadata_remarks_feature", "_UI_Metadata_type"),
 				 OscalMetadataPackage.Literals.METADATA__REMARKS,
 				 true,
-				 false,
+				 true,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,

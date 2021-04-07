@@ -118,7 +118,7 @@ public class ParameterConstraintTestItemProvider
 				 getString("_UI_PropertyDescriptor_description", "_UI_ParameterConstraintTest_remarks_feature", "_UI_ParameterConstraintTest_type"),
 				 OscalCatalogCommonPackage.Literals.PARAMETER_CONSTRAINT_TEST__REMARKS,
 				 true,
-				 false,
+				 true,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,

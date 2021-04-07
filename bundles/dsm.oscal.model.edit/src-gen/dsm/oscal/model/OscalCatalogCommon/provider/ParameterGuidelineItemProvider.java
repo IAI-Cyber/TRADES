@@ -97,7 +97,7 @@ public class ParameterGuidelineItemProvider
 				 getString("_UI_PropertyDescriptor_description", "_UI_ParameterGuideline_prose_feature", "_UI_ParameterGuideline_type"),
 				 OscalCatalogCommonPackage.Literals.PARAMETER_GUIDELINE__PROSE,
 				 true,
-				 false,
+				 true,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,

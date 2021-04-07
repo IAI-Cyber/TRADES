@@ -215,7 +215,7 @@ public class PartItemProvider
 				 getString("_UI_PropertyDescriptor_description", "_UI_Part_prose_feature", "_UI_Part_type"),
 				 OscalCatalogCommonPackage.Literals.PART__PROSE,
 				 true,
-				 false,
+				 true,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,

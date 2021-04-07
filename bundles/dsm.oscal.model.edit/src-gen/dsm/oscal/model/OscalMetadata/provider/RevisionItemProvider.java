@@ -213,7 +213,7 @@ public class RevisionItemProvider
 				 getString("_UI_PropertyDescriptor_description", "_UI_Revision_remarks_feature", "_UI_Revision_type"),
 				 OscalMetadataPackage.Literals.REVISION__REMARKS,
 				 true,
-				 false,
+				 true,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,

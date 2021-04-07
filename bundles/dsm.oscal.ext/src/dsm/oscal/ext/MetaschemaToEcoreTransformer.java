@@ -31,6 +31,7 @@ import java.util.function.BiFunction;
 
 import org.eclipse.emf.codegen.ecore.genmodel.GenClass;
 import org.eclipse.emf.codegen.ecore.genmodel.GenDataType;
+import org.eclipse.emf.codegen.ecore.genmodel.GenFeature;
 import org.eclipse.emf.codegen.ecore.genmodel.GenJDKLevel;
 import org.eclipse.emf.codegen.ecore.genmodel.GenModel;
 import org.eclipse.emf.codegen.ecore.genmodel.GenModelFactory;
@@ -115,7 +116,7 @@ public class MetaschemaToEcoreTransformer {
 	private ResourceSetImpl rs;
 
 	private EPackage rootEPackage = null;
-	
+
 	private BiFunction<String, String, String> imageProvider;
 
 	/**
@@ -263,6 +264,24 @@ public class MetaschemaToEcoreTransformer {
 				}
 			}
 		}
+		
+		
+		System.out.println("* Customizing gen features");
+		for (GenPackage genPackage : genPacks) {
+			for (GenClass genClass : genPackage.getGenClasses()) {
+				if (!genClass.isAbstract() && !genClass.isInterface()) {
+					
+					for (GenFeature genFeature : genClass.getGenFeatures()) {
+						if (MarkupMultiline.class.getName().equals(genFeature.getType(genClass))) {
+							System.out.println(genClass.getName() + "." + genFeature.getName());
+							genFeature.setPropertyMultiLine(true);
+						}
+					}
+					
+				}
+			}
+		}
+
 
 		try {
 			Resource genModelResource = rs.createResource(
@@ -279,11 +298,13 @@ public class MetaschemaToEcoreTransformer {
 		Path manEditGenFolder = srcEditGenFolder.getParent().resolve("src-man");
 		ItemProviderGenerator itemProviderGenerator = new ItemProviderGenerator(srcEditGenFolder, manEditGenFolder,
 				JAVA_HEADER, imageProvider);
-
+		System.out.println("* Generating custom item providers");
 		for (GenPackage genPackage : genPacks) {
 			for (GenClass genClass : genPackage.getGenClasses()) {
 				if (!genClass.isAbstract() && !genClass.isInterface()) {
+
 					itemProviderGenerator.generate((GenClassImpl) genClass);
+
 				}
 			}
 		}
@@ -297,7 +318,6 @@ public class MetaschemaToEcoreTransformer {
 			return;
 		}
 
-		System.out.println("Transforming " + schemaURI);
 		XmlMetaschema schema = loader.loadXmlMetaschema(schemaURI.toURL());
 
 		// First import all dependent schemas

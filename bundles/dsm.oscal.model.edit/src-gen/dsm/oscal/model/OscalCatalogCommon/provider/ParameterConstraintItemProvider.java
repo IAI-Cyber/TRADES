@@ -100,7 +100,7 @@ public class ParameterConstraintItemProvider
 				 getString("_UI_PropertyDescriptor_description", "_UI_ParameterConstraint_description_feature", "_UI_ParameterConstraint_type"),
 				 OscalCatalogCommonPackage.Literals.PARAMETER_CONSTRAINT__DESCRIPTION,
 				 true,
-				 false,
+				 true,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,

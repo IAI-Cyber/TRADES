@@ -142,7 +142,7 @@ public class ResponsiblePartyItemProvider
 				 getString("_UI_PropertyDescriptor_description", "_UI_ResponsibleParty_remarks_feature", "_UI_ResponsibleParty_type"),
 				 OscalMetadataPackage.Literals.RESPONSIBLE_PARTY__REMARKS,
 				 true,
-				 false,
+				 true,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,

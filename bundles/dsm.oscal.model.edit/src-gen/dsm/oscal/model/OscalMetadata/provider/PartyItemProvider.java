@@ -257,7 +257,7 @@ public class PartyItemProvider
 				 getString("_UI_PropertyDescriptor_description", "_UI_Party_remarks_feature", "_UI_Party_type"),
 				 OscalMetadataPackage.Literals.PARTY__REMARKS,
 				 true,
-				 false,
+				 true,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
