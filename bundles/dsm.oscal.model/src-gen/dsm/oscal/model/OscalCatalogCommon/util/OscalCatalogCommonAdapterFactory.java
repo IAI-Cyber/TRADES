@@ -17,6 +17,7 @@ package dsm.oscal.model.OscalCatalogCommon.util;
 
 import dsm.oscal.model.OscalCatalogCommon.*;
 
+import dsm.oscal.model.OscalMetadata.OscalElement;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 
@@ -103,6 +104,10 @@ public class OscalCatalogCommonAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter casePart(Part object) {
 				return createPartAdapter();
+			}
+			@Override
+			public Adapter caseOscalElement(OscalElement object) {
+				return createOscalElementAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -205,6 +210,20 @@ public class OscalCatalogCommonAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createPartAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link dsm.oscal.model.OscalMetadata.OscalElement <em>Oscal Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see dsm.oscal.model.OscalMetadata.OscalElement
+	 * @generated
+	 */
+	public Adapter createOscalElementAdapter() {
 		return null;
 	}
 

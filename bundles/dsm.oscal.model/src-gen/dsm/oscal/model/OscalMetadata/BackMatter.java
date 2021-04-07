@@ -17,8 +17,6 @@ package dsm.oscal.model.OscalMetadata;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Back Matter</b></em>'.
@@ -44,7 +42,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;AssemblyDefinition&gt;back-matter'"
  * @generated
  */
-public interface BackMatter extends EObject {
+public interface BackMatter extends OscalElement {
 	/**
 	 * Returns the value of the '<em><b>Resources</b></em>' containment reference list.
 	 * The list contents are of type {@link dsm.oscal.model.OscalMetadata.BackMatterResource}.

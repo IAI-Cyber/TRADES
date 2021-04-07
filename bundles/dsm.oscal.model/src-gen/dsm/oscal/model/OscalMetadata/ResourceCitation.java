@@ -19,8 +19,6 @@ import gov.nist.secauto.metaschema.datatypes.markup.MarkupLine;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Resource Citation</b></em>'.
@@ -49,7 +47,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;AssemblyDefinition&gt;citation'"
  * @generated
  */
-public interface ResourceCitation extends EObject {
+public interface ResourceCitation extends OscalElement {
 	/**
 	 * Returns the value of the '<em><b>Text</b></em>' attribute.
 	 * <!-- begin-user-doc -->

@@ -15,9 +15,8 @@
  */
 package dsm.oscal.model.OscalCatalogCommon;
 
+import dsm.oscal.model.OscalMetadata.OscalElement;
 import gov.nist.secauto.metaschema.datatypes.markup.MarkupMultiline;
-
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -42,7 +41,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model annotation="Metaschema source='&lt;Metaschema&gt;oscal-catalog-common.&lt;AssemblyDefinition&gt;parameter-guideline'"
  * @generated
  */
-public interface ParameterGuideline extends EObject {
+public interface ParameterGuideline extends OscalElement {
 	/**
 	 * Returns the value of the '<em><b>Prose</b></em>' attribute.
 	 * <!-- begin-user-doc -->

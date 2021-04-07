@@ -20,11 +20,10 @@ import dsm.oscal.model.OscalCatalogCommon.Parameter;
 import dsm.oscal.model.OscalMetadata.BackMatter;
 import dsm.oscal.model.OscalMetadata.Metadata;
 
+import dsm.oscal.model.OscalMetadata.OscalElement;
 import java.util.UUID;
 
 import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -57,7 +56,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model annotation="Metaschema source='&lt;Metaschema&gt;oscal-catalog.&lt;AssemblyDefinition&gt;catalog'"
  * @generated
  */
-public interface Catalog extends EObject {
+public interface Catalog extends OscalElement {
 	/**
 	 * Returns the value of the '<em><b>Uuid</b></em>' attribute.
 	 * <!-- begin-user-doc -->

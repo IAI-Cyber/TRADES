@@ -20,8 +20,6 @@ import gov.nist.secauto.metaschema.datatypes.markup.MarkupMultiline;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Role</b></em>'.
@@ -54,7 +52,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;AssemblyDefinition&gt;role'"
  * @generated
  */
-public interface Role extends EObject {
+public interface Role extends OscalElement {
 	/**
 	 * Returns the value of the '<em><b>Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->

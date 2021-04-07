@@ -19,8 +19,6 @@ import gov.nist.secauto.metaschema.datatypes.markup.MarkupLine;
 
 import java.net.URI;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Link</b></em>'.
@@ -50,7 +48,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;AssemblyDefinition&gt;link'"
  * @generated
  */
-public interface Link extends EObject {
+public interface Link extends OscalElement {
 	/**
 	 * Returns the value of the '<em><b>EHref</b></em>' attribute.
 	 * <!-- begin-user-doc -->

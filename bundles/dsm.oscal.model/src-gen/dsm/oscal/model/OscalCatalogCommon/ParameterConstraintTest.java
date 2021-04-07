@@ -15,9 +15,8 @@
  */
 package dsm.oscal.model.OscalCatalogCommon;
 
+import dsm.oscal.model.OscalMetadata.OscalElement;
 import gov.nist.secauto.metaschema.datatypes.markup.MarkupMultiline;
-
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -43,7 +42,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model annotation="Metaschema source='&lt;Metaschema&gt;oscal-catalog-common.&lt;AssemblyDefinition&gt;test'"
  * @generated
  */
-public interface ParameterConstraintTest extends EObject {
+public interface ParameterConstraintTest extends OscalElement {
 	/**
 	 * Returns the value of the '<em><b>Expression</b></em>' attribute.
 	 * <!-- begin-user-doc -->

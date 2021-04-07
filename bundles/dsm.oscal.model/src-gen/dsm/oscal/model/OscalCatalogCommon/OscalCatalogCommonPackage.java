@@ -15,6 +15,7 @@
  */
 package dsm.oscal.model.OscalCatalogCommon;
 
+import dsm.oscal.model.OscalMetadata.OscalMetadataPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
@@ -86,7 +87,7 @@ public interface OscalCatalogCommonPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER__ID = 0;
+	int PARAMETER__ID = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Clazz</b></em>' attribute.
@@ -95,7 +96,7 @@ public interface OscalCatalogCommonPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER__CLAZZ = 1;
+	int PARAMETER__CLAZZ = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Depends On</b></em>' attribute.
@@ -104,7 +105,7 @@ public interface OscalCatalogCommonPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER__DEPENDS_ON = 2;
+	int PARAMETER__DEPENDS_ON = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Label</b></em>' attribute.
@@ -113,7 +114,7 @@ public interface OscalCatalogCommonPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER__LABEL = 3;
+	int PARAMETER__LABEL = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Usage</b></em>' attribute.
@@ -122,7 +123,7 @@ public interface OscalCatalogCommonPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER__USAGE = 4;
+	int PARAMETER__USAGE = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Values</b></em>' attribute list.
@@ -131,7 +132,7 @@ public interface OscalCatalogCommonPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER__VALUES = 5;
+	int PARAMETER__VALUES = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Remarks</b></em>' attribute.
@@ -140,7 +141,7 @@ public interface OscalCatalogCommonPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER__REMARKS = 6;
+	int PARAMETER__REMARKS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
@@ -149,7 +150,7 @@ public interface OscalCatalogCommonPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER__ANNOTATIONS = 7;
+	int PARAMETER__ANNOTATIONS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Select</b></em>' containment reference.
@@ -158,7 +159,7 @@ public interface OscalCatalogCommonPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER__SELECT = 8;
+	int PARAMETER__SELECT = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Guidelines</b></em>' containment reference list.
@@ -167,7 +168,7 @@ public interface OscalCatalogCommonPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER__GUIDELINES = 9;
+	int PARAMETER__GUIDELINES = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Links</b></em>' containment reference list.
@@ -176,7 +177,7 @@ public interface OscalCatalogCommonPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER__LINKS = 10;
+	int PARAMETER__LINKS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Constraints</b></em>' containment reference list.
@@ -185,7 +186,7 @@ public interface OscalCatalogCommonPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER__CONSTRAINTS = 11;
+	int PARAMETER__CONSTRAINTS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Props</b></em>' containment reference list.
@@ -194,7 +195,7 @@ public interface OscalCatalogCommonPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER__PROPS = 12;
+	int PARAMETER__PROPS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 12;
 
 	/**
 	 * The number of structural features of the '<em>Parameter</em>' class.
@@ -203,7 +204,7 @@ public interface OscalCatalogCommonPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_FEATURE_COUNT = 13;
+	int PARAMETER_FEATURE_COUNT = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 13;
 
 	/**
 	 * The number of operations of the '<em>Parameter</em>' class.
@@ -212,7 +213,7 @@ public interface OscalCatalogCommonPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_OPERATION_COUNT = 0;
+	int PARAMETER_OPERATION_COUNT = OscalMetadataPackage.OSCAL_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link dsm.oscal.model.OscalCatalogCommon.impl.ParameterConstraintImpl <em>Parameter Constraint</em>}' class.
@@ -231,7 +232,7 @@ public interface OscalCatalogCommonPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_CONSTRAINT__DESCRIPTION = 0;
+	int PARAMETER_CONSTRAINT__DESCRIPTION = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Tests</b></em>' containment reference list.
@@ -240,7 +241,7 @@ public interface OscalCatalogCommonPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_CONSTRAINT__TESTS = 1;
+	int PARAMETER_CONSTRAINT__TESTS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Parameter Constraint</em>' class.
@@ -249,7 +250,7 @@ public interface OscalCatalogCommonPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_CONSTRAINT_FEATURE_COUNT = 2;
+	int PARAMETER_CONSTRAINT_FEATURE_COUNT = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Parameter Constraint</em>' class.
@@ -258,7 +259,7 @@ public interface OscalCatalogCommonPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_CONSTRAINT_OPERATION_COUNT = 0;
+	int PARAMETER_CONSTRAINT_OPERATION_COUNT = OscalMetadataPackage.OSCAL_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link dsm.oscal.model.OscalCatalogCommon.impl.ParameterConstraintTestImpl <em>Parameter Constraint Test</em>}' class.
@@ -277,7 +278,7 @@ public interface OscalCatalogCommonPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_CONSTRAINT_TEST__EXPRESSION = 0;
+	int PARAMETER_CONSTRAINT_TEST__EXPRESSION = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Remarks</b></em>' attribute.
@@ -286,7 +287,7 @@ public interface OscalCatalogCommonPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_CONSTRAINT_TEST__REMARKS = 1;
+	int PARAMETER_CONSTRAINT_TEST__REMARKS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Parameter Constraint Test</em>' class.
@@ -295,7 +296,7 @@ public interface OscalCatalogCommonPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_CONSTRAINT_TEST_FEATURE_COUNT = 2;
+	int PARAMETER_CONSTRAINT_TEST_FEATURE_COUNT = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Parameter Constraint Test</em>' class.
@@ -304,7 +305,7 @@ public interface OscalCatalogCommonPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_CONSTRAINT_TEST_OPERATION_COUNT = 0;
+	int PARAMETER_CONSTRAINT_TEST_OPERATION_COUNT = OscalMetadataPackage.OSCAL_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link dsm.oscal.model.OscalCatalogCommon.impl.ParameterGuidelineImpl <em>Parameter Guideline</em>}' class.
@@ -323,7 +324,7 @@ public interface OscalCatalogCommonPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_GUIDELINE__PROSE = 0;
+	int PARAMETER_GUIDELINE__PROSE = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Parameter Guideline</em>' class.
@@ -332,7 +333,7 @@ public interface OscalCatalogCommonPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_GUIDELINE_FEATURE_COUNT = 1;
+	int PARAMETER_GUIDELINE_FEATURE_COUNT = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Parameter Guideline</em>' class.
@@ -341,7 +342,7 @@ public interface OscalCatalogCommonPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_GUIDELINE_OPERATION_COUNT = 0;
+	int PARAMETER_GUIDELINE_OPERATION_COUNT = OscalMetadataPackage.OSCAL_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link dsm.oscal.model.OscalCatalogCommon.impl.ParameterSelectionImpl <em>Parameter Selection</em>}' class.
@@ -360,7 +361,7 @@ public interface OscalCatalogCommonPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_SELECTION__HOW_MANY = 0;
+	int PARAMETER_SELECTION__HOW_MANY = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Choice</b></em>' attribute list.
@@ -369,7 +370,7 @@ public interface OscalCatalogCommonPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_SELECTION__CHOICE = 1;
+	int PARAMETER_SELECTION__CHOICE = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Parameter Selection</em>' class.
@@ -378,7 +379,7 @@ public interface OscalCatalogCommonPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_SELECTION_FEATURE_COUNT = 2;
+	int PARAMETER_SELECTION_FEATURE_COUNT = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Parameter Selection</em>' class.
@@ -387,7 +388,7 @@ public interface OscalCatalogCommonPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_SELECTION_OPERATION_COUNT = 0;
+	int PARAMETER_SELECTION_OPERATION_COUNT = OscalMetadataPackage.OSCAL_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link dsm.oscal.model.OscalCatalogCommon.impl.PartImpl <em>Part</em>}' class.
@@ -406,7 +407,7 @@ public interface OscalCatalogCommonPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PART__ID = 0;
+	int PART__ID = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -415,7 +416,7 @@ public interface OscalCatalogCommonPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PART__NAME = 1;
+	int PART__NAME = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Ns</b></em>' attribute.
@@ -424,7 +425,7 @@ public interface OscalCatalogCommonPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PART__NS = 2;
+	int PART__NS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Clazz</b></em>' attribute.
@@ -433,7 +434,7 @@ public interface OscalCatalogCommonPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PART__CLAZZ = 3;
+	int PART__CLAZZ = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Title</b></em>' attribute.
@@ -442,7 +443,7 @@ public interface OscalCatalogCommonPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PART__TITLE = 4;
+	int PART__TITLE = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Prose</b></em>' attribute.
@@ -451,7 +452,7 @@ public interface OscalCatalogCommonPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PART__PROSE = 5;
+	int PART__PROSE = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
@@ -460,7 +461,7 @@ public interface OscalCatalogCommonPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PART__ANNOTATIONS = 6;
+	int PART__ANNOTATIONS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Parts</b></em>' containment reference list.
@@ -469,7 +470,7 @@ public interface OscalCatalogCommonPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PART__PARTS = 7;
+	int PART__PARTS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Links</b></em>' containment reference list.
@@ -478,7 +479,7 @@ public interface OscalCatalogCommonPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PART__LINKS = 8;
+	int PART__LINKS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Props</b></em>' containment reference list.
@@ -487,7 +488,7 @@ public interface OscalCatalogCommonPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PART__PROPS = 9;
+	int PART__PROPS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The number of structural features of the '<em>Part</em>' class.
@@ -496,7 +497,7 @@ public interface OscalCatalogCommonPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PART_FEATURE_COUNT = 10;
+	int PART_FEATURE_COUNT = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 10;
 
 	/**
 	 * The number of operations of the '<em>Part</em>' class.
@@ -505,7 +506,7 @@ public interface OscalCatalogCommonPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PART_OPERATION_COUNT = 0;
+	int PART_OPERATION_COUNT = OscalMetadataPackage.OSCAL_ELEMENT_OPERATION_COUNT + 0;
 
 
 	/**

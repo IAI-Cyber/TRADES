@@ -34,6 +34,7 @@ import dsm.oscal.model.OscalMetadata.Hash;
 import dsm.oscal.model.OscalMetadata.Link;
 import dsm.oscal.model.OscalMetadata.Location;
 import dsm.oscal.model.OscalMetadata.Metadata;
+import dsm.oscal.model.OscalMetadata.OscalElement;
 import dsm.oscal.model.OscalMetadata.OscalMetadataFactory;
 import dsm.oscal.model.OscalMetadata.OscalMetadataPackage;
 import dsm.oscal.model.OscalMetadata.Party;
@@ -213,6 +214,13 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 * @generated
 	 */
 	private EClass telephoneNumberEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass oscalElementEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1742,6 +1750,16 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 * @generated
 	 */
 	@Override
+	public EClass getOscalElement() {
+		return oscalElementEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EDataType getDateTimeType() {
 		return dateTimeTypeEDataType;
 	}
@@ -2051,6 +2069,8 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 		createEAttribute(telephoneNumberEClass, TELEPHONE_NUMBER__VALUE);
 		createEAttribute(telephoneNumberEClass, TELEPHONE_NUMBER__TYPE);
 
+		oscalElementEClass = createEClass(OSCAL_ELEMENT);
+
 		// Create data types
 		dateTypeEDataType = createEDataType(DATE_TYPE);
 		dateWithTzTypeEDataType = createEDataType(DATE_WITH_TZ_TYPE);
@@ -2095,6 +2115,26 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		addressEClass.getESuperTypes().add(this.getOscalElement());
+		annotationEClass.getESuperTypes().add(this.getOscalElement());
+		backMatterEClass.getESuperTypes().add(this.getOscalElement());
+		backMatterResourceEClass.getESuperTypes().add(this.getOscalElement());
+		base64EClass.getESuperTypes().add(this.getOscalElement());
+		documentIdEClass.getESuperTypes().add(this.getOscalElement());
+		externalIdEClass.getESuperTypes().add(this.getOscalElement());
+		hashEClass.getESuperTypes().add(this.getOscalElement());
+		linkEClass.getESuperTypes().add(this.getOscalElement());
+		locationEClass.getESuperTypes().add(this.getOscalElement());
+		metadataEClass.getESuperTypes().add(this.getOscalElement());
+		partyEClass.getESuperTypes().add(this.getOscalElement());
+		propertyEClass.getESuperTypes().add(this.getOscalElement());
+		resourceCitationEClass.getESuperTypes().add(this.getOscalElement());
+		resourceRlinkEClass.getESuperTypes().add(this.getOscalElement());
+		responsiblePartyEClass.getESuperTypes().add(this.getOscalElement());
+		responsibleRoleEClass.getESuperTypes().add(this.getOscalElement());
+		revisionEClass.getESuperTypes().add(this.getOscalElement());
+		roleEClass.getESuperTypes().add(this.getOscalElement());
+		telephoneNumberEClass.getESuperTypes().add(this.getOscalElement());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(addressEClass, Address.class, "Address", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -2252,6 +2292,8 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 		initEClass(telephoneNumberEClass, TelephoneNumber.class, "TelephoneNumber", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTelephoneNumber_Value(), ecorePackage.getEString(), "value", null, 0, 1, TelephoneNumber.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTelephoneNumber_Type(), ecorePackage.getEString(), "type", null, 0, 1, TelephoneNumber.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(oscalElementEClass, OscalElement.class, "OscalElement", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Initialize data types
 		initEDataType(dateTypeEDataType, Date.class, "DateType", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);

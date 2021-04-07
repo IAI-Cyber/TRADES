@@ -621,6 +621,12 @@ public class OscalCatalogCommonPackageImpl extends EPackageImpl implements Oscal
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		parameterEClass.getESuperTypes().add(theOscalMetadataPackage.getOscalElement());
+		parameterConstraintEClass.getESuperTypes().add(theOscalMetadataPackage.getOscalElement());
+		parameterConstraintTestEClass.getESuperTypes().add(theOscalMetadataPackage.getOscalElement());
+		parameterGuidelineEClass.getESuperTypes().add(theOscalMetadataPackage.getOscalElement());
+		parameterSelectionEClass.getESuperTypes().add(theOscalMetadataPackage.getOscalElement());
+		partEClass.getESuperTypes().add(theOscalMetadataPackage.getOscalElement());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(parameterEClass, Parameter.class, "Parameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

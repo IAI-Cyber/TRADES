@@ -15,11 +15,10 @@
  */
 package dsm.oscal.model.OscalCatalogCommon;
 
+import dsm.oscal.model.OscalMetadata.OscalElement;
 import gov.nist.secauto.metaschema.datatypes.markup.MarkupMultiline;
 
 import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -45,7 +44,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model annotation="Metaschema source='&lt;Metaschema&gt;oscal-catalog-common.&lt;AssemblyDefinition&gt;parameter-constraint'"
  * @generated
  */
-public interface ParameterConstraint extends EObject {
+public interface ParameterConstraint extends OscalElement {
 	/**
 	 * Returns the value of the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->

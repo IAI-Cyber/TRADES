@@ -22,8 +22,6 @@ import java.util.UUID;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Back Matter Resource</b></em>'.
@@ -59,7 +57,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;AssemblyDefinition&gt;resource'"
  * @generated
  */
-public interface BackMatterResource extends EObject {
+public interface BackMatterResource extends OscalElement {
 	/**
 	 * Returns the value of the '<em><b>Uuid</b></em>' attribute.
 	 * <!-- begin-user-doc -->

@@ -452,6 +452,9 @@
         <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//TelephoneNumber/type"/>
       </genFeatures>
     </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="oscal-metadata.ecore#//OscalElement"/>
+    </genClasses>
   </genPackages>
   <genPackages prefix="OscalCatalogCommon" basePackage="dsm.oscal.model" disposableProviderFactory="true">
     <ecorePackage href="oscal-catalog-common.ecore#/"/>

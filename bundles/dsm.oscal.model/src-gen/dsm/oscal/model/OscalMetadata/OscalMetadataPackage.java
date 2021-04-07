@@ -71,6 +71,34 @@ public interface OscalMetadataPackage extends EPackage {
 	OscalMetadataPackage eINSTANCE = dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl.init();
 
 	/**
+	 * The meta object id for the '{@link dsm.oscal.model.OscalMetadata.OscalElement <em>Oscal Element</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see dsm.oscal.model.OscalMetadata.OscalElement
+	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getOscalElement()
+	 * @generated
+	 */
+	int OSCAL_ELEMENT = 20;
+
+	/**
+	 * The number of structural features of the '<em>Oscal Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OSCAL_ELEMENT_FEATURE_COUNT = 0;
+
+	/**
+	 * The number of operations of the '<em>Oscal Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OSCAL_ELEMENT_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link dsm.oscal.model.OscalMetadata.impl.AddressImpl <em>Address</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -87,7 +115,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ADDRESS__TYPE = 0;
+	int ADDRESS__TYPE = OSCAL_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Addr Lines</b></em>' attribute list.
@@ -96,7 +124,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ADDRESS__ADDR_LINES = 1;
+	int ADDRESS__ADDR_LINES = OSCAL_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>City</b></em>' attribute.
@@ -105,7 +133,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ADDRESS__CITY = 2;
+	int ADDRESS__CITY = OSCAL_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>State</b></em>' attribute.
@@ -114,7 +142,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ADDRESS__STATE = 3;
+	int ADDRESS__STATE = OSCAL_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Postal Code</b></em>' attribute.
@@ -123,7 +151,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ADDRESS__POSTAL_CODE = 4;
+	int ADDRESS__POSTAL_CODE = OSCAL_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Country</b></em>' attribute.
@@ -132,7 +160,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ADDRESS__COUNTRY = 5;
+	int ADDRESS__COUNTRY = OSCAL_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Address</em>' class.
@@ -141,7 +169,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ADDRESS_FEATURE_COUNT = 6;
+	int ADDRESS_FEATURE_COUNT = OSCAL_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of operations of the '<em>Address</em>' class.
@@ -150,7 +178,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ADDRESS_OPERATION_COUNT = 0;
+	int ADDRESS_OPERATION_COUNT = OSCAL_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link dsm.oscal.model.OscalMetadata.impl.AnnotationImpl <em>Annotation</em>}' class.
@@ -169,7 +197,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ANNOTATION__NAME = 0;
+	int ANNOTATION__NAME = OSCAL_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -178,7 +206,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ANNOTATION__UUID = 1;
+	int ANNOTATION__UUID = OSCAL_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Ns</b></em>' attribute.
@@ -187,7 +215,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ANNOTATION__NS = 2;
+	int ANNOTATION__NS = OSCAL_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -196,7 +224,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ANNOTATION__VALUE = 3;
+	int ANNOTATION__VALUE = OSCAL_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Remarks</b></em>' attribute.
@@ -205,7 +233,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ANNOTATION__REMARKS = 4;
+	int ANNOTATION__REMARKS = OSCAL_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Annotation</em>' class.
@@ -214,7 +242,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ANNOTATION_FEATURE_COUNT = 5;
+	int ANNOTATION_FEATURE_COUNT = OSCAL_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of operations of the '<em>Annotation</em>' class.
@@ -223,7 +251,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ANNOTATION_OPERATION_COUNT = 0;
+	int ANNOTATION_OPERATION_COUNT = OSCAL_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link dsm.oscal.model.OscalMetadata.impl.BackMatterImpl <em>Back Matter</em>}' class.
@@ -242,7 +270,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BACK_MATTER__RESOURCES = 0;
+	int BACK_MATTER__RESOURCES = OSCAL_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Back Matter</em>' class.
@@ -251,7 +279,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BACK_MATTER_FEATURE_COUNT = 1;
+	int BACK_MATTER_FEATURE_COUNT = OSCAL_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Back Matter</em>' class.
@@ -260,7 +288,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BACK_MATTER_OPERATION_COUNT = 0;
+	int BACK_MATTER_OPERATION_COUNT = OSCAL_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link dsm.oscal.model.OscalMetadata.impl.BackMatterResourceImpl <em>Back Matter Resource</em>}' class.
@@ -279,7 +307,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BACK_MATTER_RESOURCE__UUID = 0;
+	int BACK_MATTER_RESOURCE__UUID = OSCAL_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Title</b></em>' attribute.
@@ -288,7 +316,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BACK_MATTER_RESOURCE__TITLE = 1;
+	int BACK_MATTER_RESOURCE__TITLE = OSCAL_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -297,7 +325,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BACK_MATTER_RESOURCE__DESCRIPTION = 2;
+	int BACK_MATTER_RESOURCE__DESCRIPTION = OSCAL_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Remarks</b></em>' attribute.
@@ -306,7 +334,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BACK_MATTER_RESOURCE__REMARKS = 3;
+	int BACK_MATTER_RESOURCE__REMARKS = OSCAL_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
@@ -315,7 +343,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BACK_MATTER_RESOURCE__ANNOTATIONS = 4;
+	int BACK_MATTER_RESOURCE__ANNOTATIONS = OSCAL_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Citation</b></em>' containment reference.
@@ -324,7 +352,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BACK_MATTER_RESOURCE__CITATION = 5;
+	int BACK_MATTER_RESOURCE__CITATION = OSCAL_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Rlinks</b></em>' containment reference list.
@@ -333,7 +361,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BACK_MATTER_RESOURCE__RLINKS = 6;
+	int BACK_MATTER_RESOURCE__RLINKS = OSCAL_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Props</b></em>' containment reference list.
@@ -342,7 +370,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BACK_MATTER_RESOURCE__PROPS = 7;
+	int BACK_MATTER_RESOURCE__PROPS = OSCAL_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Document Ids</b></em>' containment reference list.
@@ -351,7 +379,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BACK_MATTER_RESOURCE__DOCUMENT_IDS = 8;
+	int BACK_MATTER_RESOURCE__DOCUMENT_IDS = OSCAL_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Base64</b></em>' containment reference.
@@ -360,7 +388,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BACK_MATTER_RESOURCE__BASE64 = 9;
+	int BACK_MATTER_RESOURCE__BASE64 = OSCAL_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The number of structural features of the '<em>Back Matter Resource</em>' class.
@@ -369,7 +397,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BACK_MATTER_RESOURCE_FEATURE_COUNT = 10;
+	int BACK_MATTER_RESOURCE_FEATURE_COUNT = OSCAL_ELEMENT_FEATURE_COUNT + 10;
 
 	/**
 	 * The number of operations of the '<em>Back Matter Resource</em>' class.
@@ -378,7 +406,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BACK_MATTER_RESOURCE_OPERATION_COUNT = 0;
+	int BACK_MATTER_RESOURCE_OPERATION_COUNT = OSCAL_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link dsm.oscal.model.OscalMetadata.impl.Base64Impl <em>Base64</em>}' class.
@@ -397,7 +425,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BASE64__VALUE = 0;
+	int BASE64__VALUE = OSCAL_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Filename</b></em>' attribute.
@@ -406,7 +434,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BASE64__FILENAME = 1;
+	int BASE64__FILENAME = OSCAL_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Media Type</b></em>' attribute.
@@ -415,7 +443,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BASE64__MEDIA_TYPE = 2;
+	int BASE64__MEDIA_TYPE = OSCAL_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Base64</em>' class.
@@ -424,7 +452,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BASE64_FEATURE_COUNT = 3;
+	int BASE64_FEATURE_COUNT = OSCAL_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Base64</em>' class.
@@ -433,7 +461,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BASE64_OPERATION_COUNT = 0;
+	int BASE64_OPERATION_COUNT = OSCAL_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link dsm.oscal.model.OscalMetadata.impl.DocumentIdImpl <em>Document Id</em>}' class.
@@ -452,7 +480,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOCUMENT_ID__VALUE = 0;
+	int DOCUMENT_ID__VALUE = OSCAL_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Scheme</b></em>' attribute.
@@ -461,7 +489,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOCUMENT_ID__SCHEME = 1;
+	int DOCUMENT_ID__SCHEME = OSCAL_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Document Id</em>' class.
@@ -470,7 +498,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOCUMENT_ID_FEATURE_COUNT = 2;
+	int DOCUMENT_ID_FEATURE_COUNT = OSCAL_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Document Id</em>' class.
@@ -479,7 +507,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOCUMENT_ID_OPERATION_COUNT = 0;
+	int DOCUMENT_ID_OPERATION_COUNT = OSCAL_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link dsm.oscal.model.OscalMetadata.impl.ExternalIdImpl <em>External Id</em>}' class.
@@ -498,7 +526,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXTERNAL_ID__VALUE = 0;
+	int EXTERNAL_ID__VALUE = OSCAL_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Scheme</b></em>' attribute.
@@ -507,7 +535,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXTERNAL_ID__SCHEME = 1;
+	int EXTERNAL_ID__SCHEME = OSCAL_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>External Id</em>' class.
@@ -516,7 +544,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXTERNAL_ID_FEATURE_COUNT = 2;
+	int EXTERNAL_ID_FEATURE_COUNT = OSCAL_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>External Id</em>' class.
@@ -525,7 +553,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXTERNAL_ID_OPERATION_COUNT = 0;
+	int EXTERNAL_ID_OPERATION_COUNT = OSCAL_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link dsm.oscal.model.OscalMetadata.impl.HashImpl <em>Hash</em>}' class.
@@ -544,7 +572,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HASH__VALUE = 0;
+	int HASH__VALUE = OSCAL_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Algorithm</b></em>' attribute.
@@ -553,7 +581,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HASH__ALGORITHM = 1;
+	int HASH__ALGORITHM = OSCAL_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Hash</em>' class.
@@ -562,7 +590,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HASH_FEATURE_COUNT = 2;
+	int HASH_FEATURE_COUNT = OSCAL_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Hash</em>' class.
@@ -571,7 +599,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HASH_OPERATION_COUNT = 0;
+	int HASH_OPERATION_COUNT = OSCAL_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link dsm.oscal.model.OscalMetadata.impl.LinkImpl <em>Link</em>}' class.
@@ -590,7 +618,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LINK__EHREF = 0;
+	int LINK__EHREF = OSCAL_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Rel</b></em>' attribute.
@@ -599,7 +627,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LINK__REL = 1;
+	int LINK__REL = OSCAL_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Media Type</b></em>' attribute.
@@ -608,7 +636,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LINK__MEDIA_TYPE = 2;
+	int LINK__MEDIA_TYPE = OSCAL_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Text</b></em>' attribute.
@@ -617,7 +645,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LINK__TEXT = 3;
+	int LINK__TEXT = OSCAL_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Link</em>' class.
@@ -626,7 +654,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LINK_FEATURE_COUNT = 4;
+	int LINK_FEATURE_COUNT = OSCAL_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of operations of the '<em>Link</em>' class.
@@ -635,7 +663,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LINK_OPERATION_COUNT = 0;
+	int LINK_OPERATION_COUNT = OSCAL_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link dsm.oscal.model.OscalMetadata.impl.LocationImpl <em>Location</em>}' class.
@@ -654,7 +682,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOCATION__UUID = 0;
+	int LOCATION__UUID = OSCAL_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Title</b></em>' attribute.
@@ -663,7 +691,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOCATION__TITLE = 1;
+	int LOCATION__TITLE = OSCAL_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Email Addresses</b></em>' attribute list.
@@ -672,7 +700,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOCATION__EMAIL_ADDRESSES = 2;
+	int LOCATION__EMAIL_ADDRESSES = OSCAL_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Urls</b></em>' attribute list.
@@ -681,7 +709,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOCATION__URLS = 3;
+	int LOCATION__URLS = OSCAL_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Remarks</b></em>' attribute.
@@ -690,7 +718,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOCATION__REMARKS = 4;
+	int LOCATION__REMARKS = OSCAL_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
@@ -699,7 +727,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOCATION__ANNOTATIONS = 5;
+	int LOCATION__ANNOTATIONS = OSCAL_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Address</b></em>' containment reference.
@@ -708,7 +736,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOCATION__ADDRESS = 6;
+	int LOCATION__ADDRESS = OSCAL_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Links</b></em>' containment reference list.
@@ -717,7 +745,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOCATION__LINKS = 7;
+	int LOCATION__LINKS = OSCAL_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Telephone Numbers</b></em>' containment reference list.
@@ -726,7 +754,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOCATION__TELEPHONE_NUMBERS = 8;
+	int LOCATION__TELEPHONE_NUMBERS = OSCAL_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Props</b></em>' containment reference list.
@@ -735,7 +763,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOCATION__PROPS = 9;
+	int LOCATION__PROPS = OSCAL_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The number of structural features of the '<em>Location</em>' class.
@@ -744,7 +772,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOCATION_FEATURE_COUNT = 10;
+	int LOCATION_FEATURE_COUNT = OSCAL_ELEMENT_FEATURE_COUNT + 10;
 
 	/**
 	 * The number of operations of the '<em>Location</em>' class.
@@ -753,7 +781,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOCATION_OPERATION_COUNT = 0;
+	int LOCATION_OPERATION_COUNT = OSCAL_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link dsm.oscal.model.OscalMetadata.impl.MetadataImpl <em>Metadata</em>}' class.
@@ -772,7 +800,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int METADATA__TITLE = 0;
+	int METADATA__TITLE = OSCAL_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Published</b></em>' attribute.
@@ -781,7 +809,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int METADATA__PUBLISHED = 1;
+	int METADATA__PUBLISHED = OSCAL_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Last Modified</b></em>' attribute.
@@ -790,7 +818,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int METADATA__LAST_MODIFIED = 2;
+	int METADATA__LAST_MODIFIED = OSCAL_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Version</b></em>' attribute.
@@ -799,7 +827,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int METADATA__VERSION = 3;
+	int METADATA__VERSION = OSCAL_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Oscal Version</b></em>' attribute.
@@ -808,7 +836,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int METADATA__OSCAL_VERSION = 4;
+	int METADATA__OSCAL_VERSION = OSCAL_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Remarks</b></em>' attribute.
@@ -817,7 +845,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int METADATA__REMARKS = 5;
+	int METADATA__REMARKS = OSCAL_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
@@ -826,7 +854,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int METADATA__ANNOTATIONS = 6;
+	int METADATA__ANNOTATIONS = OSCAL_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Roles</b></em>' containment reference list.
@@ -835,7 +863,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int METADATA__ROLES = 7;
+	int METADATA__ROLES = OSCAL_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Links</b></em>' containment reference list.
@@ -844,7 +872,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int METADATA__LINKS = 8;
+	int METADATA__LINKS = OSCAL_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Locations</b></em>' containment reference list.
@@ -853,7 +881,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int METADATA__LOCATIONS = 9;
+	int METADATA__LOCATIONS = OSCAL_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Responsible Parties</b></em>' containment reference list.
@@ -862,7 +890,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int METADATA__RESPONSIBLE_PARTIES = 10;
+	int METADATA__RESPONSIBLE_PARTIES = OSCAL_ELEMENT_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Parties</b></em>' containment reference list.
@@ -871,7 +899,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int METADATA__PARTIES = 11;
+	int METADATA__PARTIES = OSCAL_ELEMENT_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Revisions</b></em>' containment reference list.
@@ -880,7 +908,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int METADATA__REVISIONS = 12;
+	int METADATA__REVISIONS = OSCAL_ELEMENT_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Document Ids</b></em>' containment reference list.
@@ -889,7 +917,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int METADATA__DOCUMENT_IDS = 13;
+	int METADATA__DOCUMENT_IDS = OSCAL_ELEMENT_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Props</b></em>' containment reference list.
@@ -898,7 +926,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int METADATA__PROPS = 14;
+	int METADATA__PROPS = OSCAL_ELEMENT_FEATURE_COUNT + 14;
 
 	/**
 	 * The number of structural features of the '<em>Metadata</em>' class.
@@ -907,7 +935,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int METADATA_FEATURE_COUNT = 15;
+	int METADATA_FEATURE_COUNT = OSCAL_ELEMENT_FEATURE_COUNT + 15;
 
 	/**
 	 * The number of operations of the '<em>Metadata</em>' class.
@@ -916,7 +944,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int METADATA_OPERATION_COUNT = 0;
+	int METADATA_OPERATION_COUNT = OSCAL_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link dsm.oscal.model.OscalMetadata.impl.PartyImpl <em>Party</em>}' class.
@@ -935,7 +963,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY__UUID = 0;
+	int PARTY__UUID = OSCAL_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -944,7 +972,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY__TYPE = 1;
+	int PARTY__TYPE = OSCAL_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -953,7 +981,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY__NAME = 2;
+	int PARTY__NAME = OSCAL_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Short Name</b></em>' attribute.
@@ -962,7 +990,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY__SHORT_NAME = 3;
+	int PARTY__SHORT_NAME = OSCAL_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Email Addresses</b></em>' attribute list.
@@ -971,7 +999,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY__EMAIL_ADDRESSES = 4;
+	int PARTY__EMAIL_ADDRESSES = OSCAL_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Location Uuids</b></em>' attribute list.
@@ -980,7 +1008,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY__LOCATION_UUIDS = 5;
+	int PARTY__LOCATION_UUIDS = OSCAL_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Member Of Organizations</b></em>' attribute list.
@@ -989,7 +1017,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY__MEMBER_OF_ORGANIZATIONS = 6;
+	int PARTY__MEMBER_OF_ORGANIZATIONS = OSCAL_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Remarks</b></em>' attribute.
@@ -998,7 +1026,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY__REMARKS = 7;
+	int PARTY__REMARKS = OSCAL_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
@@ -1007,7 +1035,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY__ANNOTATIONS = 8;
+	int PARTY__ANNOTATIONS = OSCAL_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Addresses</b></em>' containment reference list.
@@ -1016,7 +1044,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY__ADDRESSES = 9;
+	int PARTY__ADDRESSES = OSCAL_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Links</b></em>' containment reference list.
@@ -1025,7 +1053,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY__LINKS = 10;
+	int PARTY__LINKS = OSCAL_ELEMENT_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>External Ids</b></em>' containment reference list.
@@ -1034,7 +1062,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY__EXTERNAL_IDS = 11;
+	int PARTY__EXTERNAL_IDS = OSCAL_ELEMENT_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Props</b></em>' containment reference list.
@@ -1043,7 +1071,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY__PROPS = 12;
+	int PARTY__PROPS = OSCAL_ELEMENT_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Telephone Numbers</b></em>' containment reference list.
@@ -1052,7 +1080,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY__TELEPHONE_NUMBERS = 13;
+	int PARTY__TELEPHONE_NUMBERS = OSCAL_ELEMENT_FEATURE_COUNT + 13;
 
 	/**
 	 * The number of structural features of the '<em>Party</em>' class.
@@ -1061,7 +1089,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY_FEATURE_COUNT = 14;
+	int PARTY_FEATURE_COUNT = OSCAL_ELEMENT_FEATURE_COUNT + 14;
 
 	/**
 	 * The number of operations of the '<em>Party</em>' class.
@@ -1070,7 +1098,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY_OPERATION_COUNT = 0;
+	int PARTY_OPERATION_COUNT = OSCAL_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link dsm.oscal.model.OscalMetadata.impl.PropertyImpl <em>Property</em>}' class.
@@ -1089,7 +1117,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY__VALUE = 0;
+	int PROPERTY__VALUE = OSCAL_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -1098,7 +1126,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY__UUID = 1;
+	int PROPERTY__UUID = OSCAL_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1107,7 +1135,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY__NAME = 2;
+	int PROPERTY__NAME = OSCAL_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Ns</b></em>' attribute.
@@ -1116,7 +1144,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY__NS = 3;
+	int PROPERTY__NS = OSCAL_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Clazz</b></em>' attribute.
@@ -1125,7 +1153,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY__CLAZZ = 4;
+	int PROPERTY__CLAZZ = OSCAL_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Property</em>' class.
@@ -1134,7 +1162,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY_FEATURE_COUNT = 5;
+	int PROPERTY_FEATURE_COUNT = OSCAL_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of operations of the '<em>Property</em>' class.
@@ -1143,7 +1171,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY_OPERATION_COUNT = 0;
+	int PROPERTY_OPERATION_COUNT = OSCAL_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link dsm.oscal.model.OscalMetadata.impl.ResourceCitationImpl <em>Resource Citation</em>}' class.
@@ -1162,7 +1190,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_CITATION__TEXT = 0;
+	int RESOURCE_CITATION__TEXT = OSCAL_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
@@ -1171,7 +1199,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_CITATION__ANNOTATIONS = 1;
+	int RESOURCE_CITATION__ANNOTATIONS = OSCAL_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Props</b></em>' containment reference list.
@@ -1180,7 +1208,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_CITATION__PROPS = 2;
+	int RESOURCE_CITATION__PROPS = OSCAL_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Resource Citation</em>' class.
@@ -1189,7 +1217,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_CITATION_FEATURE_COUNT = 3;
+	int RESOURCE_CITATION_FEATURE_COUNT = OSCAL_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Resource Citation</em>' class.
@@ -1198,7 +1226,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_CITATION_OPERATION_COUNT = 0;
+	int RESOURCE_CITATION_OPERATION_COUNT = OSCAL_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link dsm.oscal.model.OscalMetadata.impl.ResourceRlinkImpl <em>Resource Rlink</em>}' class.
@@ -1217,7 +1245,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_RLINK__EHREF = 0;
+	int RESOURCE_RLINK__EHREF = OSCAL_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Media Type</b></em>' attribute.
@@ -1226,7 +1254,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_RLINK__MEDIA_TYPE = 1;
+	int RESOURCE_RLINK__MEDIA_TYPE = OSCAL_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Hashes</b></em>' containment reference list.
@@ -1235,7 +1263,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_RLINK__HASHES = 2;
+	int RESOURCE_RLINK__HASHES = OSCAL_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Resource Rlink</em>' class.
@@ -1244,7 +1272,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_RLINK_FEATURE_COUNT = 3;
+	int RESOURCE_RLINK_FEATURE_COUNT = OSCAL_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Resource Rlink</em>' class.
@@ -1253,7 +1281,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_RLINK_OPERATION_COUNT = 0;
+	int RESOURCE_RLINK_OPERATION_COUNT = OSCAL_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link dsm.oscal.model.OscalMetadata.impl.ResponsiblePartyImpl <em>Responsible Party</em>}' class.
@@ -1272,7 +1300,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESPONSIBLE_PARTY__ROLE_ID = 0;
+	int RESPONSIBLE_PARTY__ROLE_ID = OSCAL_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Party Uuids</b></em>' attribute list.
@@ -1281,7 +1309,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESPONSIBLE_PARTY__PARTY_UUIDS = 1;
+	int RESPONSIBLE_PARTY__PARTY_UUIDS = OSCAL_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Remarks</b></em>' attribute.
@@ -1290,7 +1318,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESPONSIBLE_PARTY__REMARKS = 2;
+	int RESPONSIBLE_PARTY__REMARKS = OSCAL_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
@@ -1299,7 +1327,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESPONSIBLE_PARTY__ANNOTATIONS = 3;
+	int RESPONSIBLE_PARTY__ANNOTATIONS = OSCAL_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Links</b></em>' containment reference list.
@@ -1308,7 +1336,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESPONSIBLE_PARTY__LINKS = 4;
+	int RESPONSIBLE_PARTY__LINKS = OSCAL_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Props</b></em>' containment reference list.
@@ -1317,7 +1345,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESPONSIBLE_PARTY__PROPS = 5;
+	int RESPONSIBLE_PARTY__PROPS = OSCAL_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Responsible Party</em>' class.
@@ -1326,7 +1354,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESPONSIBLE_PARTY_FEATURE_COUNT = 6;
+	int RESPONSIBLE_PARTY_FEATURE_COUNT = OSCAL_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of operations of the '<em>Responsible Party</em>' class.
@@ -1335,7 +1363,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESPONSIBLE_PARTY_OPERATION_COUNT = 0;
+	int RESPONSIBLE_PARTY_OPERATION_COUNT = OSCAL_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link dsm.oscal.model.OscalMetadata.impl.ResponsibleRoleImpl <em>Responsible Role</em>}' class.
@@ -1354,7 +1382,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESPONSIBLE_ROLE__ROLE_ID = 0;
+	int RESPONSIBLE_ROLE__ROLE_ID = OSCAL_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Party Uuids</b></em>' attribute list.
@@ -1363,7 +1391,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESPONSIBLE_ROLE__PARTY_UUIDS = 1;
+	int RESPONSIBLE_ROLE__PARTY_UUIDS = OSCAL_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Remarks</b></em>' attribute.
@@ -1372,7 +1400,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESPONSIBLE_ROLE__REMARKS = 2;
+	int RESPONSIBLE_ROLE__REMARKS = OSCAL_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
@@ -1381,7 +1409,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESPONSIBLE_ROLE__ANNOTATIONS = 3;
+	int RESPONSIBLE_ROLE__ANNOTATIONS = OSCAL_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Links</b></em>' containment reference list.
@@ -1390,7 +1418,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESPONSIBLE_ROLE__LINKS = 4;
+	int RESPONSIBLE_ROLE__LINKS = OSCAL_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Props</b></em>' containment reference list.
@@ -1399,7 +1427,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESPONSIBLE_ROLE__PROPS = 5;
+	int RESPONSIBLE_ROLE__PROPS = OSCAL_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Responsible Role</em>' class.
@@ -1408,7 +1436,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESPONSIBLE_ROLE_FEATURE_COUNT = 6;
+	int RESPONSIBLE_ROLE_FEATURE_COUNT = OSCAL_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of operations of the '<em>Responsible Role</em>' class.
@@ -1417,7 +1445,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESPONSIBLE_ROLE_OPERATION_COUNT = 0;
+	int RESPONSIBLE_ROLE_OPERATION_COUNT = OSCAL_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link dsm.oscal.model.OscalMetadata.impl.RevisionImpl <em>Revision</em>}' class.
@@ -1436,7 +1464,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REVISION__TITLE = 0;
+	int REVISION__TITLE = OSCAL_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Published</b></em>' attribute.
@@ -1445,7 +1473,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REVISION__PUBLISHED = 1;
+	int REVISION__PUBLISHED = OSCAL_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Last Modified</b></em>' attribute.
@@ -1454,7 +1482,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REVISION__LAST_MODIFIED = 2;
+	int REVISION__LAST_MODIFIED = OSCAL_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Version</b></em>' attribute.
@@ -1463,7 +1491,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REVISION__VERSION = 3;
+	int REVISION__VERSION = OSCAL_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Oscal Version</b></em>' attribute.
@@ -1472,7 +1500,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REVISION__OSCAL_VERSION = 4;
+	int REVISION__OSCAL_VERSION = OSCAL_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Remarks</b></em>' attribute.
@@ -1481,7 +1509,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REVISION__REMARKS = 5;
+	int REVISION__REMARKS = OSCAL_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
@@ -1490,7 +1518,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REVISION__ANNOTATIONS = 6;
+	int REVISION__ANNOTATIONS = OSCAL_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Links</b></em>' containment reference list.
@@ -1499,7 +1527,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REVISION__LINKS = 7;
+	int REVISION__LINKS = OSCAL_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Props</b></em>' containment reference list.
@@ -1508,7 +1536,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REVISION__PROPS = 8;
+	int REVISION__PROPS = OSCAL_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of structural features of the '<em>Revision</em>' class.
@@ -1517,7 +1545,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REVISION_FEATURE_COUNT = 9;
+	int REVISION_FEATURE_COUNT = OSCAL_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The number of operations of the '<em>Revision</em>' class.
@@ -1526,7 +1554,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REVISION_OPERATION_COUNT = 0;
+	int REVISION_OPERATION_COUNT = OSCAL_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link dsm.oscal.model.OscalMetadata.impl.RoleImpl <em>Role</em>}' class.
@@ -1545,7 +1573,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__ID = 0;
+	int ROLE__ID = OSCAL_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Title</b></em>' attribute.
@@ -1554,7 +1582,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__TITLE = 1;
+	int ROLE__TITLE = OSCAL_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Short Name</b></em>' attribute.
@@ -1563,7 +1591,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__SHORT_NAME = 2;
+	int ROLE__SHORT_NAME = OSCAL_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -1572,7 +1600,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__DESCRIPTION = 3;
+	int ROLE__DESCRIPTION = OSCAL_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Remarks</b></em>' attribute.
@@ -1581,7 +1609,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__REMARKS = 4;
+	int ROLE__REMARKS = OSCAL_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
@@ -1590,7 +1618,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__ANNOTATIONS = 5;
+	int ROLE__ANNOTATIONS = OSCAL_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Links</b></em>' containment reference list.
@@ -1599,7 +1627,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__LINKS = 6;
+	int ROLE__LINKS = OSCAL_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Props</b></em>' containment reference list.
@@ -1608,7 +1636,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__PROPS = 7;
+	int ROLE__PROPS = OSCAL_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of structural features of the '<em>Role</em>' class.
@@ -1617,7 +1645,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE_FEATURE_COUNT = 8;
+	int ROLE_FEATURE_COUNT = OSCAL_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of operations of the '<em>Role</em>' class.
@@ -1626,7 +1654,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE_OPERATION_COUNT = 0;
+	int ROLE_OPERATION_COUNT = OSCAL_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link dsm.oscal.model.OscalMetadata.impl.TelephoneNumberImpl <em>Telephone Number</em>}' class.
@@ -1645,7 +1673,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TELEPHONE_NUMBER__VALUE = 0;
+	int TELEPHONE_NUMBER__VALUE = OSCAL_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -1654,7 +1682,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TELEPHONE_NUMBER__TYPE = 1;
+	int TELEPHONE_NUMBER__TYPE = OSCAL_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Telephone Number</em>' class.
@@ -1663,7 +1691,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TELEPHONE_NUMBER_FEATURE_COUNT = 2;
+	int TELEPHONE_NUMBER_FEATURE_COUNT = OSCAL_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Telephone Number</em>' class.
@@ -1672,7 +1700,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TELEPHONE_NUMBER_OPERATION_COUNT = 0;
+	int TELEPHONE_NUMBER_OPERATION_COUNT = OSCAL_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '<em>Date Time Type</em>' data type.
@@ -1682,7 +1710,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getDateTimeType()
 	 * @generated
 	 */
-	int DATE_TIME_TYPE = 23;
+	int DATE_TIME_TYPE = 24;
 
 	/**
 	 * The meta object id for the '<em>Date Time With Tz Type</em>' data type.
@@ -1692,7 +1720,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getDateTimeWithTzType()
 	 * @generated
 	 */
-	int DATE_TIME_WITH_TZ_TYPE = 31;
+	int DATE_TIME_WITH_TZ_TYPE = 32;
 
 	/**
 	 * The meta object id for the '<em>Ip V6 Address Type</em>' data type.
@@ -1702,7 +1730,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getIpV6AddressType()
 	 * @generated
 	 */
-	int IP_V6_ADDRESS_TYPE = 32;
+	int IP_V6_ADDRESS_TYPE = 33;
 
 	/**
 	 * The meta object id for the '<em>Ip V4 Address Type</em>' data type.
@@ -1712,7 +1740,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getIpV4AddressType()
 	 * @generated
 	 */
-	int IP_V4_ADDRESS_TYPE = 22;
+	int IP_V4_ADDRESS_TYPE = 23;
 
 	/**
 	 * The meta object id for the '<em>Date With Tz Type</em>' data type.
@@ -1722,7 +1750,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getDateWithTzType()
 	 * @generated
 	 */
-	int DATE_WITH_TZ_TYPE = 21;
+	int DATE_WITH_TZ_TYPE = 22;
 
 	/**
 	 * The meta object id for the '<em>Uuid Type</em>' data type.
@@ -1732,7 +1760,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getUuidType()
 	 * @generated
 	 */
-	int UUID_TYPE = 25;
+	int UUID_TYPE = 26;
 
 	/**
 	 * The meta object id for the '<em>Markup Line Type</em>' data type.
@@ -1742,7 +1770,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getMarkupLineType()
 	 * @generated
 	 */
-	int MARKUP_LINE_TYPE = 28;
+	int MARKUP_LINE_TYPE = 29;
 
 	/**
 	 * The meta object id for the '<em>Date Type</em>' data type.
@@ -1752,7 +1780,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getDateType()
 	 * @generated
 	 */
-	int DATE_TYPE = 20;
+	int DATE_TYPE = 21;
 
 	/**
 	 * The meta object id for the '<em>Uri Reference Type</em>' data type.
@@ -1762,7 +1790,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getUriReferenceType()
 	 * @generated
 	 */
-	int URI_REFERENCE_TYPE = 24;
+	int URI_REFERENCE_TYPE = 25;
 
 	/**
 	 * The meta object id for the '<em>Markup Multiline Type</em>' data type.
@@ -1772,7 +1800,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getMarkupMultilineType()
 	 * @generated
 	 */
-	int MARKUP_MULTILINE_TYPE = 29;
+	int MARKUP_MULTILINE_TYPE = 30;
 
 	/**
 	 * The meta object id for the '<em>Empty Type</em>' data type.
@@ -1782,7 +1810,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getEmptyType()
 	 * @generated
 	 */
-	int EMPTY_TYPE = 30;
+	int EMPTY_TYPE = 31;
 
 	/**
 	 * The meta object id for the '<em>Base64 Type</em>' data type.
@@ -1792,7 +1820,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getBase64Type()
 	 * @generated
 	 */
-	int BASE64_TYPE = 26;
+	int BASE64_TYPE = 27;
 
 	/**
 	 * The meta object id for the '<em>Uri Type</em>' data type.
@@ -1802,7 +1830,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getUriType()
 	 * @generated
 	 */
-	int URI_TYPE = 27;
+	int URI_TYPE = 28;
 
 
 	/**
@@ -3282,6 +3310,16 @@ public interface OscalMetadataPackage extends EPackage {
 	EAttribute getTelephoneNumber_Type();
 
 	/**
+	 * Returns the meta object for class '{@link dsm.oscal.model.OscalMetadata.OscalElement <em>Oscal Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Oscal Element</em>'.
+	 * @see dsm.oscal.model.OscalMetadata.OscalElement
+	 * @generated
+	 */
+	EClass getOscalElement();
+
+	/**
 	 * Returns the meta object for data type '{@link gov.nist.secauto.metaschema.datatypes.DateTime <em>Date Time Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4574,6 +4612,16 @@ public interface OscalMetadataPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute TELEPHONE_NUMBER__TYPE = eINSTANCE.getTelephoneNumber_Type();
+
+		/**
+		 * The meta object literal for the '{@link dsm.oscal.model.OscalMetadata.OscalElement <em>Oscal Element</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see dsm.oscal.model.OscalMetadata.OscalElement
+		 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getOscalElement()
+		 * @generated
+		 */
+		EClass OSCAL_ELEMENT = eINSTANCE.getOscalElement();
 
 		/**
 		 * The meta object literal for the '<em>Date Time Type</em>' data type.

@@ -17,6 +17,7 @@ package dsm.oscal.model.OscalCatalogCommon.util;
 
 import dsm.oscal.model.OscalCatalogCommon.*;
 
+import dsm.oscal.model.OscalMetadata.OscalElement;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -82,36 +83,42 @@ public class OscalCatalogCommonSwitch<T> extends Switch<T> {
 			case OscalCatalogCommonPackage.PARAMETER: {
 				Parameter parameter = (Parameter)theEObject;
 				T result = caseParameter(parameter);
+				if (result == null) result = caseOscalElement(parameter);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case OscalCatalogCommonPackage.PARAMETER_CONSTRAINT: {
 				ParameterConstraint parameterConstraint = (ParameterConstraint)theEObject;
 				T result = caseParameterConstraint(parameterConstraint);
+				if (result == null) result = caseOscalElement(parameterConstraint);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case OscalCatalogCommonPackage.PARAMETER_CONSTRAINT_TEST: {
 				ParameterConstraintTest parameterConstraintTest = (ParameterConstraintTest)theEObject;
 				T result = caseParameterConstraintTest(parameterConstraintTest);
+				if (result == null) result = caseOscalElement(parameterConstraintTest);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case OscalCatalogCommonPackage.PARAMETER_GUIDELINE: {
 				ParameterGuideline parameterGuideline = (ParameterGuideline)theEObject;
 				T result = caseParameterGuideline(parameterGuideline);
+				if (result == null) result = caseOscalElement(parameterGuideline);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case OscalCatalogCommonPackage.PARAMETER_SELECTION: {
 				ParameterSelection parameterSelection = (ParameterSelection)theEObject;
 				T result = caseParameterSelection(parameterSelection);
+				if (result == null) result = caseOscalElement(parameterSelection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case OscalCatalogCommonPackage.PART: {
 				Part part = (Part)theEObject;
 				T result = casePart(part);
+				if (result == null) result = caseOscalElement(part);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -206,6 +213,21 @@ public class OscalCatalogCommonSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T casePart(Part object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Oscal Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Oscal Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseOscalElement(OscalElement object) {
 		return null;
 	}
 

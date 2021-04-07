@@ -114,8 +114,8 @@ public class MetaschemaToEcoreTransformer {
 
 	private ResourceSetImpl rs;
 
-	private boolean isFirst = true;
-
+	private EPackage rootEPackage = null;
+	
 	private BiFunction<String, String, String> imageProvider;
 
 	/**
@@ -184,6 +184,17 @@ public class MetaschemaToEcoreTransformer {
 
 		for (String schemaPath : metaSchemaPaths) {
 			importSchema(this.getClass().getResource(schemaPath).toURI(), modelFolder);
+		}
+
+		// Make all EClass inherits from OSCAlElements
+		EClass oscalElement = EcoreFactory.eINSTANCE.createEClass();
+		oscalElement.setName("OscalElement");
+		oscalElement.setAbstract(true);
+		oscalElement.setInterface(true);
+		rootEPackage.getEClassifiers().add(oscalElement);
+
+		for (EClass eClass : defToEClass.values()) {
+			eClass.getESuperTypes().add(oscalElement);
 		}
 
 		for (Resource r : rs.getResources()) {
@@ -267,11 +278,11 @@ public class MetaschemaToEcoreTransformer {
 		Path srcEditGenFolder = pluginFolder.getParent().resolve(editPlugin);
 		Path manEditGenFolder = srcEditGenFolder.getParent().resolve("src-man");
 		ItemProviderGenerator itemProviderGenerator = new ItemProviderGenerator(srcEditGenFolder, manEditGenFolder,
-				JAVA_HEADER,imageProvider);
+				JAVA_HEADER, imageProvider);
 
 		for (GenPackage genPackage : genPacks) {
 			for (GenClass genClass : genPackage.getGenClasses()) {
-				if (!genClass.isAbstract()) {
+				if (!genClass.isAbstract() && !genClass.isInterface()) {
 					itemProviderGenerator.generate((GenClassImpl) genClass);
 				}
 			}
@@ -299,14 +310,14 @@ public class MetaschemaToEcoreTransformer {
 		}
 
 		// Add the data types in the less dependent EPackage
-		if (isFirst) {
+		if (rootEPackage == null) {
 			createDataType();
 		}
 
 		EPackage ePackages = toEPackage(schema);
 
-		if (isFirst) {
-			isFirst = false;
+		if (rootEPackage == null) {
+			rootEPackage = ePackages;
 			List<EDataType> eData = dataTypes.values().stream()
 					.filter(d -> d.eContainer() == null /* Do not include ecore data type */).collect(toList());
 			ePackages.getEClassifiers().addAll(0, eData);

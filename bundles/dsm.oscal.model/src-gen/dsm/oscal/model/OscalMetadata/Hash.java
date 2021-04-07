@@ -15,8 +15,6 @@
  */
 package dsm.oscal.model.OscalMetadata;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Hash</b></em>'.
@@ -43,7 +41,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;FieldDefinition&gt;hash'"
  * @generated
  */
-public interface Hash extends EObject {
+public interface Hash extends OscalElement {
 	/**
 	 * Returns the value of the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->

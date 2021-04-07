@@ -17,6 +17,7 @@ package dsm.oscal.model.OscalCatalogCommon;
 
 import dsm.oscal.model.OscalMetadata.Annotation;
 import dsm.oscal.model.OscalMetadata.Link;
+import dsm.oscal.model.OscalMetadata.OscalElement;
 import dsm.oscal.model.OscalMetadata.Property;
 
 import gov.nist.secauto.metaschema.datatypes.markup.MarkupLine;
@@ -25,8 +26,6 @@ import gov.nist.secauto.metaschema.datatypes.markup.MarkupMultiline;
 import java.net.URI;
 
 import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -66,7 +65,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model annotation="Metaschema source='&lt;Metaschema&gt;oscal-catalog-common.&lt;AssemblyDefinition&gt;part'"
  * @generated
  */
-public interface Part extends EObject {
+public interface Part extends OscalElement {
 	/**
 	 * Returns the value of the '<em><b>Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->

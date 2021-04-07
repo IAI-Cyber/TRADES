@@ -82,120 +82,146 @@ public class OscalMetadataSwitch<T> extends Switch<T> {
 			case OscalMetadataPackage.ADDRESS: {
 				Address address = (Address)theEObject;
 				T result = caseAddress(address);
+				if (result == null) result = caseOscalElement(address);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case OscalMetadataPackage.ANNOTATION: {
 				Annotation annotation = (Annotation)theEObject;
 				T result = caseAnnotation(annotation);
+				if (result == null) result = caseOscalElement(annotation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case OscalMetadataPackage.BACK_MATTER: {
 				BackMatter backMatter = (BackMatter)theEObject;
 				T result = caseBackMatter(backMatter);
+				if (result == null) result = caseOscalElement(backMatter);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case OscalMetadataPackage.BACK_MATTER_RESOURCE: {
 				BackMatterResource backMatterResource = (BackMatterResource)theEObject;
 				T result = caseBackMatterResource(backMatterResource);
+				if (result == null) result = caseOscalElement(backMatterResource);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case OscalMetadataPackage.BASE64: {
 				Base64 base64 = (Base64)theEObject;
 				T result = caseBase64(base64);
+				if (result == null) result = caseOscalElement(base64);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case OscalMetadataPackage.DOCUMENT_ID: {
 				DocumentId documentId = (DocumentId)theEObject;
 				T result = caseDocumentId(documentId);
+				if (result == null) result = caseOscalElement(documentId);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case OscalMetadataPackage.EXTERNAL_ID: {
 				ExternalId externalId = (ExternalId)theEObject;
 				T result = caseExternalId(externalId);
+				if (result == null) result = caseOscalElement(externalId);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case OscalMetadataPackage.HASH: {
 				Hash hash = (Hash)theEObject;
 				T result = caseHash(hash);
+				if (result == null) result = caseOscalElement(hash);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case OscalMetadataPackage.LINK: {
 				Link link = (Link)theEObject;
 				T result = caseLink(link);
+				if (result == null) result = caseOscalElement(link);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case OscalMetadataPackage.LOCATION: {
 				Location location = (Location)theEObject;
 				T result = caseLocation(location);
+				if (result == null) result = caseOscalElement(location);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case OscalMetadataPackage.METADATA: {
 				Metadata metadata = (Metadata)theEObject;
 				T result = caseMetadata(metadata);
+				if (result == null) result = caseOscalElement(metadata);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case OscalMetadataPackage.PARTY: {
 				Party party = (Party)theEObject;
 				T result = caseParty(party);
+				if (result == null) result = caseOscalElement(party);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case OscalMetadataPackage.PROPERTY: {
 				Property property = (Property)theEObject;
 				T result = caseProperty(property);
+				if (result == null) result = caseOscalElement(property);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case OscalMetadataPackage.RESOURCE_CITATION: {
 				ResourceCitation resourceCitation = (ResourceCitation)theEObject;
 				T result = caseResourceCitation(resourceCitation);
+				if (result == null) result = caseOscalElement(resourceCitation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case OscalMetadataPackage.RESOURCE_RLINK: {
 				ResourceRlink resourceRlink = (ResourceRlink)theEObject;
 				T result = caseResourceRlink(resourceRlink);
+				if (result == null) result = caseOscalElement(resourceRlink);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case OscalMetadataPackage.RESPONSIBLE_PARTY: {
 				ResponsibleParty responsibleParty = (ResponsibleParty)theEObject;
 				T result = caseResponsibleParty(responsibleParty);
+				if (result == null) result = caseOscalElement(responsibleParty);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case OscalMetadataPackage.RESPONSIBLE_ROLE: {
 				ResponsibleRole responsibleRole = (ResponsibleRole)theEObject;
 				T result = caseResponsibleRole(responsibleRole);
+				if (result == null) result = caseOscalElement(responsibleRole);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case OscalMetadataPackage.REVISION: {
 				Revision revision = (Revision)theEObject;
 				T result = caseRevision(revision);
+				if (result == null) result = caseOscalElement(revision);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case OscalMetadataPackage.ROLE: {
 				Role role = (Role)theEObject;
 				T result = caseRole(role);
+				if (result == null) result = caseOscalElement(role);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case OscalMetadataPackage.TELEPHONE_NUMBER: {
 				TelephoneNumber telephoneNumber = (TelephoneNumber)theEObject;
 				T result = caseTelephoneNumber(telephoneNumber);
+				if (result == null) result = caseOscalElement(telephoneNumber);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case OscalMetadataPackage.OSCAL_ELEMENT: {
+				OscalElement oscalElement = (OscalElement)theEObject;
+				T result = caseOscalElement(oscalElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -500,6 +526,21 @@ public class OscalMetadataSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseTelephoneNumber(TelephoneNumber object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Oscal Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Oscal Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseOscalElement(OscalElement object) {
 		return null;
 	}
 

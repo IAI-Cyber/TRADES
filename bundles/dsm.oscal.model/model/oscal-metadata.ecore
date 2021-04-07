@@ -13,7 +13,7 @@
   <eClassifiers xsi:type="ecore:EDataType" name="EmptyType" instanceClassName="java.lang.Void"/>
   <eClassifiers xsi:type="ecore:EDataType" name="DateTimeWithTzType" instanceClassName="java.time.ZonedDateTime"/>
   <eClassifiers xsi:type="ecore:EDataType" name="IpV6AddressType" instanceClassName="gov.nist.secauto.metaschema.datatypes.IPv6"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Address">
+  <eClassifiers xsi:type="ecore:EClass" name="Address" eSuperTypes="//OscalElement">
     <eAnnotations source="Metaschema">
       <details key="source" value="&lt;Metaschema>oscal-metadata.&lt;AssemblyDefinition>address"/>
     </eAnnotations>
@@ -75,7 +75,7 @@
       <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Annotation">
+  <eClassifiers xsi:type="ecore:EClass" name="Annotation" eSuperTypes="//OscalElement">
     <eAnnotations source="Metaschema">
       <details key="source" value="&lt;Metaschema>oscal-metadata.&lt;AssemblyDefinition>annotation"/>
     </eAnnotations>
@@ -125,7 +125,7 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="BackMatter">
+  <eClassifiers xsi:type="ecore:EClass" name="BackMatter" eSuperTypes="//OscalElement">
     <eAnnotations source="Metaschema">
       <details key="source" value="&lt;Metaschema>oscal-metadata.&lt;AssemblyDefinition>back-matter"/>
     </eAnnotations>
@@ -138,7 +138,7 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="BackMatterResource">
+  <eClassifiers xsi:type="ecore:EClass" name="BackMatterResource" eSuperTypes="//OscalElement">
     <eAnnotations source="Metaschema">
       <details key="source" value="&lt;Metaschema>oscal-metadata.&lt;AssemblyDefinition>resource"/>
     </eAnnotations>
@@ -208,7 +208,7 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Base64">
+  <eClassifiers xsi:type="ecore:EClass" name="Base64" eSuperTypes="//OscalElement">
     <eAnnotations source="Metaschema">
       <details key="source" value="&lt;Metaschema>oscal-metadata.&lt;FieldDefinition>base64"/>
     </eAnnotations>
@@ -234,7 +234,7 @@
       <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DocumentId">
+  <eClassifiers xsi:type="ecore:EClass" name="DocumentId" eSuperTypes="//OscalElement">
     <eAnnotations source="Metaschema">
       <details key="source" value="&lt;Metaschema>oscal-metadata.&lt;FieldDefinition>document-id"/>
     </eAnnotations>
@@ -253,7 +253,7 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ExternalId">
+  <eClassifiers xsi:type="ecore:EClass" name="ExternalId" eSuperTypes="//OscalElement">
     <eAnnotations source="Metaschema">
       <details key="source" value="&lt;Metaschema>oscal-metadata.&lt;FieldDefinition>external-id"/>
     </eAnnotations>
@@ -272,7 +272,7 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Hash">
+  <eClassifiers xsi:type="ecore:EClass" name="Hash" eSuperTypes="//OscalElement">
     <eAnnotations source="Metaschema">
       <details key="source" value="&lt;Metaschema>oscal-metadata.&lt;FieldDefinition>hash"/>
     </eAnnotations>
@@ -292,7 +292,7 @@
       <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Link">
+  <eClassifiers xsi:type="ecore:EClass" name="Link" eSuperTypes="//OscalElement">
     <eAnnotations source="Metaschema">
       <details key="source" value="&lt;Metaschema>oscal-metadata.&lt;AssemblyDefinition>link"/>
     </eAnnotations>
@@ -334,7 +334,7 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Location">
+  <eClassifiers xsi:type="ecore:EClass" name="Location" eSuperTypes="//OscalElement">
     <eAnnotations source="Metaschema">
       <details key="source" value="&lt;Metaschema>oscal-metadata.&lt;AssemblyDefinition>location"/>
     </eAnnotations>
@@ -408,7 +408,7 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Metadata">
+  <eClassifiers xsi:type="ecore:EClass" name="Metadata" eSuperTypes="//OscalElement">
     <eAnnotations source="Metaschema">
       <details key="source" value="&lt;Metaschema>oscal-metadata.&lt;AssemblyDefinition>metadata"/>
     </eAnnotations>
@@ -511,7 +511,7 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Party">
+  <eClassifiers xsi:type="ecore:EClass" name="Party" eSuperTypes="//OscalElement">
     <eAnnotations source="Metaschema">
       <details key="source" value="&lt;Metaschema>oscal-metadata.&lt;AssemblyDefinition>party"/>
     </eAnnotations>
@@ -617,7 +617,7 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Property">
+  <eClassifiers xsi:type="ecore:EClass" name="Property" eSuperTypes="//OscalElement">
     <eAnnotations source="Metaschema">
       <details key="source" value="&lt;Metaschema>oscal-metadata.&lt;FieldDefinition>property"/>
     </eAnnotations>
@@ -662,7 +662,7 @@
       <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ResourceCitation">
+  <eClassifiers xsi:type="ecore:EClass" name="ResourceCitation" eSuperTypes="//OscalElement">
     <eAnnotations source="Metaschema">
       <details key="source" value="&lt;Metaschema>oscal-metadata.&lt;AssemblyDefinition>citation"/>
     </eAnnotations>
@@ -688,7 +688,7 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ResourceRlink">
+  <eClassifiers xsi:type="ecore:EClass" name="ResourceRlink" eSuperTypes="//OscalElement">
     <eAnnotations source="Metaschema">
       <details key="source" value="&lt;Metaschema>oscal-metadata.&lt;AssemblyDefinition>rlink"/>
     </eAnnotations>
@@ -718,7 +718,7 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ResponsibleParty">
+  <eClassifiers xsi:type="ecore:EClass" name="ResponsibleParty" eSuperTypes="//OscalElement">
     <eAnnotations source="Metaschema">
       <details key="source" value="&lt;Metaschema>oscal-metadata.&lt;AssemblyDefinition>responsible-party"/>
     </eAnnotations>
@@ -766,7 +766,7 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ResponsibleRole">
+  <eClassifiers xsi:type="ecore:EClass" name="ResponsibleRole" eSuperTypes="//OscalElement">
     <eAnnotations source="Metaschema">
       <details key="source" value="&lt;Metaschema>oscal-metadata.&lt;AssemblyDefinition>responsible-role"/>
     </eAnnotations>
@@ -814,7 +814,7 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Revision">
+  <eClassifiers xsi:type="ecore:EClass" name="Revision" eSuperTypes="//OscalElement">
     <eAnnotations source="Metaschema">
       <details key="source" value="&lt;Metaschema>oscal-metadata.&lt;AssemblyDefinition>revision"/>
     </eAnnotations>
@@ -887,7 +887,7 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Role">
+  <eClassifiers xsi:type="ecore:EClass" name="Role" eSuperTypes="//OscalElement">
     <eAnnotations source="Metaschema">
       <details key="source" value="&lt;Metaschema>oscal-metadata.&lt;AssemblyDefinition>role"/>
     </eAnnotations>
@@ -952,7 +952,7 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TelephoneNumber">
+  <eClassifiers xsi:type="ecore:EClass" name="TelephoneNumber" eSuperTypes="//OscalElement">
     <eAnnotations source="Metaschema">
       <details key="source" value="&lt;Metaschema>oscal-metadata.&lt;FieldDefinition>telephone-number"/>
     </eAnnotations>
@@ -972,4 +972,5 @@
       <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eStructuralFeatures>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OscalElement" abstract="true" interface="true"/>
 </ecore:EPackage>

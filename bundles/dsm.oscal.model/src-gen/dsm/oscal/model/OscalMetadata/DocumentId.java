@@ -17,8 +17,6 @@ package dsm.oscal.model.OscalMetadata;
 
 import java.net.URI;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Document Id</b></em>'.
@@ -46,7 +44,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;FieldDefinition&gt;document-id'"
  * @generated
  */
-public interface DocumentId extends EObject {
+public interface DocumentId extends OscalElement {
 	/**
 	 * Returns the value of the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->

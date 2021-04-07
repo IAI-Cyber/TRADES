@@ -21,8 +21,6 @@ import java.util.UUID;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Responsible Role</b></em>'.
@@ -51,7 +49,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;AssemblyDefinition&gt;responsible-role'"
  * @generated
  */
-public interface ResponsibleRole extends EObject {
+public interface ResponsibleRole extends OscalElement {
 	/**
 	 * Returns the value of the '<em><b>Role Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->

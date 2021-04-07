@@ -17,6 +17,7 @@ package dsm.oscal.model.OscalCatalog.util;
 
 import dsm.oscal.model.OscalCatalog.*;
 
+import dsm.oscal.model.OscalMetadata.OscalElement;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -82,18 +83,21 @@ public class OscalCatalogSwitch<T> extends Switch<T> {
 			case OscalCatalogPackage.CATALOG: {
 				Catalog catalog = (Catalog)theEObject;
 				T result = caseCatalog(catalog);
+				if (result == null) result = caseOscalElement(catalog);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case OscalCatalogPackage.CONTROL: {
 				Control control = (Control)theEObject;
 				T result = caseControl(control);
+				if (result == null) result = caseOscalElement(control);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case OscalCatalogPackage.GROUP: {
 				Group group = (Group)theEObject;
 				T result = caseGroup(group);
+				if (result == null) result = caseOscalElement(group);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -143,6 +147,21 @@ public class OscalCatalogSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseGroup(Group object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Oscal Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Oscal Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseOscalElement(OscalElement object) {
 		return null;
 	}
 

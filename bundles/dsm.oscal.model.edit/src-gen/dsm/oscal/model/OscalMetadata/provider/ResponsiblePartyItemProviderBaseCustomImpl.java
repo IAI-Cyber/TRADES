@@ -14,19 +14,21 @@
 package dsm.oscal.model.OscalMetadata.provider;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
+import dsm.oscal.model.OscalMetadata.ResponsibleParty;
 
 public class ResponsiblePartyItemProviderBaseCustomImpl extends ResponsiblePartyItemProvider {
-
+	
 	public ResponsiblePartyItemProviderBaseCustomImpl(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
-
+	
+	
 	/**
-	 * @generated
-	 */
+	   * @generated
+	   */
 	@Override
 	public Object getImage(Object object) {
 		return overlayImage(object, getResourceLocator().getImage("custom/ResponsibleParty.png"));
 	}
-
+	
 }
