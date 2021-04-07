@@ -18,7 +18,7 @@ SPDX-License-Identifier: EPL-2.0
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>dsm.oscal.model</artifactId>
 	<packaging>eclipse-plugin</packaging>
-	<name>Oscal</name>
+	<name>Oscal Model</name>
 
 	<parent>
 		<groupId>TRADES</groupId>

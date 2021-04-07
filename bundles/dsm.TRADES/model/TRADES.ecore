@@ -10,7 +10,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="threatOwner" lowerBound="1"
         eType="#//ThreatsOwner" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="catalogs" upperBound="-1"
-        eType="ecore:EClass ../../dsm.oscal.model/model/oscal.ecore#//Catalog" containment="true"/>
+        eType="ecore:EClass ../../dsm.oscal.model/model/oscal-catalog.ecore#//Catalog"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Threat" eSuperTypes="#//NamedElement">
     <eOperations name="checkIsUsed" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">

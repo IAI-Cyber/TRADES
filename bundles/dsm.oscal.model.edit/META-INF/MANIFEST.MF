@@ -5,12 +5,15 @@ Bundle-SymbolicName: dsm.oscal.model.edit;singleton:=true
 Automatic-Module-Name: dsm.oscal.model.edit
 Bundle-Version: 2.5.2.qualifier
 Bundle-ClassPath: .
-Bundle-Activator: dsm.oscal.model.Oscal.provider.OscalEditPlugin$Implementation
+Bundle-Activator: dsm.oscal.model.OscalMetadata.provider.OscalEditPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-14
-Export-Package: dsm.oscal.model.Oscal.provider
+Export-Package: dsm.oscal.model.OscalCatalog.provider,
+ dsm.oscal.model.OscalCatalogCommon.provider,
+ dsm.oscal.model.OscalMetadata.provider
 Require-Bundle: org.eclipse.core.runtime,
  dsm.oscal.model;visibility:=reexport,
- org.eclipse.emf.edit;visibility:=reexport
+ org.eclipse.emf.edit;visibility:=reexport,
+ dsm.oscal.ext;bundle-version="2.5.2"
 Bundle-ActivationPolicy: lazy

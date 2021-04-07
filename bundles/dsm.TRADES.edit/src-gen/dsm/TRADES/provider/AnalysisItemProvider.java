@@ -16,9 +16,7 @@ package dsm.TRADES.provider;
 import dsm.TRADES.Analysis;
 import dsm.TRADES.TRADESFactory;
 import dsm.TRADES.TRADESPackage;
-
-import dsm.oscal.model.Oscal.OscalFactory;
-
+import dsm.oscal.model.OscalCatalog.OscalCatalogFactory;
 import java.util.Collection;
 import java.util.List;
 
@@ -199,7 +197,7 @@ public class AnalysisItemProvider extends ComponentOwnerItemProvider {
 				TRADESFactory.eINSTANCE.createThreatsOwner()));
 
 		newChildDescriptors.add(createChildParameter(TRADESPackage.Literals.ANALYSIS__CATALOGS,
-				OscalFactory.eINSTANCE.createCatalog()));
+				OscalCatalogFactory.eINSTANCE.createCatalog()));
 	}
 
 }

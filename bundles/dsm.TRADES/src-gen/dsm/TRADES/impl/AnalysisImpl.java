@@ -24,9 +24,7 @@ import dsm.TRADES.NamedElement;
 import dsm.TRADES.ScoreSystem;
 import dsm.TRADES.TRADESPackage;
 import dsm.TRADES.ThreatsOwner;
-
-import dsm.oscal.model.Oscal.Catalog;
-
+import dsm.oscal.model.OscalCatalog.Catalog;
 import java.lang.reflect.InvocationTargetException;
 
 import java.util.Collection;

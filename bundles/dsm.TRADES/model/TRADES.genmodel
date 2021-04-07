@@ -6,8 +6,8 @@
     editorDirectory="/dsm.TRADES.editor/src-gen" modelPluginID="dsm.TRADES" modelName="TRADES"
     rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" codeFormatting="true"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
-    usedGenPackages="../../dsm.oscal.model/model/oscal.genmodel#//Oscal" operationReflection="true"
-    importOrganizing="true">
+    usedGenPackages="../../dsm.oscal.model/model/oscal.genmodel#//OscalCatalog ../../dsm.oscal.model/model/oscal.genmodel#//OscalCatalogCommon ../../dsm.oscal.model/model/oscal.genmodel#//OscalMetadata"
+    operationReflection="true" importOrganizing="true">
   <foreignModel>TRADES.ecore</foreignModel>
   <testsDirectory xsi:nil="true"/>
   <genPackages prefix="TRADES" basePackage="dsm" resource="XMI" disposableProviderFactory="true"

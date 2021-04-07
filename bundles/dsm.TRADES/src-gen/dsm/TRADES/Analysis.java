@@ -13,8 +13,7 @@
  */
 package dsm.TRADES;
 
-import dsm.oscal.model.Oscal.Catalog;
-
+import dsm.oscal.model.OscalCatalog.Catalog;
 import org.eclipse.emf.common.util.EList;
 
 /**
@@ -82,7 +81,7 @@ public interface Analysis extends ComponentOwner, DataOwnerElement, NamedElement
 
 	/**
 	 * Returns the value of the '<em><b>Catalogs</b></em>' containment reference list.
-	 * The list contents are of type {@link dsm.oscal.model.Oscal.Catalog}.
+	 * The list contents are of type {@link dsm.oscal.model.OscalCatalog.Catalog}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Catalogs</em>' containment reference list.

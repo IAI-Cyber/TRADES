@@ -45,9 +45,9 @@ import dsm.TRADES.ThreatsOwner;
 import dsm.TRADES.threatTypeENUM;
 
 import dsm.TRADES.util.TRADESValidator;
-
-import dsm.oscal.model.Oscal.OscalPackage;
-
+import dsm.oscal.model.OscalCatalog.OscalCatalogPackage;
+import dsm.oscal.model.OscalCatalogCommon.OscalCatalogCommonPackage;
+import dsm.oscal.model.OscalMetadata.OscalMetadataPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
@@ -313,7 +313,9 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		isInited = true;
 
 		// Initialize simple dependencies
-		OscalPackage.eINSTANCE.eClass();
+		OscalCatalogPackage.eINSTANCE.eClass();
+		OscalCatalogCommonPackage.eINSTANCE.eClass();
+		OscalMetadataPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theTRADESPackage.createPackageContents();
@@ -1434,7 +1436,8 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		OscalPackage theOscalPackage = (OscalPackage) EPackage.Registry.INSTANCE.getEPackage(OscalPackage.eNS_URI);
+		OscalCatalogPackage theOscalCatalogPackage = (OscalCatalogPackage) EPackage.Registry.INSTANCE
+				.getEPackage(OscalCatalogPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -1471,7 +1474,7 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		initEReference(getAnalysis_ThreatOwner(), this.getThreatsOwner(), null, "threatOwner", null, 1, 1,
 				Analysis.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAnalysis_Catalogs(), theOscalPackage.getCatalog(), null, "catalogs", null, 0, -1,
+		initEReference(getAnalysis_Catalogs(), theOscalCatalogPackage.getCatalog(), null, "catalogs", null, 0, -1,
 				Analysis.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

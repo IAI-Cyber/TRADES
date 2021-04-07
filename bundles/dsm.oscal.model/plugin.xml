@@ -9,8 +9,24 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated oscal -->
       <package
-            uri="dsm.oscal"
-            class="dsm.oscal.model.Oscal.OscalPackage"
+            uri="http://csrc.nist.gov/ns/oscal/1.0/oscal-metadata"
+            class="dsm.oscal.model.OscalMetadata.OscalMetadataPackage"
+            genModel="model/oscal.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated oscal -->
+      <package
+            uri="http://csrc.nist.gov/ns/oscal/1.0/oscal-catalog-common"
+            class="dsm.oscal.model.OscalCatalogCommon.OscalCatalogCommonPackage"
+            genModel="model/oscal.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated oscal -->
+      <package
+            uri="http://csrc.nist.gov/ns/oscal/1.0/oscal-catalog"
+            class="dsm.oscal.model.OscalCatalog.OscalCatalogPackage"
             genModel="model/oscal.genmodel"/>
    </extension>
 

@@ -9,8 +9,34 @@
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <!-- @generated oscal -->
       <factory
-            uri="dsm.oscal"
-            class="dsm.oscal.model.Oscal.provider.OscalItemProviderAdapterFactory"
+            uri="http://csrc.nist.gov/ns/oscal/1.0/oscal-catalog"
+            class="dsm.oscal.model.OscalCatalog.provider.OscalCatalogItemProviderAdapterFactory"
+            supportedTypes=
+              "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
+               org.eclipse.emf.edit.provider.IStructuredItemContentProvider
+               org.eclipse.emf.edit.provider.ITreeItemContentProvider
+               org.eclipse.emf.edit.provider.IItemLabelProvider
+               org.eclipse.emf.edit.provider.IItemPropertySource"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <!-- @generated oscal -->
+      <factory
+            uri="http://csrc.nist.gov/ns/oscal/1.0/oscal-catalog-common"
+            class="dsm.oscal.model.OscalCatalogCommon.provider.OscalCatalogCommonItemProviderAdapterFactory"
+            supportedTypes=
+              "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
+               org.eclipse.emf.edit.provider.IStructuredItemContentProvider
+               org.eclipse.emf.edit.provider.ITreeItemContentProvider
+               org.eclipse.emf.edit.provider.IItemLabelProvider
+               org.eclipse.emf.edit.provider.IItemPropertySource"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <!-- @generated oscal -->
+      <factory
+            uri="http://csrc.nist.gov/ns/oscal/1.0/oscal-metadata"
+            class="dsm.oscal.model.OscalMetadata.provider.OscalMetadataItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider

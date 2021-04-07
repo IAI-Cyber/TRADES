@@ -1,0 +1,942 @@
+/**
+ * 
+ *  Copyright Israel Aerospace Industries, Eclipse contributors and others 2021. All rights reserved.
+ *  This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License 2.0
+ *  which accompanies this distribution, and is available at
+ *  https://www.eclipse.org/legal/epl-2.0/
+ *  
+ *  SPDX-License-Identifier: EPL-2.0
+ *  
+ *  Contributors:
+ *      ELTA Ltd - initial API and implementation
+ *  
+ * 
+ */
+package dsm.oscal.model.OscalCatalog;
+
+import org.eclipse.emf.ecore.EAttribute;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
+
+/**
+ * <!-- begin-user-doc -->
+ * The <b>Package</b> for the model.
+ * It contains accessors for the meta objects to represent
+ * <ul>
+ *   <li>each class,</li>
+ *   <li>each feature of each class,</li>
+ *   <li>each operation of each class,</li>
+ *   <li>each enum,</li>
+ *   <li>and each data type</li>
+ * </ul>
+ * <!-- end-user-doc -->
+ * @see dsm.oscal.model.OscalCatalog.OscalCatalogFactory
+ * @model kind="package"
+ * @generated
+ */
+public interface OscalCatalogPackage extends EPackage {
+	/**
+	 * The package name.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	String eNAME = "OscalCatalog";
+
+	/**
+	 * The package namespace URI.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	String eNS_URI = "http://csrc.nist.gov/ns/oscal/1.0/oscal-catalog";
+
+	/**
+	 * The package namespace name.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	String eNS_PREFIX = "oscal-catalog";
+
+	/**
+	 * The singleton instance of the package.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	OscalCatalogPackage eINSTANCE = dsm.oscal.model.OscalCatalog.impl.OscalCatalogPackageImpl.init();
+
+	/**
+	 * The meta object id for the '{@link dsm.oscal.model.OscalCatalog.impl.CatalogImpl <em>Catalog</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see dsm.oscal.model.OscalCatalog.impl.CatalogImpl
+	 * @see dsm.oscal.model.OscalCatalog.impl.OscalCatalogPackageImpl#getCatalog()
+	 * @generated
+	 */
+	int CATALOG = 0;
+
+	/**
+	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CATALOG__UUID = 0;
+
+	/**
+	 * The feature id for the '<em><b>Metadata</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CATALOG__METADATA = 1;
+
+	/**
+	 * The feature id for the '<em><b>Params</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CATALOG__PARAMS = 2;
+
+	/**
+	 * The feature id for the '<em><b>Controls</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CATALOG__CONTROLS = 3;
+
+	/**
+	 * The feature id for the '<em><b>Back Matter</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CATALOG__BACK_MATTER = 4;
+
+	/**
+	 * The feature id for the '<em><b>Groups</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CATALOG__GROUPS = 5;
+
+	/**
+	 * The number of structural features of the '<em>Catalog</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CATALOG_FEATURE_COUNT = 6;
+
+	/**
+	 * The number of operations of the '<em>Catalog</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CATALOG_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link dsm.oscal.model.OscalCatalog.impl.ControlImpl <em>Control</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see dsm.oscal.model.OscalCatalog.impl.ControlImpl
+	 * @see dsm.oscal.model.OscalCatalog.impl.OscalCatalogPackageImpl#getControl()
+	 * @generated
+	 */
+	int CONTROL = 1;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL__ID = 0;
+
+	/**
+	 * The feature id for the '<em><b>Clazz</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL__CLAZZ = 1;
+
+	/**
+	 * The feature id for the '<em><b>Title</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL__TITLE = 2;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL__ANNOTATIONS = 3;
+
+	/**
+	 * The feature id for the '<em><b>Params</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL__PARAMS = 4;
+
+	/**
+	 * The feature id for the '<em><b>Parts</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL__PARTS = 5;
+
+	/**
+	 * The feature id for the '<em><b>Links</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL__LINKS = 6;
+
+	/**
+	 * The feature id for the '<em><b>Controls</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL__CONTROLS = 7;
+
+	/**
+	 * The feature id for the '<em><b>Props</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL__PROPS = 8;
+
+	/**
+	 * The number of structural features of the '<em>Control</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL_FEATURE_COUNT = 9;
+
+	/**
+	 * The number of operations of the '<em>Control</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link dsm.oscal.model.OscalCatalog.impl.GroupImpl <em>Group</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see dsm.oscal.model.OscalCatalog.impl.GroupImpl
+	 * @see dsm.oscal.model.OscalCatalog.impl.OscalCatalogPackageImpl#getGroup()
+	 * @generated
+	 */
+	int GROUP = 2;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GROUP__ID = 0;
+
+	/**
+	 * The feature id for the '<em><b>Clazz</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GROUP__CLAZZ = 1;
+
+	/**
+	 * The feature id for the '<em><b>Title</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GROUP__TITLE = 2;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GROUP__ANNOTATIONS = 3;
+
+	/**
+	 * The feature id for the '<em><b>Params</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GROUP__PARAMS = 4;
+
+	/**
+	 * The feature id for the '<em><b>Parts</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GROUP__PARTS = 5;
+
+	/**
+	 * The feature id for the '<em><b>Links</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GROUP__LINKS = 6;
+
+	/**
+	 * The feature id for the '<em><b>Controls</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GROUP__CONTROLS = 7;
+
+	/**
+	 * The feature id for the '<em><b>Groups</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GROUP__GROUPS = 8;
+
+	/**
+	 * The feature id for the '<em><b>Props</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GROUP__PROPS = 9;
+
+	/**
+	 * The number of structural features of the '<em>Group</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GROUP_FEATURE_COUNT = 10;
+
+	/**
+	 * The number of operations of the '<em>Group</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GROUP_OPERATION_COUNT = 0;
+
+
+	/**
+	 * Returns the meta object for class '{@link dsm.oscal.model.OscalCatalog.Catalog <em>Catalog</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Catalog</em>'.
+	 * @see dsm.oscal.model.OscalCatalog.Catalog
+	 * @generated
+	 */
+	EClass getCatalog();
+
+	/**
+	 * Returns the meta object for the attribute '{@link dsm.oscal.model.OscalCatalog.Catalog#getUuid <em>Uuid</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Uuid</em>'.
+	 * @see dsm.oscal.model.OscalCatalog.Catalog#getUuid()
+	 * @see #getCatalog()
+	 * @generated
+	 */
+	EAttribute getCatalog_Uuid();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link dsm.oscal.model.OscalCatalog.Catalog#getMetadata <em>Metadata</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Metadata</em>'.
+	 * @see dsm.oscal.model.OscalCatalog.Catalog#getMetadata()
+	 * @see #getCatalog()
+	 * @generated
+	 */
+	EReference getCatalog_Metadata();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link dsm.oscal.model.OscalCatalog.Catalog#getParams <em>Params</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Params</em>'.
+	 * @see dsm.oscal.model.OscalCatalog.Catalog#getParams()
+	 * @see #getCatalog()
+	 * @generated
+	 */
+	EReference getCatalog_Params();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link dsm.oscal.model.OscalCatalog.Catalog#getControls <em>Controls</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Controls</em>'.
+	 * @see dsm.oscal.model.OscalCatalog.Catalog#getControls()
+	 * @see #getCatalog()
+	 * @generated
+	 */
+	EReference getCatalog_Controls();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link dsm.oscal.model.OscalCatalog.Catalog#getBackMatter <em>Back Matter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Back Matter</em>'.
+	 * @see dsm.oscal.model.OscalCatalog.Catalog#getBackMatter()
+	 * @see #getCatalog()
+	 * @generated
+	 */
+	EReference getCatalog_BackMatter();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link dsm.oscal.model.OscalCatalog.Catalog#getGroups <em>Groups</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Groups</em>'.
+	 * @see dsm.oscal.model.OscalCatalog.Catalog#getGroups()
+	 * @see #getCatalog()
+	 * @generated
+	 */
+	EReference getCatalog_Groups();
+
+	/**
+	 * Returns the meta object for class '{@link dsm.oscal.model.OscalCatalog.Control <em>Control</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Control</em>'.
+	 * @see dsm.oscal.model.OscalCatalog.Control
+	 * @generated
+	 */
+	EClass getControl();
+
+	/**
+	 * Returns the meta object for the attribute '{@link dsm.oscal.model.OscalCatalog.Control#getId <em>Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Id</em>'.
+	 * @see dsm.oscal.model.OscalCatalog.Control#getId()
+	 * @see #getControl()
+	 * @generated
+	 */
+	EAttribute getControl_Id();
+
+	/**
+	 * Returns the meta object for the attribute '{@link dsm.oscal.model.OscalCatalog.Control#getClazz <em>Clazz</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Clazz</em>'.
+	 * @see dsm.oscal.model.OscalCatalog.Control#getClazz()
+	 * @see #getControl()
+	 * @generated
+	 */
+	EAttribute getControl_Clazz();
+
+	/**
+	 * Returns the meta object for the attribute '{@link dsm.oscal.model.OscalCatalog.Control#getTitle <em>Title</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Title</em>'.
+	 * @see dsm.oscal.model.OscalCatalog.Control#getTitle()
+	 * @see #getControl()
+	 * @generated
+	 */
+	EAttribute getControl_Title();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link dsm.oscal.model.OscalCatalog.Control#getAnnotations <em>Annotations</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Annotations</em>'.
+	 * @see dsm.oscal.model.OscalCatalog.Control#getAnnotations()
+	 * @see #getControl()
+	 * @generated
+	 */
+	EReference getControl_Annotations();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link dsm.oscal.model.OscalCatalog.Control#getParams <em>Params</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Params</em>'.
+	 * @see dsm.oscal.model.OscalCatalog.Control#getParams()
+	 * @see #getControl()
+	 * @generated
+	 */
+	EReference getControl_Params();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link dsm.oscal.model.OscalCatalog.Control#getParts <em>Parts</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Parts</em>'.
+	 * @see dsm.oscal.model.OscalCatalog.Control#getParts()
+	 * @see #getControl()
+	 * @generated
+	 */
+	EReference getControl_Parts();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link dsm.oscal.model.OscalCatalog.Control#getLinks <em>Links</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Links</em>'.
+	 * @see dsm.oscal.model.OscalCatalog.Control#getLinks()
+	 * @see #getControl()
+	 * @generated
+	 */
+	EReference getControl_Links();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link dsm.oscal.model.OscalCatalog.Control#getControls <em>Controls</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Controls</em>'.
+	 * @see dsm.oscal.model.OscalCatalog.Control#getControls()
+	 * @see #getControl()
+	 * @generated
+	 */
+	EReference getControl_Controls();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link dsm.oscal.model.OscalCatalog.Control#getProps <em>Props</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Props</em>'.
+	 * @see dsm.oscal.model.OscalCatalog.Control#getProps()
+	 * @see #getControl()
+	 * @generated
+	 */
+	EReference getControl_Props();
+
+	/**
+	 * Returns the meta object for class '{@link dsm.oscal.model.OscalCatalog.Group <em>Group</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Group</em>'.
+	 * @see dsm.oscal.model.OscalCatalog.Group
+	 * @generated
+	 */
+	EClass getGroup();
+
+	/**
+	 * Returns the meta object for the attribute '{@link dsm.oscal.model.OscalCatalog.Group#getId <em>Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Id</em>'.
+	 * @see dsm.oscal.model.OscalCatalog.Group#getId()
+	 * @see #getGroup()
+	 * @generated
+	 */
+	EAttribute getGroup_Id();
+
+	/**
+	 * Returns the meta object for the attribute '{@link dsm.oscal.model.OscalCatalog.Group#getClazz <em>Clazz</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Clazz</em>'.
+	 * @see dsm.oscal.model.OscalCatalog.Group#getClazz()
+	 * @see #getGroup()
+	 * @generated
+	 */
+	EAttribute getGroup_Clazz();
+
+	/**
+	 * Returns the meta object for the attribute '{@link dsm.oscal.model.OscalCatalog.Group#getTitle <em>Title</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Title</em>'.
+	 * @see dsm.oscal.model.OscalCatalog.Group#getTitle()
+	 * @see #getGroup()
+	 * @generated
+	 */
+	EAttribute getGroup_Title();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link dsm.oscal.model.OscalCatalog.Group#getAnnotations <em>Annotations</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Annotations</em>'.
+	 * @see dsm.oscal.model.OscalCatalog.Group#getAnnotations()
+	 * @see #getGroup()
+	 * @generated
+	 */
+	EReference getGroup_Annotations();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link dsm.oscal.model.OscalCatalog.Group#getParams <em>Params</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Params</em>'.
+	 * @see dsm.oscal.model.OscalCatalog.Group#getParams()
+	 * @see #getGroup()
+	 * @generated
+	 */
+	EReference getGroup_Params();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link dsm.oscal.model.OscalCatalog.Group#getParts <em>Parts</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Parts</em>'.
+	 * @see dsm.oscal.model.OscalCatalog.Group#getParts()
+	 * @see #getGroup()
+	 * @generated
+	 */
+	EReference getGroup_Parts();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link dsm.oscal.model.OscalCatalog.Group#getLinks <em>Links</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Links</em>'.
+	 * @see dsm.oscal.model.OscalCatalog.Group#getLinks()
+	 * @see #getGroup()
+	 * @generated
+	 */
+	EReference getGroup_Links();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link dsm.oscal.model.OscalCatalog.Group#getControls <em>Controls</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Controls</em>'.
+	 * @see dsm.oscal.model.OscalCatalog.Group#getControls()
+	 * @see #getGroup()
+	 * @generated
+	 */
+	EReference getGroup_Controls();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link dsm.oscal.model.OscalCatalog.Group#getGroups <em>Groups</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Groups</em>'.
+	 * @see dsm.oscal.model.OscalCatalog.Group#getGroups()
+	 * @see #getGroup()
+	 * @generated
+	 */
+	EReference getGroup_Groups();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link dsm.oscal.model.OscalCatalog.Group#getProps <em>Props</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Props</em>'.
+	 * @see dsm.oscal.model.OscalCatalog.Group#getProps()
+	 * @see #getGroup()
+	 * @generated
+	 */
+	EReference getGroup_Props();
+
+	/**
+	 * Returns the factory that creates the instances of the model.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the factory that creates the instances of the model.
+	 * @generated
+	 */
+	OscalCatalogFactory getOscalCatalogFactory();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * Defines literals for the meta objects that represent
+	 * <ul>
+	 *   <li>each class,</li>
+	 *   <li>each feature of each class,</li>
+	 *   <li>each operation of each class,</li>
+	 *   <li>each enum,</li>
+	 *   <li>and each data type</li>
+	 * </ul>
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	interface Literals {
+		/**
+		 * The meta object literal for the '{@link dsm.oscal.model.OscalCatalog.impl.CatalogImpl <em>Catalog</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see dsm.oscal.model.OscalCatalog.impl.CatalogImpl
+		 * @see dsm.oscal.model.OscalCatalog.impl.OscalCatalogPackageImpl#getCatalog()
+		 * @generated
+		 */
+		EClass CATALOG = eINSTANCE.getCatalog();
+
+		/**
+		 * The meta object literal for the '<em><b>Uuid</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CATALOG__UUID = eINSTANCE.getCatalog_Uuid();
+
+		/**
+		 * The meta object literal for the '<em><b>Metadata</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CATALOG__METADATA = eINSTANCE.getCatalog_Metadata();
+
+		/**
+		 * The meta object literal for the '<em><b>Params</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CATALOG__PARAMS = eINSTANCE.getCatalog_Params();
+
+		/**
+		 * The meta object literal for the '<em><b>Controls</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CATALOG__CONTROLS = eINSTANCE.getCatalog_Controls();
+
+		/**
+		 * The meta object literal for the '<em><b>Back Matter</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CATALOG__BACK_MATTER = eINSTANCE.getCatalog_BackMatter();
+
+		/**
+		 * The meta object literal for the '<em><b>Groups</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CATALOG__GROUPS = eINSTANCE.getCatalog_Groups();
+
+		/**
+		 * The meta object literal for the '{@link dsm.oscal.model.OscalCatalog.impl.ControlImpl <em>Control</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see dsm.oscal.model.OscalCatalog.impl.ControlImpl
+		 * @see dsm.oscal.model.OscalCatalog.impl.OscalCatalogPackageImpl#getControl()
+		 * @generated
+		 */
+		EClass CONTROL = eINSTANCE.getControl();
+
+		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CONTROL__ID = eINSTANCE.getControl_Id();
+
+		/**
+		 * The meta object literal for the '<em><b>Clazz</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CONTROL__CLAZZ = eINSTANCE.getControl_Clazz();
+
+		/**
+		 * The meta object literal for the '<em><b>Title</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CONTROL__TITLE = eINSTANCE.getControl_Title();
+
+		/**
+		 * The meta object literal for the '<em><b>Annotations</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONTROL__ANNOTATIONS = eINSTANCE.getControl_Annotations();
+
+		/**
+		 * The meta object literal for the '<em><b>Params</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONTROL__PARAMS = eINSTANCE.getControl_Params();
+
+		/**
+		 * The meta object literal for the '<em><b>Parts</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONTROL__PARTS = eINSTANCE.getControl_Parts();
+
+		/**
+		 * The meta object literal for the '<em><b>Links</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONTROL__LINKS = eINSTANCE.getControl_Links();
+
+		/**
+		 * The meta object literal for the '<em><b>Controls</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONTROL__CONTROLS = eINSTANCE.getControl_Controls();
+
+		/**
+		 * The meta object literal for the '<em><b>Props</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONTROL__PROPS = eINSTANCE.getControl_Props();
+
+		/**
+		 * The meta object literal for the '{@link dsm.oscal.model.OscalCatalog.impl.GroupImpl <em>Group</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see dsm.oscal.model.OscalCatalog.impl.GroupImpl
+		 * @see dsm.oscal.model.OscalCatalog.impl.OscalCatalogPackageImpl#getGroup()
+		 * @generated
+		 */
+		EClass GROUP = eINSTANCE.getGroup();
+
+		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute GROUP__ID = eINSTANCE.getGroup_Id();
+
+		/**
+		 * The meta object literal for the '<em><b>Clazz</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute GROUP__CLAZZ = eINSTANCE.getGroup_Clazz();
+
+		/**
+		 * The meta object literal for the '<em><b>Title</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute GROUP__TITLE = eINSTANCE.getGroup_Title();
+
+		/**
+		 * The meta object literal for the '<em><b>Annotations</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference GROUP__ANNOTATIONS = eINSTANCE.getGroup_Annotations();
+
+		/**
+		 * The meta object literal for the '<em><b>Params</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference GROUP__PARAMS = eINSTANCE.getGroup_Params();
+
+		/**
+		 * The meta object literal for the '<em><b>Parts</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference GROUP__PARTS = eINSTANCE.getGroup_Parts();
+
+		/**
+		 * The meta object literal for the '<em><b>Links</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference GROUP__LINKS = eINSTANCE.getGroup_Links();
+
+		/**
+		 * The meta object literal for the '<em><b>Controls</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference GROUP__CONTROLS = eINSTANCE.getGroup_Controls();
+
+		/**
+		 * The meta object literal for the '<em><b>Groups</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference GROUP__GROUPS = eINSTANCE.getGroup_Groups();
+
+		/**
+		 * The meta object literal for the '<em><b>Props</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference GROUP__PROPS = eINSTANCE.getGroup_Props();
+
+	}
+
+} //OscalCatalogPackage

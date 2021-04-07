@@ -2,6 +2,15 @@
 <loophole:GenGapModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:loophole="org.eclipselabs.emf.loophole:1.0.0" customModelDirectory="/dsm.oscal.model/src-man" customEditDirectory="/dsm.oscal.model.edit/src-man">
   <genModel href="oscal.genmodel#/"/>
   <genGapPackages customClassPackageSuffix="impl" customProviderPackageSuffix="provider">
-    <genPackage href="oscal.genmodel#//oscal"/>
+    <genPackage href="oscal.genmodel#//OscalCatalog"/>
+  </genGapPackages>
+  <genGapPackages customClassPackageSuffix="impl" customProviderPackageSuffix="provider">
+    <genPackage href="oscal.genmodel#//OscalCatalogCommon"/>
+  </genGapPackages>
+  <genGapPackages customClassPackageSuffix="impl" customProviderPackageSuffix="provider">
+    <genPackage href="oscal.genmodel#//OscalMetadata"/>
+  </genGapPackages>
+  <genGapPackages customClassPackageSuffix="impl" customProviderPackageSuffix="provider">
+    <genPackage href="oscal.genmodel#//OscalProfile"/>
   </genGapPackages>
 </loophole:GenGapModel>
