@@ -18,6 +18,7 @@ package dsm.oscal.model.OscalMetadata.impl;
 import dsm.oscal.model.OscalMetadata.Annotation;
 import dsm.oscal.model.OscalMetadata.OscalMetadataPackage;
 
+import dsm.oscal.model.OscalMetadata.UUIDElement;
 import gov.nist.secauto.metaschema.datatypes.markup.MarkupMultiline;
 
 import java.net.URI;
@@ -39,8 +40,8 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link dsm.oscal.model.OscalMetadata.impl.AnnotationImpl#getName <em>Name</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.AnnotationImpl#getUuid <em>Uuid</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.impl.AnnotationImpl#getName <em>Name</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.AnnotationImpl#getNs <em>Ns</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.AnnotationImpl#getValue <em>Value</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.AnnotationImpl#getRemarks <em>Remarks</em>}</li>
@@ -49,26 +50,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * @generated
  */
 public class AnnotationImpl extends MinimalEObjectImpl.Container implements Annotation {
-	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String name = NAME_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getUuid() <em>Uuid</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -88,6 +69,26 @@ public class AnnotationImpl extends MinimalEObjectImpl.Container implements Anno
 	 * @ordered
 	 */
 	protected UUID uuid = UUID_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String name = NAME_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getNs() <em>Ns</em>}' attribute.
@@ -291,10 +292,10 @@ public class AnnotationImpl extends MinimalEObjectImpl.Container implements Anno
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case OscalMetadataPackage.ANNOTATION__NAME:
-				return getName();
 			case OscalMetadataPackage.ANNOTATION__UUID:
 				return getUuid();
+			case OscalMetadataPackage.ANNOTATION__NAME:
+				return getName();
 			case OscalMetadataPackage.ANNOTATION__NS:
 				return getNs();
 			case OscalMetadataPackage.ANNOTATION__VALUE:
@@ -313,11 +314,11 @@ public class AnnotationImpl extends MinimalEObjectImpl.Container implements Anno
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case OscalMetadataPackage.ANNOTATION__NAME:
-				setName((String)newValue);
-				return;
 			case OscalMetadataPackage.ANNOTATION__UUID:
 				setUuid((UUID)newValue);
+				return;
+			case OscalMetadataPackage.ANNOTATION__NAME:
+				setName((String)newValue);
 				return;
 			case OscalMetadataPackage.ANNOTATION__NS:
 				setNs((URI)newValue);
@@ -340,11 +341,11 @@ public class AnnotationImpl extends MinimalEObjectImpl.Container implements Anno
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case OscalMetadataPackage.ANNOTATION__NAME:
-				setName(NAME_EDEFAULT);
-				return;
 			case OscalMetadataPackage.ANNOTATION__UUID:
 				setUuid(UUID_EDEFAULT);
+				return;
+			case OscalMetadataPackage.ANNOTATION__NAME:
+				setName(NAME_EDEFAULT);
 				return;
 			case OscalMetadataPackage.ANNOTATION__NS:
 				setNs(NS_EDEFAULT);
@@ -367,10 +368,10 @@ public class AnnotationImpl extends MinimalEObjectImpl.Container implements Anno
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case OscalMetadataPackage.ANNOTATION__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case OscalMetadataPackage.ANNOTATION__UUID:
 				return UUID_EDEFAULT == null ? uuid != null : !UUID_EDEFAULT.equals(uuid);
+			case OscalMetadataPackage.ANNOTATION__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case OscalMetadataPackage.ANNOTATION__NS:
 				return NS_EDEFAULT == null ? ns != null : !NS_EDEFAULT.equals(ns);
 			case OscalMetadataPackage.ANNOTATION__VALUE:
@@ -387,14 +388,46 @@ public class AnnotationImpl extends MinimalEObjectImpl.Container implements Anno
 	 * @generated
 	 */
 	@Override
+	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == UUIDElement.class) {
+			switch (derivedFeatureID) {
+				case OscalMetadataPackage.ANNOTATION__UUID: return OscalMetadataPackage.UUID_ELEMENT__UUID;
+				default: return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == UUIDElement.class) {
+			switch (baseFeatureID) {
+				case OscalMetadataPackage.UUID_ELEMENT__UUID: return OscalMetadataPackage.ANNOTATION__UUID;
+				default: return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (name: ");
-		result.append(name);
-		result.append(", uuid: ");
+		result.append(" (uuid: ");
 		result.append(uuid);
+		result.append(", name: ");
+		result.append(name);
 		result.append(", ns: ");
 		result.append(ns);
 		result.append(", value: ");

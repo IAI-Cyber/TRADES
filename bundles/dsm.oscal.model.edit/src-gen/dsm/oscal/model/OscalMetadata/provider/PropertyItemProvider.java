@@ -73,8 +73,8 @@ public class PropertyItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addValuePropertyDescriptor(object);
 			addUuidPropertyDescriptor(object);
+			addValuePropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
 			addNsPropertyDescriptor(object);
 			addClazzPropertyDescriptor(object);
@@ -115,9 +115,9 @@ public class PropertyItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Property_uuid_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Property_uuid_feature", "_UI_Property_type"),
-				 OscalMetadataPackage.Literals.PROPERTY__UUID,
+				 getString("_UI_UUIDElement_uuid_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UUIDElement_uuid_feature", "_UI_UUIDElement_type"),
+				 OscalMetadataPackage.Literals.UUID_ELEMENT__UUID,
 				 true,
 				 false,
 				 false,
@@ -230,8 +230,8 @@ public class PropertyItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Property.class)) {
-			case OscalMetadataPackage.PROPERTY__VALUE:
 			case OscalMetadataPackage.PROPERTY__UUID:
+			case OscalMetadataPackage.PROPERTY__VALUE:
 			case OscalMetadataPackage.PROPERTY__NAME:
 			case OscalMetadataPackage.PROPERTY__NS:
 			case OscalMetadataPackage.PROPERTY__CLAZZ:

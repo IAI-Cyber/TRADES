@@ -2,6 +2,7 @@ package dsm.oscal.model.transform.mappers;
 
 import dsm.oscal.model.OscalMetadata.OscalMetadataFactory;
 import dsm.oscal.model.OscalMetadata.Property;
+import dsm.oscal.model.transform.MigrationUtils;
 
 public class PropertyMapper extends AbstractObjectMapper<Property, gov.nist.secauto.oscal.lib.Property> {
 
@@ -26,7 +27,9 @@ public class PropertyMapper extends AbstractObjectMapper<Property, gov.nist.seca
 		property.setClazz(oscalObject.getClazz());
 		property.setName(oscalObject.getName());
 		property.setNs(oscalObject.getNs());
-		property.setUuid(oscalObject.getUuid());
+
+		// In oscal UUIDS are not mandatory by in TRADES they are for simplicity sake
+		MigrationUtils.setUUID(oscalObject.getUuid(), property);
 		property.setValue(oscalObject.getValue());
 		return property;
 	}

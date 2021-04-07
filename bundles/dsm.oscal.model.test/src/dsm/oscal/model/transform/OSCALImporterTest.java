@@ -20,6 +20,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
 import java.util.Collections;
 import java.util.UUID;
@@ -29,12 +30,17 @@ import javax.xml.transform.Source;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceImpl;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.rules.TemporaryFolder;
 import org.w3c.dom.Node;
 import org.xml.sax.SAXException;
 import org.xmlunit.builder.Input;
+import org.xmlunit.diff.Comparison;
+import org.xmlunit.diff.ComparisonListener;
+import org.xmlunit.diff.ComparisonResult;
+import org.xmlunit.diff.ComparisonType;
 import org.xmlunit.diff.DOMDifferenceEngine;
 import org.xmlunit.diff.DifferenceEngine;
 import org.xmlunit.input.WhitespaceStrippedSource;
@@ -100,7 +106,8 @@ public class OSCALImporterTest {
 	}
 
 	@org.junit.Test
-	public void checkAgainstNistCatalog() throws IOException, BindingException, ParserConfigurationException, SAXException {
+	public void checkAgainstNistCatalog()
+			throws IOException, BindingException, ParserConfigurationException, SAXException {
 
 		Files.copy(this.getClass().getResourceAsStream("catalog/NIST_SP-800-53_rev5_catalog.xml"), inputFile.toPath(),
 				StandardCopyOption.REPLACE_EXISTING);
@@ -131,8 +138,51 @@ public class OSCALImporterTest {
 		Source control = new WhitespaceStrippedSource(Input.fromFile(saveInputFile).build());
 		Source test = new WhitespaceStrippedSource(Input.fromFile(resultFile).build());
 		DifferenceEngine diff = new DOMDifferenceEngine();
+		diff.addDifferenceListener(new ComparisonListener() {
+			public void comparisonPerformed(Comparison comparison, ComparisonResult outcome) {
+				if (isNewUUIDDiff(comparison)) {
+					return;
+				}
+				try {
+					Files.copy(saveInputFile.toPath(), Path.of("./result/oscal-input.xml"),
+							StandardCopyOption.REPLACE_EXISTING);
+					Files.copy(resultFile.toPath(), Path.of("./result/oscal-loop.xml"),
+							StandardCopyOption.REPLACE_EXISTING);
+				} catch (IOException e) {
+					e.printStackTrace();
+					System.err.println(e.getLocalizedMessage());
+				}
+				Assert.fail("found a difference: " + comparison);
+			}
+		});
 		diff.compare(control, test);
 
+	}
+
+	/**
+	 * TRADES force some UUID to be set whereas is oscal they are not mandatory
+	 * Ignore those differences
+	 * 
+	 * @param comparison
+	 * @return
+	 */
+	private boolean isNewUUIDDiff(Comparison comparison) {
+		if (comparison.getType() == ComparisonType.ELEMENT_NUM_ATTRIBUTES) {
+			Node controlUuidItem = comparison.getControlDetails().getTarget().getAttributes().getNamedItem("uuid");
+			Node testUuidItem = comparison.getTestDetails().getTarget().getAttributes().getNamedItem("uuid");
+			if (controlUuidItem == null && testUuidItem != null) {
+				// TRADES force some UUID to be set whereas is oscal they are not mandatory
+				// Ignore those differences
+				return true;
+			}
+		} else if (comparison.getType() == ComparisonType.ATTR_NAME_LOOKUP
+				&& comparison.getTestDetails().getValue() instanceof javax.xml.namespace.QName
+				&& "uuid".equals(((javax.xml.namespace.QName) comparison.getTestDetails().getValue()).getLocalPart())) {
+			return true;
+
+		}
+
+		return false;
 	}
 
 	public void saveInputFileUsingJavaLib() {

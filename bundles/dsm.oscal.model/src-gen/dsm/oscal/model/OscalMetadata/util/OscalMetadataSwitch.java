@@ -90,6 +90,7 @@ public class OscalMetadataSwitch<T> extends Switch<T> {
 				Annotation annotation = (Annotation)theEObject;
 				T result = caseAnnotation(annotation);
 				if (result == null) result = caseOscalElement(annotation);
+				if (result == null) result = caseUUIDElement(annotation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -174,6 +175,7 @@ public class OscalMetadataSwitch<T> extends Switch<T> {
 				Property property = (Property)theEObject;
 				T result = caseProperty(property);
 				if (result == null) result = caseOscalElement(property);
+				if (result == null) result = caseUUIDElement(property);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}

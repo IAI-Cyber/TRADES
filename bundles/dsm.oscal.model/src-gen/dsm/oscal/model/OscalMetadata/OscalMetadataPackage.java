@@ -191,22 +191,22 @@ public interface OscalMetadataPackage extends EPackage {
 	int ANNOTATION = 1;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ANNOTATION__NAME = OSCAL_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ANNOTATION__UUID = OSCAL_ELEMENT_FEATURE_COUNT + 1;
+	int ANNOTATION__UUID = OSCAL_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ANNOTATION__NAME = OSCAL_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Ns</b></em>' attribute.
@@ -1111,22 +1111,22 @@ public interface OscalMetadataPackage extends EPackage {
 	int PROPERTY = 12;
 
 	/**
-	 * The feature id for the '<em><b>Value</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROPERTY__VALUE = OSCAL_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY__UUID = OSCAL_ELEMENT_FEATURE_COUNT + 1;
+	int PROPERTY__UUID = OSCAL_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROPERTY__VALUE = OSCAL_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2005,17 +2005,6 @@ public interface OscalMetadataPackage extends EPackage {
 	EAttribute getAnnotation_Name();
 
 	/**
-	 * Returns the meta object for the attribute '{@link dsm.oscal.model.OscalMetadata.Annotation#getUuid <em>Uuid</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Uuid</em>'.
-	 * @see dsm.oscal.model.OscalMetadata.Annotation#getUuid()
-	 * @see #getAnnotation()
-	 * @generated
-	 */
-	EAttribute getAnnotation_Uuid();
-
-	/**
 	 * Returns the meta object for the attribute '{@link dsm.oscal.model.OscalMetadata.Annotation#getNs <em>Ns</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2786,17 +2775,6 @@ public interface OscalMetadataPackage extends EPackage {
 	EAttribute getProperty_Value();
 
 	/**
-	 * Returns the meta object for the attribute '{@link dsm.oscal.model.OscalMetadata.Property#getUuid <em>Uuid</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Uuid</em>'.
-	 * @see dsm.oscal.model.OscalMetadata.Property#getUuid()
-	 * @see #getProperty()
-	 * @generated
-	 */
-	EAttribute getProperty_Uuid();
-
-	/**
 	 * Returns the meta object for the attribute '{@link dsm.oscal.model.OscalMetadata.Property#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3546,14 +3524,6 @@ public interface OscalMetadataPackage extends EPackage {
 		EAttribute ANNOTATION__NAME = eINSTANCE.getAnnotation_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>Uuid</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ANNOTATION__UUID = eINSTANCE.getAnnotation_Uuid();
-
-		/**
 		 * The meta object literal for the '<em><b>Ns</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4142,14 +4112,6 @@ public interface OscalMetadataPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute PROPERTY__VALUE = eINSTANCE.getProperty_Value();
-
-		/**
-		 * The meta object literal for the '<em><b>Uuid</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute PROPERTY__UUID = eINSTANCE.getProperty_Uuid();
 
 		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.

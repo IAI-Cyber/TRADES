@@ -2,6 +2,7 @@ package dsm.oscal.model.transform.mappers;
 
 import dsm.oscal.model.OscalMetadata.Annotation;
 import dsm.oscal.model.OscalMetadata.OscalMetadataFactory;
+import dsm.oscal.model.transform.MigrationUtils;
 
 public class AnnotationMapper extends AbstractObjectMapper<Annotation, gov.nist.secauto.oscal.lib.Annotation> {
 
@@ -24,7 +25,8 @@ public class AnnotationMapper extends AbstractObjectMapper<Annotation, gov.nist.
 		Annotation annotation = OscalMetadataFactory.eINSTANCE.createAnnotation();
 		annotation.setNs(oscalObject.getNs());
 		annotation.setName(oscalObject.getName());
-		annotation.setUuid(oscalObject.getUuid());
+		// In oscal UUIDS are not mandatory by in TRADES they are for simplicity sake
+		MigrationUtils.setUUID(oscalObject.getUuid(), annotation);
 		annotation.setValue(oscalObject.getValue());
 		return annotation;
 	}

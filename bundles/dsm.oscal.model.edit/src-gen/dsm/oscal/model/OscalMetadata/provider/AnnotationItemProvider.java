@@ -73,8 +73,8 @@ public class AnnotationItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addNamePropertyDescriptor(object);
 			addUuidPropertyDescriptor(object);
+			addNamePropertyDescriptor(object);
 			addNsPropertyDescriptor(object);
 			addValuePropertyDescriptor(object);
 			addRemarksPropertyDescriptor(object);
@@ -115,9 +115,9 @@ public class AnnotationItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Annotation_uuid_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Annotation_uuid_feature", "_UI_Annotation_type"),
-				 OscalMetadataPackage.Literals.ANNOTATION__UUID,
+				 getString("_UI_UUIDElement_uuid_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UUIDElement_uuid_feature", "_UI_UUIDElement_type"),
+				 OscalMetadataPackage.Literals.UUID_ELEMENT__UUID,
 				 true,
 				 false,
 				 false,
@@ -230,8 +230,8 @@ public class AnnotationItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Annotation.class)) {
-			case OscalMetadataPackage.ANNOTATION__NAME:
 			case OscalMetadataPackage.ANNOTATION__UUID:
+			case OscalMetadataPackage.ANNOTATION__NAME:
 			case OscalMetadataPackage.ANNOTATION__NS:
 			case OscalMetadataPackage.ANNOTATION__VALUE:
 			case OscalMetadataPackage.ANNOTATION__REMARKS:

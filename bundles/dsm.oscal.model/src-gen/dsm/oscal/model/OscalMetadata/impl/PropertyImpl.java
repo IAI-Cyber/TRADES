@@ -18,6 +18,7 @@ package dsm.oscal.model.OscalMetadata.impl;
 import dsm.oscal.model.OscalMetadata.OscalMetadataPackage;
 import dsm.oscal.model.OscalMetadata.Property;
 
+import dsm.oscal.model.OscalMetadata.UUIDElement;
 import java.net.URI;
 
 import java.util.UUID;
@@ -37,8 +38,8 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link dsm.oscal.model.OscalMetadata.impl.PropertyImpl#getValue <em>Value</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.PropertyImpl#getUuid <em>Uuid</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.impl.PropertyImpl#getValue <em>Value</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.PropertyImpl#getName <em>Name</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.PropertyImpl#getNs <em>Ns</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.PropertyImpl#getClazz <em>Clazz</em>}</li>
@@ -47,26 +48,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * @generated
  */
 public class PropertyImpl extends MinimalEObjectImpl.Container implements Property {
-	/**
-	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getValue()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String VALUE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getValue()
-	 * @generated
-	 * @ordered
-	 */
-	protected String value = VALUE_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getUuid() <em>Uuid</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -86,6 +67,26 @@ public class PropertyImpl extends MinimalEObjectImpl.Container implements Proper
 	 * @ordered
 	 */
 	protected UUID uuid = UUID_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getValue()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALUE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getValue()
+	 * @generated
+	 * @ordered
+	 */
+	protected String value = VALUE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -289,10 +290,10 @@ public class PropertyImpl extends MinimalEObjectImpl.Container implements Proper
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case OscalMetadataPackage.PROPERTY__VALUE:
-				return getValue();
 			case OscalMetadataPackage.PROPERTY__UUID:
 				return getUuid();
+			case OscalMetadataPackage.PROPERTY__VALUE:
+				return getValue();
 			case OscalMetadataPackage.PROPERTY__NAME:
 				return getName();
 			case OscalMetadataPackage.PROPERTY__NS:
@@ -311,11 +312,11 @@ public class PropertyImpl extends MinimalEObjectImpl.Container implements Proper
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case OscalMetadataPackage.PROPERTY__VALUE:
-				setValue((String)newValue);
-				return;
 			case OscalMetadataPackage.PROPERTY__UUID:
 				setUuid((UUID)newValue);
+				return;
+			case OscalMetadataPackage.PROPERTY__VALUE:
+				setValue((String)newValue);
 				return;
 			case OscalMetadataPackage.PROPERTY__NAME:
 				setName((String)newValue);
@@ -338,11 +339,11 @@ public class PropertyImpl extends MinimalEObjectImpl.Container implements Proper
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case OscalMetadataPackage.PROPERTY__VALUE:
-				setValue(VALUE_EDEFAULT);
-				return;
 			case OscalMetadataPackage.PROPERTY__UUID:
 				setUuid(UUID_EDEFAULT);
+				return;
+			case OscalMetadataPackage.PROPERTY__VALUE:
+				setValue(VALUE_EDEFAULT);
 				return;
 			case OscalMetadataPackage.PROPERTY__NAME:
 				setName(NAME_EDEFAULT);
@@ -365,10 +366,10 @@ public class PropertyImpl extends MinimalEObjectImpl.Container implements Proper
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case OscalMetadataPackage.PROPERTY__VALUE:
-				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
 			case OscalMetadataPackage.PROPERTY__UUID:
 				return UUID_EDEFAULT == null ? uuid != null : !UUID_EDEFAULT.equals(uuid);
+			case OscalMetadataPackage.PROPERTY__VALUE:
+				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
 			case OscalMetadataPackage.PROPERTY__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case OscalMetadataPackage.PROPERTY__NS:
@@ -385,14 +386,46 @@ public class PropertyImpl extends MinimalEObjectImpl.Container implements Proper
 	 * @generated
 	 */
 	@Override
+	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == UUIDElement.class) {
+			switch (derivedFeatureID) {
+				case OscalMetadataPackage.PROPERTY__UUID: return OscalMetadataPackage.UUID_ELEMENT__UUID;
+				default: return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == UUIDElement.class) {
+			switch (baseFeatureID) {
+				case OscalMetadataPackage.UUID_ELEMENT__UUID: return OscalMetadataPackage.PROPERTY__UUID;
+				default: return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (value: ");
-		result.append(value);
-		result.append(", uuid: ");
+		result.append(" (uuid: ");
 		result.append(uuid);
+		result.append(", value: ");
+		result.append(value);
 		result.append(", name: ");
 		result.append(name);
 		result.append(", ns: ");

@@ -19,8 +19,6 @@ import gov.nist.secauto.metaschema.datatypes.markup.MarkupMultiline;
 
 import java.net.URI;
 
-import java.util.UUID;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Annotation</b></em>'.
@@ -41,7 +39,6 @@ import java.util.UUID;
  * </p>
  * <ul>
  *   <li>{@link dsm.oscal.model.OscalMetadata.Annotation#getName <em>Name</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.Annotation#getUuid <em>Uuid</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.Annotation#getNs <em>Ns</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.Annotation#getValue <em>Value</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.Annotation#getRemarks <em>Remarks</em>}</li>
@@ -51,7 +48,7 @@ import java.util.UUID;
  * @model annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;AssemblyDefinition&gt;annotation'"
  * @generated
  */
-public interface Annotation extends OscalElement {
+public interface Annotation extends OscalElement, UUIDElement {
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -80,35 +77,6 @@ public interface Annotation extends OscalElement {
 	 * @generated
 	 */
 	void setName(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Uuid</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * <h1>Annotated Property Universally Unique Identifier</h1>
-	 * <h2>Description</h2>
-	 * <p>A unique identifier that can be used to reference this annotated property elsewhere in an OSCAL document. A UUID should be consistantly used for a given location across revisions of the document.</p>
-	 * 
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Uuid</em>' attribute.
-	 * @see #setUuid(UUID)
-	 * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getAnnotation_Uuid()
-	 * @model dataType="dsm.oscal.model.OscalMetadata.UuidType"
-	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;AssemblyDefinition&gt;annotation.&lt;FlagInstance&gt;uuid'"
-	 * @generated
-	 */
-	UUID getUuid();
-
-	/**
-	 * Sets the value of the '{@link dsm.oscal.model.OscalMetadata.Annotation#getUuid <em>Uuid</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Uuid</em>' attribute.
-	 * @see #getUuid()
-	 * @generated
-	 */
-	void setUuid(UUID value);
 
 	/**
 	 * Returns the value of the '<em><b>Ns</b></em>' attribute.

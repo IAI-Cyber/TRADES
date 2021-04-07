@@ -17,7 +17,6 @@ import static dsm.oscal.ext.matchers.EClassifierMatchers.hasInstanceClass;
 import static dsm.oscal.ext.matchers.FeatureMatchers.isAttributeTyped;
 import static dsm.oscal.ext.matchers.FeatureMatchers.isContainmentTyped;
 import static dsm.oscal.ext.matchers.FeatureMatchers.isMany;
-import static dsm.oscal.ext.matchers.FeatureMatchers.isRequired;
 import static dsm.oscal.ext.matchers.FeatureMatchers.isUnique;
 import static java.util.stream.Collectors.groupingBy;
 import static java.util.stream.Collectors.toList;
@@ -43,7 +42,10 @@ import dsm.oscal.ext.matchers.EClassifierMatchers;
 
 public class SemanticRefactoring {
 
-	private static final Predicate<EStructuralFeature> UUID_ATTR = isRequired().and(isUnique())
+	private static final Predicate<EStructuralFeature> UUID_ATTR = isUnique()/*
+																				 * Also take non unique and for them to
+																				 * be unique it will be easier to use
+																				 */
 			.and(isAttributeTyped(UUID.class.getName()));
 	private static final Predicate<EStructuralFeature> ANNOTATIONS_REF = isContainmentTyped("Annotation").and(isMany());
 

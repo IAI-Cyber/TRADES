@@ -496,7 +496,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 * @generated
 	 */
 	@Override
-	public EAttribute getAnnotation_Uuid() {
+	public EAttribute getAnnotation_Ns() {
 		return (EAttribute)annotationEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -506,7 +506,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 * @generated
 	 */
 	@Override
-	public EAttribute getAnnotation_Ns() {
+	public EAttribute getAnnotation_Value() {
 		return (EAttribute)annotationEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -516,18 +516,8 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 * @generated
 	 */
 	@Override
-	public EAttribute getAnnotation_Value() {
-		return (EAttribute)annotationEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EAttribute getAnnotation_Remarks() {
-		return (EAttribute)annotationEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)annotationEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1216,7 +1206,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProperty_Uuid() {
+	public EAttribute getProperty_Name() {
 		return (EAttribute)propertyEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -1226,7 +1216,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProperty_Name() {
+	public EAttribute getProperty_Ns() {
 		return (EAttribute)propertyEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -1236,18 +1226,8 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProperty_Ns() {
-		return (EAttribute)propertyEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EAttribute getProperty_Clazz() {
-		return (EAttribute)propertyEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)propertyEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1859,7 +1839,6 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 
 		annotationEClass = createEClass(ANNOTATION);
 		createEAttribute(annotationEClass, ANNOTATION__NAME);
-		createEAttribute(annotationEClass, ANNOTATION__UUID);
 		createEAttribute(annotationEClass, ANNOTATION__NS);
 		createEAttribute(annotationEClass, ANNOTATION__VALUE);
 		createEAttribute(annotationEClass, ANNOTATION__REMARKS);
@@ -1942,7 +1921,6 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 
 		propertyEClass = createEClass(PROPERTY);
 		createEAttribute(propertyEClass, PROPERTY__VALUE);
-		createEAttribute(propertyEClass, PROPERTY__UUID);
 		createEAttribute(propertyEClass, PROPERTY__NAME);
 		createEAttribute(propertyEClass, PROPERTY__NS);
 		createEAttribute(propertyEClass, PROPERTY__CLAZZ);
@@ -2047,6 +2025,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 		// Add supertypes to classes
 		addressEClass.getESuperTypes().add(this.getOscalElement());
 		annotationEClass.getESuperTypes().add(this.getOscalElement());
+		annotationEClass.getESuperTypes().add(this.getUUIDElement());
 		backMatterEClass.getESuperTypes().add(this.getOscalElement());
 		backMatterResourceEClass.getESuperTypes().add(this.getOscalElement());
 		backMatterResourceEClass.getESuperTypes().add(this.getUUIDElement());
@@ -2065,6 +2044,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 		partyEClass.getESuperTypes().add(this.getUUIDElement());
 		partyEClass.getESuperTypes().add(this.getAnnotationOwner());
 		propertyEClass.getESuperTypes().add(this.getOscalElement());
+		propertyEClass.getESuperTypes().add(this.getUUIDElement());
 		resourceCitationEClass.getESuperTypes().add(this.getOscalElement());
 		resourceCitationEClass.getESuperTypes().add(this.getAnnotationOwner());
 		resourceRlinkEClass.getESuperTypes().add(this.getOscalElement());
@@ -2089,7 +2069,6 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 
 		initEClass(annotationEClass, Annotation.class, "Annotation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAnnotation_Name(), ecorePackage.getEString(), "name", null, 1, 1, Annotation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAnnotation_Uuid(), this.getUuidType(), "uuid", null, 0, 1, Annotation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAnnotation_Ns(), this.getUriType(), "ns", null, 0, 1, Annotation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAnnotation_Value(), ecorePackage.getEString(), "value", null, 1, 1, Annotation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAnnotation_Remarks(), this.getMarkupMultilineType(), "remarks", null, 0, 1, Annotation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2172,7 +2151,6 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 
 		initEClass(propertyEClass, Property.class, "Property", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getProperty_Value(), ecorePackage.getEString(), "value", null, 0, 1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getProperty_Uuid(), this.getUuidType(), "uuid", null, 0, 1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProperty_Name(), ecorePackage.getEString(), "name", null, 1, 1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProperty_Ns(), this.getUriType(), "ns", null, 0, 1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProperty_Clazz(), ecorePackage.getEString(), "clazz", null, 0, 1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2315,12 +2293,6 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 		   source,
 		   new String[] {
 			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>annotation.<FlagInstance>name"
-		   });
-		addAnnotation
-		  (getAnnotation_Uuid(),
-		   source,
-		   new String[] {
-			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>annotation.<FlagInstance>uuid"
 		   });
 		addAnnotation
 		  (getAnnotation_Ns(),
@@ -2717,12 +2689,6 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 		   source,
 		   new String[] {
 			   "source", "<Metaschema>oscal-metadata.<FieldDefinition>property"
-		   });
-		addAnnotation
-		  (getProperty_Uuid(),
-		   source,
-		   new String[] {
-			   "source", "<Metaschema>oscal-metadata.<FieldDefinition>property.<FlagInstance>uuid"
 		   });
 		addAnnotation
 		  (getProperty_Name(),

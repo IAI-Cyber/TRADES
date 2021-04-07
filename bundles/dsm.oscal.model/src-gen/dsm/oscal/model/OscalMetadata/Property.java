@@ -17,8 +17,6 @@ package dsm.oscal.model.OscalMetadata;
 
 import java.net.URI;
 
-import java.util.UUID;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Property</b></em>'.
@@ -38,7 +36,6 @@ import java.util.UUID;
  * </p>
  * <ul>
  *   <li>{@link dsm.oscal.model.OscalMetadata.Property#getValue <em>Value</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.Property#getUuid <em>Uuid</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.Property#getName <em>Name</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.Property#getNs <em>Ns</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.Property#getClazz <em>Clazz</em>}</li>
@@ -48,7 +45,7 @@ import java.util.UUID;
  * @model annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;FieldDefinition&gt;property'"
  * @generated
  */
-public interface Property extends OscalElement {
+public interface Property extends OscalElement, UUIDElement {
 	/**
 	 * Returns the value of the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -70,35 +67,6 @@ public interface Property extends OscalElement {
 	 * @generated
 	 */
 	void setValue(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Uuid</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * <h1>Property Universally Unique Identifier</h1>
-	 * <h2>Description</h2>
-	 * <p>A unique identifier that can be used to reference this property elsewhere in an OSCAL document. A UUID should be consistantly used for a given location across revisions of the document.</p>
-	 * 
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Uuid</em>' attribute.
-	 * @see #setUuid(UUID)
-	 * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getProperty_Uuid()
-	 * @model dataType="dsm.oscal.model.OscalMetadata.UuidType"
-	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;FieldDefinition&gt;property.&lt;FlagInstance&gt;uuid'"
-	 * @generated
-	 */
-	UUID getUuid();
-
-	/**
-	 * Sets the value of the '{@link dsm.oscal.model.OscalMetadata.Property#getUuid <em>Uuid</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Uuid</em>' attribute.
-	 * @see #getUuid()
-	 * @generated
-	 */
-	void setUuid(UUID value);
 
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
