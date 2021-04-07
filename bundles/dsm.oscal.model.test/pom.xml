@@ -1,0 +1,51 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>dsm.oscal.model.test</artifactId>
+	<name>OSCAL Model Test</name>
+	<groupId>TRADES</groupId>
+	<version>2.5.2-SNAPSHOT</version>
+	<packaging>eclipse-test-plugin</packaging>
+
+	<parent>
+		<groupId>TRADES</groupId>
+		<artifactId>TRADES.parent</artifactId>
+		<version>2.5.2-SNAPSHOT</version>
+		<relativePath>../../releng/dsm.TRADES.parent/</relativePath>
+	</parent>
+
+
+	<dependencies>
+		<dependency>
+			<groupId>org.xmlunit</groupId>
+			<artifactId>xmlunit-core</artifactId>
+			<version>2.8.2</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<version>2.10</version>
+				<executions>
+					<execution>
+						<id>copy-dependencies</id>
+						<phase>initialize</phase>
+						<goals>
+							<goal>copy-dependencies</goal>
+						</goals>
+						<configuration>
+							<includeScope>runtime</includeScope>
+							<outputDirectory>${project.basedir}/libs</outputDirectory>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+
+</project>
