@@ -113,7 +113,7 @@ public class HashItemProvider
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
 				 getString("_UI_Hash_algorithm_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Hash_algorithm_feature", "_UI_Hash_type"),
+				 getString("_UI_Hash_algorithm_description"),
 				 OscalMetadataPackage.Literals.HASH__ALGORITHM,
 				 true,
 				 false,

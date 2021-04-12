@@ -276,6 +276,8 @@ public class MetaschemaToEcoreTransformer {
 							System.out.println(genClass.getName() + "." + genFeature.getName());
 							genFeature.setPropertyMultiLine(true);
 						}
+						// Set the property description 
+						genFeature.setPropertyDescription(MigrationEcoreUtils.getSimpleDocumentation(genFeature.getEcoreFeature()) );
 					}
 
 				}

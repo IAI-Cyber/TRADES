@@ -97,7 +97,7 @@ public class ParameterConstraintItemProvider
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
 				 getString("_UI_ParameterConstraint_description_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ParameterConstraint_description_feature", "_UI_ParameterConstraint_type"),
+				 getString("_UI_ParameterConstraint_description_description"),
 				 OscalCatalogCommonPackage.Literals.PARAMETER_CONSTRAINT__DESCRIPTION,
 				 true,
 				 true,

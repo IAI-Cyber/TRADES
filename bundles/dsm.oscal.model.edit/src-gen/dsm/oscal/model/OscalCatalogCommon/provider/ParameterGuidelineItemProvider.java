@@ -94,7 +94,7 @@ public class ParameterGuidelineItemProvider
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
 				 getString("_UI_ParameterGuideline_prose_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ParameterGuideline_prose_feature", "_UI_ParameterGuideline_type"),
+				 getString("_UI_ParameterGuideline_prose_description"),
 				 OscalCatalogCommonPackage.Literals.PARAMETER_GUIDELINE__PROSE,
 				 true,
 				 true,

@@ -113,7 +113,7 @@ public class TelephoneNumberItemProvider
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
 				 getString("_UI_TelephoneNumber_type_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_TelephoneNumber_type_feature", "_UI_TelephoneNumber_type"),
+				 getString("_UI_TelephoneNumber_type_description"),
 				 OscalMetadataPackage.Literals.TELEPHONE_NUMBER__TYPE,
 				 true,
 				 false,

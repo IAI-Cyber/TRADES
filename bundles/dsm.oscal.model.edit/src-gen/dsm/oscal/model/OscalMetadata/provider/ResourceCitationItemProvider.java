@@ -118,7 +118,7 @@ public class ResourceCitationItemProvider
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
 				 getString("_UI_ResourceCitation_text_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ResourceCitation_text_feature", "_UI_ResourceCitation_type"),
+				 getString("_UI_ResourceCitation_text_description"),
 				 OscalMetadataPackage.Literals.RESOURCE_CITATION__TEXT,
 				 true,
 				 false,

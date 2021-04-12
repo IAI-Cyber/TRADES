@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="ASCII"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="OscalMetadata" nsURI="http://csrc.nist.gov/ns/oscal/1.0/oscal-metadata" nsPrefix="oscal-metadata">
-  <eClassifiers xsi:type="ecore:EDataType" name="DateType" instanceClassName="gov.nist.secauto.metaschema.datatypes.Date"/>
-  <eClassifiers xsi:type="ecore:EDataType" name="DateWithTzType" instanceClassName="java.time.ZonedDateTime"/>
-  <eClassifiers xsi:type="ecore:EDataType" name="IpV4AddressType" instanceClassName="gov.nist.secauto.metaschema.datatypes.IPv4"/>
-  <eClassifiers xsi:type="ecore:EDataType" name="DateTimeType" instanceClassName="gov.nist.secauto.metaschema.datatypes.DateTime"/>
-  <eClassifiers xsi:type="ecore:EDataType" name="UriReferenceType" instanceClassName="java.net.URI"/>
-  <eClassifiers xsi:type="ecore:EDataType" name="UuidType" instanceClassName="java.util.UUID"/>
-  <eClassifiers xsi:type="ecore:EDataType" name="Base64Type" instanceClassName="gov.nist.secauto.metaschema.datatypes.Base64"/>
-  <eClassifiers xsi:type="ecore:EDataType" name="UriType" instanceClassName="java.net.URI"/>
-  <eClassifiers xsi:type="ecore:EDataType" name="MarkupLineType" instanceClassName="gov.nist.secauto.metaschema.datatypes.markup.MarkupLine"/>
-  <eClassifiers xsi:type="ecore:EDataType" name="MarkupMultilineType" instanceClassName="gov.nist.secauto.metaschema.datatypes.markup.MarkupMultiline"/>
-  <eClassifiers xsi:type="ecore:EDataType" name="EmptyType" instanceClassName="java.lang.Void"/>
   <eClassifiers xsi:type="ecore:EDataType" name="DateTimeWithTzType" instanceClassName="java.time.ZonedDateTime"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="MarkupLineType" instanceClassName="gov.nist.secauto.metaschema.datatypes.markup.MarkupLine"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="EmptyType" instanceClassName="java.lang.Void"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="UriType" instanceClassName="java.net.URI"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="DateTimeType" instanceClassName="gov.nist.secauto.metaschema.datatypes.DateTime"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="DateType" instanceClassName="gov.nist.secauto.metaschema.datatypes.Date"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="UuidType" instanceClassName="java.util.UUID"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="UriReferenceType" instanceClassName="java.net.URI"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="DateWithTzType" instanceClassName="java.time.ZonedDateTime"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="Base64Type" instanceClassName="gov.nist.secauto.metaschema.datatypes.Base64"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="MarkupMultilineType" instanceClassName="gov.nist.secauto.metaschema.datatypes.markup.MarkupMultiline"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="IpV4AddressType" instanceClassName="gov.nist.secauto.metaschema.datatypes.IPv4"/>
   <eClassifiers xsi:type="ecore:EDataType" name="IpV6AddressType" instanceClassName="gov.nist.secauto.metaschema.datatypes.IPv6"/>
   <eClassifiers xsi:type="ecore:EClass" name="Address" eSuperTypes="//OscalElement">
     <eAnnotations source="Metaschema">

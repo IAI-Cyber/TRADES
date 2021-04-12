@@ -113,7 +113,7 @@ public class DocumentIdItemProvider
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
 				 getString("_UI_DocumentId_scheme_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DocumentId_scheme_feature", "_UI_DocumentId_type"),
+				 getString("_UI_DocumentId_scheme_description"),
 				 OscalMetadataPackage.Literals.DOCUMENT_ID__SCHEME,
 				 true,
 				 false,

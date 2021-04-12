@@ -65,6 +65,7 @@ Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Export-Package: com.vladsch.flexmark.util.ast,
  dsm.oscal.ext,
+ dsm.oscal.ext.matchers,
  gov.nist.secauto.metaschema.binding,
  gov.nist.secauto.metaschema.binding.io,
  gov.nist.secauto.metaschema.binding.io.json,

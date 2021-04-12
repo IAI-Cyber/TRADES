@@ -16,6 +16,7 @@ package dsm.oscal.ext.matchers;
 import java.util.function.Predicate;
 
 import org.eclipse.emf.ecore.EAttribute;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 
@@ -38,8 +39,16 @@ public class FeatureMatchers {
 	}
 
 	public static Predicate<EStructuralFeature> isAttributeTyped(String instanceClassName) {
-		return f -> f instanceof EAttribute
-				&& instanceClassName.equals(((EAttribute) f).getEAttributeType().getInstanceClassName());
+		return f ->  {
+			if (f instanceof EAttribute) {
+				EAttribute attr = (EAttribute) f;
+				EDataType eAttributeType = attr.getEAttributeType();
+				if(eAttributeType != null) {
+					return instanceClassName.equals(eAttributeType.getInstanceClassName());
+				}
+			}
+			return false;
+		};
 	}
 	public static Predicate<EStructuralFeature> isContainmentTyped(String eClassName) {
 		return f -> f instanceof EReference //

@@ -113,7 +113,7 @@ public class ExternalIdItemProvider
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
 				 getString("_UI_ExternalId_scheme_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ExternalId_scheme_feature", "_UI_ExternalId_type"),
+				 getString("_UI_ExternalId_scheme_description"),
 				 OscalMetadataPackage.Literals.EXTERNAL_ID__SCHEME,
 				 true,
 				 false,

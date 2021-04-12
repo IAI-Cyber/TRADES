@@ -16,10 +16,13 @@ package dsm.oscal.ext;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EModelElement;
 import org.eclipse.emf.ecore.EcoreFactory;
+import org.jsoup.Jsoup;
 
 import gov.nist.secauto.metaschema.model.definitions.InfoElementDefinition;
 
 public class MigrationEcoreUtils {
+	
+	private static HtmlToPlainText toText = new HtmlToPlainText();
 
 	private static final String GEN_MODEL_ANNOT = "http://www.eclipse.org/emf/2002/GenModel";
 
@@ -39,6 +42,28 @@ public class MigrationEcoreUtils {
 		}
 
 		anotation.getDetails().put("documentation", doc);
+
+	}
+
+	/**
+	 * Gets a simple documentation for the given element (not HTML)
+	 * 
+	 * @param element an element
+	 * @return a String or <code>null</code>
+	 */
+	public static String getSimpleDocumentation(EModelElement element) {
+		EAnnotation anotation = element.getEAnnotation(GEN_MODEL_ANNOT);
+		if (anotation == null) {
+			return null;
+		}
+
+		String doc = anotation.getDetails().get("documentation");
+		if(doc != null) {
+			String htmlDoc = toText.getPlainText(doc);
+			String replaceAll = htmlDoc.replaceAll("\n", "\\\\n");
+			return replaceAll;
+		}
+		return doc;
 
 	}
 }
