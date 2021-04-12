@@ -56,15 +56,15 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link dsm.oscal.model.OscalCatalog.impl.GroupImpl#getAnnotations <em>Annotations</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalCatalog.impl.GroupImpl#getId <em>Id</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalog.impl.GroupImpl#getClazz <em>Clazz</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalCatalog.impl.GroupImpl#getTitle <em>Title</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalCatalog.impl.GroupImpl#getParams <em>Params</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalCatalog.impl.GroupImpl#getParts <em>Parts</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalCatalog.impl.GroupImpl#getLinks <em>Links</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalog.impl.GroupImpl#getControls <em>Controls</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalog.impl.GroupImpl#getGroups <em>Groups</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalCatalog.impl.GroupImpl#getId <em>Id</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalCatalog.impl.GroupImpl#getLinks <em>Links</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalCatalog.impl.GroupImpl#getParams <em>Params</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalCatalog.impl.GroupImpl#getParts <em>Parts</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalog.impl.GroupImpl#getProps <em>Props</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalCatalog.impl.GroupImpl#getTitle <em>Title</em>}</li>
  * </ul>
  *
  * @generated
@@ -79,26 +79,6 @@ public class GroupImpl extends MinimalEObjectImpl.Container implements Group {
 	 * @ordered
 	 */
 	protected EList<Annotation> annotations;
-
-	/**
-	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String id = ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getClazz() <em>Clazz</em>}' attribute.
@@ -121,24 +101,54 @@ public class GroupImpl extends MinimalEObjectImpl.Container implements Group {
 	protected String clazz = CLAZZ_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getTitle() <em>Title</em>}' attribute.
+	 * The cached value of the '{@link #getControls() <em>Controls</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTitle()
+	 * @see #getControls()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final MarkupLine TITLE_EDEFAULT = null;
+	protected EList<Control> controls;
 
 	/**
-	 * The cached value of the '{@link #getTitle() <em>Title</em>}' attribute.
+	 * The cached value of the '{@link #getGroups() <em>Groups</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTitle()
+	 * @see #getGroups()
 	 * @generated
 	 * @ordered
 	 */
-	protected MarkupLine title = TITLE_EDEFAULT;
+	protected EList<Group> groups;
+
+	/**
+	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String ID_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected String id = ID_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getLinks() <em>Links</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLinks()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Link> links;
 
 	/**
 	 * The cached value of the '{@link #getParams() <em>Params</em>}' containment reference list.
@@ -161,36 +171,6 @@ public class GroupImpl extends MinimalEObjectImpl.Container implements Group {
 	protected EList<Part> parts;
 
 	/**
-	 * The cached value of the '{@link #getLinks() <em>Links</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLinks()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Link> links;
-
-	/**
-	 * The cached value of the '{@link #getControls() <em>Controls</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getControls()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Control> controls;
-
-	/**
-	 * The cached value of the '{@link #getGroups() <em>Groups</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGroups()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Group> groups;
-
-	/**
 	 * The cached value of the '{@link #getProps() <em>Props</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -199,6 +179,26 @@ public class GroupImpl extends MinimalEObjectImpl.Container implements Group {
 	 * @ordered
 	 */
 	protected EList<Property> props;
+
+	/**
+	 * The default value of the '{@link #getTitle() <em>Title</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTitle()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final MarkupLine TITLE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getTitle() <em>Title</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTitle()
+	 * @generated
+	 * @ordered
+	 */
+	protected MarkupLine title = TITLE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -387,16 +387,16 @@ public class GroupImpl extends MinimalEObjectImpl.Container implements Group {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case OscalCatalogPackage.GROUP__PARAMS:
-				return ((InternalEList<?>)getParams()).basicRemove(otherEnd, msgs);
-			case OscalCatalogPackage.GROUP__PARTS:
-				return ((InternalEList<?>)getParts()).basicRemove(otherEnd, msgs);
-			case OscalCatalogPackage.GROUP__LINKS:
-				return ((InternalEList<?>)getLinks()).basicRemove(otherEnd, msgs);
 			case OscalCatalogPackage.GROUP__CONTROLS:
 				return ((InternalEList<?>)getControls()).basicRemove(otherEnd, msgs);
 			case OscalCatalogPackage.GROUP__GROUPS:
 				return ((InternalEList<?>)getGroups()).basicRemove(otherEnd, msgs);
+			case OscalCatalogPackage.GROUP__LINKS:
+				return ((InternalEList<?>)getLinks()).basicRemove(otherEnd, msgs);
+			case OscalCatalogPackage.GROUP__PARAMS:
+				return ((InternalEList<?>)getParams()).basicRemove(otherEnd, msgs);
+			case OscalCatalogPackage.GROUP__PARTS:
+				return ((InternalEList<?>)getParts()).basicRemove(otherEnd, msgs);
 			case OscalCatalogPackage.GROUP__PROPS:
 				return ((InternalEList<?>)getProps()).basicRemove(otherEnd, msgs);
 		}
@@ -413,24 +413,24 @@ public class GroupImpl extends MinimalEObjectImpl.Container implements Group {
 		switch (featureID) {
 			case OscalCatalogPackage.GROUP__ANNOTATIONS:
 				return getAnnotations();
-			case OscalCatalogPackage.GROUP__ID:
-				return getId();
 			case OscalCatalogPackage.GROUP__CLAZZ:
 				return getClazz();
-			case OscalCatalogPackage.GROUP__TITLE:
-				return getTitle();
-			case OscalCatalogPackage.GROUP__PARAMS:
-				return getParams();
-			case OscalCatalogPackage.GROUP__PARTS:
-				return getParts();
-			case OscalCatalogPackage.GROUP__LINKS:
-				return getLinks();
 			case OscalCatalogPackage.GROUP__CONTROLS:
 				return getControls();
 			case OscalCatalogPackage.GROUP__GROUPS:
 				return getGroups();
+			case OscalCatalogPackage.GROUP__ID:
+				return getId();
+			case OscalCatalogPackage.GROUP__LINKS:
+				return getLinks();
+			case OscalCatalogPackage.GROUP__PARAMS:
+				return getParams();
+			case OscalCatalogPackage.GROUP__PARTS:
+				return getParts();
 			case OscalCatalogPackage.GROUP__PROPS:
 				return getProps();
+			case OscalCatalogPackage.GROUP__TITLE:
+				return getTitle();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -448,26 +448,8 @@ public class GroupImpl extends MinimalEObjectImpl.Container implements Group {
 				getAnnotations().clear();
 				getAnnotations().addAll((Collection<? extends Annotation>)newValue);
 				return;
-			case OscalCatalogPackage.GROUP__ID:
-				setId((String)newValue);
-				return;
 			case OscalCatalogPackage.GROUP__CLAZZ:
 				setClazz((String)newValue);
-				return;
-			case OscalCatalogPackage.GROUP__TITLE:
-				setTitle((MarkupLine)newValue);
-				return;
-			case OscalCatalogPackage.GROUP__PARAMS:
-				getParams().clear();
-				getParams().addAll((Collection<? extends Parameter>)newValue);
-				return;
-			case OscalCatalogPackage.GROUP__PARTS:
-				getParts().clear();
-				getParts().addAll((Collection<? extends Part>)newValue);
-				return;
-			case OscalCatalogPackage.GROUP__LINKS:
-				getLinks().clear();
-				getLinks().addAll((Collection<? extends Link>)newValue);
 				return;
 			case OscalCatalogPackage.GROUP__CONTROLS:
 				getControls().clear();
@@ -477,9 +459,27 @@ public class GroupImpl extends MinimalEObjectImpl.Container implements Group {
 				getGroups().clear();
 				getGroups().addAll((Collection<? extends Group>)newValue);
 				return;
+			case OscalCatalogPackage.GROUP__ID:
+				setId((String)newValue);
+				return;
+			case OscalCatalogPackage.GROUP__LINKS:
+				getLinks().clear();
+				getLinks().addAll((Collection<? extends Link>)newValue);
+				return;
+			case OscalCatalogPackage.GROUP__PARAMS:
+				getParams().clear();
+				getParams().addAll((Collection<? extends Parameter>)newValue);
+				return;
+			case OscalCatalogPackage.GROUP__PARTS:
+				getParts().clear();
+				getParts().addAll((Collection<? extends Part>)newValue);
+				return;
 			case OscalCatalogPackage.GROUP__PROPS:
 				getProps().clear();
 				getProps().addAll((Collection<? extends Property>)newValue);
+				return;
+			case OscalCatalogPackage.GROUP__TITLE:
+				setTitle((MarkupLine)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -496,23 +496,8 @@ public class GroupImpl extends MinimalEObjectImpl.Container implements Group {
 			case OscalCatalogPackage.GROUP__ANNOTATIONS:
 				getAnnotations().clear();
 				return;
-			case OscalCatalogPackage.GROUP__ID:
-				setId(ID_EDEFAULT);
-				return;
 			case OscalCatalogPackage.GROUP__CLAZZ:
 				setClazz(CLAZZ_EDEFAULT);
-				return;
-			case OscalCatalogPackage.GROUP__TITLE:
-				setTitle(TITLE_EDEFAULT);
-				return;
-			case OscalCatalogPackage.GROUP__PARAMS:
-				getParams().clear();
-				return;
-			case OscalCatalogPackage.GROUP__PARTS:
-				getParts().clear();
-				return;
-			case OscalCatalogPackage.GROUP__LINKS:
-				getLinks().clear();
 				return;
 			case OscalCatalogPackage.GROUP__CONTROLS:
 				getControls().clear();
@@ -520,8 +505,23 @@ public class GroupImpl extends MinimalEObjectImpl.Container implements Group {
 			case OscalCatalogPackage.GROUP__GROUPS:
 				getGroups().clear();
 				return;
+			case OscalCatalogPackage.GROUP__ID:
+				setId(ID_EDEFAULT);
+				return;
+			case OscalCatalogPackage.GROUP__LINKS:
+				getLinks().clear();
+				return;
+			case OscalCatalogPackage.GROUP__PARAMS:
+				getParams().clear();
+				return;
+			case OscalCatalogPackage.GROUP__PARTS:
+				getParts().clear();
+				return;
 			case OscalCatalogPackage.GROUP__PROPS:
 				getProps().clear();
+				return;
+			case OscalCatalogPackage.GROUP__TITLE:
+				setTitle(TITLE_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -537,24 +537,24 @@ public class GroupImpl extends MinimalEObjectImpl.Container implements Group {
 		switch (featureID) {
 			case OscalCatalogPackage.GROUP__ANNOTATIONS:
 				return annotations != null && !annotations.isEmpty();
-			case OscalCatalogPackage.GROUP__ID:
-				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
 			case OscalCatalogPackage.GROUP__CLAZZ:
 				return CLAZZ_EDEFAULT == null ? clazz != null : !CLAZZ_EDEFAULT.equals(clazz);
-			case OscalCatalogPackage.GROUP__TITLE:
-				return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
-			case OscalCatalogPackage.GROUP__PARAMS:
-				return params != null && !params.isEmpty();
-			case OscalCatalogPackage.GROUP__PARTS:
-				return parts != null && !parts.isEmpty();
-			case OscalCatalogPackage.GROUP__LINKS:
-				return links != null && !links.isEmpty();
 			case OscalCatalogPackage.GROUP__CONTROLS:
 				return controls != null && !controls.isEmpty();
 			case OscalCatalogPackage.GROUP__GROUPS:
 				return groups != null && !groups.isEmpty();
+			case OscalCatalogPackage.GROUP__ID:
+				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
+			case OscalCatalogPackage.GROUP__LINKS:
+				return links != null && !links.isEmpty();
+			case OscalCatalogPackage.GROUP__PARAMS:
+				return params != null && !params.isEmpty();
+			case OscalCatalogPackage.GROUP__PARTS:
+				return parts != null && !parts.isEmpty();
 			case OscalCatalogPackage.GROUP__PROPS:
 				return props != null && !props.isEmpty();
+			case OscalCatalogPackage.GROUP__TITLE:
+				return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -601,10 +601,10 @@ public class GroupImpl extends MinimalEObjectImpl.Container implements Group {
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (id: ");
-		result.append(id);
-		result.append(", clazz: ");
+		result.append(" (clazz: ");
 		result.append(clazz);
+		result.append(", id: ");
+		result.append(id);
 		result.append(", title: ");
 		result.append(title);
 		result.append(')');

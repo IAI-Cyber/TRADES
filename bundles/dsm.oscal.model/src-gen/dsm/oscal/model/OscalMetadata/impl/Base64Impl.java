@@ -35,34 +35,14 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link dsm.oscal.model.OscalMetadata.impl.Base64Impl#getValue <em>Value</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.Base64Impl#getFilename <em>Filename</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.Base64Impl#getMediaType <em>Media Type</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.impl.Base64Impl#getValue <em>Value</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class Base64Impl extends MinimalEObjectImpl.Container implements Base64 {
-	/**
-	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getValue()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final gov.nist.secauto.metaschema.datatypes.Base64 VALUE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getValue()
-	 * @generated
-	 * @ordered
-	 */
-	protected gov.nist.secauto.metaschema.datatypes.Base64 value = VALUE_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getFilename() <em>Filename</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -102,6 +82,26 @@ public class Base64Impl extends MinimalEObjectImpl.Container implements Base64 {
 	 * @ordered
 	 */
 	protected String mediaType = MEDIA_TYPE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getValue()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final gov.nist.secauto.metaschema.datatypes.Base64 VALUE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getValue()
+	 * @generated
+	 * @ordered
+	 */
+	protected gov.nist.secauto.metaschema.datatypes.Base64 value = VALUE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -199,12 +199,12 @@ public class Base64Impl extends MinimalEObjectImpl.Container implements Base64 {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case OscalMetadataPackage.BASE64__VALUE:
-				return getValue();
 			case OscalMetadataPackage.BASE64__FILENAME:
 				return getFilename();
 			case OscalMetadataPackage.BASE64__MEDIA_TYPE:
 				return getMediaType();
+			case OscalMetadataPackage.BASE64__VALUE:
+				return getValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -217,14 +217,14 @@ public class Base64Impl extends MinimalEObjectImpl.Container implements Base64 {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case OscalMetadataPackage.BASE64__VALUE:
-				setValue((gov.nist.secauto.metaschema.datatypes.Base64)newValue);
-				return;
 			case OscalMetadataPackage.BASE64__FILENAME:
 				setFilename((URI)newValue);
 				return;
 			case OscalMetadataPackage.BASE64__MEDIA_TYPE:
 				setMediaType((String)newValue);
+				return;
+			case OscalMetadataPackage.BASE64__VALUE:
+				setValue((gov.nist.secauto.metaschema.datatypes.Base64)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -238,14 +238,14 @@ public class Base64Impl extends MinimalEObjectImpl.Container implements Base64 {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case OscalMetadataPackage.BASE64__VALUE:
-				setValue(VALUE_EDEFAULT);
-				return;
 			case OscalMetadataPackage.BASE64__FILENAME:
 				setFilename(FILENAME_EDEFAULT);
 				return;
 			case OscalMetadataPackage.BASE64__MEDIA_TYPE:
 				setMediaType(MEDIA_TYPE_EDEFAULT);
+				return;
+			case OscalMetadataPackage.BASE64__VALUE:
+				setValue(VALUE_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -259,12 +259,12 @@ public class Base64Impl extends MinimalEObjectImpl.Container implements Base64 {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case OscalMetadataPackage.BASE64__VALUE:
-				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
 			case OscalMetadataPackage.BASE64__FILENAME:
 				return FILENAME_EDEFAULT == null ? filename != null : !FILENAME_EDEFAULT.equals(filename);
 			case OscalMetadataPackage.BASE64__MEDIA_TYPE:
 				return MEDIA_TYPE_EDEFAULT == null ? mediaType != null : !MEDIA_TYPE_EDEFAULT.equals(mediaType);
+			case OscalMetadataPackage.BASE64__VALUE:
+				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -279,12 +279,12 @@ public class Base64Impl extends MinimalEObjectImpl.Container implements Base64 {
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (value: ");
-		result.append(value);
-		result.append(", filename: ");
+		result.append(" (filename: ");
 		result.append(filename);
 		result.append(", mediaType: ");
 		result.append(mediaType);
+		result.append(", value: ");
+		result.append(value);
 		result.append(')');
 		return result.toString();
 	}

@@ -77,11 +77,11 @@ public class RoleItemProvider
 			super.getPropertyDescriptors(object);
 
 			addAnnotationsPropertyDescriptor(object);
-			addIdPropertyDescriptor(object);
-			addTitlePropertyDescriptor(object);
-			addShortNamePropertyDescriptor(object);
 			addDescriptionPropertyDescriptor(object);
+			addIdPropertyDescriptor(object);
 			addRemarksPropertyDescriptor(object);
+			addShortNamePropertyDescriptor(object);
+			addTitlePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -287,11 +287,11 @@ public class RoleItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Role.class)) {
-			case OscalMetadataPackage.ROLE__ID:
-			case OscalMetadataPackage.ROLE__TITLE:
-			case OscalMetadataPackage.ROLE__SHORT_NAME:
 			case OscalMetadataPackage.ROLE__DESCRIPTION:
+			case OscalMetadataPackage.ROLE__ID:
 			case OscalMetadataPackage.ROLE__REMARKS:
+			case OscalMetadataPackage.ROLE__SHORT_NAME:
+			case OscalMetadataPackage.ROLE__TITLE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case OscalMetadataPackage.ROLE__LINKS:

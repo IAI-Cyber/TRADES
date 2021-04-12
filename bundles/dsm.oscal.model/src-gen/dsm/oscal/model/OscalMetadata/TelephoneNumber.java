@@ -31,8 +31,8 @@ package dsm.oscal.model.OscalMetadata;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link dsm.oscal.model.OscalMetadata.TelephoneNumber#getValue <em>Value</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.TelephoneNumber#getType <em>Type</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.TelephoneNumber#getValue <em>Value</em>}</li>
  * </ul>
  *
  * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getTelephoneNumber()

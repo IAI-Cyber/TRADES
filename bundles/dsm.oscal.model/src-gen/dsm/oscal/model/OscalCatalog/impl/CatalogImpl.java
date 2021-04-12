@@ -52,11 +52,11 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link dsm.oscal.model.OscalCatalog.impl.CatalogImpl#getUuid <em>Uuid</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalCatalog.impl.CatalogImpl#getBackMatter <em>Back Matter</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalCatalog.impl.CatalogImpl#getControls <em>Controls</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalCatalog.impl.CatalogImpl#getGroups <em>Groups</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalog.impl.CatalogImpl#getMetadata <em>Metadata</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalog.impl.CatalogImpl#getParams <em>Params</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalCatalog.impl.CatalogImpl#getControls <em>Controls</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalCatalog.impl.CatalogImpl#getBackMatter <em>Back Matter</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalCatalog.impl.CatalogImpl#getGroups <em>Groups</em>}</li>
  * </ul>
  *
  * @generated
@@ -83,6 +83,36 @@ public class CatalogImpl extends MinimalEObjectImpl.Container implements Catalog
 	protected UUID uuid = UUID_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getBackMatter() <em>Back Matter</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBackMatter()
+	 * @generated
+	 * @ordered
+	 */
+	protected BackMatter backMatter;
+
+	/**
+	 * The cached value of the '{@link #getControls() <em>Controls</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getControls()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Control> controls;
+
+	/**
+	 * The cached value of the '{@link #getGroups() <em>Groups</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getGroups()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Group> groups;
+
+	/**
 	 * The cached value of the '{@link #getMetadata() <em>Metadata</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -101,36 +131,6 @@ public class CatalogImpl extends MinimalEObjectImpl.Container implements Catalog
 	 * @ordered
 	 */
 	protected EList<Parameter> params;
-
-	/**
-	 * The cached value of the '{@link #getControls() <em>Controls</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getControls()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Control> controls;
-
-	/**
-	 * The cached value of the '{@link #getBackMatter() <em>Back Matter</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getBackMatter()
-	 * @generated
-	 * @ordered
-	 */
-	protected BackMatter backMatter;
-
-	/**
-	 * The cached value of the '{@link #getGroups() <em>Groups</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGroups()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Group> groups;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -311,16 +311,16 @@ public class CatalogImpl extends MinimalEObjectImpl.Container implements Catalog
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case OscalCatalogPackage.CATALOG__BACK_MATTER:
+				return basicSetBackMatter(null, msgs);
+			case OscalCatalogPackage.CATALOG__CONTROLS:
+				return ((InternalEList<?>)getControls()).basicRemove(otherEnd, msgs);
+			case OscalCatalogPackage.CATALOG__GROUPS:
+				return ((InternalEList<?>)getGroups()).basicRemove(otherEnd, msgs);
 			case OscalCatalogPackage.CATALOG__METADATA:
 				return basicSetMetadata(null, msgs);
 			case OscalCatalogPackage.CATALOG__PARAMS:
 				return ((InternalEList<?>)getParams()).basicRemove(otherEnd, msgs);
-			case OscalCatalogPackage.CATALOG__CONTROLS:
-				return ((InternalEList<?>)getControls()).basicRemove(otherEnd, msgs);
-			case OscalCatalogPackage.CATALOG__BACK_MATTER:
-				return basicSetBackMatter(null, msgs);
-			case OscalCatalogPackage.CATALOG__GROUPS:
-				return ((InternalEList<?>)getGroups()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -335,16 +335,16 @@ public class CatalogImpl extends MinimalEObjectImpl.Container implements Catalog
 		switch (featureID) {
 			case OscalCatalogPackage.CATALOG__UUID:
 				return getUuid();
+			case OscalCatalogPackage.CATALOG__BACK_MATTER:
+				return getBackMatter();
+			case OscalCatalogPackage.CATALOG__CONTROLS:
+				return getControls();
+			case OscalCatalogPackage.CATALOG__GROUPS:
+				return getGroups();
 			case OscalCatalogPackage.CATALOG__METADATA:
 				return getMetadata();
 			case OscalCatalogPackage.CATALOG__PARAMS:
 				return getParams();
-			case OscalCatalogPackage.CATALOG__CONTROLS:
-				return getControls();
-			case OscalCatalogPackage.CATALOG__BACK_MATTER:
-				return getBackMatter();
-			case OscalCatalogPackage.CATALOG__GROUPS:
-				return getGroups();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -361,23 +361,23 @@ public class CatalogImpl extends MinimalEObjectImpl.Container implements Catalog
 			case OscalCatalogPackage.CATALOG__UUID:
 				setUuid((UUID)newValue);
 				return;
+			case OscalCatalogPackage.CATALOG__BACK_MATTER:
+				setBackMatter((BackMatter)newValue);
+				return;
+			case OscalCatalogPackage.CATALOG__CONTROLS:
+				getControls().clear();
+				getControls().addAll((Collection<? extends Control>)newValue);
+				return;
+			case OscalCatalogPackage.CATALOG__GROUPS:
+				getGroups().clear();
+				getGroups().addAll((Collection<? extends Group>)newValue);
+				return;
 			case OscalCatalogPackage.CATALOG__METADATA:
 				setMetadata((Metadata)newValue);
 				return;
 			case OscalCatalogPackage.CATALOG__PARAMS:
 				getParams().clear();
 				getParams().addAll((Collection<? extends Parameter>)newValue);
-				return;
-			case OscalCatalogPackage.CATALOG__CONTROLS:
-				getControls().clear();
-				getControls().addAll((Collection<? extends Control>)newValue);
-				return;
-			case OscalCatalogPackage.CATALOG__BACK_MATTER:
-				setBackMatter((BackMatter)newValue);
-				return;
-			case OscalCatalogPackage.CATALOG__GROUPS:
-				getGroups().clear();
-				getGroups().addAll((Collection<? extends Group>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -394,20 +394,20 @@ public class CatalogImpl extends MinimalEObjectImpl.Container implements Catalog
 			case OscalCatalogPackage.CATALOG__UUID:
 				setUuid(UUID_EDEFAULT);
 				return;
+			case OscalCatalogPackage.CATALOG__BACK_MATTER:
+				setBackMatter((BackMatter)null);
+				return;
+			case OscalCatalogPackage.CATALOG__CONTROLS:
+				getControls().clear();
+				return;
+			case OscalCatalogPackage.CATALOG__GROUPS:
+				getGroups().clear();
+				return;
 			case OscalCatalogPackage.CATALOG__METADATA:
 				setMetadata((Metadata)null);
 				return;
 			case OscalCatalogPackage.CATALOG__PARAMS:
 				getParams().clear();
-				return;
-			case OscalCatalogPackage.CATALOG__CONTROLS:
-				getControls().clear();
-				return;
-			case OscalCatalogPackage.CATALOG__BACK_MATTER:
-				setBackMatter((BackMatter)null);
-				return;
-			case OscalCatalogPackage.CATALOG__GROUPS:
-				getGroups().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -423,16 +423,16 @@ public class CatalogImpl extends MinimalEObjectImpl.Container implements Catalog
 		switch (featureID) {
 			case OscalCatalogPackage.CATALOG__UUID:
 				return UUID_EDEFAULT == null ? uuid != null : !UUID_EDEFAULT.equals(uuid);
+			case OscalCatalogPackage.CATALOG__BACK_MATTER:
+				return backMatter != null;
+			case OscalCatalogPackage.CATALOG__CONTROLS:
+				return controls != null && !controls.isEmpty();
+			case OscalCatalogPackage.CATALOG__GROUPS:
+				return groups != null && !groups.isEmpty();
 			case OscalCatalogPackage.CATALOG__METADATA:
 				return metadata != null;
 			case OscalCatalogPackage.CATALOG__PARAMS:
 				return params != null && !params.isEmpty();
-			case OscalCatalogPackage.CATALOG__CONTROLS:
-				return controls != null && !controls.isEmpty();
-			case OscalCatalogPackage.CATALOG__BACK_MATTER:
-				return backMatter != null;
-			case OscalCatalogPackage.CATALOG__GROUPS:
-				return groups != null && !groups.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

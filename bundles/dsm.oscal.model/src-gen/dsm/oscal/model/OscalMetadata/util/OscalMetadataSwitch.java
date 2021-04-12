@@ -94,6 +94,12 @@ public class OscalMetadataSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case OscalMetadataPackage.ANNOTATION_OWNER: {
+				AnnotationOwner annotationOwner = (AnnotationOwner)theEObject;
+				T result = caseAnnotationOwner(annotationOwner);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case OscalMetadataPackage.BACK_MATTER: {
 				BackMatter backMatter = (BackMatter)theEObject;
 				T result = caseBackMatter(backMatter);
@@ -159,6 +165,12 @@ public class OscalMetadataSwitch<T> extends Switch<T> {
 				T result = caseMetadata(metadata);
 				if (result == null) result = caseOscalElement(metadata);
 				if (result == null) result = caseAnnotationOwner(metadata);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case OscalMetadataPackage.OSCAL_ELEMENT: {
+				OscalElement oscalElement = (OscalElement)theEObject;
+				T result = caseOscalElement(oscalElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -233,21 +245,9 @@ public class OscalMetadataSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case OscalMetadataPackage.OSCAL_ELEMENT: {
-				OscalElement oscalElement = (OscalElement)theEObject;
-				T result = caseOscalElement(oscalElement);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case OscalMetadataPackage.UUID_ELEMENT: {
 				UUIDElement uuidElement = (UUIDElement)theEObject;
 				T result = caseUUIDElement(uuidElement);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case OscalMetadataPackage.ANNOTATION_OWNER: {
-				AnnotationOwner annotationOwner = (AnnotationOwner)theEObject;
-				T result = caseAnnotationOwner(annotationOwner);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}

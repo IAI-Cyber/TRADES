@@ -75,8 +75,8 @@ public class ParameterSelectionItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addHowManyPropertyDescriptor(object);
 			addChoicePropertyDescriptor(object);
+			addHowManyPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -163,8 +163,8 @@ public class ParameterSelectionItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ParameterSelection.class)) {
-			case OscalCatalogCommonPackage.PARAMETER_SELECTION__HOW_MANY:
 			case OscalCatalogCommonPackage.PARAMETER_SELECTION__CHOICE:
+			case OscalCatalogCommonPackage.PARAMETER_SELECTION__HOW_MANY:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

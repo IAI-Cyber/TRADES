@@ -73,8 +73,8 @@ public class TelephoneNumberItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addValuePropertyDescriptor(object);
 			addTypePropertyDescriptor(object);
+			addValuePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -142,7 +142,7 @@ public class TelephoneNumberItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((TelephoneNumber)object).getValue();
+		String label = ((TelephoneNumber)object).getType();
 		return label == null || label.length() == 0 ?
 			getString("_UI_TelephoneNumber_type") :
 			getString("_UI_TelephoneNumber_type") + " " + label;
@@ -161,8 +161,8 @@ public class TelephoneNumberItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(TelephoneNumber.class)) {
-			case OscalMetadataPackage.TELEPHONE_NUMBER__VALUE:
 			case OscalMetadataPackage.TELEPHONE_NUMBER__TYPE:
+			case OscalMetadataPackage.TELEPHONE_NUMBER__VALUE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

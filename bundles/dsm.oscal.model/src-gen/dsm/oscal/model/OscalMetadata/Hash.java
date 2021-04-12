@@ -33,8 +33,8 @@ package dsm.oscal.model.OscalMetadata;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link dsm.oscal.model.OscalMetadata.Hash#getValue <em>Value</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.Hash#getAlgorithm <em>Algorithm</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.Hash#getValue <em>Value</em>}</li>
  * </ul>
  *
  * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getHash()

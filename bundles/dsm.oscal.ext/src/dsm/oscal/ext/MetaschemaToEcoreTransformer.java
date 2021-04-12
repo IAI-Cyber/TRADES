@@ -50,6 +50,7 @@ import org.eclipse.emf.ecore.EModelElement;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.EcoreFactory;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -198,6 +199,8 @@ public class MetaschemaToEcoreTransformer {
 		}
 		
 		new SemanticRefactoring(rootEPackage,defToEClass.values()).refactor();
+		
+		sortByName();
 
 		for (Resource r : rs.getResources()) {
 			try {
@@ -210,6 +213,19 @@ public class MetaschemaToEcoreTransformer {
 
 		createGenModel(rs, modelFolder, pluginFolder);
 
+	}
+
+	public void sortByName() {
+		for(EPackage ePack : schemaToPackage.values()) {
+			ECollections.sort(ePack.getEClassifiers(), Comparator.comparing(EClassifier::getName));
+			for(EClassifier eClassifier : ePack.getEClassifiers()) {
+				if (eClassifier instanceof EClass) {
+					EClass eClass = (EClass) eClassifier;
+					ECollections.sort(eClass.getEStructuralFeatures(), Comparator.comparing(EStructuralFeature::getName));
+					
+				}
+			}
+		}
 	}
 
 	private void createGenModel(ResourceSet rs, Path modelFolderLocation, Path pluginFolder) {
@@ -422,7 +438,6 @@ public class MetaschemaToEcoreTransformer {
 
 		createEClasses(metadata, ePack);
 
-		ECollections.sort(ePack.getEClassifiers(), Comparator.comparing(EClassifier::getName));
 
 		return ePack;
 	}

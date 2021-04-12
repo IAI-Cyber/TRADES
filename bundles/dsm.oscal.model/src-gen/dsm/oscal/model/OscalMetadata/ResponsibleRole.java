@@ -37,11 +37,11 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link dsm.oscal.model.OscalMetadata.ResponsibleRole#getRoleId <em>Role Id</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.ResponsibleRole#getPartyUuids <em>Party Uuids</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.ResponsibleRole#getRemarks <em>Remarks</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.ResponsibleRole#getLinks <em>Links</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.ResponsibleRole#getPartyUuids <em>Party Uuids</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.ResponsibleRole#getProps <em>Props</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.ResponsibleRole#getRemarks <em>Remarks</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.ResponsibleRole#getRoleId <em>Role Id</em>}</li>
  * </ul>
  *
  * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getResponsibleRole()

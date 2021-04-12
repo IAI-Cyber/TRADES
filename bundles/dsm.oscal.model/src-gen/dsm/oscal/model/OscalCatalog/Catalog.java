@@ -43,11 +43,11 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link dsm.oscal.model.OscalCatalog.Catalog#getBackMatter <em>Back Matter</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalCatalog.Catalog#getControls <em>Controls</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalCatalog.Catalog#getGroups <em>Groups</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalog.Catalog#getMetadata <em>Metadata</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalog.Catalog#getParams <em>Params</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalCatalog.Catalog#getControls <em>Controls</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalCatalog.Catalog#getBackMatter <em>Back Matter</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalCatalog.Catalog#getGroups <em>Groups</em>}</li>
  * </ul>
  *
  * @see dsm.oscal.model.OscalCatalog.OscalCatalogPackage#getCatalog()

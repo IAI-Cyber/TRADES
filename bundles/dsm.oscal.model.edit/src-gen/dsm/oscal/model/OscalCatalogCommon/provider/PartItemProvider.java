@@ -82,12 +82,12 @@ public class PartItemProvider
 			super.getPropertyDescriptors(object);
 
 			addAnnotationsPropertyDescriptor(object);
+			addClazzPropertyDescriptor(object);
 			addIdPropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
 			addNsPropertyDescriptor(object);
-			addClazzPropertyDescriptor(object);
-			addTitlePropertyDescriptor(object);
 			addProsePropertyDescriptor(object);
+			addTitlePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -258,8 +258,8 @@ public class PartItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(OscalCatalogCommonPackage.Literals.PART__PARTS);
 			childrenFeatures.add(OscalCatalogCommonPackage.Literals.PART__LINKS);
+			childrenFeatures.add(OscalCatalogCommonPackage.Literals.PART__PARTS);
 			childrenFeatures.add(OscalCatalogCommonPackage.Literals.PART__PROPS);
 		}
 		return childrenFeatures;
@@ -316,16 +316,16 @@ public class PartItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Part.class)) {
+			case OscalCatalogCommonPackage.PART__CLAZZ:
 			case OscalCatalogCommonPackage.PART__ID:
 			case OscalCatalogCommonPackage.PART__NAME:
 			case OscalCatalogCommonPackage.PART__NS:
-			case OscalCatalogCommonPackage.PART__CLAZZ:
-			case OscalCatalogCommonPackage.PART__TITLE:
 			case OscalCatalogCommonPackage.PART__PROSE:
+			case OscalCatalogCommonPackage.PART__TITLE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case OscalCatalogCommonPackage.PART__PARTS:
 			case OscalCatalogCommonPackage.PART__LINKS:
+			case OscalCatalogCommonPackage.PART__PARTS:
 			case OscalCatalogCommonPackage.PART__PROPS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
@@ -346,13 +346,13 @@ public class PartItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OscalCatalogCommonPackage.Literals.PART__PARTS,
-				 OscalCatalogCommonFactory.eINSTANCE.createPart()));
+				(OscalCatalogCommonPackage.Literals.PART__LINKS,
+				 OscalMetadataFactory.eINSTANCE.createLink()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OscalCatalogCommonPackage.Literals.PART__LINKS,
-				 OscalMetadataFactory.eINSTANCE.createLink()));
+				(OscalCatalogCommonPackage.Literals.PART__PARTS,
+				 OscalCatalogCommonFactory.eINSTANCE.createPart()));
 
 		newChildDescriptors.add
 			(createChildParameter

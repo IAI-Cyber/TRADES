@@ -37,18 +37,18 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link dsm.oscal.model.OscalMetadata.Party#getType <em>Type</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.Party#getName <em>Name</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.Party#getShortName <em>Short Name</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.Party#getAddresses <em>Addresses</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.Party#getEmailAddresses <em>Email Addresses</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.Party#getExternalIds <em>External Ids</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.Party#getLinks <em>Links</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.Party#getLocationUuids <em>Location Uuids</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.Party#getMemberOfOrganizations <em>Member Of Organizations</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.Party#getRemarks <em>Remarks</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.Party#getAddresses <em>Addresses</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.Party#getLinks <em>Links</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.Party#getExternalIds <em>External Ids</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.Party#getName <em>Name</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.Party#getProps <em>Props</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.Party#getRemarks <em>Remarks</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.Party#getShortName <em>Short Name</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.Party#getTelephoneNumbers <em>Telephone Numbers</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.Party#getType <em>Type</em>}</li>
  * </ul>
  *
  * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getParty()

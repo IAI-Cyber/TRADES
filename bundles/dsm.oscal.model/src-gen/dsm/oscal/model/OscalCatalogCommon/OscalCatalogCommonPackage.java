@@ -90,22 +90,22 @@ public interface OscalCatalogCommonPackage extends EPackage {
 	int PARAMETER__ANNOTATIONS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PARAMETER__ID = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>Clazz</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER__CLAZZ = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 2;
+	int PARAMETER__CLAZZ = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Constraints</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER__CONSTRAINTS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Depends On</b></em>' attribute.
@@ -117,58 +117,31 @@ public interface OscalCatalogCommonPackage extends EPackage {
 	int PARAMETER__DEPENDS_ON = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Label</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PARAMETER__LABEL = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 4;
-
-	/**
-	 * The feature id for the '<em><b>Usage</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PARAMETER__USAGE = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 5;
-
-	/**
-	 * The feature id for the '<em><b>Values</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PARAMETER__VALUES = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 6;
-
-	/**
-	 * The feature id for the '<em><b>Remarks</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PARAMETER__REMARKS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 7;
-
-	/**
-	 * The feature id for the '<em><b>Select</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PARAMETER__SELECT = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 8;
-
-	/**
 	 * The feature id for the '<em><b>Guidelines</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER__GUIDELINES = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 9;
+	int PARAMETER__GUIDELINES = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER__ID = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Label</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER__LABEL = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Links</b></em>' containment reference list.
@@ -177,16 +150,7 @@ public interface OscalCatalogCommonPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER__LINKS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 10;
-
-	/**
-	 * The feature id for the '<em><b>Constraints</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PARAMETER__CONSTRAINTS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 11;
+	int PARAMETER__LINKS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Props</b></em>' containment reference list.
@@ -195,7 +159,43 @@ public interface OscalCatalogCommonPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER__PROPS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 12;
+	int PARAMETER__PROPS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 8;
+
+	/**
+	 * The feature id for the '<em><b>Remarks</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER__REMARKS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 9;
+
+	/**
+	 * The feature id for the '<em><b>Select</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER__SELECT = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 10;
+
+	/**
+	 * The feature id for the '<em><b>Usage</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER__USAGE = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 11;
+
+	/**
+	 * The feature id for the '<em><b>Values</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER__VALUES = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 12;
 
 	/**
 	 * The number of structural features of the '<em>Parameter</em>' class.
@@ -355,22 +355,22 @@ public interface OscalCatalogCommonPackage extends EPackage {
 	int PARAMETER_SELECTION = 4;
 
 	/**
-	 * The feature id for the '<em><b>How Many</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PARAMETER_SELECTION__HOW_MANY = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Choice</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_SELECTION__CHOICE = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 1;
+	int PARAMETER_SELECTION__CHOICE = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>How Many</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER_SELECTION__HOW_MANY = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Parameter Selection</em>' class.
@@ -410,67 +410,22 @@ public interface OscalCatalogCommonPackage extends EPackage {
 	int PART__ANNOTATIONS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PART__ID = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PART__NAME = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Ns</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PART__NS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 3;
-
-	/**
 	 * The feature id for the '<em><b>Clazz</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PART__CLAZZ = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 4;
+	int PART__CLAZZ = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Title</b></em>' attribute.
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PART__TITLE = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 5;
-
-	/**
-	 * The feature id for the '<em><b>Prose</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PART__PROSE = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 6;
-
-	/**
-	 * The feature id for the '<em><b>Parts</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PART__PARTS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 7;
+	int PART__ID = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Links</b></em>' containment reference list.
@@ -479,7 +434,34 @@ public interface OscalCatalogCommonPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PART__LINKS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 8;
+	int PART__LINKS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PART__NAME = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Ns</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PART__NS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Parts</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PART__PARTS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Props</b></em>' containment reference list.
@@ -488,7 +470,25 @@ public interface OscalCatalogCommonPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PART__PROPS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 9;
+	int PART__PROPS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 7;
+
+	/**
+	 * The feature id for the '<em><b>Prose</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PART__PROSE = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 8;
+
+	/**
+	 * The feature id for the '<em><b>Title</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PART__TITLE = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The number of structural features of the '<em>Part</em>' class.

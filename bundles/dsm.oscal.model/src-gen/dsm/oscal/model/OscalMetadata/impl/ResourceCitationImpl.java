@@ -49,8 +49,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.ResourceCitationImpl#getAnnotations <em>Annotations</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.impl.ResourceCitationImpl#getText <em>Text</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.ResourceCitationImpl#getProps <em>Props</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.impl.ResourceCitationImpl#getText <em>Text</em>}</li>
  * </ul>
  *
  * @generated
@@ -65,6 +65,16 @@ public class ResourceCitationImpl extends MinimalEObjectImpl.Container implement
 	 * @ordered
 	 */
 	protected EList<Annotation> annotations;
+
+	/**
+	 * The cached value of the '{@link #getProps() <em>Props</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProps()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Property> props;
 
 	/**
 	 * The default value of the '{@link #getText() <em>Text</em>}' attribute.
@@ -85,16 +95,6 @@ public class ResourceCitationImpl extends MinimalEObjectImpl.Container implement
 	 * @ordered
 	 */
 	protected MarkupLine text = TEXT_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getProps() <em>Props</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProps()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Property> props;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -188,10 +188,10 @@ public class ResourceCitationImpl extends MinimalEObjectImpl.Container implement
 		switch (featureID) {
 			case OscalMetadataPackage.RESOURCE_CITATION__ANNOTATIONS:
 				return getAnnotations();
-			case OscalMetadataPackage.RESOURCE_CITATION__TEXT:
-				return getText();
 			case OscalMetadataPackage.RESOURCE_CITATION__PROPS:
 				return getProps();
+			case OscalMetadataPackage.RESOURCE_CITATION__TEXT:
+				return getText();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -209,12 +209,12 @@ public class ResourceCitationImpl extends MinimalEObjectImpl.Container implement
 				getAnnotations().clear();
 				getAnnotations().addAll((Collection<? extends Annotation>)newValue);
 				return;
-			case OscalMetadataPackage.RESOURCE_CITATION__TEXT:
-				setText((MarkupLine)newValue);
-				return;
 			case OscalMetadataPackage.RESOURCE_CITATION__PROPS:
 				getProps().clear();
 				getProps().addAll((Collection<? extends Property>)newValue);
+				return;
+			case OscalMetadataPackage.RESOURCE_CITATION__TEXT:
+				setText((MarkupLine)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -231,11 +231,11 @@ public class ResourceCitationImpl extends MinimalEObjectImpl.Container implement
 			case OscalMetadataPackage.RESOURCE_CITATION__ANNOTATIONS:
 				getAnnotations().clear();
 				return;
-			case OscalMetadataPackage.RESOURCE_CITATION__TEXT:
-				setText(TEXT_EDEFAULT);
-				return;
 			case OscalMetadataPackage.RESOURCE_CITATION__PROPS:
 				getProps().clear();
+				return;
+			case OscalMetadataPackage.RESOURCE_CITATION__TEXT:
+				setText(TEXT_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -251,10 +251,10 @@ public class ResourceCitationImpl extends MinimalEObjectImpl.Container implement
 		switch (featureID) {
 			case OscalMetadataPackage.RESOURCE_CITATION__ANNOTATIONS:
 				return annotations != null && !annotations.isEmpty();
-			case OscalMetadataPackage.RESOURCE_CITATION__TEXT:
-				return TEXT_EDEFAULT == null ? text != null : !TEXT_EDEFAULT.equals(text);
 			case OscalMetadataPackage.RESOURCE_CITATION__PROPS:
 				return props != null && !props.isEmpty();
+			case OscalMetadataPackage.RESOURCE_CITATION__TEXT:
+				return TEXT_EDEFAULT == null ? text != null : !TEXT_EDEFAULT.equals(text);
 		}
 		return super.eIsSet(featureID);
 	}

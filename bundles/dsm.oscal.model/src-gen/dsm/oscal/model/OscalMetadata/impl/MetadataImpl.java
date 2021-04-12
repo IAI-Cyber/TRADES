@@ -59,20 +59,20 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.MetadataImpl#getAnnotations <em>Annotations</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.impl.MetadataImpl#getTitle <em>Title</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.impl.MetadataImpl#getPublished <em>Published</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.impl.MetadataImpl#getDocumentIds <em>Document Ids</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.MetadataImpl#getLastModified <em>Last Modified</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.impl.MetadataImpl#getVersion <em>Version</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.impl.MetadataImpl#getOscalVersion <em>Oscal Version</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.impl.MetadataImpl#getRemarks <em>Remarks</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.impl.MetadataImpl#getRoles <em>Roles</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.MetadataImpl#getLinks <em>Links</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.MetadataImpl#getLocations <em>Locations</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.impl.MetadataImpl#getResponsibleParties <em>Responsible Parties</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.impl.MetadataImpl#getOscalVersion <em>Oscal Version</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.MetadataImpl#getParties <em>Parties</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.impl.MetadataImpl#getRevisions <em>Revisions</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.impl.MetadataImpl#getDocumentIds <em>Document Ids</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.MetadataImpl#getProps <em>Props</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.impl.MetadataImpl#getPublished <em>Published</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.impl.MetadataImpl#getRemarks <em>Remarks</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.impl.MetadataImpl#getResponsibleParties <em>Responsible Parties</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.impl.MetadataImpl#getRevisions <em>Revisions</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.impl.MetadataImpl#getRoles <em>Roles</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.impl.MetadataImpl#getTitle <em>Title</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.impl.MetadataImpl#getVersion <em>Version</em>}</li>
  * </ul>
  *
  * @generated
@@ -89,44 +89,14 @@ public class MetadataImpl extends MinimalEObjectImpl.Container implements Metada
 	protected EList<Annotation> annotations;
 
 	/**
-	 * The default value of the '{@link #getTitle() <em>Title</em>}' attribute.
+	 * The cached value of the '{@link #getDocumentIds() <em>Document Ids</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTitle()
+	 * @see #getDocumentIds()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final MarkupLine TITLE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getTitle() <em>Title</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTitle()
-	 * @generated
-	 * @ordered
-	 */
-	protected MarkupLine title = TITLE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getPublished() <em>Published</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPublished()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final ZonedDateTime PUBLISHED_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getPublished() <em>Published</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPublished()
-	 * @generated
-	 * @ordered
-	 */
-	protected ZonedDateTime published = PUBLISHED_EDEFAULT;
+	protected EList<DocumentId> documentIds;
 
 	/**
 	 * The default value of the '{@link #getLastModified() <em>Last Modified</em>}' attribute.
@@ -149,24 +119,24 @@ public class MetadataImpl extends MinimalEObjectImpl.Container implements Metada
 	protected ZonedDateTime lastModified = LAST_MODIFIED_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getVersion() <em>Version</em>}' attribute.
+	 * The cached value of the '{@link #getLinks() <em>Links</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getVersion()
+	 * @see #getLinks()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String VERSION_EDEFAULT = null;
+	protected EList<Link> links;
 
 	/**
-	 * The cached value of the '{@link #getVersion() <em>Version</em>}' attribute.
+	 * The cached value of the '{@link #getLocations() <em>Locations</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getVersion()
+	 * @see #getLocations()
 	 * @generated
 	 * @ordered
 	 */
-	protected String version = VERSION_EDEFAULT;
+	protected EList<Location> locations;
 
 	/**
 	 * The default value of the '{@link #getOscalVersion() <em>Oscal Version</em>}' attribute.
@@ -189,6 +159,46 @@ public class MetadataImpl extends MinimalEObjectImpl.Container implements Metada
 	protected String oscalVersion = OSCAL_VERSION_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getParties() <em>Parties</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getParties()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Party> parties;
+
+	/**
+	 * The cached value of the '{@link #getProps() <em>Props</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProps()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Property> props;
+
+	/**
+	 * The default value of the '{@link #getPublished() <em>Published</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPublished()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final ZonedDateTime PUBLISHED_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getPublished() <em>Published</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPublished()
+	 * @generated
+	 * @ordered
+	 */
+	protected ZonedDateTime published = PUBLISHED_EDEFAULT;
+
+	/**
 	 * The default value of the '{@link #getRemarks() <em>Remarks</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -209,36 +219,6 @@ public class MetadataImpl extends MinimalEObjectImpl.Container implements Metada
 	protected MarkupMultiline remarks = REMARKS_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getRoles() <em>Roles</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRoles()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Role> roles;
-
-	/**
-	 * The cached value of the '{@link #getLinks() <em>Links</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLinks()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Link> links;
-
-	/**
-	 * The cached value of the '{@link #getLocations() <em>Locations</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLocations()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Location> locations;
-
-	/**
 	 * The cached value of the '{@link #getResponsibleParties() <em>Responsible Parties</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -247,16 +227,6 @@ public class MetadataImpl extends MinimalEObjectImpl.Container implements Metada
 	 * @ordered
 	 */
 	protected EList<ResponsibleParty> responsibleParties;
-
-	/**
-	 * The cached value of the '{@link #getParties() <em>Parties</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getParties()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Party> parties;
 
 	/**
 	 * The cached value of the '{@link #getRevisions() <em>Revisions</em>}' containment reference list.
@@ -269,24 +239,54 @@ public class MetadataImpl extends MinimalEObjectImpl.Container implements Metada
 	protected EList<Revision> revisions;
 
 	/**
-	 * The cached value of the '{@link #getDocumentIds() <em>Document Ids</em>}' containment reference list.
+	 * The cached value of the '{@link #getRoles() <em>Roles</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getDocumentIds()
+	 * @see #getRoles()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<DocumentId> documentIds;
+	protected EList<Role> roles;
 
 	/**
-	 * The cached value of the '{@link #getProps() <em>Props</em>}' containment reference list.
+	 * The default value of the '{@link #getTitle() <em>Title</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getProps()
+	 * @see #getTitle()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Property> props;
+	protected static final MarkupLine TITLE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getTitle() <em>Title</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTitle()
+	 * @generated
+	 * @ordered
+	 */
+	protected MarkupLine title = TITLE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getVersion() <em>Version</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getVersion()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VERSION_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getVersion() <em>Version</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getVersion()
+	 * @generated
+	 * @ordered
+	 */
+	protected String version = VERSION_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -570,22 +570,22 @@ public class MetadataImpl extends MinimalEObjectImpl.Container implements Metada
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case OscalMetadataPackage.METADATA__ROLES:
-				return ((InternalEList<?>)getRoles()).basicRemove(otherEnd, msgs);
+			case OscalMetadataPackage.METADATA__DOCUMENT_IDS:
+				return ((InternalEList<?>)getDocumentIds()).basicRemove(otherEnd, msgs);
 			case OscalMetadataPackage.METADATA__LINKS:
 				return ((InternalEList<?>)getLinks()).basicRemove(otherEnd, msgs);
 			case OscalMetadataPackage.METADATA__LOCATIONS:
 				return ((InternalEList<?>)getLocations()).basicRemove(otherEnd, msgs);
-			case OscalMetadataPackage.METADATA__RESPONSIBLE_PARTIES:
-				return ((InternalEList<?>)getResponsibleParties()).basicRemove(otherEnd, msgs);
 			case OscalMetadataPackage.METADATA__PARTIES:
 				return ((InternalEList<?>)getParties()).basicRemove(otherEnd, msgs);
-			case OscalMetadataPackage.METADATA__REVISIONS:
-				return ((InternalEList<?>)getRevisions()).basicRemove(otherEnd, msgs);
-			case OscalMetadataPackage.METADATA__DOCUMENT_IDS:
-				return ((InternalEList<?>)getDocumentIds()).basicRemove(otherEnd, msgs);
 			case OscalMetadataPackage.METADATA__PROPS:
 				return ((InternalEList<?>)getProps()).basicRemove(otherEnd, msgs);
+			case OscalMetadataPackage.METADATA__RESPONSIBLE_PARTIES:
+				return ((InternalEList<?>)getResponsibleParties()).basicRemove(otherEnd, msgs);
+			case OscalMetadataPackage.METADATA__REVISIONS:
+				return ((InternalEList<?>)getRevisions()).basicRemove(otherEnd, msgs);
+			case OscalMetadataPackage.METADATA__ROLES:
+				return ((InternalEList<?>)getRoles()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -600,34 +600,34 @@ public class MetadataImpl extends MinimalEObjectImpl.Container implements Metada
 		switch (featureID) {
 			case OscalMetadataPackage.METADATA__ANNOTATIONS:
 				return getAnnotations();
-			case OscalMetadataPackage.METADATA__TITLE:
-				return getTitle();
-			case OscalMetadataPackage.METADATA__PUBLISHED:
-				return getPublished();
+			case OscalMetadataPackage.METADATA__DOCUMENT_IDS:
+				return getDocumentIds();
 			case OscalMetadataPackage.METADATA__LAST_MODIFIED:
 				return getLastModified();
-			case OscalMetadataPackage.METADATA__VERSION:
-				return getVersion();
-			case OscalMetadataPackage.METADATA__OSCAL_VERSION:
-				return getOscalVersion();
-			case OscalMetadataPackage.METADATA__REMARKS:
-				return getRemarks();
-			case OscalMetadataPackage.METADATA__ROLES:
-				return getRoles();
 			case OscalMetadataPackage.METADATA__LINKS:
 				return getLinks();
 			case OscalMetadataPackage.METADATA__LOCATIONS:
 				return getLocations();
-			case OscalMetadataPackage.METADATA__RESPONSIBLE_PARTIES:
-				return getResponsibleParties();
+			case OscalMetadataPackage.METADATA__OSCAL_VERSION:
+				return getOscalVersion();
 			case OscalMetadataPackage.METADATA__PARTIES:
 				return getParties();
-			case OscalMetadataPackage.METADATA__REVISIONS:
-				return getRevisions();
-			case OscalMetadataPackage.METADATA__DOCUMENT_IDS:
-				return getDocumentIds();
 			case OscalMetadataPackage.METADATA__PROPS:
 				return getProps();
+			case OscalMetadataPackage.METADATA__PUBLISHED:
+				return getPublished();
+			case OscalMetadataPackage.METADATA__REMARKS:
+				return getRemarks();
+			case OscalMetadataPackage.METADATA__RESPONSIBLE_PARTIES:
+				return getResponsibleParties();
+			case OscalMetadataPackage.METADATA__REVISIONS:
+				return getRevisions();
+			case OscalMetadataPackage.METADATA__ROLES:
+				return getRoles();
+			case OscalMetadataPackage.METADATA__TITLE:
+				return getTitle();
+			case OscalMetadataPackage.METADATA__VERSION:
+				return getVersion();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -645,27 +645,12 @@ public class MetadataImpl extends MinimalEObjectImpl.Container implements Metada
 				getAnnotations().clear();
 				getAnnotations().addAll((Collection<? extends Annotation>)newValue);
 				return;
-			case OscalMetadataPackage.METADATA__TITLE:
-				setTitle((MarkupLine)newValue);
-				return;
-			case OscalMetadataPackage.METADATA__PUBLISHED:
-				setPublished((ZonedDateTime)newValue);
+			case OscalMetadataPackage.METADATA__DOCUMENT_IDS:
+				getDocumentIds().clear();
+				getDocumentIds().addAll((Collection<? extends DocumentId>)newValue);
 				return;
 			case OscalMetadataPackage.METADATA__LAST_MODIFIED:
 				setLastModified((ZonedDateTime)newValue);
-				return;
-			case OscalMetadataPackage.METADATA__VERSION:
-				setVersion((String)newValue);
-				return;
-			case OscalMetadataPackage.METADATA__OSCAL_VERSION:
-				setOscalVersion((String)newValue);
-				return;
-			case OscalMetadataPackage.METADATA__REMARKS:
-				setRemarks((MarkupMultiline)newValue);
-				return;
-			case OscalMetadataPackage.METADATA__ROLES:
-				getRoles().clear();
-				getRoles().addAll((Collection<? extends Role>)newValue);
 				return;
 			case OscalMetadataPackage.METADATA__LINKS:
 				getLinks().clear();
@@ -675,25 +660,40 @@ public class MetadataImpl extends MinimalEObjectImpl.Container implements Metada
 				getLocations().clear();
 				getLocations().addAll((Collection<? extends Location>)newValue);
 				return;
-			case OscalMetadataPackage.METADATA__RESPONSIBLE_PARTIES:
-				getResponsibleParties().clear();
-				getResponsibleParties().addAll((Collection<? extends ResponsibleParty>)newValue);
+			case OscalMetadataPackage.METADATA__OSCAL_VERSION:
+				setOscalVersion((String)newValue);
 				return;
 			case OscalMetadataPackage.METADATA__PARTIES:
 				getParties().clear();
 				getParties().addAll((Collection<? extends Party>)newValue);
 				return;
+			case OscalMetadataPackage.METADATA__PROPS:
+				getProps().clear();
+				getProps().addAll((Collection<? extends Property>)newValue);
+				return;
+			case OscalMetadataPackage.METADATA__PUBLISHED:
+				setPublished((ZonedDateTime)newValue);
+				return;
+			case OscalMetadataPackage.METADATA__REMARKS:
+				setRemarks((MarkupMultiline)newValue);
+				return;
+			case OscalMetadataPackage.METADATA__RESPONSIBLE_PARTIES:
+				getResponsibleParties().clear();
+				getResponsibleParties().addAll((Collection<? extends ResponsibleParty>)newValue);
+				return;
 			case OscalMetadataPackage.METADATA__REVISIONS:
 				getRevisions().clear();
 				getRevisions().addAll((Collection<? extends Revision>)newValue);
 				return;
-			case OscalMetadataPackage.METADATA__DOCUMENT_IDS:
-				getDocumentIds().clear();
-				getDocumentIds().addAll((Collection<? extends DocumentId>)newValue);
+			case OscalMetadataPackage.METADATA__ROLES:
+				getRoles().clear();
+				getRoles().addAll((Collection<? extends Role>)newValue);
 				return;
-			case OscalMetadataPackage.METADATA__PROPS:
-				getProps().clear();
-				getProps().addAll((Collection<? extends Property>)newValue);
+			case OscalMetadataPackage.METADATA__TITLE:
+				setTitle((MarkupLine)newValue);
+				return;
+			case OscalMetadataPackage.METADATA__VERSION:
+				setVersion((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -710,26 +710,11 @@ public class MetadataImpl extends MinimalEObjectImpl.Container implements Metada
 			case OscalMetadataPackage.METADATA__ANNOTATIONS:
 				getAnnotations().clear();
 				return;
-			case OscalMetadataPackage.METADATA__TITLE:
-				setTitle(TITLE_EDEFAULT);
-				return;
-			case OscalMetadataPackage.METADATA__PUBLISHED:
-				setPublished(PUBLISHED_EDEFAULT);
+			case OscalMetadataPackage.METADATA__DOCUMENT_IDS:
+				getDocumentIds().clear();
 				return;
 			case OscalMetadataPackage.METADATA__LAST_MODIFIED:
 				setLastModified(LAST_MODIFIED_EDEFAULT);
-				return;
-			case OscalMetadataPackage.METADATA__VERSION:
-				setVersion(VERSION_EDEFAULT);
-				return;
-			case OscalMetadataPackage.METADATA__OSCAL_VERSION:
-				setOscalVersion(OSCAL_VERSION_EDEFAULT);
-				return;
-			case OscalMetadataPackage.METADATA__REMARKS:
-				setRemarks(REMARKS_EDEFAULT);
-				return;
-			case OscalMetadataPackage.METADATA__ROLES:
-				getRoles().clear();
 				return;
 			case OscalMetadataPackage.METADATA__LINKS:
 				getLinks().clear();
@@ -737,20 +722,35 @@ public class MetadataImpl extends MinimalEObjectImpl.Container implements Metada
 			case OscalMetadataPackage.METADATA__LOCATIONS:
 				getLocations().clear();
 				return;
-			case OscalMetadataPackage.METADATA__RESPONSIBLE_PARTIES:
-				getResponsibleParties().clear();
+			case OscalMetadataPackage.METADATA__OSCAL_VERSION:
+				setOscalVersion(OSCAL_VERSION_EDEFAULT);
 				return;
 			case OscalMetadataPackage.METADATA__PARTIES:
 				getParties().clear();
 				return;
+			case OscalMetadataPackage.METADATA__PROPS:
+				getProps().clear();
+				return;
+			case OscalMetadataPackage.METADATA__PUBLISHED:
+				setPublished(PUBLISHED_EDEFAULT);
+				return;
+			case OscalMetadataPackage.METADATA__REMARKS:
+				setRemarks(REMARKS_EDEFAULT);
+				return;
+			case OscalMetadataPackage.METADATA__RESPONSIBLE_PARTIES:
+				getResponsibleParties().clear();
+				return;
 			case OscalMetadataPackage.METADATA__REVISIONS:
 				getRevisions().clear();
 				return;
-			case OscalMetadataPackage.METADATA__DOCUMENT_IDS:
-				getDocumentIds().clear();
+			case OscalMetadataPackage.METADATA__ROLES:
+				getRoles().clear();
 				return;
-			case OscalMetadataPackage.METADATA__PROPS:
-				getProps().clear();
+			case OscalMetadataPackage.METADATA__TITLE:
+				setTitle(TITLE_EDEFAULT);
+				return;
+			case OscalMetadataPackage.METADATA__VERSION:
+				setVersion(VERSION_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -766,34 +766,34 @@ public class MetadataImpl extends MinimalEObjectImpl.Container implements Metada
 		switch (featureID) {
 			case OscalMetadataPackage.METADATA__ANNOTATIONS:
 				return annotations != null && !annotations.isEmpty();
-			case OscalMetadataPackage.METADATA__TITLE:
-				return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
-			case OscalMetadataPackage.METADATA__PUBLISHED:
-				return PUBLISHED_EDEFAULT == null ? published != null : !PUBLISHED_EDEFAULT.equals(published);
+			case OscalMetadataPackage.METADATA__DOCUMENT_IDS:
+				return documentIds != null && !documentIds.isEmpty();
 			case OscalMetadataPackage.METADATA__LAST_MODIFIED:
 				return LAST_MODIFIED_EDEFAULT == null ? lastModified != null : !LAST_MODIFIED_EDEFAULT.equals(lastModified);
-			case OscalMetadataPackage.METADATA__VERSION:
-				return VERSION_EDEFAULT == null ? version != null : !VERSION_EDEFAULT.equals(version);
-			case OscalMetadataPackage.METADATA__OSCAL_VERSION:
-				return OSCAL_VERSION_EDEFAULT == null ? oscalVersion != null : !OSCAL_VERSION_EDEFAULT.equals(oscalVersion);
-			case OscalMetadataPackage.METADATA__REMARKS:
-				return REMARKS_EDEFAULT == null ? remarks != null : !REMARKS_EDEFAULT.equals(remarks);
-			case OscalMetadataPackage.METADATA__ROLES:
-				return roles != null && !roles.isEmpty();
 			case OscalMetadataPackage.METADATA__LINKS:
 				return links != null && !links.isEmpty();
 			case OscalMetadataPackage.METADATA__LOCATIONS:
 				return locations != null && !locations.isEmpty();
-			case OscalMetadataPackage.METADATA__RESPONSIBLE_PARTIES:
-				return responsibleParties != null && !responsibleParties.isEmpty();
+			case OscalMetadataPackage.METADATA__OSCAL_VERSION:
+				return OSCAL_VERSION_EDEFAULT == null ? oscalVersion != null : !OSCAL_VERSION_EDEFAULT.equals(oscalVersion);
 			case OscalMetadataPackage.METADATA__PARTIES:
 				return parties != null && !parties.isEmpty();
-			case OscalMetadataPackage.METADATA__REVISIONS:
-				return revisions != null && !revisions.isEmpty();
-			case OscalMetadataPackage.METADATA__DOCUMENT_IDS:
-				return documentIds != null && !documentIds.isEmpty();
 			case OscalMetadataPackage.METADATA__PROPS:
 				return props != null && !props.isEmpty();
+			case OscalMetadataPackage.METADATA__PUBLISHED:
+				return PUBLISHED_EDEFAULT == null ? published != null : !PUBLISHED_EDEFAULT.equals(published);
+			case OscalMetadataPackage.METADATA__REMARKS:
+				return REMARKS_EDEFAULT == null ? remarks != null : !REMARKS_EDEFAULT.equals(remarks);
+			case OscalMetadataPackage.METADATA__RESPONSIBLE_PARTIES:
+				return responsibleParties != null && !responsibleParties.isEmpty();
+			case OscalMetadataPackage.METADATA__REVISIONS:
+				return revisions != null && !revisions.isEmpty();
+			case OscalMetadataPackage.METADATA__ROLES:
+				return roles != null && !roles.isEmpty();
+			case OscalMetadataPackage.METADATA__TITLE:
+				return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
+			case OscalMetadataPackage.METADATA__VERSION:
+				return VERSION_EDEFAULT == null ? version != null : !VERSION_EDEFAULT.equals(version);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -840,18 +840,18 @@ public class MetadataImpl extends MinimalEObjectImpl.Container implements Metada
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (title: ");
-		result.append(title);
-		result.append(", published: ");
-		result.append(published);
-		result.append(", lastModified: ");
+		result.append(" (lastModified: ");
 		result.append(lastModified);
-		result.append(", version: ");
-		result.append(version);
 		result.append(", oscalVersion: ");
 		result.append(oscalVersion);
+		result.append(", published: ");
+		result.append(published);
 		result.append(", remarks: ");
 		result.append(remarks);
+		result.append(", title: ");
+		result.append(title);
+		result.append(", version: ");
+		result.append(version);
 		result.append(')');
 		return result.toString();
 	}

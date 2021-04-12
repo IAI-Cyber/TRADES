@@ -56,14 +56,14 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.BackMatterResourceImpl#getUuid <em>Uuid</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.BackMatterResourceImpl#getAnnotations <em>Annotations</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.impl.BackMatterResourceImpl#getTitle <em>Title</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.impl.BackMatterResourceImpl#getDescription <em>Description</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.impl.BackMatterResourceImpl#getRemarks <em>Remarks</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.impl.BackMatterResourceImpl#getCitation <em>Citation</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.impl.BackMatterResourceImpl#getRlinks <em>Rlinks</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.impl.BackMatterResourceImpl#getProps <em>Props</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.impl.BackMatterResourceImpl#getDocumentIds <em>Document Ids</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.BackMatterResourceImpl#getBase64 <em>Base64</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.impl.BackMatterResourceImpl#getCitation <em>Citation</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.impl.BackMatterResourceImpl#getDescription <em>Description</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.impl.BackMatterResourceImpl#getDocumentIds <em>Document Ids</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.impl.BackMatterResourceImpl#getProps <em>Props</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.impl.BackMatterResourceImpl#getRemarks <em>Remarks</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.impl.BackMatterResourceImpl#getRlinks <em>Rlinks</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.impl.BackMatterResourceImpl#getTitle <em>Title</em>}</li>
  * </ul>
  *
  * @generated
@@ -100,24 +100,24 @@ public class BackMatterResourceImpl extends MinimalEObjectImpl.Container impleme
 	protected EList<Annotation> annotations;
 
 	/**
-	 * The default value of the '{@link #getTitle() <em>Title</em>}' attribute.
+	 * The cached value of the '{@link #getBase64() <em>Base64</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTitle()
+	 * @see #getBase64()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final MarkupLine TITLE_EDEFAULT = null;
+	protected Base64 base64;
 
 	/**
-	 * The cached value of the '{@link #getTitle() <em>Title</em>}' attribute.
+	 * The cached value of the '{@link #getCitation() <em>Citation</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTitle()
+	 * @see #getCitation()
 	 * @generated
 	 * @ordered
 	 */
-	protected MarkupLine title = TITLE_EDEFAULT;
+	protected ResourceCitation citation;
 
 	/**
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
@@ -140,6 +140,26 @@ public class BackMatterResourceImpl extends MinimalEObjectImpl.Container impleme
 	protected MarkupMultiline description = DESCRIPTION_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getDocumentIds() <em>Document Ids</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDocumentIds()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<DocumentId> documentIds;
+
+	/**
+	 * The cached value of the '{@link #getProps() <em>Props</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProps()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Property> props;
+
+	/**
 	 * The default value of the '{@link #getRemarks() <em>Remarks</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -160,16 +180,6 @@ public class BackMatterResourceImpl extends MinimalEObjectImpl.Container impleme
 	protected MarkupMultiline remarks = REMARKS_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getCitation() <em>Citation</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCitation()
-	 * @generated
-	 * @ordered
-	 */
-	protected ResourceCitation citation;
-
-	/**
 	 * The cached value of the '{@link #getRlinks() <em>Rlinks</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -180,34 +190,24 @@ public class BackMatterResourceImpl extends MinimalEObjectImpl.Container impleme
 	protected EList<ResourceRlink> rlinks;
 
 	/**
-	 * The cached value of the '{@link #getProps() <em>Props</em>}' containment reference list.
+	 * The default value of the '{@link #getTitle() <em>Title</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getProps()
+	 * @see #getTitle()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Property> props;
+	protected static final MarkupLine TITLE_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getDocumentIds() <em>Document Ids</em>}' containment reference list.
+	 * The cached value of the '{@link #getTitle() <em>Title</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getDocumentIds()
+	 * @see #getTitle()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<DocumentId> documentIds;
-
-	/**
-	 * The cached value of the '{@link #getBase64() <em>Base64</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getBase64()
-	 * @generated
-	 * @ordered
-	 */
-	protected Base64 base64;
+	protected MarkupLine title = TITLE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -470,16 +470,16 @@ public class BackMatterResourceImpl extends MinimalEObjectImpl.Container impleme
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case OscalMetadataPackage.BACK_MATTER_RESOURCE__CITATION:
-				return basicSetCitation(null, msgs);
-			case OscalMetadataPackage.BACK_MATTER_RESOURCE__RLINKS:
-				return ((InternalEList<?>)getRlinks()).basicRemove(otherEnd, msgs);
-			case OscalMetadataPackage.BACK_MATTER_RESOURCE__PROPS:
-				return ((InternalEList<?>)getProps()).basicRemove(otherEnd, msgs);
-			case OscalMetadataPackage.BACK_MATTER_RESOURCE__DOCUMENT_IDS:
-				return ((InternalEList<?>)getDocumentIds()).basicRemove(otherEnd, msgs);
 			case OscalMetadataPackage.BACK_MATTER_RESOURCE__BASE64:
 				return basicSetBase64(null, msgs);
+			case OscalMetadataPackage.BACK_MATTER_RESOURCE__CITATION:
+				return basicSetCitation(null, msgs);
+			case OscalMetadataPackage.BACK_MATTER_RESOURCE__DOCUMENT_IDS:
+				return ((InternalEList<?>)getDocumentIds()).basicRemove(otherEnd, msgs);
+			case OscalMetadataPackage.BACK_MATTER_RESOURCE__PROPS:
+				return ((InternalEList<?>)getProps()).basicRemove(otherEnd, msgs);
+			case OscalMetadataPackage.BACK_MATTER_RESOURCE__RLINKS:
+				return ((InternalEList<?>)getRlinks()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -496,22 +496,22 @@ public class BackMatterResourceImpl extends MinimalEObjectImpl.Container impleme
 				return getUuid();
 			case OscalMetadataPackage.BACK_MATTER_RESOURCE__ANNOTATIONS:
 				return getAnnotations();
-			case OscalMetadataPackage.BACK_MATTER_RESOURCE__TITLE:
-				return getTitle();
-			case OscalMetadataPackage.BACK_MATTER_RESOURCE__DESCRIPTION:
-				return getDescription();
-			case OscalMetadataPackage.BACK_MATTER_RESOURCE__REMARKS:
-				return getRemarks();
-			case OscalMetadataPackage.BACK_MATTER_RESOURCE__CITATION:
-				return getCitation();
-			case OscalMetadataPackage.BACK_MATTER_RESOURCE__RLINKS:
-				return getRlinks();
-			case OscalMetadataPackage.BACK_MATTER_RESOURCE__PROPS:
-				return getProps();
-			case OscalMetadataPackage.BACK_MATTER_RESOURCE__DOCUMENT_IDS:
-				return getDocumentIds();
 			case OscalMetadataPackage.BACK_MATTER_RESOURCE__BASE64:
 				return getBase64();
+			case OscalMetadataPackage.BACK_MATTER_RESOURCE__CITATION:
+				return getCitation();
+			case OscalMetadataPackage.BACK_MATTER_RESOURCE__DESCRIPTION:
+				return getDescription();
+			case OscalMetadataPackage.BACK_MATTER_RESOURCE__DOCUMENT_IDS:
+				return getDocumentIds();
+			case OscalMetadataPackage.BACK_MATTER_RESOURCE__PROPS:
+				return getProps();
+			case OscalMetadataPackage.BACK_MATTER_RESOURCE__REMARKS:
+				return getRemarks();
+			case OscalMetadataPackage.BACK_MATTER_RESOURCE__RLINKS:
+				return getRlinks();
+			case OscalMetadataPackage.BACK_MATTER_RESOURCE__TITLE:
+				return getTitle();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -532,32 +532,32 @@ public class BackMatterResourceImpl extends MinimalEObjectImpl.Container impleme
 				getAnnotations().clear();
 				getAnnotations().addAll((Collection<? extends Annotation>)newValue);
 				return;
-			case OscalMetadataPackage.BACK_MATTER_RESOURCE__TITLE:
-				setTitle((MarkupLine)newValue);
-				return;
-			case OscalMetadataPackage.BACK_MATTER_RESOURCE__DESCRIPTION:
-				setDescription((MarkupMultiline)newValue);
-				return;
-			case OscalMetadataPackage.BACK_MATTER_RESOURCE__REMARKS:
-				setRemarks((MarkupMultiline)newValue);
+			case OscalMetadataPackage.BACK_MATTER_RESOURCE__BASE64:
+				setBase64((Base64)newValue);
 				return;
 			case OscalMetadataPackage.BACK_MATTER_RESOURCE__CITATION:
 				setCitation((ResourceCitation)newValue);
 				return;
-			case OscalMetadataPackage.BACK_MATTER_RESOURCE__RLINKS:
-				getRlinks().clear();
-				getRlinks().addAll((Collection<? extends ResourceRlink>)newValue);
-				return;
-			case OscalMetadataPackage.BACK_MATTER_RESOURCE__PROPS:
-				getProps().clear();
-				getProps().addAll((Collection<? extends Property>)newValue);
+			case OscalMetadataPackage.BACK_MATTER_RESOURCE__DESCRIPTION:
+				setDescription((MarkupMultiline)newValue);
 				return;
 			case OscalMetadataPackage.BACK_MATTER_RESOURCE__DOCUMENT_IDS:
 				getDocumentIds().clear();
 				getDocumentIds().addAll((Collection<? extends DocumentId>)newValue);
 				return;
-			case OscalMetadataPackage.BACK_MATTER_RESOURCE__BASE64:
-				setBase64((Base64)newValue);
+			case OscalMetadataPackage.BACK_MATTER_RESOURCE__PROPS:
+				getProps().clear();
+				getProps().addAll((Collection<? extends Property>)newValue);
+				return;
+			case OscalMetadataPackage.BACK_MATTER_RESOURCE__REMARKS:
+				setRemarks((MarkupMultiline)newValue);
+				return;
+			case OscalMetadataPackage.BACK_MATTER_RESOURCE__RLINKS:
+				getRlinks().clear();
+				getRlinks().addAll((Collection<? extends ResourceRlink>)newValue);
+				return;
+			case OscalMetadataPackage.BACK_MATTER_RESOURCE__TITLE:
+				setTitle((MarkupLine)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -577,29 +577,29 @@ public class BackMatterResourceImpl extends MinimalEObjectImpl.Container impleme
 			case OscalMetadataPackage.BACK_MATTER_RESOURCE__ANNOTATIONS:
 				getAnnotations().clear();
 				return;
-			case OscalMetadataPackage.BACK_MATTER_RESOURCE__TITLE:
-				setTitle(TITLE_EDEFAULT);
-				return;
-			case OscalMetadataPackage.BACK_MATTER_RESOURCE__DESCRIPTION:
-				setDescription(DESCRIPTION_EDEFAULT);
-				return;
-			case OscalMetadataPackage.BACK_MATTER_RESOURCE__REMARKS:
-				setRemarks(REMARKS_EDEFAULT);
+			case OscalMetadataPackage.BACK_MATTER_RESOURCE__BASE64:
+				setBase64((Base64)null);
 				return;
 			case OscalMetadataPackage.BACK_MATTER_RESOURCE__CITATION:
 				setCitation((ResourceCitation)null);
 				return;
-			case OscalMetadataPackage.BACK_MATTER_RESOURCE__RLINKS:
-				getRlinks().clear();
-				return;
-			case OscalMetadataPackage.BACK_MATTER_RESOURCE__PROPS:
-				getProps().clear();
+			case OscalMetadataPackage.BACK_MATTER_RESOURCE__DESCRIPTION:
+				setDescription(DESCRIPTION_EDEFAULT);
 				return;
 			case OscalMetadataPackage.BACK_MATTER_RESOURCE__DOCUMENT_IDS:
 				getDocumentIds().clear();
 				return;
-			case OscalMetadataPackage.BACK_MATTER_RESOURCE__BASE64:
-				setBase64((Base64)null);
+			case OscalMetadataPackage.BACK_MATTER_RESOURCE__PROPS:
+				getProps().clear();
+				return;
+			case OscalMetadataPackage.BACK_MATTER_RESOURCE__REMARKS:
+				setRemarks(REMARKS_EDEFAULT);
+				return;
+			case OscalMetadataPackage.BACK_MATTER_RESOURCE__RLINKS:
+				getRlinks().clear();
+				return;
+			case OscalMetadataPackage.BACK_MATTER_RESOURCE__TITLE:
+				setTitle(TITLE_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -617,22 +617,22 @@ public class BackMatterResourceImpl extends MinimalEObjectImpl.Container impleme
 				return UUID_EDEFAULT == null ? uuid != null : !UUID_EDEFAULT.equals(uuid);
 			case OscalMetadataPackage.BACK_MATTER_RESOURCE__ANNOTATIONS:
 				return annotations != null && !annotations.isEmpty();
-			case OscalMetadataPackage.BACK_MATTER_RESOURCE__TITLE:
-				return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
-			case OscalMetadataPackage.BACK_MATTER_RESOURCE__DESCRIPTION:
-				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-			case OscalMetadataPackage.BACK_MATTER_RESOURCE__REMARKS:
-				return REMARKS_EDEFAULT == null ? remarks != null : !REMARKS_EDEFAULT.equals(remarks);
-			case OscalMetadataPackage.BACK_MATTER_RESOURCE__CITATION:
-				return citation != null;
-			case OscalMetadataPackage.BACK_MATTER_RESOURCE__RLINKS:
-				return rlinks != null && !rlinks.isEmpty();
-			case OscalMetadataPackage.BACK_MATTER_RESOURCE__PROPS:
-				return props != null && !props.isEmpty();
-			case OscalMetadataPackage.BACK_MATTER_RESOURCE__DOCUMENT_IDS:
-				return documentIds != null && !documentIds.isEmpty();
 			case OscalMetadataPackage.BACK_MATTER_RESOURCE__BASE64:
 				return base64 != null;
+			case OscalMetadataPackage.BACK_MATTER_RESOURCE__CITATION:
+				return citation != null;
+			case OscalMetadataPackage.BACK_MATTER_RESOURCE__DESCRIPTION:
+				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+			case OscalMetadataPackage.BACK_MATTER_RESOURCE__DOCUMENT_IDS:
+				return documentIds != null && !documentIds.isEmpty();
+			case OscalMetadataPackage.BACK_MATTER_RESOURCE__PROPS:
+				return props != null && !props.isEmpty();
+			case OscalMetadataPackage.BACK_MATTER_RESOURCE__REMARKS:
+				return REMARKS_EDEFAULT == null ? remarks != null : !REMARKS_EDEFAULT.equals(remarks);
+			case OscalMetadataPackage.BACK_MATTER_RESOURCE__RLINKS:
+				return rlinks != null && !rlinks.isEmpty();
+			case OscalMetadataPackage.BACK_MATTER_RESOURCE__TITLE:
+				return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -693,12 +693,12 @@ public class BackMatterResourceImpl extends MinimalEObjectImpl.Container impleme
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (uuid: ");
 		result.append(uuid);
-		result.append(", title: ");
-		result.append(title);
 		result.append(", description: ");
 		result.append(description);
 		result.append(", remarks: ");
 		result.append(remarks);
+		result.append(", title: ");
+		result.append(title);
 		result.append(')');
 		return result.toString();
 	}

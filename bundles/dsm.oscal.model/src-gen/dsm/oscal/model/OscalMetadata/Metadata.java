@@ -38,20 +38,20 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link dsm.oscal.model.OscalMetadata.Metadata#getTitle <em>Title</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.Metadata#getPublished <em>Published</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.Metadata#getDocumentIds <em>Document Ids</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.Metadata#getLastModified <em>Last Modified</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.Metadata#getVersion <em>Version</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.Metadata#getOscalVersion <em>Oscal Version</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.Metadata#getRemarks <em>Remarks</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.Metadata#getRoles <em>Roles</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.Metadata#getLinks <em>Links</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.Metadata#getLocations <em>Locations</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.Metadata#getResponsibleParties <em>Responsible Parties</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.Metadata#getOscalVersion <em>Oscal Version</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.Metadata#getParties <em>Parties</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.Metadata#getRevisions <em>Revisions</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.Metadata#getDocumentIds <em>Document Ids</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.Metadata#getProps <em>Props</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.Metadata#getPublished <em>Published</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.Metadata#getRemarks <em>Remarks</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.Metadata#getResponsibleParties <em>Responsible Parties</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.Metadata#getRevisions <em>Revisions</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.Metadata#getRoles <em>Roles</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.Metadata#getTitle <em>Title</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.Metadata#getVersion <em>Version</em>}</li>
  * </ul>
  *
  * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getMetadata()

@@ -121,11 +121,11 @@ public class CatalogItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
+			childrenFeatures.add(OscalCatalogPackage.Literals.CATALOG__BACK_MATTER);
+			childrenFeatures.add(OscalCatalogPackage.Literals.CATALOG__CONTROLS);
+			childrenFeatures.add(OscalCatalogPackage.Literals.CATALOG__GROUPS);
 			childrenFeatures.add(OscalCatalogPackage.Literals.CATALOG__METADATA);
 			childrenFeatures.add(OscalCatalogPackage.Literals.CATALOG__PARAMS);
-			childrenFeatures.add(OscalCatalogPackage.Literals.CATALOG__CONTROLS);
-			childrenFeatures.add(OscalCatalogPackage.Literals.CATALOG__BACK_MATTER);
-			childrenFeatures.add(OscalCatalogPackage.Literals.CATALOG__GROUPS);
 		}
 		return childrenFeatures;
 	}
@@ -185,11 +185,11 @@ public class CatalogItemProvider
 			case OscalCatalogPackage.CATALOG__UUID:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
+			case OscalCatalogPackage.CATALOG__BACK_MATTER:
+			case OscalCatalogPackage.CATALOG__CONTROLS:
+			case OscalCatalogPackage.CATALOG__GROUPS:
 			case OscalCatalogPackage.CATALOG__METADATA:
 			case OscalCatalogPackage.CATALOG__PARAMS:
-			case OscalCatalogPackage.CATALOG__CONTROLS:
-			case OscalCatalogPackage.CATALOG__BACK_MATTER:
-			case OscalCatalogPackage.CATALOG__GROUPS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -209,13 +209,8 @@ public class CatalogItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OscalCatalogPackage.Literals.CATALOG__METADATA,
-				 OscalMetadataFactory.eINSTANCE.createMetadata()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OscalCatalogPackage.Literals.CATALOG__PARAMS,
-				 OscalCatalogCommonFactory.eINSTANCE.createParameter()));
+				(OscalCatalogPackage.Literals.CATALOG__BACK_MATTER,
+				 OscalMetadataFactory.eINSTANCE.createBackMatter()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -224,13 +219,18 @@ public class CatalogItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OscalCatalogPackage.Literals.CATALOG__BACK_MATTER,
-				 OscalMetadataFactory.eINSTANCE.createBackMatter()));
+				(OscalCatalogPackage.Literals.CATALOG__GROUPS,
+				 OscalCatalogFactory.eINSTANCE.createGroup()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OscalCatalogPackage.Literals.CATALOG__GROUPS,
-				 OscalCatalogFactory.eINSTANCE.createGroup()));
+				(OscalCatalogPackage.Literals.CATALOG__METADATA,
+				 OscalMetadataFactory.eINSTANCE.createMetadata()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OscalCatalogPackage.Literals.CATALOG__PARAMS,
+				 OscalCatalogCommonFactory.eINSTANCE.createParameter()));
 	}
 
 	/**

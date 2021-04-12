@@ -90,22 +90,13 @@ public interface OscalCatalogPackage extends EPackage {
 	int CATALOG__UUID = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Metadata</b></em>' containment reference.
+	 * The feature id for the '<em><b>Back Matter</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CATALOG__METADATA = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Params</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CATALOG__PARAMS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 2;
+	int CATALOG__BACK_MATTER = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Controls</b></em>' containment reference list.
@@ -114,16 +105,7 @@ public interface OscalCatalogPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CATALOG__CONTROLS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Back Matter</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CATALOG__BACK_MATTER = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 4;
+	int CATALOG__CONTROLS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Groups</b></em>' containment reference list.
@@ -132,7 +114,25 @@ public interface OscalCatalogPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CATALOG__GROUPS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 5;
+	int CATALOG__GROUPS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Metadata</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CATALOG__METADATA = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Params</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CATALOG__PARAMS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Catalog</em>' class.
@@ -172,58 +172,13 @@ public interface OscalCatalogPackage extends EPackage {
 	int CONTROL__ANNOTATIONS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTROL__ID = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>Clazz</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL__CLAZZ = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Title</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTROL__TITLE = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Params</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTROL__PARAMS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 4;
-
-	/**
-	 * The feature id for the '<em><b>Parts</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTROL__PARTS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 5;
-
-	/**
-	 * The feature id for the '<em><b>Links</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTROL__LINKS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 6;
+	int CONTROL__CLAZZ = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Controls</b></em>' containment reference list.
@@ -232,7 +187,43 @@ public interface OscalCatalogPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL__CONTROLS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 7;
+	int CONTROL__CONTROLS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL__ID = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Links</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL__LINKS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Params</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL__PARAMS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Parts</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL__PARTS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Props</b></em>' containment reference list.
@@ -241,7 +232,16 @@ public interface OscalCatalogPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL__PROPS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 8;
+	int CONTROL__PROPS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 7;
+
+	/**
+	 * The feature id for the '<em><b>Title</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL__TITLE = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of structural features of the '<em>Control</em>' class.
@@ -281,58 +281,13 @@ public interface OscalCatalogPackage extends EPackage {
 	int GROUP__ANNOTATIONS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GROUP__ID = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>Clazz</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GROUP__CLAZZ = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Title</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GROUP__TITLE = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Params</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GROUP__PARAMS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 4;
-
-	/**
-	 * The feature id for the '<em><b>Parts</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GROUP__PARTS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 5;
-
-	/**
-	 * The feature id for the '<em><b>Links</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GROUP__LINKS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 6;
+	int GROUP__CLAZZ = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Controls</b></em>' containment reference list.
@@ -341,7 +296,7 @@ public interface OscalCatalogPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GROUP__CONTROLS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 7;
+	int GROUP__CONTROLS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Groups</b></em>' containment reference list.
@@ -350,7 +305,43 @@ public interface OscalCatalogPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GROUP__GROUPS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 8;
+	int GROUP__GROUPS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GROUP__ID = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Links</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GROUP__LINKS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Params</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GROUP__PARAMS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 6;
+
+	/**
+	 * The feature id for the '<em><b>Parts</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GROUP__PARTS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Props</b></em>' containment reference list.
@@ -359,7 +350,16 @@ public interface OscalCatalogPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GROUP__PROPS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 9;
+	int GROUP__PROPS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 8;
+
+	/**
+	 * The feature id for the '<em><b>Title</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GROUP__TITLE = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The number of structural features of the '<em>Group</em>' class.

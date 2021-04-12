@@ -40,8 +40,8 @@ import java.net.URI;
  * <ul>
  *   <li>{@link dsm.oscal.model.OscalMetadata.Annotation#getName <em>Name</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.Annotation#getNs <em>Ns</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.Annotation#getValue <em>Value</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.Annotation#getRemarks <em>Remarks</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.Annotation#getValue <em>Value</em>}</li>
  * </ul>
  *
  * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getAnnotation()

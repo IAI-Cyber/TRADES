@@ -38,14 +38,14 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link dsm.oscal.model.OscalMetadata.BackMatterResource#getTitle <em>Title</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.BackMatterResource#getDescription <em>Description</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.BackMatterResource#getRemarks <em>Remarks</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.BackMatterResource#getCitation <em>Citation</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.BackMatterResource#getRlinks <em>Rlinks</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.BackMatterResource#getProps <em>Props</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.BackMatterResource#getDocumentIds <em>Document Ids</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.BackMatterResource#getBase64 <em>Base64</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.BackMatterResource#getCitation <em>Citation</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.BackMatterResource#getDescription <em>Description</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.BackMatterResource#getDocumentIds <em>Document Ids</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.BackMatterResource#getProps <em>Props</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.BackMatterResource#getRemarks <em>Remarks</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.BackMatterResource#getRlinks <em>Rlinks</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.BackMatterResource#getTitle <em>Title</em>}</li>
  * </ul>
  *
  * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getBackMatterResource()

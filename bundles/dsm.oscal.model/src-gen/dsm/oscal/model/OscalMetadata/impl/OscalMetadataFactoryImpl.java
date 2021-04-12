@@ -86,6 +86,7 @@ public class OscalMetadataFactoryImpl extends EFactoryImpl implements OscalMetad
 		switch (eClass.getClassifierID()) {
 			case OscalMetadataPackage.ADDRESS: return createAddress();
 			case OscalMetadataPackage.ANNOTATION: return createAnnotation();
+			case OscalMetadataPackage.ANNOTATION_OWNER: return createAnnotationOwner();
 			case OscalMetadataPackage.BACK_MATTER: return createBackMatter();
 			case OscalMetadataPackage.BACK_MATTER_RESOURCE: return createBackMatterResource();
 			case OscalMetadataPackage.BASE64: return createBase64();
@@ -105,7 +106,6 @@ public class OscalMetadataFactoryImpl extends EFactoryImpl implements OscalMetad
 			case OscalMetadataPackage.ROLE: return createRole();
 			case OscalMetadataPackage.TELEPHONE_NUMBER: return createTelephoneNumber();
 			case OscalMetadataPackage.UUID_ELEMENT: return createUUIDElement();
-			case OscalMetadataPackage.ANNOTATION_OWNER: return createAnnotationOwner();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -119,32 +119,32 @@ public class OscalMetadataFactoryImpl extends EFactoryImpl implements OscalMetad
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
+			case OscalMetadataPackage.BASE64_TYPE:
+				return createBase64TypeFromString(eDataType, initialValue);
+			case OscalMetadataPackage.DATE_TIME_TYPE:
+				return createDateTimeTypeFromString(eDataType, initialValue);
+			case OscalMetadataPackage.DATE_TIME_WITH_TZ_TYPE:
+				return createDateTimeWithTzTypeFromString(eDataType, initialValue);
 			case OscalMetadataPackage.DATE_TYPE:
 				return createDateTypeFromString(eDataType, initialValue);
 			case OscalMetadataPackage.DATE_WITH_TZ_TYPE:
 				return createDateWithTzTypeFromString(eDataType, initialValue);
+			case OscalMetadataPackage.EMPTY_TYPE:
+				return createEmptyTypeFromString(eDataType, initialValue);
 			case OscalMetadataPackage.IP_V4_ADDRESS_TYPE:
 				return createIpV4AddressTypeFromString(eDataType, initialValue);
-			case OscalMetadataPackage.DATE_TIME_TYPE:
-				return createDateTimeTypeFromString(eDataType, initialValue);
-			case OscalMetadataPackage.URI_REFERENCE_TYPE:
-				return createUriReferenceTypeFromString(eDataType, initialValue);
-			case OscalMetadataPackage.UUID_TYPE:
-				return createUuidTypeFromString(eDataType, initialValue);
-			case OscalMetadataPackage.BASE64_TYPE:
-				return createBase64TypeFromString(eDataType, initialValue);
-			case OscalMetadataPackage.URI_TYPE:
-				return createUriTypeFromString(eDataType, initialValue);
+			case OscalMetadataPackage.IP_V6_ADDRESS_TYPE:
+				return createIpV6AddressTypeFromString(eDataType, initialValue);
 			case OscalMetadataPackage.MARKUP_LINE_TYPE:
 				return createMarkupLineTypeFromString(eDataType, initialValue);
 			case OscalMetadataPackage.MARKUP_MULTILINE_TYPE:
 				return createMarkupMultilineTypeFromString(eDataType, initialValue);
-			case OscalMetadataPackage.EMPTY_TYPE:
-				return createEmptyTypeFromString(eDataType, initialValue);
-			case OscalMetadataPackage.DATE_TIME_WITH_TZ_TYPE:
-				return createDateTimeWithTzTypeFromString(eDataType, initialValue);
-			case OscalMetadataPackage.IP_V6_ADDRESS_TYPE:
-				return createIpV6AddressTypeFromString(eDataType, initialValue);
+			case OscalMetadataPackage.URI_REFERENCE_TYPE:
+				return createUriReferenceTypeFromString(eDataType, initialValue);
+			case OscalMetadataPackage.URI_TYPE:
+				return createUriTypeFromString(eDataType, initialValue);
+			case OscalMetadataPackage.UUID_TYPE:
+				return createUuidTypeFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -158,32 +158,32 @@ public class OscalMetadataFactoryImpl extends EFactoryImpl implements OscalMetad
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
+			case OscalMetadataPackage.BASE64_TYPE:
+				return convertBase64TypeToString(eDataType, instanceValue);
+			case OscalMetadataPackage.DATE_TIME_TYPE:
+				return convertDateTimeTypeToString(eDataType, instanceValue);
+			case OscalMetadataPackage.DATE_TIME_WITH_TZ_TYPE:
+				return convertDateTimeWithTzTypeToString(eDataType, instanceValue);
 			case OscalMetadataPackage.DATE_TYPE:
 				return convertDateTypeToString(eDataType, instanceValue);
 			case OscalMetadataPackage.DATE_WITH_TZ_TYPE:
 				return convertDateWithTzTypeToString(eDataType, instanceValue);
+			case OscalMetadataPackage.EMPTY_TYPE:
+				return convertEmptyTypeToString(eDataType, instanceValue);
 			case OscalMetadataPackage.IP_V4_ADDRESS_TYPE:
 				return convertIpV4AddressTypeToString(eDataType, instanceValue);
-			case OscalMetadataPackage.DATE_TIME_TYPE:
-				return convertDateTimeTypeToString(eDataType, instanceValue);
-			case OscalMetadataPackage.URI_REFERENCE_TYPE:
-				return convertUriReferenceTypeToString(eDataType, instanceValue);
-			case OscalMetadataPackage.UUID_TYPE:
-				return convertUuidTypeToString(eDataType, instanceValue);
-			case OscalMetadataPackage.BASE64_TYPE:
-				return convertBase64TypeToString(eDataType, instanceValue);
-			case OscalMetadataPackage.URI_TYPE:
-				return convertUriTypeToString(eDataType, instanceValue);
+			case OscalMetadataPackage.IP_V6_ADDRESS_TYPE:
+				return convertIpV6AddressTypeToString(eDataType, instanceValue);
 			case OscalMetadataPackage.MARKUP_LINE_TYPE:
 				return convertMarkupLineTypeToString(eDataType, instanceValue);
 			case OscalMetadataPackage.MARKUP_MULTILINE_TYPE:
 				return convertMarkupMultilineTypeToString(eDataType, instanceValue);
-			case OscalMetadataPackage.EMPTY_TYPE:
-				return convertEmptyTypeToString(eDataType, instanceValue);
-			case OscalMetadataPackage.DATE_TIME_WITH_TZ_TYPE:
-				return convertDateTimeWithTzTypeToString(eDataType, instanceValue);
-			case OscalMetadataPackage.IP_V6_ADDRESS_TYPE:
-				return convertIpV6AddressTypeToString(eDataType, instanceValue);
+			case OscalMetadataPackage.URI_REFERENCE_TYPE:
+				return convertUriReferenceTypeToString(eDataType, instanceValue);
+			case OscalMetadataPackage.URI_TYPE:
+				return convertUriTypeToString(eDataType, instanceValue);
+			case OscalMetadataPackage.UUID_TYPE:
+				return convertUuidTypeToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}

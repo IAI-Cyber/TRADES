@@ -38,8 +38,8 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link dsm.oscal.model.OscalCatalogCommon.ParameterSelection#getHowMany <em>How Many</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalogCommon.ParameterSelection#getChoice <em>Choice</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalCatalogCommon.ParameterSelection#getHowMany <em>How Many</em>}</li>
  * </ul>
  *
  * @see dsm.oscal.model.OscalCatalogCommon.OscalCatalogCommonPackage#getParameterSelection()

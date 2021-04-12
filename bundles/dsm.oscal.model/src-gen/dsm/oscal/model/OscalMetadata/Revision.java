@@ -40,14 +40,14 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link dsm.oscal.model.OscalMetadata.Revision#getTitle <em>Title</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.Revision#getPublished <em>Published</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.Revision#getLastModified <em>Last Modified</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.Revision#getVersion <em>Version</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.Revision#getOscalVersion <em>Oscal Version</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.Revision#getRemarks <em>Remarks</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.Revision#getLinks <em>Links</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.Revision#getOscalVersion <em>Oscal Version</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.Revision#getProps <em>Props</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.Revision#getPublished <em>Published</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.Revision#getRemarks <em>Remarks</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.Revision#getTitle <em>Title</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.Revision#getVersion <em>Version</em>}</li>
  * </ul>
  *
  * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getRevision()

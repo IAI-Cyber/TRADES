@@ -73,12 +73,12 @@ public class AddressItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addTypePropertyDescriptor(object);
 			addAddrLinesPropertyDescriptor(object);
 			addCityPropertyDescriptor(object);
-			addStatePropertyDescriptor(object);
-			addPostalCodePropertyDescriptor(object);
 			addCountryPropertyDescriptor(object);
+			addPostalCodePropertyDescriptor(object);
+			addStatePropertyDescriptor(object);
+			addTypePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -234,7 +234,7 @@ public class AddressItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Address)object).getType();
+		String label = ((Address)object).getCity();
 		return label == null || label.length() == 0 ?
 			getString("_UI_Address_type") :
 			getString("_UI_Address_type") + " " + label;
@@ -253,12 +253,12 @@ public class AddressItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Address.class)) {
-			case OscalMetadataPackage.ADDRESS__TYPE:
 			case OscalMetadataPackage.ADDRESS__ADDR_LINES:
 			case OscalMetadataPackage.ADDRESS__CITY:
-			case OscalMetadataPackage.ADDRESS__STATE:
-			case OscalMetadataPackage.ADDRESS__POSTAL_CODE:
 			case OscalMetadataPackage.ADDRESS__COUNTRY:
+			case OscalMetadataPackage.ADDRESS__POSTAL_CODE:
+			case OscalMetadataPackage.ADDRESS__STATE:
+			case OscalMetadataPackage.ADDRESS__TYPE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

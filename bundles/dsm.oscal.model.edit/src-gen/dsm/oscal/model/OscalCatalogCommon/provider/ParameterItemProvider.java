@@ -82,13 +82,13 @@ public class ParameterItemProvider
 			super.getPropertyDescriptors(object);
 
 			addAnnotationsPropertyDescriptor(object);
-			addIdPropertyDescriptor(object);
 			addClazzPropertyDescriptor(object);
 			addDependsOnPropertyDescriptor(object);
+			addIdPropertyDescriptor(object);
 			addLabelPropertyDescriptor(object);
+			addRemarksPropertyDescriptor(object);
 			addUsagePropertyDescriptor(object);
 			addValuesPropertyDescriptor(object);
-			addRemarksPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -281,11 +281,11 @@ public class ParameterItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(OscalCatalogCommonPackage.Literals.PARAMETER__SELECT);
+			childrenFeatures.add(OscalCatalogCommonPackage.Literals.PARAMETER__CONSTRAINTS);
 			childrenFeatures.add(OscalCatalogCommonPackage.Literals.PARAMETER__GUIDELINES);
 			childrenFeatures.add(OscalCatalogCommonPackage.Literals.PARAMETER__LINKS);
-			childrenFeatures.add(OscalCatalogCommonPackage.Literals.PARAMETER__CONSTRAINTS);
 			childrenFeatures.add(OscalCatalogCommonPackage.Literals.PARAMETER__PROPS);
+			childrenFeatures.add(OscalCatalogCommonPackage.Literals.PARAMETER__SELECT);
 		}
 		return childrenFeatures;
 	}
@@ -341,20 +341,20 @@ public class ParameterItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Parameter.class)) {
-			case OscalCatalogCommonPackage.PARAMETER__ID:
 			case OscalCatalogCommonPackage.PARAMETER__CLAZZ:
 			case OscalCatalogCommonPackage.PARAMETER__DEPENDS_ON:
+			case OscalCatalogCommonPackage.PARAMETER__ID:
 			case OscalCatalogCommonPackage.PARAMETER__LABEL:
+			case OscalCatalogCommonPackage.PARAMETER__REMARKS:
 			case OscalCatalogCommonPackage.PARAMETER__USAGE:
 			case OscalCatalogCommonPackage.PARAMETER__VALUES:
-			case OscalCatalogCommonPackage.PARAMETER__REMARKS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case OscalCatalogCommonPackage.PARAMETER__SELECT:
+			case OscalCatalogCommonPackage.PARAMETER__CONSTRAINTS:
 			case OscalCatalogCommonPackage.PARAMETER__GUIDELINES:
 			case OscalCatalogCommonPackage.PARAMETER__LINKS:
-			case OscalCatalogCommonPackage.PARAMETER__CONSTRAINTS:
 			case OscalCatalogCommonPackage.PARAMETER__PROPS:
+			case OscalCatalogCommonPackage.PARAMETER__SELECT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -374,8 +374,8 @@ public class ParameterItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OscalCatalogCommonPackage.Literals.PARAMETER__SELECT,
-				 OscalCatalogCommonFactory.eINSTANCE.createParameterSelection()));
+				(OscalCatalogCommonPackage.Literals.PARAMETER__CONSTRAINTS,
+				 OscalCatalogCommonFactory.eINSTANCE.createParameterConstraint()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -389,13 +389,13 @@ public class ParameterItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OscalCatalogCommonPackage.Literals.PARAMETER__CONSTRAINTS,
-				 OscalCatalogCommonFactory.eINSTANCE.createParameterConstraint()));
+				(OscalCatalogCommonPackage.Literals.PARAMETER__PROPS,
+				 OscalMetadataFactory.eINSTANCE.createProperty()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OscalCatalogCommonPackage.Literals.PARAMETER__PROPS,
-				 OscalMetadataFactory.eINSTANCE.createProperty()));
+				(OscalCatalogCommonPackage.Literals.PARAMETER__SELECT,
+				 OscalCatalogCommonFactory.eINSTANCE.createParameterSelection()));
 	}
 
 	/**

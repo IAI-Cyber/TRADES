@@ -39,8 +39,8 @@ import java.net.URI;
  * </p>
  * <ul>
  *   <li>{@link dsm.oscal.model.OscalMetadata.Link#getEHref <em>EHref</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.Link#getRel <em>Rel</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.Link#getMediaType <em>Media Type</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.Link#getRel <em>Rel</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.Link#getText <em>Text</em>}</li>
  * </ul>
  *

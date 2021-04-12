@@ -77,10 +77,10 @@ public class LocationItemProvider
 
 			addUuidPropertyDescriptor(object);
 			addAnnotationsPropertyDescriptor(object);
-			addTitlePropertyDescriptor(object);
 			addEmailAddressesPropertyDescriptor(object);
-			addUrlsPropertyDescriptor(object);
 			addRemarksPropertyDescriptor(object);
+			addTitlePropertyDescriptor(object);
+			addUrlsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -231,8 +231,8 @@ public class LocationItemProvider
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(OscalMetadataPackage.Literals.LOCATION__ADDRESS);
 			childrenFeatures.add(OscalMetadataPackage.Literals.LOCATION__LINKS);
-			childrenFeatures.add(OscalMetadataPackage.Literals.LOCATION__TELEPHONE_NUMBERS);
 			childrenFeatures.add(OscalMetadataPackage.Literals.LOCATION__PROPS);
+			childrenFeatures.add(OscalMetadataPackage.Literals.LOCATION__TELEPHONE_NUMBERS);
 		}
 		return childrenFeatures;
 	}
@@ -290,16 +290,16 @@ public class LocationItemProvider
 
 		switch (notification.getFeatureID(Location.class)) {
 			case OscalMetadataPackage.LOCATION__UUID:
-			case OscalMetadataPackage.LOCATION__TITLE:
 			case OscalMetadataPackage.LOCATION__EMAIL_ADDRESSES:
-			case OscalMetadataPackage.LOCATION__URLS:
 			case OscalMetadataPackage.LOCATION__REMARKS:
+			case OscalMetadataPackage.LOCATION__TITLE:
+			case OscalMetadataPackage.LOCATION__URLS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case OscalMetadataPackage.LOCATION__ADDRESS:
 			case OscalMetadataPackage.LOCATION__LINKS:
-			case OscalMetadataPackage.LOCATION__TELEPHONE_NUMBERS:
 			case OscalMetadataPackage.LOCATION__PROPS:
+			case OscalMetadataPackage.LOCATION__TELEPHONE_NUMBERS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -329,13 +329,13 @@ public class LocationItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OscalMetadataPackage.Literals.LOCATION__TELEPHONE_NUMBERS,
-				 OscalMetadataFactory.eINSTANCE.createTelephoneNumber()));
+				(OscalMetadataPackage.Literals.LOCATION__PROPS,
+				 OscalMetadataFactory.eINSTANCE.createProperty()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OscalMetadataPackage.Literals.LOCATION__PROPS,
-				 OscalMetadataFactory.eINSTANCE.createProperty()));
+				(OscalMetadataPackage.Literals.LOCATION__TELEPHONE_NUMBERS,
+				 OscalMetadataFactory.eINSTANCE.createTelephoneNumber()));
 	}
 
 	/**

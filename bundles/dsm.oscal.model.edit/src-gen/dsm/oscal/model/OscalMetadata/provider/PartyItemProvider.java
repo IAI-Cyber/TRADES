@@ -78,13 +78,13 @@ public class PartyItemProvider
 
 			addUuidPropertyDescriptor(object);
 			addAnnotationsPropertyDescriptor(object);
-			addTypePropertyDescriptor(object);
-			addNamePropertyDescriptor(object);
-			addShortNamePropertyDescriptor(object);
 			addEmailAddressesPropertyDescriptor(object);
 			addLocationUuidsPropertyDescriptor(object);
 			addMemberOfOrganizationsPropertyDescriptor(object);
+			addNamePropertyDescriptor(object);
 			addRemarksPropertyDescriptor(object);
+			addShortNamePropertyDescriptor(object);
+			addTypePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -300,8 +300,8 @@ public class PartyItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(OscalMetadataPackage.Literals.PARTY__ADDRESSES);
-			childrenFeatures.add(OscalMetadataPackage.Literals.PARTY__LINKS);
 			childrenFeatures.add(OscalMetadataPackage.Literals.PARTY__EXTERNAL_IDS);
+			childrenFeatures.add(OscalMetadataPackage.Literals.PARTY__LINKS);
 			childrenFeatures.add(OscalMetadataPackage.Literals.PARTY__PROPS);
 			childrenFeatures.add(OscalMetadataPackage.Literals.PARTY__TELEPHONE_NUMBERS);
 		}
@@ -360,18 +360,18 @@ public class PartyItemProvider
 
 		switch (notification.getFeatureID(Party.class)) {
 			case OscalMetadataPackage.PARTY__UUID:
-			case OscalMetadataPackage.PARTY__TYPE:
-			case OscalMetadataPackage.PARTY__NAME:
-			case OscalMetadataPackage.PARTY__SHORT_NAME:
 			case OscalMetadataPackage.PARTY__EMAIL_ADDRESSES:
 			case OscalMetadataPackage.PARTY__LOCATION_UUIDS:
 			case OscalMetadataPackage.PARTY__MEMBER_OF_ORGANIZATIONS:
+			case OscalMetadataPackage.PARTY__NAME:
 			case OscalMetadataPackage.PARTY__REMARKS:
+			case OscalMetadataPackage.PARTY__SHORT_NAME:
+			case OscalMetadataPackage.PARTY__TYPE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case OscalMetadataPackage.PARTY__ADDRESSES:
-			case OscalMetadataPackage.PARTY__LINKS:
 			case OscalMetadataPackage.PARTY__EXTERNAL_IDS:
+			case OscalMetadataPackage.PARTY__LINKS:
 			case OscalMetadataPackage.PARTY__PROPS:
 			case OscalMetadataPackage.PARTY__TELEPHONE_NUMBERS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
@@ -398,13 +398,13 @@ public class PartyItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OscalMetadataPackage.Literals.PARTY__LINKS,
-				 OscalMetadataFactory.eINSTANCE.createLink()));
+				(OscalMetadataPackage.Literals.PARTY__EXTERNAL_IDS,
+				 OscalMetadataFactory.eINSTANCE.createExternalId()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OscalMetadataPackage.Literals.PARTY__EXTERNAL_IDS,
-				 OscalMetadataFactory.eINSTANCE.createExternalId()));
+				(OscalMetadataPackage.Literals.PARTY__LINKS,
+				 OscalMetadataFactory.eINSTANCE.createLink()));
 
 		newChildDescriptors.add
 			(createChildParameter

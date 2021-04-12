@@ -9,6 +9,22 @@
     </eAnnotations>
     <eSuperTypes href="oscal-metadata.ecore#//OscalElement"/>
     <eSuperTypes href="oscal-metadata.ecore#//UUIDElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="backMatter" containment="true">
+      <eAnnotations source="Metaschema">
+        <details key="source" value="&lt;Metaschema>oscal-metadata.&lt;AssemblyDefinition>back-matter"/>
+      </eAnnotations>
+      <eType xsi:type="ecore:EClass" href="oscal-metadata.ecore#//BackMatter"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="controls" upperBound="-1" eType="//Control" containment="true">
+      <eAnnotations source="Metaschema">
+        <details key="source" value="&lt;Metaschema>oscal-catalog.&lt;AssemblyDefinition>control"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="groups" upperBound="-1" eType="//Group" containment="true">
+      <eAnnotations source="Metaschema">
+        <details key="source" value="&lt;Metaschema>oscal-catalog.&lt;AssemblyDefinition>group"/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="metadata" lowerBound="1" containment="true">
       <eAnnotations source="Metaschema">
         <details key="source" value="&lt;Metaschema>oscal-metadata.&lt;AssemblyDefinition>metadata"/>
@@ -21,22 +37,6 @@
       </eAnnotations>
       <eType xsi:type="ecore:EClass" href="oscal-catalog-common.ecore#//Parameter"/>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="controls" upperBound="-1" eType="//Control" containment="true">
-      <eAnnotations source="Metaschema">
-        <details key="source" value="&lt;Metaschema>oscal-catalog.&lt;AssemblyDefinition>control"/>
-      </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="backMatter" containment="true">
-      <eAnnotations source="Metaschema">
-        <details key="source" value="&lt;Metaschema>oscal-metadata.&lt;AssemblyDefinition>back-matter"/>
-      </eAnnotations>
-      <eType xsi:type="ecore:EClass" href="oscal-metadata.ecore#//BackMatter"/>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="groups" upperBound="-1" eType="//Group" containment="true">
-      <eAnnotations source="Metaschema">
-        <details key="source" value="&lt;Metaschema>oscal-catalog.&lt;AssemblyDefinition>group"/>
-      </eAnnotations>
-    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Control">
     <eAnnotations source="Metaschema">
@@ -47,15 +47,6 @@
     </eAnnotations>
     <eSuperTypes href="oscal-metadata.ecore#//OscalElement"/>
     <eSuperTypes href="oscal-metadata.ecore#//AnnotationOwner"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1">
-      <eAnnotations source="Metaschema">
-        <details key="source" value="&lt;Metaschema>oscal-catalog.&lt;AssemblyDefinition>control.&lt;FlagInstance>id"/>
-      </eAnnotations>
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="&lt;h1>Control Identifier&lt;/h1>&#xA;&lt;h2>Description&lt;/h2>&#xA;&lt;p>A unique identifier for a specific control instance that can be used to reference the control in other OSCAL documents. This identifier's uniqueness is document scoped and is intended to be consistent for the same control across minor revisions of the document.&lt;/p>&#xA;"/>
-      </eAnnotations>
-      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="clazz">
       <eAnnotations source="Metaschema">
         <details key="source" value="&lt;Metaschema>oscal-catalog.&lt;AssemblyDefinition>control.&lt;FlagInstance>class"/>
@@ -65,14 +56,25 @@
       </eAnnotations>
       <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" lowerBound="1">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="controls" upperBound="-1" eType="//Control" containment="true">
       <eAnnotations source="Metaschema">
-        <details key="source" value="&lt;Metaschema>oscal-catalog.&lt;AssemblyDefinition>control.&lt;FieldInstance>title"/>
+        <details key="source" value="&lt;Metaschema>oscal-catalog.&lt;AssemblyDefinition>control"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1">
+      <eAnnotations source="Metaschema">
+        <details key="source" value="&lt;Metaschema>oscal-catalog.&lt;AssemblyDefinition>control.&lt;FlagInstance>id"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="&lt;h1>Control Title&lt;/h1>&#xA;&lt;h2>Description&lt;/h2>&#xA;&lt;p>A name given to the control, which may be used by a tool for display and navigation.&lt;/p>&#xA;"/>
+        <details key="documentation" value="&lt;h1>Control Identifier&lt;/h1>&#xA;&lt;h2>Description&lt;/h2>&#xA;&lt;p>A unique identifier for a specific control instance that can be used to reference the control in other OSCAL documents. This identifier's uniqueness is document scoped and is intended to be consistent for the same control across minor revisions of the document.&lt;/p>&#xA;"/>
       </eAnnotations>
-      <eType xsi:type="ecore:EDataType" href="oscal-metadata.ecore#//MarkupLineType"/>
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="links" upperBound="-1" containment="true">
+      <eAnnotations source="Metaschema">
+        <details key="source" value="&lt;Metaschema>oscal-metadata.&lt;AssemblyDefinition>link"/>
+      </eAnnotations>
+      <eType xsi:type="ecore:EClass" href="oscal-metadata.ecore#//Link"/>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="params" upperBound="-1" containment="true">
       <eAnnotations source="Metaschema">
@@ -86,22 +88,20 @@
       </eAnnotations>
       <eType xsi:type="ecore:EClass" href="oscal-catalog-common.ecore#//Part"/>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="links" upperBound="-1" containment="true">
-      <eAnnotations source="Metaschema">
-        <details key="source" value="&lt;Metaschema>oscal-metadata.&lt;AssemblyDefinition>link"/>
-      </eAnnotations>
-      <eType xsi:type="ecore:EClass" href="oscal-metadata.ecore#//Link"/>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="controls" upperBound="-1" eType="//Control" containment="true">
-      <eAnnotations source="Metaschema">
-        <details key="source" value="&lt;Metaschema>oscal-catalog.&lt;AssemblyDefinition>control"/>
-      </eAnnotations>
-    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="props" upperBound="-1" containment="true">
       <eAnnotations source="Metaschema">
         <details key="source" value="&lt;Metaschema>oscal-metadata.&lt;FieldDefinition>property"/>
       </eAnnotations>
       <eType xsi:type="ecore:EClass" href="oscal-metadata.ecore#//Property"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" lowerBound="1">
+      <eAnnotations source="Metaschema">
+        <details key="source" value="&lt;Metaschema>oscal-catalog.&lt;AssemblyDefinition>control.&lt;FieldInstance>title"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&lt;h1>Control Title&lt;/h1>&#xA;&lt;h2>Description&lt;/h2>&#xA;&lt;p>A name given to the control, which may be used by a tool for display and navigation.&lt;/p>&#xA;"/>
+      </eAnnotations>
+      <eType xsi:type="ecore:EDataType" href="oscal-metadata.ecore#//MarkupLineType"/>
     </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Group">
@@ -113,15 +113,6 @@
     </eAnnotations>
     <eSuperTypes href="oscal-metadata.ecore#//OscalElement"/>
     <eSuperTypes href="oscal-metadata.ecore#//AnnotationOwner"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id">
-      <eAnnotations source="Metaschema">
-        <details key="source" value="&lt;Metaschema>oscal-catalog.&lt;AssemblyDefinition>group.&lt;FlagInstance>id"/>
-      </eAnnotations>
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="&lt;h1>Group Identifier&lt;/h1>&#xA;&lt;h2>Description&lt;/h2>&#xA;&lt;p>A unique identifier for a specific group instance that can be used to reference the group within this and in other OSCAL documents. This identifier's uniqueness is document scoped and is intended to be consistent for the same group across minor revisions of the document.&lt;/p>&#xA;"/>
-      </eAnnotations>
-      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="clazz">
       <eAnnotations source="Metaschema">
         <details key="source" value="&lt;Metaschema>oscal-catalog.&lt;AssemblyDefinition>group.&lt;FlagInstance>class"/>
@@ -131,14 +122,30 @@
       </eAnnotations>
       <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" lowerBound="1">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="controls" upperBound="-1" eType="//Control" containment="true">
       <eAnnotations source="Metaschema">
-        <details key="source" value="&lt;Metaschema>oscal-catalog.&lt;AssemblyDefinition>group.&lt;FieldInstance>title"/>
+        <details key="source" value="&lt;Metaschema>oscal-catalog.&lt;AssemblyDefinition>control"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="groups" upperBound="-1" eType="//Group" containment="true">
+      <eAnnotations source="Metaschema">
+        <details key="source" value="&lt;Metaschema>oscal-catalog.&lt;AssemblyDefinition>group"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id">
+      <eAnnotations source="Metaschema">
+        <details key="source" value="&lt;Metaschema>oscal-catalog.&lt;AssemblyDefinition>group.&lt;FlagInstance>id"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="&lt;h1>Group Title&lt;/h1>&#xA;&lt;h2>Description&lt;/h2>&#xA;&lt;p>A name given to the group, which may be used by a tool for display and navigation.&lt;/p>&#xA;"/>
+        <details key="documentation" value="&lt;h1>Group Identifier&lt;/h1>&#xA;&lt;h2>Description&lt;/h2>&#xA;&lt;p>A unique identifier for a specific group instance that can be used to reference the group within this and in other OSCAL documents. This identifier's uniqueness is document scoped and is intended to be consistent for the same group across minor revisions of the document.&lt;/p>&#xA;"/>
       </eAnnotations>
-      <eType xsi:type="ecore:EDataType" href="oscal-metadata.ecore#//MarkupLineType"/>
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="links" upperBound="-1" containment="true">
+      <eAnnotations source="Metaschema">
+        <details key="source" value="&lt;Metaschema>oscal-metadata.&lt;AssemblyDefinition>link"/>
+      </eAnnotations>
+      <eType xsi:type="ecore:EClass" href="oscal-metadata.ecore#//Link"/>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="params" upperBound="-1" containment="true">
       <eAnnotations source="Metaschema">
@@ -152,27 +159,20 @@
       </eAnnotations>
       <eType xsi:type="ecore:EClass" href="oscal-catalog-common.ecore#//Part"/>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="links" upperBound="-1" containment="true">
-      <eAnnotations source="Metaschema">
-        <details key="source" value="&lt;Metaschema>oscal-metadata.&lt;AssemblyDefinition>link"/>
-      </eAnnotations>
-      <eType xsi:type="ecore:EClass" href="oscal-metadata.ecore#//Link"/>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="controls" upperBound="-1" eType="//Control" containment="true">
-      <eAnnotations source="Metaschema">
-        <details key="source" value="&lt;Metaschema>oscal-catalog.&lt;AssemblyDefinition>control"/>
-      </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="groups" upperBound="-1" eType="//Group" containment="true">
-      <eAnnotations source="Metaschema">
-        <details key="source" value="&lt;Metaschema>oscal-catalog.&lt;AssemblyDefinition>group"/>
-      </eAnnotations>
-    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="props" upperBound="-1" containment="true">
       <eAnnotations source="Metaschema">
         <details key="source" value="&lt;Metaschema>oscal-metadata.&lt;FieldDefinition>property"/>
       </eAnnotations>
       <eType xsi:type="ecore:EClass" href="oscal-metadata.ecore#//Property"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" lowerBound="1">
+      <eAnnotations source="Metaschema">
+        <details key="source" value="&lt;Metaschema>oscal-catalog.&lt;AssemblyDefinition>group.&lt;FieldInstance>title"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&lt;h1>Group Title&lt;/h1>&#xA;&lt;h2>Description&lt;/h2>&#xA;&lt;p>A name given to the group, which may be used by a tool for display and navigation.&lt;/p>&#xA;"/>
+      </eAnnotations>
+      <eType xsi:type="ecore:EDataType" href="oscal-metadata.ecore#//MarkupLineType"/>
     </eStructuralFeatures>
   </eClassifiers>
 </ecore:EPackage>

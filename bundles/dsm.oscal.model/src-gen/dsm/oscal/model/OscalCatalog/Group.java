@@ -45,15 +45,15 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link dsm.oscal.model.OscalCatalog.Group#getId <em>Id</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalog.Group#getClazz <em>Clazz</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalCatalog.Group#getTitle <em>Title</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalCatalog.Group#getParams <em>Params</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalCatalog.Group#getParts <em>Parts</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalCatalog.Group#getLinks <em>Links</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalog.Group#getControls <em>Controls</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalog.Group#getGroups <em>Groups</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalCatalog.Group#getId <em>Id</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalCatalog.Group#getLinks <em>Links</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalCatalog.Group#getParams <em>Params</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalCatalog.Group#getParts <em>Parts</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalog.Group#getProps <em>Props</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalCatalog.Group#getTitle <em>Title</em>}</li>
  * </ul>
  *
  * @see dsm.oscal.model.OscalCatalog.OscalCatalogPackage#getGroup()

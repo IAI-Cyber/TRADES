@@ -36,8 +36,8 @@ import java.net.URI;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link dsm.oscal.model.OscalMetadata.DocumentId#getValue <em>Value</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.DocumentId#getScheme <em>Scheme</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.DocumentId#getValue <em>Value</em>}</li>
  * </ul>
  *
  * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getDocumentId()

@@ -74,10 +74,10 @@ public class PropertyItemProvider
 			super.getPropertyDescriptors(object);
 
 			addUuidPropertyDescriptor(object);
-			addValuePropertyDescriptor(object);
+			addClazzPropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
 			addNsPropertyDescriptor(object);
-			addClazzPropertyDescriptor(object);
+			addValuePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -231,10 +231,10 @@ public class PropertyItemProvider
 
 		switch (notification.getFeatureID(Property.class)) {
 			case OscalMetadataPackage.PROPERTY__UUID:
-			case OscalMetadataPackage.PROPERTY__VALUE:
+			case OscalMetadataPackage.PROPERTY__CLAZZ:
 			case OscalMetadataPackage.PROPERTY__NAME:
 			case OscalMetadataPackage.PROPERTY__NS:
-			case OscalMetadataPackage.PROPERTY__CLAZZ:
+			case OscalMetadataPackage.PROPERTY__VALUE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

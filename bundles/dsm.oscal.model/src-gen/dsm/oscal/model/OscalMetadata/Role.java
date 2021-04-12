@@ -38,13 +38,13 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link dsm.oscal.model.OscalMetadata.Role#getId <em>Id</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.Role#getTitle <em>Title</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.Role#getShortName <em>Short Name</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.Role#getDescription <em>Description</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.Role#getRemarks <em>Remarks</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.Role#getId <em>Id</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.Role#getLinks <em>Links</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.Role#getProps <em>Props</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.Role#getRemarks <em>Remarks</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.Role#getShortName <em>Short Name</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.Role#getTitle <em>Title</em>}</li>
  * </ul>
  *
  * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getRole()

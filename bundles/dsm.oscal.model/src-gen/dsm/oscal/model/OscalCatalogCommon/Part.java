@@ -49,15 +49,15 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link dsm.oscal.model.OscalCatalogCommon.Part#getClazz <em>Clazz</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalogCommon.Part#getId <em>Id</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalCatalogCommon.Part#getLinks <em>Links</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalogCommon.Part#getName <em>Name</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalogCommon.Part#getNs <em>Ns</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalCatalogCommon.Part#getClazz <em>Clazz</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalCatalogCommon.Part#getTitle <em>Title</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalCatalogCommon.Part#getProse <em>Prose</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalogCommon.Part#getParts <em>Parts</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalCatalogCommon.Part#getLinks <em>Links</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalogCommon.Part#getProps <em>Props</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalCatalogCommon.Part#getProse <em>Prose</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalCatalogCommon.Part#getTitle <em>Title</em>}</li>
  * </ul>
  *
  * @see dsm.oscal.model.OscalCatalogCommon.OscalCatalogCommonPackage#getPart()

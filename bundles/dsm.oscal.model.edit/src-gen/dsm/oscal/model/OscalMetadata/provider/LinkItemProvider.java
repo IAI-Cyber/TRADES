@@ -76,8 +76,8 @@ public class LinkItemProvider
 			super.getPropertyDescriptors(object);
 
 			addEHrefPropertyDescriptor(object);
-			addRelPropertyDescriptor(object);
 			addMediaTypePropertyDescriptor(object);
+			addRelPropertyDescriptor(object);
 			addTextPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -211,8 +211,8 @@ public class LinkItemProvider
 
 		switch (notification.getFeatureID(Link.class)) {
 			case OscalMetadataPackage.LINK__EHREF:
-			case OscalMetadataPackage.LINK__REL:
 			case OscalMetadataPackage.LINK__MEDIA_TYPE:
+			case OscalMetadataPackage.LINK__REL:
 			case OscalMetadataPackage.LINK__TEXT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;

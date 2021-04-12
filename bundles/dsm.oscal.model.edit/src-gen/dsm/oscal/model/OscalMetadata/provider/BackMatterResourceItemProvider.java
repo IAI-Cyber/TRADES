@@ -77,9 +77,9 @@ public class BackMatterResourceItemProvider
 
 			addUuidPropertyDescriptor(object);
 			addAnnotationsPropertyDescriptor(object);
-			addTitlePropertyDescriptor(object);
 			addDescriptionPropertyDescriptor(object);
 			addRemarksPropertyDescriptor(object);
+			addTitlePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -206,11 +206,11 @@ public class BackMatterResourceItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(OscalMetadataPackage.Literals.BACK_MATTER_RESOURCE__CITATION);
-			childrenFeatures.add(OscalMetadataPackage.Literals.BACK_MATTER_RESOURCE__RLINKS);
-			childrenFeatures.add(OscalMetadataPackage.Literals.BACK_MATTER_RESOURCE__PROPS);
-			childrenFeatures.add(OscalMetadataPackage.Literals.BACK_MATTER_RESOURCE__DOCUMENT_IDS);
 			childrenFeatures.add(OscalMetadataPackage.Literals.BACK_MATTER_RESOURCE__BASE64);
+			childrenFeatures.add(OscalMetadataPackage.Literals.BACK_MATTER_RESOURCE__CITATION);
+			childrenFeatures.add(OscalMetadataPackage.Literals.BACK_MATTER_RESOURCE__DOCUMENT_IDS);
+			childrenFeatures.add(OscalMetadataPackage.Literals.BACK_MATTER_RESOURCE__PROPS);
+			childrenFeatures.add(OscalMetadataPackage.Literals.BACK_MATTER_RESOURCE__RLINKS);
 		}
 		return childrenFeatures;
 	}
@@ -268,16 +268,16 @@ public class BackMatterResourceItemProvider
 
 		switch (notification.getFeatureID(BackMatterResource.class)) {
 			case OscalMetadataPackage.BACK_MATTER_RESOURCE__UUID:
-			case OscalMetadataPackage.BACK_MATTER_RESOURCE__TITLE:
 			case OscalMetadataPackage.BACK_MATTER_RESOURCE__DESCRIPTION:
 			case OscalMetadataPackage.BACK_MATTER_RESOURCE__REMARKS:
+			case OscalMetadataPackage.BACK_MATTER_RESOURCE__TITLE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case OscalMetadataPackage.BACK_MATTER_RESOURCE__CITATION:
-			case OscalMetadataPackage.BACK_MATTER_RESOURCE__RLINKS:
-			case OscalMetadataPackage.BACK_MATTER_RESOURCE__PROPS:
-			case OscalMetadataPackage.BACK_MATTER_RESOURCE__DOCUMENT_IDS:
 			case OscalMetadataPackage.BACK_MATTER_RESOURCE__BASE64:
+			case OscalMetadataPackage.BACK_MATTER_RESOURCE__CITATION:
+			case OscalMetadataPackage.BACK_MATTER_RESOURCE__DOCUMENT_IDS:
+			case OscalMetadataPackage.BACK_MATTER_RESOURCE__PROPS:
+			case OscalMetadataPackage.BACK_MATTER_RESOURCE__RLINKS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -297,18 +297,13 @@ public class BackMatterResourceItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
+				(OscalMetadataPackage.Literals.BACK_MATTER_RESOURCE__BASE64,
+				 OscalMetadataFactory.eINSTANCE.createBase64()));
+
+		newChildDescriptors.add
+			(createChildParameter
 				(OscalMetadataPackage.Literals.BACK_MATTER_RESOURCE__CITATION,
 				 OscalMetadataFactory.eINSTANCE.createResourceCitation()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OscalMetadataPackage.Literals.BACK_MATTER_RESOURCE__RLINKS,
-				 OscalMetadataFactory.eINSTANCE.createResourceRlink()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OscalMetadataPackage.Literals.BACK_MATTER_RESOURCE__PROPS,
-				 OscalMetadataFactory.eINSTANCE.createProperty()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -317,8 +312,13 @@ public class BackMatterResourceItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OscalMetadataPackage.Literals.BACK_MATTER_RESOURCE__BASE64,
-				 OscalMetadataFactory.eINSTANCE.createBase64()));
+				(OscalMetadataPackage.Literals.BACK_MATTER_RESOURCE__PROPS,
+				 OscalMetadataFactory.eINSTANCE.createProperty()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OscalMetadataPackage.Literals.BACK_MATTER_RESOURCE__RLINKS,
+				 OscalMetadataFactory.eINSTANCE.createResourceRlink()));
 	}
 
 	/**

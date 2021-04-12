@@ -33,33 +33,13 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link dsm.oscal.model.OscalMetadata.impl.HashImpl#getValue <em>Value</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.HashImpl#getAlgorithm <em>Algorithm</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.impl.HashImpl#getValue <em>Value</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class HashImpl extends MinimalEObjectImpl.Container implements Hash {
-	/**
-	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getValue()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String VALUE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getValue()
-	 * @generated
-	 * @ordered
-	 */
-	protected String value = VALUE_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getAlgorithm() <em>Algorithm</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -79,6 +59,26 @@ public class HashImpl extends MinimalEObjectImpl.Container implements Hash {
 	 * @ordered
 	 */
 	protected String algorithm = ALGORITHM_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getValue()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALUE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getValue()
+	 * @generated
+	 * @ordered
+	 */
+	protected String value = VALUE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -153,10 +153,10 @@ public class HashImpl extends MinimalEObjectImpl.Container implements Hash {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case OscalMetadataPackage.HASH__VALUE:
-				return getValue();
 			case OscalMetadataPackage.HASH__ALGORITHM:
 				return getAlgorithm();
+			case OscalMetadataPackage.HASH__VALUE:
+				return getValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -169,11 +169,11 @@ public class HashImpl extends MinimalEObjectImpl.Container implements Hash {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case OscalMetadataPackage.HASH__VALUE:
-				setValue((String)newValue);
-				return;
 			case OscalMetadataPackage.HASH__ALGORITHM:
 				setAlgorithm((String)newValue);
+				return;
+			case OscalMetadataPackage.HASH__VALUE:
+				setValue((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -187,11 +187,11 @@ public class HashImpl extends MinimalEObjectImpl.Container implements Hash {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case OscalMetadataPackage.HASH__VALUE:
-				setValue(VALUE_EDEFAULT);
-				return;
 			case OscalMetadataPackage.HASH__ALGORITHM:
 				setAlgorithm(ALGORITHM_EDEFAULT);
+				return;
+			case OscalMetadataPackage.HASH__VALUE:
+				setValue(VALUE_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -205,10 +205,10 @@ public class HashImpl extends MinimalEObjectImpl.Container implements Hash {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case OscalMetadataPackage.HASH__VALUE:
-				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
 			case OscalMetadataPackage.HASH__ALGORITHM:
 				return ALGORITHM_EDEFAULT == null ? algorithm != null : !ALGORITHM_EDEFAULT.equals(algorithm);
+			case OscalMetadataPackage.HASH__VALUE:
+				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -223,10 +223,10 @@ public class HashImpl extends MinimalEObjectImpl.Container implements Hash {
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (value: ");
-		result.append(value);
-		result.append(", algorithm: ");
+		result.append(" (algorithm: ");
 		result.append(algorithm);
+		result.append(", value: ");
+		result.append(value);
 		result.append(')');
 		return result.toString();
 	}

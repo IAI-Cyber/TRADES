@@ -75,9 +75,9 @@ public class Base64ItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addValuePropertyDescriptor(object);
 			addFilenamePropertyDescriptor(object);
 			addMediaTypePropertyDescriptor(object);
+			addValuePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -187,9 +187,9 @@ public class Base64ItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Base64.class)) {
-			case OscalMetadataPackage.BASE64__VALUE:
 			case OscalMetadataPackage.BASE64__FILENAME:
 			case OscalMetadataPackage.BASE64__MEDIA_TYPE:
+			case OscalMetadataPackage.BASE64__VALUE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

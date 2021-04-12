@@ -46,8 +46,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.ResourceRlinkImpl#getEHref <em>EHref</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.impl.ResourceRlinkImpl#getMediaType <em>Media Type</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.ResourceRlinkImpl#getHashes <em>Hashes</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.impl.ResourceRlinkImpl#getMediaType <em>Media Type</em>}</li>
  * </ul>
  *
  * @generated
@@ -74,6 +74,16 @@ public class ResourceRlinkImpl extends MinimalEObjectImpl.Container implements R
 	protected URI eHref = EHREF_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getHashes() <em>Hashes</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getHashes()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Hash> hashes;
+
+	/**
 	 * The default value of the '{@link #getMediaType() <em>Media Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -92,16 +102,6 @@ public class ResourceRlinkImpl extends MinimalEObjectImpl.Container implements R
 	 * @ordered
 	 */
 	protected String mediaType = MEDIA_TYPE_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getHashes() <em>Hashes</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getHashes()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Hash> hashes;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -205,10 +205,10 @@ public class ResourceRlinkImpl extends MinimalEObjectImpl.Container implements R
 		switch (featureID) {
 			case OscalMetadataPackage.RESOURCE_RLINK__EHREF:
 				return getEHref();
-			case OscalMetadataPackage.RESOURCE_RLINK__MEDIA_TYPE:
-				return getMediaType();
 			case OscalMetadataPackage.RESOURCE_RLINK__HASHES:
 				return getHashes();
+			case OscalMetadataPackage.RESOURCE_RLINK__MEDIA_TYPE:
+				return getMediaType();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -225,12 +225,12 @@ public class ResourceRlinkImpl extends MinimalEObjectImpl.Container implements R
 			case OscalMetadataPackage.RESOURCE_RLINK__EHREF:
 				setEHref((URI)newValue);
 				return;
-			case OscalMetadataPackage.RESOURCE_RLINK__MEDIA_TYPE:
-				setMediaType((String)newValue);
-				return;
 			case OscalMetadataPackage.RESOURCE_RLINK__HASHES:
 				getHashes().clear();
 				getHashes().addAll((Collection<? extends Hash>)newValue);
+				return;
+			case OscalMetadataPackage.RESOURCE_RLINK__MEDIA_TYPE:
+				setMediaType((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -247,11 +247,11 @@ public class ResourceRlinkImpl extends MinimalEObjectImpl.Container implements R
 			case OscalMetadataPackage.RESOURCE_RLINK__EHREF:
 				setEHref(EHREF_EDEFAULT);
 				return;
-			case OscalMetadataPackage.RESOURCE_RLINK__MEDIA_TYPE:
-				setMediaType(MEDIA_TYPE_EDEFAULT);
-				return;
 			case OscalMetadataPackage.RESOURCE_RLINK__HASHES:
 				getHashes().clear();
+				return;
+			case OscalMetadataPackage.RESOURCE_RLINK__MEDIA_TYPE:
+				setMediaType(MEDIA_TYPE_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -267,10 +267,10 @@ public class ResourceRlinkImpl extends MinimalEObjectImpl.Container implements R
 		switch (featureID) {
 			case OscalMetadataPackage.RESOURCE_RLINK__EHREF:
 				return EHREF_EDEFAULT == null ? eHref != null : !EHREF_EDEFAULT.equals(eHref);
-			case OscalMetadataPackage.RESOURCE_RLINK__MEDIA_TYPE:
-				return MEDIA_TYPE_EDEFAULT == null ? mediaType != null : !MEDIA_TYPE_EDEFAULT.equals(mediaType);
 			case OscalMetadataPackage.RESOURCE_RLINK__HASHES:
 				return hashes != null && !hashes.isEmpty();
+			case OscalMetadataPackage.RESOURCE_RLINK__MEDIA_TYPE:
+				return MEDIA_TYPE_EDEFAULT == null ? mediaType != null : !MEDIA_TYPE_EDEFAULT.equals(mediaType);
 		}
 		return super.eIsSet(featureID);
 	}

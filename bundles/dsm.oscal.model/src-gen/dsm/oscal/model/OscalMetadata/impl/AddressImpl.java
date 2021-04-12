@@ -39,37 +39,17 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link dsm.oscal.model.OscalMetadata.impl.AddressImpl#getType <em>Type</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.AddressImpl#getAddrLines <em>Addr Lines</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.AddressImpl#getCity <em>City</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.impl.AddressImpl#getState <em>State</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.impl.AddressImpl#getPostalCode <em>Postal Code</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.AddressImpl#getCountry <em>Country</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.impl.AddressImpl#getPostalCode <em>Postal Code</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.impl.AddressImpl#getState <em>State</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.impl.AddressImpl#getType <em>Type</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class AddressImpl extends MinimalEObjectImpl.Container implements Address {
-	/**
-	 * The default value of the '{@link #getType() <em>Type</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getType()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String TYPE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getType()
-	 * @generated
-	 * @ordered
-	 */
-	protected String type = TYPE_EDEFAULT;
-
 	/**
 	 * The cached value of the '{@link #getAddrLines() <em>Addr Lines</em>}' attribute list.
 	 * <!-- begin-user-doc -->
@@ -101,24 +81,24 @@ public class AddressImpl extends MinimalEObjectImpl.Container implements Address
 	protected String city = CITY_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getState() <em>State</em>}' attribute.
+	 * The default value of the '{@link #getCountry() <em>Country</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getState()
+	 * @see #getCountry()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String STATE_EDEFAULT = null;
+	protected static final String COUNTRY_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getState() <em>State</em>}' attribute.
+	 * The cached value of the '{@link #getCountry() <em>Country</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getState()
+	 * @see #getCountry()
 	 * @generated
 	 * @ordered
 	 */
-	protected String state = STATE_EDEFAULT;
+	protected String country = COUNTRY_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getPostalCode() <em>Postal Code</em>}' attribute.
@@ -141,24 +121,44 @@ public class AddressImpl extends MinimalEObjectImpl.Container implements Address
 	protected String postalCode = POSTAL_CODE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getCountry() <em>Country</em>}' attribute.
+	 * The default value of the '{@link #getState() <em>State</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getCountry()
+	 * @see #getState()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String COUNTRY_EDEFAULT = null;
+	protected static final String STATE_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getCountry() <em>Country</em>}' attribute.
+	 * The cached value of the '{@link #getState() <em>State</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getCountry()
+	 * @see #getState()
 	 * @generated
 	 * @ordered
 	 */
-	protected String country = COUNTRY_EDEFAULT;
+	protected String state = STATE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getType() <em>Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getType()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String TYPE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getType()
+	 * @generated
+	 * @ordered
+	 */
+	protected String type = TYPE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -315,18 +315,18 @@ public class AddressImpl extends MinimalEObjectImpl.Container implements Address
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case OscalMetadataPackage.ADDRESS__TYPE:
-				return getType();
 			case OscalMetadataPackage.ADDRESS__ADDR_LINES:
 				return getAddrLines();
 			case OscalMetadataPackage.ADDRESS__CITY:
 				return getCity();
-			case OscalMetadataPackage.ADDRESS__STATE:
-				return getState();
-			case OscalMetadataPackage.ADDRESS__POSTAL_CODE:
-				return getPostalCode();
 			case OscalMetadataPackage.ADDRESS__COUNTRY:
 				return getCountry();
+			case OscalMetadataPackage.ADDRESS__POSTAL_CODE:
+				return getPostalCode();
+			case OscalMetadataPackage.ADDRESS__STATE:
+				return getState();
+			case OscalMetadataPackage.ADDRESS__TYPE:
+				return getType();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -340,9 +340,6 @@ public class AddressImpl extends MinimalEObjectImpl.Container implements Address
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case OscalMetadataPackage.ADDRESS__TYPE:
-				setType((String)newValue);
-				return;
 			case OscalMetadataPackage.ADDRESS__ADDR_LINES:
 				getAddrLines().clear();
 				getAddrLines().addAll((Collection<? extends String>)newValue);
@@ -350,14 +347,17 @@ public class AddressImpl extends MinimalEObjectImpl.Container implements Address
 			case OscalMetadataPackage.ADDRESS__CITY:
 				setCity((String)newValue);
 				return;
-			case OscalMetadataPackage.ADDRESS__STATE:
-				setState((String)newValue);
+			case OscalMetadataPackage.ADDRESS__COUNTRY:
+				setCountry((String)newValue);
 				return;
 			case OscalMetadataPackage.ADDRESS__POSTAL_CODE:
 				setPostalCode((String)newValue);
 				return;
-			case OscalMetadataPackage.ADDRESS__COUNTRY:
-				setCountry((String)newValue);
+			case OscalMetadataPackage.ADDRESS__STATE:
+				setState((String)newValue);
+				return;
+			case OscalMetadataPackage.ADDRESS__TYPE:
+				setType((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -371,23 +371,23 @@ public class AddressImpl extends MinimalEObjectImpl.Container implements Address
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case OscalMetadataPackage.ADDRESS__TYPE:
-				setType(TYPE_EDEFAULT);
-				return;
 			case OscalMetadataPackage.ADDRESS__ADDR_LINES:
 				getAddrLines().clear();
 				return;
 			case OscalMetadataPackage.ADDRESS__CITY:
 				setCity(CITY_EDEFAULT);
 				return;
-			case OscalMetadataPackage.ADDRESS__STATE:
-				setState(STATE_EDEFAULT);
+			case OscalMetadataPackage.ADDRESS__COUNTRY:
+				setCountry(COUNTRY_EDEFAULT);
 				return;
 			case OscalMetadataPackage.ADDRESS__POSTAL_CODE:
 				setPostalCode(POSTAL_CODE_EDEFAULT);
 				return;
-			case OscalMetadataPackage.ADDRESS__COUNTRY:
-				setCountry(COUNTRY_EDEFAULT);
+			case OscalMetadataPackage.ADDRESS__STATE:
+				setState(STATE_EDEFAULT);
+				return;
+			case OscalMetadataPackage.ADDRESS__TYPE:
+				setType(TYPE_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -401,18 +401,18 @@ public class AddressImpl extends MinimalEObjectImpl.Container implements Address
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case OscalMetadataPackage.ADDRESS__TYPE:
-				return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
 			case OscalMetadataPackage.ADDRESS__ADDR_LINES:
 				return addrLines != null && !addrLines.isEmpty();
 			case OscalMetadataPackage.ADDRESS__CITY:
 				return CITY_EDEFAULT == null ? city != null : !CITY_EDEFAULT.equals(city);
-			case OscalMetadataPackage.ADDRESS__STATE:
-				return STATE_EDEFAULT == null ? state != null : !STATE_EDEFAULT.equals(state);
-			case OscalMetadataPackage.ADDRESS__POSTAL_CODE:
-				return POSTAL_CODE_EDEFAULT == null ? postalCode != null : !POSTAL_CODE_EDEFAULT.equals(postalCode);
 			case OscalMetadataPackage.ADDRESS__COUNTRY:
 				return COUNTRY_EDEFAULT == null ? country != null : !COUNTRY_EDEFAULT.equals(country);
+			case OscalMetadataPackage.ADDRESS__POSTAL_CODE:
+				return POSTAL_CODE_EDEFAULT == null ? postalCode != null : !POSTAL_CODE_EDEFAULT.equals(postalCode);
+			case OscalMetadataPackage.ADDRESS__STATE:
+				return STATE_EDEFAULT == null ? state != null : !STATE_EDEFAULT.equals(state);
+			case OscalMetadataPackage.ADDRESS__TYPE:
+				return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -427,18 +427,18 @@ public class AddressImpl extends MinimalEObjectImpl.Container implements Address
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (type: ");
-		result.append(type);
-		result.append(", addrLines: ");
+		result.append(" (addrLines: ");
 		result.append(addrLines);
 		result.append(", city: ");
 		result.append(city);
-		result.append(", state: ");
-		result.append(state);
-		result.append(", postalCode: ");
-		result.append(postalCode);
 		result.append(", country: ");
 		result.append(country);
+		result.append(", postalCode: ");
+		result.append(postalCode);
+		result.append(", state: ");
+		result.append(state);
+		result.append(", type: ");
+		result.append(type);
 		result.append(')');
 		return result.toString();
 	}

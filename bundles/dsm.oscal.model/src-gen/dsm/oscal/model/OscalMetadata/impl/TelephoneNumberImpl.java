@@ -33,33 +33,13 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link dsm.oscal.model.OscalMetadata.impl.TelephoneNumberImpl#getValue <em>Value</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.TelephoneNumberImpl#getType <em>Type</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.impl.TelephoneNumberImpl#getValue <em>Value</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class TelephoneNumberImpl extends MinimalEObjectImpl.Container implements TelephoneNumber {
-	/**
-	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getValue()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String VALUE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getValue()
-	 * @generated
-	 * @ordered
-	 */
-	protected String value = VALUE_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getType() <em>Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -79,6 +59,26 @@ public class TelephoneNumberImpl extends MinimalEObjectImpl.Container implements
 	 * @ordered
 	 */
 	protected String type = TYPE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getValue()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALUE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getValue()
+	 * @generated
+	 * @ordered
+	 */
+	protected String value = VALUE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -153,10 +153,10 @@ public class TelephoneNumberImpl extends MinimalEObjectImpl.Container implements
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case OscalMetadataPackage.TELEPHONE_NUMBER__VALUE:
-				return getValue();
 			case OscalMetadataPackage.TELEPHONE_NUMBER__TYPE:
 				return getType();
+			case OscalMetadataPackage.TELEPHONE_NUMBER__VALUE:
+				return getValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -169,11 +169,11 @@ public class TelephoneNumberImpl extends MinimalEObjectImpl.Container implements
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case OscalMetadataPackage.TELEPHONE_NUMBER__VALUE:
-				setValue((String)newValue);
-				return;
 			case OscalMetadataPackage.TELEPHONE_NUMBER__TYPE:
 				setType((String)newValue);
+				return;
+			case OscalMetadataPackage.TELEPHONE_NUMBER__VALUE:
+				setValue((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -187,11 +187,11 @@ public class TelephoneNumberImpl extends MinimalEObjectImpl.Container implements
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case OscalMetadataPackage.TELEPHONE_NUMBER__VALUE:
-				setValue(VALUE_EDEFAULT);
-				return;
 			case OscalMetadataPackage.TELEPHONE_NUMBER__TYPE:
 				setType(TYPE_EDEFAULT);
+				return;
+			case OscalMetadataPackage.TELEPHONE_NUMBER__VALUE:
+				setValue(VALUE_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -205,10 +205,10 @@ public class TelephoneNumberImpl extends MinimalEObjectImpl.Container implements
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case OscalMetadataPackage.TELEPHONE_NUMBER__VALUE:
-				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
 			case OscalMetadataPackage.TELEPHONE_NUMBER__TYPE:
 				return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
+			case OscalMetadataPackage.TELEPHONE_NUMBER__VALUE:
+				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -223,10 +223,10 @@ public class TelephoneNumberImpl extends MinimalEObjectImpl.Container implements
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (value: ");
-		result.append(value);
-		result.append(", type: ");
+		result.append(" (type: ");
 		result.append(type);
+		result.append(", value: ");
+		result.append(value);
 		result.append(')');
 		return result.toString();
 	}

@@ -697,6 +697,7 @@ public class OscalMetadataItemProviderAdapterFactory extends OscalMetadataAdapte
 	public void dispose() {
 		if (addressItemProvider != null) addressItemProvider.dispose();
 		if (annotationItemProvider != null) annotationItemProvider.dispose();
+		if (annotationOwnerItemProvider != null) annotationOwnerItemProvider.dispose();
 		if (backMatterItemProvider != null) backMatterItemProvider.dispose();
 		if (backMatterResourceItemProvider != null) backMatterResourceItemProvider.dispose();
 		if (base64ItemProvider != null) base64ItemProvider.dispose();
@@ -716,7 +717,6 @@ public class OscalMetadataItemProviderAdapterFactory extends OscalMetadataAdapte
 		if (roleItemProvider != null) roleItemProvider.dispose();
 		if (telephoneNumberItemProvider != null) telephoneNumberItemProvider.dispose();
 		if (uuidElementItemProvider != null) uuidElementItemProvider.dispose();
-		if (annotationOwnerItemProvider != null) annotationOwnerItemProvider.dispose();
 	}
 
 }

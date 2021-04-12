@@ -55,14 +55,14 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link dsm.oscal.model.OscalCatalog.impl.ControlImpl#getAnnotations <em>Annotations</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalCatalog.impl.ControlImpl#getId <em>Id</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalog.impl.ControlImpl#getClazz <em>Clazz</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalCatalog.impl.ControlImpl#getTitle <em>Title</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalCatalog.impl.ControlImpl#getControls <em>Controls</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalCatalog.impl.ControlImpl#getId <em>Id</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalCatalog.impl.ControlImpl#getLinks <em>Links</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalog.impl.ControlImpl#getParams <em>Params</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalog.impl.ControlImpl#getParts <em>Parts</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalCatalog.impl.ControlImpl#getLinks <em>Links</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalCatalog.impl.ControlImpl#getControls <em>Controls</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalog.impl.ControlImpl#getProps <em>Props</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalCatalog.impl.ControlImpl#getTitle <em>Title</em>}</li>
  * </ul>
  *
  * @generated
@@ -77,26 +77,6 @@ public class ControlImpl extends MinimalEObjectImpl.Container implements Control
 	 * @ordered
 	 */
 	protected EList<Annotation> annotations;
-
-	/**
-	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String id = ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getClazz() <em>Clazz</em>}' attribute.
@@ -119,24 +99,44 @@ public class ControlImpl extends MinimalEObjectImpl.Container implements Control
 	protected String clazz = CLAZZ_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getTitle() <em>Title</em>}' attribute.
+	 * The cached value of the '{@link #getControls() <em>Controls</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTitle()
+	 * @see #getControls()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final MarkupLine TITLE_EDEFAULT = null;
+	protected EList<Control> controls;
 
 	/**
-	 * The cached value of the '{@link #getTitle() <em>Title</em>}' attribute.
+	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTitle()
+	 * @see #getId()
 	 * @generated
 	 * @ordered
 	 */
-	protected MarkupLine title = TITLE_EDEFAULT;
+	protected static final String ID_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected String id = ID_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getLinks() <em>Links</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLinks()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Link> links;
 
 	/**
 	 * The cached value of the '{@link #getParams() <em>Params</em>}' containment reference list.
@@ -159,26 +159,6 @@ public class ControlImpl extends MinimalEObjectImpl.Container implements Control
 	protected EList<Part> parts;
 
 	/**
-	 * The cached value of the '{@link #getLinks() <em>Links</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLinks()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Link> links;
-
-	/**
-	 * The cached value of the '{@link #getControls() <em>Controls</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getControls()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Control> controls;
-
-	/**
 	 * The cached value of the '{@link #getProps() <em>Props</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -187,6 +167,26 @@ public class ControlImpl extends MinimalEObjectImpl.Container implements Control
 	 * @ordered
 	 */
 	protected EList<Property> props;
+
+	/**
+	 * The default value of the '{@link #getTitle() <em>Title</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTitle()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final MarkupLine TITLE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getTitle() <em>Title</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTitle()
+	 * @generated
+	 * @ordered
+	 */
+	protected MarkupLine title = TITLE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -362,14 +362,14 @@ public class ControlImpl extends MinimalEObjectImpl.Container implements Control
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case OscalCatalogPackage.CONTROL__CONTROLS:
+				return ((InternalEList<?>)getControls()).basicRemove(otherEnd, msgs);
+			case OscalCatalogPackage.CONTROL__LINKS:
+				return ((InternalEList<?>)getLinks()).basicRemove(otherEnd, msgs);
 			case OscalCatalogPackage.CONTROL__PARAMS:
 				return ((InternalEList<?>)getParams()).basicRemove(otherEnd, msgs);
 			case OscalCatalogPackage.CONTROL__PARTS:
 				return ((InternalEList<?>)getParts()).basicRemove(otherEnd, msgs);
-			case OscalCatalogPackage.CONTROL__LINKS:
-				return ((InternalEList<?>)getLinks()).basicRemove(otherEnd, msgs);
-			case OscalCatalogPackage.CONTROL__CONTROLS:
-				return ((InternalEList<?>)getControls()).basicRemove(otherEnd, msgs);
 			case OscalCatalogPackage.CONTROL__PROPS:
 				return ((InternalEList<?>)getProps()).basicRemove(otherEnd, msgs);
 		}
@@ -386,22 +386,22 @@ public class ControlImpl extends MinimalEObjectImpl.Container implements Control
 		switch (featureID) {
 			case OscalCatalogPackage.CONTROL__ANNOTATIONS:
 				return getAnnotations();
-			case OscalCatalogPackage.CONTROL__ID:
-				return getId();
 			case OscalCatalogPackage.CONTROL__CLAZZ:
 				return getClazz();
-			case OscalCatalogPackage.CONTROL__TITLE:
-				return getTitle();
+			case OscalCatalogPackage.CONTROL__CONTROLS:
+				return getControls();
+			case OscalCatalogPackage.CONTROL__ID:
+				return getId();
+			case OscalCatalogPackage.CONTROL__LINKS:
+				return getLinks();
 			case OscalCatalogPackage.CONTROL__PARAMS:
 				return getParams();
 			case OscalCatalogPackage.CONTROL__PARTS:
 				return getParts();
-			case OscalCatalogPackage.CONTROL__LINKS:
-				return getLinks();
-			case OscalCatalogPackage.CONTROL__CONTROLS:
-				return getControls();
 			case OscalCatalogPackage.CONTROL__PROPS:
 				return getProps();
+			case OscalCatalogPackage.CONTROL__TITLE:
+				return getTitle();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -419,14 +419,19 @@ public class ControlImpl extends MinimalEObjectImpl.Container implements Control
 				getAnnotations().clear();
 				getAnnotations().addAll((Collection<? extends Annotation>)newValue);
 				return;
-			case OscalCatalogPackage.CONTROL__ID:
-				setId((String)newValue);
-				return;
 			case OscalCatalogPackage.CONTROL__CLAZZ:
 				setClazz((String)newValue);
 				return;
-			case OscalCatalogPackage.CONTROL__TITLE:
-				setTitle((MarkupLine)newValue);
+			case OscalCatalogPackage.CONTROL__CONTROLS:
+				getControls().clear();
+				getControls().addAll((Collection<? extends Control>)newValue);
+				return;
+			case OscalCatalogPackage.CONTROL__ID:
+				setId((String)newValue);
+				return;
+			case OscalCatalogPackage.CONTROL__LINKS:
+				getLinks().clear();
+				getLinks().addAll((Collection<? extends Link>)newValue);
 				return;
 			case OscalCatalogPackage.CONTROL__PARAMS:
 				getParams().clear();
@@ -436,17 +441,12 @@ public class ControlImpl extends MinimalEObjectImpl.Container implements Control
 				getParts().clear();
 				getParts().addAll((Collection<? extends Part>)newValue);
 				return;
-			case OscalCatalogPackage.CONTROL__LINKS:
-				getLinks().clear();
-				getLinks().addAll((Collection<? extends Link>)newValue);
-				return;
-			case OscalCatalogPackage.CONTROL__CONTROLS:
-				getControls().clear();
-				getControls().addAll((Collection<? extends Control>)newValue);
-				return;
 			case OscalCatalogPackage.CONTROL__PROPS:
 				getProps().clear();
 				getProps().addAll((Collection<? extends Property>)newValue);
+				return;
+			case OscalCatalogPackage.CONTROL__TITLE:
+				setTitle((MarkupLine)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -463,14 +463,17 @@ public class ControlImpl extends MinimalEObjectImpl.Container implements Control
 			case OscalCatalogPackage.CONTROL__ANNOTATIONS:
 				getAnnotations().clear();
 				return;
-			case OscalCatalogPackage.CONTROL__ID:
-				setId(ID_EDEFAULT);
-				return;
 			case OscalCatalogPackage.CONTROL__CLAZZ:
 				setClazz(CLAZZ_EDEFAULT);
 				return;
-			case OscalCatalogPackage.CONTROL__TITLE:
-				setTitle(TITLE_EDEFAULT);
+			case OscalCatalogPackage.CONTROL__CONTROLS:
+				getControls().clear();
+				return;
+			case OscalCatalogPackage.CONTROL__ID:
+				setId(ID_EDEFAULT);
+				return;
+			case OscalCatalogPackage.CONTROL__LINKS:
+				getLinks().clear();
 				return;
 			case OscalCatalogPackage.CONTROL__PARAMS:
 				getParams().clear();
@@ -478,14 +481,11 @@ public class ControlImpl extends MinimalEObjectImpl.Container implements Control
 			case OscalCatalogPackage.CONTROL__PARTS:
 				getParts().clear();
 				return;
-			case OscalCatalogPackage.CONTROL__LINKS:
-				getLinks().clear();
-				return;
-			case OscalCatalogPackage.CONTROL__CONTROLS:
-				getControls().clear();
-				return;
 			case OscalCatalogPackage.CONTROL__PROPS:
 				getProps().clear();
+				return;
+			case OscalCatalogPackage.CONTROL__TITLE:
+				setTitle(TITLE_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -501,22 +501,22 @@ public class ControlImpl extends MinimalEObjectImpl.Container implements Control
 		switch (featureID) {
 			case OscalCatalogPackage.CONTROL__ANNOTATIONS:
 				return annotations != null && !annotations.isEmpty();
-			case OscalCatalogPackage.CONTROL__ID:
-				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
 			case OscalCatalogPackage.CONTROL__CLAZZ:
 				return CLAZZ_EDEFAULT == null ? clazz != null : !CLAZZ_EDEFAULT.equals(clazz);
-			case OscalCatalogPackage.CONTROL__TITLE:
-				return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
+			case OscalCatalogPackage.CONTROL__CONTROLS:
+				return controls != null && !controls.isEmpty();
+			case OscalCatalogPackage.CONTROL__ID:
+				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
+			case OscalCatalogPackage.CONTROL__LINKS:
+				return links != null && !links.isEmpty();
 			case OscalCatalogPackage.CONTROL__PARAMS:
 				return params != null && !params.isEmpty();
 			case OscalCatalogPackage.CONTROL__PARTS:
 				return parts != null && !parts.isEmpty();
-			case OscalCatalogPackage.CONTROL__LINKS:
-				return links != null && !links.isEmpty();
-			case OscalCatalogPackage.CONTROL__CONTROLS:
-				return controls != null && !controls.isEmpty();
 			case OscalCatalogPackage.CONTROL__PROPS:
 				return props != null && !props.isEmpty();
+			case OscalCatalogPackage.CONTROL__TITLE:
+				return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -563,10 +563,10 @@ public class ControlImpl extends MinimalEObjectImpl.Container implements Control
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (id: ");
-		result.append(id);
-		result.append(", clazz: ");
+		result.append(" (clazz: ");
 		result.append(clazz);
+		result.append(", id: ");
+		result.append(id);
 		result.append(", title: ");
 		result.append(title);
 		result.append(')');

@@ -19,6 +19,7 @@ package dsm.oscal.model.OscalMetadata.provider;
 import dsm.oscal.model.OscalMetadata.DocumentId;
 import dsm.oscal.model.OscalMetadata.OscalMetadataPackage;
 
+import java.net.URI;
 import java.util.Collection;
 import java.util.List;
 
@@ -73,8 +74,8 @@ public class DocumentIdItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addValuePropertyDescriptor(object);
 			addSchemePropertyDescriptor(object);
+			addValuePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -142,7 +143,8 @@ public class DocumentIdItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((DocumentId)object).getValue();
+		URI labelValue = ((DocumentId)object).getScheme();
+		String label = labelValue == null ? null : labelValue.toString();
 		return label == null || label.length() == 0 ?
 			getString("_UI_DocumentId_type") :
 			getString("_UI_DocumentId_type") + " " + label;
@@ -161,8 +163,8 @@ public class DocumentIdItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(DocumentId.class)) {
-			case OscalMetadataPackage.DOCUMENT_ID__VALUE:
 			case OscalMetadataPackage.DOCUMENT_ID__SCHEME:
+			case OscalMetadataPackage.DOCUMENT_ID__VALUE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

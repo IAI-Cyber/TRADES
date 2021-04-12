@@ -20,6 +20,7 @@ import dsm.oscal.model.OscalMetadata.OscalMetadataFactory;
 import dsm.oscal.model.OscalMetadata.OscalMetadataPackage;
 import dsm.oscal.model.OscalMetadata.ResponsibleParty;
 
+import gov.nist.secauto.metaschema.datatypes.markup.MarkupMultiline;
 import java.util.Collection;
 import java.util.List;
 
@@ -77,9 +78,9 @@ public class ResponsiblePartyItemProvider
 			super.getPropertyDescriptors(object);
 
 			addAnnotationsPropertyDescriptor(object);
-			addRoleIdPropertyDescriptor(object);
 			addPartyUuidsPropertyDescriptor(object);
 			addRemarksPropertyDescriptor(object);
+			addRoleIdPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -222,7 +223,8 @@ public class ResponsiblePartyItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ResponsibleParty)object).getRoleId();
+		MarkupMultiline labelValue = ((ResponsibleParty)object).getRemarks();
+		String label = labelValue == null ? null : labelValue.toString();
 		return label == null || label.length() == 0 ?
 			getString("_UI_ResponsibleParty_type") :
 			getString("_UI_ResponsibleParty_type") + " " + label;
@@ -241,9 +243,9 @@ public class ResponsiblePartyItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ResponsibleParty.class)) {
-			case OscalMetadataPackage.RESPONSIBLE_PARTY__ROLE_ID:
 			case OscalMetadataPackage.RESPONSIBLE_PARTY__PARTY_UUIDS:
 			case OscalMetadataPackage.RESPONSIBLE_PARTY__REMARKS:
+			case OscalMetadataPackage.RESPONSIBLE_PARTY__ROLE_ID:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case OscalMetadataPackage.RESPONSIBLE_PARTY__LINKS:

@@ -33,12 +33,12 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link dsm.oscal.model.OscalMetadata.Address#getType <em>Type</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.Address#getAddrLines <em>Addr Lines</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.Address#getCity <em>City</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.Address#getState <em>State</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.Address#getPostalCode <em>Postal Code</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.Address#getCountry <em>Country</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.Address#getPostalCode <em>Postal Code</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.Address#getState <em>State</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.Address#getType <em>Type</em>}</li>
  * </ul>
  *
  * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getAddress()

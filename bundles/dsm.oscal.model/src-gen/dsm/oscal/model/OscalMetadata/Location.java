@@ -37,14 +37,14 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link dsm.oscal.model.OscalMetadata.Location#getTitle <em>Title</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.Location#getEmailAddresses <em>Email Addresses</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.Location#getUrls <em>Urls</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.Location#getRemarks <em>Remarks</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.Location#getAddress <em>Address</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.Location#getEmailAddresses <em>Email Addresses</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.Location#getLinks <em>Links</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.Location#getTelephoneNumbers <em>Telephone Numbers</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.Location#getProps <em>Props</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.Location#getRemarks <em>Remarks</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.Location#getTelephoneNumbers <em>Telephone Numbers</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.Location#getTitle <em>Title</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.Location#getUrls <em>Urls</em>}</li>
  * </ul>
  *
  * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getLocation()

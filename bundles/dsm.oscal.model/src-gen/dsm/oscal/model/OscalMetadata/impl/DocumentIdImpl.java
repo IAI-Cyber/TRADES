@@ -35,33 +35,13 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link dsm.oscal.model.OscalMetadata.impl.DocumentIdImpl#getValue <em>Value</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.DocumentIdImpl#getScheme <em>Scheme</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.impl.DocumentIdImpl#getValue <em>Value</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class DocumentIdImpl extends MinimalEObjectImpl.Container implements DocumentId {
-	/**
-	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getValue()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String VALUE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getValue()
-	 * @generated
-	 * @ordered
-	 */
-	protected String value = VALUE_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getScheme() <em>Scheme</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -81,6 +61,26 @@ public class DocumentIdImpl extends MinimalEObjectImpl.Container implements Docu
 	 * @ordered
 	 */
 	protected URI scheme = SCHEME_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getValue()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALUE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getValue()
+	 * @generated
+	 * @ordered
+	 */
+	protected String value = VALUE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -155,10 +155,10 @@ public class DocumentIdImpl extends MinimalEObjectImpl.Container implements Docu
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case OscalMetadataPackage.DOCUMENT_ID__VALUE:
-				return getValue();
 			case OscalMetadataPackage.DOCUMENT_ID__SCHEME:
 				return getScheme();
+			case OscalMetadataPackage.DOCUMENT_ID__VALUE:
+				return getValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -171,11 +171,11 @@ public class DocumentIdImpl extends MinimalEObjectImpl.Container implements Docu
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case OscalMetadataPackage.DOCUMENT_ID__VALUE:
-				setValue((String)newValue);
-				return;
 			case OscalMetadataPackage.DOCUMENT_ID__SCHEME:
 				setScheme((URI)newValue);
+				return;
+			case OscalMetadataPackage.DOCUMENT_ID__VALUE:
+				setValue((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -189,11 +189,11 @@ public class DocumentIdImpl extends MinimalEObjectImpl.Container implements Docu
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case OscalMetadataPackage.DOCUMENT_ID__VALUE:
-				setValue(VALUE_EDEFAULT);
-				return;
 			case OscalMetadataPackage.DOCUMENT_ID__SCHEME:
 				setScheme(SCHEME_EDEFAULT);
+				return;
+			case OscalMetadataPackage.DOCUMENT_ID__VALUE:
+				setValue(VALUE_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -207,10 +207,10 @@ public class DocumentIdImpl extends MinimalEObjectImpl.Container implements Docu
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case OscalMetadataPackage.DOCUMENT_ID__VALUE:
-				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
 			case OscalMetadataPackage.DOCUMENT_ID__SCHEME:
 				return SCHEME_EDEFAULT == null ? scheme != null : !SCHEME_EDEFAULT.equals(scheme);
+			case OscalMetadataPackage.DOCUMENT_ID__VALUE:
+				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -225,10 +225,10 @@ public class DocumentIdImpl extends MinimalEObjectImpl.Container implements Docu
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (value: ");
-		result.append(value);
-		result.append(", scheme: ");
+		result.append(" (scheme: ");
 		result.append(scheme);
+		result.append(", value: ");
+		result.append(value);
 		result.append(')');
 		return result.toString();
 	}

@@ -35,10 +35,10 @@ import java.net.URI;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link dsm.oscal.model.OscalMetadata.Property#getValue <em>Value</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.Property#getClazz <em>Clazz</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.Property#getName <em>Name</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.Property#getNs <em>Ns</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.Property#getClazz <em>Clazz</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.Property#getValue <em>Value</em>}</li>
  * </ul>
  *
  * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getProperty()

@@ -44,18 +44,18 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link dsm.oscal.model.OscalCatalogCommon.Parameter#getId <em>Id</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalogCommon.Parameter#getClazz <em>Clazz</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalCatalogCommon.Parameter#getConstraints <em>Constraints</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalogCommon.Parameter#getDependsOn <em>Depends On</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalCatalogCommon.Parameter#getGuidelines <em>Guidelines</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalCatalogCommon.Parameter#getId <em>Id</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalogCommon.Parameter#getLabel <em>Label</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalCatalogCommon.Parameter#getUsage <em>Usage</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalCatalogCommon.Parameter#getValues <em>Values</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalCatalogCommon.Parameter#getLinks <em>Links</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalCatalogCommon.Parameter#getProps <em>Props</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalogCommon.Parameter#getRemarks <em>Remarks</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalogCommon.Parameter#getSelect <em>Select</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalCatalogCommon.Parameter#getGuidelines <em>Guidelines</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalCatalogCommon.Parameter#getLinks <em>Links</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalCatalogCommon.Parameter#getConstraints <em>Constraints</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalCatalogCommon.Parameter#getProps <em>Props</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalCatalogCommon.Parameter#getUsage <em>Usage</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalCatalogCommon.Parameter#getValues <em>Values</em>}</li>
  * </ul>
  *
  * @see dsm.oscal.model.OscalCatalogCommon.OscalCatalogCommonPackage#getParameter()

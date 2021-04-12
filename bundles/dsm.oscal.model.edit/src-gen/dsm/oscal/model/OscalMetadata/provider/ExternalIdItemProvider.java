@@ -19,6 +19,7 @@ package dsm.oscal.model.OscalMetadata.provider;
 import dsm.oscal.model.OscalMetadata.ExternalId;
 import dsm.oscal.model.OscalMetadata.OscalMetadataPackage;
 
+import java.net.URI;
 import java.util.Collection;
 import java.util.List;
 
@@ -73,8 +74,8 @@ public class ExternalIdItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addValuePropertyDescriptor(object);
 			addSchemePropertyDescriptor(object);
+			addValuePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -142,7 +143,8 @@ public class ExternalIdItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ExternalId)object).getValue();
+		URI labelValue = ((ExternalId)object).getScheme();
+		String label = labelValue == null ? null : labelValue.toString();
 		return label == null || label.length() == 0 ?
 			getString("_UI_ExternalId_type") :
 			getString("_UI_ExternalId_type") + " " + label;
@@ -161,8 +163,8 @@ public class ExternalIdItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ExternalId.class)) {
-			case OscalMetadataPackage.EXTERNAL_ID__VALUE:
 			case OscalMetadataPackage.EXTERNAL_ID__SCHEME:
+			case OscalMetadataPackage.EXTERNAL_ID__VALUE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

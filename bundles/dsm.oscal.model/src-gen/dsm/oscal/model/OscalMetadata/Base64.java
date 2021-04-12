@@ -33,9 +33,9 @@ import java.net.URI;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link dsm.oscal.model.OscalMetadata.Base64#getValue <em>Value</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.Base64#getFilename <em>Filename</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.Base64#getMediaType <em>Media Type</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.Base64#getValue <em>Value</em>}</li>
  * </ul>
  *
  * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getBase64()

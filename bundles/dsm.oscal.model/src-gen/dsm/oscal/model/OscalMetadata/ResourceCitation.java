@@ -38,8 +38,8 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link dsm.oscal.model.OscalMetadata.ResourceCitation#getText <em>Text</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.ResourceCitation#getProps <em>Props</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.ResourceCitation#getText <em>Text</em>}</li>
  * </ul>
  *
  * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getResourceCitation()

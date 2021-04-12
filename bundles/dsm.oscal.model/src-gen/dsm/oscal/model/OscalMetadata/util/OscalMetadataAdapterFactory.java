@@ -89,6 +89,10 @@ public class OscalMetadataAdapterFactory extends AdapterFactoryImpl {
 				return createAnnotationAdapter();
 			}
 			@Override
+			public Adapter caseAnnotationOwner(AnnotationOwner object) {
+				return createAnnotationOwnerAdapter();
+			}
+			@Override
 			public Adapter caseBackMatter(BackMatter object) {
 				return createBackMatterAdapter();
 			}
@@ -123,6 +127,10 @@ public class OscalMetadataAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseMetadata(Metadata object) {
 				return createMetadataAdapter();
+			}
+			@Override
+			public Adapter caseOscalElement(OscalElement object) {
+				return createOscalElementAdapter();
 			}
 			@Override
 			public Adapter caseParty(Party object) {
@@ -161,16 +169,8 @@ public class OscalMetadataAdapterFactory extends AdapterFactoryImpl {
 				return createTelephoneNumberAdapter();
 			}
 			@Override
-			public Adapter caseOscalElement(OscalElement object) {
-				return createOscalElementAdapter();
-			}
-			@Override
 			public Adapter caseUUIDElement(UUIDElement object) {
 				return createUUIDElementAdapter();
-			}
-			@Override
-			public Adapter caseAnnotationOwner(AnnotationOwner object) {
-				return createAnnotationOwnerAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {

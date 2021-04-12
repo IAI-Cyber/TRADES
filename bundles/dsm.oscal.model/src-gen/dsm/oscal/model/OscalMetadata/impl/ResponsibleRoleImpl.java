@@ -52,11 +52,11 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.ResponsibleRoleImpl#getAnnotations <em>Annotations</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.impl.ResponsibleRoleImpl#getRoleId <em>Role Id</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.impl.ResponsibleRoleImpl#getPartyUuids <em>Party Uuids</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.impl.ResponsibleRoleImpl#getRemarks <em>Remarks</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.ResponsibleRoleImpl#getLinks <em>Links</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.impl.ResponsibleRoleImpl#getPartyUuids <em>Party Uuids</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.ResponsibleRoleImpl#getProps <em>Props</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.impl.ResponsibleRoleImpl#getRemarks <em>Remarks</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.impl.ResponsibleRoleImpl#getRoleId <em>Role Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -73,24 +73,14 @@ public class ResponsibleRoleImpl extends MinimalEObjectImpl.Container implements
 	protected EList<Annotation> annotations;
 
 	/**
-	 * The default value of the '{@link #getRoleId() <em>Role Id</em>}' attribute.
+	 * The cached value of the '{@link #getLinks() <em>Links</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRoleId()
+	 * @see #getLinks()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String ROLE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getRoleId() <em>Role Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRoleId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String roleId = ROLE_ID_EDEFAULT;
+	protected EList<Link> links;
 
 	/**
 	 * The cached value of the '{@link #getPartyUuids() <em>Party Uuids</em>}' attribute list.
@@ -101,6 +91,16 @@ public class ResponsibleRoleImpl extends MinimalEObjectImpl.Container implements
 	 * @ordered
 	 */
 	protected EList<UUID> partyUuids;
+
+	/**
+	 * The cached value of the '{@link #getProps() <em>Props</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProps()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Property> props;
 
 	/**
 	 * The default value of the '{@link #getRemarks() <em>Remarks</em>}' attribute.
@@ -123,24 +123,24 @@ public class ResponsibleRoleImpl extends MinimalEObjectImpl.Container implements
 	protected MarkupMultiline remarks = REMARKS_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getLinks() <em>Links</em>}' containment reference list.
+	 * The default value of the '{@link #getRoleId() <em>Role Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getLinks()
+	 * @see #getRoleId()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Link> links;
+	protected static final String ROLE_ID_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getProps() <em>Props</em>}' containment reference list.
+	 * The cached value of the '{@link #getRoleId() <em>Role Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getProps()
+	 * @see #getRoleId()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Property> props;
+	protected String roleId = ROLE_ID_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -285,16 +285,16 @@ public class ResponsibleRoleImpl extends MinimalEObjectImpl.Container implements
 		switch (featureID) {
 			case OscalMetadataPackage.RESPONSIBLE_ROLE__ANNOTATIONS:
 				return getAnnotations();
-			case OscalMetadataPackage.RESPONSIBLE_ROLE__ROLE_ID:
-				return getRoleId();
-			case OscalMetadataPackage.RESPONSIBLE_ROLE__PARTY_UUIDS:
-				return getPartyUuids();
-			case OscalMetadataPackage.RESPONSIBLE_ROLE__REMARKS:
-				return getRemarks();
 			case OscalMetadataPackage.RESPONSIBLE_ROLE__LINKS:
 				return getLinks();
+			case OscalMetadataPackage.RESPONSIBLE_ROLE__PARTY_UUIDS:
+				return getPartyUuids();
 			case OscalMetadataPackage.RESPONSIBLE_ROLE__PROPS:
 				return getProps();
+			case OscalMetadataPackage.RESPONSIBLE_ROLE__REMARKS:
+				return getRemarks();
+			case OscalMetadataPackage.RESPONSIBLE_ROLE__ROLE_ID:
+				return getRoleId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -312,23 +312,23 @@ public class ResponsibleRoleImpl extends MinimalEObjectImpl.Container implements
 				getAnnotations().clear();
 				getAnnotations().addAll((Collection<? extends Annotation>)newValue);
 				return;
-			case OscalMetadataPackage.RESPONSIBLE_ROLE__ROLE_ID:
-				setRoleId((String)newValue);
+			case OscalMetadataPackage.RESPONSIBLE_ROLE__LINKS:
+				getLinks().clear();
+				getLinks().addAll((Collection<? extends Link>)newValue);
 				return;
 			case OscalMetadataPackage.RESPONSIBLE_ROLE__PARTY_UUIDS:
 				getPartyUuids().clear();
 				getPartyUuids().addAll((Collection<? extends UUID>)newValue);
 				return;
-			case OscalMetadataPackage.RESPONSIBLE_ROLE__REMARKS:
-				setRemarks((MarkupMultiline)newValue);
-				return;
-			case OscalMetadataPackage.RESPONSIBLE_ROLE__LINKS:
-				getLinks().clear();
-				getLinks().addAll((Collection<? extends Link>)newValue);
-				return;
 			case OscalMetadataPackage.RESPONSIBLE_ROLE__PROPS:
 				getProps().clear();
 				getProps().addAll((Collection<? extends Property>)newValue);
+				return;
+			case OscalMetadataPackage.RESPONSIBLE_ROLE__REMARKS:
+				setRemarks((MarkupMultiline)newValue);
+				return;
+			case OscalMetadataPackage.RESPONSIBLE_ROLE__ROLE_ID:
+				setRoleId((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -345,20 +345,20 @@ public class ResponsibleRoleImpl extends MinimalEObjectImpl.Container implements
 			case OscalMetadataPackage.RESPONSIBLE_ROLE__ANNOTATIONS:
 				getAnnotations().clear();
 				return;
-			case OscalMetadataPackage.RESPONSIBLE_ROLE__ROLE_ID:
-				setRoleId(ROLE_ID_EDEFAULT);
+			case OscalMetadataPackage.RESPONSIBLE_ROLE__LINKS:
+				getLinks().clear();
 				return;
 			case OscalMetadataPackage.RESPONSIBLE_ROLE__PARTY_UUIDS:
 				getPartyUuids().clear();
 				return;
+			case OscalMetadataPackage.RESPONSIBLE_ROLE__PROPS:
+				getProps().clear();
+				return;
 			case OscalMetadataPackage.RESPONSIBLE_ROLE__REMARKS:
 				setRemarks(REMARKS_EDEFAULT);
 				return;
-			case OscalMetadataPackage.RESPONSIBLE_ROLE__LINKS:
-				getLinks().clear();
-				return;
-			case OscalMetadataPackage.RESPONSIBLE_ROLE__PROPS:
-				getProps().clear();
+			case OscalMetadataPackage.RESPONSIBLE_ROLE__ROLE_ID:
+				setRoleId(ROLE_ID_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -374,16 +374,16 @@ public class ResponsibleRoleImpl extends MinimalEObjectImpl.Container implements
 		switch (featureID) {
 			case OscalMetadataPackage.RESPONSIBLE_ROLE__ANNOTATIONS:
 				return annotations != null && !annotations.isEmpty();
-			case OscalMetadataPackage.RESPONSIBLE_ROLE__ROLE_ID:
-				return ROLE_ID_EDEFAULT == null ? roleId != null : !ROLE_ID_EDEFAULT.equals(roleId);
-			case OscalMetadataPackage.RESPONSIBLE_ROLE__PARTY_UUIDS:
-				return partyUuids != null && !partyUuids.isEmpty();
-			case OscalMetadataPackage.RESPONSIBLE_ROLE__REMARKS:
-				return REMARKS_EDEFAULT == null ? remarks != null : !REMARKS_EDEFAULT.equals(remarks);
 			case OscalMetadataPackage.RESPONSIBLE_ROLE__LINKS:
 				return links != null && !links.isEmpty();
+			case OscalMetadataPackage.RESPONSIBLE_ROLE__PARTY_UUIDS:
+				return partyUuids != null && !partyUuids.isEmpty();
 			case OscalMetadataPackage.RESPONSIBLE_ROLE__PROPS:
 				return props != null && !props.isEmpty();
+			case OscalMetadataPackage.RESPONSIBLE_ROLE__REMARKS:
+				return REMARKS_EDEFAULT == null ? remarks != null : !REMARKS_EDEFAULT.equals(remarks);
+			case OscalMetadataPackage.RESPONSIBLE_ROLE__ROLE_ID:
+				return ROLE_ID_EDEFAULT == null ? roleId != null : !ROLE_ID_EDEFAULT.equals(roleId);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -430,12 +430,12 @@ public class ResponsibleRoleImpl extends MinimalEObjectImpl.Container implements
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (roleId: ");
-		result.append(roleId);
-		result.append(", partyUuids: ");
+		result.append(" (partyUuids: ");
 		result.append(partyUuids);
 		result.append(", remarks: ");
 		result.append(remarks);
+		result.append(", roleId: ");
+		result.append(roleId);
 		result.append(')');
 		return result.toString();
 	}

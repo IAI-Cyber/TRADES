@@ -19,9 +19,7 @@ package dsm.oscal.model.OscalMetadata.provider;
 import dsm.oscal.model.OscalMetadata.OscalMetadataFactory;
 import dsm.oscal.model.OscalMetadata.OscalMetadataPackage;
 import dsm.oscal.model.OscalMetadata.Revision;
-
-import gov.nist.secauto.metaschema.datatypes.markup.MarkupLine;
-
+import java.time.ZonedDateTime;
 import java.util.Collection;
 import java.util.List;
 
@@ -79,12 +77,12 @@ public class RevisionItemProvider
 			super.getPropertyDescriptors(object);
 
 			addAnnotationsPropertyDescriptor(object);
-			addTitlePropertyDescriptor(object);
-			addPublishedPropertyDescriptor(object);
 			addLastModifiedPropertyDescriptor(object);
-			addVersionPropertyDescriptor(object);
 			addOscalVersionPropertyDescriptor(object);
+			addPublishedPropertyDescriptor(object);
 			addRemarksPropertyDescriptor(object);
+			addTitlePropertyDescriptor(object);
+			addVersionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -293,7 +291,7 @@ public class RevisionItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		MarkupLine labelValue = ((Revision)object).getTitle();
+		ZonedDateTime labelValue = ((Revision)object).getLastModified();
 		String label = labelValue == null ? null : labelValue.toString();
 		return label == null || label.length() == 0 ?
 			getString("_UI_Revision_type") :
@@ -313,12 +311,12 @@ public class RevisionItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Revision.class)) {
-			case OscalMetadataPackage.REVISION__TITLE:
-			case OscalMetadataPackage.REVISION__PUBLISHED:
 			case OscalMetadataPackage.REVISION__LAST_MODIFIED:
-			case OscalMetadataPackage.REVISION__VERSION:
 			case OscalMetadataPackage.REVISION__OSCAL_VERSION:
+			case OscalMetadataPackage.REVISION__PUBLISHED:
 			case OscalMetadataPackage.REVISION__REMARKS:
+			case OscalMetadataPackage.REVISION__TITLE:
+			case OscalMetadataPackage.REVISION__VERSION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case OscalMetadataPackage.REVISION__LINKS:

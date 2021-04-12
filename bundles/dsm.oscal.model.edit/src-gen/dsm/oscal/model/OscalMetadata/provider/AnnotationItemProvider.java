@@ -76,8 +76,8 @@ public class AnnotationItemProvider
 			addUuidPropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
 			addNsPropertyDescriptor(object);
-			addValuePropertyDescriptor(object);
 			addRemarksPropertyDescriptor(object);
+			addValuePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -233,8 +233,8 @@ public class AnnotationItemProvider
 			case OscalMetadataPackage.ANNOTATION__UUID:
 			case OscalMetadataPackage.ANNOTATION__NAME:
 			case OscalMetadataPackage.ANNOTATION__NS:
-			case OscalMetadataPackage.ANNOTATION__VALUE:
 			case OscalMetadataPackage.ANNOTATION__REMARKS:
+			case OscalMetadataPackage.ANNOTATION__VALUE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

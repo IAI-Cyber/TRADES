@@ -39,8 +39,8 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link dsm.oscal.model.OscalMetadata.ResourceRlink#getEHref <em>EHref</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.ResourceRlink#getMediaType <em>Media Type</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.ResourceRlink#getHashes <em>Hashes</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.ResourceRlink#getMediaType <em>Media Type</em>}</li>
  * </ul>
  *
  * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getResourceRlink()

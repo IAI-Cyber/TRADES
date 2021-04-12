@@ -41,13 +41,23 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link dsm.oscal.model.OscalCatalogCommon.impl.ParameterSelectionImpl#getHowMany <em>How Many</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalogCommon.impl.ParameterSelectionImpl#getChoice <em>Choice</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalCatalogCommon.impl.ParameterSelectionImpl#getHowMany <em>How Many</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class ParameterSelectionImpl extends MinimalEObjectImpl.Container implements ParameterSelection {
+	/**
+	 * The cached value of the '{@link #getChoice() <em>Choice</em>}' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getChoice()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<MarkupLine> choice;
+
 	/**
 	 * The default value of the '{@link #getHowMany() <em>How Many</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -67,16 +77,6 @@ public class ParameterSelectionImpl extends MinimalEObjectImpl.Container impleme
 	 * @ordered
 	 */
 	protected String howMany = HOW_MANY_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getChoice() <em>Choice</em>}' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getChoice()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<MarkupLine> choice;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -141,10 +141,10 @@ public class ParameterSelectionImpl extends MinimalEObjectImpl.Container impleme
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case OscalCatalogCommonPackage.PARAMETER_SELECTION__HOW_MANY:
-				return getHowMany();
 			case OscalCatalogCommonPackage.PARAMETER_SELECTION__CHOICE:
 				return getChoice();
+			case OscalCatalogCommonPackage.PARAMETER_SELECTION__HOW_MANY:
+				return getHowMany();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -158,12 +158,12 @@ public class ParameterSelectionImpl extends MinimalEObjectImpl.Container impleme
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case OscalCatalogCommonPackage.PARAMETER_SELECTION__HOW_MANY:
-				setHowMany((String)newValue);
-				return;
 			case OscalCatalogCommonPackage.PARAMETER_SELECTION__CHOICE:
 				getChoice().clear();
 				getChoice().addAll((Collection<? extends MarkupLine>)newValue);
+				return;
+			case OscalCatalogCommonPackage.PARAMETER_SELECTION__HOW_MANY:
+				setHowMany((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -177,11 +177,11 @@ public class ParameterSelectionImpl extends MinimalEObjectImpl.Container impleme
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case OscalCatalogCommonPackage.PARAMETER_SELECTION__HOW_MANY:
-				setHowMany(HOW_MANY_EDEFAULT);
-				return;
 			case OscalCatalogCommonPackage.PARAMETER_SELECTION__CHOICE:
 				getChoice().clear();
+				return;
+			case OscalCatalogCommonPackage.PARAMETER_SELECTION__HOW_MANY:
+				setHowMany(HOW_MANY_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -195,10 +195,10 @@ public class ParameterSelectionImpl extends MinimalEObjectImpl.Container impleme
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case OscalCatalogCommonPackage.PARAMETER_SELECTION__HOW_MANY:
-				return HOW_MANY_EDEFAULT == null ? howMany != null : !HOW_MANY_EDEFAULT.equals(howMany);
 			case OscalCatalogCommonPackage.PARAMETER_SELECTION__CHOICE:
 				return choice != null && !choice.isEmpty();
+			case OscalCatalogCommonPackage.PARAMETER_SELECTION__HOW_MANY:
+				return HOW_MANY_EDEFAULT == null ? howMany != null : !HOW_MANY_EDEFAULT.equals(howMany);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -213,10 +213,10 @@ public class ParameterSelectionImpl extends MinimalEObjectImpl.Container impleme
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (howMany: ");
-		result.append(howMany);
-		result.append(", choice: ");
+		result.append(" (choice: ");
 		result.append(choice);
+		result.append(", howMany: ");
+		result.append(howMany);
 		result.append(')');
 		return result.toString();
 	}

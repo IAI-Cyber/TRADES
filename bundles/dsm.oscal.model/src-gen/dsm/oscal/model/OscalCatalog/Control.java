@@ -44,14 +44,14 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link dsm.oscal.model.OscalCatalog.Control#getId <em>Id</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalog.Control#getClazz <em>Clazz</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalCatalog.Control#getTitle <em>Title</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalCatalog.Control#getControls <em>Controls</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalCatalog.Control#getId <em>Id</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalCatalog.Control#getLinks <em>Links</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalog.Control#getParams <em>Params</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalog.Control#getParts <em>Parts</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalCatalog.Control#getLinks <em>Links</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalCatalog.Control#getControls <em>Controls</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalog.Control#getProps <em>Props</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalCatalog.Control#getTitle <em>Title</em>}</li>
  * </ul>
  *
  * @see dsm.oscal.model.OscalCatalog.OscalCatalogPackage#getControl()

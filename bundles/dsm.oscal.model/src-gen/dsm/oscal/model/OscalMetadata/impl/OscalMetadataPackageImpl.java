@@ -417,7 +417,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 */
 	@Override
 	public EAttribute getAddress_Type() {
-		return (EAttribute)addressEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)addressEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -427,7 +427,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 */
 	@Override
 	public EAttribute getAddress_AddrLines() {
-		return (EAttribute)addressEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)addressEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -437,7 +437,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 */
 	@Override
 	public EAttribute getAddress_City() {
-		return (EAttribute)addressEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)addressEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -447,16 +447,6 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 */
 	@Override
 	public EAttribute getAddress_State() {
-		return (EAttribute)addressEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getAddress_PostalCode() {
 		return (EAttribute)addressEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -466,8 +456,18 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 * @generated
 	 */
 	@Override
+	public EAttribute getAddress_PostalCode() {
+		return (EAttribute)addressEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EAttribute getAddress_Country() {
-		return (EAttribute)addressEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)addressEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -507,7 +507,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 */
 	@Override
 	public EAttribute getAnnotation_Value() {
-		return (EAttribute)annotationEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)annotationEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -517,7 +517,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 */
 	@Override
 	public EAttribute getAnnotation_Remarks() {
-		return (EAttribute)annotationEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)annotationEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -557,7 +557,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 */
 	@Override
 	public EAttribute getBackMatterResource_Title() {
-		return (EAttribute)backMatterResourceEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)backMatterResourceEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -567,16 +567,6 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 */
 	@Override
 	public EAttribute getBackMatterResource_Description() {
-		return (EAttribute)backMatterResourceEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getBackMatterResource_Remarks() {
 		return (EAttribute)backMatterResourceEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -586,8 +576,18 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 * @generated
 	 */
 	@Override
+	public EAttribute getBackMatterResource_Remarks() {
+		return (EAttribute)backMatterResourceEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EReference getBackMatterResource_Citation() {
-		return (EReference)backMatterResourceEClass.getEStructuralFeatures().get(3);
+		return (EReference)backMatterResourceEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -597,26 +597,6 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 */
 	@Override
 	public EReference getBackMatterResource_Rlinks() {
-		return (EReference)backMatterResourceEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getBackMatterResource_Props() {
-		return (EReference)backMatterResourceEClass.getEStructuralFeatures().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getBackMatterResource_DocumentIds() {
 		return (EReference)backMatterResourceEClass.getEStructuralFeatures().get(6);
 	}
 
@@ -626,8 +606,28 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 * @generated
 	 */
 	@Override
+	public EReference getBackMatterResource_Props() {
+		return (EReference)backMatterResourceEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getBackMatterResource_DocumentIds() {
+		return (EReference)backMatterResourceEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EReference getBackMatterResource_Base64() {
-		return (EReference)backMatterResourceEClass.getEStructuralFeatures().get(7);
+		return (EReference)backMatterResourceEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -647,7 +647,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 */
 	@Override
 	public EAttribute getBase64_Value() {
-		return (EAttribute)base64EClass.getEStructuralFeatures().get(0);
+		return (EAttribute)base64EClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -657,7 +657,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 */
 	@Override
 	public EAttribute getBase64_Filename() {
-		return (EAttribute)base64EClass.getEStructuralFeatures().get(1);
+		return (EAttribute)base64EClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -667,7 +667,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 */
 	@Override
 	public EAttribute getBase64_MediaType() {
-		return (EAttribute)base64EClass.getEStructuralFeatures().get(2);
+		return (EAttribute)base64EClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -687,7 +687,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 */
 	@Override
 	public EAttribute getDocumentId_Value() {
-		return (EAttribute)documentIdEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)documentIdEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -697,7 +697,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 */
 	@Override
 	public EAttribute getDocumentId_Scheme() {
-		return (EAttribute)documentIdEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)documentIdEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -717,7 +717,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 */
 	@Override
 	public EAttribute getExternalId_Value() {
-		return (EAttribute)externalIdEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)externalIdEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -727,7 +727,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 */
 	@Override
 	public EAttribute getExternalId_Scheme() {
-		return (EAttribute)externalIdEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)externalIdEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -747,7 +747,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 */
 	@Override
 	public EAttribute getHash_Value() {
-		return (EAttribute)hashEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)hashEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -757,7 +757,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 */
 	@Override
 	public EAttribute getHash_Algorithm() {
-		return (EAttribute)hashEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)hashEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -787,7 +787,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 */
 	@Override
 	public EAttribute getLink_Rel() {
-		return (EAttribute)linkEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)linkEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -797,7 +797,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 */
 	@Override
 	public EAttribute getLink_MediaType() {
-		return (EAttribute)linkEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)linkEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -827,7 +827,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 */
 	@Override
 	public EAttribute getLocation_Title() {
-		return (EAttribute)locationEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)locationEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -847,7 +847,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 */
 	@Override
 	public EAttribute getLocation_Urls() {
-		return (EAttribute)locationEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)locationEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -857,7 +857,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 */
 	@Override
 	public EAttribute getLocation_Remarks() {
-		return (EAttribute)locationEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)locationEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -867,7 +867,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 */
 	@Override
 	public EReference getLocation_Address() {
-		return (EReference)locationEClass.getEStructuralFeatures().get(4);
+		return (EReference)locationEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -877,7 +877,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 */
 	@Override
 	public EReference getLocation_Links() {
-		return (EReference)locationEClass.getEStructuralFeatures().get(5);
+		return (EReference)locationEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -887,7 +887,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 */
 	@Override
 	public EReference getLocation_TelephoneNumbers() {
-		return (EReference)locationEClass.getEStructuralFeatures().get(6);
+		return (EReference)locationEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -897,7 +897,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 */
 	@Override
 	public EReference getLocation_Props() {
-		return (EReference)locationEClass.getEStructuralFeatures().get(7);
+		return (EReference)locationEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -917,7 +917,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 */
 	@Override
 	public EAttribute getMetadata_Title() {
-		return (EAttribute)metadataEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)metadataEClass.getEStructuralFeatures().get(12);
 	}
 
 	/**
@@ -927,7 +927,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 */
 	@Override
 	public EAttribute getMetadata_Published() {
-		return (EAttribute)metadataEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)metadataEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -937,7 +937,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 */
 	@Override
 	public EAttribute getMetadata_LastModified() {
-		return (EAttribute)metadataEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)metadataEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -947,7 +947,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 */
 	@Override
 	public EAttribute getMetadata_Version() {
-		return (EAttribute)metadataEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)metadataEClass.getEStructuralFeatures().get(13);
 	}
 
 	/**
@@ -967,7 +967,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 */
 	@Override
 	public EAttribute getMetadata_Remarks() {
-		return (EAttribute)metadataEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)metadataEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -977,7 +977,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 */
 	@Override
 	public EReference getMetadata_Roles() {
-		return (EReference)metadataEClass.getEStructuralFeatures().get(6);
+		return (EReference)metadataEClass.getEStructuralFeatures().get(11);
 	}
 
 	/**
@@ -987,7 +987,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 */
 	@Override
 	public EReference getMetadata_Links() {
-		return (EReference)metadataEClass.getEStructuralFeatures().get(7);
+		return (EReference)metadataEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -997,7 +997,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 */
 	@Override
 	public EReference getMetadata_Locations() {
-		return (EReference)metadataEClass.getEStructuralFeatures().get(8);
+		return (EReference)metadataEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1017,7 +1017,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 */
 	@Override
 	public EReference getMetadata_Parties() {
-		return (EReference)metadataEClass.getEStructuralFeatures().get(10);
+		return (EReference)metadataEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -1027,7 +1027,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 */
 	@Override
 	public EReference getMetadata_Revisions() {
-		return (EReference)metadataEClass.getEStructuralFeatures().get(11);
+		return (EReference)metadataEClass.getEStructuralFeatures().get(10);
 	}
 
 	/**
@@ -1037,7 +1037,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 */
 	@Override
 	public EReference getMetadata_DocumentIds() {
-		return (EReference)metadataEClass.getEStructuralFeatures().get(12);
+		return (EReference)metadataEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1047,7 +1047,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 */
 	@Override
 	public EReference getMetadata_Props() {
-		return (EReference)metadataEClass.getEStructuralFeatures().get(13);
+		return (EReference)metadataEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -1067,7 +1067,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 */
 	@Override
 	public EAttribute getParty_Type() {
-		return (EAttribute)partyEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)partyEClass.getEStructuralFeatures().get(11);
 	}
 
 	/**
@@ -1077,7 +1077,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 */
 	@Override
 	public EAttribute getParty_Name() {
-		return (EAttribute)partyEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)partyEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -1087,7 +1087,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 */
 	@Override
 	public EAttribute getParty_ShortName() {
-		return (EAttribute)partyEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)partyEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -1097,7 +1097,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 */
 	@Override
 	public EAttribute getParty_EmailAddresses() {
-		return (EAttribute)partyEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)partyEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1127,7 +1127,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 */
 	@Override
 	public EAttribute getParty_Remarks() {
-		return (EAttribute)partyEClass.getEStructuralFeatures().get(6);
+		return (EAttribute)partyEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -1137,7 +1137,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 */
 	@Override
 	public EReference getParty_Addresses() {
-		return (EReference)partyEClass.getEStructuralFeatures().get(7);
+		return (EReference)partyEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1147,7 +1147,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 */
 	@Override
 	public EReference getParty_Links() {
-		return (EReference)partyEClass.getEStructuralFeatures().get(8);
+		return (EReference)partyEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1157,7 +1157,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 */
 	@Override
 	public EReference getParty_ExternalIds() {
-		return (EReference)partyEClass.getEStructuralFeatures().get(9);
+		return (EReference)partyEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1167,7 +1167,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 */
 	@Override
 	public EReference getParty_Props() {
-		return (EReference)partyEClass.getEStructuralFeatures().get(10);
+		return (EReference)partyEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -1177,7 +1177,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 */
 	@Override
 	public EReference getParty_TelephoneNumbers() {
-		return (EReference)partyEClass.getEStructuralFeatures().get(11);
+		return (EReference)partyEClass.getEStructuralFeatures().get(10);
 	}
 
 	/**
@@ -1197,7 +1197,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 */
 	@Override
 	public EAttribute getProperty_Value() {
-		return (EAttribute)propertyEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)propertyEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1227,7 +1227,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 */
 	@Override
 	public EAttribute getProperty_Clazz() {
-		return (EAttribute)propertyEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)propertyEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1247,7 +1247,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 */
 	@Override
 	public EAttribute getResourceCitation_Text() {
-		return (EAttribute)resourceCitationEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)resourceCitationEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1257,7 +1257,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 */
 	@Override
 	public EReference getResourceCitation_Props() {
-		return (EReference)resourceCitationEClass.getEStructuralFeatures().get(1);
+		return (EReference)resourceCitationEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1287,7 +1287,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 */
 	@Override
 	public EAttribute getResourceRlink_MediaType() {
-		return (EAttribute)resourceRlinkEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)resourceRlinkEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1297,7 +1297,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 */
 	@Override
 	public EReference getResourceRlink_Hashes() {
-		return (EReference)resourceRlinkEClass.getEStructuralFeatures().get(2);
+		return (EReference)resourceRlinkEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1317,7 +1317,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 */
 	@Override
 	public EAttribute getResponsibleParty_RoleId() {
-		return (EAttribute)responsiblePartyEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)responsiblePartyEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -1337,7 +1337,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 */
 	@Override
 	public EAttribute getResponsibleParty_Remarks() {
-		return (EAttribute)responsiblePartyEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)responsiblePartyEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1347,7 +1347,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 */
 	@Override
 	public EReference getResponsibleParty_Links() {
-		return (EReference)responsiblePartyEClass.getEStructuralFeatures().get(3);
+		return (EReference)responsiblePartyEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1357,7 +1357,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 */
 	@Override
 	public EReference getResponsibleParty_Props() {
-		return (EReference)responsiblePartyEClass.getEStructuralFeatures().get(4);
+		return (EReference)responsiblePartyEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1377,7 +1377,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 */
 	@Override
 	public EAttribute getResponsibleRole_RoleId() {
-		return (EAttribute)responsibleRoleEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)responsibleRoleEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -1397,7 +1397,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 */
 	@Override
 	public EAttribute getResponsibleRole_Remarks() {
-		return (EAttribute)responsibleRoleEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)responsibleRoleEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1407,7 +1407,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 */
 	@Override
 	public EReference getResponsibleRole_Links() {
-		return (EReference)responsibleRoleEClass.getEStructuralFeatures().get(3);
+		return (EReference)responsibleRoleEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1417,7 +1417,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 */
 	@Override
 	public EReference getResponsibleRole_Props() {
-		return (EReference)responsibleRoleEClass.getEStructuralFeatures().get(4);
+		return (EReference)responsibleRoleEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1437,7 +1437,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 */
 	@Override
 	public EAttribute getRevision_Title() {
-		return (EAttribute)revisionEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)revisionEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -1447,7 +1447,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 */
 	@Override
 	public EAttribute getRevision_Published() {
-		return (EAttribute)revisionEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)revisionEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -1457,7 +1457,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 */
 	@Override
 	public EAttribute getRevision_LastModified() {
-		return (EAttribute)revisionEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)revisionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1467,7 +1467,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 */
 	@Override
 	public EAttribute getRevision_Version() {
-		return (EAttribute)revisionEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)revisionEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -1477,7 +1477,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 */
 	@Override
 	public EAttribute getRevision_OscalVersion() {
-		return (EAttribute)revisionEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)revisionEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1497,7 +1497,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 */
 	@Override
 	public EReference getRevision_Links() {
-		return (EReference)revisionEClass.getEStructuralFeatures().get(6);
+		return (EReference)revisionEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1507,7 +1507,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 */
 	@Override
 	public EReference getRevision_Props() {
-		return (EReference)revisionEClass.getEStructuralFeatures().get(7);
+		return (EReference)revisionEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1527,16 +1527,6 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 */
 	@Override
 	public EAttribute getRole_Id() {
-		return (EAttribute)roleEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getRole_Title() {
 		return (EAttribute)roleEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -1546,8 +1536,18 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 * @generated
 	 */
 	@Override
+	public EAttribute getRole_Title() {
+		return (EAttribute)roleEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EAttribute getRole_ShortName() {
-		return (EAttribute)roleEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)roleEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -1557,7 +1557,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 */
 	@Override
 	public EAttribute getRole_Description() {
-		return (EAttribute)roleEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)roleEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1577,7 +1577,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 */
 	@Override
 	public EReference getRole_Links() {
-		return (EReference)roleEClass.getEStructuralFeatures().get(5);
+		return (EReference)roleEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1587,7 +1587,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 */
 	@Override
 	public EReference getRole_Props() {
-		return (EReference)roleEClass.getEStructuralFeatures().get(6);
+		return (EReference)roleEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1607,7 +1607,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 */
 	@Override
 	public EAttribute getTelephoneNumber_Value() {
-		return (EAttribute)telephoneNumberEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)telephoneNumberEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1617,7 +1617,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 */
 	@Override
 	public EAttribute getTelephoneNumber_Type() {
-		return (EAttribute)telephoneNumberEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)telephoneNumberEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1830,169 +1830,169 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 
 		// Create classes and their features
 		addressEClass = createEClass(ADDRESS);
-		createEAttribute(addressEClass, ADDRESS__TYPE);
 		createEAttribute(addressEClass, ADDRESS__ADDR_LINES);
 		createEAttribute(addressEClass, ADDRESS__CITY);
-		createEAttribute(addressEClass, ADDRESS__STATE);
-		createEAttribute(addressEClass, ADDRESS__POSTAL_CODE);
 		createEAttribute(addressEClass, ADDRESS__COUNTRY);
+		createEAttribute(addressEClass, ADDRESS__POSTAL_CODE);
+		createEAttribute(addressEClass, ADDRESS__STATE);
+		createEAttribute(addressEClass, ADDRESS__TYPE);
 
 		annotationEClass = createEClass(ANNOTATION);
 		createEAttribute(annotationEClass, ANNOTATION__NAME);
 		createEAttribute(annotationEClass, ANNOTATION__NS);
-		createEAttribute(annotationEClass, ANNOTATION__VALUE);
 		createEAttribute(annotationEClass, ANNOTATION__REMARKS);
+		createEAttribute(annotationEClass, ANNOTATION__VALUE);
+
+		annotationOwnerEClass = createEClass(ANNOTATION_OWNER);
+		createEReference(annotationOwnerEClass, ANNOTATION_OWNER__ANNOTATIONS);
 
 		backMatterEClass = createEClass(BACK_MATTER);
 		createEReference(backMatterEClass, BACK_MATTER__RESOURCES);
 
 		backMatterResourceEClass = createEClass(BACK_MATTER_RESOURCE);
-		createEAttribute(backMatterResourceEClass, BACK_MATTER_RESOURCE__TITLE);
-		createEAttribute(backMatterResourceEClass, BACK_MATTER_RESOURCE__DESCRIPTION);
-		createEAttribute(backMatterResourceEClass, BACK_MATTER_RESOURCE__REMARKS);
-		createEReference(backMatterResourceEClass, BACK_MATTER_RESOURCE__CITATION);
-		createEReference(backMatterResourceEClass, BACK_MATTER_RESOURCE__RLINKS);
-		createEReference(backMatterResourceEClass, BACK_MATTER_RESOURCE__PROPS);
-		createEReference(backMatterResourceEClass, BACK_MATTER_RESOURCE__DOCUMENT_IDS);
 		createEReference(backMatterResourceEClass, BACK_MATTER_RESOURCE__BASE64);
+		createEReference(backMatterResourceEClass, BACK_MATTER_RESOURCE__CITATION);
+		createEAttribute(backMatterResourceEClass, BACK_MATTER_RESOURCE__DESCRIPTION);
+		createEReference(backMatterResourceEClass, BACK_MATTER_RESOURCE__DOCUMENT_IDS);
+		createEReference(backMatterResourceEClass, BACK_MATTER_RESOURCE__PROPS);
+		createEAttribute(backMatterResourceEClass, BACK_MATTER_RESOURCE__REMARKS);
+		createEReference(backMatterResourceEClass, BACK_MATTER_RESOURCE__RLINKS);
+		createEAttribute(backMatterResourceEClass, BACK_MATTER_RESOURCE__TITLE);
 
 		base64EClass = createEClass(BASE64);
-		createEAttribute(base64EClass, BASE64__VALUE);
 		createEAttribute(base64EClass, BASE64__FILENAME);
 		createEAttribute(base64EClass, BASE64__MEDIA_TYPE);
+		createEAttribute(base64EClass, BASE64__VALUE);
 
 		documentIdEClass = createEClass(DOCUMENT_ID);
-		createEAttribute(documentIdEClass, DOCUMENT_ID__VALUE);
 		createEAttribute(documentIdEClass, DOCUMENT_ID__SCHEME);
+		createEAttribute(documentIdEClass, DOCUMENT_ID__VALUE);
 
 		externalIdEClass = createEClass(EXTERNAL_ID);
-		createEAttribute(externalIdEClass, EXTERNAL_ID__VALUE);
 		createEAttribute(externalIdEClass, EXTERNAL_ID__SCHEME);
+		createEAttribute(externalIdEClass, EXTERNAL_ID__VALUE);
 
 		hashEClass = createEClass(HASH);
-		createEAttribute(hashEClass, HASH__VALUE);
 		createEAttribute(hashEClass, HASH__ALGORITHM);
+		createEAttribute(hashEClass, HASH__VALUE);
 
 		linkEClass = createEClass(LINK);
 		createEAttribute(linkEClass, LINK__EHREF);
-		createEAttribute(linkEClass, LINK__REL);
 		createEAttribute(linkEClass, LINK__MEDIA_TYPE);
+		createEAttribute(linkEClass, LINK__REL);
 		createEAttribute(linkEClass, LINK__TEXT);
 
 		locationEClass = createEClass(LOCATION);
-		createEAttribute(locationEClass, LOCATION__TITLE);
-		createEAttribute(locationEClass, LOCATION__EMAIL_ADDRESSES);
-		createEAttribute(locationEClass, LOCATION__URLS);
-		createEAttribute(locationEClass, LOCATION__REMARKS);
 		createEReference(locationEClass, LOCATION__ADDRESS);
+		createEAttribute(locationEClass, LOCATION__EMAIL_ADDRESSES);
 		createEReference(locationEClass, LOCATION__LINKS);
-		createEReference(locationEClass, LOCATION__TELEPHONE_NUMBERS);
 		createEReference(locationEClass, LOCATION__PROPS);
+		createEAttribute(locationEClass, LOCATION__REMARKS);
+		createEReference(locationEClass, LOCATION__TELEPHONE_NUMBERS);
+		createEAttribute(locationEClass, LOCATION__TITLE);
+		createEAttribute(locationEClass, LOCATION__URLS);
 
 		metadataEClass = createEClass(METADATA);
-		createEAttribute(metadataEClass, METADATA__TITLE);
-		createEAttribute(metadataEClass, METADATA__PUBLISHED);
+		createEReference(metadataEClass, METADATA__DOCUMENT_IDS);
 		createEAttribute(metadataEClass, METADATA__LAST_MODIFIED);
-		createEAttribute(metadataEClass, METADATA__VERSION);
-		createEAttribute(metadataEClass, METADATA__OSCAL_VERSION);
-		createEAttribute(metadataEClass, METADATA__REMARKS);
-		createEReference(metadataEClass, METADATA__ROLES);
 		createEReference(metadataEClass, METADATA__LINKS);
 		createEReference(metadataEClass, METADATA__LOCATIONS);
-		createEReference(metadataEClass, METADATA__RESPONSIBLE_PARTIES);
+		createEAttribute(metadataEClass, METADATA__OSCAL_VERSION);
 		createEReference(metadataEClass, METADATA__PARTIES);
-		createEReference(metadataEClass, METADATA__REVISIONS);
-		createEReference(metadataEClass, METADATA__DOCUMENT_IDS);
 		createEReference(metadataEClass, METADATA__PROPS);
+		createEAttribute(metadataEClass, METADATA__PUBLISHED);
+		createEAttribute(metadataEClass, METADATA__REMARKS);
+		createEReference(metadataEClass, METADATA__RESPONSIBLE_PARTIES);
+		createEReference(metadataEClass, METADATA__REVISIONS);
+		createEReference(metadataEClass, METADATA__ROLES);
+		createEAttribute(metadataEClass, METADATA__TITLE);
+		createEAttribute(metadataEClass, METADATA__VERSION);
+
+		oscalElementEClass = createEClass(OSCAL_ELEMENT);
 
 		partyEClass = createEClass(PARTY);
-		createEAttribute(partyEClass, PARTY__TYPE);
-		createEAttribute(partyEClass, PARTY__NAME);
-		createEAttribute(partyEClass, PARTY__SHORT_NAME);
+		createEReference(partyEClass, PARTY__ADDRESSES);
 		createEAttribute(partyEClass, PARTY__EMAIL_ADDRESSES);
+		createEReference(partyEClass, PARTY__EXTERNAL_IDS);
+		createEReference(partyEClass, PARTY__LINKS);
 		createEAttribute(partyEClass, PARTY__LOCATION_UUIDS);
 		createEAttribute(partyEClass, PARTY__MEMBER_OF_ORGANIZATIONS);
-		createEAttribute(partyEClass, PARTY__REMARKS);
-		createEReference(partyEClass, PARTY__ADDRESSES);
-		createEReference(partyEClass, PARTY__LINKS);
-		createEReference(partyEClass, PARTY__EXTERNAL_IDS);
+		createEAttribute(partyEClass, PARTY__NAME);
 		createEReference(partyEClass, PARTY__PROPS);
+		createEAttribute(partyEClass, PARTY__REMARKS);
+		createEAttribute(partyEClass, PARTY__SHORT_NAME);
 		createEReference(partyEClass, PARTY__TELEPHONE_NUMBERS);
+		createEAttribute(partyEClass, PARTY__TYPE);
 
 		propertyEClass = createEClass(PROPERTY);
-		createEAttribute(propertyEClass, PROPERTY__VALUE);
+		createEAttribute(propertyEClass, PROPERTY__CLAZZ);
 		createEAttribute(propertyEClass, PROPERTY__NAME);
 		createEAttribute(propertyEClass, PROPERTY__NS);
-		createEAttribute(propertyEClass, PROPERTY__CLAZZ);
+		createEAttribute(propertyEClass, PROPERTY__VALUE);
 
 		resourceCitationEClass = createEClass(RESOURCE_CITATION);
-		createEAttribute(resourceCitationEClass, RESOURCE_CITATION__TEXT);
 		createEReference(resourceCitationEClass, RESOURCE_CITATION__PROPS);
+		createEAttribute(resourceCitationEClass, RESOURCE_CITATION__TEXT);
 
 		resourceRlinkEClass = createEClass(RESOURCE_RLINK);
 		createEAttribute(resourceRlinkEClass, RESOURCE_RLINK__EHREF);
-		createEAttribute(resourceRlinkEClass, RESOURCE_RLINK__MEDIA_TYPE);
 		createEReference(resourceRlinkEClass, RESOURCE_RLINK__HASHES);
+		createEAttribute(resourceRlinkEClass, RESOURCE_RLINK__MEDIA_TYPE);
 
 		responsiblePartyEClass = createEClass(RESPONSIBLE_PARTY);
-		createEAttribute(responsiblePartyEClass, RESPONSIBLE_PARTY__ROLE_ID);
-		createEAttribute(responsiblePartyEClass, RESPONSIBLE_PARTY__PARTY_UUIDS);
-		createEAttribute(responsiblePartyEClass, RESPONSIBLE_PARTY__REMARKS);
 		createEReference(responsiblePartyEClass, RESPONSIBLE_PARTY__LINKS);
+		createEAttribute(responsiblePartyEClass, RESPONSIBLE_PARTY__PARTY_UUIDS);
 		createEReference(responsiblePartyEClass, RESPONSIBLE_PARTY__PROPS);
+		createEAttribute(responsiblePartyEClass, RESPONSIBLE_PARTY__REMARKS);
+		createEAttribute(responsiblePartyEClass, RESPONSIBLE_PARTY__ROLE_ID);
 
 		responsibleRoleEClass = createEClass(RESPONSIBLE_ROLE);
-		createEAttribute(responsibleRoleEClass, RESPONSIBLE_ROLE__ROLE_ID);
-		createEAttribute(responsibleRoleEClass, RESPONSIBLE_ROLE__PARTY_UUIDS);
-		createEAttribute(responsibleRoleEClass, RESPONSIBLE_ROLE__REMARKS);
 		createEReference(responsibleRoleEClass, RESPONSIBLE_ROLE__LINKS);
+		createEAttribute(responsibleRoleEClass, RESPONSIBLE_ROLE__PARTY_UUIDS);
 		createEReference(responsibleRoleEClass, RESPONSIBLE_ROLE__PROPS);
+		createEAttribute(responsibleRoleEClass, RESPONSIBLE_ROLE__REMARKS);
+		createEAttribute(responsibleRoleEClass, RESPONSIBLE_ROLE__ROLE_ID);
 
 		revisionEClass = createEClass(REVISION);
-		createEAttribute(revisionEClass, REVISION__TITLE);
-		createEAttribute(revisionEClass, REVISION__PUBLISHED);
 		createEAttribute(revisionEClass, REVISION__LAST_MODIFIED);
-		createEAttribute(revisionEClass, REVISION__VERSION);
-		createEAttribute(revisionEClass, REVISION__OSCAL_VERSION);
-		createEAttribute(revisionEClass, REVISION__REMARKS);
 		createEReference(revisionEClass, REVISION__LINKS);
+		createEAttribute(revisionEClass, REVISION__OSCAL_VERSION);
 		createEReference(revisionEClass, REVISION__PROPS);
+		createEAttribute(revisionEClass, REVISION__PUBLISHED);
+		createEAttribute(revisionEClass, REVISION__REMARKS);
+		createEAttribute(revisionEClass, REVISION__TITLE);
+		createEAttribute(revisionEClass, REVISION__VERSION);
 
 		roleEClass = createEClass(ROLE);
-		createEAttribute(roleEClass, ROLE__ID);
-		createEAttribute(roleEClass, ROLE__TITLE);
-		createEAttribute(roleEClass, ROLE__SHORT_NAME);
 		createEAttribute(roleEClass, ROLE__DESCRIPTION);
-		createEAttribute(roleEClass, ROLE__REMARKS);
+		createEAttribute(roleEClass, ROLE__ID);
 		createEReference(roleEClass, ROLE__LINKS);
 		createEReference(roleEClass, ROLE__PROPS);
+		createEAttribute(roleEClass, ROLE__REMARKS);
+		createEAttribute(roleEClass, ROLE__SHORT_NAME);
+		createEAttribute(roleEClass, ROLE__TITLE);
 
 		telephoneNumberEClass = createEClass(TELEPHONE_NUMBER);
-		createEAttribute(telephoneNumberEClass, TELEPHONE_NUMBER__VALUE);
 		createEAttribute(telephoneNumberEClass, TELEPHONE_NUMBER__TYPE);
-
-		oscalElementEClass = createEClass(OSCAL_ELEMENT);
+		createEAttribute(telephoneNumberEClass, TELEPHONE_NUMBER__VALUE);
 
 		uuidElementEClass = createEClass(UUID_ELEMENT);
 		createEAttribute(uuidElementEClass, UUID_ELEMENT__UUID);
 
-		annotationOwnerEClass = createEClass(ANNOTATION_OWNER);
-		createEReference(annotationOwnerEClass, ANNOTATION_OWNER__ANNOTATIONS);
-
 		// Create data types
+		base64TypeEDataType = createEDataType(BASE64_TYPE);
+		dateTimeTypeEDataType = createEDataType(DATE_TIME_TYPE);
+		dateTimeWithTzTypeEDataType = createEDataType(DATE_TIME_WITH_TZ_TYPE);
 		dateTypeEDataType = createEDataType(DATE_TYPE);
 		dateWithTzTypeEDataType = createEDataType(DATE_WITH_TZ_TYPE);
+		emptyTypeEDataType = createEDataType(EMPTY_TYPE);
 		ipV4AddressTypeEDataType = createEDataType(IP_V4_ADDRESS_TYPE);
-		dateTimeTypeEDataType = createEDataType(DATE_TIME_TYPE);
-		uriReferenceTypeEDataType = createEDataType(URI_REFERENCE_TYPE);
-		uuidTypeEDataType = createEDataType(UUID_TYPE);
-		base64TypeEDataType = createEDataType(BASE64_TYPE);
-		uriTypeEDataType = createEDataType(URI_TYPE);
+		ipV6AddressTypeEDataType = createEDataType(IP_V6_ADDRESS_TYPE);
 		markupLineTypeEDataType = createEDataType(MARKUP_LINE_TYPE);
 		markupMultilineTypeEDataType = createEDataType(MARKUP_MULTILINE_TYPE);
-		emptyTypeEDataType = createEDataType(EMPTY_TYPE);
-		dateTimeWithTzTypeEDataType = createEDataType(DATE_TIME_WITH_TZ_TYPE);
-		ipV6AddressTypeEDataType = createEDataType(IP_V6_ADDRESS_TYPE);
+		uriReferenceTypeEDataType = createEDataType(URI_REFERENCE_TYPE);
+		uriTypeEDataType = createEDataType(URI_TYPE);
+		uuidTypeEDataType = createEDataType(UUID_TYPE);
 	}
 
 	/**
@@ -2060,169 +2060,169 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(addressEClass, Address.class, "Address", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getAddress_Type(), ecorePackage.getEString(), "type", null, 0, 1, Address.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAddress_AddrLines(), ecorePackage.getEString(), "addrLines", null, 0, -1, Address.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAddress_City(), ecorePackage.getEString(), "city", null, 0, 1, Address.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAddress_State(), ecorePackage.getEString(), "state", null, 0, 1, Address.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAddress_PostalCode(), ecorePackage.getEString(), "postalCode", null, 0, 1, Address.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAddress_Country(), ecorePackage.getEString(), "country", null, 0, 1, Address.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAddress_PostalCode(), ecorePackage.getEString(), "postalCode", null, 0, 1, Address.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAddress_State(), ecorePackage.getEString(), "state", null, 0, 1, Address.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAddress_Type(), ecorePackage.getEString(), "type", null, 0, 1, Address.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(annotationEClass, Annotation.class, "Annotation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAnnotation_Name(), ecorePackage.getEString(), "name", null, 1, 1, Annotation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAnnotation_Ns(), this.getUriType(), "ns", null, 0, 1, Annotation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAnnotation_Value(), ecorePackage.getEString(), "value", null, 1, 1, Annotation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAnnotation_Remarks(), this.getMarkupMultilineType(), "remarks", null, 0, 1, Annotation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAnnotation_Value(), ecorePackage.getEString(), "value", null, 1, 1, Annotation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(annotationOwnerEClass, AnnotationOwner.class, "AnnotationOwner", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAnnotationOwner_Annotations(), this.getAnnotation(), null, "annotations", null, 0, -1, AnnotationOwner.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(backMatterEClass, BackMatter.class, "BackMatter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getBackMatter_Resources(), this.getBackMatterResource(), null, "resources", null, 0, -1, BackMatter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(backMatterResourceEClass, BackMatterResource.class, "BackMatterResource", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getBackMatterResource_Title(), this.getMarkupLineType(), "title", null, 0, 1, BackMatterResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getBackMatterResource_Description(), this.getMarkupMultilineType(), "description", null, 0, 1, BackMatterResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getBackMatterResource_Remarks(), this.getMarkupMultilineType(), "remarks", null, 0, 1, BackMatterResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getBackMatterResource_Citation(), this.getResourceCitation(), null, "citation", null, 0, 1, BackMatterResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getBackMatterResource_Rlinks(), this.getResourceRlink(), null, "rlinks", null, 0, -1, BackMatterResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getBackMatterResource_Props(), this.getProperty(), null, "props", null, 0, -1, BackMatterResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getBackMatterResource_DocumentIds(), this.getDocumentId(), null, "documentIds", null, 0, -1, BackMatterResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getBackMatterResource_Base64(), this.getBase64(), null, "base64", null, 0, 1, BackMatterResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBackMatterResource_Citation(), this.getResourceCitation(), null, "citation", null, 0, 1, BackMatterResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getBackMatterResource_Description(), this.getMarkupMultilineType(), "description", null, 0, 1, BackMatterResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBackMatterResource_DocumentIds(), this.getDocumentId(), null, "documentIds", null, 0, -1, BackMatterResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBackMatterResource_Props(), this.getProperty(), null, "props", null, 0, -1, BackMatterResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getBackMatterResource_Remarks(), this.getMarkupMultilineType(), "remarks", null, 0, 1, BackMatterResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBackMatterResource_Rlinks(), this.getResourceRlink(), null, "rlinks", null, 0, -1, BackMatterResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getBackMatterResource_Title(), this.getMarkupLineType(), "title", null, 0, 1, BackMatterResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(base64EClass, Base64.class, "Base64", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getBase64_Value(), this.getBase64Type(), "value", null, 0, 1, Base64.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getBase64_Filename(), this.getUriReferenceType(), "filename", null, 0, 1, Base64.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getBase64_MediaType(), ecorePackage.getEString(), "mediaType", null, 0, 1, Base64.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getBase64_Value(), this.getBase64Type(), "value", null, 0, 1, Base64.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(documentIdEClass, DocumentId.class, "DocumentId", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getDocumentId_Value(), ecorePackage.getEString(), "value", null, 0, 1, DocumentId.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDocumentId_Scheme(), this.getUriType(), "scheme", null, 1, 1, DocumentId.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDocumentId_Value(), ecorePackage.getEString(), "value", null, 0, 1, DocumentId.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(externalIdEClass, ExternalId.class, "ExternalId", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getExternalId_Value(), ecorePackage.getEString(), "value", null, 0, 1, ExternalId.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getExternalId_Scheme(), this.getUriType(), "scheme", null, 1, 1, ExternalId.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getExternalId_Value(), ecorePackage.getEString(), "value", null, 0, 1, ExternalId.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(hashEClass, Hash.class, "Hash", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getHash_Value(), ecorePackage.getEString(), "value", null, 0, 1, Hash.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getHash_Algorithm(), ecorePackage.getEString(), "algorithm", null, 1, 1, Hash.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getHash_Value(), ecorePackage.getEString(), "value", null, 0, 1, Hash.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(linkEClass, Link.class, "Link", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getLink_EHref(), this.getUriReferenceType(), "eHref", null, 1, 1, Link.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getLink_Rel(), ecorePackage.getEString(), "rel", null, 0, 1, Link.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getLink_MediaType(), ecorePackage.getEString(), "mediaType", null, 0, 1, Link.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getLink_Rel(), ecorePackage.getEString(), "rel", null, 0, 1, Link.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getLink_Text(), this.getMarkupLineType(), "text", null, 0, 1, Link.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(locationEClass, Location.class, "Location", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getLocation_Title(), this.getMarkupLineType(), "title", null, 0, 1, Location.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getLocation_EmailAddresses(), ecorePackage.getEString(), "emailAddresses", null, 0, -1, Location.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getLocation_Urls(), this.getUriType(), "urls", null, 0, -1, Location.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getLocation_Remarks(), this.getMarkupMultilineType(), "remarks", null, 0, 1, Location.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getLocation_Address(), this.getAddress(), null, "address", null, 1, 1, Location.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getLocation_EmailAddresses(), ecorePackage.getEString(), "emailAddresses", null, 0, -1, Location.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getLocation_Links(), this.getLink(), null, "links", null, 0, -1, Location.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getLocation_TelephoneNumbers(), this.getTelephoneNumber(), null, "telephoneNumbers", null, 0, -1, Location.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getLocation_Props(), this.getProperty(), null, "props", null, 0, -1, Location.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getLocation_Remarks(), this.getMarkupMultilineType(), "remarks", null, 0, 1, Location.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getLocation_TelephoneNumbers(), this.getTelephoneNumber(), null, "telephoneNumbers", null, 0, -1, Location.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getLocation_Title(), this.getMarkupLineType(), "title", null, 0, 1, Location.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getLocation_Urls(), this.getUriType(), "urls", null, 0, -1, Location.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(metadataEClass, Metadata.class, "Metadata", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getMetadata_Title(), this.getMarkupLineType(), "title", null, 1, 1, Metadata.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMetadata_Published(), this.getDateTimeWithTzType(), "published", null, 0, 1, Metadata.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMetadata_DocumentIds(), this.getDocumentId(), null, "documentIds", null, 0, -1, Metadata.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMetadata_LastModified(), this.getDateTimeWithTzType(), "lastModified", null, 1, 1, Metadata.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMetadata_Version(), ecorePackage.getEString(), "version", null, 1, 1, Metadata.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMetadata_OscalVersion(), ecorePackage.getEString(), "oscalVersion", null, 1, 1, Metadata.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMetadata_Remarks(), this.getMarkupMultilineType(), "remarks", null, 0, 1, Metadata.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMetadata_Roles(), this.getRole(), null, "roles", null, 0, -1, Metadata.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMetadata_Links(), this.getLink(), null, "links", null, 0, -1, Metadata.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMetadata_Locations(), this.getLocation(), null, "locations", null, 0, -1, Metadata.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMetadata_ResponsibleParties(), this.getResponsibleParty(), null, "responsibleParties", null, 0, -1, Metadata.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMetadata_OscalVersion(), ecorePackage.getEString(), "oscalVersion", null, 1, 1, Metadata.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMetadata_Parties(), this.getParty(), null, "parties", null, 0, -1, Metadata.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMetadata_Revisions(), this.getRevision(), null, "revisions", null, 0, -1, Metadata.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMetadata_DocumentIds(), this.getDocumentId(), null, "documentIds", null, 0, -1, Metadata.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMetadata_Props(), this.getProperty(), null, "props", null, 0, -1, Metadata.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMetadata_Published(), this.getDateTimeWithTzType(), "published", null, 0, 1, Metadata.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMetadata_Remarks(), this.getMarkupMultilineType(), "remarks", null, 0, 1, Metadata.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMetadata_ResponsibleParties(), this.getResponsibleParty(), null, "responsibleParties", null, 0, -1, Metadata.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMetadata_Revisions(), this.getRevision(), null, "revisions", null, 0, -1, Metadata.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMetadata_Roles(), this.getRole(), null, "roles", null, 0, -1, Metadata.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMetadata_Title(), this.getMarkupLineType(), "title", null, 1, 1, Metadata.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMetadata_Version(), ecorePackage.getEString(), "version", null, 1, 1, Metadata.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(oscalElementEClass, OscalElement.class, "OscalElement", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(partyEClass, Party.class, "Party", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getParty_Type(), ecorePackage.getEString(), "type", null, 1, 1, Party.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getParty_Name(), ecorePackage.getEString(), "name", null, 0, 1, Party.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getParty_ShortName(), ecorePackage.getEString(), "shortName", null, 0, 1, Party.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getParty_Addresses(), this.getAddress(), null, "addresses", null, 0, -1, Party.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getParty_EmailAddresses(), ecorePackage.getEString(), "emailAddresses", null, 0, -1, Party.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getParty_ExternalIds(), this.getExternalId(), null, "externalIds", null, 0, -1, Party.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getParty_Links(), this.getLink(), null, "links", null, 0, -1, Party.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getParty_LocationUuids(), this.getUuidType(), "locationUuids", null, 0, -1, Party.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getParty_MemberOfOrganizations(), this.getUuidType(), "memberOfOrganizations", null, 0, -1, Party.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getParty_Remarks(), this.getMarkupMultilineType(), "remarks", null, 0, 1, Party.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getParty_Addresses(), this.getAddress(), null, "addresses", null, 0, -1, Party.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getParty_Links(), this.getLink(), null, "links", null, 0, -1, Party.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getParty_ExternalIds(), this.getExternalId(), null, "externalIds", null, 0, -1, Party.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getParty_Name(), ecorePackage.getEString(), "name", null, 0, 1, Party.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getParty_Props(), this.getProperty(), null, "props", null, 0, -1, Party.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getParty_Remarks(), this.getMarkupMultilineType(), "remarks", null, 0, 1, Party.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getParty_ShortName(), ecorePackage.getEString(), "shortName", null, 0, 1, Party.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getParty_TelephoneNumbers(), this.getTelephoneNumber(), null, "telephoneNumbers", null, 0, -1, Party.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getParty_Type(), ecorePackage.getEString(), "type", null, 1, 1, Party.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(propertyEClass, Property.class, "Property", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getProperty_Value(), ecorePackage.getEString(), "value", null, 0, 1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getProperty_Clazz(), ecorePackage.getEString(), "clazz", null, 0, 1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProperty_Name(), ecorePackage.getEString(), "name", null, 1, 1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProperty_Ns(), this.getUriType(), "ns", null, 0, 1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getProperty_Clazz(), ecorePackage.getEString(), "clazz", null, 0, 1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getProperty_Value(), ecorePackage.getEString(), "value", null, 0, 1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(resourceCitationEClass, ResourceCitation.class, "ResourceCitation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getResourceCitation_Text(), this.getMarkupLineType(), "text", null, 1, 1, ResourceCitation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getResourceCitation_Props(), this.getProperty(), null, "props", null, 0, -1, ResourceCitation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getResourceCitation_Text(), this.getMarkupLineType(), "text", null, 1, 1, ResourceCitation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(resourceRlinkEClass, ResourceRlink.class, "ResourceRlink", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getResourceRlink_EHref(), this.getUriReferenceType(), "eHref", null, 1, 1, ResourceRlink.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getResourceRlink_MediaType(), ecorePackage.getEString(), "mediaType", null, 0, 1, ResourceRlink.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getResourceRlink_Hashes(), this.getHash(), null, "hashes", null, 0, -1, ResourceRlink.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getResourceRlink_MediaType(), ecorePackage.getEString(), "mediaType", null, 0, 1, ResourceRlink.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(responsiblePartyEClass, ResponsibleParty.class, "ResponsibleParty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getResponsibleParty_RoleId(), ecorePackage.getEString(), "roleId", null, 1, 1, ResponsibleParty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getResponsibleParty_PartyUuids(), this.getUuidType(), "partyUuids", null, 1, -1, ResponsibleParty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getResponsibleParty_Remarks(), this.getMarkupMultilineType(), "remarks", null, 0, 1, ResponsibleParty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getResponsibleParty_Links(), this.getLink(), null, "links", null, 0, -1, ResponsibleParty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getResponsibleParty_PartyUuids(), this.getUuidType(), "partyUuids", null, 1, -1, ResponsibleParty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getResponsibleParty_Props(), this.getProperty(), null, "props", null, 0, -1, ResponsibleParty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getResponsibleParty_Remarks(), this.getMarkupMultilineType(), "remarks", null, 0, 1, ResponsibleParty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getResponsibleParty_RoleId(), ecorePackage.getEString(), "roleId", null, 1, 1, ResponsibleParty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(responsibleRoleEClass, ResponsibleRole.class, "ResponsibleRole", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getResponsibleRole_RoleId(), ecorePackage.getEString(), "roleId", null, 1, 1, ResponsibleRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getResponsibleRole_PartyUuids(), this.getUuidType(), "partyUuids", null, 0, -1, ResponsibleRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getResponsibleRole_Remarks(), this.getMarkupMultilineType(), "remarks", null, 0, 1, ResponsibleRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getResponsibleRole_Links(), this.getLink(), null, "links", null, 0, -1, ResponsibleRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getResponsibleRole_PartyUuids(), this.getUuidType(), "partyUuids", null, 0, -1, ResponsibleRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getResponsibleRole_Props(), this.getProperty(), null, "props", null, 0, -1, ResponsibleRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getResponsibleRole_Remarks(), this.getMarkupMultilineType(), "remarks", null, 0, 1, ResponsibleRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getResponsibleRole_RoleId(), ecorePackage.getEString(), "roleId", null, 1, 1, ResponsibleRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(revisionEClass, Revision.class, "Revision", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getRevision_Title(), this.getMarkupLineType(), "title", null, 0, 1, Revision.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getRevision_Published(), this.getDateTimeWithTzType(), "published", null, 0, 1, Revision.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRevision_LastModified(), this.getDateTimeWithTzType(), "lastModified", null, 0, 1, Revision.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getRevision_Version(), ecorePackage.getEString(), "version", null, 0, 1, Revision.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getRevision_OscalVersion(), ecorePackage.getEString(), "oscalVersion", null, 0, 1, Revision.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getRevision_Remarks(), this.getMarkupMultilineType(), "remarks", null, 0, 1, Revision.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRevision_Links(), this.getLink(), null, "links", null, 0, -1, Revision.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRevision_OscalVersion(), ecorePackage.getEString(), "oscalVersion", null, 0, 1, Revision.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRevision_Props(), this.getProperty(), null, "props", null, 0, -1, Revision.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRevision_Published(), this.getDateTimeWithTzType(), "published", null, 0, 1, Revision.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRevision_Remarks(), this.getMarkupMultilineType(), "remarks", null, 0, 1, Revision.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRevision_Title(), this.getMarkupLineType(), "title", null, 0, 1, Revision.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRevision_Version(), ecorePackage.getEString(), "version", null, 0, 1, Revision.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(roleEClass, Role.class, "Role", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getRole_Id(), ecorePackage.getEString(), "id", null, 1, 1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getRole_Title(), this.getMarkupLineType(), "title", null, 1, 1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getRole_ShortName(), ecorePackage.getEString(), "shortName", null, 0, 1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRole_Description(), this.getMarkupMultilineType(), "description", null, 0, 1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getRole_Remarks(), this.getMarkupMultilineType(), "remarks", null, 0, 1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRole_Id(), ecorePackage.getEString(), "id", null, 1, 1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRole_Links(), this.getLink(), null, "links", null, 0, -1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRole_Props(), this.getProperty(), null, "props", null, 0, -1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRole_Remarks(), this.getMarkupMultilineType(), "remarks", null, 0, 1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRole_ShortName(), ecorePackage.getEString(), "shortName", null, 0, 1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRole_Title(), this.getMarkupLineType(), "title", null, 1, 1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(telephoneNumberEClass, TelephoneNumber.class, "TelephoneNumber", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getTelephoneNumber_Value(), ecorePackage.getEString(), "value", null, 0, 1, TelephoneNumber.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTelephoneNumber_Type(), ecorePackage.getEString(), "type", null, 0, 1, TelephoneNumber.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(oscalElementEClass, OscalElement.class, "OscalElement", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getTelephoneNumber_Value(), ecorePackage.getEString(), "value", null, 0, 1, TelephoneNumber.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(uuidElementEClass, UUIDElement.class, "UUIDElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getUUIDElement_Uuid(), this.getUuidType(), "uuid", null, 1, 1, UUIDElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(annotationOwnerEClass, AnnotationOwner.class, "AnnotationOwner", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAnnotationOwner_Annotations(), this.getAnnotation(), null, "annotations", null, 0, -1, AnnotationOwner.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
 		// Initialize data types
+		initEDataType(base64TypeEDataType, gov.nist.secauto.metaschema.datatypes.Base64.class, "Base64Type", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(dateTimeTypeEDataType, DateTime.class, "DateTimeType", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(dateTimeWithTzTypeEDataType, ZonedDateTime.class, "DateTimeWithTzType", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(dateTypeEDataType, Date.class, "DateType", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(dateWithTzTypeEDataType, ZonedDateTime.class, "DateWithTzType", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(emptyTypeEDataType, Void.class, "EmptyType", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(ipV4AddressTypeEDataType, IPv4.class, "IpV4AddressType", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
-		initEDataType(dateTimeTypeEDataType, DateTime.class, "DateTimeType", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
-		initEDataType(uriReferenceTypeEDataType, URI.class, "UriReferenceType", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
-		initEDataType(uuidTypeEDataType, UUID.class, "UuidType", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
-		initEDataType(base64TypeEDataType, gov.nist.secauto.metaschema.datatypes.Base64.class, "Base64Type", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
-		initEDataType(uriTypeEDataType, URI.class, "UriType", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(ipV6AddressTypeEDataType, IPv6.class, "IpV6AddressType", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(markupLineTypeEDataType, MarkupLine.class, "MarkupLineType", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(markupMultilineTypeEDataType, MarkupMultiline.class, "MarkupMultilineType", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
-		initEDataType(emptyTypeEDataType, Void.class, "EmptyType", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
-		initEDataType(dateTimeWithTzTypeEDataType, ZonedDateTime.class, "DateTimeWithTzType", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
-		initEDataType(ipV6AddressTypeEDataType, IPv6.class, "IpV6AddressType", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(uriReferenceTypeEDataType, URI.class, "UriReferenceType", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(uriTypeEDataType, URI.class, "UriType", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(uuidTypeEDataType, UUID.class, "UuidType", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);
@@ -2247,12 +2247,6 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>address"
 		   });
 		addAnnotation
-		  (getAddress_Type(),
-		   source,
-		   new String[] {
-			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>address.<FlagInstance>location-type"
-		   });
-		addAnnotation
 		  (getAddress_AddrLines(),
 		   source,
 		   new String[] {
@@ -2265,10 +2259,10 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>address.<FieldInstance>city"
 		   });
 		addAnnotation
-		  (getAddress_State(),
+		  (getAddress_Country(),
 		   source,
 		   new String[] {
-			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>address.<FieldInstance>state"
+			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>address.<FieldInstance>country"
 		   });
 		addAnnotation
 		  (getAddress_PostalCode(),
@@ -2277,10 +2271,16 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>address.<FieldInstance>postal-code"
 		   });
 		addAnnotation
-		  (getAddress_Country(),
+		  (getAddress_State(),
 		   source,
 		   new String[] {
-			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>address.<FieldInstance>country"
+			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>address.<FieldInstance>state"
+		   });
+		addAnnotation
+		  (getAddress_Type(),
+		   source,
+		   new String[] {
+			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>address.<FlagInstance>location-type"
 		   });
 		addAnnotation
 		  (annotationEClass,
@@ -2301,16 +2301,16 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>annotation.<FlagInstance>ns"
 		   });
 		addAnnotation
-		  (getAnnotation_Value(),
-		   source,
-		   new String[] {
-			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>annotation.<FlagInstance>value"
-		   });
-		addAnnotation
 		  (getAnnotation_Remarks(),
 		   source,
 		   new String[] {
 			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>annotation.<FieldInstance>remarks"
+		   });
+		addAnnotation
+		  (getAnnotation_Value(),
+		   source,
+		   new String[] {
+			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>annotation.<FlagInstance>value"
 		   });
 		addAnnotation
 		  (backMatterEClass,
@@ -2331,22 +2331,10 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>resource"
 		   });
 		addAnnotation
-		  (getBackMatterResource_Title(),
+		  (getBackMatterResource_Base64(),
 		   source,
 		   new String[] {
-			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>resource.<FieldInstance>title"
-		   });
-		addAnnotation
-		  (getBackMatterResource_Description(),
-		   source,
-		   new String[] {
-			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>resource.<FieldInstance>description"
-		   });
-		addAnnotation
-		  (getBackMatterResource_Remarks(),
-		   source,
-		   new String[] {
-			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>resource.<FieldInstance>remarks"
+			   "source", "<Metaschema>oscal-metadata.<FieldDefinition>base64"
 		   });
 		addAnnotation
 		  (getBackMatterResource_Citation(),
@@ -2355,16 +2343,10 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>citation"
 		   });
 		addAnnotation
-		  (getBackMatterResource_Rlinks(),
+		  (getBackMatterResource_Description(),
 		   source,
 		   new String[] {
-			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>rlink"
-		   });
-		addAnnotation
-		  (getBackMatterResource_Props(),
-		   source,
-		   new String[] {
-			   "source", "<Metaschema>oscal-metadata.<FieldDefinition>property"
+			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>resource.<FieldInstance>description"
 		   });
 		addAnnotation
 		  (getBackMatterResource_DocumentIds(),
@@ -2373,10 +2355,28 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 			   "source", "<Metaschema>oscal-metadata.<FieldDefinition>document-id"
 		   });
 		addAnnotation
-		  (getBackMatterResource_Base64(),
+		  (getBackMatterResource_Props(),
 		   source,
 		   new String[] {
-			   "source", "<Metaschema>oscal-metadata.<FieldDefinition>base64"
+			   "source", "<Metaschema>oscal-metadata.<FieldDefinition>property"
+		   });
+		addAnnotation
+		  (getBackMatterResource_Remarks(),
+		   source,
+		   new String[] {
+			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>resource.<FieldInstance>remarks"
+		   });
+		addAnnotation
+		  (getBackMatterResource_Rlinks(),
+		   source,
+		   new String[] {
+			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>rlink"
+		   });
+		addAnnotation
+		  (getBackMatterResource_Title(),
+		   source,
+		   new String[] {
+			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>resource.<FieldInstance>title"
 		   });
 		addAnnotation
 		  (base64EClass,
@@ -2445,16 +2445,16 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>link.<FlagInstance>href"
 		   });
 		addAnnotation
-		  (getLink_Rel(),
-		   source,
-		   new String[] {
-			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>link.<FlagInstance>rel"
-		   });
-		addAnnotation
 		  (getLink_MediaType(),
 		   source,
 		   new String[] {
 			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>link.<FlagInstance>media-type"
+		   });
+		addAnnotation
+		  (getLink_Rel(),
+		   source,
+		   new String[] {
+			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>link.<FlagInstance>rel"
 		   });
 		addAnnotation
 		  (getLink_Text(),
@@ -2469,10 +2469,10 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>location"
 		   });
 		addAnnotation
-		  (getLocation_Title(),
+		  (getLocation_Address(),
 		   source,
 		   new String[] {
-			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>location.<FieldInstance>title"
+			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>address"
 		   });
 		addAnnotation
 		  (getLocation_EmailAddresses(),
@@ -2481,34 +2481,10 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>location.<FieldInstance>email-address"
 		   });
 		addAnnotation
-		  (getLocation_Urls(),
-		   source,
-		   new String[] {
-			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>location.<FieldInstance>url"
-		   });
-		addAnnotation
-		  (getLocation_Remarks(),
-		   source,
-		   new String[] {
-			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>location.<FieldInstance>remarks"
-		   });
-		addAnnotation
-		  (getLocation_Address(),
-		   source,
-		   new String[] {
-			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>address"
-		   });
-		addAnnotation
 		  (getLocation_Links(),
 		   source,
 		   new String[] {
 			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>link"
-		   });
-		addAnnotation
-		  (getLocation_TelephoneNumbers(),
-		   source,
-		   new String[] {
-			   "source", "<Metaschema>oscal-metadata.<FieldDefinition>telephone-number"
 		   });
 		addAnnotation
 		  (getLocation_Props(),
@@ -2517,52 +2493,46 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 			   "source", "<Metaschema>oscal-metadata.<FieldDefinition>property"
 		   });
 		addAnnotation
+		  (getLocation_Remarks(),
+		   source,
+		   new String[] {
+			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>location.<FieldInstance>remarks"
+		   });
+		addAnnotation
+		  (getLocation_TelephoneNumbers(),
+		   source,
+		   new String[] {
+			   "source", "<Metaschema>oscal-metadata.<FieldDefinition>telephone-number"
+		   });
+		addAnnotation
+		  (getLocation_Title(),
+		   source,
+		   new String[] {
+			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>location.<FieldInstance>title"
+		   });
+		addAnnotation
+		  (getLocation_Urls(),
+		   source,
+		   new String[] {
+			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>location.<FieldInstance>url"
+		   });
+		addAnnotation
 		  (metadataEClass,
 		   source,
 		   new String[] {
 			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>metadata"
 		   });
 		addAnnotation
-		  (getMetadata_Title(),
+		  (getMetadata_DocumentIds(),
 		   source,
 		   new String[] {
-			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>metadata.<FieldInstance>title"
-		   });
-		addAnnotation
-		  (getMetadata_Published(),
-		   source,
-		   new String[] {
-			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>metadata.<FieldInstance>published"
+			   "source", "<Metaschema>oscal-metadata.<FieldDefinition>document-id"
 		   });
 		addAnnotation
 		  (getMetadata_LastModified(),
 		   source,
 		   new String[] {
 			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>metadata.<FieldInstance>last-modified"
-		   });
-		addAnnotation
-		  (getMetadata_Version(),
-		   source,
-		   new String[] {
-			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>metadata.<FieldInstance>version"
-		   });
-		addAnnotation
-		  (getMetadata_OscalVersion(),
-		   source,
-		   new String[] {
-			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>metadata.<FieldInstance>oscal-version"
-		   });
-		addAnnotation
-		  (getMetadata_Remarks(),
-		   source,
-		   new String[] {
-			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>metadata.<FieldInstance>remarks"
-		   });
-		addAnnotation
-		  (getMetadata_Roles(),
-		   source,
-		   new String[] {
-			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>role"
 		   });
 		addAnnotation
 		  (getMetadata_Links(),
@@ -2577,10 +2547,10 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>location"
 		   });
 		addAnnotation
-		  (getMetadata_ResponsibleParties(),
+		  (getMetadata_OscalVersion(),
 		   source,
 		   new String[] {
-			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>responsible-party"
+			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>metadata.<FieldInstance>oscal-version"
 		   });
 		addAnnotation
 		  (getMetadata_Parties(),
@@ -2589,22 +2559,52 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>party"
 		   });
 		addAnnotation
+		  (getMetadata_Props(),
+		   source,
+		   new String[] {
+			   "source", "<Metaschema>oscal-metadata.<FieldDefinition>property"
+		   });
+		addAnnotation
+		  (getMetadata_Published(),
+		   source,
+		   new String[] {
+			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>metadata.<FieldInstance>published"
+		   });
+		addAnnotation
+		  (getMetadata_Remarks(),
+		   source,
+		   new String[] {
+			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>metadata.<FieldInstance>remarks"
+		   });
+		addAnnotation
+		  (getMetadata_ResponsibleParties(),
+		   source,
+		   new String[] {
+			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>responsible-party"
+		   });
+		addAnnotation
 		  (getMetadata_Revisions(),
 		   source,
 		   new String[] {
 			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>revision"
 		   });
 		addAnnotation
-		  (getMetadata_DocumentIds(),
+		  (getMetadata_Roles(),
 		   source,
 		   new String[] {
-			   "source", "<Metaschema>oscal-metadata.<FieldDefinition>document-id"
+			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>role"
 		   });
 		addAnnotation
-		  (getMetadata_Props(),
+		  (getMetadata_Title(),
 		   source,
 		   new String[] {
-			   "source", "<Metaschema>oscal-metadata.<FieldDefinition>property"
+			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>metadata.<FieldInstance>title"
+		   });
+		addAnnotation
+		  (getMetadata_Version(),
+		   source,
+		   new String[] {
+			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>metadata.<FieldInstance>version"
 		   });
 		addAnnotation
 		  (partyEClass,
@@ -2613,28 +2613,28 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>party"
 		   });
 		addAnnotation
-		  (getParty_Type(),
+		  (getParty_Addresses(),
 		   source,
 		   new String[] {
-			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>party.<FlagInstance>type"
-		   });
-		addAnnotation
-		  (getParty_Name(),
-		   source,
-		   new String[] {
-			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>party.<FieldInstance>name"
-		   });
-		addAnnotation
-		  (getParty_ShortName(),
-		   source,
-		   new String[] {
-			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>party.<FieldInstance>short-name"
+			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>address"
 		   });
 		addAnnotation
 		  (getParty_EmailAddresses(),
 		   source,
 		   new String[] {
 			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>party.<FieldInstance>email-address"
+		   });
+		addAnnotation
+		  (getParty_ExternalIds(),
+		   source,
+		   new String[] {
+			   "source", "<Metaschema>oscal-metadata.<FieldDefinition>external-id"
+		   });
+		addAnnotation
+		  (getParty_Links(),
+		   source,
+		   new String[] {
+			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>link"
 		   });
 		addAnnotation
 		  (getParty_LocationUuids(),
@@ -2649,28 +2649,10 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>party.<FieldInstance>member-of-organization"
 		   });
 		addAnnotation
-		  (getParty_Remarks(),
+		  (getParty_Name(),
 		   source,
 		   new String[] {
-			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>party.<FieldInstance>remarks"
-		   });
-		addAnnotation
-		  (getParty_Addresses(),
-		   source,
-		   new String[] {
-			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>address"
-		   });
-		addAnnotation
-		  (getParty_Links(),
-		   source,
-		   new String[] {
-			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>link"
-		   });
-		addAnnotation
-		  (getParty_ExternalIds(),
-		   source,
-		   new String[] {
-			   "source", "<Metaschema>oscal-metadata.<FieldDefinition>external-id"
+			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>party.<FieldInstance>name"
 		   });
 		addAnnotation
 		  (getParty_Props(),
@@ -2679,16 +2661,40 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 			   "source", "<Metaschema>oscal-metadata.<FieldDefinition>property"
 		   });
 		addAnnotation
+		  (getParty_Remarks(),
+		   source,
+		   new String[] {
+			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>party.<FieldInstance>remarks"
+		   });
+		addAnnotation
+		  (getParty_ShortName(),
+		   source,
+		   new String[] {
+			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>party.<FieldInstance>short-name"
+		   });
+		addAnnotation
 		  (getParty_TelephoneNumbers(),
 		   source,
 		   new String[] {
 			   "source", "<Metaschema>oscal-metadata.<FieldDefinition>telephone-number"
 		   });
 		addAnnotation
+		  (getParty_Type(),
+		   source,
+		   new String[] {
+			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>party.<FlagInstance>type"
+		   });
+		addAnnotation
 		  (propertyEClass,
 		   source,
 		   new String[] {
 			   "source", "<Metaschema>oscal-metadata.<FieldDefinition>property"
+		   });
+		addAnnotation
+		  (getProperty_Clazz(),
+		   source,
+		   new String[] {
+			   "source", "<Metaschema>oscal-metadata.<FieldDefinition>property.<FlagInstance>class"
 		   });
 		addAnnotation
 		  (getProperty_Name(),
@@ -2703,28 +2709,22 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 			   "source", "<Metaschema>oscal-metadata.<FieldDefinition>property.<FlagInstance>ns"
 		   });
 		addAnnotation
-		  (getProperty_Clazz(),
-		   source,
-		   new String[] {
-			   "source", "<Metaschema>oscal-metadata.<FieldDefinition>property.<FlagInstance>class"
-		   });
-		addAnnotation
 		  (resourceCitationEClass,
 		   source,
 		   new String[] {
 			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>citation"
 		   });
 		addAnnotation
-		  (getResourceCitation_Text(),
-		   source,
-		   new String[] {
-			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>citation.<FieldInstance>text"
-		   });
-		addAnnotation
 		  (getResourceCitation_Props(),
 		   source,
 		   new String[] {
 			   "source", "<Metaschema>oscal-metadata.<FieldDefinition>property"
+		   });
+		addAnnotation
+		  (getResourceCitation_Text(),
+		   source,
+		   new String[] {
+			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>citation.<FieldInstance>text"
 		   });
 		addAnnotation
 		  (resourceRlinkEClass,
@@ -2739,16 +2739,16 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>rlink.<FlagInstance>href"
 		   });
 		addAnnotation
-		  (getResourceRlink_MediaType(),
-		   source,
-		   new String[] {
-			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>rlink.<FlagInstance>media-type"
-		   });
-		addAnnotation
 		  (getResourceRlink_Hashes(),
 		   source,
 		   new String[] {
 			   "source", "<Metaschema>oscal-metadata.<FieldDefinition>hash"
+		   });
+		addAnnotation
+		  (getResourceRlink_MediaType(),
+		   source,
+		   new String[] {
+			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>rlink.<FlagInstance>media-type"
 		   });
 		addAnnotation
 		  (responsiblePartyEClass,
@@ -2757,10 +2757,10 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>responsible-party"
 		   });
 		addAnnotation
-		  (getResponsibleParty_RoleId(),
+		  (getResponsibleParty_Links(),
 		   source,
 		   new String[] {
-			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>responsible-party.<FlagInstance>role-id"
+			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>link"
 		   });
 		addAnnotation
 		  (getResponsibleParty_PartyUuids(),
@@ -2769,22 +2769,22 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>responsible-party.<FieldInstance>party-uuid"
 		   });
 		addAnnotation
+		  (getResponsibleParty_Props(),
+		   source,
+		   new String[] {
+			   "source", "<Metaschema>oscal-metadata.<FieldDefinition>property"
+		   });
+		addAnnotation
 		  (getResponsibleParty_Remarks(),
 		   source,
 		   new String[] {
 			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>responsible-party.<FieldInstance>remarks"
 		   });
 		addAnnotation
-		  (getResponsibleParty_Links(),
+		  (getResponsibleParty_RoleId(),
 		   source,
 		   new String[] {
-			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>link"
-		   });
-		addAnnotation
-		  (getResponsibleParty_Props(),
-		   source,
-		   new String[] {
-			   "source", "<Metaschema>oscal-metadata.<FieldDefinition>property"
+			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>responsible-party.<FlagInstance>role-id"
 		   });
 		addAnnotation
 		  (responsibleRoleEClass,
@@ -2793,10 +2793,10 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>responsible-role"
 		   });
 		addAnnotation
-		  (getResponsibleRole_RoleId(),
+		  (getResponsibleRole_Links(),
 		   source,
 		   new String[] {
-			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>responsible-role.<FlagInstance>role-id"
+			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>link"
 		   });
 		addAnnotation
 		  (getResponsibleRole_PartyUuids(),
@@ -2805,22 +2805,22 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>responsible-role.<FieldInstance>party-uuid"
 		   });
 		addAnnotation
+		  (getResponsibleRole_Props(),
+		   source,
+		   new String[] {
+			   "source", "<Metaschema>oscal-metadata.<FieldDefinition>property"
+		   });
+		addAnnotation
 		  (getResponsibleRole_Remarks(),
 		   source,
 		   new String[] {
 			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>responsible-role.<FieldInstance>remarks"
 		   });
 		addAnnotation
-		  (getResponsibleRole_Links(),
+		  (getResponsibleRole_RoleId(),
 		   source,
 		   new String[] {
-			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>link"
-		   });
-		addAnnotation
-		  (getResponsibleRole_Props(),
-		   source,
-		   new String[] {
-			   "source", "<Metaschema>oscal-metadata.<FieldDefinition>property"
+			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>responsible-role.<FlagInstance>role-id"
 		   });
 		addAnnotation
 		  (revisionEClass,
@@ -2829,40 +2829,10 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>revision"
 		   });
 		addAnnotation
-		  (getRevision_Title(),
-		   source,
-		   new String[] {
-			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>revision.<FieldInstance>title"
-		   });
-		addAnnotation
-		  (getRevision_Published(),
-		   source,
-		   new String[] {
-			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>revision.<FieldInstance>published"
-		   });
-		addAnnotation
 		  (getRevision_LastModified(),
 		   source,
 		   new String[] {
 			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>revision.<FieldInstance>last-modified"
-		   });
-		addAnnotation
-		  (getRevision_Version(),
-		   source,
-		   new String[] {
-			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>revision.<FieldInstance>version"
-		   });
-		addAnnotation
-		  (getRevision_OscalVersion(),
-		   source,
-		   new String[] {
-			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>revision.<FieldInstance>oscal-version"
-		   });
-		addAnnotation
-		  (getRevision_Remarks(),
-		   source,
-		   new String[] {
-			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>revision.<FieldInstance>remarks"
 		   });
 		addAnnotation
 		  (getRevision_Links(),
@@ -2871,10 +2841,40 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>link"
 		   });
 		addAnnotation
+		  (getRevision_OscalVersion(),
+		   source,
+		   new String[] {
+			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>revision.<FieldInstance>oscal-version"
+		   });
+		addAnnotation
 		  (getRevision_Props(),
 		   source,
 		   new String[] {
 			   "source", "<Metaschema>oscal-metadata.<FieldDefinition>property"
+		   });
+		addAnnotation
+		  (getRevision_Published(),
+		   source,
+		   new String[] {
+			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>revision.<FieldInstance>published"
+		   });
+		addAnnotation
+		  (getRevision_Remarks(),
+		   source,
+		   new String[] {
+			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>revision.<FieldInstance>remarks"
+		   });
+		addAnnotation
+		  (getRevision_Title(),
+		   source,
+		   new String[] {
+			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>revision.<FieldInstance>title"
+		   });
+		addAnnotation
+		  (getRevision_Version(),
+		   source,
+		   new String[] {
+			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>revision.<FieldInstance>version"
 		   });
 		addAnnotation
 		  (roleEClass,
@@ -2883,34 +2883,16 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>role"
 		   });
 		addAnnotation
-		  (getRole_Id(),
-		   source,
-		   new String[] {
-			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>role.<FlagInstance>id"
-		   });
-		addAnnotation
-		  (getRole_Title(),
-		   source,
-		   new String[] {
-			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>role.<FieldInstance>title"
-		   });
-		addAnnotation
-		  (getRole_ShortName(),
-		   source,
-		   new String[] {
-			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>role.<FieldInstance>short-name"
-		   });
-		addAnnotation
 		  (getRole_Description(),
 		   source,
 		   new String[] {
 			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>role.<FieldInstance>description"
 		   });
 		addAnnotation
-		  (getRole_Remarks(),
+		  (getRole_Id(),
 		   source,
 		   new String[] {
-			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>role.<FieldInstance>remarks"
+			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>role.<FlagInstance>id"
 		   });
 		addAnnotation
 		  (getRole_Links(),
@@ -2923,6 +2905,24 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 		   source,
 		   new String[] {
 			   "source", "<Metaschema>oscal-metadata.<FieldDefinition>property"
+		   });
+		addAnnotation
+		  (getRole_Remarks(),
+		   source,
+		   new String[] {
+			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>role.<FieldInstance>remarks"
+		   });
+		addAnnotation
+		  (getRole_ShortName(),
+		   source,
+		   new String[] {
+			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>role.<FieldInstance>short-name"
+		   });
+		addAnnotation
+		  (getRole_Title(),
+		   source,
+		   new String[] {
+			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>role.<FieldInstance>title"
 		   });
 		addAnnotation
 		  (telephoneNumberEClass,

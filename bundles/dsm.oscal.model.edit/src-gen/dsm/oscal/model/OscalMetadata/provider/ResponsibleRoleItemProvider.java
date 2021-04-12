@@ -20,6 +20,7 @@ import dsm.oscal.model.OscalMetadata.OscalMetadataFactory;
 import dsm.oscal.model.OscalMetadata.OscalMetadataPackage;
 import dsm.oscal.model.OscalMetadata.ResponsibleRole;
 
+import gov.nist.secauto.metaschema.datatypes.markup.MarkupMultiline;
 import java.util.Collection;
 import java.util.List;
 
@@ -77,9 +78,9 @@ public class ResponsibleRoleItemProvider
 			super.getPropertyDescriptors(object);
 
 			addAnnotationsPropertyDescriptor(object);
-			addRoleIdPropertyDescriptor(object);
 			addPartyUuidsPropertyDescriptor(object);
 			addRemarksPropertyDescriptor(object);
+			addRoleIdPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -222,7 +223,8 @@ public class ResponsibleRoleItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ResponsibleRole)object).getRoleId();
+		MarkupMultiline labelValue = ((ResponsibleRole)object).getRemarks();
+		String label = labelValue == null ? null : labelValue.toString();
 		return label == null || label.length() == 0 ?
 			getString("_UI_ResponsibleRole_type") :
 			getString("_UI_ResponsibleRole_type") + " " + label;
@@ -241,9 +243,9 @@ public class ResponsibleRoleItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ResponsibleRole.class)) {
-			case OscalMetadataPackage.RESPONSIBLE_ROLE__ROLE_ID:
 			case OscalMetadataPackage.RESPONSIBLE_ROLE__PARTY_UUIDS:
 			case OscalMetadataPackage.RESPONSIBLE_ROLE__REMARKS:
+			case OscalMetadataPackage.RESPONSIBLE_ROLE__ROLE_ID:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case OscalMetadataPackage.RESPONSIBLE_ROLE__LINKS:

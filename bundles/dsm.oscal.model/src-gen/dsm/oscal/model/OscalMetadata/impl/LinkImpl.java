@@ -38,8 +38,8 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * </p>
  * <ul>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.LinkImpl#getEHref <em>EHref</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.impl.LinkImpl#getRel <em>Rel</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.LinkImpl#getMediaType <em>Media Type</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.impl.LinkImpl#getRel <em>Rel</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.LinkImpl#getText <em>Text</em>}</li>
  * </ul>
  *
@@ -67,26 +67,6 @@ public class LinkImpl extends MinimalEObjectImpl.Container implements Link {
 	protected URI eHref = EHREF_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getRel() <em>Rel</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRel()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String REL_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getRel() <em>Rel</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRel()
-	 * @generated
-	 * @ordered
-	 */
-	protected String rel = REL_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getMediaType() <em>Media Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -105,6 +85,26 @@ public class LinkImpl extends MinimalEObjectImpl.Container implements Link {
 	 * @ordered
 	 */
 	protected String mediaType = MEDIA_TYPE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getRel() <em>Rel</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRel()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String REL_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getRel() <em>Rel</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRel()
+	 * @generated
+	 * @ordered
+	 */
+	protected String rel = REL_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getText() <em>Text</em>}' attribute.
@@ -247,10 +247,10 @@ public class LinkImpl extends MinimalEObjectImpl.Container implements Link {
 		switch (featureID) {
 			case OscalMetadataPackage.LINK__EHREF:
 				return getEHref();
-			case OscalMetadataPackage.LINK__REL:
-				return getRel();
 			case OscalMetadataPackage.LINK__MEDIA_TYPE:
 				return getMediaType();
+			case OscalMetadataPackage.LINK__REL:
+				return getRel();
 			case OscalMetadataPackage.LINK__TEXT:
 				return getText();
 		}
@@ -268,11 +268,11 @@ public class LinkImpl extends MinimalEObjectImpl.Container implements Link {
 			case OscalMetadataPackage.LINK__EHREF:
 				setEHref((URI)newValue);
 				return;
-			case OscalMetadataPackage.LINK__REL:
-				setRel((String)newValue);
-				return;
 			case OscalMetadataPackage.LINK__MEDIA_TYPE:
 				setMediaType((String)newValue);
+				return;
+			case OscalMetadataPackage.LINK__REL:
+				setRel((String)newValue);
 				return;
 			case OscalMetadataPackage.LINK__TEXT:
 				setText((MarkupLine)newValue);
@@ -292,11 +292,11 @@ public class LinkImpl extends MinimalEObjectImpl.Container implements Link {
 			case OscalMetadataPackage.LINK__EHREF:
 				setEHref(EHREF_EDEFAULT);
 				return;
-			case OscalMetadataPackage.LINK__REL:
-				setRel(REL_EDEFAULT);
-				return;
 			case OscalMetadataPackage.LINK__MEDIA_TYPE:
 				setMediaType(MEDIA_TYPE_EDEFAULT);
+				return;
+			case OscalMetadataPackage.LINK__REL:
+				setRel(REL_EDEFAULT);
 				return;
 			case OscalMetadataPackage.LINK__TEXT:
 				setText(TEXT_EDEFAULT);
@@ -315,10 +315,10 @@ public class LinkImpl extends MinimalEObjectImpl.Container implements Link {
 		switch (featureID) {
 			case OscalMetadataPackage.LINK__EHREF:
 				return EHREF_EDEFAULT == null ? eHref != null : !EHREF_EDEFAULT.equals(eHref);
-			case OscalMetadataPackage.LINK__REL:
-				return REL_EDEFAULT == null ? rel != null : !REL_EDEFAULT.equals(rel);
 			case OscalMetadataPackage.LINK__MEDIA_TYPE:
 				return MEDIA_TYPE_EDEFAULT == null ? mediaType != null : !MEDIA_TYPE_EDEFAULT.equals(mediaType);
+			case OscalMetadataPackage.LINK__REL:
+				return REL_EDEFAULT == null ? rel != null : !REL_EDEFAULT.equals(rel);
 			case OscalMetadataPackage.LINK__TEXT:
 				return TEXT_EDEFAULT == null ? text != null : !TEXT_EDEFAULT.equals(text);
 		}
@@ -337,10 +337,10 @@ public class LinkImpl extends MinimalEObjectImpl.Container implements Link {
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (eHref: ");
 		result.append(eHref);
-		result.append(", rel: ");
-		result.append(rel);
 		result.append(", mediaType: ");
 		result.append(mediaType);
+		result.append(", rel: ");
+		result.append(rel);
 		result.append(", text: ");
 		result.append(text);
 		result.append(')');
