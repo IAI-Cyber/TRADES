@@ -262,6 +262,8 @@ public class MetaschemaToEcoreTransformer {
 				eDataToGenerate.add(entry.getKey());
 			}
 		}
+		
+		Collections.sort(eDataToGenerate, Comparator.comparing(DataType::name));
 
 		OscalDataTypeHandlerGenerator genTypeGenerator = new OscalDataTypeHandlerGenerator("dsm.oscal.model", (msg,
 				exVariable) -> "dsm.oscal.model.OSCALModelActivator.logError(\"" + msg + "\", " + exVariable + ")",
@@ -403,10 +405,9 @@ public class MetaschemaToEcoreTransformer {
 				String instanceClassName = genType.getTypeName().toString();
 
 				// For type mapped to String use UString
-				eDataType = switch (instanceClassName) {
-				case "java.lang.String" -> EcorePackage.eINSTANCE.getEString();
-				default -> null;
-				};
+				if("java.lang.String".equals(instanceClassName)) {
+					eDataType = EcorePackage.eINSTANCE.getEString();
+				}
 
 				// Only creates a new data types when required
 				if (eDataType == null) {

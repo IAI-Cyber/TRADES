@@ -15,6 +15,7 @@ package dsm.oscal.ext;
 
 import com.google.common.base.CaseFormat;
 
+import gov.nist.secauto.metaschema.datatypes.IPv4;
 import gov.nist.secauto.metaschema.model.Metaschema;
 import gov.nist.secauto.metaschema.model.instances.AssemblyInstance;
 import gov.nist.secauto.metaschema.model.instances.FieldInstance;

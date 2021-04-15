@@ -17,7 +17,7 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.core.resources;bundle-version="3.13.700",
  org.eclipse.emf.transaction;bundle-version="1.9.1",
  org.apache.poi
-Bundle-RequiredExecutionEnvironment: JavaSE-15
+Bundle-RequiredExecutionEnvironment: JavaSE-11
 Automatic-Module-Name: dsm.TRADES.m2doc
 Bundle-ActivationPolicy: lazy
 Export-Package: dsm.trades.m2doc,

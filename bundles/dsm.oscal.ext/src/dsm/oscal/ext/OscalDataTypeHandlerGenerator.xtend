@@ -21,6 +21,7 @@ import java.util.List
 import java.util.function.BiFunction
 
 import static java.util.stream.Collectors.toList
+import java.util.Comparator
 
 /**
  * Generator that create an helper class to handle custom data types

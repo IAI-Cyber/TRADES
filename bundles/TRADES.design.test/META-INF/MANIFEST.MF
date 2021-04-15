@@ -5,7 +5,7 @@ Bundle-SymbolicName: TRADES.design.test
 Bundle-Version: 2.5.2.qualifier
 Fragment-Host: TRADES.design;bundle-version="2.5.0"
 Automatic-Module-Name: TRADES.design.test
-Bundle-RequiredExecutionEnvironment: JavaSE-15
+Bundle-RequiredExecutionEnvironment: JavaSE-11
 Require-Bundle: org.junit;bundle-version="4.13.0",
  dsm.TRADES.testlib,
  org.assertj;bundle-version="3.14.0"

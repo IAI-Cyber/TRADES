@@ -4,7 +4,7 @@ Bundle-Name: OSCAL Ext Sirius
 Bundle-SymbolicName: dsm.oscal.ext.sirius.tooling;singleton:=true
 Bundle-Version: 2.5.2.qualifier
 Automatic-Module-Name: dsm.oscal.ext.sirius.toolins
-Bundle-RequiredExecutionEnvironment: JavaSE-15
+Bundle-RequiredExecutionEnvironment: JavaSE-11
 Require-Bundle: org.eclipse.sirius.editor.properties;bundle-version="6.4.0",
  dsm.oscal.ext;bundle-version="2.5.2",
  dsm.oscal.model;bundle-version="2.5.2",

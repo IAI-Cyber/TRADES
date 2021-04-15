@@ -2,7 +2,7 @@ target "TRADES"
 
 include "target.tpd"
 
-environment JavaSE-15
+environment JavaSE-11
 
 with requirements,source
 

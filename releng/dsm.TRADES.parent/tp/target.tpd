@@ -1,6 +1,6 @@
 target "TRADES"
 
-environment JavaSE-15
+environment JavaSE-11
 
 with requirements,source
 
@@ -80,7 +80,6 @@ location  "https://download.eclipse.org/tools/orbit/downloads/drops/R20200529191
 }
 
 
-location "https://download.eclipse.org/justj/jres/15/updates/release/15.0.2" {
+location "https://download.eclipse.org/justj/jres/11/updates/release/11.0.2" {
 	org.eclipse.justj.openjdk.hotspot.jre.full.feature.group lazy
-	org.eclipse.justj.openjdk.hotspot.jre.full lazy
 }

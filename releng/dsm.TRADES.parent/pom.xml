@@ -127,7 +127,7 @@
 								<classifier>tp/target</classifier>
 							</artifact>
 						</target>
-						<executionEnvironment>org.eclipse.justj.openjdk.hotspot.jre.full-15</executionEnvironment>
+						<executionEnvironment>org.eclipse.justj.openjdk.hotspot.jre.full-11</executionEnvironment>
 					</configuration>
 				</plugin>
 				<plugin>

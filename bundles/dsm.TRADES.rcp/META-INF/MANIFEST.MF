@@ -10,7 +10,7 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.emf.ecore,
  dsm.oscal.model;bundle-version="2.5.2",
  dsm.TRADES;bundle-version="2.5.2"
-Bundle-RequiredExecutionEnvironment: JavaSE-15
+Bundle-RequiredExecutionEnvironment: JavaSE-11
 Automatic-Module-Name: dsm.TRADES.rcp
 Bundle-ActivationPolicy: lazy
 Bundle-Vendor: IAI Cyber Division

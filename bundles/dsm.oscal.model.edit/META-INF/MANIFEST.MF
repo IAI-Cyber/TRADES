@@ -8,7 +8,7 @@ Bundle-ClassPath: .
 Bundle-Activator: dsm.oscal.model.OscalMetadata.provider.OscalEditPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-15
+Bundle-RequiredExecutionEnvironment: JavaSE-11
 Export-Package: dsm.oscal.model.OscalCatalog.provider,
  dsm.oscal.model.OscalCatalogCommon.provider,
  dsm.oscal.model.OscalMetadata.provider
