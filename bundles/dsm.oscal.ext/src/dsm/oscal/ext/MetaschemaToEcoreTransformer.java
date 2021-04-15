@@ -103,7 +103,6 @@ public class MetaschemaToEcoreTransformer {
 
 	private static final String METASCHEMA_SOURCE = "Metaschema";
 
-
 	private Map<DataType, EDataType> dataTypes = new HashMap<>();
 	private Map<EDataType, DataType> dataTypesReverse = new HashMap<>();
 
@@ -115,9 +114,13 @@ public class MetaschemaToEcoreTransformer {
 
 	private ResourceSetImpl rs;
 
+	private List<GenClass> genClasses = new ArrayList<>();
+
 	private EPackage rootEPackage = null;
 
 	private BiFunction<String, String, String> imageProvider;
+
+	private ISemanticRefactorer refactorer;
 
 	/**
 	 * Command line application to use for the migration
@@ -134,7 +137,7 @@ public class MetaschemaToEcoreTransformer {
 		if (args.length == 0) {
 			throw new IllegalArgumentException("Expecting one argument that target the model plugin");
 		}
-		new MetaschemaToEcoreTransformer(new OSCALImageProvider()).transform(List.of(//
+		new MetaschemaToEcoreTransformer(new OSCALImageProvider(), new OscalSemanticRefactorer()).transform(List.of(//
 //				"metaschema/oscal_assessment-common_metaschema.xml", //
 //				"metaschema/oscal_assessment-plan_metaschema.xml", //
 //				"metaschema/oscal_assessment-results_metaschema.xml", //
@@ -156,8 +159,10 @@ public class MetaschemaToEcoreTransformer {
 	 * @param imageProvider <EPackage name,EClass name,Optional path to an image
 	 *                      contained in the icon folder of the edit plugin>
 	 */
-	public MetaschemaToEcoreTransformer(BiFunction<String, String, String> imageProvider) {
+	public MetaschemaToEcoreTransformer(BiFunction<String, String, String> imageProvider,
+			ISemanticRefactorer refactorer) {
 		this.imageProvider = imageProvider;
+		this.refactorer = refactorer;
 		this.rs = new ResourceSetImpl();
 		rs.getResourceFactoryRegistry().getExtensionToFactoryMap().put("ecore", new XMIResourceFactoryImpl());
 		rs.getResourceFactoryRegistry().getExtensionToFactoryMap().put("genmodel", new XMIResourceFactoryImpl());
@@ -197,9 +202,10 @@ public class MetaschemaToEcoreTransformer {
 		for (EClass eClass : defToEClass.values()) {
 			eClass.getESuperTypes().add(oscalElement);
 		}
-		
-		new SemanticRefactoring(rootEPackage,defToEClass.values()).refactor();
-		
+
+		refactorer.init(rootEPackage);
+		refactorer.refactorSemantic(defToEClass.values());
+
 		sortByName();
 
 		for (Resource r : rs.getResources()) {
@@ -212,17 +218,18 @@ public class MetaschemaToEcoreTransformer {
 		}
 
 		createGenModel(rs, modelFolder, pluginFolder);
-
+		refactorer.refactorGenModel(genClasses);
 	}
 
 	public void sortByName() {
-		for(EPackage ePack : schemaToPackage.values()) {
+		for (EPackage ePack : schemaToPackage.values()) {
 			ECollections.sort(ePack.getEClassifiers(), Comparator.comparing(EClassifier::getName));
-			for(EClassifier eClassifier : ePack.getEClassifiers()) {
+			for (EClassifier eClassifier : ePack.getEClassifiers()) {
 				if (eClassifier instanceof EClass) {
 					EClass eClass = (EClass) eClassifier;
-					ECollections.sort(eClass.getEStructuralFeatures(), Comparator.comparing(EStructuralFeature::getName));
-					
+					ECollections.sort(eClass.getEStructuralFeatures(),
+							Comparator.comparing(EStructuralFeature::getName));
+
 				}
 			}
 		}
@@ -262,7 +269,7 @@ public class MetaschemaToEcoreTransformer {
 				eDataToGenerate.add(entry.getKey());
 			}
 		}
-		
+
 		Collections.sort(eDataToGenerate, Comparator.comparing(DataType::name));
 
 		OscalDataTypeHandlerGenerator genTypeGenerator = new OscalDataTypeHandlerGenerator("dsm.oscal.model", (msg,
@@ -287,6 +294,7 @@ public class MetaschemaToEcoreTransformer {
 		System.out.println("* Customizing gen features");
 		for (GenPackage genPackage : genPacks) {
 			for (GenClass genClass : genPackage.getGenClasses()) {
+				genClasses.add(genClass);
 				if (!genClass.isAbstract() && !genClass.isInterface()) {
 
 					for (GenFeature genFeature : genClass.getGenFeatures()) {
@@ -294,8 +302,9 @@ public class MetaschemaToEcoreTransformer {
 							System.out.println(genClass.getName() + "." + genFeature.getName());
 							genFeature.setPropertyMultiLine(true);
 						}
-						// Set the property description 
-						genFeature.setPropertyDescription(MigrationEcoreUtils.getSimpleDocumentation(genFeature.getEcoreFeature()) );
+						// Set the property description
+						genFeature.setPropertyDescription(
+								MigrationEcoreUtils.getSimpleDocumentation(genFeature.getEcoreFeature()));
 					}
 
 				}
@@ -405,7 +414,7 @@ public class MetaschemaToEcoreTransformer {
 				String instanceClassName = genType.getTypeName().toString();
 
 				// For type mapped to String use UString
-				if("java.lang.String".equals(instanceClassName)) {
+				if ("java.lang.String".equals(instanceClassName)) {
 					eDataType = EcorePackage.eINSTANCE.getEString();
 				}
 
@@ -438,7 +447,6 @@ public class MetaschemaToEcoreTransformer {
 		ePack.setNsPrefix(metadata.getShortName());
 
 		createEClasses(metadata, ePack);
-
 
 		return ePack;
 	}

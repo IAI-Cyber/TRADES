@@ -21,12 +21,15 @@ import static dsm.oscal.ext.matchers.FeatureMatchers.isUnique;
 import static java.util.stream.Collectors.groupingBy;
 import static java.util.stream.Collectors.toList;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 import java.util.function.Predicate;
 
+import org.eclipse.emf.codegen.ecore.genmodel.GenClass;
+import org.eclipse.emf.codegen.ecore.genmodel.GenFeature;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
@@ -40,7 +43,7 @@ import com.google.common.base.CaseFormat;
 
 import dsm.oscal.ext.matchers.EClassifierMatchers;
 
-public class SemanticRefactoring {
+public class OscalSemanticRefactorer implements ISemanticRefactorer {
 
 	private static final Predicate<EStructuralFeature> UUID_ATTR = isUnique()/*
 																				 * Also take non unique and for them to
@@ -49,21 +52,25 @@ public class SemanticRefactoring {
 			.and(isAttributeTyped(UUID.class.getName()));
 	private static final Predicate<EStructuralFeature> ANNOTATIONS_REF = isContainmentTyped("Annotation").and(isMany());
 
-	private final EPackage rootEPackage;
+	private EPackage rootEPackage;
 
-	private final EDataType uuidDataType;
+	private EDataType uuidDataType;
 	private Collection<EClass> eClasses;
 
-	public SemanticRefactoring(EPackage rootEPackage, Collection<EClass> eClasses) {
-		super();
+	private List<EReference> hiddenContainementReferences = new ArrayList<>();
+	private List<GenClass> genClasses;
+
+	@Override
+	public void init(EPackage rootEPackage) {
 		this.rootEPackage = rootEPackage;
-		this.eClasses = eClasses;
 		this.uuidDataType = (EDataType) rootEPackage.getEClassifiers().stream()
 				.filter(hasInstanceClass(UUID.class.getName())).findFirst().get();
 	}
 
-	public void refactor() {
+	@Override
+	public void refactorSemantic(Collection<EClass> eClasses) {
 
+		this.eClasses = eClasses;
 		System.out.println("* Starting semantic refactoring");
 		createUUIDElements();
 		createAnnotationOwner();
@@ -98,7 +105,7 @@ public class SemanticRefactoring {
 
 	}
 
-	public void createUUIDElements() {
+	private void createUUIDElements() {
 		List<EClass> elementWithUniqueId = eClasses.stream()
 				.filter(e -> e.getEStructuralFeatures().stream().filter(UUID_ATTR).count() == 1).collect(toList());
 		if (!elementWithUniqueId.isEmpty()) {
@@ -111,7 +118,7 @@ public class SemanticRefactoring {
 		}
 	}
 
-	public EClass createUUIDElementEClass() {
+	private EClass createUUIDElementEClass() {
 		EClass withIdEclass = createEClass("UUIDElement");
 		EAttribute idAttribute = createAttribute(withIdEclass, "uuid", uuidDataType);
 		idAttribute.setID(true);
@@ -121,14 +128,18 @@ public class SemanticRefactoring {
 		return withIdEclass;
 	}
 
-	public EClass createAnnotationOwnerEClass() {
+	private EClass createAnnotationOwnerEClass() {
 		EClass annotOwner = createEClass("AnnotationOwner");
-		createManyContainmentRef(annotOwner, "annotations",
-				eClasses.stream().filter(EClassifierMatchers.hasName("Annotation")).findFirst().get());
+		EClass annotationEClass = getEClass("Annotation");
+		hiddenContainementReferences.add(createManyContainmentRef(annotOwner, "annotations", annotationEClass));
 		return annotOwner;
 	}
 
-	public EReference createManyContainmentRef(EClass owner, String name, EClass type) {
+	private EClass getEClass(String name) {
+		return eClasses.stream().filter(EClassifierMatchers.hasName(name)).findFirst().get();
+	}
+
+	private EReference createManyContainmentRef(EClass owner, String name, EClass type) {
 		EReference ref = EcoreFactory.eINSTANCE.createEReference();
 		owner.getEStructuralFeatures().add(ref);
 		ref.setName(name);
@@ -138,7 +149,7 @@ public class SemanticRefactoring {
 		return ref;
 	}
 
-	public EAttribute createAttribute(EClass withIdEclass, String name, EClassifier type) {
+	private EAttribute createAttribute(EClass withIdEclass, String name, EClassifier type) {
 		EAttribute idAttribute = EcoreFactory.eINSTANCE.createEAttribute();
 		withIdEclass.getEStructuralFeatures().add(idAttribute);
 		idAttribute.setName(name);
@@ -146,7 +157,7 @@ public class SemanticRefactoring {
 		return idAttribute;
 	}
 
-	public EClass createEClass(String name) {
+	private EClass createEClass(String name) {
 		EClass withIdEclass = EcoreFactory.eINSTANCE.createEClass();
 		withIdEclass.setName(name);
 		rootEPackage.getEClassifiers().add(withIdEclass);
@@ -156,6 +167,19 @@ public class SemanticRefactoring {
 
 	private String toEClassName(EStructuralFeature feature) {
 		return CaseFormat.LOWER_CAMEL.to(CaseFormat.UPPER_CAMEL, feature.getName()) + "Owner";
+	}
+
+	@Override
+	public void refactorGenModel(List<GenClass> genClasses) {
+		this.genClasses = genClasses;
+		for(EReference ref : hiddenContainementReferences) {
+			getGenFeaure(ref).setChildren(false);
+		}
+		
+	}
+	
+	private GenFeature getGenFeaure(EReference ref) {
+		return genClasses.stream().flatMap(g -> g.getGenFeatures().stream()).filter(gf -> gf.getEcoreFeature() == ref).findFirst().get();
 	}
 
 }
