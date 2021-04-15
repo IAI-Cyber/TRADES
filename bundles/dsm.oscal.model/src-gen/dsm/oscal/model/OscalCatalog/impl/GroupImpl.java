@@ -44,7 +44,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -71,7 +70,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class GroupImpl extends MinimalEObjectImpl.Container implements Group {
 	/**
-	 * The cached value of the '{@link #getAnnotations() <em>Annotations</em>}' reference list.
+	 * The cached value of the '{@link #getAnnotations() <em>Annotations</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getAnnotations()
@@ -296,7 +295,7 @@ public class GroupImpl extends MinimalEObjectImpl.Container implements Group {
 	@Override
 	public EList<Annotation> getAnnotations() {
 		if (annotations == null) {
-			annotations = new EObjectResolvingEList<Annotation>(Annotation.class, this, OscalCatalogPackage.GROUP__ANNOTATIONS);
+			annotations = new EObjectContainmentEList<Annotation>(Annotation.class, this, OscalCatalogPackage.GROUP__ANNOTATIONS);
 		}
 		return annotations;
 	}
@@ -387,6 +386,8 @@ public class GroupImpl extends MinimalEObjectImpl.Container implements Group {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case OscalCatalogPackage.GROUP__ANNOTATIONS:
+				return ((InternalEList<?>)getAnnotations()).basicRemove(otherEnd, msgs);
 			case OscalCatalogPackage.GROUP__CONTROLS:
 				return ((InternalEList<?>)getControls()).basicRemove(otherEnd, msgs);
 			case OscalCatalogPackage.GROUP__GROUPS:

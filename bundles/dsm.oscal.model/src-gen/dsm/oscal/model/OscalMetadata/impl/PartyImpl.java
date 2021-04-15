@@ -44,7 +44,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -95,7 +94,7 @@ public class PartyImpl extends MinimalEObjectImpl.Container implements Party {
 	protected UUID uuid = UUID_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getAnnotations() <em>Annotations</em>}' reference list.
+	 * The cached value of the '{@link #getAnnotations() <em>Annotations</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getAnnotations()
@@ -445,7 +444,7 @@ public class PartyImpl extends MinimalEObjectImpl.Container implements Party {
 	@Override
 	public EList<Annotation> getAnnotations() {
 		if (annotations == null) {
-			annotations = new EObjectResolvingEList<Annotation>(Annotation.class, this, OscalMetadataPackage.PARTY__ANNOTATIONS);
+			annotations = new EObjectContainmentEList<Annotation>(Annotation.class, this, OscalMetadataPackage.PARTY__ANNOTATIONS);
 		}
 		return annotations;
 	}
@@ -523,6 +522,8 @@ public class PartyImpl extends MinimalEObjectImpl.Container implements Party {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case OscalMetadataPackage.PARTY__ANNOTATIONS:
+				return ((InternalEList<?>)getAnnotations()).basicRemove(otherEnd, msgs);
 			case OscalMetadataPackage.PARTY__ADDRESSES:
 				return ((InternalEList<?>)getAddresses()).basicRemove(otherEnd, msgs);
 			case OscalMetadataPackage.PARTY__EXTERNAL_IDS:

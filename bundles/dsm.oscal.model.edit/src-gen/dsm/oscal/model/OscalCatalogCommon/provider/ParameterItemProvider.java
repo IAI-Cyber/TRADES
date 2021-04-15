@@ -81,7 +81,6 @@ public class ParameterItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addAnnotationsPropertyDescriptor(object);
 			addClazzPropertyDescriptor(object);
 			addDependsOnPropertyDescriptor(object);
 			addIdPropertyDescriptor(object);
@@ -91,28 +90,6 @@ public class ParameterItemProvider
 			addValuesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Annotations feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addAnnotationsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_AnnotationOwner_annotations_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_AnnotationOwner_annotations_feature", "_UI_AnnotationOwner_type"),
-				 OscalMetadataPackage.Literals.ANNOTATION_OWNER__ANNOTATIONS,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
 	}
 
 	/**
@@ -281,6 +258,7 @@ public class ParameterItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
+			childrenFeatures.add(OscalMetadataPackage.Literals.ANNOTATION_OWNER__ANNOTATIONS);
 			childrenFeatures.add(OscalCatalogCommonPackage.Literals.PARAMETER__CONSTRAINTS);
 			childrenFeatures.add(OscalCatalogCommonPackage.Literals.PARAMETER__GUIDELINES);
 			childrenFeatures.add(OscalCatalogCommonPackage.Literals.PARAMETER__LINKS);
@@ -350,6 +328,7 @@ public class ParameterItemProvider
 			case OscalCatalogCommonPackage.PARAMETER__VALUES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
+			case OscalCatalogCommonPackage.PARAMETER__ANNOTATIONS:
 			case OscalCatalogCommonPackage.PARAMETER__CONSTRAINTS:
 			case OscalCatalogCommonPackage.PARAMETER__GUIDELINES:
 			case OscalCatalogCommonPackage.PARAMETER__LINKS:
@@ -371,6 +350,11 @@ public class ParameterItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OscalMetadataPackage.Literals.ANNOTATION_OWNER__ANNOTATIONS,
+				 OscalMetadataFactory.eINSTANCE.createAnnotation()));
 
 		newChildDescriptors.add
 			(createChildParameter

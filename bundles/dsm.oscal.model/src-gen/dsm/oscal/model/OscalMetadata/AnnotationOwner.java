@@ -37,13 +37,13 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface AnnotationOwner extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Annotations</b></em>' reference list.
+	 * Returns the value of the '<em><b>Annotations</b></em>' containment reference list.
 	 * The list contents are of type {@link dsm.oscal.model.OscalMetadata.Annotation}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Annotations</em>' reference list.
+	 * @return the value of the '<em>Annotations</em>' containment reference list.
 	 * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getAnnotationOwner_Annotations()
-	 * @model
+	 * @model containment="true"
 	 * @generated
 	 */
 	EList<Annotation> getAnnotations();

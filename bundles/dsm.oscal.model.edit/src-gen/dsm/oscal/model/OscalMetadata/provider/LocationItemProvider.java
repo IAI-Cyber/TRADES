@@ -76,7 +76,6 @@ public class LocationItemProvider
 			super.getPropertyDescriptors(object);
 
 			addUuidPropertyDescriptor(object);
-			addAnnotationsPropertyDescriptor(object);
 			addEmailAddressesPropertyDescriptor(object);
 			addRemarksPropertyDescriptor(object);
 			addTitlePropertyDescriptor(object);
@@ -103,28 +102,6 @@ public class LocationItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Annotations feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addAnnotationsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_AnnotationOwner_annotations_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_AnnotationOwner_annotations_feature", "_UI_AnnotationOwner_type"),
-				 OscalMetadataPackage.Literals.ANNOTATION_OWNER__ANNOTATIONS,
-				 true,
-				 false,
-				 true,
-				 null,
 				 null,
 				 null));
 	}
@@ -229,6 +206,7 @@ public class LocationItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
+			childrenFeatures.add(OscalMetadataPackage.Literals.ANNOTATION_OWNER__ANNOTATIONS);
 			childrenFeatures.add(OscalMetadataPackage.Literals.LOCATION__ADDRESS);
 			childrenFeatures.add(OscalMetadataPackage.Literals.LOCATION__LINKS);
 			childrenFeatures.add(OscalMetadataPackage.Literals.LOCATION__PROPS);
@@ -296,6 +274,7 @@ public class LocationItemProvider
 			case OscalMetadataPackage.LOCATION__URLS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
+			case OscalMetadataPackage.LOCATION__ANNOTATIONS:
 			case OscalMetadataPackage.LOCATION__ADDRESS:
 			case OscalMetadataPackage.LOCATION__LINKS:
 			case OscalMetadataPackage.LOCATION__PROPS:
@@ -316,6 +295,11 @@ public class LocationItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OscalMetadataPackage.Literals.ANNOTATION_OWNER__ANNOTATIONS,
+				 OscalMetadataFactory.eINSTANCE.createAnnotation()));
 
 		newChildDescriptors.add
 			(createChildParameter

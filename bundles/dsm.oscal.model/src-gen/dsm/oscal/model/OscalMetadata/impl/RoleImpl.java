@@ -39,7 +39,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -64,7 +63,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class RoleImpl extends MinimalEObjectImpl.Container implements Role {
 	/**
-	 * The cached value of the '{@link #getAnnotations() <em>Annotations</em>}' reference list.
+	 * The cached value of the '{@link #getAnnotations() <em>Annotations</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getAnnotations()
@@ -335,7 +334,7 @@ public class RoleImpl extends MinimalEObjectImpl.Container implements Role {
 	@Override
 	public EList<Annotation> getAnnotations() {
 		if (annotations == null) {
-			annotations = new EObjectResolvingEList<Annotation>(Annotation.class, this, OscalMetadataPackage.ROLE__ANNOTATIONS);
+			annotations = new EObjectContainmentEList<Annotation>(Annotation.class, this, OscalMetadataPackage.ROLE__ANNOTATIONS);
 		}
 		return annotations;
 	}
@@ -374,6 +373,8 @@ public class RoleImpl extends MinimalEObjectImpl.Container implements Role {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case OscalMetadataPackage.ROLE__ANNOTATIONS:
+				return ((InternalEList<?>)getAnnotations()).basicRemove(otherEnd, msgs);
 			case OscalMetadataPackage.ROLE__LINKS:
 				return ((InternalEList<?>)getLinks()).basicRemove(otherEnd, msgs);
 			case OscalMetadataPackage.ROLE__PROPS:

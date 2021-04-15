@@ -43,7 +43,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -90,7 +89,7 @@ public class BackMatterResourceImpl extends MinimalEObjectImpl.Container impleme
 	protected UUID uuid = UUID_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getAnnotations() <em>Annotations</em>}' reference list.
+	 * The cached value of the '{@link #getAnnotations() <em>Annotations</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getAnnotations()
@@ -328,7 +327,7 @@ public class BackMatterResourceImpl extends MinimalEObjectImpl.Container impleme
 	@Override
 	public EList<Annotation> getAnnotations() {
 		if (annotations == null) {
-			annotations = new EObjectResolvingEList<Annotation>(Annotation.class, this, OscalMetadataPackage.BACK_MATTER_RESOURCE__ANNOTATIONS);
+			annotations = new EObjectContainmentEList<Annotation>(Annotation.class, this, OscalMetadataPackage.BACK_MATTER_RESOURCE__ANNOTATIONS);
 		}
 		return annotations;
 	}
@@ -470,6 +469,8 @@ public class BackMatterResourceImpl extends MinimalEObjectImpl.Container impleme
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case OscalMetadataPackage.BACK_MATTER_RESOURCE__ANNOTATIONS:
+				return ((InternalEList<?>)getAnnotations()).basicRemove(otherEnd, msgs);
 			case OscalMetadataPackage.BACK_MATTER_RESOURCE__BASE64:
 				return basicSetBase64(null, msgs);
 			case OscalMetadataPackage.BACK_MATTER_RESOURCE__CITATION:

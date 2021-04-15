@@ -83,34 +83,11 @@ public class ControlItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addAnnotationsPropertyDescriptor(object);
 			addClazzPropertyDescriptor(object);
 			addIdPropertyDescriptor(object);
 			addTitlePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Annotations feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addAnnotationsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_AnnotationOwner_annotations_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_AnnotationOwner_annotations_feature", "_UI_AnnotationOwner_type"),
-				 OscalMetadataPackage.Literals.ANNOTATION_OWNER__ANNOTATIONS,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
 	}
 
 	/**
@@ -191,6 +168,7 @@ public class ControlItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
+			childrenFeatures.add(OscalMetadataPackage.Literals.ANNOTATION_OWNER__ANNOTATIONS);
 			childrenFeatures.add(OscalCatalogPackage.Literals.CONTROL__CONTROLS);
 			childrenFeatures.add(OscalCatalogPackage.Literals.CONTROL__LINKS);
 			childrenFeatures.add(OscalCatalogPackage.Literals.CONTROL__PARAMS);
@@ -256,6 +234,7 @@ public class ControlItemProvider
 			case OscalCatalogPackage.CONTROL__TITLE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
+			case OscalCatalogPackage.CONTROL__ANNOTATIONS:
 			case OscalCatalogPackage.CONTROL__CONTROLS:
 			case OscalCatalogPackage.CONTROL__LINKS:
 			case OscalCatalogPackage.CONTROL__PARAMS:
@@ -277,6 +256,11 @@ public class ControlItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OscalMetadataPackage.Literals.ANNOTATION_OWNER__ANNOTATIONS,
+				 OscalMetadataFactory.eINSTANCE.createAnnotation()));
 
 		newChildDescriptors.add
 			(createChildParameter

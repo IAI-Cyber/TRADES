@@ -133,6 +133,7 @@ public class SemanticRefactoring {
 		owner.getEStructuralFeatures().add(ref);
 		ref.setName(name);
 		ref.setEType(type);
+		ref.setContainment(true);
 		ref.setUpperBound(-1);
 		return ref;
 	}

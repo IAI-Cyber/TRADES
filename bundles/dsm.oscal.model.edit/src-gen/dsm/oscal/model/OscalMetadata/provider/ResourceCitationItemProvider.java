@@ -78,32 +78,9 @@ public class ResourceCitationItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addAnnotationsPropertyDescriptor(object);
 			addTextPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Annotations feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addAnnotationsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_AnnotationOwner_annotations_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_AnnotationOwner_annotations_feature", "_UI_AnnotationOwner_type"),
-				 OscalMetadataPackage.Literals.ANNOTATION_OWNER__ANNOTATIONS,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
 	}
 
 	/**
@@ -140,6 +117,7 @@ public class ResourceCitationItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
+			childrenFeatures.add(OscalMetadataPackage.Literals.ANNOTATION_OWNER__ANNOTATIONS);
 			childrenFeatures.add(OscalMetadataPackage.Literals.RESOURCE_CITATION__PROPS);
 		}
 		return childrenFeatures;
@@ -200,6 +178,7 @@ public class ResourceCitationItemProvider
 			case OscalMetadataPackage.RESOURCE_CITATION__TEXT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
+			case OscalMetadataPackage.RESOURCE_CITATION__ANNOTATIONS:
 			case OscalMetadataPackage.RESOURCE_CITATION__PROPS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
@@ -217,6 +196,11 @@ public class ResourceCitationItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OscalMetadataPackage.Literals.ANNOTATION_OWNER__ANNOTATIONS,
+				 OscalMetadataFactory.eINSTANCE.createAnnotation()));
 
 		newChildDescriptors.add
 			(createChildParameter

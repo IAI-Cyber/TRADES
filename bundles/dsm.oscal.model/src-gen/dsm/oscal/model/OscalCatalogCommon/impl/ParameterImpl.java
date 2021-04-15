@@ -45,7 +45,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -75,7 +74,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class ParameterImpl extends MinimalEObjectImpl.Container implements Parameter {
 	/**
-	 * The cached value of the '{@link #getAnnotations() <em>Annotations</em>}' reference list.
+	 * The cached value of the '{@link #getAnnotations() <em>Annotations</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getAnnotations()
@@ -442,7 +441,7 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
 	@Override
 	public EList<Annotation> getAnnotations() {
 		if (annotations == null) {
-			annotations = new EObjectResolvingEList<Annotation>(Annotation.class, this, OscalCatalogCommonPackage.PARAMETER__ANNOTATIONS);
+			annotations = new EObjectContainmentEList<Annotation>(Annotation.class, this, OscalCatalogCommonPackage.PARAMETER__ANNOTATIONS);
 		}
 		return annotations;
 	}
@@ -552,6 +551,8 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case OscalCatalogCommonPackage.PARAMETER__ANNOTATIONS:
+				return ((InternalEList<?>)getAnnotations()).basicRemove(otherEnd, msgs);
 			case OscalCatalogCommonPackage.PARAMETER__CONSTRAINTS:
 				return ((InternalEList<?>)getConstraints()).basicRemove(otherEnd, msgs);
 			case OscalCatalogCommonPackage.PARAMETER__GUIDELINES:

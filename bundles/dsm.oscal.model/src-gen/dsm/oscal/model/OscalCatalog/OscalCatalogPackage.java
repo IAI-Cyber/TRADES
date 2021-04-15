@@ -163,7 +163,7 @@ public interface OscalCatalogPackage extends EPackage {
 	int CONTROL = 1;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -272,7 +272,7 @@ public interface OscalCatalogPackage extends EPackage {
 	int GROUP = 2;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated

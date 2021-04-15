@@ -76,7 +76,6 @@ public class MetadataItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addAnnotationsPropertyDescriptor(object);
 			addLastModifiedPropertyDescriptor(object);
 			addOscalVersionPropertyDescriptor(object);
 			addPublishedPropertyDescriptor(object);
@@ -85,28 +84,6 @@ public class MetadataItemProvider
 			addVersionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Annotations feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addAnnotationsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_AnnotationOwner_annotations_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_AnnotationOwner_annotations_feature", "_UI_AnnotationOwner_type"),
-				 OscalMetadataPackage.Literals.ANNOTATION_OWNER__ANNOTATIONS,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
 	}
 
 	/**
@@ -253,6 +230,7 @@ public class MetadataItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
+			childrenFeatures.add(OscalMetadataPackage.Literals.ANNOTATION_OWNER__ANNOTATIONS);
 			childrenFeatures.add(OscalMetadataPackage.Literals.METADATA__DOCUMENT_IDS);
 			childrenFeatures.add(OscalMetadataPackage.Literals.METADATA__LINKS);
 			childrenFeatures.add(OscalMetadataPackage.Literals.METADATA__LOCATIONS);
@@ -325,6 +303,7 @@ public class MetadataItemProvider
 			case OscalMetadataPackage.METADATA__VERSION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
+			case OscalMetadataPackage.METADATA__ANNOTATIONS:
 			case OscalMetadataPackage.METADATA__DOCUMENT_IDS:
 			case OscalMetadataPackage.METADATA__LINKS:
 			case OscalMetadataPackage.METADATA__LOCATIONS:
@@ -349,6 +328,11 @@ public class MetadataItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OscalMetadataPackage.Literals.ANNOTATION_OWNER__ANNOTATIONS,
+				 OscalMetadataFactory.eINSTANCE.createAnnotation()));
 
 		newChildDescriptors.add
 			(createChildParameter

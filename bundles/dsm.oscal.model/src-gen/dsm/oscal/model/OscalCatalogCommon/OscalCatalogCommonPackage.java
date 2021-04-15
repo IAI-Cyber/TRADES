@@ -81,7 +81,7 @@ public interface OscalCatalogCommonPackage extends EPackage {
 	int PARAMETER = 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -401,7 +401,7 @@ public interface OscalCatalogCommonPackage extends EPackage {
 	int PART = 5;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated

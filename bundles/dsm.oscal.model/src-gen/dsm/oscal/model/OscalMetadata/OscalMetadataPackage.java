@@ -454,7 +454,7 @@ public interface OscalMetadataPackage extends EPackage {
 	int ANNOTATION_OWNER = 2;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -517,7 +517,7 @@ public interface OscalMetadataPackage extends EPackage {
 	int BACK_MATTER_RESOURCE__UUID = OSCAL_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -832,7 +832,7 @@ public interface OscalMetadataPackage extends EPackage {
 	int LOCATION__UUID = OSCAL_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -931,7 +931,7 @@ public interface OscalMetadataPackage extends EPackage {
 	int LOCATION_OPERATION_COUNT = OSCAL_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1093,7 +1093,7 @@ public interface OscalMetadataPackage extends EPackage {
 	int PARTY__UUID = OSCAL_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1291,7 +1291,7 @@ public interface OscalMetadataPackage extends EPackage {
 	int PROPERTY_OPERATION_COUNT = OSCAL_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1381,7 +1381,7 @@ public interface OscalMetadataPackage extends EPackage {
 	int RESOURCE_RLINK_OPERATION_COUNT = OSCAL_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1453,7 +1453,7 @@ public interface OscalMetadataPackage extends EPackage {
 	int RESPONSIBLE_PARTY_OPERATION_COUNT = OSCAL_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1525,7 +1525,7 @@ public interface OscalMetadataPackage extends EPackage {
 	int RESPONSIBLE_ROLE_OPERATION_COUNT = OSCAL_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1624,7 +1624,7 @@ public interface OscalMetadataPackage extends EPackage {
 	int REVISION_OPERATION_COUNT = OSCAL_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' reference list.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -3271,10 +3271,10 @@ public interface OscalMetadataPackage extends EPackage {
 	EClass getAnnotationOwner();
 
 	/**
-	 * Returns the meta object for the reference list '{@link dsm.oscal.model.OscalMetadata.AnnotationOwner#getAnnotations <em>Annotations</em>}'.
+	 * Returns the meta object for the containment reference list '{@link dsm.oscal.model.OscalMetadata.AnnotationOwner#getAnnotations <em>Annotations</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Annotations</em>'.
+	 * @return the meta object for the containment reference list '<em>Annotations</em>'.
 	 * @see dsm.oscal.model.OscalMetadata.AnnotationOwner#getAnnotations()
 	 * @see #getAnnotationOwner()
 	 * @generated
@@ -4502,7 +4502,7 @@ public interface OscalMetadataPackage extends EPackage {
 		EClass ANNOTATION_OWNER = eINSTANCE.getAnnotationOwner();
 
 		/**
-		 * The meta object literal for the '<em><b>Annotations</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Annotations</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
