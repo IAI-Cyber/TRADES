@@ -90,58 +90,13 @@ public interface OscalCatalogCommonPackage extends EPackage {
 	int PARAMETER__ANNOTATIONS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Clazz</b></em>' attribute.
+	 * The feature id for the '<em><b>Props</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER__CLAZZ = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Constraints</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PARAMETER__CONSTRAINTS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Depends On</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PARAMETER__DEPENDS_ON = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Guidelines</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PARAMETER__GUIDELINES = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 4;
-
-	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PARAMETER__ID = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 5;
-
-	/**
-	 * The feature id for the '<em><b>Label</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PARAMETER__LABEL = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 6;
+	int PARAMETER__PROPS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Links</b></em>' containment reference list.
@@ -150,16 +105,7 @@ public interface OscalCatalogCommonPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER__LINKS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 7;
-
-	/**
-	 * The feature id for the '<em><b>Props</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PARAMETER__PROPS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 8;
+	int PARAMETER__LINKS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Remarks</b></em>' attribute.
@@ -168,7 +114,61 @@ public interface OscalCatalogCommonPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER__REMARKS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 9;
+	int PARAMETER__REMARKS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Clazz</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER__CLAZZ = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Constraints</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER__CONSTRAINTS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Depends On</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER__DEPENDS_ON = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 6;
+
+	/**
+	 * The feature id for the '<em><b>Guidelines</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER__GUIDELINES = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 7;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER__ID = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 8;
+
+	/**
+	 * The feature id for the '<em><b>Label</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER__LABEL = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Select</b></em>' containment reference.
@@ -272,22 +272,22 @@ public interface OscalCatalogCommonPackage extends EPackage {
 	int PARAMETER_CONSTRAINT_TEST = 2;
 
 	/**
-	 * The feature id for the '<em><b>Expression</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PARAMETER_CONSTRAINT_TEST__EXPRESSION = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Remarks</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_CONSTRAINT_TEST__REMARKS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 1;
+	int PARAMETER_CONSTRAINT_TEST__REMARKS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Expression</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER_CONSTRAINT_TEST__EXPRESSION = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Parameter Constraint Test</em>' class.
@@ -410,22 +410,13 @@ public interface OscalCatalogCommonPackage extends EPackage {
 	int PART__ANNOTATIONS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Clazz</b></em>' attribute.
+	 * The feature id for the '<em><b>Props</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PART__CLAZZ = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PART__ID = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 2;
+	int PART__PROPS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Links</b></em>' containment reference list.
@@ -434,7 +425,25 @@ public interface OscalCatalogCommonPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PART__LINKS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 3;
+	int PART__LINKS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Clazz</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PART__CLAZZ = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PART__ID = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -443,7 +452,7 @@ public interface OscalCatalogCommonPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PART__NAME = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 4;
+	int PART__NAME = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Ns</b></em>' attribute.
@@ -452,7 +461,7 @@ public interface OscalCatalogCommonPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PART__NS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 5;
+	int PART__NS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Parts</b></em>' containment reference list.
@@ -461,16 +470,7 @@ public interface OscalCatalogCommonPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PART__PARTS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 6;
-
-	/**
-	 * The feature id for the '<em><b>Props</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PART__PROPS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 7;
+	int PART__PARTS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Prose</b></em>' attribute.
@@ -531,17 +531,6 @@ public interface OscalCatalogCommonPackage extends EPackage {
 	EAttribute getParameter_Id();
 
 	/**
-	 * Returns the meta object for the attribute '{@link dsm.oscal.model.OscalCatalogCommon.Parameter#getClazz <em>Clazz</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Clazz</em>'.
-	 * @see dsm.oscal.model.OscalCatalogCommon.Parameter#getClazz()
-	 * @see #getParameter()
-	 * @generated
-	 */
-	EAttribute getParameter_Clazz();
-
-	/**
 	 * Returns the meta object for the attribute '{@link dsm.oscal.model.OscalCatalogCommon.Parameter#getDependsOn <em>Depends On</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -586,17 +575,6 @@ public interface OscalCatalogCommonPackage extends EPackage {
 	EAttribute getParameter_Values();
 
 	/**
-	 * Returns the meta object for the attribute '{@link dsm.oscal.model.OscalCatalogCommon.Parameter#getRemarks <em>Remarks</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Remarks</em>'.
-	 * @see dsm.oscal.model.OscalCatalogCommon.Parameter#getRemarks()
-	 * @see #getParameter()
-	 * @generated
-	 */
-	EAttribute getParameter_Remarks();
-
-	/**
 	 * Returns the meta object for the containment reference '{@link dsm.oscal.model.OscalCatalogCommon.Parameter#getSelect <em>Select</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -619,17 +597,6 @@ public interface OscalCatalogCommonPackage extends EPackage {
 	EReference getParameter_Guidelines();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link dsm.oscal.model.OscalCatalogCommon.Parameter#getLinks <em>Links</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Links</em>'.
-	 * @see dsm.oscal.model.OscalCatalogCommon.Parameter#getLinks()
-	 * @see #getParameter()
-	 * @generated
-	 */
-	EReference getParameter_Links();
-
-	/**
 	 * Returns the meta object for the containment reference list '{@link dsm.oscal.model.OscalCatalogCommon.Parameter#getConstraints <em>Constraints</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -639,17 +606,6 @@ public interface OscalCatalogCommonPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getParameter_Constraints();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link dsm.oscal.model.OscalCatalogCommon.Parameter#getProps <em>Props</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Props</em>'.
-	 * @see dsm.oscal.model.OscalCatalogCommon.Parameter#getProps()
-	 * @see #getParameter()
-	 * @generated
-	 */
-	EReference getParameter_Props();
 
 	/**
 	 * Returns the meta object for class '{@link dsm.oscal.model.OscalCatalogCommon.ParameterConstraint <em>Parameter Constraint</em>}'.
@@ -703,17 +659,6 @@ public interface OscalCatalogCommonPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getParameterConstraintTest_Expression();
-
-	/**
-	 * Returns the meta object for the attribute '{@link dsm.oscal.model.OscalCatalogCommon.ParameterConstraintTest#getRemarks <em>Remarks</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Remarks</em>'.
-	 * @see dsm.oscal.model.OscalCatalogCommon.ParameterConstraintTest#getRemarks()
-	 * @see #getParameterConstraintTest()
-	 * @generated
-	 */
-	EAttribute getParameterConstraintTest_Remarks();
 
 	/**
 	 * Returns the meta object for class '{@link dsm.oscal.model.OscalCatalogCommon.ParameterGuideline <em>Parameter Guideline</em>}'.
@@ -812,17 +757,6 @@ public interface OscalCatalogCommonPackage extends EPackage {
 	EAttribute getPart_Ns();
 
 	/**
-	 * Returns the meta object for the attribute '{@link dsm.oscal.model.OscalCatalogCommon.Part#getClazz <em>Clazz</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Clazz</em>'.
-	 * @see dsm.oscal.model.OscalCatalogCommon.Part#getClazz()
-	 * @see #getPart()
-	 * @generated
-	 */
-	EAttribute getPart_Clazz();
-
-	/**
 	 * Returns the meta object for the attribute '{@link dsm.oscal.model.OscalCatalogCommon.Part#getTitle <em>Title</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -854,28 +788,6 @@ public interface OscalCatalogCommonPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getPart_Parts();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link dsm.oscal.model.OscalCatalogCommon.Part#getLinks <em>Links</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Links</em>'.
-	 * @see dsm.oscal.model.OscalCatalogCommon.Part#getLinks()
-	 * @see #getPart()
-	 * @generated
-	 */
-	EReference getPart_Links();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link dsm.oscal.model.OscalCatalogCommon.Part#getProps <em>Props</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Props</em>'.
-	 * @see dsm.oscal.model.OscalCatalogCommon.Part#getProps()
-	 * @see #getPart()
-	 * @generated
-	 */
-	EReference getPart_Props();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -919,14 +831,6 @@ public interface OscalCatalogCommonPackage extends EPackage {
 		EAttribute PARAMETER__ID = eINSTANCE.getParameter_Id();
 
 		/**
-		 * The meta object literal for the '<em><b>Clazz</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute PARAMETER__CLAZZ = eINSTANCE.getParameter_Clazz();
-
-		/**
 		 * The meta object literal for the '<em><b>Depends On</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -959,14 +863,6 @@ public interface OscalCatalogCommonPackage extends EPackage {
 		EAttribute PARAMETER__VALUES = eINSTANCE.getParameter_Values();
 
 		/**
-		 * The meta object literal for the '<em><b>Remarks</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute PARAMETER__REMARKS = eINSTANCE.getParameter_Remarks();
-
-		/**
 		 * The meta object literal for the '<em><b>Select</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -983,28 +879,12 @@ public interface OscalCatalogCommonPackage extends EPackage {
 		EReference PARAMETER__GUIDELINES = eINSTANCE.getParameter_Guidelines();
 
 		/**
-		 * The meta object literal for the '<em><b>Links</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference PARAMETER__LINKS = eINSTANCE.getParameter_Links();
-
-		/**
 		 * The meta object literal for the '<em><b>Constraints</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference PARAMETER__CONSTRAINTS = eINSTANCE.getParameter_Constraints();
-
-		/**
-		 * The meta object literal for the '<em><b>Props</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference PARAMETER__PROPS = eINSTANCE.getParameter_Props();
 
 		/**
 		 * The meta object literal for the '{@link dsm.oscal.model.OscalCatalogCommon.impl.ParameterConstraintImpl <em>Parameter Constraint</em>}' class.
@@ -1049,14 +929,6 @@ public interface OscalCatalogCommonPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute PARAMETER_CONSTRAINT_TEST__EXPRESSION = eINSTANCE.getParameterConstraintTest_Expression();
-
-		/**
-		 * The meta object literal for the '<em><b>Remarks</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute PARAMETER_CONSTRAINT_TEST__REMARKS = eINSTANCE.getParameterConstraintTest_Remarks();
 
 		/**
 		 * The meta object literal for the '{@link dsm.oscal.model.OscalCatalogCommon.impl.ParameterGuidelineImpl <em>Parameter Guideline</em>}' class.
@@ -1137,14 +1009,6 @@ public interface OscalCatalogCommonPackage extends EPackage {
 		EAttribute PART__NS = eINSTANCE.getPart_Ns();
 
 		/**
-		 * The meta object literal for the '<em><b>Clazz</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute PART__CLAZZ = eINSTANCE.getPart_Clazz();
-
-		/**
 		 * The meta object literal for the '<em><b>Title</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1167,22 +1031,6 @@ public interface OscalCatalogCommonPackage extends EPackage {
 		 * @generated
 		 */
 		EReference PART__PARTS = eINSTANCE.getPart_Parts();
-
-		/**
-		 * The meta object literal for the '<em><b>Links</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference PART__LINKS = eINSTANCE.getPart_Links();
-
-		/**
-		 * The meta object literal for the '<em><b>Props</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference PART__PROPS = eINSTANCE.getPart_Props();
 
 	}
 

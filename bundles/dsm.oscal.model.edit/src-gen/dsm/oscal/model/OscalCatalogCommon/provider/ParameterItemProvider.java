@@ -81,11 +81,11 @@ public class ParameterItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addRemarksPropertyDescriptor(object);
 			addClazzPropertyDescriptor(object);
 			addDependsOnPropertyDescriptor(object);
 			addIdPropertyDescriptor(object);
 			addLabelPropertyDescriptor(object);
-			addRemarksPropertyDescriptor(object);
 			addUsagePropertyDescriptor(object);
 			addValuesPropertyDescriptor(object);
 		}
@@ -125,9 +125,9 @@ public class ParameterItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Parameter_clazz_feature"),
-				 getString("_UI_Parameter_clazz_description"),
-				 OscalCatalogCommonPackage.Literals.PARAMETER__CLAZZ,
+				 getString("_UI_ElementWithClazz_clazz_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ElementWithClazz_clazz_feature", "_UI_ElementWithClazz_type"),
+				 OscalMetadataPackage.Literals.ELEMENT_WITH_CLAZZ__CLAZZ,
 				 true,
 				 false,
 				 false,
@@ -235,9 +235,9 @@ public class ParameterItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Parameter_remarks_feature"),
-				 getString("_UI_Parameter_remarks_description"),
-				 OscalCatalogCommonPackage.Literals.PARAMETER__REMARKS,
+				 getString("_UI_ElementWithRemarks_remarks_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ElementWithRemarks_remarks_feature", "_UI_ElementWithRemarks_type"),
+				 OscalMetadataPackage.Literals.ELEMENT_WITH_REMARKS__REMARKS,
 				 true,
 				 true,
 				 false,
@@ -258,11 +258,8 @@ public class ParameterItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(OscalMetadataPackage.Literals.ANNOTATION_OWNER__ANNOTATIONS);
 			childrenFeatures.add(OscalCatalogCommonPackage.Literals.PARAMETER__CONSTRAINTS);
 			childrenFeatures.add(OscalCatalogCommonPackage.Literals.PARAMETER__GUIDELINES);
-			childrenFeatures.add(OscalCatalogCommonPackage.Literals.PARAMETER__LINKS);
-			childrenFeatures.add(OscalCatalogCommonPackage.Literals.PARAMETER__PROPS);
 			childrenFeatures.add(OscalCatalogCommonPackage.Literals.PARAMETER__SELECT);
 		}
 		return childrenFeatures;
@@ -319,20 +316,20 @@ public class ParameterItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Parameter.class)) {
+			case OscalCatalogCommonPackage.PARAMETER__ANNOTATIONS:
+			case OscalCatalogCommonPackage.PARAMETER__PROPS:
+			case OscalCatalogCommonPackage.PARAMETER__LINKS:
+			case OscalCatalogCommonPackage.PARAMETER__REMARKS:
 			case OscalCatalogCommonPackage.PARAMETER__CLAZZ:
 			case OscalCatalogCommonPackage.PARAMETER__DEPENDS_ON:
 			case OscalCatalogCommonPackage.PARAMETER__ID:
 			case OscalCatalogCommonPackage.PARAMETER__LABEL:
-			case OscalCatalogCommonPackage.PARAMETER__REMARKS:
 			case OscalCatalogCommonPackage.PARAMETER__USAGE:
 			case OscalCatalogCommonPackage.PARAMETER__VALUES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case OscalCatalogCommonPackage.PARAMETER__ANNOTATIONS:
 			case OscalCatalogCommonPackage.PARAMETER__CONSTRAINTS:
 			case OscalCatalogCommonPackage.PARAMETER__GUIDELINES:
-			case OscalCatalogCommonPackage.PARAMETER__LINKS:
-			case OscalCatalogCommonPackage.PARAMETER__PROPS:
 			case OscalCatalogCommonPackage.PARAMETER__SELECT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
@@ -358,6 +355,16 @@ public class ParameterItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
+				(OscalMetadataPackage.Literals.PROPERTY_OWNER__PROPS,
+				 OscalMetadataFactory.eINSTANCE.createProperty()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OscalMetadataPackage.Literals.LINK_OWNER__LINKS,
+				 OscalMetadataFactory.eINSTANCE.createLink()));
+
+		newChildDescriptors.add
+			(createChildParameter
 				(OscalCatalogCommonPackage.Literals.PARAMETER__CONSTRAINTS,
 				 OscalCatalogCommonFactory.eINSTANCE.createParameterConstraint()));
 
@@ -365,16 +372,6 @@ public class ParameterItemProvider
 			(createChildParameter
 				(OscalCatalogCommonPackage.Literals.PARAMETER__GUIDELINES,
 				 OscalCatalogCommonFactory.eINSTANCE.createParameterGuideline()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OscalCatalogCommonPackage.Literals.PARAMETER__LINKS,
-				 OscalMetadataFactory.eINSTANCE.createLink()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OscalCatalogCommonPackage.Literals.PARAMETER__PROPS,
-				 OscalMetadataFactory.eINSTANCE.createProperty()));
 
 		newChildDescriptors.add
 			(createChildParameter

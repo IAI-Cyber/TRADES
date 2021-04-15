@@ -18,8 +18,6 @@ package dsm.oscal.model.OscalMetadata.provider;
 
 import dsm.oscal.model.OscalMetadata.ExternalId;
 import dsm.oscal.model.OscalMetadata.OscalMetadataPackage;
-
-import java.net.URI;
 import java.util.Collection;
 import java.util.List;
 
@@ -74,8 +72,8 @@ public class ExternalIdItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addSchemePropertyDescriptor(object);
 			addValuePropertyDescriptor(object);
+			addSchemePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -91,9 +89,9 @@ public class ExternalIdItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ExternalId_value_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ExternalId_value_feature", "_UI_ExternalId_type"),
-				 OscalMetadataPackage.Literals.EXTERNAL_ID__VALUE,
+				 getString("_UI_ElementWithValue_value_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ElementWithValue_value_feature", "_UI_ElementWithValue_type"),
+				 OscalMetadataPackage.Literals.ELEMENT_WITH_VALUE__VALUE,
 				 true,
 				 false,
 				 false,
@@ -143,8 +141,7 @@ public class ExternalIdItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		URI labelValue = ((ExternalId)object).getScheme();
-		String label = labelValue == null ? null : labelValue.toString();
+		String label = ((ExternalId)object).getValue();
 		return label == null || label.length() == 0 ?
 			getString("_UI_ExternalId_type") :
 			getString("_UI_ExternalId_type") + " " + label;
@@ -163,8 +160,8 @@ public class ExternalIdItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ExternalId.class)) {
-			case OscalMetadataPackage.EXTERNAL_ID__SCHEME:
 			case OscalMetadataPackage.EXTERNAL_ID__VALUE:
+			case OscalMetadataPackage.EXTERNAL_ID__SCHEME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

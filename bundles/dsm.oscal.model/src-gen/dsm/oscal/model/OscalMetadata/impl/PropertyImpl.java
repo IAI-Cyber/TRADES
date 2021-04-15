@@ -15,6 +15,8 @@
  */
 package dsm.oscal.model.OscalMetadata.impl;
 
+import dsm.oscal.model.OscalMetadata.ElementWithClazz;
+import dsm.oscal.model.OscalMetadata.ElementWithValue;
 import dsm.oscal.model.OscalMetadata.OscalMetadataPackage;
 import dsm.oscal.model.OscalMetadata.Property;
 
@@ -39,10 +41,10 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * </p>
  * <ul>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.PropertyImpl#getUuid <em>Uuid</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.impl.PropertyImpl#getValue <em>Value</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.PropertyImpl#getClazz <em>Clazz</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.PropertyImpl#getName <em>Name</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.PropertyImpl#getNs <em>Ns</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.impl.PropertyImpl#getValue <em>Value</em>}</li>
  * </ul>
  *
  * @generated
@@ -67,6 +69,26 @@ public class PropertyImpl extends MinimalEObjectImpl.Container implements Proper
 	 * @ordered
 	 */
 	protected UUID uuid = UUID_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getValue()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALUE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getValue()
+	 * @generated
+	 * @ordered
+	 */
+	protected String value = VALUE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getClazz() <em>Clazz</em>}' attribute.
@@ -127,26 +149,6 @@ public class PropertyImpl extends MinimalEObjectImpl.Container implements Proper
 	 * @ordered
 	 */
 	protected URI ns = NS_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getValue()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String VALUE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getValue()
-	 * @generated
-	 * @ordered
-	 */
-	protected String value = VALUE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -292,14 +294,14 @@ public class PropertyImpl extends MinimalEObjectImpl.Container implements Proper
 		switch (featureID) {
 			case OscalMetadataPackage.PROPERTY__UUID:
 				return getUuid();
+			case OscalMetadataPackage.PROPERTY__VALUE:
+				return getValue();
 			case OscalMetadataPackage.PROPERTY__CLAZZ:
 				return getClazz();
 			case OscalMetadataPackage.PROPERTY__NAME:
 				return getName();
 			case OscalMetadataPackage.PROPERTY__NS:
 				return getNs();
-			case OscalMetadataPackage.PROPERTY__VALUE:
-				return getValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -315,6 +317,9 @@ public class PropertyImpl extends MinimalEObjectImpl.Container implements Proper
 			case OscalMetadataPackage.PROPERTY__UUID:
 				setUuid((UUID)newValue);
 				return;
+			case OscalMetadataPackage.PROPERTY__VALUE:
+				setValue((String)newValue);
+				return;
 			case OscalMetadataPackage.PROPERTY__CLAZZ:
 				setClazz((String)newValue);
 				return;
@@ -323,9 +328,6 @@ public class PropertyImpl extends MinimalEObjectImpl.Container implements Proper
 				return;
 			case OscalMetadataPackage.PROPERTY__NS:
 				setNs((URI)newValue);
-				return;
-			case OscalMetadataPackage.PROPERTY__VALUE:
-				setValue((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -342,6 +344,9 @@ public class PropertyImpl extends MinimalEObjectImpl.Container implements Proper
 			case OscalMetadataPackage.PROPERTY__UUID:
 				setUuid(UUID_EDEFAULT);
 				return;
+			case OscalMetadataPackage.PROPERTY__VALUE:
+				setValue(VALUE_EDEFAULT);
+				return;
 			case OscalMetadataPackage.PROPERTY__CLAZZ:
 				setClazz(CLAZZ_EDEFAULT);
 				return;
@@ -350,9 +355,6 @@ public class PropertyImpl extends MinimalEObjectImpl.Container implements Proper
 				return;
 			case OscalMetadataPackage.PROPERTY__NS:
 				setNs(NS_EDEFAULT);
-				return;
-			case OscalMetadataPackage.PROPERTY__VALUE:
-				setValue(VALUE_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -368,14 +370,14 @@ public class PropertyImpl extends MinimalEObjectImpl.Container implements Proper
 		switch (featureID) {
 			case OscalMetadataPackage.PROPERTY__UUID:
 				return UUID_EDEFAULT == null ? uuid != null : !UUID_EDEFAULT.equals(uuid);
+			case OscalMetadataPackage.PROPERTY__VALUE:
+				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
 			case OscalMetadataPackage.PROPERTY__CLAZZ:
 				return CLAZZ_EDEFAULT == null ? clazz != null : !CLAZZ_EDEFAULT.equals(clazz);
 			case OscalMetadataPackage.PROPERTY__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case OscalMetadataPackage.PROPERTY__NS:
 				return NS_EDEFAULT == null ? ns != null : !NS_EDEFAULT.equals(ns);
-			case OscalMetadataPackage.PROPERTY__VALUE:
-				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -390,6 +392,18 @@ public class PropertyImpl extends MinimalEObjectImpl.Container implements Proper
 		if (baseClass == UUIDElement.class) {
 			switch (derivedFeatureID) {
 				case OscalMetadataPackage.PROPERTY__UUID: return OscalMetadataPackage.UUID_ELEMENT__UUID;
+				default: return -1;
+			}
+		}
+		if (baseClass == ElementWithValue.class) {
+			switch (derivedFeatureID) {
+				case OscalMetadataPackage.PROPERTY__VALUE: return OscalMetadataPackage.ELEMENT_WITH_VALUE__VALUE;
+				default: return -1;
+			}
+		}
+		if (baseClass == ElementWithClazz.class) {
+			switch (derivedFeatureID) {
+				case OscalMetadataPackage.PROPERTY__CLAZZ: return OscalMetadataPackage.ELEMENT_WITH_CLAZZ__CLAZZ;
 				default: return -1;
 			}
 		}
@@ -409,6 +423,18 @@ public class PropertyImpl extends MinimalEObjectImpl.Container implements Proper
 				default: return -1;
 			}
 		}
+		if (baseClass == ElementWithValue.class) {
+			switch (baseFeatureID) {
+				case OscalMetadataPackage.ELEMENT_WITH_VALUE__VALUE: return OscalMetadataPackage.PROPERTY__VALUE;
+				default: return -1;
+			}
+		}
+		if (baseClass == ElementWithClazz.class) {
+			switch (baseFeatureID) {
+				case OscalMetadataPackage.ELEMENT_WITH_CLAZZ__CLAZZ: return OscalMetadataPackage.PROPERTY__CLAZZ;
+				default: return -1;
+			}
+		}
 		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
@@ -424,14 +450,14 @@ public class PropertyImpl extends MinimalEObjectImpl.Container implements Proper
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (uuid: ");
 		result.append(uuid);
+		result.append(", value: ");
+		result.append(value);
 		result.append(", clazz: ");
 		result.append(clazz);
 		result.append(", name: ");
 		result.append(name);
 		result.append(", ns: ");
 		result.append(ns);
-		result.append(", value: ");
-		result.append(value);
 		result.append(')');
 		return result.toString();
 	}

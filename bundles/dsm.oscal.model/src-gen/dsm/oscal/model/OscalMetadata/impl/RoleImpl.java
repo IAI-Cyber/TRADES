@@ -17,9 +17,12 @@ package dsm.oscal.model.OscalMetadata.impl;
 
 import dsm.oscal.model.OscalMetadata.Annotation;
 import dsm.oscal.model.OscalMetadata.AnnotationOwner;
+import dsm.oscal.model.OscalMetadata.ElementWithRemarks;
 import dsm.oscal.model.OscalMetadata.Link;
+import dsm.oscal.model.OscalMetadata.LinkOwner;
 import dsm.oscal.model.OscalMetadata.OscalMetadataPackage;
 import dsm.oscal.model.OscalMetadata.Property;
+import dsm.oscal.model.OscalMetadata.PropertyOwner;
 import dsm.oscal.model.OscalMetadata.Role;
 
 import gov.nist.secauto.metaschema.datatypes.markup.MarkupLine;
@@ -50,11 +53,11 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.RoleImpl#getAnnotations <em>Annotations</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.impl.RoleImpl#getProps <em>Props</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.impl.RoleImpl#getLinks <em>Links</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.impl.RoleImpl#getRemarks <em>Remarks</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.RoleImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.RoleImpl#getId <em>Id</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.impl.RoleImpl#getLinks <em>Links</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.impl.RoleImpl#getProps <em>Props</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.impl.RoleImpl#getRemarks <em>Remarks</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.RoleImpl#getShortName <em>Short Name</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.RoleImpl#getTitle <em>Title</em>}</li>
  * </ul>
@@ -71,6 +74,46 @@ public class RoleImpl extends MinimalEObjectImpl.Container implements Role {
 	 * @ordered
 	 */
 	protected EList<Annotation> annotations;
+
+	/**
+	 * The cached value of the '{@link #getProps() <em>Props</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProps()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Property> props;
+
+	/**
+	 * The cached value of the '{@link #getLinks() <em>Links</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLinks()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Link> links;
+
+	/**
+	 * The default value of the '{@link #getRemarks() <em>Remarks</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRemarks()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final MarkupMultiline REMARKS_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getRemarks() <em>Remarks</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRemarks()
+	 * @generated
+	 * @ordered
+	 */
+	protected MarkupMultiline remarks = REMARKS_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
@@ -111,46 +154,6 @@ public class RoleImpl extends MinimalEObjectImpl.Container implements Role {
 	 * @ordered
 	 */
 	protected String id = ID_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getLinks() <em>Links</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLinks()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Link> links;
-
-	/**
-	 * The cached value of the '{@link #getProps() <em>Props</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProps()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Property> props;
-
-	/**
-	 * The default value of the '{@link #getRemarks() <em>Remarks</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRemarks()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final MarkupMultiline REMARKS_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getRemarks() <em>Remarks</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRemarks()
-	 * @generated
-	 * @ordered
-	 */
-	protected MarkupMultiline remarks = REMARKS_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getShortName() <em>Short Name</em>}' attribute.
@@ -375,10 +378,10 @@ public class RoleImpl extends MinimalEObjectImpl.Container implements Role {
 		switch (featureID) {
 			case OscalMetadataPackage.ROLE__ANNOTATIONS:
 				return ((InternalEList<?>)getAnnotations()).basicRemove(otherEnd, msgs);
-			case OscalMetadataPackage.ROLE__LINKS:
-				return ((InternalEList<?>)getLinks()).basicRemove(otherEnd, msgs);
 			case OscalMetadataPackage.ROLE__PROPS:
 				return ((InternalEList<?>)getProps()).basicRemove(otherEnd, msgs);
+			case OscalMetadataPackage.ROLE__LINKS:
+				return ((InternalEList<?>)getLinks()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -393,16 +396,16 @@ public class RoleImpl extends MinimalEObjectImpl.Container implements Role {
 		switch (featureID) {
 			case OscalMetadataPackage.ROLE__ANNOTATIONS:
 				return getAnnotations();
+			case OscalMetadataPackage.ROLE__PROPS:
+				return getProps();
+			case OscalMetadataPackage.ROLE__LINKS:
+				return getLinks();
+			case OscalMetadataPackage.ROLE__REMARKS:
+				return getRemarks();
 			case OscalMetadataPackage.ROLE__DESCRIPTION:
 				return getDescription();
 			case OscalMetadataPackage.ROLE__ID:
 				return getId();
-			case OscalMetadataPackage.ROLE__LINKS:
-				return getLinks();
-			case OscalMetadataPackage.ROLE__PROPS:
-				return getProps();
-			case OscalMetadataPackage.ROLE__REMARKS:
-				return getRemarks();
 			case OscalMetadataPackage.ROLE__SHORT_NAME:
 				return getShortName();
 			case OscalMetadataPackage.ROLE__TITLE:
@@ -424,22 +427,22 @@ public class RoleImpl extends MinimalEObjectImpl.Container implements Role {
 				getAnnotations().clear();
 				getAnnotations().addAll((Collection<? extends Annotation>)newValue);
 				return;
-			case OscalMetadataPackage.ROLE__DESCRIPTION:
-				setDescription((MarkupMultiline)newValue);
-				return;
-			case OscalMetadataPackage.ROLE__ID:
-				setId((String)newValue);
+			case OscalMetadataPackage.ROLE__PROPS:
+				getProps().clear();
+				getProps().addAll((Collection<? extends Property>)newValue);
 				return;
 			case OscalMetadataPackage.ROLE__LINKS:
 				getLinks().clear();
 				getLinks().addAll((Collection<? extends Link>)newValue);
 				return;
-			case OscalMetadataPackage.ROLE__PROPS:
-				getProps().clear();
-				getProps().addAll((Collection<? extends Property>)newValue);
-				return;
 			case OscalMetadataPackage.ROLE__REMARKS:
 				setRemarks((MarkupMultiline)newValue);
+				return;
+			case OscalMetadataPackage.ROLE__DESCRIPTION:
+				setDescription((MarkupMultiline)newValue);
+				return;
+			case OscalMetadataPackage.ROLE__ID:
+				setId((String)newValue);
 				return;
 			case OscalMetadataPackage.ROLE__SHORT_NAME:
 				setShortName((String)newValue);
@@ -462,20 +465,20 @@ public class RoleImpl extends MinimalEObjectImpl.Container implements Role {
 			case OscalMetadataPackage.ROLE__ANNOTATIONS:
 				getAnnotations().clear();
 				return;
+			case OscalMetadataPackage.ROLE__PROPS:
+				getProps().clear();
+				return;
+			case OscalMetadataPackage.ROLE__LINKS:
+				getLinks().clear();
+				return;
+			case OscalMetadataPackage.ROLE__REMARKS:
+				setRemarks(REMARKS_EDEFAULT);
+				return;
 			case OscalMetadataPackage.ROLE__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
 				return;
 			case OscalMetadataPackage.ROLE__ID:
 				setId(ID_EDEFAULT);
-				return;
-			case OscalMetadataPackage.ROLE__LINKS:
-				getLinks().clear();
-				return;
-			case OscalMetadataPackage.ROLE__PROPS:
-				getProps().clear();
-				return;
-			case OscalMetadataPackage.ROLE__REMARKS:
-				setRemarks(REMARKS_EDEFAULT);
 				return;
 			case OscalMetadataPackage.ROLE__SHORT_NAME:
 				setShortName(SHORT_NAME_EDEFAULT);
@@ -497,16 +500,16 @@ public class RoleImpl extends MinimalEObjectImpl.Container implements Role {
 		switch (featureID) {
 			case OscalMetadataPackage.ROLE__ANNOTATIONS:
 				return annotations != null && !annotations.isEmpty();
+			case OscalMetadataPackage.ROLE__PROPS:
+				return props != null && !props.isEmpty();
+			case OscalMetadataPackage.ROLE__LINKS:
+				return links != null && !links.isEmpty();
+			case OscalMetadataPackage.ROLE__REMARKS:
+				return REMARKS_EDEFAULT == null ? remarks != null : !REMARKS_EDEFAULT.equals(remarks);
 			case OscalMetadataPackage.ROLE__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 			case OscalMetadataPackage.ROLE__ID:
 				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
-			case OscalMetadataPackage.ROLE__LINKS:
-				return links != null && !links.isEmpty();
-			case OscalMetadataPackage.ROLE__PROPS:
-				return props != null && !props.isEmpty();
-			case OscalMetadataPackage.ROLE__REMARKS:
-				return REMARKS_EDEFAULT == null ? remarks != null : !REMARKS_EDEFAULT.equals(remarks);
 			case OscalMetadataPackage.ROLE__SHORT_NAME:
 				return SHORT_NAME_EDEFAULT == null ? shortName != null : !SHORT_NAME_EDEFAULT.equals(shortName);
 			case OscalMetadataPackage.ROLE__TITLE:
@@ -528,6 +531,24 @@ public class RoleImpl extends MinimalEObjectImpl.Container implements Role {
 				default: return -1;
 			}
 		}
+		if (baseClass == PropertyOwner.class) {
+			switch (derivedFeatureID) {
+				case OscalMetadataPackage.ROLE__PROPS: return OscalMetadataPackage.PROPERTY_OWNER__PROPS;
+				default: return -1;
+			}
+		}
+		if (baseClass == LinkOwner.class) {
+			switch (derivedFeatureID) {
+				case OscalMetadataPackage.ROLE__LINKS: return OscalMetadataPackage.LINK_OWNER__LINKS;
+				default: return -1;
+			}
+		}
+		if (baseClass == ElementWithRemarks.class) {
+			switch (derivedFeatureID) {
+				case OscalMetadataPackage.ROLE__REMARKS: return OscalMetadataPackage.ELEMENT_WITH_REMARKS__REMARKS;
+				default: return -1;
+			}
+		}
 		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
 	}
 
@@ -544,6 +565,24 @@ public class RoleImpl extends MinimalEObjectImpl.Container implements Role {
 				default: return -1;
 			}
 		}
+		if (baseClass == PropertyOwner.class) {
+			switch (baseFeatureID) {
+				case OscalMetadataPackage.PROPERTY_OWNER__PROPS: return OscalMetadataPackage.ROLE__PROPS;
+				default: return -1;
+			}
+		}
+		if (baseClass == LinkOwner.class) {
+			switch (baseFeatureID) {
+				case OscalMetadataPackage.LINK_OWNER__LINKS: return OscalMetadataPackage.ROLE__LINKS;
+				default: return -1;
+			}
+		}
+		if (baseClass == ElementWithRemarks.class) {
+			switch (baseFeatureID) {
+				case OscalMetadataPackage.ELEMENT_WITH_REMARKS__REMARKS: return OscalMetadataPackage.ROLE__REMARKS;
+				default: return -1;
+			}
+		}
 		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
@@ -557,12 +596,12 @@ public class RoleImpl extends MinimalEObjectImpl.Container implements Role {
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (description: ");
+		result.append(" (remarks: ");
+		result.append(remarks);
+		result.append(", description: ");
 		result.append(description);
 		result.append(", id: ");
 		result.append(id);
-		result.append(", remarks: ");
-		result.append(remarks);
 		result.append(", shortName: ");
 		result.append(shortName);
 		result.append(", title: ");

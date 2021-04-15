@@ -18,7 +18,11 @@ package dsm.oscal.model.OscalCatalogCommon.util;
 import dsm.oscal.model.OscalCatalogCommon.*;
 
 import dsm.oscal.model.OscalMetadata.AnnotationOwner;
+import dsm.oscal.model.OscalMetadata.ElementWithClazz;
+import dsm.oscal.model.OscalMetadata.ElementWithRemarks;
+import dsm.oscal.model.OscalMetadata.LinkOwner;
 import dsm.oscal.model.OscalMetadata.OscalElement;
+import dsm.oscal.model.OscalMetadata.PropertyOwner;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -86,6 +90,10 @@ public class OscalCatalogCommonSwitch<T> extends Switch<T> {
 				T result = caseParameter(parameter);
 				if (result == null) result = caseOscalElement(parameter);
 				if (result == null) result = caseAnnotationOwner(parameter);
+				if (result == null) result = casePropertyOwner(parameter);
+				if (result == null) result = caseLinkOwner(parameter);
+				if (result == null) result = caseElementWithRemarks(parameter);
+				if (result == null) result = caseElementWithClazz(parameter);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -100,6 +108,7 @@ public class OscalCatalogCommonSwitch<T> extends Switch<T> {
 				ParameterConstraintTest parameterConstraintTest = (ParameterConstraintTest)theEObject;
 				T result = caseParameterConstraintTest(parameterConstraintTest);
 				if (result == null) result = caseOscalElement(parameterConstraintTest);
+				if (result == null) result = caseElementWithRemarks(parameterConstraintTest);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -122,6 +131,9 @@ public class OscalCatalogCommonSwitch<T> extends Switch<T> {
 				T result = casePart(part);
 				if (result == null) result = caseOscalElement(part);
 				if (result == null) result = caseAnnotationOwner(part);
+				if (result == null) result = casePropertyOwner(part);
+				if (result == null) result = caseLinkOwner(part);
+				if (result == null) result = caseElementWithClazz(part);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -246,6 +258,66 @@ public class OscalCatalogCommonSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseAnnotationOwner(AnnotationOwner object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Property Owner</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Property Owner</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePropertyOwner(PropertyOwner object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Link Owner</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Link Owner</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseLinkOwner(LinkOwner object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Element With Remarks</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Element With Remarks</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseElementWithRemarks(ElementWithRemarks object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Element With Clazz</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Element With Clazz</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseElementWithClazz(ElementWithClazz object) {
 		return null;
 	}
 

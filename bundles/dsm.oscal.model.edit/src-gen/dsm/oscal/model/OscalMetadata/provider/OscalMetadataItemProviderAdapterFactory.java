@@ -223,6 +223,75 @@ public class OscalMetadataItemProviderAdapterFactory extends OscalMetadataAdapte
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link dsm.oscal.model.OscalMetadata.ElementWithClazz} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ElementWithClazzItemProvider elementWithClazzItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link dsm.oscal.model.OscalMetadata.ElementWithClazz}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createElementWithClazzAdapter() {
+		if (elementWithClazzItemProvider == null) {
+			elementWithClazzItemProvider = new ElementWithClazzItemProvider(this);
+		}
+
+		return elementWithClazzItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link dsm.oscal.model.OscalMetadata.ElementWithRemarks} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ElementWithRemarksItemProvider elementWithRemarksItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link dsm.oscal.model.OscalMetadata.ElementWithRemarks}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createElementWithRemarksAdapter() {
+		if (elementWithRemarksItemProvider == null) {
+			elementWithRemarksItemProvider = new ElementWithRemarksItemProvider(this);
+		}
+
+		return elementWithRemarksItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link dsm.oscal.model.OscalMetadata.ElementWithValue} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ElementWithValueItemProvider elementWithValueItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link dsm.oscal.model.OscalMetadata.ElementWithValue}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createElementWithValueAdapter() {
+		if (elementWithValueItemProvider == null) {
+			elementWithValueItemProvider = new ElementWithValueItemProvider(this);
+		}
+
+		return elementWithValueItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link dsm.oscal.model.OscalMetadata.ExternalId} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -289,6 +358,29 @@ public class OscalMetadataItemProviderAdapterFactory extends OscalMetadataAdapte
 		}
 
 		return linkItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link dsm.oscal.model.OscalMetadata.LinkOwner} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected LinkOwnerItemProvider linkOwnerItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link dsm.oscal.model.OscalMetadata.LinkOwner}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createLinkOwnerAdapter() {
+		if (linkOwnerItemProvider == null) {
+			linkOwnerItemProvider = new LinkOwnerItemProvider(this);
+		}
+
+		return linkOwnerItemProvider;
 	}
 
 	/**
@@ -381,6 +473,29 @@ public class OscalMetadataItemProviderAdapterFactory extends OscalMetadataAdapte
 		}
 
 		return propertyItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link dsm.oscal.model.OscalMetadata.PropertyOwner} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected PropertyOwnerItemProvider propertyOwnerItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link dsm.oscal.model.OscalMetadata.PropertyOwner}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createPropertyOwnerAdapter() {
+		if (propertyOwnerItemProvider == null) {
+			propertyOwnerItemProvider = new PropertyOwnerItemProvider(this);
+		}
+
+		return propertyOwnerItemProvider;
 	}
 
 	/**
@@ -702,13 +817,18 @@ public class OscalMetadataItemProviderAdapterFactory extends OscalMetadataAdapte
 		if (backMatterResourceItemProvider != null) backMatterResourceItemProvider.dispose();
 		if (base64ItemProvider != null) base64ItemProvider.dispose();
 		if (documentIdItemProvider != null) documentIdItemProvider.dispose();
+		if (elementWithClazzItemProvider != null) elementWithClazzItemProvider.dispose();
+		if (elementWithRemarksItemProvider != null) elementWithRemarksItemProvider.dispose();
+		if (elementWithValueItemProvider != null) elementWithValueItemProvider.dispose();
 		if (externalIdItemProvider != null) externalIdItemProvider.dispose();
 		if (hashItemProvider != null) hashItemProvider.dispose();
 		if (linkItemProvider != null) linkItemProvider.dispose();
+		if (linkOwnerItemProvider != null) linkOwnerItemProvider.dispose();
 		if (locationItemProvider != null) locationItemProvider.dispose();
 		if (metadataItemProvider != null) metadataItemProvider.dispose();
 		if (partyItemProvider != null) partyItemProvider.dispose();
 		if (propertyItemProvider != null) propertyItemProvider.dispose();
+		if (propertyOwnerItemProvider != null) propertyOwnerItemProvider.dispose();
 		if (resourceCitationItemProvider != null) resourceCitationItemProvider.dispose();
 		if (resourceRlinkItemProvider != null) resourceRlinkItemProvider.dispose();
 		if (responsiblePartyItemProvider != null) responsiblePartyItemProvider.dispose();

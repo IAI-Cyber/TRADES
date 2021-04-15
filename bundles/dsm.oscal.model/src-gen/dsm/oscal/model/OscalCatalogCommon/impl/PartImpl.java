@@ -20,10 +20,13 @@ import dsm.oscal.model.OscalCatalogCommon.Part;
 
 import dsm.oscal.model.OscalMetadata.Annotation;
 import dsm.oscal.model.OscalMetadata.AnnotationOwner;
+import dsm.oscal.model.OscalMetadata.ElementWithClazz;
 import dsm.oscal.model.OscalMetadata.Link;
+import dsm.oscal.model.OscalMetadata.LinkOwner;
 import dsm.oscal.model.OscalMetadata.OscalMetadataPackage;
 import dsm.oscal.model.OscalMetadata.Property;
 
+import dsm.oscal.model.OscalMetadata.PropertyOwner;
 import gov.nist.secauto.metaschema.datatypes.markup.MarkupLine;
 import gov.nist.secauto.metaschema.datatypes.markup.MarkupMultiline;
 
@@ -54,13 +57,13 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link dsm.oscal.model.OscalCatalogCommon.impl.PartImpl#getAnnotations <em>Annotations</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalCatalogCommon.impl.PartImpl#getProps <em>Props</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalCatalogCommon.impl.PartImpl#getLinks <em>Links</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalogCommon.impl.PartImpl#getClazz <em>Clazz</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalogCommon.impl.PartImpl#getId <em>Id</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalCatalogCommon.impl.PartImpl#getLinks <em>Links</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalogCommon.impl.PartImpl#getName <em>Name</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalogCommon.impl.PartImpl#getNs <em>Ns</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalogCommon.impl.PartImpl#getParts <em>Parts</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalCatalogCommon.impl.PartImpl#getProps <em>Props</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalogCommon.impl.PartImpl#getProse <em>Prose</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalogCommon.impl.PartImpl#getTitle <em>Title</em>}</li>
  * </ul>
@@ -77,6 +80,26 @@ public class PartImpl extends MinimalEObjectImpl.Container implements Part {
 	 * @ordered
 	 */
 	protected EList<Annotation> annotations;
+
+	/**
+	 * The cached value of the '{@link #getProps() <em>Props</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProps()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Property> props;
+
+	/**
+	 * The cached value of the '{@link #getLinks() <em>Links</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLinks()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Link> links;
 
 	/**
 	 * The default value of the '{@link #getClazz() <em>Clazz</em>}' attribute.
@@ -117,16 +140,6 @@ public class PartImpl extends MinimalEObjectImpl.Container implements Part {
 	 * @ordered
 	 */
 	protected String id = ID_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getLinks() <em>Links</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLinks()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Link> links;
 
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -177,16 +190,6 @@ public class PartImpl extends MinimalEObjectImpl.Container implements Part {
 	 * @ordered
 	 */
 	protected EList<Part> parts;
-
-	/**
-	 * The cached value of the '{@link #getProps() <em>Props</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProps()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Property> props;
 
 	/**
 	 * The default value of the '{@link #getProse() <em>Prose</em>}' attribute.
@@ -447,12 +450,12 @@ public class PartImpl extends MinimalEObjectImpl.Container implements Part {
 		switch (featureID) {
 			case OscalCatalogCommonPackage.PART__ANNOTATIONS:
 				return ((InternalEList<?>)getAnnotations()).basicRemove(otherEnd, msgs);
+			case OscalCatalogCommonPackage.PART__PROPS:
+				return ((InternalEList<?>)getProps()).basicRemove(otherEnd, msgs);
 			case OscalCatalogCommonPackage.PART__LINKS:
 				return ((InternalEList<?>)getLinks()).basicRemove(otherEnd, msgs);
 			case OscalCatalogCommonPackage.PART__PARTS:
 				return ((InternalEList<?>)getParts()).basicRemove(otherEnd, msgs);
-			case OscalCatalogCommonPackage.PART__PROPS:
-				return ((InternalEList<?>)getProps()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -467,20 +470,20 @@ public class PartImpl extends MinimalEObjectImpl.Container implements Part {
 		switch (featureID) {
 			case OscalCatalogCommonPackage.PART__ANNOTATIONS:
 				return getAnnotations();
+			case OscalCatalogCommonPackage.PART__PROPS:
+				return getProps();
+			case OscalCatalogCommonPackage.PART__LINKS:
+				return getLinks();
 			case OscalCatalogCommonPackage.PART__CLAZZ:
 				return getClazz();
 			case OscalCatalogCommonPackage.PART__ID:
 				return getId();
-			case OscalCatalogCommonPackage.PART__LINKS:
-				return getLinks();
 			case OscalCatalogCommonPackage.PART__NAME:
 				return getName();
 			case OscalCatalogCommonPackage.PART__NS:
 				return getNs();
 			case OscalCatalogCommonPackage.PART__PARTS:
 				return getParts();
-			case OscalCatalogCommonPackage.PART__PROPS:
-				return getProps();
 			case OscalCatalogCommonPackage.PART__PROSE:
 				return getProse();
 			case OscalCatalogCommonPackage.PART__TITLE:
@@ -502,15 +505,19 @@ public class PartImpl extends MinimalEObjectImpl.Container implements Part {
 				getAnnotations().clear();
 				getAnnotations().addAll((Collection<? extends Annotation>)newValue);
 				return;
+			case OscalCatalogCommonPackage.PART__PROPS:
+				getProps().clear();
+				getProps().addAll((Collection<? extends Property>)newValue);
+				return;
+			case OscalCatalogCommonPackage.PART__LINKS:
+				getLinks().clear();
+				getLinks().addAll((Collection<? extends Link>)newValue);
+				return;
 			case OscalCatalogCommonPackage.PART__CLAZZ:
 				setClazz((String)newValue);
 				return;
 			case OscalCatalogCommonPackage.PART__ID:
 				setId((String)newValue);
-				return;
-			case OscalCatalogCommonPackage.PART__LINKS:
-				getLinks().clear();
-				getLinks().addAll((Collection<? extends Link>)newValue);
 				return;
 			case OscalCatalogCommonPackage.PART__NAME:
 				setName((String)newValue);
@@ -521,10 +528,6 @@ public class PartImpl extends MinimalEObjectImpl.Container implements Part {
 			case OscalCatalogCommonPackage.PART__PARTS:
 				getParts().clear();
 				getParts().addAll((Collection<? extends Part>)newValue);
-				return;
-			case OscalCatalogCommonPackage.PART__PROPS:
-				getProps().clear();
-				getProps().addAll((Collection<? extends Property>)newValue);
 				return;
 			case OscalCatalogCommonPackage.PART__PROSE:
 				setProse((MarkupMultiline)newValue);
@@ -547,14 +550,17 @@ public class PartImpl extends MinimalEObjectImpl.Container implements Part {
 			case OscalCatalogCommonPackage.PART__ANNOTATIONS:
 				getAnnotations().clear();
 				return;
+			case OscalCatalogCommonPackage.PART__PROPS:
+				getProps().clear();
+				return;
+			case OscalCatalogCommonPackage.PART__LINKS:
+				getLinks().clear();
+				return;
 			case OscalCatalogCommonPackage.PART__CLAZZ:
 				setClazz(CLAZZ_EDEFAULT);
 				return;
 			case OscalCatalogCommonPackage.PART__ID:
 				setId(ID_EDEFAULT);
-				return;
-			case OscalCatalogCommonPackage.PART__LINKS:
-				getLinks().clear();
 				return;
 			case OscalCatalogCommonPackage.PART__NAME:
 				setName(NAME_EDEFAULT);
@@ -564,9 +570,6 @@ public class PartImpl extends MinimalEObjectImpl.Container implements Part {
 				return;
 			case OscalCatalogCommonPackage.PART__PARTS:
 				getParts().clear();
-				return;
-			case OscalCatalogCommonPackage.PART__PROPS:
-				getProps().clear();
 				return;
 			case OscalCatalogCommonPackage.PART__PROSE:
 				setProse(PROSE_EDEFAULT);
@@ -588,20 +591,20 @@ public class PartImpl extends MinimalEObjectImpl.Container implements Part {
 		switch (featureID) {
 			case OscalCatalogCommonPackage.PART__ANNOTATIONS:
 				return annotations != null && !annotations.isEmpty();
+			case OscalCatalogCommonPackage.PART__PROPS:
+				return props != null && !props.isEmpty();
+			case OscalCatalogCommonPackage.PART__LINKS:
+				return links != null && !links.isEmpty();
 			case OscalCatalogCommonPackage.PART__CLAZZ:
 				return CLAZZ_EDEFAULT == null ? clazz != null : !CLAZZ_EDEFAULT.equals(clazz);
 			case OscalCatalogCommonPackage.PART__ID:
 				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
-			case OscalCatalogCommonPackage.PART__LINKS:
-				return links != null && !links.isEmpty();
 			case OscalCatalogCommonPackage.PART__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case OscalCatalogCommonPackage.PART__NS:
 				return NS_EDEFAULT == null ? ns != null : !NS_EDEFAULT.equals(ns);
 			case OscalCatalogCommonPackage.PART__PARTS:
 				return parts != null && !parts.isEmpty();
-			case OscalCatalogCommonPackage.PART__PROPS:
-				return props != null && !props.isEmpty();
 			case OscalCatalogCommonPackage.PART__PROSE:
 				return PROSE_EDEFAULT == null ? prose != null : !PROSE_EDEFAULT.equals(prose);
 			case OscalCatalogCommonPackage.PART__TITLE:
@@ -623,6 +626,24 @@ public class PartImpl extends MinimalEObjectImpl.Container implements Part {
 				default: return -1;
 			}
 		}
+		if (baseClass == PropertyOwner.class) {
+			switch (derivedFeatureID) {
+				case OscalCatalogCommonPackage.PART__PROPS: return OscalMetadataPackage.PROPERTY_OWNER__PROPS;
+				default: return -1;
+			}
+		}
+		if (baseClass == LinkOwner.class) {
+			switch (derivedFeatureID) {
+				case OscalCatalogCommonPackage.PART__LINKS: return OscalMetadataPackage.LINK_OWNER__LINKS;
+				default: return -1;
+			}
+		}
+		if (baseClass == ElementWithClazz.class) {
+			switch (derivedFeatureID) {
+				case OscalCatalogCommonPackage.PART__CLAZZ: return OscalMetadataPackage.ELEMENT_WITH_CLAZZ__CLAZZ;
+				default: return -1;
+			}
+		}
 		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
 	}
 
@@ -636,6 +657,24 @@ public class PartImpl extends MinimalEObjectImpl.Container implements Part {
 		if (baseClass == AnnotationOwner.class) {
 			switch (baseFeatureID) {
 				case OscalMetadataPackage.ANNOTATION_OWNER__ANNOTATIONS: return OscalCatalogCommonPackage.PART__ANNOTATIONS;
+				default: return -1;
+			}
+		}
+		if (baseClass == PropertyOwner.class) {
+			switch (baseFeatureID) {
+				case OscalMetadataPackage.PROPERTY_OWNER__PROPS: return OscalCatalogCommonPackage.PART__PROPS;
+				default: return -1;
+			}
+		}
+		if (baseClass == LinkOwner.class) {
+			switch (baseFeatureID) {
+				case OscalMetadataPackage.LINK_OWNER__LINKS: return OscalCatalogCommonPackage.PART__LINKS;
+				default: return -1;
+			}
+		}
+		if (baseClass == ElementWithClazz.class) {
+			switch (baseFeatureID) {
+				case OscalMetadataPackage.ELEMENT_WITH_CLAZZ__CLAZZ: return OscalCatalogCommonPackage.PART__CLAZZ;
 				default: return -1;
 			}
 		}

@@ -15,8 +15,6 @@
  */
 package dsm.oscal.model.OscalMetadata;
 
-import gov.nist.secauto.metaschema.datatypes.markup.MarkupMultiline;
-
 import java.util.UUID;
 
 import org.eclipse.emf.common.util.EList;
@@ -40,12 +38,9 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link dsm.oscal.model.OscalMetadata.Party#getAddresses <em>Addresses</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.Party#getEmailAddresses <em>Email Addresses</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.Party#getExternalIds <em>External Ids</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.Party#getLinks <em>Links</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.Party#getLocationUuids <em>Location Uuids</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.Party#getMemberOfOrganizations <em>Member Of Organizations</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.Party#getName <em>Name</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.Party#getProps <em>Props</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.Party#getRemarks <em>Remarks</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.Party#getShortName <em>Short Name</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.Party#getTelephoneNumbers <em>Telephone Numbers</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.Party#getType <em>Type</em>}</li>
@@ -55,7 +50,7 @@ import org.eclipse.emf.common.util.EList;
  * @model annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;AssemblyDefinition&gt;party'"
  * @generated
  */
-public interface Party extends OscalElement, UUIDElement, AnnotationOwner {
+public interface Party extends OscalElement, UUIDElement, AnnotationOwner, PropertyOwner, LinkOwner, ElementWithRemarks {
 	/**
 	 * Returns the value of the '<em><b>Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -200,35 +195,6 @@ public interface Party extends OscalElement, UUIDElement, AnnotationOwner {
 	EList<UUID> getMemberOfOrganizations();
 
 	/**
-	 * Returns the value of the '<em><b>Remarks</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * <h1>Remarks</h1>
-	 * <h2>Description</h2>
-	 * <p>Additional commentary on the containing object.</p>
-	 * 
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Remarks</em>' attribute.
-	 * @see #setRemarks(MarkupMultiline)
-	 * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getParty_Remarks()
-	 * @model dataType="dsm.oscal.model.OscalMetadata.MarkupMultilineType"
-	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;AssemblyDefinition&gt;party.&lt;FieldInstance&gt;remarks'"
-	 * @generated
-	 */
-	MarkupMultiline getRemarks();
-
-	/**
-	 * Sets the value of the '{@link dsm.oscal.model.OscalMetadata.Party#getRemarks <em>Remarks</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Remarks</em>' attribute.
-	 * @see #getRemarks()
-	 * @generated
-	 */
-	void setRemarks(MarkupMultiline value);
-
-	/**
 	 * Returns the value of the '<em><b>Addresses</b></em>' containment reference list.
 	 * The list contents are of type {@link dsm.oscal.model.OscalMetadata.Address}.
 	 * <!-- begin-user-doc -->
@@ -242,19 +208,6 @@ public interface Party extends OscalElement, UUIDElement, AnnotationOwner {
 	EList<Address> getAddresses();
 
 	/**
-	 * Returns the value of the '<em><b>Links</b></em>' containment reference list.
-	 * The list contents are of type {@link dsm.oscal.model.OscalMetadata.Link}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Links</em>' containment reference list.
-	 * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getParty_Links()
-	 * @model containment="true"
-	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;AssemblyDefinition&gt;link'"
-	 * @generated
-	 */
-	EList<Link> getLinks();
-
-	/**
 	 * Returns the value of the '<em><b>External Ids</b></em>' containment reference list.
 	 * The list contents are of type {@link dsm.oscal.model.OscalMetadata.ExternalId}.
 	 * <!-- begin-user-doc -->
@@ -266,19 +219,6 @@ public interface Party extends OscalElement, UUIDElement, AnnotationOwner {
 	 * @generated
 	 */
 	EList<ExternalId> getExternalIds();
-
-	/**
-	 * Returns the value of the '<em><b>Props</b></em>' containment reference list.
-	 * The list contents are of type {@link dsm.oscal.model.OscalMetadata.Property}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Props</em>' containment reference list.
-	 * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getParty_Props()
-	 * @model containment="true"
-	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;FieldDefinition&gt;property'"
-	 * @generated
-	 */
-	EList<Property> getProps();
 
 	/**
 	 * Returns the value of the '<em><b>Telephone Numbers</b></em>' containment reference list.

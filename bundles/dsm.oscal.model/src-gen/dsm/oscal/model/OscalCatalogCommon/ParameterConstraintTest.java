@@ -15,8 +15,8 @@
  */
 package dsm.oscal.model.OscalCatalogCommon;
 
+import dsm.oscal.model.OscalMetadata.ElementWithRemarks;
 import dsm.oscal.model.OscalMetadata.OscalElement;
-import gov.nist.secauto.metaschema.datatypes.markup.MarkupMultiline;
 
 /**
  * <!-- begin-user-doc -->
@@ -35,14 +35,13 @@ import gov.nist.secauto.metaschema.datatypes.markup.MarkupMultiline;
  * </p>
  * <ul>
  *   <li>{@link dsm.oscal.model.OscalCatalogCommon.ParameterConstraintTest#getExpression <em>Expression</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalCatalogCommon.ParameterConstraintTest#getRemarks <em>Remarks</em>}</li>
  * </ul>
  *
  * @see dsm.oscal.model.OscalCatalogCommon.OscalCatalogCommonPackage#getParameterConstraintTest()
  * @model annotation="Metaschema source='&lt;Metaschema&gt;oscal-catalog-common.&lt;AssemblyDefinition&gt;test'"
  * @generated
  */
-public interface ParameterConstraintTest extends OscalElement {
+public interface ParameterConstraintTest extends OscalElement, ElementWithRemarks {
 	/**
 	 * Returns the value of the '<em><b>Expression</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -71,34 +70,5 @@ public interface ParameterConstraintTest extends OscalElement {
 	 * @generated
 	 */
 	void setExpression(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Remarks</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * <h1>Remarks</h1>
-	 * <h2>Description</h2>
-	 * <p>Additional commentary on the containing object.</p>
-	 * 
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Remarks</em>' attribute.
-	 * @see #setRemarks(MarkupMultiline)
-	 * @see dsm.oscal.model.OscalCatalogCommon.OscalCatalogCommonPackage#getParameterConstraintTest_Remarks()
-	 * @model dataType="dsm.oscal.model.OscalMetadata.MarkupMultilineType"
-	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-catalog-common.&lt;AssemblyDefinition&gt;test.&lt;FieldInstance&gt;remarks'"
-	 * @generated
-	 */
-	MarkupMultiline getRemarks();
-
-	/**
-	 * Sets the value of the '{@link dsm.oscal.model.OscalCatalogCommon.ParameterConstraintTest#getRemarks <em>Remarks</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Remarks</em>' attribute.
-	 * @see #getRemarks()
-	 * @generated
-	 */
-	void setRemarks(MarkupMultiline value);
 
 } // ParameterConstraintTest

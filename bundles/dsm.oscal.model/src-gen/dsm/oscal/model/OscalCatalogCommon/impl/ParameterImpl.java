@@ -23,10 +23,14 @@ import dsm.oscal.model.OscalCatalogCommon.ParameterSelection;
 
 import dsm.oscal.model.OscalMetadata.Annotation;
 import dsm.oscal.model.OscalMetadata.AnnotationOwner;
+import dsm.oscal.model.OscalMetadata.ElementWithClazz;
+import dsm.oscal.model.OscalMetadata.ElementWithRemarks;
 import dsm.oscal.model.OscalMetadata.Link;
+import dsm.oscal.model.OscalMetadata.LinkOwner;
 import dsm.oscal.model.OscalMetadata.OscalMetadataPackage;
 import dsm.oscal.model.OscalMetadata.Property;
 
+import dsm.oscal.model.OscalMetadata.PropertyOwner;
 import gov.nist.secauto.metaschema.datatypes.markup.MarkupLine;
 import gov.nist.secauto.metaschema.datatypes.markup.MarkupMultiline;
 
@@ -56,15 +60,15 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link dsm.oscal.model.OscalCatalogCommon.impl.ParameterImpl#getAnnotations <em>Annotations</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalCatalogCommon.impl.ParameterImpl#getProps <em>Props</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalCatalogCommon.impl.ParameterImpl#getLinks <em>Links</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalCatalogCommon.impl.ParameterImpl#getRemarks <em>Remarks</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalogCommon.impl.ParameterImpl#getClazz <em>Clazz</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalogCommon.impl.ParameterImpl#getConstraints <em>Constraints</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalogCommon.impl.ParameterImpl#getDependsOn <em>Depends On</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalogCommon.impl.ParameterImpl#getGuidelines <em>Guidelines</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalogCommon.impl.ParameterImpl#getId <em>Id</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalogCommon.impl.ParameterImpl#getLabel <em>Label</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalCatalogCommon.impl.ParameterImpl#getLinks <em>Links</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalCatalogCommon.impl.ParameterImpl#getProps <em>Props</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalCatalogCommon.impl.ParameterImpl#getRemarks <em>Remarks</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalogCommon.impl.ParameterImpl#getSelect <em>Select</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalogCommon.impl.ParameterImpl#getUsage <em>Usage</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalogCommon.impl.ParameterImpl#getValues <em>Values</em>}</li>
@@ -82,6 +86,46 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
 	 * @ordered
 	 */
 	protected EList<Annotation> annotations;
+
+	/**
+	 * The cached value of the '{@link #getProps() <em>Props</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProps()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Property> props;
+
+	/**
+	 * The cached value of the '{@link #getLinks() <em>Links</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLinks()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Link> links;
+
+	/**
+	 * The default value of the '{@link #getRemarks() <em>Remarks</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRemarks()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final MarkupMultiline REMARKS_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getRemarks() <em>Remarks</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRemarks()
+	 * @generated
+	 * @ordered
+	 */
+	protected MarkupMultiline remarks = REMARKS_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getClazz() <em>Clazz</em>}' attribute.
@@ -182,46 +226,6 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
 	 * @ordered
 	 */
 	protected MarkupLine label = LABEL_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getLinks() <em>Links</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLinks()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Link> links;
-
-	/**
-	 * The cached value of the '{@link #getProps() <em>Props</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProps()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Property> props;
-
-	/**
-	 * The default value of the '{@link #getRemarks() <em>Remarks</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRemarks()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final MarkupMultiline REMARKS_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getRemarks() <em>Remarks</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRemarks()
-	 * @generated
-	 * @ordered
-	 */
-	protected MarkupMultiline remarks = REMARKS_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getSelect() <em>Select</em>}' containment reference.
@@ -553,14 +557,14 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
 		switch (featureID) {
 			case OscalCatalogCommonPackage.PARAMETER__ANNOTATIONS:
 				return ((InternalEList<?>)getAnnotations()).basicRemove(otherEnd, msgs);
+			case OscalCatalogCommonPackage.PARAMETER__PROPS:
+				return ((InternalEList<?>)getProps()).basicRemove(otherEnd, msgs);
+			case OscalCatalogCommonPackage.PARAMETER__LINKS:
+				return ((InternalEList<?>)getLinks()).basicRemove(otherEnd, msgs);
 			case OscalCatalogCommonPackage.PARAMETER__CONSTRAINTS:
 				return ((InternalEList<?>)getConstraints()).basicRemove(otherEnd, msgs);
 			case OscalCatalogCommonPackage.PARAMETER__GUIDELINES:
 				return ((InternalEList<?>)getGuidelines()).basicRemove(otherEnd, msgs);
-			case OscalCatalogCommonPackage.PARAMETER__LINKS:
-				return ((InternalEList<?>)getLinks()).basicRemove(otherEnd, msgs);
-			case OscalCatalogCommonPackage.PARAMETER__PROPS:
-				return ((InternalEList<?>)getProps()).basicRemove(otherEnd, msgs);
 			case OscalCatalogCommonPackage.PARAMETER__SELECT:
 				return basicSetSelect(null, msgs);
 		}
@@ -577,6 +581,12 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
 		switch (featureID) {
 			case OscalCatalogCommonPackage.PARAMETER__ANNOTATIONS:
 				return getAnnotations();
+			case OscalCatalogCommonPackage.PARAMETER__PROPS:
+				return getProps();
+			case OscalCatalogCommonPackage.PARAMETER__LINKS:
+				return getLinks();
+			case OscalCatalogCommonPackage.PARAMETER__REMARKS:
+				return getRemarks();
 			case OscalCatalogCommonPackage.PARAMETER__CLAZZ:
 				return getClazz();
 			case OscalCatalogCommonPackage.PARAMETER__CONSTRAINTS:
@@ -589,12 +599,6 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
 				return getId();
 			case OscalCatalogCommonPackage.PARAMETER__LABEL:
 				return getLabel();
-			case OscalCatalogCommonPackage.PARAMETER__LINKS:
-				return getLinks();
-			case OscalCatalogCommonPackage.PARAMETER__PROPS:
-				return getProps();
-			case OscalCatalogCommonPackage.PARAMETER__REMARKS:
-				return getRemarks();
 			case OscalCatalogCommonPackage.PARAMETER__SELECT:
 				return getSelect();
 			case OscalCatalogCommonPackage.PARAMETER__USAGE:
@@ -618,6 +622,17 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
 				getAnnotations().clear();
 				getAnnotations().addAll((Collection<? extends Annotation>)newValue);
 				return;
+			case OscalCatalogCommonPackage.PARAMETER__PROPS:
+				getProps().clear();
+				getProps().addAll((Collection<? extends Property>)newValue);
+				return;
+			case OscalCatalogCommonPackage.PARAMETER__LINKS:
+				getLinks().clear();
+				getLinks().addAll((Collection<? extends Link>)newValue);
+				return;
+			case OscalCatalogCommonPackage.PARAMETER__REMARKS:
+				setRemarks((MarkupMultiline)newValue);
+				return;
 			case OscalCatalogCommonPackage.PARAMETER__CLAZZ:
 				setClazz((String)newValue);
 				return;
@@ -637,17 +652,6 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
 				return;
 			case OscalCatalogCommonPackage.PARAMETER__LABEL:
 				setLabel((MarkupLine)newValue);
-				return;
-			case OscalCatalogCommonPackage.PARAMETER__LINKS:
-				getLinks().clear();
-				getLinks().addAll((Collection<? extends Link>)newValue);
-				return;
-			case OscalCatalogCommonPackage.PARAMETER__PROPS:
-				getProps().clear();
-				getProps().addAll((Collection<? extends Property>)newValue);
-				return;
-			case OscalCatalogCommonPackage.PARAMETER__REMARKS:
-				setRemarks((MarkupMultiline)newValue);
 				return;
 			case OscalCatalogCommonPackage.PARAMETER__SELECT:
 				setSelect((ParameterSelection)newValue);
@@ -674,6 +678,15 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
 			case OscalCatalogCommonPackage.PARAMETER__ANNOTATIONS:
 				getAnnotations().clear();
 				return;
+			case OscalCatalogCommonPackage.PARAMETER__PROPS:
+				getProps().clear();
+				return;
+			case OscalCatalogCommonPackage.PARAMETER__LINKS:
+				getLinks().clear();
+				return;
+			case OscalCatalogCommonPackage.PARAMETER__REMARKS:
+				setRemarks(REMARKS_EDEFAULT);
+				return;
 			case OscalCatalogCommonPackage.PARAMETER__CLAZZ:
 				setClazz(CLAZZ_EDEFAULT);
 				return;
@@ -691,15 +704,6 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
 				return;
 			case OscalCatalogCommonPackage.PARAMETER__LABEL:
 				setLabel(LABEL_EDEFAULT);
-				return;
-			case OscalCatalogCommonPackage.PARAMETER__LINKS:
-				getLinks().clear();
-				return;
-			case OscalCatalogCommonPackage.PARAMETER__PROPS:
-				getProps().clear();
-				return;
-			case OscalCatalogCommonPackage.PARAMETER__REMARKS:
-				setRemarks(REMARKS_EDEFAULT);
 				return;
 			case OscalCatalogCommonPackage.PARAMETER__SELECT:
 				setSelect((ParameterSelection)null);
@@ -724,6 +728,12 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
 		switch (featureID) {
 			case OscalCatalogCommonPackage.PARAMETER__ANNOTATIONS:
 				return annotations != null && !annotations.isEmpty();
+			case OscalCatalogCommonPackage.PARAMETER__PROPS:
+				return props != null && !props.isEmpty();
+			case OscalCatalogCommonPackage.PARAMETER__LINKS:
+				return links != null && !links.isEmpty();
+			case OscalCatalogCommonPackage.PARAMETER__REMARKS:
+				return REMARKS_EDEFAULT == null ? remarks != null : !REMARKS_EDEFAULT.equals(remarks);
 			case OscalCatalogCommonPackage.PARAMETER__CLAZZ:
 				return CLAZZ_EDEFAULT == null ? clazz != null : !CLAZZ_EDEFAULT.equals(clazz);
 			case OscalCatalogCommonPackage.PARAMETER__CONSTRAINTS:
@@ -736,12 +746,6 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
 				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
 			case OscalCatalogCommonPackage.PARAMETER__LABEL:
 				return LABEL_EDEFAULT == null ? label != null : !LABEL_EDEFAULT.equals(label);
-			case OscalCatalogCommonPackage.PARAMETER__LINKS:
-				return links != null && !links.isEmpty();
-			case OscalCatalogCommonPackage.PARAMETER__PROPS:
-				return props != null && !props.isEmpty();
-			case OscalCatalogCommonPackage.PARAMETER__REMARKS:
-				return REMARKS_EDEFAULT == null ? remarks != null : !REMARKS_EDEFAULT.equals(remarks);
 			case OscalCatalogCommonPackage.PARAMETER__SELECT:
 				return select != null;
 			case OscalCatalogCommonPackage.PARAMETER__USAGE:
@@ -765,6 +769,30 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
 				default: return -1;
 			}
 		}
+		if (baseClass == PropertyOwner.class) {
+			switch (derivedFeatureID) {
+				case OscalCatalogCommonPackage.PARAMETER__PROPS: return OscalMetadataPackage.PROPERTY_OWNER__PROPS;
+				default: return -1;
+			}
+		}
+		if (baseClass == LinkOwner.class) {
+			switch (derivedFeatureID) {
+				case OscalCatalogCommonPackage.PARAMETER__LINKS: return OscalMetadataPackage.LINK_OWNER__LINKS;
+				default: return -1;
+			}
+		}
+		if (baseClass == ElementWithRemarks.class) {
+			switch (derivedFeatureID) {
+				case OscalCatalogCommonPackage.PARAMETER__REMARKS: return OscalMetadataPackage.ELEMENT_WITH_REMARKS__REMARKS;
+				default: return -1;
+			}
+		}
+		if (baseClass == ElementWithClazz.class) {
+			switch (derivedFeatureID) {
+				case OscalCatalogCommonPackage.PARAMETER__CLAZZ: return OscalMetadataPackage.ELEMENT_WITH_CLAZZ__CLAZZ;
+				default: return -1;
+			}
+		}
 		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
 	}
 
@@ -781,6 +809,30 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
 				default: return -1;
 			}
 		}
+		if (baseClass == PropertyOwner.class) {
+			switch (baseFeatureID) {
+				case OscalMetadataPackage.PROPERTY_OWNER__PROPS: return OscalCatalogCommonPackage.PARAMETER__PROPS;
+				default: return -1;
+			}
+		}
+		if (baseClass == LinkOwner.class) {
+			switch (baseFeatureID) {
+				case OscalMetadataPackage.LINK_OWNER__LINKS: return OscalCatalogCommonPackage.PARAMETER__LINKS;
+				default: return -1;
+			}
+		}
+		if (baseClass == ElementWithRemarks.class) {
+			switch (baseFeatureID) {
+				case OscalMetadataPackage.ELEMENT_WITH_REMARKS__REMARKS: return OscalCatalogCommonPackage.PARAMETER__REMARKS;
+				default: return -1;
+			}
+		}
+		if (baseClass == ElementWithClazz.class) {
+			switch (baseFeatureID) {
+				case OscalMetadataPackage.ELEMENT_WITH_CLAZZ__CLAZZ: return OscalCatalogCommonPackage.PARAMETER__CLAZZ;
+				default: return -1;
+			}
+		}
 		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
@@ -794,7 +846,9 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (clazz: ");
+		result.append(" (remarks: ");
+		result.append(remarks);
+		result.append(", clazz: ");
 		result.append(clazz);
 		result.append(", dependsOn: ");
 		result.append(dependsOn);
@@ -802,8 +856,6 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
 		result.append(id);
 		result.append(", label: ");
 		result.append(label);
-		result.append(", remarks: ");
-		result.append(remarks);
 		result.append(", usage: ");
 		result.append(usage);
 		result.append(", values: ");

@@ -18,10 +18,13 @@ package dsm.oscal.model.OscalMetadata.impl;
 import dsm.oscal.model.OscalMetadata.Address;
 import dsm.oscal.model.OscalMetadata.Annotation;
 import dsm.oscal.model.OscalMetadata.AnnotationOwner;
+import dsm.oscal.model.OscalMetadata.ElementWithRemarks;
 import dsm.oscal.model.OscalMetadata.Link;
+import dsm.oscal.model.OscalMetadata.LinkOwner;
 import dsm.oscal.model.OscalMetadata.Location;
 import dsm.oscal.model.OscalMetadata.OscalMetadataPackage;
 import dsm.oscal.model.OscalMetadata.Property;
+import dsm.oscal.model.OscalMetadata.PropertyOwner;
 import dsm.oscal.model.OscalMetadata.TelephoneNumber;
 
 import dsm.oscal.model.OscalMetadata.UUIDElement;
@@ -57,11 +60,11 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.LocationImpl#getUuid <em>Uuid</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.LocationImpl#getAnnotations <em>Annotations</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.impl.LocationImpl#getProps <em>Props</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.impl.LocationImpl#getLinks <em>Links</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.impl.LocationImpl#getRemarks <em>Remarks</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.LocationImpl#getAddress <em>Address</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.LocationImpl#getEmailAddresses <em>Email Addresses</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.impl.LocationImpl#getLinks <em>Links</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.impl.LocationImpl#getProps <em>Props</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.impl.LocationImpl#getRemarks <em>Remarks</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.LocationImpl#getTelephoneNumbers <em>Telephone Numbers</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.LocationImpl#getTitle <em>Title</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.LocationImpl#getUrls <em>Urls</em>}</li>
@@ -101,24 +104,14 @@ public class LocationImpl extends MinimalEObjectImpl.Container implements Locati
 	protected EList<Annotation> annotations;
 
 	/**
-	 * The cached value of the '{@link #getAddress() <em>Address</em>}' containment reference.
+	 * The cached value of the '{@link #getProps() <em>Props</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAddress()
+	 * @see #getProps()
 	 * @generated
 	 * @ordered
 	 */
-	protected Address address;
-
-	/**
-	 * The cached value of the '{@link #getEmailAddresses() <em>Email Addresses</em>}' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEmailAddresses()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<String> emailAddresses;
+	protected EList<Property> props;
 
 	/**
 	 * The cached value of the '{@link #getLinks() <em>Links</em>}' containment reference list.
@@ -129,16 +122,6 @@ public class LocationImpl extends MinimalEObjectImpl.Container implements Locati
 	 * @ordered
 	 */
 	protected EList<Link> links;
-
-	/**
-	 * The cached value of the '{@link #getProps() <em>Props</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProps()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Property> props;
 
 	/**
 	 * The default value of the '{@link #getRemarks() <em>Remarks</em>}' attribute.
@@ -159,6 +142,26 @@ public class LocationImpl extends MinimalEObjectImpl.Container implements Locati
 	 * @ordered
 	 */
 	protected MarkupMultiline remarks = REMARKS_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getAddress() <em>Address</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAddress()
+	 * @generated
+	 * @ordered
+	 */
+	protected Address address;
+
+	/**
+	 * The cached value of the '{@link #getEmailAddresses() <em>Email Addresses</em>}' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEmailAddresses()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<String> emailAddresses;
 
 	/**
 	 * The cached value of the '{@link #getTelephoneNumbers() <em>Telephone Numbers</em>}' containment reference list.
@@ -421,12 +424,12 @@ public class LocationImpl extends MinimalEObjectImpl.Container implements Locati
 		switch (featureID) {
 			case OscalMetadataPackage.LOCATION__ANNOTATIONS:
 				return ((InternalEList<?>)getAnnotations()).basicRemove(otherEnd, msgs);
-			case OscalMetadataPackage.LOCATION__ADDRESS:
-				return basicSetAddress(null, msgs);
-			case OscalMetadataPackage.LOCATION__LINKS:
-				return ((InternalEList<?>)getLinks()).basicRemove(otherEnd, msgs);
 			case OscalMetadataPackage.LOCATION__PROPS:
 				return ((InternalEList<?>)getProps()).basicRemove(otherEnd, msgs);
+			case OscalMetadataPackage.LOCATION__LINKS:
+				return ((InternalEList<?>)getLinks()).basicRemove(otherEnd, msgs);
+			case OscalMetadataPackage.LOCATION__ADDRESS:
+				return basicSetAddress(null, msgs);
 			case OscalMetadataPackage.LOCATION__TELEPHONE_NUMBERS:
 				return ((InternalEList<?>)getTelephoneNumbers()).basicRemove(otherEnd, msgs);
 		}
@@ -445,16 +448,16 @@ public class LocationImpl extends MinimalEObjectImpl.Container implements Locati
 				return getUuid();
 			case OscalMetadataPackage.LOCATION__ANNOTATIONS:
 				return getAnnotations();
+			case OscalMetadataPackage.LOCATION__PROPS:
+				return getProps();
+			case OscalMetadataPackage.LOCATION__LINKS:
+				return getLinks();
+			case OscalMetadataPackage.LOCATION__REMARKS:
+				return getRemarks();
 			case OscalMetadataPackage.LOCATION__ADDRESS:
 				return getAddress();
 			case OscalMetadataPackage.LOCATION__EMAIL_ADDRESSES:
 				return getEmailAddresses();
-			case OscalMetadataPackage.LOCATION__LINKS:
-				return getLinks();
-			case OscalMetadataPackage.LOCATION__PROPS:
-				return getProps();
-			case OscalMetadataPackage.LOCATION__REMARKS:
-				return getRemarks();
 			case OscalMetadataPackage.LOCATION__TELEPHONE_NUMBERS:
 				return getTelephoneNumbers();
 			case OscalMetadataPackage.LOCATION__TITLE:
@@ -481,23 +484,23 @@ public class LocationImpl extends MinimalEObjectImpl.Container implements Locati
 				getAnnotations().clear();
 				getAnnotations().addAll((Collection<? extends Annotation>)newValue);
 				return;
+			case OscalMetadataPackage.LOCATION__PROPS:
+				getProps().clear();
+				getProps().addAll((Collection<? extends Property>)newValue);
+				return;
+			case OscalMetadataPackage.LOCATION__LINKS:
+				getLinks().clear();
+				getLinks().addAll((Collection<? extends Link>)newValue);
+				return;
+			case OscalMetadataPackage.LOCATION__REMARKS:
+				setRemarks((MarkupMultiline)newValue);
+				return;
 			case OscalMetadataPackage.LOCATION__ADDRESS:
 				setAddress((Address)newValue);
 				return;
 			case OscalMetadataPackage.LOCATION__EMAIL_ADDRESSES:
 				getEmailAddresses().clear();
 				getEmailAddresses().addAll((Collection<? extends String>)newValue);
-				return;
-			case OscalMetadataPackage.LOCATION__LINKS:
-				getLinks().clear();
-				getLinks().addAll((Collection<? extends Link>)newValue);
-				return;
-			case OscalMetadataPackage.LOCATION__PROPS:
-				getProps().clear();
-				getProps().addAll((Collection<? extends Property>)newValue);
-				return;
-			case OscalMetadataPackage.LOCATION__REMARKS:
-				setRemarks((MarkupMultiline)newValue);
 				return;
 			case OscalMetadataPackage.LOCATION__TELEPHONE_NUMBERS:
 				getTelephoneNumbers().clear();
@@ -528,20 +531,20 @@ public class LocationImpl extends MinimalEObjectImpl.Container implements Locati
 			case OscalMetadataPackage.LOCATION__ANNOTATIONS:
 				getAnnotations().clear();
 				return;
+			case OscalMetadataPackage.LOCATION__PROPS:
+				getProps().clear();
+				return;
+			case OscalMetadataPackage.LOCATION__LINKS:
+				getLinks().clear();
+				return;
+			case OscalMetadataPackage.LOCATION__REMARKS:
+				setRemarks(REMARKS_EDEFAULT);
+				return;
 			case OscalMetadataPackage.LOCATION__ADDRESS:
 				setAddress((Address)null);
 				return;
 			case OscalMetadataPackage.LOCATION__EMAIL_ADDRESSES:
 				getEmailAddresses().clear();
-				return;
-			case OscalMetadataPackage.LOCATION__LINKS:
-				getLinks().clear();
-				return;
-			case OscalMetadataPackage.LOCATION__PROPS:
-				getProps().clear();
-				return;
-			case OscalMetadataPackage.LOCATION__REMARKS:
-				setRemarks(REMARKS_EDEFAULT);
 				return;
 			case OscalMetadataPackage.LOCATION__TELEPHONE_NUMBERS:
 				getTelephoneNumbers().clear();
@@ -568,16 +571,16 @@ public class LocationImpl extends MinimalEObjectImpl.Container implements Locati
 				return UUID_EDEFAULT == null ? uuid != null : !UUID_EDEFAULT.equals(uuid);
 			case OscalMetadataPackage.LOCATION__ANNOTATIONS:
 				return annotations != null && !annotations.isEmpty();
+			case OscalMetadataPackage.LOCATION__PROPS:
+				return props != null && !props.isEmpty();
+			case OscalMetadataPackage.LOCATION__LINKS:
+				return links != null && !links.isEmpty();
+			case OscalMetadataPackage.LOCATION__REMARKS:
+				return REMARKS_EDEFAULT == null ? remarks != null : !REMARKS_EDEFAULT.equals(remarks);
 			case OscalMetadataPackage.LOCATION__ADDRESS:
 				return address != null;
 			case OscalMetadataPackage.LOCATION__EMAIL_ADDRESSES:
 				return emailAddresses != null && !emailAddresses.isEmpty();
-			case OscalMetadataPackage.LOCATION__LINKS:
-				return links != null && !links.isEmpty();
-			case OscalMetadataPackage.LOCATION__PROPS:
-				return props != null && !props.isEmpty();
-			case OscalMetadataPackage.LOCATION__REMARKS:
-				return REMARKS_EDEFAULT == null ? remarks != null : !REMARKS_EDEFAULT.equals(remarks);
 			case OscalMetadataPackage.LOCATION__TELEPHONE_NUMBERS:
 				return telephoneNumbers != null && !telephoneNumbers.isEmpty();
 			case OscalMetadataPackage.LOCATION__TITLE:
@@ -607,6 +610,24 @@ public class LocationImpl extends MinimalEObjectImpl.Container implements Locati
 				default: return -1;
 			}
 		}
+		if (baseClass == PropertyOwner.class) {
+			switch (derivedFeatureID) {
+				case OscalMetadataPackage.LOCATION__PROPS: return OscalMetadataPackage.PROPERTY_OWNER__PROPS;
+				default: return -1;
+			}
+		}
+		if (baseClass == LinkOwner.class) {
+			switch (derivedFeatureID) {
+				case OscalMetadataPackage.LOCATION__LINKS: return OscalMetadataPackage.LINK_OWNER__LINKS;
+				default: return -1;
+			}
+		}
+		if (baseClass == ElementWithRemarks.class) {
+			switch (derivedFeatureID) {
+				case OscalMetadataPackage.LOCATION__REMARKS: return OscalMetadataPackage.ELEMENT_WITH_REMARKS__REMARKS;
+				default: return -1;
+			}
+		}
 		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
 	}
 
@@ -629,6 +650,24 @@ public class LocationImpl extends MinimalEObjectImpl.Container implements Locati
 				default: return -1;
 			}
 		}
+		if (baseClass == PropertyOwner.class) {
+			switch (baseFeatureID) {
+				case OscalMetadataPackage.PROPERTY_OWNER__PROPS: return OscalMetadataPackage.LOCATION__PROPS;
+				default: return -1;
+			}
+		}
+		if (baseClass == LinkOwner.class) {
+			switch (baseFeatureID) {
+				case OscalMetadataPackage.LINK_OWNER__LINKS: return OscalMetadataPackage.LOCATION__LINKS;
+				default: return -1;
+			}
+		}
+		if (baseClass == ElementWithRemarks.class) {
+			switch (baseFeatureID) {
+				case OscalMetadataPackage.ELEMENT_WITH_REMARKS__REMARKS: return OscalMetadataPackage.LOCATION__REMARKS;
+				default: return -1;
+			}
+		}
 		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
@@ -644,10 +683,10 @@ public class LocationImpl extends MinimalEObjectImpl.Container implements Locati
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (uuid: ");
 		result.append(uuid);
-		result.append(", emailAddresses: ");
-		result.append(emailAddresses);
 		result.append(", remarks: ");
 		result.append(remarks);
+		result.append(", emailAddresses: ");
+		result.append(emailAddresses);
 		result.append(", title: ");
 		result.append(title);
 		result.append(", urls: ");

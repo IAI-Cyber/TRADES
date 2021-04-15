@@ -74,10 +74,10 @@ public class PropertyItemProvider
 			super.getPropertyDescriptors(object);
 
 			addUuidPropertyDescriptor(object);
+			addValuePropertyDescriptor(object);
 			addClazzPropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
 			addNsPropertyDescriptor(object);
-			addValuePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -93,9 +93,9 @@ public class PropertyItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Property_value_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Property_value_feature", "_UI_Property_type"),
-				 OscalMetadataPackage.Literals.PROPERTY__VALUE,
+				 getString("_UI_ElementWithValue_value_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ElementWithValue_value_feature", "_UI_ElementWithValue_type"),
+				 OscalMetadataPackage.Literals.ELEMENT_WITH_VALUE__VALUE,
 				 true,
 				 false,
 				 false,
@@ -181,9 +181,9 @@ public class PropertyItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Property_clazz_feature"),
-				 getString("_UI_Property_clazz_description"),
-				 OscalMetadataPackage.Literals.PROPERTY__CLAZZ,
+				 getString("_UI_ElementWithClazz_clazz_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ElementWithClazz_clazz_feature", "_UI_ElementWithClazz_type"),
+				 OscalMetadataPackage.Literals.ELEMENT_WITH_CLAZZ__CLAZZ,
 				 true,
 				 false,
 				 false,
@@ -231,10 +231,10 @@ public class PropertyItemProvider
 
 		switch (notification.getFeatureID(Property.class)) {
 			case OscalMetadataPackage.PROPERTY__UUID:
+			case OscalMetadataPackage.PROPERTY__VALUE:
 			case OscalMetadataPackage.PROPERTY__CLAZZ:
 			case OscalMetadataPackage.PROPERTY__NAME:
 			case OscalMetadataPackage.PROPERTY__NS:
-			case OscalMetadataPackage.PROPERTY__VALUE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

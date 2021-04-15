@@ -123,9 +123,9 @@ public class ControlItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Control_clazz_feature"),
-				 getString("_UI_Control_clazz_description"),
-				 OscalCatalogPackage.Literals.CONTROL__CLAZZ,
+				 getString("_UI_ElementWithClazz_clazz_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ElementWithClazz_clazz_feature", "_UI_ElementWithClazz_type"),
+				 OscalMetadataPackage.Literals.ELEMENT_WITH_CLAZZ__CLAZZ,
 				 true,
 				 false,
 				 false,
@@ -168,12 +168,9 @@ public class ControlItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(OscalMetadataPackage.Literals.ANNOTATION_OWNER__ANNOTATIONS);
 			childrenFeatures.add(OscalCatalogPackage.Literals.CONTROL__CONTROLS);
-			childrenFeatures.add(OscalCatalogPackage.Literals.CONTROL__LINKS);
 			childrenFeatures.add(OscalCatalogPackage.Literals.CONTROL__PARAMS);
 			childrenFeatures.add(OscalCatalogPackage.Literals.CONTROL__PARTS);
-			childrenFeatures.add(OscalCatalogPackage.Literals.CONTROL__PROPS);
 		}
 		return childrenFeatures;
 	}
@@ -229,17 +226,17 @@ public class ControlItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Control.class)) {
+			case OscalCatalogPackage.CONTROL__ANNOTATIONS:
+			case OscalCatalogPackage.CONTROL__PROPS:
+			case OscalCatalogPackage.CONTROL__LINKS:
 			case OscalCatalogPackage.CONTROL__CLAZZ:
 			case OscalCatalogPackage.CONTROL__ID:
 			case OscalCatalogPackage.CONTROL__TITLE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case OscalCatalogPackage.CONTROL__ANNOTATIONS:
 			case OscalCatalogPackage.CONTROL__CONTROLS:
-			case OscalCatalogPackage.CONTROL__LINKS:
 			case OscalCatalogPackage.CONTROL__PARAMS:
 			case OscalCatalogPackage.CONTROL__PARTS:
-			case OscalCatalogPackage.CONTROL__PROPS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -264,13 +261,18 @@ public class ControlItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OscalCatalogPackage.Literals.CONTROL__CONTROLS,
-				 OscalCatalogFactory.eINSTANCE.createControl()));
+				(OscalMetadataPackage.Literals.PROPERTY_OWNER__PROPS,
+				 OscalMetadataFactory.eINSTANCE.createProperty()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OscalCatalogPackage.Literals.CONTROL__LINKS,
+				(OscalMetadataPackage.Literals.LINK_OWNER__LINKS,
 				 OscalMetadataFactory.eINSTANCE.createLink()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OscalCatalogPackage.Literals.CONTROL__CONTROLS,
+				 OscalCatalogFactory.eINSTANCE.createControl()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -281,11 +283,6 @@ public class ControlItemProvider
 			(createChildParameter
 				(OscalCatalogPackage.Literals.CONTROL__PARTS,
 				 OscalCatalogCommonFactory.eINSTANCE.createPart()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OscalCatalogPackage.Literals.CONTROL__PROPS,
-				 OscalMetadataFactory.eINSTANCE.createProperty()));
 	}
 
 	/**

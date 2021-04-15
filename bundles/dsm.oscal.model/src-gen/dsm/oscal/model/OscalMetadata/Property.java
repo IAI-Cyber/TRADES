@@ -35,39 +35,15 @@ import java.net.URI;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link dsm.oscal.model.OscalMetadata.Property#getClazz <em>Clazz</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.Property#getName <em>Name</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.Property#getNs <em>Ns</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.Property#getValue <em>Value</em>}</li>
  * </ul>
  *
  * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getProperty()
  * @model annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;FieldDefinition&gt;property'"
  * @generated
  */
-public interface Property extends OscalElement, UUIDElement {
-	/**
-	 * Returns the value of the '<em><b>Value</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Value</em>' attribute.
-	 * @see #setValue(String)
-	 * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getProperty_Value()
-	 * @model
-	 * @generated
-	 */
-	String getValue();
-
-	/**
-	 * Sets the value of the '{@link dsm.oscal.model.OscalMetadata.Property#getValue <em>Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Value</em>' attribute.
-	 * @see #getValue()
-	 * @generated
-	 */
-	void setValue(String value);
-
+public interface Property extends OscalElement, UUIDElement, ElementWithValue, ElementWithClazz {
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -129,35 +105,5 @@ public interface Property extends OscalElement, UUIDElement {
 	 * @generated
 	 */
 	void setNs(URI value);
-
-	/**
-	 * Returns the value of the '<em><b>Clazz</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * <h1>Property Class</h1>
-	 * <h2>Description</h2>
-	 * <p>A textual label that provides a sub-type or characterization of the property's <code>name</code>. This can be used to further distinguish or discriminate between the semantics of multiple properties of the same object with the same <code>name</code> and <code>ns</code>.</p>
-	 * <h2>Remarks</h2>
-	 * <p>A <code>class</code> can be used in validation rules to express extra constraints over named items of a specific <code>class</code> value.</p>
-	 * 
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Clazz</em>' attribute.
-	 * @see #setClazz(String)
-	 * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getProperty_Clazz()
-	 * @model annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;FieldDefinition&gt;property.&lt;FlagInstance&gt;class'"
-	 * @generated
-	 */
-	String getClazz();
-
-	/**
-	 * Sets the value of the '{@link dsm.oscal.model.OscalMetadata.Property#getClazz <em>Clazz</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Clazz</em>' attribute.
-	 * @see #getClazz()
-	 * @generated
-	 */
-	void setClazz(String value);
 
 } // Property

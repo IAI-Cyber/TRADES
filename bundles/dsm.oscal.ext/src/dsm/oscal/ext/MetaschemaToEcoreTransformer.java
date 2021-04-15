@@ -218,7 +218,7 @@ public class MetaschemaToEcoreTransformer {
 		}
 
 		createGenModel(rs, modelFolder, pluginFolder);
-		refactorer.refactorGenModel(genClasses);
+		
 	}
 
 	public void sortByName() {
@@ -310,7 +310,7 @@ public class MetaschemaToEcoreTransformer {
 				}
 			}
 		}
-
+		refactorer.refactorGenModel(genClasses);
 		try {
 			Resource genModelResource = rs.createResource(
 					URI.createFileURI(modelFolderLocation.resolve("oscal.genmodel").toFile().toURI().getPath()));

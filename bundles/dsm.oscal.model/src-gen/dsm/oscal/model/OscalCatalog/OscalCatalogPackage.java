@@ -172,31 +172,13 @@ public interface OscalCatalogPackage extends EPackage {
 	int CONTROL__ANNOTATIONS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Clazz</b></em>' attribute.
+	 * The feature id for the '<em><b>Props</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL__CLAZZ = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Controls</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTROL__CONTROLS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTROL__ID = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 3;
+	int CONTROL__PROPS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Links</b></em>' containment reference list.
@@ -205,7 +187,34 @@ public interface OscalCatalogPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL__LINKS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 4;
+	int CONTROL__LINKS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Clazz</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL__CLAZZ = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Controls</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL__CONTROLS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL__ID = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Params</b></em>' containment reference list.
@@ -214,7 +223,7 @@ public interface OscalCatalogPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL__PARAMS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 5;
+	int CONTROL__PARAMS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Parts</b></em>' containment reference list.
@@ -223,16 +232,7 @@ public interface OscalCatalogPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL__PARTS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 6;
-
-	/**
-	 * The feature id for the '<em><b>Props</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTROL__PROPS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 7;
+	int CONTROL__PARTS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Title</b></em>' attribute.
@@ -281,40 +281,13 @@ public interface OscalCatalogPackage extends EPackage {
 	int GROUP__ANNOTATIONS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Clazz</b></em>' attribute.
+	 * The feature id for the '<em><b>Props</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GROUP__CLAZZ = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Controls</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GROUP__CONTROLS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Groups</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GROUP__GROUPS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GROUP__ID = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 4;
+	int GROUP__PROPS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Links</b></em>' containment reference list.
@@ -323,7 +296,43 @@ public interface OscalCatalogPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GROUP__LINKS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 5;
+	int GROUP__LINKS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Clazz</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GROUP__CLAZZ = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Controls</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GROUP__CONTROLS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Groups</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GROUP__GROUPS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GROUP__ID = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Params</b></em>' containment reference list.
@@ -332,7 +341,7 @@ public interface OscalCatalogPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GROUP__PARAMS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 6;
+	int GROUP__PARAMS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Parts</b></em>' containment reference list.
@@ -341,16 +350,7 @@ public interface OscalCatalogPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GROUP__PARTS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 7;
-
-	/**
-	 * The feature id for the '<em><b>Props</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GROUP__PROPS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 8;
+	int GROUP__PARTS = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Title</b></em>' attribute.
@@ -467,17 +467,6 @@ public interface OscalCatalogPackage extends EPackage {
 	EAttribute getControl_Id();
 
 	/**
-	 * Returns the meta object for the attribute '{@link dsm.oscal.model.OscalCatalog.Control#getClazz <em>Clazz</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Clazz</em>'.
-	 * @see dsm.oscal.model.OscalCatalog.Control#getClazz()
-	 * @see #getControl()
-	 * @generated
-	 */
-	EAttribute getControl_Clazz();
-
-	/**
 	 * Returns the meta object for the attribute '{@link dsm.oscal.model.OscalCatalog.Control#getTitle <em>Title</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -511,17 +500,6 @@ public interface OscalCatalogPackage extends EPackage {
 	EReference getControl_Parts();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link dsm.oscal.model.OscalCatalog.Control#getLinks <em>Links</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Links</em>'.
-	 * @see dsm.oscal.model.OscalCatalog.Control#getLinks()
-	 * @see #getControl()
-	 * @generated
-	 */
-	EReference getControl_Links();
-
-	/**
 	 * Returns the meta object for the containment reference list '{@link dsm.oscal.model.OscalCatalog.Control#getControls <em>Controls</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -531,17 +509,6 @@ public interface OscalCatalogPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getControl_Controls();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link dsm.oscal.model.OscalCatalog.Control#getProps <em>Props</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Props</em>'.
-	 * @see dsm.oscal.model.OscalCatalog.Control#getProps()
-	 * @see #getControl()
-	 * @generated
-	 */
-	EReference getControl_Props();
 
 	/**
 	 * Returns the meta object for class '{@link dsm.oscal.model.OscalCatalog.Group <em>Group</em>}'.
@@ -563,17 +530,6 @@ public interface OscalCatalogPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getGroup_Id();
-
-	/**
-	 * Returns the meta object for the attribute '{@link dsm.oscal.model.OscalCatalog.Group#getClazz <em>Clazz</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Clazz</em>'.
-	 * @see dsm.oscal.model.OscalCatalog.Group#getClazz()
-	 * @see #getGroup()
-	 * @generated
-	 */
-	EAttribute getGroup_Clazz();
 
 	/**
 	 * Returns the meta object for the attribute '{@link dsm.oscal.model.OscalCatalog.Group#getTitle <em>Title</em>}'.
@@ -609,17 +565,6 @@ public interface OscalCatalogPackage extends EPackage {
 	EReference getGroup_Parts();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link dsm.oscal.model.OscalCatalog.Group#getLinks <em>Links</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Links</em>'.
-	 * @see dsm.oscal.model.OscalCatalog.Group#getLinks()
-	 * @see #getGroup()
-	 * @generated
-	 */
-	EReference getGroup_Links();
-
-	/**
 	 * Returns the meta object for the containment reference list '{@link dsm.oscal.model.OscalCatalog.Group#getControls <em>Controls</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -640,17 +585,6 @@ public interface OscalCatalogPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getGroup_Groups();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link dsm.oscal.model.OscalCatalog.Group#getProps <em>Props</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Props</em>'.
-	 * @see dsm.oscal.model.OscalCatalog.Group#getProps()
-	 * @see #getGroup()
-	 * @generated
-	 */
-	EReference getGroup_Props();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -744,14 +678,6 @@ public interface OscalCatalogPackage extends EPackage {
 		EAttribute CONTROL__ID = eINSTANCE.getControl_Id();
 
 		/**
-		 * The meta object literal for the '<em><b>Clazz</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CONTROL__CLAZZ = eINSTANCE.getControl_Clazz();
-
-		/**
 		 * The meta object literal for the '<em><b>Title</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -776,28 +702,12 @@ public interface OscalCatalogPackage extends EPackage {
 		EReference CONTROL__PARTS = eINSTANCE.getControl_Parts();
 
 		/**
-		 * The meta object literal for the '<em><b>Links</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference CONTROL__LINKS = eINSTANCE.getControl_Links();
-
-		/**
 		 * The meta object literal for the '<em><b>Controls</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference CONTROL__CONTROLS = eINSTANCE.getControl_Controls();
-
-		/**
-		 * The meta object literal for the '<em><b>Props</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference CONTROL__PROPS = eINSTANCE.getControl_Props();
 
 		/**
 		 * The meta object literal for the '{@link dsm.oscal.model.OscalCatalog.impl.GroupImpl <em>Group</em>}' class.
@@ -816,14 +726,6 @@ public interface OscalCatalogPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute GROUP__ID = eINSTANCE.getGroup_Id();
-
-		/**
-		 * The meta object literal for the '<em><b>Clazz</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute GROUP__CLAZZ = eINSTANCE.getGroup_Clazz();
 
 		/**
 		 * The meta object literal for the '<em><b>Title</b></em>' attribute feature.
@@ -850,14 +752,6 @@ public interface OscalCatalogPackage extends EPackage {
 		EReference GROUP__PARTS = eINSTANCE.getGroup_Parts();
 
 		/**
-		 * The meta object literal for the '<em><b>Links</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference GROUP__LINKS = eINSTANCE.getGroup_Links();
-
-		/**
 		 * The meta object literal for the '<em><b>Controls</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -872,14 +766,6 @@ public interface OscalCatalogPackage extends EPackage {
 		 * @generated
 		 */
 		EReference GROUP__GROUPS = eINSTANCE.getGroup_Groups();
-
-		/**
-		 * The meta object literal for the '<em><b>Props</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference GROUP__PROPS = eINSTANCE.getGroup_Props();
 
 	}
 

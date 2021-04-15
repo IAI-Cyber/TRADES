@@ -27,9 +27,6 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
-
-import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -76,9 +73,9 @@ public class RoleItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addRemarksPropertyDescriptor(object);
 			addDescriptionPropertyDescriptor(object);
 			addIdPropertyDescriptor(object);
-			addRemarksPropertyDescriptor(object);
 			addShortNamePropertyDescriptor(object);
 			addTitlePropertyDescriptor(object);
 		}
@@ -184,47 +181,15 @@ public class RoleItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Role_remarks_feature"),
-				 getString("_UI_Role_remarks_description"),
-				 OscalMetadataPackage.Literals.ROLE__REMARKS,
+				 getString("_UI_ElementWithRemarks_remarks_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ElementWithRemarks_remarks_feature", "_UI_ElementWithRemarks_type"),
+				 OscalMetadataPackage.Literals.ELEMENT_WITH_REMARKS__REMARKS,
 				 true,
 				 true,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
-	}
-
-	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
-	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null) {
-			super.getChildrenFeatures(object);
-			childrenFeatures.add(OscalMetadataPackage.Literals.ANNOTATION_OWNER__ANNOTATIONS);
-			childrenFeatures.add(OscalMetadataPackage.Literals.ROLE__LINKS);
-			childrenFeatures.add(OscalMetadataPackage.Literals.ROLE__PROPS);
-		}
-		return childrenFeatures;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected EStructuralFeature getChildFeature(Object object, Object child) {
-		// Check the type of the specified child object and return the proper feature to use for
-		// adding (see {@link AddCommand}) it as a child.
-
-		return super.getChildFeature(object, child);
 	}
 
 	/**
@@ -265,17 +230,15 @@ public class RoleItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Role.class)) {
+			case OscalMetadataPackage.ROLE__ANNOTATIONS:
+			case OscalMetadataPackage.ROLE__PROPS:
+			case OscalMetadataPackage.ROLE__LINKS:
+			case OscalMetadataPackage.ROLE__REMARKS:
 			case OscalMetadataPackage.ROLE__DESCRIPTION:
 			case OscalMetadataPackage.ROLE__ID:
-			case OscalMetadataPackage.ROLE__REMARKS:
 			case OscalMetadataPackage.ROLE__SHORT_NAME:
 			case OscalMetadataPackage.ROLE__TITLE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-			case OscalMetadataPackage.ROLE__ANNOTATIONS:
-			case OscalMetadataPackage.ROLE__LINKS:
-			case OscalMetadataPackage.ROLE__PROPS:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
 		super.notifyChanged(notification);
@@ -299,13 +262,13 @@ public class RoleItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OscalMetadataPackage.Literals.ROLE__LINKS,
-				 OscalMetadataFactory.eINSTANCE.createLink()));
+				(OscalMetadataPackage.Literals.PROPERTY_OWNER__PROPS,
+				 OscalMetadataFactory.eINSTANCE.createProperty()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OscalMetadataPackage.Literals.ROLE__PROPS,
-				 OscalMetadataFactory.eINSTANCE.createProperty()));
+				(OscalMetadataPackage.Literals.LINK_OWNER__LINKS,
+				 OscalMetadataFactory.eINSTANCE.createLink()));
 	}
 
 	/**

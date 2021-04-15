@@ -73,8 +73,8 @@ public class HashItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addAlgorithmPropertyDescriptor(object);
 			addValuePropertyDescriptor(object);
+			addAlgorithmPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -90,9 +90,9 @@ public class HashItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Hash_value_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Hash_value_feature", "_UI_Hash_type"),
-				 OscalMetadataPackage.Literals.HASH__VALUE,
+				 getString("_UI_ElementWithValue_value_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ElementWithValue_value_feature", "_UI_ElementWithValue_type"),
+				 OscalMetadataPackage.Literals.ELEMENT_WITH_VALUE__VALUE,
 				 true,
 				 false,
 				 false,
@@ -142,7 +142,7 @@ public class HashItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Hash)object).getAlgorithm();
+		String label = ((Hash)object).getValue();
 		return label == null || label.length() == 0 ?
 			getString("_UI_Hash_type") :
 			getString("_UI_Hash_type") + " " + label;
@@ -161,8 +161,8 @@ public class HashItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Hash.class)) {
-			case OscalMetadataPackage.HASH__ALGORITHM:
 			case OscalMetadataPackage.HASH__VALUE:
+			case OscalMetadataPackage.HASH__ALGORITHM:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

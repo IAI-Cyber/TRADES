@@ -19,6 +19,7 @@ import dsm.oscal.model.OscalMetadata.Annotation;
 import dsm.oscal.model.OscalMetadata.AnnotationOwner;
 import dsm.oscal.model.OscalMetadata.OscalMetadataPackage;
 import dsm.oscal.model.OscalMetadata.Property;
+import dsm.oscal.model.OscalMetadata.PropertyOwner;
 import dsm.oscal.model.OscalMetadata.ResourceCitation;
 
 import gov.nist.secauto.metaschema.datatypes.markup.MarkupLine;
@@ -273,6 +274,12 @@ public class ResourceCitationImpl extends MinimalEObjectImpl.Container implement
 				default: return -1;
 			}
 		}
+		if (baseClass == PropertyOwner.class) {
+			switch (derivedFeatureID) {
+				case OscalMetadataPackage.RESOURCE_CITATION__PROPS: return OscalMetadataPackage.PROPERTY_OWNER__PROPS;
+				default: return -1;
+			}
+		}
 		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
 	}
 
@@ -286,6 +293,12 @@ public class ResourceCitationImpl extends MinimalEObjectImpl.Container implement
 		if (baseClass == AnnotationOwner.class) {
 			switch (baseFeatureID) {
 				case OscalMetadataPackage.ANNOTATION_OWNER__ANNOTATIONS: return OscalMetadataPackage.RESOURCE_CITATION__ANNOTATIONS;
+				default: return -1;
+			}
+		}
+		if (baseClass == PropertyOwner.class) {
+			switch (baseFeatureID) {
+				case OscalMetadataPackage.PROPERTY_OWNER__PROPS: return OscalMetadataPackage.RESOURCE_CITATION__PROPS;
 				default: return -1;
 			}
 		}

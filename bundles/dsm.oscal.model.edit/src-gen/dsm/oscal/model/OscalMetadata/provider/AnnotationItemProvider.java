@@ -74,10 +74,10 @@ public class AnnotationItemProvider
 			super.getPropertyDescriptors(object);
 
 			addUuidPropertyDescriptor(object);
-			addNamePropertyDescriptor(object);
-			addNsPropertyDescriptor(object);
 			addRemarksPropertyDescriptor(object);
 			addValuePropertyDescriptor(object);
+			addNamePropertyDescriptor(object);
+			addNsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -159,9 +159,9 @@ public class AnnotationItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Annotation_value_feature"),
-				 getString("_UI_Annotation_value_description"),
-				 OscalMetadataPackage.Literals.ANNOTATION__VALUE,
+				 getString("_UI_ElementWithValue_value_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ElementWithValue_value_feature", "_UI_ElementWithValue_type"),
+				 OscalMetadataPackage.Literals.ELEMENT_WITH_VALUE__VALUE,
 				 true,
 				 false,
 				 false,
@@ -181,9 +181,9 @@ public class AnnotationItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Annotation_remarks_feature"),
-				 getString("_UI_Annotation_remarks_description"),
-				 OscalMetadataPackage.Literals.ANNOTATION__REMARKS,
+				 getString("_UI_ElementWithRemarks_remarks_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ElementWithRemarks_remarks_feature", "_UI_ElementWithRemarks_type"),
+				 OscalMetadataPackage.Literals.ELEMENT_WITH_REMARKS__REMARKS,
 				 true,
 				 true,
 				 false,
@@ -231,10 +231,10 @@ public class AnnotationItemProvider
 
 		switch (notification.getFeatureID(Annotation.class)) {
 			case OscalMetadataPackage.ANNOTATION__UUID:
-			case OscalMetadataPackage.ANNOTATION__NAME:
-			case OscalMetadataPackage.ANNOTATION__NS:
 			case OscalMetadataPackage.ANNOTATION__REMARKS:
 			case OscalMetadataPackage.ANNOTATION__VALUE:
+			case OscalMetadataPackage.ANNOTATION__NAME:
+			case OscalMetadataPackage.ANNOTATION__NS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

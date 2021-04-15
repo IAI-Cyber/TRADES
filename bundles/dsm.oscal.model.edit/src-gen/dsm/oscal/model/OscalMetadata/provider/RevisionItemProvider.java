@@ -19,7 +19,7 @@ package dsm.oscal.model.OscalMetadata.provider;
 import dsm.oscal.model.OscalMetadata.OscalMetadataFactory;
 import dsm.oscal.model.OscalMetadata.OscalMetadataPackage;
 import dsm.oscal.model.OscalMetadata.Revision;
-import java.time.ZonedDateTime;
+import gov.nist.secauto.metaschema.datatypes.markup.MarkupMultiline;
 import java.util.Collection;
 import java.util.List;
 
@@ -27,9 +27,6 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
-
-import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -76,10 +73,10 @@ public class RevisionItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addRemarksPropertyDescriptor(object);
 			addLastModifiedPropertyDescriptor(object);
 			addOscalVersionPropertyDescriptor(object);
 			addPublishedPropertyDescriptor(object);
-			addRemarksPropertyDescriptor(object);
 			addTitlePropertyDescriptor(object);
 			addVersionPropertyDescriptor(object);
 		}
@@ -207,47 +204,15 @@ public class RevisionItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Revision_remarks_feature"),
-				 getString("_UI_Revision_remarks_description"),
-				 OscalMetadataPackage.Literals.REVISION__REMARKS,
+				 getString("_UI_ElementWithRemarks_remarks_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ElementWithRemarks_remarks_feature", "_UI_ElementWithRemarks_type"),
+				 OscalMetadataPackage.Literals.ELEMENT_WITH_REMARKS__REMARKS,
 				 true,
 				 true,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
-	}
-
-	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
-	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null) {
-			super.getChildrenFeatures(object);
-			childrenFeatures.add(OscalMetadataPackage.Literals.ANNOTATION_OWNER__ANNOTATIONS);
-			childrenFeatures.add(OscalMetadataPackage.Literals.REVISION__LINKS);
-			childrenFeatures.add(OscalMetadataPackage.Literals.REVISION__PROPS);
-		}
-		return childrenFeatures;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected EStructuralFeature getChildFeature(Object object, Object child) {
-		// Check the type of the specified child object and return the proper feature to use for
-		// adding (see {@link AddCommand}) it as a child.
-
-		return super.getChildFeature(object, child);
 	}
 
 	/**
@@ -269,7 +234,7 @@ public class RevisionItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		ZonedDateTime labelValue = ((Revision)object).getLastModified();
+		MarkupMultiline labelValue = ((Revision)object).getRemarks();
 		String label = labelValue == null ? null : labelValue.toString();
 		return label == null || label.length() == 0 ?
 			getString("_UI_Revision_type") :
@@ -289,18 +254,16 @@ public class RevisionItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Revision.class)) {
+			case OscalMetadataPackage.REVISION__ANNOTATIONS:
+			case OscalMetadataPackage.REVISION__PROPS:
+			case OscalMetadataPackage.REVISION__LINKS:
+			case OscalMetadataPackage.REVISION__REMARKS:
 			case OscalMetadataPackage.REVISION__LAST_MODIFIED:
 			case OscalMetadataPackage.REVISION__OSCAL_VERSION:
 			case OscalMetadataPackage.REVISION__PUBLISHED:
-			case OscalMetadataPackage.REVISION__REMARKS:
 			case OscalMetadataPackage.REVISION__TITLE:
 			case OscalMetadataPackage.REVISION__VERSION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-			case OscalMetadataPackage.REVISION__ANNOTATIONS:
-			case OscalMetadataPackage.REVISION__LINKS:
-			case OscalMetadataPackage.REVISION__PROPS:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
 		super.notifyChanged(notification);
@@ -324,13 +287,13 @@ public class RevisionItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OscalMetadataPackage.Literals.REVISION__LINKS,
-				 OscalMetadataFactory.eINSTANCE.createLink()));
+				(OscalMetadataPackage.Literals.PROPERTY_OWNER__PROPS,
+				 OscalMetadataFactory.eINSTANCE.createProperty()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OscalMetadataPackage.Literals.REVISION__PROPS,
-				 OscalMetadataFactory.eINSTANCE.createProperty()));
+				(OscalMetadataPackage.Literals.LINK_OWNER__LINKS,
+				 OscalMetadataFactory.eINSTANCE.createLink()));
 	}
 
 	/**

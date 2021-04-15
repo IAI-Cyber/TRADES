@@ -15,6 +15,7 @@
  */
 package dsm.oscal.model.OscalMetadata.impl;
 
+import dsm.oscal.model.OscalMetadata.ElementWithValue;
 import dsm.oscal.model.OscalMetadata.ExternalId;
 import dsm.oscal.model.OscalMetadata.OscalMetadataPackage;
 
@@ -35,33 +36,13 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link dsm.oscal.model.OscalMetadata.impl.ExternalIdImpl#getScheme <em>Scheme</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.ExternalIdImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.impl.ExternalIdImpl#getScheme <em>Scheme</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class ExternalIdImpl extends MinimalEObjectImpl.Container implements ExternalId {
-	/**
-	 * The default value of the '{@link #getScheme() <em>Scheme</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getScheme()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final URI SCHEME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getScheme() <em>Scheme</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getScheme()
-	 * @generated
-	 * @ordered
-	 */
-	protected URI scheme = SCHEME_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -81,6 +62,26 @@ public class ExternalIdImpl extends MinimalEObjectImpl.Container implements Exte
 	 * @ordered
 	 */
 	protected String value = VALUE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getScheme() <em>Scheme</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getScheme()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final URI SCHEME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getScheme() <em>Scheme</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getScheme()
+	 * @generated
+	 * @ordered
+	 */
+	protected URI scheme = SCHEME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -155,10 +156,10 @@ public class ExternalIdImpl extends MinimalEObjectImpl.Container implements Exte
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case OscalMetadataPackage.EXTERNAL_ID__SCHEME:
-				return getScheme();
 			case OscalMetadataPackage.EXTERNAL_ID__VALUE:
 				return getValue();
+			case OscalMetadataPackage.EXTERNAL_ID__SCHEME:
+				return getScheme();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -171,11 +172,11 @@ public class ExternalIdImpl extends MinimalEObjectImpl.Container implements Exte
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case OscalMetadataPackage.EXTERNAL_ID__SCHEME:
-				setScheme((URI)newValue);
-				return;
 			case OscalMetadataPackage.EXTERNAL_ID__VALUE:
 				setValue((String)newValue);
+				return;
+			case OscalMetadataPackage.EXTERNAL_ID__SCHEME:
+				setScheme((URI)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -189,11 +190,11 @@ public class ExternalIdImpl extends MinimalEObjectImpl.Container implements Exte
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case OscalMetadataPackage.EXTERNAL_ID__SCHEME:
-				setScheme(SCHEME_EDEFAULT);
-				return;
 			case OscalMetadataPackage.EXTERNAL_ID__VALUE:
 				setValue(VALUE_EDEFAULT);
+				return;
+			case OscalMetadataPackage.EXTERNAL_ID__SCHEME:
+				setScheme(SCHEME_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -207,12 +208,44 @@ public class ExternalIdImpl extends MinimalEObjectImpl.Container implements Exte
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case OscalMetadataPackage.EXTERNAL_ID__SCHEME:
-				return SCHEME_EDEFAULT == null ? scheme != null : !SCHEME_EDEFAULT.equals(scheme);
 			case OscalMetadataPackage.EXTERNAL_ID__VALUE:
 				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
+			case OscalMetadataPackage.EXTERNAL_ID__SCHEME:
+				return SCHEME_EDEFAULT == null ? scheme != null : !SCHEME_EDEFAULT.equals(scheme);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == ElementWithValue.class) {
+			switch (derivedFeatureID) {
+				case OscalMetadataPackage.EXTERNAL_ID__VALUE: return OscalMetadataPackage.ELEMENT_WITH_VALUE__VALUE;
+				default: return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == ElementWithValue.class) {
+			switch (baseFeatureID) {
+				case OscalMetadataPackage.ELEMENT_WITH_VALUE__VALUE: return OscalMetadataPackage.EXTERNAL_ID__VALUE;
+				default: return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
 	/**
@@ -225,10 +258,10 @@ public class ExternalIdImpl extends MinimalEObjectImpl.Container implements Exte
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (scheme: ");
-		result.append(scheme);
-		result.append(", value: ");
+		result.append(" (value: ");
 		result.append(value);
+		result.append(", scheme: ");
+		result.append(scheme);
 		result.append(')');
 		return result.toString();
 	}

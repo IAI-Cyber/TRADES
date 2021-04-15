@@ -19,8 +19,10 @@ package dsm.oscal.model.OscalCatalogCommon.provider;
 import dsm.oscal.model.OscalCatalogCommon.OscalCatalogCommonPackage;
 import dsm.oscal.model.OscalCatalogCommon.ParameterConstraintTest;
 
+import dsm.oscal.model.OscalMetadata.OscalMetadataPackage;
 import dsm.oscal.model.OscalMetadata.provider.OscalEditPlugin;
 
+import gov.nist.secauto.metaschema.datatypes.markup.MarkupMultiline;
 import java.util.Collection;
 import java.util.List;
 
@@ -75,8 +77,8 @@ public class ParameterConstraintTestItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addExpressionPropertyDescriptor(object);
 			addRemarksPropertyDescriptor(object);
+			addExpressionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -114,9 +116,9 @@ public class ParameterConstraintTestItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ParameterConstraintTest_remarks_feature"),
-				 getString("_UI_ParameterConstraintTest_remarks_description"),
-				 OscalCatalogCommonPackage.Literals.PARAMETER_CONSTRAINT_TEST__REMARKS,
+				 getString("_UI_ElementWithRemarks_remarks_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ElementWithRemarks_remarks_feature", "_UI_ElementWithRemarks_type"),
+				 OscalMetadataPackage.Literals.ELEMENT_WITH_REMARKS__REMARKS,
 				 true,
 				 true,
 				 false,
@@ -144,7 +146,8 @@ public class ParameterConstraintTestItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ParameterConstraintTest)object).getExpression();
+		MarkupMultiline labelValue = ((ParameterConstraintTest)object).getRemarks();
+		String label = labelValue == null ? null : labelValue.toString();
 		return label == null || label.length() == 0 ?
 			getString("_UI_ParameterConstraintTest_type") :
 			getString("_UI_ParameterConstraintTest_type") + " " + label;
@@ -163,8 +166,8 @@ public class ParameterConstraintTestItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ParameterConstraintTest.class)) {
-			case OscalCatalogCommonPackage.PARAMETER_CONSTRAINT_TEST__EXPRESSION:
 			case OscalCatalogCommonPackage.PARAMETER_CONSTRAINT_TEST__REMARKS:
+			case OscalCatalogCommonPackage.PARAMETER_CONSTRAINT_TEST__EXPRESSION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

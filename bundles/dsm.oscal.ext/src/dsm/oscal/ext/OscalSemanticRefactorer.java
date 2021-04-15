@@ -14,7 +14,7 @@
 package dsm.oscal.ext;
 
 import static dsm.oscal.ext.matchers.EClassifierMatchers.hasInstanceClass;
-import static dsm.oscal.ext.matchers.FeatureMatchers.isAttributeTyped;
+import static dsm.oscal.ext.matchers.FeatureMatchers.*;
 import static dsm.oscal.ext.matchers.FeatureMatchers.isContainmentTyped;
 import static dsm.oscal.ext.matchers.FeatureMatchers.isMany;
 import static dsm.oscal.ext.matchers.FeatureMatchers.isUnique;
@@ -38,10 +38,12 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.EcoreFactory;
+import org.eclipse.emf.ecore.EcorePackage;
 
 import com.google.common.base.CaseFormat;
 
 import dsm.oscal.ext.matchers.EClassifierMatchers;
+import gov.nist.secauto.metaschema.datatypes.markup.MarkupMultiline;
 
 public class OscalSemanticRefactorer implements ISemanticRefactorer {
 
@@ -50,7 +52,6 @@ public class OscalSemanticRefactorer implements ISemanticRefactorer {
 																				 * be unique it will be easier to use
 																				 */
 			.and(isAttributeTyped(UUID.class.getName()));
-	private static final Predicate<EStructuralFeature> ANNOTATIONS_REF = isContainmentTyped("Annotation").and(isMany());
 
 	private EPackage rootEPackage;
 
@@ -59,12 +60,15 @@ public class OscalSemanticRefactorer implements ISemanticRefactorer {
 
 	private List<EReference> hiddenContainementReferences = new ArrayList<>();
 	private List<GenClass> genClasses;
+	private EDataType markupMultilineType;
 
 	@Override
 	public void init(EPackage rootEPackage) {
 		this.rootEPackage = rootEPackage;
 		this.uuidDataType = (EDataType) rootEPackage.getEClassifiers().stream()
 				.filter(hasInstanceClass(UUID.class.getName())).findFirst().get();
+		this.markupMultilineType = (EDataType) rootEPackage.getEClassifiers().stream()
+				.filter(hasInstanceClass(MarkupMultiline.class.getName())).findFirst().get();
 	}
 
 	@Override
@@ -73,7 +77,13 @@ public class OscalSemanticRefactorer implements ISemanticRefactorer {
 		this.eClasses = eClasses;
 		System.out.println("* Starting semantic refactoring");
 		createUUIDElements();
-		createAnnotationOwner();
+		createAbstractOwnerClass(getEClass("Annotation"), "annotations");
+		createAbstractOwnerClass(getEClass("Property"), "props");
+		createAbstractOwnerClass(getEClass("Link"), "links");
+
+		createElementWith(markupMultilineType, "remarks", false);
+		createElementWith(EcorePackage.eINSTANCE.getEString(), "value", false);
+		createElementWith(EcorePackage.eINSTANCE.getEString(), "clazz", false);
 
 		Map<FeatureBucket, List<EStructuralFeature>> features = eClasses.stream()
 				.flatMap(e -> e.getEStructuralFeatures().stream()).collect(groupingBy(f -> FeatureBucket.create(f)));
@@ -85,24 +95,53 @@ public class OscalSemanticRefactorer implements ISemanticRefactorer {
 				EStructuralFeature feature = commonFeatures.get(0);
 				eClass.setName(toEClassName(feature));
 
-				System.out.println(commonFeatures.get(0).getName() + " - " + commonFeatures.size());
+				EStructuralFeature f = commonFeatures.get(0);
+				System.out.println(f.getName() + "[" + f.getLowerBound() + "-" + f.getUpperBound() + "]" + " - "
+						+ commonFeatures.size() + " : " + feature.getEType().getName());
 			}
 		}
 	}
 
-	private void createAnnotationOwner() {
+	private void createAbstractOwnerClass(EClass targetType, String refName) {
+		Predicate<EStructuralFeature> refPredicate = isContainmentTyped(targetType.getName()).and(isMany())
+				.and(hasName(refName));
 		List<EClass> elementOwningAnnotations = eClasses.stream()
-				.filter(e -> e.getEStructuralFeatures().stream().filter(ANNOTATIONS_REF).count() == 1)
-				.collect(toList());
+				.filter(e -> e.getEStructuralFeatures().stream().filter(refPredicate).count() == 1).collect(toList());
 		if (!elementOwningAnnotations.isEmpty()) {
-			EClass annotOwner = createAnnotationOwnerEClass();
+			EClass annotOwner = createAbstractOwnerEClass(targetType, refName);
 			for (EClass e : elementOwningAnnotations) {
 				e.getEStructuralFeatures()
-						.remove(e.getEStructuralFeatures().stream().filter(ANNOTATIONS_REF).findFirst().get());
+						.remove(e.getEStructuralFeatures().stream().filter(refPredicate).findFirst().get());
 				e.getESuperTypes().add(annotOwner);
 			}
 		}
 
+	}
+
+	private void createElementWith(EDataType targetType, String refName, boolean many) {
+		Predicate<EStructuralFeature> refPredicate = buildAttributeFilter(targetType, refName, many);
+		List<EClass> elementOwningAnnotations = eClasses.stream()
+				.filter(e -> e.getEStructuralFeatures().stream().filter(refPredicate).count() == 1).collect(toList());
+		if (!elementOwningAnnotations.isEmpty()) {
+			EClass annotOwner = createElementWithEClass(targetType, refName, many);
+			for (EClass e : elementOwningAnnotations) {
+				e.getEStructuralFeatures()
+						.remove(e.getEStructuralFeatures().stream().filter(refPredicate).findFirst().get());
+				e.getESuperTypes().add(annotOwner);
+			}
+		}
+
+	}
+
+	public Predicate<EStructuralFeature> buildAttributeFilter(EDataType targetType, String refName, boolean many) {
+		Predicate<EStructuralFeature> refPredicate = isAttributeTyped(targetType).and(hasName(refName));
+		if (many) {
+			refPredicate = refPredicate.and(isMany());
+		} else {
+			refPredicate = refPredicate.and(isMany().negate());
+
+		}
+		return refPredicate;
 	}
 
 	private void createUUIDElements() {
@@ -128,10 +167,18 @@ public class OscalSemanticRefactorer implements ISemanticRefactorer {
 		return withIdEclass;
 	}
 
-	private EClass createAnnotationOwnerEClass() {
-		EClass annotOwner = createEClass("AnnotationOwner");
-		EClass annotationEClass = getEClass("Annotation");
-		hiddenContainementReferences.add(createManyContainmentRef(annotOwner, "annotations", annotationEClass));
+	private EClass createAbstractOwnerEClass(EClass targetType, String refName) {
+		EClass annotOwner = createEClass(targetType.getName() + "Owner");
+		hiddenContainementReferences.add(createManyContainmentRef(annotOwner, refName, targetType));
+		return annotOwner;
+	}
+
+	private EClass createElementWithEClass(EDataType targetType, String featureName, boolean many) {
+		EClass annotOwner = createEClass("ElementWith" + NameHelper.getProperEClassName(featureName) + (many ? "s" : ""));
+		EAttribute feature = createAttribute(annotOwner, featureName, targetType);
+		if (many) {
+			feature.setUpperBound(-1);
+		}
 		return annotOwner;
 	}
 
@@ -172,14 +219,15 @@ public class OscalSemanticRefactorer implements ISemanticRefactorer {
 	@Override
 	public void refactorGenModel(List<GenClass> genClasses) {
 		this.genClasses = genClasses;
-		for(EReference ref : hiddenContainementReferences) {
+		for (EReference ref : hiddenContainementReferences) {
 			getGenFeaure(ref).setChildren(false);
 		}
-		
+
 	}
-	
+
 	private GenFeature getGenFeaure(EReference ref) {
-		return genClasses.stream().flatMap(g -> g.getGenFeatures().stream()).filter(gf -> gf.getEcoreFeature() == ref).findFirst().get();
+		return genClasses.stream().flatMap(g -> g.getGenFeatures().stream()).filter(gf -> gf.getEcoreFeature() == ref)
+				.findFirst().get();
 	}
 
 }

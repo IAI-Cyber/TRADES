@@ -17,9 +17,12 @@ package dsm.oscal.model.OscalMetadata.impl;
 
 import dsm.oscal.model.OscalMetadata.Annotation;
 import dsm.oscal.model.OscalMetadata.AnnotationOwner;
+import dsm.oscal.model.OscalMetadata.ElementWithRemarks;
 import dsm.oscal.model.OscalMetadata.Link;
+import dsm.oscal.model.OscalMetadata.LinkOwner;
 import dsm.oscal.model.OscalMetadata.OscalMetadataPackage;
 import dsm.oscal.model.OscalMetadata.Property;
+import dsm.oscal.model.OscalMetadata.PropertyOwner;
 import dsm.oscal.model.OscalMetadata.Revision;
 
 import gov.nist.secauto.metaschema.datatypes.markup.MarkupLine;
@@ -52,12 +55,12 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.RevisionImpl#getAnnotations <em>Annotations</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.impl.RevisionImpl#getLastModified <em>Last Modified</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.impl.RevisionImpl#getLinks <em>Links</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.impl.RevisionImpl#getOscalVersion <em>Oscal Version</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.RevisionImpl#getProps <em>Props</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.impl.RevisionImpl#getPublished <em>Published</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.impl.RevisionImpl#getLinks <em>Links</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.RevisionImpl#getRemarks <em>Remarks</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.impl.RevisionImpl#getLastModified <em>Last Modified</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.impl.RevisionImpl#getOscalVersion <em>Oscal Version</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.impl.RevisionImpl#getPublished <em>Published</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.RevisionImpl#getTitle <em>Title</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.RevisionImpl#getVersion <em>Version</em>}</li>
  * </ul>
@@ -74,6 +77,46 @@ public class RevisionImpl extends MinimalEObjectImpl.Container implements Revisi
 	 * @ordered
 	 */
 	protected EList<Annotation> annotations;
+
+	/**
+	 * The cached value of the '{@link #getProps() <em>Props</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProps()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Property> props;
+
+	/**
+	 * The cached value of the '{@link #getLinks() <em>Links</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLinks()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Link> links;
+
+	/**
+	 * The default value of the '{@link #getRemarks() <em>Remarks</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRemarks()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final MarkupMultiline REMARKS_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getRemarks() <em>Remarks</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRemarks()
+	 * @generated
+	 * @ordered
+	 */
+	protected MarkupMultiline remarks = REMARKS_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getLastModified() <em>Last Modified</em>}' attribute.
@@ -96,16 +139,6 @@ public class RevisionImpl extends MinimalEObjectImpl.Container implements Revisi
 	protected ZonedDateTime lastModified = LAST_MODIFIED_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getLinks() <em>Links</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLinks()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Link> links;
-
-	/**
 	 * The default value of the '{@link #getOscalVersion() <em>Oscal Version</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -126,16 +159,6 @@ public class RevisionImpl extends MinimalEObjectImpl.Container implements Revisi
 	protected String oscalVersion = OSCAL_VERSION_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getProps() <em>Props</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProps()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Property> props;
-
-	/**
 	 * The default value of the '{@link #getPublished() <em>Published</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -154,26 +177,6 @@ public class RevisionImpl extends MinimalEObjectImpl.Container implements Revisi
 	 * @ordered
 	 */
 	protected ZonedDateTime published = PUBLISHED_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getRemarks() <em>Remarks</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRemarks()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final MarkupMultiline REMARKS_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getRemarks() <em>Remarks</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRemarks()
-	 * @generated
-	 * @ordered
-	 */
-	protected MarkupMultiline remarks = REMARKS_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getTitle() <em>Title</em>}' attribute.
@@ -421,10 +424,10 @@ public class RevisionImpl extends MinimalEObjectImpl.Container implements Revisi
 		switch (featureID) {
 			case OscalMetadataPackage.REVISION__ANNOTATIONS:
 				return ((InternalEList<?>)getAnnotations()).basicRemove(otherEnd, msgs);
-			case OscalMetadataPackage.REVISION__LINKS:
-				return ((InternalEList<?>)getLinks()).basicRemove(otherEnd, msgs);
 			case OscalMetadataPackage.REVISION__PROPS:
 				return ((InternalEList<?>)getProps()).basicRemove(otherEnd, msgs);
+			case OscalMetadataPackage.REVISION__LINKS:
+				return ((InternalEList<?>)getLinks()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -439,18 +442,18 @@ public class RevisionImpl extends MinimalEObjectImpl.Container implements Revisi
 		switch (featureID) {
 			case OscalMetadataPackage.REVISION__ANNOTATIONS:
 				return getAnnotations();
-			case OscalMetadataPackage.REVISION__LAST_MODIFIED:
-				return getLastModified();
-			case OscalMetadataPackage.REVISION__LINKS:
-				return getLinks();
-			case OscalMetadataPackage.REVISION__OSCAL_VERSION:
-				return getOscalVersion();
 			case OscalMetadataPackage.REVISION__PROPS:
 				return getProps();
-			case OscalMetadataPackage.REVISION__PUBLISHED:
-				return getPublished();
+			case OscalMetadataPackage.REVISION__LINKS:
+				return getLinks();
 			case OscalMetadataPackage.REVISION__REMARKS:
 				return getRemarks();
+			case OscalMetadataPackage.REVISION__LAST_MODIFIED:
+				return getLastModified();
+			case OscalMetadataPackage.REVISION__OSCAL_VERSION:
+				return getOscalVersion();
+			case OscalMetadataPackage.REVISION__PUBLISHED:
+				return getPublished();
 			case OscalMetadataPackage.REVISION__TITLE:
 				return getTitle();
 			case OscalMetadataPackage.REVISION__VERSION:
@@ -472,25 +475,25 @@ public class RevisionImpl extends MinimalEObjectImpl.Container implements Revisi
 				getAnnotations().clear();
 				getAnnotations().addAll((Collection<? extends Annotation>)newValue);
 				return;
-			case OscalMetadataPackage.REVISION__LAST_MODIFIED:
-				setLastModified((ZonedDateTime)newValue);
+			case OscalMetadataPackage.REVISION__PROPS:
+				getProps().clear();
+				getProps().addAll((Collection<? extends Property>)newValue);
 				return;
 			case OscalMetadataPackage.REVISION__LINKS:
 				getLinks().clear();
 				getLinks().addAll((Collection<? extends Link>)newValue);
 				return;
+			case OscalMetadataPackage.REVISION__REMARKS:
+				setRemarks((MarkupMultiline)newValue);
+				return;
+			case OscalMetadataPackage.REVISION__LAST_MODIFIED:
+				setLastModified((ZonedDateTime)newValue);
+				return;
 			case OscalMetadataPackage.REVISION__OSCAL_VERSION:
 				setOscalVersion((String)newValue);
 				return;
-			case OscalMetadataPackage.REVISION__PROPS:
-				getProps().clear();
-				getProps().addAll((Collection<? extends Property>)newValue);
-				return;
 			case OscalMetadataPackage.REVISION__PUBLISHED:
 				setPublished((ZonedDateTime)newValue);
-				return;
-			case OscalMetadataPackage.REVISION__REMARKS:
-				setRemarks((MarkupMultiline)newValue);
 				return;
 			case OscalMetadataPackage.REVISION__TITLE:
 				setTitle((MarkupLine)newValue);
@@ -513,23 +516,23 @@ public class RevisionImpl extends MinimalEObjectImpl.Container implements Revisi
 			case OscalMetadataPackage.REVISION__ANNOTATIONS:
 				getAnnotations().clear();
 				return;
-			case OscalMetadataPackage.REVISION__LAST_MODIFIED:
-				setLastModified(LAST_MODIFIED_EDEFAULT);
+			case OscalMetadataPackage.REVISION__PROPS:
+				getProps().clear();
 				return;
 			case OscalMetadataPackage.REVISION__LINKS:
 				getLinks().clear();
 				return;
+			case OscalMetadataPackage.REVISION__REMARKS:
+				setRemarks(REMARKS_EDEFAULT);
+				return;
+			case OscalMetadataPackage.REVISION__LAST_MODIFIED:
+				setLastModified(LAST_MODIFIED_EDEFAULT);
+				return;
 			case OscalMetadataPackage.REVISION__OSCAL_VERSION:
 				setOscalVersion(OSCAL_VERSION_EDEFAULT);
 				return;
-			case OscalMetadataPackage.REVISION__PROPS:
-				getProps().clear();
-				return;
 			case OscalMetadataPackage.REVISION__PUBLISHED:
 				setPublished(PUBLISHED_EDEFAULT);
-				return;
-			case OscalMetadataPackage.REVISION__REMARKS:
-				setRemarks(REMARKS_EDEFAULT);
 				return;
 			case OscalMetadataPackage.REVISION__TITLE:
 				setTitle(TITLE_EDEFAULT);
@@ -551,18 +554,18 @@ public class RevisionImpl extends MinimalEObjectImpl.Container implements Revisi
 		switch (featureID) {
 			case OscalMetadataPackage.REVISION__ANNOTATIONS:
 				return annotations != null && !annotations.isEmpty();
-			case OscalMetadataPackage.REVISION__LAST_MODIFIED:
-				return LAST_MODIFIED_EDEFAULT == null ? lastModified != null : !LAST_MODIFIED_EDEFAULT.equals(lastModified);
-			case OscalMetadataPackage.REVISION__LINKS:
-				return links != null && !links.isEmpty();
-			case OscalMetadataPackage.REVISION__OSCAL_VERSION:
-				return OSCAL_VERSION_EDEFAULT == null ? oscalVersion != null : !OSCAL_VERSION_EDEFAULT.equals(oscalVersion);
 			case OscalMetadataPackage.REVISION__PROPS:
 				return props != null && !props.isEmpty();
-			case OscalMetadataPackage.REVISION__PUBLISHED:
-				return PUBLISHED_EDEFAULT == null ? published != null : !PUBLISHED_EDEFAULT.equals(published);
+			case OscalMetadataPackage.REVISION__LINKS:
+				return links != null && !links.isEmpty();
 			case OscalMetadataPackage.REVISION__REMARKS:
 				return REMARKS_EDEFAULT == null ? remarks != null : !REMARKS_EDEFAULT.equals(remarks);
+			case OscalMetadataPackage.REVISION__LAST_MODIFIED:
+				return LAST_MODIFIED_EDEFAULT == null ? lastModified != null : !LAST_MODIFIED_EDEFAULT.equals(lastModified);
+			case OscalMetadataPackage.REVISION__OSCAL_VERSION:
+				return OSCAL_VERSION_EDEFAULT == null ? oscalVersion != null : !OSCAL_VERSION_EDEFAULT.equals(oscalVersion);
+			case OscalMetadataPackage.REVISION__PUBLISHED:
+				return PUBLISHED_EDEFAULT == null ? published != null : !PUBLISHED_EDEFAULT.equals(published);
 			case OscalMetadataPackage.REVISION__TITLE:
 				return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
 			case OscalMetadataPackage.REVISION__VERSION:
@@ -584,6 +587,24 @@ public class RevisionImpl extends MinimalEObjectImpl.Container implements Revisi
 				default: return -1;
 			}
 		}
+		if (baseClass == PropertyOwner.class) {
+			switch (derivedFeatureID) {
+				case OscalMetadataPackage.REVISION__PROPS: return OscalMetadataPackage.PROPERTY_OWNER__PROPS;
+				default: return -1;
+			}
+		}
+		if (baseClass == LinkOwner.class) {
+			switch (derivedFeatureID) {
+				case OscalMetadataPackage.REVISION__LINKS: return OscalMetadataPackage.LINK_OWNER__LINKS;
+				default: return -1;
+			}
+		}
+		if (baseClass == ElementWithRemarks.class) {
+			switch (derivedFeatureID) {
+				case OscalMetadataPackage.REVISION__REMARKS: return OscalMetadataPackage.ELEMENT_WITH_REMARKS__REMARKS;
+				default: return -1;
+			}
+		}
 		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
 	}
 
@@ -600,6 +621,24 @@ public class RevisionImpl extends MinimalEObjectImpl.Container implements Revisi
 				default: return -1;
 			}
 		}
+		if (baseClass == PropertyOwner.class) {
+			switch (baseFeatureID) {
+				case OscalMetadataPackage.PROPERTY_OWNER__PROPS: return OscalMetadataPackage.REVISION__PROPS;
+				default: return -1;
+			}
+		}
+		if (baseClass == LinkOwner.class) {
+			switch (baseFeatureID) {
+				case OscalMetadataPackage.LINK_OWNER__LINKS: return OscalMetadataPackage.REVISION__LINKS;
+				default: return -1;
+			}
+		}
+		if (baseClass == ElementWithRemarks.class) {
+			switch (baseFeatureID) {
+				case OscalMetadataPackage.ELEMENT_WITH_REMARKS__REMARKS: return OscalMetadataPackage.REVISION__REMARKS;
+				default: return -1;
+			}
+		}
 		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
@@ -613,14 +652,14 @@ public class RevisionImpl extends MinimalEObjectImpl.Container implements Revisi
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (lastModified: ");
+		result.append(" (remarks: ");
+		result.append(remarks);
+		result.append(", lastModified: ");
 		result.append(lastModified);
 		result.append(", oscalVersion: ");
 		result.append(oscalVersion);
 		result.append(", published: ");
 		result.append(published);
-		result.append(", remarks: ");
-		result.append(remarks);
 		result.append(", title: ");
 		result.append(title);
 		result.append(", version: ");

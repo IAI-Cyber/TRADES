@@ -168,9 +168,9 @@ public class PartItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Part_clazz_feature"),
-				 getString("_UI_Part_clazz_description"),
-				 OscalCatalogCommonPackage.Literals.PART__CLAZZ,
+				 getString("_UI_ElementWithClazz_clazz_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ElementWithClazz_clazz_feature", "_UI_ElementWithClazz_type"),
+				 OscalMetadataPackage.Literals.ELEMENT_WITH_CLAZZ__CLAZZ,
 				 true,
 				 false,
 				 false,
@@ -235,10 +235,7 @@ public class PartItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(OscalMetadataPackage.Literals.ANNOTATION_OWNER__ANNOTATIONS);
-			childrenFeatures.add(OscalCatalogCommonPackage.Literals.PART__LINKS);
 			childrenFeatures.add(OscalCatalogCommonPackage.Literals.PART__PARTS);
-			childrenFeatures.add(OscalCatalogCommonPackage.Literals.PART__PROPS);
 		}
 		return childrenFeatures;
 	}
@@ -294,6 +291,9 @@ public class PartItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Part.class)) {
+			case OscalCatalogCommonPackage.PART__ANNOTATIONS:
+			case OscalCatalogCommonPackage.PART__PROPS:
+			case OscalCatalogCommonPackage.PART__LINKS:
 			case OscalCatalogCommonPackage.PART__CLAZZ:
 			case OscalCatalogCommonPackage.PART__ID:
 			case OscalCatalogCommonPackage.PART__NAME:
@@ -302,10 +302,7 @@ public class PartItemProvider
 			case OscalCatalogCommonPackage.PART__TITLE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case OscalCatalogCommonPackage.PART__ANNOTATIONS:
-			case OscalCatalogCommonPackage.PART__LINKS:
 			case OscalCatalogCommonPackage.PART__PARTS:
-			case OscalCatalogCommonPackage.PART__PROPS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -330,18 +327,18 @@ public class PartItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OscalCatalogCommonPackage.Literals.PART__LINKS,
+				(OscalMetadataPackage.Literals.PROPERTY_OWNER__PROPS,
+				 OscalMetadataFactory.eINSTANCE.createProperty()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OscalMetadataPackage.Literals.LINK_OWNER__LINKS,
 				 OscalMetadataFactory.eINSTANCE.createLink()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(OscalCatalogCommonPackage.Literals.PART__PARTS,
 				 OscalCatalogCommonFactory.eINSTANCE.createPart()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OscalCatalogCommonPackage.Literals.PART__PROPS,
-				 OscalMetadataFactory.eINSTANCE.createProperty()));
 	}
 
 	/**

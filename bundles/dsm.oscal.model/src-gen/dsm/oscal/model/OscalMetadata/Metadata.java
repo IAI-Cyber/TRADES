@@ -16,8 +16,6 @@
 package dsm.oscal.model.OscalMetadata;
 
 import gov.nist.secauto.metaschema.datatypes.markup.MarkupLine;
-import gov.nist.secauto.metaschema.datatypes.markup.MarkupMultiline;
-
 import java.time.ZonedDateTime;
 
 import org.eclipse.emf.common.util.EList;
@@ -40,13 +38,10 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link dsm.oscal.model.OscalMetadata.Metadata#getDocumentIds <em>Document Ids</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.Metadata#getLastModified <em>Last Modified</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.Metadata#getLinks <em>Links</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.Metadata#getLocations <em>Locations</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.Metadata#getOscalVersion <em>Oscal Version</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.Metadata#getParties <em>Parties</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.Metadata#getProps <em>Props</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.Metadata#getPublished <em>Published</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.Metadata#getRemarks <em>Remarks</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.Metadata#getResponsibleParties <em>Responsible Parties</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.Metadata#getRevisions <em>Revisions</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.Metadata#getRoles <em>Roles</em>}</li>
@@ -58,7 +53,7 @@ import org.eclipse.emf.common.util.EList;
  * @model annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;AssemblyDefinition&gt;metadata'"
  * @generated
  */
-public interface Metadata extends OscalElement, AnnotationOwner {
+public interface Metadata extends OscalElement, AnnotationOwner, PropertyOwner, LinkOwner, ElementWithRemarks {
 	/**
 	 * Returns the value of the '<em><b>Title</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -219,35 +214,6 @@ public interface Metadata extends OscalElement, AnnotationOwner {
 	void setOscalVersion(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Remarks</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * <h1>Remarks</h1>
-	 * <h2>Description</h2>
-	 * <p>Additional commentary on the containing object.</p>
-	 * 
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Remarks</em>' attribute.
-	 * @see #setRemarks(MarkupMultiline)
-	 * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getMetadata_Remarks()
-	 * @model dataType="dsm.oscal.model.OscalMetadata.MarkupMultilineType"
-	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;AssemblyDefinition&gt;metadata.&lt;FieldInstance&gt;remarks'"
-	 * @generated
-	 */
-	MarkupMultiline getRemarks();
-
-	/**
-	 * Sets the value of the '{@link dsm.oscal.model.OscalMetadata.Metadata#getRemarks <em>Remarks</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Remarks</em>' attribute.
-	 * @see #getRemarks()
-	 * @generated
-	 */
-	void setRemarks(MarkupMultiline value);
-
-	/**
 	 * Returns the value of the '<em><b>Roles</b></em>' containment reference list.
 	 * The list contents are of type {@link dsm.oscal.model.OscalMetadata.Role}.
 	 * <!-- begin-user-doc -->
@@ -259,19 +225,6 @@ public interface Metadata extends OscalElement, AnnotationOwner {
 	 * @generated
 	 */
 	EList<Role> getRoles();
-
-	/**
-	 * Returns the value of the '<em><b>Links</b></em>' containment reference list.
-	 * The list contents are of type {@link dsm.oscal.model.OscalMetadata.Link}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Links</em>' containment reference list.
-	 * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getMetadata_Links()
-	 * @model containment="true"
-	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;AssemblyDefinition&gt;link'"
-	 * @generated
-	 */
-	EList<Link> getLinks();
 
 	/**
 	 * Returns the value of the '<em><b>Locations</b></em>' containment reference list.
@@ -337,18 +290,5 @@ public interface Metadata extends OscalElement, AnnotationOwner {
 	 * @generated
 	 */
 	EList<DocumentId> getDocumentIds();
-
-	/**
-	 * Returns the value of the '<em><b>Props</b></em>' containment reference list.
-	 * The list contents are of type {@link dsm.oscal.model.OscalMetadata.Property}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Props</em>' containment reference list.
-	 * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getMetadata_Props()
-	 * @model containment="true"
-	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;FieldDefinition&gt;property'"
-	 * @generated
-	 */
-	EList<Property> getProps();
 
 } // Metadata

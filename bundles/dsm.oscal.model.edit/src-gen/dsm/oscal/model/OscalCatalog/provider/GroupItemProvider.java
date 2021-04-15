@@ -123,9 +123,9 @@ public class GroupItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Group_clazz_feature"),
-				 getString("_UI_Group_clazz_description"),
-				 OscalCatalogPackage.Literals.GROUP__CLAZZ,
+				 getString("_UI_ElementWithClazz_clazz_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ElementWithClazz_clazz_feature", "_UI_ElementWithClazz_type"),
+				 OscalMetadataPackage.Literals.ELEMENT_WITH_CLAZZ__CLAZZ,
 				 true,
 				 false,
 				 false,
@@ -168,13 +168,10 @@ public class GroupItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(OscalMetadataPackage.Literals.ANNOTATION_OWNER__ANNOTATIONS);
 			childrenFeatures.add(OscalCatalogPackage.Literals.GROUP__CONTROLS);
 			childrenFeatures.add(OscalCatalogPackage.Literals.GROUP__GROUPS);
-			childrenFeatures.add(OscalCatalogPackage.Literals.GROUP__LINKS);
 			childrenFeatures.add(OscalCatalogPackage.Literals.GROUP__PARAMS);
 			childrenFeatures.add(OscalCatalogPackage.Literals.GROUP__PARTS);
-			childrenFeatures.add(OscalCatalogPackage.Literals.GROUP__PROPS);
 		}
 		return childrenFeatures;
 	}
@@ -230,18 +227,18 @@ public class GroupItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Group.class)) {
+			case OscalCatalogPackage.GROUP__ANNOTATIONS:
+			case OscalCatalogPackage.GROUP__PROPS:
+			case OscalCatalogPackage.GROUP__LINKS:
 			case OscalCatalogPackage.GROUP__CLAZZ:
 			case OscalCatalogPackage.GROUP__ID:
 			case OscalCatalogPackage.GROUP__TITLE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case OscalCatalogPackage.GROUP__ANNOTATIONS:
 			case OscalCatalogPackage.GROUP__CONTROLS:
 			case OscalCatalogPackage.GROUP__GROUPS:
-			case OscalCatalogPackage.GROUP__LINKS:
 			case OscalCatalogPackage.GROUP__PARAMS:
 			case OscalCatalogPackage.GROUP__PARTS:
-			case OscalCatalogPackage.GROUP__PROPS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -266,6 +263,16 @@ public class GroupItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
+				(OscalMetadataPackage.Literals.PROPERTY_OWNER__PROPS,
+				 OscalMetadataFactory.eINSTANCE.createProperty()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OscalMetadataPackage.Literals.LINK_OWNER__LINKS,
+				 OscalMetadataFactory.eINSTANCE.createLink()));
+
+		newChildDescriptors.add
+			(createChildParameter
 				(OscalCatalogPackage.Literals.GROUP__CONTROLS,
 				 OscalCatalogFactory.eINSTANCE.createControl()));
 
@@ -276,11 +283,6 @@ public class GroupItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OscalCatalogPackage.Literals.GROUP__LINKS,
-				 OscalMetadataFactory.eINSTANCE.createLink()));
-
-		newChildDescriptors.add
-			(createChildParameter
 				(OscalCatalogPackage.Literals.GROUP__PARAMS,
 				 OscalCatalogCommonFactory.eINSTANCE.createParameter()));
 
@@ -288,11 +290,6 @@ public class GroupItemProvider
 			(createChildParameter
 				(OscalCatalogPackage.Literals.GROUP__PARTS,
 				 OscalCatalogCommonFactory.eINSTANCE.createPart()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OscalCatalogPackage.Literals.GROUP__PROPS,
-				 OscalMetadataFactory.eINSTANCE.createProperty()));
 	}
 
 	/**

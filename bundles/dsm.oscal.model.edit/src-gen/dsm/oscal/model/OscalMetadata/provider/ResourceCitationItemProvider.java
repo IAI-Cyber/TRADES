@@ -29,9 +29,6 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
-
-import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -106,37 +103,6 @@ public class ResourceCitationItemProvider
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
-	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null) {
-			super.getChildrenFeatures(object);
-			childrenFeatures.add(OscalMetadataPackage.Literals.ANNOTATION_OWNER__ANNOTATIONS);
-			childrenFeatures.add(OscalMetadataPackage.Literals.RESOURCE_CITATION__PROPS);
-		}
-		return childrenFeatures;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected EStructuralFeature getChildFeature(Object object, Object child) {
-		// Check the type of the specified child object and return the proper feature to use for
-		// adding (see {@link AddCommand}) it as a child.
-
-		return super.getChildFeature(object, child);
-	}
-
-	/**
 	 * This returns ResourceCitation.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -175,12 +141,10 @@ public class ResourceCitationItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ResourceCitation.class)) {
-			case OscalMetadataPackage.RESOURCE_CITATION__TEXT:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
 			case OscalMetadataPackage.RESOURCE_CITATION__ANNOTATIONS:
 			case OscalMetadataPackage.RESOURCE_CITATION__PROPS:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			case OscalMetadataPackage.RESOURCE_CITATION__TEXT:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}
 		super.notifyChanged(notification);
@@ -204,7 +168,7 @@ public class ResourceCitationItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OscalMetadataPackage.Literals.RESOURCE_CITATION__PROPS,
+				(OscalMetadataPackage.Literals.PROPERTY_OWNER__PROPS,
 				 OscalMetadataFactory.eINSTANCE.createProperty()));
 	}
 

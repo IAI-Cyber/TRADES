@@ -42,8 +42,6 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link dsm.oscal.model.OscalMetadata.BackMatterResource#getCitation <em>Citation</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.BackMatterResource#getDescription <em>Description</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.BackMatterResource#getDocumentIds <em>Document Ids</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.BackMatterResource#getProps <em>Props</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.BackMatterResource#getRemarks <em>Remarks</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.BackMatterResource#getRlinks <em>Rlinks</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.BackMatterResource#getTitle <em>Title</em>}</li>
  * </ul>
@@ -52,7 +50,7 @@ import org.eclipse.emf.common.util.EList;
  * @model annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;AssemblyDefinition&gt;resource'"
  * @generated
  */
-public interface BackMatterResource extends OscalElement, UUIDElement, AnnotationOwner {
+public interface BackMatterResource extends OscalElement, UUIDElement, AnnotationOwner, PropertyOwner, ElementWithRemarks {
 	/**
 	 * Returns the value of the '<em><b>Title</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -112,35 +110,6 @@ public interface BackMatterResource extends OscalElement, UUIDElement, Annotatio
 	void setDescription(MarkupMultiline value);
 
 	/**
-	 * Returns the value of the '<em><b>Remarks</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * <h1>Remarks</h1>
-	 * <h2>Description</h2>
-	 * <p>Additional commentary on the containing object.</p>
-	 * 
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Remarks</em>' attribute.
-	 * @see #setRemarks(MarkupMultiline)
-	 * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getBackMatterResource_Remarks()
-	 * @model dataType="dsm.oscal.model.OscalMetadata.MarkupMultilineType"
-	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;AssemblyDefinition&gt;resource.&lt;FieldInstance&gt;remarks'"
-	 * @generated
-	 */
-	MarkupMultiline getRemarks();
-
-	/**
-	 * Sets the value of the '{@link dsm.oscal.model.OscalMetadata.BackMatterResource#getRemarks <em>Remarks</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Remarks</em>' attribute.
-	 * @see #getRemarks()
-	 * @generated
-	 */
-	void setRemarks(MarkupMultiline value);
-
-	/**
 	 * Returns the value of the '<em><b>Citation</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -175,19 +144,6 @@ public interface BackMatterResource extends OscalElement, UUIDElement, Annotatio
 	 * @generated
 	 */
 	EList<ResourceRlink> getRlinks();
-
-	/**
-	 * Returns the value of the '<em><b>Props</b></em>' containment reference list.
-	 * The list contents are of type {@link dsm.oscal.model.OscalMetadata.Property}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Props</em>' containment reference list.
-	 * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getBackMatterResource_Props()
-	 * @model containment="true"
-	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;FieldDefinition&gt;property'"
-	 * @generated
-	 */
-	EList<Property> getProps();
 
 	/**
 	 * Returns the value of the '<em><b>Document Ids</b></em>' containment reference list.

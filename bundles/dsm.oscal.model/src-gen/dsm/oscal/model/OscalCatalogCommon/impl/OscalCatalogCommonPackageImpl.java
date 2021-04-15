@@ -175,17 +175,7 @@ public class OscalCatalogCommonPackageImpl extends EPackageImpl implements Oscal
 	 */
 	@Override
 	public EAttribute getParameter_Id() {
-		return (EAttribute)parameterEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getParameter_Clazz() {
-		return (EAttribute)parameterEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)parameterEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -195,7 +185,7 @@ public class OscalCatalogCommonPackageImpl extends EPackageImpl implements Oscal
 	 */
 	@Override
 	public EAttribute getParameter_DependsOn() {
-		return (EAttribute)parameterEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)parameterEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -205,7 +195,7 @@ public class OscalCatalogCommonPackageImpl extends EPackageImpl implements Oscal
 	 */
 	@Override
 	public EAttribute getParameter_Label() {
-		return (EAttribute)parameterEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)parameterEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -215,7 +205,7 @@ public class OscalCatalogCommonPackageImpl extends EPackageImpl implements Oscal
 	 */
 	@Override
 	public EAttribute getParameter_Usage() {
-		return (EAttribute)parameterEClass.getEStructuralFeatures().get(10);
+		return (EAttribute)parameterEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -225,17 +215,7 @@ public class OscalCatalogCommonPackageImpl extends EPackageImpl implements Oscal
 	 */
 	@Override
 	public EAttribute getParameter_Values() {
-		return (EAttribute)parameterEClass.getEStructuralFeatures().get(11);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getParameter_Remarks() {
-		return (EAttribute)parameterEClass.getEStructuralFeatures().get(8);
+		return (EAttribute)parameterEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -245,7 +225,7 @@ public class OscalCatalogCommonPackageImpl extends EPackageImpl implements Oscal
 	 */
 	@Override
 	public EReference getParameter_Select() {
-		return (EReference)parameterEClass.getEStructuralFeatures().get(9);
+		return (EReference)parameterEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -255,17 +235,7 @@ public class OscalCatalogCommonPackageImpl extends EPackageImpl implements Oscal
 	 */
 	@Override
 	public EReference getParameter_Guidelines() {
-		return (EReference)parameterEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getParameter_Links() {
-		return (EReference)parameterEClass.getEStructuralFeatures().get(6);
+		return (EReference)parameterEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -275,17 +245,7 @@ public class OscalCatalogCommonPackageImpl extends EPackageImpl implements Oscal
 	 */
 	@Override
 	public EReference getParameter_Constraints() {
-		return (EReference)parameterEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getParameter_Props() {
-		return (EReference)parameterEClass.getEStructuralFeatures().get(7);
+		return (EReference)parameterEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -336,16 +296,6 @@ public class OscalCatalogCommonPackageImpl extends EPackageImpl implements Oscal
 	@Override
 	public EAttribute getParameterConstraintTest_Expression() {
 		return (EAttribute)parameterConstraintTestEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getParameterConstraintTest_Remarks() {
-		return (EAttribute)parameterConstraintTestEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -415,36 +365,6 @@ public class OscalCatalogCommonPackageImpl extends EPackageImpl implements Oscal
 	 */
 	@Override
 	public EAttribute getPart_Id() {
-		return (EAttribute)partEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getPart_Name() {
-		return (EAttribute)partEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getPart_Ns() {
-		return (EAttribute)partEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getPart_Clazz() {
 		return (EAttribute)partEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -454,8 +374,28 @@ public class OscalCatalogCommonPackageImpl extends EPackageImpl implements Oscal
 	 * @generated
 	 */
 	@Override
+	public EAttribute getPart_Name() {
+		return (EAttribute)partEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getPart_Ns() {
+		return (EAttribute)partEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EAttribute getPart_Title() {
-		return (EAttribute)partEClass.getEStructuralFeatures().get(8);
+		return (EAttribute)partEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -465,7 +405,7 @@ public class OscalCatalogCommonPackageImpl extends EPackageImpl implements Oscal
 	 */
 	@Override
 	public EAttribute getPart_Prose() {
-		return (EAttribute)partEClass.getEStructuralFeatures().get(7);
+		return (EAttribute)partEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -475,27 +415,7 @@ public class OscalCatalogCommonPackageImpl extends EPackageImpl implements Oscal
 	 */
 	@Override
 	public EReference getPart_Parts() {
-		return (EReference)partEClass.getEStructuralFeatures().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getPart_Links() {
-		return (EReference)partEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getPart_Props() {
-		return (EReference)partEClass.getEStructuralFeatures().get(6);
+		return (EReference)partEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -528,15 +448,11 @@ public class OscalCatalogCommonPackageImpl extends EPackageImpl implements Oscal
 
 		// Create classes and their features
 		parameterEClass = createEClass(PARAMETER);
-		createEAttribute(parameterEClass, PARAMETER__CLAZZ);
 		createEReference(parameterEClass, PARAMETER__CONSTRAINTS);
 		createEAttribute(parameterEClass, PARAMETER__DEPENDS_ON);
 		createEReference(parameterEClass, PARAMETER__GUIDELINES);
 		createEAttribute(parameterEClass, PARAMETER__ID);
 		createEAttribute(parameterEClass, PARAMETER__LABEL);
-		createEReference(parameterEClass, PARAMETER__LINKS);
-		createEReference(parameterEClass, PARAMETER__PROPS);
-		createEAttribute(parameterEClass, PARAMETER__REMARKS);
 		createEReference(parameterEClass, PARAMETER__SELECT);
 		createEAttribute(parameterEClass, PARAMETER__USAGE);
 		createEAttribute(parameterEClass, PARAMETER__VALUES);
@@ -547,7 +463,6 @@ public class OscalCatalogCommonPackageImpl extends EPackageImpl implements Oscal
 
 		parameterConstraintTestEClass = createEClass(PARAMETER_CONSTRAINT_TEST);
 		createEAttribute(parameterConstraintTestEClass, PARAMETER_CONSTRAINT_TEST__EXPRESSION);
-		createEAttribute(parameterConstraintTestEClass, PARAMETER_CONSTRAINT_TEST__REMARKS);
 
 		parameterGuidelineEClass = createEClass(PARAMETER_GUIDELINE);
 		createEAttribute(parameterGuidelineEClass, PARAMETER_GUIDELINE__PROSE);
@@ -557,13 +472,10 @@ public class OscalCatalogCommonPackageImpl extends EPackageImpl implements Oscal
 		createEAttribute(parameterSelectionEClass, PARAMETER_SELECTION__HOW_MANY);
 
 		partEClass = createEClass(PART);
-		createEAttribute(partEClass, PART__CLAZZ);
 		createEAttribute(partEClass, PART__ID);
-		createEReference(partEClass, PART__LINKS);
 		createEAttribute(partEClass, PART__NAME);
 		createEAttribute(partEClass, PART__NS);
 		createEReference(partEClass, PART__PARTS);
-		createEReference(partEClass, PART__PROPS);
 		createEAttribute(partEClass, PART__PROSE);
 		createEAttribute(partEClass, PART__TITLE);
 	}
@@ -601,24 +513,28 @@ public class OscalCatalogCommonPackageImpl extends EPackageImpl implements Oscal
 		// Add supertypes to classes
 		parameterEClass.getESuperTypes().add(theOscalMetadataPackage.getOscalElement());
 		parameterEClass.getESuperTypes().add(theOscalMetadataPackage.getAnnotationOwner());
+		parameterEClass.getESuperTypes().add(theOscalMetadataPackage.getPropertyOwner());
+		parameterEClass.getESuperTypes().add(theOscalMetadataPackage.getLinkOwner());
+		parameterEClass.getESuperTypes().add(theOscalMetadataPackage.getElementWithRemarks());
+		parameterEClass.getESuperTypes().add(theOscalMetadataPackage.getElementWithClazz());
 		parameterConstraintEClass.getESuperTypes().add(theOscalMetadataPackage.getOscalElement());
 		parameterConstraintTestEClass.getESuperTypes().add(theOscalMetadataPackage.getOscalElement());
+		parameterConstraintTestEClass.getESuperTypes().add(theOscalMetadataPackage.getElementWithRemarks());
 		parameterGuidelineEClass.getESuperTypes().add(theOscalMetadataPackage.getOscalElement());
 		parameterSelectionEClass.getESuperTypes().add(theOscalMetadataPackage.getOscalElement());
 		partEClass.getESuperTypes().add(theOscalMetadataPackage.getOscalElement());
 		partEClass.getESuperTypes().add(theOscalMetadataPackage.getAnnotationOwner());
+		partEClass.getESuperTypes().add(theOscalMetadataPackage.getPropertyOwner());
+		partEClass.getESuperTypes().add(theOscalMetadataPackage.getLinkOwner());
+		partEClass.getESuperTypes().add(theOscalMetadataPackage.getElementWithClazz());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(parameterEClass, Parameter.class, "Parameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getParameter_Clazz(), ecorePackage.getEString(), "clazz", null, 0, 1, Parameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getParameter_Constraints(), this.getParameterConstraint(), null, "constraints", null, 0, -1, Parameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getParameter_DependsOn(), ecorePackage.getEString(), "dependsOn", null, 0, 1, Parameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getParameter_Guidelines(), this.getParameterGuideline(), null, "guidelines", null, 0, -1, Parameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getParameter_Id(), ecorePackage.getEString(), "id", null, 1, 1, Parameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getParameter_Label(), theOscalMetadataPackage.getMarkupLineType(), "label", null, 0, 1, Parameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getParameter_Links(), theOscalMetadataPackage.getLink(), null, "links", null, 0, -1, Parameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getParameter_Props(), theOscalMetadataPackage.getProperty(), null, "props", null, 0, -1, Parameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getParameter_Remarks(), theOscalMetadataPackage.getMarkupMultilineType(), "remarks", null, 0, 1, Parameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getParameter_Select(), this.getParameterSelection(), null, "select", null, 0, 1, Parameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getParameter_Usage(), theOscalMetadataPackage.getMarkupMultilineType(), "usage", null, 0, 1, Parameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getParameter_Values(), ecorePackage.getEString(), "values", null, 0, -1, Parameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -629,7 +545,6 @@ public class OscalCatalogCommonPackageImpl extends EPackageImpl implements Oscal
 
 		initEClass(parameterConstraintTestEClass, ParameterConstraintTest.class, "ParameterConstraintTest", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getParameterConstraintTest_Expression(), ecorePackage.getEString(), "expression", null, 1, 1, ParameterConstraintTest.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getParameterConstraintTest_Remarks(), theOscalMetadataPackage.getMarkupMultilineType(), "remarks", null, 0, 1, ParameterConstraintTest.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(parameterGuidelineEClass, ParameterGuideline.class, "ParameterGuideline", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getParameterGuideline_Prose(), theOscalMetadataPackage.getMarkupMultilineType(), "prose", null, 1, 1, ParameterGuideline.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -639,13 +554,10 @@ public class OscalCatalogCommonPackageImpl extends EPackageImpl implements Oscal
 		initEAttribute(getParameterSelection_HowMany(), ecorePackage.getEString(), "howMany", null, 0, 1, ParameterSelection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(partEClass, Part.class, "Part", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getPart_Clazz(), ecorePackage.getEString(), "clazz", null, 0, 1, Part.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPart_Id(), ecorePackage.getEString(), "id", null, 0, 1, Part.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getPart_Links(), theOscalMetadataPackage.getLink(), null, "links", null, 0, -1, Part.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPart_Name(), ecorePackage.getEString(), "name", null, 1, 1, Part.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPart_Ns(), theOscalMetadataPackage.getUriType(), "ns", null, 0, 1, Part.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPart_Parts(), this.getPart(), null, "parts", null, 0, -1, Part.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getPart_Props(), theOscalMetadataPackage.getProperty(), null, "props", null, 0, -1, Part.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPart_Prose(), theOscalMetadataPackage.getMarkupMultilineType(), "prose", null, 0, 1, Part.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPart_Title(), theOscalMetadataPackage.getMarkupLineType(), "title", null, 0, 1, Part.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -670,12 +582,6 @@ public class OscalCatalogCommonPackageImpl extends EPackageImpl implements Oscal
 		   source,
 		   new String[] {
 			   "source", "<Metaschema>oscal-catalog-common.<AssemblyDefinition>parameter"
-		   });
-		addAnnotation
-		  (getParameter_Clazz(),
-		   source,
-		   new String[] {
-			   "source", "<Metaschema>oscal-catalog-common.<AssemblyDefinition>parameter.<FlagInstance>class"
 		   });
 		addAnnotation
 		  (getParameter_Constraints(),
@@ -706,24 +612,6 @@ public class OscalCatalogCommonPackageImpl extends EPackageImpl implements Oscal
 		   source,
 		   new String[] {
 			   "source", "<Metaschema>oscal-catalog-common.<AssemblyDefinition>parameter.<FieldInstance>label"
-		   });
-		addAnnotation
-		  (getParameter_Links(),
-		   source,
-		   new String[] {
-			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>link"
-		   });
-		addAnnotation
-		  (getParameter_Props(),
-		   source,
-		   new String[] {
-			   "source", "<Metaschema>oscal-metadata.<FieldDefinition>property"
-		   });
-		addAnnotation
-		  (getParameter_Remarks(),
-		   source,
-		   new String[] {
-			   "source", "<Metaschema>oscal-catalog-common.<AssemblyDefinition>parameter.<FieldInstance>remarks"
 		   });
 		addAnnotation
 		  (getParameter_Select(),
@@ -774,12 +662,6 @@ public class OscalCatalogCommonPackageImpl extends EPackageImpl implements Oscal
 			   "source", "<Metaschema>oscal-catalog-common.<AssemblyDefinition>test.<FieldInstance>expression"
 		   });
 		addAnnotation
-		  (getParameterConstraintTest_Remarks(),
-		   source,
-		   new String[] {
-			   "source", "<Metaschema>oscal-catalog-common.<AssemblyDefinition>test.<FieldInstance>remarks"
-		   });
-		addAnnotation
 		  (parameterGuidelineEClass,
 		   source,
 		   new String[] {
@@ -816,22 +698,10 @@ public class OscalCatalogCommonPackageImpl extends EPackageImpl implements Oscal
 			   "source", "<Metaschema>oscal-catalog-common.<AssemblyDefinition>part"
 		   });
 		addAnnotation
-		  (getPart_Clazz(),
-		   source,
-		   new String[] {
-			   "source", "<Metaschema>oscal-catalog-common.<AssemblyDefinition>part.<FlagInstance>class"
-		   });
-		addAnnotation
 		  (getPart_Id(),
 		   source,
 		   new String[] {
 			   "source", "<Metaschema>oscal-catalog-common.<AssemblyDefinition>part.<FlagInstance>id"
-		   });
-		addAnnotation
-		  (getPart_Links(),
-		   source,
-		   new String[] {
-			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>link"
 		   });
 		addAnnotation
 		  (getPart_Name(),
@@ -850,12 +720,6 @@ public class OscalCatalogCommonPackageImpl extends EPackageImpl implements Oscal
 		   source,
 		   new String[] {
 			   "source", "<Metaschema>oscal-catalog-common.<AssemblyDefinition>part"
-		   });
-		addAnnotation
-		  (getPart_Props(),
-		   source,
-		   new String[] {
-			   "source", "<Metaschema>oscal-metadata.<FieldDefinition>property"
 		   });
 		addAnnotation
 		  (getPart_Prose(),

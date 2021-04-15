@@ -16,10 +16,10 @@
 package dsm.oscal.model.OscalCatalogCommon;
 
 import dsm.oscal.model.OscalMetadata.AnnotationOwner;
-import dsm.oscal.model.OscalMetadata.Link;
+import dsm.oscal.model.OscalMetadata.ElementWithClazz;
+import dsm.oscal.model.OscalMetadata.LinkOwner;
 import dsm.oscal.model.OscalMetadata.OscalElement;
-import dsm.oscal.model.OscalMetadata.Property;
-
+import dsm.oscal.model.OscalMetadata.PropertyOwner;
 import gov.nist.secauto.metaschema.datatypes.markup.MarkupLine;
 import gov.nist.secauto.metaschema.datatypes.markup.MarkupMultiline;
 
@@ -49,13 +49,10 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link dsm.oscal.model.OscalCatalogCommon.Part#getClazz <em>Clazz</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalogCommon.Part#getId <em>Id</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalCatalogCommon.Part#getLinks <em>Links</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalogCommon.Part#getName <em>Name</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalogCommon.Part#getNs <em>Ns</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalogCommon.Part#getParts <em>Parts</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalCatalogCommon.Part#getProps <em>Props</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalogCommon.Part#getProse <em>Prose</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalogCommon.Part#getTitle <em>Title</em>}</li>
  * </ul>
@@ -64,7 +61,7 @@ import org.eclipse.emf.common.util.EList;
  * @model annotation="Metaschema source='&lt;Metaschema&gt;oscal-catalog-common.&lt;AssemblyDefinition&gt;part'"
  * @generated
  */
-public interface Part extends OscalElement, AnnotationOwner {
+public interface Part extends OscalElement, AnnotationOwner, PropertyOwner, LinkOwner, ElementWithClazz {
 	/**
 	 * Returns the value of the '<em><b>Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -156,37 +153,6 @@ public interface Part extends OscalElement, AnnotationOwner {
 	void setNs(URI value);
 
 	/**
-	 * Returns the value of the '<em><b>Clazz</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * <h1>Part Class</h1>
-	 * <h2>Description</h2>
-	 * <p>A textual label that provides a sub-type or characterization of the part's <code>name</code>. This can be used to further distinguish or discriminate between the semantics of multiple parts of the same control with the same <code>name</code> and <code>ns</code>.</p>
-	 * <h2>Remarks</h2>
-	 * <p>A <code>class</code> can be used in validation rules to express extra constraints over named items of a specific <code>class</code> value.</p>
-	 * <p>A <code>class</code> can also be used in an OSCAL profile as a means to target an alteration to control content.</p>
-	 * 
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Clazz</em>' attribute.
-	 * @see #setClazz(String)
-	 * @see dsm.oscal.model.OscalCatalogCommon.OscalCatalogCommonPackage#getPart_Clazz()
-	 * @model annotation="Metaschema source='&lt;Metaschema&gt;oscal-catalog-common.&lt;AssemblyDefinition&gt;part.&lt;FlagInstance&gt;class'"
-	 * @generated
-	 */
-	String getClazz();
-
-	/**
-	 * Sets the value of the '{@link dsm.oscal.model.OscalCatalogCommon.Part#getClazz <em>Clazz</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Clazz</em>' attribute.
-	 * @see #getClazz()
-	 * @generated
-	 */
-	void setClazz(String value);
-
-	/**
 	 * Returns the value of the '<em><b>Title</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -256,31 +222,5 @@ public interface Part extends OscalElement, AnnotationOwner {
 	 * @generated
 	 */
 	EList<Part> getParts();
-
-	/**
-	 * Returns the value of the '<em><b>Links</b></em>' containment reference list.
-	 * The list contents are of type {@link dsm.oscal.model.OscalMetadata.Link}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Links</em>' containment reference list.
-	 * @see dsm.oscal.model.OscalCatalogCommon.OscalCatalogCommonPackage#getPart_Links()
-	 * @model containment="true"
-	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;AssemblyDefinition&gt;link'"
-	 * @generated
-	 */
-	EList<Link> getLinks();
-
-	/**
-	 * Returns the value of the '<em><b>Props</b></em>' containment reference list.
-	 * The list contents are of type {@link dsm.oscal.model.OscalMetadata.Property}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Props</em>' containment reference list.
-	 * @see dsm.oscal.model.OscalCatalogCommon.OscalCatalogCommonPackage#getPart_Props()
-	 * @model containment="true"
-	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;FieldDefinition&gt;property'"
-	 * @generated
-	 */
-	EList<Property> getProps();
 
 } // Part

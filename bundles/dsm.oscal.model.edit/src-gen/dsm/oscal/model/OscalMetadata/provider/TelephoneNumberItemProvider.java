@@ -73,8 +73,8 @@ public class TelephoneNumberItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addTypePropertyDescriptor(object);
 			addValuePropertyDescriptor(object);
+			addTypePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -90,9 +90,9 @@ public class TelephoneNumberItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_TelephoneNumber_value_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_TelephoneNumber_value_feature", "_UI_TelephoneNumber_type"),
-				 OscalMetadataPackage.Literals.TELEPHONE_NUMBER__VALUE,
+				 getString("_UI_ElementWithValue_value_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ElementWithValue_value_feature", "_UI_ElementWithValue_type"),
+				 OscalMetadataPackage.Literals.ELEMENT_WITH_VALUE__VALUE,
 				 true,
 				 false,
 				 false,
@@ -142,7 +142,7 @@ public class TelephoneNumberItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((TelephoneNumber)object).getType();
+		String label = ((TelephoneNumber)object).getValue();
 		return label == null || label.length() == 0 ?
 			getString("_UI_TelephoneNumber_type") :
 			getString("_UI_TelephoneNumber_type") + " " + label;
@@ -161,8 +161,8 @@ public class TelephoneNumberItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(TelephoneNumber.class)) {
-			case OscalMetadataPackage.TELEPHONE_NUMBER__TYPE:
 			case OscalMetadataPackage.TELEPHONE_NUMBER__VALUE:
+			case OscalMetadataPackage.TELEPHONE_NUMBER__TYPE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

@@ -34,36 +34,13 @@ package dsm.oscal.model.OscalMetadata;
  * </p>
  * <ul>
  *   <li>{@link dsm.oscal.model.OscalMetadata.Hash#getAlgorithm <em>Algorithm</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.Hash#getValue <em>Value</em>}</li>
  * </ul>
  *
  * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getHash()
  * @model annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;FieldDefinition&gt;hash'"
  * @generated
  */
-public interface Hash extends OscalElement {
-	/**
-	 * Returns the value of the '<em><b>Value</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Value</em>' attribute.
-	 * @see #setValue(String)
-	 * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getHash_Value()
-	 * @model
-	 * @generated
-	 */
-	String getValue();
-
-	/**
-	 * Sets the value of the '{@link dsm.oscal.model.OscalMetadata.Hash#getValue <em>Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Value</em>' attribute.
-	 * @see #getValue()
-	 * @generated
-	 */
-	void setValue(String value);
-
+public interface Hash extends OscalElement, ElementWithValue {
 	/**
 	 * Returns the value of the '<em><b>Algorithm</b></em>' attribute.
 	 * <!-- begin-user-doc -->

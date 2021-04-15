@@ -18,7 +18,10 @@ package dsm.oscal.model.OscalCatalog.util;
 import dsm.oscal.model.OscalCatalog.*;
 
 import dsm.oscal.model.OscalMetadata.AnnotationOwner;
+import dsm.oscal.model.OscalMetadata.ElementWithClazz;
+import dsm.oscal.model.OscalMetadata.LinkOwner;
 import dsm.oscal.model.OscalMetadata.OscalElement;
+import dsm.oscal.model.OscalMetadata.PropertyOwner;
 import dsm.oscal.model.OscalMetadata.UUIDElement;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -95,6 +98,9 @@ public class OscalCatalogSwitch<T> extends Switch<T> {
 				T result = caseControl(control);
 				if (result == null) result = caseOscalElement(control);
 				if (result == null) result = caseAnnotationOwner(control);
+				if (result == null) result = casePropertyOwner(control);
+				if (result == null) result = caseLinkOwner(control);
+				if (result == null) result = caseElementWithClazz(control);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -103,6 +109,9 @@ public class OscalCatalogSwitch<T> extends Switch<T> {
 				T result = caseGroup(group);
 				if (result == null) result = caseOscalElement(group);
 				if (result == null) result = caseAnnotationOwner(group);
+				if (result == null) result = casePropertyOwner(group);
+				if (result == null) result = caseLinkOwner(group);
+				if (result == null) result = caseElementWithClazz(group);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -197,6 +206,51 @@ public class OscalCatalogSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseAnnotationOwner(AnnotationOwner object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Property Owner</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Property Owner</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePropertyOwner(PropertyOwner object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Link Owner</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Link Owner</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseLinkOwner(LinkOwner object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Element With Clazz</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Element With Clazz</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseElementWithClazz(ElementWithClazz object) {
 		return null;
 	}
 

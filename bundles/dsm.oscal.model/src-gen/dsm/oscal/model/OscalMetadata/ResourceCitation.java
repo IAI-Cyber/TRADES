@@ -17,8 +17,6 @@ package dsm.oscal.model.OscalMetadata;
 
 import gov.nist.secauto.metaschema.datatypes.markup.MarkupLine;
 
-import org.eclipse.emf.common.util.EList;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Resource Citation</b></em>'.
@@ -38,7 +36,6 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link dsm.oscal.model.OscalMetadata.ResourceCitation#getProps <em>Props</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.ResourceCitation#getText <em>Text</em>}</li>
  * </ul>
  *
@@ -46,7 +43,7 @@ import org.eclipse.emf.common.util.EList;
  * @model annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;AssemblyDefinition&gt;citation'"
  * @generated
  */
-public interface ResourceCitation extends OscalElement, AnnotationOwner {
+public interface ResourceCitation extends OscalElement, AnnotationOwner, PropertyOwner {
 	/**
 	 * Returns the value of the '<em><b>Text</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -75,18 +72,5 @@ public interface ResourceCitation extends OscalElement, AnnotationOwner {
 	 * @generated
 	 */
 	void setText(MarkupLine value);
-
-	/**
-	 * Returns the value of the '<em><b>Props</b></em>' containment reference list.
-	 * The list contents are of type {@link dsm.oscal.model.OscalMetadata.Property}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Props</em>' containment reference list.
-	 * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getResourceCitation_Props()
-	 * @model containment="true"
-	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;FieldDefinition&gt;property'"
-	 * @generated
-	 */
-	EList<Property> getProps();
 
 } // ResourceCitation

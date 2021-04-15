@@ -18,10 +18,10 @@ package dsm.oscal.model.OscalCatalog;
 import dsm.oscal.model.OscalCatalogCommon.Parameter;
 import dsm.oscal.model.OscalCatalogCommon.Part;
 import dsm.oscal.model.OscalMetadata.AnnotationOwner;
-import dsm.oscal.model.OscalMetadata.Link;
+import dsm.oscal.model.OscalMetadata.ElementWithClazz;
+import dsm.oscal.model.OscalMetadata.LinkOwner;
 import dsm.oscal.model.OscalMetadata.OscalElement;
-import dsm.oscal.model.OscalMetadata.Property;
-
+import dsm.oscal.model.OscalMetadata.PropertyOwner;
 import gov.nist.secauto.metaschema.datatypes.markup.MarkupLine;
 
 import org.eclipse.emf.common.util.EList;
@@ -44,13 +44,10 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link dsm.oscal.model.OscalCatalog.Control#getClazz <em>Clazz</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalog.Control#getControls <em>Controls</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalog.Control#getId <em>Id</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalCatalog.Control#getLinks <em>Links</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalog.Control#getParams <em>Params</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalog.Control#getParts <em>Parts</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalCatalog.Control#getProps <em>Props</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalog.Control#getTitle <em>Title</em>}</li>
  * </ul>
  *
@@ -58,7 +55,7 @@ import org.eclipse.emf.common.util.EList;
  * @model annotation="Metaschema source='&lt;Metaschema&gt;oscal-catalog.&lt;AssemblyDefinition&gt;control'"
  * @generated
  */
-public interface Control extends OscalElement, AnnotationOwner {
+public interface Control extends OscalElement, AnnotationOwner, PropertyOwner, LinkOwner, ElementWithClazz {
 	/**
 	 * Returns the value of the '<em><b>Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -87,37 +84,6 @@ public interface Control extends OscalElement, AnnotationOwner {
 	 * @generated
 	 */
 	void setId(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Clazz</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * <h1>Control Class</h1>
-	 * <h2>Description</h2>
-	 * <p>A textual label that provides a sub-type or characterization of the control.</p>
-	 * <h2>Remarks</h2>
-	 * <p>A <code>class</code> can be used in validation rules to express extra constraints over named items of a specific <code>class</code> value.</p>
-	 * <p>A <code>class</code> can also be used in an OSCAL profile as a means to target an alteration to control content.</p>
-	 * 
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Clazz</em>' attribute.
-	 * @see #setClazz(String)
-	 * @see dsm.oscal.model.OscalCatalog.OscalCatalogPackage#getControl_Clazz()
-	 * @model annotation="Metaschema source='&lt;Metaschema&gt;oscal-catalog.&lt;AssemblyDefinition&gt;control.&lt;FlagInstance&gt;class'"
-	 * @generated
-	 */
-	String getClazz();
-
-	/**
-	 * Sets the value of the '{@link dsm.oscal.model.OscalCatalog.Control#getClazz <em>Clazz</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Clazz</em>' attribute.
-	 * @see #getClazz()
-	 * @generated
-	 */
-	void setClazz(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Title</b></em>' attribute.
@@ -175,19 +141,6 @@ public interface Control extends OscalElement, AnnotationOwner {
 	EList<Part> getParts();
 
 	/**
-	 * Returns the value of the '<em><b>Links</b></em>' containment reference list.
-	 * The list contents are of type {@link dsm.oscal.model.OscalMetadata.Link}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Links</em>' containment reference list.
-	 * @see dsm.oscal.model.OscalCatalog.OscalCatalogPackage#getControl_Links()
-	 * @model containment="true"
-	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;AssemblyDefinition&gt;link'"
-	 * @generated
-	 */
-	EList<Link> getLinks();
-
-	/**
 	 * Returns the value of the '<em><b>Controls</b></em>' containment reference list.
 	 * The list contents are of type {@link dsm.oscal.model.OscalCatalog.Control}.
 	 * <!-- begin-user-doc -->
@@ -199,18 +152,5 @@ public interface Control extends OscalElement, AnnotationOwner {
 	 * @generated
 	 */
 	EList<Control> getControls();
-
-	/**
-	 * Returns the value of the '<em><b>Props</b></em>' containment reference list.
-	 * The list contents are of type {@link dsm.oscal.model.OscalMetadata.Property}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Props</em>' containment reference list.
-	 * @see dsm.oscal.model.OscalCatalog.OscalCatalogPackage#getControl_Props()
-	 * @model containment="true"
-	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;FieldDefinition&gt;property'"
-	 * @generated
-	 */
-	EList<Property> getProps();
 
 } // Control

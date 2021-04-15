@@ -18,7 +18,10 @@ package dsm.oscal.model.OscalCatalog.util;
 import dsm.oscal.model.OscalCatalog.*;
 
 import dsm.oscal.model.OscalMetadata.AnnotationOwner;
+import dsm.oscal.model.OscalMetadata.ElementWithClazz;
+import dsm.oscal.model.OscalMetadata.LinkOwner;
 import dsm.oscal.model.OscalMetadata.OscalElement;
+import dsm.oscal.model.OscalMetadata.PropertyOwner;
 import dsm.oscal.model.OscalMetadata.UUIDElement;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
@@ -106,6 +109,18 @@ public class OscalCatalogAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseAnnotationOwner(AnnotationOwner object) {
 				return createAnnotationOwnerAdapter();
+			}
+			@Override
+			public Adapter casePropertyOwner(PropertyOwner object) {
+				return createPropertyOwnerAdapter();
+			}
+			@Override
+			public Adapter caseLinkOwner(LinkOwner object) {
+				return createLinkOwnerAdapter();
+			}
+			@Override
+			public Adapter caseElementWithClazz(ElementWithClazz object) {
+				return createElementWithClazzAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -208,6 +223,48 @@ public class OscalCatalogAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createAnnotationOwnerAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link dsm.oscal.model.OscalMetadata.PropertyOwner <em>Property Owner</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see dsm.oscal.model.OscalMetadata.PropertyOwner
+	 * @generated
+	 */
+	public Adapter createPropertyOwnerAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link dsm.oscal.model.OscalMetadata.LinkOwner <em>Link Owner</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see dsm.oscal.model.OscalMetadata.LinkOwner
+	 * @generated
+	 */
+	public Adapter createLinkOwnerAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link dsm.oscal.model.OscalMetadata.ElementWithClazz <em>Element With Clazz</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see dsm.oscal.model.OscalMetadata.ElementWithClazz
+	 * @generated
+	 */
+	public Adapter createElementWithClazzAdapter() {
 		return null;
 	}
 

@@ -109,6 +109,18 @@ public class OscalMetadataAdapterFactory extends AdapterFactoryImpl {
 				return createDocumentIdAdapter();
 			}
 			@Override
+			public Adapter caseElementWithClazz(ElementWithClazz object) {
+				return createElementWithClazzAdapter();
+			}
+			@Override
+			public Adapter caseElementWithRemarks(ElementWithRemarks object) {
+				return createElementWithRemarksAdapter();
+			}
+			@Override
+			public Adapter caseElementWithValue(ElementWithValue object) {
+				return createElementWithValueAdapter();
+			}
+			@Override
 			public Adapter caseExternalId(ExternalId object) {
 				return createExternalIdAdapter();
 			}
@@ -119,6 +131,10 @@ public class OscalMetadataAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseLink(Link object) {
 				return createLinkAdapter();
+			}
+			@Override
+			public Adapter caseLinkOwner(LinkOwner object) {
+				return createLinkOwnerAdapter();
 			}
 			@Override
 			public Adapter caseLocation(Location object) {
@@ -139,6 +155,10 @@ public class OscalMetadataAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseProperty(Property object) {
 				return createPropertyAdapter();
+			}
+			@Override
+			public Adapter casePropertyOwner(PropertyOwner object) {
+				return createPropertyOwnerAdapter();
 			}
 			@Override
 			public Adapter caseResourceCitation(ResourceCitation object) {
@@ -277,6 +297,48 @@ public class OscalMetadataAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link dsm.oscal.model.OscalMetadata.ElementWithClazz <em>Element With Clazz</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see dsm.oscal.model.OscalMetadata.ElementWithClazz
+	 * @generated
+	 */
+	public Adapter createElementWithClazzAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link dsm.oscal.model.OscalMetadata.ElementWithRemarks <em>Element With Remarks</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see dsm.oscal.model.OscalMetadata.ElementWithRemarks
+	 * @generated
+	 */
+	public Adapter createElementWithRemarksAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link dsm.oscal.model.OscalMetadata.ElementWithValue <em>Element With Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see dsm.oscal.model.OscalMetadata.ElementWithValue
+	 * @generated
+	 */
+	public Adapter createElementWithValueAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link dsm.oscal.model.OscalMetadata.ExternalId <em>External Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -315,6 +377,20 @@ public class OscalMetadataAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createLinkAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link dsm.oscal.model.OscalMetadata.LinkOwner <em>Link Owner</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see dsm.oscal.model.OscalMetadata.LinkOwner
+	 * @generated
+	 */
+	public Adapter createLinkOwnerAdapter() {
 		return null;
 	}
 
@@ -371,6 +447,20 @@ public class OscalMetadataAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createPropertyAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link dsm.oscal.model.OscalMetadata.PropertyOwner <em>Property Owner</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see dsm.oscal.model.OscalMetadata.PropertyOwner
+	 * @generated
+	 */
+	public Adapter createPropertyOwnerAdapter() {
 		return null;
 	}
 

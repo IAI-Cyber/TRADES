@@ -16,6 +16,8 @@
 package dsm.oscal.model.OscalMetadata.impl;
 
 import dsm.oscal.model.OscalMetadata.Annotation;
+import dsm.oscal.model.OscalMetadata.ElementWithRemarks;
+import dsm.oscal.model.OscalMetadata.ElementWithValue;
 import dsm.oscal.model.OscalMetadata.OscalMetadataPackage;
 
 import dsm.oscal.model.OscalMetadata.UUIDElement;
@@ -41,10 +43,10 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * </p>
  * <ul>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.AnnotationImpl#getUuid <em>Uuid</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.impl.AnnotationImpl#getName <em>Name</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.impl.AnnotationImpl#getNs <em>Ns</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.AnnotationImpl#getRemarks <em>Remarks</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.AnnotationImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.impl.AnnotationImpl#getName <em>Name</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.impl.AnnotationImpl#getNs <em>Ns</em>}</li>
  * </ul>
  *
  * @generated
@@ -69,46 +71,6 @@ public class AnnotationImpl extends MinimalEObjectImpl.Container implements Anno
 	 * @ordered
 	 */
 	protected UUID uuid = UUID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String name = NAME_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getNs() <em>Ns</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getNs()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final URI NS_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getNs() <em>Ns</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getNs()
-	 * @generated
-	 * @ordered
-	 */
-	protected URI ns = NS_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getRemarks() <em>Remarks</em>}' attribute.
@@ -149,6 +111,46 @@ public class AnnotationImpl extends MinimalEObjectImpl.Container implements Anno
 	 * @ordered
 	 */
 	protected String value = VALUE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String name = NAME_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getNs() <em>Ns</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNs()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final URI NS_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getNs() <em>Ns</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNs()
+	 * @generated
+	 * @ordered
+	 */
+	protected URI ns = NS_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -294,14 +296,14 @@ public class AnnotationImpl extends MinimalEObjectImpl.Container implements Anno
 		switch (featureID) {
 			case OscalMetadataPackage.ANNOTATION__UUID:
 				return getUuid();
-			case OscalMetadataPackage.ANNOTATION__NAME:
-				return getName();
-			case OscalMetadataPackage.ANNOTATION__NS:
-				return getNs();
 			case OscalMetadataPackage.ANNOTATION__REMARKS:
 				return getRemarks();
 			case OscalMetadataPackage.ANNOTATION__VALUE:
 				return getValue();
+			case OscalMetadataPackage.ANNOTATION__NAME:
+				return getName();
+			case OscalMetadataPackage.ANNOTATION__NS:
+				return getNs();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -317,17 +319,17 @@ public class AnnotationImpl extends MinimalEObjectImpl.Container implements Anno
 			case OscalMetadataPackage.ANNOTATION__UUID:
 				setUuid((UUID)newValue);
 				return;
-			case OscalMetadataPackage.ANNOTATION__NAME:
-				setName((String)newValue);
-				return;
-			case OscalMetadataPackage.ANNOTATION__NS:
-				setNs((URI)newValue);
-				return;
 			case OscalMetadataPackage.ANNOTATION__REMARKS:
 				setRemarks((MarkupMultiline)newValue);
 				return;
 			case OscalMetadataPackage.ANNOTATION__VALUE:
 				setValue((String)newValue);
+				return;
+			case OscalMetadataPackage.ANNOTATION__NAME:
+				setName((String)newValue);
+				return;
+			case OscalMetadataPackage.ANNOTATION__NS:
+				setNs((URI)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -344,17 +346,17 @@ public class AnnotationImpl extends MinimalEObjectImpl.Container implements Anno
 			case OscalMetadataPackage.ANNOTATION__UUID:
 				setUuid(UUID_EDEFAULT);
 				return;
-			case OscalMetadataPackage.ANNOTATION__NAME:
-				setName(NAME_EDEFAULT);
-				return;
-			case OscalMetadataPackage.ANNOTATION__NS:
-				setNs(NS_EDEFAULT);
-				return;
 			case OscalMetadataPackage.ANNOTATION__REMARKS:
 				setRemarks(REMARKS_EDEFAULT);
 				return;
 			case OscalMetadataPackage.ANNOTATION__VALUE:
 				setValue(VALUE_EDEFAULT);
+				return;
+			case OscalMetadataPackage.ANNOTATION__NAME:
+				setName(NAME_EDEFAULT);
+				return;
+			case OscalMetadataPackage.ANNOTATION__NS:
+				setNs(NS_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -370,14 +372,14 @@ public class AnnotationImpl extends MinimalEObjectImpl.Container implements Anno
 		switch (featureID) {
 			case OscalMetadataPackage.ANNOTATION__UUID:
 				return UUID_EDEFAULT == null ? uuid != null : !UUID_EDEFAULT.equals(uuid);
-			case OscalMetadataPackage.ANNOTATION__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case OscalMetadataPackage.ANNOTATION__NS:
-				return NS_EDEFAULT == null ? ns != null : !NS_EDEFAULT.equals(ns);
 			case OscalMetadataPackage.ANNOTATION__REMARKS:
 				return REMARKS_EDEFAULT == null ? remarks != null : !REMARKS_EDEFAULT.equals(remarks);
 			case OscalMetadataPackage.ANNOTATION__VALUE:
 				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
+			case OscalMetadataPackage.ANNOTATION__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case OscalMetadataPackage.ANNOTATION__NS:
+				return NS_EDEFAULT == null ? ns != null : !NS_EDEFAULT.equals(ns);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -392,6 +394,18 @@ public class AnnotationImpl extends MinimalEObjectImpl.Container implements Anno
 		if (baseClass == UUIDElement.class) {
 			switch (derivedFeatureID) {
 				case OscalMetadataPackage.ANNOTATION__UUID: return OscalMetadataPackage.UUID_ELEMENT__UUID;
+				default: return -1;
+			}
+		}
+		if (baseClass == ElementWithRemarks.class) {
+			switch (derivedFeatureID) {
+				case OscalMetadataPackage.ANNOTATION__REMARKS: return OscalMetadataPackage.ELEMENT_WITH_REMARKS__REMARKS;
+				default: return -1;
+			}
+		}
+		if (baseClass == ElementWithValue.class) {
+			switch (derivedFeatureID) {
+				case OscalMetadataPackage.ANNOTATION__VALUE: return OscalMetadataPackage.ELEMENT_WITH_VALUE__VALUE;
 				default: return -1;
 			}
 		}
@@ -411,6 +425,18 @@ public class AnnotationImpl extends MinimalEObjectImpl.Container implements Anno
 				default: return -1;
 			}
 		}
+		if (baseClass == ElementWithRemarks.class) {
+			switch (baseFeatureID) {
+				case OscalMetadataPackage.ELEMENT_WITH_REMARKS__REMARKS: return OscalMetadataPackage.ANNOTATION__REMARKS;
+				default: return -1;
+			}
+		}
+		if (baseClass == ElementWithValue.class) {
+			switch (baseFeatureID) {
+				case OscalMetadataPackage.ELEMENT_WITH_VALUE__VALUE: return OscalMetadataPackage.ANNOTATION__VALUE;
+				default: return -1;
+			}
+		}
 		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
@@ -426,14 +452,14 @@ public class AnnotationImpl extends MinimalEObjectImpl.Container implements Anno
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (uuid: ");
 		result.append(uuid);
-		result.append(", name: ");
-		result.append(name);
-		result.append(", ns: ");
-		result.append(ns);
 		result.append(", remarks: ");
 		result.append(remarks);
 		result.append(", value: ");
 		result.append(value);
+		result.append(", name: ");
+		result.append(name);
+		result.append(", ns: ");
+		result.append(ns);
 		result.append(')');
 		return result.toString();
 	}

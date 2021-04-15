@@ -89,6 +89,33 @@ public interface OscalMetadataFactory extends EFactory {
 	DocumentId createDocumentId();
 
 	/**
+	 * Returns a new object of class '<em>Element With Clazz</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Element With Clazz</em>'.
+	 * @generated
+	 */
+	ElementWithClazz createElementWithClazz();
+
+	/**
+	 * Returns a new object of class '<em>Element With Remarks</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Element With Remarks</em>'.
+	 * @generated
+	 */
+	ElementWithRemarks createElementWithRemarks();
+
+	/**
+	 * Returns a new object of class '<em>Element With Value</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Element With Value</em>'.
+	 * @generated
+	 */
+	ElementWithValue createElementWithValue();
+
+	/**
 	 * Returns a new object of class '<em>External Id</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -114,6 +141,15 @@ public interface OscalMetadataFactory extends EFactory {
 	 * @generated
 	 */
 	Link createLink();
+
+	/**
+	 * Returns a new object of class '<em>Link Owner</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Link Owner</em>'.
+	 * @generated
+	 */
+	LinkOwner createLinkOwner();
 
 	/**
 	 * Returns a new object of class '<em>Location</em>'.
@@ -150,6 +186,15 @@ public interface OscalMetadataFactory extends EFactory {
 	 * @generated
 	 */
 	Property createProperty();
+
+	/**
+	 * Returns a new object of class '<em>Property Owner</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Property Owner</em>'.
+	 * @generated
+	 */
+	PropertyOwner createPropertyOwner();
 
 	/**
 	 * Returns a new object of class '<em>Resource Citation</em>'.

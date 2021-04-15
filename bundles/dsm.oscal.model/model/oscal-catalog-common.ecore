@@ -9,15 +9,10 @@
     </eAnnotations>
     <eSuperTypes href="oscal-metadata.ecore#//OscalElement"/>
     <eSuperTypes href="oscal-metadata.ecore#//AnnotationOwner"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="clazz">
-      <eAnnotations source="Metaschema">
-        <details key="source" value="&lt;Metaschema>oscal-catalog-common.&lt;AssemblyDefinition>parameter.&lt;FlagInstance>class"/>
-      </eAnnotations>
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="&lt;h1>Parameter Class&lt;/h1>&#xA;&lt;h2>Description&lt;/h2>&#xA;&lt;p>A textual label that provides a characterization of the parameter.&lt;/p>&#xA;&lt;h2>Remarks&lt;/h2>&#xA;&lt;p>A &lt;code>class&lt;/code> can be used in validation rules to express extra constraints over named items of a specific &lt;code>class&lt;/code> value.&lt;/p>&#xA;"/>
-      </eAnnotations>
-      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eStructuralFeatures>
+    <eSuperTypes href="oscal-metadata.ecore#//PropertyOwner"/>
+    <eSuperTypes href="oscal-metadata.ecore#//LinkOwner"/>
+    <eSuperTypes href="oscal-metadata.ecore#//ElementWithRemarks"/>
+    <eSuperTypes href="oscal-metadata.ecore#//ElementWithClazz"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="constraints" upperBound="-1" eType="//ParameterConstraint" containment="true">
       <eAnnotations source="Metaschema">
         <details key="source" value="&lt;Metaschema>oscal-catalog-common.&lt;AssemblyDefinition>parameter-constraint"/>
@@ -54,27 +49,6 @@
         <details key="documentation" value="&lt;h1>Parameter Label&lt;/h1>&#xA;&lt;h2>Description&lt;/h2>&#xA;&lt;p>A short, placeholder name for the parameter, which can be used as a subsitute for a &lt;code>value&lt;/code> if no value is assigned.&lt;/p>&#xA;&lt;h2>Remarks&lt;/h2>&#xA;&lt;p>The label value should be suitable for inline display in a rendered catalog.&lt;/p>&#xA;"/>
       </eAnnotations>
       <eType xsi:type="ecore:EDataType" href="oscal-metadata.ecore#//MarkupLineType"/>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="links" upperBound="-1" containment="true">
-      <eAnnotations source="Metaschema">
-        <details key="source" value="&lt;Metaschema>oscal-metadata.&lt;AssemblyDefinition>link"/>
-      </eAnnotations>
-      <eType xsi:type="ecore:EClass" href="oscal-metadata.ecore#//Link"/>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="props" upperBound="-1" containment="true">
-      <eAnnotations source="Metaschema">
-        <details key="source" value="&lt;Metaschema>oscal-metadata.&lt;FieldDefinition>property"/>
-      </eAnnotations>
-      <eType xsi:type="ecore:EClass" href="oscal-metadata.ecore#//Property"/>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="remarks">
-      <eAnnotations source="Metaschema">
-        <details key="source" value="&lt;Metaschema>oscal-catalog-common.&lt;AssemblyDefinition>parameter.&lt;FieldInstance>remarks"/>
-      </eAnnotations>
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="&lt;h1>Remarks&lt;/h1>&#xA;&lt;h2>Description&lt;/h2>&#xA;&lt;p>Additional commentary on the containing object.&lt;/p>&#xA;"/>
-      </eAnnotations>
-      <eType xsi:type="ecore:EDataType" href="oscal-metadata.ecore#//MarkupMultilineType"/>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="select" eType="//ParameterSelection" containment="true">
       <eAnnotations source="Metaschema">
@@ -131,6 +105,7 @@
       <details key="documentation" value="&lt;h1>Constraint Test&lt;/h1>&#xA;&lt;h2>Description&lt;/h2>&#xA;&lt;p>A test expression which is expected to be evaluated by a tool.&lt;/p>&#xA;"/>
     </eAnnotations>
     <eSuperTypes href="oscal-metadata.ecore#//OscalElement"/>
+    <eSuperTypes href="oscal-metadata.ecore#//ElementWithRemarks"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="expression" lowerBound="1">
       <eAnnotations source="Metaschema">
         <details key="source" value="&lt;Metaschema>oscal-catalog-common.&lt;AssemblyDefinition>test.&lt;FieldInstance>expression"/>
@@ -139,15 +114,6 @@
         <details key="documentation" value="&lt;h1>Constraint test&lt;/h1>&#xA;&lt;h2>Description&lt;/h2>&#xA;&lt;p>A formal (executable) expression of a constraint&lt;/p>&#xA;"/>
       </eAnnotations>
       <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="remarks">
-      <eAnnotations source="Metaschema">
-        <details key="source" value="&lt;Metaschema>oscal-catalog-common.&lt;AssemblyDefinition>test.&lt;FieldInstance>remarks"/>
-      </eAnnotations>
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="&lt;h1>Remarks&lt;/h1>&#xA;&lt;h2>Description&lt;/h2>&#xA;&lt;p>Additional commentary on the containing object.&lt;/p>&#xA;"/>
-      </eAnnotations>
-      <eType xsi:type="ecore:EDataType" href="oscal-metadata.ecore#//MarkupMultilineType"/>
     </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ParameterGuideline">
@@ -204,15 +170,9 @@
     </eAnnotations>
     <eSuperTypes href="oscal-metadata.ecore#//OscalElement"/>
     <eSuperTypes href="oscal-metadata.ecore#//AnnotationOwner"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="clazz">
-      <eAnnotations source="Metaschema">
-        <details key="source" value="&lt;Metaschema>oscal-catalog-common.&lt;AssemblyDefinition>part.&lt;FlagInstance>class"/>
-      </eAnnotations>
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="&lt;h1>Part Class&lt;/h1>&#xA;&lt;h2>Description&lt;/h2>&#xA;&lt;p>A textual label that provides a sub-type or characterization of the part's &lt;code>name&lt;/code>. This can be used to further distinguish or discriminate between the semantics of multiple parts of the same control with the same &lt;code>name&lt;/code> and &lt;code>ns&lt;/code>.&lt;/p>&#xA;&lt;h2>Remarks&lt;/h2>&#xA;&lt;p>A &lt;code>class&lt;/code> can be used in validation rules to express extra constraints over named items of a specific &lt;code>class&lt;/code> value.&lt;/p>&#xA;&lt;p>A &lt;code>class&lt;/code> can also be used in an OSCAL profile as a means to target an alteration to control content.&lt;/p>&#xA;"/>
-      </eAnnotations>
-      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eStructuralFeatures>
+    <eSuperTypes href="oscal-metadata.ecore#//PropertyOwner"/>
+    <eSuperTypes href="oscal-metadata.ecore#//LinkOwner"/>
+    <eSuperTypes href="oscal-metadata.ecore#//ElementWithClazz"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id">
       <eAnnotations source="Metaschema">
         <details key="source" value="&lt;Metaschema>oscal-catalog-common.&lt;AssemblyDefinition>part.&lt;FlagInstance>id"/>
@@ -221,12 +181,6 @@
         <details key="documentation" value="&lt;h1>Part Identifier&lt;/h1>&#xA;&lt;h2>Description&lt;/h2>&#xA;&lt;p>A unique identifier for a specific part instance. This identifier's uniqueness is document scoped and is intended to be consistent for the same part across minor revisions of the document.&lt;/p>&#xA;"/>
       </eAnnotations>
       <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="links" upperBound="-1" containment="true">
-      <eAnnotations source="Metaschema">
-        <details key="source" value="&lt;Metaschema>oscal-metadata.&lt;AssemblyDefinition>link"/>
-      </eAnnotations>
-      <eType xsi:type="ecore:EClass" href="oscal-metadata.ecore#//Link"/>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1">
       <eAnnotations source="Metaschema">
@@ -250,12 +204,6 @@
       <eAnnotations source="Metaschema">
         <details key="source" value="&lt;Metaschema>oscal-catalog-common.&lt;AssemblyDefinition>part"/>
       </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="props" upperBound="-1" containment="true">
-      <eAnnotations source="Metaschema">
-        <details key="source" value="&lt;Metaschema>oscal-metadata.&lt;FieldDefinition>property"/>
-      </eAnnotations>
-      <eType xsi:type="ecore:EClass" href="oscal-metadata.ecore#//Property"/>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="prose">
       <eAnnotations source="Metaschema">

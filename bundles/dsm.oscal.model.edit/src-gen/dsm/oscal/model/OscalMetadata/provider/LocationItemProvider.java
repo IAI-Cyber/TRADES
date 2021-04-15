@@ -76,8 +76,8 @@ public class LocationItemProvider
 			super.getPropertyDescriptors(object);
 
 			addUuidPropertyDescriptor(object);
-			addEmailAddressesPropertyDescriptor(object);
 			addRemarksPropertyDescriptor(object);
+			addEmailAddressesPropertyDescriptor(object);
 			addTitlePropertyDescriptor(object);
 			addUrlsPropertyDescriptor(object);
 		}
@@ -183,9 +183,9 @@ public class LocationItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Location_remarks_feature"),
-				 getString("_UI_Location_remarks_description"),
-				 OscalMetadataPackage.Literals.LOCATION__REMARKS,
+				 getString("_UI_ElementWithRemarks_remarks_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ElementWithRemarks_remarks_feature", "_UI_ElementWithRemarks_type"),
+				 OscalMetadataPackage.Literals.ELEMENT_WITH_REMARKS__REMARKS,
 				 true,
 				 true,
 				 false,
@@ -206,10 +206,7 @@ public class LocationItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(OscalMetadataPackage.Literals.ANNOTATION_OWNER__ANNOTATIONS);
 			childrenFeatures.add(OscalMetadataPackage.Literals.LOCATION__ADDRESS);
-			childrenFeatures.add(OscalMetadataPackage.Literals.LOCATION__LINKS);
-			childrenFeatures.add(OscalMetadataPackage.Literals.LOCATION__PROPS);
 			childrenFeatures.add(OscalMetadataPackage.Literals.LOCATION__TELEPHONE_NUMBERS);
 		}
 		return childrenFeatures;
@@ -268,16 +265,16 @@ public class LocationItemProvider
 
 		switch (notification.getFeatureID(Location.class)) {
 			case OscalMetadataPackage.LOCATION__UUID:
-			case OscalMetadataPackage.LOCATION__EMAIL_ADDRESSES:
+			case OscalMetadataPackage.LOCATION__ANNOTATIONS:
+			case OscalMetadataPackage.LOCATION__PROPS:
+			case OscalMetadataPackage.LOCATION__LINKS:
 			case OscalMetadataPackage.LOCATION__REMARKS:
+			case OscalMetadataPackage.LOCATION__EMAIL_ADDRESSES:
 			case OscalMetadataPackage.LOCATION__TITLE:
 			case OscalMetadataPackage.LOCATION__URLS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case OscalMetadataPackage.LOCATION__ANNOTATIONS:
 			case OscalMetadataPackage.LOCATION__ADDRESS:
-			case OscalMetadataPackage.LOCATION__LINKS:
-			case OscalMetadataPackage.LOCATION__PROPS:
 			case OscalMetadataPackage.LOCATION__TELEPHONE_NUMBERS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
@@ -303,18 +300,18 @@ public class LocationItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OscalMetadataPackage.Literals.LOCATION__ADDRESS,
-				 OscalMetadataFactory.eINSTANCE.createAddress()));
+				(OscalMetadataPackage.Literals.PROPERTY_OWNER__PROPS,
+				 OscalMetadataFactory.eINSTANCE.createProperty()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OscalMetadataPackage.Literals.LOCATION__LINKS,
+				(OscalMetadataPackage.Literals.LINK_OWNER__LINKS,
 				 OscalMetadataFactory.eINSTANCE.createLink()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OscalMetadataPackage.Literals.LOCATION__PROPS,
-				 OscalMetadataFactory.eINSTANCE.createProperty()));
+				(OscalMetadataPackage.Literals.LOCATION__ADDRESS,
+				 OscalMetadataFactory.eINSTANCE.createAddress()));
 
 		newChildDescriptors.add
 			(createChildParameter

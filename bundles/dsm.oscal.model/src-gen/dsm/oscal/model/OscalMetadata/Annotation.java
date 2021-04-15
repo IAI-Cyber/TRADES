@@ -15,8 +15,6 @@
  */
 package dsm.oscal.model.OscalMetadata;
 
-import gov.nist.secauto.metaschema.datatypes.markup.MarkupMultiline;
-
 import java.net.URI;
 
 /**
@@ -40,15 +38,13 @@ import java.net.URI;
  * <ul>
  *   <li>{@link dsm.oscal.model.OscalMetadata.Annotation#getName <em>Name</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.Annotation#getNs <em>Ns</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.Annotation#getRemarks <em>Remarks</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.Annotation#getValue <em>Value</em>}</li>
  * </ul>
  *
  * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getAnnotation()
  * @model annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;AssemblyDefinition&gt;annotation'"
  * @generated
  */
-public interface Annotation extends OscalElement, UUIDElement {
+public interface Annotation extends OscalElement, UUIDElement, ElementWithRemarks, ElementWithValue {
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -110,63 +106,5 @@ public interface Annotation extends OscalElement, UUIDElement {
 	 * @generated
 	 */
 	void setNs(URI value);
-
-	/**
-	 * Returns the value of the '<em><b>Value</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * <h1>Annotated Property Value</h1>
-	 * <h2>Description</h2>
-	 * <p>Indicates the value of the attribute, characteristic, or quality.</p>
-	 * 
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Value</em>' attribute.
-	 * @see #setValue(String)
-	 * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getAnnotation_Value()
-	 * @model required="true"
-	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;AssemblyDefinition&gt;annotation.&lt;FlagInstance&gt;value'"
-	 * @generated
-	 */
-	String getValue();
-
-	/**
-	 * Sets the value of the '{@link dsm.oscal.model.OscalMetadata.Annotation#getValue <em>Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Value</em>' attribute.
-	 * @see #getValue()
-	 * @generated
-	 */
-	void setValue(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Remarks</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * <h1>Remarks</h1>
-	 * <h2>Description</h2>
-	 * <p>Additional commentary on the containing object.</p>
-	 * 
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Remarks</em>' attribute.
-	 * @see #setRemarks(MarkupMultiline)
-	 * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getAnnotation_Remarks()
-	 * @model dataType="dsm.oscal.model.OscalMetadata.MarkupMultilineType"
-	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;AssemblyDefinition&gt;annotation.&lt;FieldInstance&gt;remarks'"
-	 * @generated
-	 */
-	MarkupMultiline getRemarks();
-
-	/**
-	 * Sets the value of the '{@link dsm.oscal.model.OscalMetadata.Annotation#getRemarks <em>Remarks</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Remarks</em>' attribute.
-	 * @see #getRemarks()
-	 * @generated
-	 */
-	void setRemarks(MarkupMultiline value);
 
 } // Annotation

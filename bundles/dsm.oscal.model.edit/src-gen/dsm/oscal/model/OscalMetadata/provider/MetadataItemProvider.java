@@ -19,7 +19,7 @@ package dsm.oscal.model.OscalMetadata.provider;
 import dsm.oscal.model.OscalMetadata.Metadata;
 import dsm.oscal.model.OscalMetadata.OscalMetadataFactory;
 import dsm.oscal.model.OscalMetadata.OscalMetadataPackage;
-import java.time.ZonedDateTime;
+import gov.nist.secauto.metaschema.datatypes.markup.MarkupMultiline;
 import java.util.Collection;
 import java.util.List;
 
@@ -76,10 +76,10 @@ public class MetadataItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addRemarksPropertyDescriptor(object);
 			addLastModifiedPropertyDescriptor(object);
 			addOscalVersionPropertyDescriptor(object);
 			addPublishedPropertyDescriptor(object);
-			addRemarksPropertyDescriptor(object);
 			addTitlePropertyDescriptor(object);
 			addVersionPropertyDescriptor(object);
 		}
@@ -207,9 +207,9 @@ public class MetadataItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Metadata_remarks_feature"),
-				 getString("_UI_Metadata_remarks_description"),
-				 OscalMetadataPackage.Literals.METADATA__REMARKS,
+				 getString("_UI_ElementWithRemarks_remarks_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ElementWithRemarks_remarks_feature", "_UI_ElementWithRemarks_type"),
+				 OscalMetadataPackage.Literals.ELEMENT_WITH_REMARKS__REMARKS,
 				 true,
 				 true,
 				 false,
@@ -230,12 +230,9 @@ public class MetadataItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(OscalMetadataPackage.Literals.ANNOTATION_OWNER__ANNOTATIONS);
 			childrenFeatures.add(OscalMetadataPackage.Literals.METADATA__DOCUMENT_IDS);
-			childrenFeatures.add(OscalMetadataPackage.Literals.METADATA__LINKS);
 			childrenFeatures.add(OscalMetadataPackage.Literals.METADATA__LOCATIONS);
 			childrenFeatures.add(OscalMetadataPackage.Literals.METADATA__PARTIES);
-			childrenFeatures.add(OscalMetadataPackage.Literals.METADATA__PROPS);
 			childrenFeatures.add(OscalMetadataPackage.Literals.METADATA__RESPONSIBLE_PARTIES);
 			childrenFeatures.add(OscalMetadataPackage.Literals.METADATA__REVISIONS);
 			childrenFeatures.add(OscalMetadataPackage.Literals.METADATA__ROLES);
@@ -275,7 +272,7 @@ public class MetadataItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		ZonedDateTime labelValue = ((Metadata)object).getLastModified();
+		MarkupMultiline labelValue = ((Metadata)object).getRemarks();
 		String label = labelValue == null ? null : labelValue.toString();
 		return label == null || label.length() == 0 ?
 			getString("_UI_Metadata_type") :
@@ -295,20 +292,20 @@ public class MetadataItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Metadata.class)) {
+			case OscalMetadataPackage.METADATA__ANNOTATIONS:
+			case OscalMetadataPackage.METADATA__PROPS:
+			case OscalMetadataPackage.METADATA__LINKS:
+			case OscalMetadataPackage.METADATA__REMARKS:
 			case OscalMetadataPackage.METADATA__LAST_MODIFIED:
 			case OscalMetadataPackage.METADATA__OSCAL_VERSION:
 			case OscalMetadataPackage.METADATA__PUBLISHED:
-			case OscalMetadataPackage.METADATA__REMARKS:
 			case OscalMetadataPackage.METADATA__TITLE:
 			case OscalMetadataPackage.METADATA__VERSION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case OscalMetadataPackage.METADATA__ANNOTATIONS:
 			case OscalMetadataPackage.METADATA__DOCUMENT_IDS:
-			case OscalMetadataPackage.METADATA__LINKS:
 			case OscalMetadataPackage.METADATA__LOCATIONS:
 			case OscalMetadataPackage.METADATA__PARTIES:
-			case OscalMetadataPackage.METADATA__PROPS:
 			case OscalMetadataPackage.METADATA__RESPONSIBLE_PARTIES:
 			case OscalMetadataPackage.METADATA__REVISIONS:
 			case OscalMetadataPackage.METADATA__ROLES:
@@ -336,13 +333,18 @@ public class MetadataItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OscalMetadataPackage.Literals.METADATA__DOCUMENT_IDS,
-				 OscalMetadataFactory.eINSTANCE.createDocumentId()));
+				(OscalMetadataPackage.Literals.PROPERTY_OWNER__PROPS,
+				 OscalMetadataFactory.eINSTANCE.createProperty()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OscalMetadataPackage.Literals.METADATA__LINKS,
+				(OscalMetadataPackage.Literals.LINK_OWNER__LINKS,
 				 OscalMetadataFactory.eINSTANCE.createLink()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OscalMetadataPackage.Literals.METADATA__DOCUMENT_IDS,
+				 OscalMetadataFactory.eINSTANCE.createDocumentId()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -353,11 +355,6 @@ public class MetadataItemProvider
 			(createChildParameter
 				(OscalMetadataPackage.Literals.METADATA__PARTIES,
 				 OscalMetadataFactory.eINSTANCE.createParty()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OscalMetadataPackage.Literals.METADATA__PROPS,
-				 OscalMetadataFactory.eINSTANCE.createProperty()));
 
 		newChildDescriptors.add
 			(createChildParameter

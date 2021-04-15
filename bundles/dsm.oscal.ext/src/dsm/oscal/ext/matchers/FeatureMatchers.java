@@ -50,6 +50,16 @@ public class FeatureMatchers {
 			return false;
 		};
 	}
+	public static Predicate<EStructuralFeature> isAttributeTyped(EDataType type) {
+		return f ->  {
+			if (f instanceof EAttribute) {
+				EAttribute attr = (EAttribute) f;
+				EDataType eAttributeType = attr.getEAttributeType();
+				return eAttributeType == type;
+			}
+			return false;
+		};
+	}
 	public static Predicate<EStructuralFeature> isContainmentTyped(String eClassName) {
 		return f -> f instanceof EReference //
 				&& ((EReference)f).isContainment() //

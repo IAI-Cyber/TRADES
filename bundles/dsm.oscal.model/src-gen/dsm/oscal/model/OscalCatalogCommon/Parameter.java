@@ -16,10 +16,11 @@
 package dsm.oscal.model.OscalCatalogCommon;
 
 import dsm.oscal.model.OscalMetadata.AnnotationOwner;
-import dsm.oscal.model.OscalMetadata.Link;
+import dsm.oscal.model.OscalMetadata.ElementWithClazz;
+import dsm.oscal.model.OscalMetadata.ElementWithRemarks;
+import dsm.oscal.model.OscalMetadata.LinkOwner;
 import dsm.oscal.model.OscalMetadata.OscalElement;
-import dsm.oscal.model.OscalMetadata.Property;
-
+import dsm.oscal.model.OscalMetadata.PropertyOwner;
 import gov.nist.secauto.metaschema.datatypes.markup.MarkupLine;
 import gov.nist.secauto.metaschema.datatypes.markup.MarkupMultiline;
 
@@ -44,15 +45,11 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link dsm.oscal.model.OscalCatalogCommon.Parameter#getClazz <em>Clazz</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalogCommon.Parameter#getConstraints <em>Constraints</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalogCommon.Parameter#getDependsOn <em>Depends On</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalogCommon.Parameter#getGuidelines <em>Guidelines</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalogCommon.Parameter#getId <em>Id</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalogCommon.Parameter#getLabel <em>Label</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalCatalogCommon.Parameter#getLinks <em>Links</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalCatalogCommon.Parameter#getProps <em>Props</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalCatalogCommon.Parameter#getRemarks <em>Remarks</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalogCommon.Parameter#getSelect <em>Select</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalogCommon.Parameter#getUsage <em>Usage</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalogCommon.Parameter#getValues <em>Values</em>}</li>
@@ -62,7 +59,7 @@ import org.eclipse.emf.common.util.EList;
  * @model annotation="Metaschema source='&lt;Metaschema&gt;oscal-catalog-common.&lt;AssemblyDefinition&gt;parameter'"
  * @generated
  */
-public interface Parameter extends OscalElement, AnnotationOwner {
+public interface Parameter extends OscalElement, AnnotationOwner, PropertyOwner, LinkOwner, ElementWithRemarks, ElementWithClazz {
 	/**
 	 * Returns the value of the '<em><b>Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -91,36 +88,6 @@ public interface Parameter extends OscalElement, AnnotationOwner {
 	 * @generated
 	 */
 	void setId(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Clazz</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * <h1>Parameter Class</h1>
-	 * <h2>Description</h2>
-	 * <p>A textual label that provides a characterization of the parameter.</p>
-	 * <h2>Remarks</h2>
-	 * <p>A <code>class</code> can be used in validation rules to express extra constraints over named items of a specific <code>class</code> value.</p>
-	 * 
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Clazz</em>' attribute.
-	 * @see #setClazz(String)
-	 * @see dsm.oscal.model.OscalCatalogCommon.OscalCatalogCommonPackage#getParameter_Clazz()
-	 * @model annotation="Metaschema source='&lt;Metaschema&gt;oscal-catalog-common.&lt;AssemblyDefinition&gt;parameter.&lt;FlagInstance&gt;class'"
-	 * @generated
-	 */
-	String getClazz();
-
-	/**
-	 * Sets the value of the '{@link dsm.oscal.model.OscalCatalogCommon.Parameter#getClazz <em>Clazz</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Clazz</em>' attribute.
-	 * @see #getClazz()
-	 * @generated
-	 */
-	void setClazz(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Depends On</b></em>' attribute.
@@ -229,35 +196,6 @@ public interface Parameter extends OscalElement, AnnotationOwner {
 	EList<String> getValues();
 
 	/**
-	 * Returns the value of the '<em><b>Remarks</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * <h1>Remarks</h1>
-	 * <h2>Description</h2>
-	 * <p>Additional commentary on the containing object.</p>
-	 * 
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Remarks</em>' attribute.
-	 * @see #setRemarks(MarkupMultiline)
-	 * @see dsm.oscal.model.OscalCatalogCommon.OscalCatalogCommonPackage#getParameter_Remarks()
-	 * @model dataType="dsm.oscal.model.OscalMetadata.MarkupMultilineType"
-	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-catalog-common.&lt;AssemblyDefinition&gt;parameter.&lt;FieldInstance&gt;remarks'"
-	 * @generated
-	 */
-	MarkupMultiline getRemarks();
-
-	/**
-	 * Sets the value of the '{@link dsm.oscal.model.OscalCatalogCommon.Parameter#getRemarks <em>Remarks</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Remarks</em>' attribute.
-	 * @see #getRemarks()
-	 * @generated
-	 */
-	void setRemarks(MarkupMultiline value);
-
-	/**
 	 * Returns the value of the '<em><b>Select</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -294,19 +232,6 @@ public interface Parameter extends OscalElement, AnnotationOwner {
 	EList<ParameterGuideline> getGuidelines();
 
 	/**
-	 * Returns the value of the '<em><b>Links</b></em>' containment reference list.
-	 * The list contents are of type {@link dsm.oscal.model.OscalMetadata.Link}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Links</em>' containment reference list.
-	 * @see dsm.oscal.model.OscalCatalogCommon.OscalCatalogCommonPackage#getParameter_Links()
-	 * @model containment="true"
-	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;AssemblyDefinition&gt;link'"
-	 * @generated
-	 */
-	EList<Link> getLinks();
-
-	/**
 	 * Returns the value of the '<em><b>Constraints</b></em>' containment reference list.
 	 * The list contents are of type {@link dsm.oscal.model.OscalCatalogCommon.ParameterConstraint}.
 	 * <!-- begin-user-doc -->
@@ -318,18 +243,5 @@ public interface Parameter extends OscalElement, AnnotationOwner {
 	 * @generated
 	 */
 	EList<ParameterConstraint> getConstraints();
-
-	/**
-	 * Returns the value of the '<em><b>Props</b></em>' containment reference list.
-	 * The list contents are of type {@link dsm.oscal.model.OscalMetadata.Property}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Props</em>' containment reference list.
-	 * @see dsm.oscal.model.OscalCatalogCommon.OscalCatalogCommonPackage#getParameter_Props()
-	 * @model containment="true"
-	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;FieldDefinition&gt;property'"
-	 * @generated
-	 */
-	EList<Property> getProps();
 
 } // Parameter

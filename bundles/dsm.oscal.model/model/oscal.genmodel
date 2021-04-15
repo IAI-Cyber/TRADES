@@ -73,16 +73,10 @@
       <genFeatures createChild="false" propertyDescription="\nAnnotated Property Namespace\n\nDescription\n\nA namespace qualifying the annotated property's name. This allows different \norganizations to associate distinct semantics with the same name.\n\nRemarks\n\nProvides a means to segment the value space for the name, so that different \norganizations and individuals can assert control over the allowed names and \nassociated values used in an annotated property. This allows the semantics \nassociated with a given name/value pair to be defined on an \norganization-by-organization basis.\n\nAn organization MUST use a URI that they have control over. e.g., a domain \nregistered to the organization in a URI, a registered uniform resource names \n(URN) namespace.\n\nWhen a ns is not provided, its value should be assumed to be \nhttp://csrc.nist.gov/ns/oscal and the name should be a name defined by the \nassociated OSCAL model.\n">
         <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//Annotation/ns"/>
       </genFeatures>
-      <genFeatures createChild="false" propertyDescription="\nRemarks\n\nDescription\n\nAdditional commentary on the containing object.\n" propertyMultiLine="true">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//Annotation/remarks"/>
-      </genFeatures>
-      <genFeatures createChild="false" propertyDescription="\nAnnotated Property Value\n\nDescription\n\nIndicates the value of the attribute, characteristic, or quality.\n">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//Annotation/value"/>
-      </genFeatures>
     </genClasses>
     <genClasses>
       <ecoreClass href="oscal-metadata.ecore#//AnnotationOwner"/>
-      <genFeatures property="None" children="true" createChild="true">
+      <genFeatures property="None" createChild="true">
         <ecoreFeature xsi:type="ecore:EReference" href="oscal-metadata.ecore#//AnnotationOwner/annotations"/>
       </genFeatures>
     </genClasses>
@@ -105,12 +99,6 @@
       </genFeatures>
       <genFeatures property="None" children="true" createChild="true">
         <ecoreFeature xsi:type="ecore:EReference" href="oscal-metadata.ecore#//BackMatterResource/documentIds"/>
-      </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-metadata.ecore#//BackMatterResource/props"/>
-      </genFeatures>
-      <genFeatures createChild="false" propertyDescription="\nRemarks\n\nDescription\n\nAdditional commentary on the containing object.\n" propertyMultiLine="true">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//BackMatterResource/remarks"/>
       </genFeatures>
       <genFeatures property="None" children="true" createChild="true">
         <ecoreFeature xsi:type="ecore:EReference" href="oscal-metadata.ecore#//BackMatterResource/rlinks"/>
@@ -136,8 +124,23 @@
       <genFeatures createChild="false" propertyDescription="\nDocument Identification Scheme\n\nDescription\n\nQualifies the kind of document identifier.\n">
         <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//DocumentId/scheme"/>
       </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="oscal-metadata.ecore#//ElementWithClazz"/>
       <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//DocumentId/value"/>
+        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//ElementWithClazz/clazz"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="oscal-metadata.ecore#//ElementWithRemarks"/>
+      <genFeatures createChild="false" propertyMultiLine="true">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//ElementWithRemarks/remarks"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="oscal-metadata.ecore#//ElementWithValue"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//ElementWithValue/value"/>
       </genFeatures>
     </genClasses>
     <genClasses>
@@ -145,17 +148,11 @@
       <genFeatures createChild="false" propertyDescription="\nExternal Identifier Schema\n\nDescription\n\nIndicates the type of external identifier.\n">
         <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//ExternalId/scheme"/>
       </genFeatures>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//ExternalId/value"/>
-      </genFeatures>
     </genClasses>
     <genClasses>
       <ecoreClass href="oscal-metadata.ecore#//Hash"/>
       <genFeatures createChild="false" propertyDescription="\nHash algorithm\n\nDescription\n\nMethod by which a hash is derived\n\nRemarks\n\nAny other value used MUST be a value defined in the W3C XML Security Algorithm \nCross-Reference &lt;http://www.w3.org/TR/xmlsec-algorithms/#digest-method> Digest \nMethods (W3C, April 2013) orRFC 6931 Section 2.1.5 \n&lt;https://tools.ietf.org/html/rfc6931#section-2.1.5> New SHA Functions.\n">
         <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//Hash/algorithm"/>
-      </genFeatures>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//Hash/value"/>
       </genFeatures>
     </genClasses>
     <genClasses>
@@ -174,21 +171,18 @@
       </genFeatures>
     </genClasses>
     <genClasses>
+      <ecoreClass href="oscal-metadata.ecore#//LinkOwner"/>
+      <genFeatures property="None" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="oscal-metadata.ecore#//LinkOwner/links"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
       <ecoreClass href="oscal-metadata.ecore#//Location"/>
       <genFeatures property="None" children="true" createChild="true">
         <ecoreFeature xsi:type="ecore:EReference" href="oscal-metadata.ecore#//Location/address"/>
       </genFeatures>
       <genFeatures createChild="false" propertyDescription="\nEmail Address\n\nDescription\n\nAn email address as defined by RFC 5322 Section 3.4.1 \n&lt;https://tools.ietf.org/html/rfc5322#section-3.4.1>.\n">
         <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//Location/emailAddresses"/>
-      </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-metadata.ecore#//Location/links"/>
-      </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-metadata.ecore#//Location/props"/>
-      </genFeatures>
-      <genFeatures createChild="false" propertyDescription="\nRemarks\n\nDescription\n\nAdditional commentary on the containing object.\n" propertyMultiLine="true">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//Location/remarks"/>
       </genFeatures>
       <genFeatures property="None" children="true" createChild="true">
         <ecoreFeature xsi:type="ecore:EReference" href="oscal-metadata.ecore#//Location/telephoneNumbers"/>
@@ -209,9 +203,6 @@
         <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//Metadata/lastModified"/>
       </genFeatures>
       <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-metadata.ecore#//Metadata/links"/>
-      </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
         <ecoreFeature xsi:type="ecore:EReference" href="oscal-metadata.ecore#//Metadata/locations"/>
       </genFeatures>
       <genFeatures createChild="false" propertyDescription="\nOSCAL version\n\nDescription\n\nThe OSCAL model version the document was authored against.\n\nRemarks\n\nIndicates the version of the OSCAL model to which this data set conforms, for \nexample1.1.0 or 1.0.0-M1. That can be used as a hint by a tool to indicate \nwhich version of the OSCAL XML or JSON schema to use for validation.\n">
@@ -220,14 +211,8 @@
       <genFeatures property="None" children="true" createChild="true">
         <ecoreFeature xsi:type="ecore:EReference" href="oscal-metadata.ecore#//Metadata/parties"/>
       </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-metadata.ecore#//Metadata/props"/>
-      </genFeatures>
       <genFeatures createChild="false" propertyDescription="\nPublication Timestamp\n\nDescription\n\nThe date and time the document was published. The date-time value must be \nformatted according toRFC 3339 &lt;https://tools.ietf.org/html/rfc3339> with full \ntime and time zone included.\n\nRemarks\n\nThis value represents the point in time when the OSCAL document was published. \nTypically, this date value will be machine generated at the time the containing \ndocument is published.\n\nIn some cases, an OSCAL document may be derived from some source material in a \ndifferent format. In such a case, thepublished value should indicate when the \nOSCAL document was published, not the source material. Where necessary, the \npublication date of the original source material can be captured as a named \nproperty or custom metadata construct.\n\nA publisher of OSCAL content can use this data point along with its siblings \nlast-modified and version to establish a sequence of successive revisions of a \ngiven OSCAL-based publication. The metadata for previous revisions can be \nrepresented as arevision in this object.\n">
         <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//Metadata/published"/>
-      </genFeatures>
-      <genFeatures createChild="false" propertyDescription="\nRemarks\n\nDescription\n\nAdditional commentary on the containing object.\n" propertyMultiLine="true">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//Metadata/remarks"/>
       </genFeatures>
       <genFeatures property="None" children="true" createChild="true">
         <ecoreFeature xsi:type="ecore:EReference" href="oscal-metadata.ecore#//Metadata/responsibleParties"/>
@@ -259,9 +244,6 @@
       <genFeatures property="None" children="true" createChild="true">
         <ecoreFeature xsi:type="ecore:EReference" href="oscal-metadata.ecore#//Party/externalIds"/>
       </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-metadata.ecore#//Party/links"/>
-      </genFeatures>
       <genFeatures createChild="false" propertyDescription="\nLocation Reference\n\nDescription\n\nReferences a location defined in metadata.\n">
         <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//Party/locationUuids"/>
       </genFeatures>
@@ -270,12 +252,6 @@
       </genFeatures>
       <genFeatures createChild="false" propertyDescription="\nParty Name\n\nDescription\n\nThe full name of the party. This is typically the legal name associated with \nthe party.\n">
         <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//Party/name"/>
-      </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-metadata.ecore#//Party/props"/>
-      </genFeatures>
-      <genFeatures createChild="false" propertyDescription="\nRemarks\n\nDescription\n\nAdditional commentary on the containing object.\n" propertyMultiLine="true">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//Party/remarks"/>
       </genFeatures>
       <genFeatures createChild="false" propertyDescription="\nParty Short Name\n\nDescription\n\nA short common name, abbreviation, or acronym for the party.\n">
         <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//Party/shortName"/>
@@ -289,24 +265,21 @@
     </genClasses>
     <genClasses>
       <ecoreClass href="oscal-metadata.ecore#//Property"/>
-      <genFeatures createChild="false" propertyDescription="\nProperty Class\n\nDescription\n\nA textual label that provides a sub-type or characterization of the property's \nname. This can be used to further distinguish or discriminate between the \nsemantics of multiple properties of the same object with the samename and ns.\n\nRemarks\n\nA class can be used in validation rules to express extra constraints over \nnamed items of a specificclass value.\n">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//Property/clazz"/>
-      </genFeatures>
       <genFeatures createChild="false" propertyDescription="\nProperty Name\n\nDescription\n\nA textual label that uniquely identifies a specific attribute, characteristic, \nor quality of the property's containing object.\n">
         <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//Property/name"/>
       </genFeatures>
       <genFeatures createChild="false" propertyDescription="\nProperty Namespace\n\nDescription\n\nA namespace qualifying the property's name. This allows different \norganizations to associate distinct semantics with the same name.\n\nRemarks\n\nProvides a means to segment the value space for the name, so that different \norganizations and individuals can assert control over the allowed names and \nassociated values used in a property. This allows the semantics associated with \na given name/value pair to be defined on an organization-by-organization basis.\n\nAn organization MUST use a URI that they have control over. e.g., a domain \nregistered to the organization in a URI, a registered uniform resource names \n(URN) namespace.\n\nWhen a ns is not provided, its value should be assumed to be \nhttp://csrc.nist.gov/ns/oscal and the name should be a name defined by the \nassociated OSCAL model.\n">
         <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//Property/ns"/>
       </genFeatures>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//Property/value"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="oscal-metadata.ecore#//PropertyOwner"/>
+      <genFeatures property="None" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="oscal-metadata.ecore#//PropertyOwner/props"/>
       </genFeatures>
     </genClasses>
     <genClasses>
       <ecoreClass href="oscal-metadata.ecore#//ResourceCitation"/>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-metadata.ecore#//ResourceCitation/props"/>
-      </genFeatures>
       <genFeatures createChild="false" propertyDescription="\nCitation Text\n\nDescription\n\nA line of citation text.\n">
         <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//ResourceCitation/text"/>
       </genFeatures>
@@ -325,17 +298,8 @@
     </genClasses>
     <genClasses>
       <ecoreClass href="oscal-metadata.ecore#//ResponsibleParty"/>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-metadata.ecore#//ResponsibleParty/links"/>
-      </genFeatures>
       <genFeatures createChild="false" propertyDescription="\nParty Reference\n\nDescription\n\nReferences a party defined in metadata.\n">
         <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//ResponsibleParty/partyUuids"/>
-      </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-metadata.ecore#//ResponsibleParty/props"/>
-      </genFeatures>
-      <genFeatures createChild="false" propertyDescription="\nRemarks\n\nDescription\n\nAdditional commentary on the containing object.\n" propertyMultiLine="true">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//ResponsibleParty/remarks"/>
       </genFeatures>
       <genFeatures createChild="false" propertyDescription="\nResponsible Role\n\nDescription\n\nThe role that the party is responsible for.\n">
         <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//ResponsibleParty/roleId"/>
@@ -343,17 +307,8 @@
     </genClasses>
     <genClasses>
       <ecoreClass href="oscal-metadata.ecore#//ResponsibleRole"/>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-metadata.ecore#//ResponsibleRole/links"/>
-      </genFeatures>
       <genFeatures createChild="false" propertyDescription="\nParty Reference\n\nDescription\n\nReferences a party defined in metadata.\n">
         <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//ResponsibleRole/partyUuids"/>
-      </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-metadata.ecore#//ResponsibleRole/props"/>
-      </genFeatures>
-      <genFeatures createChild="false" propertyDescription="\nRemarks\n\nDescription\n\nAdditional commentary on the containing object.\n" propertyMultiLine="true">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//ResponsibleRole/remarks"/>
       </genFeatures>
       <genFeatures createChild="false" propertyDescription="\nResponsible Role ID\n\nDescription\n\nThe role that is responsible for the business function.\n">
         <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//ResponsibleRole/roleId"/>
@@ -364,20 +319,11 @@
       <genFeatures createChild="false" propertyDescription="\nLast Modified Timestamp\n\nDescription\n\nThe date and time the document was last modified. The date-time value must be \nformatted according toRFC 3339 &lt;https://tools.ietf.org/html/rfc3339> with full \ntime and time zone included.\n\nRemarks\n\nThis value represents the point in time when the OSCAL document was last \nupdated, or at the point of creation the creation date. Typically, this date \nvalue will be machine generated at time of creation or modification.\n\nIn some cases, an OSCAL document may be derived from some source material in a \ndifferent format. In such a case, thelast-modified value should indicate the \nmodification time of the OSCAL document, not the source material.\n\nA publisher of OSCAL content can use this data point along with its siblings \npublished and version to establish a sequence of successive revisions of a \ngiven OSCAL-based publication. The metadata for previous revisions can be \nrepresented as arevision in this object.\n">
         <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//Revision/lastModified"/>
       </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-metadata.ecore#//Revision/links"/>
-      </genFeatures>
       <genFeatures createChild="false" propertyDescription="\nOSCAL version\n\nDescription\n\nThe OSCAL model version the document was authored against.\n\nRemarks\n\nIndicates the version of the OSCAL model to which this data set conforms, for \nexample1.1.0 or 1.0.0-M1. That can be used as a hint by a tool to indicate \nwhich version of the OSCAL XML or JSON schema to use for validation.\n">
         <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//Revision/oscalVersion"/>
       </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-metadata.ecore#//Revision/props"/>
-      </genFeatures>
       <genFeatures createChild="false" propertyDescription="\nPublication Timestamp\n\nDescription\n\nThe date and time the document was published. The date-time value must be \nformatted according toRFC 3339 &lt;https://tools.ietf.org/html/rfc3339> with full \ntime and time zone included.\n\nRemarks\n\nThis value represents the point in time when the OSCAL document was published. \nTypically, this date value will be machine generated at the time the containing \ndocument is published.\n\nIn some cases, an OSCAL document may be derived from some source material in a \ndifferent format. In such a case, thepublished value should indicate when the \nOSCAL document was published, not the source material. Where necessary, the \npublication date of the original source material can be captured as a named \nproperty or custom metadata construct.\n\nA publisher of OSCAL content can use this data point along with its siblings \nlast-modified and version to establish a sequence of successive revisions of a \ngiven OSCAL-based publication. The metadata for previous revisions can be \nrepresented as arevision in this object.\n">
         <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//Revision/published"/>
-      </genFeatures>
-      <genFeatures createChild="false" propertyDescription="\nRemarks\n\nDescription\n\nAdditional commentary on the containing object.\n" propertyMultiLine="true">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//Revision/remarks"/>
       </genFeatures>
       <genFeatures createChild="false" propertyDescription="\nDocument Title\n\nDescription\n\nA name given to the document revision, which may be used by a tool for display \nand navigation.\n">
         <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//Revision/title"/>
@@ -394,15 +340,6 @@
       <genFeatures createChild="false" propertyDescription="\nRole Identifier\n\nDescription\n\nA unique identifier for a specific role instance. This identifier's uniqueness \nis document scoped and is intended to be consistent for the same role across \nminor revisions of the document.\n\nRemarks\n\nOSCAL has defined a set of standardized roles for consistant use in OSCAL \ndocuments. This allows tools consuming OSCAL content to infer specific \nsemantics when these roles are used. These roles are documented in the specific \ncontexts of their use (e.g., responsible-party, responsible-role). When using \nsuch a role, it is necessary to define these roles in this list, which will \nthen allow such a role to be referenced.\n">
         <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//Role/id"/>
       </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-metadata.ecore#//Role/links"/>
-      </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-metadata.ecore#//Role/props"/>
-      </genFeatures>
-      <genFeatures createChild="false" propertyDescription="\nRemarks\n\nDescription\n\nAdditional commentary on the containing object.\n" propertyMultiLine="true">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//Role/remarks"/>
-      </genFeatures>
       <genFeatures createChild="false" propertyDescription="\nRole Short Name\n\nDescription\n\nA short common name, abbreviation, or acronym for the role.\n">
         <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//Role/shortName"/>
       </genFeatures>
@@ -414,9 +351,6 @@
       <ecoreClass href="oscal-metadata.ecore#//TelephoneNumber"/>
       <genFeatures createChild="false" propertyDescription="\ntype flag\n\nDescription\n\nIndicates the type of phone number.\n">
         <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//TelephoneNumber/type"/>
-      </genFeatures>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//TelephoneNumber/value"/>
       </genFeatures>
     </genClasses>
     <genClasses>
@@ -430,9 +364,6 @@
     <ecorePackage href="oscal-catalog-common.ecore#/"/>
     <genClasses>
       <ecoreClass href="oscal-catalog-common.ecore#//Parameter"/>
-      <genFeatures createChild="false" propertyDescription="\nParameter Class\n\nDescription\n\nA textual label that provides a characterization of the parameter.\n\nRemarks\n\nA class can be used in validation rules to express extra constraints over \nnamed items of a specificclass value.\n">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-catalog-common.ecore#//Parameter/clazz"/>
-      </genFeatures>
       <genFeatures property="None" children="true" createChild="true">
         <ecoreFeature xsi:type="ecore:EReference" href="oscal-catalog-common.ecore#//Parameter/constraints"/>
       </genFeatures>
@@ -447,15 +378,6 @@
       </genFeatures>
       <genFeatures createChild="false" propertyDescription="\nParameter Label\n\nDescription\n\nA short, placeholder name for the parameter, which can be used as a subsitute \nfor avalue if no value is assigned.\n\nRemarks\n\nThe label value should be suitable for inline display in a rendered catalog.\n">
         <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-catalog-common.ecore#//Parameter/label"/>
-      </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-catalog-common.ecore#//Parameter/links"/>
-      </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-catalog-common.ecore#//Parameter/props"/>
-      </genFeatures>
-      <genFeatures createChild="false" propertyDescription="\nRemarks\n\nDescription\n\nAdditional commentary on the containing object.\n" propertyMultiLine="true">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-catalog-common.ecore#//Parameter/remarks"/>
       </genFeatures>
       <genFeatures property="None" children="true" createChild="true">
         <ecoreFeature xsi:type="ecore:EReference" href="oscal-catalog-common.ecore#//Parameter/select"/>
@@ -481,9 +403,6 @@
       <genFeatures createChild="false" propertyDescription="\nConstraint test\n\nDescription\n\nA formal (executable) expression of a constraint\n">
         <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-catalog-common.ecore#//ParameterConstraintTest/expression"/>
       </genFeatures>
-      <genFeatures createChild="false" propertyDescription="\nRemarks\n\nDescription\n\nAdditional commentary on the containing object.\n" propertyMultiLine="true">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-catalog-common.ecore#//ParameterConstraintTest/remarks"/>
-      </genFeatures>
     </genClasses>
     <genClasses>
       <ecoreClass href="oscal-catalog-common.ecore#//ParameterGuideline"/>
@@ -502,14 +421,8 @@
     </genClasses>
     <genClasses>
       <ecoreClass href="oscal-catalog-common.ecore#//Part"/>
-      <genFeatures createChild="false" propertyDescription="\nPart Class\n\nDescription\n\nA textual label that provides a sub-type or characterization of the part's name\n. This can be used to further distinguish or discriminate between the semantics \nof multiple parts of the same control with the samename and ns.\n\nRemarks\n\nA class can be used in validation rules to express extra constraints over \nnamed items of a specificclass value.\n\nA class can also be used in an OSCAL profile as a means to target an \nalteration to control content.\n">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-catalog-common.ecore#//Part/clazz"/>
-      </genFeatures>
       <genFeatures createChild="false" propertyDescription="\nPart Identifier\n\nDescription\n\nA unique identifier for a specific part instance. This identifier's uniqueness \nis document scoped and is intended to be consistent for the same part across \nminor revisions of the document.\n">
         <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-catalog-common.ecore#//Part/id"/>
-      </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-catalog-common.ecore#//Part/links"/>
       </genFeatures>
       <genFeatures createChild="false" propertyDescription="\nPart Name\n\nDescription\n\nA textual label that uniquely identifies the part's semantic type.\n">
         <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-catalog-common.ecore#//Part/name"/>
@@ -519,9 +432,6 @@
       </genFeatures>
       <genFeatures property="None" children="true" createChild="true">
         <ecoreFeature xsi:type="ecore:EReference" href="oscal-catalog-common.ecore#//Part/parts"/>
-      </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-catalog-common.ecore#//Part/props"/>
       </genFeatures>
       <genFeatures createChild="false" propertyDescription="\nPart Text\n\nDescription\n\nPermits multiple paragraphs, lists, tables etc.\n" propertyMultiLine="true">
         <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-catalog-common.ecore#//Part/prose"/>
@@ -553,9 +463,6 @@
     </genClasses>
     <genClasses>
       <ecoreClass href="oscal-catalog.ecore#//Control"/>
-      <genFeatures createChild="false" propertyDescription="\nControl Class\n\nDescription\n\nA textual label that provides a sub-type or characterization of the control.\n\nRemarks\n\nA class can be used in validation rules to express extra constraints over \nnamed items of a specificclass value.\n\nA class can also be used in an OSCAL profile as a means to target an \nalteration to control content.\n">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-catalog.ecore#//Control/clazz"/>
-      </genFeatures>
       <genFeatures property="None" children="true" createChild="true">
         <ecoreFeature xsi:type="ecore:EReference" href="oscal-catalog.ecore#//Control/controls"/>
       </genFeatures>
@@ -563,16 +470,10 @@
         <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-catalog.ecore#//Control/id"/>
       </genFeatures>
       <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-catalog.ecore#//Control/links"/>
-      </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
         <ecoreFeature xsi:type="ecore:EReference" href="oscal-catalog.ecore#//Control/params"/>
       </genFeatures>
       <genFeatures property="None" children="true" createChild="true">
         <ecoreFeature xsi:type="ecore:EReference" href="oscal-catalog.ecore#//Control/parts"/>
-      </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-catalog.ecore#//Control/props"/>
       </genFeatures>
       <genFeatures createChild="false" propertyDescription="\nControl Title\n\nDescription\n\nA name given to the control, which may be used by a tool for display and \nnavigation.\n">
         <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-catalog.ecore#//Control/title"/>
@@ -580,9 +481,6 @@
     </genClasses>
     <genClasses>
       <ecoreClass href="oscal-catalog.ecore#//Group"/>
-      <genFeatures createChild="false" propertyDescription="\nGroup Class\n\nDescription\n\nA textual label that provides a sub-type or characterization of the group.\n\nRemarks\n\nA class can be used in validation rules to express extra constraints over \nnamed items of a specificclass value.\n\nA class can also be used in an OSCAL profile as a means to target an \nalteration to control content.\n">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-catalog.ecore#//Group/clazz"/>
-      </genFeatures>
       <genFeatures property="None" children="true" createChild="true">
         <ecoreFeature xsi:type="ecore:EReference" href="oscal-catalog.ecore#//Group/controls"/>
       </genFeatures>
@@ -593,16 +491,10 @@
         <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-catalog.ecore#//Group/id"/>
       </genFeatures>
       <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-catalog.ecore#//Group/links"/>
-      </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
         <ecoreFeature xsi:type="ecore:EReference" href="oscal-catalog.ecore#//Group/params"/>
       </genFeatures>
       <genFeatures property="None" children="true" createChild="true">
         <ecoreFeature xsi:type="ecore:EReference" href="oscal-catalog.ecore#//Group/parts"/>
-      </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-catalog.ecore#//Group/props"/>
       </genFeatures>
       <genFeatures createChild="false" propertyDescription="\nGroup Title\n\nDescription\n\nA name given to the group, which may be used by a tool for display and \nnavigation.\n">
         <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-catalog.ecore#//Group/title"/>

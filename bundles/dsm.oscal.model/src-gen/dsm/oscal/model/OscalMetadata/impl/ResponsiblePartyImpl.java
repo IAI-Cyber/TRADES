@@ -17,9 +17,12 @@ package dsm.oscal.model.OscalMetadata.impl;
 
 import dsm.oscal.model.OscalMetadata.Annotation;
 import dsm.oscal.model.OscalMetadata.AnnotationOwner;
+import dsm.oscal.model.OscalMetadata.ElementWithRemarks;
 import dsm.oscal.model.OscalMetadata.Link;
+import dsm.oscal.model.OscalMetadata.LinkOwner;
 import dsm.oscal.model.OscalMetadata.OscalMetadataPackage;
 import dsm.oscal.model.OscalMetadata.Property;
+import dsm.oscal.model.OscalMetadata.PropertyOwner;
 import dsm.oscal.model.OscalMetadata.ResponsibleParty;
 
 import gov.nist.secauto.metaschema.datatypes.markup.MarkupMultiline;
@@ -51,10 +54,10 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.ResponsiblePartyImpl#getAnnotations <em>Annotations</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.impl.ResponsiblePartyImpl#getLinks <em>Links</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.impl.ResponsiblePartyImpl#getPartyUuids <em>Party Uuids</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.ResponsiblePartyImpl#getProps <em>Props</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.impl.ResponsiblePartyImpl#getLinks <em>Links</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.ResponsiblePartyImpl#getRemarks <em>Remarks</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.impl.ResponsiblePartyImpl#getPartyUuids <em>Party Uuids</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.ResponsiblePartyImpl#getRoleId <em>Role Id</em>}</li>
  * </ul>
  *
@@ -72,26 +75,6 @@ public class ResponsiblePartyImpl extends MinimalEObjectImpl.Container implement
 	protected EList<Annotation> annotations;
 
 	/**
-	 * The cached value of the '{@link #getLinks() <em>Links</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLinks()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Link> links;
-
-	/**
-	 * The cached value of the '{@link #getPartyUuids() <em>Party Uuids</em>}' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyUuids()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<UUID> partyUuids;
-
-	/**
 	 * The cached value of the '{@link #getProps() <em>Props</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -100,6 +83,16 @@ public class ResponsiblePartyImpl extends MinimalEObjectImpl.Container implement
 	 * @ordered
 	 */
 	protected EList<Property> props;
+
+	/**
+	 * The cached value of the '{@link #getLinks() <em>Links</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLinks()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Link> links;
 
 	/**
 	 * The default value of the '{@link #getRemarks() <em>Remarks</em>}' attribute.
@@ -120,6 +113,16 @@ public class ResponsiblePartyImpl extends MinimalEObjectImpl.Container implement
 	 * @ordered
 	 */
 	protected MarkupMultiline remarks = REMARKS_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getPartyUuids() <em>Party Uuids</em>}' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPartyUuids()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<UUID> partyUuids;
 
 	/**
 	 * The default value of the '{@link #getRoleId() <em>Role Id</em>}' attribute.
@@ -268,10 +271,10 @@ public class ResponsiblePartyImpl extends MinimalEObjectImpl.Container implement
 		switch (featureID) {
 			case OscalMetadataPackage.RESPONSIBLE_PARTY__ANNOTATIONS:
 				return ((InternalEList<?>)getAnnotations()).basicRemove(otherEnd, msgs);
-			case OscalMetadataPackage.RESPONSIBLE_PARTY__LINKS:
-				return ((InternalEList<?>)getLinks()).basicRemove(otherEnd, msgs);
 			case OscalMetadataPackage.RESPONSIBLE_PARTY__PROPS:
 				return ((InternalEList<?>)getProps()).basicRemove(otherEnd, msgs);
+			case OscalMetadataPackage.RESPONSIBLE_PARTY__LINKS:
+				return ((InternalEList<?>)getLinks()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -286,14 +289,14 @@ public class ResponsiblePartyImpl extends MinimalEObjectImpl.Container implement
 		switch (featureID) {
 			case OscalMetadataPackage.RESPONSIBLE_PARTY__ANNOTATIONS:
 				return getAnnotations();
-			case OscalMetadataPackage.RESPONSIBLE_PARTY__LINKS:
-				return getLinks();
-			case OscalMetadataPackage.RESPONSIBLE_PARTY__PARTY_UUIDS:
-				return getPartyUuids();
 			case OscalMetadataPackage.RESPONSIBLE_PARTY__PROPS:
 				return getProps();
+			case OscalMetadataPackage.RESPONSIBLE_PARTY__LINKS:
+				return getLinks();
 			case OscalMetadataPackage.RESPONSIBLE_PARTY__REMARKS:
 				return getRemarks();
+			case OscalMetadataPackage.RESPONSIBLE_PARTY__PARTY_UUIDS:
+				return getPartyUuids();
 			case OscalMetadataPackage.RESPONSIBLE_PARTY__ROLE_ID:
 				return getRoleId();
 		}
@@ -313,20 +316,20 @@ public class ResponsiblePartyImpl extends MinimalEObjectImpl.Container implement
 				getAnnotations().clear();
 				getAnnotations().addAll((Collection<? extends Annotation>)newValue);
 				return;
-			case OscalMetadataPackage.RESPONSIBLE_PARTY__LINKS:
-				getLinks().clear();
-				getLinks().addAll((Collection<? extends Link>)newValue);
-				return;
-			case OscalMetadataPackage.RESPONSIBLE_PARTY__PARTY_UUIDS:
-				getPartyUuids().clear();
-				getPartyUuids().addAll((Collection<? extends UUID>)newValue);
-				return;
 			case OscalMetadataPackage.RESPONSIBLE_PARTY__PROPS:
 				getProps().clear();
 				getProps().addAll((Collection<? extends Property>)newValue);
 				return;
+			case OscalMetadataPackage.RESPONSIBLE_PARTY__LINKS:
+				getLinks().clear();
+				getLinks().addAll((Collection<? extends Link>)newValue);
+				return;
 			case OscalMetadataPackage.RESPONSIBLE_PARTY__REMARKS:
 				setRemarks((MarkupMultiline)newValue);
+				return;
+			case OscalMetadataPackage.RESPONSIBLE_PARTY__PARTY_UUIDS:
+				getPartyUuids().clear();
+				getPartyUuids().addAll((Collection<? extends UUID>)newValue);
 				return;
 			case OscalMetadataPackage.RESPONSIBLE_PARTY__ROLE_ID:
 				setRoleId((String)newValue);
@@ -346,17 +349,17 @@ public class ResponsiblePartyImpl extends MinimalEObjectImpl.Container implement
 			case OscalMetadataPackage.RESPONSIBLE_PARTY__ANNOTATIONS:
 				getAnnotations().clear();
 				return;
-			case OscalMetadataPackage.RESPONSIBLE_PARTY__LINKS:
-				getLinks().clear();
-				return;
-			case OscalMetadataPackage.RESPONSIBLE_PARTY__PARTY_UUIDS:
-				getPartyUuids().clear();
-				return;
 			case OscalMetadataPackage.RESPONSIBLE_PARTY__PROPS:
 				getProps().clear();
 				return;
+			case OscalMetadataPackage.RESPONSIBLE_PARTY__LINKS:
+				getLinks().clear();
+				return;
 			case OscalMetadataPackage.RESPONSIBLE_PARTY__REMARKS:
 				setRemarks(REMARKS_EDEFAULT);
+				return;
+			case OscalMetadataPackage.RESPONSIBLE_PARTY__PARTY_UUIDS:
+				getPartyUuids().clear();
 				return;
 			case OscalMetadataPackage.RESPONSIBLE_PARTY__ROLE_ID:
 				setRoleId(ROLE_ID_EDEFAULT);
@@ -375,14 +378,14 @@ public class ResponsiblePartyImpl extends MinimalEObjectImpl.Container implement
 		switch (featureID) {
 			case OscalMetadataPackage.RESPONSIBLE_PARTY__ANNOTATIONS:
 				return annotations != null && !annotations.isEmpty();
-			case OscalMetadataPackage.RESPONSIBLE_PARTY__LINKS:
-				return links != null && !links.isEmpty();
-			case OscalMetadataPackage.RESPONSIBLE_PARTY__PARTY_UUIDS:
-				return partyUuids != null && !partyUuids.isEmpty();
 			case OscalMetadataPackage.RESPONSIBLE_PARTY__PROPS:
 				return props != null && !props.isEmpty();
+			case OscalMetadataPackage.RESPONSIBLE_PARTY__LINKS:
+				return links != null && !links.isEmpty();
 			case OscalMetadataPackage.RESPONSIBLE_PARTY__REMARKS:
 				return REMARKS_EDEFAULT == null ? remarks != null : !REMARKS_EDEFAULT.equals(remarks);
+			case OscalMetadataPackage.RESPONSIBLE_PARTY__PARTY_UUIDS:
+				return partyUuids != null && !partyUuids.isEmpty();
 			case OscalMetadataPackage.RESPONSIBLE_PARTY__ROLE_ID:
 				return ROLE_ID_EDEFAULT == null ? roleId != null : !ROLE_ID_EDEFAULT.equals(roleId);
 		}
@@ -402,6 +405,24 @@ public class ResponsiblePartyImpl extends MinimalEObjectImpl.Container implement
 				default: return -1;
 			}
 		}
+		if (baseClass == PropertyOwner.class) {
+			switch (derivedFeatureID) {
+				case OscalMetadataPackage.RESPONSIBLE_PARTY__PROPS: return OscalMetadataPackage.PROPERTY_OWNER__PROPS;
+				default: return -1;
+			}
+		}
+		if (baseClass == LinkOwner.class) {
+			switch (derivedFeatureID) {
+				case OscalMetadataPackage.RESPONSIBLE_PARTY__LINKS: return OscalMetadataPackage.LINK_OWNER__LINKS;
+				default: return -1;
+			}
+		}
+		if (baseClass == ElementWithRemarks.class) {
+			switch (derivedFeatureID) {
+				case OscalMetadataPackage.RESPONSIBLE_PARTY__REMARKS: return OscalMetadataPackage.ELEMENT_WITH_REMARKS__REMARKS;
+				default: return -1;
+			}
+		}
 		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
 	}
 
@@ -418,6 +439,24 @@ public class ResponsiblePartyImpl extends MinimalEObjectImpl.Container implement
 				default: return -1;
 			}
 		}
+		if (baseClass == PropertyOwner.class) {
+			switch (baseFeatureID) {
+				case OscalMetadataPackage.PROPERTY_OWNER__PROPS: return OscalMetadataPackage.RESPONSIBLE_PARTY__PROPS;
+				default: return -1;
+			}
+		}
+		if (baseClass == LinkOwner.class) {
+			switch (baseFeatureID) {
+				case OscalMetadataPackage.LINK_OWNER__LINKS: return OscalMetadataPackage.RESPONSIBLE_PARTY__LINKS;
+				default: return -1;
+			}
+		}
+		if (baseClass == ElementWithRemarks.class) {
+			switch (baseFeatureID) {
+				case OscalMetadataPackage.ELEMENT_WITH_REMARKS__REMARKS: return OscalMetadataPackage.RESPONSIBLE_PARTY__REMARKS;
+				default: return -1;
+			}
+		}
 		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
@@ -431,10 +470,10 @@ public class ResponsiblePartyImpl extends MinimalEObjectImpl.Container implement
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (partyUuids: ");
-		result.append(partyUuids);
-		result.append(", remarks: ");
+		result.append(" (remarks: ");
 		result.append(remarks);
+		result.append(", partyUuids: ");
+		result.append(partyUuids);
 		result.append(", roleId: ");
 		result.append(roleId);
 		result.append(')');
