@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: OSCAL Sirius Ext Lib
+Bundle-SymbolicName: dsm.oscal.ext.sirius.lib
+Bundle-Version: 2.5.2.qualifier
+Automatic-Module-Name: dsm.oscal.ext.sirius.lib
+Bundle-RequiredExecutionEnvironment: JavaSE-15
+Require-Bundle: org.eclipse.emf.ecore,
+ dsm.oscal.ext
+Export-Package: dsm.oscal.ext.sirius.lib

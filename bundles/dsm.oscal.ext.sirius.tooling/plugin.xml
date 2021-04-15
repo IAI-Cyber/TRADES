@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.sirius.editor.properties.siriusPropertiesDefaultWidgetDescriptionFactory">
+      <descriptor
+            class="dsm.oscal.ext.sirius.toolins.MarkupLineWidget"
+            description="MarkupLineWidget"
+            id="dsm.oscal.ext.sirius.markupline"
+            label="MarkupLineWidget">
+      </descriptor>
+   </extension>
+   <extension
+         point="org.eclipse.sirius.editor.properties.siriusPropertiesDefaultWidgetDescriptionFactory">
+      <descriptor
+            class="dsm.oscal.ext.sirius.toolins.MarkupMultiLineWidget"
+            description="MarkupMultilineWidget"
+            id="dsm.oscal.ext.sirius.markupMultiline"
+            label="MarkupMultilineWidget">
+      </descriptor>
+   </extension>
+
+</plugin>
