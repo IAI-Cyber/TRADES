@@ -4,7 +4,7 @@ Bundle-Name: TRADES Testlib
 Bundle-SymbolicName: dsm.TRADES.testlib
 Bundle-Version: 2.5.2.qualifier
 Automatic-Module-Name: dsm.TRADES.testlib
-Bundle-RequiredExecutionEnvironment: JavaSE-14
+Bundle-RequiredExecutionEnvironment: JavaSE-15
 Require-Bundle: dsm.TRADES;bundle-version="2.5.0",
  TRADES.design;bundle-version="2.5.0",
  org.eclipse.sirius.common

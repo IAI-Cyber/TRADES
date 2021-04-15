@@ -2,11 +2,11 @@ target "TRADES"
 
 include "target.tpd"
 
-environment JavaSE-14
+environment JavaSE-15
 
 with requirements,source
 
-location "https://download.eclipse.org/releases/2020-06/" {
+location "https://download.eclipse.org/releases/2020-12/" {
 	org.eclipse.egit.feature.group lazy
 	org.eclipse.emf.sdk.feature.group lazy
 }

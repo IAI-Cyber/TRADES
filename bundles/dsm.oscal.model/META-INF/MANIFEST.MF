@@ -7,7 +7,7 @@ Bundle-Version: 2.5.2.qualifier
 Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-14
+Bundle-RequiredExecutionEnvironment: JavaSE-15
 Export-Package: dsm.oscal.model.transform,
  dsm.oscal.model.OscalCatalog,
  dsm.oscal.model.OscalCatalog.impl,

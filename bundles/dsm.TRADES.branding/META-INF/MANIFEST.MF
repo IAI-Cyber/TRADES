@@ -4,7 +4,7 @@ Bundle-Name: TRADES RCP
 Bundle-SymbolicName: dsm.TRADES.branding;singleton:=true
 Bundle-Version: 2.5.2.qualifier
 Automatic-Module-Name: dsm.TRADES.rcp
-Bundle-RequiredExecutionEnvironment: JavaSE-14
+Bundle-RequiredExecutionEnvironment: JavaSE-15
 Require-Bundle: org.eclipse.equinox.app,
  org.eclipse.ui,
  org.eclipse.core.runtime;bundle-version="3.18.0"

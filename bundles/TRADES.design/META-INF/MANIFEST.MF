@@ -32,9 +32,11 @@ Require-Bundle: org.eclipse.ui,
  dsm.TRADES.rcp;bundle-version="2.5.2",
  dsm.oscal.model,
  org.eclipse.core.expressions,
- org.eclipse.core.expressions
+ org.eclipse.core.expressions,
+ dsm.oscal.ext;bundle-version="2.5.2",
+ dsm.oscal.ext.sirius.lib;bundle-version="1.0.0"
 Bundle-ActivationPolicy: lazy
-Bundle-RequiredExecutionEnvironment: JavaSE-14
+Bundle-RequiredExecutionEnvironment: JavaSE-15
 Bundle-Vendor: %providerName
 Export-Package: TRADES.design
 Automatic-Module-Name: TRADES.design

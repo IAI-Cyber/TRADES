@@ -12,7 +12,6 @@
  */
 package dsm.oscal.ext;
 
-import dsm.oscal.ext.NameHelper;
 import gov.nist.secauto.metaschema.datatypes.adapter.JavaTypeAdapter;
 import gov.nist.secauto.metaschema.model.definitions.DataType;
 import java.nio.file.Files;

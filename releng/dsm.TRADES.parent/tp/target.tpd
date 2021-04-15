@@ -1,12 +1,13 @@
 target "TRADES"
 
-environment JavaSE-14
+environment JavaSE-15
 
 with requirements,source
 
-location "https://download.eclipse.org/releases/2020-06/" {
+location "https://download.eclipse.org/releases/2020-12/" {
 	org.eclipse.platform.sdk lazy
 	org.eclipse.emf lazy
+	org.eclipse.emf.codegen.ecore.feature.group lazy
 	org.eclipse.pde.feature.group lazy
 	org.eclipse.rcp.feature.group lazy
 	org.eclipse.osgi.services lazy
@@ -79,6 +80,7 @@ location  "https://download.eclipse.org/tools/orbit/downloads/drops/R20200529191
 }
 
 
-location "https://download.eclipse.org/justj/jres/14/updates/nightly/latest" {
+location "https://download.eclipse.org/justj/jres/15/updates/release/15.0.2" {
 	org.eclipse.justj.openjdk.hotspot.jre.full.feature.group lazy
+	org.eclipse.justj.openjdk.hotspot.jre.full lazy
 }

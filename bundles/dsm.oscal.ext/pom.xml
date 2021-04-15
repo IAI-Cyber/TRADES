@@ -2,19 +2,20 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>dsm.TRADES</groupId>
-	<artifactId>dsm.oscal.ext</artifactId>
-	<version>2.5.2-SNAPSHOT</version>
-	<packaging>eclipse-plugin</packaging>
-	<!-- <packaging>pom</packaging> -->
-	<name>OSCAL Ext</name>
-
 	<parent>
 		<groupId>TRADES</groupId>
 		<artifactId>TRADES.parent</artifactId>
 		<version>2.5.2-SNAPSHOT</version>
 		<relativePath>../../releng/dsm.TRADES.parent/</relativePath>
 	</parent>
+
+	<groupId>dsm.TRADES</groupId>
+	<artifactId>dsm.oscal.ext</artifactId>
+	<version>2.5.2-SNAPSHOT</version>
+	<packaging>eclipse-plugin</packaging>
+	<name>OSCAL Ext</name>
+
+
 
 	<dependencies>
 		<dependency>
@@ -39,6 +40,8 @@
 		</dependency>
 	</dependencies>
 
+
+
 	<build>
 		<plugins>
 			<plugin>
@@ -55,11 +58,42 @@
 						<configuration>
 							<outputDirectory>${project.basedir}/lib</outputDirectory>
 							<overWriteSnapshots>true</overWriteSnapshots>
-							 <overWriteIfNewer>true</overWriteIfNewer>
+							<overWriteIfNewer>true</overWriteIfNewer>
 						</configuration>
 					</execution>
 				</executions>
 			</plugin>
+<!-- 			<plugin> -->
+<!-- 				<groupId>org.eclipse.xtend</groupId> -->
+<!-- 				<artifactId>xtend-maven-plugin</artifactId> -->
+<!-- 				<executions> -->
+<!-- 					<execution> -->
+<!-- 						<phase>generate-sources</phase> -->
+<!-- 						<goals> -->
+<!-- 							<goal>compile</goal> -->
+<!-- 						</goals> -->
+<!-- 						<configuration> -->
+<!-- 							<outputDirectory>xtend-gen</outputDirectory> -->
+<!-- 						</configuration> -->
+<!-- 					</execution> -->
+<!-- 				</executions> -->
+
+<!-- 			</plugin> -->
+
+<!-- 			<plugin> -->
+<!-- 				<groupId>org.apache.maven.plugins</groupId> -->
+<!-- 				<artifactId>maven-clean-plugin</artifactId> -->
+<!-- 				<configuration> -->
+<!-- 					<filesets> -->
+<!-- 						<fileset> -->
+<!-- 							<directory>${basedir}/xtend-gen/</directory> -->
+<!-- 							<includes> -->
+<!-- 								<include>**/*</include> -->
+<!-- 							</includes> -->
+<!-- 						</fileset> -->
+<!-- 					</filesets> -->
+<!-- 				</configuration> -->
+<!-- 			</plugin> -->
 		</plugins>
 	</build>
 

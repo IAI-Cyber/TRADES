@@ -8,7 +8,7 @@ Bundle-ClassPath: .
 Bundle-Activator: dsm.TRADES.presentation.TRADESEditorPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-14
+Bundle-RequiredExecutionEnvironment: JavaSE-15
 Export-Package: dsm.TRADES.presentation
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources;visibility:=reexport,

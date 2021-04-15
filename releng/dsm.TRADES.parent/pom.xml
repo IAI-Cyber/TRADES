@@ -1,18 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- 
-Copyright Israel Aerospace Industries, Eclipse contributors and others 2021. All rights reserved.
-
-This program and the accompanying materials
-are made available under the terms of the Eclipse Public License 2.0
-which accompanies this distribution, and is available at
-https://www.eclipse.org/legal/epl-2.0/
-
-SPDX-License-Identifier: EPL-2.0
-
- Contributors:
-    ELTA Ltd - initial API and implementation
-
- -->
+<!-- Copyright Israel Aerospace Industries, Eclipse contributors and others 
+	2021. All rights reserved. This program and the accompanying materials are 
+	made available under the terms of the Eclipse Public License 2.0 which accompanies 
+	this distribution, and is available at https://www.eclipse.org/legal/epl-2.0/ 
+	SPDX-License-Identifier: EPL-2.0 Contributors: ELTA Ltd - initial API and 
+	implementation -->
 <project xmlns="http://maven.apache.org/POM/4.0.0"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
@@ -25,8 +17,9 @@ SPDX-License-Identifier: EPL-2.0
 	<name>TRADES Parent</name>
 
 	<properties>
-		<tycho.version>2.1.0</tycho.version>
+		<tycho.version>2.3.0</tycho.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<xtend.version>2.25.0</xtend.version>
 	</properties>
 
 	<build>
@@ -65,6 +58,17 @@ SPDX-License-Identifier: EPL-2.0
 
 		<pluginManagement>
 			<plugins>
+				<plugin>
+					<groupId>org.eclipse.xtend</groupId>
+					<artifactId>xtend-maven-plugin</artifactId>
+					<version>${xtend.version}</version>
+				</plugin>
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-clean-plugin</artifactId>
+					<version>3.1.0</version>
+				</plugin>
 				<!-- Eclipse tycho -->
 				<plugin> <!-- Lifecycle -->
 					<groupId>org.eclipse.tycho</groupId>
@@ -109,8 +113,7 @@ SPDX-License-Identifier: EPL-2.0
 								<ws>cocoa</ws>
 								<arch>x86_64</arch>
 							</environment>
-							<environment><!-- Needed to run test on the integration server which 
-									is under linux -->
+							<environment>
 								<os>linux</os>
 								<ws>gtk</ws>
 								<arch>x86_64</arch>
@@ -124,8 +127,7 @@ SPDX-License-Identifier: EPL-2.0
 								<classifier>tp/target</classifier>
 							</artifact>
 						</target>
-						<!-- Required to include JustJ JRE see https://www.eclipse.org/justj/?page=documentation -->
-						<resolveWithExecutionEnvironmentConstraints>false</resolveWithExecutionEnvironmentConstraints>
+						<executionEnvironment>org.eclipse.justj.openjdk.hotspot.jre.full-15</executionEnvironment>
 					</configuration>
 				</plugin>
 				<plugin>
@@ -141,9 +143,12 @@ SPDX-License-Identifier: EPL-2.0
 
 	<modules>
 		<!-- Oscal -->
+		<module>../../bundles/dsm.oscal.ext/</module>
 		<module>../../bundles/dsm.oscal.model/</module>
+		<module>../../bundles/dsm.oscal.ext.sirius.tooling/</module>
+		<module>../../bundles/dsm.oscal.ext.sirius.lib/</module>
 		<module>../../bundles/dsm.oscal.model.edit/</module>
-		
+
 		<!-- Base plugins -->
 		<module>../../bundles/dsm.TRADES/</module>
 		<module>../../bundles/dsm.TRADES.edit/</module>
@@ -154,7 +159,7 @@ SPDX-License-Identifier: EPL-2.0
 		<module>../../bundles/dsm.TRADES.testlib/</module>
 		<module>../../bundles/dsm.TRADES.tests/</module>
 		<module>../../bundles/TRADES.design.test/</module>
-		
+
 
 
 		<!-- This plugin holdd all information about the product branding -->
