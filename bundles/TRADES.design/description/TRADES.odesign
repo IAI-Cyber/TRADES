@@ -1107,6 +1107,7 @@
     <ownedJavaExtensions qualifiedClassName="TRADES.design.DebugService"/>
     <ownedJavaExtensions qualifiedClassName="dsm.oscal.ext.sirius.lib.OscalWidgetUtil"/>
     <ownedJavaExtensions qualifiedClassName="dsm.oscal.ext.sirius.lib.URIService"/>
+    <ownedJavaExtensions qualifiedClassName="dsm.oscal.ext.sirius.lib.DateService"/>
   </ownedViewpoints>
   <userColorsPalettes name="Colors">
     <entries xsi:type="description:ComputedColor" name="HeatMapColorBackGround" red="aql:self.color.getRed()" green="aql:self.color.getGreen()" blue="aql:self.color.getBlue()"/>
@@ -1603,32 +1604,25 @@
       </groups>
     </categories>
     <categories name="OSCAL">
-      <pages name="CatalogPage" labelExpression="General" domainClass="OscalCatalog::Catalog" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.1/@groups.0"/>
-      <pages name="ControlPage" labelExpression="General" domainClass="OscalCatalog::Control" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.1/@groups.1"/>
-      <pages name="UUIDElementPage" labelExpression="UUID" domainClass="OscalMetadata::UUIDElement" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.1/@groups.2"/>
-      <pages name="GroupPage" labelExpression="General" domainClass="OscalCatalog::Group" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.1/@groups.3"/>
-      <pages name="AnnotationOwnerPage" labelExpression="Annotations" domainClass="OscalMetadata::AnnotationOwner" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.1/@groups.4" indented="true"/>
-      <pages name="PropertyOwnerPage" labelExpression="Properties" domainClass="OscalMetadata::PropertyOwner" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.1/@groups.6" indented="true"/>
-      <pages name="LinkOwnerPage" labelExpression="Links" domainClass="OscalMetadata::LinkOwner" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.1/@groups.8" indented="true"/>
-      <pages name="ElementWithRemarksPage" labelExpression="Remarks" domainClass="OscalMetadata::ElementWithRemarks" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.1/@groups.10" indented="true"/>
-      <pages name="ElementWithClassPage" labelExpression="Class" domainClass="OscalMetadata::ElementWithClazz" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.1/@groups.11" indented="true"/>
-      <groups name="CatalogGroup" labelExpression="Group" domainClass="OscalCatalog::Catalog" semanticCandidateExpression="var:self"/>
+      <pages name="CatalogPage" labelExpression="General" domainClass="OscalCatalog::Catalog" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.1/@groups.14"/>
+      <pages name="MetadataPage" labelExpression="General" domainClass="OscalMetadata::Metadata" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.1/@groups.14"/>
+      <pages name="ControlPage" labelExpression="General" domainClass="OscalCatalog::Control" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.1/@groups.0"/>
+      <pages name="GroupPage" labelExpression="General" domainClass="OscalCatalog::Group" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.1/@groups.2"/>
+      <pages name="PartPage" labelExpression="General" domainClass="OscalCatalogCommon::Part" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.1/@groups.11"/>
+      <pages name="DocumentationComputerPage" labelExpression="Documentation" domainClass="OscalMetadata::DocumentationComputer" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.1/@groups.12" indented="true"/>
+      <pages name="AnnotationOwnerPage" labelExpression="Annotations" domainClass="OscalMetadata::AnnotationOwner" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.1/@groups.3" indented="true"/>
+      <pages name="PropertyOwnerPage" labelExpression="Properties" domainClass="OscalMetadata::PropertyOwner" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.1/@groups.5" indented="true"/>
+      <pages name="LinkOwnerPage" labelExpression="Links" domainClass="OscalMetadata::LinkOwner" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.1/@groups.7" indented="true"/>
+      <pages name="ElementWithRemarksPage" labelExpression="Remarks" domainClass="OscalMetadata::ElementWithRemarks" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.1/@groups.9" indented="true"/>
+      <pages name="ElementWithClassPage" labelExpression="Class" domainClass="OscalMetadata::ElementWithClazz" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.1/@groups.10" indented="true"/>
+      <pages name="UUIDElementPage" labelExpression="UUID" domainClass="OscalMetadata::UUIDElement" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.1/@groups.1" indented="true"/>
+      <pages name="ElementWithId" labelExpression="Id" domainClass="OscalMetadata::ElementWithId" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.1/@groups.13" indented="true"/>
       <groups name="ControlGroup" labelExpression="General" domainClass="OscalCatalog::Control" semanticCandidateExpression="var:self">
         <controls xsi:type="properties:TextDescription" name="OscalCatalog::Control title" labelExpression="aql:input.emfEditServices(self).getText(self.eClass().getEStructuralFeature('title')) + ':'" helpExpression="aql:input.emfEditServices(self).getDescription(self.eClass().getEStructuralFeature('title'))" isEnabledExpression="aql:self.eClass().getEStructuralFeature('title').changeable" valueExpression="aql:self.getMarkupAttribute('title')">
           <initialOperation>
             <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.setMarkupAttribute('title',newValue)"/>
           </initialOperation>
           <conditionalStyles preconditionExpression="aql:self.eClass().getEStructuralFeature('title').lowerBound = 1">
-            <style>
-              <labelFontFormat>bold</labelFontFormat>
-            </style>
-          </conditionalStyles>
-        </controls>
-        <controls xsi:type="properties:TextDescription" name="OscalCatalog::Control id" labelExpression="aql:input.emfEditServices(self).getText(self.eClass().getEStructuralFeature('id')) + ':'" helpExpression="aql:input.emfEditServices(self).getDescription(self.eClass().getEStructuralFeature('id'))" isEnabledExpression="aql:self.eClass().getEStructuralFeature('id').changeable" valueExpression="aql:self.id">
-          <initialOperation>
-            <firstModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="var:newValue"/>
-          </initialOperation>
-          <conditionalStyles preconditionExpression="aql:self.eClass().getEStructuralFeature('id').lowerBound = 1">
             <style>
               <labelFontFormat>bold</labelFontFormat>
             </style>
@@ -1683,7 +1677,7 @@
                   <buttons labelExpression="OK" default="true" closeDialogOnClick="true">
                     <initialOperation/>
                   </buttons>
-                  <page name="Default Page" labelExpression="Page" domainClass="OscalMetadata::Annotation" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.1/@groups.5"/>
+                  <page name="Default Page" labelExpression="Page" domainClass="OscalMetadata::Annotation" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.1/@groups.4"/>
                 </subModelOperations>
               </firstModelOperations>
             </initialOperation>
@@ -1748,7 +1742,7 @@
                   <buttons labelExpression="OK" default="true" closeDialogOnClick="true">
                     <initialOperation/>
                   </buttons>
-                  <page name="Default Page" labelExpression="Property detail" domainClass="OscalMetadata::Property" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.1/@groups.7"/>
+                  <page name="Default Page" labelExpression="Property detail" domainClass="OscalMetadata::Property" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.1/@groups.6"/>
                 </subModelOperations>
               </firstModelOperations>
             </initialOperation>
@@ -1808,7 +1802,7 @@
                   <buttons labelExpression="OK" default="true" closeDialogOnClick="true">
                     <initialOperation/>
                   </buttons>
-                  <page name="Default Page" labelExpression="Link detail" domainClass="OscalMetadata::Link" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.1/@groups.9"/>
+                  <page name="Default Page" labelExpression="Link detail" domainClass="OscalMetadata::Link" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.1/@groups.8"/>
                 </subModelOperations>
               </firstModelOperations>
             </initialOperation>
@@ -1854,6 +1848,84 @@
         <controls xsi:type="properties:TextDescription" name="OscalMetadata::ElementWithClazz clazz" labelExpression="aql:input.emfEditServices(self).getText(self.eClass().getEStructuralFeature('clazz')) + ':'" helpExpression="aql:input.emfEditServices(self).getDescription(self.eClass().getEStructuralFeature('clazz'))" isEnabledExpression="aql:self.eClass().getEStructuralFeature('clazz').changeable" valueExpression="aql:self.clazz">
           <initialOperation>
             <firstModelOperations xsi:type="tool_1:SetValue" featureName="clazz" valueExpression="var:newValue"/>
+          </initialOperation>
+        </controls>
+      </groups>
+      <groups name="PartGroup" labelExpression="General" domainClass="OscalCatalogCommon::Part" semanticCandidateExpression="var:self">
+        <controls xsi:type="properties:TextDescription" name="OscalCatalogCommon::Part name" labelExpression="aql:input.emfEditServices(self).getText(self.eClass().getEStructuralFeature('name')) + ':'" helpExpression="aql:input.emfEditServices(self).getDescription(self.eClass().getEStructuralFeature('name'))" isEnabledExpression="aql:self.eClass().getEStructuralFeature('name').changeable" valueExpression="aql:self.name">
+          <initialOperation>
+            <firstModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="var:newValue"/>
+          </initialOperation>
+          <conditionalStyles preconditionExpression="aql:self.eClass().getEStructuralFeature('name').lowerBound = 1">
+            <style>
+              <labelFontFormat>bold</labelFontFormat>
+            </style>
+          </conditionalStyles>
+        </controls>
+        <controls xsi:type="properties:TextDescription" name="OscalCatalogCommon::Part title" labelExpression="aql:input.emfEditServices(self).getText(self.eClass().getEStructuralFeature('title')) + ':'" helpExpression="aql:input.emfEditServices(self).getDescription(self.eClass().getEStructuralFeature('title'))" isEnabledExpression="aql:self.eClass().getEStructuralFeature('title').changeable" valueExpression="aql:self.getMarkupAttribute('title')">
+          <initialOperation>
+            <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.setMarkupAttribute('title',newValue)"/>
+          </initialOperation>
+        </controls>
+        <controls xsi:type="properties:TextAreaDescription" name="OscalCatalogCommon::Part prose" labelExpression="aql:input.emfEditServices(self).getText(self.eClass().getEStructuralFeature('prose')) + ':'" helpExpression="aql:input.emfEditServices(self).getDescription(self.eClass().getEStructuralFeature('prose'))" isEnabledExpression="aql:self.eClass().getEStructuralFeature('prose').changeable" valueExpression="aql:self.getMarkupAttribute('prose')">
+          <initialOperation>
+            <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.setMarkupAttribute('prose',newValue)"/>
+          </initialOperation>
+        </controls>
+      </groups>
+      <groups name="DocumentationComputerGroup" labelExpression="Computed documentation" domainClass="OscalMetadata::DocumentationComputer" semanticCandidateExpression="var:self">
+        <controls xsi:type="properties:TextAreaDescription" name="ComputedDocumentation" labelExpression="Documentation" helpExpression="Documentation computed from the contained parts. To edit the documentation select each part in the tree." isEnabledExpression="aql:true" valueExpression="aql:self.computeDocumentation()">
+          <initialOperation>
+            <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self"/>
+          </initialOperation>
+        </controls>
+      </groups>
+      <groups name="ElementWithIdGroup" labelExpression="ID" domainClass="OscalMetadata::ElementWithId" semanticCandidateExpression="var:self">
+        <controls xsi:type="properties:TextDescription" name="OscalMetadata::ElementWithId id" labelExpression="aql:input.emfEditServices(self).getText(self.eClass().getEStructuralFeature('id')) + ':'" helpExpression="aql:input.emfEditServices(self).getDescription(self.eClass().getEStructuralFeature('id'))" isEnabledExpression="aql:self.eClass().getEStructuralFeature('id').changeable" valueExpression="aql:self.id">
+          <initialOperation>
+            <firstModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="var:newValue"/>
+          </initialOperation>
+        </controls>
+      </groups>
+      <groups name="MetadataGroup" labelExpression="Metadata" domainClass="OscalMetadata::Metadata" semanticCandidateExpression="aql:Sequence{self,self.metadata} ">
+        <controls xsi:type="properties:TextDescription" name="OscalMetadata::Metadata title" labelExpression="aql:input.emfEditServices(self).getText(self.eClass().getEStructuralFeature('title')) + ':'" helpExpression="aql:input.emfEditServices(self).getDescription(self.eClass().getEStructuralFeature('title'))" isEnabledExpression="aql:self.eClass().getEStructuralFeature('title').changeable" valueExpression="aql:self.getMarkupAttribute('title')">
+          <initialOperation>
+            <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.setMarkupAttribute('title',newValue)"/>
+          </initialOperation>
+          <conditionalStyles preconditionExpression="aql:self.eClass().getEStructuralFeature('title').lowerBound = 1">
+            <style>
+              <labelFontFormat>bold</labelFontFormat>
+            </style>
+          </conditionalStyles>
+        </controls>
+        <controls xsi:type="properties:TextDescription" name="OscalMetadata::Metadata oscalVersion" labelExpression="aql:input.emfEditServices(self).getText(self.eClass().getEStructuralFeature('oscalVersion')) + ':'" helpExpression="aql:input.emfEditServices(self).getDescription(self.eClass().getEStructuralFeature('oscalVersion'))" isEnabledExpression="aql:self.eClass().getEStructuralFeature('oscalVersion').changeable" valueExpression="aql:self.oscalVersion">
+          <initialOperation>
+            <firstModelOperations xsi:type="tool_1:SetValue" featureName="oscalVersion" valueExpression="var:newValue"/>
+          </initialOperation>
+          <conditionalStyles preconditionExpression="aql:self.eClass().getEStructuralFeature('oscalVersion').lowerBound = 1">
+            <style>
+              <labelFontFormat>bold</labelFontFormat>
+            </style>
+          </conditionalStyles>
+        </controls>
+        <controls xsi:type="properties:TextDescription" name="OscalMetadata::Metadata version" labelExpression="aql:input.emfEditServices(self).getText(self.eClass().getEStructuralFeature('version')) + ':'" helpExpression="aql:input.emfEditServices(self).getDescription(self.eClass().getEStructuralFeature('version'))" isEnabledExpression="aql:self.eClass().getEStructuralFeature('version').changeable" valueExpression="aql:self.version">
+          <initialOperation>
+            <firstModelOperations xsi:type="tool_1:SetValue" featureName="version" valueExpression="var:newValue"/>
+          </initialOperation>
+          <conditionalStyles preconditionExpression="aql:self.eClass().getEStructuralFeature('version').lowerBound = 1">
+            <style>
+              <labelFontFormat>bold</labelFontFormat>
+            </style>
+          </conditionalStyles>
+        </controls>
+        <controls xsi:type="properties:TextDescription" name="LastModifiedWidget" labelExpression="aql:input.emfEditServices(self).getText(self.eClass().getEStructuralFeature('lastModified')) + ':'" helpExpression="aql:input.emfEditServices(self).getDescription(self.eClass().getEStructuralFeature('lastModified'))" isEnabledExpression="aql:self.eClass().getEStructuralFeature('lastModified').changeable" valueExpression="aql:self.getDate('lastModified')">
+          <initialOperation>
+            <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.setDate('lastModified',newValue)"/>
+          </initialOperation>
+        </controls>
+        <controls xsi:type="properties:TextDescription" name="LastModifiedWidget" labelExpression="aql:input.emfEditServices(self).getText(self.eClass().getEStructuralFeature('published')) + ':'" helpExpression="aql:input.emfEditServices(self).getDescription(self.eClass().getEStructuralFeature('published'))" isEnabledExpression="aql:self.eClass().getEStructuralFeature('published').changeable" valueExpression="aql:self.getDate('published')">
+          <initialOperation>
+            <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.setDate('lastModified',newValue)"/>
           </initialOperation>
         </controls>
       </groups>
