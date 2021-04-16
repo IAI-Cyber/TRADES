@@ -45,7 +45,7 @@ public class MarkupLineWidget implements IDefaultWidgetDescriptionFactory {
 
 	@Override
 	public boolean canCreate(EClass domainClass, EStructuralFeature eStructuralFeature) {
-		return isOscal(domainClass) && MARKUP_LINE_PRED.test(eStructuralFeature);
+		return MARKUP_LINE_PRED.test(eStructuralFeature);
 	}
 
 	public boolean isOscal(EClass domainClass) {

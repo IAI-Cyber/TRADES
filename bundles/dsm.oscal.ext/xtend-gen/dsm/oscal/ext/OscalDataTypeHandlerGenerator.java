@@ -177,10 +177,8 @@ public class OscalDataTypeHandlerGenerator {
   }
   
   private List<gov.nist.secauto.metaschema.codegen.type.DataType> getGenTypes() {
-    final Function<DataType, gov.nist.secauto.metaschema.codegen.type.DataType> _function = new Function<DataType, gov.nist.secauto.metaschema.codegen.type.DataType>() {
-      public gov.nist.secauto.metaschema.codegen.type.DataType apply(final DataType it) {
-        return gov.nist.secauto.metaschema.codegen.type.DataType.lookupByDatatype(it);
-      }
+    final Function<DataType, gov.nist.secauto.metaschema.codegen.type.DataType> _function = (DataType it) -> {
+      return gov.nist.secauto.metaschema.codegen.type.DataType.lookupByDatatype(it);
     };
     return this.types.stream().<gov.nist.secauto.metaschema.codegen.type.DataType>map(_function).collect(Collectors.<gov.nist.secauto.metaschema.codegen.type.DataType>toList());
   }

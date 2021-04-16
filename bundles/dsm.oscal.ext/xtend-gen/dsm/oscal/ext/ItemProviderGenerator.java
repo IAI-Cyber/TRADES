@@ -355,10 +355,8 @@ public class ItemProviderGenerator {
   }
   
   private Optional<GenFeature> getFeature(final GenClass genClass, final String name) {
-    final Predicate<GenFeature> _function = new Predicate<GenFeature>() {
-      public boolean test(final GenFeature it) {
-        return name.equalsIgnoreCase(it.getName());
-      }
+    final Predicate<GenFeature> _function = (GenFeature it) -> {
+      return name.equalsIgnoreCase(it.getName());
     };
     return genClass.getAllGenFeatures().stream().filter(_function).findFirst();
   }

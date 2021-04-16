@@ -45,7 +45,7 @@ public class MarkupMultiLineWidget implements IDefaultWidgetDescriptionFactory {
 
 	@Override
 	public boolean canCreate(EClass domainClass, EStructuralFeature eStructuralFeature) {
-		return isOscal(domainClass) && MARKUP_MULTILINE_PRED.test(eStructuralFeature);
+		return  MARKUP_MULTILINE_PRED.test(eStructuralFeature);
 	}
 
 	public boolean isOscal(EClass domainClass) {
