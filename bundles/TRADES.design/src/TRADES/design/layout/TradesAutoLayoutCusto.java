@@ -17,12 +17,14 @@ import java.util.Optional;
 
 import org.eclipse.elk.core.options.CoreOptions;
 import org.eclipse.elk.core.options.NodeLabelPlacement;
+import org.eclipse.elk.core.options.PortConstraints;
 import org.eclipse.elk.core.service.LayoutMapping;
 import org.eclipse.elk.graph.ElkEdge;
 import org.eclipse.elk.graph.ElkGraphElement;
 import org.eclipse.elk.graph.ElkGraphPackage;
 import org.eclipse.elk.graph.ElkLabel;
 import org.eclipse.elk.graph.ElkNode;
+import org.eclipse.elk.graph.ElkPort;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
@@ -45,6 +47,12 @@ import dsm.TRADES.util.EcoreUtils;
 public class TradesAutoLayoutCusto implements IELKLayoutExtension {
 
 	private static final String TRADES_DIAGRAM = "TRADES diagram";
+
+    /** The identifier of the border node mapping used to display label of Control. */
+    private static final String CONTROL_LABEL_PORT_MAPPING_NAME = "ControlLabel_TD";
+
+    /** The identifier of the border node mapping used to display label of Threat. */
+    private static final String THREAT_LABEL_PORT_MAPPING_NAME = "ThreatLabel_TD";
 
 //	private List<ElkEdge> modifiedMitigationRelations;
 
@@ -88,6 +96,21 @@ public class TradesAutoLayoutCusto implements IELKLayoutExtension {
 				}
 			}
 		});
+        // Force the location, of ports displaying label of Control/Threat, to remain fix (ie centered below its
+        // Control/Threat)
+        EcoreUtils.allContainedObjectOfType(layoutGraph, ElkPort.class).forEach(port -> {
+            Object oPort = graphMap.get(port);
+            if (oPort instanceof IGraphicalEditPart) {
+                IGraphicalEditPart editpart = (IGraphicalEditPart) oPort;
+                EObject sElement = editpart.resolveSemanticElement();
+                if (sElement instanceof DDiagramElement) {
+                    DDiagramElement node = (DDiagramElement) sElement;
+                    if (CONTROL_LABEL_PORT_MAPPING_NAME.equals(node.getMapping().getName()) || THREAT_LABEL_PORT_MAPPING_NAME.equals(node.getMapping().getName())) {
+                        port.getParent().setProperty(CoreOptions.PORT_CONSTRAINTS, PortConstraints.FIXED_POS);
+                    }
+                }
+            }
+        });
 
 		// Attempt to handle edge that connect node to another edge
 //
