@@ -19,7 +19,7 @@ location Eclipse-Shared-License "http://download.eclipse.org/cbi/updates/license
 	org.eclipse.license.feature.group lazy
 }
 
-location "https://s3-eu-west-1.amazonaws.com/obeo-m2doc-releases/3.1.1/repository" {
+location "https://s3-eu-west-1.amazonaws.com/obeo-m2doc-releases/master/nightly/repository" {
 	org.obeonetwork.m2doc.feature.feature.group lazy
 	org.obeonetwork.m2doc.sirius.feature.feature.group lazy
 	org.obeonetwork.m2doc.ui.feature.feature.group lazy
@@ -43,7 +43,7 @@ location "https://www.obeo.fr/download/release/designer/11.3/community/latest/re
 }
 
 
-location "https://download.eclipse.org/sirius/updates/releases/6.4.0/2020-06/" {
+location "https://download.eclipse.org/sirius/updates/stable/6.5.0-S20210326-125830/2020-06/" {
 	//Sirius
 	org.eclipse.sirius.specifier.feature.group lazy
 	org.eclipse.sirius.properties.feature.feature.group lazy
