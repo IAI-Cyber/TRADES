@@ -34,7 +34,7 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.core.expressions,
  org.eclipse.core.expressions,
  dsm.oscal.ext;bundle-version="2.5.2",
- dsm.oscal.ext.sirius.lib;bundle-version="1.0.0",
+ dsm.oscal.ext.sirius.lib,
  org.eclipse.eef.ide.ui;bundle-version="2.1.5"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-11
