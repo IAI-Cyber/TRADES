@@ -18,6 +18,7 @@ package dsm.oscal.model.OscalCatalogCommon.impl;
 import dsm.oscal.model.OscalCatalogCommon.OscalCatalogCommonPackage;
 import dsm.oscal.model.OscalCatalogCommon.ParameterSelection;
 
+import dsm.oscal.model.OscalMetadata.impl.OscalElementCustomImpl;
 import gov.nist.secauto.metaschema.datatypes.markup.MarkupLine;
 
 import java.util.Collection;
@@ -29,8 +30,6 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 /**
@@ -47,7 +46,7 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
  *
  * @generated
  */
-public class ParameterSelectionImpl extends MinimalEObjectImpl.Container implements ParameterSelection {
+public class ParameterSelectionImpl extends OscalElementCustomImpl implements ParameterSelection {
 	/**
 	 * The cached value of the '{@link #getChoice() <em>Choice</em>}' attribute list.
 	 * <!-- begin-user-doc -->

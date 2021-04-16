@@ -70,6 +70,7 @@ import java.util.UUID;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -1456,6 +1457,16 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 * @generated
 	 */
 	@Override
+	public EOperation getOscalElement__Resolve__URI() {
+		return oscalElementEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getUUIDElement() {
 		return uuidElementEClass;
 	}
@@ -1728,6 +1739,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 		createEAttribute(metadataEClass, METADATA__VERSION);
 
 		oscalElementEClass = createEClass(OSCAL_ELEMENT);
+		createEOperation(oscalElementEClass, OSCAL_ELEMENT___RESOLVE__URI);
 
 		partyEClass = createEClass(PARTY);
 		createEReference(partyEClass, PARTY__ADDRESSES);
@@ -1972,7 +1984,10 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 		initEAttribute(getMetadata_Title(), this.getMarkupLineType(), "title", null, 1, 1, Metadata.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMetadata_Version(), ecorePackage.getEString(), "version", null, 1, 1, Metadata.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(oscalElementEClass, OscalElement.class, "OscalElement", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(oscalElementEClass, OscalElement.class, "OscalElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		EOperation op = initEOperation(getOscalElement__Resolve__URI(), ecorePackage.getEObject(), "resolve", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getUriType(), "uri", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(partyEClass, Party.class, "Party", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getParty_Addresses(), this.getAddress(), null, "addresses", null, 0, -1, Party.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

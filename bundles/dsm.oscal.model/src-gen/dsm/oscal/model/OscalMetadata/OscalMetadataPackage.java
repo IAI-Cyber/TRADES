@@ -18,6 +18,7 @@ package dsm.oscal.model.OscalMetadata;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -71,10 +72,10 @@ public interface OscalMetadataPackage extends EPackage {
 	OscalMetadataPackage eINSTANCE = dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link dsm.oscal.model.OscalMetadata.OscalElement <em>Oscal Element</em>}' class.
+	 * The meta object id for the '{@link dsm.oscal.model.OscalMetadata.impl.OscalElementImpl <em>Oscal Element</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see dsm.oscal.model.OscalMetadata.OscalElement
+	 * @see dsm.oscal.model.OscalMetadata.impl.OscalElementImpl
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getOscalElement()
 	 * @generated
 	 */
@@ -90,13 +91,22 @@ public interface OscalMetadataPackage extends EPackage {
 	int OSCAL_ELEMENT_FEATURE_COUNT = 0;
 
 	/**
+	 * The operation id for the '<em>Resolve</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OSCAL_ELEMENT___RESOLVE__URI = 0;
+
+	/**
 	 * The number of operations of the '<em>Oscal Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OSCAL_ELEMENT_OPERATION_COUNT = 0;
+	int OSCAL_ELEMENT_OPERATION_COUNT = 1;
 
 	/**
 	 * The meta object id for the '{@link dsm.oscal.model.OscalMetadata.impl.AddressImpl <em>Address</em>}' class.
@@ -172,6 +182,15 @@ public interface OscalMetadataPackage extends EPackage {
 	int ADDRESS_FEATURE_COUNT = OSCAL_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
+	 * The operation id for the '<em>Resolve</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADDRESS___RESOLVE__URI = OSCAL_ELEMENT___RESOLVE__URI;
+
+	/**
 	 * The number of operations of the '<em>Address</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -243,6 +262,15 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @ordered
 	 */
 	int ANNOTATION_FEATURE_COUNT = OSCAL_ELEMENT_FEATURE_COUNT + 5;
+
+	/**
+	 * The operation id for the '<em>Resolve</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ANNOTATION___RESOLVE__URI = OSCAL_ELEMENT___RESOLVE__URI;
 
 	/**
 	 * The number of operations of the '<em>Annotation</em>' class.
@@ -499,6 +527,15 @@ public interface OscalMetadataPackage extends EPackage {
 	int BACK_MATTER_FEATURE_COUNT = OSCAL_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
+	 * The operation id for the '<em>Resolve</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BACK_MATTER___RESOLVE__URI = OSCAL_ELEMENT___RESOLVE__URI;
+
+	/**
 	 * The number of operations of the '<em>Back Matter</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -607,6 +644,15 @@ public interface OscalMetadataPackage extends EPackage {
 	int BACK_MATTER_RESOURCE_FEATURE_COUNT = OSCAL_ELEMENT_FEATURE_COUNT + 10;
 
 	/**
+	 * The operation id for the '<em>Resolve</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BACK_MATTER_RESOURCE___RESOLVE__URI = OSCAL_ELEMENT___RESOLVE__URI;
+
+	/**
 	 * The number of operations of the '<em>Back Matter Resource</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -652,6 +698,15 @@ public interface OscalMetadataPackage extends EPackage {
 	int BASE64_FEATURE_COUNT = OSCAL_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
+	 * The operation id for the '<em>Resolve</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BASE64___RESOLVE__URI = OSCAL_ELEMENT___RESOLVE__URI;
+
+	/**
 	 * The number of operations of the '<em>Base64</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -686,6 +741,15 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @ordered
 	 */
 	int DOCUMENT_ID_FEATURE_COUNT = OSCAL_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Resolve</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DOCUMENT_ID___RESOLVE__URI = OSCAL_ELEMENT___RESOLVE__URI;
 
 	/**
 	 * The number of operations of the '<em>Document Id</em>' class.
@@ -835,6 +899,15 @@ public interface OscalMetadataPackage extends EPackage {
 	int EXTERNAL_ID_FEATURE_COUNT = OSCAL_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
+	 * The operation id for the '<em>Resolve</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTERNAL_ID___RESOLVE__URI = OSCAL_ELEMENT___RESOLVE__URI;
+
+	/**
 	 * The number of operations of the '<em>External Id</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -869,6 +942,15 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @ordered
 	 */
 	int HASH_FEATURE_COUNT = OSCAL_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Resolve</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HASH___RESOLVE__URI = OSCAL_ELEMENT___RESOLVE__URI;
 
 	/**
 	 * The number of operations of the '<em>Hash</em>' class.
@@ -923,6 +1005,15 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @ordered
 	 */
 	int LINK_FEATURE_COUNT = OSCAL_ELEMENT_FEATURE_COUNT + 4;
+
+	/**
+	 * The operation id for the '<em>Resolve</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK___RESOLVE__URI = OSCAL_ELEMENT___RESOLVE__URI;
 
 	/**
 	 * The number of operations of the '<em>Link</em>' class.
@@ -1068,6 +1159,15 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @ordered
 	 */
 	int LOCATION_FEATURE_COUNT = OSCAL_ELEMENT_FEATURE_COUNT + 10;
+
+	/**
+	 * The operation id for the '<em>Resolve</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOCATION___RESOLVE__URI = OSCAL_ELEMENT___RESOLVE__URI;
 
 	/**
 	 * The number of operations of the '<em>Location</em>' class.
@@ -1223,6 +1323,15 @@ public interface OscalMetadataPackage extends EPackage {
 	int METADATA_FEATURE_COUNT = OSCAL_ELEMENT_FEATURE_COUNT + 15;
 
 	/**
+	 * The operation id for the '<em>Resolve</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int METADATA___RESOLVE__URI = OSCAL_ELEMENT___RESOLVE__URI;
+
+	/**
 	 * The number of operations of the '<em>Metadata</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1367,6 +1476,15 @@ public interface OscalMetadataPackage extends EPackage {
 	int PARTY_FEATURE_COUNT = OSCAL_ELEMENT_FEATURE_COUNT + 14;
 
 	/**
+	 * The operation id for the '<em>Resolve</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY___RESOLVE__URI = OSCAL_ELEMENT___RESOLVE__URI;
+
+	/**
 	 * The number of operations of the '<em>Party</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1428,6 +1546,15 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @ordered
 	 */
 	int PROPERTY_FEATURE_COUNT = OSCAL_ELEMENT_FEATURE_COUNT + 5;
+
+	/**
+	 * The operation id for the '<em>Resolve</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROPERTY___RESOLVE__URI = OSCAL_ELEMENT___RESOLVE__URI;
 
 	/**
 	 * The number of operations of the '<em>Property</em>' class.
@@ -1512,6 +1639,15 @@ public interface OscalMetadataPackage extends EPackage {
 	int RESOURCE_CITATION_FEATURE_COUNT = OSCAL_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
+	 * The operation id for the '<em>Resolve</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_CITATION___RESOLVE__URI = OSCAL_ELEMENT___RESOLVE__URI;
+
+	/**
 	 * The number of operations of the '<em>Resource Citation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1555,6 +1691,15 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @ordered
 	 */
 	int RESOURCE_RLINK_FEATURE_COUNT = OSCAL_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Resolve</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_RLINK___RESOLVE__URI = OSCAL_ELEMENT___RESOLVE__URI;
 
 	/**
 	 * The number of operations of the '<em>Resource Rlink</em>' class.
@@ -1629,6 +1774,15 @@ public interface OscalMetadataPackage extends EPackage {
 	int RESPONSIBLE_PARTY_FEATURE_COUNT = OSCAL_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
+	 * The operation id for the '<em>Resolve</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESPONSIBLE_PARTY___RESOLVE__URI = OSCAL_ELEMENT___RESOLVE__URI;
+
+	/**
 	 * The number of operations of the '<em>Responsible Party</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1699,6 +1853,15 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @ordered
 	 */
 	int RESPONSIBLE_ROLE_FEATURE_COUNT = OSCAL_ELEMENT_FEATURE_COUNT + 6;
+
+	/**
+	 * The operation id for the '<em>Resolve</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESPONSIBLE_ROLE___RESOLVE__URI = OSCAL_ELEMENT___RESOLVE__URI;
 
 	/**
 	 * The number of operations of the '<em>Responsible Role</em>' class.
@@ -1800,6 +1963,15 @@ public interface OscalMetadataPackage extends EPackage {
 	int REVISION_FEATURE_COUNT = OSCAL_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
+	 * The operation id for the '<em>Resolve</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REVISION___RESOLVE__URI = OSCAL_ELEMENT___RESOLVE__URI;
+
+	/**
 	 * The number of operations of the '<em>Revision</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1890,6 +2062,15 @@ public interface OscalMetadataPackage extends EPackage {
 	int ROLE_FEATURE_COUNT = OSCAL_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
+	 * The operation id for the '<em>Resolve</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE___RESOLVE__URI = OSCAL_ELEMENT___RESOLVE__URI;
+
+	/**
 	 * The number of operations of the '<em>Role</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1924,6 +2105,15 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @ordered
 	 */
 	int TELEPHONE_NUMBER_FEATURE_COUNT = OSCAL_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Resolve</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TELEPHONE_NUMBER___RESOLVE__URI = OSCAL_ELEMENT___RESOLVE__URI;
 
 	/**
 	 * The number of operations of the '<em>Telephone Number</em>' class.
@@ -3178,6 +3368,16 @@ public interface OscalMetadataPackage extends EPackage {
 	EClass getOscalElement();
 
 	/**
+	 * Returns the meta object for the '{@link dsm.oscal.model.OscalMetadata.OscalElement#resolve(java.net.URI) <em>Resolve</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Resolve</em>' operation.
+	 * @see dsm.oscal.model.OscalMetadata.OscalElement#resolve(java.net.URI)
+	 * @generated
+	 */
+	EOperation getOscalElement__Resolve__URI();
+
+	/**
 	 * Returns the meta object for class '{@link dsm.oscal.model.OscalMetadata.UUIDElement <em>UUID Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4236,14 +4436,22 @@ public interface OscalMetadataPackage extends EPackage {
 		EAttribute TELEPHONE_NUMBER__TYPE = eINSTANCE.getTelephoneNumber_Type();
 
 		/**
-		 * The meta object literal for the '{@link dsm.oscal.model.OscalMetadata.OscalElement <em>Oscal Element</em>}' class.
+		 * The meta object literal for the '{@link dsm.oscal.model.OscalMetadata.impl.OscalElementImpl <em>Oscal Element</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see dsm.oscal.model.OscalMetadata.OscalElement
+		 * @see dsm.oscal.model.OscalMetadata.impl.OscalElementImpl
 		 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getOscalElement()
 		 * @generated
 		 */
 		EClass OSCAL_ELEMENT = eINSTANCE.getOscalElement();
+
+		/**
+		 * The meta object literal for the '<em><b>Resolve</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation OSCAL_ELEMENT___RESOLVE__URI = eINSTANCE.getOscalElement__Resolve__URI();
 
 		/**
 		 * The meta object literal for the '{@link dsm.oscal.model.OscalMetadata.impl.UUIDElementImpl <em>UUID Element</em>}' class.

@@ -413,7 +413,12 @@
       <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="OscalElement" abstract="true" interface="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="OscalElement" abstract="true">
+    <eOperations name="resolve">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+      <eParameters name="uri" eType="//UriType"/>
+    </eOperations>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Party" eSuperTypes="//OscalElement //UUIDElement //AnnotationOwner //PropertyOwner //LinkOwner //ElementWithRemarks">
     <eAnnotations source="Metaschema">
       <details key="source" value="&lt;Metaschema>oscal-metadata.&lt;AssemblyDefinition>party"/>

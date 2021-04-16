@@ -22,14 +22,18 @@ public class LabelUtils {
 		if (value == null) {
 			return "";
 		}
-		return value.toMarkdown();
+		String markdown = value.toMarkdown();
+		String oneLine = markdown.replaceAll("\\n", " ");
+		return getShorten(oneLine, 20);
 	}
 
 	public static String toSimpleLabel(MarkupMultiline value) {
 		if (value == null) {
 			return "";
 		}
-		return value.toMarkdown();
+		String markdown = value.toMarkdown();
+		String oneLine = markdown.replaceAll("\\n", " ");
+		return getShorten(oneLine, 20);
 	}
 
 	public static String getShorten(String msg, int size) {

@@ -48,7 +48,9 @@ import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EModelElement;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EParameter;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.EcoreFactory;
@@ -196,7 +198,8 @@ public class MetaschemaToEcoreTransformer {
 		EClass oscalElement = EcoreFactory.eINSTANCE.createEClass();
 		oscalElement.setName("OscalElement");
 		oscalElement.setAbstract(true);
-		oscalElement.setInterface(true);
+		EOperation resolveOperation = createResolveOperation();
+		oscalElement.getEOperations().add(resolveOperation);
 		rootEPackage.getEClassifiers().add(oscalElement);
 
 		for (EClass eClass : defToEClass.values()) {
@@ -219,6 +222,19 @@ public class MetaschemaToEcoreTransformer {
 
 		createGenModel(rs, modelFolder, pluginFolder);
 		
+	}
+
+	public EOperation createResolveOperation() {
+		EOperation resolveOperation = EcoreFactory.eINSTANCE.createEOperation();
+		resolveOperation.setName("resolve");
+		resolveOperation.setEType(EcorePackage.eINSTANCE.getEObject());
+		resolveOperation.setLowerBound(0);
+		resolveOperation.setUpperBound(1);
+		EParameter param = EcoreFactory.eINSTANCE.createEParameter();
+		param.setName("uri");
+		param.setEType(dataTypes.get(DataType.URI));
+		resolveOperation.getEParameters().add(param);
+		return resolveOperation;
 	}
 
 	public void sortByName() {

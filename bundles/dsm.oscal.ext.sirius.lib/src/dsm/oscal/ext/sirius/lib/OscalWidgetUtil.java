@@ -45,4 +45,26 @@ public class OscalWidgetUtil {
 		return null;
 	}
 
+	public static String getHTML(EObject owner, String featureName) {
+		EStructuralFeature feature = owner.eClass().getEStructuralFeature(featureName);
+		if (feature instanceof EAttribute) {
+			EAttribute attr = (EAttribute) feature;
+			if (!attr.isMany() && attr.getEAttributeType() != null
+					&& MarkupLine.class.getName().equals(attr.getEAttributeType().getInstanceClassName())) {
+				Object value = owner.eGet(feature);
+				if (value instanceof MarkupLine) {
+					return ((MarkupLine) value).toHtml();
+				}
+			} else if (!attr.isMany() && attr.getEAttributeType() != null
+					&& MarkupMultiline.class.getName().equals(attr.getEAttributeType().getInstanceClassName())) {
+				Object value = owner.eGet(feature);
+				if (value instanceof MarkupMultiline) {
+					return ((MarkupMultiline) value).toHtml();
+
+				}
+			}
+		}
+		return null;
+	}
+
 }

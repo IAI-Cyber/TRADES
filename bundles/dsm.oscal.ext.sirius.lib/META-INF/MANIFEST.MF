@@ -6,5 +6,9 @@ Bundle-Version: 2.5.2.qualifier
 Automatic-Module-Name: dsm.oscal.ext.sirius.lib
 Bundle-RequiredExecutionEnvironment: JavaSE-11
 Require-Bundle: org.eclipse.emf.ecore,
- dsm.oscal.ext
+ dsm.oscal.ext,
+ org.eclipse.sirius,
+ org.eclipse.emf.edit,
+ org.eclipse.sirius.ext.emf.edit,
+ dsm.oscal.model;bundle-version="2.5.2"
 Export-Package: dsm.oscal.ext.sirius.lib

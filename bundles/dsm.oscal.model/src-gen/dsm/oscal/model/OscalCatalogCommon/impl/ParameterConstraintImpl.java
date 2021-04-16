@@ -19,6 +19,7 @@ import dsm.oscal.model.OscalCatalogCommon.OscalCatalogCommonPackage;
 import dsm.oscal.model.OscalCatalogCommon.ParameterConstraint;
 import dsm.oscal.model.OscalCatalogCommon.ParameterConstraintTest;
 
+import dsm.oscal.model.OscalMetadata.impl.OscalElementCustomImpl;
 import gov.nist.secauto.metaschema.datatypes.markup.MarkupMultiline;
 
 import java.util.Collection;
@@ -32,8 +33,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -51,7 +50,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class ParameterConstraintImpl extends MinimalEObjectImpl.Container implements ParameterConstraint {
+public class ParameterConstraintImpl extends OscalElementCustomImpl implements ParameterConstraint {
 	/**
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->

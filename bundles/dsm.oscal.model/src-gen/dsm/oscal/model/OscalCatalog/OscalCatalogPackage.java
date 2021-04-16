@@ -144,6 +144,15 @@ public interface OscalCatalogPackage extends EPackage {
 	int CATALOG_FEATURE_COUNT = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
+	 * The operation id for the '<em>Resolve</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CATALOG___RESOLVE__URI = OscalMetadataPackage.OSCAL_ELEMENT___RESOLVE__URI;
+
+	/**
 	 * The number of operations of the '<em>Catalog</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -251,6 +260,15 @@ public interface OscalCatalogPackage extends EPackage {
 	 * @ordered
 	 */
 	int CONTROL_FEATURE_COUNT = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 9;
+
+	/**
+	 * The operation id for the '<em>Resolve</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL___RESOLVE__URI = OscalMetadataPackage.OSCAL_ELEMENT___RESOLVE__URI;
 
 	/**
 	 * The number of operations of the '<em>Control</em>' class.
@@ -369,6 +387,15 @@ public interface OscalCatalogPackage extends EPackage {
 	 * @ordered
 	 */
 	int GROUP_FEATURE_COUNT = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 10;
+
+	/**
+	 * The operation id for the '<em>Resolve</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GROUP___RESOLVE__URI = OscalMetadataPackage.OSCAL_ELEMENT___RESOLVE__URI;
 
 	/**
 	 * The number of operations of the '<em>Group</em>' class.

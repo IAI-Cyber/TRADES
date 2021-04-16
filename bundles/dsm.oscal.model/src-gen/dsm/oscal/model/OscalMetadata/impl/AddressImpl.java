@@ -27,8 +27,6 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 /**
@@ -49,7 +47,7 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
  *
  * @generated
  */
-public class AddressImpl extends MinimalEObjectImpl.Container implements Address {
+public class AddressImpl extends OscalElementCustomImpl implements Address {
 	/**
 	 * The cached value of the '{@link #getAddrLines() <em>Addr Lines</em>}' attribute list.
 	 * <!-- begin-user-doc -->

@@ -27,6 +27,7 @@ import dsm.oscal.model.OscalMetadata.Metadata;
 
 import dsm.oscal.model.OscalMetadata.OscalMetadataPackage;
 import dsm.oscal.model.OscalMetadata.UUIDElement;
+import dsm.oscal.model.OscalMetadata.impl.OscalElementCustomImpl;
 import java.util.Collection;
 import java.util.UUID;
 import org.eclipse.emf.common.notify.Notification;
@@ -38,8 +39,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -61,7 +60,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class CatalogImpl extends MinimalEObjectImpl.Container implements Catalog {
+public class CatalogImpl extends OscalElementCustomImpl implements Catalog {
 	/**
 	 * The default value of the '{@link #getUuid() <em>Uuid</em>}' attribute.
 	 * <!-- begin-user-doc -->

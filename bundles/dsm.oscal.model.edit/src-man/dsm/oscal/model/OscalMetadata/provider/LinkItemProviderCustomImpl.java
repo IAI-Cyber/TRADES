@@ -1,9 +1,14 @@
 package dsm.oscal.model.OscalMetadata.provider;
 
+import java.net.URI;
+
 import org.eclipse.emf.common.notify.AdapterFactory;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.edit.provider.IItemLabelProvider;
 
 import dsm.oscal.model.LabelUtils;
 import dsm.oscal.model.OscalMetadata.Link;
+import gov.nist.secauto.metaschema.datatypes.markup.MarkupLine;
 
 public class LinkItemProviderCustomImpl extends LinkItemProviderBaseCustomImpl {
 
@@ -14,7 +19,23 @@ public class LinkItemProviderCustomImpl extends LinkItemProviderBaseCustomImpl {
 	@Override
 	public String getText(Object object) {
 		Link link = (Link) object;
-		return "[" + link.getRel() + "] " + LabelUtils.toSimpleLabel(link.getText()) + ":" + link.getEHref();
+		URI eHref = link.getEHref();
+		EObject referencedElement = link.resolve(eHref);
+		final String refLabel;
+		if (referencedElement != null) {
+			refLabel = ((IItemLabelProvider) getRootAdapterFactory().adapt(referencedElement, IItemLabelProvider.class))
+					.getText(referencedElement);
+		} else {
+			refLabel = eHref != null ? eHref.toString() : "";
+		}
+		String textLabel;
+		MarkupLine text = link.getText();
+		if (text != null && !text.toMarkdown().isBlank()) {
+			textLabel = LabelUtils.toSimpleLabel(link.getText()) + ":";
+		} else {
+			textLabel = "";
+		}
+		return "[" + link.getRel() + "] " + textLabel + refLabel;
 	}
 
 }

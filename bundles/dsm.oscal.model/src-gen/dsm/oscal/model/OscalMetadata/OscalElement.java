@@ -15,6 +15,7 @@
  */
 package dsm.oscal.model.OscalMetadata;
 
+import java.net.URI;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -24,8 +25,16 @@ import org.eclipse.emf.ecore.EObject;
  *
  *
  * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getOscalElement()
- * @model interface="true" abstract="true"
+ * @model abstract="true"
  * @generated
  */
 public interface OscalElement extends EObject {
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model uriDataType="dsm.oscal.model.OscalMetadata.UriType"
+	 * @generated
+	 */
+	EObject resolve(URI uri);
 } // OscalElement

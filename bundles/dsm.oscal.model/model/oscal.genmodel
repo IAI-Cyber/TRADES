@@ -232,6 +232,12 @@
     </genClasses>
     <genClasses image="false">
       <ecoreClass href="oscal-metadata.ecore#//OscalElement"/>
+      <genOperations>
+        <ecoreOperation href="oscal-metadata.ecore#//OscalElement/resolve"/>
+        <genParameters>
+          <ecoreParameter href="oscal-metadata.ecore#//OscalElement/resolve/uri"/>
+        </genParameters>
+      </genOperations>
     </genClasses>
     <genClasses>
       <ecoreClass href="oscal-metadata.ecore#//Party"/>

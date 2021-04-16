@@ -20,6 +20,7 @@ import dsm.oscal.model.OscalCatalogCommon.ParameterConstraintTest;
 
 import dsm.oscal.model.OscalMetadata.ElementWithRemarks;
 import dsm.oscal.model.OscalMetadata.OscalMetadataPackage;
+import dsm.oscal.model.OscalMetadata.impl.OscalElementCustomImpl;
 import gov.nist.secauto.metaschema.datatypes.markup.MarkupMultiline;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -27,7 +28,6 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -43,7 +43,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *
  * @generated
  */
-public class ParameterConstraintTestImpl extends MinimalEObjectImpl.Container implements ParameterConstraintTest {
+public class ParameterConstraintTestImpl extends OscalElementCustomImpl implements ParameterConstraintTest {
 	/**
 	 * The default value of the '{@link #getRemarks() <em>Remarks</em>}' attribute.
 	 * <!-- begin-user-doc -->

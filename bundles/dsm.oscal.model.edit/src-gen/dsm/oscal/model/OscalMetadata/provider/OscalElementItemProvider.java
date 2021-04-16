@@ -13,16 +13,8 @@
  *  
  * 
  */
-package dsm.oscal.model.OscalCatalogCommon.provider;
+package dsm.oscal.model.OscalMetadata.provider;
 
-
-import dsm.oscal.model.OscalCatalogCommon.OscalCatalogCommonPackage;
-import dsm.oscal.model.OscalCatalogCommon.ParameterGuideline;
-
-import dsm.oscal.model.OscalMetadata.provider.OscalEditPlugin;
-
-import dsm.oscal.model.OscalMetadata.provider.OscalElementItemProvider;
-import gov.nist.secauto.metaschema.datatypes.markup.MarkupMultiline;
 
 import java.util.Collection;
 import java.util.List;
@@ -32,26 +24,35 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
+import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
+import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ViewerNotification;
+import org.eclipse.emf.edit.provider.IItemPropertySource;
+import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
+import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 
 /**
- * This is the item provider adapter for a {@link dsm.oscal.model.OscalCatalogCommon.ParameterGuideline} object.
+ * This is the item provider adapter for a {@link dsm.oscal.model.OscalMetadata.OscalElement} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ParameterGuidelineItemProvider 
-	extends OscalElementItemProvider {
+public class OscalElementItemProvider 
+	extends ItemProviderAdapter
+	implements
+		IEditingDomainItemProvider,
+		IStructuredItemContentProvider,
+		ITreeItemContentProvider,
+		IItemLabelProvider,
+		IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ParameterGuidelineItemProvider(AdapterFactory adapterFactory) {
+	public OscalElementItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -66,42 +67,8 @@ public class ParameterGuidelineItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addProsePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Prose feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addProsePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ParameterGuideline_prose_feature"),
-				 getString("_UI_ParameterGuideline_prose_description"),
-				 OscalCatalogCommonPackage.Literals.PARAMETER_GUIDELINE__PROSE,
-				 true,
-				 true,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This returns ParameterGuideline.gif.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/ParameterGuideline"));
 	}
 
 	/**
@@ -112,11 +79,7 @@ public class ParameterGuidelineItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		MarkupMultiline labelValue = ((ParameterGuideline)object).getProse();
-		String label = labelValue == null ? null : labelValue.toString();
-		return label == null || label.length() == 0 ?
-			getString("_UI_ParameterGuideline_type") :
-			getString("_UI_ParameterGuideline_type") + " " + label;
+		return getString("_UI_OscalElement_type");
 	}
 
 
@@ -130,12 +93,6 @@ public class ParameterGuidelineItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-
-		switch (notification.getFeatureID(ParameterGuideline.class)) {
-			case OscalCatalogCommonPackage.PARAMETER_GUIDELINE__PROSE:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-		}
 		super.notifyChanged(notification);
 	}
 

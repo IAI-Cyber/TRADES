@@ -207,6 +207,15 @@ public interface OscalCatalogCommonPackage extends EPackage {
 	int PARAMETER_FEATURE_COUNT = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 13;
 
 	/**
+	 * The operation id for the '<em>Resolve</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER___RESOLVE__URI = OscalMetadataPackage.OSCAL_ELEMENT___RESOLVE__URI;
+
+	/**
 	 * The number of operations of the '<em>Parameter</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -251,6 +260,15 @@ public interface OscalCatalogCommonPackage extends EPackage {
 	 * @ordered
 	 */
 	int PARAMETER_CONSTRAINT_FEATURE_COUNT = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Resolve</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER_CONSTRAINT___RESOLVE__URI = OscalMetadataPackage.OSCAL_ELEMENT___RESOLVE__URI;
 
 	/**
 	 * The number of operations of the '<em>Parameter Constraint</em>' class.
@@ -299,6 +317,15 @@ public interface OscalCatalogCommonPackage extends EPackage {
 	int PARAMETER_CONSTRAINT_TEST_FEATURE_COUNT = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
+	 * The operation id for the '<em>Resolve</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER_CONSTRAINT_TEST___RESOLVE__URI = OscalMetadataPackage.OSCAL_ELEMENT___RESOLVE__URI;
+
+	/**
 	 * The number of operations of the '<em>Parameter Constraint Test</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -334,6 +361,15 @@ public interface OscalCatalogCommonPackage extends EPackage {
 	 * @ordered
 	 */
 	int PARAMETER_GUIDELINE_FEATURE_COUNT = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Resolve</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER_GUIDELINE___RESOLVE__URI = OscalMetadataPackage.OSCAL_ELEMENT___RESOLVE__URI;
 
 	/**
 	 * The number of operations of the '<em>Parameter Guideline</em>' class.
@@ -380,6 +416,15 @@ public interface OscalCatalogCommonPackage extends EPackage {
 	 * @ordered
 	 */
 	int PARAMETER_SELECTION_FEATURE_COUNT = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Resolve</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER_SELECTION___RESOLVE__URI = OscalMetadataPackage.OSCAL_ELEMENT___RESOLVE__URI;
 
 	/**
 	 * The number of operations of the '<em>Parameter Selection</em>' class.
@@ -498,6 +543,15 @@ public interface OscalCatalogCommonPackage extends EPackage {
 	 * @ordered
 	 */
 	int PART_FEATURE_COUNT = OscalMetadataPackage.OSCAL_ELEMENT_FEATURE_COUNT + 10;
+
+	/**
+	 * The operation id for the '<em>Resolve</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PART___RESOLVE__URI = OscalMetadataPackage.OSCAL_ELEMENT___RESOLVE__URI;
 
 	/**
 	 * The number of operations of the '<em>Part</em>' class.
