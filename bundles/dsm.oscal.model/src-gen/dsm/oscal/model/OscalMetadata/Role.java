@@ -37,7 +37,6 @@ import gov.nist.secauto.metaschema.datatypes.markup.MarkupMultiline;
  * </p>
  * <ul>
  *   <li>{@link dsm.oscal.model.OscalMetadata.Role#getDescription <em>Description</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.Role#getId <em>Id</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.Role#getShortName <em>Short Name</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.Role#getTitle <em>Title</em>}</li>
  * </ul>
@@ -46,38 +45,7 @@ import gov.nist.secauto.metaschema.datatypes.markup.MarkupMultiline;
  * @model annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;AssemblyDefinition&gt;role'"
  * @generated
  */
-public interface Role extends OscalElement, AnnotationOwner, PropertyOwner, LinkOwner, ElementWithRemarks {
-	/**
-	 * Returns the value of the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * <h1>Role Identifier</h1>
-	 * <h2>Description</h2>
-	 * <p>A unique identifier for a specific role instance. This identifier's uniqueness is document scoped and is intended to be consistent for the same role across minor revisions of the document.</p>
-	 * <h2>Remarks</h2>
-	 * <p>OSCAL has defined a set of standardized roles for consistant use in OSCAL documents. This allows tools consuming OSCAL content to infer specific semantics when these roles are used. These roles are documented in the specific contexts of their use (e.g., responsible-party, responsible-role). When using such a role, it is necessary to define these roles in this list, which will then allow such a role to be referenced.</p>
-	 * 
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Id</em>' attribute.
-	 * @see #setId(String)
-	 * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getRole_Id()
-	 * @model required="true"
-	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;AssemblyDefinition&gt;role.&lt;FlagInstance&gt;id'"
-	 * @generated
-	 */
-	String getId();
-
-	/**
-	 * Sets the value of the '{@link dsm.oscal.model.OscalMetadata.Role#getId <em>Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Id</em>' attribute.
-	 * @see #getId()
-	 * @generated
-	 */
-	void setId(String value);
-
+public interface Role extends OscalElement, AnnotationOwner, PropertyOwner, LinkOwner, ElementWithRemarks, ElementWithId {
 	/**
 	 * Returns the value of the '<em><b>Title</b></em>' attribute.
 	 * <!-- begin-user-doc -->

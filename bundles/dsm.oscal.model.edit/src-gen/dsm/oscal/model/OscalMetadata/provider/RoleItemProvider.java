@@ -60,8 +60,8 @@ public class RoleItemProvider
 			super.getPropertyDescriptors(object);
 
 			addRemarksPropertyDescriptor(object);
-			addDescriptionPropertyDescriptor(object);
 			addIdPropertyDescriptor(object);
+			addDescriptionPropertyDescriptor(object);
 			addShortNamePropertyDescriptor(object);
 			addTitlePropertyDescriptor(object);
 		}
@@ -79,9 +79,9 @@ public class RoleItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Role_id_feature"),
-				 getString("_UI_Role_id_description"),
-				 OscalMetadataPackage.Literals.ROLE__ID,
+				 getString("_UI_ElementWithId_id_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ElementWithId_id_feature", "_UI_ElementWithId_type"),
+				 OscalMetadataPackage.Literals.ELEMENT_WITH_ID__ID,
 				 true,
 				 false,
 				 false,
@@ -220,8 +220,8 @@ public class RoleItemProvider
 			case OscalMetadataPackage.ROLE__PROPS:
 			case OscalMetadataPackage.ROLE__LINKS:
 			case OscalMetadataPackage.ROLE__REMARKS:
-			case OscalMetadataPackage.ROLE__DESCRIPTION:
 			case OscalMetadataPackage.ROLE__ID:
+			case OscalMetadataPackage.ROLE__DESCRIPTION:
 			case OscalMetadataPackage.ROLE__SHORT_NAME:
 			case OscalMetadataPackage.ROLE__TITLE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));

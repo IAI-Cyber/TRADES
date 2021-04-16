@@ -13,6 +13,7 @@
     <eSuperTypes href="oscal-metadata.ecore#//LinkOwner"/>
     <eSuperTypes href="oscal-metadata.ecore#//ElementWithRemarks"/>
     <eSuperTypes href="oscal-metadata.ecore#//ElementWithClazz"/>
+    <eSuperTypes href="oscal-metadata.ecore#//ElementWithId"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="constraints" upperBound="-1" eType="//ParameterConstraint" containment="true">
       <eAnnotations source="Metaschema">
         <details key="source" value="&lt;Metaschema>oscal-catalog-common.&lt;AssemblyDefinition>parameter-constraint"/>
@@ -31,15 +32,6 @@
       <eAnnotations source="Metaschema">
         <details key="source" value="&lt;Metaschema>oscal-catalog-common.&lt;AssemblyDefinition>parameter-guideline"/>
       </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1">
-      <eAnnotations source="Metaschema">
-        <details key="source" value="&lt;Metaschema>oscal-catalog-common.&lt;AssemblyDefinition>parameter.&lt;FlagInstance>id"/>
-      </eAnnotations>
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="&lt;h1>Parameter Identifier&lt;/h1>&#xA;&lt;h2>Description&lt;/h2>&#xA;&lt;p>A unique identifier for a specific parameter instance. This identifier's uniqueness is document scoped and is intended to be consistent for the same parameter across minor revisions of the document.&lt;/p>&#xA;"/>
-      </eAnnotations>
-      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="label">
       <eAnnotations source="Metaschema">
@@ -172,16 +164,10 @@
     <eSuperTypes href="oscal-metadata.ecore#//AnnotationOwner"/>
     <eSuperTypes href="oscal-metadata.ecore#//PropertyOwner"/>
     <eSuperTypes href="oscal-metadata.ecore#//LinkOwner"/>
+    <eSuperTypes href="oscal-metadata.ecore#//PartOwner"/>
+    <eSuperTypes href="oscal-metadata.ecore#//DocumentationComputer"/>
     <eSuperTypes href="oscal-metadata.ecore#//ElementWithClazz"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id">
-      <eAnnotations source="Metaschema">
-        <details key="source" value="&lt;Metaschema>oscal-catalog-common.&lt;AssemblyDefinition>part.&lt;FlagInstance>id"/>
-      </eAnnotations>
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="&lt;h1>Part Identifier&lt;/h1>&#xA;&lt;h2>Description&lt;/h2>&#xA;&lt;p>A unique identifier for a specific part instance. This identifier's uniqueness is document scoped and is intended to be consistent for the same part across minor revisions of the document.&lt;/p>&#xA;"/>
-      </eAnnotations>
-      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eStructuralFeatures>
+    <eSuperTypes href="oscal-metadata.ecore#//ElementWithId"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1">
       <eAnnotations source="Metaschema">
         <details key="source" value="&lt;Metaschema>oscal-catalog-common.&lt;AssemblyDefinition>part.&lt;FlagInstance>name"/>
@@ -199,11 +185,6 @@
         <details key="documentation" value="&lt;h1>Part Namespace&lt;/h1>&#xA;&lt;h2>Description&lt;/h2>&#xA;&lt;p>A namespace qualifying the part's name. This allows different organizations to associate distinct semantics with the same name.&lt;/p>&#xA;&lt;h2>Remarks&lt;/h2>&#xA;&lt;p>Provides a means to segment the value space for the &lt;code>name&lt;/code>, so that different organizations and individuals can assert control over the allowed names and associated text used in a part. This allows the semantics associated with a given name to be defined on an organization-by-organization basis.&lt;/p>&#xA;&lt;p>An organization MUST use a URI that they have control over. e.g., a domain registered to the organization in a URI, a registered uniform resource names (URN) namespace.&lt;/p>&#xA;&lt;p>When a &lt;code>ns&lt;/code> is not provided, its value should be assumed to be &lt;code>http://csrc.nist.gov/ns/oscal&lt;/code> and the name should be a name defined by the associated OSCAL model.&lt;/p>&#xA;"/>
       </eAnnotations>
       <eType xsi:type="ecore:EDataType" href="oscal-metadata.ecore#//UriType"/>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="parts" upperBound="-1" eType="//Part" containment="true">
-      <eAnnotations source="Metaschema">
-        <details key="source" value="&lt;Metaschema>oscal-catalog-common.&lt;AssemblyDefinition>part"/>
-      </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="prose">
       <eAnnotations source="Metaschema">

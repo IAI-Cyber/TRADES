@@ -92,6 +92,7 @@ public class OscalMetadataFactoryImpl extends EFactoryImpl implements OscalMetad
 			case OscalMetadataPackage.BASE64: return createBase64();
 			case OscalMetadataPackage.DOCUMENT_ID: return createDocumentId();
 			case OscalMetadataPackage.ELEMENT_WITH_CLAZZ: return createElementWithClazz();
+			case OscalMetadataPackage.ELEMENT_WITH_ID: return createElementWithId();
 			case OscalMetadataPackage.ELEMENT_WITH_REMARKS: return createElementWithRemarks();
 			case OscalMetadataPackage.ELEMENT_WITH_VALUE: return createElementWithValue();
 			case OscalMetadataPackage.EXTERNAL_ID: return createExternalId();
@@ -100,6 +101,7 @@ public class OscalMetadataFactoryImpl extends EFactoryImpl implements OscalMetad
 			case OscalMetadataPackage.LINK_OWNER: return createLinkOwner();
 			case OscalMetadataPackage.LOCATION: return createLocation();
 			case OscalMetadataPackage.METADATA: return createMetadata();
+			case OscalMetadataPackage.PART_OWNER: return createPartOwner();
 			case OscalMetadataPackage.PARTY: return createParty();
 			case OscalMetadataPackage.PROPERTY: return createProperty();
 			case OscalMetadataPackage.PROPERTY_OWNER: return createPropertyOwner();
@@ -277,6 +279,17 @@ public class OscalMetadataFactoryImpl extends EFactoryImpl implements OscalMetad
 	 * @generated
 	 */
 	@Override
+	public ElementWithId createElementWithId() {
+		ElementWithIdImpl elementWithId = new ElementWithIdImpl();
+		return elementWithId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public ElementWithRemarks createElementWithRemarks() {
 		ElementWithRemarksImpl elementWithRemarks = new ElementWithRemarksImpl();
 		return elementWithRemarks;
@@ -357,6 +370,17 @@ public class OscalMetadataFactoryImpl extends EFactoryImpl implements OscalMetad
 	public Metadata createMetadata() {
 		MetadataImpl metadata = new MetadataImpl();
 		return metadata;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public PartOwner createPartOwner() {
+		PartOwnerCustomImpl partOwner = new PartOwnerCustomImpl();
+		return partOwner;
 	}
 
 	/**

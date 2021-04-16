@@ -135,9 +135,21 @@ public class OscalMetadataSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case OscalMetadataPackage.DOCUMENTATION_COMPUTER: {
+				DocumentationComputer documentationComputer = (DocumentationComputer)theEObject;
+				T result = caseDocumentationComputer(documentationComputer);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case OscalMetadataPackage.ELEMENT_WITH_CLAZZ: {
 				ElementWithClazz elementWithClazz = (ElementWithClazz)theEObject;
 				T result = caseElementWithClazz(elementWithClazz);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case OscalMetadataPackage.ELEMENT_WITH_ID: {
+				ElementWithId elementWithId = (ElementWithId)theEObject;
+				T result = caseElementWithId(elementWithId);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -208,6 +220,13 @@ public class OscalMetadataSwitch<T> extends Switch<T> {
 			case OscalMetadataPackage.OSCAL_ELEMENT: {
 				OscalElement oscalElement = (OscalElement)theEObject;
 				T result = caseOscalElement(oscalElement);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case OscalMetadataPackage.PART_OWNER: {
+				PartOwner partOwner = (PartOwner)theEObject;
+				T result = casePartOwner(partOwner);
+				if (result == null) result = caseDocumentationComputer(partOwner);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -296,6 +315,7 @@ public class OscalMetadataSwitch<T> extends Switch<T> {
 				if (result == null) result = casePropertyOwner(role);
 				if (result == null) result = caseLinkOwner(role);
 				if (result == null) result = caseElementWithRemarks(role);
+				if (result == null) result = caseElementWithId(role);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -408,6 +428,21 @@ public class OscalMetadataSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Documentation Computer</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Documentation Computer</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDocumentationComputer(DocumentationComputer object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Element With Clazz</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -419,6 +454,21 @@ public class OscalMetadataSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseElementWithClazz(ElementWithClazz object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Element With Id</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Element With Id</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseElementWithId(ElementWithId object) {
 		return null;
 	}
 
@@ -704,6 +754,21 @@ public class OscalMetadataSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseOscalElement(OscalElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Part Owner</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Part Owner</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePartOwner(PartOwner object) {
 		return null;
 	}
 

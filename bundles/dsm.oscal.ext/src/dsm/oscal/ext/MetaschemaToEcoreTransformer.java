@@ -194,17 +194,7 @@ public class MetaschemaToEcoreTransformer {
 			importSchema(this.getClass().getResource(schemaPath).toURI(), modelFolder);
 		}
 
-		// Make all EClass inherits from OSCAlElements
-		EClass oscalElement = EcoreFactory.eINSTANCE.createEClass();
-		oscalElement.setName("OscalElement");
-		oscalElement.setAbstract(true);
-		EOperation resolveOperation = createResolveOperation();
-		oscalElement.getEOperations().add(resolveOperation);
-		rootEPackage.getEClassifiers().add(oscalElement);
 
-		for (EClass eClass : defToEClass.values()) {
-			eClass.getESuperTypes().add(oscalElement);
-		}
 
 		refactorer.init(rootEPackage);
 		refactorer.refactorSemantic(defToEClass.values());
@@ -224,18 +214,6 @@ public class MetaschemaToEcoreTransformer {
 		
 	}
 
-	public EOperation createResolveOperation() {
-		EOperation resolveOperation = EcoreFactory.eINSTANCE.createEOperation();
-		resolveOperation.setName("resolve");
-		resolveOperation.setEType(EcorePackage.eINSTANCE.getEObject());
-		resolveOperation.setLowerBound(0);
-		resolveOperation.setUpperBound(1);
-		EParameter param = EcoreFactory.eINSTANCE.createEParameter();
-		param.setName("uri");
-		param.setEType(dataTypes.get(DataType.URI));
-		resolveOperation.getEParameters().add(param);
-		return resolveOperation;
-	}
 
 	public void sortByName() {
 		for (EPackage ePack : schemaToPackage.values()) {

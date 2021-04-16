@@ -95,7 +95,7 @@ public class OscalCatalogFactoryImpl extends EFactoryImpl implements OscalCatalo
 	 */
 	@Override
 	public Control createControl() {
-		ControlImpl control = new ControlImpl();
+		ControlCustomImpl control = new ControlCustomImpl();
 		return control;
 	}
 
@@ -106,7 +106,7 @@ public class OscalCatalogFactoryImpl extends EFactoryImpl implements OscalCatalo
 	 */
 	@Override
 	public Group createGroup() {
-		GroupImpl group = new GroupImpl();
+		GroupCustomImpl group = new GroupCustomImpl();
 		return group;
 	}
 

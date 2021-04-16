@@ -125,10 +125,22 @@
         <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//DocumentId/scheme"/>
       </genFeatures>
     </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="oscal-metadata.ecore#//DocumentationComputer"/>
+      <genOperations>
+        <ecoreOperation href="oscal-metadata.ecore#//DocumentationComputer/computeDocumentation"/>
+      </genOperations>
+    </genClasses>
     <genClasses>
       <ecoreClass href="oscal-metadata.ecore#//ElementWithClazz"/>
       <genFeatures createChild="false">
         <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//ElementWithClazz/clazz"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="oscal-metadata.ecore#//ElementWithId"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//ElementWithId/id"/>
       </genFeatures>
     </genClasses>
     <genClasses>
@@ -240,6 +252,12 @@
       </genOperations>
     </genClasses>
     <genClasses>
+      <ecoreClass href="oscal-metadata.ecore#//PartOwner"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="oscal-metadata.ecore#//PartOwner/parts"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
       <ecoreClass href="oscal-metadata.ecore#//Party"/>
       <genFeatures property="None" children="true" createChild="true">
         <ecoreFeature xsi:type="ecore:EReference" href="oscal-metadata.ecore#//Party/addresses"/>
@@ -343,9 +361,6 @@
       <genFeatures createChild="false" propertyDescription="\nRole Description\n\nDescription\n\nA summary of the role's purpose and associated responsibilities.\n" propertyMultiLine="true">
         <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//Role/description"/>
       </genFeatures>
-      <genFeatures createChild="false" propertyDescription="\nRole Identifier\n\nDescription\n\nA unique identifier for a specific role instance. This identifier's uniqueness \nis document scoped and is intended to be consistent for the same role across \nminor revisions of the document.\n\nRemarks\n\nOSCAL has defined a set of standardized roles for consistant use in OSCAL \ndocuments. This allows tools consuming OSCAL content to infer specific \nsemantics when these roles are used. These roles are documented in the specific \ncontexts of their use (e.g., responsible-party, responsible-role). When using \nsuch a role, it is necessary to define these roles in this list, which will \nthen allow such a role to be referenced.\n">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//Role/id"/>
-      </genFeatures>
       <genFeatures createChild="false" propertyDescription="\nRole Short Name\n\nDescription\n\nA short common name, abbreviation, or acronym for the role.\n">
         <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//Role/shortName"/>
       </genFeatures>
@@ -378,9 +393,6 @@
       </genFeatures>
       <genFeatures property="None" children="true" createChild="true">
         <ecoreFeature xsi:type="ecore:EReference" href="oscal-catalog-common.ecore#//Parameter/guidelines"/>
-      </genFeatures>
-      <genFeatures createChild="false" propertyDescription="\nParameter Identifier\n\nDescription\n\nA unique identifier for a specific parameter instance. This identifier's \nuniqueness is document scoped and is intended to be consistent for the same \nparameter across minor revisions of the document.\n">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-catalog-common.ecore#//Parameter/id"/>
       </genFeatures>
       <genFeatures createChild="false" propertyDescription="\nParameter Label\n\nDescription\n\nA short, placeholder name for the parameter, which can be used as a subsitute \nfor avalue if no value is assigned.\n\nRemarks\n\nThe label value should be suitable for inline display in a rendered catalog.\n">
         <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-catalog-common.ecore#//Parameter/label"/>
@@ -427,17 +439,11 @@
     </genClasses>
     <genClasses>
       <ecoreClass href="oscal-catalog-common.ecore#//Part"/>
-      <genFeatures createChild="false" propertyDescription="\nPart Identifier\n\nDescription\n\nA unique identifier for a specific part instance. This identifier's uniqueness \nis document scoped and is intended to be consistent for the same part across \nminor revisions of the document.\n">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-catalog-common.ecore#//Part/id"/>
-      </genFeatures>
       <genFeatures createChild="false" propertyDescription="\nPart Name\n\nDescription\n\nA textual label that uniquely identifies the part's semantic type.\n">
         <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-catalog-common.ecore#//Part/name"/>
       </genFeatures>
       <genFeatures createChild="false" propertyDescription="\nPart Namespace\n\nDescription\n\nA namespace qualifying the part's name. This allows different organizations to \nassociate distinct semantics with the same name.\n\nRemarks\n\nProvides a means to segment the value space for the name, so that different \norganizations and individuals can assert control over the allowed names and \nassociated text used in a part. This allows the semantics associated with a \ngiven name to be defined on an organization-by-organization basis.\n\nAn organization MUST use a URI that they have control over. e.g., a domain \nregistered to the organization in a URI, a registered uniform resource names \n(URN) namespace.\n\nWhen a ns is not provided, its value should be assumed to be \nhttp://csrc.nist.gov/ns/oscal and the name should be a name defined by the \nassociated OSCAL model.\n">
         <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-catalog-common.ecore#//Part/ns"/>
-      </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-catalog-common.ecore#//Part/parts"/>
       </genFeatures>
       <genFeatures createChild="false" propertyDescription="\nPart Text\n\nDescription\n\nPermits multiple paragraphs, lists, tables etc.\n" propertyMultiLine="true">
         <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-catalog-common.ecore#//Part/prose"/>
@@ -472,14 +478,8 @@
       <genFeatures property="None" children="true" createChild="true">
         <ecoreFeature xsi:type="ecore:EReference" href="oscal-catalog.ecore#//Control/controls"/>
       </genFeatures>
-      <genFeatures createChild="false" propertyDescription="\nControl Identifier\n\nDescription\n\nA unique identifier for a specific control instance that can be used to \nreference the control in other OSCAL documents. This identifier's uniqueness is \ndocument scoped and is intended to be consistent for the same control across \nminor revisions of the document.\n">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-catalog.ecore#//Control/id"/>
-      </genFeatures>
       <genFeatures property="None" children="true" createChild="true">
         <ecoreFeature xsi:type="ecore:EReference" href="oscal-catalog.ecore#//Control/params"/>
-      </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-catalog.ecore#//Control/parts"/>
       </genFeatures>
       <genFeatures createChild="false" propertyDescription="\nControl Title\n\nDescription\n\nA name given to the control, which may be used by a tool for display and \nnavigation.\n">
         <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-catalog.ecore#//Control/title"/>
@@ -493,14 +493,8 @@
       <genFeatures property="None" children="true" createChild="true">
         <ecoreFeature xsi:type="ecore:EReference" href="oscal-catalog.ecore#//Group/groups"/>
       </genFeatures>
-      <genFeatures createChild="false" propertyDescription="\nGroup Identifier\n\nDescription\n\nA unique identifier for a specific group instance that can be used to \nreference the group within this and in other OSCAL documents. This identifier's \nuniqueness is document scoped and is intended to be consistent for the same \ngroup across minor revisions of the document.\n">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-catalog.ecore#//Group/id"/>
-      </genFeatures>
       <genFeatures property="None" children="true" createChild="true">
         <ecoreFeature xsi:type="ecore:EReference" href="oscal-catalog.ecore#//Group/params"/>
-      </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-catalog.ecore#//Group/parts"/>
       </genFeatures>
       <genFeatures createChild="false" propertyDescription="\nGroup Title\n\nDescription\n\nA name given to the group, which may be used by a tool for display and \nnavigation.\n">
         <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-catalog.ecore#//Group/title"/>

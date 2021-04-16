@@ -18,10 +18,13 @@ package dsm.oscal.model.OscalCatalogCommon.util;
 import dsm.oscal.model.OscalCatalogCommon.*;
 
 import dsm.oscal.model.OscalMetadata.AnnotationOwner;
+import dsm.oscal.model.OscalMetadata.DocumentationComputer;
 import dsm.oscal.model.OscalMetadata.ElementWithClazz;
+import dsm.oscal.model.OscalMetadata.ElementWithId;
 import dsm.oscal.model.OscalMetadata.ElementWithRemarks;
 import dsm.oscal.model.OscalMetadata.LinkOwner;
 import dsm.oscal.model.OscalMetadata.OscalElement;
+import dsm.oscal.model.OscalMetadata.PartOwner;
 import dsm.oscal.model.OscalMetadata.PropertyOwner;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -94,6 +97,7 @@ public class OscalCatalogCommonSwitch<T> extends Switch<T> {
 				if (result == null) result = caseLinkOwner(parameter);
 				if (result == null) result = caseElementWithRemarks(parameter);
 				if (result == null) result = caseElementWithClazz(parameter);
+				if (result == null) result = caseElementWithId(parameter);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -133,7 +137,10 @@ public class OscalCatalogCommonSwitch<T> extends Switch<T> {
 				if (result == null) result = caseAnnotationOwner(part);
 				if (result == null) result = casePropertyOwner(part);
 				if (result == null) result = caseLinkOwner(part);
+				if (result == null) result = casePartOwner(part);
 				if (result == null) result = caseElementWithClazz(part);
+				if (result == null) result = caseElementWithId(part);
+				if (result == null) result = caseDocumentationComputer(part);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -318,6 +325,51 @@ public class OscalCatalogCommonSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseElementWithClazz(ElementWithClazz object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Element With Id</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Element With Id</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseElementWithId(ElementWithId object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Documentation Computer</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Documentation Computer</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDocumentationComputer(DocumentationComputer object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Part Owner</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Part Owner</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePartOwner(PartOwner object) {
 		return null;
 	}
 

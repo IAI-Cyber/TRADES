@@ -16,11 +16,12 @@
 package dsm.oscal.model.OscalCatalog;
 
 import dsm.oscal.model.OscalCatalogCommon.Parameter;
-import dsm.oscal.model.OscalCatalogCommon.Part;
 import dsm.oscal.model.OscalMetadata.AnnotationOwner;
 import dsm.oscal.model.OscalMetadata.ElementWithClazz;
+import dsm.oscal.model.OscalMetadata.ElementWithId;
 import dsm.oscal.model.OscalMetadata.LinkOwner;
 import dsm.oscal.model.OscalMetadata.OscalElement;
+import dsm.oscal.model.OscalMetadata.PartOwner;
 import dsm.oscal.model.OscalMetadata.PropertyOwner;
 import gov.nist.secauto.metaschema.datatypes.markup.MarkupLine;
 
@@ -47,9 +48,7 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link dsm.oscal.model.OscalCatalog.Group#getControls <em>Controls</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalog.Group#getGroups <em>Groups</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalCatalog.Group#getId <em>Id</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalog.Group#getParams <em>Params</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalCatalog.Group#getParts <em>Parts</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalog.Group#getTitle <em>Title</em>}</li>
  * </ul>
  *
@@ -57,35 +56,7 @@ import org.eclipse.emf.common.util.EList;
  * @model annotation="Metaschema source='&lt;Metaschema&gt;oscal-catalog.&lt;AssemblyDefinition&gt;group'"
  * @generated
  */
-public interface Group extends OscalElement, AnnotationOwner, PropertyOwner, LinkOwner, ElementWithClazz {
-	/**
-	 * Returns the value of the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * <h1>Group Identifier</h1>
-	 * <h2>Description</h2>
-	 * <p>A unique identifier for a specific group instance that can be used to reference the group within this and in other OSCAL documents. This identifier's uniqueness is document scoped and is intended to be consistent for the same group across minor revisions of the document.</p>
-	 * 
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Id</em>' attribute.
-	 * @see #setId(String)
-	 * @see dsm.oscal.model.OscalCatalog.OscalCatalogPackage#getGroup_Id()
-	 * @model annotation="Metaschema source='&lt;Metaschema&gt;oscal-catalog.&lt;AssemblyDefinition&gt;group.&lt;FlagInstance&gt;id'"
-	 * @generated
-	 */
-	String getId();
-
-	/**
-	 * Sets the value of the '{@link dsm.oscal.model.OscalCatalog.Group#getId <em>Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Id</em>' attribute.
-	 * @see #getId()
-	 * @generated
-	 */
-	void setId(String value);
-
+public interface Group extends OscalElement, AnnotationOwner, PropertyOwner, LinkOwner, PartOwner, ElementWithClazz, ElementWithId {
 	/**
 	 * Returns the value of the '<em><b>Title</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -127,19 +98,6 @@ public interface Group extends OscalElement, AnnotationOwner, PropertyOwner, Lin
 	 * @generated
 	 */
 	EList<Parameter> getParams();
-
-	/**
-	 * Returns the value of the '<em><b>Parts</b></em>' containment reference list.
-	 * The list contents are of type {@link dsm.oscal.model.OscalCatalogCommon.Part}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Parts</em>' containment reference list.
-	 * @see dsm.oscal.model.OscalCatalog.OscalCatalogPackage#getGroup_Parts()
-	 * @model containment="true"
-	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-catalog-common.&lt;AssemblyDefinition&gt;part'"
-	 * @generated
-	 */
-	EList<Part> getParts();
 
 	/**
 	 * Returns the value of the '<em><b>Controls</b></em>' containment reference list.

@@ -90,9 +90,9 @@ public class ControlItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Control_id_feature"),
-				 getString("_UI_Control_id_description"),
-				 OscalCatalogPackage.Literals.CONTROL__ID,
+				 getString("_UI_ElementWithId_id_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ElementWithId_id_feature", "_UI_ElementWithId_type"),
+				 OscalMetadataPackage.Literals.ELEMENT_WITH_ID__ID,
 				 true,
 				 false,
 				 false,
@@ -157,9 +157,9 @@ public class ControlItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
+			childrenFeatures.add(OscalMetadataPackage.Literals.PART_OWNER__PARTS);
 			childrenFeatures.add(OscalCatalogPackage.Literals.CONTROL__CONTROLS);
 			childrenFeatures.add(OscalCatalogPackage.Literals.CONTROL__PARAMS);
-			childrenFeatures.add(OscalCatalogPackage.Literals.CONTROL__PARTS);
 		}
 		return childrenFeatures;
 	}
@@ -223,9 +223,9 @@ public class ControlItemProvider
 			case OscalCatalogPackage.CONTROL__TITLE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
+			case OscalCatalogPackage.CONTROL__PARTS:
 			case OscalCatalogPackage.CONTROL__CONTROLS:
 			case OscalCatalogPackage.CONTROL__PARAMS:
-			case OscalCatalogPackage.CONTROL__PARTS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -260,6 +260,11 @@ public class ControlItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
+				(OscalMetadataPackage.Literals.PART_OWNER__PARTS,
+				 OscalCatalogCommonFactory.eINSTANCE.createPart()));
+
+		newChildDescriptors.add
+			(createChildParameter
 				(OscalCatalogPackage.Literals.CONTROL__CONTROLS,
 				 OscalCatalogFactory.eINSTANCE.createControl()));
 
@@ -267,11 +272,6 @@ public class ControlItemProvider
 			(createChildParameter
 				(OscalCatalogPackage.Literals.CONTROL__PARAMS,
 				 OscalCatalogCommonFactory.eINSTANCE.createParameter()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OscalCatalogPackage.Literals.CONTROL__PARTS,
-				 OscalCatalogCommonFactory.eINSTANCE.createPart()));
 	}
 
 	/**

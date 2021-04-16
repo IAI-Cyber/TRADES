@@ -90,9 +90,9 @@ public class GroupItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Group_id_feature"),
-				 getString("_UI_Group_id_description"),
-				 OscalCatalogPackage.Literals.GROUP__ID,
+				 getString("_UI_ElementWithId_id_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ElementWithId_id_feature", "_UI_ElementWithId_type"),
+				 OscalMetadataPackage.Literals.ELEMENT_WITH_ID__ID,
 				 true,
 				 false,
 				 false,
@@ -157,10 +157,10 @@ public class GroupItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
+			childrenFeatures.add(OscalMetadataPackage.Literals.PART_OWNER__PARTS);
 			childrenFeatures.add(OscalCatalogPackage.Literals.GROUP__CONTROLS);
 			childrenFeatures.add(OscalCatalogPackage.Literals.GROUP__GROUPS);
 			childrenFeatures.add(OscalCatalogPackage.Literals.GROUP__PARAMS);
-			childrenFeatures.add(OscalCatalogPackage.Literals.GROUP__PARTS);
 		}
 		return childrenFeatures;
 	}
@@ -224,10 +224,10 @@ public class GroupItemProvider
 			case OscalCatalogPackage.GROUP__TITLE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
+			case OscalCatalogPackage.GROUP__PARTS:
 			case OscalCatalogPackage.GROUP__CONTROLS:
 			case OscalCatalogPackage.GROUP__GROUPS:
 			case OscalCatalogPackage.GROUP__PARAMS:
-			case OscalCatalogPackage.GROUP__PARTS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -262,6 +262,11 @@ public class GroupItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
+				(OscalMetadataPackage.Literals.PART_OWNER__PARTS,
+				 OscalCatalogCommonFactory.eINSTANCE.createPart()));
+
+		newChildDescriptors.add
+			(createChildParameter
 				(OscalCatalogPackage.Literals.GROUP__CONTROLS,
 				 OscalCatalogFactory.eINSTANCE.createControl()));
 
@@ -274,11 +279,6 @@ public class GroupItemProvider
 			(createChildParameter
 				(OscalCatalogPackage.Literals.GROUP__PARAMS,
 				 OscalCatalogCommonFactory.eINSTANCE.createParameter()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OscalCatalogPackage.Literals.GROUP__PARTS,
-				 OscalCatalogCommonFactory.eINSTANCE.createPart()));
 	}
 
 	/**

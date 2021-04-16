@@ -109,8 +109,16 @@ public class OscalMetadataAdapterFactory extends AdapterFactoryImpl {
 				return createDocumentIdAdapter();
 			}
 			@Override
+			public Adapter caseDocumentationComputer(DocumentationComputer object) {
+				return createDocumentationComputerAdapter();
+			}
+			@Override
 			public Adapter caseElementWithClazz(ElementWithClazz object) {
 				return createElementWithClazzAdapter();
+			}
+			@Override
+			public Adapter caseElementWithId(ElementWithId object) {
+				return createElementWithIdAdapter();
 			}
 			@Override
 			public Adapter caseElementWithRemarks(ElementWithRemarks object) {
@@ -147,6 +155,10 @@ public class OscalMetadataAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseOscalElement(OscalElement object) {
 				return createOscalElementAdapter();
+			}
+			@Override
+			public Adapter casePartOwner(PartOwner object) {
+				return createPartOwnerAdapter();
 			}
 			@Override
 			public Adapter caseParty(Party object) {
@@ -297,6 +309,20 @@ public class OscalMetadataAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link dsm.oscal.model.OscalMetadata.DocumentationComputer <em>Documentation Computer</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see dsm.oscal.model.OscalMetadata.DocumentationComputer
+	 * @generated
+	 */
+	public Adapter createDocumentationComputerAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link dsm.oscal.model.OscalMetadata.ElementWithClazz <em>Element With Clazz</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -307,6 +333,20 @@ public class OscalMetadataAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createElementWithClazzAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link dsm.oscal.model.OscalMetadata.ElementWithId <em>Element With Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see dsm.oscal.model.OscalMetadata.ElementWithId
+	 * @generated
+	 */
+	public Adapter createElementWithIdAdapter() {
 		return null;
 	}
 
@@ -573,6 +613,20 @@ public class OscalMetadataAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createOscalElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link dsm.oscal.model.OscalMetadata.PartOwner <em>Part Owner</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see dsm.oscal.model.OscalMetadata.PartOwner
+	 * @generated
+	 */
+	public Adapter createPartOwnerAdapter() {
 		return null;
 	}
 

@@ -98,6 +98,15 @@ public interface OscalMetadataFactory extends EFactory {
 	ElementWithClazz createElementWithClazz();
 
 	/**
+	 * Returns a new object of class '<em>Element With Id</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Element With Id</em>'.
+	 * @generated
+	 */
+	ElementWithId createElementWithId();
+
+	/**
 	 * Returns a new object of class '<em>Element With Remarks</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -168,6 +177,15 @@ public interface OscalMetadataFactory extends EFactory {
 	 * @generated
 	 */
 	Metadata createMetadata();
+
+	/**
+	 * Returns a new object of class '<em>Part Owner</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Part Owner</em>'.
+	 * @generated
+	 */
+	PartOwner createPartOwner();
 
 	/**
 	 * Returns a new object of class '<em>Party</em>'.

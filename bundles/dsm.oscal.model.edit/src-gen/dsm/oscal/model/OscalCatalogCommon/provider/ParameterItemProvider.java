@@ -72,8 +72,8 @@ public class ParameterItemProvider
 
 			addRemarksPropertyDescriptor(object);
 			addClazzPropertyDescriptor(object);
-			addDependsOnPropertyDescriptor(object);
 			addIdPropertyDescriptor(object);
+			addDependsOnPropertyDescriptor(object);
 			addLabelPropertyDescriptor(object);
 			addUsagePropertyDescriptor(object);
 			addValuesPropertyDescriptor(object);
@@ -92,9 +92,9 @@ public class ParameterItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Parameter_id_feature"),
-				 getString("_UI_Parameter_id_description"),
-				 OscalCatalogCommonPackage.Literals.PARAMETER__ID,
+				 getString("_UI_ElementWithId_id_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ElementWithId_id_feature", "_UI_ElementWithId_type"),
+				 OscalMetadataPackage.Literals.ELEMENT_WITH_ID__ID,
 				 true,
 				 false,
 				 false,
@@ -310,8 +310,8 @@ public class ParameterItemProvider
 			case OscalCatalogCommonPackage.PARAMETER__LINKS:
 			case OscalCatalogCommonPackage.PARAMETER__REMARKS:
 			case OscalCatalogCommonPackage.PARAMETER__CLAZZ:
-			case OscalCatalogCommonPackage.PARAMETER__DEPENDS_ON:
 			case OscalCatalogCommonPackage.PARAMETER__ID:
+			case OscalCatalogCommonPackage.PARAMETER__DEPENDS_ON:
 			case OscalCatalogCommonPackage.PARAMETER__LABEL:
 			case OscalCatalogCommonPackage.PARAMETER__USAGE:
 			case OscalCatalogCommonPackage.PARAMETER__VALUES:

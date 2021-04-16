@@ -24,6 +24,7 @@ import dsm.oscal.model.OscalCatalogCommon.ParameterSelection;
 import dsm.oscal.model.OscalMetadata.Annotation;
 import dsm.oscal.model.OscalMetadata.AnnotationOwner;
 import dsm.oscal.model.OscalMetadata.ElementWithClazz;
+import dsm.oscal.model.OscalMetadata.ElementWithId;
 import dsm.oscal.model.OscalMetadata.ElementWithRemarks;
 import dsm.oscal.model.OscalMetadata.Link;
 import dsm.oscal.model.OscalMetadata.LinkOwner;
@@ -63,10 +64,10 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dsm.oscal.model.OscalCatalogCommon.impl.ParameterImpl#getLinks <em>Links</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalogCommon.impl.ParameterImpl#getRemarks <em>Remarks</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalogCommon.impl.ParameterImpl#getClazz <em>Clazz</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalCatalogCommon.impl.ParameterImpl#getId <em>Id</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalogCommon.impl.ParameterImpl#getConstraints <em>Constraints</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalogCommon.impl.ParameterImpl#getDependsOn <em>Depends On</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalogCommon.impl.ParameterImpl#getGuidelines <em>Guidelines</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalCatalogCommon.impl.ParameterImpl#getId <em>Id</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalogCommon.impl.ParameterImpl#getLabel <em>Label</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalogCommon.impl.ParameterImpl#getSelect <em>Select</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalogCommon.impl.ParameterImpl#getUsage <em>Usage</em>}</li>
@@ -147,6 +148,26 @@ public class ParameterImpl extends OscalElementCustomImpl implements Parameter {
 	protected String clazz = CLAZZ_EDEFAULT;
 
 	/**
+	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String ID_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected String id = ID_EDEFAULT;
+
+	/**
 	 * The cached value of the '{@link #getConstraints() <em>Constraints</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -185,26 +206,6 @@ public class ParameterImpl extends OscalElementCustomImpl implements Parameter {
 	 * @ordered
 	 */
 	protected EList<ParameterGuideline> guidelines;
-
-	/**
-	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String id = ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getLabel() <em>Label</em>}' attribute.
@@ -588,14 +589,14 @@ public class ParameterImpl extends OscalElementCustomImpl implements Parameter {
 				return getRemarks();
 			case OscalCatalogCommonPackage.PARAMETER__CLAZZ:
 				return getClazz();
+			case OscalCatalogCommonPackage.PARAMETER__ID:
+				return getId();
 			case OscalCatalogCommonPackage.PARAMETER__CONSTRAINTS:
 				return getConstraints();
 			case OscalCatalogCommonPackage.PARAMETER__DEPENDS_ON:
 				return getDependsOn();
 			case OscalCatalogCommonPackage.PARAMETER__GUIDELINES:
 				return getGuidelines();
-			case OscalCatalogCommonPackage.PARAMETER__ID:
-				return getId();
 			case OscalCatalogCommonPackage.PARAMETER__LABEL:
 				return getLabel();
 			case OscalCatalogCommonPackage.PARAMETER__SELECT:
@@ -635,6 +636,9 @@ public class ParameterImpl extends OscalElementCustomImpl implements Parameter {
 			case OscalCatalogCommonPackage.PARAMETER__CLAZZ:
 				setClazz((String)newValue);
 				return;
+			case OscalCatalogCommonPackage.PARAMETER__ID:
+				setId((String)newValue);
+				return;
 			case OscalCatalogCommonPackage.PARAMETER__CONSTRAINTS:
 				getConstraints().clear();
 				getConstraints().addAll((Collection<? extends ParameterConstraint>)newValue);
@@ -645,9 +649,6 @@ public class ParameterImpl extends OscalElementCustomImpl implements Parameter {
 			case OscalCatalogCommonPackage.PARAMETER__GUIDELINES:
 				getGuidelines().clear();
 				getGuidelines().addAll((Collection<? extends ParameterGuideline>)newValue);
-				return;
-			case OscalCatalogCommonPackage.PARAMETER__ID:
-				setId((String)newValue);
 				return;
 			case OscalCatalogCommonPackage.PARAMETER__LABEL:
 				setLabel((MarkupLine)newValue);
@@ -689,6 +690,9 @@ public class ParameterImpl extends OscalElementCustomImpl implements Parameter {
 			case OscalCatalogCommonPackage.PARAMETER__CLAZZ:
 				setClazz(CLAZZ_EDEFAULT);
 				return;
+			case OscalCatalogCommonPackage.PARAMETER__ID:
+				setId(ID_EDEFAULT);
+				return;
 			case OscalCatalogCommonPackage.PARAMETER__CONSTRAINTS:
 				getConstraints().clear();
 				return;
@@ -697,9 +701,6 @@ public class ParameterImpl extends OscalElementCustomImpl implements Parameter {
 				return;
 			case OscalCatalogCommonPackage.PARAMETER__GUIDELINES:
 				getGuidelines().clear();
-				return;
-			case OscalCatalogCommonPackage.PARAMETER__ID:
-				setId(ID_EDEFAULT);
 				return;
 			case OscalCatalogCommonPackage.PARAMETER__LABEL:
 				setLabel(LABEL_EDEFAULT);
@@ -735,14 +736,14 @@ public class ParameterImpl extends OscalElementCustomImpl implements Parameter {
 				return REMARKS_EDEFAULT == null ? remarks != null : !REMARKS_EDEFAULT.equals(remarks);
 			case OscalCatalogCommonPackage.PARAMETER__CLAZZ:
 				return CLAZZ_EDEFAULT == null ? clazz != null : !CLAZZ_EDEFAULT.equals(clazz);
+			case OscalCatalogCommonPackage.PARAMETER__ID:
+				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
 			case OscalCatalogCommonPackage.PARAMETER__CONSTRAINTS:
 				return constraints != null && !constraints.isEmpty();
 			case OscalCatalogCommonPackage.PARAMETER__DEPENDS_ON:
 				return DEPENDS_ON_EDEFAULT == null ? dependsOn != null : !DEPENDS_ON_EDEFAULT.equals(dependsOn);
 			case OscalCatalogCommonPackage.PARAMETER__GUIDELINES:
 				return guidelines != null && !guidelines.isEmpty();
-			case OscalCatalogCommonPackage.PARAMETER__ID:
-				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
 			case OscalCatalogCommonPackage.PARAMETER__LABEL:
 				return LABEL_EDEFAULT == null ? label != null : !LABEL_EDEFAULT.equals(label);
 			case OscalCatalogCommonPackage.PARAMETER__SELECT:
@@ -792,6 +793,12 @@ public class ParameterImpl extends OscalElementCustomImpl implements Parameter {
 				default: return -1;
 			}
 		}
+		if (baseClass == ElementWithId.class) {
+			switch (derivedFeatureID) {
+				case OscalCatalogCommonPackage.PARAMETER__ID: return OscalMetadataPackage.ELEMENT_WITH_ID__ID;
+				default: return -1;
+			}
+		}
 		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
 	}
 
@@ -832,6 +839,12 @@ public class ParameterImpl extends OscalElementCustomImpl implements Parameter {
 				default: return -1;
 			}
 		}
+		if (baseClass == ElementWithId.class) {
+			switch (baseFeatureID) {
+				case OscalMetadataPackage.ELEMENT_WITH_ID__ID: return OscalCatalogCommonPackage.PARAMETER__ID;
+				default: return -1;
+			}
+		}
 		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
@@ -849,10 +862,10 @@ public class ParameterImpl extends OscalElementCustomImpl implements Parameter {
 		result.append(remarks);
 		result.append(", clazz: ");
 		result.append(clazz);
-		result.append(", dependsOn: ");
-		result.append(dependsOn);
 		result.append(", id: ");
 		result.append(id);
+		result.append(", dependsOn: ");
+		result.append(dependsOn);
 		result.append(", label: ");
 		result.append(label);
 		result.append(", usage: ");

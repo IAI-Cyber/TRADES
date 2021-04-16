@@ -30,7 +30,9 @@ import dsm.oscal.model.OscalMetadata.BackMatter;
 import dsm.oscal.model.OscalMetadata.BackMatterResource;
 import dsm.oscal.model.OscalMetadata.Base64;
 import dsm.oscal.model.OscalMetadata.DocumentId;
+import dsm.oscal.model.OscalMetadata.DocumentationComputer;
 import dsm.oscal.model.OscalMetadata.ElementWithClazz;
+import dsm.oscal.model.OscalMetadata.ElementWithId;
 import dsm.oscal.model.OscalMetadata.ElementWithRemarks;
 import dsm.oscal.model.OscalMetadata.ElementWithValue;
 import dsm.oscal.model.OscalMetadata.ExternalId;
@@ -42,6 +44,7 @@ import dsm.oscal.model.OscalMetadata.Metadata;
 import dsm.oscal.model.OscalMetadata.OscalElement;
 import dsm.oscal.model.OscalMetadata.OscalMetadataFactory;
 import dsm.oscal.model.OscalMetadata.OscalMetadataPackage;
+import dsm.oscal.model.OscalMetadata.PartOwner;
 import dsm.oscal.model.OscalMetadata.Party;
 import dsm.oscal.model.OscalMetadata.Property;
 import dsm.oscal.model.OscalMetadata.PropertyOwner;
@@ -130,7 +133,21 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass documentationComputerEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass elementWithClazzEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass elementWithIdEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -264,6 +281,13 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 * @generated
 	 */
 	private EClass oscalElementEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass partOwnerEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -697,6 +721,26 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 * @generated
 	 */
 	@Override
+	public EClass getDocumentationComputer() {
+		return documentationComputerEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getDocumentationComputer__ComputeDocumentation() {
+		return documentationComputerEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getElementWithClazz() {
 		return elementWithClazzEClass;
 	}
@@ -709,6 +753,26 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	@Override
 	public EAttribute getElementWithClazz_Clazz() {
 		return (EAttribute)elementWithClazzEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getElementWithId() {
+		return elementWithIdEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getElementWithId_Id() {
+		return (EAttribute)elementWithIdEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1387,18 +1451,8 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 * @generated
 	 */
 	@Override
-	public EAttribute getRole_Id() {
-		return (EAttribute)roleEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EAttribute getRole_Title() {
-		return (EAttribute)roleEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)roleEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1408,7 +1462,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 */
 	@Override
 	public EAttribute getRole_ShortName() {
-		return (EAttribute)roleEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)roleEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1459,6 +1513,26 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	@Override
 	public EOperation getOscalElement__Resolve__URI() {
 		return oscalElementEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getPartOwner() {
+		return partOwnerEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getPartOwner_Parts() {
+		return (EReference)partOwnerEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1694,8 +1768,14 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 		documentIdEClass = createEClass(DOCUMENT_ID);
 		createEAttribute(documentIdEClass, DOCUMENT_ID__SCHEME);
 
+		documentationComputerEClass = createEClass(DOCUMENTATION_COMPUTER);
+		createEOperation(documentationComputerEClass, DOCUMENTATION_COMPUTER___COMPUTE_DOCUMENTATION);
+
 		elementWithClazzEClass = createEClass(ELEMENT_WITH_CLAZZ);
 		createEAttribute(elementWithClazzEClass, ELEMENT_WITH_CLAZZ__CLAZZ);
+
+		elementWithIdEClass = createEClass(ELEMENT_WITH_ID);
+		createEAttribute(elementWithIdEClass, ELEMENT_WITH_ID__ID);
 
 		elementWithRemarksEClass = createEClass(ELEMENT_WITH_REMARKS);
 		createEAttribute(elementWithRemarksEClass, ELEMENT_WITH_REMARKS__REMARKS);
@@ -1741,6 +1821,9 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 		oscalElementEClass = createEClass(OSCAL_ELEMENT);
 		createEOperation(oscalElementEClass, OSCAL_ELEMENT___RESOLVE__URI);
 
+		partOwnerEClass = createEClass(PART_OWNER);
+		createEReference(partOwnerEClass, PART_OWNER__PARTS);
+
 		partyEClass = createEClass(PARTY);
 		createEReference(partyEClass, PARTY__ADDRESSES);
 		createEAttribute(partyEClass, PARTY__EMAIL_ADDRESSES);
@@ -1784,7 +1867,6 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 
 		roleEClass = createEClass(ROLE);
 		createEAttribute(roleEClass, ROLE__DESCRIPTION);
-		createEAttribute(roleEClass, ROLE__ID);
 		createEAttribute(roleEClass, ROLE__SHORT_NAME);
 		createEAttribute(roleEClass, ROLE__TITLE);
 
@@ -1833,6 +1915,9 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 		setNsPrefix(eNS_PREFIX);
 		setNsURI(eNS_URI);
 
+		// Obtain other dependent packages
+		OscalCatalogCommonPackage theOscalCatalogCommonPackage = (OscalCatalogCommonPackage)EPackage.Registry.INSTANCE.getEPackage(OscalCatalogCommonPackage.eNS_URI);
+
 		// Create type parameters
 
 		// Set bounds for type parameters
@@ -1868,6 +1953,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 		metadataEClass.getESuperTypes().add(this.getPropertyOwner());
 		metadataEClass.getESuperTypes().add(this.getLinkOwner());
 		metadataEClass.getESuperTypes().add(this.getElementWithRemarks());
+		partOwnerEClass.getESuperTypes().add(this.getDocumentationComputer());
 		partyEClass.getESuperTypes().add(this.getOscalElement());
 		partyEClass.getESuperTypes().add(this.getUUIDElement());
 		partyEClass.getESuperTypes().add(this.getAnnotationOwner());
@@ -1902,6 +1988,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 		roleEClass.getESuperTypes().add(this.getPropertyOwner());
 		roleEClass.getESuperTypes().add(this.getLinkOwner());
 		roleEClass.getESuperTypes().add(this.getElementWithRemarks());
+		roleEClass.getESuperTypes().add(this.getElementWithId());
 		telephoneNumberEClass.getESuperTypes().add(this.getOscalElement());
 		telephoneNumberEClass.getESuperTypes().add(this.getElementWithValue());
 
@@ -1940,8 +2027,15 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 		initEClass(documentIdEClass, DocumentId.class, "DocumentId", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDocumentId_Scheme(), this.getUriType(), "scheme", null, 1, 1, DocumentId.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEClass(documentationComputerEClass, DocumentationComputer.class, "DocumentationComputer", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEOperation(getDocumentationComputer__ComputeDocumentation(), ecorePackage.getEString(), "computeDocumentation", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(elementWithClazzEClass, ElementWithClazz.class, "ElementWithClazz", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getElementWithClazz_Clazz(), ecorePackage.getEString(), "clazz", null, 0, 1, ElementWithClazz.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(elementWithIdEClass, ElementWithId.class, "ElementWithId", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getElementWithId_Id(), ecorePackage.getEString(), "id", null, 0, 1, ElementWithId.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(elementWithRemarksEClass, ElementWithRemarks.class, "ElementWithRemarks", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getElementWithRemarks_Remarks(), this.getMarkupMultilineType(), "remarks", null, 0, 1, ElementWithRemarks.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1989,6 +2083,9 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 		EOperation op = initEOperation(getOscalElement__Resolve__URI(), ecorePackage.getEObject(), "resolve", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getUriType(), "uri", 0, 1, IS_UNIQUE, IS_ORDERED);
 
+		initEClass(partOwnerEClass, PartOwner.class, "PartOwner", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getPartOwner_Parts(), theOscalCatalogCommonPackage.getPart(), null, "parts", null, 0, -1, PartOwner.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		initEClass(partyEClass, Party.class, "Party", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getParty_Addresses(), this.getAddress(), null, "addresses", null, 0, -1, Party.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getParty_EmailAddresses(), ecorePackage.getEString(), "emailAddresses", null, 0, -1, Party.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2032,7 +2129,6 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 
 		initEClass(roleEClass, Role.class, "Role", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getRole_Description(), this.getMarkupMultilineType(), "description", null, 0, 1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getRole_Id(), ecorePackage.getEString(), "id", null, 1, 1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRole_ShortName(), ecorePackage.getEString(), "shortName", null, 0, 1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRole_Title(), this.getMarkupLineType(), "title", null, 1, 1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -2576,12 +2672,6 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 		   source,
 		   new String[] {
 			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>role.<FieldInstance>description"
-		   });
-		addAnnotation
-		  (getRole_Id(),
-		   source,
-		   new String[] {
-			   "source", "<Metaschema>oscal-metadata.<AssemblyDefinition>role.<FlagInstance>id"
 		   });
 		addAnnotation
 		  (getRole_ShortName(),

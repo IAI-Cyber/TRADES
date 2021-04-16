@@ -246,6 +246,29 @@ public class OscalMetadataItemProviderAdapterFactory extends OscalMetadataAdapte
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link dsm.oscal.model.OscalMetadata.ElementWithId} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ElementWithIdItemProviderCustomImpl elementWithIdItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link dsm.oscal.model.OscalMetadata.ElementWithId}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createElementWithIdAdapter() {
+		if (elementWithIdItemProvider == null) {
+			elementWithIdItemProvider = new ElementWithIdItemProviderCustomImpl(this);
+		}
+
+		return elementWithIdItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link dsm.oscal.model.OscalMetadata.ElementWithRemarks} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -427,6 +450,29 @@ public class OscalMetadataItemProviderAdapterFactory extends OscalMetadataAdapte
 		}
 
 		return metadataItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link dsm.oscal.model.OscalMetadata.PartOwner} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected PartOwnerItemProvider partOwnerItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link dsm.oscal.model.OscalMetadata.PartOwner}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createPartOwnerAdapter() {
+		if (partOwnerItemProvider == null) {
+			partOwnerItemProvider = new PartOwnerItemProvider(this);
+		}
+
+		return partOwnerItemProvider;
 	}
 
 	/**
@@ -818,6 +864,7 @@ public class OscalMetadataItemProviderAdapterFactory extends OscalMetadataAdapte
 		if (base64ItemProvider != null) base64ItemProvider.dispose();
 		if (documentIdItemProvider != null) documentIdItemProvider.dispose();
 		if (elementWithClazzItemProvider != null) elementWithClazzItemProvider.dispose();
+		if (elementWithIdItemProvider != null) elementWithIdItemProvider.dispose();
 		if (elementWithRemarksItemProvider != null) elementWithRemarksItemProvider.dispose();
 		if (elementWithValueItemProvider != null) elementWithValueItemProvider.dispose();
 		if (externalIdItemProvider != null) externalIdItemProvider.dispose();
@@ -826,6 +873,7 @@ public class OscalMetadataItemProviderAdapterFactory extends OscalMetadataAdapte
 		if (linkOwnerItemProvider != null) linkOwnerItemProvider.dispose();
 		if (locationItemProvider != null) locationItemProvider.dispose();
 		if (metadataItemProvider != null) metadataItemProvider.dispose();
+		if (partOwnerItemProvider != null) partOwnerItemProvider.dispose();
 		if (partyItemProvider != null) partyItemProvider.dispose();
 		if (propertyItemProvider != null) propertyItemProvider.dispose();
 		if (propertyOwnerItemProvider != null) propertyOwnerItemProvider.dispose();

@@ -20,19 +20,22 @@ import dsm.oscal.model.OscalCatalog.OscalCatalogPackage;
 
 import dsm.oscal.model.OscalCatalogCommon.Parameter;
 import dsm.oscal.model.OscalCatalogCommon.Part;
-
 import dsm.oscal.model.OscalMetadata.Annotation;
 import dsm.oscal.model.OscalMetadata.AnnotationOwner;
+import dsm.oscal.model.OscalMetadata.DocumentationComputer;
 import dsm.oscal.model.OscalMetadata.ElementWithClazz;
+import dsm.oscal.model.OscalMetadata.ElementWithId;
 import dsm.oscal.model.OscalMetadata.Link;
 import dsm.oscal.model.OscalMetadata.LinkOwner;
 import dsm.oscal.model.OscalMetadata.OscalMetadataPackage;
+import dsm.oscal.model.OscalMetadata.PartOwner;
 import dsm.oscal.model.OscalMetadata.Property;
 
 import dsm.oscal.model.OscalMetadata.PropertyOwner;
 import dsm.oscal.model.OscalMetadata.impl.OscalElementCustomImpl;
 import gov.nist.secauto.metaschema.datatypes.markup.MarkupLine;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -58,11 +61,11 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dsm.oscal.model.OscalCatalog.impl.ControlImpl#getAnnotations <em>Annotations</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalog.impl.ControlImpl#getProps <em>Props</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalog.impl.ControlImpl#getLinks <em>Links</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalCatalog.impl.ControlImpl#getClazz <em>Clazz</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalCatalog.impl.ControlImpl#getControls <em>Controls</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalCatalog.impl.ControlImpl#getId <em>Id</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalCatalog.impl.ControlImpl#getParams <em>Params</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalog.impl.ControlImpl#getParts <em>Parts</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalCatalog.impl.ControlImpl#getClazz <em>Clazz</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalCatalog.impl.ControlImpl#getId <em>Id</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalCatalog.impl.ControlImpl#getControls <em>Controls</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalCatalog.impl.ControlImpl#getParams <em>Params</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalog.impl.ControlImpl#getTitle <em>Title</em>}</li>
  * </ul>
  *
@@ -100,6 +103,16 @@ public class ControlImpl extends OscalElementCustomImpl implements Control {
 	protected EList<Link> links;
 
 	/**
+	 * The cached value of the '{@link #getParts() <em>Parts</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getParts()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Part> parts;
+
+	/**
 	 * The default value of the '{@link #getClazz() <em>Clazz</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -118,16 +131,6 @@ public class ControlImpl extends OscalElementCustomImpl implements Control {
 	 * @ordered
 	 */
 	protected String clazz = CLAZZ_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getControls() <em>Controls</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getControls()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Control> controls;
 
 	/**
 	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
@@ -150,6 +153,16 @@ public class ControlImpl extends OscalElementCustomImpl implements Control {
 	protected String id = ID_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getControls() <em>Controls</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getControls()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Control> controls;
+
+	/**
 	 * The cached value of the '{@link #getParams() <em>Params</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -158,16 +171,6 @@ public class ControlImpl extends OscalElementCustomImpl implements Control {
 	 * @ordered
 	 */
 	protected EList<Parameter> params;
-
-	/**
-	 * The cached value of the '{@link #getParts() <em>Parts</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getParts()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Part> parts;
 
 	/**
 	 * The default value of the '{@link #getTitle() <em>Title</em>}' attribute.
@@ -283,6 +286,18 @@ public class ControlImpl extends OscalElementCustomImpl implements Control {
 	 * @generated
 	 */
 	@Override
+	public String computeDocumentation() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EList<Annotation> getAnnotations() {
 		if (annotations == null) {
 			annotations = new EObjectContainmentEList<Annotation>(Annotation.class, this, OscalCatalogPackage.CONTROL__ANNOTATIONS);
@@ -309,11 +324,11 @@ public class ControlImpl extends OscalElementCustomImpl implements Control {
 	 * @generated
 	 */
 	@Override
-	public EList<Part> getParts() {
-		if (parts == null) {
-			parts = new EObjectContainmentEList<Part>(Part.class, this, OscalCatalogPackage.CONTROL__PARTS);
+	public EList<Link> getLinks() {
+		if (links == null) {
+			links = new EObjectContainmentEList<Link>(Link.class, this, OscalCatalogPackage.CONTROL__LINKS);
 		}
-		return parts;
+		return links;
 	}
 
 	/**
@@ -322,11 +337,11 @@ public class ControlImpl extends OscalElementCustomImpl implements Control {
 	 * @generated
 	 */
 	@Override
-	public EList<Link> getLinks() {
-		if (links == null) {
-			links = new EObjectContainmentEList<Link>(Link.class, this, OscalCatalogPackage.CONTROL__LINKS);
+	public EList<Part> getParts() {
+		if (parts == null) {
+			parts = new EObjectContainmentEList<Part>(Part.class, this, OscalCatalogPackage.CONTROL__PARTS);
 		}
-		return links;
+		return parts;
 	}
 
 	/**
@@ -369,12 +384,12 @@ public class ControlImpl extends OscalElementCustomImpl implements Control {
 				return ((InternalEList<?>)getProps()).basicRemove(otherEnd, msgs);
 			case OscalCatalogPackage.CONTROL__LINKS:
 				return ((InternalEList<?>)getLinks()).basicRemove(otherEnd, msgs);
+			case OscalCatalogPackage.CONTROL__PARTS:
+				return ((InternalEList<?>)getParts()).basicRemove(otherEnd, msgs);
 			case OscalCatalogPackage.CONTROL__CONTROLS:
 				return ((InternalEList<?>)getControls()).basicRemove(otherEnd, msgs);
 			case OscalCatalogPackage.CONTROL__PARAMS:
 				return ((InternalEList<?>)getParams()).basicRemove(otherEnd, msgs);
-			case OscalCatalogPackage.CONTROL__PARTS:
-				return ((InternalEList<?>)getParts()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -393,16 +408,16 @@ public class ControlImpl extends OscalElementCustomImpl implements Control {
 				return getProps();
 			case OscalCatalogPackage.CONTROL__LINKS:
 				return getLinks();
-			case OscalCatalogPackage.CONTROL__CLAZZ:
-				return getClazz();
-			case OscalCatalogPackage.CONTROL__CONTROLS:
-				return getControls();
-			case OscalCatalogPackage.CONTROL__ID:
-				return getId();
-			case OscalCatalogPackage.CONTROL__PARAMS:
-				return getParams();
 			case OscalCatalogPackage.CONTROL__PARTS:
 				return getParts();
+			case OscalCatalogPackage.CONTROL__CLAZZ:
+				return getClazz();
+			case OscalCatalogPackage.CONTROL__ID:
+				return getId();
+			case OscalCatalogPackage.CONTROL__CONTROLS:
+				return getControls();
+			case OscalCatalogPackage.CONTROL__PARAMS:
+				return getParams();
 			case OscalCatalogPackage.CONTROL__TITLE:
 				return getTitle();
 		}
@@ -430,23 +445,23 @@ public class ControlImpl extends OscalElementCustomImpl implements Control {
 				getLinks().clear();
 				getLinks().addAll((Collection<? extends Link>)newValue);
 				return;
+			case OscalCatalogPackage.CONTROL__PARTS:
+				getParts().clear();
+				getParts().addAll((Collection<? extends Part>)newValue);
+				return;
 			case OscalCatalogPackage.CONTROL__CLAZZ:
 				setClazz((String)newValue);
+				return;
+			case OscalCatalogPackage.CONTROL__ID:
+				setId((String)newValue);
 				return;
 			case OscalCatalogPackage.CONTROL__CONTROLS:
 				getControls().clear();
 				getControls().addAll((Collection<? extends Control>)newValue);
 				return;
-			case OscalCatalogPackage.CONTROL__ID:
-				setId((String)newValue);
-				return;
 			case OscalCatalogPackage.CONTROL__PARAMS:
 				getParams().clear();
 				getParams().addAll((Collection<? extends Parameter>)newValue);
-				return;
-			case OscalCatalogPackage.CONTROL__PARTS:
-				getParts().clear();
-				getParts().addAll((Collection<? extends Part>)newValue);
 				return;
 			case OscalCatalogPackage.CONTROL__TITLE:
 				setTitle((MarkupLine)newValue);
@@ -472,20 +487,20 @@ public class ControlImpl extends OscalElementCustomImpl implements Control {
 			case OscalCatalogPackage.CONTROL__LINKS:
 				getLinks().clear();
 				return;
+			case OscalCatalogPackage.CONTROL__PARTS:
+				getParts().clear();
+				return;
 			case OscalCatalogPackage.CONTROL__CLAZZ:
 				setClazz(CLAZZ_EDEFAULT);
-				return;
-			case OscalCatalogPackage.CONTROL__CONTROLS:
-				getControls().clear();
 				return;
 			case OscalCatalogPackage.CONTROL__ID:
 				setId(ID_EDEFAULT);
 				return;
+			case OscalCatalogPackage.CONTROL__CONTROLS:
+				getControls().clear();
+				return;
 			case OscalCatalogPackage.CONTROL__PARAMS:
 				getParams().clear();
-				return;
-			case OscalCatalogPackage.CONTROL__PARTS:
-				getParts().clear();
 				return;
 			case OscalCatalogPackage.CONTROL__TITLE:
 				setTitle(TITLE_EDEFAULT);
@@ -508,16 +523,16 @@ public class ControlImpl extends OscalElementCustomImpl implements Control {
 				return props != null && !props.isEmpty();
 			case OscalCatalogPackage.CONTROL__LINKS:
 				return links != null && !links.isEmpty();
-			case OscalCatalogPackage.CONTROL__CLAZZ:
-				return CLAZZ_EDEFAULT == null ? clazz != null : !CLAZZ_EDEFAULT.equals(clazz);
-			case OscalCatalogPackage.CONTROL__CONTROLS:
-				return controls != null && !controls.isEmpty();
-			case OscalCatalogPackage.CONTROL__ID:
-				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
-			case OscalCatalogPackage.CONTROL__PARAMS:
-				return params != null && !params.isEmpty();
 			case OscalCatalogPackage.CONTROL__PARTS:
 				return parts != null && !parts.isEmpty();
+			case OscalCatalogPackage.CONTROL__CLAZZ:
+				return CLAZZ_EDEFAULT == null ? clazz != null : !CLAZZ_EDEFAULT.equals(clazz);
+			case OscalCatalogPackage.CONTROL__ID:
+				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
+			case OscalCatalogPackage.CONTROL__CONTROLS:
+				return controls != null && !controls.isEmpty();
+			case OscalCatalogPackage.CONTROL__PARAMS:
+				return params != null && !params.isEmpty();
 			case OscalCatalogPackage.CONTROL__TITLE:
 				return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
 		}
@@ -549,9 +564,26 @@ public class ControlImpl extends OscalElementCustomImpl implements Control {
 				default: return -1;
 			}
 		}
+		if (baseClass == DocumentationComputer.class) {
+			switch (derivedFeatureID) {
+				default: return -1;
+			}
+		}
+		if (baseClass == PartOwner.class) {
+			switch (derivedFeatureID) {
+				case OscalCatalogPackage.CONTROL__PARTS: return OscalMetadataPackage.PART_OWNER__PARTS;
+				default: return -1;
+			}
+		}
 		if (baseClass == ElementWithClazz.class) {
 			switch (derivedFeatureID) {
 				case OscalCatalogPackage.CONTROL__CLAZZ: return OscalMetadataPackage.ELEMENT_WITH_CLAZZ__CLAZZ;
+				default: return -1;
+			}
+		}
+		if (baseClass == ElementWithId.class) {
+			switch (derivedFeatureID) {
+				case OscalCatalogPackage.CONTROL__ID: return OscalMetadataPackage.ELEMENT_WITH_ID__ID;
 				default: return -1;
 			}
 		}
@@ -583,13 +615,90 @@ public class ControlImpl extends OscalElementCustomImpl implements Control {
 				default: return -1;
 			}
 		}
+		if (baseClass == DocumentationComputer.class) {
+			switch (baseFeatureID) {
+				default: return -1;
+			}
+		}
+		if (baseClass == PartOwner.class) {
+			switch (baseFeatureID) {
+				case OscalMetadataPackage.PART_OWNER__PARTS: return OscalCatalogPackage.CONTROL__PARTS;
+				default: return -1;
+			}
+		}
 		if (baseClass == ElementWithClazz.class) {
 			switch (baseFeatureID) {
 				case OscalMetadataPackage.ELEMENT_WITH_CLAZZ__CLAZZ: return OscalCatalogPackage.CONTROL__CLAZZ;
 				default: return -1;
 			}
 		}
+		if (baseClass == ElementWithId.class) {
+			switch (baseFeatureID) {
+				case OscalMetadataPackage.ELEMENT_WITH_ID__ID: return OscalCatalogPackage.CONTROL__ID;
+				default: return -1;
+			}
+		}
 		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
+		if (baseClass == AnnotationOwner.class) {
+			switch (baseOperationID) {
+				default: return -1;
+			}
+		}
+		if (baseClass == PropertyOwner.class) {
+			switch (baseOperationID) {
+				default: return -1;
+			}
+		}
+		if (baseClass == LinkOwner.class) {
+			switch (baseOperationID) {
+				default: return -1;
+			}
+		}
+		if (baseClass == DocumentationComputer.class) {
+			switch (baseOperationID) {
+				case OscalMetadataPackage.DOCUMENTATION_COMPUTER___COMPUTE_DOCUMENTATION: return OscalCatalogPackage.CONTROL___COMPUTE_DOCUMENTATION;
+				default: return -1;
+			}
+		}
+		if (baseClass == PartOwner.class) {
+			switch (baseOperationID) {
+				default: return -1;
+			}
+		}
+		if (baseClass == ElementWithClazz.class) {
+			switch (baseOperationID) {
+				default: return -1;
+			}
+		}
+		if (baseClass == ElementWithId.class) {
+			switch (baseOperationID) {
+				default: return -1;
+			}
+		}
+		return super.eDerivedOperationID(baseOperationID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case OscalCatalogPackage.CONTROL___COMPUTE_DOCUMENTATION:
+				return computeDocumentation();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

@@ -142,7 +142,7 @@ public class OscalCatalogCommonFactoryImpl extends EFactoryImpl implements Oscal
 	 */
 	@Override
 	public Part createPart() {
-		PartImpl part = new PartImpl();
+		PartCustomImpl part = new PartCustomImpl();
 		return part;
 	}
 

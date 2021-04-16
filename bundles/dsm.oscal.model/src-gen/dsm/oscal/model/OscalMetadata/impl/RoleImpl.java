@@ -17,6 +17,7 @@ package dsm.oscal.model.OscalMetadata.impl;
 
 import dsm.oscal.model.OscalMetadata.Annotation;
 import dsm.oscal.model.OscalMetadata.AnnotationOwner;
+import dsm.oscal.model.OscalMetadata.ElementWithId;
 import dsm.oscal.model.OscalMetadata.ElementWithRemarks;
 import dsm.oscal.model.OscalMetadata.Link;
 import dsm.oscal.model.OscalMetadata.LinkOwner;
@@ -54,8 +55,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.RoleImpl#getProps <em>Props</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.RoleImpl#getLinks <em>Links</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.RoleImpl#getRemarks <em>Remarks</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.impl.RoleImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.RoleImpl#getId <em>Id</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.impl.RoleImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.RoleImpl#getShortName <em>Short Name</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.RoleImpl#getTitle <em>Title</em>}</li>
  * </ul>
@@ -114,26 +115,6 @@ public class RoleImpl extends OscalElementCustomImpl implements Role {
 	protected MarkupMultiline remarks = REMARKS_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final MarkupMultiline DESCRIPTION_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected MarkupMultiline description = DESCRIPTION_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -152,6 +133,26 @@ public class RoleImpl extends OscalElementCustomImpl implements Role {
 	 * @ordered
 	 */
 	protected String id = ID_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDescription()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final MarkupMultiline DESCRIPTION_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDescription()
+	 * @generated
+	 * @ordered
+	 */
+	protected MarkupMultiline description = DESCRIPTION_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getShortName() <em>Short Name</em>}' attribute.
@@ -400,10 +401,10 @@ public class RoleImpl extends OscalElementCustomImpl implements Role {
 				return getLinks();
 			case OscalMetadataPackage.ROLE__REMARKS:
 				return getRemarks();
-			case OscalMetadataPackage.ROLE__DESCRIPTION:
-				return getDescription();
 			case OscalMetadataPackage.ROLE__ID:
 				return getId();
+			case OscalMetadataPackage.ROLE__DESCRIPTION:
+				return getDescription();
 			case OscalMetadataPackage.ROLE__SHORT_NAME:
 				return getShortName();
 			case OscalMetadataPackage.ROLE__TITLE:
@@ -436,11 +437,11 @@ public class RoleImpl extends OscalElementCustomImpl implements Role {
 			case OscalMetadataPackage.ROLE__REMARKS:
 				setRemarks((MarkupMultiline)newValue);
 				return;
-			case OscalMetadataPackage.ROLE__DESCRIPTION:
-				setDescription((MarkupMultiline)newValue);
-				return;
 			case OscalMetadataPackage.ROLE__ID:
 				setId((String)newValue);
+				return;
+			case OscalMetadataPackage.ROLE__DESCRIPTION:
+				setDescription((MarkupMultiline)newValue);
 				return;
 			case OscalMetadataPackage.ROLE__SHORT_NAME:
 				setShortName((String)newValue);
@@ -472,11 +473,11 @@ public class RoleImpl extends OscalElementCustomImpl implements Role {
 			case OscalMetadataPackage.ROLE__REMARKS:
 				setRemarks(REMARKS_EDEFAULT);
 				return;
-			case OscalMetadataPackage.ROLE__DESCRIPTION:
-				setDescription(DESCRIPTION_EDEFAULT);
-				return;
 			case OscalMetadataPackage.ROLE__ID:
 				setId(ID_EDEFAULT);
+				return;
+			case OscalMetadataPackage.ROLE__DESCRIPTION:
+				setDescription(DESCRIPTION_EDEFAULT);
 				return;
 			case OscalMetadataPackage.ROLE__SHORT_NAME:
 				setShortName(SHORT_NAME_EDEFAULT);
@@ -504,10 +505,10 @@ public class RoleImpl extends OscalElementCustomImpl implements Role {
 				return links != null && !links.isEmpty();
 			case OscalMetadataPackage.ROLE__REMARKS:
 				return REMARKS_EDEFAULT == null ? remarks != null : !REMARKS_EDEFAULT.equals(remarks);
-			case OscalMetadataPackage.ROLE__DESCRIPTION:
-				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 			case OscalMetadataPackage.ROLE__ID:
 				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
+			case OscalMetadataPackage.ROLE__DESCRIPTION:
+				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 			case OscalMetadataPackage.ROLE__SHORT_NAME:
 				return SHORT_NAME_EDEFAULT == null ? shortName != null : !SHORT_NAME_EDEFAULT.equals(shortName);
 			case OscalMetadataPackage.ROLE__TITLE:
@@ -547,6 +548,12 @@ public class RoleImpl extends OscalElementCustomImpl implements Role {
 				default: return -1;
 			}
 		}
+		if (baseClass == ElementWithId.class) {
+			switch (derivedFeatureID) {
+				case OscalMetadataPackage.ROLE__ID: return OscalMetadataPackage.ELEMENT_WITH_ID__ID;
+				default: return -1;
+			}
+		}
 		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
 	}
 
@@ -581,6 +588,12 @@ public class RoleImpl extends OscalElementCustomImpl implements Role {
 				default: return -1;
 			}
 		}
+		if (baseClass == ElementWithId.class) {
+			switch (baseFeatureID) {
+				case OscalMetadataPackage.ELEMENT_WITH_ID__ID: return OscalMetadataPackage.ROLE__ID;
+				default: return -1;
+			}
+		}
 		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
@@ -596,10 +609,10 @@ public class RoleImpl extends OscalElementCustomImpl implements Role {
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (remarks: ");
 		result.append(remarks);
-		result.append(", description: ");
-		result.append(description);
 		result.append(", id: ");
 		result.append(id);
+		result.append(", description: ");
+		result.append(description);
 		result.append(", shortName: ");
 		result.append(shortName);
 		result.append(", title: ");

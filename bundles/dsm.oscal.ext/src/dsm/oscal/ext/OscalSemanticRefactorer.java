@@ -21,6 +21,7 @@ import static dsm.oscal.ext.matchers.FeatureMatchers.isUnique;
 import static java.util.stream.Collectors.groupingBy;
 import static java.util.stream.Collectors.toList;
 
+import java.net.URI;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -34,7 +35,9 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EDataType;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EParameter;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.EcoreFactory;
@@ -44,6 +47,7 @@ import com.google.common.base.CaseFormat;
 
 import dsm.oscal.ext.matchers.EClassifierMatchers;
 import gov.nist.secauto.metaschema.datatypes.markup.MarkupMultiline;
+import gov.nist.secauto.metaschema.model.definitions.DataType;
 
 public class OscalSemanticRefactorer implements ISemanticRefactorer {
 
@@ -62,6 +66,8 @@ public class OscalSemanticRefactorer implements ISemanticRefactorer {
 	private List<GenClass> genClasses;
 	private EDataType markupMultilineType;
 
+	private EDataType uriType;
+
 	@Override
 	public void init(EPackage rootEPackage) {
 		this.rootEPackage = rootEPackage;
@@ -69,21 +75,49 @@ public class OscalSemanticRefactorer implements ISemanticRefactorer {
 				.filter(hasInstanceClass(UUID.class.getName())).findFirst().get();
 		this.markupMultilineType = (EDataType) rootEPackage.getEClassifiers().stream()
 				.filter(hasInstanceClass(MarkupMultiline.class.getName())).findFirst().get();
+		this.uriType = (EDataType) rootEPackage.getEClassifiers().stream().filter(hasInstanceClass(URI.class.getName()))
+				.findFirst().get();
 	}
 
 	@Override
 	public void refactorSemantic(Collection<EClass> eClasses) {
-
 		this.eClasses = eClasses;
+
 		System.out.println("* Starting semantic refactoring");
+
+		// Make all EClass inherits from OSCAlElements
+		EClass oscalElement = EcoreFactory.eINSTANCE.createEClass();
+		oscalElement.setName("OscalElement");
+		oscalElement.setAbstract(true);
+		EOperation resolveOperation = createResolveOperation();
+		oscalElement.getEOperations().add(resolveOperation);
+		rootEPackage.getEClassifiers().add(oscalElement);
+
+		for (EClass eClass : eClasses) {
+			eClass.getESuperTypes().add(oscalElement);
+		}
+
 		createUUIDElements();
-		createAbstractOwnerClass(getEClass("Annotation"), "annotations");
-		createAbstractOwnerClass(getEClass("Property"), "props");
-		createAbstractOwnerClass(getEClass("Link"), "links");
+		createAbstractOwnerClass(getEClass("Annotation"), "annotations", true);
+		createAbstractOwnerClass(getEClass("Property"), "props", true);
+		createAbstractOwnerClass(getEClass("Link"), "links", true);
+
+		// Create documentation owner
+		EClass docComputer = createEClass("DocumentationComputer");
+		docComputer.setInterface(true);
+		docComputer.setAbstract(true);
+		docComputer.getEOperations()
+				.add(createOperation("computeDocumentation", EcorePackage.eINSTANCE.getEString(), false));
+
+		EClass partOwner = createAbstractOwnerClass(getEClass("Part"), "parts", false);
+		partOwner.getESuperTypes().add(docComputer);
+
+		getEClass("Part").getESuperTypes().add(docComputer);
 
 		createElementWith(markupMultilineType, "remarks", false);
 		createElementWith(EcorePackage.eINSTANCE.getEString(), "value", false);
 		createElementWith(EcorePackage.eINSTANCE.getEString(), "clazz", false);
+		createElementWith(EcorePackage.eINSTANCE.getEString(), "id", false);
 
 		Map<FeatureBucket, List<EStructuralFeature>> features = eClasses.stream()
 				.flatMap(e -> e.getEStructuralFeatures().stream()).collect(groupingBy(f -> FeatureBucket.create(f)));
@@ -102,34 +136,61 @@ public class OscalSemanticRefactorer implements ISemanticRefactorer {
 		}
 	}
 
-	private void createAbstractOwnerClass(EClass targetType, String refName) {
+	private EOperation createResolveOperation() {
+		EOperation resolveOperation = createOperation("resolve", EcorePackage.eINSTANCE.getEObject(), false);
+		EParameter param = EcoreFactory.eINSTANCE.createEParameter();
+		param.setName("uri");
+		param.setEType(uriType);
+		resolveOperation.getEParameters().add(param);
+		return resolveOperation;
+	}
+
+	private EOperation createOperation(String name, EClassifier type, boolean many) {
+		EOperation resolveOperation = EcoreFactory.eINSTANCE.createEOperation();
+		resolveOperation.setName(name);
+		resolveOperation.setEType(type);
+		if (many) {
+			resolveOperation.setUpperBound(-1);
+		} else {
+
+			resolveOperation.setLowerBound(0);
+			resolveOperation.setUpperBound(1);
+		}
+		return resolveOperation;
+	}
+
+	private EClass createAbstractOwnerClass(EClass targetType, String refName, boolean hideChildrenInTree) {
 		Predicate<EStructuralFeature> refPredicate = isContainmentTyped(targetType.getName()).and(isMany())
 				.and(hasName(refName));
 		List<EClass> elementOwningAnnotations = eClasses.stream()
 				.filter(e -> e.getEStructuralFeatures().stream().filter(refPredicate).count() == 1).collect(toList());
 		if (!elementOwningAnnotations.isEmpty()) {
-			EClass annotOwner = createAbstractOwnerEClass(targetType, refName);
+			EClass newClass = createAbstractOwnerEClass(targetType, refName, hideChildrenInTree);
 			for (EClass e : elementOwningAnnotations) {
 				e.getEStructuralFeatures()
 						.remove(e.getEStructuralFeatures().stream().filter(refPredicate).findFirst().get());
-				e.getESuperTypes().add(annotOwner);
+				e.getESuperTypes().add(newClass);
 			}
+			return newClass;
 		}
+		return null;
 
 	}
 
-	private void createElementWith(EDataType targetType, String refName, boolean many) {
+	private EClass createElementWith(EDataType targetType, String refName, boolean many) {
 		Predicate<EStructuralFeature> refPredicate = buildAttributeFilter(targetType, refName, many);
 		List<EClass> elementOwningAnnotations = eClasses.stream()
 				.filter(e -> e.getEStructuralFeatures().stream().filter(refPredicate).count() == 1).collect(toList());
 		if (!elementOwningAnnotations.isEmpty()) {
-			EClass annotOwner = createElementWithEClass(targetType, refName, many);
+			EClass newClass = createElementWithEClass(targetType, refName, many);
 			for (EClass e : elementOwningAnnotations) {
 				e.getEStructuralFeatures()
 						.remove(e.getEStructuralFeatures().stream().filter(refPredicate).findFirst().get());
-				e.getESuperTypes().add(annotOwner);
+				e.getESuperTypes().add(newClass);
 			}
+			return newClass;
 		}
+		return null;
 
 	}
 
@@ -167,14 +228,18 @@ public class OscalSemanticRefactorer implements ISemanticRefactorer {
 		return withIdEclass;
 	}
 
-	private EClass createAbstractOwnerEClass(EClass targetType, String refName) {
+	private EClass createAbstractOwnerEClass(EClass targetType, String refName, boolean hideChildrenInTree) {
 		EClass annotOwner = createEClass(targetType.getName() + "Owner");
-		hiddenContainementReferences.add(createManyContainmentRef(annotOwner, refName, targetType));
+		EReference ref = createManyContainmentRef(annotOwner, refName, targetType);
+		if (hideChildrenInTree) {
+			hiddenContainementReferences.add(ref);
+		}
 		return annotOwner;
 	}
 
 	private EClass createElementWithEClass(EDataType targetType, String featureName, boolean many) {
-		EClass annotOwner = createEClass("ElementWith" + NameHelper.getProperEClassName(featureName) + (many ? "s" : ""));
+		EClass annotOwner = createEClass(
+				"ElementWith" + NameHelper.getProperEClassName(featureName) + (many ? "s" : ""));
 		EAttribute feature = createAttribute(annotOwner, featureName, targetType);
 		if (many) {
 			feature.setUpperBound(-1);
