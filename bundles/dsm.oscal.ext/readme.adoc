@@ -1,4 +1,4 @@
-# Global information
+= Global information
 
 This plugin create and OSGi bundle of https://github.com/usnistgov/liboscal-java.
 
@@ -11,13 +11,13 @@ Here are the reference of the commit and repository used to build the current ve
 When a first release is version use the maven artifacts that will be available online.
 ====
 
-## oss-maven 
+== oss-maven 
 
 * Repository: https://github.com/usnistgov/oss-maven
 * Commit: 03252eb24567a57296086e7574fa3016e3f693c4 
 * Command: `mvn clean install`
 
-## metaschema-java
+== metaschema-java
 
 * Main repository; https://github.com/usnistgov/metaschema-java 
 * Repository used since it contains the current dev: https://github.com/david-waltermire-nist/metaschema-java
@@ -30,7 +30,7 @@ This is some test failing so I has to skip the tests.
 ====
 
 
-## liboscal-jar
+== liboscal-jar
 
 * Main repository: https://github.com/usnistgov/liboscal-java
 * Dev repository: https://github.com/david-waltermire-nist/liboscal-java
@@ -41,3 +41,34 @@ This is some test failing so I has to skip the tests.
 ====
 This repository has sub module so do not forget to clone them git submodule update --init --recursive`
 ====
+
+== Metaschema definition
+
+The metadaschema defintion are copied from the https://github.com/usnistgov/OSCAL[OSCAL repository].
+
+They are located at : _oscal/src/metaschema_
+
+The embedded definition have been taken from commit: _eaf1bf51d546dc0a21e6b98c1cdd0cb63f499057_
+
+== Sample catalog
+
+The sample catalog are found on the official https://github.com/usnistgov/oscal-content[OSCAL Content] repository.
+
+The embedded catalog have been taken from commit:
+
+== Run the migration
+
+This chapter describe how to run the transformation from metaschema definition into ECore models
+
+* Delete the content of all _src-gen_ folder (in dsm.oscal.*)
+* Copy the new version of the Metaschema definition from _/liboscal-java/oscal/src/metaschema/*.xml_ in _/dsm.oscal.ext/src/dsm/oscal/ext/metaschema_
+* Copy the XSD file from _/liboscal-java/oscal/xml/schema/*.xsd_ to _/dsm.oscal.ext/src/dsm/oscal/ext/schemas_
+* Run _dsm.oscal.ext.MetaschemaToEcoreTransformer.main(String[])_ with one argument that target the _model_ folder of _dsm.oscal.model_
+* Open (or reload) the Oscal _genmodel_ (located in the model folder)
+* Open the _oscal.gengapmodel_ and generate the source code for:
+** Model
+** Edit
+** Editor
+* Fix compilation error
+* Compare the version of the ecore models and update the migration code located at _/dsm.oscal.model/src/dsm/oscal/model/transform_
+* Update the VSM model with model changes
