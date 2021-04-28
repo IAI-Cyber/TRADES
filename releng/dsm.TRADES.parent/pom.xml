@@ -148,6 +148,7 @@
 		<module>../../bundles/dsm.oscal.ext.sirius.tooling/</module>
 		<module>../../bundles/dsm.oscal.ext.sirius.lib/</module>
 		<module>../../bundles/dsm.oscal.model.edit/</module>
+		<module>../../bundles/dsm.oscal.design/</module>
 
 		<!-- Base plugins -->
 		<module>../../bundles/dsm.TRADES/</module>
