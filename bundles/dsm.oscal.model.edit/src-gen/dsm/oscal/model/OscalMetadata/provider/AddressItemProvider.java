@@ -24,6 +24,7 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
@@ -35,8 +36,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class AddressItemProvider 
-	extends OscalElementItemProvider {
+public class AddressItemProvider extends OscalElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -66,28 +66,6 @@ public class AddressItemProvider
 			addTypePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Type feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addTypePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Address_type_feature"),
-				 getString("_UI_Address_type_description"),
-				 OscalMetadataPackage.Literals.ADDRESS__TYPE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
 	}
 
 	/**
@@ -135,19 +113,19 @@ public class AddressItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the State feature.
+	 * This adds a property descriptor for the Country feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addStatePropertyDescriptor(Object object) {
+	protected void addCountryPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Address_state_feature"),
-				 getString("_UI_Address_state_description"),
-				 OscalMetadataPackage.Literals.ADDRESS__STATE,
+				 getString("_UI_Address_country_feature"),
+				 getString("_UI_Address_country_description"),
+				 OscalMetadataPackage.Literals.ADDRESS__COUNTRY,
 				 true,
 				 false,
 				 false,
@@ -179,19 +157,41 @@ public class AddressItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Country feature.
+	 * This adds a property descriptor for the State feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addCountryPropertyDescriptor(Object object) {
+	protected void addStatePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Address_country_feature"),
-				 getString("_UI_Address_country_description"),
-				 OscalMetadataPackage.Literals.ADDRESS__COUNTRY,
+				 getString("_UI_Address_state_feature"),
+				 getString("_UI_Address_state_description"),
+				 OscalMetadataPackage.Literals.ADDRESS__STATE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Type feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTypePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Address_type_feature"),
+				 getString("_UI_Address_type_description"),
+				 OscalMetadataPackage.Literals.ADDRESS__TYPE,
 				 true,
 				 false,
 				 false,

@@ -21,11 +21,13 @@ import dsm.oscal.model.OscalMetadata.OscalMetadataPackage;
 import dsm.oscal.model.OscalMetadata.ResponsibleParty;
 
 import gov.nist.secauto.metaschema.datatypes.markup.MarkupMultiline;
+
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
@@ -37,8 +39,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ResponsiblePartyItemProvider 
-	extends OscalElementItemProvider {
+public class ResponsiblePartyItemProvider extends OscalElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -68,21 +69,21 @@ public class ResponsiblePartyItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Role Id feature.
+	 * This adds a property descriptor for the Remarks feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addRoleIdPropertyDescriptor(Object object) {
+	protected void addRemarksPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ResponsibleParty_roleId_feature"),
-				 getString("_UI_ResponsibleParty_roleId_description"),
-				 OscalMetadataPackage.Literals.RESPONSIBLE_PARTY__ROLE_ID,
+				 getString("_UI_ElementWithRemarks_remarks_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ElementWithRemarks_remarks_feature", "_UI_ElementWithRemarks_type"),
+				 OscalMetadataPackage.Literals.ELEMENT_WITH_REMARKS__REMARKS,
 				 true,
-				 false,
+				 true,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
@@ -112,21 +113,21 @@ public class ResponsiblePartyItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Remarks feature.
+	 * This adds a property descriptor for the Role Id feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addRemarksPropertyDescriptor(Object object) {
+	protected void addRoleIdPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ElementWithRemarks_remarks_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ElementWithRemarks_remarks_feature", "_UI_ElementWithRemarks_type"),
-				 OscalMetadataPackage.Literals.ELEMENT_WITH_REMARKS__REMARKS,
+				 getString("_UI_ResponsibleParty_roleId_feature"),
+				 getString("_UI_ResponsibleParty_roleId_description"),
+				 OscalMetadataPackage.Literals.RESPONSIBLE_PARTY__ROLE_ID,
 				 true,
-				 true,
+				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
@@ -172,7 +173,6 @@ public class ResponsiblePartyItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ResponsibleParty.class)) {
-			case OscalMetadataPackage.RESPONSIBLE_PARTY__ANNOTATIONS:
 			case OscalMetadataPackage.RESPONSIBLE_PARTY__PROPS:
 			case OscalMetadataPackage.RESPONSIBLE_PARTY__LINKS:
 			case OscalMetadataPackage.RESPONSIBLE_PARTY__REMARKS:
@@ -194,11 +194,6 @@ public class ResponsiblePartyItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OscalMetadataPackage.Literals.ANNOTATION_OWNER__ANNOTATIONS,
-				 OscalMetadataFactory.eINSTANCE.createAnnotation()));
 
 		newChildDescriptors.add
 			(createChildParameter

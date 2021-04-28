@@ -28,6 +28,7 @@ import dsm.oscal.model.OscalCatalogCommon.impl.OscalCatalogCommonPackageImpl;
 import dsm.oscal.model.OscalMetadata.OscalMetadataPackage;
 
 import dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl;
+
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
@@ -150,6 +151,36 @@ public class OscalCatalogPackageImpl extends EPackageImpl implements OscalCatalo
 	 * @generated
 	 */
 	@Override
+	public EReference getCatalog_BackMatter() {
+		return (EReference)catalogEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getCatalog_Controls() {
+		return (EReference)catalogEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getCatalog_Groups() {
+		return (EReference)catalogEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EReference getCatalog_Metadata() {
 		return (EReference)catalogEClass.getEStructuralFeatures().get(3);
 	}
@@ -170,58 +201,8 @@ public class OscalCatalogPackageImpl extends EPackageImpl implements OscalCatalo
 	 * @generated
 	 */
 	@Override
-	public EReference getCatalog_Controls() {
-		return (EReference)catalogEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getCatalog_BackMatter() {
-		return (EReference)catalogEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getCatalog_Groups() {
-		return (EReference)catalogEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getControl() {
 		return controlEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getControl_Title() {
-		return (EAttribute)controlEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getControl_Params() {
-		return (EReference)controlEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -240,28 +221,28 @@ public class OscalCatalogPackageImpl extends EPackageImpl implements OscalCatalo
 	 * @generated
 	 */
 	@Override
+	public EReference getControl_Params() {
+		return (EReference)controlEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getControl_Title() {
+		return (EAttribute)controlEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getGroup() {
 		return groupEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getGroup_Title() {
-		return (EAttribute)groupEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getGroup_Params() {
-		return (EReference)groupEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -282,6 +263,26 @@ public class OscalCatalogPackageImpl extends EPackageImpl implements OscalCatalo
 	@Override
 	public EReference getGroup_Groups() {
 		return (EReference)groupEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getGroup_Params() {
+		return (EReference)groupEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getGroup_Title() {
+		return (EAttribute)groupEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -367,14 +368,12 @@ public class OscalCatalogPackageImpl extends EPackageImpl implements OscalCatalo
 		catalogEClass.getESuperTypes().add(theOscalMetadataPackage.getOscalElement());
 		catalogEClass.getESuperTypes().add(theOscalMetadataPackage.getUUIDElement());
 		controlEClass.getESuperTypes().add(theOscalMetadataPackage.getOscalElement());
-		controlEClass.getESuperTypes().add(theOscalMetadataPackage.getAnnotationOwner());
 		controlEClass.getESuperTypes().add(theOscalMetadataPackage.getPropertyOwner());
 		controlEClass.getESuperTypes().add(theOscalMetadataPackage.getLinkOwner());
 		controlEClass.getESuperTypes().add(theOscalMetadataPackage.getPartOwner());
 		controlEClass.getESuperTypes().add(theOscalMetadataPackage.getElementWithClazz());
 		controlEClass.getESuperTypes().add(theOscalMetadataPackage.getElementWithId());
 		groupEClass.getESuperTypes().add(theOscalMetadataPackage.getOscalElement());
-		groupEClass.getESuperTypes().add(theOscalMetadataPackage.getAnnotationOwner());
 		groupEClass.getESuperTypes().add(theOscalMetadataPackage.getPropertyOwner());
 		groupEClass.getESuperTypes().add(theOscalMetadataPackage.getLinkOwner());
 		groupEClass.getESuperTypes().add(theOscalMetadataPackage.getPartOwner());

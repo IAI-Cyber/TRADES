@@ -28,7 +28,7 @@ import gov.nist.secauto.metaschema.datatypes.markup.MarkupLine;
  * <p>A citation consisting of end note text and optional structured bibliographic data.</p>
  * <h2>Remarks</h2>
  * <p>The <code>text</code> is used to define the endnote text, without any required bibliographic structure. If structured bibliographic data is needed, then the <code>biblio</code> can be used for this purpose.</p>
- * <p>A <code>biblio</code> can be used to capture a structured bibliograpical citation in an appropriate format.</p>
+ * <p>A <code>biblio</code> can be used to capture a structured bibliographical citation in an appropriate format.</p>
  * 
  * <!-- end-model-doc -->
  *
@@ -43,7 +43,7 @@ import gov.nist.secauto.metaschema.datatypes.markup.MarkupLine;
  * @model annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;AssemblyDefinition&gt;citation'"
  * @generated
  */
-public interface ResourceCitation extends OscalElement, AnnotationOwner, PropertyOwner {
+public interface ResourceCitation extends OscalElement, PropertyOwner {
 	/**
 	 * Returns the value of the '<em><b>Text</b></em>' attribute.
 	 * <!-- begin-user-doc -->

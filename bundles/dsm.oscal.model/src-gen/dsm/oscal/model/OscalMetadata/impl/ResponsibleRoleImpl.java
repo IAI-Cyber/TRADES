@@ -15,8 +15,6 @@
  */
 package dsm.oscal.model.OscalMetadata.impl;
 
-import dsm.oscal.model.OscalMetadata.Annotation;
-import dsm.oscal.model.OscalMetadata.AnnotationOwner;
 import dsm.oscal.model.OscalMetadata.ElementWithRemarks;
 import dsm.oscal.model.OscalMetadata.Link;
 import dsm.oscal.model.OscalMetadata.LinkOwner;
@@ -39,6 +37,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -51,7 +50,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link dsm.oscal.model.OscalMetadata.impl.ResponsibleRoleImpl#getAnnotations <em>Annotations</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.ResponsibleRoleImpl#getProps <em>Props</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.ResponsibleRoleImpl#getLinks <em>Links</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.ResponsibleRoleImpl#getRemarks <em>Remarks</em>}</li>
@@ -62,16 +60,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * @generated
  */
 public class ResponsibleRoleImpl extends OscalElementCustomImpl implements ResponsibleRole {
-	/**
-	 * The cached value of the '{@link #getAnnotations() <em>Annotations</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAnnotations()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Annotation> annotations;
-
 	/**
 	 * The cached value of the '{@link #getProps() <em>Props</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -167,34 +155,24 @@ public class ResponsibleRoleImpl extends OscalElementCustomImpl implements Respo
 	 * @generated
 	 */
 	@Override
-	public String getRoleId() {
-		return roleId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setRoleId(String newRoleId) {
-		String oldRoleId = roleId;
-		roleId = newRoleId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OscalMetadataPackage.RESPONSIBLE_ROLE__ROLE_ID, oldRoleId, roleId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EList<UUID> getPartyUuids() {
-		if (partyUuids == null) {
-			partyUuids = new EDataTypeUniqueEList<UUID>(UUID.class, this, OscalMetadataPackage.RESPONSIBLE_ROLE__PARTY_UUIDS);
+	public EList<Property> getProps() {
+		if (props == null) {
+			props = new EObjectContainmentEList<Property>(Property.class, this, OscalMetadataPackage.RESPONSIBLE_ROLE__PROPS);
 		}
-		return partyUuids;
+		return props;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<Link> getLinks() {
+		if (links == null) {
+			links = new EObjectContainmentEList<Link>(Link.class, this, OscalMetadataPackage.RESPONSIBLE_ROLE__LINKS);
+		}
+		return links;
 	}
 
 	/**
@@ -226,11 +204,11 @@ public class ResponsibleRoleImpl extends OscalElementCustomImpl implements Respo
 	 * @generated
 	 */
 	@Override
-	public EList<Annotation> getAnnotations() {
-		if (annotations == null) {
-			annotations = new EObjectContainmentEList<Annotation>(Annotation.class, this, OscalMetadataPackage.RESPONSIBLE_ROLE__ANNOTATIONS);
+	public EList<UUID> getPartyUuids() {
+		if (partyUuids == null) {
+			partyUuids = new EDataTypeUniqueEList<UUID>(UUID.class, this, OscalMetadataPackage.RESPONSIBLE_ROLE__PARTY_UUIDS);
 		}
-		return annotations;
+		return partyUuids;
 	}
 
 	/**
@@ -239,11 +217,8 @@ public class ResponsibleRoleImpl extends OscalElementCustomImpl implements Respo
 	 * @generated
 	 */
 	@Override
-	public EList<Link> getLinks() {
-		if (links == null) {
-			links = new EObjectContainmentEList<Link>(Link.class, this, OscalMetadataPackage.RESPONSIBLE_ROLE__LINKS);
-		}
-		return links;
+	public String getRoleId() {
+		return roleId;
 	}
 
 	/**
@@ -252,11 +227,11 @@ public class ResponsibleRoleImpl extends OscalElementCustomImpl implements Respo
 	 * @generated
 	 */
 	@Override
-	public EList<Property> getProps() {
-		if (props == null) {
-			props = new EObjectContainmentEList<Property>(Property.class, this, OscalMetadataPackage.RESPONSIBLE_ROLE__PROPS);
-		}
-		return props;
+	public void setRoleId(String newRoleId) {
+		String oldRoleId = roleId;
+		roleId = newRoleId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OscalMetadataPackage.RESPONSIBLE_ROLE__ROLE_ID, oldRoleId, roleId));
 	}
 
 	/**
@@ -267,8 +242,6 @@ public class ResponsibleRoleImpl extends OscalElementCustomImpl implements Respo
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case OscalMetadataPackage.RESPONSIBLE_ROLE__ANNOTATIONS:
-				return ((InternalEList<?>)getAnnotations()).basicRemove(otherEnd, msgs);
 			case OscalMetadataPackage.RESPONSIBLE_ROLE__PROPS:
 				return ((InternalEList<?>)getProps()).basicRemove(otherEnd, msgs);
 			case OscalMetadataPackage.RESPONSIBLE_ROLE__LINKS:
@@ -285,8 +258,6 @@ public class ResponsibleRoleImpl extends OscalElementCustomImpl implements Respo
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case OscalMetadataPackage.RESPONSIBLE_ROLE__ANNOTATIONS:
-				return getAnnotations();
 			case OscalMetadataPackage.RESPONSIBLE_ROLE__PROPS:
 				return getProps();
 			case OscalMetadataPackage.RESPONSIBLE_ROLE__LINKS:
@@ -310,10 +281,6 @@ public class ResponsibleRoleImpl extends OscalElementCustomImpl implements Respo
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case OscalMetadataPackage.RESPONSIBLE_ROLE__ANNOTATIONS:
-				getAnnotations().clear();
-				getAnnotations().addAll((Collection<? extends Annotation>)newValue);
-				return;
 			case OscalMetadataPackage.RESPONSIBLE_ROLE__PROPS:
 				getProps().clear();
 				getProps().addAll((Collection<? extends Property>)newValue);
@@ -344,9 +311,6 @@ public class ResponsibleRoleImpl extends OscalElementCustomImpl implements Respo
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case OscalMetadataPackage.RESPONSIBLE_ROLE__ANNOTATIONS:
-				getAnnotations().clear();
-				return;
 			case OscalMetadataPackage.RESPONSIBLE_ROLE__PROPS:
 				getProps().clear();
 				return;
@@ -374,8 +338,6 @@ public class ResponsibleRoleImpl extends OscalElementCustomImpl implements Respo
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case OscalMetadataPackage.RESPONSIBLE_ROLE__ANNOTATIONS:
-				return annotations != null && !annotations.isEmpty();
 			case OscalMetadataPackage.RESPONSIBLE_ROLE__PROPS:
 				return props != null && !props.isEmpty();
 			case OscalMetadataPackage.RESPONSIBLE_ROLE__LINKS:
@@ -397,12 +359,6 @@ public class ResponsibleRoleImpl extends OscalElementCustomImpl implements Respo
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == AnnotationOwner.class) {
-			switch (derivedFeatureID) {
-				case OscalMetadataPackage.RESPONSIBLE_ROLE__ANNOTATIONS: return OscalMetadataPackage.ANNOTATION_OWNER__ANNOTATIONS;
-				default: return -1;
-			}
-		}
 		if (baseClass == PropertyOwner.class) {
 			switch (derivedFeatureID) {
 				case OscalMetadataPackage.RESPONSIBLE_ROLE__PROPS: return OscalMetadataPackage.PROPERTY_OWNER__PROPS;
@@ -431,12 +387,6 @@ public class ResponsibleRoleImpl extends OscalElementCustomImpl implements Respo
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == AnnotationOwner.class) {
-			switch (baseFeatureID) {
-				case OscalMetadataPackage.ANNOTATION_OWNER__ANNOTATIONS: return OscalMetadataPackage.RESPONSIBLE_ROLE__ANNOTATIONS;
-				default: return -1;
-			}
-		}
 		if (baseClass == PropertyOwner.class) {
 			switch (baseFeatureID) {
 				case OscalMetadataPackage.PROPERTY_OWNER__PROPS: return OscalMetadataPackage.RESPONSIBLE_ROLE__PROPS;

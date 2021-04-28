@@ -16,6 +16,7 @@
 package dsm.oscal.model.OscalMetadata;
 
 import gov.nist.secauto.metaschema.datatypes.markup.MarkupLine;
+
 import java.time.ZonedDateTime;
 
 /**
@@ -47,35 +48,69 @@ import java.time.ZonedDateTime;
  * @model annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;AssemblyDefinition&gt;revision'"
  * @generated
  */
-public interface Revision extends OscalElement, AnnotationOwner, PropertyOwner, LinkOwner, ElementWithRemarks {
+public interface Revision extends OscalElement, PropertyOwner, LinkOwner, ElementWithRemarks {
 	/**
-	 * Returns the value of the '<em><b>Title</b></em>' attribute.
+	 * Returns the value of the '<em><b>Last Modified</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * <h1>Document Title</h1>
+	 * <h1>Last Modified Timestamp</h1>
 	 * <h2>Description</h2>
-	 * <p>A name given to the document revision, which may be used by a tool for display and navigation.</p>
+	 * <p>The date and time the document was last modified. The date-time value must be formatted according to <a href="https://tools.ietf.org/html/rfc3339">RFC 3339</a> with full time and time zone included.</p>
+	 * <h2>Remarks</h2>
+	 * <p>This value represents the point in time when the OSCAL document was last updated, or at the point of creation the creation date. Typically, this date value will be machine generated at time of creation or modification.</p>
+	 * <p>In some cases, an OSCAL document may be derived from some source material in a different format. In such a case, the <code>last-modified</code> value should indicate the modification time of the OSCAL document, not the source material.</p>
+	 * <p>A publisher of OSCAL content can use this data point along with its siblings <code>published</code> and <code>version</code> to establish a sequence of successive revisions of a given OSCAL-based publication. The metadata for previous revisions can be represented as a <code>revision</code> in this object.</p>
 	 * 
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Title</em>' attribute.
-	 * @see #setTitle(MarkupLine)
-	 * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getRevision_Title()
-	 * @model dataType="dsm.oscal.model.OscalMetadata.MarkupLineType"
-	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;AssemblyDefinition&gt;revision.&lt;FieldInstance&gt;title'"
+	 * @return the value of the '<em>Last Modified</em>' attribute.
+	 * @see #setLastModified(ZonedDateTime)
+	 * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getRevision_LastModified()
+	 * @model dataType="dsm.oscal.model.OscalMetadata.DateTimeWithTzType"
+	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;AssemblyDefinition&gt;revision.&lt;FieldInstance&gt;last-modified'"
 	 * @generated
 	 */
-	MarkupLine getTitle();
+	ZonedDateTime getLastModified();
 
 	/**
-	 * Sets the value of the '{@link dsm.oscal.model.OscalMetadata.Revision#getTitle <em>Title</em>}' attribute.
+	 * Sets the value of the '{@link dsm.oscal.model.OscalMetadata.Revision#getLastModified <em>Last Modified</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Title</em>' attribute.
-	 * @see #getTitle()
+	 * @param value the new value of the '<em>Last Modified</em>' attribute.
+	 * @see #getLastModified()
 	 * @generated
 	 */
-	void setTitle(MarkupLine value);
+	void setLastModified(ZonedDateTime value);
+
+	/**
+	 * Returns the value of the '<em><b>Oscal Version</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * <h1>OSCAL version</h1>
+	 * <h2>Description</h2>
+	 * <p>The OSCAL model version the document was authored against.</p>
+	 * <h2>Remarks</h2>
+	 * <p>Indicates the version of the OSCAL model to which this data set conforms, for example <q>1.1.0</q> or <q>1.0.0-M1</q>. That can be used as a hint by a tool to indicate which version of the OSCAL XML or JSON schema to use for validation.</p>
+	 * 
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Oscal Version</em>' attribute.
+	 * @see #setOscalVersion(String)
+	 * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getRevision_OscalVersion()
+	 * @model annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;AssemblyDefinition&gt;revision.&lt;FieldInstance&gt;oscal-version'"
+	 * @generated
+	 */
+	String getOscalVersion();
+
+	/**
+	 * Sets the value of the '{@link dsm.oscal.model.OscalMetadata.Revision#getOscalVersion <em>Oscal Version</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Oscal Version</em>' attribute.
+	 * @see #getOscalVersion()
+	 * @generated
+	 */
+	void setOscalVersion(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Published</b></em>' attribute.
@@ -111,37 +146,33 @@ public interface Revision extends OscalElement, AnnotationOwner, PropertyOwner, 
 	void setPublished(ZonedDateTime value);
 
 	/**
-	 * Returns the value of the '<em><b>Last Modified</b></em>' attribute.
+	 * Returns the value of the '<em><b>Title</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * <h1>Last Modified Timestamp</h1>
+	 * <h1>Document Title</h1>
 	 * <h2>Description</h2>
-	 * <p>The date and time the document was last modified. The date-time value must be formatted according to <a href="https://tools.ietf.org/html/rfc3339">RFC 3339</a> with full time and time zone included.</p>
-	 * <h2>Remarks</h2>
-	 * <p>This value represents the point in time when the OSCAL document was last updated, or at the point of creation the creation date. Typically, this date value will be machine generated at time of creation or modification.</p>
-	 * <p>In some cases, an OSCAL document may be derived from some source material in a different format. In such a case, the <code>last-modified</code> value should indicate the modification time of the OSCAL document, not the source material.</p>
-	 * <p>A publisher of OSCAL content can use this data point along with its siblings <code>published</code> and <code>version</code> to establish a sequence of successive revisions of a given OSCAL-based publication. The metadata for previous revisions can be represented as a <code>revision</code> in this object.</p>
+	 * <p>A name given to the document revision, which may be used by a tool for display and navigation.</p>
 	 * 
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Last Modified</em>' attribute.
-	 * @see #setLastModified(ZonedDateTime)
-	 * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getRevision_LastModified()
-	 * @model dataType="dsm.oscal.model.OscalMetadata.DateTimeWithTzType"
-	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;AssemblyDefinition&gt;revision.&lt;FieldInstance&gt;last-modified'"
+	 * @return the value of the '<em>Title</em>' attribute.
+	 * @see #setTitle(MarkupLine)
+	 * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getRevision_Title()
+	 * @model dataType="dsm.oscal.model.OscalMetadata.MarkupLineType"
+	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;AssemblyDefinition&gt;revision.&lt;FieldInstance&gt;title'"
 	 * @generated
 	 */
-	ZonedDateTime getLastModified();
+	MarkupLine getTitle();
 
 	/**
-	 * Sets the value of the '{@link dsm.oscal.model.OscalMetadata.Revision#getLastModified <em>Last Modified</em>}' attribute.
+	 * Sets the value of the '{@link dsm.oscal.model.OscalMetadata.Revision#getTitle <em>Title</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Last Modified</em>' attribute.
-	 * @see #getLastModified()
+	 * @param value the new value of the '<em>Title</em>' attribute.
+	 * @see #getTitle()
 	 * @generated
 	 */
-	void setLastModified(ZonedDateTime value);
+	void setTitle(MarkupLine value);
 
 	/**
 	 * Returns the value of the '<em><b>Version</b></em>' attribute.
@@ -174,35 +205,5 @@ public interface Revision extends OscalElement, AnnotationOwner, PropertyOwner, 
 	 * @generated
 	 */
 	void setVersion(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Oscal Version</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * <h1>OSCAL version</h1>
-	 * <h2>Description</h2>
-	 * <p>The OSCAL model version the document was authored against.</p>
-	 * <h2>Remarks</h2>
-	 * <p>Indicates the version of the OSCAL model to which this data set conforms, for example <q>1.1.0</q> or <q>1.0.0-M1</q>. That can be used as a hint by a tool to indicate which version of the OSCAL XML or JSON schema to use for validation.</p>
-	 * 
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Oscal Version</em>' attribute.
-	 * @see #setOscalVersion(String)
-	 * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getRevision_OscalVersion()
-	 * @model annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;AssemblyDefinition&gt;revision.&lt;FieldInstance&gt;oscal-version'"
-	 * @generated
-	 */
-	String getOscalVersion();
-
-	/**
-	 * Sets the value of the '{@link dsm.oscal.model.OscalMetadata.Revision#getOscalVersion <em>Oscal Version</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Oscal Version</em>' attribute.
-	 * @see #getOscalVersion()
-	 * @generated
-	 */
-	void setOscalVersion(String value);
 
 } // Revision

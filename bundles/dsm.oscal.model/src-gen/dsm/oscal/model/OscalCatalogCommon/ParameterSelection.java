@@ -16,6 +16,7 @@
 package dsm.oscal.model.OscalCatalogCommon;
 
 import dsm.oscal.model.OscalMetadata.OscalElement;
+
 import gov.nist.secauto.metaschema.datatypes.markup.MarkupLine;
 
 import org.eclipse.emf.common.util.EList;
@@ -48,6 +49,25 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface ParameterSelection extends OscalElement {
 	/**
+	 * Returns the value of the '<em><b>Choice</b></em>' attribute list.
+	 * The list contents are of type {@link gov.nist.secauto.metaschema.datatypes.markup.MarkupLine}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * <h1>Choice</h1>
+	 * <h2>Description</h2>
+	 * <p>A value selection among several such options</p>
+	 * 
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Choice</em>' attribute list.
+	 * @see dsm.oscal.model.OscalCatalogCommon.OscalCatalogCommonPackage#getParameterSelection_Choice()
+	 * @model dataType="dsm.oscal.model.OscalMetadata.MarkupLineType"
+	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-catalog-common.&lt;AssemblyDefinition&gt;parameter-selection.&lt;FieldInstance&gt;parameter-choice'"
+	 * @generated
+	 */
+	EList<MarkupLine> getChoice();
+
+	/**
 	 * Returns the value of the '<em><b>How Many</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -74,24 +94,5 @@ public interface ParameterSelection extends OscalElement {
 	 * @generated
 	 */
 	void setHowMany(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Choice</b></em>' attribute list.
-	 * The list contents are of type {@link gov.nist.secauto.metaschema.datatypes.markup.MarkupLine}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * <h1>Choice</h1>
-	 * <h2>Description</h2>
-	 * <p>A value selection among several such options</p>
-	 * 
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Choice</em>' attribute list.
-	 * @see dsm.oscal.model.OscalCatalogCommon.OscalCatalogCommonPackage#getParameterSelection_Choice()
-	 * @model dataType="dsm.oscal.model.OscalMetadata.MarkupLineType"
-	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-catalog-common.&lt;AssemblyDefinition&gt;parameter-selection.&lt;FieldInstance&gt;parameter-choice'"
-	 * @generated
-	 */
-	EList<MarkupLine> getChoice();
 
 } // ParameterSelection

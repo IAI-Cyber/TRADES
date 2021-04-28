@@ -19,7 +19,9 @@ import dsm.oscal.model.OscalMetadata.OscalMetadataPackage;
 import dsm.oscal.model.OscalMetadata.UUIDElement;
 
 import java.util.UUID;
+
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -48,6 +50,7 @@ public class UUIDElementImpl extends MinimalEObjectImpl.Container implements UUI
 	 * @ordered
 	 */
 	protected static final UUID UUID_EDEFAULT = null;
+
 	/**
 	 * The cached value of the '{@link #getUuid() <em>Uuid</em>}' attribute.
 	 * <!-- begin-user-doc -->

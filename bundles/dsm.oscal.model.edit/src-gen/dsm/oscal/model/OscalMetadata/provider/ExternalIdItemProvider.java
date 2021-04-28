@@ -18,11 +18,13 @@ package dsm.oscal.model.OscalMetadata.provider;
 
 import dsm.oscal.model.OscalMetadata.ExternalId;
 import dsm.oscal.model.OscalMetadata.OscalMetadataPackage;
+
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
@@ -34,8 +36,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ExternalIdItemProvider 
-	extends OscalElementItemProvider {
+public class ExternalIdItemProvider extends OscalElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

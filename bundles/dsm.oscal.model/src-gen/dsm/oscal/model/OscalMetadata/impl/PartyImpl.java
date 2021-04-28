@@ -16,8 +16,6 @@
 package dsm.oscal.model.OscalMetadata.impl;
 
 import dsm.oscal.model.OscalMetadata.Address;
-import dsm.oscal.model.OscalMetadata.Annotation;
-import dsm.oscal.model.OscalMetadata.AnnotationOwner;
 import dsm.oscal.model.OscalMetadata.ElementWithRemarks;
 import dsm.oscal.model.OscalMetadata.ExternalId;
 import dsm.oscal.model.OscalMetadata.Link;
@@ -27,8 +25,8 @@ import dsm.oscal.model.OscalMetadata.Party;
 import dsm.oscal.model.OscalMetadata.Property;
 import dsm.oscal.model.OscalMetadata.PropertyOwner;
 import dsm.oscal.model.OscalMetadata.TelephoneNumber;
-
 import dsm.oscal.model.OscalMetadata.UUIDElement;
+
 import gov.nist.secauto.metaschema.datatypes.markup.MarkupMultiline;
 
 import java.util.Collection;
@@ -43,6 +41,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -56,7 +55,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.PartyImpl#getUuid <em>Uuid</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.impl.PartyImpl#getAnnotations <em>Annotations</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.PartyImpl#getProps <em>Props</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.PartyImpl#getLinks <em>Links</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.PartyImpl#getRemarks <em>Remarks</em>}</li>
@@ -93,16 +91,6 @@ public class PartyImpl extends OscalElementCustomImpl implements Party {
 	 * @ordered
 	 */
 	protected UUID uuid = UUID_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getAnnotations() <em>Annotations</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAnnotations()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Annotation> annotations;
 
 	/**
 	 * The cached value of the '{@link #getProps() <em>Props</em>}' containment reference list.
@@ -312,8 +300,11 @@ public class PartyImpl extends OscalElementCustomImpl implements Party {
 	 * @generated
 	 */
 	@Override
-	public String getType() {
-		return type;
+	public EList<Property> getProps() {
+		if (props == null) {
+			props = new EObjectContainmentEList<Property>(Property.class, this, OscalMetadataPackage.PARTY__PROPS);
+		}
+		return props;
 	}
 
 	/**
@@ -322,11 +313,99 @@ public class PartyImpl extends OscalElementCustomImpl implements Party {
 	 * @generated
 	 */
 	@Override
-	public void setType(String newType) {
-		String oldType = type;
-		type = newType;
+	public EList<Link> getLinks() {
+		if (links == null) {
+			links = new EObjectContainmentEList<Link>(Link.class, this, OscalMetadataPackage.PARTY__LINKS);
+		}
+		return links;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public MarkupMultiline getRemarks() {
+		return remarks;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setRemarks(MarkupMultiline newRemarks) {
+		MarkupMultiline oldRemarks = remarks;
+		remarks = newRemarks;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OscalMetadataPackage.PARTY__TYPE, oldType, type));
+			eNotify(new ENotificationImpl(this, Notification.SET, OscalMetadataPackage.PARTY__REMARKS, oldRemarks, remarks));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<Address> getAddresses() {
+		if (addresses == null) {
+			addresses = new EObjectContainmentEList<Address>(Address.class, this, OscalMetadataPackage.PARTY__ADDRESSES);
+		}
+		return addresses;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<String> getEmailAddresses() {
+		if (emailAddresses == null) {
+			emailAddresses = new EDataTypeUniqueEList<String>(String.class, this, OscalMetadataPackage.PARTY__EMAIL_ADDRESSES);
+		}
+		return emailAddresses;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<ExternalId> getExternalIds() {
+		if (externalIds == null) {
+			externalIds = new EObjectContainmentEList<ExternalId>(ExternalId.class, this, OscalMetadataPackage.PARTY__EXTERNAL_IDS);
+		}
+		return externalIds;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<UUID> getLocationUuids() {
+		if (locationUuids == null) {
+			locationUuids = new EDataTypeUniqueEList<UUID>(UUID.class, this, OscalMetadataPackage.PARTY__LOCATION_UUIDS);
+		}
+		return locationUuids;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<UUID> getMemberOfOrganizations() {
+		if (memberOfOrganizations == null) {
+			memberOfOrganizations = new EDataTypeUniqueEList<UUID>(UUID.class, this, OscalMetadataPackage.PARTY__MEMBER_OF_ORGANIZATIONS);
+		}
+		return memberOfOrganizations;
 	}
 
 	/**
@@ -381,133 +460,6 @@ public class PartyImpl extends OscalElementCustomImpl implements Party {
 	 * @generated
 	 */
 	@Override
-	public EList<String> getEmailAddresses() {
-		if (emailAddresses == null) {
-			emailAddresses = new EDataTypeUniqueEList<String>(String.class, this, OscalMetadataPackage.PARTY__EMAIL_ADDRESSES);
-		}
-		return emailAddresses;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EList<UUID> getLocationUuids() {
-		if (locationUuids == null) {
-			locationUuids = new EDataTypeUniqueEList<UUID>(UUID.class, this, OscalMetadataPackage.PARTY__LOCATION_UUIDS);
-		}
-		return locationUuids;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EList<UUID> getMemberOfOrganizations() {
-		if (memberOfOrganizations == null) {
-			memberOfOrganizations = new EDataTypeUniqueEList<UUID>(UUID.class, this, OscalMetadataPackage.PARTY__MEMBER_OF_ORGANIZATIONS);
-		}
-		return memberOfOrganizations;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public MarkupMultiline getRemarks() {
-		return remarks;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setRemarks(MarkupMultiline newRemarks) {
-		MarkupMultiline oldRemarks = remarks;
-		remarks = newRemarks;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OscalMetadataPackage.PARTY__REMARKS, oldRemarks, remarks));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EList<Annotation> getAnnotations() {
-		if (annotations == null) {
-			annotations = new EObjectContainmentEList<Annotation>(Annotation.class, this, OscalMetadataPackage.PARTY__ANNOTATIONS);
-		}
-		return annotations;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EList<Address> getAddresses() {
-		if (addresses == null) {
-			addresses = new EObjectContainmentEList<Address>(Address.class, this, OscalMetadataPackage.PARTY__ADDRESSES);
-		}
-		return addresses;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EList<Link> getLinks() {
-		if (links == null) {
-			links = new EObjectContainmentEList<Link>(Link.class, this, OscalMetadataPackage.PARTY__LINKS);
-		}
-		return links;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EList<ExternalId> getExternalIds() {
-		if (externalIds == null) {
-			externalIds = new EObjectContainmentEList<ExternalId>(ExternalId.class, this, OscalMetadataPackage.PARTY__EXTERNAL_IDS);
-		}
-		return externalIds;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EList<Property> getProps() {
-		if (props == null) {
-			props = new EObjectContainmentEList<Property>(Property.class, this, OscalMetadataPackage.PARTY__PROPS);
-		}
-		return props;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EList<TelephoneNumber> getTelephoneNumbers() {
 		if (telephoneNumbers == null) {
 			telephoneNumbers = new EObjectContainmentEList<TelephoneNumber>(TelephoneNumber.class, this, OscalMetadataPackage.PARTY__TELEPHONE_NUMBERS);
@@ -521,10 +473,31 @@ public class PartyImpl extends OscalElementCustomImpl implements Party {
 	 * @generated
 	 */
 	@Override
+	public String getType() {
+		return type;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setType(String newType) {
+		String oldType = type;
+		type = newType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OscalMetadataPackage.PARTY__TYPE, oldType, type));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case OscalMetadataPackage.PARTY__ANNOTATIONS:
-				return ((InternalEList<?>)getAnnotations()).basicRemove(otherEnd, msgs);
 			case OscalMetadataPackage.PARTY__PROPS:
 				return ((InternalEList<?>)getProps()).basicRemove(otherEnd, msgs);
 			case OscalMetadataPackage.PARTY__LINKS:
@@ -549,8 +522,6 @@ public class PartyImpl extends OscalElementCustomImpl implements Party {
 		switch (featureID) {
 			case OscalMetadataPackage.PARTY__UUID:
 				return getUuid();
-			case OscalMetadataPackage.PARTY__ANNOTATIONS:
-				return getAnnotations();
 			case OscalMetadataPackage.PARTY__PROPS:
 				return getProps();
 			case OscalMetadataPackage.PARTY__LINKS:
@@ -590,10 +561,6 @@ public class PartyImpl extends OscalElementCustomImpl implements Party {
 		switch (featureID) {
 			case OscalMetadataPackage.PARTY__UUID:
 				setUuid((UUID)newValue);
-				return;
-			case OscalMetadataPackage.PARTY__ANNOTATIONS:
-				getAnnotations().clear();
-				getAnnotations().addAll((Collection<? extends Annotation>)newValue);
 				return;
 			case OscalMetadataPackage.PARTY__PROPS:
 				getProps().clear();
@@ -654,9 +621,6 @@ public class PartyImpl extends OscalElementCustomImpl implements Party {
 			case OscalMetadataPackage.PARTY__UUID:
 				setUuid(UUID_EDEFAULT);
 				return;
-			case OscalMetadataPackage.PARTY__ANNOTATIONS:
-				getAnnotations().clear();
-				return;
 			case OscalMetadataPackage.PARTY__PROPS:
 				getProps().clear();
 				return;
@@ -707,8 +671,6 @@ public class PartyImpl extends OscalElementCustomImpl implements Party {
 		switch (featureID) {
 			case OscalMetadataPackage.PARTY__UUID:
 				return UUID_EDEFAULT == null ? uuid != null : !UUID_EDEFAULT.equals(uuid);
-			case OscalMetadataPackage.PARTY__ANNOTATIONS:
-				return annotations != null && !annotations.isEmpty();
 			case OscalMetadataPackage.PARTY__PROPS:
 				return props != null && !props.isEmpty();
 			case OscalMetadataPackage.PARTY__LINKS:
@@ -750,12 +712,6 @@ public class PartyImpl extends OscalElementCustomImpl implements Party {
 				default: return -1;
 			}
 		}
-		if (baseClass == AnnotationOwner.class) {
-			switch (derivedFeatureID) {
-				case OscalMetadataPackage.PARTY__ANNOTATIONS: return OscalMetadataPackage.ANNOTATION_OWNER__ANNOTATIONS;
-				default: return -1;
-			}
-		}
 		if (baseClass == PropertyOwner.class) {
 			switch (derivedFeatureID) {
 				case OscalMetadataPackage.PARTY__PROPS: return OscalMetadataPackage.PROPERTY_OWNER__PROPS;
@@ -787,12 +743,6 @@ public class PartyImpl extends OscalElementCustomImpl implements Party {
 		if (baseClass == UUIDElement.class) {
 			switch (baseFeatureID) {
 				case OscalMetadataPackage.UUID_ELEMENT__UUID: return OscalMetadataPackage.PARTY__UUID;
-				default: return -1;
-			}
-		}
-		if (baseClass == AnnotationOwner.class) {
-			switch (baseFeatureID) {
-				case OscalMetadataPackage.ANNOTATION_OWNER__ANNOTATIONS: return OscalMetadataPackage.PARTY__ANNOTATIONS;
 				default: return -1;
 			}
 		}

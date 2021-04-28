@@ -25,9 +25,10 @@ import java.net.URI;
  * <!-- begin-model-doc -->
  * <h1>Property</h1>
  * <h2>Description</h2>
- * <p>An attribute, characteristic, or quality of the containing object expressed as a namespace qualified name/value pair. The value of a property is a simple scalar value, which may be expressed as a list of values in some OSCAL formats.</p>
+ * <p>An attribute, characteristic, or quality of the containing object expressed as a namespace qualified name/value pair. The value of a property is a simple scalar value, which may be expressed as a list of values.</p>
  * <h2>Remarks</h2>
  * <p>Properties permit the deployment and management of arbitrary controlled values, within OSCAL objects. A property can be included for any purpose useful to an application or implementation. Typically, properties will be used to sort, filter, select, order, and arrange OSCAL content objects, to relate OSCAL objects to one another, or to associate an OSCAL object to class hierarchies, taxonomies, or external authorities. Thus, the lexical composition of properties may be constrained by external processes to ensure consistency.</p>
+ * <p>Property allows for associated remarks that describe why the specific property value was applied to the containing object, or the significance of the value in the context of the containing object.</p>
  * 
  * <!-- end-model-doc -->
  *
@@ -40,10 +41,10 @@ import java.net.URI;
  * </ul>
  *
  * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getProperty()
- * @model annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;FieldDefinition&gt;property'"
+ * @model annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;AssemblyDefinition&gt;property'"
  * @generated
  */
-public interface Property extends OscalElement, UUIDElement, ElementWithValue, ElementWithClazz {
+public interface Property extends OscalElement, UUIDElement, ElementWithRemarks, ElementWithValue, ElementWithClazz {
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -58,7 +59,7 @@ public interface Property extends OscalElement, UUIDElement, ElementWithValue, E
 	 * @see #setName(String)
 	 * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getProperty_Name()
 	 * @model required="true"
-	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;FieldDefinition&gt;property.&lt;FlagInstance&gt;name'"
+	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;AssemblyDefinition&gt;property.&lt;FlagInstance&gt;name'"
 	 * @generated
 	 */
 	String getName();
@@ -91,7 +92,7 @@ public interface Property extends OscalElement, UUIDElement, ElementWithValue, E
 	 * @see #setNs(URI)
 	 * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getProperty_Ns()
 	 * @model dataType="dsm.oscal.model.OscalMetadata.UriType"
-	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;FieldDefinition&gt;property.&lt;FlagInstance&gt;ns'"
+	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;AssemblyDefinition&gt;property.&lt;FlagInstance&gt;ns'"
 	 * @generated
 	 */
 	URI getNs();

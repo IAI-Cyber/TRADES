@@ -15,8 +15,6 @@
  */
 package dsm.oscal.model.OscalMetadata.impl;
 
-import dsm.oscal.model.OscalMetadata.Annotation;
-import dsm.oscal.model.OscalMetadata.AnnotationOwner;
 import dsm.oscal.model.OscalMetadata.BackMatterResource;
 import dsm.oscal.model.OscalMetadata.Base64;
 import dsm.oscal.model.OscalMetadata.DocumentId;
@@ -26,13 +24,14 @@ import dsm.oscal.model.OscalMetadata.Property;
 import dsm.oscal.model.OscalMetadata.PropertyOwner;
 import dsm.oscal.model.OscalMetadata.ResourceCitation;
 import dsm.oscal.model.OscalMetadata.ResourceRlink;
-
 import dsm.oscal.model.OscalMetadata.UUIDElement;
+
 import gov.nist.secauto.metaschema.datatypes.markup.MarkupLine;
 import gov.nist.secauto.metaschema.datatypes.markup.MarkupMultiline;
 
 import java.util.Collection;
 import java.util.UUID;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -42,6 +41,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -54,7 +54,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.BackMatterResourceImpl#getUuid <em>Uuid</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalMetadata.impl.BackMatterResourceImpl#getAnnotations <em>Annotations</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.BackMatterResourceImpl#getProps <em>Props</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.BackMatterResourceImpl#getRemarks <em>Remarks</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.BackMatterResourceImpl#getBase64 <em>Base64</em>}</li>
@@ -87,16 +86,6 @@ public class BackMatterResourceImpl extends OscalElementCustomImpl implements Ba
 	 * @ordered
 	 */
 	protected UUID uuid = UUID_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getAnnotations() <em>Annotations</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAnnotations()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Annotation> annotations;
 
 	/**
 	 * The cached value of the '{@link #getProps() <em>Props</em>}' containment reference list.
@@ -256,44 +245,11 @@ public class BackMatterResourceImpl extends OscalElementCustomImpl implements Ba
 	 * @generated
 	 */
 	@Override
-	public MarkupLine getTitle() {
-		return title;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setTitle(MarkupLine newTitle) {
-		MarkupLine oldTitle = title;
-		title = newTitle;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OscalMetadataPackage.BACK_MATTER_RESOURCE__TITLE, oldTitle, title));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public MarkupMultiline getDescription() {
-		return description;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setDescription(MarkupMultiline newDescription) {
-		MarkupMultiline oldDescription = description;
-		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OscalMetadataPackage.BACK_MATTER_RESOURCE__DESCRIPTION, oldDescription, description));
+	public EList<Property> getProps() {
+		if (props == null) {
+			props = new EObjectContainmentEList<Property>(Property.class, this, OscalMetadataPackage.BACK_MATTER_RESOURCE__PROPS);
+		}
+		return props;
 	}
 
 	/**
@@ -317,103 +273,6 @@ public class BackMatterResourceImpl extends OscalElementCustomImpl implements Ba
 		remarks = newRemarks;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OscalMetadataPackage.BACK_MATTER_RESOURCE__REMARKS, oldRemarks, remarks));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EList<Annotation> getAnnotations() {
-		if (annotations == null) {
-			annotations = new EObjectContainmentEList<Annotation>(Annotation.class, this, OscalMetadataPackage.BACK_MATTER_RESOURCE__ANNOTATIONS);
-		}
-		return annotations;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ResourceCitation getCitation() {
-		return citation;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetCitation(ResourceCitation newCitation, NotificationChain msgs) {
-		ResourceCitation oldCitation = citation;
-		citation = newCitation;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, OscalMetadataPackage.BACK_MATTER_RESOURCE__CITATION, oldCitation, newCitation);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setCitation(ResourceCitation newCitation) {
-		if (newCitation != citation) {
-			NotificationChain msgs = null;
-			if (citation != null)
-				msgs = ((InternalEObject)citation).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - OscalMetadataPackage.BACK_MATTER_RESOURCE__CITATION, null, msgs);
-			if (newCitation != null)
-				msgs = ((InternalEObject)newCitation).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - OscalMetadataPackage.BACK_MATTER_RESOURCE__CITATION, null, msgs);
-			msgs = basicSetCitation(newCitation, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OscalMetadataPackage.BACK_MATTER_RESOURCE__CITATION, newCitation, newCitation));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EList<ResourceRlink> getRlinks() {
-		if (rlinks == null) {
-			rlinks = new EObjectContainmentEList<ResourceRlink>(ResourceRlink.class, this, OscalMetadataPackage.BACK_MATTER_RESOURCE__RLINKS);
-		}
-		return rlinks;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EList<Property> getProps() {
-		if (props == null) {
-			props = new EObjectContainmentEList<Property>(Property.class, this, OscalMetadataPackage.BACK_MATTER_RESOURCE__PROPS);
-		}
-		return props;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EList<DocumentId> getDocumentIds() {
-		if (documentIds == null) {
-			documentIds = new EObjectContainmentEList<DocumentId>(DocumentId.class, this, OscalMetadataPackage.BACK_MATTER_RESOURCE__DOCUMENT_IDS);
-		}
-		return documentIds;
 	}
 
 	/**
@@ -467,10 +326,125 @@ public class BackMatterResourceImpl extends OscalElementCustomImpl implements Ba
 	 * @generated
 	 */
 	@Override
+	public ResourceCitation getCitation() {
+		return citation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetCitation(ResourceCitation newCitation, NotificationChain msgs) {
+		ResourceCitation oldCitation = citation;
+		citation = newCitation;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, OscalMetadataPackage.BACK_MATTER_RESOURCE__CITATION, oldCitation, newCitation);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setCitation(ResourceCitation newCitation) {
+		if (newCitation != citation) {
+			NotificationChain msgs = null;
+			if (citation != null)
+				msgs = ((InternalEObject)citation).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - OscalMetadataPackage.BACK_MATTER_RESOURCE__CITATION, null, msgs);
+			if (newCitation != null)
+				msgs = ((InternalEObject)newCitation).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - OscalMetadataPackage.BACK_MATTER_RESOURCE__CITATION, null, msgs);
+			msgs = basicSetCitation(newCitation, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OscalMetadataPackage.BACK_MATTER_RESOURCE__CITATION, newCitation, newCitation));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public MarkupMultiline getDescription() {
+		return description;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setDescription(MarkupMultiline newDescription) {
+		MarkupMultiline oldDescription = description;
+		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OscalMetadataPackage.BACK_MATTER_RESOURCE__DESCRIPTION, oldDescription, description));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<DocumentId> getDocumentIds() {
+		if (documentIds == null) {
+			documentIds = new EObjectContainmentEList<DocumentId>(DocumentId.class, this, OscalMetadataPackage.BACK_MATTER_RESOURCE__DOCUMENT_IDS);
+		}
+		return documentIds;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<ResourceRlink> getRlinks() {
+		if (rlinks == null) {
+			rlinks = new EObjectContainmentEList<ResourceRlink>(ResourceRlink.class, this, OscalMetadataPackage.BACK_MATTER_RESOURCE__RLINKS);
+		}
+		return rlinks;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public MarkupLine getTitle() {
+		return title;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setTitle(MarkupLine newTitle) {
+		MarkupLine oldTitle = title;
+		title = newTitle;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OscalMetadataPackage.BACK_MATTER_RESOURCE__TITLE, oldTitle, title));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case OscalMetadataPackage.BACK_MATTER_RESOURCE__ANNOTATIONS:
-				return ((InternalEList<?>)getAnnotations()).basicRemove(otherEnd, msgs);
 			case OscalMetadataPackage.BACK_MATTER_RESOURCE__PROPS:
 				return ((InternalEList<?>)getProps()).basicRemove(otherEnd, msgs);
 			case OscalMetadataPackage.BACK_MATTER_RESOURCE__BASE64:
@@ -495,8 +469,6 @@ public class BackMatterResourceImpl extends OscalElementCustomImpl implements Ba
 		switch (featureID) {
 			case OscalMetadataPackage.BACK_MATTER_RESOURCE__UUID:
 				return getUuid();
-			case OscalMetadataPackage.BACK_MATTER_RESOURCE__ANNOTATIONS:
-				return getAnnotations();
 			case OscalMetadataPackage.BACK_MATTER_RESOURCE__PROPS:
 				return getProps();
 			case OscalMetadataPackage.BACK_MATTER_RESOURCE__REMARKS:
@@ -528,10 +500,6 @@ public class BackMatterResourceImpl extends OscalElementCustomImpl implements Ba
 		switch (featureID) {
 			case OscalMetadataPackage.BACK_MATTER_RESOURCE__UUID:
 				setUuid((UUID)newValue);
-				return;
-			case OscalMetadataPackage.BACK_MATTER_RESOURCE__ANNOTATIONS:
-				getAnnotations().clear();
-				getAnnotations().addAll((Collection<? extends Annotation>)newValue);
 				return;
 			case OscalMetadataPackage.BACK_MATTER_RESOURCE__PROPS:
 				getProps().clear();
@@ -575,9 +543,6 @@ public class BackMatterResourceImpl extends OscalElementCustomImpl implements Ba
 			case OscalMetadataPackage.BACK_MATTER_RESOURCE__UUID:
 				setUuid(UUID_EDEFAULT);
 				return;
-			case OscalMetadataPackage.BACK_MATTER_RESOURCE__ANNOTATIONS:
-				getAnnotations().clear();
-				return;
 			case OscalMetadataPackage.BACK_MATTER_RESOURCE__PROPS:
 				getProps().clear();
 				return;
@@ -616,8 +581,6 @@ public class BackMatterResourceImpl extends OscalElementCustomImpl implements Ba
 		switch (featureID) {
 			case OscalMetadataPackage.BACK_MATTER_RESOURCE__UUID:
 				return UUID_EDEFAULT == null ? uuid != null : !UUID_EDEFAULT.equals(uuid);
-			case OscalMetadataPackage.BACK_MATTER_RESOURCE__ANNOTATIONS:
-				return annotations != null && !annotations.isEmpty();
 			case OscalMetadataPackage.BACK_MATTER_RESOURCE__PROPS:
 				return props != null && !props.isEmpty();
 			case OscalMetadataPackage.BACK_MATTER_RESOURCE__REMARKS:
@@ -651,12 +614,6 @@ public class BackMatterResourceImpl extends OscalElementCustomImpl implements Ba
 				default: return -1;
 			}
 		}
-		if (baseClass == AnnotationOwner.class) {
-			switch (derivedFeatureID) {
-				case OscalMetadataPackage.BACK_MATTER_RESOURCE__ANNOTATIONS: return OscalMetadataPackage.ANNOTATION_OWNER__ANNOTATIONS;
-				default: return -1;
-			}
-		}
 		if (baseClass == PropertyOwner.class) {
 			switch (derivedFeatureID) {
 				case OscalMetadataPackage.BACK_MATTER_RESOURCE__PROPS: return OscalMetadataPackage.PROPERTY_OWNER__PROPS;
@@ -682,12 +639,6 @@ public class BackMatterResourceImpl extends OscalElementCustomImpl implements Ba
 		if (baseClass == UUIDElement.class) {
 			switch (baseFeatureID) {
 				case OscalMetadataPackage.UUID_ELEMENT__UUID: return OscalMetadataPackage.BACK_MATTER_RESOURCE__UUID;
-				default: return -1;
-			}
-		}
-		if (baseClass == AnnotationOwner.class) {
-			switch (baseFeatureID) {
-				case OscalMetadataPackage.ANNOTATION_OWNER__ANNOTATIONS: return OscalMetadataPackage.BACK_MATTER_RESOURCE__ANNOTATIONS;
 				default: return -1;
 			}
 		}

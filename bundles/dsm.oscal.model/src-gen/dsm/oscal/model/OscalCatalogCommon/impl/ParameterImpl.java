@@ -21,8 +21,6 @@ import dsm.oscal.model.OscalCatalogCommon.ParameterConstraint;
 import dsm.oscal.model.OscalCatalogCommon.ParameterGuideline;
 import dsm.oscal.model.OscalCatalogCommon.ParameterSelection;
 
-import dsm.oscal.model.OscalMetadata.Annotation;
-import dsm.oscal.model.OscalMetadata.AnnotationOwner;
 import dsm.oscal.model.OscalMetadata.ElementWithClazz;
 import dsm.oscal.model.OscalMetadata.ElementWithId;
 import dsm.oscal.model.OscalMetadata.ElementWithRemarks;
@@ -30,9 +28,10 @@ import dsm.oscal.model.OscalMetadata.Link;
 import dsm.oscal.model.OscalMetadata.LinkOwner;
 import dsm.oscal.model.OscalMetadata.OscalMetadataPackage;
 import dsm.oscal.model.OscalMetadata.Property;
-
 import dsm.oscal.model.OscalMetadata.PropertyOwner;
+
 import dsm.oscal.model.OscalMetadata.impl.OscalElementCustomImpl;
+
 import gov.nist.secauto.metaschema.datatypes.markup.MarkupLine;
 import gov.nist.secauto.metaschema.datatypes.markup.MarkupMultiline;
 
@@ -47,6 +46,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -59,7 +59,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link dsm.oscal.model.OscalCatalogCommon.impl.ParameterImpl#getAnnotations <em>Annotations</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalogCommon.impl.ParameterImpl#getProps <em>Props</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalogCommon.impl.ParameterImpl#getLinks <em>Links</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalogCommon.impl.ParameterImpl#getRemarks <em>Remarks</em>}</li>
@@ -77,16 +76,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * @generated
  */
 public class ParameterImpl extends OscalElementCustomImpl implements Parameter {
-	/**
-	 * The cached value of the '{@link #getAnnotations() <em>Annotations</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAnnotations()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Annotation> annotations;
-
 	/**
 	 * The cached value of the '{@link #getProps() <em>Props</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -292,126 +281,24 @@ public class ParameterImpl extends OscalElementCustomImpl implements Parameter {
 	 * @generated
 	 */
 	@Override
-	public String getId() {
-		return id;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setId(String newId) {
-		String oldId = id;
-		id = newId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OscalCatalogCommonPackage.PARAMETER__ID, oldId, id));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getClazz() {
-		return clazz;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setClazz(String newClazz) {
-		String oldClazz = clazz;
-		clazz = newClazz;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OscalCatalogCommonPackage.PARAMETER__CLAZZ, oldClazz, clazz));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getDependsOn() {
-		return dependsOn;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setDependsOn(String newDependsOn) {
-		String oldDependsOn = dependsOn;
-		dependsOn = newDependsOn;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OscalCatalogCommonPackage.PARAMETER__DEPENDS_ON, oldDependsOn, dependsOn));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public MarkupLine getLabel() {
-		return label;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setLabel(MarkupLine newLabel) {
-		MarkupLine oldLabel = label;
-		label = newLabel;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OscalCatalogCommonPackage.PARAMETER__LABEL, oldLabel, label));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public MarkupMultiline getUsage() {
-		return usage;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setUsage(MarkupMultiline newUsage) {
-		MarkupMultiline oldUsage = usage;
-		usage = newUsage;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OscalCatalogCommonPackage.PARAMETER__USAGE, oldUsage, usage));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EList<String> getValues() {
-		if (values == null) {
-			values = new EDataTypeUniqueEList<String>(String.class, this, OscalCatalogCommonPackage.PARAMETER__VALUES);
+	public EList<Property> getProps() {
+		if (props == null) {
+			props = new EObjectContainmentEList<Property>(Property.class, this, OscalCatalogCommonPackage.PARAMETER__PROPS);
 		}
-		return values;
+		return props;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<Link> getLinks() {
+		if (links == null) {
+			links = new EObjectContainmentEList<Link>(Link.class, this, OscalCatalogCommonPackage.PARAMETER__LINKS);
+		}
+		return links;
 	}
 
 	/**
@@ -443,11 +330,116 @@ public class ParameterImpl extends OscalElementCustomImpl implements Parameter {
 	 * @generated
 	 */
 	@Override
-	public EList<Annotation> getAnnotations() {
-		if (annotations == null) {
-			annotations = new EObjectContainmentEList<Annotation>(Annotation.class, this, OscalCatalogCommonPackage.PARAMETER__ANNOTATIONS);
+	public String getClazz() {
+		return clazz;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setClazz(String newClazz) {
+		String oldClazz = clazz;
+		clazz = newClazz;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OscalCatalogCommonPackage.PARAMETER__CLAZZ, oldClazz, clazz));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getId() {
+		return id;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setId(String newId) {
+		String oldId = id;
+		id = newId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OscalCatalogCommonPackage.PARAMETER__ID, oldId, id));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<ParameterConstraint> getConstraints() {
+		if (constraints == null) {
+			constraints = new EObjectContainmentEList<ParameterConstraint>(ParameterConstraint.class, this, OscalCatalogCommonPackage.PARAMETER__CONSTRAINTS);
 		}
-		return annotations;
+		return constraints;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getDependsOn() {
+		return dependsOn;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setDependsOn(String newDependsOn) {
+		String oldDependsOn = dependsOn;
+		dependsOn = newDependsOn;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OscalCatalogCommonPackage.PARAMETER__DEPENDS_ON, oldDependsOn, dependsOn));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<ParameterGuideline> getGuidelines() {
+		if (guidelines == null) {
+			guidelines = new EObjectContainmentEList<ParameterGuideline>(ParameterGuideline.class, this, OscalCatalogCommonPackage.PARAMETER__GUIDELINES);
+		}
+		return guidelines;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public MarkupLine getLabel() {
+		return label;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setLabel(MarkupLine newLabel) {
+		MarkupLine oldLabel = label;
+		label = newLabel;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OscalCatalogCommonPackage.PARAMETER__LABEL, oldLabel, label));
 	}
 
 	/**
@@ -501,11 +493,8 @@ public class ParameterImpl extends OscalElementCustomImpl implements Parameter {
 	 * @generated
 	 */
 	@Override
-	public EList<ParameterGuideline> getGuidelines() {
-		if (guidelines == null) {
-			guidelines = new EObjectContainmentEList<ParameterGuideline>(ParameterGuideline.class, this, OscalCatalogCommonPackage.PARAMETER__GUIDELINES);
-		}
-		return guidelines;
+	public MarkupMultiline getUsage() {
+		return usage;
 	}
 
 	/**
@@ -514,11 +503,11 @@ public class ParameterImpl extends OscalElementCustomImpl implements Parameter {
 	 * @generated
 	 */
 	@Override
-	public EList<Link> getLinks() {
-		if (links == null) {
-			links = new EObjectContainmentEList<Link>(Link.class, this, OscalCatalogCommonPackage.PARAMETER__LINKS);
-		}
-		return links;
+	public void setUsage(MarkupMultiline newUsage) {
+		MarkupMultiline oldUsage = usage;
+		usage = newUsage;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OscalCatalogCommonPackage.PARAMETER__USAGE, oldUsage, usage));
 	}
 
 	/**
@@ -527,24 +516,11 @@ public class ParameterImpl extends OscalElementCustomImpl implements Parameter {
 	 * @generated
 	 */
 	@Override
-	public EList<ParameterConstraint> getConstraints() {
-		if (constraints == null) {
-			constraints = new EObjectContainmentEList<ParameterConstraint>(ParameterConstraint.class, this, OscalCatalogCommonPackage.PARAMETER__CONSTRAINTS);
+	public EList<String> getValues() {
+		if (values == null) {
+			values = new EDataTypeUniqueEList<String>(String.class, this, OscalCatalogCommonPackage.PARAMETER__VALUES);
 		}
-		return constraints;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EList<Property> getProps() {
-		if (props == null) {
-			props = new EObjectContainmentEList<Property>(Property.class, this, OscalCatalogCommonPackage.PARAMETER__PROPS);
-		}
-		return props;
+		return values;
 	}
 
 	/**
@@ -555,8 +531,6 @@ public class ParameterImpl extends OscalElementCustomImpl implements Parameter {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case OscalCatalogCommonPackage.PARAMETER__ANNOTATIONS:
-				return ((InternalEList<?>)getAnnotations()).basicRemove(otherEnd, msgs);
 			case OscalCatalogCommonPackage.PARAMETER__PROPS:
 				return ((InternalEList<?>)getProps()).basicRemove(otherEnd, msgs);
 			case OscalCatalogCommonPackage.PARAMETER__LINKS:
@@ -579,8 +553,6 @@ public class ParameterImpl extends OscalElementCustomImpl implements Parameter {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case OscalCatalogCommonPackage.PARAMETER__ANNOTATIONS:
-				return getAnnotations();
 			case OscalCatalogCommonPackage.PARAMETER__PROPS:
 				return getProps();
 			case OscalCatalogCommonPackage.PARAMETER__LINKS:
@@ -618,10 +590,6 @@ public class ParameterImpl extends OscalElementCustomImpl implements Parameter {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case OscalCatalogCommonPackage.PARAMETER__ANNOTATIONS:
-				getAnnotations().clear();
-				getAnnotations().addAll((Collection<? extends Annotation>)newValue);
-				return;
 			case OscalCatalogCommonPackage.PARAMETER__PROPS:
 				getProps().clear();
 				getProps().addAll((Collection<? extends Property>)newValue);
@@ -675,9 +643,6 @@ public class ParameterImpl extends OscalElementCustomImpl implements Parameter {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case OscalCatalogCommonPackage.PARAMETER__ANNOTATIONS:
-				getAnnotations().clear();
-				return;
 			case OscalCatalogCommonPackage.PARAMETER__PROPS:
 				getProps().clear();
 				return;
@@ -726,8 +691,6 @@ public class ParameterImpl extends OscalElementCustomImpl implements Parameter {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case OscalCatalogCommonPackage.PARAMETER__ANNOTATIONS:
-				return annotations != null && !annotations.isEmpty();
 			case OscalCatalogCommonPackage.PARAMETER__PROPS:
 				return props != null && !props.isEmpty();
 			case OscalCatalogCommonPackage.PARAMETER__LINKS:
@@ -763,12 +726,6 @@ public class ParameterImpl extends OscalElementCustomImpl implements Parameter {
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == AnnotationOwner.class) {
-			switch (derivedFeatureID) {
-				case OscalCatalogCommonPackage.PARAMETER__ANNOTATIONS: return OscalMetadataPackage.ANNOTATION_OWNER__ANNOTATIONS;
-				default: return -1;
-			}
-		}
 		if (baseClass == PropertyOwner.class) {
 			switch (derivedFeatureID) {
 				case OscalCatalogCommonPackage.PARAMETER__PROPS: return OscalMetadataPackage.PROPERTY_OWNER__PROPS;
@@ -809,12 +766,6 @@ public class ParameterImpl extends OscalElementCustomImpl implements Parameter {
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == AnnotationOwner.class) {
-			switch (baseFeatureID) {
-				case OscalMetadataPackage.ANNOTATION_OWNER__ANNOTATIONS: return OscalCatalogCommonPackage.PARAMETER__ANNOTATIONS;
-				default: return -1;
-			}
-		}
 		if (baseClass == PropertyOwner.class) {
 			switch (baseFeatureID) {
 				case OscalMetadataPackage.PROPERTY_OWNER__PROPS: return OscalCatalogCommonPackage.PARAMETER__PROPS;

@@ -43,7 +43,26 @@ import org.eclipse.emf.common.util.EList;
  * @model annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;AssemblyDefinition&gt;responsible-party'"
  * @generated
  */
-public interface ResponsibleParty extends OscalElement, AnnotationOwner, PropertyOwner, LinkOwner, ElementWithRemarks {
+public interface ResponsibleParty extends OscalElement, PropertyOwner, LinkOwner, ElementWithRemarks {
+	/**
+	 * Returns the value of the '<em><b>Party Uuids</b></em>' attribute list.
+	 * The list contents are of type {@link java.util.UUID}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * <h1>Party Reference</h1>
+	 * <h2>Description</h2>
+	 * <p>References a <code>party</code> defined in <code>metadata</code>.</p>
+	 * 
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Party Uuids</em>' attribute list.
+	 * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getResponsibleParty_PartyUuids()
+	 * @model dataType="dsm.oscal.model.OscalMetadata.UuidType" required="true"
+	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;AssemblyDefinition&gt;responsible-party.&lt;FieldInstance&gt;party-uuid'"
+	 * @generated
+	 */
+	EList<UUID> getPartyUuids();
+
 	/**
 	 * Returns the value of the '<em><b>Role Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -72,24 +91,5 @@ public interface ResponsibleParty extends OscalElement, AnnotationOwner, Propert
 	 * @generated
 	 */
 	void setRoleId(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Party Uuids</b></em>' attribute list.
-	 * The list contents are of type {@link java.util.UUID}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * <h1>Party Reference</h1>
-	 * <h2>Description</h2>
-	 * <p>References a <code>party</code> defined in <code>metadata</code>.</p>
-	 * 
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Party Uuids</em>' attribute list.
-	 * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getResponsibleParty_PartyUuids()
-	 * @model dataType="dsm.oscal.model.OscalMetadata.UuidType" required="true"
-	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;AssemblyDefinition&gt;responsible-party.&lt;FieldInstance&gt;party-uuid'"
-	 * @generated
-	 */
-	EList<UUID> getPartyUuids();
 
 } // ResponsibleParty

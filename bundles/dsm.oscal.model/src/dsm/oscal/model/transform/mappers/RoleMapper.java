@@ -22,7 +22,6 @@ public class RoleMapper extends AbstractObjectMapper<Role, gov.nist.secauto.osca
 	@Override
 	protected gov.nist.secauto.oscal.lib.Role safeToOscal(Role tradesObject) {
 		gov.nist.secauto.oscal.lib.Role role = new gov.nist.secauto.oscal.lib.Role();
-		buildXMLChildList(AnnotationMapper.getInstance(), tradesObject.getAnnotations(), role::setAnnotations);
 		role.setDescription(tradesObject.getDescription());
 		role.setId(tradesObject.getId());
 		buildXMLChildList(LinkMapper.getInstance(), tradesObject.getLinks(), role::setLinks);
@@ -36,7 +35,6 @@ public class RoleMapper extends AbstractObjectMapper<Role, gov.nist.secauto.osca
 	@Override
 	protected Role safeToTrades(gov.nist.secauto.oscal.lib.Role oscalObject) {
 		Role role = OscalMetadataFactory.eINSTANCE.createRole();
-		buildChildList(AnnotationMapper.getInstance(), oscalObject.getAnnotations(), role::getAnnotations);
 		role.setDescription(oscalObject.getDescription());
 		role.setId(oscalObject.getId());
 		buildChildList(LinkMapper.getInstance(), oscalObject.getLinks(), role::getLinks);

@@ -27,6 +27,7 @@ public class PropertyMapper extends AbstractObjectMapper<Property, gov.nist.seca
 		property.setClazz(oscalObject.getClazz());
 		property.setName(oscalObject.getName());
 		property.setNs(oscalObject.getNs());
+		property.setRemarks(oscalObject.getRemarks());
 
 		// In oscal UUIDS are not mandatory by in TRADES they are for simplicity sake
 		MigrationUtils.setUUID(oscalObject.getUuid(), property);
@@ -43,6 +44,7 @@ public class PropertyMapper extends AbstractObjectMapper<Property, gov.nist.seca
 		property.setNs(tradesObject.getNs());
 		property.setUuid(tradesObject.getUuid());
 		property.setValue(tradesObject.getValue());
+		property.setRemarks(tradesObject.getRemarks());
 		return property;
 	}
 

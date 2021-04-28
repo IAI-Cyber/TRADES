@@ -15,7 +15,6 @@
  */
 package dsm.oscal.model.OscalCatalogCommon;
 
-import dsm.oscal.model.OscalMetadata.AnnotationOwner;
 import dsm.oscal.model.OscalMetadata.DocumentationComputer;
 import dsm.oscal.model.OscalMetadata.ElementWithClazz;
 import dsm.oscal.model.OscalMetadata.ElementWithId;
@@ -23,6 +22,7 @@ import dsm.oscal.model.OscalMetadata.LinkOwner;
 import dsm.oscal.model.OscalMetadata.OscalElement;
 import dsm.oscal.model.OscalMetadata.PartOwner;
 import dsm.oscal.model.OscalMetadata.PropertyOwner;
+
 import gov.nist.secauto.metaschema.datatypes.markup.MarkupLine;
 import gov.nist.secauto.metaschema.datatypes.markup.MarkupMultiline;
 
@@ -42,7 +42,7 @@ import java.net.URI;
  * <p>A <code>part</code> can be assigned an optional <code>id</code>, which allows for internal and external references to the textual concept contained within a <code>part</code>. A <code>id</code> provides a means for an OSCAL profile, or a higher layer OSCAL model to reference a specific part within a <code>catalog</code>. For example, an <code>id</code> can be used to reference or to make modifications to a control statement in a profile.</p>
  * <p>Use of <code>part</code> and <code>prop</code> provides for a wide degree of extensibility within the OSCAL catalog model. The optional <code>ns</code> provides a means to qualify a part's <code>name</code>, allowing for organization-specific vocabularies to be defined with clear semantics. Any organization that extends OSCAL in this way should consistently assign a <code>ns</code> value that represents the organization, making a given namespace qualified <code>name</code> unique to that organization. This allows the combination of <code>ns</code> and <code>name</code> to always be unique and unambiguous, even when mixed with extensions from other organizations. Each organization is responsible for governance of their own extensions, and is strongly encouraged to publish their extensions as standards to their user community. If no <code>ns</code> is provided, the name is expected to be in the <q>OSCAL</q> namespace.</p>
  * <p>To ensure a <code>ns</code> is unique to an organization and naming conflicts are avoided, a URI containing a DNS or other globally defined organization name should be used. For example, if FedRAMP and DoD both extend OSCAL, FedRAMP will use the <code>ns</code> <q>https://fedramp.gov</q>, while DoD will use the <code>ns</code> <q>https://defense.gov</q> for any organization specific <code>name</code>.</p>
- * <p>Tools that process OSCAL content are not required to interpret unrecognized OSCAL extensions; however, OSCAL-compliant tools should not modify or remove unrecognized extensions, unless there is a compelling reason to do so, such as data sensitivity.</p>
+ * <p>Tools that process OSCAL content are not required to interpret unrecognized OSCAL extensions; however, OSCAL compliant tools should not modify or remove unrecognized extensions, unless there is a compelling reason to do so, such as data sensitivity.</p>
  * 
  * <!-- end-model-doc -->
  *
@@ -60,7 +60,7 @@ import java.net.URI;
  * @model annotation="Metaschema source='&lt;Metaschema&gt;oscal-catalog-common.&lt;AssemblyDefinition&gt;part'"
  * @generated
  */
-public interface Part extends OscalElement, AnnotationOwner, PropertyOwner, LinkOwner, PartOwner, DocumentationComputer, ElementWithClazz, ElementWithId {
+public interface Part extends OscalElement, PropertyOwner, LinkOwner, PartOwner, DocumentationComputer, ElementWithClazz, ElementWithId {
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -124,35 +124,6 @@ public interface Part extends OscalElement, AnnotationOwner, PropertyOwner, Link
 	void setNs(URI value);
 
 	/**
-	 * Returns the value of the '<em><b>Title</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * <h1>Part Title</h1>
-	 * <h2>Description</h2>
-	 * <p>A name given to the part, which may be used by a tool for display and navigation.</p>
-	 * 
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Title</em>' attribute.
-	 * @see #setTitle(MarkupLine)
-	 * @see dsm.oscal.model.OscalCatalogCommon.OscalCatalogCommonPackage#getPart_Title()
-	 * @model dataType="dsm.oscal.model.OscalMetadata.MarkupLineType"
-	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-catalog-common.&lt;AssemblyDefinition&gt;part.&lt;FieldInstance&gt;title'"
-	 * @generated
-	 */
-	MarkupLine getTitle();
-
-	/**
-	 * Sets the value of the '{@link dsm.oscal.model.OscalCatalogCommon.Part#getTitle <em>Title</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Title</em>' attribute.
-	 * @see #getTitle()
-	 * @generated
-	 */
-	void setTitle(MarkupLine value);
-
-	/**
 	 * Returns the value of the '<em><b>Prose</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -180,5 +151,34 @@ public interface Part extends OscalElement, AnnotationOwner, PropertyOwner, Link
 	 * @generated
 	 */
 	void setProse(MarkupMultiline value);
+
+	/**
+	 * Returns the value of the '<em><b>Title</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * <h1>Part Title</h1>
+	 * <h2>Description</h2>
+	 * <p>A name given to the part, which may be used by a tool for display and navigation.</p>
+	 * 
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Title</em>' attribute.
+	 * @see #setTitle(MarkupLine)
+	 * @see dsm.oscal.model.OscalCatalogCommon.OscalCatalogCommonPackage#getPart_Title()
+	 * @model dataType="dsm.oscal.model.OscalMetadata.MarkupLineType"
+	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-catalog-common.&lt;AssemblyDefinition&gt;part.&lt;FieldInstance&gt;title'"
+	 * @generated
+	 */
+	MarkupLine getTitle();
+
+	/**
+	 * Sets the value of the '{@link dsm.oscal.model.OscalCatalogCommon.Part#getTitle <em>Title</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Title</em>' attribute.
+	 * @see #getTitle()
+	 * @generated
+	 */
+	void setTitle(MarkupLine value);
 
 } // Part

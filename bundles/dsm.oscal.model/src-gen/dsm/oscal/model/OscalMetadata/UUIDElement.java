@@ -16,6 +16,7 @@
 package dsm.oscal.model.OscalMetadata;
 
 import java.util.UUID;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -35,7 +36,6 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface UUIDElement extends EObject {
-
 	/**
 	 * Returns the value of the '<em><b>Uuid</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -60,4 +60,5 @@ public interface UUIDElement extends EObject {
 	 * @generated
 	 */
 	void setUuid(UUID value);
+
 } // UUIDElement

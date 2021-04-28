@@ -44,15 +44,6 @@ public interface OscalMetadataFactory extends EFactory {
 	Address createAddress();
 
 	/**
-	 * Returns a new object of class '<em>Annotation</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Annotation</em>'.
-	 * @generated
-	 */
-	Annotation createAnnotation();
-
-	/**
 	 * Returns a new object of class '<em>Back Matter</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -285,15 +276,6 @@ public interface OscalMetadataFactory extends EFactory {
 	 * @generated
 	 */
 	UUIDElement createUUIDElement();
-
-	/**
-	 * Returns a new object of class '<em>Annotation Owner</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Annotation Owner</em>'.
-	 * @generated
-	 */
-	AnnotationOwner createAnnotationOwner();
 
 	/**
 	 * Returns the package supported by this factory.

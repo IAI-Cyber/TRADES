@@ -11,7 +11,7 @@
  *     ELTA Ltd - initial API and implementation
  * 
  */
-package dsm.oscal.model;
+package dsm.oscal.model.edit;
 
 import gov.nist.secauto.metaschema.datatypes.markup.MarkupLine;
 import gov.nist.secauto.metaschema.datatypes.markup.MarkupMultiline;

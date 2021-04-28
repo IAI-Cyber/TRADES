@@ -2,9 +2,9 @@ package dsm.oscal.model.OscalCatalog.provider;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 
-import dsm.oscal.model.LabelUtils;
 import dsm.oscal.model.OscalCatalog.Catalog;
 import dsm.oscal.model.OscalMetadata.Metadata;
+import dsm.oscal.model.edit.LabelUtils;
 
 public class CatalogItemProviderCustomImpl extends CatalogItemProvider {
 

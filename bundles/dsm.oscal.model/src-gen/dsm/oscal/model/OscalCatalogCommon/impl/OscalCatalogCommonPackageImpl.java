@@ -31,6 +31,7 @@ import dsm.oscal.model.OscalCatalogCommon.Part;
 import dsm.oscal.model.OscalMetadata.OscalMetadataPackage;
 
 import dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl;
+
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
@@ -174,6 +175,16 @@ public class OscalCatalogCommonPackageImpl extends EPackageImpl implements Oscal
 	 * @generated
 	 */
 	@Override
+	public EReference getParameter_Constraints() {
+		return (EReference)parameterEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EAttribute getParameter_DependsOn() {
 		return (EAttribute)parameterEClass.getEStructuralFeatures().get(1);
 	}
@@ -184,8 +195,28 @@ public class OscalCatalogCommonPackageImpl extends EPackageImpl implements Oscal
 	 * @generated
 	 */
 	@Override
+	public EReference getParameter_Guidelines() {
+		return (EReference)parameterEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EAttribute getParameter_Label() {
 		return (EAttribute)parameterEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getParameter_Select() {
+		return (EReference)parameterEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -206,36 +237,6 @@ public class OscalCatalogCommonPackageImpl extends EPackageImpl implements Oscal
 	@Override
 	public EAttribute getParameter_Values() {
 		return (EAttribute)parameterEClass.getEStructuralFeatures().get(6);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getParameter_Select() {
-		return (EReference)parameterEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getParameter_Guidelines() {
-		return (EReference)parameterEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getParameter_Constraints() {
-		return (EReference)parameterEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -324,8 +325,8 @@ public class OscalCatalogCommonPackageImpl extends EPackageImpl implements Oscal
 	 * @generated
 	 */
 	@Override
-	public EAttribute getParameterSelection_HowMany() {
-		return (EAttribute)parameterSelectionEClass.getEStructuralFeatures().get(1);
+	public EAttribute getParameterSelection_Choice() {
+		return (EAttribute)parameterSelectionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -334,8 +335,8 @@ public class OscalCatalogCommonPackageImpl extends EPackageImpl implements Oscal
 	 * @generated
 	 */
 	@Override
-	public EAttribute getParameterSelection_Choice() {
-		return (EAttribute)parameterSelectionEClass.getEStructuralFeatures().get(0);
+	public EAttribute getParameterSelection_HowMany() {
+		return (EAttribute)parameterSelectionEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -374,8 +375,8 @@ public class OscalCatalogCommonPackageImpl extends EPackageImpl implements Oscal
 	 * @generated
 	 */
 	@Override
-	public EAttribute getPart_Title() {
-		return (EAttribute)partEClass.getEStructuralFeatures().get(3);
+	public EAttribute getPart_Prose() {
+		return (EAttribute)partEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -384,8 +385,8 @@ public class OscalCatalogCommonPackageImpl extends EPackageImpl implements Oscal
 	 * @generated
 	 */
 	@Override
-	public EAttribute getPart_Prose() {
-		return (EAttribute)partEClass.getEStructuralFeatures().get(2);
+	public EAttribute getPart_Title() {
+		return (EAttribute)partEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -479,7 +480,6 @@ public class OscalCatalogCommonPackageImpl extends EPackageImpl implements Oscal
 
 		// Add supertypes to classes
 		parameterEClass.getESuperTypes().add(theOscalMetadataPackage.getOscalElement());
-		parameterEClass.getESuperTypes().add(theOscalMetadataPackage.getAnnotationOwner());
 		parameterEClass.getESuperTypes().add(theOscalMetadataPackage.getPropertyOwner());
 		parameterEClass.getESuperTypes().add(theOscalMetadataPackage.getLinkOwner());
 		parameterEClass.getESuperTypes().add(theOscalMetadataPackage.getElementWithRemarks());
@@ -491,7 +491,6 @@ public class OscalCatalogCommonPackageImpl extends EPackageImpl implements Oscal
 		parameterGuidelineEClass.getESuperTypes().add(theOscalMetadataPackage.getOscalElement());
 		parameterSelectionEClass.getESuperTypes().add(theOscalMetadataPackage.getOscalElement());
 		partEClass.getESuperTypes().add(theOscalMetadataPackage.getOscalElement());
-		partEClass.getESuperTypes().add(theOscalMetadataPackage.getAnnotationOwner());
 		partEClass.getESuperTypes().add(theOscalMetadataPackage.getPropertyOwner());
 		partEClass.getESuperTypes().add(theOscalMetadataPackage.getLinkOwner());
 		partEClass.getESuperTypes().add(theOscalMetadataPackage.getPartOwner());

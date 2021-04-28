@@ -27,6 +27,7 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
@@ -38,8 +39,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ResourceCitationItemProvider 
-	extends OscalElementItemProvider {
+public class ResourceCitationItemProvider extends OscalElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -127,7 +127,6 @@ public class ResourceCitationItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ResourceCitation.class)) {
-			case OscalMetadataPackage.RESOURCE_CITATION__ANNOTATIONS:
 			case OscalMetadataPackage.RESOURCE_CITATION__PROPS:
 			case OscalMetadataPackage.RESOURCE_CITATION__TEXT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
@@ -146,11 +145,6 @@ public class ResourceCitationItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OscalMetadataPackage.Literals.ANNOTATION_OWNER__ANNOTATIONS,
-				 OscalMetadataFactory.eINSTANCE.createAnnotation()));
 
 		newChildDescriptors.add
 			(createChildParameter

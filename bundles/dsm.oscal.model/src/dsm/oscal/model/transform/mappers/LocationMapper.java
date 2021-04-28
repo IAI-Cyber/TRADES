@@ -25,7 +25,6 @@ public class LocationMapper extends AbstractObjectMapper<Location, gov.nist.seca
 		gov.nist.secauto.oscal.lib.Location location = new gov.nist.secauto.oscal.lib.Location();
 
 		location.setAddress(AddresseMapper.getInstance().toOscal(tradesObject.getAddress()));
-		buildXMLChildList(AnnotationMapper.getInstance(), tradesObject.getAnnotations(), location::setAnnotations);
 
 		setXMLList(tradesObject.getEmailAddresses(), location::setEmailAddresses);
 		buildXMLChildList(LinkMapper.getInstance(), tradesObject.getLinks(), location::setLinks);
@@ -46,7 +45,6 @@ public class LocationMapper extends AbstractObjectMapper<Location, gov.nist.seca
 		Location location = OscalMetadataFactory.eINSTANCE.createLocation();
 
 		location.setAddress(AddresseMapper.getInstance().toTrades(oscalObject.getAddress()));
-		buildChildList(AnnotationMapper.getInstance(), oscalObject.getAnnotations(), location::getAnnotations);
 
 		setList(oscalObject.getEmailAddresses(), location.getEmailAddresses());
 

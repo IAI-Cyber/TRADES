@@ -19,6 +19,7 @@ import dsm.oscal.model.OscalCatalogCommon.OscalCatalogCommonPackage;
 import dsm.oscal.model.OscalCatalogCommon.ParameterSelection;
 
 import dsm.oscal.model.OscalMetadata.impl.OscalElementCustomImpl;
+
 import gov.nist.secauto.metaschema.datatypes.markup.MarkupLine;
 
 import java.util.Collection;
@@ -30,6 +31,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 /**
@@ -102,6 +104,19 @@ public class ParameterSelectionImpl extends OscalElementCustomImpl implements Pa
 	 * @generated
 	 */
 	@Override
+	public EList<MarkupLine> getChoice() {
+		if (choice == null) {
+			choice = new EDataTypeUniqueEList<MarkupLine>(MarkupLine.class, this, OscalCatalogCommonPackage.PARAMETER_SELECTION__CHOICE);
+		}
+		return choice;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public String getHowMany() {
 		return howMany;
 	}
@@ -117,19 +132,6 @@ public class ParameterSelectionImpl extends OscalElementCustomImpl implements Pa
 		howMany = newHowMany;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OscalCatalogCommonPackage.PARAMETER_SELECTION__HOW_MANY, oldHowMany, howMany));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EList<MarkupLine> getChoice() {
-		if (choice == null) {
-			choice = new EDataTypeUniqueEList<MarkupLine>(MarkupLine.class, this, OscalCatalogCommonPackage.PARAMETER_SELECTION__CHOICE);
-		}
-		return choice;
 	}
 
 	/**

@@ -20,10 +20,12 @@ import dsm.oscal.model.OscalCatalogCommon.OscalCatalogCommonPackage;
 import dsm.oscal.model.OscalCatalogCommon.ParameterConstraintTest;
 
 import dsm.oscal.model.OscalMetadata.OscalMetadataPackage;
-import dsm.oscal.model.OscalMetadata.provider.OscalEditPlugin;
 
+import dsm.oscal.model.OscalMetadata.provider.OscalEditPlugin;
 import dsm.oscal.model.OscalMetadata.provider.OscalElementItemProvider;
+
 import gov.nist.secauto.metaschema.datatypes.markup.MarkupMultiline;
+
 import java.util.Collection;
 import java.util.List;
 
@@ -43,8 +45,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ParameterConstraintTestItemProvider 
-	extends OscalElementItemProvider {
+public class ParameterConstraintTestItemProvider extends OscalElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -73,28 +74,6 @@ public class ParameterConstraintTestItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Expression feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addExpressionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ParameterConstraintTest_expression_feature"),
-				 getString("_UI_ParameterConstraintTest_expression_description"),
-				 OscalCatalogCommonPackage.Literals.PARAMETER_CONSTRAINT_TEST__EXPRESSION,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Remarks feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -110,6 +89,28 @@ public class ParameterConstraintTestItemProvider
 				 OscalMetadataPackage.Literals.ELEMENT_WITH_REMARKS__REMARKS,
 				 true,
 				 true,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Expression feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addExpressionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ParameterConstraintTest_expression_feature"),
+				 getString("_UI_ParameterConstraintTest_expression_description"),
+				 OscalCatalogCommonPackage.Literals.PARAMETER_CONSTRAINT_TEST__EXPRESSION,
+				 true,
+				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,

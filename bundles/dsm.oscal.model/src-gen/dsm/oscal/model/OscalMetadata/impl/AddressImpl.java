@@ -27,6 +27,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 /**
@@ -183,29 +184,6 @@ public class AddressImpl extends OscalElementCustomImpl implements Address {
 	 * @generated
 	 */
 	@Override
-	public String getType() {
-		return type;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setType(String newType) {
-		String oldType = type;
-		type = newType;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OscalMetadataPackage.ADDRESS__TYPE, oldType, type));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EList<String> getAddrLines() {
 		if (addrLines == null) {
 			addrLines = new EDataTypeUniqueEList<String>(String.class, this, OscalMetadataPackage.ADDRESS__ADDR_LINES);
@@ -242,8 +220,8 @@ public class AddressImpl extends OscalElementCustomImpl implements Address {
 	 * @generated
 	 */
 	@Override
-	public String getState() {
-		return state;
+	public String getCountry() {
+		return country;
 	}
 
 	/**
@@ -252,11 +230,11 @@ public class AddressImpl extends OscalElementCustomImpl implements Address {
 	 * @generated
 	 */
 	@Override
-	public void setState(String newState) {
-		String oldState = state;
-		state = newState;
+	public void setCountry(String newCountry) {
+		String oldCountry = country;
+		country = newCountry;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OscalMetadataPackage.ADDRESS__STATE, oldState, state));
+			eNotify(new ENotificationImpl(this, Notification.SET, OscalMetadataPackage.ADDRESS__COUNTRY, oldCountry, country));
 	}
 
 	/**
@@ -288,8 +266,8 @@ public class AddressImpl extends OscalElementCustomImpl implements Address {
 	 * @generated
 	 */
 	@Override
-	public String getCountry() {
-		return country;
+	public String getState() {
+		return state;
 	}
 
 	/**
@@ -298,11 +276,34 @@ public class AddressImpl extends OscalElementCustomImpl implements Address {
 	 * @generated
 	 */
 	@Override
-	public void setCountry(String newCountry) {
-		String oldCountry = country;
-		country = newCountry;
+	public void setState(String newState) {
+		String oldState = state;
+		state = newState;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OscalMetadataPackage.ADDRESS__COUNTRY, oldCountry, country));
+			eNotify(new ENotificationImpl(this, Notification.SET, OscalMetadataPackage.ADDRESS__STATE, oldState, state));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getType() {
+		return type;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setType(String newType) {
+		String oldType = type;
+		type = newType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OscalMetadataPackage.ADDRESS__TYPE, oldType, type));
 	}
 
 	/**

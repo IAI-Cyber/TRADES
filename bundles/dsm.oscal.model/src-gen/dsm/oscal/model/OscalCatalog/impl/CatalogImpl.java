@@ -24,12 +24,14 @@ import dsm.oscal.model.OscalCatalogCommon.Parameter;
 
 import dsm.oscal.model.OscalMetadata.BackMatter;
 import dsm.oscal.model.OscalMetadata.Metadata;
-
 import dsm.oscal.model.OscalMetadata.OscalMetadataPackage;
 import dsm.oscal.model.OscalMetadata.UUIDElement;
+
 import dsm.oscal.model.OscalMetadata.impl.OscalElementCustomImpl;
+
 import java.util.Collection;
 import java.util.UUID;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -39,6 +41,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -179,6 +182,77 @@ public class CatalogImpl extends OscalElementCustomImpl implements Catalog {
 	 * @generated
 	 */
 	@Override
+	public BackMatter getBackMatter() {
+		return backMatter;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetBackMatter(BackMatter newBackMatter, NotificationChain msgs) {
+		BackMatter oldBackMatter = backMatter;
+		backMatter = newBackMatter;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, OscalCatalogPackage.CATALOG__BACK_MATTER, oldBackMatter, newBackMatter);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setBackMatter(BackMatter newBackMatter) {
+		if (newBackMatter != backMatter) {
+			NotificationChain msgs = null;
+			if (backMatter != null)
+				msgs = ((InternalEObject)backMatter).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - OscalCatalogPackage.CATALOG__BACK_MATTER, null, msgs);
+			if (newBackMatter != null)
+				msgs = ((InternalEObject)newBackMatter).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - OscalCatalogPackage.CATALOG__BACK_MATTER, null, msgs);
+			msgs = basicSetBackMatter(newBackMatter, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OscalCatalogPackage.CATALOG__BACK_MATTER, newBackMatter, newBackMatter));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<Control> getControls() {
+		if (controls == null) {
+			controls = new EObjectContainmentEList<Control>(Control.class, this, OscalCatalogPackage.CATALOG__CONTROLS);
+		}
+		return controls;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<Group> getGroups() {
+		if (groups == null) {
+			groups = new EObjectContainmentEList<Group>(Group.class, this, OscalCatalogPackage.CATALOG__GROUPS);
+		}
+		return groups;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Metadata getMetadata() {
 		return metadata;
 	}
@@ -229,77 +303,6 @@ public class CatalogImpl extends OscalElementCustomImpl implements Catalog {
 			params = new EObjectContainmentEList<Parameter>(Parameter.class, this, OscalCatalogPackage.CATALOG__PARAMS);
 		}
 		return params;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EList<Control> getControls() {
-		if (controls == null) {
-			controls = new EObjectContainmentEList<Control>(Control.class, this, OscalCatalogPackage.CATALOG__CONTROLS);
-		}
-		return controls;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public BackMatter getBackMatter() {
-		return backMatter;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetBackMatter(BackMatter newBackMatter, NotificationChain msgs) {
-		BackMatter oldBackMatter = backMatter;
-		backMatter = newBackMatter;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, OscalCatalogPackage.CATALOG__BACK_MATTER, oldBackMatter, newBackMatter);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setBackMatter(BackMatter newBackMatter) {
-		if (newBackMatter != backMatter) {
-			NotificationChain msgs = null;
-			if (backMatter != null)
-				msgs = ((InternalEObject)backMatter).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - OscalCatalogPackage.CATALOG__BACK_MATTER, null, msgs);
-			if (newBackMatter != null)
-				msgs = ((InternalEObject)newBackMatter).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - OscalCatalogPackage.CATALOG__BACK_MATTER, null, msgs);
-			msgs = basicSetBackMatter(newBackMatter, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OscalCatalogPackage.CATALOG__BACK_MATTER, newBackMatter, newBackMatter));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EList<Group> getGroups() {
-		if (groups == null) {
-			groups = new EObjectContainmentEList<Group>(Group.class, this, OscalCatalogPackage.CATALOG__GROUPS);
-		}
-		return groups;
 	}
 
 	/**

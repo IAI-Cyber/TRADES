@@ -44,28 +44,6 @@ import java.net.URI;
  */
 public interface Base64 extends OscalElement {
 	/**
-	 * Returns the value of the '<em><b>Value</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Value</em>' attribute.
-	 * @see #setValue(gov.nist.secauto.metaschema.datatypes.Base64)
-	 * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getBase64_Value()
-	 * @model dataType="dsm.oscal.model.OscalMetadata.Base64Type"
-	 * @generated
-	 */
-	gov.nist.secauto.metaschema.datatypes.Base64 getValue();
-
-	/**
-	 * Sets the value of the '{@link dsm.oscal.model.OscalMetadata.Base64#getValue <em>Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Value</em>' attribute.
-	 * @see #getValue()
-	 * @generated
-	 */
-	void setValue(gov.nist.secauto.metaschema.datatypes.Base64 value);
-
-	/**
 	 * Returns the value of the '<em><b>Filename</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -121,5 +99,27 @@ public interface Base64 extends OscalElement {
 	 * @generated
 	 */
 	void setMediaType(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Value</em>' attribute.
+	 * @see #setValue(gov.nist.secauto.metaschema.datatypes.Base64)
+	 * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getBase64_Value()
+	 * @model dataType="dsm.oscal.model.OscalMetadata.Base64Type"
+	 * @generated
+	 */
+	gov.nist.secauto.metaschema.datatypes.Base64 getValue();
+
+	/**
+	 * Sets the value of the '{@link dsm.oscal.model.OscalMetadata.Base64#getValue <em>Value</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Value</em>' attribute.
+	 * @see #getValue()
+	 * @generated
+	 */
+	void setValue(gov.nist.secauto.metaschema.datatypes.Base64 value);
 
 } // Base64

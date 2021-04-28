@@ -85,14 +85,6 @@ public class OscalMetadataAdapterFactory extends AdapterFactoryImpl {
 				return createAddressAdapter();
 			}
 			@Override
-			public Adapter caseAnnotation(Annotation object) {
-				return createAnnotationAdapter();
-			}
-			@Override
-			public Adapter caseAnnotationOwner(AnnotationOwner object) {
-				return createAnnotationOwnerAdapter();
-			}
-			@Override
 			public Adapter caseBackMatter(BackMatter object) {
 				return createBackMatterAdapter();
 			}
@@ -235,20 +227,6 @@ public class OscalMetadataAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createAddressAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link dsm.oscal.model.OscalMetadata.Annotation <em>Annotation</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see dsm.oscal.model.OscalMetadata.Annotation
-	 * @generated
-	 */
-	public Adapter createAnnotationAdapter() {
 		return null;
 	}
 
@@ -463,6 +441,34 @@ public class OscalMetadataAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link dsm.oscal.model.OscalMetadata.OscalElement <em>Oscal Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see dsm.oscal.model.OscalMetadata.OscalElement
+	 * @generated
+	 */
+	public Adapter createOscalElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link dsm.oscal.model.OscalMetadata.PartOwner <em>Part Owner</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see dsm.oscal.model.OscalMetadata.PartOwner
+	 * @generated
+	 */
+	public Adapter createPartOwnerAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link dsm.oscal.model.OscalMetadata.Party <em>Party</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -603,34 +609,6 @@ public class OscalMetadataAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link dsm.oscal.model.OscalMetadata.OscalElement <em>Oscal Element</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see dsm.oscal.model.OscalMetadata.OscalElement
-	 * @generated
-	 */
-	public Adapter createOscalElementAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link dsm.oscal.model.OscalMetadata.PartOwner <em>Part Owner</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see dsm.oscal.model.OscalMetadata.PartOwner
-	 * @generated
-	 */
-	public Adapter createPartOwnerAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link dsm.oscal.model.OscalMetadata.UUIDElement <em>UUID Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -641,20 +619,6 @@ public class OscalMetadataAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createUUIDElementAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link dsm.oscal.model.OscalMetadata.AnnotationOwner <em>Annotation Owner</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see dsm.oscal.model.OscalMetadata.AnnotationOwner
-	 * @generated
-	 */
-	public Adapter createAnnotationOwnerAdapter() {
 		return null;
 	}
 

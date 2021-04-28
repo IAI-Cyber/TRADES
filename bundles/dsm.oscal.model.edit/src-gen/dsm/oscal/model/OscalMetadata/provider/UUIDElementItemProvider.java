@@ -18,10 +18,11 @@ package dsm.oscal.model.OscalMetadata.provider;
 
 import dsm.oscal.model.OscalMetadata.OscalMetadataPackage;
 import dsm.oscal.model.OscalMetadata.UUIDElement;
+
 import java.util.Collection;
 import java.util.List;
-
 import java.util.UUID;
+
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 

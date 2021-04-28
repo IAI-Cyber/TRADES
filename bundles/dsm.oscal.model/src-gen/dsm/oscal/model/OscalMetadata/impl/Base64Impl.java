@@ -127,29 +127,6 @@ public class Base64Impl extends OscalElementCustomImpl implements Base64 {
 	 * @generated
 	 */
 	@Override
-	public gov.nist.secauto.metaschema.datatypes.Base64 getValue() {
-		return value;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setValue(gov.nist.secauto.metaschema.datatypes.Base64 newValue) {
-		gov.nist.secauto.metaschema.datatypes.Base64 oldValue = value;
-		value = newValue;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OscalMetadataPackage.BASE64__VALUE, oldValue, value));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public URI getFilename() {
 		return filename;
 	}
@@ -188,6 +165,29 @@ public class Base64Impl extends OscalElementCustomImpl implements Base64 {
 		mediaType = newMediaType;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OscalMetadataPackage.BASE64__MEDIA_TYPE, oldMediaType, mediaType));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public gov.nist.secauto.metaschema.datatypes.Base64 getValue() {
+		return value;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setValue(gov.nist.secauto.metaschema.datatypes.Base64 newValue) {
+		gov.nist.secauto.metaschema.datatypes.Base64 oldValue = value;
+		value = newValue;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OscalMetadataPackage.BASE64__VALUE, oldValue, value));
 	}
 
 	/**

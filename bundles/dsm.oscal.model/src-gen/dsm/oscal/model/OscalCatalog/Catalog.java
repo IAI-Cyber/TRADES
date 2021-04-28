@@ -19,9 +19,9 @@ import dsm.oscal.model.OscalCatalogCommon.Parameter;
 
 import dsm.oscal.model.OscalMetadata.BackMatter;
 import dsm.oscal.model.OscalMetadata.Metadata;
-
 import dsm.oscal.model.OscalMetadata.OscalElement;
 import dsm.oscal.model.OscalMetadata.UUIDElement;
+
 import org.eclipse.emf.common.util.EList;
 
 /**
@@ -55,6 +55,55 @@ import org.eclipse.emf.common.util.EList;
  * @generated
  */
 public interface Catalog extends OscalElement, UUIDElement {
+	/**
+	 * Returns the value of the '<em><b>Back Matter</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Back Matter</em>' containment reference.
+	 * @see #setBackMatter(BackMatter)
+	 * @see dsm.oscal.model.OscalCatalog.OscalCatalogPackage#getCatalog_BackMatter()
+	 * @model containment="true"
+	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;AssemblyDefinition&gt;back-matter'"
+	 * @generated
+	 */
+	BackMatter getBackMatter();
+
+	/**
+	 * Sets the value of the '{@link dsm.oscal.model.OscalCatalog.Catalog#getBackMatter <em>Back Matter</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Back Matter</em>' containment reference.
+	 * @see #getBackMatter()
+	 * @generated
+	 */
+	void setBackMatter(BackMatter value);
+
+	/**
+	 * Returns the value of the '<em><b>Controls</b></em>' containment reference list.
+	 * The list contents are of type {@link dsm.oscal.model.OscalCatalog.Control}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Controls</em>' containment reference list.
+	 * @see dsm.oscal.model.OscalCatalog.OscalCatalogPackage#getCatalog_Controls()
+	 * @model containment="true"
+	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-catalog.&lt;AssemblyDefinition&gt;control'"
+	 * @generated
+	 */
+	EList<Control> getControls();
+
+	/**
+	 * Returns the value of the '<em><b>Groups</b></em>' containment reference list.
+	 * The list contents are of type {@link dsm.oscal.model.OscalCatalog.Group}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Groups</em>' containment reference list.
+	 * @see dsm.oscal.model.OscalCatalog.OscalCatalogPackage#getCatalog_Groups()
+	 * @model containment="true"
+	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-catalog.&lt;AssemblyDefinition&gt;group'"
+	 * @generated
+	 */
+	EList<Group> getGroups();
+
 	/**
 	 * Returns the value of the '<em><b>Metadata</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
@@ -90,54 +139,5 @@ public interface Catalog extends OscalElement, UUIDElement {
 	 * @generated
 	 */
 	EList<Parameter> getParams();
-
-	/**
-	 * Returns the value of the '<em><b>Controls</b></em>' containment reference list.
-	 * The list contents are of type {@link dsm.oscal.model.OscalCatalog.Control}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Controls</em>' containment reference list.
-	 * @see dsm.oscal.model.OscalCatalog.OscalCatalogPackage#getCatalog_Controls()
-	 * @model containment="true"
-	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-catalog.&lt;AssemblyDefinition&gt;control'"
-	 * @generated
-	 */
-	EList<Control> getControls();
-
-	/**
-	 * Returns the value of the '<em><b>Back Matter</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Back Matter</em>' containment reference.
-	 * @see #setBackMatter(BackMatter)
-	 * @see dsm.oscal.model.OscalCatalog.OscalCatalogPackage#getCatalog_BackMatter()
-	 * @model containment="true"
-	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;AssemblyDefinition&gt;back-matter'"
-	 * @generated
-	 */
-	BackMatter getBackMatter();
-
-	/**
-	 * Sets the value of the '{@link dsm.oscal.model.OscalCatalog.Catalog#getBackMatter <em>Back Matter</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Back Matter</em>' containment reference.
-	 * @see #getBackMatter()
-	 * @generated
-	 */
-	void setBackMatter(BackMatter value);
-
-	/**
-	 * Returns the value of the '<em><b>Groups</b></em>' containment reference list.
-	 * The list contents are of type {@link dsm.oscal.model.OscalCatalog.Group}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Groups</em>' containment reference list.
-	 * @see dsm.oscal.model.OscalCatalog.OscalCatalogPackage#getCatalog_Groups()
-	 * @model containment="true"
-	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-catalog.&lt;AssemblyDefinition&gt;group'"
-	 * @generated
-	 */
-	EList<Group> getGroups();
 
 } // Catalog

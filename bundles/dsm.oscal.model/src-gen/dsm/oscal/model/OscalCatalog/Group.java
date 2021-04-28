@@ -16,13 +16,14 @@
 package dsm.oscal.model.OscalCatalog;
 
 import dsm.oscal.model.OscalCatalogCommon.Parameter;
-import dsm.oscal.model.OscalMetadata.AnnotationOwner;
+
 import dsm.oscal.model.OscalMetadata.ElementWithClazz;
 import dsm.oscal.model.OscalMetadata.ElementWithId;
 import dsm.oscal.model.OscalMetadata.LinkOwner;
 import dsm.oscal.model.OscalMetadata.OscalElement;
 import dsm.oscal.model.OscalMetadata.PartOwner;
 import dsm.oscal.model.OscalMetadata.PropertyOwner;
+
 import gov.nist.secauto.metaschema.datatypes.markup.MarkupLine;
 
 import org.eclipse.emf.common.util.EList;
@@ -56,7 +57,46 @@ import org.eclipse.emf.common.util.EList;
  * @model annotation="Metaschema source='&lt;Metaschema&gt;oscal-catalog.&lt;AssemblyDefinition&gt;group'"
  * @generated
  */
-public interface Group extends OscalElement, AnnotationOwner, PropertyOwner, LinkOwner, PartOwner, ElementWithClazz, ElementWithId {
+public interface Group extends OscalElement, PropertyOwner, LinkOwner, PartOwner, ElementWithClazz, ElementWithId {
+	/**
+	 * Returns the value of the '<em><b>Controls</b></em>' containment reference list.
+	 * The list contents are of type {@link dsm.oscal.model.OscalCatalog.Control}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Controls</em>' containment reference list.
+	 * @see dsm.oscal.model.OscalCatalog.OscalCatalogPackage#getGroup_Controls()
+	 * @model containment="true"
+	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-catalog.&lt;AssemblyDefinition&gt;control'"
+	 * @generated
+	 */
+	EList<Control> getControls();
+
+	/**
+	 * Returns the value of the '<em><b>Groups</b></em>' containment reference list.
+	 * The list contents are of type {@link dsm.oscal.model.OscalCatalog.Group}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Groups</em>' containment reference list.
+	 * @see dsm.oscal.model.OscalCatalog.OscalCatalogPackage#getGroup_Groups()
+	 * @model containment="true"
+	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-catalog.&lt;AssemblyDefinition&gt;group'"
+	 * @generated
+	 */
+	EList<Group> getGroups();
+
+	/**
+	 * Returns the value of the '<em><b>Params</b></em>' containment reference list.
+	 * The list contents are of type {@link dsm.oscal.model.OscalCatalogCommon.Parameter}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Params</em>' containment reference list.
+	 * @see dsm.oscal.model.OscalCatalog.OscalCatalogPackage#getGroup_Params()
+	 * @model containment="true"
+	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-catalog-common.&lt;AssemblyDefinition&gt;parameter'"
+	 * @generated
+	 */
+	EList<Parameter> getParams();
+
 	/**
 	 * Returns the value of the '<em><b>Title</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -85,44 +125,5 @@ public interface Group extends OscalElement, AnnotationOwner, PropertyOwner, Lin
 	 * @generated
 	 */
 	void setTitle(MarkupLine value);
-
-	/**
-	 * Returns the value of the '<em><b>Params</b></em>' containment reference list.
-	 * The list contents are of type {@link dsm.oscal.model.OscalCatalogCommon.Parameter}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Params</em>' containment reference list.
-	 * @see dsm.oscal.model.OscalCatalog.OscalCatalogPackage#getGroup_Params()
-	 * @model containment="true"
-	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-catalog-common.&lt;AssemblyDefinition&gt;parameter'"
-	 * @generated
-	 */
-	EList<Parameter> getParams();
-
-	/**
-	 * Returns the value of the '<em><b>Controls</b></em>' containment reference list.
-	 * The list contents are of type {@link dsm.oscal.model.OscalCatalog.Control}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Controls</em>' containment reference list.
-	 * @see dsm.oscal.model.OscalCatalog.OscalCatalogPackage#getGroup_Controls()
-	 * @model containment="true"
-	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-catalog.&lt;AssemblyDefinition&gt;control'"
-	 * @generated
-	 */
-	EList<Control> getControls();
-
-	/**
-	 * Returns the value of the '<em><b>Groups</b></em>' containment reference list.
-	 * The list contents are of type {@link dsm.oscal.model.OscalCatalog.Group}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Groups</em>' containment reference list.
-	 * @see dsm.oscal.model.OscalCatalog.OscalCatalogPackage#getGroup_Groups()
-	 * @model containment="true"
-	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-catalog.&lt;AssemblyDefinition&gt;group'"
-	 * @generated
-	 */
-	EList<Group> getGroups();
 
 } // Group

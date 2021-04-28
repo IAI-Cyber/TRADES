@@ -23,7 +23,6 @@ public class CitationWrapper
 	@Override
 	protected gov.nist.secauto.oscal.lib.BackMatter.Resource.Citation safeToOscal(ResourceCitation tradesObject) {
 		gov.nist.secauto.oscal.lib.BackMatter.Resource.Citation citation = new gov.nist.secauto.oscal.lib.BackMatter.Resource.Citation();
-		buildXMLChildList(AnnotationMapper.getInstance(), tradesObject.getAnnotations(), citation::setAnnotations);
 
 		// Ask to NIST
 		// citation.setBiblio(oscalObject.getBiblio());
@@ -36,7 +35,6 @@ public class CitationWrapper
 	@Override
 	protected ResourceCitation safeToTrades(gov.nist.secauto.oscal.lib.BackMatter.Resource.Citation oscalObject) {
 		ResourceCitation citation =OscalMetadataFactory.eINSTANCE.createResourceCitation();
-		buildChildList(AnnotationMapper.getInstance(), oscalObject.getAnnotations(), citation::getAnnotations);
 		
 		// Ask to NIST
 		// citation.setBiblio(oscalObject.getBiblio());

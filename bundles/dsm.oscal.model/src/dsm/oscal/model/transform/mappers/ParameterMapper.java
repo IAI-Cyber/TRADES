@@ -28,7 +28,6 @@ public class ParameterMapper extends AbstractObjectMapper<Parameter, gov.nist.se
 		parameter.setRemarks(oscalObject.getRemarks());
 
 		buildChildList(LinkMapper.getInstance(), oscalObject.getLinks(), parameter::getLinks);
-		buildChildList(AnnotationMapper.getInstance(), oscalObject.getAnnotations(), parameter::getAnnotations);
 		buildChildList(ConstraintMapper.getInstance(), oscalObject.getConstraints(), parameter::getConstraints);
 		buildChildList(ParameterGuidelineMapper.getInstance(), oscalObject.getGuidelines(), parameter::getGuidelines);
 
@@ -51,7 +50,6 @@ public class ParameterMapper extends AbstractObjectMapper<Parameter, gov.nist.se
 		parameter.setRemarks(tradesObject.getRemarks());
 
 		buildXMLChildList(LinkMapper.getInstance(), tradesObject.getLinks(), parameter::setLinks);
-		buildXMLChildList(AnnotationMapper.getInstance(), tradesObject.getAnnotations(), parameter::setAnnotations);
 		buildXMLChildList(ConstraintMapper.getInstance(), tradesObject.getConstraints(), parameter::setConstraints);
 		buildXMLChildList(ParameterGuidelineMapper.getInstance(), tradesObject.getGuidelines(),
 				parameter::setGuidelines);

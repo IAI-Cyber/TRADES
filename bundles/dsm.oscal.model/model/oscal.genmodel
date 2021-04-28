@@ -66,21 +66,6 @@
       </genFeatures>
     </genClasses>
     <genClasses>
-      <ecoreClass href="oscal-metadata.ecore#//Annotation"/>
-      <genFeatures createChild="false" propertyDescription="\nAnnotated Property Name\n\nDescription\n\nA textual label that uniquely identifies a specific attribute, characteristic, \nor quality of the annotated property's containing object.\n">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//Annotation/name"/>
-      </genFeatures>
-      <genFeatures createChild="false" propertyDescription="\nAnnotated Property Namespace\n\nDescription\n\nA namespace qualifying the annotated property's name. This allows different \norganizations to associate distinct semantics with the same name.\n\nRemarks\n\nProvides a means to segment the value space for the name, so that different \norganizations and individuals can assert control over the allowed names and \nassociated values used in an annotated property. This allows the semantics \nassociated with a given name/value pair to be defined on an \norganization-by-organization basis.\n\nAn organization MUST use a URI that they have control over. e.g., a domain \nregistered to the organization in a URI, a registered uniform resource names \n(URN) namespace.\n\nWhen a ns is not provided, its value should be assumed to be \nhttp://csrc.nist.gov/ns/oscal and the name should be a name defined by the \nassociated OSCAL model.\n">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//Annotation/ns"/>
-      </genFeatures>
-    </genClasses>
-    <genClasses>
-      <ecoreClass href="oscal-metadata.ecore#//AnnotationOwner"/>
-      <genFeatures property="None" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-metadata.ecore#//AnnotationOwner/annotations"/>
-      </genFeatures>
-    </genClasses>
-    <genClasses>
       <ecoreClass href="oscal-metadata.ecore#//BackMatter"/>
       <genFeatures property="None" children="true" createChild="true">
         <ecoreFeature xsi:type="ecore:EReference" href="oscal-metadata.ecore#//BackMatter/resources"/>
@@ -121,7 +106,7 @@
     </genClasses>
     <genClasses>
       <ecoreClass href="oscal-metadata.ecore#//DocumentId"/>
-      <genFeatures createChild="false" propertyDescription="\nDocument Identification Scheme\n\nDescription\n\nQualifies the kind of document identifier.\n">
+      <genFeatures createChild="false" propertyDescription="\nDocument Identification Scheme\n\nDescription\n\nQualifies the kind of document identifier using a URI. If the scheme is not \nprovided the value of the element will be interpreted as a string of characters.\n">
         <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-metadata.ecore#//DocumentId/scheme"/>
       </genFeatures>
     </genClasses>
@@ -394,7 +379,7 @@
       <genFeatures property="None" children="true" createChild="true">
         <ecoreFeature xsi:type="ecore:EReference" href="oscal-catalog-common.ecore#//Parameter/guidelines"/>
       </genFeatures>
-      <genFeatures createChild="false" propertyDescription="\nParameter Label\n\nDescription\n\nA short, placeholder name for the parameter, which can be used as a subsitute \nfor avalue if no value is assigned.\n\nRemarks\n\nThe label value should be suitable for inline display in a rendered catalog.\n">
+      <genFeatures createChild="false" propertyDescription="\nParameter Label\n\nDescription\n\nA short, placeholder name for the parameter, which can be used as a substitute \nfor avalue if no value is assigned.\n\nRemarks\n\nThe label value should be suitable for inline display in a rendered catalog.\n">
         <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-catalog-common.ecore#//Parameter/label"/>
       </genFeatures>
       <genFeatures property="None" children="true" createChild="true">

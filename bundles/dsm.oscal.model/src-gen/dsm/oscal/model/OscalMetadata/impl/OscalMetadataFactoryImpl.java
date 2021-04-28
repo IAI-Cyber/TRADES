@@ -85,8 +85,6 @@ public class OscalMetadataFactoryImpl extends EFactoryImpl implements OscalMetad
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case OscalMetadataPackage.ADDRESS: return createAddress();
-			case OscalMetadataPackage.ANNOTATION: return createAnnotation();
-			case OscalMetadataPackage.ANNOTATION_OWNER: return createAnnotationOwner();
 			case OscalMetadataPackage.BACK_MATTER: return createBackMatter();
 			case OscalMetadataPackage.BACK_MATTER_RESOURCE: return createBackMatterResource();
 			case OscalMetadataPackage.BASE64: return createBase64();
@@ -205,17 +203,6 @@ public class OscalMetadataFactoryImpl extends EFactoryImpl implements OscalMetad
 	public Address createAddress() {
 		AddressImpl address = new AddressImpl();
 		return address;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Annotation createAnnotation() {
-		AnnotationImpl annotation = new AnnotationImpl();
-		return annotation;
 	}
 
 	/**
@@ -509,10 +496,35 @@ public class OscalMetadataFactoryImpl extends EFactoryImpl implements OscalMetad
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public AnnotationOwner createAnnotationOwner() {
-		AnnotationOwnerImpl annotationOwner = new AnnotationOwnerImpl();
-		return annotationOwner;
+	public gov.nist.secauto.metaschema.datatypes.Base64 createBase64Type(final String it) {
+		return dsm.oscal.model.OSCALDataTypeHandler.INSTANCE.loadBase64TypeFromString(it);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public gov.nist.secauto.metaschema.datatypes.Base64 createBase64TypeFromString(EDataType eDataType, String initialValue) {
+		return createBase64Type(initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertBase64Type(final gov.nist.secauto.metaschema.datatypes.Base64 it) {
+		return dsm.oscal.model.OSCALDataTypeHandler.INSTANCE.saveBase64TypeToString(it);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertBase64TypeToString(EDataType eDataType, Object instanceValue) {
+		return convertBase64Type((gov.nist.secauto.metaschema.datatypes.Base64)instanceValue);
 	}
 
 	/**
@@ -592,8 +604,8 @@ public class OscalMetadataFactoryImpl extends EFactoryImpl implements OscalMetad
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public IPv6 createIpV6AddressType(final String it) {
-		return dsm.oscal.model.OSCALDataTypeHandler.INSTANCE.loadIpV6AddressTypeFromString(it);
+	public Date createDateType(final String it) {
+		return dsm.oscal.model.OSCALDataTypeHandler.INSTANCE.loadDateTypeFromString(it);
 	}
 
 	/**
@@ -601,8 +613,8 @@ public class OscalMetadataFactoryImpl extends EFactoryImpl implements OscalMetad
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public IPv6 createIpV6AddressTypeFromString(EDataType eDataType, String initialValue) {
-		return createIpV6AddressType(initialValue);
+	public Date createDateTypeFromString(EDataType eDataType, String initialValue) {
+		return createDateType(initialValue);
 	}
 
 	/**
@@ -610,8 +622,8 @@ public class OscalMetadataFactoryImpl extends EFactoryImpl implements OscalMetad
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String convertIpV6AddressType(final IPv6 it) {
-		return dsm.oscal.model.OSCALDataTypeHandler.INSTANCE.saveIpV6AddressTypeToString(it);
+	public String convertDateType(final Date it) {
+		return dsm.oscal.model.OSCALDataTypeHandler.INSTANCE.saveDateTypeToString(it);
 	}
 
 	/**
@@ -619,44 +631,8 @@ public class OscalMetadataFactoryImpl extends EFactoryImpl implements OscalMetad
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String convertIpV6AddressTypeToString(EDataType eDataType, Object instanceValue) {
-		return convertIpV6AddressType((IPv6)instanceValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public IPv4 createIpV4AddressType(final String it) {
-		return dsm.oscal.model.OSCALDataTypeHandler.INSTANCE.loadIpV4AddressTypeFromString(it);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public IPv4 createIpV4AddressTypeFromString(EDataType eDataType, String initialValue) {
-		return createIpV4AddressType(initialValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertIpV4AddressType(final IPv4 it) {
-		return dsm.oscal.model.OSCALDataTypeHandler.INSTANCE.saveIpV4AddressTypeToString(it);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertIpV4AddressTypeToString(EDataType eDataType, Object instanceValue) {
-		return convertIpV4AddressType((IPv4)instanceValue);
+	public String convertDateTypeToString(EDataType eDataType, Object instanceValue) {
+		return convertDateType((Date)instanceValue);
 	}
 
 	/**
@@ -700,8 +676,8 @@ public class OscalMetadataFactoryImpl extends EFactoryImpl implements OscalMetad
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public UUID createUuidType(final String it) {
-		return dsm.oscal.model.OSCALDataTypeHandler.INSTANCE.loadUuidTypeFromString(it);
+	public Void createEmptyType(final String it) {
+		return null;
 	}
 
 	/**
@@ -709,8 +685,8 @@ public class OscalMetadataFactoryImpl extends EFactoryImpl implements OscalMetad
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public UUID createUuidTypeFromString(EDataType eDataType, String initialValue) {
-		return createUuidType(initialValue);
+	public Void createEmptyTypeFromString(EDataType eDataType, String initialValue) {
+		return createEmptyType(initialValue);
 	}
 
 	/**
@@ -718,8 +694,8 @@ public class OscalMetadataFactoryImpl extends EFactoryImpl implements OscalMetad
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String convertUuidType(final UUID it) {
-		return dsm.oscal.model.OSCALDataTypeHandler.INSTANCE.saveUuidTypeToString(it);
+	public String convertEmptyType(final Void it) {
+		return null;
 	}
 
 	/**
@@ -727,8 +703,80 @@ public class OscalMetadataFactoryImpl extends EFactoryImpl implements OscalMetad
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String convertUuidTypeToString(EDataType eDataType, Object instanceValue) {
-		return convertUuidType((UUID)instanceValue);
+	public String convertEmptyTypeToString(EDataType eDataType, Object instanceValue) {
+		return convertEmptyType((Void)instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public IPv4 createIpV4AddressType(final String it) {
+		return dsm.oscal.model.OSCALDataTypeHandler.INSTANCE.loadIpV4AddressTypeFromString(it);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public IPv4 createIpV4AddressTypeFromString(EDataType eDataType, String initialValue) {
+		return createIpV4AddressType(initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertIpV4AddressType(final IPv4 it) {
+		return dsm.oscal.model.OSCALDataTypeHandler.INSTANCE.saveIpV4AddressTypeToString(it);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertIpV4AddressTypeToString(EDataType eDataType, Object instanceValue) {
+		return convertIpV4AddressType((IPv4)instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public IPv6 createIpV6AddressType(final String it) {
+		return dsm.oscal.model.OSCALDataTypeHandler.INSTANCE.loadIpV6AddressTypeFromString(it);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public IPv6 createIpV6AddressTypeFromString(EDataType eDataType, String initialValue) {
+		return createIpV6AddressType(initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertIpV6AddressType(final IPv6 it) {
+		return dsm.oscal.model.OSCALDataTypeHandler.INSTANCE.saveIpV6AddressTypeToString(it);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertIpV6AddressTypeToString(EDataType eDataType, Object instanceValue) {
+		return convertIpV6AddressType((IPv6)instanceValue);
 	}
 
 	/**
@@ -772,8 +820,8 @@ public class OscalMetadataFactoryImpl extends EFactoryImpl implements OscalMetad
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Date createDateType(final String it) {
-		return dsm.oscal.model.OSCALDataTypeHandler.INSTANCE.loadDateTypeFromString(it);
+	public MarkupMultiline createMarkupMultilineType(final String it) {
+		return dsm.oscal.model.OSCALDataTypeHandler.INSTANCE.loadMarkupMultilineTypeFromString(it);
 	}
 
 	/**
@@ -781,8 +829,8 @@ public class OscalMetadataFactoryImpl extends EFactoryImpl implements OscalMetad
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Date createDateTypeFromString(EDataType eDataType, String initialValue) {
-		return createDateType(initialValue);
+	public MarkupMultiline createMarkupMultilineTypeFromString(EDataType eDataType, String initialValue) {
+		return createMarkupMultilineType(initialValue);
 	}
 
 	/**
@@ -790,8 +838,8 @@ public class OscalMetadataFactoryImpl extends EFactoryImpl implements OscalMetad
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String convertDateType(final Date it) {
-		return dsm.oscal.model.OSCALDataTypeHandler.INSTANCE.saveDateTypeToString(it);
+	public String convertMarkupMultilineType(final MarkupMultiline it) {
+		return dsm.oscal.model.OSCALDataTypeHandler.INSTANCE.saveMarkupMultilineTypeToString(it);
 	}
 
 	/**
@@ -799,8 +847,8 @@ public class OscalMetadataFactoryImpl extends EFactoryImpl implements OscalMetad
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String convertDateTypeToString(EDataType eDataType, Object instanceValue) {
-		return convertDateType((Date)instanceValue);
+	public String convertMarkupMultilineTypeToString(EDataType eDataType, Object instanceValue) {
+		return convertMarkupMultilineType((MarkupMultiline)instanceValue);
 	}
 
 	/**
@@ -844,114 +892,6 @@ public class OscalMetadataFactoryImpl extends EFactoryImpl implements OscalMetad
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MarkupMultiline createMarkupMultilineType(final String it) {
-		return dsm.oscal.model.OSCALDataTypeHandler.INSTANCE.loadMarkupMultilineTypeFromString(it);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public MarkupMultiline createMarkupMultilineTypeFromString(EDataType eDataType, String initialValue) {
-		return createMarkupMultilineType(initialValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertMarkupMultilineType(final MarkupMultiline it) {
-		return dsm.oscal.model.OSCALDataTypeHandler.INSTANCE.saveMarkupMultilineTypeToString(it);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertMarkupMultilineTypeToString(EDataType eDataType, Object instanceValue) {
-		return convertMarkupMultilineType((MarkupMultiline)instanceValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Void createEmptyType(final String it) {
-		return null;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Void createEmptyTypeFromString(EDataType eDataType, String initialValue) {
-		return createEmptyType(initialValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertEmptyType(final Void it) {
-		return null;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertEmptyTypeToString(EDataType eDataType, Object instanceValue) {
-		return convertEmptyType((Void)instanceValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public gov.nist.secauto.metaschema.datatypes.Base64 createBase64Type(final String it) {
-		return dsm.oscal.model.OSCALDataTypeHandler.INSTANCE.loadBase64TypeFromString(it);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public gov.nist.secauto.metaschema.datatypes.Base64 createBase64TypeFromString(EDataType eDataType, String initialValue) {
-		return createBase64Type(initialValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertBase64Type(final gov.nist.secauto.metaschema.datatypes.Base64 it) {
-		return dsm.oscal.model.OSCALDataTypeHandler.INSTANCE.saveBase64TypeToString(it);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertBase64TypeToString(EDataType eDataType, Object instanceValue) {
-		return convertBase64Type((gov.nist.secauto.metaschema.datatypes.Base64)instanceValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public URI createUriType(final String it) {
 		return dsm.oscal.model.OSCALDataTypeHandler.INSTANCE.loadUriTypeFromString(it);
 	}
@@ -981,6 +921,42 @@ public class OscalMetadataFactoryImpl extends EFactoryImpl implements OscalMetad
 	 */
 	public String convertUriTypeToString(EDataType eDataType, Object instanceValue) {
 		return convertUriType((URI)instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public UUID createUuidType(final String it) {
+		return dsm.oscal.model.OSCALDataTypeHandler.INSTANCE.loadUuidTypeFromString(it);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public UUID createUuidTypeFromString(EDataType eDataType, String initialValue) {
+		return createUuidType(initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertUuidType(final UUID it) {
+		return dsm.oscal.model.OSCALDataTypeHandler.INSTANCE.saveUuidTypeToString(it);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertUuidTypeToString(EDataType eDataType, Object instanceValue) {
+		return convertUuidType((UUID)instanceValue);
 	}
 
 	/**

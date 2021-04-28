@@ -16,6 +16,7 @@
 package dsm.oscal.model.OscalMetadata;
 
 import java.net.URI;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -29,7 +30,6 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface OscalElement extends EObject {
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -37,4 +37,5 @@ public interface OscalElement extends EObject {
 	 * @generated
 	 */
 	EObject resolve(URI uri);
+
 } // OscalElement

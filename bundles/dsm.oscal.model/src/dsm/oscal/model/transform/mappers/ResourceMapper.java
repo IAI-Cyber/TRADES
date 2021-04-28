@@ -25,7 +25,6 @@ public class ResourceMapper
 	protected gov.nist.secauto.oscal.lib.BackMatter.Resource safeToOscal(BackMatterResource tradesObject) {
 		gov.nist.secauto.oscal.lib.BackMatter.Resource resource = new gov.nist.secauto.oscal.lib.BackMatter.Resource();
 
-		buildXMLChildList(AnnotationMapper.getInstance(), tradesObject.getAnnotations(), resource::setAnnotations);
 		resource.setBase64(Base64Mapper.getInstance().toOscal(tradesObject.getBase64()));
 		resource.setCitation(CitationWrapper.getInstance().toOscal(tradesObject.getCitation()));
 		resource.setDescription(tradesObject.getDescription());
@@ -43,7 +42,6 @@ public class ResourceMapper
 	protected BackMatterResource safeToTrades(gov.nist.secauto.oscal.lib.BackMatter.Resource oscalObject) {
 		BackMatterResource resource = OscalMetadataFactory.eINSTANCE.createBackMatterResource();
 
-		buildChildList(AnnotationMapper.getInstance(), oscalObject.getAnnotations(), resource::getAnnotations);
 		resource.setBase64(Base64Mapper.getInstance().toTrades(oscalObject.getBase64()));
 		resource.setCitation(CitationWrapper.getInstance().toTrades(oscalObject.getCitation()));
 		resource.setDescription(oscalObject.getDescription());

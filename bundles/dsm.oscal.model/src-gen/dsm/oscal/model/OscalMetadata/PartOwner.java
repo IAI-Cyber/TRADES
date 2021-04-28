@@ -16,6 +16,7 @@
 package dsm.oscal.model.OscalMetadata;
 
 import dsm.oscal.model.OscalCatalogCommon.Part;
+
 import org.eclipse.emf.common.util.EList;
 
 /**
@@ -35,7 +36,6 @@ import org.eclipse.emf.common.util.EList;
  * @generated
  */
 public interface PartOwner extends DocumentationComputer {
-
 	/**
 	 * Returns the value of the '<em><b>Parts</b></em>' containment reference list.
 	 * The list contents are of type {@link dsm.oscal.model.OscalCatalogCommon.Part}.
@@ -47,4 +47,5 @@ public interface PartOwner extends DocumentationComputer {
 	 * @generated
 	 */
 	EList<Part> getParts();
+
 } // PartOwner

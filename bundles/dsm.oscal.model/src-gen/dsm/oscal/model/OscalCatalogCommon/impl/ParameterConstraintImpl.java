@@ -20,6 +20,7 @@ import dsm.oscal.model.OscalCatalogCommon.ParameterConstraint;
 import dsm.oscal.model.OscalCatalogCommon.ParameterConstraintTest;
 
 import dsm.oscal.model.OscalMetadata.impl.OscalElementCustomImpl;
+
 import gov.nist.secauto.metaschema.datatypes.markup.MarkupMultiline;
 
 import java.util.Collection;
@@ -33,6 +34,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 

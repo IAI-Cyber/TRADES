@@ -23,7 +23,6 @@ public class RevisionMapper extends AbstractObjectMapper<Revision, gov.nist.seca
 	protected gov.nist.secauto.oscal.lib.Revision safeToOscal(Revision tradesObject) {
 		gov.nist.secauto.oscal.lib.Revision revision = new gov.nist.secauto.oscal.lib.Revision();
 
-		buildXMLChildList(AnnotationMapper.getInstance(), tradesObject.getAnnotations(), revision::setAnnotations);
 		revision.setLastModified(tradesObject.getLastModified());
 		buildXMLChildList(LinkMapper.getInstance(), tradesObject.getLinks(), revision::setLinks);
 		revision.setOscalVersion(tradesObject.getOscalVersion());
@@ -40,7 +39,6 @@ public class RevisionMapper extends AbstractObjectMapper<Revision, gov.nist.seca
 	protected Revision safeToTrades(gov.nist.secauto.oscal.lib.Revision oscalObject) {
 		Revision revision = OscalMetadataFactory.eINSTANCE.createRevision();
 
-		buildChildList(AnnotationMapper.getInstance(), oscalObject.getAnnotations(), revision::getAnnotations);
 		revision.setLastModified(oscalObject.getLastModified());
 		buildChildList(LinkMapper.getInstance(), oscalObject.getLinks(), revision::getLinks);
 		revision.setOscalVersion(oscalObject.getOscalVersion());

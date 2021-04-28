@@ -23,11 +23,11 @@ import dsm.oscal.model.OscalCatalog.OscalCatalogPackage;
 import dsm.oscal.model.OscalCatalogCommon.OscalCatalogCommonFactory;
 
 import dsm.oscal.model.OscalMetadata.OscalMetadataFactory;
-
 import dsm.oscal.model.OscalMetadata.OscalMetadataPackage;
-import dsm.oscal.model.OscalMetadata.provider.OscalEditPlugin;
 
+import dsm.oscal.model.OscalMetadata.provider.OscalEditPlugin;
 import dsm.oscal.model.OscalMetadata.provider.OscalElementItemProvider;
+
 import java.util.Collection;
 import java.util.List;
 
@@ -49,8 +49,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class GroupItemProvider 
-	extends OscalElementItemProvider {
+public class GroupItemProvider extends OscalElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -80,28 +79,6 @@ public class GroupItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Id feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addIdPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ElementWithId_id_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ElementWithId_id_feature", "_UI_ElementWithId_type"),
-				 OscalMetadataPackage.Literals.ELEMENT_WITH_ID__ID,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Clazz feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -115,6 +92,28 @@ public class GroupItemProvider
 				 getString("_UI_ElementWithClazz_clazz_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ElementWithClazz_clazz_feature", "_UI_ElementWithClazz_type"),
 				 OscalMetadataPackage.Literals.ELEMENT_WITH_CLAZZ__CLAZZ,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Id feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIdPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ElementWithId_id_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ElementWithId_id_feature", "_UI_ElementWithId_type"),
+				 OscalMetadataPackage.Literals.ELEMENT_WITH_ID__ID,
 				 true,
 				 false,
 				 false,
@@ -216,7 +215,6 @@ public class GroupItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Group.class)) {
-			case OscalCatalogPackage.GROUP__ANNOTATIONS:
 			case OscalCatalogPackage.GROUP__PROPS:
 			case OscalCatalogPackage.GROUP__LINKS:
 			case OscalCatalogPackage.GROUP__CLAZZ:
@@ -244,11 +242,6 @@ public class GroupItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OscalMetadataPackage.Literals.ANNOTATION_OWNER__ANNOTATIONS,
-				 OscalMetadataFactory.eINSTANCE.createAnnotation()));
 
 		newChildDescriptors.add
 			(createChildParameter

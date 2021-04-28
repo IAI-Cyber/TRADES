@@ -20,8 +20,8 @@ import dsm.oscal.model.OscalCatalogCommon.OscalCatalogCommonPackage;
 import dsm.oscal.model.OscalCatalogCommon.ParameterGuideline;
 
 import dsm.oscal.model.OscalMetadata.provider.OscalEditPlugin;
-
 import dsm.oscal.model.OscalMetadata.provider.OscalElementItemProvider;
+
 import gov.nist.secauto.metaschema.datatypes.markup.MarkupMultiline;
 
 import java.util.Collection;
@@ -43,8 +43,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ParameterGuidelineItemProvider 
-	extends OscalElementItemProvider {
+public class ParameterGuidelineItemProvider extends OscalElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

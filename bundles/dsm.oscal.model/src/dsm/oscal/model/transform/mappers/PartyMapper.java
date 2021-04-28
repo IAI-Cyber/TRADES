@@ -25,7 +25,6 @@ public class PartyMapper extends AbstractObjectMapper<Party, gov.nist.secauto.os
 		gov.nist.secauto.oscal.lib.Party party = new gov.nist.secauto.oscal.lib.Party();
 
 		buildXMLChildList(AddresseMapper.getInstance(), tradesObject.getAddresses(), party::setAddresses);
-		buildXMLChildList(AnnotationMapper.getInstance(), tradesObject.getAnnotations(), party::setAnnotations);
 
 		setXMLList(tradesObject.getEmailAddresses(), party::setEmailAddresses);
 		buildXMLChildList(ExternalIdMapper.getInstance(), tradesObject.getExternalIds(), party::setExternalIds);
@@ -51,7 +50,6 @@ public class PartyMapper extends AbstractObjectMapper<Party, gov.nist.secauto.os
 		Party party = OscalMetadataFactory.eINSTANCE.createParty();
 
 		buildChildList(AddresseMapper.getInstance(), oscalObject.getAddresses(), party::getAddresses);
-		buildChildList(AnnotationMapper.getInstance(), oscalObject.getAnnotations(), party::getAnnotations);
 
 		setList(oscalObject.getEmailAddresses(), party.getEmailAddresses());
 		buildChildList(ExternalIdMapper.getInstance(), oscalObject.getExternalIds(), party::getExternalIds);

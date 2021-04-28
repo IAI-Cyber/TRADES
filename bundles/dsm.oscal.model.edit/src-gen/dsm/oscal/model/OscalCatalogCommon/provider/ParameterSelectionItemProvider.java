@@ -20,8 +20,8 @@ import dsm.oscal.model.OscalCatalogCommon.OscalCatalogCommonPackage;
 import dsm.oscal.model.OscalCatalogCommon.ParameterSelection;
 
 import dsm.oscal.model.OscalMetadata.provider.OscalEditPlugin;
-
 import dsm.oscal.model.OscalMetadata.provider.OscalElementItemProvider;
+
 import java.util.Collection;
 import java.util.List;
 
@@ -41,8 +41,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ParameterSelectionItemProvider 
-	extends OscalElementItemProvider {
+public class ParameterSelectionItemProvider extends OscalElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -71,28 +70,6 @@ public class ParameterSelectionItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the How Many feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHowManyPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ParameterSelection_howMany_feature"),
-				 getString("_UI_ParameterSelection_howMany_description"),
-				 OscalCatalogCommonPackage.Literals.PARAMETER_SELECTION__HOW_MANY,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Choice feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -106,6 +83,28 @@ public class ParameterSelectionItemProvider
 				 getString("_UI_ParameterSelection_choice_feature"),
 				 getString("_UI_ParameterSelection_choice_description"),
 				 OscalCatalogCommonPackage.Literals.PARAMETER_SELECTION__CHOICE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the How Many feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHowManyPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ParameterSelection_howMany_feature"),
+				 getString("_UI_ParameterSelection_howMany_description"),
+				 OscalCatalogCommonPackage.Literals.PARAMETER_SELECTION__HOW_MANY,
 				 true,
 				 false,
 				 false,

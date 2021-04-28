@@ -15,8 +15,6 @@
  */
 package dsm.oscal.model.OscalMetadata.impl;
 
-import dsm.oscal.model.OscalMetadata.Annotation;
-import dsm.oscal.model.OscalMetadata.AnnotationOwner;
 import dsm.oscal.model.OscalMetadata.ElementWithId;
 import dsm.oscal.model.OscalMetadata.ElementWithRemarks;
 import dsm.oscal.model.OscalMetadata.Link;
@@ -40,6 +38,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -51,7 +50,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link dsm.oscal.model.OscalMetadata.impl.RoleImpl#getAnnotations <em>Annotations</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.RoleImpl#getProps <em>Props</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.RoleImpl#getLinks <em>Links</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.RoleImpl#getRemarks <em>Remarks</em>}</li>
@@ -64,16 +62,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * @generated
  */
 public class RoleImpl extends OscalElementCustomImpl implements Role {
-	/**
-	 * The cached value of the '{@link #getAnnotations() <em>Annotations</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAnnotations()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Annotation> annotations;
-
 	/**
 	 * The cached value of the '{@link #getProps() <em>Props</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -219,8 +207,11 @@ public class RoleImpl extends OscalElementCustomImpl implements Role {
 	 * @generated
 	 */
 	@Override
-	public String getId() {
-		return id;
+	public EList<Property> getProps() {
+		if (props == null) {
+			props = new EObjectContainmentEList<Property>(Property.class, this, OscalMetadataPackage.ROLE__PROPS);
+		}
+		return props;
 	}
 
 	/**
@@ -229,80 +220,11 @@ public class RoleImpl extends OscalElementCustomImpl implements Role {
 	 * @generated
 	 */
 	@Override
-	public void setId(String newId) {
-		String oldId = id;
-		id = newId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OscalMetadataPackage.ROLE__ID, oldId, id));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public MarkupLine getTitle() {
-		return title;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setTitle(MarkupLine newTitle) {
-		MarkupLine oldTitle = title;
-		title = newTitle;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OscalMetadataPackage.ROLE__TITLE, oldTitle, title));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getShortName() {
-		return shortName;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setShortName(String newShortName) {
-		String oldShortName = shortName;
-		shortName = newShortName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OscalMetadataPackage.ROLE__SHORT_NAME, oldShortName, shortName));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public MarkupMultiline getDescription() {
-		return description;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setDescription(MarkupMultiline newDescription) {
-		MarkupMultiline oldDescription = description;
-		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OscalMetadataPackage.ROLE__DESCRIPTION, oldDescription, description));
+	public EList<Link> getLinks() {
+		if (links == null) {
+			links = new EObjectContainmentEList<Link>(Link.class, this, OscalMetadataPackage.ROLE__LINKS);
+		}
+		return links;
 	}
 
 	/**
@@ -334,11 +256,8 @@ public class RoleImpl extends OscalElementCustomImpl implements Role {
 	 * @generated
 	 */
 	@Override
-	public EList<Annotation> getAnnotations() {
-		if (annotations == null) {
-			annotations = new EObjectContainmentEList<Annotation>(Annotation.class, this, OscalMetadataPackage.ROLE__ANNOTATIONS);
-		}
-		return annotations;
+	public String getId() {
+		return id;
 	}
 
 	/**
@@ -347,11 +266,11 @@ public class RoleImpl extends OscalElementCustomImpl implements Role {
 	 * @generated
 	 */
 	@Override
-	public EList<Link> getLinks() {
-		if (links == null) {
-			links = new EObjectContainmentEList<Link>(Link.class, this, OscalMetadataPackage.ROLE__LINKS);
-		}
-		return links;
+	public void setId(String newId) {
+		String oldId = id;
+		id = newId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OscalMetadataPackage.ROLE__ID, oldId, id));
 	}
 
 	/**
@@ -360,11 +279,67 @@ public class RoleImpl extends OscalElementCustomImpl implements Role {
 	 * @generated
 	 */
 	@Override
-	public EList<Property> getProps() {
-		if (props == null) {
-			props = new EObjectContainmentEList<Property>(Property.class, this, OscalMetadataPackage.ROLE__PROPS);
-		}
-		return props;
+	public MarkupMultiline getDescription() {
+		return description;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setDescription(MarkupMultiline newDescription) {
+		MarkupMultiline oldDescription = description;
+		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OscalMetadataPackage.ROLE__DESCRIPTION, oldDescription, description));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getShortName() {
+		return shortName;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setShortName(String newShortName) {
+		String oldShortName = shortName;
+		shortName = newShortName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OscalMetadataPackage.ROLE__SHORT_NAME, oldShortName, shortName));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public MarkupLine getTitle() {
+		return title;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setTitle(MarkupLine newTitle) {
+		MarkupLine oldTitle = title;
+		title = newTitle;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OscalMetadataPackage.ROLE__TITLE, oldTitle, title));
 	}
 
 	/**
@@ -375,8 +350,6 @@ public class RoleImpl extends OscalElementCustomImpl implements Role {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case OscalMetadataPackage.ROLE__ANNOTATIONS:
-				return ((InternalEList<?>)getAnnotations()).basicRemove(otherEnd, msgs);
 			case OscalMetadataPackage.ROLE__PROPS:
 				return ((InternalEList<?>)getProps()).basicRemove(otherEnd, msgs);
 			case OscalMetadataPackage.ROLE__LINKS:
@@ -393,8 +366,6 @@ public class RoleImpl extends OscalElementCustomImpl implements Role {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case OscalMetadataPackage.ROLE__ANNOTATIONS:
-				return getAnnotations();
 			case OscalMetadataPackage.ROLE__PROPS:
 				return getProps();
 			case OscalMetadataPackage.ROLE__LINKS:
@@ -422,10 +393,6 @@ public class RoleImpl extends OscalElementCustomImpl implements Role {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case OscalMetadataPackage.ROLE__ANNOTATIONS:
-				getAnnotations().clear();
-				getAnnotations().addAll((Collection<? extends Annotation>)newValue);
-				return;
 			case OscalMetadataPackage.ROLE__PROPS:
 				getProps().clear();
 				getProps().addAll((Collection<? extends Property>)newValue);
@@ -461,9 +428,6 @@ public class RoleImpl extends OscalElementCustomImpl implements Role {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case OscalMetadataPackage.ROLE__ANNOTATIONS:
-				getAnnotations().clear();
-				return;
 			case OscalMetadataPackage.ROLE__PROPS:
 				getProps().clear();
 				return;
@@ -497,8 +461,6 @@ public class RoleImpl extends OscalElementCustomImpl implements Role {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case OscalMetadataPackage.ROLE__ANNOTATIONS:
-				return annotations != null && !annotations.isEmpty();
 			case OscalMetadataPackage.ROLE__PROPS:
 				return props != null && !props.isEmpty();
 			case OscalMetadataPackage.ROLE__LINKS:
@@ -524,12 +486,6 @@ public class RoleImpl extends OscalElementCustomImpl implements Role {
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == AnnotationOwner.class) {
-			switch (derivedFeatureID) {
-				case OscalMetadataPackage.ROLE__ANNOTATIONS: return OscalMetadataPackage.ANNOTATION_OWNER__ANNOTATIONS;
-				default: return -1;
-			}
-		}
 		if (baseClass == PropertyOwner.class) {
 			switch (derivedFeatureID) {
 				case OscalMetadataPackage.ROLE__PROPS: return OscalMetadataPackage.PROPERTY_OWNER__PROPS;
@@ -564,12 +520,6 @@ public class RoleImpl extends OscalElementCustomImpl implements Role {
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == AnnotationOwner.class) {
-			switch (baseFeatureID) {
-				case OscalMetadataPackage.ANNOTATION_OWNER__ANNOTATIONS: return OscalMetadataPackage.ROLE__ANNOTATIONS;
-				default: return -1;
-			}
-		}
 		if (baseClass == PropertyOwner.class) {
 			switch (baseFeatureID) {
 				case OscalMetadataPackage.PROPERTY_OWNER__PROPS: return OscalMetadataPackage.ROLE__PROPS;

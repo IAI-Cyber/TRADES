@@ -23,20 +23,22 @@ import dsm.oscal.model.OscalCatalog.OscalCatalogPackage;
 import dsm.oscal.model.OscalCatalogCommon.OscalCatalogCommonFactory;
 
 import dsm.oscal.model.OscalMetadata.OscalMetadataFactory;
-
 import dsm.oscal.model.OscalMetadata.OscalMetadataPackage;
-import dsm.oscal.model.OscalMetadata.provider.OscalEditPlugin;
 
+import dsm.oscal.model.OscalMetadata.provider.OscalEditPlugin;
 import dsm.oscal.model.OscalMetadata.provider.OscalElementItemProvider;
+
 import java.util.Collection;
 import java.util.List;
 import java.util.UUID;
+
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
@@ -48,8 +50,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class CatalogItemProvider 
-	extends OscalElementItemProvider {
+public class CatalogItemProvider extends OscalElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

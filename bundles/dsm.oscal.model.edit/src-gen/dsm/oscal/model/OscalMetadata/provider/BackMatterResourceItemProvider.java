@@ -19,11 +19,14 @@ package dsm.oscal.model.OscalMetadata.provider;
 import dsm.oscal.model.OscalMetadata.BackMatterResource;
 import dsm.oscal.model.OscalMetadata.OscalMetadataFactory;
 import dsm.oscal.model.OscalMetadata.OscalMetadataPackage;
+
 import java.util.Collection;
 import java.util.List;
 import java.util.UUID;
+
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EStructuralFeature;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
@@ -37,8 +40,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class BackMatterResourceItemProvider 
-	extends OscalElementItemProvider {
+public class BackMatterResourceItemProvider extends OscalElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -91,21 +93,21 @@ public class BackMatterResourceItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Title feature.
+	 * This adds a property descriptor for the Remarks feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addTitlePropertyDescriptor(Object object) {
+	protected void addRemarksPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_BackMatterResource_title_feature"),
-				 getString("_UI_BackMatterResource_title_description"),
-				 OscalMetadataPackage.Literals.BACK_MATTER_RESOURCE__TITLE,
+				 getString("_UI_ElementWithRemarks_remarks_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ElementWithRemarks_remarks_feature", "_UI_ElementWithRemarks_type"),
+				 OscalMetadataPackage.Literals.ELEMENT_WITH_REMARKS__REMARKS,
 				 true,
-				 false,
+				 true,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
@@ -135,21 +137,21 @@ public class BackMatterResourceItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Remarks feature.
+	 * This adds a property descriptor for the Title feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addRemarksPropertyDescriptor(Object object) {
+	protected void addTitlePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ElementWithRemarks_remarks_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ElementWithRemarks_remarks_feature", "_UI_ElementWithRemarks_type"),
-				 OscalMetadataPackage.Literals.ELEMENT_WITH_REMARKS__REMARKS,
+				 getString("_UI_BackMatterResource_title_feature"),
+				 getString("_UI_BackMatterResource_title_description"),
+				 OscalMetadataPackage.Literals.BACK_MATTER_RESOURCE__TITLE,
 				 true,
-				 true,
+				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
@@ -229,7 +231,6 @@ public class BackMatterResourceItemProvider
 
 		switch (notification.getFeatureID(BackMatterResource.class)) {
 			case OscalMetadataPackage.BACK_MATTER_RESOURCE__UUID:
-			case OscalMetadataPackage.BACK_MATTER_RESOURCE__ANNOTATIONS:
 			case OscalMetadataPackage.BACK_MATTER_RESOURCE__PROPS:
 			case OscalMetadataPackage.BACK_MATTER_RESOURCE__REMARKS:
 			case OscalMetadataPackage.BACK_MATTER_RESOURCE__DESCRIPTION:
@@ -256,11 +257,6 @@ public class BackMatterResourceItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OscalMetadataPackage.Literals.ANNOTATION_OWNER__ANNOTATIONS,
-				 OscalMetadataFactory.eINSTANCE.createAnnotation()));
 
 		newChildDescriptors.add
 			(createChildParameter

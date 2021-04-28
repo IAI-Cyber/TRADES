@@ -25,7 +25,6 @@ public class ControlMapper
 
 		dsm.oscal.model.OscalCatalog.Control result = OscalCatalogFactory.eINSTANCE.createControl();
 
-		buildChildList(AnnotationMapper.getInstance(), oscalObject.getAnnotations(), result::getAnnotations);
 		result.setClazz(oscalObject.getClazz());
 		buildChildList(this, oscalObject.getControls(), result::getControls);
 		result.setId(oscalObject.getId());
@@ -42,7 +41,6 @@ public class ControlMapper
 	protected Control safeToOscal(dsm.oscal.model.OscalCatalog.Control tradesObject) {
 		Control result = new Control();
 
-		buildXMLChildList(AnnotationMapper.getInstance(), tradesObject.getAnnotations(), result::setAnnotations);
 		result.setClazz(tradesObject.getClazz());
 		buildXMLChildList(this, tradesObject.getControls(), result::setControls);
 		result.setId(tradesObject.getId());

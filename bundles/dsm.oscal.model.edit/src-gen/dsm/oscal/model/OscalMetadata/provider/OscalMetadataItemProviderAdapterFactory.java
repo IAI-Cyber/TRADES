@@ -108,29 +108,6 @@ public class OscalMetadataItemProviderAdapterFactory extends OscalMetadataAdapte
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link dsm.oscal.model.OscalMetadata.Annotation} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected AnnotationItemProviderCustomImpl annotationItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link dsm.oscal.model.OscalMetadata.Annotation}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createAnnotationAdapter() {
-		if (annotationItemProvider == null) {
-			annotationItemProvider = new AnnotationItemProviderCustomImpl(this);
-		}
-
-		return annotationItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link dsm.oscal.model.OscalMetadata.BackMatter} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -729,35 +706,11 @@ public class OscalMetadataItemProviderAdapterFactory extends OscalMetadataAdapte
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link dsm.oscal.model.OscalMetadata.AnnotationOwner} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected AnnotationOwnerItemProvider annotationOwnerItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link dsm.oscal.model.OscalMetadata.AnnotationOwner}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createAnnotationOwnerAdapter() {
-		if (annotationOwnerItemProvider == null) {
-			annotationOwnerItemProvider = new AnnotationOwnerItemProvider(this);
-		}
-
-		return annotationOwnerItemProvider;
-	}
-
-	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public ComposeableAdapterFactory getRootAdapterFactory() {
 		return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
 	}
@@ -768,7 +721,6 @@ public class OscalMetadataItemProviderAdapterFactory extends OscalMetadataAdapte
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory) {
 		this.parentAdapterFactory = parentAdapterFactory;
 	}
@@ -817,7 +769,6 @@ public class OscalMetadataItemProviderAdapterFactory extends OscalMetadataAdapte
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void addListener(INotifyChangedListener notifyChangedListener) {
 		changeNotifier.addListener(notifyChangedListener);
 	}
@@ -828,7 +779,6 @@ public class OscalMetadataItemProviderAdapterFactory extends OscalMetadataAdapte
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void removeListener(INotifyChangedListener notifyChangedListener) {
 		changeNotifier.removeListener(notifyChangedListener);
 	}
@@ -839,7 +789,6 @@ public class OscalMetadataItemProviderAdapterFactory extends OscalMetadataAdapte
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void fireNotifyChanged(Notification notification) {
 		changeNotifier.fireNotifyChanged(notification);
 
@@ -854,11 +803,8 @@ public class OscalMetadataItemProviderAdapterFactory extends OscalMetadataAdapte
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void dispose() {
 		if (addressItemProvider != null) addressItemProvider.dispose();
-		if (annotationItemProvider != null) annotationItemProvider.dispose();
-		if (annotationOwnerItemProvider != null) annotationOwnerItemProvider.dispose();
 		if (backMatterItemProvider != null) backMatterItemProvider.dispose();
 		if (backMatterResourceItemProvider != null) backMatterResourceItemProvider.dispose();
 		if (base64ItemProvider != null) base64ItemProvider.dispose();

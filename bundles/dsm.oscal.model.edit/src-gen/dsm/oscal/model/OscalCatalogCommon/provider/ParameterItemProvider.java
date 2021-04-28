@@ -21,11 +21,11 @@ import dsm.oscal.model.OscalCatalogCommon.OscalCatalogCommonPackage;
 import dsm.oscal.model.OscalCatalogCommon.Parameter;
 
 import dsm.oscal.model.OscalMetadata.OscalMetadataFactory;
-
 import dsm.oscal.model.OscalMetadata.OscalMetadataPackage;
-import dsm.oscal.model.OscalMetadata.provider.OscalEditPlugin;
 
+import dsm.oscal.model.OscalMetadata.provider.OscalEditPlugin;
 import dsm.oscal.model.OscalMetadata.provider.OscalElementItemProvider;
+
 import java.util.Collection;
 import java.util.List;
 
@@ -47,8 +47,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ParameterItemProvider 
-	extends OscalElementItemProvider {
+public class ParameterItemProvider extends OscalElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -82,21 +81,21 @@ public class ParameterItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Id feature.
+	 * This adds a property descriptor for the Remarks feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addIdPropertyDescriptor(Object object) {
+	protected void addRemarksPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ElementWithId_id_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ElementWithId_id_feature", "_UI_ElementWithId_type"),
-				 OscalMetadataPackage.Literals.ELEMENT_WITH_ID__ID,
+				 getString("_UI_ElementWithRemarks_remarks_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ElementWithRemarks_remarks_feature", "_UI_ElementWithRemarks_type"),
+				 OscalMetadataPackage.Literals.ELEMENT_WITH_REMARKS__REMARKS,
 				 true,
-				 false,
+				 true,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
@@ -117,6 +116,28 @@ public class ParameterItemProvider
 				 getString("_UI_ElementWithClazz_clazz_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ElementWithClazz_clazz_feature", "_UI_ElementWithClazz_type"),
 				 OscalMetadataPackage.Literals.ELEMENT_WITH_CLAZZ__CLAZZ,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Id feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIdPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ElementWithId_id_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ElementWithId_id_feature", "_UI_ElementWithId_type"),
+				 OscalMetadataPackage.Literals.ELEMENT_WITH_ID__ID,
 				 true,
 				 false,
 				 false,
@@ -214,28 +235,6 @@ public class ParameterItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Remarks feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addRemarksPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ElementWithRemarks_remarks_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ElementWithRemarks_remarks_feature", "_UI_ElementWithRemarks_type"),
-				 OscalMetadataPackage.Literals.ELEMENT_WITH_REMARKS__REMARKS,
-				 true,
-				 true,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -305,7 +304,6 @@ public class ParameterItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Parameter.class)) {
-			case OscalCatalogCommonPackage.PARAMETER__ANNOTATIONS:
 			case OscalCatalogCommonPackage.PARAMETER__PROPS:
 			case OscalCatalogCommonPackage.PARAMETER__LINKS:
 			case OscalCatalogCommonPackage.PARAMETER__REMARKS:
@@ -336,11 +334,6 @@ public class ParameterItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OscalMetadataPackage.Literals.ANNOTATION_OWNER__ANNOTATIONS,
-				 OscalMetadataFactory.eINSTANCE.createAnnotation()));
 
 		newChildDescriptors.add
 			(createChildParameter

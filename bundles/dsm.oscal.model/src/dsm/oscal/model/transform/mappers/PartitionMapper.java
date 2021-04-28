@@ -23,7 +23,6 @@ public class PartitionMapper extends AbstractObjectMapper<dsm.oscal.model.OscalC
 	protected dsm.oscal.model.OscalCatalogCommon.Part safeToTrades(Part oscalObject) {
 		dsm.oscal.model.OscalCatalogCommon.Part partition = OscalCatalogCommonFactory.eINSTANCE.createPart();
 
-		buildChildList(AnnotationMapper.getInstance(), oscalObject.getAnnotations(), partition::getAnnotations);
 		partition.setClazz(oscalObject.getClazz());
 		partition.setId(oscalObject.getId());
 		buildChildList(LinkMapper.getInstance(), oscalObject.getLinks(), partition::getLinks);
@@ -40,7 +39,6 @@ public class PartitionMapper extends AbstractObjectMapper<dsm.oscal.model.OscalC
 	protected Part safeToOscal(dsm.oscal.model.OscalCatalogCommon.Part tradesObject) {
 		Part partition = new Part();
 
-		buildXMLChildList(AnnotationMapper.getInstance(), tradesObject.getAnnotations(), partition::setAnnotations);
 		partition.setClazz(tradesObject.getClazz());
 		partition.setId(tradesObject.getId());
 		buildXMLChildList(LinkMapper.getInstance(), tradesObject.getLinks(), partition::setLinks);

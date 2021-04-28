@@ -45,35 +45,35 @@ import gov.nist.secauto.metaschema.datatypes.markup.MarkupMultiline;
  * @model annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;AssemblyDefinition&gt;role'"
  * @generated
  */
-public interface Role extends OscalElement, AnnotationOwner, PropertyOwner, LinkOwner, ElementWithRemarks, ElementWithId {
+public interface Role extends OscalElement, PropertyOwner, LinkOwner, ElementWithRemarks, ElementWithId {
 	/**
-	 * Returns the value of the '<em><b>Title</b></em>' attribute.
+	 * Returns the value of the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * <h1>Role Title</h1>
+	 * <h1>Role Description</h1>
 	 * <h2>Description</h2>
-	 * <p>A name given to the role, which may be used by a tool for display and navigation.</p>
+	 * <p>A summary of the role's purpose and associated responsibilities.</p>
 	 * 
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Title</em>' attribute.
-	 * @see #setTitle(MarkupLine)
-	 * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getRole_Title()
-	 * @model dataType="dsm.oscal.model.OscalMetadata.MarkupLineType" required="true"
-	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;AssemblyDefinition&gt;role.&lt;FieldInstance&gt;title'"
+	 * @return the value of the '<em>Description</em>' attribute.
+	 * @see #setDescription(MarkupMultiline)
+	 * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getRole_Description()
+	 * @model dataType="dsm.oscal.model.OscalMetadata.MarkupMultilineType"
+	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;AssemblyDefinition&gt;role.&lt;FieldInstance&gt;description'"
 	 * @generated
 	 */
-	MarkupLine getTitle();
+	MarkupMultiline getDescription();
 
 	/**
-	 * Sets the value of the '{@link dsm.oscal.model.OscalMetadata.Role#getTitle <em>Title</em>}' attribute.
+	 * Sets the value of the '{@link dsm.oscal.model.OscalMetadata.Role#getDescription <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Title</em>' attribute.
-	 * @see #getTitle()
+	 * @param value the new value of the '<em>Description</em>' attribute.
+	 * @see #getDescription()
 	 * @generated
 	 */
-	void setTitle(MarkupLine value);
+	void setDescription(MarkupMultiline value);
 
 	/**
 	 * Returns the value of the '<em><b>Short Name</b></em>' attribute.
@@ -104,32 +104,32 @@ public interface Role extends OscalElement, AnnotationOwner, PropertyOwner, Link
 	void setShortName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Description</b></em>' attribute.
+	 * Returns the value of the '<em><b>Title</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * <h1>Role Description</h1>
+	 * <h1>Role Title</h1>
 	 * <h2>Description</h2>
-	 * <p>A summary of the role's purpose and associated responsibilities.</p>
+	 * <p>A name given to the role, which may be used by a tool for display and navigation.</p>
 	 * 
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Description</em>' attribute.
-	 * @see #setDescription(MarkupMultiline)
-	 * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getRole_Description()
-	 * @model dataType="dsm.oscal.model.OscalMetadata.MarkupMultilineType"
-	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;AssemblyDefinition&gt;role.&lt;FieldInstance&gt;description'"
+	 * @return the value of the '<em>Title</em>' attribute.
+	 * @see #setTitle(MarkupLine)
+	 * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getRole_Title()
+	 * @model dataType="dsm.oscal.model.OscalMetadata.MarkupLineType" required="true"
+	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;AssemblyDefinition&gt;role.&lt;FieldInstance&gt;title'"
 	 * @generated
 	 */
-	MarkupMultiline getDescription();
+	MarkupLine getTitle();
 
 	/**
-	 * Sets the value of the '{@link dsm.oscal.model.OscalMetadata.Role#getDescription <em>Description</em>}' attribute.
+	 * Sets the value of the '{@link dsm.oscal.model.OscalMetadata.Role#getTitle <em>Title</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Description</em>' attribute.
-	 * @see #getDescription()
+	 * @param value the new value of the '<em>Title</em>' attribute.
+	 * @see #getTitle()
 	 * @generated
 	 */
-	void setDescription(MarkupMultiline value);
+	void setTitle(MarkupLine value);
 
 } // Role

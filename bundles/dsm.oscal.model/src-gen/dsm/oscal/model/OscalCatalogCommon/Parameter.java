@@ -15,13 +15,13 @@
  */
 package dsm.oscal.model.OscalCatalogCommon;
 
-import dsm.oscal.model.OscalMetadata.AnnotationOwner;
 import dsm.oscal.model.OscalMetadata.ElementWithClazz;
 import dsm.oscal.model.OscalMetadata.ElementWithId;
 import dsm.oscal.model.OscalMetadata.ElementWithRemarks;
 import dsm.oscal.model.OscalMetadata.LinkOwner;
 import dsm.oscal.model.OscalMetadata.OscalElement;
 import dsm.oscal.model.OscalMetadata.PropertyOwner;
+
 import gov.nist.secauto.metaschema.datatypes.markup.MarkupLine;
 import gov.nist.secauto.metaschema.datatypes.markup.MarkupMultiline;
 
@@ -59,7 +59,20 @@ import org.eclipse.emf.common.util.EList;
  * @model annotation="Metaschema source='&lt;Metaschema&gt;oscal-catalog-common.&lt;AssemblyDefinition&gt;parameter'"
  * @generated
  */
-public interface Parameter extends OscalElement, AnnotationOwner, PropertyOwner, LinkOwner, ElementWithRemarks, ElementWithClazz, ElementWithId {
+public interface Parameter extends OscalElement, PropertyOwner, LinkOwner, ElementWithRemarks, ElementWithClazz, ElementWithId {
+	/**
+	 * Returns the value of the '<em><b>Constraints</b></em>' containment reference list.
+	 * The list contents are of type {@link dsm.oscal.model.OscalCatalogCommon.ParameterConstraint}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Constraints</em>' containment reference list.
+	 * @see dsm.oscal.model.OscalCatalogCommon.OscalCatalogCommonPackage#getParameter_Constraints()
+	 * @model containment="true"
+	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-catalog-common.&lt;AssemblyDefinition&gt;parameter-constraint'"
+	 * @generated
+	 */
+	EList<ParameterConstraint> getConstraints();
+
 	/**
 	 * Returns the value of the '<em><b>Depends On</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -89,13 +102,26 @@ public interface Parameter extends OscalElement, AnnotationOwner, PropertyOwner,
 	void setDependsOn(String value);
 
 	/**
+	 * Returns the value of the '<em><b>Guidelines</b></em>' containment reference list.
+	 * The list contents are of type {@link dsm.oscal.model.OscalCatalogCommon.ParameterGuideline}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Guidelines</em>' containment reference list.
+	 * @see dsm.oscal.model.OscalCatalogCommon.OscalCatalogCommonPackage#getParameter_Guidelines()
+	 * @model containment="true"
+	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-catalog-common.&lt;AssemblyDefinition&gt;parameter-guideline'"
+	 * @generated
+	 */
+	EList<ParameterGuideline> getGuidelines();
+
+	/**
 	 * Returns the value of the '<em><b>Label</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * <h1>Parameter Label</h1>
 	 * <h2>Description</h2>
-	 * <p>A short, placeholder name for the parameter, which can be used as a subsitute for a <code>value</code> if no value is assigned.</p>
+	 * <p>A short, placeholder name for the parameter, which can be used as a substitute for a <code>value</code> if no value is assigned.</p>
 	 * <h2>Remarks</h2>
 	 * <p>The label value should be suitable for inline display in a rendered catalog.</p>
 	 * 
@@ -118,6 +144,29 @@ public interface Parameter extends OscalElement, AnnotationOwner, PropertyOwner,
 	 * @generated
 	 */
 	void setLabel(MarkupLine value);
+
+	/**
+	 * Returns the value of the '<em><b>Select</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Select</em>' containment reference.
+	 * @see #setSelect(ParameterSelection)
+	 * @see dsm.oscal.model.OscalCatalogCommon.OscalCatalogCommonPackage#getParameter_Select()
+	 * @model containment="true"
+	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-catalog-common.&lt;AssemblyDefinition&gt;parameter-selection'"
+	 * @generated
+	 */
+	ParameterSelection getSelect();
+
+	/**
+	 * Sets the value of the '{@link dsm.oscal.model.OscalCatalogCommon.Parameter#getSelect <em>Select</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Select</em>' containment reference.
+	 * @see #getSelect()
+	 * @generated
+	 */
+	void setSelect(ParameterSelection value);
 
 	/**
 	 * Returns the value of the '<em><b>Usage</b></em>' attribute.
@@ -165,54 +214,5 @@ public interface Parameter extends OscalElement, AnnotationOwner, PropertyOwner,
 	 * @generated
 	 */
 	EList<String> getValues();
-
-	/**
-	 * Returns the value of the '<em><b>Select</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Select</em>' containment reference.
-	 * @see #setSelect(ParameterSelection)
-	 * @see dsm.oscal.model.OscalCatalogCommon.OscalCatalogCommonPackage#getParameter_Select()
-	 * @model containment="true"
-	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-catalog-common.&lt;AssemblyDefinition&gt;parameter-selection'"
-	 * @generated
-	 */
-	ParameterSelection getSelect();
-
-	/**
-	 * Sets the value of the '{@link dsm.oscal.model.OscalCatalogCommon.Parameter#getSelect <em>Select</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Select</em>' containment reference.
-	 * @see #getSelect()
-	 * @generated
-	 */
-	void setSelect(ParameterSelection value);
-
-	/**
-	 * Returns the value of the '<em><b>Guidelines</b></em>' containment reference list.
-	 * The list contents are of type {@link dsm.oscal.model.OscalCatalogCommon.ParameterGuideline}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Guidelines</em>' containment reference list.
-	 * @see dsm.oscal.model.OscalCatalogCommon.OscalCatalogCommonPackage#getParameter_Guidelines()
-	 * @model containment="true"
-	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-catalog-common.&lt;AssemblyDefinition&gt;parameter-guideline'"
-	 * @generated
-	 */
-	EList<ParameterGuideline> getGuidelines();
-
-	/**
-	 * Returns the value of the '<em><b>Constraints</b></em>' containment reference list.
-	 * The list contents are of type {@link dsm.oscal.model.OscalCatalogCommon.ParameterConstraint}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Constraints</em>' containment reference list.
-	 * @see dsm.oscal.model.OscalCatalogCommon.OscalCatalogCommonPackage#getParameter_Constraints()
-	 * @model containment="true"
-	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-catalog-common.&lt;AssemblyDefinition&gt;parameter-constraint'"
-	 * @generated
-	 */
-	EList<ParameterConstraint> getConstraints();
 
 } // Parameter

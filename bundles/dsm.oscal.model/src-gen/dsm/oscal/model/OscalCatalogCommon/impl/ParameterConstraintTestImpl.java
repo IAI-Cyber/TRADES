@@ -20,7 +20,9 @@ import dsm.oscal.model.OscalCatalogCommon.ParameterConstraintTest;
 
 import dsm.oscal.model.OscalMetadata.ElementWithRemarks;
 import dsm.oscal.model.OscalMetadata.OscalMetadataPackage;
+
 import dsm.oscal.model.OscalMetadata.impl.OscalElementCustomImpl;
+
 import gov.nist.secauto.metaschema.datatypes.markup.MarkupMultiline;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -109,29 +111,6 @@ public class ParameterConstraintTestImpl extends OscalElementCustomImpl implemen
 	 * @generated
 	 */
 	@Override
-	public String getExpression() {
-		return expression;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setExpression(String newExpression) {
-		String oldExpression = expression;
-		expression = newExpression;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OscalCatalogCommonPackage.PARAMETER_CONSTRAINT_TEST__EXPRESSION, oldExpression, expression));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public MarkupMultiline getRemarks() {
 		return remarks;
 	}
@@ -147,6 +126,29 @@ public class ParameterConstraintTestImpl extends OscalElementCustomImpl implemen
 		remarks = newRemarks;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OscalCatalogCommonPackage.PARAMETER_CONSTRAINT_TEST__REMARKS, oldRemarks, remarks));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getExpression() {
+		return expression;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setExpression(String newExpression) {
+		String oldExpression = expression;
+		expression = newExpression;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OscalCatalogCommonPackage.PARAMETER_CONSTRAINT_TEST__EXPRESSION, oldExpression, expression));
 	}
 
 	/**

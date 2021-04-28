@@ -3,7 +3,7 @@ package dsm.oscal.model.transform.mappers;
 import dsm.oscal.model.OscalCatalog.Group;
 import dsm.oscal.model.OscalCatalog.OscalCatalogFactory;
 
-public class GroupMapper extends AbstractObjectMapper<Group, gov.nist.secauto.oscal.lib.Group> {
+public class GroupMapper extends AbstractObjectMapper<Group, gov.nist.secauto.oscal.lib.GrouposcalCatalog> {
 
 	private GroupMapper() {
 	}
@@ -20,13 +20,12 @@ public class GroupMapper extends AbstractObjectMapper<Group, gov.nist.secauto.os
 	}
 
 	@Override
-	protected Group safeToTrades(gov.nist.secauto.oscal.lib.Group oscalObject) {
+	protected Group safeToTrades(gov.nist.secauto.oscal.lib.GrouposcalCatalog oscalObject) {
 		Group group = OscalCatalogFactory.eINSTANCE.createGroup();
 		group.setId(oscalObject.getId());
 		group.setTitle(oscalObject.getTitle());
 		group.setClazz(oscalObject.getClazz());
 
-		buildChildList(AnnotationMapper.getInstance(), oscalObject.getAnnotations(), group::getAnnotations);
 		buildChildList(ControlMapper.getInstance(), oscalObject.getControls(), group::getControls);
 		buildChildList(this, oscalObject.getGroups(), group::getGroups);
 		buildChildList(LinkMapper.getInstance(), oscalObject.getLinks(), group::getLinks);
@@ -38,13 +37,12 @@ public class GroupMapper extends AbstractObjectMapper<Group, gov.nist.secauto.os
 	}
 
 	@Override
-	protected gov.nist.secauto.oscal.lib.Group safeToOscal(Group tradesObject) {
-		gov.nist.secauto.oscal.lib.Group group = new gov.nist.secauto.oscal.lib.Group();
+	protected gov.nist.secauto.oscal.lib.GrouposcalCatalog safeToOscal(Group tradesObject) {
+		gov.nist.secauto.oscal.lib.GrouposcalCatalog group = new gov.nist.secauto.oscal.lib.GrouposcalCatalog();
 		group.setId(tradesObject.getId());
 		group.setTitle(tradesObject.getTitle());
 		group.setClazz(tradesObject.getClazz());
 
-		buildXMLChildList(AnnotationMapper.getInstance(), tradesObject.getAnnotations(), group::setAnnotations);
 		buildXMLChildList(ControlMapper.getInstance(), tradesObject.getControls(), group::setControls);
 		buildXMLChildList(this, tradesObject.getGroups(), group::setGroups);
 		buildXMLChildList(LinkMapper.getInstance(), tradesObject.getLinks(), group::setLinks);

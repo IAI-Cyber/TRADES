@@ -16,6 +16,7 @@
 package dsm.oscal.model.OscalCatalogCommon;
 
 import dsm.oscal.model.OscalMetadata.OscalElement;
+
 import gov.nist.secauto.metaschema.datatypes.markup.MarkupMultiline;
 
 /**

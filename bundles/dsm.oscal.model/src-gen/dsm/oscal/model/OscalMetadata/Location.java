@@ -16,7 +16,9 @@
 package dsm.oscal.model.OscalMetadata;
 
 import gov.nist.secauto.metaschema.datatypes.markup.MarkupLine;
+
 import java.net.URI;
+
 import org.eclipse.emf.common.util.EList;
 
 /**
@@ -46,7 +48,61 @@ import org.eclipse.emf.common.util.EList;
  * @model annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;AssemblyDefinition&gt;location'"
  * @generated
  */
-public interface Location extends OscalElement, UUIDElement, AnnotationOwner, PropertyOwner, LinkOwner, ElementWithRemarks {
+public interface Location extends OscalElement, UUIDElement, PropertyOwner, LinkOwner, ElementWithRemarks {
+	/**
+	 * Returns the value of the '<em><b>Address</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Address</em>' containment reference.
+	 * @see #setAddress(Address)
+	 * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getLocation_Address()
+	 * @model containment="true" required="true"
+	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;AssemblyDefinition&gt;address'"
+	 * @generated
+	 */
+	Address getAddress();
+
+	/**
+	 * Sets the value of the '{@link dsm.oscal.model.OscalMetadata.Location#getAddress <em>Address</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Address</em>' containment reference.
+	 * @see #getAddress()
+	 * @generated
+	 */
+	void setAddress(Address value);
+
+	/**
+	 * Returns the value of the '<em><b>Email Addresses</b></em>' attribute list.
+	 * The list contents are of type {@link java.lang.String}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * <h1>Email Address</h1>
+	 * <h2>Description</h2>
+	 * <p>An email address as defined by <a href="https://tools.ietf.org/html/rfc5322#section-3.4.1">RFC 5322 Section 3.4.1</a>.</p>
+	 * 
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Email Addresses</em>' attribute list.
+	 * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getLocation_EmailAddresses()
+	 * @model annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;AssemblyDefinition&gt;location.&lt;FieldInstance&gt;email-address'"
+	 * @generated
+	 */
+	EList<String> getEmailAddresses();
+
+	/**
+	 * Returns the value of the '<em><b>Telephone Numbers</b></em>' containment reference list.
+	 * The list contents are of type {@link dsm.oscal.model.OscalMetadata.TelephoneNumber}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Telephone Numbers</em>' containment reference list.
+	 * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getLocation_TelephoneNumbers()
+	 * @model containment="true"
+	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;FieldDefinition&gt;telephone-number'"
+	 * @generated
+	 */
+	EList<TelephoneNumber> getTelephoneNumbers();
+
 	/**
 	 * Returns the value of the '<em><b>Title</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -77,24 +133,6 @@ public interface Location extends OscalElement, UUIDElement, AnnotationOwner, Pr
 	void setTitle(MarkupLine value);
 
 	/**
-	 * Returns the value of the '<em><b>Email Addresses</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * <h1>Email Address</h1>
-	 * <h2>Description</h2>
-	 * <p>An email address as defined by <a href="https://tools.ietf.org/html/rfc5322#section-3.4.1">RFC 5322 Section 3.4.1</a>.</p>
-	 * 
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Email Addresses</em>' attribute list.
-	 * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getLocation_EmailAddresses()
-	 * @model annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;AssemblyDefinition&gt;location.&lt;FieldInstance&gt;email-address'"
-	 * @generated
-	 */
-	EList<String> getEmailAddresses();
-
-	/**
 	 * Returns the value of the '<em><b>Urls</b></em>' attribute list.
 	 * The list contents are of type {@link java.net.URI}.
 	 * <!-- begin-user-doc -->
@@ -112,41 +150,5 @@ public interface Location extends OscalElement, UUIDElement, AnnotationOwner, Pr
 	 * @generated
 	 */
 	EList<URI> getUrls();
-
-	/**
-	 * Returns the value of the '<em><b>Address</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Address</em>' containment reference.
-	 * @see #setAddress(Address)
-	 * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getLocation_Address()
-	 * @model containment="true" required="true"
-	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;AssemblyDefinition&gt;address'"
-	 * @generated
-	 */
-	Address getAddress();
-
-	/**
-	 * Sets the value of the '{@link dsm.oscal.model.OscalMetadata.Location#getAddress <em>Address</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Address</em>' containment reference.
-	 * @see #getAddress()
-	 * @generated
-	 */
-	void setAddress(Address value);
-
-	/**
-	 * Returns the value of the '<em><b>Telephone Numbers</b></em>' containment reference list.
-	 * The list contents are of type {@link dsm.oscal.model.OscalMetadata.TelephoneNumber}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Telephone Numbers</em>' containment reference list.
-	 * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getLocation_TelephoneNumbers()
-	 * @model containment="true"
-	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;FieldDefinition&gt;telephone-number'"
-	 * @generated
-	 */
-	EList<TelephoneNumber> getTelephoneNumbers();
 
 } // Location

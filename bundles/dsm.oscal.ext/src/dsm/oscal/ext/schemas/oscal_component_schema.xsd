@@ -13,7 +13,7 @@
          <m:short-name>oscal-component-definition</m:short-name>
          <m:remarks>
             <p>The OSCAL Component Definition Model can be used to describe the implementation of controls in a <code>component</code> or a set of components grouped as a <code>capability</code>. A component can be either a <em>technical component</em>, or a <em>documentary component</em>. A technical component is a component that is implemented in hardware (physical or virtual) or software. A documentary component is a component implemented in a document, such as a process, procedure, or policy.</p>
-            <p>The root of the OSCAL Implementation Component format is <code>component-definition</code>.</p>
+            <p>The root of the OSCAL Implementation Component format is <code>component-definition</code>. </p>
             <p>NOTE: This documentation is a work in progress. As a result, documentation for many of the information elements is missing or incomplete.</p>
          </m:remarks>
          <m:root>component-definition</m:root>
@@ -31,7 +31,17 @@
       <xs:sequence>
          <xs:element name="title" minOccurs="1" maxOccurs="1">
             <xs:complexType mixed="true">
-               <xs:group ref="oscal-component-definition:everything-inline"/>
+               <xs:annotation>
+                  <xs:appinfo>
+                     <m:formal-name>Document Title</m:formal-name>
+                     <m:description>A name given to the document, which may be used by a tool for display and navigation.</m:description>
+                  </xs:appinfo>
+                  <xs:documentation>
+                     <b>Document Title</b>: A name given to the document, which may be used by a tool for display and navigation.</xs:documentation>
+               </xs:annotation>
+               <xs:complexContent>
+                  <xs:extension base="oscal-component-definition:markupLineType"/>
+               </xs:complexContent>
             </xs:complexType>
          </xs:element>
          <xs:element name="published"
@@ -65,11 +75,7 @@
                      minOccurs="0"
                      maxOccurs="unbounded"/>
          <xs:element name="prop"
-                     type="oscal-component-definition:property-FIELD"
-                     minOccurs="0"
-                     maxOccurs="unbounded"/>
-         <xs:element name="annotation"
-                     type="oscal-component-definition:annotation-ASSEMBLY"
+                     type="oscal-component-definition:property-ASSEMBLY"
                      minOccurs="0"
                      maxOccurs="unbounded"/>
          <xs:element name="link"
@@ -102,7 +108,7 @@
                   <b>Remarks</b>: Additional commentary on the containing object.</xs:documentation>
             </xs:annotation>
             <xs:complexType>
-               <xs:group ref="oscal-component-definition:PROSE"
+               <xs:group ref="oscal-component-definition:blockElementGroup"
                          maxOccurs="unbounded"
                          minOccurs="0"/>
             </xs:complexType>
@@ -121,7 +127,17 @@
       <xs:sequence>
          <xs:element name="title" minOccurs="0" maxOccurs="1">
             <xs:complexType mixed="true">
-               <xs:group ref="oscal-component-definition:everything-inline"/>
+               <xs:annotation>
+                  <xs:appinfo>
+                     <m:formal-name>Document Title</m:formal-name>
+                     <m:description>A name given to the document revision, which may be used by a tool for display and navigation.</m:description>
+                  </xs:appinfo>
+                  <xs:documentation>
+                     <b>Document Title</b>: A name given to the document revision, which may be used by a tool for display and navigation.</xs:documentation>
+               </xs:annotation>
+               <xs:complexContent>
+                  <xs:extension base="oscal-component-definition:markupLineType"/>
+               </xs:complexContent>
             </xs:complexType>
          </xs:element>
          <xs:element name="published"
@@ -141,11 +157,7 @@
                      minOccurs="0"
                      maxOccurs="1"/>
          <xs:element name="prop"
-                     type="oscal-component-definition:property-FIELD"
-                     minOccurs="0"
-                     maxOccurs="unbounded"/>
-         <xs:element name="annotation"
-                     type="oscal-component-definition:annotation-ASSEMBLY"
+                     type="oscal-component-definition:property-ASSEMBLY"
                      minOccurs="0"
                      maxOccurs="unbounded"/>
          <xs:element name="link"
@@ -162,7 +174,7 @@
                   <b>Remarks</b>: Additional commentary on the containing object.</xs:documentation>
             </xs:annotation>
             <xs:complexType>
-               <xs:group ref="oscal-component-definition:PROSE"
+               <xs:group ref="oscal-component-definition:blockElementGroup"
                          maxOccurs="unbounded"
                          minOccurs="0"/>
             </xs:complexType>
@@ -181,7 +193,17 @@
       <xs:sequence>
          <xs:element name="title" minOccurs="0" maxOccurs="1">
             <xs:complexType mixed="true">
-               <xs:group ref="oscal-component-definition:everything-inline"/>
+               <xs:annotation>
+                  <xs:appinfo>
+                     <m:formal-name>Location Title</m:formal-name>
+                     <m:description>A name given to the location, which may be used by a tool for display and navigation.</m:description>
+                  </xs:appinfo>
+                  <xs:documentation>
+                     <b>Location Title</b>: A name given to the location, which may be used by a tool for display and navigation.</xs:documentation>
+               </xs:annotation>
+               <xs:complexContent>
+                  <xs:extension base="oscal-component-definition:markupLineType"/>
+               </xs:complexContent>
             </xs:complexType>
          </xs:element>
          <xs:element name="address"
@@ -210,11 +232,7 @@
             </xs:simpleType>
          </xs:element>
          <xs:element name="prop"
-                     type="oscal-component-definition:property-FIELD"
-                     minOccurs="0"
-                     maxOccurs="unbounded"/>
-         <xs:element name="annotation"
-                     type="oscal-component-definition:annotation-ASSEMBLY"
+                     type="oscal-component-definition:property-ASSEMBLY"
                      minOccurs="0"
                      maxOccurs="unbounded"/>
          <xs:element name="link"
@@ -231,7 +249,7 @@
                   <b>Remarks</b>: Additional commentary on the containing object.</xs:documentation>
             </xs:annotation>
             <xs:complexType>
-               <xs:group ref="oscal-component-definition:PROSE"
+               <xs:group ref="oscal-component-definition:blockElementGroup"
                          maxOccurs="unbounded"
                          minOccurs="0"/>
             </xs:complexType>
@@ -241,10 +259,10 @@
          <xs:annotation>
             <xs:appinfo>
                <m:formal-name>Location Universally Unique Identifier</m:formal-name>
-               <m:description>A unique identifier that can be used to reference this defined location elsewhere in an OSCAL document. A UUID should be consistantly used for a given location across revisions of the document.</m:description>
+               <m:description>A unique identifier that can be used to reference this defined location elsewhere in an OSCAL document. A UUID should be consistently used for a given location across revisions of the document.</m:description>
             </xs:appinfo>
             <xs:documentation>
-               <b>Location Universally Unique Identifier</b>: A unique identifier that can be used to reference this defined location elsewhere in an OSCAL document. A UUID should be consistantly used for a given location across revisions of the document.</xs:documentation>
+               <b>Location Universally Unique Identifier</b>: A unique identifier that can be used to reference this defined location elsewhere in an OSCAL document. A UUID should be consistently used for a given location across revisions of the document.</xs:documentation>
          </xs:annotation>
       </xs:attribute>
    </xs:complexType>
@@ -252,10 +270,10 @@
       <xs:annotation>
          <xs:appinfo>
             <m:formal-name>Location Reference</m:formal-name>
-            <m:description>References a <m:code>location</m:code> defined in <m:code>metadata</m:code>.</m:description>
+            <m:description>References a <m:code>location</m:code> defined in <m:code>metadata</m:code>. </m:description>
          </xs:appinfo>
          <xs:documentation>
-            <b>Location Reference</b>: References a location defined in metadata.</xs:documentation>
+            <b>Location Reference</b>: References a location defined in metadata. </xs:documentation>
       </xs:annotation>
       <xs:restriction base="oscal-component-definition:uuid"/>
    </xs:simpleType>
@@ -322,11 +340,7 @@
             </xs:complexType>
          </xs:element>
          <xs:element name="prop"
-                     type="oscal-component-definition:property-FIELD"
-                     minOccurs="0"
-                     maxOccurs="unbounded"/>
-         <xs:element name="annotation"
-                     type="oscal-component-definition:annotation-ASSEMBLY"
+                     type="oscal-component-definition:property-ASSEMBLY"
                      minOccurs="0"
                      maxOccurs="unbounded"/>
          <xs:element name="link"
@@ -374,7 +388,7 @@
                   <b>Remarks</b>: Additional commentary on the containing object.</xs:documentation>
             </xs:annotation>
             <xs:complexType>
-               <xs:group ref="oscal-component-definition:PROSE"
+               <xs:group ref="oscal-component-definition:blockElementGroup"
                          maxOccurs="unbounded"
                          minOccurs="0"/>
             </xs:complexType>
@@ -384,10 +398,10 @@
          <xs:annotation>
             <xs:appinfo>
                <m:formal-name>Party Universally Unique Identifier</m:formal-name>
-               <m:description>A unique identifier that can be used to reference this defined location elsewhere in an OSCAL document. A UUID should be consistantly used for a given party across revisions of the document.</m:description>
+               <m:description>A unique identifier that can be used to reference this defined location elsewhere in an OSCAL document. A UUID should be consistently used for a given party across revisions of the document.</m:description>
             </xs:appinfo>
             <xs:documentation>
-               <b>Party Universally Unique Identifier</b>: A unique identifier that can be used to reference this defined location elsewhere in an OSCAL document. A UUID should be consistantly used for a given party across revisions of the document.</xs:documentation>
+               <b>Party Universally Unique Identifier</b>: A unique identifier that can be used to reference this defined location elsewhere in an OSCAL document. A UUID should be consistently used for a given party across revisions of the document.</xs:documentation>
          </xs:annotation>
       </xs:attribute>
       <xs:attribute name="type" use="required" type="xs:string">
@@ -405,10 +419,10 @@
       <xs:annotation>
          <xs:appinfo>
             <m:formal-name>Party Reference</m:formal-name>
-            <m:description>References a <m:code>party</m:code> defined in <m:code>metadata</m:code>.</m:description>
+            <m:description>References a <m:code>party</m:code> defined in <m:code>metadata</m:code>. </m:description>
          </xs:appinfo>
          <xs:documentation>
-            <b>Party Reference</b>: References a party defined in metadata.</xs:documentation>
+            <b>Party Reference</b>: References a party defined in metadata. </xs:documentation>
       </xs:annotation>
       <xs:restriction base="oscal-component-definition:uuid"/>
    </xs:simpleType>
@@ -424,7 +438,17 @@
       <xs:sequence>
          <xs:element name="title" minOccurs="1" maxOccurs="1">
             <xs:complexType mixed="true">
-               <xs:group ref="oscal-component-definition:everything-inline"/>
+               <xs:annotation>
+                  <xs:appinfo>
+                     <m:formal-name>Role Title</m:formal-name>
+                     <m:description>A name given to the role, which may be used by a tool for display and navigation.</m:description>
+                  </xs:appinfo>
+                  <xs:documentation>
+                     <b>Role Title</b>: A name given to the role, which may be used by a tool for display and navigation.</xs:documentation>
+               </xs:annotation>
+               <xs:complexContent>
+                  <xs:extension base="oscal-component-definition:markupLineType"/>
+               </xs:complexContent>
             </xs:complexType>
          </xs:element>
          <xs:element name="short-name" minOccurs="0" maxOccurs="1">
@@ -442,17 +466,21 @@
          </xs:element>
          <xs:element name="description" minOccurs="0" maxOccurs="1">
             <xs:complexType>
-               <xs:group ref="oscal-component-definition:PROSE"
-                         maxOccurs="unbounded"
-                         minOccurs="0"/>
+               <xs:annotation>
+                  <xs:appinfo>
+                     <m:formal-name>Role Description</m:formal-name>
+                     <m:description>A summary of the role's purpose and associated responsibilities.</m:description>
+                  </xs:appinfo>
+                  <xs:documentation>
+                     <b>Role Description</b>: A summary of the role's purpose and associated responsibilities.</xs:documentation>
+               </xs:annotation>
+               <xs:complexContent>
+                  <xs:extension base="oscal-component-definition:markupMultilineType"/>
+               </xs:complexContent>
             </xs:complexType>
          </xs:element>
          <xs:element name="prop"
-                     type="oscal-component-definition:property-FIELD"
-                     minOccurs="0"
-                     maxOccurs="unbounded"/>
-         <xs:element name="annotation"
-                     type="oscal-component-definition:annotation-ASSEMBLY"
+                     type="oscal-component-definition:property-ASSEMBLY"
                      minOccurs="0"
                      maxOccurs="unbounded"/>
          <xs:element name="link"
@@ -469,7 +497,7 @@
                   <b>Remarks</b>: Additional commentary on the containing object.</xs:documentation>
             </xs:annotation>
             <xs:complexType>
-               <xs:group ref="oscal-component-definition:PROSE"
+               <xs:group ref="oscal-component-definition:blockElementGroup"
                          maxOccurs="unbounded"
                          minOccurs="0"/>
             </xs:complexType>
@@ -486,17 +514,6 @@
          </xs:annotation>
       </xs:attribute>
    </xs:complexType>
-   <xs:simpleType name="role-id-FIELD">
-      <xs:annotation>
-         <xs:appinfo>
-            <m:formal-name>Role Identifier Reference</m:formal-name>
-            <m:description>A reference to the roles served by the user.</m:description>
-         </xs:appinfo>
-         <xs:documentation>
-            <b>Role Identifier Reference</b>: A reference to the roles served by the user.</xs:documentation>
-      </xs:annotation>
-      <xs:restriction base="xs:NCName"/>
-   </xs:simpleType>
    <xs:complexType name="back-matter-ASSEMBLY">
       <xs:annotation>
          <xs:appinfo>
@@ -512,30 +529,44 @@
                <xs:annotation>
                   <xs:appinfo>
                      <m:formal-name>Resource</m:formal-name>
-                     <m:description>A resource associated with content in the containing document. A resource may be directly included in the document base64 encoded or may point to one or more equavalent internet resources.</m:description>
+                     <m:description>A resource associated with content in the containing document. A resource may be directly included in the document base64 encoded or may point to one or more equivalent internet resources.</m:description>
                   </xs:appinfo>
                   <xs:documentation>
-                     <b>Resource</b>: A resource associated with content in the containing document. A resource may be directly included in the document base64 encoded or may point to one or more equavalent internet resources.</xs:documentation>
+                     <b>Resource</b>: A resource associated with content in the containing document. A resource may be directly included in the document base64 encoded or may point to one or more equivalent internet resources.</xs:documentation>
                </xs:annotation>
                <xs:sequence>
                   <xs:element name="title" minOccurs="0" maxOccurs="1">
                      <xs:complexType mixed="true">
-                        <xs:group ref="oscal-component-definition:everything-inline"/>
+                        <xs:annotation>
+                           <xs:appinfo>
+                              <m:formal-name>Resource Title</m:formal-name>
+                              <m:description>A name given to the resource, which may be used by a tool for display and navigation.</m:description>
+                           </xs:appinfo>
+                           <xs:documentation>
+                              <b>Resource Title</b>: A name given to the resource, which may be used by a tool for display and navigation.</xs:documentation>
+                        </xs:annotation>
+                        <xs:complexContent>
+                           <xs:extension base="oscal-component-definition:markupLineType"/>
+                        </xs:complexContent>
                      </xs:complexType>
                   </xs:element>
                   <xs:element name="description" minOccurs="0" maxOccurs="1">
                      <xs:complexType>
-                        <xs:group ref="oscal-component-definition:PROSE"
-                                  maxOccurs="unbounded"
-                                  minOccurs="0"/>
+                        <xs:annotation>
+                           <xs:appinfo>
+                              <m:formal-name>Resource Description</m:formal-name>
+                              <m:description>A short summary of the resource used to indicate the purpose of the resource.</m:description>
+                           </xs:appinfo>
+                           <xs:documentation>
+                              <b>Resource Description</b>: A short summary of the resource used to indicate the purpose of the resource.</xs:documentation>
+                        </xs:annotation>
+                        <xs:complexContent>
+                           <xs:extension base="oscal-component-definition:markupMultilineType"/>
+                        </xs:complexContent>
                      </xs:complexType>
                   </xs:element>
                   <xs:element name="prop"
-                              type="oscal-component-definition:property-FIELD"
-                              minOccurs="0"
-                              maxOccurs="unbounded"/>
-                  <xs:element name="annotation"
-                              type="oscal-component-definition:annotation-ASSEMBLY"
+                              type="oscal-component-definition:property-ASSEMBLY"
                               minOccurs="0"
                               maxOccurs="unbounded"/>
                   <xs:element name="document-id"
@@ -555,15 +586,21 @@
                         <xs:sequence>
                            <xs:element name="text" minOccurs="1" maxOccurs="1">
                               <xs:complexType mixed="true">
-                                 <xs:group ref="oscal-component-definition:everything-inline"/>
+                                 <xs:annotation>
+                                    <xs:appinfo>
+                                       <m:formal-name>Citation Text</m:formal-name>
+                                       <m:description>A line of citation text.</m:description>
+                                    </xs:appinfo>
+                                    <xs:documentation>
+                                       <b>Citation Text</b>: A line of citation text.</xs:documentation>
+                                 </xs:annotation>
+                                 <xs:complexContent>
+                                    <xs:extension base="oscal-component-definition:markupLineType"/>
+                                 </xs:complexContent>
                               </xs:complexType>
                            </xs:element>
                            <xs:element name="prop"
-                                       type="oscal-component-definition:property-FIELD"
-                                       minOccurs="0"
-                                       maxOccurs="unbounded"/>
-                           <xs:element name="annotation"
-                                       type="oscal-component-definition:annotation-ASSEMBLY"
+                                       type="oscal-component-definition:property-ASSEMBLY"
                                        minOccurs="0"
                                        maxOccurs="unbounded"/>
                            <xs:element name="biblio" minOccurs="0" maxOccurs="1">
@@ -576,7 +613,12 @@
                                     <xs:documentation>
                                        <b>Bibliographic Definition</b>: A container for structured bibliographic information. The model of this information is undefined by OSCAL.</xs:documentation>
                                  </xs:annotation>
-                                 <xs:sequence/>
+                                 <xs:sequence>
+                                    <xs:any namespace="##other"
+                                            processContents="lax"
+                                            minOccurs="0"
+                                            maxOccurs="unbounded"/>
+                                 </xs:sequence>
                               </xs:complexType>
                            </xs:element>
                         </xs:sequence>
@@ -614,10 +656,10 @@
                            <xs:annotation>
                               <xs:appinfo>
                                  <m:formal-name>Media Type</m:formal-name>
-                                 <m:description>Specifies a media type as defined by the Internet Assigned Numbers Authority (IANA) <m:a>Media Types Registry</m:a>.</m:description>
+                                 <m:description>Specifies a media type as defined by the Internet Assigned Numbers Authority (IANA) <m:a>Media Types Registry</m:a>. </m:description>
                               </xs:appinfo>
                               <xs:documentation>
-                                 <b>Media Type</b>: Specifies a media type as defined by the Internet Assigned Numbers Authority (IANA) Media Types Registry.</xs:documentation>
+                                 <b>Media Type</b>: Specifies a media type as defined by the Internet Assigned Numbers Authority (IANA) Media Types Registry. </xs:documentation>
                            </xs:annotation>
                         </xs:attribute>
                      </xs:complexType>
@@ -648,10 +690,10 @@
                                  <xs:annotation>
                                     <xs:appinfo>
                                        <m:formal-name>Media Type</m:formal-name>
-                                       <m:description>Specifies a media type as defined by the Internet Assigned Numbers Authority (IANA) <m:a>Media Types Registry</m:a>.</m:description>
+                                       <m:description>Specifies a media type as defined by the Internet Assigned Numbers Authority (IANA) <m:a>Media Types Registry</m:a>. </m:description>
                                     </xs:appinfo>
                                     <xs:documentation>
-                                       <b>Media Type</b>: Specifies a media type as defined by the Internet Assigned Numbers Authority (IANA) Media Types Registry.</xs:documentation>
+                                       <b>Media Type</b>: Specifies a media type as defined by the Internet Assigned Numbers Authority (IANA) Media Types Registry. </xs:documentation>
                                  </xs:annotation>
                               </xs:attribute>
                            </xs:extension>
@@ -668,7 +710,7 @@
                            <b>Remarks</b>: Additional commentary on the containing object.</xs:documentation>
                      </xs:annotation>
                      <xs:complexType>
-                        <xs:group ref="oscal-component-definition:PROSE"
+                        <xs:group ref="oscal-component-definition:blockElementGroup"
                                   maxOccurs="unbounded"
                                   minOccurs="0"/>
                      </xs:complexType>
@@ -678,78 +720,24 @@
                   <xs:annotation>
                      <xs:appinfo>
                         <m:formal-name>Resource Universally Unique Identifier</m:formal-name>
-                        <m:description>A globally unique identifier that can be used to reference this defined resource elsewhere in an OSCAL document. A UUID should be consistantly used for a given resource across revisions of the document.</m:description>
+                        <m:description>A globally unique identifier that can be used to reference this defined resource elsewhere in an OSCAL document. A UUID should be consistently used for a given resource across revisions of the document.</m:description>
                      </xs:appinfo>
                      <xs:documentation>
-                        <b>Resource Universally Unique Identifier</b>: A globally unique identifier that can be used to reference this defined resource elsewhere in an OSCAL document. A UUID should be consistantly used for a given resource across revisions of the document.</xs:documentation>
+                        <b>Resource Universally Unique Identifier</b>: A globally unique identifier that can be used to reference this defined resource elsewhere in an OSCAL document. A UUID should be consistently used for a given resource across revisions of the document.</xs:documentation>
                   </xs:annotation>
                </xs:attribute>
             </xs:complexType>
          </xs:element>
       </xs:sequence>
    </xs:complexType>
-   <xs:complexType name="property-FIELD">
+   <xs:complexType name="property-ASSEMBLY">
       <xs:annotation>
          <xs:appinfo>
             <m:formal-name>Property</m:formal-name>
-            <m:description>An attribute, characteristic, or quality of the containing object expressed as a namespace qualified name/value pair. The value of a property is a simple scalar value, which may be expressed as a list of values in some OSCAL formats.</m:description>
+            <m:description>An attribute, characteristic, or quality of the containing object expressed as a namespace qualified name/value pair. The value of a property is a simple scalar value, which may be expressed as a list of values.</m:description>
          </xs:appinfo>
          <xs:documentation>
-            <b>Property</b>: An attribute, characteristic, or quality of the containing object expressed as a namespace qualified name/value pair. The value of a property is a simple scalar value, which may be expressed as a list of values in some OSCAL formats.</xs:documentation>
-      </xs:annotation>
-      <xs:simpleContent>
-         <xs:extension base="xs:string">
-            <xs:attribute name="uuid" type="oscal-component-definition:uuid">
-               <xs:annotation>
-                  <xs:appinfo>
-                     <m:formal-name>Property Universally Unique Identifier</m:formal-name>
-                     <m:description>A unique identifier that can be used to reference this property elsewhere in an OSCAL document. A UUID should be consistantly used for a given location across revisions of the document.</m:description>
-                  </xs:appinfo>
-                  <xs:documentation>
-                     <b>Property Universally Unique Identifier</b>: A unique identifier that can be used to reference this property elsewhere in an OSCAL document. A UUID should be consistantly used for a given location across revisions of the document.</xs:documentation>
-               </xs:annotation>
-            </xs:attribute>
-            <xs:attribute name="name" use="required" type="xs:NCName">
-               <xs:annotation>
-                  <xs:appinfo>
-                     <m:formal-name>Property Name</m:formal-name>
-                     <m:description>A textual label that uniquely identifies a specific attribute, characteristic, or quality of the property's containing object.</m:description>
-                  </xs:appinfo>
-                  <xs:documentation>
-                     <b>Property Name</b>: A textual label that uniquely identifies a specific attribute, characteristic, or quality of the property's containing object.</xs:documentation>
-               </xs:annotation>
-            </xs:attribute>
-            <xs:attribute name="ns" type="oscal-component-definition:uri">
-               <xs:annotation>
-                  <xs:appinfo>
-                     <m:formal-name>Property Namespace</m:formal-name>
-                     <m:description>A namespace qualifying the property's name. This allows different organizations to associate distinct semantics with the same name.</m:description>
-                  </xs:appinfo>
-                  <xs:documentation>
-                     <b>Property Namespace</b>: A namespace qualifying the property's name. This allows different organizations to associate distinct semantics with the same name.</xs:documentation>
-               </xs:annotation>
-            </xs:attribute>
-            <xs:attribute name="class" type="xs:NCName">
-               <xs:annotation>
-                  <xs:appinfo>
-                     <m:formal-name>Property Class</m:formal-name>
-                     <m:description>A textual label that provides a sub-type or characterization of the property's <m:code>name</m:code>. This can be used to further distinguish or discriminate between the semantics of multiple properties of the same object with the same <m:code>name</m:code> and <m:code>ns</m:code>.</m:description>
-                  </xs:appinfo>
-                  <xs:documentation>
-                     <b>Property Class</b>: A textual label that provides a sub-type or characterization of the property's name. This can be used to further distinguish or discriminate between the semantics of multiple properties of the same object with the same name and ns.</xs:documentation>
-               </xs:annotation>
-            </xs:attribute>
-         </xs:extension>
-      </xs:simpleContent>
-   </xs:complexType>
-   <xs:complexType name="annotation-ASSEMBLY">
-      <xs:annotation>
-         <xs:appinfo>
-            <m:formal-name>Annotated Property</m:formal-name>
-            <m:description>An attribute, characteristic, or quality of the containing object expressed as a namespace qualified name/value pair with optional explanatory remarks. The value of an annotated property is a simple scalar value.</m:description>
-         </xs:appinfo>
-         <xs:documentation>
-            <b>Annotated Property</b>: An attribute, characteristic, or quality of the containing object expressed as a namespace qualified name/value pair with optional explanatory remarks. The value of an annotated property is a simple scalar value.</xs:documentation>
+            <b>Property</b>: An attribute, characteristic, or quality of the containing object expressed as a namespace qualified name/value pair. The value of a property is a simple scalar value, which may be expressed as a list of values.</xs:documentation>
       </xs:annotation>
       <xs:sequence>
          <xs:element name="remarks" minOccurs="0" maxOccurs="1">
@@ -762,7 +750,7 @@
                   <b>Remarks</b>: Additional commentary on the containing object.</xs:documentation>
             </xs:annotation>
             <xs:complexType>
-               <xs:group ref="oscal-component-definition:PROSE"
+               <xs:group ref="oscal-component-definition:blockElementGroup"
                          maxOccurs="unbounded"
                          minOccurs="0"/>
             </xs:complexType>
@@ -771,41 +759,51 @@
       <xs:attribute name="name" use="required" type="xs:NCName">
          <xs:annotation>
             <xs:appinfo>
-               <m:formal-name>Annotated Property Name</m:formal-name>
-               <m:description>A textual label that uniquely identifies a specific attribute, characteristic, or quality of the annotated property's containing object.</m:description>
+               <m:formal-name>Property Name</m:formal-name>
+               <m:description>A textual label that uniquely identifies a specific attribute, characteristic, or quality of the property's containing object.</m:description>
             </xs:appinfo>
             <xs:documentation>
-               <b>Annotated Property Name</b>: A textual label that uniquely identifies a specific attribute, characteristic, or quality of the annotated property's containing object.</xs:documentation>
+               <b>Property Name</b>: A textual label that uniquely identifies a specific attribute, characteristic, or quality of the property's containing object.</xs:documentation>
          </xs:annotation>
       </xs:attribute>
       <xs:attribute name="uuid" type="oscal-component-definition:uuid">
          <xs:annotation>
             <xs:appinfo>
-               <m:formal-name>Annotated Property Universally Unique Identifier</m:formal-name>
-               <m:description>A unique identifier that can be used to reference this annotated property elsewhere in an OSCAL document. A UUID should be consistantly used for a given location across revisions of the document.</m:description>
+               <m:formal-name>Property Universally Unique Identifier</m:formal-name>
+               <m:description>A unique identifier that can be used to reference this property elsewhere in an OSCAL document. A UUID should be consistently used for a given location across revisions of the document.</m:description>
             </xs:appinfo>
             <xs:documentation>
-               <b>Annotated Property Universally Unique Identifier</b>: A unique identifier that can be used to reference this annotated property elsewhere in an OSCAL document. A UUID should be consistantly used for a given location across revisions of the document.</xs:documentation>
+               <b>Property Universally Unique Identifier</b>: A unique identifier that can be used to reference this property elsewhere in an OSCAL document. A UUID should be consistently used for a given location across revisions of the document.</xs:documentation>
          </xs:annotation>
       </xs:attribute>
       <xs:attribute name="ns" type="oscal-component-definition:uri">
          <xs:annotation>
             <xs:appinfo>
-               <m:formal-name>Annotated Property Namespace</m:formal-name>
-               <m:description>A namespace qualifying the annotated property's name. This allows different organizations to associate distinct semantics with the same name.</m:description>
+               <m:formal-name>Property Namespace</m:formal-name>
+               <m:description>A namespace qualifying the property's name. This allows different organizations to associate distinct semantics with the same name.</m:description>
             </xs:appinfo>
             <xs:documentation>
-               <b>Annotated Property Namespace</b>: A namespace qualifying the annotated property's name. This allows different organizations to associate distinct semantics with the same name.</xs:documentation>
+               <b>Property Namespace</b>: A namespace qualifying the property's name. This allows different organizations to associate distinct semantics with the same name.</xs:documentation>
          </xs:annotation>
       </xs:attribute>
       <xs:attribute name="value" use="required" type="xs:string">
          <xs:annotation>
             <xs:appinfo>
-               <m:formal-name>Annotated Property Value</m:formal-name>
+               <m:formal-name>Property Value</m:formal-name>
                <m:description>Indicates the value of the attribute, characteristic, or quality.</m:description>
             </xs:appinfo>
             <xs:documentation>
-               <b>Annotated Property Value</b>: Indicates the value of the attribute, characteristic, or quality.</xs:documentation>
+               <b>Property Value</b>: Indicates the value of the attribute, characteristic, or quality.</xs:documentation>
+         </xs:annotation>
+      </xs:attribute>
+      <xs:attribute name="class" type="xs:NCName">
+         <xs:annotation>
+            <xs:appinfo>
+               <m:formal-name>Property Class</m:formal-name>
+               <m:description>A textual label that provides a sub-type or characterization of the property's <m:code>name</m:code>. This can be used to further distinguish or discriminate between the semantics of multiple properties of the same object with the same <m:code>name</m:code> and <m:code>ns</m:code>. </m:description>
+            </xs:appinfo>
+            <xs:documentation>
+               <b>Property Class</b>: A textual label that provides a sub-type or characterization of the property's name. This can be used to further distinguish or discriminate between the semantics of multiple properties of the same object with the same name and ns. </xs:documentation>
          </xs:annotation>
       </xs:attribute>
    </xs:complexType>
@@ -821,7 +819,17 @@
       <xs:sequence>
          <xs:element name="text" minOccurs="0" maxOccurs="1">
             <xs:complexType mixed="true">
-               <xs:group ref="oscal-component-definition:everything-inline"/>
+               <xs:annotation>
+                  <xs:appinfo>
+                     <m:formal-name>Link Text</m:formal-name>
+                     <m:description>A textual label to associate with the link, which may be used for presentation in a tool.</m:description>
+                  </xs:appinfo>
+                  <xs:documentation>
+                     <b>Link Text</b>: A textual label to associate with the link, which may be used for presentation in a tool.</xs:documentation>
+               </xs:annotation>
+               <xs:complexContent>
+                  <xs:extension base="oscal-component-definition:markupLineType"/>
+               </xs:complexContent>
             </xs:complexType>
          </xs:element>
       </xs:sequence>
@@ -851,10 +859,10 @@
          <xs:annotation>
             <xs:appinfo>
                <m:formal-name>Media Type</m:formal-name>
-               <m:description>Specifies a media type as defined by the Internet Assigned Numbers Authority (IANA) <m:a>Media Types Registry</m:a>.</m:description>
+               <m:description>Specifies a media type as defined by the Internet Assigned Numbers Authority (IANA) <m:a>Media Types Registry</m:a>. </m:description>
             </xs:appinfo>
             <xs:documentation>
-               <b>Media Type</b>: Specifies a media type as defined by the Internet Assigned Numbers Authority (IANA) Media Types Registry.</xs:documentation>
+               <b>Media Type</b>: Specifies a media type as defined by the Internet Assigned Numbers Authority (IANA) Media Types Registry. </xs:documentation>
          </xs:annotation>
       </xs:attribute>
    </xs:complexType>
@@ -873,11 +881,7 @@
                      minOccurs="1"
                      maxOccurs="unbounded"/>
          <xs:element name="prop"
-                     type="oscal-component-definition:property-FIELD"
-                     minOccurs="0"
-                     maxOccurs="unbounded"/>
-         <xs:element name="annotation"
-                     type="oscal-component-definition:annotation-ASSEMBLY"
+                     type="oscal-component-definition:property-ASSEMBLY"
                      minOccurs="0"
                      maxOccurs="unbounded"/>
          <xs:element name="link"
@@ -894,7 +898,7 @@
                   <b>Remarks</b>: Additional commentary on the containing object.</xs:documentation>
             </xs:annotation>
             <xs:complexType>
-               <xs:group ref="oscal-component-definition:PROSE"
+               <xs:group ref="oscal-component-definition:blockElementGroup"
                          maxOccurs="unbounded"
                          minOccurs="0"/>
             </xs:complexType>
@@ -922,11 +926,7 @@
       </xs:annotation>
       <xs:sequence>
          <xs:element name="prop"
-                     type="oscal-component-definition:property-FIELD"
-                     minOccurs="0"
-                     maxOccurs="unbounded"/>
-         <xs:element name="annotation"
-                     type="oscal-component-definition:annotation-ASSEMBLY"
+                     type="oscal-component-definition:property-ASSEMBLY"
                      minOccurs="0"
                      maxOccurs="unbounded"/>
          <xs:element name="link"
@@ -947,7 +947,7 @@
                   <b>Remarks</b>: Additional commentary on the containing object.</xs:documentation>
             </xs:annotation>
             <xs:complexType>
-               <xs:group ref="oscal-component-definition:PROSE"
+               <xs:group ref="oscal-component-definition:blockElementGroup"
                          maxOccurs="unbounded"
                          minOccurs="0"/>
             </xs:complexType>
@@ -1036,10 +1036,10 @@
       <xs:annotation>
          <xs:appinfo>
             <m:formal-name>Email Address</m:formal-name>
-            <m:description>An email address as defined by <m:a>RFC 5322 Section 3.4.1</m:a>.</m:description>
+            <m:description>An email address as defined by <m:a>RFC 5322 Section 3.4.1</m:a>. </m:description>
          </xs:appinfo>
          <xs:documentation>
-            <b>Email Address</b>: An email address as defined by RFC 5322 Section 3.4.1.</xs:documentation>
+            <b>Email Address</b>: An email address as defined by RFC 5322 Section 3.4.1. </xs:documentation>
       </xs:annotation>
       <xs:restriction base="oscal-component-definition:email"/>
    </xs:simpleType>
@@ -1134,7 +1134,16 @@
             </xs:simpleType>
          </xs:element>
       </xs:sequence>
-      <xs:attribute name="type" type="xs:string"/>
+      <xs:attribute name="type" type="xs:NCName">
+         <xs:annotation>
+            <xs:appinfo>
+               <m:formal-name>Address Type</m:formal-name>
+               <m:description>Indicates the type of address.</m:description>
+            </xs:appinfo>
+            <xs:documentation>
+               <b>Address Type</b>: Indicates the type of address.</xs:documentation>
+         </xs:annotation>
+      </xs:attribute>
    </xs:complexType>
    <xs:simpleType name="oscal-metadata-addr-line-FIELD">
       <xs:annotation>
@@ -1151,148 +1160,25 @@
       <xs:annotation>
          <xs:appinfo>
             <m:formal-name>Document Identifier</m:formal-name>
-            <m:description>A document identifier qualified by an identifier <m:code>type</m:code>.</m:description>
+            <m:description>A document identifier qualified by an identifier <m:code>scheme</m:code>. A document identifier provides a globally unique identifier for a group of documents that are to be treated as different versions of the same document. If this element does not appear, or if the value of this element is empty, the value of "document-id" is equal to the value of the "uuid" flag of the top-level root element.</m:description>
          </xs:appinfo>
          <xs:documentation>
-            <b>Document Identifier</b>: A document identifier qualified by an identifier type.</xs:documentation>
+            <b>Document Identifier</b>: A document identifier qualified by an identifier scheme. A document identifier provides a globally unique identifier for a group of documents that are to be treated as different versions of the same document. If this element does not appear, or if the value of this element is empty, the value of "document-id" is equal to the value of the "uuid" flag of the top-level root element.</xs:documentation>
       </xs:annotation>
       <xs:simpleContent>
          <xs:extension base="xs:string">
-            <xs:attribute name="scheme" use="required" type="oscal-component-definition:uri">
+            <xs:attribute name="scheme" type="oscal-component-definition:uri">
                <xs:annotation>
                   <xs:appinfo>
                      <m:formal-name>Document Identification Scheme</m:formal-name>
-                     <m:description>Qualifies the kind of document identifier.</m:description>
+                     <m:description>Qualifies the kind of document identifier using a URI. If the scheme is not provided the value of the element will be interpreted as a string of characters. </m:description>
                   </xs:appinfo>
                   <xs:documentation>
-                     <b>Document Identification Scheme</b>: Qualifies the kind of document identifier.</xs:documentation>
+                     <b>Document Identification Scheme</b>: Qualifies the kind of document identifier using a URI. If the scheme is not provided the value of the element will be interpreted as a string of characters. </xs:documentation>
                </xs:annotation>
             </xs:attribute>
          </xs:extension>
       </xs:simpleContent>
-   </xs:complexType>
-   <xs:complexType name="system-component-ASSEMBLY">
-      <xs:annotation>
-         <xs:appinfo>
-            <m:formal-name>Component</m:formal-name>
-            <m:description>A defined component that can be part of an implemented system.</m:description>
-         </xs:appinfo>
-         <xs:documentation>
-            <b>Component</b>: A defined component that can be part of an implemented system.</xs:documentation>
-      </xs:annotation>
-      <xs:sequence>
-         <xs:element name="title" minOccurs="1" maxOccurs="1">
-            <xs:complexType mixed="true">
-               <xs:group ref="oscal-component-definition:everything-inline"/>
-            </xs:complexType>
-         </xs:element>
-         <xs:element name="description" minOccurs="1" maxOccurs="1">
-            <xs:complexType>
-               <xs:group ref="oscal-component-definition:PROSE"
-                         maxOccurs="unbounded"
-                         minOccurs="0"/>
-            </xs:complexType>
-         </xs:element>
-         <xs:element name="purpose" minOccurs="0" maxOccurs="1">
-            <xs:complexType mixed="true">
-               <xs:group ref="oscal-component-definition:everything-inline"/>
-            </xs:complexType>
-         </xs:element>
-         <xs:element name="prop"
-                     type="oscal-component-definition:property-FIELD"
-                     minOccurs="0"
-                     maxOccurs="unbounded"/>
-         <xs:element name="annotation"
-                     type="oscal-component-definition:annotation-ASSEMBLY"
-                     minOccurs="0"
-                     maxOccurs="unbounded"/>
-         <xs:element name="link"
-                     type="oscal-component-definition:link-ASSEMBLY"
-                     minOccurs="0"
-                     maxOccurs="unbounded"/>
-         <xs:element name="status" minOccurs="1" maxOccurs="1">
-            <xs:complexType>
-               <xs:annotation>
-                  <xs:appinfo>
-                     <m:formal-name>Status</m:formal-name>
-                     <m:description>Describes the operational status of the system component.</m:description>
-                  </xs:appinfo>
-                  <xs:documentation>
-                     <b>Status</b>: Describes the operational status of the system component.</xs:documentation>
-               </xs:annotation>
-               <xs:sequence>
-                  <xs:element name="remarks" minOccurs="0" maxOccurs="1">
-                     <xs:annotation>
-                        <xs:appinfo>
-                           <m:formal-name>Remarks</m:formal-name>
-                           <m:description>Additional commentary on the containing object.</m:description>
-                        </xs:appinfo>
-                        <xs:documentation>
-                           <b>Remarks</b>: Additional commentary on the containing object.</xs:documentation>
-                     </xs:annotation>
-                     <xs:complexType>
-                        <xs:group ref="oscal-component-definition:PROSE"
-                                  maxOccurs="unbounded"
-                                  minOccurs="0"/>
-                     </xs:complexType>
-                  </xs:element>
-               </xs:sequence>
-               <xs:attribute name="state" use="required" type="xs:NCName">
-                  <xs:annotation>
-                     <xs:appinfo>
-                        <m:formal-name>State</m:formal-name>
-                        <m:description>The operational status.</m:description>
-                     </xs:appinfo>
-                     <xs:documentation>
-                        <b>State</b>: The operational status.</xs:documentation>
-                  </xs:annotation>
-               </xs:attribute>
-            </xs:complexType>
-         </xs:element>
-         <xs:element name="responsible-role"
-                     type="oscal-component-definition:responsible-role-ASSEMBLY"
-                     minOccurs="0"
-                     maxOccurs="unbounded"/>
-         <xs:element name="protocol"
-                     type="oscal-component-definition:protocol-ASSEMBLY"
-                     minOccurs="0"
-                     maxOccurs="unbounded"/>
-         <xs:element name="remarks" minOccurs="0" maxOccurs="1">
-            <xs:annotation>
-               <xs:appinfo>
-                  <m:formal-name>Remarks</m:formal-name>
-                  <m:description>Additional commentary on the containing object.</m:description>
-               </xs:appinfo>
-               <xs:documentation>
-                  <b>Remarks</b>: Additional commentary on the containing object.</xs:documentation>
-            </xs:annotation>
-            <xs:complexType>
-               <xs:group ref="oscal-component-definition:PROSE"
-                         maxOccurs="unbounded"
-                         minOccurs="0"/>
-            </xs:complexType>
-         </xs:element>
-      </xs:sequence>
-      <xs:attribute name="uuid" use="required" type="oscal-component-definition:uuid">
-         <xs:annotation>
-            <xs:appinfo>
-               <m:formal-name>Component Identifier</m:formal-name>
-               <m:description>The unique identifier for the component.</m:description>
-            </xs:appinfo>
-            <xs:documentation>
-               <b>Component Identifier</b>: The unique identifier for the component.</xs:documentation>
-         </xs:annotation>
-      </xs:attribute>
-      <xs:attribute name="type" use="required" type="xs:string">
-         <xs:annotation>
-            <xs:appinfo>
-               <m:formal-name>Component Type</m:formal-name>
-               <m:description>A category describing the purpose of the component.</m:description>
-            </xs:appinfo>
-            <xs:documentation>
-               <b>Component Type</b>: A category describing the purpose of the component.</xs:documentation>
-         </xs:annotation>
-      </xs:attribute>
    </xs:complexType>
    <xs:complexType name="protocol-ASSEMBLY">
       <xs:annotation>
@@ -1306,11 +1192,21 @@
       <xs:sequence>
          <xs:element name="title" minOccurs="0" maxOccurs="1">
             <xs:complexType mixed="true">
-               <xs:group ref="oscal-component-definition:everything-inline"/>
+               <xs:annotation>
+                  <xs:appinfo>
+                     <m:formal-name>Protocol Title</m:formal-name>
+                     <m:description>A human readable name for the protocol (e.g., Transport Layer Security).</m:description>
+                  </xs:appinfo>
+                  <xs:documentation>
+                     <b>Protocol Title</b>: A human readable name for the protocol (e.g., Transport Layer Security).</xs:documentation>
+               </xs:annotation>
+               <xs:complexContent>
+                  <xs:extension base="oscal-component-definition:markupLineType"/>
+               </xs:complexContent>
             </xs:complexType>
          </xs:element>
          <xs:element name="port-range"
-                     type="oscal-component-definition:port-range-FIELD"
+                     type="oscal-component-definition:port-range-ASSEMBLY"
                      minOccurs="0"
                      maxOccurs="unbounded"/>
       </xs:sequence>
@@ -1328,14 +1224,22 @@
          <xs:annotation>
             <xs:appinfo>
                <m:formal-name>Protocol Name</m:formal-name>
-               <m:description>The common name of the protocol, which should be the appropriate "service name" from the <m:a>IANA Service Name and Transport Protocol Port Number Registry</m:a>.</m:description>
+               <m:description>The common name of the protocol, which should be the appropriate "service name" from the <m:a>IANA Service Name and Transport Protocol Port Number Registry</m:a>. </m:description>
             </xs:appinfo>
             <xs:documentation>
-               <b>Protocol Name</b>: The common name of the protocol, which should be the appropriate "service name" from the IANA Service Name and Transport Protocol Port Number Registry.</xs:documentation>
+               <b>Protocol Name</b>: The common name of the protocol, which should be the appropriate "service name" from the IANA Service Name and Transport Protocol Port Number Registry. </xs:documentation>
          </xs:annotation>
       </xs:attribute>
    </xs:complexType>
-   <xs:complexType name="port-range-FIELD">
+   <xs:complexType name="port-range-ASSEMBLY">
+      <xs:annotation>
+         <xs:appinfo>
+            <m:formal-name>Port Range</m:formal-name>
+            <m:description>Where applicable this is the IPv4 port range on which the service operates.</m:description>
+         </xs:appinfo>
+         <xs:documentation>
+            <b>Port Range</b>: Where applicable this is the IPv4 port range on which the service operates.</xs:documentation>
+      </xs:annotation>
       <xs:attribute name="start" type="xs:nonNegativeInteger">
          <xs:annotation>
             <xs:appinfo>
@@ -1364,244 +1268,6 @@
             </xs:appinfo>
             <xs:documentation>
                <b>Transport</b>: Indicates the transport type.</xs:documentation>
-         </xs:annotation>
-      </xs:attribute>
-   </xs:complexType>
-   <xs:complexType name="system-user-ASSEMBLY">
-      <xs:annotation>
-         <xs:appinfo>
-            <m:formal-name>System User</m:formal-name>
-            <m:description>A type of user that interacts with the system based on an associated role.</m:description>
-         </xs:appinfo>
-         <xs:documentation>
-            <b>System User</b>: A type of user that interacts with the system based on an associated role.</xs:documentation>
-      </xs:annotation>
-      <xs:sequence>
-         <xs:element name="title" minOccurs="0" maxOccurs="1">
-            <xs:complexType mixed="true">
-               <xs:group ref="oscal-component-definition:everything-inline"/>
-            </xs:complexType>
-         </xs:element>
-         <xs:element name="short-name" minOccurs="0" maxOccurs="1">
-            <xs:simpleType>
-               <xs:annotation>
-                  <xs:appinfo>
-                     <m:formal-name>User Short Name</m:formal-name>
-                     <m:description>A short common name, abbreviation, or acronym for the user.</m:description>
-                  </xs:appinfo>
-                  <xs:documentation>
-                     <b>User Short Name</b>: A short common name, abbreviation, or acronym for the user.</xs:documentation>
-               </xs:annotation>
-               <xs:restriction base="xs:string"/>
-            </xs:simpleType>
-         </xs:element>
-         <xs:element name="description" minOccurs="0" maxOccurs="1">
-            <xs:complexType>
-               <xs:group ref="oscal-component-definition:PROSE"
-                         maxOccurs="unbounded"
-                         minOccurs="0"/>
-            </xs:complexType>
-         </xs:element>
-         <xs:element name="prop"
-                     type="oscal-component-definition:property-FIELD"
-                     minOccurs="0"
-                     maxOccurs="unbounded"/>
-         <xs:element name="annotation"
-                     type="oscal-component-definition:annotation-ASSEMBLY"
-                     minOccurs="0"
-                     maxOccurs="unbounded"/>
-         <xs:element name="link"
-                     type="oscal-component-definition:link-ASSEMBLY"
-                     minOccurs="0"
-                     maxOccurs="unbounded"/>
-         <xs:element name="role-id"
-                     type="oscal-component-definition:role-id-FIELD"
-                     minOccurs="0"
-                     maxOccurs="unbounded"/>
-         <xs:element name="authorized-privilege"
-                     type="oscal-component-definition:authorized-privilege-ASSEMBLY"
-                     minOccurs="0"
-                     maxOccurs="unbounded"/>
-         <xs:element name="remarks" minOccurs="0" maxOccurs="1">
-            <xs:annotation>
-               <xs:appinfo>
-                  <m:formal-name>Remarks</m:formal-name>
-                  <m:description>Additional commentary on the containing object.</m:description>
-               </xs:appinfo>
-               <xs:documentation>
-                  <b>Remarks</b>: Additional commentary on the containing object.</xs:documentation>
-            </xs:annotation>
-            <xs:complexType>
-               <xs:group ref="oscal-component-definition:PROSE"
-                         maxOccurs="unbounded"
-                         minOccurs="0"/>
-            </xs:complexType>
-         </xs:element>
-      </xs:sequence>
-      <xs:attribute name="uuid" use="required" type="oscal-component-definition:uuid">
-         <xs:annotation>
-            <xs:appinfo>
-               <m:formal-name>User Universally Unique Identifier</m:formal-name>
-               <m:description>The unique identifier for the user class.</m:description>
-            </xs:appinfo>
-            <xs:documentation>
-               <b>User Universally Unique Identifier</b>: The unique identifier for the user class.</xs:documentation>
-         </xs:annotation>
-      </xs:attribute>
-   </xs:complexType>
-   <xs:complexType name="authorized-privilege-ASSEMBLY">
-      <xs:annotation>
-         <xs:appinfo>
-            <m:formal-name>Privilege</m:formal-name>
-            <m:description>Identifies a specific system privilege held by the user, along with an associated description and/or rationale for the privilege.</m:description>
-         </xs:appinfo>
-         <xs:documentation>
-            <b>Privilege</b>: Identifies a specific system privilege held by the user, along with an associated description and/or rationale for the privilege.</xs:documentation>
-      </xs:annotation>
-      <xs:sequence>
-         <xs:element name="title" minOccurs="1" maxOccurs="1">
-            <xs:complexType mixed="true">
-               <xs:group ref="oscal-component-definition:everything-inline"/>
-            </xs:complexType>
-         </xs:element>
-         <xs:element name="description" minOccurs="0" maxOccurs="1">
-            <xs:complexType>
-               <xs:group ref="oscal-component-definition:PROSE"
-                         maxOccurs="unbounded"
-                         minOccurs="0"/>
-            </xs:complexType>
-         </xs:element>
-         <xs:element name="function-performed"
-                     type="oscal-component-definition:function-performed-FIELD"
-                     minOccurs="1"
-                     maxOccurs="unbounded"/>
-      </xs:sequence>
-   </xs:complexType>
-   <xs:simpleType name="function-performed-FIELD">
-      <xs:annotation>
-         <xs:appinfo>
-            <m:formal-name>Functions Performed</m:formal-name>
-            <m:description>Describes a function performed for a given authorized privilege by this user class.</m:description>
-         </xs:appinfo>
-         <xs:documentation>
-            <b>Functions Performed</b>: Describes a function performed for a given authorized privilege by this user class.</xs:documentation>
-      </xs:annotation>
-      <xs:restriction base="xs:string"/>
-   </xs:simpleType>
-   <xs:complexType name="inventory-item-ASSEMBLY">
-      <xs:annotation>
-         <xs:appinfo>
-            <m:formal-name>Inventory Item</m:formal-name>
-            <m:description>A single managed inventory item within the system.</m:description>
-         </xs:appinfo>
-         <xs:documentation>
-            <b>Inventory Item</b>: A single managed inventory item within the system.</xs:documentation>
-      </xs:annotation>
-      <xs:sequence>
-         <xs:element name="description" minOccurs="1" maxOccurs="1">
-            <xs:complexType>
-               <xs:group ref="oscal-component-definition:PROSE"
-                         maxOccurs="unbounded"
-                         minOccurs="0"/>
-            </xs:complexType>
-         </xs:element>
-         <xs:element name="prop"
-                     type="oscal-component-definition:property-FIELD"
-                     minOccurs="0"
-                     maxOccurs="unbounded"/>
-         <xs:element name="annotation"
-                     type="oscal-component-definition:annotation-ASSEMBLY"
-                     minOccurs="0"
-                     maxOccurs="unbounded"/>
-         <xs:element name="link"
-                     type="oscal-component-definition:link-ASSEMBLY"
-                     minOccurs="0"
-                     maxOccurs="unbounded"/>
-         <xs:element name="responsible-party"
-                     type="oscal-component-definition:responsible-party-ASSEMBLY"
-                     minOccurs="0"
-                     maxOccurs="unbounded"/>
-         <xs:element name="implemented-component" minOccurs="0" maxOccurs="unbounded">
-            <xs:complexType>
-               <xs:annotation>
-                  <xs:appinfo>
-                     <m:formal-name>Implemented Component</m:formal-name>
-                     <m:description>The set of components that are implemented in a given system inventory item.</m:description>
-                  </xs:appinfo>
-                  <xs:documentation>
-                     <b>Implemented Component</b>: The set of components that are implemented in a given system inventory item.</xs:documentation>
-               </xs:annotation>
-               <xs:sequence>
-                  <xs:element name="prop"
-                              type="oscal-component-definition:property-FIELD"
-                              minOccurs="0"
-                              maxOccurs="unbounded"/>
-                  <xs:element name="annotation"
-                              type="oscal-component-definition:annotation-ASSEMBLY"
-                              minOccurs="0"
-                              maxOccurs="unbounded"/>
-                  <xs:element name="link"
-                              type="oscal-component-definition:link-ASSEMBLY"
-                              minOccurs="0"
-                              maxOccurs="unbounded"/>
-                  <xs:element name="responsible-party"
-                              type="oscal-component-definition:responsible-party-ASSEMBLY"
-                              minOccurs="0"
-                              maxOccurs="unbounded"/>
-                  <xs:element name="remarks" minOccurs="0" maxOccurs="1">
-                     <xs:annotation>
-                        <xs:appinfo>
-                           <m:formal-name>Remarks</m:formal-name>
-                           <m:description>Additional commentary on the containing object.</m:description>
-                        </xs:appinfo>
-                        <xs:documentation>
-                           <b>Remarks</b>: Additional commentary on the containing object.</xs:documentation>
-                     </xs:annotation>
-                     <xs:complexType>
-                        <xs:group ref="oscal-component-definition:PROSE"
-                                  maxOccurs="unbounded"
-                                  minOccurs="0"/>
-                     </xs:complexType>
-                  </xs:element>
-               </xs:sequence>
-               <xs:attribute name="component-uuid"
-                             use="required"
-                             type="oscal-component-definition:uuid">
-                  <xs:annotation>
-                     <xs:appinfo>
-                        <m:formal-name>Component Universally Unique Identifier Reference</m:formal-name>
-                        <m:description>A reference to a component that is implemented as part of an inventory item.</m:description>
-                     </xs:appinfo>
-                     <xs:documentation>
-                        <b>Component Universally Unique Identifier Reference</b>: A reference to a component that is implemented as part of an inventory item.</xs:documentation>
-                  </xs:annotation>
-               </xs:attribute>
-            </xs:complexType>
-         </xs:element>
-         <xs:element name="remarks" minOccurs="0" maxOccurs="1">
-            <xs:annotation>
-               <xs:appinfo>
-                  <m:formal-name>Remarks</m:formal-name>
-                  <m:description>Additional commentary on the containing object.</m:description>
-               </xs:appinfo>
-               <xs:documentation>
-                  <b>Remarks</b>: Additional commentary on the containing object.</xs:documentation>
-            </xs:annotation>
-            <xs:complexType>
-               <xs:group ref="oscal-component-definition:PROSE"
-                         maxOccurs="unbounded"
-                         minOccurs="0"/>
-            </xs:complexType>
-         </xs:element>
-      </xs:sequence>
-      <xs:attribute name="uuid" use="required" type="oscal-component-definition:uuid">
-         <xs:annotation>
-            <xs:appinfo>
-               <m:formal-name>Inventory Item Universally Unique Identifier</m:formal-name>
-               <m:description>A globally unique identifier that can be used to reference this inventory item entry elsewhere in an OSCAL document. A UUID should be consistently used for a given resource across revisions of the document.</m:description>
-            </xs:appinfo>
-            <xs:documentation>
-               <b>Inventory Item Universally Unique Identifier</b>: A globally unique identifier that can be used to reference this inventory item entry elsewhere in an OSCAL document. A UUID should be consistently used for a given resource across revisions of the document.</xs:documentation>
          </xs:annotation>
       </xs:attribute>
    </xs:complexType>
@@ -1638,7 +1304,7 @@
                   <b>Remarks</b>: Additional commentary on the containing object.</xs:documentation>
             </xs:annotation>
             <xs:complexType>
-               <xs:group ref="oscal-component-definition:PROSE"
+               <xs:group ref="oscal-component-definition:blockElementGroup"
                          maxOccurs="unbounded"
                          minOccurs="0"/>
             </xs:complexType>
@@ -1654,30 +1320,6 @@
                <b>Parameter ID</b>: A reference to a parameter within a control, who's catalog has been imported into the current implementation context.</xs:documentation>
          </xs:annotation>
       </xs:attribute>
-   </xs:complexType>
-   <xs:complexType name="system-id-FIELD">
-      <xs:annotation>
-         <xs:appinfo>
-            <m:formal-name>System Identification</m:formal-name>
-            <m:description>A unique identifier for the system described by this system security plan.</m:description>
-         </xs:appinfo>
-         <xs:documentation>
-            <b>System Identification</b>: A unique identifier for the system described by this system security plan.</xs:documentation>
-      </xs:annotation>
-      <xs:simpleContent>
-         <xs:extension base="xs:string">
-            <xs:attribute name="identifier-type" type="oscal-component-definition:uri">
-               <xs:annotation>
-                  <xs:appinfo>
-                     <m:formal-name>Identification System Type</m:formal-name>
-                     <m:description>Identifies the identification system from which the provided identifier was assigned.</m:description>
-                  </xs:appinfo>
-                  <xs:documentation>
-                     <b>Identification System Type</b>: Identifies the identification system from which the provided identifier was assigned.</xs:documentation>
-               </xs:annotation>
-            </xs:attribute>
-         </xs:extension>
-      </xs:simpleContent>
    </xs:complexType>
    <xs:element name="component-definition"
                type="oscal-component-definition:component-definition-ASSEMBLY"/>
@@ -1696,7 +1338,7 @@
                      minOccurs="1"
                      maxOccurs="1"/>
          <xs:element name="import-component-definition"
-                     type="oscal-component-definition:import-component-definition-FIELD"
+                     type="oscal-component-definition:import-component-definition-ASSEMBLY"
                      minOccurs="0"
                      maxOccurs="unbounded"/>
          <xs:element name="component"
@@ -1723,7 +1365,15 @@
          </xs:annotation>
       </xs:attribute>
    </xs:complexType>
-   <xs:complexType name="import-component-definition-FIELD">
+   <xs:complexType name="import-component-definition-ASSEMBLY">
+      <xs:annotation>
+         <xs:appinfo>
+            <m:formal-name>Import Component Definition</m:formal-name>
+            <m:description>Loads a component definition from another resource.</m:description>
+         </xs:appinfo>
+         <xs:documentation>
+            <b>Import Component Definition</b>: Loads a component definition from another resource.</xs:documentation>
+      </xs:annotation>
       <xs:attribute name="href"
                     use="required"
                     type="oscal-component-definition:uri-reference">
@@ -1749,27 +1399,51 @@
       <xs:sequence>
          <xs:element name="title" minOccurs="1" maxOccurs="1">
             <xs:complexType mixed="true">
-               <xs:group ref="oscal-component-definition:everything-inline"/>
+               <xs:annotation>
+                  <xs:appinfo>
+                     <m:formal-name>Component Title</m:formal-name>
+                     <m:description>A human readable name for the component.</m:description>
+                  </xs:appinfo>
+                  <xs:documentation>
+                     <b>Component Title</b>: A human readable name for the component.</xs:documentation>
+               </xs:annotation>
+               <xs:complexContent>
+                  <xs:extension base="oscal-component-definition:markupLineType"/>
+               </xs:complexContent>
             </xs:complexType>
          </xs:element>
          <xs:element name="description" minOccurs="1" maxOccurs="1">
             <xs:complexType>
-               <xs:group ref="oscal-component-definition:PROSE"
-                         maxOccurs="unbounded"
-                         minOccurs="0"/>
+               <xs:annotation>
+                  <xs:appinfo>
+                     <m:formal-name>Component Description</m:formal-name>
+                     <m:description>A description of the component, including information about its function.</m:description>
+                  </xs:appinfo>
+                  <xs:documentation>
+                     <b>Component Description</b>: A description of the component, including information about its function.</xs:documentation>
+               </xs:annotation>
+               <xs:complexContent>
+                  <xs:extension base="oscal-component-definition:markupMultilineType"/>
+               </xs:complexContent>
             </xs:complexType>
          </xs:element>
          <xs:element name="purpose" minOccurs="0" maxOccurs="1">
             <xs:complexType mixed="true">
-               <xs:group ref="oscal-component-definition:everything-inline"/>
+               <xs:annotation>
+                  <xs:appinfo>
+                     <m:formal-name>Purpose</m:formal-name>
+                     <m:description>A summary of the technological or business purpose of the component.</m:description>
+                  </xs:appinfo>
+                  <xs:documentation>
+                     <b>Purpose</b>: A summary of the technological or business purpose of the component.</xs:documentation>
+               </xs:annotation>
+               <xs:complexContent>
+                  <xs:extension base="oscal-component-definition:markupLineType"/>
+               </xs:complexContent>
             </xs:complexType>
          </xs:element>
          <xs:element name="prop"
-                     type="oscal-component-definition:property-FIELD"
-                     minOccurs="0"
-                     maxOccurs="unbounded"/>
-         <xs:element name="annotation"
-                     type="oscal-component-definition:annotation-ASSEMBLY"
+                     type="oscal-component-definition:property-ASSEMBLY"
                      minOccurs="0"
                      maxOccurs="unbounded"/>
          <xs:element name="link"
@@ -1798,7 +1472,7 @@
                   <b>Remarks</b>: Additional commentary on the containing object.</xs:documentation>
             </xs:annotation>
             <xs:complexType>
-               <xs:group ref="oscal-component-definition:PROSE"
+               <xs:group ref="oscal-component-definition:blockElementGroup"
                          maxOccurs="unbounded"
                          minOccurs="0"/>
             </xs:complexType>
@@ -1837,17 +1511,21 @@
       <xs:sequence>
          <xs:element name="description" minOccurs="1" maxOccurs="1">
             <xs:complexType>
-               <xs:group ref="oscal-component-definition:PROSE"
-                         maxOccurs="unbounded"
-                         minOccurs="0"/>
+               <xs:annotation>
+                  <xs:appinfo>
+                     <m:formal-name>Capability Description</m:formal-name>
+                     <m:description>A summary of the capability.</m:description>
+                  </xs:appinfo>
+                  <xs:documentation>
+                     <b>Capability Description</b>: A summary of the capability.</xs:documentation>
+               </xs:annotation>
+               <xs:complexContent>
+                  <xs:extension base="oscal-component-definition:markupMultilineType"/>
+               </xs:complexContent>
             </xs:complexType>
          </xs:element>
          <xs:element name="prop"
-                     type="oscal-component-definition:property-FIELD"
-                     minOccurs="0"
-                     maxOccurs="unbounded"/>
-         <xs:element name="annotation"
-                     type="oscal-component-definition:annotation-ASSEMBLY"
+                     type="oscal-component-definition:property-ASSEMBLY"
                      minOccurs="0"
                      maxOccurs="unbounded"/>
          <xs:element name="link"
@@ -1872,7 +1550,7 @@
                   <b>Remarks</b>: Additional commentary on the containing object.</xs:documentation>
             </xs:annotation>
             <xs:complexType>
-               <xs:group ref="oscal-component-definition:PROSE"
+               <xs:group ref="oscal-component-definition:blockElementGroup"
                          maxOccurs="unbounded"
                          minOccurs="0"/>
             </xs:complexType>
@@ -1911,9 +1589,17 @@
       <xs:sequence>
          <xs:element name="description" minOccurs="1" maxOccurs="1">
             <xs:complexType>
-               <xs:group ref="oscal-component-definition:PROSE"
-                         maxOccurs="unbounded"
-                         minOccurs="0"/>
+               <xs:annotation>
+                  <xs:appinfo>
+                     <m:formal-name>Component Description</m:formal-name>
+                     <m:description>A description of the component, including information about its function.</m:description>
+                  </xs:appinfo>
+                  <xs:documentation>
+                     <b>Component Description</b>: A description of the component, including information about its function.</xs:documentation>
+               </xs:annotation>
+               <xs:complexContent>
+                  <xs:extension base="oscal-component-definition:markupMultilineType"/>
+               </xs:complexContent>
             </xs:complexType>
          </xs:element>
       </xs:sequence>
@@ -1942,21 +1628,29 @@
       <xs:sequence>
          <xs:element name="description" minOccurs="1" maxOccurs="1">
             <xs:complexType>
-               <xs:group ref="oscal-component-definition:PROSE"
-                         maxOccurs="unbounded"
-                         minOccurs="0"/>
+               <xs:annotation>
+                  <xs:appinfo>
+                     <m:formal-name>Control Implementation Description</m:formal-name>
+                     <m:description>A description of how the specified set of controls are implemented for the containing component or capability.</m:description>
+                  </xs:appinfo>
+                  <xs:documentation>
+                     <b>Control Implementation Description</b>: A description of how the specified set of controls are implemented for the containing component or capability.</xs:documentation>
+               </xs:annotation>
+               <xs:complexContent>
+                  <xs:extension base="oscal-component-definition:markupMultilineType"/>
+               </xs:complexContent>
             </xs:complexType>
          </xs:element>
          <xs:element name="prop"
-                     type="oscal-component-definition:property-FIELD"
-                     minOccurs="0"
-                     maxOccurs="unbounded"/>
-         <xs:element name="annotation"
-                     type="oscal-component-definition:annotation-ASSEMBLY"
+                     type="oscal-component-definition:property-ASSEMBLY"
                      minOccurs="0"
                      maxOccurs="unbounded"/>
          <xs:element name="link"
                      type="oscal-component-definition:link-ASSEMBLY"
+                     minOccurs="0"
+                     maxOccurs="unbounded"/>
+         <xs:element name="set-parameter"
+                     type="oscal-component-definition:set-parameter-ASSEMBLY"
                      minOccurs="0"
                      maxOccurs="unbounded"/>
          <xs:element name="implemented-requirement"
@@ -1999,17 +1693,21 @@
       <xs:sequence>
          <xs:element name="description" minOccurs="1" maxOccurs="1">
             <xs:complexType>
-               <xs:group ref="oscal-component-definition:PROSE"
-                         maxOccurs="unbounded"
-                         minOccurs="0"/>
+               <xs:annotation>
+                  <xs:appinfo>
+                     <m:formal-name>Control Implementation Description</m:formal-name>
+                     <m:description>A description of how the specified control is implemented for the containing component or capability.</m:description>
+                  </xs:appinfo>
+                  <xs:documentation>
+                     <b>Control Implementation Description</b>: A description of how the specified control is implemented for the containing component or capability.</xs:documentation>
+               </xs:annotation>
+               <xs:complexContent>
+                  <xs:extension base="oscal-component-definition:markupMultilineType"/>
+               </xs:complexContent>
             </xs:complexType>
          </xs:element>
          <xs:element name="prop"
-                     type="oscal-component-definition:property-FIELD"
-                     minOccurs="0"
-                     maxOccurs="unbounded"/>
-         <xs:element name="annotation"
-                     type="oscal-component-definition:annotation-ASSEMBLY"
+                     type="oscal-component-definition:property-ASSEMBLY"
                      minOccurs="0"
                      maxOccurs="unbounded"/>
          <xs:element name="link"
@@ -2038,7 +1736,7 @@
                   <b>Remarks</b>: Additional commentary on the containing object.</xs:documentation>
             </xs:annotation>
             <xs:complexType>
-               <xs:group ref="oscal-component-definition:PROSE"
+               <xs:group ref="oscal-component-definition:blockElementGroup"
                          maxOccurs="unbounded"
                          minOccurs="0"/>
             </xs:complexType>
@@ -2077,17 +1775,21 @@
       <xs:sequence>
          <xs:element name="description" minOccurs="1" maxOccurs="1">
             <xs:complexType>
-               <xs:group ref="oscal-component-definition:PROSE"
-                         maxOccurs="unbounded"
-                         minOccurs="0"/>
+               <xs:annotation>
+                  <xs:appinfo>
+                     <m:formal-name>Statement Implementation Description</m:formal-name>
+                     <m:description>A summary of how the containing control statement is implemented by the component or capability.</m:description>
+                  </xs:appinfo>
+                  <xs:documentation>
+                     <b>Statement Implementation Description</b>: A summary of how the containing control statement is implemented by the component or capability.</xs:documentation>
+               </xs:annotation>
+               <xs:complexContent>
+                  <xs:extension base="oscal-component-definition:markupMultilineType"/>
+               </xs:complexContent>
             </xs:complexType>
          </xs:element>
          <xs:element name="prop"
-                     type="oscal-component-definition:property-FIELD"
-                     minOccurs="0"
-                     maxOccurs="unbounded"/>
-         <xs:element name="annotation"
-                     type="oscal-component-definition:annotation-ASSEMBLY"
+                     type="oscal-component-definition:property-ASSEMBLY"
                      minOccurs="0"
                      maxOccurs="unbounded"/>
          <xs:element name="link"
@@ -2108,7 +1810,7 @@
                   <b>Remarks</b>: Additional commentary on the containing object.</xs:documentation>
             </xs:annotation>
             <xs:complexType>
-               <xs:group ref="oscal-component-definition:PROSE"
+               <xs:group ref="oscal-component-definition:blockElementGroup"
                          maxOccurs="unbounded"
                          minOccurs="0"/>
             </xs:complexType>
@@ -2135,245 +1837,187 @@
          </xs:annotation>
       </xs:attribute>
    </xs:complexType>
-   <xs:group name="PROSE">
-      <xs:choice>
-         <xs:element ref="oscal-prose:h1"/>
-         <xs:element ref="oscal-prose:h2"/>
-         <xs:element ref="oscal-prose:h3"/>
-         <xs:element ref="oscal-prose:h4"/>
-         <xs:element ref="oscal-prose:h5"/>
-         <xs:element ref="oscal-prose:h6"/>
-         <xs:element ref="oscal-prose:p"/>
-         <xs:element ref="oscal-prose:ul"/>
-         <xs:element ref="oscal-prose:ol"/>
-         <xs:element ref="oscal-prose:pre"/>
-         <xs:element ref="oscal-prose:table"/>
+   <xs:complexType name="markupLineType" mixed="true">
+      <xs:group ref="oscal-component-definition:mixedInlineMarkupGroup"/>
+   </xs:complexType>
+   <xs:complexType name="markupMultilineType">
+      <xs:group ref="oscal-component-definition:blockElementGroup"/>
+   </xs:complexType>
+   <xs:group name="blockElementGroup">
+      <xs:sequence>
+         <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="h1" type="oscal-component-definition:blockElementType"/>
+            <xs:element name="h2" type="oscal-component-definition:blockElementType"/>
+            <xs:element name="h3" type="oscal-component-definition:blockElementType"/>
+            <xs:element name="h4" type="oscal-component-definition:blockElementType"/>
+            <xs:element name="h5" type="oscal-component-definition:blockElementType"/>
+            <xs:element name="h6" type="oscal-component-definition:blockElementType"/>
+            <xs:element name="p" type="oscal-component-definition:blockElementType"/>
+            <xs:element name="ul" type="oscal-component-definition:listType"/>
+            <xs:element name="ol" type="oscal-component-definition:listType"/>
+            <xs:element name="pre" type="oscal-component-definition:preformattedType"/>
+            <xs:element name="table" type="oscal-component-definition:tableType"/>
+            <!-- TODO: need to add support for blockquote, which can contain block elements. usnistgov/metaschema#70 -->
+         </xs:choice>
+      </xs:sequence>
+   </xs:group>
+   <!--
+    headers: phrase inline markup, a, insert (phrase)
+    p: phrase inline markup, a, insert, img (phrase+img)
+    li: phrase inline markup, a, insert, img (phrase+img)
+    pre: phrase inline markup, a, insert (phrase)
+    td th: phrase inline markup, a, insert, img (phrase+img)
+  -->
+   <xs:complexType name="blockElementType" mixed="true">
+      <xs:group ref="oscal-component-definition:phraseInlineMarkupGroup"/>
+   </xs:complexType>
+   <xs:complexType name="headingType" mixed="true">
+      <xs:complexContent>
+         <xs:extension base="oscal-component-definition:blockElementType">
+            <xs:annotation>
+               <xs:documentation>The content model is the same as blockElementType, but line endings need
+            to be preserved, since this is preformatted.</xs:documentation>
+            </xs:annotation>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="preformattedType" mixed="true">
+      <xs:complexContent>
+         <xs:extension base="oscal-component-definition:blockElementType">
+            <xs:annotation>
+               <xs:documentation>The content model is the same as blockElementType, but line endings need
+            to be preserved, since this is preformatted.</xs:documentation>
+            </xs:annotation>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="listType">
+      <xs:sequence>
+         <xs:element name="li"
+                     type="oscal-component-definition:listItemType"
+                     minOccurs="1"
+                     maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="listItemType" mixed="true">
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+         <xs:group ref="oscal-component-definition:mixedInlineMarkupGroup"/>
+         <xs:element name="ul" type="oscal-component-definition:listType"/>
+         <xs:element name="ol" type="oscal-component-definition:listType"/>
       </xs:choice>
-   </xs:group>
-   <xs:element name="h1">
-      <xs:complexType mixed="true">
-         <xs:group ref="oscal-prose:inlines"/>
-      </xs:complexType>
-   </xs:element>
-   <xs:element name="h2">
-      <xs:complexType mixed="true">
-         <xs:group ref="oscal-prose:inlines"/>
-      </xs:complexType>
-   </xs:element>
-   <xs:element name="h3">
-      <xs:complexType mixed="true">
-         <xs:group ref="oscal-prose:inlines"/>
-      </xs:complexType>
-   </xs:element>
-   <xs:element name="h4">
-      <xs:complexType mixed="true">
-         <xs:group ref="oscal-prose:inlines"/>
-      </xs:complexType>
-   </xs:element>
-   <xs:element name="h5">
-      <xs:complexType mixed="true">
-         <xs:group ref="oscal-prose:inlines"/>
-      </xs:complexType>
-   </xs:element>
-   <xs:element name="h6">
-      <xs:complexType mixed="true">
-         <xs:group ref="oscal-prose:inlines"/>
-      </xs:complexType>
-   </xs:element>
-   <xs:element name="p">
-      <xs:complexType mixed="true">
-         <xs:group ref="oscal-prose:everything-inline"/>
-      </xs:complexType>
-   </xs:element>
-   <xs:element name="pre">
-      <xs:complexType mixed="true">
-         <xs:choice minOccurs="0" maxOccurs="unbounded">
-            <xs:group ref="oscal-prose:mix"/>
-            <xs:element ref="oscal-prose:a"/>
-         </xs:choice>
-         <xs:attributeGroup ref="oscal-prose:optionalClass"/>
-      </xs:complexType>
-   </xs:element>
-   <xs:element name="ol">
-      <xs:complexType>
-         <xs:sequence>
-            <xs:element maxOccurs="unbounded" ref="oscal-prose:li"/>
-         </xs:sequence>
-      </xs:complexType>
-   </xs:element>
-   <xs:element name="li">
-      <xs:complexType mixed="true">
-         <xs:choice minOccurs="0" maxOccurs="unbounded">
-            <xs:group ref="oscal-prose:everything-inline"/>
-            <xs:element ref="oscal-prose:ol"/>
-            <xs:element ref="oscal-prose:ul"/>
-         </xs:choice>
-         <xs:attributeGroup ref="oscal-prose:optionalClass"/>
-      </xs:complexType>
-   </xs:element>
-   <xs:element name="ul">
-      <xs:complexType>
-         <xs:sequence>
-            <xs:element maxOccurs="unbounded" ref="oscal-prose:li"/>
-         </xs:sequence>
-      </xs:complexType>
-   </xs:element>
-   <xs:element name="table">
-      <xs:complexType>
-         <xs:sequence>
-            <xs:element maxOccurs="unbounded" ref="oscal-prose:tr"/>
-         </xs:sequence>
-      </xs:complexType>
-   </xs:element>
-   <xs:element name="tr">
-      <xs:complexType>
-         <xs:choice minOccurs="0" maxOccurs="unbounded">
-            <xs:element maxOccurs="unbounded" ref="oscal-prose:td"/>
-            <xs:element maxOccurs="unbounded" ref="oscal-prose:th"/>
-         </xs:choice>
-      </xs:complexType>
-   </xs:element>
-   <xs:element name="th">
-      <xs:complexType mixed="true">
-         <xs:group ref="oscal-prose:everything-inline"/>
-      </xs:complexType>
-   </xs:element>
-   <xs:element name="td">
-      <xs:complexType mixed="true">
-         <xs:group ref="oscal-prose:everything-inline"/>
-      </xs:complexType>
-   </xs:element>
-   <xs:group name="everything-inline">
+   </xs:complexType>
+   <xs:complexType name="tableType">
+      <xs:sequence>
+         <xs:element maxOccurs="unbounded"
+                     name="tr"
+                     type="oscal-component-definition:tableRowType"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="tableRowType"><!-- QUESTION: Should we allow TH and TD to be mixed? -->
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+         <xs:element name="td"
+                     type="oscal-component-definition:tableCellType"
+                     maxOccurs="unbounded"/>
+         <xs:element name="th"
+                     type="oscal-component-definition:tableCellType"
+                     maxOccurs="unbounded"/>
+      </xs:choice>
+   </xs:complexType>
+   <xs:complexType name="tableCellType" mixed="true">
+      <xs:group ref="oscal-component-definition:mixedInlineMarkupGroup"/>
+      <!-- TODO: consider adding a choice between the inline or paragraphs. We need to figure out what is supported in Markdown. -->
+      <xs:attribute name="align"
+                    type="oscal-component-definition:alignType"
+                    default="left"/>
+      <!-- TODO: need to add support for alignment. usnistgov/metaschema#70 -->
+   </xs:complexType>
+   <xs:simpleType name="alignType">
+      <xs:restriction base="xs:token">
+         <xs:enumeration value="left"/>
+         <xs:enumeration value="center"/>
+         <xs:enumeration value="right"/>
+      </xs:restriction>
+   </xs:simpleType>
+   <!-- note mix does not include anchors, which do not come for free -->
+   <xs:group name="mixedInlineMarkupGroup">
       <xs:sequence>
          <xs:choice minOccurs="0" maxOccurs="unbounded">
-            <xs:group ref="oscal-prose:mix"/>
-            <xs:group ref="oscal-prose:special"/>
-            <xs:element ref="oscal-prose:a"/>
+            <xs:group ref="oscal-component-definition:phraseInlineMarkupGroup"/>
+            <xs:element name="img" type="oscal-component-definition:imageType"/>
          </xs:choice>
       </xs:sequence>
    </xs:group>
-   <xs:group name="mix">
-      <xs:sequence>
-         <xs:group minOccurs="0" maxOccurs="unbounded" ref="oscal-prose:inlines"/>
-      </xs:sequence>
-   </xs:group>
-   <xs:group name="inlines">
+   <xs:group name="phraseInlineMarkupGroup">
       <xs:sequence>
          <xs:choice minOccurs="0" maxOccurs="unbounded">
-            <xs:element ref="oscal-prose:q"/>
-            <xs:element ref="oscal-prose:code"/>
-            <xs:element ref="oscal-prose:em"/>
-            <xs:element ref="oscal-prose:i"/>
-            <xs:element ref="oscal-prose:strong"/>
-            <xs:element ref="oscal-prose:b"/>
-            <xs:element ref="oscal-prose:sub"/>
-            <xs:element ref="oscal-prose:sup"/>
-            <xs:element ref="oscal-prose:img"/>
-         </xs:choice>
-      </xs:sequence>
-   </xs:group>
-   <xs:element name="q">
-      <xs:complexType mixed="true">
-         <xs:choice minOccurs="0" maxOccurs="unbounded">
-            <xs:element ref="oscal-prose:code"/>
-            <xs:element ref="oscal-prose:em"/>
-            <xs:element ref="oscal-prose:i"/>
-            <xs:element ref="oscal-prose:b"/>
-            <xs:element ref="oscal-prose:strong"/>
-            <xs:element ref="oscal-prose:sub"/>
-            <xs:element ref="oscal-prose:sup"/>
-         </xs:choice>
-      </xs:complexType>
-   </xs:element>
-   <xs:element name="code">
-      <xs:complexType mixed="true">
-         <xs:group ref="oscal-prose:mix"/>
-         <xs:attributeGroup ref="oscal-prose:optionalClass"/>
-      </xs:complexType>
-   </xs:element>
-   <xs:element name="strong">
-      <xs:complexType mixed="true">
-         <xs:choice minOccurs="0" maxOccurs="unbounded">
-            <xs:group ref="oscal-prose:mix"/>
-            <xs:element ref="oscal-prose:a"/>
-         </xs:choice>
-         <xs:attributeGroup ref="oscal-prose:optionalClass"/>
-      </xs:complexType>
-   </xs:element>
-   <xs:element name="em">
-      <xs:complexType mixed="true">
-         <xs:choice minOccurs="0" maxOccurs="unbounded">
-            <xs:group ref="oscal-prose:mix"/>
-            <xs:element ref="oscal-prose:a"/>
-         </xs:choice>
-         <xs:attributeGroup ref="oscal-prose:optionalClass"/>
-      </xs:complexType>
-   </xs:element>
-   <xs:element name="i">
-      <xs:complexType mixed="true">
-         <xs:choice minOccurs="0" maxOccurs="unbounded">
-            <xs:group ref="oscal-prose:mix"/>
-            <xs:element ref="oscal-prose:a"/>
-         </xs:choice>
-         <xs:attributeGroup ref="oscal-prose:optionalClass"/>
-      </xs:complexType>
-   </xs:element>
-   <xs:element name="b">
-      <xs:complexType mixed="true">
-         <xs:choice minOccurs="0" maxOccurs="unbounded">
-            <xs:group ref="oscal-prose:mix"/>
-            <xs:element ref="oscal-prose:a"/>
-         </xs:choice>
-         <xs:attributeGroup ref="oscal-prose:optionalClass"/>
-      </xs:complexType>
-   </xs:element>
-   <xs:element name="sub">
-      <xs:complexType mixed="true">
-         <xs:attributeGroup ref="oscal-prose:optionalClass"/>
-      </xs:complexType>
-   </xs:element>
-   <xs:element name="sup">
-      <xs:complexType mixed="true">
-         <xs:attributeGroup ref="oscal-prose:optionalClass"/>
-      </xs:complexType>
-   </xs:element>
-   <xs:element name="img">
-      <xs:complexType>
-         <xs:attribute name="alt"/>
-         <xs:attribute name="src" use="required" type="xs:anyURI"/>
-      </xs:complexType>
-   </xs:element>
-   <xs:element name="a">
-      <xs:complexType mixed="true">
-         <xs:choice minOccurs="0" maxOccurs="unbounded">
-            <xs:element ref="oscal-prose:q"/>
-            <xs:element ref="oscal-prose:code"/>
-            <xs:element name="em">
-               <xs:complexType mixed="true">
-                  <xs:attributeGroup ref="oscal-prose:optionalClass"/>
-               </xs:complexType>
-            </xs:element>
-         </xs:choice>
-         <xs:attribute name="href"/>
-      </xs:complexType>
-   </xs:element>
-   <xs:group name="special">
-      <xs:sequence>
-         <xs:choice minOccurs="0" maxOccurs="unbounded">
-            <xs:element ref="oscal-prose:insert"/>
+            <xs:element name="code"
+                        type="oscal-component-definition:inlineMarkupType"
+                        minOccurs="1"/>
+            <xs:element name="em"
+                        type="oscal-component-definition:inlineMarkupType"
+                        minOccurs="1"/>
+            <xs:element name="i"
+                        type="oscal-component-definition:inlineMarkupType"
+                        minOccurs="1"/>
+            <xs:element name="b"
+                        type="oscal-component-definition:inlineMarkupType"
+                        minOccurs="1"/>
+            <xs:element name="strong"
+                        type="oscal-component-definition:inlineMarkupType"
+                        minOccurs="1"/>
+            <xs:element name="sub"
+                        type="oscal-component-definition:inlineMarkupType"
+                        minOccurs="1"/>
+            <xs:element name="sup"
+                        type="oscal-component-definition:inlineMarkupType"
+                        minOccurs="1"/>
+            <xs:element name="q"
+                        type="oscal-component-definition:inlineMarkupType"
+                        minOccurs="1"/>
+            <xs:element name="insert" type="oscal-component-definition:insertType"/>
+            <xs:element name="a" type="oscal-component-definition:anchorType"/>
          </xs:choice>
       </xs:sequence>
    </xs:group>
-   <xs:element name="insert">
-      <xs:complexType>
-         <xs:attribute name="param-id" use="required" type="xs:NCName"/>
-      </xs:complexType>
-   </xs:element>
-   <xs:attributeGroup name="requiredClass"/>
-   <xs:attributeGroup name="optionalClass"/>
-   <xs:attributeGroup name="hrefAttr">
-      <xs:attribute name="href"/>
-   </xs:attributeGroup>
+   <xs:complexType name="inlineMarkupType" mixed="true">
+      <xs:group ref="oscal-component-definition:phraseInlineMarkupGroup"/>
+   </xs:complexType>
+   <xs:complexType name="imageType">
+      <xs:attribute name="alt" type="xs:string"/>
+      <xs:attribute name="src" use="required" type="xs:anyURI"/>
+   </xs:complexType>
+   <xs:complexType name="anchorType" mixed="true">
+      <xs:group ref="oscal-component-definition:phraseInlineMarkupGroup"/>
+      <xs:attribute name="href" type="xs:anyURI"/>
+   </xs:complexType>
+   <!--
+    A value to be assigned by responder via parameter
+    (a parameter must be available)
+  -->
+   <xs:complexType name="insertType">
+      <xs:annotation>
+         <xs:documentation>An insert can be used to identify a placeholder for dynamically inserting text related to a specific object, which is referenced by the object's identifier using an <code xmlns="http://csrc.nist.gov/ns/oscal/1.0">id-ref</code>. This insert mechanism allows the selection of which text value from the object to dynamically include based on the application's display requirements.</xs:documentation>
+      </xs:annotation>
+      <xs:attribute name="type" use="required" type="xs:NCName">
+         <xs:annotation>
+            <xs:documentation>The type of object to include from (e.g., parameter, control, component, role, etc.)</xs:documentation>
+         </xs:annotation>
+      </xs:attribute>
+      <xs:attribute name="id-ref" use="required" type="xs:NCName">
+         <xs:annotation>
+            <xs:documentation>The identity of the object to insert a value for. The identity will be selected from the index of objects of the specified <code xmlns="http://csrc.nist.gov/ns/oscal/1.0">type</code>. The specific value to include is based on the application's display requirements, which will likely use a specific data element associated with the <code xmlns="http://csrc.nist.gov/ns/oscal/1.0">type</code> (e.g., title, identifier, value, etc.) that is appropriate for the application.</xs:documentation>
+         </xs:annotation>
+      </xs:attribute>
+   </xs:complexType>
+   <!--
+    Within a selection, a choice - tbd
+    unlike 'value', choice may have inline stuff as well as 'assign' elements
+    choice = element choice { (assign | mix)* }
+  -->
+   <!--
+    IDs are required everywhere for now
+    idAttr      = attribute id { xsd:ID }
+  -->
    <xs:simpleType name="dateTime-with-timezone">
       <xs:annotation>
          <xs:documentation>The xs:dateTime with a required timezone.</xs:documentation>

@@ -58,7 +58,8 @@ public interface Link extends OscalElement {
 	 * <h2>Description</h2>
 	 * <p>A resolvable URL reference to a resource.</p>
 	 * <h2>Remarks</h2>
-	 * <p>The value of the <code>href</code> can be an internet resource, or a local reference using a fragment e.g. #fragment that points to a <code>back-matter</code> <code>resource</code> in the same document.</p>
+	 * <p>The value of the <code>href</code> can be an internet resource, or a local reference using a fragment e.g. #fragment that points to a <code>back-matter</code>
+	 * <code>resource</code> in the same document.</p>
 	 * <p>If a local reference using a fragment is used, this will be indicated by a fragment <q>#</q> followed by an identifier which references an identified <code>resource</code> in the document's <code>back-matter</code> or another object that is within the scope of the containing OSCAL document.</p>
 	 * <p>If an internet resource is used, the <code>href</code> value will be an absolute or relative URI pointing to the location of the referenced resource. A relative URI will be resolved relative to the location of the document containing the link.</p>
 	 * 
@@ -81,34 +82,6 @@ public interface Link extends OscalElement {
 	 * @generated
 	 */
 	void setEHref(URI value);
-
-	/**
-	 * Returns the value of the '<em><b>Rel</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * <h1>Relation</h1>
-	 * <h2>Description</h2>
-	 * <p>Describes the type of relationship provided by the link. This can be an indicator of the link's purpose.</p>
-	 * 
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Rel</em>' attribute.
-	 * @see #setRel(String)
-	 * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getLink_Rel()
-	 * @model annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;AssemblyDefinition&gt;link.&lt;FlagInstance&gt;rel'"
-	 * @generated
-	 */
-	String getRel();
-
-	/**
-	 * Sets the value of the '{@link dsm.oscal.model.OscalMetadata.Link#getRel <em>Rel</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Rel</em>' attribute.
-	 * @see #getRel()
-	 * @generated
-	 */
-	void setRel(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Media Type</b></em>' attribute.
@@ -137,6 +110,34 @@ public interface Link extends OscalElement {
 	 * @generated
 	 */
 	void setMediaType(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Rel</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * <h1>Relation</h1>
+	 * <h2>Description</h2>
+	 * <p>Describes the type of relationship provided by the link. This can be an indicator of the link's purpose.</p>
+	 * 
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Rel</em>' attribute.
+	 * @see #setRel(String)
+	 * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getLink_Rel()
+	 * @model annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;AssemblyDefinition&gt;link.&lt;FlagInstance&gt;rel'"
+	 * @generated
+	 */
+	String getRel();
+
+	/**
+	 * Sets the value of the '{@link dsm.oscal.model.OscalMetadata.Link#getRel <em>Rel</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Rel</em>' attribute.
+	 * @see #getRel()
+	 * @generated
+	 */
+	void setRel(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Text</b></em>' attribute.

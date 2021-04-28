@@ -78,6 +78,19 @@ public interface ResourceRlink extends OscalElement {
 	void setEHref(URI value);
 
 	/**
+	 * Returns the value of the '<em><b>Hashes</b></em>' containment reference list.
+	 * The list contents are of type {@link dsm.oscal.model.OscalMetadata.Hash}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Hashes</em>' containment reference list.
+	 * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getResourceRlink_Hashes()
+	 * @model containment="true"
+	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;FieldDefinition&gt;hash'"
+	 * @generated
+	 */
+	EList<Hash> getHashes();
+
+	/**
 	 * Returns the value of the '<em><b>Media Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -104,18 +117,5 @@ public interface ResourceRlink extends OscalElement {
 	 * @generated
 	 */
 	void setMediaType(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Hashes</b></em>' containment reference list.
-	 * The list contents are of type {@link dsm.oscal.model.OscalMetadata.Hash}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Hashes</em>' containment reference list.
-	 * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getResourceRlink_Hashes()
-	 * @model containment="true"
-	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;FieldDefinition&gt;hash'"
-	 * @generated
-	 */
-	EList<Hash> getHashes();
 
 } // ResourceRlink

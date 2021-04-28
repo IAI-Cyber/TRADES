@@ -47,34 +47,6 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface Address extends OscalElement {
 	/**
-	 * Returns the value of the '<em><b>Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * <h1>Address Type</h1>
-	 * <h2>Description</h2>
-	 * <p>Indicates the type of address.</p>
-	 * 
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Type</em>' attribute.
-	 * @see #setType(String)
-	 * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getAddress_Type()
-	 * @model annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;AssemblyDefinition&gt;address.&lt;FlagInstance&gt;location-type'"
-	 * @generated
-	 */
-	String getType();
-
-	/**
-	 * Sets the value of the '{@link dsm.oscal.model.OscalMetadata.Address#getType <em>Type</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Type</em>' attribute.
-	 * @see #getType()
-	 * @generated
-	 */
-	void setType(String value);
-
-	/**
 	 * Returns the value of the '<em><b>Addr Lines</b></em>' attribute list.
 	 * The list contents are of type {@link java.lang.String}.
 	 * <!-- begin-user-doc -->
@@ -121,32 +93,32 @@ public interface Address extends OscalElement {
 	void setCity(String value);
 
 	/**
-	 * Returns the value of the '<em><b>State</b></em>' attribute.
+	 * Returns the value of the '<em><b>Country</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * <h1>State</h1>
+	 * <h1>Country Code</h1>
 	 * <h2>Description</h2>
-	 * <p>State, province or analogous geographical region for mailing address</p>
+	 * <p>The ISO 3166-1 alpha-2 country code for the mailing address.</p>
 	 * 
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>State</em>' attribute.
-	 * @see #setState(String)
-	 * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getAddress_State()
-	 * @model annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;AssemblyDefinition&gt;address.&lt;FieldInstance&gt;state'"
+	 * @return the value of the '<em>Country</em>' attribute.
+	 * @see #setCountry(String)
+	 * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getAddress_Country()
+	 * @model annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;AssemblyDefinition&gt;address.&lt;FieldInstance&gt;country'"
 	 * @generated
 	 */
-	String getState();
+	String getCountry();
 
 	/**
-	 * Sets the value of the '{@link dsm.oscal.model.OscalMetadata.Address#getState <em>State</em>}' attribute.
+	 * Sets the value of the '{@link dsm.oscal.model.OscalMetadata.Address#getCountry <em>Country</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>State</em>' attribute.
-	 * @see #getState()
+	 * @param value the new value of the '<em>Country</em>' attribute.
+	 * @see #getCountry()
 	 * @generated
 	 */
-	void setState(String value);
+	void setCountry(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Postal Code</b></em>' attribute.
@@ -177,31 +149,59 @@ public interface Address extends OscalElement {
 	void setPostalCode(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Country</b></em>' attribute.
+	 * Returns the value of the '<em><b>State</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * <h1>Country Code</h1>
+	 * <h1>State</h1>
 	 * <h2>Description</h2>
-	 * <p>The ISO 3166-1 alpha-2 country code for the mailing address.</p>
+	 * <p>State, province or analogous geographical region for mailing address</p>
 	 * 
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Country</em>' attribute.
-	 * @see #setCountry(String)
-	 * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getAddress_Country()
-	 * @model annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;AssemblyDefinition&gt;address.&lt;FieldInstance&gt;country'"
+	 * @return the value of the '<em>State</em>' attribute.
+	 * @see #setState(String)
+	 * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getAddress_State()
+	 * @model annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;AssemblyDefinition&gt;address.&lt;FieldInstance&gt;state'"
 	 * @generated
 	 */
-	String getCountry();
+	String getState();
 
 	/**
-	 * Sets the value of the '{@link dsm.oscal.model.OscalMetadata.Address#getCountry <em>Country</em>}' attribute.
+	 * Sets the value of the '{@link dsm.oscal.model.OscalMetadata.Address#getState <em>State</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Country</em>' attribute.
-	 * @see #getCountry()
+	 * @param value the new value of the '<em>State</em>' attribute.
+	 * @see #getState()
 	 * @generated
 	 */
-	void setCountry(String value);
+	void setState(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * <h1>Address Type</h1>
+	 * <h2>Description</h2>
+	 * <p>Indicates the type of address.</p>
+	 * 
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Type</em>' attribute.
+	 * @see #setType(String)
+	 * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getAddress_Type()
+	 * @model annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;AssemblyDefinition&gt;address.&lt;FlagInstance&gt;location-type'"
+	 * @generated
+	 */
+	String getType();
+
+	/**
+	 * Sets the value of the '{@link dsm.oscal.model.OscalMetadata.Address#getType <em>Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Type</em>' attribute.
+	 * @see #getType()
+	 * @generated
+	 */
+	void setType(String value);
 
 } // Address

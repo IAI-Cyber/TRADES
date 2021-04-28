@@ -32,6 +32,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -149,6 +150,19 @@ public class ResourceRlinkImpl extends OscalElementCustomImpl implements Resourc
 	 * @generated
 	 */
 	@Override
+	public EList<Hash> getHashes() {
+		if (hashes == null) {
+			hashes = new EObjectContainmentEList<Hash>(Hash.class, this, OscalMetadataPackage.RESOURCE_RLINK__HASHES);
+		}
+		return hashes;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public String getMediaType() {
 		return mediaType;
 	}
@@ -164,19 +178,6 @@ public class ResourceRlinkImpl extends OscalElementCustomImpl implements Resourc
 		mediaType = newMediaType;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OscalMetadataPackage.RESOURCE_RLINK__MEDIA_TYPE, oldMediaType, mediaType));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EList<Hash> getHashes() {
-		if (hashes == null) {
-			hashes = new EObjectContainmentEList<Hash>(Hash.class, this, OscalMetadataPackage.RESOURCE_RLINK__HASHES);
-		}
-		return hashes;
 	}
 
 	/**

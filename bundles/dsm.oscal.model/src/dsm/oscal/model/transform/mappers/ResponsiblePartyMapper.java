@@ -24,7 +24,6 @@ public class ResponsiblePartyMapper
 	protected gov.nist.secauto.oscal.lib.ResponsibleParty safeToOscal(ResponsibleParty tradesObject) {
 		gov.nist.secauto.oscal.lib.ResponsibleParty respParty = new gov.nist.secauto.oscal.lib.ResponsibleParty();
 
-		buildXMLChildList(AnnotationMapper.getInstance(), tradesObject.getAnnotations(), respParty::setAnnotations);
 		buildXMLChildList(LinkMapper.getInstance(), tradesObject.getLinks(), respParty::setLinks);
 		setXMLList(tradesObject.getPartyUuids(), respParty::setPartyUuids);
 		buildXMLChildList(PropertyMapper.getInstance(), tradesObject.getProps(), respParty::setProps);
@@ -38,7 +37,6 @@ public class ResponsiblePartyMapper
 	protected ResponsibleParty safeToTrades(gov.nist.secauto.oscal.lib.ResponsibleParty oscalObject) {
 		ResponsibleParty respParty = OscalMetadataFactory.eINSTANCE.createResponsibleParty();
 
-		buildChildList(AnnotationMapper.getInstance(), oscalObject.getAnnotations(), respParty::getAnnotations);
 		buildChildList(LinkMapper.getInstance(), oscalObject.getLinks(), respParty::getLinks);
 		setList(oscalObject.getPartyUuids(), respParty.getPartyUuids());
 		buildChildList(PropertyMapper.getInstance(), oscalObject.getProps(), respParty::getProps);

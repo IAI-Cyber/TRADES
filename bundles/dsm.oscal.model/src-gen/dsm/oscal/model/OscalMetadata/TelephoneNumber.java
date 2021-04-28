@@ -15,6 +15,7 @@
  */
 package dsm.oscal.model.OscalMetadata;
 
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Telephone Number</b></em>'.

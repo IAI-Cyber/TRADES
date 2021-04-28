@@ -17,7 +17,6 @@ package dsm.oscal.model.OscalCatalogCommon.util;
 
 import dsm.oscal.model.OscalCatalogCommon.*;
 
-import dsm.oscal.model.OscalMetadata.AnnotationOwner;
 import dsm.oscal.model.OscalMetadata.DocumentationComputer;
 import dsm.oscal.model.OscalMetadata.ElementWithClazz;
 import dsm.oscal.model.OscalMetadata.ElementWithId;
@@ -26,6 +25,7 @@ import dsm.oscal.model.OscalMetadata.LinkOwner;
 import dsm.oscal.model.OscalMetadata.OscalElement;
 import dsm.oscal.model.OscalMetadata.PartOwner;
 import dsm.oscal.model.OscalMetadata.PropertyOwner;
+
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 
@@ -116,10 +116,6 @@ public class OscalCatalogCommonAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseOscalElement(OscalElement object) {
 				return createOscalElementAdapter();
-			}
-			@Override
-			public Adapter caseAnnotationOwner(AnnotationOwner object) {
-				return createAnnotationOwnerAdapter();
 			}
 			@Override
 			public Adapter casePropertyOwner(PropertyOwner object) {
@@ -264,20 +260,6 @@ public class OscalCatalogCommonAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createOscalElementAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link dsm.oscal.model.OscalMetadata.AnnotationOwner <em>Annotation Owner</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see dsm.oscal.model.OscalMetadata.AnnotationOwner
-	 * @generated
-	 */
-	public Adapter createAnnotationOwnerAdapter() {
 		return null;
 	}
 

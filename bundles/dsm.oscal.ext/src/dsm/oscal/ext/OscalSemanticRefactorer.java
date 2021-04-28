@@ -98,7 +98,6 @@ public class OscalSemanticRefactorer implements ISemanticRefactorer {
 		}
 
 		createUUIDElements();
-		createAbstractOwnerClass(getEClass("Annotation"), "annotations", true);
 		createAbstractOwnerClass(getEClass("Property"), "props", true);
 		createAbstractOwnerClass(getEClass("Link"), "links", true);
 

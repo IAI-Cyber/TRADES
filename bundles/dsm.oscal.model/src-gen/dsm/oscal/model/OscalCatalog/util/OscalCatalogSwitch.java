@@ -17,7 +17,6 @@ package dsm.oscal.model.OscalCatalog.util;
 
 import dsm.oscal.model.OscalCatalog.*;
 
-import dsm.oscal.model.OscalMetadata.AnnotationOwner;
 import dsm.oscal.model.OscalMetadata.DocumentationComputer;
 import dsm.oscal.model.OscalMetadata.ElementWithClazz;
 import dsm.oscal.model.OscalMetadata.ElementWithId;
@@ -26,6 +25,7 @@ import dsm.oscal.model.OscalMetadata.OscalElement;
 import dsm.oscal.model.OscalMetadata.PartOwner;
 import dsm.oscal.model.OscalMetadata.PropertyOwner;
 import dsm.oscal.model.OscalMetadata.UUIDElement;
+
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -100,7 +100,6 @@ public class OscalCatalogSwitch<T> extends Switch<T> {
 				Control control = (Control)theEObject;
 				T result = caseControl(control);
 				if (result == null) result = caseOscalElement(control);
-				if (result == null) result = caseAnnotationOwner(control);
 				if (result == null) result = casePropertyOwner(control);
 				if (result == null) result = caseLinkOwner(control);
 				if (result == null) result = casePartOwner(control);
@@ -114,7 +113,6 @@ public class OscalCatalogSwitch<T> extends Switch<T> {
 				Group group = (Group)theEObject;
 				T result = caseGroup(group);
 				if (result == null) result = caseOscalElement(group);
-				if (result == null) result = caseAnnotationOwner(group);
 				if (result == null) result = casePropertyOwner(group);
 				if (result == null) result = caseLinkOwner(group);
 				if (result == null) result = casePartOwner(group);
@@ -200,21 +198,6 @@ public class OscalCatalogSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseUUIDElement(UUIDElement object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Annotation Owner</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Annotation Owner</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseAnnotationOwner(AnnotationOwner object) {
 		return null;
 	}
 

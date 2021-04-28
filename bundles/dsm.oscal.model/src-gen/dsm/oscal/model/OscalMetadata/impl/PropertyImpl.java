@@ -16,11 +16,14 @@
 package dsm.oscal.model.OscalMetadata.impl;
 
 import dsm.oscal.model.OscalMetadata.ElementWithClazz;
+import dsm.oscal.model.OscalMetadata.ElementWithRemarks;
 import dsm.oscal.model.OscalMetadata.ElementWithValue;
 import dsm.oscal.model.OscalMetadata.OscalMetadataPackage;
 import dsm.oscal.model.OscalMetadata.Property;
-
 import dsm.oscal.model.OscalMetadata.UUIDElement;
+
+import gov.nist.secauto.metaschema.datatypes.markup.MarkupMultiline;
+
 import java.net.URI;
 
 import java.util.UUID;
@@ -40,6 +43,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.PropertyImpl#getUuid <em>Uuid</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.impl.PropertyImpl#getRemarks <em>Remarks</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.PropertyImpl#getValue <em>Value</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.PropertyImpl#getClazz <em>Clazz</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.PropertyImpl#getName <em>Name</em>}</li>
@@ -68,6 +72,26 @@ public class PropertyImpl extends OscalElementCustomImpl implements Property {
 	 * @ordered
 	 */
 	protected UUID uuid = UUID_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getRemarks() <em>Remarks</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRemarks()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final MarkupMultiline REMARKS_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getRemarks() <em>Remarks</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRemarks()
+	 * @generated
+	 * @ordered
+	 */
+	protected MarkupMultiline remarks = REMARKS_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
@@ -174,6 +198,52 @@ public class PropertyImpl extends OscalElementCustomImpl implements Property {
 	 * @generated
 	 */
 	@Override
+	public UUID getUuid() {
+		return uuid;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setUuid(UUID newUuid) {
+		UUID oldUuid = uuid;
+		uuid = newUuid;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OscalMetadataPackage.PROPERTY__UUID, oldUuid, uuid));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public MarkupMultiline getRemarks() {
+		return remarks;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setRemarks(MarkupMultiline newRemarks) {
+		MarkupMultiline oldRemarks = remarks;
+		remarks = newRemarks;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OscalMetadataPackage.PROPERTY__REMARKS, oldRemarks, remarks));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public String getValue() {
 		return value;
 	}
@@ -197,8 +267,8 @@ public class PropertyImpl extends OscalElementCustomImpl implements Property {
 	 * @generated
 	 */
 	@Override
-	public UUID getUuid() {
-		return uuid;
+	public String getClazz() {
+		return clazz;
 	}
 
 	/**
@@ -207,11 +277,11 @@ public class PropertyImpl extends OscalElementCustomImpl implements Property {
 	 * @generated
 	 */
 	@Override
-	public void setUuid(UUID newUuid) {
-		UUID oldUuid = uuid;
-		uuid = newUuid;
+	public void setClazz(String newClazz) {
+		String oldClazz = clazz;
+		clazz = newClazz;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OscalMetadataPackage.PROPERTY__UUID, oldUuid, uuid));
+			eNotify(new ENotificationImpl(this, Notification.SET, OscalMetadataPackage.PROPERTY__CLAZZ, oldClazz, clazz));
 	}
 
 	/**
@@ -266,33 +336,12 @@ public class PropertyImpl extends OscalElementCustomImpl implements Property {
 	 * @generated
 	 */
 	@Override
-	public String getClazz() {
-		return clazz;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setClazz(String newClazz) {
-		String oldClazz = clazz;
-		clazz = newClazz;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OscalMetadataPackage.PROPERTY__CLAZZ, oldClazz, clazz));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case OscalMetadataPackage.PROPERTY__UUID:
 				return getUuid();
+			case OscalMetadataPackage.PROPERTY__REMARKS:
+				return getRemarks();
 			case OscalMetadataPackage.PROPERTY__VALUE:
 				return getValue();
 			case OscalMetadataPackage.PROPERTY__CLAZZ:
@@ -315,6 +364,9 @@ public class PropertyImpl extends OscalElementCustomImpl implements Property {
 		switch (featureID) {
 			case OscalMetadataPackage.PROPERTY__UUID:
 				setUuid((UUID)newValue);
+				return;
+			case OscalMetadataPackage.PROPERTY__REMARKS:
+				setRemarks((MarkupMultiline)newValue);
 				return;
 			case OscalMetadataPackage.PROPERTY__VALUE:
 				setValue((String)newValue);
@@ -343,6 +395,9 @@ public class PropertyImpl extends OscalElementCustomImpl implements Property {
 			case OscalMetadataPackage.PROPERTY__UUID:
 				setUuid(UUID_EDEFAULT);
 				return;
+			case OscalMetadataPackage.PROPERTY__REMARKS:
+				setRemarks(REMARKS_EDEFAULT);
+				return;
 			case OscalMetadataPackage.PROPERTY__VALUE:
 				setValue(VALUE_EDEFAULT);
 				return;
@@ -369,6 +424,8 @@ public class PropertyImpl extends OscalElementCustomImpl implements Property {
 		switch (featureID) {
 			case OscalMetadataPackage.PROPERTY__UUID:
 				return UUID_EDEFAULT == null ? uuid != null : !UUID_EDEFAULT.equals(uuid);
+			case OscalMetadataPackage.PROPERTY__REMARKS:
+				return REMARKS_EDEFAULT == null ? remarks != null : !REMARKS_EDEFAULT.equals(remarks);
 			case OscalMetadataPackage.PROPERTY__VALUE:
 				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
 			case OscalMetadataPackage.PROPERTY__CLAZZ:
@@ -391,6 +448,12 @@ public class PropertyImpl extends OscalElementCustomImpl implements Property {
 		if (baseClass == UUIDElement.class) {
 			switch (derivedFeatureID) {
 				case OscalMetadataPackage.PROPERTY__UUID: return OscalMetadataPackage.UUID_ELEMENT__UUID;
+				default: return -1;
+			}
+		}
+		if (baseClass == ElementWithRemarks.class) {
+			switch (derivedFeatureID) {
+				case OscalMetadataPackage.PROPERTY__REMARKS: return OscalMetadataPackage.ELEMENT_WITH_REMARKS__REMARKS;
 				default: return -1;
 			}
 		}
@@ -422,6 +485,12 @@ public class PropertyImpl extends OscalElementCustomImpl implements Property {
 				default: return -1;
 			}
 		}
+		if (baseClass == ElementWithRemarks.class) {
+			switch (baseFeatureID) {
+				case OscalMetadataPackage.ELEMENT_WITH_REMARKS__REMARKS: return OscalMetadataPackage.PROPERTY__REMARKS;
+				default: return -1;
+			}
+		}
 		if (baseClass == ElementWithValue.class) {
 			switch (baseFeatureID) {
 				case OscalMetadataPackage.ELEMENT_WITH_VALUE__VALUE: return OscalMetadataPackage.PROPERTY__VALUE;
@@ -449,6 +518,8 @@ public class PropertyImpl extends OscalElementCustomImpl implements Property {
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (uuid: ");
 		result.append(uuid);
+		result.append(", remarks: ");
+		result.append(remarks);
 		result.append(", value: ");
 		result.append(value);
 		result.append(", clazz: ");

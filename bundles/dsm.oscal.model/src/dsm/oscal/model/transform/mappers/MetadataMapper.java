@@ -28,7 +28,6 @@ public class MetadataMapper extends AbstractObjectMapper<Metadata, gov.nist.seca
 	protected gov.nist.secauto.oscal.lib.Metadata safeToOscal(Metadata tradesObject) {
 		gov.nist.secauto.oscal.lib.Metadata metadata = new gov.nist.secauto.oscal.lib.Metadata();
 
-		buildXMLChildList(AnnotationMapper.getInstance(), tradesObject.getAnnotations(), metadata::setAnnotations);
 		buildXMLChildList(DocumentIdMapper.getInstance(), tradesObject.getDocumentIds(), metadata::setDocumentIds);
 		metadata.setLastModified(tradesObject.getLastModified());
 		buildXMLChildList(LinkMapper.getInstance(), tradesObject.getLinks(), metadata::setLinks);
@@ -61,7 +60,6 @@ public class MetadataMapper extends AbstractObjectMapper<Metadata, gov.nist.seca
 	protected Metadata safeToTrades(gov.nist.secauto.oscal.lib.Metadata oscalObject) {
 		Metadata metadata = OscalMetadataFactory.eINSTANCE.createMetadata();
 
-		buildChildList(AnnotationMapper.getInstance(), oscalObject.getAnnotations(), metadata::getAnnotations);
 		buildChildList(DocumentIdMapper.getInstance(), oscalObject.getDocumentIds(), metadata::getDocumentIds);
 		metadata.setLastModified(oscalObject.getLastModified());
 		buildChildList(LinkMapper.getInstance(), oscalObject.getLinks(), metadata::getLinks);

@@ -11,7 +11,8 @@ Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-11
 Export-Package: dsm.oscal.model.OscalCatalog.provider,
  dsm.oscal.model.OscalCatalogCommon.provider,
- dsm.oscal.model.OscalMetadata.provider
+ dsm.oscal.model.OscalMetadata.provider,
+ dsm.oscal.model.edit
 Require-Bundle: org.eclipse.core.runtime,
  dsm.oscal.model;visibility:=reexport,
  org.eclipse.emf.edit;visibility:=reexport,

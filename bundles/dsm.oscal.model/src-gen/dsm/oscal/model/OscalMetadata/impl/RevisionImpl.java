@@ -15,8 +15,6 @@
  */
 package dsm.oscal.model.OscalMetadata.impl;
 
-import dsm.oscal.model.OscalMetadata.Annotation;
-import dsm.oscal.model.OscalMetadata.AnnotationOwner;
 import dsm.oscal.model.OscalMetadata.ElementWithRemarks;
 import dsm.oscal.model.OscalMetadata.Link;
 import dsm.oscal.model.OscalMetadata.LinkOwner;
@@ -41,6 +39,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -52,7 +51,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link dsm.oscal.model.OscalMetadata.impl.RevisionImpl#getAnnotations <em>Annotations</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.RevisionImpl#getProps <em>Props</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.RevisionImpl#getLinks <em>Links</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.RevisionImpl#getRemarks <em>Remarks</em>}</li>
@@ -66,16 +64,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * @generated
  */
 public class RevisionImpl extends OscalElementCustomImpl implements Revision {
-	/**
-	 * The cached value of the '{@link #getAnnotations() <em>Annotations</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAnnotations()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Annotation> annotations;
-
 	/**
 	 * The cached value of the '{@link #getProps() <em>Props</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -241,8 +229,11 @@ public class RevisionImpl extends OscalElementCustomImpl implements Revision {
 	 * @generated
 	 */
 	@Override
-	public MarkupLine getTitle() {
-		return title;
+	public EList<Property> getProps() {
+		if (props == null) {
+			props = new EObjectContainmentEList<Property>(Property.class, this, OscalMetadataPackage.REVISION__PROPS);
+		}
+		return props;
 	}
 
 	/**
@@ -251,103 +242,11 @@ public class RevisionImpl extends OscalElementCustomImpl implements Revision {
 	 * @generated
 	 */
 	@Override
-	public void setTitle(MarkupLine newTitle) {
-		MarkupLine oldTitle = title;
-		title = newTitle;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OscalMetadataPackage.REVISION__TITLE, oldTitle, title));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ZonedDateTime getPublished() {
-		return published;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setPublished(ZonedDateTime newPublished) {
-		ZonedDateTime oldPublished = published;
-		published = newPublished;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OscalMetadataPackage.REVISION__PUBLISHED, oldPublished, published));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ZonedDateTime getLastModified() {
-		return lastModified;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setLastModified(ZonedDateTime newLastModified) {
-		ZonedDateTime oldLastModified = lastModified;
-		lastModified = newLastModified;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OscalMetadataPackage.REVISION__LAST_MODIFIED, oldLastModified, lastModified));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getVersion() {
-		return version;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setVersion(String newVersion) {
-		String oldVersion = version;
-		version = newVersion;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OscalMetadataPackage.REVISION__VERSION, oldVersion, version));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getOscalVersion() {
-		return oscalVersion;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setOscalVersion(String newOscalVersion) {
-		String oldOscalVersion = oscalVersion;
-		oscalVersion = newOscalVersion;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OscalMetadataPackage.REVISION__OSCAL_VERSION, oldOscalVersion, oscalVersion));
+	public EList<Link> getLinks() {
+		if (links == null) {
+			links = new EObjectContainmentEList<Link>(Link.class, this, OscalMetadataPackage.REVISION__LINKS);
+		}
+		return links;
 	}
 
 	/**
@@ -379,11 +278,8 @@ public class RevisionImpl extends OscalElementCustomImpl implements Revision {
 	 * @generated
 	 */
 	@Override
-	public EList<Annotation> getAnnotations() {
-		if (annotations == null) {
-			annotations = new EObjectContainmentEList<Annotation>(Annotation.class, this, OscalMetadataPackage.REVISION__ANNOTATIONS);
-		}
-		return annotations;
+	public ZonedDateTime getLastModified() {
+		return lastModified;
 	}
 
 	/**
@@ -392,11 +288,11 @@ public class RevisionImpl extends OscalElementCustomImpl implements Revision {
 	 * @generated
 	 */
 	@Override
-	public EList<Link> getLinks() {
-		if (links == null) {
-			links = new EObjectContainmentEList<Link>(Link.class, this, OscalMetadataPackage.REVISION__LINKS);
-		}
-		return links;
+	public void setLastModified(ZonedDateTime newLastModified) {
+		ZonedDateTime oldLastModified = lastModified;
+		lastModified = newLastModified;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OscalMetadataPackage.REVISION__LAST_MODIFIED, oldLastModified, lastModified));
 	}
 
 	/**
@@ -405,11 +301,90 @@ public class RevisionImpl extends OscalElementCustomImpl implements Revision {
 	 * @generated
 	 */
 	@Override
-	public EList<Property> getProps() {
-		if (props == null) {
-			props = new EObjectContainmentEList<Property>(Property.class, this, OscalMetadataPackage.REVISION__PROPS);
-		}
-		return props;
+	public String getOscalVersion() {
+		return oscalVersion;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setOscalVersion(String newOscalVersion) {
+		String oldOscalVersion = oscalVersion;
+		oscalVersion = newOscalVersion;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OscalMetadataPackage.REVISION__OSCAL_VERSION, oldOscalVersion, oscalVersion));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ZonedDateTime getPublished() {
+		return published;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setPublished(ZonedDateTime newPublished) {
+		ZonedDateTime oldPublished = published;
+		published = newPublished;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OscalMetadataPackage.REVISION__PUBLISHED, oldPublished, published));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public MarkupLine getTitle() {
+		return title;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setTitle(MarkupLine newTitle) {
+		MarkupLine oldTitle = title;
+		title = newTitle;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OscalMetadataPackage.REVISION__TITLE, oldTitle, title));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getVersion() {
+		return version;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setVersion(String newVersion) {
+		String oldVersion = version;
+		version = newVersion;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OscalMetadataPackage.REVISION__VERSION, oldVersion, version));
 	}
 
 	/**
@@ -420,8 +395,6 @@ public class RevisionImpl extends OscalElementCustomImpl implements Revision {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case OscalMetadataPackage.REVISION__ANNOTATIONS:
-				return ((InternalEList<?>)getAnnotations()).basicRemove(otherEnd, msgs);
 			case OscalMetadataPackage.REVISION__PROPS:
 				return ((InternalEList<?>)getProps()).basicRemove(otherEnd, msgs);
 			case OscalMetadataPackage.REVISION__LINKS:
@@ -438,8 +411,6 @@ public class RevisionImpl extends OscalElementCustomImpl implements Revision {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case OscalMetadataPackage.REVISION__ANNOTATIONS:
-				return getAnnotations();
 			case OscalMetadataPackage.REVISION__PROPS:
 				return getProps();
 			case OscalMetadataPackage.REVISION__LINKS:
@@ -469,10 +440,6 @@ public class RevisionImpl extends OscalElementCustomImpl implements Revision {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case OscalMetadataPackage.REVISION__ANNOTATIONS:
-				getAnnotations().clear();
-				getAnnotations().addAll((Collection<? extends Annotation>)newValue);
-				return;
 			case OscalMetadataPackage.REVISION__PROPS:
 				getProps().clear();
 				getProps().addAll((Collection<? extends Property>)newValue);
@@ -511,9 +478,6 @@ public class RevisionImpl extends OscalElementCustomImpl implements Revision {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case OscalMetadataPackage.REVISION__ANNOTATIONS:
-				getAnnotations().clear();
-				return;
 			case OscalMetadataPackage.REVISION__PROPS:
 				getProps().clear();
 				return;
@@ -550,8 +514,6 @@ public class RevisionImpl extends OscalElementCustomImpl implements Revision {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case OscalMetadataPackage.REVISION__ANNOTATIONS:
-				return annotations != null && !annotations.isEmpty();
 			case OscalMetadataPackage.REVISION__PROPS:
 				return props != null && !props.isEmpty();
 			case OscalMetadataPackage.REVISION__LINKS:
@@ -579,12 +541,6 @@ public class RevisionImpl extends OscalElementCustomImpl implements Revision {
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == AnnotationOwner.class) {
-			switch (derivedFeatureID) {
-				case OscalMetadataPackage.REVISION__ANNOTATIONS: return OscalMetadataPackage.ANNOTATION_OWNER__ANNOTATIONS;
-				default: return -1;
-			}
-		}
 		if (baseClass == PropertyOwner.class) {
 			switch (derivedFeatureID) {
 				case OscalMetadataPackage.REVISION__PROPS: return OscalMetadataPackage.PROPERTY_OWNER__PROPS;
@@ -613,12 +569,6 @@ public class RevisionImpl extends OscalElementCustomImpl implements Revision {
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == AnnotationOwner.class) {
-			switch (baseFeatureID) {
-				case OscalMetadataPackage.ANNOTATION_OWNER__ANNOTATIONS: return OscalMetadataPackage.REVISION__ANNOTATIONS;
-				default: return -1;
-			}
-		}
 		if (baseClass == PropertyOwner.class) {
 			switch (baseFeatureID) {
 				case OscalMetadataPackage.PROPERTY_OWNER__PROPS: return OscalMetadataPackage.REVISION__PROPS;

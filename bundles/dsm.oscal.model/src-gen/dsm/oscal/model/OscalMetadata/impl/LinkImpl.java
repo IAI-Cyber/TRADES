@@ -173,29 +173,6 @@ public class LinkImpl extends OscalElementCustomImpl implements Link {
 	 * @generated
 	 */
 	@Override
-	public String getRel() {
-		return rel;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setRel(String newRel) {
-		String oldRel = rel;
-		rel = newRel;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OscalMetadataPackage.LINK__REL, oldRel, rel));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public String getMediaType() {
 		return mediaType;
 	}
@@ -211,6 +188,29 @@ public class LinkImpl extends OscalElementCustomImpl implements Link {
 		mediaType = newMediaType;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OscalMetadataPackage.LINK__MEDIA_TYPE, oldMediaType, mediaType));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getRel() {
+		return rel;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setRel(String newRel) {
+		String oldRel = rel;
+		rel = newRel;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OscalMetadataPackage.LINK__REL, oldRel, rel));
 	}
 
 	/**
