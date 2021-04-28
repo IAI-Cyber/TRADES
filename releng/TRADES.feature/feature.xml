@@ -89,16 +89,19 @@ ELTA Ltd - initial API and implementation
          download-size="0"
          install-size="0"
          version="0.0.0"/>
+
    <plugin
          id="dsm.oscal.model"
          download-size="0"
          install-size="0"
          version="0.0.0"/>
+
    <plugin
          id="dsm.oscal.model.edit"
          download-size="0"
          install-size="0"
          version="0.0.0"/>
+
    <plugin
          id="dsm.TRADES"
          download-size="0"
@@ -133,6 +136,34 @@ ELTA Ltd - initial API and implementation
 
    <plugin
          id="dsm.TRADES.rcp"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="dsm.oscal.design"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="dsm.oscal.ext"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="dsm.oscal.ext.sirius.tooling"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="dsm.oscal.model.editor"
          download-size="0"
          install-size="0"
          version="0.0.0"
