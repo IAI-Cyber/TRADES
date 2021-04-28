@@ -22,8 +22,6 @@ import java.util.Set;
 
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
-import org.eclipse.eef.ide.ui.internal.preferences.EEFPreferences;
-import org.eclipse.eef.ide.ui.internal.widgets.EEFTextLifecycleManager.ConflictResolutionMode;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.sirius.business.api.componentization.ViewpointRegistry;
 import org.eclipse.sirius.viewpoint.description.Viewpoint;
@@ -41,6 +39,8 @@ public class Activator extends AbstractUIPlugin {
 	private static Activator plugin;
 
 	private static Set<Viewpoint> viewpoints;
+
+	public static String VIEWPOINT_NAME = "TRADESview";
 
 	/**
 	 * The constructor
@@ -60,22 +60,7 @@ public class Activator extends AbstractUIPlugin {
 		viewpoints = new HashSet<Viewpoint>();
 		viewpoints
 				.addAll(ViewpointRegistry.getInstance().registerFromPlugin(PLUGIN_ID + "/description/TRADES.odesign"));
-		/*
-		 * Temporary hack to handle MarkupLine and MarkupMultiline on EEF property view
-		 * <p>
-		 * The current text area widget tries to resolve conflit on value by before
-		 * disposing checking the the value of the text is equal to the current value.
-		 * However the current implementation of the MarkupMultiline.toMarkdown() some
-		 * time adds a trailing \n making the input string and the given string not
-		 * equals. At some point we will need to create a custom widget for those data
-		 * type. The implementation should take care of this limitation and then remove
-		 * this preference.
-		 * </p>
-		 * 
-		 * @see org.eclipse.eef.ide.ui.internal.widgets.EEFTextLifecycleManager.resolveEditionConflict(Shell,
-		 *      String, String, String)
-		 */
-		EEFPreferences.setTextConflictResolutionMode(ConflictResolutionMode.USE_LOCAL_VERSION);
+		
 	}
 
 	public List<URI> getDatabaseURI() {

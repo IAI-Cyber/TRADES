@@ -13,7 +13,6 @@
 *******************************************************************************************************/
 package dsm.TRADES.presentation;
 
-import dsm.oscal.model.OscalMetadata.provider.OscalEditPlugin;
 import org.eclipse.emf.common.EMFPlugin;
 import org.eclipse.emf.common.ui.EclipseUIPlugin;
 import org.eclipse.emf.common.util.ResourceLocator;
@@ -48,7 +47,7 @@ public final class TRADESEditorPlugin extends EMFPlugin {
 	 * @generated
 	 */
 	public TRADESEditorPlugin() {
-		super(new ResourceLocator[] { OscalEditPlugin.INSTANCE, });
+		super(new ResourceLocator[] {});
 	}
 
 	/**

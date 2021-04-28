@@ -18,7 +18,6 @@ import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 
 import dsm.TRADES.TRADESPackage;
-import dsm.oscal.model.OscalCatalog.OscalCatalogPackage;
 
 public class HandlerUtils {
 
@@ -30,7 +29,7 @@ public class HandlerUtils {
 				Object first = strucSelection.getFirstElement();
 				if (first instanceof EObject) {
 					EObject eObject = (EObject) first;
-					if (eObject.eClass().getEPackage() == TRADESPackage.eINSTANCE || eObject.eClass().getEPackage() == OscalCatalogPackage.eINSTANCE) {
+					if (eObject.eClass().getEPackage() == TRADESPackage.eINSTANCE) {
 						return eObject;
 					}
 				}

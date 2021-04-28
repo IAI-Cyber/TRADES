@@ -177,22 +177,13 @@ public interface TRADESPackage extends EPackage {
 	int ANALYSIS__THREAT_OWNER = COMPONENT_OWNER_FEATURE_COUNT + 4;
 
 	/**
-	 * The feature id for the '<em><b>Catalogs</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ANALYSIS__CATALOGS = COMPONENT_OWNER_FEATURE_COUNT + 5;
-
-	/**
 	 * The number of structural features of the '<em>Analysis</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ANALYSIS_FEATURE_COUNT = COMPONENT_OWNER_FEATURE_COUNT + 6;
+	int ANALYSIS_FEATURE_COUNT = COMPONENT_OWNER_FEATURE_COUNT + 5;
 
 	/**
 	 * The operation id for the '<em>Get Datas</em>' operation.
@@ -1756,17 +1747,6 @@ public interface TRADESPackage extends EPackage {
 	EReference getAnalysis_ThreatOwner();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link dsm.TRADES.Analysis#getCatalogs <em>Catalogs</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Catalogs</em>'.
-	 * @see dsm.TRADES.Analysis#getCatalogs()
-	 * @see #getAnalysis()
-	 * @generated
-	 */
-	EReference getAnalysis_Catalogs();
-
-	/**
 	 * Returns the meta object for class '{@link dsm.TRADES.Threat <em>Threat</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2747,14 +2727,6 @@ public interface TRADESPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ANALYSIS__THREAT_OWNER = eINSTANCE.getAnalysis_ThreatOwner();
-
-		/**
-		 * The meta object literal for the '<em><b>Catalogs</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ANALYSIS__CATALOGS = eINSTANCE.getAnalysis_Catalogs();
 
 		/**
 		 * The meta object literal for the '{@link dsm.TRADES.impl.ThreatImpl <em>Threat</em>}' class.

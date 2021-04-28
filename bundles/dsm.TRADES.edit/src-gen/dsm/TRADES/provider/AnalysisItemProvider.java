@@ -16,7 +16,6 @@ package dsm.TRADES.provider;
 import dsm.TRADES.Analysis;
 import dsm.TRADES.TRADESFactory;
 import dsm.TRADES.TRADESPackage;
-import dsm.oscal.model.OscalCatalog.OscalCatalogFactory;
 import java.util.Collection;
 import java.util.List;
 
@@ -95,7 +94,6 @@ public class AnalysisItemProvider extends ComponentOwnerItemProvider {
 			childrenFeatures.add(TRADESPackage.Literals.ABSTRACT_CONTROL_OWNER__CONTROL_OWNER);
 			childrenFeatures.add(TRADESPackage.Literals.ANALYSIS__SCORE_SYSTEM);
 			childrenFeatures.add(TRADESPackage.Literals.ANALYSIS__THREAT_OWNER);
-			childrenFeatures.add(TRADESPackage.Literals.ANALYSIS__CATALOGS);
 		}
 		return childrenFeatures;
 	}
@@ -166,7 +164,6 @@ public class AnalysisItemProvider extends ComponentOwnerItemProvider {
 		case TRADESPackage.ANALYSIS__CONTROL_OWNER:
 		case TRADESPackage.ANALYSIS__SCORE_SYSTEM:
 		case TRADESPackage.ANALYSIS__THREAT_OWNER:
-		case TRADESPackage.ANALYSIS__CATALOGS:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -195,9 +192,6 @@ public class AnalysisItemProvider extends ComponentOwnerItemProvider {
 
 		newChildDescriptors.add(createChildParameter(TRADESPackage.Literals.ANALYSIS__THREAT_OWNER,
 				TRADESFactory.eINSTANCE.createThreatsOwner()));
-
-		newChildDescriptors.add(createChildParameter(TRADESPackage.Literals.ANALYSIS__CATALOGS,
-				OscalCatalogFactory.eINSTANCE.createCatalog()));
 	}
 
 }

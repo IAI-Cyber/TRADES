@@ -192,7 +192,7 @@ public class TradesNewProjectNewWizard extends BasicNewProjectResourceWizard imp
 	}
 
 	private Viewpoint getTradesMainViewPoint() {
-		return ViewpointRegistry.getInstance().getViewpoint(URI.createURI("viewpoint:/TRADES.design/TRADESview"));
+		return ViewpointRegistry.getInstance().getViewpoint(URI.createURI("viewpoint:/TRADES.design/"+Activator.VIEWPOINT_NAME));
 	}
 
 	private static String getNewModelFilePath(IProject project, String umlFileName) {

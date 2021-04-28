@@ -24,11 +24,7 @@ import dsm.TRADES.NamedElement;
 import dsm.TRADES.ScoreSystem;
 import dsm.TRADES.TRADESPackage;
 import dsm.TRADES.ThreatsOwner;
-import dsm.oscal.model.OscalCatalog.Catalog;
 import java.lang.reflect.InvocationTargetException;
-
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -38,9 +34,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -55,7 +48,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getControlOwner <em>Control Owner</em>}</li>
  *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getScoreSystem <em>Score System</em>}</li>
  *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getThreatOwner <em>Threat Owner</em>}</li>
- *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getCatalogs <em>Catalogs</em>}</li>
  * </ul>
  *
  * @generated
@@ -120,16 +112,6 @@ public class AnalysisImpl extends ComponentOwnerImpl implements Analysis {
 	 * @ordered
 	 */
 	protected ThreatsOwner threatOwner;
-
-	/**
-	 * The cached value of the '{@link #getCatalogs() <em>Catalogs</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCatalogs()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Catalog> catalogs;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -387,19 +369,6 @@ public class AnalysisImpl extends ComponentOwnerImpl implements Analysis {
 	 * @generated
 	 */
 	@Override
-	public EList<Catalog> getCatalogs() {
-		if (catalogs == null) {
-			catalogs = new EObjectContainmentEList<Catalog>(Catalog.class, this, TRADESPackage.ANALYSIS__CATALOGS);
-		}
-		return catalogs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EList<Control> getAllControls() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -458,8 +427,6 @@ public class AnalysisImpl extends ComponentOwnerImpl implements Analysis {
 			return basicSetScoreSystem(null, msgs);
 		case TRADESPackage.ANALYSIS__THREAT_OWNER:
 			return basicSetThreatOwner(null, msgs);
-		case TRADESPackage.ANALYSIS__CATALOGS:
-			return ((InternalEList<?>) getCatalogs()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -482,8 +449,6 @@ public class AnalysisImpl extends ComponentOwnerImpl implements Analysis {
 			return getScoreSystem();
 		case TRADESPackage.ANALYSIS__THREAT_OWNER:
 			return getThreatOwner();
-		case TRADESPackage.ANALYSIS__CATALOGS:
-			return getCatalogs();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -512,10 +477,6 @@ public class AnalysisImpl extends ComponentOwnerImpl implements Analysis {
 		case TRADESPackage.ANALYSIS__THREAT_OWNER:
 			setThreatOwner((ThreatsOwner) newValue);
 			return;
-		case TRADESPackage.ANALYSIS__CATALOGS:
-			getCatalogs().clear();
-			getCatalogs().addAll((Collection<? extends Catalog>) newValue);
-			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -543,9 +504,6 @@ public class AnalysisImpl extends ComponentOwnerImpl implements Analysis {
 		case TRADESPackage.ANALYSIS__THREAT_OWNER:
 			setThreatOwner((ThreatsOwner) null);
 			return;
-		case TRADESPackage.ANALYSIS__CATALOGS:
-			getCatalogs().clear();
-			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -568,8 +526,6 @@ public class AnalysisImpl extends ComponentOwnerImpl implements Analysis {
 			return scoreSystem != null;
 		case TRADESPackage.ANALYSIS__THREAT_OWNER:
 			return threatOwner != null;
-		case TRADESPackage.ANALYSIS__CATALOGS:
-			return catalogs != null && !catalogs.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

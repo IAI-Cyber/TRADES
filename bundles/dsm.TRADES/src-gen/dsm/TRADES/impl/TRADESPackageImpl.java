@@ -45,9 +45,6 @@ import dsm.TRADES.ThreatsOwner;
 import dsm.TRADES.threatTypeENUM;
 
 import dsm.TRADES.util.TRADESValidator;
-import dsm.oscal.model.OscalCatalog.OscalCatalogPackage;
-import dsm.oscal.model.OscalCatalogCommon.OscalCatalogCommonPackage;
-import dsm.oscal.model.OscalMetadata.OscalMetadataPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
@@ -312,11 +309,6 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 
 		isInited = true;
 
-		// Initialize simple dependencies
-		OscalCatalogPackage.eINSTANCE.eClass();
-		OscalCatalogCommonPackage.eINSTANCE.eClass();
-		OscalMetadataPackage.eINSTANCE.eClass();
-
 		// Create package meta-data objects
 		theTRADESPackage.createPackageContents();
 
@@ -367,16 +359,6 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	@Override
 	public EReference getAnalysis_ThreatOwner() {
 		return (EReference) analysisEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getAnalysis_Catalogs() {
-		return (EReference) analysisEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1292,7 +1274,6 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		analysisEClass = createEClass(ANALYSIS);
 		createEReference(analysisEClass, ANALYSIS__SCORE_SYSTEM);
 		createEReference(analysisEClass, ANALYSIS__THREAT_OWNER);
-		createEReference(analysisEClass, ANALYSIS__CATALOGS);
 
 		threatEClass = createEClass(THREAT);
 		createEReference(threatEClass, THREAT__THREAT_ALLOCATIONS);
@@ -1435,10 +1416,6 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		setNsPrefix(eNS_PREFIX);
 		setNsURI(eNS_URI);
 
-		// Obtain other dependent packages
-		OscalCatalogPackage theOscalCatalogPackage = (OscalCatalogPackage) EPackage.Registry.INSTANCE
-				.getEPackage(OscalCatalogPackage.eNS_URI);
-
 		// Create type parameters
 
 		// Set bounds for type parameters
@@ -1472,9 +1449,6 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 				Analysis.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAnalysis_ThreatOwner(), this.getThreatsOwner(), null, "threatOwner", null, 1, 1,
-				Analysis.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAnalysis_Catalogs(), theOscalCatalogPackage.getCatalog(), null, "catalogs", null, 0, -1,
 				Analysis.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

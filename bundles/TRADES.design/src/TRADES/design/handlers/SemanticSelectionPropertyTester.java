@@ -20,7 +20,6 @@ import org.eclipse.core.runtime.Adapters;
 import org.eclipse.emf.ecore.EObject;
 
 import dsm.TRADES.TRADESPackage;
-import dsm.oscal.model.OscalCatalog.OscalCatalogPackage;
 
 /**
  * Property test that check that the current selection if one or more EObject
@@ -36,8 +35,7 @@ public class SemanticSelectionPropertyTester extends PropertyTester {
 		if (receiver instanceof Collection<?>) {
 			return ((Collection<?>) receiver).stream().allMatch(e -> {
 				EObject eObject = Adapters.adapt(e, EObject.class);
-				return eObject != null && (eObject.eClass().getEPackage() == TRADESPackage.eINSTANCE
-						|| eObject.eClass().getEPackage() == OscalCatalogPackage.eINSTANCE);
+				return eObject != null && (eObject.eClass().getEPackage() == TRADESPackage.eINSTANCE);
 			});
 		}
 

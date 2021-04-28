@@ -130,9 +130,6 @@ import org.eclipse.ui.views.properties.PropertySheet;
 import org.eclipse.ui.views.properties.PropertySheetPage;
 
 import dsm.TRADES.provider.TRADESItemProviderAdapterFactory;
-import dsm.oscal.model.OscalCatalog.provider.OscalCatalogItemProviderAdapterFactory;
-import dsm.oscal.model.OscalCatalogCommon.provider.OscalCatalogCommonItemProviderAdapterFactory;
-import dsm.oscal.model.OscalMetadata.provider.OscalMetadataItemProviderAdapterFactory;
 
 /**
  * This is an example of a TRADES model editor.
@@ -663,9 +660,6 @@ public class TRADESEditor extends MultiPageEditorPart
 
 		adapterFactory.addAdapterFactory(new ResourceItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new TRADESItemProviderAdapterFactory());
-		adapterFactory.addAdapterFactory(new OscalCatalogItemProviderAdapterFactory());
-		adapterFactory.addAdapterFactory(new OscalCatalogCommonItemProviderAdapterFactory());
-		adapterFactory.addAdapterFactory(new OscalMetadataItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());
 
 		// Create the command stack that will notify this editor as commands are executed.

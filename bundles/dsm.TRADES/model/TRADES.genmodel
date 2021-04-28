@@ -6,7 +6,6 @@
     editorDirectory="/dsm.TRADES.editor/src-gen" modelPluginID="dsm.TRADES" modelName="TRADES"
     rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" codeFormatting="true"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
-    usedGenPackages="../../dsm.oscal.model/model/oscal.genmodel#//OscalCatalog ../../dsm.oscal.model/model/oscal.genmodel#//OscalCatalogCommon ../../dsm.oscal.model/model/oscal.genmodel#//OscalMetadata"
     operationReflection="true" importOrganizing="true">
   <foreignModel>TRADES.ecore</foreignModel>
   <testsDirectory xsi:nil="true"/>
@@ -30,7 +29,6 @@
     <genClasses ecoreClass="TRADES.ecore#//Analysis">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Analysis/scoreSystem"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Analysis/threatOwner"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Analysis/catalogs"/>
     </genClasses>
     <genClasses ecoreClass="TRADES.ecore#//Threat">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TRADES.ecore#//Threat/threatAllocations"/>

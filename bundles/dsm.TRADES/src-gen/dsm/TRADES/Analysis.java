@@ -13,9 +13,6 @@
  */
 package dsm.TRADES;
 
-import dsm.oscal.model.OscalCatalog.Catalog;
-import org.eclipse.emf.common.util.EList;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Analysis</b></em>'.
@@ -27,7 +24,6 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link dsm.TRADES.Analysis#getScoreSystem <em>Score System</em>}</li>
  *   <li>{@link dsm.TRADES.Analysis#getThreatOwner <em>Threat Owner</em>}</li>
- *   <li>{@link dsm.TRADES.Analysis#getCatalogs <em>Catalogs</em>}</li>
  * </ul>
  *
  * @see dsm.TRADES.TRADESPackage#getAnalysis()
@@ -78,17 +74,5 @@ public interface Analysis extends ComponentOwner, DataOwnerElement, NamedElement
 	 * @generated
 	 */
 	void setThreatOwner(ThreatsOwner value);
-
-	/**
-	 * Returns the value of the '<em><b>Catalogs</b></em>' containment reference list.
-	 * The list contents are of type {@link dsm.oscal.model.OscalCatalog.Catalog}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Catalogs</em>' containment reference list.
-	 * @see dsm.TRADES.TRADESPackage#getAnalysis_Catalogs()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<Catalog> getCatalogs();
 
 } // Analysis

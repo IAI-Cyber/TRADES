@@ -47,7 +47,7 @@ public final class TRADESEditPlugin extends EMFPlugin {
 	 * @generated
 	 */
 	public TRADESEditPlugin() {
-		super(new ResourceLocator[] { dsm.oscal.model.OscalMetadata.provider.OscalEditPlugin.INSTANCE, });
+		super(new ResourceLocator[] {});
 	}
 
 	/**

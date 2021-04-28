@@ -8,7 +8,6 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  org.eclipse.ui.console,
  org.eclipse.emf.ecore,
- dsm.oscal.model;bundle-version="2.5.2",
  dsm.TRADES;bundle-version="2.5.2"
 Bundle-RequiredExecutionEnvironment: JavaSE-11
 Automatic-Module-Name: dsm.TRADES.rcp
