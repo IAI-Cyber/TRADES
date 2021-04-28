@@ -21,7 +21,6 @@ import java.util.List
 import java.util.function.BiFunction
 
 import static java.util.stream.Collectors.toList
-import java.util.Comparator
 
 /**
  * Generator that create an helper class to handle custom data types
@@ -154,6 +153,7 @@ public class «CLASS_NAME» {
 
 	private def String generaToValueMethod(gov.nist.secauto.metaschema.model.definitions.DataType dataType) {
 		var genDataType = DataType.lookupByDatatype(dataType)
+		val loggerCode = logExpressionProvider.apply('''Unable to parse data type «NameHelper.getProperEDataTypeName(genDataType)»''',"e");
 		if (genDataType.javaTypeAdapterClass !== null) {
 			return '''
 				/**
@@ -166,7 +166,7 @@ public class «CLASS_NAME» {
 					try {
 						return «genDataType.attrName».parse(value);
 					} catch (java.lang.Exception e){
-						«logExpressionProvider.apply('''Unable to parse data type «NameHelper.getProperEDataTypeName(genDataType)»''',"e")»;
+						«loggerCode»;
 						return null;
 					}
 				}
