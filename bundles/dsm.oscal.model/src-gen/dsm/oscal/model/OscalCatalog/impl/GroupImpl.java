@@ -28,6 +28,7 @@ import dsm.oscal.model.OscalMetadata.ElementWithId;
 import dsm.oscal.model.OscalMetadata.Link;
 import dsm.oscal.model.OscalMetadata.LinkOwner;
 import dsm.oscal.model.OscalMetadata.OscalMetadataPackage;
+import dsm.oscal.model.OscalMetadata.ParameterOwner;
 import dsm.oscal.model.OscalMetadata.PartOwner;
 import dsm.oscal.model.OscalMetadata.Property;
 import dsm.oscal.model.OscalMetadata.PropertyOwner;
@@ -40,6 +41,7 @@ import java.lang.reflect.InvocationTargetException;
 
 import java.util.Collection;
 
+import java.util.Map;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -61,6 +63,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link dsm.oscal.model.OscalCatalog.impl.GroupImpl#getParams <em>Params</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalog.impl.GroupImpl#getProps <em>Props</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalog.impl.GroupImpl#getLinks <em>Links</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalog.impl.GroupImpl#getParts <em>Parts</em>}</li>
@@ -68,13 +71,22 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dsm.oscal.model.OscalCatalog.impl.GroupImpl#getId <em>Id</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalog.impl.GroupImpl#getControls <em>Controls</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalog.impl.GroupImpl#getGroups <em>Groups</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalCatalog.impl.GroupImpl#getParams <em>Params</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalog.impl.GroupImpl#getTitle <em>Title</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class GroupImpl extends OscalElementCustomImpl implements Group {
+	/**
+	 * The cached value of the '{@link #getParams() <em>Params</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getParams()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Parameter> params;
+
 	/**
 	 * The cached value of the '{@link #getProps() <em>Props</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -164,16 +176,6 @@ public class GroupImpl extends OscalElementCustomImpl implements Group {
 	 * @ordered
 	 */
 	protected EList<Group> groups;
-
-	/**
-	 * The cached value of the '{@link #getParams() <em>Params</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getParams()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Parameter> params;
 
 	/**
 	 * The default value of the '{@link #getTitle() <em>Title</em>}' attribute.
@@ -379,8 +381,22 @@ public class GroupImpl extends OscalElementCustomImpl implements Group {
 	 * @generated
 	 */
 	@Override
+	public Map<String, String> getParameterValues() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case OscalCatalogPackage.GROUP__PARAMS:
+				return ((InternalEList<?>)getParams()).basicRemove(otherEnd, msgs);
 			case OscalCatalogPackage.GROUP__PROPS:
 				return ((InternalEList<?>)getProps()).basicRemove(otherEnd, msgs);
 			case OscalCatalogPackage.GROUP__LINKS:
@@ -391,8 +407,6 @@ public class GroupImpl extends OscalElementCustomImpl implements Group {
 				return ((InternalEList<?>)getControls()).basicRemove(otherEnd, msgs);
 			case OscalCatalogPackage.GROUP__GROUPS:
 				return ((InternalEList<?>)getGroups()).basicRemove(otherEnd, msgs);
-			case OscalCatalogPackage.GROUP__PARAMS:
-				return ((InternalEList<?>)getParams()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -405,6 +419,8 @@ public class GroupImpl extends OscalElementCustomImpl implements Group {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case OscalCatalogPackage.GROUP__PARAMS:
+				return getParams();
 			case OscalCatalogPackage.GROUP__PROPS:
 				return getProps();
 			case OscalCatalogPackage.GROUP__LINKS:
@@ -419,8 +435,6 @@ public class GroupImpl extends OscalElementCustomImpl implements Group {
 				return getControls();
 			case OscalCatalogPackage.GROUP__GROUPS:
 				return getGroups();
-			case OscalCatalogPackage.GROUP__PARAMS:
-				return getParams();
 			case OscalCatalogPackage.GROUP__TITLE:
 				return getTitle();
 		}
@@ -436,6 +450,10 @@ public class GroupImpl extends OscalElementCustomImpl implements Group {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case OscalCatalogPackage.GROUP__PARAMS:
+				getParams().clear();
+				getParams().addAll((Collection<? extends Parameter>)newValue);
+				return;
 			case OscalCatalogPackage.GROUP__PROPS:
 				getProps().clear();
 				getProps().addAll((Collection<? extends Property>)newValue);
@@ -462,10 +480,6 @@ public class GroupImpl extends OscalElementCustomImpl implements Group {
 				getGroups().clear();
 				getGroups().addAll((Collection<? extends Group>)newValue);
 				return;
-			case OscalCatalogPackage.GROUP__PARAMS:
-				getParams().clear();
-				getParams().addAll((Collection<? extends Parameter>)newValue);
-				return;
 			case OscalCatalogPackage.GROUP__TITLE:
 				setTitle((MarkupLine)newValue);
 				return;
@@ -481,6 +495,9 @@ public class GroupImpl extends OscalElementCustomImpl implements Group {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case OscalCatalogPackage.GROUP__PARAMS:
+				getParams().clear();
+				return;
 			case OscalCatalogPackage.GROUP__PROPS:
 				getProps().clear();
 				return;
@@ -502,9 +519,6 @@ public class GroupImpl extends OscalElementCustomImpl implements Group {
 			case OscalCatalogPackage.GROUP__GROUPS:
 				getGroups().clear();
 				return;
-			case OscalCatalogPackage.GROUP__PARAMS:
-				getParams().clear();
-				return;
 			case OscalCatalogPackage.GROUP__TITLE:
 				setTitle(TITLE_EDEFAULT);
 				return;
@@ -520,6 +534,8 @@ public class GroupImpl extends OscalElementCustomImpl implements Group {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case OscalCatalogPackage.GROUP__PARAMS:
+				return params != null && !params.isEmpty();
 			case OscalCatalogPackage.GROUP__PROPS:
 				return props != null && !props.isEmpty();
 			case OscalCatalogPackage.GROUP__LINKS:
@@ -534,8 +550,6 @@ public class GroupImpl extends OscalElementCustomImpl implements Group {
 				return controls != null && !controls.isEmpty();
 			case OscalCatalogPackage.GROUP__GROUPS:
 				return groups != null && !groups.isEmpty();
-			case OscalCatalogPackage.GROUP__PARAMS:
-				return params != null && !params.isEmpty();
 			case OscalCatalogPackage.GROUP__TITLE:
 				return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
 		}
@@ -549,6 +563,12 @@ public class GroupImpl extends OscalElementCustomImpl implements Group {
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == ParameterOwner.class) {
+			switch (derivedFeatureID) {
+				case OscalCatalogPackage.GROUP__PARAMS: return OscalMetadataPackage.PARAMETER_OWNER__PARAMS;
+				default: return -1;
+			}
+		}
 		if (baseClass == PropertyOwner.class) {
 			switch (derivedFeatureID) {
 				case OscalCatalogPackage.GROUP__PROPS: return OscalMetadataPackage.PROPERTY_OWNER__PROPS;
@@ -594,6 +614,12 @@ public class GroupImpl extends OscalElementCustomImpl implements Group {
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == ParameterOwner.class) {
+			switch (baseFeatureID) {
+				case OscalMetadataPackage.PARAMETER_OWNER__PARAMS: return OscalCatalogPackage.GROUP__PARAMS;
+				default: return -1;
+			}
+		}
 		if (baseClass == PropertyOwner.class) {
 			switch (baseFeatureID) {
 				case OscalMetadataPackage.PROPERTY_OWNER__PROPS: return OscalCatalogPackage.GROUP__PROPS;
@@ -639,6 +665,12 @@ public class GroupImpl extends OscalElementCustomImpl implements Group {
 	 */
 	@Override
 	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
+		if (baseClass == ParameterOwner.class) {
+			switch (baseOperationID) {
+				case OscalMetadataPackage.PARAMETER_OWNER___GET_PARAMETER_VALUES: return OscalCatalogPackage.GROUP___GET_PARAMETER_VALUES;
+				default: return -1;
+			}
+		}
 		if (baseClass == PropertyOwner.class) {
 			switch (baseOperationID) {
 				default: return -1;
@@ -683,6 +715,8 @@ public class GroupImpl extends OscalElementCustomImpl implements Group {
 		switch (operationID) {
 			case OscalCatalogPackage.GROUP___COMPUTE_DOCUMENTATION:
 				return computeDocumentation();
+			case OscalCatalogPackage.GROUP___GET_PARAMETER_VALUES:
+				return getParameterValues();
 		}
 		return super.eInvoke(operationID, arguments);
 	}

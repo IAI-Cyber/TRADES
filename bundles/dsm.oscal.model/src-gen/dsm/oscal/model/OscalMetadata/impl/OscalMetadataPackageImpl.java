@@ -42,6 +42,7 @@ import dsm.oscal.model.OscalMetadata.Metadata;
 import dsm.oscal.model.OscalMetadata.OscalElement;
 import dsm.oscal.model.OscalMetadata.OscalMetadataFactory;
 import dsm.oscal.model.OscalMetadata.OscalMetadataPackage;
+import dsm.oscal.model.OscalMetadata.ParameterOwner;
 import dsm.oscal.model.OscalMetadata.PartOwner;
 import dsm.oscal.model.OscalMetadata.Party;
 import dsm.oscal.model.OscalMetadata.Property;
@@ -72,6 +73,7 @@ import java.util.UUID;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
+import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
@@ -203,6 +205,13 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 * @generated
 	 */
 	private EClass oscalElementEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass parameterOwnerEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1086,6 +1095,36 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 * @generated
 	 */
 	@Override
+	public EClass getParameterOwner() {
+		return parameterOwnerEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getParameterOwner_Params() {
+		return (EReference)parameterOwnerEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getParameterOwner__GetParameterValues() {
+		return parameterOwnerEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getPartOwner() {
 		return partOwnerEClass;
 	}
@@ -1749,6 +1788,10 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 		oscalElementEClass = createEClass(OSCAL_ELEMENT);
 		createEOperation(oscalElementEClass, OSCAL_ELEMENT___RESOLVE__URI);
 
+		parameterOwnerEClass = createEClass(PARAMETER_OWNER);
+		createEReference(parameterOwnerEClass, PARAMETER_OWNER__PARAMS);
+		createEOperation(parameterOwnerEClass, PARAMETER_OWNER___GET_PARAMETER_VALUES);
+
 		partOwnerEClass = createEClass(PART_OWNER);
 		createEReference(partOwnerEClass, PART_OWNER__PARTS);
 
@@ -1991,6 +2034,17 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 
 		EOperation op = initEOperation(getOscalElement__Resolve__URI(), ecorePackage.getEObject(), "resolve", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getUriType(), "uri", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEClass(parameterOwnerEClass, ParameterOwner.class, "ParameterOwner", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getParameterOwner_Params(), theOscalCatalogCommonPackage.getParameter(), null, "params", null, 0, -1, ParameterOwner.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		op = initEOperation(getParameterOwner__GetParameterValues(), null, "getParameterValues", 0, 1, IS_UNIQUE, IS_ORDERED);
+		EGenericType g1 = createEGenericType(ecorePackage.getEMap());
+		EGenericType g2 = createEGenericType(ecorePackage.getEString());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEString());
+		g1.getETypeArguments().add(g2);
+		initEOperation(op, g1);
 
 		initEClass(partOwnerEClass, PartOwner.class, "PartOwner", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPartOwner_Parts(), theOscalCatalogCommonPackage.getPart(), null, "parts", null, 0, -1, PartOwner.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

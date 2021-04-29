@@ -15,11 +15,10 @@
  */
 package dsm.oscal.model.OscalCatalog;
 
-import dsm.oscal.model.OscalCatalogCommon.Parameter;
-
 import dsm.oscal.model.OscalMetadata.BackMatter;
 import dsm.oscal.model.OscalMetadata.Metadata;
 import dsm.oscal.model.OscalMetadata.OscalElement;
+import dsm.oscal.model.OscalMetadata.ParameterOwner;
 import dsm.oscal.model.OscalMetadata.UUIDElement;
 
 import org.eclipse.emf.common.util.EList;
@@ -47,14 +46,13 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link dsm.oscal.model.OscalCatalog.Catalog#getControls <em>Controls</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalog.Catalog#getGroups <em>Groups</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalog.Catalog#getMetadata <em>Metadata</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalCatalog.Catalog#getParams <em>Params</em>}</li>
  * </ul>
  *
  * @see dsm.oscal.model.OscalCatalog.OscalCatalogPackage#getCatalog()
  * @model annotation="Metaschema source='&lt;Metaschema&gt;oscal-catalog.&lt;AssemblyDefinition&gt;catalog'"
  * @generated
  */
-public interface Catalog extends OscalElement, UUIDElement {
+public interface Catalog extends OscalElement, UUIDElement, ParameterOwner {
 	/**
 	 * Returns the value of the '<em><b>Back Matter</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
@@ -126,18 +124,5 @@ public interface Catalog extends OscalElement, UUIDElement {
 	 * @generated
 	 */
 	void setMetadata(Metadata value);
-
-	/**
-	 * Returns the value of the '<em><b>Params</b></em>' containment reference list.
-	 * The list contents are of type {@link dsm.oscal.model.OscalCatalogCommon.Parameter}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Params</em>' containment reference list.
-	 * @see dsm.oscal.model.OscalCatalog.OscalCatalogPackage#getCatalog_Params()
-	 * @model containment="true"
-	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-catalog-common.&lt;AssemblyDefinition&gt;parameter'"
-	 * @generated
-	 */
-	EList<Parameter> getParams();
 
 } // Catalog

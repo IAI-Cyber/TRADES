@@ -14,7 +14,8 @@
 package dsm.oscal.ext;
 
 import static dsm.oscal.ext.matchers.EClassifierMatchers.hasInstanceClass;
-import static dsm.oscal.ext.matchers.FeatureMatchers.*;
+import static dsm.oscal.ext.matchers.FeatureMatchers.hasName;
+import static dsm.oscal.ext.matchers.FeatureMatchers.isAttributeTyped;
 import static dsm.oscal.ext.matchers.FeatureMatchers.isContainmentTyped;
 import static dsm.oscal.ext.matchers.FeatureMatchers.isMany;
 import static dsm.oscal.ext.matchers.FeatureMatchers.isUnique;
@@ -35,6 +36,7 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EDataType;
+import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EParameter;
@@ -47,7 +49,6 @@ import com.google.common.base.CaseFormat;
 
 import dsm.oscal.ext.matchers.EClassifierMatchers;
 import gov.nist.secauto.metaschema.datatypes.markup.MarkupMultiline;
-import gov.nist.secauto.metaschema.model.definitions.DataType;
 
 public class OscalSemanticRefactorer implements ISemanticRefactorer {
 
@@ -98,6 +99,11 @@ public class OscalSemanticRefactorer implements ISemanticRefactorer {
 		}
 
 		createUUIDElements();
+		EClass paramOwner = createAbstractOwnerClass(getEClass("Parameter"), "params", true);
+		EOperation getParamOperation = createGetParameterOperation();
+		paramOwner.getEOperations().add(getParamOperation);
+		
+		
 		createAbstractOwnerClass(getEClass("Property"), "props", true);
 		createAbstractOwnerClass(getEClass("Link"), "links", true);
 
@@ -133,6 +139,24 @@ public class OscalSemanticRefactorer implements ISemanticRefactorer {
 						+ commonFeatures.size() + " : " + feature.getEType().getName());
 			}
 		}
+	}
+
+	public EOperation createGetParameterOperation() {
+		EOperation getParamOperation = createOperation("getParameterValues", null, false);
+		
+		EGenericType mapType = EcoreFactory.eINSTANCE.createEGenericType();
+		mapType.setEClassifier( EcorePackage.eINSTANCE.getEMap());
+		
+		EGenericType key = EcoreFactory.eINSTANCE.createEGenericType();
+		key.setEClassifier(EcorePackage.eINSTANCE.getEString());
+		mapType.getETypeArguments().add(key);
+		
+		EGenericType value = EcoreFactory.eINSTANCE.createEGenericType();
+		value.setEClassifier(EcorePackage.eINSTANCE.getEString());
+		mapType.getETypeArguments().add(value);
+		
+		getParamOperation.setEGenericType(mapType);
+		return getParamOperation;
 	}
 
 	private EOperation createResolveOperation() {

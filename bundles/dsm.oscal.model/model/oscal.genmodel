@@ -237,6 +237,15 @@
       </genOperations>
     </genClasses>
     <genClasses>
+      <ecoreClass href="oscal-metadata.ecore#//ParameterOwner"/>
+      <genFeatures property="None" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="oscal-metadata.ecore#//ParameterOwner/params"/>
+      </genFeatures>
+      <genOperations>
+        <ecoreOperation href="oscal-metadata.ecore#//ParameterOwner/getParameterValues"/>
+      </genOperations>
+    </genClasses>
+    <genClasses>
       <ecoreClass href="oscal-metadata.ecore#//PartOwner"/>
       <genFeatures property="None" children="true" createChild="true">
         <ecoreFeature xsi:type="ecore:EReference" href="oscal-metadata.ecore#//PartOwner/parts"/>
@@ -454,17 +463,11 @@
       <genFeatures property="None" children="true" createChild="true">
         <ecoreFeature xsi:type="ecore:EReference" href="oscal-catalog.ecore#//Catalog/metadata"/>
       </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-catalog.ecore#//Catalog/params"/>
-      </genFeatures>
     </genClasses>
     <genClasses>
       <ecoreClass href="oscal-catalog.ecore#//Control"/>
       <genFeatures property="None" children="true" createChild="true">
         <ecoreFeature xsi:type="ecore:EReference" href="oscal-catalog.ecore#//Control/controls"/>
-      </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-catalog.ecore#//Control/params"/>
       </genFeatures>
       <genFeatures createChild="false" propertyDescription="\nControl Title\n\nDescription\n\nA name given to the control, which may be used by a tool for display and \nnavigation.\n">
         <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-catalog.ecore#//Control/title"/>
@@ -477,9 +480,6 @@
       </genFeatures>
       <genFeatures property="None" children="true" createChild="true">
         <ecoreFeature xsi:type="ecore:EReference" href="oscal-catalog.ecore#//Group/groups"/>
-      </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="oscal-catalog.ecore#//Group/params"/>
       </genFeatures>
       <genFeatures createChild="false" propertyDescription="\nGroup Title\n\nDescription\n\nA name given to the group, which may be used by a tool for display and \nnavigation.\n">
         <ecoreFeature xsi:type="ecore:EAttribute" href="oscal-catalog.ecore#//Group/title"/>

@@ -15,12 +15,11 @@
  */
 package dsm.oscal.model.OscalCatalog;
 
-import dsm.oscal.model.OscalCatalogCommon.Parameter;
-
 import dsm.oscal.model.OscalMetadata.ElementWithClazz;
 import dsm.oscal.model.OscalMetadata.ElementWithId;
 import dsm.oscal.model.OscalMetadata.LinkOwner;
 import dsm.oscal.model.OscalMetadata.OscalElement;
+import dsm.oscal.model.OscalMetadata.ParameterOwner;
 import dsm.oscal.model.OscalMetadata.PartOwner;
 import dsm.oscal.model.OscalMetadata.PropertyOwner;
 
@@ -48,7 +47,6 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link dsm.oscal.model.OscalCatalog.Control#getControls <em>Controls</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalCatalog.Control#getParams <em>Params</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalog.Control#getTitle <em>Title</em>}</li>
  * </ul>
  *
@@ -56,7 +54,7 @@ import org.eclipse.emf.common.util.EList;
  * @model annotation="Metaschema source='&lt;Metaschema&gt;oscal-catalog.&lt;AssemblyDefinition&gt;control'"
  * @generated
  */
-public interface Control extends OscalElement, PropertyOwner, LinkOwner, PartOwner, ElementWithClazz, ElementWithId {
+public interface Control extends OscalElement, ParameterOwner, PropertyOwner, LinkOwner, PartOwner, ElementWithClazz, ElementWithId {
 	/**
 	 * Returns the value of the '<em><b>Controls</b></em>' containment reference list.
 	 * The list contents are of type {@link dsm.oscal.model.OscalCatalog.Control}.
@@ -69,19 +67,6 @@ public interface Control extends OscalElement, PropertyOwner, LinkOwner, PartOwn
 	 * @generated
 	 */
 	EList<Control> getControls();
-
-	/**
-	 * Returns the value of the '<em><b>Params</b></em>' containment reference list.
-	 * The list contents are of type {@link dsm.oscal.model.OscalCatalogCommon.Parameter}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Params</em>' containment reference list.
-	 * @see dsm.oscal.model.OscalCatalog.OscalCatalogPackage#getControl_Params()
-	 * @model containment="true"
-	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-catalog-common.&lt;AssemblyDefinition&gt;parameter'"
-	 * @generated
-	 */
-	EList<Parameter> getParams();
 
 	/**
 	 * Returns the value of the '<em><b>Title</b></em>' attribute.

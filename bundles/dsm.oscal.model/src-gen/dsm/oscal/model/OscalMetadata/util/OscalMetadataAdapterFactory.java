@@ -149,6 +149,10 @@ public class OscalMetadataAdapterFactory extends AdapterFactoryImpl {
 				return createOscalElementAdapter();
 			}
 			@Override
+			public Adapter caseParameterOwner(ParameterOwner object) {
+				return createParameterOwnerAdapter();
+			}
+			@Override
 			public Adapter casePartOwner(PartOwner object) {
 				return createPartOwnerAdapter();
 			}
@@ -451,6 +455,20 @@ public class OscalMetadataAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createOscalElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link dsm.oscal.model.OscalMetadata.ParameterOwner <em>Parameter Owner</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see dsm.oscal.model.OscalMetadata.ParameterOwner
+	 * @generated
+	 */
+	public Adapter createParameterOwnerAdapter() {
 		return null;
 	}
 

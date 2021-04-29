@@ -25,11 +25,14 @@ import dsm.oscal.model.OscalCatalogCommon.Parameter;
 import dsm.oscal.model.OscalMetadata.BackMatter;
 import dsm.oscal.model.OscalMetadata.Metadata;
 import dsm.oscal.model.OscalMetadata.OscalMetadataPackage;
+import dsm.oscal.model.OscalMetadata.ParameterOwner;
 import dsm.oscal.model.OscalMetadata.UUIDElement;
 
 import dsm.oscal.model.OscalMetadata.impl.OscalElementCustomImpl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
+import java.util.Map;
 import java.util.UUID;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -54,11 +57,11 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link dsm.oscal.model.OscalCatalog.impl.CatalogImpl#getUuid <em>Uuid</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalCatalog.impl.CatalogImpl#getParams <em>Params</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalog.impl.CatalogImpl#getBackMatter <em>Back Matter</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalog.impl.CatalogImpl#getControls <em>Controls</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalog.impl.CatalogImpl#getGroups <em>Groups</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalog.impl.CatalogImpl#getMetadata <em>Metadata</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalCatalog.impl.CatalogImpl#getParams <em>Params</em>}</li>
  * </ul>
  *
  * @generated
@@ -83,6 +86,16 @@ public class CatalogImpl extends OscalElementCustomImpl implements Catalog {
 	 * @ordered
 	 */
 	protected UUID uuid = UUID_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getParams() <em>Params</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getParams()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Parameter> params;
 
 	/**
 	 * The cached value of the '{@link #getBackMatter() <em>Back Matter</em>}' containment reference.
@@ -123,16 +136,6 @@ public class CatalogImpl extends OscalElementCustomImpl implements Catalog {
 	 * @ordered
 	 */
 	protected Metadata metadata;
-
-	/**
-	 * The cached value of the '{@link #getParams() <em>Params</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getParams()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Parameter> params;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -298,6 +301,18 @@ public class CatalogImpl extends OscalElementCustomImpl implements Catalog {
 	 * @generated
 	 */
 	@Override
+	public Map<String, String> getParameterValues() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EList<Parameter> getParams() {
 		if (params == null) {
 			params = new EObjectContainmentEList<Parameter>(Parameter.class, this, OscalCatalogPackage.CATALOG__PARAMS);
@@ -313,6 +328,8 @@ public class CatalogImpl extends OscalElementCustomImpl implements Catalog {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case OscalCatalogPackage.CATALOG__PARAMS:
+				return ((InternalEList<?>)getParams()).basicRemove(otherEnd, msgs);
 			case OscalCatalogPackage.CATALOG__BACK_MATTER:
 				return basicSetBackMatter(null, msgs);
 			case OscalCatalogPackage.CATALOG__CONTROLS:
@@ -321,8 +338,6 @@ public class CatalogImpl extends OscalElementCustomImpl implements Catalog {
 				return ((InternalEList<?>)getGroups()).basicRemove(otherEnd, msgs);
 			case OscalCatalogPackage.CATALOG__METADATA:
 				return basicSetMetadata(null, msgs);
-			case OscalCatalogPackage.CATALOG__PARAMS:
-				return ((InternalEList<?>)getParams()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -337,6 +352,8 @@ public class CatalogImpl extends OscalElementCustomImpl implements Catalog {
 		switch (featureID) {
 			case OscalCatalogPackage.CATALOG__UUID:
 				return getUuid();
+			case OscalCatalogPackage.CATALOG__PARAMS:
+				return getParams();
 			case OscalCatalogPackage.CATALOG__BACK_MATTER:
 				return getBackMatter();
 			case OscalCatalogPackage.CATALOG__CONTROLS:
@@ -345,8 +362,6 @@ public class CatalogImpl extends OscalElementCustomImpl implements Catalog {
 				return getGroups();
 			case OscalCatalogPackage.CATALOG__METADATA:
 				return getMetadata();
-			case OscalCatalogPackage.CATALOG__PARAMS:
-				return getParams();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -363,6 +378,10 @@ public class CatalogImpl extends OscalElementCustomImpl implements Catalog {
 			case OscalCatalogPackage.CATALOG__UUID:
 				setUuid((UUID)newValue);
 				return;
+			case OscalCatalogPackage.CATALOG__PARAMS:
+				getParams().clear();
+				getParams().addAll((Collection<? extends Parameter>)newValue);
+				return;
 			case OscalCatalogPackage.CATALOG__BACK_MATTER:
 				setBackMatter((BackMatter)newValue);
 				return;
@@ -376,10 +395,6 @@ public class CatalogImpl extends OscalElementCustomImpl implements Catalog {
 				return;
 			case OscalCatalogPackage.CATALOG__METADATA:
 				setMetadata((Metadata)newValue);
-				return;
-			case OscalCatalogPackage.CATALOG__PARAMS:
-				getParams().clear();
-				getParams().addAll((Collection<? extends Parameter>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -396,6 +411,9 @@ public class CatalogImpl extends OscalElementCustomImpl implements Catalog {
 			case OscalCatalogPackage.CATALOG__UUID:
 				setUuid(UUID_EDEFAULT);
 				return;
+			case OscalCatalogPackage.CATALOG__PARAMS:
+				getParams().clear();
+				return;
 			case OscalCatalogPackage.CATALOG__BACK_MATTER:
 				setBackMatter((BackMatter)null);
 				return;
@@ -407,9 +425,6 @@ public class CatalogImpl extends OscalElementCustomImpl implements Catalog {
 				return;
 			case OscalCatalogPackage.CATALOG__METADATA:
 				setMetadata((Metadata)null);
-				return;
-			case OscalCatalogPackage.CATALOG__PARAMS:
-				getParams().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -425,6 +440,8 @@ public class CatalogImpl extends OscalElementCustomImpl implements Catalog {
 		switch (featureID) {
 			case OscalCatalogPackage.CATALOG__UUID:
 				return UUID_EDEFAULT == null ? uuid != null : !UUID_EDEFAULT.equals(uuid);
+			case OscalCatalogPackage.CATALOG__PARAMS:
+				return params != null && !params.isEmpty();
 			case OscalCatalogPackage.CATALOG__BACK_MATTER:
 				return backMatter != null;
 			case OscalCatalogPackage.CATALOG__CONTROLS:
@@ -433,8 +450,6 @@ public class CatalogImpl extends OscalElementCustomImpl implements Catalog {
 				return groups != null && !groups.isEmpty();
 			case OscalCatalogPackage.CATALOG__METADATA:
 				return metadata != null;
-			case OscalCatalogPackage.CATALOG__PARAMS:
-				return params != null && !params.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -449,6 +464,12 @@ public class CatalogImpl extends OscalElementCustomImpl implements Catalog {
 		if (baseClass == UUIDElement.class) {
 			switch (derivedFeatureID) {
 				case OscalCatalogPackage.CATALOG__UUID: return OscalMetadataPackage.UUID_ELEMENT__UUID;
+				default: return -1;
+			}
+		}
+		if (baseClass == ParameterOwner.class) {
+			switch (derivedFeatureID) {
+				case OscalCatalogPackage.CATALOG__PARAMS: return OscalMetadataPackage.PARAMETER_OWNER__PARAMS;
 				default: return -1;
 			}
 		}
@@ -468,7 +489,48 @@ public class CatalogImpl extends OscalElementCustomImpl implements Catalog {
 				default: return -1;
 			}
 		}
+		if (baseClass == ParameterOwner.class) {
+			switch (baseFeatureID) {
+				case OscalMetadataPackage.PARAMETER_OWNER__PARAMS: return OscalCatalogPackage.CATALOG__PARAMS;
+				default: return -1;
+			}
+		}
 		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
+		if (baseClass == UUIDElement.class) {
+			switch (baseOperationID) {
+				default: return -1;
+			}
+		}
+		if (baseClass == ParameterOwner.class) {
+			switch (baseOperationID) {
+				case OscalMetadataPackage.PARAMETER_OWNER___GET_PARAMETER_VALUES: return OscalCatalogPackage.CATALOG___GET_PARAMETER_VALUES;
+				default: return -1;
+			}
+		}
+		return super.eDerivedOperationID(baseOperationID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case OscalCatalogPackage.CATALOG___GET_PARAMETER_VALUES:
+				return getParameterValues();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

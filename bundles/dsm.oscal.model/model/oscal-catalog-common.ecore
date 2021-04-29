@@ -1,184 +1,206 @@
 <?xml version="1.0" encoding="ASCII"?>
-<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="OscalCatalogCommon" nsURI="http://csrc.nist.gov/ns/oscal/1.0/oscal-catalog-common"
-    nsPrefix="oscal-catalog-common">
-  <eClassifiers xsi:type="ecore:EClass" name="Parameter" eSuperTypes="oscal-metadata.ecore#//OscalElement oscal-metadata.ecore#//PropertyOwner oscal-metadata.ecore#//LinkOwner oscal-metadata.ecore#//ElementWithRemarks oscal-metadata.ecore#//ElementWithClazz oscal-metadata.ecore#//ElementWithId">
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="OscalCatalogCommon" nsURI="http://csrc.nist.gov/ns/oscal/1.0/oscal-catalog-common" nsPrefix="oscal-catalog-common">
+  <eClassifiers xsi:type="ecore:EClass" name="Parameter">
     <eAnnotations source="Metaschema">
       <details key="source" value="&lt;Metaschema>oscal-catalog-common.&lt;AssemblyDefinition>parameter"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="&lt;h1>Parameter&lt;/h1>&#xA;&lt;h2>Description&lt;/h2>&#xA;&lt;p>Parameters provide a mechanism for the dynamic assignment of value(s) in a control.&lt;/p>&#xA;&lt;h2>Remarks&lt;/h2>&#xA;&lt;p>In a catalog, a parameter is typically used as a placeholder for the future assignment of a parameter value, although the OSCAL model allows for the direct assignment of a value if desired by the control author. The &lt;code>value&lt;/code> may be optionally used to specify one or more values. If no value is provided, then it is expected that the value will be provided at the Profile or Implementation layer.&lt;/p>&#xA;&lt;p>A parameter can include a variety of metadata options that support the future solicitation of one or more values. A &lt;code>label&lt;/code> provides a textual placeholder that can be used in a tool to solicit parameter value input, or to display in catalog documentation. The &lt;code>desc&lt;/code> provides a short description of what the parameter is used for, which can be used in tooling to help a user understand how to use the parameter. A &lt;code>constraint&lt;/code> can be used to provide criteria for the allowed values. A &lt;code>guideline&lt;/code> provides a recommendation for the use of a parameter.&lt;/p>&#xA;"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="constraints" upperBound="-1"
-        eType="#//ParameterConstraint" containment="true">
+    <eSuperTypes href="oscal-metadata.ecore#//OscalElement"/>
+    <eSuperTypes href="oscal-metadata.ecore#//PropertyOwner"/>
+    <eSuperTypes href="oscal-metadata.ecore#//LinkOwner"/>
+    <eSuperTypes href="oscal-metadata.ecore#//ElementWithRemarks"/>
+    <eSuperTypes href="oscal-metadata.ecore#//ElementWithClazz"/>
+    <eSuperTypes href="oscal-metadata.ecore#//ElementWithId"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="constraints" upperBound="-1" eType="//ParameterConstraint" containment="true">
       <eAnnotations source="Metaschema">
         <details key="source" value="&lt;Metaschema>oscal-catalog-common.&lt;AssemblyDefinition>parameter-constraint"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dependsOn" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dependsOn">
       <eAnnotations source="Metaschema">
         <details key="source" value="&lt;Metaschema>oscal-catalog-common.&lt;AssemblyDefinition>parameter.&lt;FlagInstance>depends-on"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="&lt;h1>Depends on&lt;/h1>&#xA;&lt;h2>Description&lt;/h2>&#xA;&lt;p>Another parameter invoking this one&lt;/p>&#xA;"/>
       </eAnnotations>
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="guidelines" upperBound="-1"
-        eType="#//ParameterGuideline" containment="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="guidelines" upperBound="-1" eType="//ParameterGuideline" containment="true">
       <eAnnotations source="Metaschema">
         <details key="source" value="&lt;Metaschema>oscal-catalog-common.&lt;AssemblyDefinition>parameter-guideline"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" eType="ecore:EDataType oscal-metadata.ecore#//MarkupLineType">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="label">
       <eAnnotations source="Metaschema">
         <details key="source" value="&lt;Metaschema>oscal-catalog-common.&lt;AssemblyDefinition>parameter.&lt;FieldInstance>label"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="&lt;h1>Parameter Label&lt;/h1>&#xA;&lt;h2>Description&lt;/h2>&#xA;&lt;p>A short, placeholder name for the parameter, which can be used as a substitute for a &lt;code>value&lt;/code> if no value is assigned.&lt;/p>&#xA;&lt;h2>Remarks&lt;/h2>&#xA;&lt;p>The label value should be suitable for inline display in a rendered catalog.&lt;/p>&#xA;"/>
       </eAnnotations>
+      <eType xsi:type="ecore:EDataType" href="oscal-metadata.ecore#//MarkupLineType"/>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="select" eType="#//ParameterSelection"
-        containment="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="select" eType="//ParameterSelection" containment="true">
       <eAnnotations source="Metaschema">
         <details key="source" value="&lt;Metaschema>oscal-catalog-common.&lt;AssemblyDefinition>parameter-selection"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="usage" eType="ecore:EDataType oscal-metadata.ecore#//MarkupMultilineType">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="usage">
       <eAnnotations source="Metaschema">
         <details key="source" value="&lt;Metaschema>oscal-catalog-common.&lt;AssemblyDefinition>parameter.&lt;FieldInstance>usage"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="&lt;h1>Parameter Usage Description&lt;/h1>&#xA;&lt;h2>Description&lt;/h2>&#xA;&lt;p>Describes the purpose and use of a parameter&lt;/p>&#xA;"/>
       </eAnnotations>
+      <eType xsi:type="ecore:EDataType" href="oscal-metadata.ecore#//MarkupMultilineType"/>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="values" upperBound="-1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="values" upperBound="-1">
       <eAnnotations source="Metaschema">
         <details key="source" value="&lt;Metaschema>oscal-catalog-common.&lt;AssemblyDefinition>parameter.&lt;FieldInstance>parameter-value"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="&lt;h1>Parameter Value&lt;/h1>&#xA;&lt;h2>Description&lt;/h2>&#xA;&lt;p>A parameter value or set of values.&lt;/p>&#xA;"/>
       </eAnnotations>
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ParameterConstraint" eSuperTypes="oscal-metadata.ecore#//OscalElement">
+  <eClassifiers xsi:type="ecore:EClass" name="ParameterConstraint">
     <eAnnotations source="Metaschema">
       <details key="source" value="&lt;Metaschema>oscal-catalog-common.&lt;AssemblyDefinition>parameter-constraint"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="&lt;h1>Constraint&lt;/h1>&#xA;&lt;h2>Description&lt;/h2>&#xA;&lt;p>A formal or informal expression of a constraint or test&lt;/p>&#xA;"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType oscal-metadata.ecore#//MarkupMultilineType">
+    <eSuperTypes href="oscal-metadata.ecore#//OscalElement"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description">
       <eAnnotations source="Metaschema">
         <details key="source" value="&lt;Metaschema>oscal-catalog-common.&lt;AssemblyDefinition>parameter-constraint.&lt;FieldInstance>description"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="&lt;h1>Constraint Description&lt;/h1>&#xA;&lt;h2>Description&lt;/h2>&#xA;&lt;p>A textual summary of the constraint to be applied.&lt;/p>&#xA;"/>
       </eAnnotations>
+      <eType xsi:type="ecore:EDataType" href="oscal-metadata.ecore#//MarkupMultilineType"/>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="tests" upperBound="-1"
-        eType="#//ParameterConstraintTest" containment="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tests" upperBound="-1" eType="//ParameterConstraintTest" containment="true">
       <eAnnotations source="Metaschema">
         <details key="source" value="&lt;Metaschema>oscal-catalog-common.&lt;AssemblyDefinition>test"/>
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ParameterConstraintTest" eSuperTypes="oscal-metadata.ecore#//OscalElement oscal-metadata.ecore#//ElementWithRemarks">
+  <eClassifiers xsi:type="ecore:EClass" name="ParameterConstraintTest">
     <eAnnotations source="Metaschema">
       <details key="source" value="&lt;Metaschema>oscal-catalog-common.&lt;AssemblyDefinition>test"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="&lt;h1>Constraint Test&lt;/h1>&#xA;&lt;h2>Description&lt;/h2>&#xA;&lt;p>A test expression which is expected to be evaluated by a tool.&lt;/p>&#xA;"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="expression" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+    <eSuperTypes href="oscal-metadata.ecore#//OscalElement"/>
+    <eSuperTypes href="oscal-metadata.ecore#//ElementWithRemarks"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="expression" lowerBound="1">
       <eAnnotations source="Metaschema">
         <details key="source" value="&lt;Metaschema>oscal-catalog-common.&lt;AssemblyDefinition>test.&lt;FieldInstance>expression"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="&lt;h1>Constraint test&lt;/h1>&#xA;&lt;h2>Description&lt;/h2>&#xA;&lt;p>A formal (executable) expression of a constraint&lt;/p>&#xA;"/>
       </eAnnotations>
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ParameterGuideline" eSuperTypes="oscal-metadata.ecore#//OscalElement">
+  <eClassifiers xsi:type="ecore:EClass" name="ParameterGuideline">
     <eAnnotations source="Metaschema">
       <details key="source" value="&lt;Metaschema>oscal-catalog-common.&lt;AssemblyDefinition>parameter-guideline"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="&lt;h1>Guideline&lt;/h1>&#xA;&lt;h2>Description&lt;/h2>&#xA;&lt;p>A prose statement that provides a recommendation for the use of a parameter.&lt;/p>&#xA;"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="prose" lowerBound="1" eType="ecore:EDataType oscal-metadata.ecore#//MarkupMultilineType">
+    <eSuperTypes href="oscal-metadata.ecore#//OscalElement"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="prose" lowerBound="1">
       <eAnnotations source="Metaschema">
         <details key="source" value="&lt;Metaschema>oscal-catalog-common.&lt;AssemblyDefinition>parameter-guideline.&lt;FieldInstance>prose"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="&lt;h1>Guideline Text&lt;/h1>&#xA;&lt;h2>Description&lt;/h2>&#xA;&lt;p>Prose permits multiple paragraphs, lists, tables etc.&lt;/p>&#xA;"/>
       </eAnnotations>
+      <eType xsi:type="ecore:EDataType" href="oscal-metadata.ecore#//MarkupMultilineType"/>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ParameterSelection" eSuperTypes="oscal-metadata.ecore#//OscalElement">
+  <eClassifiers xsi:type="ecore:EClass" name="ParameterSelection">
     <eAnnotations source="Metaschema">
       <details key="source" value="&lt;Metaschema>oscal-catalog-common.&lt;AssemblyDefinition>parameter-selection"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="&lt;h1>Selection&lt;/h1>&#xA;&lt;h2>Description&lt;/h2>&#xA;&lt;p>Presenting a choice among alternatives&lt;/p>&#xA;&lt;h2>Remarks&lt;/h2>&#xA;&lt;p>A set of parameter value choices, that may be picked from to set the parameter value.&lt;/p>&#xA;"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="choice" upperBound="-1"
-        eType="ecore:EDataType oscal-metadata.ecore#//MarkupLineType">
+    <eSuperTypes href="oscal-metadata.ecore#//OscalElement"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="choice" upperBound="-1">
       <eAnnotations source="Metaschema">
         <details key="source" value="&lt;Metaschema>oscal-catalog-common.&lt;AssemblyDefinition>parameter-selection.&lt;FieldInstance>parameter-choice"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="&lt;h1>Choice&lt;/h1>&#xA;&lt;h2>Description&lt;/h2>&#xA;&lt;p>A value selection among several such options&lt;/p>&#xA;"/>
       </eAnnotations>
+      <eType xsi:type="ecore:EDataType" href="oscal-metadata.ecore#//MarkupLineType"/>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="howMany" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="howMany">
       <eAnnotations source="Metaschema">
         <details key="source" value="&lt;Metaschema>oscal-catalog-common.&lt;AssemblyDefinition>parameter-selection.&lt;FlagInstance>how-many"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="&lt;h1>Parameter Cardinality&lt;/h1>&#xA;&lt;h2>Description&lt;/h2>&#xA;&lt;p>Describes the number of selections that must occur.&lt;/p>&#xA;"/>
       </eAnnotations>
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Part" eSuperTypes="oscal-metadata.ecore#//OscalElement oscal-metadata.ecore#//PropertyOwner oscal-metadata.ecore#//LinkOwner oscal-metadata.ecore#//PartOwner oscal-metadata.ecore#//DocumentationComputer oscal-metadata.ecore#//ElementWithClazz oscal-metadata.ecore#//ElementWithId">
+  <eClassifiers xsi:type="ecore:EClass" name="Part">
     <eAnnotations source="Metaschema">
       <details key="source" value="&lt;Metaschema>oscal-catalog-common.&lt;AssemblyDefinition>part"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="&lt;h1>Part&lt;/h1>&#xA;&lt;h2>Description&lt;/h2>&#xA;&lt;p>A partition of a control's definition or a child of another part.&lt;/p>&#xA;&lt;h2>Remarks&lt;/h2>&#xA;&lt;p>A &lt;code>part&lt;/code> provides for logical partitioning of prose, and can be thought of as a grouping structure (e.g., section). A &lt;code>part&lt;/code> can have child parts allowing for arbitrary nesting of prose content (e.g., statement hierarchy). A &lt;code>part&lt;/code> can contain &lt;code>prop&lt;/code> objects that allow for enriching prose text with structured name/value information.&lt;/p>&#xA;&lt;p>A &lt;code>part&lt;/code> can be assigned an optional &lt;code>id&lt;/code>, which allows for internal and external references to the textual concept contained within a &lt;code>part&lt;/code>. A &lt;code>id&lt;/code> provides a means for an OSCAL profile, or a higher layer OSCAL model to reference a specific part within a &lt;code>catalog&lt;/code>. For example, an &lt;code>id&lt;/code> can be used to reference or to make modifications to a control statement in a profile.&lt;/p>&#xA;&lt;p>Use of &lt;code>part&lt;/code> and &lt;code>prop&lt;/code> provides for a wide degree of extensibility within the OSCAL catalog model. The optional &lt;code>ns&lt;/code> provides a means to qualify a part's &lt;code>name&lt;/code>, allowing for organization-specific vocabularies to be defined with clear semantics. Any organization that extends OSCAL in this way should consistently assign a &lt;code>ns&lt;/code> value that represents the organization, making a given namespace qualified &lt;code>name&lt;/code> unique to that organization. This allows the combination of &lt;code>ns&lt;/code> and &lt;code>name&lt;/code> to always be unique and unambiguous, even when mixed with extensions from other organizations. Each organization is responsible for governance of their own extensions, and is strongly encouraged to publish their extensions as standards to their user community. If no &lt;code>ns&lt;/code> is provided, the name is expected to be in the &lt;q>OSCAL&lt;/q> namespace.&lt;/p>&#xA;&lt;p>To ensure a &lt;code>ns&lt;/code> is unique to an organization and naming conflicts are avoided, a URI containing a DNS or other globally defined organization name should be used. For example, if FedRAMP and DoD both extend OSCAL, FedRAMP will use the &lt;code>ns&lt;/code> &lt;q>https://fedramp.gov&lt;/q>, while DoD will use the &lt;code>ns&lt;/code> &lt;q>https://defense.gov&lt;/q> for any organization specific &lt;code>name&lt;/code>.&lt;/p>&#xA;&lt;p>Tools that process OSCAL content are not required to interpret unrecognized OSCAL extensions; however, OSCAL compliant tools should not modify or remove unrecognized extensions, unless there is a compelling reason to do so, such as data sensitivity.&lt;/p>&#xA;"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+    <eSuperTypes href="oscal-metadata.ecore#//OscalElement"/>
+    <eSuperTypes href="oscal-metadata.ecore#//PropertyOwner"/>
+    <eSuperTypes href="oscal-metadata.ecore#//LinkOwner"/>
+    <eSuperTypes href="oscal-metadata.ecore#//PartOwner"/>
+    <eSuperTypes href="oscal-metadata.ecore#//DocumentationComputer"/>
+    <eSuperTypes href="oscal-metadata.ecore#//ElementWithClazz"/>
+    <eSuperTypes href="oscal-metadata.ecore#//ElementWithId"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1">
       <eAnnotations source="Metaschema">
         <details key="source" value="&lt;Metaschema>oscal-catalog-common.&lt;AssemblyDefinition>part.&lt;FlagInstance>name"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="&lt;h1>Part Name&lt;/h1>&#xA;&lt;h2>Description&lt;/h2>&#xA;&lt;p>A textual label that uniquely identifies the part's semantic type.&lt;/p>&#xA;"/>
       </eAnnotations>
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ns" eType="ecore:EDataType oscal-metadata.ecore#//UriType">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ns">
       <eAnnotations source="Metaschema">
         <details key="source" value="&lt;Metaschema>oscal-catalog-common.&lt;AssemblyDefinition>part.&lt;FlagInstance>ns"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="&lt;h1>Part Namespace&lt;/h1>&#xA;&lt;h2>Description&lt;/h2>&#xA;&lt;p>A namespace qualifying the part's name. This allows different organizations to associate distinct semantics with the same name.&lt;/p>&#xA;&lt;h2>Remarks&lt;/h2>&#xA;&lt;p>Provides a means to segment the value space for the &lt;code>name&lt;/code>, so that different organizations and individuals can assert control over the allowed names and associated text used in a part. This allows the semantics associated with a given name to be defined on an organization-by-organization basis.&lt;/p>&#xA;&lt;p>An organization MUST use a URI that they have control over. e.g., a domain registered to the organization in a URI, a registered uniform resource names (URN) namespace.&lt;/p>&#xA;&lt;p>When a &lt;code>ns&lt;/code> is not provided, its value should be assumed to be &lt;code>http://csrc.nist.gov/ns/oscal&lt;/code> and the name should be a name defined by the associated OSCAL model.&lt;/p>&#xA;"/>
       </eAnnotations>
+      <eType xsi:type="ecore:EDataType" href="oscal-metadata.ecore#//UriType"/>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="prose" eType="ecore:EDataType oscal-metadata.ecore#//MarkupMultilineType">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="prose">
       <eAnnotations source="Metaschema">
         <details key="source" value="&lt;Metaschema>oscal-catalog-common.&lt;AssemblyDefinition>part.&lt;FieldInstance>prose"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="&lt;h1>Part Text&lt;/h1>&#xA;&lt;h2>Description&lt;/h2>&#xA;&lt;p>Permits multiple paragraphs, lists, tables etc.&lt;/p>&#xA;"/>
       </eAnnotations>
+      <eType xsi:type="ecore:EDataType" href="oscal-metadata.ecore#//MarkupMultilineType"/>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" eType="ecore:EDataType oscal-metadata.ecore#//MarkupLineType">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="title">
       <eAnnotations source="Metaschema">
         <details key="source" value="&lt;Metaschema>oscal-catalog-common.&lt;AssemblyDefinition>part.&lt;FieldInstance>title"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="&lt;h1>Part Title&lt;/h1>&#xA;&lt;h2>Description&lt;/h2>&#xA;&lt;p>A name given to the part, which may be used by a tool for display and navigation.&lt;/p>&#xA;"/>
       </eAnnotations>
+      <eType xsi:type="ecore:EDataType" href="oscal-metadata.ecore#//MarkupLineType"/>
     </eStructuralFeatures>
   </eClassifiers>
 </ecore:EPackage>

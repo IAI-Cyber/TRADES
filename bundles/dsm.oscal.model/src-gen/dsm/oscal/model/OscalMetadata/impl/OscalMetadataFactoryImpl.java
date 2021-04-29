@@ -99,6 +99,7 @@ public class OscalMetadataFactoryImpl extends EFactoryImpl implements OscalMetad
 			case OscalMetadataPackage.LINK_OWNER: return createLinkOwner();
 			case OscalMetadataPackage.LOCATION: return createLocation();
 			case OscalMetadataPackage.METADATA: return createMetadata();
+			case OscalMetadataPackage.PARAMETER_OWNER: return createParameterOwner();
 			case OscalMetadataPackage.PART_OWNER: return createPartOwner();
 			case OscalMetadataPackage.PARTY: return createParty();
 			case OscalMetadataPackage.PROPERTY: return createProperty();
@@ -357,6 +358,17 @@ public class OscalMetadataFactoryImpl extends EFactoryImpl implements OscalMetad
 	public Metadata createMetadata() {
 		MetadataImpl metadata = new MetadataImpl();
 		return metadata;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ParameterOwner createParameterOwner() {
+		ParameterOwnerImpl parameterOwner = new ParameterOwnerImpl();
+		return parameterOwner;
 	}
 
 	/**

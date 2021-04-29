@@ -15,13 +15,13 @@
 package dsm.oscal.model.OscalMetadata.impl;
 
 import dsm.oscal.model.DocumentationComputer;
-import dsm.oscal.model.OscalCatalogCommon.Part;
+import dsm.oscal.model.ParameterResolver;
 
 public class PartOwnerCustomImpl extends PartOwnerImpl {
 
 	@Override
 	public String computeDocumentation() {
-		return DocumentationComputer.computeDocumentation(this);
+		return DocumentationComputer.computeDocumentation(this,ParameterResolver.getAvailableParams(this));
 	}
 
 }

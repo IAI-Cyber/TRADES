@@ -14,13 +14,21 @@
 
 package dsm.oscal.model.OscalCatalog.impl;
 
+import java.util.Map;
+
 import dsm.oscal.model.DocumentationComputer;
-import dsm.oscal.model.OscalCatalog.impl.GroupImpl;
+import dsm.oscal.model.ParameterResolver;
 
 public class GroupCustomImpl extends GroupImpl {
+
 	@Override
 	public String computeDocumentation() {
-		return DocumentationComputer.computeDocumentation(this);
+		return DocumentationComputer.computeDocumentation(this,getParameterValues());
+	}
+
+	@Override
+	public Map<String, String> getParameterValues() {
+		return ParameterResolver.getAvailableParams(this);
 	}
 
 }

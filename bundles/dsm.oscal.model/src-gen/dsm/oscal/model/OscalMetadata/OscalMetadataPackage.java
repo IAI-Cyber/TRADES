@@ -1169,6 +1169,52 @@ public interface OscalMetadataPackage extends EPackage {
 	int METADATA_OPERATION_COUNT = OSCAL_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link dsm.oscal.model.OscalMetadata.impl.ParameterOwnerImpl <em>Parameter Owner</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see dsm.oscal.model.OscalMetadata.impl.ParameterOwnerImpl
+	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getParameterOwner()
+	 * @generated
+	 */
+	int PARAMETER_OWNER = 17;
+
+	/**
+	 * The feature id for the '<em><b>Params</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER_OWNER__PARAMS = 0;
+
+	/**
+	 * The number of structural features of the '<em>Parameter Owner</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER_OWNER_FEATURE_COUNT = 1;
+
+	/**
+	 * The operation id for the '<em>Get Parameter Values</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER_OWNER___GET_PARAMETER_VALUES = 0;
+
+	/**
+	 * The number of operations of the '<em>Parameter Owner</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER_OWNER_OPERATION_COUNT = 1;
+
+	/**
 	 * The meta object id for the '{@link dsm.oscal.model.OscalMetadata.impl.PartOwnerImpl <em>Part Owner</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1176,7 +1222,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getPartOwner()
 	 * @generated
 	 */
-	int PART_OWNER = 17;
+	int PART_OWNER = 18;
 
 	/**
 	 * The feature id for the '<em><b>Parts</b></em>' containment reference list.
@@ -1222,7 +1268,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getParty()
 	 * @generated
 	 */
-	int PARTY = 18;
+	int PARTY = 19;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -1376,7 +1422,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getProperty()
 	 * @generated
 	 */
-	int PROPERTY = 19;
+	int PROPERTY = 20;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -1467,7 +1513,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getPropertyOwner()
 	 * @generated
 	 */
-	int PROPERTY_OWNER = 20;
+	int PROPERTY_OWNER = 21;
 
 	/**
 	 * The feature id for the '<em><b>Props</b></em>' containment reference list.
@@ -1504,7 +1550,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getResourceCitation()
 	 * @generated
 	 */
-	int RESOURCE_CITATION = 21;
+	int RESOURCE_CITATION = 22;
 
 	/**
 	 * The feature id for the '<em><b>Props</b></em>' containment reference list.
@@ -1559,7 +1605,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getResourceRlink()
 	 * @generated
 	 */
-	int RESOURCE_RLINK = 22;
+	int RESOURCE_RLINK = 23;
 
 	/**
 	 * The feature id for the '<em><b>EHref</b></em>' attribute.
@@ -1623,7 +1669,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getResponsibleParty()
 	 * @generated
 	 */
-	int RESPONSIBLE_PARTY = 23;
+	int RESPONSIBLE_PARTY = 24;
 
 	/**
 	 * The feature id for the '<em><b>Props</b></em>' containment reference list.
@@ -1705,7 +1751,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getResponsibleRole()
 	 * @generated
 	 */
-	int RESPONSIBLE_ROLE = 24;
+	int RESPONSIBLE_ROLE = 25;
 
 	/**
 	 * The feature id for the '<em><b>Props</b></em>' containment reference list.
@@ -1787,7 +1833,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getRevision()
 	 * @generated
 	 */
-	int REVISION = 25;
+	int REVISION = 26;
 
 	/**
 	 * The feature id for the '<em><b>Props</b></em>' containment reference list.
@@ -1896,7 +1942,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getRole()
 	 * @generated
 	 */
-	int ROLE = 26;
+	int ROLE = 27;
 
 	/**
 	 * The feature id for the '<em><b>Props</b></em>' containment reference list.
@@ -1996,7 +2042,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getTelephoneNumber()
 	 * @generated
 	 */
-	int TELEPHONE_NUMBER = 27;
+	int TELEPHONE_NUMBER = 28;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -2051,7 +2097,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getUUIDElement()
 	 * @generated
 	 */
-	int UUID_ELEMENT = 28;
+	int UUID_ELEMENT = 29;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -2088,7 +2134,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getBase64Type()
 	 * @generated
 	 */
-	int BASE64_TYPE = 29;
+	int BASE64_TYPE = 30;
 
 	/**
 	 * The meta object id for the '<em>Date Time Type</em>' data type.
@@ -2098,7 +2144,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getDateTimeType()
 	 * @generated
 	 */
-	int DATE_TIME_TYPE = 30;
+	int DATE_TIME_TYPE = 31;
 
 	/**
 	 * The meta object id for the '<em>Date Time With Tz Type</em>' data type.
@@ -2108,7 +2154,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getDateTimeWithTzType()
 	 * @generated
 	 */
-	int DATE_TIME_WITH_TZ_TYPE = 31;
+	int DATE_TIME_WITH_TZ_TYPE = 32;
 
 	/**
 	 * The meta object id for the '<em>Date Type</em>' data type.
@@ -2118,7 +2164,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getDateType()
 	 * @generated
 	 */
-	int DATE_TYPE = 32;
+	int DATE_TYPE = 33;
 
 	/**
 	 * The meta object id for the '<em>Date With Tz Type</em>' data type.
@@ -2128,7 +2174,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getDateWithTzType()
 	 * @generated
 	 */
-	int DATE_WITH_TZ_TYPE = 33;
+	int DATE_WITH_TZ_TYPE = 34;
 
 	/**
 	 * The meta object id for the '<em>Empty Type</em>' data type.
@@ -2138,7 +2184,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getEmptyType()
 	 * @generated
 	 */
-	int EMPTY_TYPE = 34;
+	int EMPTY_TYPE = 35;
 
 	/**
 	 * The meta object id for the '<em>Ip V4 Address Type</em>' data type.
@@ -2148,7 +2194,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getIpV4AddressType()
 	 * @generated
 	 */
-	int IP_V4_ADDRESS_TYPE = 35;
+	int IP_V4_ADDRESS_TYPE = 36;
 
 	/**
 	 * The meta object id for the '<em>Ip V6 Address Type</em>' data type.
@@ -2158,7 +2204,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getIpV6AddressType()
 	 * @generated
 	 */
-	int IP_V6_ADDRESS_TYPE = 36;
+	int IP_V6_ADDRESS_TYPE = 37;
 
 	/**
 	 * The meta object id for the '<em>Markup Line Type</em>' data type.
@@ -2168,7 +2214,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getMarkupLineType()
 	 * @generated
 	 */
-	int MARKUP_LINE_TYPE = 37;
+	int MARKUP_LINE_TYPE = 38;
 
 	/**
 	 * The meta object id for the '<em>Markup Multiline Type</em>' data type.
@@ -2178,7 +2224,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getMarkupMultilineType()
 	 * @generated
 	 */
-	int MARKUP_MULTILINE_TYPE = 38;
+	int MARKUP_MULTILINE_TYPE = 39;
 
 	/**
 	 * The meta object id for the '<em>Uri Reference Type</em>' data type.
@@ -2188,7 +2234,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getUriReferenceType()
 	 * @generated
 	 */
-	int URI_REFERENCE_TYPE = 39;
+	int URI_REFERENCE_TYPE = 40;
 
 	/**
 	 * The meta object id for the '<em>Uri Type</em>' data type.
@@ -2198,7 +2244,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getUriType()
 	 * @generated
 	 */
-	int URI_TYPE = 40;
+	int URI_TYPE = 41;
 
 	/**
 	 * The meta object id for the '<em>Uuid Type</em>' data type.
@@ -2208,7 +2254,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getUuidType()
 	 * @generated
 	 */
-	int UUID_TYPE = 41;
+	int UUID_TYPE = 42;
 
 
 	/**
@@ -2884,6 +2930,37 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getOscalElement__Resolve__URI();
+
+	/**
+	 * Returns the meta object for class '{@link dsm.oscal.model.OscalMetadata.ParameterOwner <em>Parameter Owner</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Parameter Owner</em>'.
+	 * @see dsm.oscal.model.OscalMetadata.ParameterOwner
+	 * @generated
+	 */
+	EClass getParameterOwner();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link dsm.oscal.model.OscalMetadata.ParameterOwner#getParams <em>Params</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Params</em>'.
+	 * @see dsm.oscal.model.OscalMetadata.ParameterOwner#getParams()
+	 * @see #getParameterOwner()
+	 * @generated
+	 */
+	EReference getParameterOwner_Params();
+
+	/**
+	 * Returns the meta object for the '{@link dsm.oscal.model.OscalMetadata.ParameterOwner#getParameterValues() <em>Get Parameter Values</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Parameter Values</em>' operation.
+	 * @see dsm.oscal.model.OscalMetadata.ParameterOwner#getParameterValues()
+	 * @generated
+	 */
+	EOperation getParameterOwner__GetParameterValues();
 
 	/**
 	 * Returns the meta object for class '{@link dsm.oscal.model.OscalMetadata.PartOwner <em>Part Owner</em>}'.
@@ -4049,6 +4126,32 @@ public interface OscalMetadataPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation OSCAL_ELEMENT___RESOLVE__URI = eINSTANCE.getOscalElement__Resolve__URI();
+
+		/**
+		 * The meta object literal for the '{@link dsm.oscal.model.OscalMetadata.impl.ParameterOwnerImpl <em>Parameter Owner</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see dsm.oscal.model.OscalMetadata.impl.ParameterOwnerImpl
+		 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getParameterOwner()
+		 * @generated
+		 */
+		EClass PARAMETER_OWNER = eINSTANCE.getParameterOwner();
+
+		/**
+		 * The meta object literal for the '<em><b>Params</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PARAMETER_OWNER__PARAMS = eINSTANCE.getParameterOwner_Params();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Parameter Values</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation PARAMETER_OWNER___GET_PARAMETER_VALUES = eINSTANCE.getParameterOwner__GetParameterValues();
 
 		/**
 		 * The meta object literal for the '{@link dsm.oscal.model.OscalMetadata.impl.PartOwnerImpl <em>Part Owner</em>}' class.

@@ -27,6 +27,7 @@ import dsm.oscal.model.OscalMetadata.ElementWithId;
 import dsm.oscal.model.OscalMetadata.Link;
 import dsm.oscal.model.OscalMetadata.LinkOwner;
 import dsm.oscal.model.OscalMetadata.OscalMetadataPackage;
+import dsm.oscal.model.OscalMetadata.ParameterOwner;
 import dsm.oscal.model.OscalMetadata.PartOwner;
 import dsm.oscal.model.OscalMetadata.Property;
 import dsm.oscal.model.OscalMetadata.PropertyOwner;
@@ -39,6 +40,7 @@ import java.lang.reflect.InvocationTargetException;
 
 import java.util.Collection;
 
+import java.util.Map;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -60,19 +62,29 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link dsm.oscal.model.OscalCatalog.impl.ControlImpl#getParams <em>Params</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalog.impl.ControlImpl#getProps <em>Props</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalog.impl.ControlImpl#getLinks <em>Links</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalog.impl.ControlImpl#getParts <em>Parts</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalog.impl.ControlImpl#getClazz <em>Clazz</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalog.impl.ControlImpl#getId <em>Id</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalog.impl.ControlImpl#getControls <em>Controls</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalCatalog.impl.ControlImpl#getParams <em>Params</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalog.impl.ControlImpl#getTitle <em>Title</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class ControlImpl extends OscalElementCustomImpl implements Control {
+	/**
+	 * The cached value of the '{@link #getParams() <em>Params</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getParams()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Parameter> params;
+
 	/**
 	 * The cached value of the '{@link #getProps() <em>Props</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -152,16 +164,6 @@ public class ControlImpl extends OscalElementCustomImpl implements Control {
 	 * @ordered
 	 */
 	protected EList<Control> controls;
-
-	/**
-	 * The cached value of the '{@link #getParams() <em>Params</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getParams()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Parameter> params;
 
 	/**
 	 * The default value of the '{@link #getTitle() <em>Title</em>}' attribute.
@@ -354,8 +356,22 @@ public class ControlImpl extends OscalElementCustomImpl implements Control {
 	 * @generated
 	 */
 	@Override
+	public Map<String, String> getParameterValues() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case OscalCatalogPackage.CONTROL__PARAMS:
+				return ((InternalEList<?>)getParams()).basicRemove(otherEnd, msgs);
 			case OscalCatalogPackage.CONTROL__PROPS:
 				return ((InternalEList<?>)getProps()).basicRemove(otherEnd, msgs);
 			case OscalCatalogPackage.CONTROL__LINKS:
@@ -364,8 +380,6 @@ public class ControlImpl extends OscalElementCustomImpl implements Control {
 				return ((InternalEList<?>)getParts()).basicRemove(otherEnd, msgs);
 			case OscalCatalogPackage.CONTROL__CONTROLS:
 				return ((InternalEList<?>)getControls()).basicRemove(otherEnd, msgs);
-			case OscalCatalogPackage.CONTROL__PARAMS:
-				return ((InternalEList<?>)getParams()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -378,6 +392,8 @@ public class ControlImpl extends OscalElementCustomImpl implements Control {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case OscalCatalogPackage.CONTROL__PARAMS:
+				return getParams();
 			case OscalCatalogPackage.CONTROL__PROPS:
 				return getProps();
 			case OscalCatalogPackage.CONTROL__LINKS:
@@ -390,8 +406,6 @@ public class ControlImpl extends OscalElementCustomImpl implements Control {
 				return getId();
 			case OscalCatalogPackage.CONTROL__CONTROLS:
 				return getControls();
-			case OscalCatalogPackage.CONTROL__PARAMS:
-				return getParams();
 			case OscalCatalogPackage.CONTROL__TITLE:
 				return getTitle();
 		}
@@ -407,6 +421,10 @@ public class ControlImpl extends OscalElementCustomImpl implements Control {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case OscalCatalogPackage.CONTROL__PARAMS:
+				getParams().clear();
+				getParams().addAll((Collection<? extends Parameter>)newValue);
+				return;
 			case OscalCatalogPackage.CONTROL__PROPS:
 				getProps().clear();
 				getProps().addAll((Collection<? extends Property>)newValue);
@@ -429,10 +447,6 @@ public class ControlImpl extends OscalElementCustomImpl implements Control {
 				getControls().clear();
 				getControls().addAll((Collection<? extends Control>)newValue);
 				return;
-			case OscalCatalogPackage.CONTROL__PARAMS:
-				getParams().clear();
-				getParams().addAll((Collection<? extends Parameter>)newValue);
-				return;
 			case OscalCatalogPackage.CONTROL__TITLE:
 				setTitle((MarkupLine)newValue);
 				return;
@@ -448,6 +462,9 @@ public class ControlImpl extends OscalElementCustomImpl implements Control {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case OscalCatalogPackage.CONTROL__PARAMS:
+				getParams().clear();
+				return;
 			case OscalCatalogPackage.CONTROL__PROPS:
 				getProps().clear();
 				return;
@@ -466,9 +483,6 @@ public class ControlImpl extends OscalElementCustomImpl implements Control {
 			case OscalCatalogPackage.CONTROL__CONTROLS:
 				getControls().clear();
 				return;
-			case OscalCatalogPackage.CONTROL__PARAMS:
-				getParams().clear();
-				return;
 			case OscalCatalogPackage.CONTROL__TITLE:
 				setTitle(TITLE_EDEFAULT);
 				return;
@@ -484,6 +498,8 @@ public class ControlImpl extends OscalElementCustomImpl implements Control {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case OscalCatalogPackage.CONTROL__PARAMS:
+				return params != null && !params.isEmpty();
 			case OscalCatalogPackage.CONTROL__PROPS:
 				return props != null && !props.isEmpty();
 			case OscalCatalogPackage.CONTROL__LINKS:
@@ -496,8 +512,6 @@ public class ControlImpl extends OscalElementCustomImpl implements Control {
 				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
 			case OscalCatalogPackage.CONTROL__CONTROLS:
 				return controls != null && !controls.isEmpty();
-			case OscalCatalogPackage.CONTROL__PARAMS:
-				return params != null && !params.isEmpty();
 			case OscalCatalogPackage.CONTROL__TITLE:
 				return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
 		}
@@ -511,6 +525,12 @@ public class ControlImpl extends OscalElementCustomImpl implements Control {
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == ParameterOwner.class) {
+			switch (derivedFeatureID) {
+				case OscalCatalogPackage.CONTROL__PARAMS: return OscalMetadataPackage.PARAMETER_OWNER__PARAMS;
+				default: return -1;
+			}
+		}
 		if (baseClass == PropertyOwner.class) {
 			switch (derivedFeatureID) {
 				case OscalCatalogPackage.CONTROL__PROPS: return OscalMetadataPackage.PROPERTY_OWNER__PROPS;
@@ -556,6 +576,12 @@ public class ControlImpl extends OscalElementCustomImpl implements Control {
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == ParameterOwner.class) {
+			switch (baseFeatureID) {
+				case OscalMetadataPackage.PARAMETER_OWNER__PARAMS: return OscalCatalogPackage.CONTROL__PARAMS;
+				default: return -1;
+			}
+		}
 		if (baseClass == PropertyOwner.class) {
 			switch (baseFeatureID) {
 				case OscalMetadataPackage.PROPERTY_OWNER__PROPS: return OscalCatalogPackage.CONTROL__PROPS;
@@ -601,6 +627,12 @@ public class ControlImpl extends OscalElementCustomImpl implements Control {
 	 */
 	@Override
 	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
+		if (baseClass == ParameterOwner.class) {
+			switch (baseOperationID) {
+				case OscalMetadataPackage.PARAMETER_OWNER___GET_PARAMETER_VALUES: return OscalCatalogPackage.CONTROL___GET_PARAMETER_VALUES;
+				default: return -1;
+			}
+		}
 		if (baseClass == PropertyOwner.class) {
 			switch (baseOperationID) {
 				default: return -1;
@@ -645,6 +677,8 @@ public class ControlImpl extends OscalElementCustomImpl implements Control {
 		switch (operationID) {
 			case OscalCatalogPackage.CONTROL___COMPUTE_DOCUMENTATION:
 				return computeDocumentation();
+			case OscalCatalogPackage.CONTROL___GET_PARAMETER_VALUES:
+				return getParameterValues();
 		}
 		return super.eInvoke(operationID, arguments);
 	}

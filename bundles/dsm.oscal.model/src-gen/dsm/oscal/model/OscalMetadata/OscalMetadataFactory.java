@@ -170,6 +170,15 @@ public interface OscalMetadataFactory extends EFactory {
 	Metadata createMetadata();
 
 	/**
+	 * Returns a new object of class '<em>Parameter Owner</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Parameter Owner</em>'.
+	 * @generated
+	 */
+	ParameterOwner createParameterOwner();
+
+	/**
 	 * Returns a new object of class '<em>Part Owner</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

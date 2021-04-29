@@ -16,15 +16,9 @@ package dsm.oscal.model.OscalCatalog.impl;
 
 import java.util.Map;
 
-import dsm.oscal.model.DocumentationComputer;
 import dsm.oscal.model.ParameterResolver;
 
-public class ControlCustomImpl extends ControlImpl {
-
-	@Override
-	public String computeDocumentation() {
-		return DocumentationComputer.computeDocumentation(this,getParameterValues());
-	}
+public class CatalogCustomImpl extends CatalogImpl {
 
 	@Override
 	public Map<String, String> getParameterValues() {

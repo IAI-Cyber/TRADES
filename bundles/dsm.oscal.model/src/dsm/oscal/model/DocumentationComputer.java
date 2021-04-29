@@ -14,11 +14,25 @@
 
 package dsm.oscal.model;
 
+import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import dsm.oscal.model.OscalCatalogCommon.Part;
 import dsm.oscal.model.OscalMetadata.PartOwner;
 
 public class DocumentationComputer {
-	public static String computeDocumentation(PartOwner owner) {
+
+	/**
+	 * Computes the documentation of the given {@link PartOwner}. This methods also
+	 * replace the <code>{{insert: param ...}}</code> tags by their value (if more
+	 * than one only takes the first one)
+	 * 
+	 * @param owner  the owner
+	 * @param params the available parameters value from the given owner
+	 * @return
+	 */
+	public static String computeDocumentation(PartOwner owner, Map<String, String> params) {
 
 		StringBuilder builder = new StringBuilder();
 		for (Part p : owner.getParts()) {
@@ -27,6 +41,21 @@ public class DocumentationComputer {
 				builder.append(doc);
 			}
 		}
-		return builder.toString();
+		String doc = builder.toString();
+
+		Pattern inserPattern = Pattern.compile("\\{\\{\\s*insert:\\s*param\\s*,\\s*(\\S*)\\s*\\}\\}");
+		Matcher match = inserPattern.matcher(doc);
+
+		String newDoc = match.replaceAll(matchResult -> {
+			String id = matchResult.group(1);
+			String value = params.get(id);
+			if (value != null) {
+				return value;
+			}
+			return doc.substring(matchResult.start(), matchResult.end());
+		});
+
+		return newDoc;
 	}
+
 }

@@ -115,7 +115,6 @@ public class CatalogItemProvider extends OscalElementItemProvider {
 			childrenFeatures.add(OscalCatalogPackage.Literals.CATALOG__CONTROLS);
 			childrenFeatures.add(OscalCatalogPackage.Literals.CATALOG__GROUPS);
 			childrenFeatures.add(OscalCatalogPackage.Literals.CATALOG__METADATA);
-			childrenFeatures.add(OscalCatalogPackage.Literals.CATALOG__PARAMS);
 		}
 		return childrenFeatures;
 	}
@@ -173,13 +172,13 @@ public class CatalogItemProvider extends OscalElementItemProvider {
 
 		switch (notification.getFeatureID(Catalog.class)) {
 			case OscalCatalogPackage.CATALOG__UUID:
+			case OscalCatalogPackage.CATALOG__PARAMS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case OscalCatalogPackage.CATALOG__BACK_MATTER:
 			case OscalCatalogPackage.CATALOG__CONTROLS:
 			case OscalCatalogPackage.CATALOG__GROUPS:
 			case OscalCatalogPackage.CATALOG__METADATA:
-			case OscalCatalogPackage.CATALOG__PARAMS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -196,6 +195,11 @@ public class CatalogItemProvider extends OscalElementItemProvider {
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OscalMetadataPackage.Literals.PARAMETER_OWNER__PARAMS,
+				 OscalCatalogCommonFactory.eINSTANCE.createParameter()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -216,11 +220,6 @@ public class CatalogItemProvider extends OscalElementItemProvider {
 			(createChildParameter
 				(OscalCatalogPackage.Literals.CATALOG__METADATA,
 				 OscalMetadataFactory.eINSTANCE.createMetadata()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OscalCatalogPackage.Literals.CATALOG__PARAMS,
-				 OscalCatalogCommonFactory.eINSTANCE.createParameter()));
 	}
 
 	/**

@@ -204,6 +204,12 @@ public class OscalMetadataSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case OscalMetadataPackage.PARAMETER_OWNER: {
+				ParameterOwner parameterOwner = (ParameterOwner)theEObject;
+				T result = caseParameterOwner(parameterOwner);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case OscalMetadataPackage.PART_OWNER: {
 				PartOwner partOwner = (PartOwner)theEObject;
 				T result = casePartOwner(partOwner);
@@ -565,6 +571,21 @@ public class OscalMetadataSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseOscalElement(OscalElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Parameter Owner</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Parameter Owner</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseParameterOwner(ParameterOwner object) {
 		return null;
 	}
 

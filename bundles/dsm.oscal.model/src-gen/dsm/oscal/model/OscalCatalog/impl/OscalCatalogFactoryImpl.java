@@ -84,7 +84,7 @@ public class OscalCatalogFactoryImpl extends EFactoryImpl implements OscalCatalo
 	 */
 	@Override
 	public Catalog createCatalog() {
-		CatalogImpl catalog = new CatalogImpl();
+		CatalogCustomImpl catalog = new CatalogCustomImpl();
 		return catalog;
 	}
 

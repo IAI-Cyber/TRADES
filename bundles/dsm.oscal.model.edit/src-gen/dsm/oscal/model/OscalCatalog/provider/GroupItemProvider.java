@@ -159,7 +159,6 @@ public class GroupItemProvider extends OscalElementItemProvider {
 			childrenFeatures.add(OscalMetadataPackage.Literals.PART_OWNER__PARTS);
 			childrenFeatures.add(OscalCatalogPackage.Literals.GROUP__CONTROLS);
 			childrenFeatures.add(OscalCatalogPackage.Literals.GROUP__GROUPS);
-			childrenFeatures.add(OscalCatalogPackage.Literals.GROUP__PARAMS);
 		}
 		return childrenFeatures;
 	}
@@ -215,6 +214,7 @@ public class GroupItemProvider extends OscalElementItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Group.class)) {
+			case OscalCatalogPackage.GROUP__PARAMS:
 			case OscalCatalogPackage.GROUP__PROPS:
 			case OscalCatalogPackage.GROUP__LINKS:
 			case OscalCatalogPackage.GROUP__CLAZZ:
@@ -225,7 +225,6 @@ public class GroupItemProvider extends OscalElementItemProvider {
 			case OscalCatalogPackage.GROUP__PARTS:
 			case OscalCatalogPackage.GROUP__CONTROLS:
 			case OscalCatalogPackage.GROUP__GROUPS:
-			case OscalCatalogPackage.GROUP__PARAMS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -242,6 +241,11 @@ public class GroupItemProvider extends OscalElementItemProvider {
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OscalMetadataPackage.Literals.PARAMETER_OWNER__PARAMS,
+				 OscalCatalogCommonFactory.eINSTANCE.createParameter()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -267,11 +271,6 @@ public class GroupItemProvider extends OscalElementItemProvider {
 			(createChildParameter
 				(OscalCatalogPackage.Literals.GROUP__GROUPS,
 				 OscalCatalogFactory.eINSTANCE.createGroup()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OscalCatalogPackage.Literals.GROUP__PARAMS,
-				 OscalCatalogCommonFactory.eINSTANCE.createParameter()));
 	}
 
 	/**

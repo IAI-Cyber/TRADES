@@ -430,6 +430,29 @@ public class OscalMetadataItemProviderAdapterFactory extends OscalMetadataAdapte
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link dsm.oscal.model.OscalMetadata.ParameterOwner} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ParameterOwnerItemProvider parameterOwnerItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link dsm.oscal.model.OscalMetadata.ParameterOwner}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createParameterOwnerAdapter() {
+		if (parameterOwnerItemProvider == null) {
+			parameterOwnerItemProvider = new ParameterOwnerItemProvider(this);
+		}
+
+		return parameterOwnerItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link dsm.oscal.model.OscalMetadata.PartOwner} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -819,6 +842,7 @@ public class OscalMetadataItemProviderAdapterFactory extends OscalMetadataAdapte
 		if (linkOwnerItemProvider != null) linkOwnerItemProvider.dispose();
 		if (locationItemProvider != null) locationItemProvider.dispose();
 		if (metadataItemProvider != null) metadataItemProvider.dispose();
+		if (parameterOwnerItemProvider != null) parameterOwnerItemProvider.dispose();
 		if (partOwnerItemProvider != null) partOwnerItemProvider.dispose();
 		if (partyItemProvider != null) partyItemProvider.dispose();
 		if (propertyItemProvider != null) propertyItemProvider.dispose();
