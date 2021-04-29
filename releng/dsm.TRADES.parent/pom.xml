@@ -145,6 +145,7 @@
 		<!-- Oscal -->
 		<module>../../bundles/dsm.oscal.ext/</module>
 		<module>../../bundles/dsm.oscal.model/</module>
+		<module>../../bundles/dsm.oscal.model.test/</module>
 		<module>../../bundles/dsm.oscal.ext.sirius.tooling/</module>
 		<module>../../bundles/dsm.oscal.ext.sirius.lib/</module>
 		<module>../../bundles/dsm.oscal.model.edit/</module>

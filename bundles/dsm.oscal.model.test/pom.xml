@@ -33,7 +33,7 @@
 				<executions>
 					<execution>
 						<id>copy-dependencies</id>
-						<phase>initialize</phase>
+						<phase>generate-resources</phase>
 						<goals>
 							<goal>copy-dependencies</goal>
 						</goals>
