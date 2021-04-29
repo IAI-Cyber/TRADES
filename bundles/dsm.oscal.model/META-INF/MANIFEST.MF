@@ -8,7 +8,7 @@ Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-11
-Export-Package: dsm.oscal.model.transform,
+Export-Package: dsm.oscal.model,
  dsm.oscal.model.OscalCatalog,
  dsm.oscal.model.OscalCatalog.impl,
  dsm.oscal.model.OscalCatalog.util,
@@ -17,7 +17,8 @@ Export-Package: dsm.oscal.model.transform,
  dsm.oscal.model.OscalCatalogCommon.util,
  dsm.oscal.model.OscalMetadata,
  dsm.oscal.model.OscalMetadata.impl,
- dsm.oscal.model.OscalMetadata.util
+ dsm.oscal.model.OscalMetadata.util,
+ dsm.oscal.model.transform
 Require-Bundle: org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.core.runtime,
  dsm.oscal.ext;bundle-version="2.5.0"

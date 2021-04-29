@@ -51,10 +51,19 @@ public class ParameterResolver {
 		while (current != null) {
 			if (current instanceof ParameterOwner) {
 				collect((ParameterOwner) current, params);
-				;
 			}
 			current = current.eContainer();
 		}
+
+		// Resolve inside variables
+		params.replaceAll((key, value) -> {
+			String resolveValue = DocumentationComputer.resolveInsideVariable(params, value);
+			if (value != null && !value.equals(resolveValue)) {
+				return resolveValue;
+			} else {
+				return value;
+			}
+		});
 
 		return params;
 	}
@@ -69,47 +78,46 @@ public class ParameterResolver {
 		}
 	}
 
-	private static String getParamValue(Parameter p) {
+	public static String getParamValue(Parameter p) {
 		if (p == null) {
 			return null;
 		}
 
-		String value = null;
-		MarkupLine label = p.getLabel();
-		if (label != null) {
-			String md = label.toMarkdown();
-			if (md != null && !md.isEmpty()) {
-				value = md;
-			}
+		EList<String> values = p.getValues();
+		if (!values.isEmpty()) {
+			return values.get(0);
 		}
 
-		if (value == null) {
-			ParameterSelection select = p.getSelect();
-			if (select != null) {
-				EList<MarkupLine> choices = select.getChoice();
-				if (!choices.isEmpty()) {
-					MarkupLine choice = choices.get(0);
-					if (choice != null) {
-						return choice.toMarkdown();
-					}
+		ParameterSelection select = p.getSelect();
+		if (select != null) {
+			EList<MarkupLine> choices = select.getChoice();
+			if (!choices.isEmpty()) {
+				MarkupLine choice = choices.get(0);
+				if (choice != null) {
+					return safeToMarkdown(choice);
 				}
 			}
 		}
 
-		if (value == null) {
-			EList<String> values = p.getValues();
-			if (!values.isEmpty()) {
-				return values.get(0);
-			}
+		MarkupLine label = p.getLabel();
+		if (label != null) {
+			return "${" + safeToMarkdown(label) + "}";
 		}
 
-		if (value != null) {
-			// Workaround for https://github.com/usnistgov/liboscal-java/issues/4
-			if (value.endsWith("\n")) {
-				return value.substring(0, value.length() - 1);
+		return null;
+
+	}
+
+	public static String safeToMarkdown(MarkupLine line) {
+		if (line != null) {
+			String md = line.toMarkdown();
+			if (md != null) {
+				// Workaround for https://github.com/usnistgov/liboscal-java/issues/4
+				if (md.endsWith("\n")) {
+					return md.substring(0, md.length() - 1);
+				}
 			}
 		}
-
 		return null;
 	}
 

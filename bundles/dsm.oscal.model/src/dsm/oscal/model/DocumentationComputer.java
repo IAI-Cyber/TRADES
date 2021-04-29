@@ -23,6 +23,8 @@ import dsm.oscal.model.OscalMetadata.PartOwner;
 
 public class DocumentationComputer {
 
+	public static Pattern INSET_PATTERN = Pattern.compile("\\{\\{\\s*insert:\\s*param\\s*,\\s*(\\S*)\\s*\\}\\}");
+
 	/**
 	 * Computes the documentation of the given {@link PartOwner}. This methods also
 	 * replace the <code>{{insert: param ...}}</code> tags by their value (if more
@@ -43,18 +45,22 @@ public class DocumentationComputer {
 		}
 		String doc = builder.toString();
 
-		Pattern inserPattern = Pattern.compile("\\{\\{\\s*insert:\\s*param\\s*,\\s*(\\S*)\\s*\\}\\}");
-		Matcher match = inserPattern.matcher(doc);
+		String newDoc = resolveInsideVariable(params, doc);
+
+		return newDoc;
+	}
+
+	public static String resolveInsideVariable(Map<String, String> params, String doc) {
+		Matcher match = INSET_PATTERN.matcher(doc);
 
 		String newDoc = match.replaceAll(matchResult -> {
 			String id = matchResult.group(1);
 			String value = params.get(id);
 			if (value != null) {
-				return value;
+				return Matcher.quoteReplacement(value);
 			}
 			return doc.substring(matchResult.start(), matchResult.end());
 		});
-
 		return newDoc;
 	}
 
