@@ -73,4 +73,20 @@
         </includes>
      </viewerActionBinding>
   </extension>
+  <extension
+        point="org.eclipse.ui.importWizards">
+     <wizard
+           category="dsm.TRADES.rcp.import"
+           class="dsm.oscal.design.wizards.ImportEmbeddedCatalogWizard"
+           icon="icons/library_obj.png"
+           id="dsm.oscal.design.importoscalcatalog"
+           name="Import OSCAL Catalog">
+        <selection
+              class="org.eclipse.core.resources.IProject">
+        </selection>
+        <description>
+           Import an embeded OSCAL library
+        </description>
+     </wizard>
+  </extension>
 </plugin>

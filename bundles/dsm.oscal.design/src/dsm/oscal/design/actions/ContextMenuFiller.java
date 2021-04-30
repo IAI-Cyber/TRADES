@@ -14,7 +14,6 @@
 
 package dsm.oscal.design.actions;
 
-import org.eclipse.core.resources.IProject;
 import org.eclipse.jface.action.IMenuListener;
 import org.eclipse.jface.action.IMenuListener2;
 import org.eclipse.jface.action.IMenuManager;
@@ -43,10 +42,8 @@ public class ContextMenuFiller implements IMenuListener, IMenuListener2 {
 
 		if (selection != null) {
 			Object first = selection.getFirstElement();
-			if (first instanceof IProject) {
-				manager.add(new ImportOscalCatalogHandler());
-			} else if (first instanceof Catalog) {
-				manager.add(new ConvertCatalogToTradesAction((Catalog) first));
+			if (first instanceof Catalog) {
+				manager.add(new ActionRemoveCatalog((Catalog) first));
 			}
 		}
 
@@ -61,7 +58,7 @@ public class ContextMenuFiller implements IMenuListener, IMenuListener2 {
 	}
 
 	public void dispose() {
-		System.out.println("tt");
+		selection = null;
 	}
 
 }

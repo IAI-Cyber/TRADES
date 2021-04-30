@@ -35,4 +35,11 @@
          </hiddenToolBarItem>
       </perspectiveExtension>
    </extension>
+   <extension
+         point="org.eclipse.ui.importWizards">
+      <category
+            id="dsm.TRADES.rcp.import"
+            name="TRADES">
+      </category>
+   </extension>
 </plugin>
