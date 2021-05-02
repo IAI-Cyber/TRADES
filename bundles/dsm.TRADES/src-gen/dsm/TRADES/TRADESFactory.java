@@ -204,6 +204,42 @@ public interface TRADESFactory extends EFactory {
 	DataOwner createDataOwner();
 
 	/**
+	 * Returns a new object of class '<em>Link</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Link</em>'.
+	 * @generated
+	 */
+	Link createLink();
+
+	/**
+	 * Returns a new object of class '<em>Link Owner</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Link Owner</em>'.
+	 * @generated
+	 */
+	LinkOwner createLinkOwner();
+
+	/**
+	 * Returns a new object of class '<em>Link Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Link Type</em>'.
+	 * @generated
+	 */
+	LinkType createLinkType();
+
+	/**
+	 * Returns a new object of class '<em>Link Type Owner</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Link Type Owner</em>'.
+	 * @generated
+	 */
+	LinkTypeOwner createLinkTypeOwner();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

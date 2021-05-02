@@ -89,6 +89,8 @@ public class TRADESSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseAbstractControlOwner(analysis);
 			if (result == null)
+				result = caseLinkTypeOwner(analysis);
+			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
@@ -112,6 +114,8 @@ public class TRADESSwitch<T> extends Switch<T> {
 				result = caseNamedElement(component);
 			if (result == null)
 				result = caseAbstractControlOwner(component);
+			if (result == null)
+				result = caseLinkOwner(component);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -285,6 +289,38 @@ public class TRADESSwitch<T> extends Switch<T> {
 		case TRADESPackage.DATA_OWNER: {
 			DataOwner dataOwner = (DataOwner) theEObject;
 			T result = caseDataOwner(dataOwner);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case TRADESPackage.LINK: {
+			Link link = (Link) theEObject;
+			T result = caseLink(link);
+			if (result == null)
+				result = caseNamedElement(link);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case TRADESPackage.LINK_OWNER: {
+			LinkOwner linkOwner = (LinkOwner) theEObject;
+			T result = caseLinkOwner(linkOwner);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case TRADESPackage.LINK_TYPE: {
+			LinkType linkType = (LinkType) theEObject;
+			T result = caseLinkType(linkType);
+			if (result == null)
+				result = caseNamedElement(linkType);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case TRADESPackage.LINK_TYPE_OWNER: {
+			LinkTypeOwner linkTypeOwner = (LinkTypeOwner) theEObject;
+			T result = caseLinkTypeOwner(linkTypeOwner);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -651,6 +687,66 @@ public class TRADESSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseDataOwner(DataOwner object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Link</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Link</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseLink(Link object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Link Owner</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Link Owner</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseLinkOwner(LinkOwner object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Link Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Link Type</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseLinkType(LinkType object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Link Type Owner</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Link Type Owner</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseLinkTypeOwner(LinkTypeOwner object) {
 		return null;
 	}
 

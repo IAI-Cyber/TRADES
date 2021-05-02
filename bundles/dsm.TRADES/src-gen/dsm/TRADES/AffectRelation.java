@@ -31,6 +31,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link dsm.TRADES.AffectRelation#getSourceComponent <em>Source Component</em>}</li>
  *   <li>{@link dsm.TRADES.AffectRelation#getTargetComponent <em>Target Component</em>}</li>
  *   <li>{@link dsm.TRADES.AffectRelation#getAnalysisStatus <em>Analysis Status</em>}</li>
+ *   <li>{@link dsm.TRADES.AffectRelation#getLink <em>Link</em>}</li>
  * </ul>
  *
  * @see dsm.TRADES.TRADESPackage#getAffectRelation()
@@ -121,6 +122,30 @@ public interface AffectRelation extends NamedElement {
 	 * @generated
 	 */
 	void setAnalysisStatus(AffectedENUM value);
+
+	/**
+	 * Returns the value of the '<em><b>Link</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link dsm.TRADES.Link#getAffectRelations <em>Affect Relations</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Link</em>' reference.
+	 * @see #setLink(Link)
+	 * @see dsm.TRADES.TRADESPackage#getAffectRelation_Link()
+	 * @see dsm.TRADES.Link#getAffectRelations
+	 * @model opposite="affectRelations"
+	 * @generated
+	 */
+	Link getLink();
+
+	/**
+	 * Sets the value of the '{@link dsm.TRADES.AffectRelation#getLink <em>Link</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Link</em>' reference.
+	 * @see #getLink()
+	 * @generated
+	 */
+	void setLink(Link value);
 
 	/**
 	 * <!-- begin-user-doc -->

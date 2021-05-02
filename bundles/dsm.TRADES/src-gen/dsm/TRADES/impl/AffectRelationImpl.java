@@ -17,6 +17,7 @@ import dsm.TRADES.AffectRelation;
 import dsm.TRADES.AffectedENUM;
 import dsm.TRADES.Component;
 import dsm.TRADES.Data;
+import dsm.TRADES.Link;
 import dsm.TRADES.TRADESPackage;
 
 import dsm.TRADES.util.TRADESValidator;
@@ -57,6 +58,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  *   <li>{@link dsm.TRADES.impl.AffectRelationImpl#getSourceComponent <em>Source Component</em>}</li>
  *   <li>{@link dsm.TRADES.impl.AffectRelationImpl#getTargetComponent <em>Target Component</em>}</li>
  *   <li>{@link dsm.TRADES.impl.AffectRelationImpl#getAnalysisStatus <em>Analysis Status</em>}</li>
+ *   <li>{@link dsm.TRADES.impl.AffectRelationImpl#getLink <em>Link</em>}</li>
  * </ul>
  *
  * @generated
@@ -101,6 +103,16 @@ public class AffectRelationImpl extends NamedElementImpl implements AffectRelati
 	 * @ordered
 	 */
 	protected AffectedENUM analysisStatus = ANALYSIS_STATUS_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getLink() <em>Link</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLink()
+	 * @generated
+	 * @ordered
+	 */
+	protected Link link;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -255,6 +267,76 @@ public class AffectRelationImpl extends NamedElementImpl implements AffectRelati
 	 * @generated
 	 */
 	@Override
+	public Link getLink() {
+		if (link != null && link.eIsProxy()) {
+			InternalEObject oldLink = (InternalEObject) link;
+			link = (Link) eResolveProxy(oldLink);
+			if (link != oldLink) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TRADESPackage.AFFECT_RELATION__LINK,
+							oldLink, link));
+			}
+		}
+		return link;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Link basicGetLink() {
+		return link;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetLink(Link newLink, NotificationChain msgs) {
+		Link oldLink = link;
+		link = newLink;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					TRADESPackage.AFFECT_RELATION__LINK, oldLink, newLink);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setLink(Link newLink) {
+		if (newLink != link) {
+			NotificationChain msgs = null;
+			if (link != null)
+				msgs = ((InternalEObject) link).eInverseRemove(this, TRADESPackage.LINK__AFFECT_RELATIONS, Link.class,
+						msgs);
+			if (newLink != null)
+				msgs = ((InternalEObject) newLink).eInverseAdd(this, TRADESPackage.LINK__AFFECT_RELATIONS, Link.class,
+						msgs);
+			msgs = basicSetLink(newLink, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TRADESPackage.AFFECT_RELATION__LINK, newLink,
+					newLink));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public boolean checkDataScope(DiagnosticChain chain, Map context) {
 		// TODO: implement this method
 		// -> specify the condition that violates the invariant
@@ -285,6 +367,11 @@ public class AffectRelationImpl extends NamedElementImpl implements AffectRelati
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			return basicSetSourceComponent((Component) otherEnd, msgs);
+		case TRADESPackage.AFFECT_RELATION__LINK:
+			if (link != null)
+				msgs = ((InternalEObject) link).eInverseRemove(this, TRADESPackage.LINK__AFFECT_RELATIONS, Link.class,
+						msgs);
+			return basicSetLink((Link) otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -299,6 +386,8 @@ public class AffectRelationImpl extends NamedElementImpl implements AffectRelati
 		switch (featureID) {
 		case TRADESPackage.AFFECT_RELATION__SOURCE_COMPONENT:
 			return basicSetSourceComponent(null, msgs);
+		case TRADESPackage.AFFECT_RELATION__LINK:
+			return basicSetLink(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -336,6 +425,10 @@ public class AffectRelationImpl extends NamedElementImpl implements AffectRelati
 			return basicGetTargetComponent();
 		case TRADESPackage.AFFECT_RELATION__ANALYSIS_STATUS:
 			return getAnalysisStatus();
+		case TRADESPackage.AFFECT_RELATION__LINK:
+			if (resolve)
+				return getLink();
+			return basicGetLink();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -362,6 +455,9 @@ public class AffectRelationImpl extends NamedElementImpl implements AffectRelati
 		case TRADESPackage.AFFECT_RELATION__ANALYSIS_STATUS:
 			setAnalysisStatus((AffectedENUM) newValue);
 			return;
+		case TRADESPackage.AFFECT_RELATION__LINK:
+			setLink((Link) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -386,6 +482,9 @@ public class AffectRelationImpl extends NamedElementImpl implements AffectRelati
 		case TRADESPackage.AFFECT_RELATION__ANALYSIS_STATUS:
 			setAnalysisStatus(ANALYSIS_STATUS_EDEFAULT);
 			return;
+		case TRADESPackage.AFFECT_RELATION__LINK:
+			setLink((Link) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -406,6 +505,8 @@ public class AffectRelationImpl extends NamedElementImpl implements AffectRelati
 			return targetComponent != null;
 		case TRADESPackage.AFFECT_RELATION__ANALYSIS_STATUS:
 			return analysisStatus != ANALYSIS_STATUS_EDEFAULT;
+		case TRADESPackage.AFFECT_RELATION__LINK:
+			return link != null;
 		}
 		return super.eIsSet(featureID);
 	}

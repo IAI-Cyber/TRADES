@@ -34,6 +34,10 @@ import dsm.TRADES.ExternalElement;
 import dsm.TRADES.ExternalThreat;
 import dsm.TRADES.ImpactConfiguration;
 import dsm.TRADES.ImpactScore;
+import dsm.TRADES.Link;
+import dsm.TRADES.LinkOwner;
+import dsm.TRADES.LinkType;
+import dsm.TRADES.LinkTypeOwner;
 import dsm.TRADES.NamedElement;
 import dsm.TRADES.RGBColor;
 import dsm.TRADES.ScoreSystem;
@@ -231,6 +235,34 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * @generated
 	 */
 	private EClass dataOwnerEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass linkEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass linkOwnerEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass linkTypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass linkTypeOwnerEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -735,6 +767,16 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * @generated
 	 */
 	@Override
+	public EReference getAffectRelation_Link() {
+		return (EReference) affectRelationEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EOperation getAffectRelation__CheckDataScope__DiagnosticChain_Map() {
 		return affectRelationEClass.getEOperations().get(0);
 	}
@@ -1225,6 +1267,86 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * @generated
 	 */
 	@Override
+	public EClass getLink() {
+		return linkEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getLink_AffectRelations() {
+		return (EReference) linkEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getLink_Linktype() {
+		return (EReference) linkEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getLinkOwner() {
+		return linkOwnerEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getLinkOwner_Link() {
+		return (EReference) linkOwnerEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getLinkType() {
+		return linkTypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getLinkTypeOwner() {
+		return linkTypeOwnerEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getLinkTypeOwner_Linktype() {
+		return (EReference) linkTypeOwnerEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EEnum getAssessmentENUM() {
 		return assessmentENUMEEnum;
 	}
@@ -1346,6 +1468,7 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		createEReference(affectRelationEClass, AFFECT_RELATION__SOURCE_COMPONENT);
 		createEReference(affectRelationEClass, AFFECT_RELATION__TARGET_COMPONENT);
 		createEAttribute(affectRelationEClass, AFFECT_RELATION__ANALYSIS_STATUS);
+		createEReference(affectRelationEClass, AFFECT_RELATION__LINK);
 		createEOperation(affectRelationEClass, AFFECT_RELATION___CHECK_DATA_SCOPE__DIAGNOSTICCHAIN_MAP);
 
 		attackChainEClass = createEClass(ATTACK_CHAIN);
@@ -1412,6 +1535,18 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		dataOwnerEClass = createEClass(DATA_OWNER);
 		createEReference(dataOwnerEClass, DATA_OWNER__DATA);
 
+		linkEClass = createEClass(LINK);
+		createEReference(linkEClass, LINK__AFFECT_RELATIONS);
+		createEReference(linkEClass, LINK__LINKTYPE);
+
+		linkOwnerEClass = createEClass(LINK_OWNER);
+		createEReference(linkOwnerEClass, LINK_OWNER__LINK);
+
+		linkTypeEClass = createEClass(LINK_TYPE);
+
+		linkTypeOwnerEClass = createEClass(LINK_TYPE_OWNER);
+		createEReference(linkTypeOwnerEClass, LINK_TYPE_OWNER__LINKTYPE);
+
 		// Create enums
 		assessmentENUMEEnum = createEEnum(ASSESSMENT_ENUM);
 		affectedENUMEEnum = createEEnum(AFFECTED_ENUM);
@@ -1455,11 +1590,13 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		analysisEClass.getESuperTypes().add(this.getDataOwnerElement());
 		analysisEClass.getESuperTypes().add(this.getNamedElement());
 		analysisEClass.getESuperTypes().add(this.getAbstractControlOwner());
+		analysisEClass.getESuperTypes().add(this.getLinkTypeOwner());
 		threatEClass.getESuperTypes().add(this.getNamedElement());
 		componentEClass.getESuperTypes().add(this.getComponentOwner());
 		componentEClass.getESuperTypes().add(this.getDataOwnerElement());
 		componentEClass.getESuperTypes().add(this.getNamedElement());
 		componentEClass.getESuperTypes().add(this.getAbstractControlOwner());
+		componentEClass.getESuperTypes().add(this.getLinkOwner());
 		controlEClass.getESuperTypes().add(this.getNamedElement());
 		dataEClass.getESuperTypes().add(this.getNamedElement());
 		affectRelationEClass.getESuperTypes().add(this.getNamedElement());
@@ -1471,6 +1608,8 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		externalThreatEClass.getESuperTypes().add(this.getExternalElement());
 		externalControlEClass.getESuperTypes().add(this.getExternalElement());
 		externalControlEClass.getESuperTypes().add(this.getControl());
+		linkEClass.getESuperTypes().add(this.getNamedElement());
+		linkTypeEClass.getESuperTypes().add(this.getNamedElement());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(analysisEClass, Analysis.class, "Analysis", !IS_ABSTRACT, !IS_INTERFACE,
@@ -1588,6 +1727,9 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		initEAttribute(getAffectRelation_AnalysisStatus(), this.getAffectedENUM(), "analysisStatus", "Confirmed", 1, 1,
 				AffectRelation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
+		initEReference(getAffectRelation_Link(), this.getLink(), this.getLink_AffectRelations(), "link", null, 0, 1,
+				AffectRelation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		op = initEOperation(getAffectRelation__CheckDataScope__DiagnosticChain_Map(), ecorePackage.getEBoolean(),
 				"checkDataScope", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -1735,6 +1877,29 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		initEReference(getDataOwner_Data(), this.getData(), null, "data", null, 0, -1, DataOwner.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
+
+		initEClass(linkEClass, Link.class, "Link", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getLink_AffectRelations(), this.getAffectRelation(), this.getAffectRelation_Link(),
+				"affectRelations", null, 0, -1, Link.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getLink_Linktype(), this.getLinkType(), null, "linktype", null, 1, 1, Link.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+
+		initEClass(linkOwnerEClass, LinkOwner.class, "LinkOwner", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getLinkOwner_Link(), this.getLink(), null, "link", null, 0, -1, LinkOwner.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+
+		initEClass(linkTypeEClass, LinkType.class, "LinkType", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(linkTypeOwnerEClass, LinkTypeOwner.class, "LinkTypeOwner", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getLinkTypeOwner_Linktype(), this.getLinkType(), null, "linktype", null, 0, -1,
+				LinkTypeOwner.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(assessmentENUMEEnum, AssessmentENUM.class, "AssessmentENUM");

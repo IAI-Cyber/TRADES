@@ -83,6 +83,7 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TRADES.ecore#//AffectRelation/sourceComponent"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TRADES.ecore#//AffectRelation/targetComponent"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//AffectRelation/analysisStatus"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TRADES.ecore#//AffectRelation/link"/>
       <genOperations ecoreOperation="TRADES.ecore#//AffectRelation/checkDataScope">
         <genParameters ecoreParameter="TRADES.ecore#//AffectRelation/checkDataScope/chain"/>
         <genParameters ecoreParameter="TRADES.ecore#//AffectRelation/checkDataScope/context"/>
@@ -152,6 +153,17 @@
     </genClasses>
     <genClasses ecoreClass="TRADES.ecore#//DataOwner">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//DataOwner/data"/>
+    </genClasses>
+    <genClasses ecoreClass="TRADES.ecore#//Link">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TRADES.ecore#//Link/affectRelations"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TRADES.ecore#//Link/linktype"/>
+    </genClasses>
+    <genClasses ecoreClass="TRADES.ecore#//LinkOwner">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//LinkOwner/link"/>
+    </genClasses>
+    <genClasses ecoreClass="TRADES.ecore#//LinkType"/>
+    <genClasses ecoreClass="TRADES.ecore#//LinkTypeOwner">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//LinkTypeOwner/linktype"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

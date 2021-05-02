@@ -30,7 +30,7 @@ package dsm.TRADES;
  * @model
  * @generated
  */
-public interface Analysis extends ComponentOwner, DataOwnerElement, NamedElement, AbstractControlOwner {
+public interface Analysis extends ComponentOwner, DataOwnerElement, NamedElement, AbstractControlOwner, LinkTypeOwner {
 	/**
 	 * Returns the value of the '<em><b>Score System</b></em>' containment reference.
 	 * <!-- begin-user-doc -->

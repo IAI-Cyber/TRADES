@@ -109,6 +109,7 @@ public class ComponentItemProvider extends ComponentOwnerItemProvider {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(TRADESPackage.Literals.DATA_OWNER_ELEMENT__DATA_OWNER);
 			childrenFeatures.add(TRADESPackage.Literals.ABSTRACT_CONTROL_OWNER__CONTROL_OWNER);
+			childrenFeatures.add(TRADESPackage.Literals.LINK_OWNER__LINK);
 			childrenFeatures.add(TRADESPackage.Literals.COMPONENT__THREAT_ALLOCATIONS);
 			childrenFeatures.add(TRADESPackage.Literals.COMPONENT__AFFECT_RELATIONS);
 		}
@@ -179,6 +180,7 @@ public class ComponentItemProvider extends ComponentOwnerItemProvider {
 			return;
 		case TRADESPackage.COMPONENT__DATA_OWNER:
 		case TRADESPackage.COMPONENT__CONTROL_OWNER:
+		case TRADESPackage.COMPONENT__LINK:
 		case TRADESPackage.COMPONENT__THREAT_ALLOCATIONS:
 		case TRADESPackage.COMPONENT__AFFECT_RELATIONS:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
@@ -203,6 +205,9 @@ public class ComponentItemProvider extends ComponentOwnerItemProvider {
 
 		newChildDescriptors.add(createChildParameter(TRADESPackage.Literals.ABSTRACT_CONTROL_OWNER__CONTROL_OWNER,
 				TRADESFactory.eINSTANCE.createControlOwner()));
+
+		newChildDescriptors.add(
+				createChildParameter(TRADESPackage.Literals.LINK_OWNER__LINK, TRADESFactory.eINSTANCE.createLink()));
 
 		newChildDescriptors.add(createChildParameter(TRADESPackage.Literals.COMPONENT__THREAT_ALLOCATIONS,
 				TRADESFactory.eINSTANCE.createThreatAllocationRelation()));

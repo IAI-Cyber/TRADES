@@ -20,11 +20,14 @@ import dsm.TRADES.ControlOwner;
 import dsm.TRADES.Data;
 import dsm.TRADES.DataOwner;
 import dsm.TRADES.DataOwnerElement;
+import dsm.TRADES.LinkType;
+import dsm.TRADES.LinkTypeOwner;
 import dsm.TRADES.NamedElement;
 import dsm.TRADES.ScoreSystem;
 import dsm.TRADES.TRADESPackage;
 import dsm.TRADES.ThreatsOwner;
 import java.lang.reflect.InvocationTargetException;
+import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -34,6 +37,8 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -46,6 +51,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getDataOwner <em>Data Owner</em>}</li>
  *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getName <em>Name</em>}</li>
  *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getControlOwner <em>Control Owner</em>}</li>
+ *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getLinktype <em>Linktype</em>}</li>
  *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getScoreSystem <em>Score System</em>}</li>
  *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getThreatOwner <em>Threat Owner</em>}</li>
  * </ul>
@@ -92,6 +98,16 @@ public class AnalysisImpl extends ComponentOwnerImpl implements Analysis {
 	 * @ordered
 	 */
 	protected ControlOwner controlOwner;
+
+	/**
+	 * The cached value of the '{@link #getLinktype() <em>Linktype</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLinktype()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<LinkType> linktype;
 
 	/**
 	 * The cached value of the '{@link #getScoreSystem() <em>Score System</em>}' containment reference.
@@ -265,6 +281,19 @@ public class AnalysisImpl extends ComponentOwnerImpl implements Analysis {
 	 * @generated
 	 */
 	@Override
+	public EList<LinkType> getLinktype() {
+		if (linktype == null) {
+			linktype = new EObjectContainmentEList<LinkType>(LinkType.class, this, TRADESPackage.ANALYSIS__LINKTYPE);
+		}
+		return linktype;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public ScoreSystem getScoreSystem() {
 		return scoreSystem;
 	}
@@ -423,6 +452,8 @@ public class AnalysisImpl extends ComponentOwnerImpl implements Analysis {
 			return basicSetDataOwner(null, msgs);
 		case TRADESPackage.ANALYSIS__CONTROL_OWNER:
 			return basicSetControlOwner(null, msgs);
+		case TRADESPackage.ANALYSIS__LINKTYPE:
+			return ((InternalEList<?>) getLinktype()).basicRemove(otherEnd, msgs);
 		case TRADESPackage.ANALYSIS__SCORE_SYSTEM:
 			return basicSetScoreSystem(null, msgs);
 		case TRADESPackage.ANALYSIS__THREAT_OWNER:
@@ -445,6 +476,8 @@ public class AnalysisImpl extends ComponentOwnerImpl implements Analysis {
 			return getName();
 		case TRADESPackage.ANALYSIS__CONTROL_OWNER:
 			return getControlOwner();
+		case TRADESPackage.ANALYSIS__LINKTYPE:
+			return getLinktype();
 		case TRADESPackage.ANALYSIS__SCORE_SYSTEM:
 			return getScoreSystem();
 		case TRADESPackage.ANALYSIS__THREAT_OWNER:
@@ -470,6 +503,10 @@ public class AnalysisImpl extends ComponentOwnerImpl implements Analysis {
 			return;
 		case TRADESPackage.ANALYSIS__CONTROL_OWNER:
 			setControlOwner((ControlOwner) newValue);
+			return;
+		case TRADESPackage.ANALYSIS__LINKTYPE:
+			getLinktype().clear();
+			getLinktype().addAll((Collection<? extends LinkType>) newValue);
 			return;
 		case TRADESPackage.ANALYSIS__SCORE_SYSTEM:
 			setScoreSystem((ScoreSystem) newValue);
@@ -498,6 +535,9 @@ public class AnalysisImpl extends ComponentOwnerImpl implements Analysis {
 		case TRADESPackage.ANALYSIS__CONTROL_OWNER:
 			setControlOwner((ControlOwner) null);
 			return;
+		case TRADESPackage.ANALYSIS__LINKTYPE:
+			getLinktype().clear();
+			return;
 		case TRADESPackage.ANALYSIS__SCORE_SYSTEM:
 			setScoreSystem((ScoreSystem) null);
 			return;
@@ -522,6 +562,8 @@ public class AnalysisImpl extends ComponentOwnerImpl implements Analysis {
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		case TRADESPackage.ANALYSIS__CONTROL_OWNER:
 			return controlOwner != null;
+		case TRADESPackage.ANALYSIS__LINKTYPE:
+			return linktype != null && !linktype.isEmpty();
 		case TRADESPackage.ANALYSIS__SCORE_SYSTEM:
 			return scoreSystem != null;
 		case TRADESPackage.ANALYSIS__THREAT_OWNER:
@@ -561,6 +603,14 @@ public class AnalysisImpl extends ComponentOwnerImpl implements Analysis {
 				return -1;
 			}
 		}
+		if (baseClass == LinkTypeOwner.class) {
+			switch (derivedFeatureID) {
+			case TRADESPackage.ANALYSIS__LINKTYPE:
+				return TRADESPackage.LINK_TYPE_OWNER__LINKTYPE;
+			default:
+				return -1;
+			}
+		}
 		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
 	}
 
@@ -591,6 +641,14 @@ public class AnalysisImpl extends ComponentOwnerImpl implements Analysis {
 			switch (baseFeatureID) {
 			case TRADESPackage.ABSTRACT_CONTROL_OWNER__CONTROL_OWNER:
 				return TRADESPackage.ANALYSIS__CONTROL_OWNER;
+			default:
+				return -1;
+			}
+		}
+		if (baseClass == LinkTypeOwner.class) {
+			switch (baseFeatureID) {
+			case TRADESPackage.LINK_TYPE_OWNER__LINKTYPE:
+				return TRADESPackage.ANALYSIS__LINKTYPE;
 			default:
 				return -1;
 			}
@@ -627,6 +685,12 @@ public class AnalysisImpl extends ComponentOwnerImpl implements Analysis {
 			switch (baseOperationID) {
 			case TRADESPackage.ABSTRACT_CONTROL_OWNER___GET_ALL_CONTROLS:
 				return TRADESPackage.ANALYSIS___GET_ALL_CONTROLS;
+			default:
+				return -1;
+			}
+		}
+		if (baseClass == LinkTypeOwner.class) {
+			switch (baseOperationID) {
 			default:
 				return -1;
 			}

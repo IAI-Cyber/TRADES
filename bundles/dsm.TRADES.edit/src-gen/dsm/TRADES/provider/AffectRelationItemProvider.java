@@ -59,6 +59,7 @@ public class AffectRelationItemProvider extends NamedElementItemProvider {
 			addSourceComponentPropertyDescriptor(object);
 			addTargetComponentPropertyDescriptor(object);
 			addAnalysisStatusPropertyDescriptor(object);
+			addLinkPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -122,6 +123,21 @@ public class AffectRelationItemProvider extends NamedElementItemProvider {
 								"_UI_AffectRelation_type"),
 						TRADESPackage.Literals.AFFECT_RELATION__ANALYSIS_STATUS, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Link feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addLinkPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_AffectRelation_link_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_AffectRelation_link_feature",
+								"_UI_AffectRelation_type"),
+						TRADESPackage.Literals.AFFECT_RELATION__LINK, true, false, true, null, null, null));
 	}
 
 	/**

@@ -177,6 +177,14 @@ public class TRADESValidator extends EObjectValidator {
 			return validateAbstractControlOwner((AbstractControlOwner) value, diagnostics, context);
 		case TRADESPackage.DATA_OWNER:
 			return validateDataOwner((DataOwner) value, diagnostics, context);
+		case TRADESPackage.LINK:
+			return validateLink((Link) value, diagnostics, context);
+		case TRADESPackage.LINK_OWNER:
+			return validateLinkOwner((LinkOwner) value, diagnostics, context);
+		case TRADESPackage.LINK_TYPE:
+			return validateLinkType((LinkType) value, diagnostics, context);
+		case TRADESPackage.LINK_TYPE_OWNER:
+			return validateLinkTypeOwner((LinkTypeOwner) value, diagnostics, context);
 		case TRADESPackage.ASSESSMENT_ENUM:
 			return validateAssessmentENUM((AssessmentENUM) value, diagnostics, context);
 		case TRADESPackage.AFFECTED_ENUM:
@@ -564,6 +572,43 @@ public class TRADESValidator extends EObjectValidator {
 	 */
 	public boolean validateDataOwner(DataOwner dataOwner, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(dataOwner, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateLink(Link link, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(link, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateLinkOwner(LinkOwner linkOwner, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(linkOwner, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateLinkType(LinkType linkType, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(linkType, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateLinkTypeOwner(LinkTypeOwner linkTypeOwner, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(linkTypeOwner, diagnostics, context);
 	}
 
 	/**

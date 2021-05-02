@@ -539,6 +539,98 @@ public class TRADESItemProviderAdapterFactory extends TRADESAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link dsm.TRADES.Link} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected LinkItemProvider linkItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link dsm.TRADES.Link}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createLinkAdapter() {
+		if (linkItemProvider == null) {
+			linkItemProvider = new LinkItemProvider(this);
+		}
+
+		return linkItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link dsm.TRADES.LinkOwner} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected LinkOwnerItemProvider linkOwnerItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link dsm.TRADES.LinkOwner}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createLinkOwnerAdapter() {
+		if (linkOwnerItemProvider == null) {
+			linkOwnerItemProvider = new LinkOwnerItemProvider(this);
+		}
+
+		return linkOwnerItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link dsm.TRADES.LinkType} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected LinkTypeItemProvider linkTypeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link dsm.TRADES.LinkType}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createLinkTypeAdapter() {
+		if (linkTypeItemProvider == null) {
+			linkTypeItemProvider = new LinkTypeItemProvider(this);
+		}
+
+		return linkTypeItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link dsm.TRADES.LinkTypeOwner} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected LinkTypeOwnerItemProvider linkTypeOwnerItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link dsm.TRADES.LinkTypeOwner}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createLinkTypeOwnerAdapter() {
+		if (linkTypeOwnerItemProvider == null) {
+			linkTypeOwnerItemProvider = new LinkTypeOwnerItemProvider(this);
+		}
+
+		return linkTypeOwnerItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -708,6 +800,14 @@ public class TRADESItemProviderAdapterFactory extends TRADESAdapterFactory
 			controlOwnerItemProvider.dispose();
 		if (dataOwnerItemProvider != null)
 			dataOwnerItemProvider.dispose();
+		if (linkItemProvider != null)
+			linkItemProvider.dispose();
+		if (linkOwnerItemProvider != null)
+			linkOwnerItemProvider.dispose();
+		if (linkTypeItemProvider != null)
+			linkTypeItemProvider.dispose();
+		if (linkTypeOwnerItemProvider != null)
+			linkTypeOwnerItemProvider.dispose();
 	}
 
 }

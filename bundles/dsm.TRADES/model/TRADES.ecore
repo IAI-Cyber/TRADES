@@ -4,7 +4,7 @@
   <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
     <details key="documentation" value="TRADES model, by Israel Aerospace Industries. All rights reserved.&#xD;&#xA;&#xD;&#xA;The TRADES model, based on Threat and Risk assessment ontology and the TRADES model-based methodology."/>
   </eAnnotations>
-  <eClassifiers xsi:type="ecore:EClass" name="Analysis" eSuperTypes="#//ComponentOwner #//DataOwnerElement #//NamedElement #//AbstractControlOwner">
+  <eClassifiers xsi:type="ecore:EClass" name="Analysis" eSuperTypes="#//ComponentOwner #//DataOwnerElement #//NamedElement #//AbstractControlOwner #//LinkTypeOwner">
     <eStructuralFeatures xsi:type="ecore:EReference" name="scoreSystem" eType="#//ScoreSystem"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="threatOwner" lowerBound="1"
@@ -22,7 +22,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="applicability" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Component" eSuperTypes="#//ComponentOwner #//DataOwnerElement #//NamedElement #//AbstractControlOwner">
+  <eClassifiers xsi:type="ecore:EClass" name="Component" eSuperTypes="#//ComponentOwner #//DataOwnerElement #//NamedElement #//AbstractControlOwner #//LinkOwner">
     <eStructuralFeatures xsi:type="ecore:EReference" name="threatAllocations" upperBound="-1"
         eType="#//ThreatAllocationRelation" containment="true" eOpposite="#//ThreatAllocationRelation/component"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="affectRelations" upperBound="-1"
@@ -86,6 +86,7 @@
         eType="#//Component"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="analysisStatus" lowerBound="1"
         eType="#//AffectedENUM" defaultValueLiteral="Confirmed"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="link" eType="#//Link" eOpposite="#//Link/affectRelations"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="AffectedENUM">
     <eLiterals name="Undecided"/>
@@ -190,5 +191,20 @@
     <eLiterals name="Agreed" value="1"/>
     <eLiterals name="Implemented" value="2"/>
     <eLiterals name="Rejected" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Link" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="affectRelations" upperBound="-1"
+        eType="#//AffectRelation" eOpposite="#//AffectRelation/link"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="linktype" lowerBound="1"
+        eType="#//LinkType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LinkOwner">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="link" upperBound="-1" eType="#//Link"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LinkType" eSuperTypes="#//NamedElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="LinkTypeOwner">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="linktype" upperBound="-1"
+        eType="#//LinkType" containment="true"/>
   </eClassifiers>
 </ecore:EPackage>

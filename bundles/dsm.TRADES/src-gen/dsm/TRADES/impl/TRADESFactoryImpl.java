@@ -106,6 +106,14 @@ public class TRADESFactoryImpl extends EFactoryImpl implements TRADESFactory {
 			return createControlOwner();
 		case TRADESPackage.DATA_OWNER:
 			return createDataOwner();
+		case TRADESPackage.LINK:
+			return createLink();
+		case TRADESPackage.LINK_OWNER:
+			return createLinkOwner();
+		case TRADESPackage.LINK_TYPE:
+			return createLinkType();
+		case TRADESPackage.LINK_TYPE_OWNER:
+			return createLinkTypeOwner();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -364,6 +372,50 @@ public class TRADESFactoryImpl extends EFactoryImpl implements TRADESFactory {
 	public DataOwner createDataOwner() {
 		DataOwnerImpl dataOwner = new DataOwnerImpl();
 		return dataOwner;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Link createLink() {
+		LinkImpl link = new LinkImpl();
+		return link;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public LinkOwner createLinkOwner() {
+		LinkOwnerImpl linkOwner = new LinkOwnerImpl();
+		return linkOwner;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public LinkType createLinkType() {
+		LinkTypeImpl linkType = new LinkTypeImpl();
+		return linkType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public LinkTypeOwner createLinkTypeOwner() {
+		LinkTypeOwnerImpl linkTypeOwner = new LinkTypeOwnerImpl();
+		return linkTypeOwner;
 	}
 
 	/**
