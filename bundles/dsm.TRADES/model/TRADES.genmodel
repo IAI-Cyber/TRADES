@@ -24,6 +24,12 @@
       <genEnumLiterals ecoreEnumLiteral="TRADES.ecore#//threatTypeENUM/ConcreteThreat"/>
       <genEnumLiterals ecoreEnumLiteral="TRADES.ecore#//threatTypeENUM/ConceptualThreat"/>
     </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="TRADES.ecore#//ContrlStatusENUM">
+      <genEnumLiterals ecoreEnumLiteral="TRADES.ecore#//ContrlStatusENUM/Proposed"/>
+      <genEnumLiterals ecoreEnumLiteral="TRADES.ecore#//ContrlStatusENUM/Agreed"/>
+      <genEnumLiterals ecoreEnumLiteral="TRADES.ecore#//ContrlStatusENUM/Implemented"/>
+      <genEnumLiterals ecoreEnumLiteral="TRADES.ecore#//ContrlStatusENUM/Rejected"/>
+    </genEnums>
     <genDataTypes ecoreDataType="TRADES.ecore#//RGBColor" create="return RGBColor.decode(it);"
         convert="return it == null ? &quot;&quot; : it.encode();"/>
     <genClasses ecoreClass="TRADES.ecore#//Analysis">
@@ -50,6 +56,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Control/id"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Control/description"/>
       <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference TRADES.ecore#//Control/mitigationRelations"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//Control/status"/>
     </genClasses>
     <genClasses ecoreClass="TRADES.ecore#//ThreatAllocationRelation">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//ThreatAllocationRelation/assessment"/>

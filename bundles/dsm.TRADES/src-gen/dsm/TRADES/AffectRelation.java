@@ -98,6 +98,7 @@ public interface AffectRelation extends NamedElement {
 
 	/**
 	 * Returns the value of the '<em><b>Analysis Status</b></em>' attribute.
+	 * The default value is <code>"Confirmed"</code>.
 	 * The literals are from the enumeration {@link dsm.TRADES.AffectedENUM}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -105,7 +106,7 @@ public interface AffectRelation extends NamedElement {
 	 * @see dsm.TRADES.AffectedENUM
 	 * @see #setAnalysisStatus(AffectedENUM)
 	 * @see dsm.TRADES.TRADESPackage#getAffectRelation_AnalysisStatus()
-	 * @model required="true"
+	 * @model default="Confirmed" required="true"
 	 * @generated
 	 */
 	AffectedENUM getAnalysisStatus();

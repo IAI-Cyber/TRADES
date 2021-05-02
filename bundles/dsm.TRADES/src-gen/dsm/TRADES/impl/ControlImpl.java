@@ -13,6 +13,7 @@
  */
 package dsm.TRADES.impl;
 
+import dsm.TRADES.ContrlStatusENUM;
 import dsm.TRADES.Control;
 import dsm.TRADES.TRADESPackage;
 import dsm.TRADES.Threat;
@@ -46,6 +47,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dsm.TRADES.impl.ControlImpl#getId <em>Id</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ControlImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ControlImpl#getMitigationRelations <em>Mitigation Relations</em>}</li>
+ *   <li>{@link dsm.TRADES.impl.ControlImpl#getStatus <em>Status</em>}</li>
  * </ul>
  *
  * @generated
@@ -110,6 +112,26 @@ public class ControlImpl extends NamedElementImpl implements Control {
 	 * @ordered
 	 */
 	protected EList<ThreatMitigationRelation> mitigationRelations;
+
+	/**
+	 * The default value of the '{@link #getStatus() <em>Status</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStatus()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final ContrlStatusENUM STATUS_EDEFAULT = ContrlStatusENUM.PROPOSED;
+
+	/**
+	 * The cached value of the '{@link #getStatus() <em>Status</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStatus()
+	 * @generated
+	 * @ordered
+	 */
+	protected ContrlStatusENUM status = STATUS_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -211,6 +233,29 @@ public class ControlImpl extends NamedElementImpl implements Control {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public ContrlStatusENUM getStatus() {
+		return status;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setStatus(ContrlStatusENUM newStatus) {
+		ContrlStatusENUM oldStatus = status;
+		status = newStatus == null ? STATUS_EDEFAULT : newStatus;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TRADESPackage.CONTROL__STATUS, oldStatus, status));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -252,6 +297,8 @@ public class ControlImpl extends NamedElementImpl implements Control {
 			return getDescription();
 		case TRADESPackage.CONTROL__MITIGATION_RELATIONS:
 			return getMitigationRelations();
+		case TRADESPackage.CONTROL__STATUS:
+			return getStatus();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -279,6 +326,9 @@ public class ControlImpl extends NamedElementImpl implements Control {
 			getMitigationRelations().clear();
 			getMitigationRelations().addAll((Collection<? extends ThreatMitigationRelation>) newValue);
 			return;
+		case TRADESPackage.CONTROL__STATUS:
+			setStatus((ContrlStatusENUM) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -303,6 +353,9 @@ public class ControlImpl extends NamedElementImpl implements Control {
 		case TRADESPackage.CONTROL__MITIGATION_RELATIONS:
 			getMitigationRelations().clear();
 			return;
+		case TRADESPackage.CONTROL__STATUS:
+			setStatus(STATUS_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -323,6 +376,8 @@ public class ControlImpl extends NamedElementImpl implements Control {
 			return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 		case TRADESPackage.CONTROL__MITIGATION_RELATIONS:
 			return mitigationRelations != null && !mitigationRelations.isEmpty();
+		case TRADESPackage.CONTROL__STATUS:
+			return status != STATUS_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -342,6 +397,8 @@ public class ControlImpl extends NamedElementImpl implements Control {
 		result.append(id);
 		result.append(", description: ");
 		result.append(description);
+		result.append(", status: ");
+		result.append(status);
 		result.append(')');
 		return result.toString();
 	}

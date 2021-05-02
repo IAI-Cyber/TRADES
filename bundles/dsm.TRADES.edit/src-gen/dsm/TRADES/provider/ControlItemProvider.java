@@ -62,6 +62,7 @@ public class ControlItemProvider extends NamedElementItemProvider {
 			addIdPropertyDescriptor(object);
 			addDescriptionPropertyDescriptor(object);
 			addMitigationRelationsPropertyDescriptor(object);
+			addStatusPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -125,6 +126,22 @@ public class ControlItemProvider extends NamedElementItemProvider {
 						getString("_UI_PropertyDescriptor_description", "_UI_Control_mitigationRelations_feature",
 								"_UI_Control_type"),
 						TRADESPackage.Literals.CONTROL__MITIGATION_RELATIONS, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Status feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addStatusPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Control_status_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Control_status_feature",
+								"_UI_Control_type"),
+						TRADESPackage.Literals.CONTROL__STATUS, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -205,6 +222,7 @@ public class ControlItemProvider extends NamedElementItemProvider {
 		switch (notification.getFeatureID(Control.class)) {
 		case TRADESPackage.CONTROL__ID:
 		case TRADESPackage.CONTROL__DESCRIPTION:
+		case TRADESPackage.CONTROL__STATUS:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		case TRADESPackage.CONTROL__MITIGATION_RELATIONS:

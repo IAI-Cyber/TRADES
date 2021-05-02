@@ -90,7 +90,7 @@ public class AffectRelationImpl extends NamedElementImpl implements AffectRelati
 	 * @generated
 	 * @ordered
 	 */
-	protected static final AffectedENUM ANALYSIS_STATUS_EDEFAULT = AffectedENUM.UNDECIDED;
+	protected static final AffectedENUM ANALYSIS_STATUS_EDEFAULT = AffectedENUM.CONFIRMED;
 
 	/**
 	 * The cached value of the '{@link #getAnalysisStatus() <em>Analysis Status</em>}' attribute.

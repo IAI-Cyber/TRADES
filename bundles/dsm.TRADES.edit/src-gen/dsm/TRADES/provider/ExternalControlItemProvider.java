@@ -63,6 +63,7 @@ public class ExternalControlItemProvider extends ExternalElementItemProvider {
 			addIdPropertyDescriptor(object);
 			addDescriptionPropertyDescriptor(object);
 			addMitigationRelationsPropertyDescriptor(object);
+			addStatusPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -145,6 +146,22 @@ public class ExternalControlItemProvider extends ExternalElementItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Status feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addStatusPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Control_status_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Control_status_feature",
+								"_UI_Control_type"),
+						TRADESPackage.Literals.CONTROL__STATUS, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -223,6 +240,7 @@ public class ExternalControlItemProvider extends ExternalElementItemProvider {
 		case TRADESPackage.EXTERNAL_CONTROL__NAME:
 		case TRADESPackage.EXTERNAL_CONTROL__ID:
 		case TRADESPackage.EXTERNAL_CONTROL__DESCRIPTION:
+		case TRADESPackage.EXTERNAL_CONTROL__STATUS:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		case TRADESPackage.EXTERNAL_CONTROL__MITIGATION_RELATIONS:

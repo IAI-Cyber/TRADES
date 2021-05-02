@@ -22,6 +22,7 @@ import dsm.TRADES.AttackChain;
 import dsm.TRADES.AttackChainStep;
 import dsm.TRADES.Component;
 import dsm.TRADES.ComponentOwner;
+import dsm.TRADES.ContrlStatusENUM;
 import dsm.TRADES.Control;
 import dsm.TRADES.ControlOwner;
 import dsm.TRADES.Data;
@@ -251,6 +252,13 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * @generated
 	 */
 	private EEnum threatTypeENUMEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum contrlStatusENUMEEnum = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -509,6 +517,16 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	@Override
 	public EReference getControl_MitigationRelations() {
 		return (EReference) controlEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getControl_Status() {
+		return (EAttribute) controlEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -1237,6 +1255,16 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * @generated
 	 */
 	@Override
+	public EEnum getContrlStatusENUM() {
+		return contrlStatusENUMEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EDataType getRGBColor() {
 		return rgbColorEDataType;
 	}
@@ -1292,6 +1320,7 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		createEAttribute(controlEClass, CONTROL__ID);
 		createEAttribute(controlEClass, CONTROL__DESCRIPTION);
 		createEReference(controlEClass, CONTROL__MITIGATION_RELATIONS);
+		createEAttribute(controlEClass, CONTROL__STATUS);
 
 		threatAllocationRelationEClass = createEClass(THREAT_ALLOCATION_RELATION);
 		createEAttribute(threatAllocationRelationEClass, THREAT_ALLOCATION_RELATION__ASSESSMENT);
@@ -1387,6 +1416,7 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		assessmentENUMEEnum = createEEnum(ASSESSMENT_ENUM);
 		affectedENUMEEnum = createEEnum(AFFECTED_ENUM);
 		threatTypeENUMEEnum = createEEnum(THREAT_TYPE_ENUM);
+		contrlStatusENUMEEnum = createEEnum(CONTRL_STATUS_ENUM);
 
 		// Create data types
 		rgbColorEDataType = createEDataType(RGB_COLOR);
@@ -1494,6 +1524,8 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 				this.getThreatMitigationRelation_Control(), "mitigationRelations", null, 0, -1, Control.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getControl_Status(), this.getContrlStatusENUM(), "status", null, 0, 1, Control.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(threatAllocationRelationEClass, ThreatAllocationRelation.class, "ThreatAllocationRelation",
 				!IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1553,7 +1585,7 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		initEReference(getAffectRelation_TargetComponent(), this.getComponent(), null, "targetComponent", null, 1, 1,
 				AffectRelation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAffectRelation_AnalysisStatus(), this.getAffectedENUM(), "analysisStatus", null, 1, 1,
+		initEAttribute(getAffectRelation_AnalysisStatus(), this.getAffectedENUM(), "analysisStatus", "Confirmed", 1, 1,
 				AffectRelation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
 
@@ -1717,6 +1749,12 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		initEEnum(threatTypeENUMEEnum, threatTypeENUM.class, "threatTypeENUM");
 		addEEnumLiteral(threatTypeENUMEEnum, threatTypeENUM.CONCRETE_THREAT);
 		addEEnumLiteral(threatTypeENUMEEnum, threatTypeENUM.CONCEPTUAL_THREAT);
+
+		initEEnum(contrlStatusENUMEEnum, ContrlStatusENUM.class, "ContrlStatusENUM");
+		addEEnumLiteral(contrlStatusENUMEEnum, ContrlStatusENUM.PROPOSED);
+		addEEnumLiteral(contrlStatusENUMEEnum, ContrlStatusENUM.AGREED);
+		addEEnumLiteral(contrlStatusENUMEEnum, ContrlStatusENUM.IMPLEMENTED);
+		addEEnumLiteral(contrlStatusENUMEEnum, ContrlStatusENUM.REJECTED);
 
 		// Initialize data types
 		initEDataType(rgbColorEDataType, RGBColor.class, "RGBColor", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);

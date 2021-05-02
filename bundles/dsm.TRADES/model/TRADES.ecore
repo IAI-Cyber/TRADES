@@ -35,6 +35,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="mitigationRelations" upperBound="-1"
         eType="#//ThreatMitigationRelation" containment="true" eOpposite="#//ThreatMitigationRelation/control"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="status" eType="#//ContrlStatusENUM"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ThreatAllocationRelation">
     <eOperations name="checkComputedDifficultyConstraint" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
@@ -84,7 +85,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="targetComponent" lowerBound="1"
         eType="#//Component"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="analysisStatus" lowerBound="1"
-        eType="#//AffectedENUM"/>
+        eType="#//AffectedENUM" defaultValueLiteral="Confirmed"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="AffectedENUM">
     <eLiterals name="Undecided"/>
@@ -183,5 +184,11 @@
   <eClassifiers xsi:type="ecore:EClass" name="DataOwner">
     <eStructuralFeatures xsi:type="ecore:EReference" name="data" upperBound="-1" eType="#//Data"
         containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ContrlStatusENUM">
+    <eLiterals name="Proposed"/>
+    <eLiterals name="Agreed" value="1"/>
+    <eLiterals name="Implemented" value="2"/>
+    <eLiterals name="Rejected" value="3"/>
   </eClassifiers>
 </ecore:EPackage>

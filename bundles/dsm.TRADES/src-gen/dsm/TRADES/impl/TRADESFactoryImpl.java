@@ -125,6 +125,8 @@ public class TRADESFactoryImpl extends EFactoryImpl implements TRADESFactory {
 			return createAffectedENUMFromString(eDataType, initialValue);
 		case TRADESPackage.THREAT_TYPE_ENUM:
 			return createthreatTypeENUMFromString(eDataType, initialValue);
+		case TRADESPackage.CONTRL_STATUS_ENUM:
+			return createContrlStatusENUMFromString(eDataType, initialValue);
 		case TRADESPackage.RGB_COLOR:
 			return createRGBColorFromString(eDataType, initialValue);
 		default:
@@ -146,6 +148,8 @@ public class TRADESFactoryImpl extends EFactoryImpl implements TRADESFactory {
 			return convertAffectedENUMToString(eDataType, instanceValue);
 		case TRADESPackage.THREAT_TYPE_ENUM:
 			return convertthreatTypeENUMToString(eDataType, instanceValue);
+		case TRADESPackage.CONTRL_STATUS_ENUM:
+			return convertContrlStatusENUMToString(eDataType, instanceValue);
 		case TRADESPackage.RGB_COLOR:
 			return convertRGBColorToString(eDataType, instanceValue);
 		default:
@@ -425,6 +429,28 @@ public class TRADESFactoryImpl extends EFactoryImpl implements TRADESFactory {
 	 * @generated
 	 */
 	public String convertthreatTypeENUMToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ContrlStatusENUM createContrlStatusENUMFromString(EDataType eDataType, String initialValue) {
+		ContrlStatusENUM result = ContrlStatusENUM.get(initialValue);
+		if (result == null)
+			throw new IllegalArgumentException(
+					"The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertContrlStatusENUMToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

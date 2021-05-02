@@ -28,6 +28,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link dsm.TRADES.Control#getId <em>Id</em>}</li>
  *   <li>{@link dsm.TRADES.Control#getDescription <em>Description</em>}</li>
  *   <li>{@link dsm.TRADES.Control#getMitigationRelations <em>Mitigation Relations</em>}</li>
+ *   <li>{@link dsm.TRADES.Control#getStatus <em>Status</em>}</li>
  * </ul>
  *
  * @see dsm.TRADES.TRADESPackage#getControl()
@@ -104,5 +105,30 @@ public interface Control extends NamedElement {
 	 * @generated
 	 */
 	EList<ThreatMitigationRelation> getMitigationRelations();
+
+	/**
+	 * Returns the value of the '<em><b>Status</b></em>' attribute.
+	 * The literals are from the enumeration {@link dsm.TRADES.ContrlStatusENUM}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Status</em>' attribute.
+	 * @see dsm.TRADES.ContrlStatusENUM
+	 * @see #setStatus(ContrlStatusENUM)
+	 * @see dsm.TRADES.TRADESPackage#getControl_Status()
+	 * @model
+	 * @generated
+	 */
+	ContrlStatusENUM getStatus();
+
+	/**
+	 * Sets the value of the '{@link dsm.TRADES.Control#getStatus <em>Status</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Status</em>' attribute.
+	 * @see dsm.TRADES.ContrlStatusENUM
+	 * @see #getStatus()
+	 * @generated
+	 */
+	void setStatus(ContrlStatusENUM value);
 
 } // Control

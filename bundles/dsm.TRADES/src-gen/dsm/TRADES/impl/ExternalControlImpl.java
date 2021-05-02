@@ -13,6 +13,7 @@
  */
 package dsm.TRADES.impl;
 
+import dsm.TRADES.ContrlStatusENUM;
 import dsm.TRADES.Control;
 import dsm.TRADES.ExternalControl;
 import dsm.TRADES.NamedElement;
@@ -49,6 +50,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dsm.TRADES.impl.ExternalControlImpl#getId <em>Id</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ExternalControlImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ExternalControlImpl#getMitigationRelations <em>Mitigation Relations</em>}</li>
+ *   <li>{@link dsm.TRADES.impl.ExternalControlImpl#getStatus <em>Status</em>}</li>
  * </ul>
  *
  * @generated
@@ -133,6 +135,26 @@ public class ExternalControlImpl extends ExternalElementImpl implements External
 	 * @ordered
 	 */
 	protected EList<ThreatMitigationRelation> mitigationRelations;
+
+	/**
+	 * The default value of the '{@link #getStatus() <em>Status</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStatus()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final ContrlStatusENUM STATUS_EDEFAULT = ContrlStatusENUM.PROPOSED;
+
+	/**
+	 * The cached value of the '{@link #getStatus() <em>Status</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStatus()
+	 * @generated
+	 * @ordered
+	 */
+	protected ContrlStatusENUM status = STATUS_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -257,6 +279,30 @@ public class ExternalControlImpl extends ExternalElementImpl implements External
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public ContrlStatusENUM getStatus() {
+		return status;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setStatus(ContrlStatusENUM newStatus) {
+		ContrlStatusENUM oldStatus = status;
+		status = newStatus == null ? STATUS_EDEFAULT : newStatus;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TRADESPackage.EXTERNAL_CONTROL__STATUS, oldStatus,
+					status));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -300,6 +346,8 @@ public class ExternalControlImpl extends ExternalElementImpl implements External
 			return getDescription();
 		case TRADESPackage.EXTERNAL_CONTROL__MITIGATION_RELATIONS:
 			return getMitigationRelations();
+		case TRADESPackage.EXTERNAL_CONTROL__STATUS:
+			return getStatus();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -330,6 +378,9 @@ public class ExternalControlImpl extends ExternalElementImpl implements External
 			getMitigationRelations().clear();
 			getMitigationRelations().addAll((Collection<? extends ThreatMitigationRelation>) newValue);
 			return;
+		case TRADESPackage.EXTERNAL_CONTROL__STATUS:
+			setStatus((ContrlStatusENUM) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -357,6 +408,9 @@ public class ExternalControlImpl extends ExternalElementImpl implements External
 		case TRADESPackage.EXTERNAL_CONTROL__MITIGATION_RELATIONS:
 			getMitigationRelations().clear();
 			return;
+		case TRADESPackage.EXTERNAL_CONTROL__STATUS:
+			setStatus(STATUS_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -379,6 +433,8 @@ public class ExternalControlImpl extends ExternalElementImpl implements External
 			return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 		case TRADESPackage.EXTERNAL_CONTROL__MITIGATION_RELATIONS:
 			return mitigationRelations != null && !mitigationRelations.isEmpty();
+		case TRADESPackage.EXTERNAL_CONTROL__STATUS:
+			return status != STATUS_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -408,6 +464,8 @@ public class ExternalControlImpl extends ExternalElementImpl implements External
 				return TRADESPackage.CONTROL__DESCRIPTION;
 			case TRADESPackage.EXTERNAL_CONTROL__MITIGATION_RELATIONS:
 				return TRADESPackage.CONTROL__MITIGATION_RELATIONS;
+			case TRADESPackage.EXTERNAL_CONTROL__STATUS:
+				return TRADESPackage.CONTROL__STATUS;
 			default:
 				return -1;
 			}
@@ -440,6 +498,8 @@ public class ExternalControlImpl extends ExternalElementImpl implements External
 				return TRADESPackage.EXTERNAL_CONTROL__DESCRIPTION;
 			case TRADESPackage.CONTROL__MITIGATION_RELATIONS:
 				return TRADESPackage.EXTERNAL_CONTROL__MITIGATION_RELATIONS;
+			case TRADESPackage.CONTROL__STATUS:
+				return TRADESPackage.EXTERNAL_CONTROL__STATUS;
 			default:
 				return -1;
 			}
@@ -464,6 +524,8 @@ public class ExternalControlImpl extends ExternalElementImpl implements External
 		result.append(id);
 		result.append(", description: ");
 		result.append(description);
+		result.append(", status: ");
+		result.append(status);
 		result.append(')');
 		return result.toString();
 	}

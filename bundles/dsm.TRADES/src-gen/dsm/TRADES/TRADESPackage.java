@@ -532,13 +532,22 @@ public interface TRADESPackage extends EPackage {
 	int CONTROL__MITIGATION_RELATIONS = NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
+	 * The feature id for the '<em><b>Status</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL__STATUS = NAMED_ELEMENT_FEATURE_COUNT + 4;
+
+	/**
 	 * The number of structural features of the '<em>Control</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 4;
+	int CONTROL_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of operations of the '<em>Control</em>' class.
@@ -1482,13 +1491,22 @@ public interface TRADESPackage extends EPackage {
 	int EXTERNAL_CONTROL__MITIGATION_RELATIONS = EXTERNAL_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
+	 * The feature id for the '<em><b>Status</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTERNAL_CONTROL__STATUS = EXTERNAL_ELEMENT_FEATURE_COUNT + 5;
+
+	/**
 	 * The number of structural features of the '<em>External Control</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXTERNAL_CONTROL_FEATURE_COUNT = EXTERNAL_ELEMENT_FEATURE_COUNT + 5;
+	int EXTERNAL_CONTROL_FEATURE_COUNT = EXTERNAL_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of operations of the '<em>External Control</em>' class.
@@ -1705,6 +1723,16 @@ public interface TRADESPackage extends EPackage {
 	int THREAT_TYPE_ENUM = 26;
 
 	/**
+	 * The meta object id for the '{@link dsm.TRADES.ContrlStatusENUM <em>Contrl Status ENUM</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see dsm.TRADES.ContrlStatusENUM
+	 * @see dsm.TRADES.impl.TRADESPackageImpl#getContrlStatusENUM()
+	 * @generated
+	 */
+	int CONTRL_STATUS_ENUM = 27;
+
+	/**
 	 * The meta object id for the '<em>RGB Color</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1712,7 +1740,7 @@ public interface TRADESPackage extends EPackage {
 	 * @see dsm.TRADES.impl.TRADESPackageImpl#getRGBColor()
 	 * @generated
 	 */
-	int RGB_COLOR = 27;
+	int RGB_COLOR = 28;
 
 	/**
 	 * Returns the meta object for class '{@link dsm.TRADES.Analysis <em>Analysis</em>}'.
@@ -1906,6 +1934,17 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getControl_MitigationRelations();
+
+	/**
+	 * Returns the meta object for the attribute '{@link dsm.TRADES.Control#getStatus <em>Status</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Status</em>'.
+	 * @see dsm.TRADES.Control#getStatus()
+	 * @see #getControl()
+	 * @generated
+	 */
+	EAttribute getControl_Status();
 
 	/**
 	 * Returns the meta object for class '{@link dsm.TRADES.ThreatAllocationRelation <em>Threat Allocation Relation</em>}'.
@@ -2669,6 +2708,16 @@ public interface TRADESPackage extends EPackage {
 	EEnum getthreatTypeENUM();
 
 	/**
+	 * Returns the meta object for enum '{@link dsm.TRADES.ContrlStatusENUM <em>Contrl Status ENUM</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Contrl Status ENUM</em>'.
+	 * @see dsm.TRADES.ContrlStatusENUM
+	 * @generated
+	 */
+	EEnum getContrlStatusENUM();
+
+	/**
 	 * Returns the meta object for data type '{@link dsm.TRADES.RGBColor <em>RGB Color</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2854,6 +2903,14 @@ public interface TRADESPackage extends EPackage {
 		 * @generated
 		 */
 		EReference CONTROL__MITIGATION_RELATIONS = eINSTANCE.getControl_MitigationRelations();
+
+		/**
+		 * The meta object literal for the '<em><b>Status</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CONTROL__STATUS = eINSTANCE.getControl_Status();
 
 		/**
 		 * The meta object literal for the '{@link dsm.TRADES.impl.ThreatAllocationRelationImpl <em>Threat Allocation Relation</em>}' class.
@@ -3483,6 +3540,16 @@ public interface TRADESPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum THREAT_TYPE_ENUM = eINSTANCE.getthreatTypeENUM();
+
+		/**
+		 * The meta object literal for the '{@link dsm.TRADES.ContrlStatusENUM <em>Contrl Status ENUM</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see dsm.TRADES.ContrlStatusENUM
+		 * @see dsm.TRADES.impl.TRADESPackageImpl#getContrlStatusENUM()
+		 * @generated
+		 */
+		EEnum CONTRL_STATUS_ENUM = eINSTANCE.getContrlStatusENUM();
 
 		/**
 		 * The meta object literal for the '<em>RGB Color</em>' data type.

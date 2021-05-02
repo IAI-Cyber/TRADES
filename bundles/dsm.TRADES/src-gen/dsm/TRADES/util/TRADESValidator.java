@@ -183,6 +183,8 @@ public class TRADESValidator extends EObjectValidator {
 			return validateAffectedENUM((AffectedENUM) value, diagnostics, context);
 		case TRADESPackage.THREAT_TYPE_ENUM:
 			return validatethreatTypeENUM((threatTypeENUM) value, diagnostics, context);
+		case TRADESPackage.CONTRL_STATUS_ENUM:
+			return validateContrlStatusENUM((ContrlStatusENUM) value, diagnostics, context);
 		case TRADESPackage.RGB_COLOR:
 			return validateRGBColor((RGBColor) value, diagnostics, context);
 		default:
@@ -590,6 +592,16 @@ public class TRADESValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validatethreatTypeENUM(threatTypeENUM threatTypeENUM, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
+		return true;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateContrlStatusENUM(ContrlStatusENUM contrlStatusENUM, DiagnosticChain diagnostics,
 			Map<Object, Object> context) {
 		return true;
 	}
