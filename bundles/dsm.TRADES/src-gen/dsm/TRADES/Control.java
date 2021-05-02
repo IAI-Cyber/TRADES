@@ -108,27 +108,27 @@ public interface Control extends NamedElement {
 
 	/**
 	 * Returns the value of the '<em><b>Status</b></em>' attribute.
-	 * The literals are from the enumeration {@link dsm.TRADES.ContrlStatusENUM}.
+	 * The literals are from the enumeration {@link dsm.TRADES.ControlStatusENUM}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Status</em>' attribute.
-	 * @see dsm.TRADES.ContrlStatusENUM
-	 * @see #setStatus(ContrlStatusENUM)
+	 * @see dsm.TRADES.ControlStatusENUM
+	 * @see #setStatus(ControlStatusENUM)
 	 * @see dsm.TRADES.TRADESPackage#getControl_Status()
 	 * @model
 	 * @generated
 	 */
-	ContrlStatusENUM getStatus();
+	ControlStatusENUM getStatus();
 
 	/**
 	 * Sets the value of the '{@link dsm.TRADES.Control#getStatus <em>Status</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Status</em>' attribute.
-	 * @see dsm.TRADES.ContrlStatusENUM
+	 * @see dsm.TRADES.ControlStatusENUM
 	 * @see #getStatus()
 	 * @generated
 	 */
-	void setStatus(ContrlStatusENUM value);
+	void setStatus(ControlStatusENUM value);
 
 } // Control

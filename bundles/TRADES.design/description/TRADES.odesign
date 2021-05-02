@@ -1161,7 +1161,7 @@
               </firstModelOperations>
             </initialOperation>
           </controls>
-          <controls xsi:type="properties:SelectDescription" name="ThreatTypeField" label="Threat Type" labelExpression="Treat Type" helpExpression="The type of the treat" isEnabledExpression="aql:self.oclIsTypeOf(TRADES::Threat)" valueExpression="aql:TRADES::threatTypeENUM.getEEnumLiteral(self.threatType.toString())" candidatesExpression="aql:TRADES::threatTypeENUM.eLiterals" candidateDisplayExpression="aql:candidate.name">
+          <controls xsi:type="properties:SelectDescription" name="ThreatTypeField" label="Threat Type" labelExpression="Threat Type" helpExpression="The type of the treat" isEnabledExpression="aql:self.oclIsTypeOf(TRADES::Threat)" valueExpression="aql:TRADES::threatTypeENUM.getEEnumLiteral(self.threatType.toString())" candidatesExpression="aql:TRADES::threatTypeENUM.eLiterals" candidateDisplayExpression="aql:candidate.name">
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
                 <subModelOperations xsi:type="tool_1:SetValue" featureName="threatType" valueExpression="aql:newValue.instance"/>
@@ -1185,7 +1185,14 @@
           </initialOperation>
         </controls>
       </groups>
-      <groups name="ControlGroup" label="Cnotrol Details" labelExpression="Control Details" domainClass="TRADES::Control" semanticCandidateExpression="var:self">
+      <groups name="ControlGroup" label="Control Details" labelExpression="Control Details" domainClass="TRADES::Control" semanticCandidateExpression="var:self">
+        <controls xsi:type="properties:SelectDescription" name="Status" labelExpression="Status" isEnabledExpression="aql:self.oclIsTypeOf(TRADES::Control)" valueExpression="aql: TRADES::ControlStatusENUM.getEEnumLiteral(self.status.toString())" candidatesExpression="aql: TRADES::ControlStatusENUM.eLiterals" candidateDisplayExpression="aql:candidate.name">
+          <initialOperation>
+            <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+              <subModelOperations xsi:type="tool_1:SetValue" featureName="status" valueExpression="aql:newValue.instance"/>
+            </firstModelOperations>
+          </initialOperation>
+        </controls>
         <controls xsi:type="properties:TextDescription" name="ControlDFieald" label="ID" labelExpression="ID" helpExpression="ID of the control" isEnabledExpression="aql:self.oclIsTypeOf(TRADES::Control)" valueExpression="aql:self.id">
           <initialOperation>
             <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">

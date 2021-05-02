@@ -13,8 +13,8 @@
  */
 package dsm.TRADES.impl;
 
-import dsm.TRADES.ContrlStatusENUM;
 import dsm.TRADES.Control;
+import dsm.TRADES.ControlStatusENUM;
 import dsm.TRADES.ExternalControl;
 import dsm.TRADES.NamedElement;
 import dsm.TRADES.TRADESPackage;
@@ -144,7 +144,7 @@ public class ExternalControlImpl extends ExternalElementImpl implements External
 	 * @generated
 	 * @ordered
 	 */
-	protected static final ContrlStatusENUM STATUS_EDEFAULT = ContrlStatusENUM.PROPOSED;
+	protected static final ControlStatusENUM STATUS_EDEFAULT = ControlStatusENUM.PROPOSED;
 
 	/**
 	 * The cached value of the '{@link #getStatus() <em>Status</em>}' attribute.
@@ -154,7 +154,7 @@ public class ExternalControlImpl extends ExternalElementImpl implements External
 	 * @generated
 	 * @ordered
 	 */
-	protected ContrlStatusENUM status = STATUS_EDEFAULT;
+	protected ControlStatusENUM status = STATUS_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -280,7 +280,7 @@ public class ExternalControlImpl extends ExternalElementImpl implements External
 	 * @generated
 	 */
 	@Override
-	public ContrlStatusENUM getStatus() {
+	public ControlStatusENUM getStatus() {
 		return status;
 	}
 
@@ -290,8 +290,8 @@ public class ExternalControlImpl extends ExternalElementImpl implements External
 	 * @generated
 	 */
 	@Override
-	public void setStatus(ContrlStatusENUM newStatus) {
-		ContrlStatusENUM oldStatus = status;
+	public void setStatus(ControlStatusENUM newStatus) {
+		ControlStatusENUM oldStatus = status;
 		status = newStatus == null ? STATUS_EDEFAULT : newStatus;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TRADESPackage.EXTERNAL_CONTROL__STATUS, oldStatus,
@@ -379,7 +379,7 @@ public class ExternalControlImpl extends ExternalElementImpl implements External
 			getMitigationRelations().addAll((Collection<? extends ThreatMitigationRelation>) newValue);
 			return;
 		case TRADESPackage.EXTERNAL_CONTROL__STATUS:
-			setStatus((ContrlStatusENUM) newValue);
+			setStatus((ControlStatusENUM) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);

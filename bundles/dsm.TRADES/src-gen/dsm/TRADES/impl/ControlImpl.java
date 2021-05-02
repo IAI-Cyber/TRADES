@@ -13,8 +13,8 @@
  */
 package dsm.TRADES.impl;
 
-import dsm.TRADES.ContrlStatusENUM;
 import dsm.TRADES.Control;
+import dsm.TRADES.ControlStatusENUM;
 import dsm.TRADES.TRADESPackage;
 import dsm.TRADES.Threat;
 import dsm.TRADES.ThreatMitigationRelation;
@@ -121,7 +121,7 @@ public class ControlImpl extends NamedElementImpl implements Control {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final ContrlStatusENUM STATUS_EDEFAULT = ContrlStatusENUM.PROPOSED;
+	protected static final ControlStatusENUM STATUS_EDEFAULT = ControlStatusENUM.PROPOSED;
 
 	/**
 	 * The cached value of the '{@link #getStatus() <em>Status</em>}' attribute.
@@ -131,7 +131,7 @@ public class ControlImpl extends NamedElementImpl implements Control {
 	 * @generated
 	 * @ordered
 	 */
-	protected ContrlStatusENUM status = STATUS_EDEFAULT;
+	protected ControlStatusENUM status = STATUS_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -234,7 +234,7 @@ public class ControlImpl extends NamedElementImpl implements Control {
 	 * @generated
 	 */
 	@Override
-	public ContrlStatusENUM getStatus() {
+	public ControlStatusENUM getStatus() {
 		return status;
 	}
 
@@ -244,8 +244,8 @@ public class ControlImpl extends NamedElementImpl implements Control {
 	 * @generated
 	 */
 	@Override
-	public void setStatus(ContrlStatusENUM newStatus) {
-		ContrlStatusENUM oldStatus = status;
+	public void setStatus(ControlStatusENUM newStatus) {
+		ControlStatusENUM oldStatus = status;
 		status = newStatus == null ? STATUS_EDEFAULT : newStatus;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TRADESPackage.CONTROL__STATUS, oldStatus, status));
@@ -327,7 +327,7 @@ public class ControlImpl extends NamedElementImpl implements Control {
 			getMitigationRelations().addAll((Collection<? extends ThreatMitigationRelation>) newValue);
 			return;
 		case TRADESPackage.CONTROL__STATUS:
-			setStatus((ContrlStatusENUM) newValue);
+			setStatus((ControlStatusENUM) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);

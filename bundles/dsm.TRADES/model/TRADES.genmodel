@@ -24,11 +24,11 @@
       <genEnumLiterals ecoreEnumLiteral="TRADES.ecore#//threatTypeENUM/ConcreteThreat"/>
       <genEnumLiterals ecoreEnumLiteral="TRADES.ecore#//threatTypeENUM/ConceptualThreat"/>
     </genEnums>
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="TRADES.ecore#//ContrlStatusENUM">
-      <genEnumLiterals ecoreEnumLiteral="TRADES.ecore#//ContrlStatusENUM/Proposed"/>
-      <genEnumLiterals ecoreEnumLiteral="TRADES.ecore#//ContrlStatusENUM/Agreed"/>
-      <genEnumLiterals ecoreEnumLiteral="TRADES.ecore#//ContrlStatusENUM/Implemented"/>
-      <genEnumLiterals ecoreEnumLiteral="TRADES.ecore#//ContrlStatusENUM/Rejected"/>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="TRADES.ecore#//ControlStatusENUM">
+      <genEnumLiterals ecoreEnumLiteral="TRADES.ecore#//ControlStatusENUM/Proposed"/>
+      <genEnumLiterals ecoreEnumLiteral="TRADES.ecore#//ControlStatusENUM/Agreed"/>
+      <genEnumLiterals ecoreEnumLiteral="TRADES.ecore#//ControlStatusENUM/Implemented"/>
+      <genEnumLiterals ecoreEnumLiteral="TRADES.ecore#//ControlStatusENUM/Rejected"/>
     </genEnums>
     <genDataTypes ecoreDataType="TRADES.ecore#//RGBColor" create="return RGBColor.decode(it);"
         convert="return it == null ? &quot;&quot; : it.encode();"/>

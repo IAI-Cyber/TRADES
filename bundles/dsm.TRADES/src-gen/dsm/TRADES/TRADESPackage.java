@@ -1723,14 +1723,14 @@ public interface TRADESPackage extends EPackage {
 	int THREAT_TYPE_ENUM = 26;
 
 	/**
-	 * The meta object id for the '{@link dsm.TRADES.ContrlStatusENUM <em>Contrl Status ENUM</em>}' enum.
+	 * The meta object id for the '{@link dsm.TRADES.ControlStatusENUM <em>Control Status ENUM</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see dsm.TRADES.ContrlStatusENUM
-	 * @see dsm.TRADES.impl.TRADESPackageImpl#getContrlStatusENUM()
+	 * @see dsm.TRADES.ControlStatusENUM
+	 * @see dsm.TRADES.impl.TRADESPackageImpl#getControlStatusENUM()
 	 * @generated
 	 */
-	int CONTRL_STATUS_ENUM = 27;
+	int CONTROL_STATUS_ENUM = 27;
 
 	/**
 	 * The meta object id for the '<em>RGB Color</em>' data type.
@@ -2708,14 +2708,14 @@ public interface TRADESPackage extends EPackage {
 	EEnum getthreatTypeENUM();
 
 	/**
-	 * Returns the meta object for enum '{@link dsm.TRADES.ContrlStatusENUM <em>Contrl Status ENUM</em>}'.
+	 * Returns the meta object for enum '{@link dsm.TRADES.ControlStatusENUM <em>Control Status ENUM</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Contrl Status ENUM</em>'.
-	 * @see dsm.TRADES.ContrlStatusENUM
+	 * @return the meta object for enum '<em>Control Status ENUM</em>'.
+	 * @see dsm.TRADES.ControlStatusENUM
 	 * @generated
 	 */
-	EEnum getContrlStatusENUM();
+	EEnum getControlStatusENUM();
 
 	/**
 	 * Returns the meta object for data type '{@link dsm.TRADES.RGBColor <em>RGB Color</em>}'.
@@ -3542,14 +3542,14 @@ public interface TRADESPackage extends EPackage {
 		EEnum THREAT_TYPE_ENUM = eINSTANCE.getthreatTypeENUM();
 
 		/**
-		 * The meta object literal for the '{@link dsm.TRADES.ContrlStatusENUM <em>Contrl Status ENUM</em>}' enum.
+		 * The meta object literal for the '{@link dsm.TRADES.ControlStatusENUM <em>Control Status ENUM</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see dsm.TRADES.ContrlStatusENUM
-		 * @see dsm.TRADES.impl.TRADESPackageImpl#getContrlStatusENUM()
+		 * @see dsm.TRADES.ControlStatusENUM
+		 * @see dsm.TRADES.impl.TRADESPackageImpl#getControlStatusENUM()
 		 * @generated
 		 */
-		EEnum CONTRL_STATUS_ENUM = eINSTANCE.getContrlStatusENUM();
+		EEnum CONTROL_STATUS_ENUM = eINSTANCE.getControlStatusENUM();
 
 		/**
 		 * The meta object literal for the '<em>RGB Color</em>' data type.

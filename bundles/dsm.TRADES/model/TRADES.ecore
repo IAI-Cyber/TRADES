@@ -35,7 +35,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="mitigationRelations" upperBound="-1"
         eType="#//ThreatMitigationRelation" containment="true" eOpposite="#//ThreatMitigationRelation/control"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="status" eType="#//ContrlStatusENUM"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="status" eType="#//ControlStatusENUM"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ThreatAllocationRelation">
     <eOperations name="checkComputedDifficultyConstraint" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
@@ -185,7 +185,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="data" upperBound="-1" eType="#//Data"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="ContrlStatusENUM">
+  <eClassifiers xsi:type="ecore:EEnum" name="ControlStatusENUM">
     <eLiterals name="Proposed"/>
     <eLiterals name="Agreed" value="1"/>
     <eLiterals name="Implemented" value="2"/>
