@@ -36,7 +36,7 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
-import dsm.TRADES.Analysis;
+import dsm.TRADES.Catalog;
 import dsm.TRADES.ControlOwner;
 import dsm.TRADES.ExternalControl;
 import dsm.TRADES.ExternalThreat;
@@ -64,9 +64,9 @@ public class InitCapec implements IApplication {
 
 		Resource resource = rs.createResource(URI.createFileURI(targetModelFile));
 
-		Analysis analysis = SemanticUtil.createInitialModel("Capec");
+		Catalog catalog = SemanticUtil.createInitialCatalog("Capec");
 
-		ThreatsOwner threatOwner = analysis.getThreatOwner();
+		ThreatsOwner threatOwner = catalog.getThreatOwner();
 
 		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 		DocumentBuilder builder = factory.newDocumentBuilder();
@@ -86,8 +86,7 @@ public class InitCapec implements IApplication {
 					for (int j = 0; j < attackPatternList.getLength(); j++) {
 						Node threatNode = attackPatternList.item(j);
 						if (threatNode instanceof Element) {
-
-							ExternalThreat threat = createNewThreat((Element) threatNode, analysis.getControlOwner());
+							ExternalThreat threat = createNewThreat((Element) threatNode, catalog.getControlOwner());
 							threatOwner.getExternals().add(threat);
 						}
 					}
@@ -100,7 +99,7 @@ public class InitCapec implements IApplication {
 			e.printStackTrace();
 		}
 
-		resource.getContents().add(analysis);
+		resource.getContents().add(catalog);
 		resource.save(Collections.emptyMap());
 		return 1;
 	}

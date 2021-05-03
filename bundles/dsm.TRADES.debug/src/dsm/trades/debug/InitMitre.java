@@ -33,7 +33,7 @@ import org.eclipse.equinox.app.IApplicationContext;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import dsm.TRADES.Analysis;
+import dsm.TRADES.Catalog;
 import dsm.TRADES.Control;
 import dsm.TRADES.ControlOwner;
 import dsm.TRADES.ExternalControl;
@@ -77,10 +77,10 @@ public class InitMitre implements IApplication {
 			Resource resource = rs.createResource(URI.createFileURI(targetModelFile + "_" + modelName + ".trades"));
 
 			String analysisName = "Mitre Att&ck : " + modelName;
-			Analysis analysis = SemanticUtil.createInitialModel(analysisName);
+			Catalog catalog = SemanticUtil.createInitialCatalog(analysisName);
 
-			ThreatsOwner threatOwner = analysis.getThreatOwner();
-			ControlOwner controlOwnedr = analysis.getControlOwner();
+			ThreatsOwner threatOwner = catalog.getThreatOwner();
+			ControlOwner controlOwnedr = catalog.getControlOwner();
 
 			Path path = Paths.get(inputFile, fileName);
 
@@ -164,7 +164,7 @@ public class InitMitre implements IApplication {
 				System.err.println("Error while parsing " + path);
 				e.printStackTrace();
 			}
-			resource.getContents().add(analysis);
+			resource.getContents().add(catalog);
 			resource.save(Collections.emptyMap());
 		}
 

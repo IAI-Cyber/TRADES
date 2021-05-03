@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
@@ -27,6 +28,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.sirius.business.api.session.Session;
 
 import dsm.TRADES.Analysis;
+import dsm.TRADES.Catalog;
 import dsm.TRADES.Control;
 import dsm.TRADES.ExternalControl;
 import dsm.TRADES.ExternalThreat;
@@ -38,15 +40,34 @@ import dsm.TRADES.ThreatsOwner;
 
 public class ExtThreatServices {
 
-	public List<Analysis> getAvailableExternalServices(Analysis analysis) {
+	public List<Catalog> getAvailableExternalServices(Analysis analysis) {
 
-		List<Analysis> result = new ArrayList<Analysis>();
+		List<Catalog> result = new ArrayList<Catalog>();
 
-		ResourceSet rs = Session.of(analysis).get().getTransactionalEditingDomain().getResourceSet();
+		Session session = Session.of(analysis).get();
 
+		// Local catalogs
+		for (Resource r : session.getSemanticResources()) {
+			EList<EObject> contents = r.getContents();
+			if (!contents.isEmpty()) {
+				EObject root = contents.get(0);
+				if (root instanceof Catalog) {
+					Catalog catalog = (Catalog) root;
+					result.add(catalog);
+				}
+			}
+		}
+
+		ResourceSet rs = session.getTransactionalEditingDomain().getResourceSet();
+		// Embedded catalogs
 		for (URI uri : Activator.getDefault().getDatabaseURI()) {
 			Resource resource = rs.getResource(uri, true);
-			result.add((Analysis) resource.getContents().get(0));
+
+			EObject eObject = resource.getContents().get(0);
+			if (eObject instanceof Catalog) {
+				Catalog catalog = (Catalog) eObject;
+				result.add(catalog);
+			}
 		}
 
 		return result;
@@ -77,7 +98,7 @@ public class ExtThreatServices {
 			analysis.setThreatOwner(threatOwner);
 		}
 
-		//String threatSource = source.getSource();
+		// String threatSource = source.getSource();
 
 		threatOwner.getExternals().add(result);
 		return result;
