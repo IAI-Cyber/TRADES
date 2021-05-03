@@ -20,7 +20,8 @@ Require-Bundle: org.eclipse.ui,
  dsm.TRADES;bundle-version="2.5.2",
  dsm.TRADES.edit;bundle-version="2.5.2",
  TRADES.design;bundle-version="2.5.2",
- org.eclipse.eef.ide.ui;bundle-version="2.1.5"
+ org.eclipse.eef.ide.ui;bundle-version="2.1.5",
+ dsm.TRADES.rcp;bundle-version="2.5.2"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-11
 Bundle-Vendor: %providerName

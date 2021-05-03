@@ -49,6 +49,7 @@ import dsm.oscal.design.Activator;
 import dsm.oscal.design.EmbeddedCatalogRegistry;
 import dsm.oscal.model.OscalCatalog.Catalog;
 import dsm.oscal.model.transform.OSCALTransformer;
+import dsm.trades.rcp.internal.wizards.ProjectSelectionPage;
 
 /**
  * Wizard use to import an OSCAL catalog
