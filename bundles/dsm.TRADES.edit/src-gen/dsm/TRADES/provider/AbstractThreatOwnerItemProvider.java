@@ -13,36 +13,45 @@
  */
 package dsm.TRADES.provider;
 
-import dsm.TRADES.Analysis;
+import dsm.TRADES.AbstractThreatOwner;
 import dsm.TRADES.TRADESFactory;
 import dsm.TRADES.TRADESPackage;
+
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.ResourceLocator;
+
 import org.eclipse.emf.ecore.EStructuralFeature;
 
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
+import org.eclipse.emf.edit.provider.IChildCreationExtender;
+import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
+import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.IItemPropertySource;
+import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
+import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link dsm.TRADES.Analysis} object.
+ * This is the item provider adapter for a {@link dsm.TRADES.AbstractThreatOwner} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class AnalysisItemProvider extends ComponentOwnerItemProvider {
+public class AbstractThreatOwnerItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
+		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AnalysisItemProvider(AdapterFactory adapterFactory) {
+	public AbstractThreatOwnerItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -57,25 +66,8 @@ public class AnalysisItemProvider extends ComponentOwnerItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addNamePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Name feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_NamedElement_name_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_NamedElement_name_feature",
-								"_UI_NamedElement_type"),
-						TRADESPackage.Literals.NAMED_ELEMENT__NAME, true, false, false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -90,10 +82,7 @@ public class AnalysisItemProvider extends ComponentOwnerItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(TRADESPackage.Literals.DATA_OWNER_ELEMENT__DATA_OWNER);
-			childrenFeatures.add(TRADESPackage.Literals.ABSTRACT_CONTROL_OWNER__CONTROL_OWNER);
 			childrenFeatures.add(TRADESPackage.Literals.ABSTRACT_THREAT_OWNER__THREAT_OWNER);
-			childrenFeatures.add(TRADESPackage.Literals.ANALYSIS__SCORE_SYSTEM);
 		}
 		return childrenFeatures;
 	}
@@ -112,14 +101,14 @@ public class AnalysisItemProvider extends ComponentOwnerItemProvider {
 	}
 
 	/**
-	 * This returns Analysis.gif.
+	 * This returns AbstractThreatOwner.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Analysis"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/AbstractThreatOwner"));
 	}
 
 	/**
@@ -140,9 +129,7 @@ public class AnalysisItemProvider extends ComponentOwnerItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Analysis) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_Analysis_type")
-				: getString("_UI_Analysis_type") + " " + label;
+		return getString("_UI_AbstractThreatOwner_type");
 	}
 
 	/**
@@ -156,14 +143,8 @@ public class AnalysisItemProvider extends ComponentOwnerItemProvider {
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Analysis.class)) {
-		case TRADESPackage.ANALYSIS__NAME:
-			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-			return;
-		case TRADESPackage.ANALYSIS__DATA_OWNER:
-		case TRADESPackage.ANALYSIS__CONTROL_OWNER:
-		case TRADESPackage.ANALYSIS__THREAT_OWNER:
-		case TRADESPackage.ANALYSIS__SCORE_SYSTEM:
+		switch (notification.getFeatureID(AbstractThreatOwner.class)) {
+		case TRADESPackage.ABSTRACT_THREAT_OWNER__THREAT_OWNER:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -181,17 +162,19 @@ public class AnalysisItemProvider extends ComponentOwnerItemProvider {
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(TRADESPackage.Literals.DATA_OWNER_ELEMENT__DATA_OWNER,
-				TRADESFactory.eINSTANCE.createDataOwner()));
-
-		newChildDescriptors.add(createChildParameter(TRADESPackage.Literals.ABSTRACT_CONTROL_OWNER__CONTROL_OWNER,
-				TRADESFactory.eINSTANCE.createControlOwner()));
-
 		newChildDescriptors.add(createChildParameter(TRADESPackage.Literals.ABSTRACT_THREAT_OWNER__THREAT_OWNER,
 				TRADESFactory.eINSTANCE.createThreatsOwner()));
+	}
 
-		newChildDescriptors.add(createChildParameter(TRADESPackage.Literals.ANALYSIS__SCORE_SYSTEM,
-				TRADESFactory.eINSTANCE.createScoreSystem()));
+	/**
+	 * Return the resource locator for this item provider's resources.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ResourceLocator getResourceLocator() {
+		return ((IChildCreationExtender) adapterFactory).getResourceLocator();
 	}
 
 }

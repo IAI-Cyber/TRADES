@@ -13,9 +13,10 @@
  */
 package dsm.TRADES.provider;
 
-import dsm.TRADES.Analysis;
+import dsm.TRADES.Catalog;
 import dsm.TRADES.TRADESFactory;
 import dsm.TRADES.TRADESPackage;
+
 import java.util.Collection;
 import java.util.List;
 
@@ -30,19 +31,19 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link dsm.TRADES.Analysis} object.
+ * This is the item provider adapter for a {@link dsm.TRADES.Catalog} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class AnalysisItemProvider extends ComponentOwnerItemProvider {
+public class CatalogItemProvider extends AbstractThreatOwnerItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AnalysisItemProvider(AdapterFactory adapterFactory) {
+	public CatalogItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -90,10 +91,7 @@ public class AnalysisItemProvider extends ComponentOwnerItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(TRADESPackage.Literals.DATA_OWNER_ELEMENT__DATA_OWNER);
 			childrenFeatures.add(TRADESPackage.Literals.ABSTRACT_CONTROL_OWNER__CONTROL_OWNER);
-			childrenFeatures.add(TRADESPackage.Literals.ABSTRACT_THREAT_OWNER__THREAT_OWNER);
-			childrenFeatures.add(TRADESPackage.Literals.ANALYSIS__SCORE_SYSTEM);
 		}
 		return childrenFeatures;
 	}
@@ -112,14 +110,14 @@ public class AnalysisItemProvider extends ComponentOwnerItemProvider {
 	}
 
 	/**
-	 * This returns Analysis.gif.
+	 * This returns Catalog.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Analysis"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Catalog"));
 	}
 
 	/**
@@ -140,9 +138,9 @@ public class AnalysisItemProvider extends ComponentOwnerItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Analysis) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_Analysis_type")
-				: getString("_UI_Analysis_type") + " " + label;
+		String label = ((Catalog) object).getName();
+		return label == null || label.length() == 0 ? getString("_UI_Catalog_type")
+				: getString("_UI_Catalog_type") + " " + label;
 	}
 
 	/**
@@ -156,14 +154,11 @@ public class AnalysisItemProvider extends ComponentOwnerItemProvider {
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Analysis.class)) {
-		case TRADESPackage.ANALYSIS__NAME:
+		switch (notification.getFeatureID(Catalog.class)) {
+		case TRADESPackage.CATALOG__NAME:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
-		case TRADESPackage.ANALYSIS__DATA_OWNER:
-		case TRADESPackage.ANALYSIS__CONTROL_OWNER:
-		case TRADESPackage.ANALYSIS__THREAT_OWNER:
-		case TRADESPackage.ANALYSIS__SCORE_SYSTEM:
+		case TRADESPackage.CATALOG__CONTROL_OWNER:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -181,17 +176,8 @@ public class AnalysisItemProvider extends ComponentOwnerItemProvider {
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(TRADESPackage.Literals.DATA_OWNER_ELEMENT__DATA_OWNER,
-				TRADESFactory.eINSTANCE.createDataOwner()));
-
 		newChildDescriptors.add(createChildParameter(TRADESPackage.Literals.ABSTRACT_CONTROL_OWNER__CONTROL_OWNER,
 				TRADESFactory.eINSTANCE.createControlOwner()));
-
-		newChildDescriptors.add(createChildParameter(TRADESPackage.Literals.ABSTRACT_THREAT_OWNER__THREAT_OWNER,
-				TRADESFactory.eINSTANCE.createThreatsOwner()));
-
-		newChildDescriptors.add(createChildParameter(TRADESPackage.Literals.ANALYSIS__SCORE_SYSTEM,
-				TRADESFactory.eINSTANCE.createScoreSystem()));
 	}
 
 }

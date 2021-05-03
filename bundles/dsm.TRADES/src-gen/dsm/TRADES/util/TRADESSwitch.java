@@ -89,6 +89,8 @@ public class TRADESSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseAbstractControlOwner(analysis);
 			if (result == null)
+				result = caseAbstractThreatOwner(analysis);
+			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
@@ -285,6 +287,26 @@ public class TRADESSwitch<T> extends Switch<T> {
 		case TRADESPackage.DATA_OWNER: {
 			DataOwner dataOwner = (DataOwner) theEObject;
 			T result = caseDataOwner(dataOwner);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case TRADESPackage.CATALOG: {
+			Catalog catalog = (Catalog) theEObject;
+			T result = caseCatalog(catalog);
+			if (result == null)
+				result = caseAbstractThreatOwner(catalog);
+			if (result == null)
+				result = caseAbstractControlOwner(catalog);
+			if (result == null)
+				result = caseNamedElement(catalog);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case TRADESPackage.ABSTRACT_THREAT_OWNER: {
+			AbstractThreatOwner abstractThreatOwner = (AbstractThreatOwner) theEObject;
+			T result = caseAbstractThreatOwner(abstractThreatOwner);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -651,6 +673,36 @@ public class TRADESSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseDataOwner(DataOwner object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Catalog</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Catalog</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCatalog(Catalog object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Abstract Threat Owner</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Abstract Threat Owner</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAbstractThreatOwner(AbstractThreatOwner object) {
 		return null;
 	}
 

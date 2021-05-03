@@ -177,6 +177,10 @@ public class TRADESValidator extends EObjectValidator {
 			return validateAbstractControlOwner((AbstractControlOwner) value, diagnostics, context);
 		case TRADESPackage.DATA_OWNER:
 			return validateDataOwner((DataOwner) value, diagnostics, context);
+		case TRADESPackage.CATALOG:
+			return validateCatalog((Catalog) value, diagnostics, context);
+		case TRADESPackage.ABSTRACT_THREAT_OWNER:
+			return validateAbstractThreatOwner((AbstractThreatOwner) value, diagnostics, context);
 		case TRADESPackage.ASSESSMENT_ENUM:
 			return validateAssessmentENUM((AssessmentENUM) value, diagnostics, context);
 		case TRADESPackage.AFFECTED_ENUM:
@@ -562,6 +566,25 @@ public class TRADESValidator extends EObjectValidator {
 	 */
 	public boolean validateDataOwner(DataOwner dataOwner, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(dataOwner, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateCatalog(Catalog catalog, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(catalog, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateAbstractThreatOwner(AbstractThreatOwner abstractThreatOwner, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(abstractThreatOwner, diagnostics, context);
 	}
 
 	/**

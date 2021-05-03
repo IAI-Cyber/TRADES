@@ -28,7 +28,6 @@
         convert="return it == null ? &quot;&quot; : it.encode();"/>
     <genClasses ecoreClass="TRADES.ecore#//Analysis">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Analysis/scoreSystem"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Analysis/threatOwner"/>
     </genClasses>
     <genClasses ecoreClass="TRADES.ecore#//Threat">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TRADES.ecore#//Threat/threatAllocations"/>
@@ -145,6 +144,10 @@
     </genClasses>
     <genClasses ecoreClass="TRADES.ecore#//DataOwner">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//DataOwner/data"/>
+    </genClasses>
+    <genClasses ecoreClass="TRADES.ecore#//Catalog"/>
+    <genClasses ecoreClass="TRADES.ecore#//AbstractThreatOwner">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//AbstractThreatOwner/threatOwner"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

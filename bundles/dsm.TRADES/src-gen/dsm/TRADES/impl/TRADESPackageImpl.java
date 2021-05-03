@@ -14,12 +14,14 @@
 package dsm.TRADES.impl;
 
 import dsm.TRADES.AbstractControlOwner;
+import dsm.TRADES.AbstractThreatOwner;
 import dsm.TRADES.AffectRelation;
 import dsm.TRADES.AffectedENUM;
 import dsm.TRADES.Analysis;
 import dsm.TRADES.AssessmentENUM;
 import dsm.TRADES.AttackChain;
 import dsm.TRADES.AttackChainStep;
+import dsm.TRADES.Catalog;
 import dsm.TRADES.Component;
 import dsm.TRADES.ComponentOwner;
 import dsm.TRADES.Control;
@@ -236,6 +238,20 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass catalogEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass abstractThreatOwnerEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EEnum assessmentENUMEEnum = null;
 
 	/**
@@ -349,16 +365,6 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	@Override
 	public EReference getAnalysis_ScoreSystem() {
 		return (EReference) analysisEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getAnalysis_ThreatOwner() {
-		return (EReference) analysisEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1207,6 +1213,36 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * @generated
 	 */
 	@Override
+	public EClass getCatalog() {
+		return catalogEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getAbstractThreatOwner() {
+		return abstractThreatOwnerEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getAbstractThreatOwner_ThreatOwner() {
+		return (EReference) abstractThreatOwnerEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EEnum getAssessmentENUM() {
 		return assessmentENUMEEnum;
 	}
@@ -1273,7 +1309,6 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		// Create classes and their features
 		analysisEClass = createEClass(ANALYSIS);
 		createEReference(analysisEClass, ANALYSIS__SCORE_SYSTEM);
-		createEReference(analysisEClass, ANALYSIS__THREAT_OWNER);
 
 		threatEClass = createEClass(THREAT);
 		createEReference(threatEClass, THREAT__THREAT_ALLOCATIONS);
@@ -1383,6 +1418,11 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		dataOwnerEClass = createEClass(DATA_OWNER);
 		createEReference(dataOwnerEClass, DATA_OWNER__DATA);
 
+		catalogEClass = createEClass(CATALOG);
+
+		abstractThreatOwnerEClass = createEClass(ABSTRACT_THREAT_OWNER);
+		createEReference(abstractThreatOwnerEClass, ABSTRACT_THREAT_OWNER__THREAT_OWNER);
+
 		// Create enums
 		assessmentENUMEEnum = createEEnum(ASSESSMENT_ENUM);
 		affectedENUMEEnum = createEEnum(AFFECTED_ENUM);
@@ -1425,6 +1465,7 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		analysisEClass.getESuperTypes().add(this.getDataOwnerElement());
 		analysisEClass.getESuperTypes().add(this.getNamedElement());
 		analysisEClass.getESuperTypes().add(this.getAbstractControlOwner());
+		analysisEClass.getESuperTypes().add(this.getAbstractThreatOwner());
 		threatEClass.getESuperTypes().add(this.getNamedElement());
 		componentEClass.getESuperTypes().add(this.getComponentOwner());
 		componentEClass.getESuperTypes().add(this.getDataOwnerElement());
@@ -1441,14 +1482,14 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		externalThreatEClass.getESuperTypes().add(this.getExternalElement());
 		externalControlEClass.getESuperTypes().add(this.getExternalElement());
 		externalControlEClass.getESuperTypes().add(this.getControl());
+		catalogEClass.getESuperTypes().add(this.getAbstractThreatOwner());
+		catalogEClass.getESuperTypes().add(this.getAbstractControlOwner());
+		catalogEClass.getESuperTypes().add(this.getNamedElement());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(analysisEClass, Analysis.class, "Analysis", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAnalysis_ScoreSystem(), this.getScoreSystem(), null, "scoreSystem", null, 0, 1,
-				Analysis.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAnalysis_ThreatOwner(), this.getThreatsOwner(), null, "threatOwner", null, 1, 1,
 				Analysis.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -1703,6 +1744,14 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		initEReference(getDataOwner_Data(), this.getData(), null, "data", null, 0, -1, DataOwner.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
+
+		initEClass(catalogEClass, Catalog.class, "Catalog", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(abstractThreatOwnerEClass, AbstractThreatOwner.class, "AbstractThreatOwner", IS_ABSTRACT,
+				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAbstractThreatOwner_ThreatOwner(), this.getThreatsOwner(), null, "threatOwner", null, 1, 1,
+				AbstractThreatOwner.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
+				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(assessmentENUMEEnum, AssessmentENUM.class, "AssessmentENUM");

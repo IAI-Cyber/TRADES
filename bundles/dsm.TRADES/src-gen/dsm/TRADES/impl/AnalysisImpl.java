@@ -14,6 +14,7 @@
 package dsm.TRADES.impl;
 
 import dsm.TRADES.AbstractControlOwner;
+import dsm.TRADES.AbstractThreatOwner;
 import dsm.TRADES.Analysis;
 import dsm.TRADES.Control;
 import dsm.TRADES.ControlOwner;
@@ -46,8 +47,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getDataOwner <em>Data Owner</em>}</li>
  *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getName <em>Name</em>}</li>
  *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getControlOwner <em>Control Owner</em>}</li>
- *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getScoreSystem <em>Score System</em>}</li>
  *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getThreatOwner <em>Threat Owner</em>}</li>
+ *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getScoreSystem <em>Score System</em>}</li>
  * </ul>
  *
  * @generated
@@ -94,16 +95,6 @@ public class AnalysisImpl extends ComponentOwnerImpl implements Analysis {
 	protected ControlOwner controlOwner;
 
 	/**
-	 * The cached value of the '{@link #getScoreSystem() <em>Score System</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getScoreSystem()
-	 * @generated
-	 * @ordered
-	 */
-	protected ScoreSystem scoreSystem;
-
-	/**
 	 * The cached value of the '{@link #getThreatOwner() <em>Threat Owner</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -112,6 +103,16 @@ public class AnalysisImpl extends ComponentOwnerImpl implements Analysis {
 	 * @ordered
 	 */
 	protected ThreatsOwner threatOwner;
+
+	/**
+	 * The cached value of the '{@link #getScoreSystem() <em>Score System</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getScoreSystem()
+	 * @generated
+	 * @ordered
+	 */
+	protected ScoreSystem scoreSystem;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -423,10 +424,10 @@ public class AnalysisImpl extends ComponentOwnerImpl implements Analysis {
 			return basicSetDataOwner(null, msgs);
 		case TRADESPackage.ANALYSIS__CONTROL_OWNER:
 			return basicSetControlOwner(null, msgs);
-		case TRADESPackage.ANALYSIS__SCORE_SYSTEM:
-			return basicSetScoreSystem(null, msgs);
 		case TRADESPackage.ANALYSIS__THREAT_OWNER:
 			return basicSetThreatOwner(null, msgs);
+		case TRADESPackage.ANALYSIS__SCORE_SYSTEM:
+			return basicSetScoreSystem(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -445,10 +446,10 @@ public class AnalysisImpl extends ComponentOwnerImpl implements Analysis {
 			return getName();
 		case TRADESPackage.ANALYSIS__CONTROL_OWNER:
 			return getControlOwner();
-		case TRADESPackage.ANALYSIS__SCORE_SYSTEM:
-			return getScoreSystem();
 		case TRADESPackage.ANALYSIS__THREAT_OWNER:
 			return getThreatOwner();
+		case TRADESPackage.ANALYSIS__SCORE_SYSTEM:
+			return getScoreSystem();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -471,11 +472,11 @@ public class AnalysisImpl extends ComponentOwnerImpl implements Analysis {
 		case TRADESPackage.ANALYSIS__CONTROL_OWNER:
 			setControlOwner((ControlOwner) newValue);
 			return;
-		case TRADESPackage.ANALYSIS__SCORE_SYSTEM:
-			setScoreSystem((ScoreSystem) newValue);
-			return;
 		case TRADESPackage.ANALYSIS__THREAT_OWNER:
 			setThreatOwner((ThreatsOwner) newValue);
+			return;
+		case TRADESPackage.ANALYSIS__SCORE_SYSTEM:
+			setScoreSystem((ScoreSystem) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -498,11 +499,11 @@ public class AnalysisImpl extends ComponentOwnerImpl implements Analysis {
 		case TRADESPackage.ANALYSIS__CONTROL_OWNER:
 			setControlOwner((ControlOwner) null);
 			return;
-		case TRADESPackage.ANALYSIS__SCORE_SYSTEM:
-			setScoreSystem((ScoreSystem) null);
-			return;
 		case TRADESPackage.ANALYSIS__THREAT_OWNER:
 			setThreatOwner((ThreatsOwner) null);
+			return;
+		case TRADESPackage.ANALYSIS__SCORE_SYSTEM:
+			setScoreSystem((ScoreSystem) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -522,10 +523,10 @@ public class AnalysisImpl extends ComponentOwnerImpl implements Analysis {
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		case TRADESPackage.ANALYSIS__CONTROL_OWNER:
 			return controlOwner != null;
-		case TRADESPackage.ANALYSIS__SCORE_SYSTEM:
-			return scoreSystem != null;
 		case TRADESPackage.ANALYSIS__THREAT_OWNER:
 			return threatOwner != null;
+		case TRADESPackage.ANALYSIS__SCORE_SYSTEM:
+			return scoreSystem != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -557,6 +558,14 @@ public class AnalysisImpl extends ComponentOwnerImpl implements Analysis {
 			switch (derivedFeatureID) {
 			case TRADESPackage.ANALYSIS__CONTROL_OWNER:
 				return TRADESPackage.ABSTRACT_CONTROL_OWNER__CONTROL_OWNER;
+			default:
+				return -1;
+			}
+		}
+		if (baseClass == AbstractThreatOwner.class) {
+			switch (derivedFeatureID) {
+			case TRADESPackage.ANALYSIS__THREAT_OWNER:
+				return TRADESPackage.ABSTRACT_THREAT_OWNER__THREAT_OWNER;
 			default:
 				return -1;
 			}
@@ -595,6 +604,14 @@ public class AnalysisImpl extends ComponentOwnerImpl implements Analysis {
 				return -1;
 			}
 		}
+		if (baseClass == AbstractThreatOwner.class) {
+			switch (baseFeatureID) {
+			case TRADESPackage.ABSTRACT_THREAT_OWNER__THREAT_OWNER:
+				return TRADESPackage.ANALYSIS__THREAT_OWNER;
+			default:
+				return -1;
+			}
+		}
 		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
@@ -627,6 +644,12 @@ public class AnalysisImpl extends ComponentOwnerImpl implements Analysis {
 			switch (baseOperationID) {
 			case TRADESPackage.ABSTRACT_CONTROL_OWNER___GET_ALL_CONTROLS:
 				return TRADESPackage.ANALYSIS___GET_ALL_CONTROLS;
+			default:
+				return -1;
+			}
+		}
+		if (baseClass == AbstractThreatOwner.class) {
+			switch (baseOperationID) {
 			default:
 				return -1;
 			}

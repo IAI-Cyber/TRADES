@@ -159,22 +159,22 @@ public interface TRADESPackage extends EPackage {
 	int ANALYSIS__CONTROL_OWNER = COMPONENT_OWNER_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Score System</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ANALYSIS__SCORE_SYSTEM = COMPONENT_OWNER_FEATURE_COUNT + 3;
-
-	/**
 	 * The feature id for the '<em><b>Threat Owner</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ANALYSIS__THREAT_OWNER = COMPONENT_OWNER_FEATURE_COUNT + 4;
+	int ANALYSIS__THREAT_OWNER = COMPONENT_OWNER_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Score System</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ANALYSIS__SCORE_SYSTEM = COMPONENT_OWNER_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Analysis</em>' class.
@@ -1675,6 +1675,107 @@ public interface TRADESPackage extends EPackage {
 	int DATA_OWNER_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link dsm.TRADES.impl.AbstractThreatOwnerImpl <em>Abstract Threat Owner</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see dsm.TRADES.impl.AbstractThreatOwnerImpl
+	 * @see dsm.TRADES.impl.TRADESPackageImpl#getAbstractThreatOwner()
+	 * @generated
+	 */
+	int ABSTRACT_THREAT_OWNER = 25;
+
+	/**
+	 * The feature id for the '<em><b>Threat Owner</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_THREAT_OWNER__THREAT_OWNER = 0;
+
+	/**
+	 * The number of structural features of the '<em>Abstract Threat Owner</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_THREAT_OWNER_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Abstract Threat Owner</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_THREAT_OWNER_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link dsm.TRADES.impl.CatalogImpl <em>Catalog</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see dsm.TRADES.impl.CatalogImpl
+	 * @see dsm.TRADES.impl.TRADESPackageImpl#getCatalog()
+	 * @generated
+	 */
+	int CATALOG = 24;
+
+	/**
+	 * The feature id for the '<em><b>Threat Owner</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CATALOG__THREAT_OWNER = ABSTRACT_THREAT_OWNER__THREAT_OWNER;
+
+	/**
+	 * The feature id for the '<em><b>Control Owner</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CATALOG__CONTROL_OWNER = ABSTRACT_THREAT_OWNER_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CATALOG__NAME = ABSTRACT_THREAT_OWNER_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Catalog</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CATALOG_FEATURE_COUNT = ABSTRACT_THREAT_OWNER_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Get All Controls</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CATALOG___GET_ALL_CONTROLS = ABSTRACT_THREAT_OWNER_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Catalog</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CATALOG_OPERATION_COUNT = ABSTRACT_THREAT_OWNER_OPERATION_COUNT + 1;
+
+	/**
 	 * The meta object id for the '{@link dsm.TRADES.AssessmentENUM <em>Assessment ENUM</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1682,7 +1783,7 @@ public interface TRADESPackage extends EPackage {
 	 * @see dsm.TRADES.impl.TRADESPackageImpl#getAssessmentENUM()
 	 * @generated
 	 */
-	int ASSESSMENT_ENUM = 24;
+	int ASSESSMENT_ENUM = 26;
 
 	/**
 	 * The meta object id for the '{@link dsm.TRADES.AffectedENUM <em>Affected ENUM</em>}' enum.
@@ -1692,7 +1793,7 @@ public interface TRADESPackage extends EPackage {
 	 * @see dsm.TRADES.impl.TRADESPackageImpl#getAffectedENUM()
 	 * @generated
 	 */
-	int AFFECTED_ENUM = 25;
+	int AFFECTED_ENUM = 27;
 
 	/**
 	 * The meta object id for the '{@link dsm.TRADES.threatTypeENUM <em>threat Type ENUM</em>}' enum.
@@ -1702,7 +1803,7 @@ public interface TRADESPackage extends EPackage {
 	 * @see dsm.TRADES.impl.TRADESPackageImpl#getthreatTypeENUM()
 	 * @generated
 	 */
-	int THREAT_TYPE_ENUM = 26;
+	int THREAT_TYPE_ENUM = 28;
 
 	/**
 	 * The meta object id for the '<em>RGB Color</em>' data type.
@@ -1712,7 +1813,7 @@ public interface TRADESPackage extends EPackage {
 	 * @see dsm.TRADES.impl.TRADESPackageImpl#getRGBColor()
 	 * @generated
 	 */
-	int RGB_COLOR = 27;
+	int RGB_COLOR = 29;
 
 	/**
 	 * Returns the meta object for class '{@link dsm.TRADES.Analysis <em>Analysis</em>}'.
@@ -1734,17 +1835,6 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getAnalysis_ScoreSystem();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link dsm.TRADES.Analysis#getThreatOwner <em>Threat Owner</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Threat Owner</em>'.
-	 * @see dsm.TRADES.Analysis#getThreatOwner()
-	 * @see #getAnalysis()
-	 * @generated
-	 */
-	EReference getAnalysis_ThreatOwner();
 
 	/**
 	 * Returns the meta object for class '{@link dsm.TRADES.Threat <em>Threat</em>}'.
@@ -2639,6 +2729,37 @@ public interface TRADESPackage extends EPackage {
 	EReference getDataOwner_Data();
 
 	/**
+	 * Returns the meta object for class '{@link dsm.TRADES.Catalog <em>Catalog</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Catalog</em>'.
+	 * @see dsm.TRADES.Catalog
+	 * @generated
+	 */
+	EClass getCatalog();
+
+	/**
+	 * Returns the meta object for class '{@link dsm.TRADES.AbstractThreatOwner <em>Abstract Threat Owner</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Abstract Threat Owner</em>'.
+	 * @see dsm.TRADES.AbstractThreatOwner
+	 * @generated
+	 */
+	EClass getAbstractThreatOwner();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link dsm.TRADES.AbstractThreatOwner#getThreatOwner <em>Threat Owner</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Threat Owner</em>'.
+	 * @see dsm.TRADES.AbstractThreatOwner#getThreatOwner()
+	 * @see #getAbstractThreatOwner()
+	 * @generated
+	 */
+	EReference getAbstractThreatOwner_ThreatOwner();
+
+	/**
 	 * Returns the meta object for enum '{@link dsm.TRADES.AssessmentENUM <em>Assessment ENUM</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2719,14 +2840,6 @@ public interface TRADESPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ANALYSIS__SCORE_SYSTEM = eINSTANCE.getAnalysis_ScoreSystem();
-
-		/**
-		 * The meta object literal for the '<em><b>Threat Owner</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ANALYSIS__THREAT_OWNER = eINSTANCE.getAnalysis_ThreatOwner();
 
 		/**
 		 * The meta object literal for the '{@link dsm.TRADES.impl.ThreatImpl <em>Threat</em>}' class.
@@ -3453,6 +3566,34 @@ public interface TRADESPackage extends EPackage {
 		 * @generated
 		 */
 		EReference DATA_OWNER__DATA = eINSTANCE.getDataOwner_Data();
+
+		/**
+		 * The meta object literal for the '{@link dsm.TRADES.impl.CatalogImpl <em>Catalog</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see dsm.TRADES.impl.CatalogImpl
+		 * @see dsm.TRADES.impl.TRADESPackageImpl#getCatalog()
+		 * @generated
+		 */
+		EClass CATALOG = eINSTANCE.getCatalog();
+
+		/**
+		 * The meta object literal for the '{@link dsm.TRADES.impl.AbstractThreatOwnerImpl <em>Abstract Threat Owner</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see dsm.TRADES.impl.AbstractThreatOwnerImpl
+		 * @see dsm.TRADES.impl.TRADESPackageImpl#getAbstractThreatOwner()
+		 * @generated
+		 */
+		EClass ABSTRACT_THREAT_OWNER = eINSTANCE.getAbstractThreatOwner();
+
+		/**
+		 * The meta object literal for the '<em><b>Threat Owner</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ABSTRACT_THREAT_OWNER__THREAT_OWNER = eINSTANCE.getAbstractThreatOwner_ThreatOwner();
 
 		/**
 		 * The meta object literal for the '{@link dsm.TRADES.AssessmentENUM <em>Assessment ENUM</em>}' enum.
