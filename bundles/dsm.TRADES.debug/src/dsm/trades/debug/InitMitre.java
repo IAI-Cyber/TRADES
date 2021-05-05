@@ -22,6 +22,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -104,7 +105,12 @@ public class InitMitre implements IApplication {
 								.filter(ext -> ext.getSource_name() != null && (ext.getSource_name().endsWith("attack")
 										|| ext.getSource_name().equals("capec")))
 								.findFirst().ifPresentOrElse(ext -> {
-									threat.setId(ext.getExternal_id());
+									String external_id = ext.getExternal_id();
+									if (external_id != null) {
+										threat.setId(external_id);
+									} else {
+										threat.setId(UUID.randomUUID().toString());
+									}
 									threat.setSource(analysisName);
 									threat.setLink(ext.getUrl());
 								}, () -> {
@@ -125,7 +131,12 @@ public class InitMitre implements IApplication {
 									ext -> ext.getSource_name() != null && (ext.getSource_name().endsWith("attack")
 											|| ext.getSource_name().equals("capec")))
 									.findFirst().ifPresentOrElse(ext -> {
-										control.setId(ext.getExternal_id());
+										String external_id = ext.getExternal_id();
+										if (external_id != null) {
+											control.setId(external_id);
+										} else {
+											control.setId(UUID.randomUUID().toString());
+										}
 										control.setSource(analysisName);
 										control.setLink(ext.getUrl());
 									}, () -> {
