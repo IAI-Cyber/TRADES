@@ -16,6 +16,7 @@ package dsm.oscal.design.service;
 
 import org.eclipse.emf.ecore.EObject;
 
+import TRADES.design.ExtThreatServices;
 import dsm.TRADES.AbstractControlOwner;
 import dsm.TRADES.ControlOwner;
 import dsm.TRADES.ExternalControl;
@@ -38,6 +39,7 @@ public class OscalDesignService {
 		extControl.setId(control.getId());
 
 		extControl.setSource(getCatalogTitle(control));
+		extControl.setLink(ExtThreatServices.createURIRepresentation(control));
 
 		ControlOwner controlOwner = owner.getControlOwner();
 		if (controlOwner == null) {
