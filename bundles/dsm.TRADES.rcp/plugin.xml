@@ -44,7 +44,7 @@
       <wizard
             category="dsm.TRADES.rcp.import"
             class="dsm.trades.rcp.internal.wizards.ImportTradesModelWizard"
-            icon="icons/library_obj.png"
+            icon="icons/bookmarks_view.png"
             id="dsm.TRADES.rcp.trades"
             name="Import TRADES library">
       </wizard>

@@ -16,8 +16,9 @@ package dsm.trades.rcp.internal.wizards;
 
 import static java.util.stream.Collectors.toList;
 
-import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.function.Consumer;
 import java.util.stream.Stream;
 
 import org.eclipse.emf.ecore.EObject;
@@ -40,12 +41,17 @@ public class EObjectSelectionPage<T extends EObject> extends WizardPage {
 	private ComposedAdapterFactory adapterFactory = new ComposedAdapterFactory(
 			ComposedAdapterFactory.Descriptor.Registry.INSTANCE);
 
-	private List<T> selection = new ArrayList<>();
 
 	private CheckboxTableViewer viewer;
 
-	protected EObjectSelectionPage() {
+	private Consumer<List<T>> objectConsumer;
+
+	private List<T> input;
+
+	public EObjectSelectionPage(Consumer<List<T>> objectConsumer, String message) {
 		super("Threat selection page");
+		setMessage(message);
+		this.objectConsumer = objectConsumer;
 		setMessage("Select the threats to import.");
 	}
 
@@ -63,9 +69,10 @@ public class EObjectSelectionPage<T extends EObject> extends WizardPage {
 		viewer.setContentProvider(ArrayContentProvider.getInstance());
 		viewer.addCheckStateListener(new ICheckStateListener() {
 
+			@SuppressWarnings("unchecked")
 			@Override
 			public void checkStateChanged(CheckStateChangedEvent event) {
-				selection = Stream.of(viewer.getCheckedElements()).map(e -> (T) e).collect(toList());
+				objectConsumer.accept(Stream.of(viewer.getCheckedElements()).map(e -> (T) e).collect(toList()));
 			}
 		});
 
@@ -80,6 +87,7 @@ public class EObjectSelectionPage<T extends EObject> extends WizardPage {
 
 			public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
 				viewer.setAllChecked(true);
+				objectConsumer.accept(input);
 			};
 		});
 		Button deselectAll = new Button(buttons, SWT.PUSH);
@@ -89,6 +97,7 @@ public class EObjectSelectionPage<T extends EObject> extends WizardPage {
 
 			public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
 				viewer.setAllChecked(false);
+				objectConsumer.accept(Collections.emptyList());
 			};
 		});
 
@@ -103,15 +112,12 @@ public class EObjectSelectionPage<T extends EObject> extends WizardPage {
 	}
 
 	public void setInput(List<T> input) {
+		this.input = input;
+		objectConsumer.accept(input);
 		viewer.setInput(input);
 		viewer.setAllChecked(true);
-		selection.clear();
-		selection.addAll(input);
 		getContainer().updateButtons();
 	}
 
-	public List<T> getSelection() {
-		return selection;
-	}
 
 }

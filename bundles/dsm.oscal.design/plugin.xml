@@ -78,7 +78,7 @@
      <wizard
            category="dsm.TRADES.rcp.import"
            class="dsm.oscal.design.wizards.ImportEmbeddedCatalogWizard"
-           icon="icons/library_obj.png"
+           icon="icons/bookmarks_view.png"
            id="dsm.oscal.design.importoscalcatalog"
            name="Import OSCAL Catalog">
         <selection

@@ -49,6 +49,7 @@ import dsm.oscal.design.Activator;
 import dsm.oscal.design.EmbeddedCatalogRegistry;
 import dsm.oscal.model.OscalCatalog.Catalog;
 import dsm.oscal.model.transform.OSCALTransformer;
+import dsm.trades.rcp.internal.wizards.ImportTradesModelWizard;
 import dsm.trades.rcp.internal.wizards.ProjectSelectionPage;
 
 /**
@@ -98,6 +99,8 @@ public class ImportEmbeddedCatalogWizard extends Wizard implements IImportWizard
 							if (!session[0].isOpen()) {
 								session[0].open(monitor);
 							}
+
+							ImportTradesModelWizard.createCatalogFolder(selectedProject0, monitor);
 						});
 					} catch (InvocationTargetException | InterruptedException e) {
 						Activator.logError("Error occured while loading the session : " + e.getMessage(), e);
@@ -149,7 +152,8 @@ public class ImportEmbeddedCatalogWizard extends Wizard implements IImportWizard
 
 	private boolean importOscalCatalog(URI repUri, Session session, String oscalLibName, Path libPath) {
 
-		URI oscalLibURI = repUri.trimSegments(1).appendSegment(oscalLibName + ".oscal");
+		URI oscalLibURI = ImportTradesModelWizard.getCatalogFolderURI(repUri)
+				.appendSegment(URI.encodeSegment(oscalLibName, false) + ".oscal");
 		TransactionalEditingDomain transactionalEditingDomain = session.getTransactionalEditingDomain();
 		ResourceSet resourceSet = transactionalEditingDomain.getResourceSet();
 		Resource existingResource = resourceSet.getResource(oscalLibURI, false);
