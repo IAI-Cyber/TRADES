@@ -15,6 +15,9 @@
  */
 package dsm.oscal.model.OscalCatalog.util;
 
+import dsm.TRADES.ICatalogDefinition;
+import dsm.TRADES.IControlDefinition;
+
 import dsm.oscal.model.OscalCatalog.*;
 
 import dsm.oscal.model.OscalMetadata.DocumentationComputer;
@@ -115,6 +118,10 @@ public class OscalCatalogAdapterFactory extends AdapterFactoryImpl {
 				return createParameterOwnerAdapter();
 			}
 			@Override
+			public Adapter caseICatalogDefinition(ICatalogDefinition object) {
+				return createICatalogDefinitionAdapter();
+			}
+			@Override
 			public Adapter casePropertyOwner(PropertyOwner object) {
 				return createPropertyOwnerAdapter();
 			}
@@ -129,6 +136,10 @@ public class OscalCatalogAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter casePartOwner(PartOwner object) {
 				return createPartOwnerAdapter();
+			}
+			@Override
+			public Adapter caseIControlDefinition(IControlDefinition object) {
+				return createIControlDefinitionAdapter();
 			}
 			@Override
 			public Adapter caseElementWithClazz(ElementWithClazz object) {
@@ -243,6 +254,20 @@ public class OscalCatalogAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link dsm.TRADES.ICatalogDefinition <em>ICatalog Definition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see dsm.TRADES.ICatalogDefinition
+	 * @generated
+	 */
+	public Adapter createICatalogDefinitionAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link dsm.oscal.model.OscalMetadata.PropertyOwner <em>Property Owner</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -295,6 +320,20 @@ public class OscalCatalogAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createPartOwnerAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link dsm.TRADES.IControlDefinition <em>IControl Definition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see dsm.TRADES.IControlDefinition
+	 * @generated
+	 */
+	public Adapter createIControlDefinitionAdapter() {
 		return null;
 	}
 

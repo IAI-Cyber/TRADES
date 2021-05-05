@@ -19,8 +19,6 @@ package dsm.oscal.model.OscalCatalogCommon.provider;
 import dsm.oscal.model.OscalCatalogCommon.OscalCatalogCommonFactory;
 import dsm.oscal.model.OscalCatalogCommon.OscalCatalogCommonPackage;
 import dsm.oscal.model.OscalCatalogCommon.ParameterConstraint;
-
-import dsm.oscal.model.OscalMetadata.provider.OscalEditPlugin;
 import dsm.oscal.model.OscalMetadata.provider.OscalElementItemProvider;
 
 import gov.nist.secauto.metaschema.datatypes.markup.MarkupMultiline;

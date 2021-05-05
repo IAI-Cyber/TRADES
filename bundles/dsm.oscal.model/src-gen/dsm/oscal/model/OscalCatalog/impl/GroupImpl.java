@@ -40,8 +40,8 @@ import gov.nist.secauto.metaschema.datatypes.markup.MarkupLine;
 import java.lang.reflect.InvocationTargetException;
 
 import java.util.Collection;
-
 import java.util.Map;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -222,6 +222,19 @@ public class GroupImpl extends OscalElementCustomImpl implements Group {
 	 * @generated
 	 */
 	@Override
+	public EList<Parameter> getParams() {
+		if (params == null) {
+			params = new EObjectContainmentEList<Parameter>(Parameter.class, this, OscalCatalogPackage.GROUP__PARAMS);
+		}
+		return params;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EList<Property> getProps() {
 		if (props == null) {
 			props = new EObjectContainmentEList<Property>(Property.class, this, OscalCatalogPackage.GROUP__PROPS);
@@ -325,19 +338,6 @@ public class GroupImpl extends OscalElementCustomImpl implements Group {
 			groups = new EObjectContainmentEList<Group>(Group.class, this, OscalCatalogPackage.GROUP__GROUPS);
 		}
 		return groups;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EList<Parameter> getParams() {
-		if (params == null) {
-			params = new EObjectContainmentEList<Parameter>(Parameter.class, this, OscalCatalogPackage.GROUP__PARAMS);
-		}
-		return params;
 	}
 
 	/**

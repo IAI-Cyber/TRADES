@@ -39,7 +39,6 @@ import org.eclipse.emf.codegen.ecore.genmodel.GenPackage;
 import org.eclipse.emf.codegen.ecore.genmodel.impl.GenClassImpl;
 import org.eclipse.emf.codegen.ecore.genmodel.impl.GenDataTypeImpl;
 import org.eclipse.emf.common.util.ECollections;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EAttribute;
@@ -47,10 +46,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EModelElement;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.EParameter;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.EcoreFactory;
@@ -124,36 +120,8 @@ public class MetaschemaToEcoreTransformer {
 
 	private ISemanticRefactorer refactorer;
 
-	/**
-	 * Command line application to use for the migration
-	 * 
-	 * @param args only contains only one argument that is a path to an existing
-	 *             plugin that will contain the generated models (and code)
-	 * @throws MalformedURLException
-	 * @throws MetaschemaException
-	 * @throws IOException
-	 * @throws URISyntaxException
-	 */
-	public static void main(String[] args)
-			throws MalformedURLException, MetaschemaException, IOException, URISyntaxException {
-		if (args.length == 0) {
-			throw new IllegalArgumentException("Expecting one argument that target the model plugin");
-		}
-		new MetaschemaToEcoreTransformer(new OSCALImageProvider(), new OscalSemanticRefactorer()).transform(List.of(//
-//				"metaschema/oscal_assessment-common_metaschema.xml", //
-//				"metaschema/oscal_assessment-plan_metaschema.xml", //
-//				"metaschema/oscal_assessment-results_metaschema.xml", //
-				"metaschema/oscal_catalog_metaschema.xml", //
-//				"metaschema/oscal_component_metaschema.xml", //
-				"metaschema/oscal_control-common_metaschema.xml", //
-//				"metaschema/oscal_implementation-common_metaschema.xml", //
-				"metaschema/oscal_metadata_metaschema.xml" //
-//				"metaschema/oscal_poam_metaschema.xml", //
-//				"metaschema/oscal_profile_metaschema.xml" //
-//				"metaschema/oscal_ssp_metaschema.xml"//
-		), Path.of(args[0]));
 
-	}
+
 
 	/**
 	 * Simple constructor
@@ -196,7 +164,7 @@ public class MetaschemaToEcoreTransformer {
 
 
 
-		refactorer.init(rootEPackage);
+		refactorer.init(rootEPackage, rs);
 		refactorer.refactorSemantic(defToEClass.values());
 
 		sortByName();
@@ -230,7 +198,7 @@ public class MetaschemaToEcoreTransformer {
 	}
 
 	private void createGenModel(ResourceSet rs, Path modelFolderLocation, Path pluginFolder) {
-
+		URI genModelURI = URI.createFileURI(modelFolderLocation.resolve("oscal.genmodel").toFile().toURI().getPath());
 		GenModel genModel = GenModelFactory.eINSTANCE.createGenModel();
 		genModel.setComplianceLevel(GenJDKLevel.JDK70_LITERAL);
 		genModel.setModelDirectory("/dsm.oscal.model/src-gen");
@@ -245,15 +213,23 @@ public class MetaschemaToEcoreTransformer {
 		genModel.setImportOrganizing(true);
 		genModel.setCopyrightText(HEADER);
 
-		List<EPackage> ePackages = new ArrayList<>();
-		for (Resource r : rs.getResources()) {
-			EList<EObject> content = r.getContents();
-			if (!content.isEmpty() && content.get(0) instanceof EPackage) {
-				genModel.getForeignModel().add(r.getURI().lastSegment());
-				ePackages.add((EPackage) content.get(0));
 
-			}
+		List<EPackage> ePackages = new ArrayList<>();
+//		for (Resource r : rs.getResources()) {
+//			EList<EObject> content = r.getContents();
+//			if (!content.isEmpty() && content.get(0) instanceof EPackage) {
+//				URI packURI = r.getURI();
+//				if (packURI.isFile()) {
+//					packURI = genModelURI.deresolve(packURI);
+//				}
+//				genModel.getForeignModel().add(packURI.toString());
+//			}
+//		}
+//		ePackages.add(EcorePackage.eINSTANCE);
+		for (EPackage pack : schemaToPackage.values()) {
+			ePackages.add(pack);
 		}
+		refactorer.refactorGenModel(genModel);
 		genModel.initialize(ePackages);
 
 		List<DataType> eDataToGenerate = new ArrayList<>();
@@ -304,10 +280,11 @@ public class MetaschemaToEcoreTransformer {
 				}
 			}
 		}
-		refactorer.refactorGenModel(genClasses);
+		refactorer.refactorGenClasses(genClasses);
 		try {
+
 			Resource genModelResource = rs.createResource(
-					URI.createFileURI(modelFolderLocation.resolve("oscal.genmodel").toFile().toURI().getPath()));
+					genModelURI);
 			genModelResource.getContents().add(genModel);
 			genModelResource.save(Collections.emptyMap());
 		} catch (IOException e) {
@@ -770,5 +747,6 @@ public class MetaschemaToEcoreTransformer {
 		MigrationEcoreUtils.setDocumentation(element, doc);
 
 	}
+
 
 }

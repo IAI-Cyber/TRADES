@@ -15,6 +15,8 @@
  */
 package dsm.oscal.model.OscalMetadata.impl;
 
+import dsm.TRADES.TRADESPackage;
+
 import dsm.oscal.model.OscalCatalog.OscalCatalogPackage;
 
 import dsm.oscal.model.OscalCatalog.impl.OscalCatalogPackageImpl;
@@ -77,6 +79,7 @@ import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EcorePackage;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
@@ -434,6 +437,10 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 		OscalMetadataPackageImpl theOscalMetadataPackage = registeredOscalMetadataPackage instanceof OscalMetadataPackageImpl ? (OscalMetadataPackageImpl)registeredOscalMetadataPackage : new OscalMetadataPackageImpl();
 
 		isInited = true;
+
+		// Initialize simple dependencies
+		TRADESPackage.eINSTANCE.eClass();
+		EcorePackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
 		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(OscalCatalogCommonPackage.eNS_URI);
@@ -2033,7 +2040,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 		initEClass(oscalElementEClass, OscalElement.class, "OscalElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		EOperation op = initEOperation(getOscalElement__Resolve__URI(), ecorePackage.getEObject(), "resolve", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, this.getUriType(), "uri", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getUriReferenceType(), "uri", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(parameterOwnerEClass, ParameterOwner.class, "ParameterOwner", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getParameterOwner_Params(), theOscalCatalogCommonPackage.getParameter(), null, "params", null, 0, -1, ParameterOwner.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

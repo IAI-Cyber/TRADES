@@ -15,6 +15,10 @@
  */
 package dsm.oscal.model.OscalCatalog.impl;
 
+import dsm.TRADES.ICatalogDefinition;
+import dsm.TRADES.IControlDefinition;
+import dsm.TRADES.IThreatDefinition;
+import dsm.TRADES.TRADESPackage;
 import dsm.oscal.model.OscalCatalog.Catalog;
 import dsm.oscal.model.OscalCatalog.Control;
 import dsm.oscal.model.OscalCatalog.Group;
@@ -31,6 +35,7 @@ import dsm.oscal.model.OscalMetadata.UUIDElement;
 import dsm.oscal.model.OscalMetadata.impl.OscalElementCustomImpl;
 
 import java.lang.reflect.InvocationTargetException;
+
 import java.util.Collection;
 import java.util.Map;
 import java.util.UUID;
@@ -185,6 +190,19 @@ public class CatalogImpl extends OscalElementCustomImpl implements Catalog {
 	 * @generated
 	 */
 	@Override
+	public EList<Parameter> getParams() {
+		if (params == null) {
+			params = new EObjectContainmentEList<Parameter>(Parameter.class, this, OscalCatalogPackage.CATALOG__PARAMS);
+		}
+		return params;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public BackMatter getBackMatter() {
 		return backMatter;
 	}
@@ -301,7 +319,7 @@ public class CatalogImpl extends OscalElementCustomImpl implements Catalog {
 	 * @generated
 	 */
 	@Override
-	public Map<String, String> getParameterValues() {
+	public IThreatDefinition getThreatById(String id) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -313,11 +331,58 @@ public class CatalogImpl extends OscalElementCustomImpl implements Catalog {
 	 * @generated
 	 */
 	@Override
-	public EList<Parameter> getParams() {
-		if (params == null) {
-			params = new EObjectContainmentEList<Parameter>(Parameter.class, this, OscalCatalogPackage.CATALOG__PARAMS);
-		}
-		return params;
+	public IControlDefinition getControlById(String id) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<IThreatDefinition> getThreatDefinitions() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<IControlDefinition> getControlDefinitions() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getIdentifier() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Map<String, String> getParameterValues() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -473,6 +538,11 @@ public class CatalogImpl extends OscalElementCustomImpl implements Catalog {
 				default: return -1;
 			}
 		}
+		if (baseClass == ICatalogDefinition.class) {
+			switch (derivedFeatureID) {
+				default: return -1;
+			}
+		}
 		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
 	}
 
@@ -492,6 +562,11 @@ public class CatalogImpl extends OscalElementCustomImpl implements Catalog {
 		if (baseClass == ParameterOwner.class) {
 			switch (baseFeatureID) {
 				case OscalMetadataPackage.PARAMETER_OWNER__PARAMS: return OscalCatalogPackage.CATALOG__PARAMS;
+				default: return -1;
+			}
+		}
+		if (baseClass == ICatalogDefinition.class) {
+			switch (baseFeatureID) {
 				default: return -1;
 			}
 		}
@@ -516,6 +591,16 @@ public class CatalogImpl extends OscalElementCustomImpl implements Catalog {
 				default: return -1;
 			}
 		}
+		if (baseClass == ICatalogDefinition.class) {
+			switch (baseOperationID) {
+				case TRADESPackage.ICATALOG_DEFINITION___GET_THREAT_BY_ID__STRING: return OscalCatalogPackage.CATALOG___GET_THREAT_BY_ID__STRING;
+				case TRADESPackage.ICATALOG_DEFINITION___GET_CONTROL_BY_ID__STRING: return OscalCatalogPackage.CATALOG___GET_CONTROL_BY_ID__STRING;
+				case TRADESPackage.ICATALOG_DEFINITION___GET_THREAT_DEFINITIONS: return OscalCatalogPackage.CATALOG___GET_THREAT_DEFINITIONS;
+				case TRADESPackage.ICATALOG_DEFINITION___GET_CONTROL_DEFINITIONS: return OscalCatalogPackage.CATALOG___GET_CONTROL_DEFINITIONS;
+				case TRADESPackage.ICATALOG_DEFINITION___GET_IDENTIFIER: return OscalCatalogPackage.CATALOG___GET_IDENTIFIER;
+				default: return -1;
+			}
+		}
 		return super.eDerivedOperationID(baseOperationID, baseClass);
 	}
 
@@ -527,6 +612,16 @@ public class CatalogImpl extends OscalElementCustomImpl implements Catalog {
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
+			case OscalCatalogPackage.CATALOG___GET_THREAT_BY_ID__STRING:
+				return getThreatById((String)arguments.get(0));
+			case OscalCatalogPackage.CATALOG___GET_CONTROL_BY_ID__STRING:
+				return getControlById((String)arguments.get(0));
+			case OscalCatalogPackage.CATALOG___GET_THREAT_DEFINITIONS:
+				return getThreatDefinitions();
+			case OscalCatalogPackage.CATALOG___GET_CONTROL_DEFINITIONS:
+				return getControlDefinitions();
+			case OscalCatalogPackage.CATALOG___GET_IDENTIFIER:
+				return getIdentifier();
 			case OscalCatalogPackage.CATALOG___GET_PARAMETER_VALUES:
 				return getParameterValues();
 		}

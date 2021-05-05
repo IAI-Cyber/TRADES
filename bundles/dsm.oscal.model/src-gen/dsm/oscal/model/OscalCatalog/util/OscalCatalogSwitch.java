@@ -15,6 +15,9 @@
  */
 package dsm.oscal.model.OscalCatalog.util;
 
+import dsm.TRADES.ICatalogDefinition;
+import dsm.TRADES.IControlDefinition;
+
 import dsm.oscal.model.OscalCatalog.*;
 
 import dsm.oscal.model.OscalMetadata.DocumentationComputer;
@@ -95,6 +98,7 @@ public class OscalCatalogSwitch<T> extends Switch<T> {
 				if (result == null) result = caseOscalElement(catalog);
 				if (result == null) result = caseUUIDElement(catalog);
 				if (result == null) result = caseParameterOwner(catalog);
+				if (result == null) result = caseICatalogDefinition(catalog);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -106,6 +110,7 @@ public class OscalCatalogSwitch<T> extends Switch<T> {
 				if (result == null) result = casePropertyOwner(control);
 				if (result == null) result = caseLinkOwner(control);
 				if (result == null) result = casePartOwner(control);
+				if (result == null) result = caseIControlDefinition(control);
 				if (result == null) result = caseElementWithClazz(control);
 				if (result == null) result = caseElementWithId(control);
 				if (result == null) result = caseDocumentationComputer(control);
@@ -221,6 +226,21 @@ public class OscalCatalogSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>ICatalog Definition</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>ICatalog Definition</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseICatalogDefinition(ICatalogDefinition object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Property Owner</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -277,6 +297,21 @@ public class OscalCatalogSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T casePartOwner(PartOwner object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>IControl Definition</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>IControl Definition</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseIControlDefinition(IControlDefinition object) {
 		return null;
 	}
 
