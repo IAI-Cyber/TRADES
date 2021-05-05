@@ -22,6 +22,7 @@ import java.io.InputStream;
 import java.lang.reflect.InvocationTargetException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.StandardCopyOption;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Stream;
@@ -127,11 +128,9 @@ public class ImportEmbeddedCatalogWizard extends Wizard implements IImportWizard
 					if (stream != null) {
 						File tmpFile = File.createTempFile(catalog, ".xml");
 						tmpFile.deleteOnExit();
-						byte[] buffer = new byte[stream.available()];
-						stream.read(buffer);
 						catalogPath = tmpFile.toPath();
 						oscalLibName = catalog;
-						Files.write(catalogPath, buffer);
+						Files.copy(stream, catalogPath, StandardCopyOption.REPLACE_EXISTING);
 					}
 
 				} catch (IOException e) {
