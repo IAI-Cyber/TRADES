@@ -1239,7 +1239,7 @@
         </controls>
       </groups>
       <groups name="ComponentGroup" label="Component Details" labelExpression="Component Details" domainClass="TRADES::Component" semanticCandidateExpression="var:self">
-        <controls xsi:type="properties:ListDescription" name="ThreatAllocationList" label="Threat Allocation" labelExpression="Alocated Threats" valueExpression="aql:self.threatAllocations.threat" displayExpression="aql:value.name">
+        <controls xsi:type="properties:ListDescription" name="ThreatAllocationList" label="Threat Allocation" labelExpression="Allocated Threats" valueExpression="aql:self.threatAllocations.threat" displayExpression="aql:value.name">
           <onClickOperation>
             <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self"/>
           </onClickOperation>
