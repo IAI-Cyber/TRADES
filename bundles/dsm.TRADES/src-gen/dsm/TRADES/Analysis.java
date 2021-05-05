@@ -53,4 +53,20 @@ public interface Analysis
 	 */
 	void setScoreSystem(ScoreSystem value);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	ExternalThreat getExternalThreat(String id, String source);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	ExternalControl getExternalControl(String id, String source);
+
 } // Analysis

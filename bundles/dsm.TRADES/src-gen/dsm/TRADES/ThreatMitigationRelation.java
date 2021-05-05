@@ -13,8 +13,6 @@
  */
 package dsm.TRADES;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Threat Mitigation Relation</b></em>'.
@@ -35,7 +33,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface ThreatMitigationRelation extends EObject {
+public interface ThreatMitigationRelation extends IMitigationLink {
 	/**
 	 * Returns the value of the '<em><b>Assessment</b></em>' attribute.
 	 * The default value is <code>"Undecided"</code>.

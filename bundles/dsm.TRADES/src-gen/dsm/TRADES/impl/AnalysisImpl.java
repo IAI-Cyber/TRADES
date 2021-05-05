@@ -21,6 +21,8 @@ import dsm.TRADES.ControlOwner;
 import dsm.TRADES.Data;
 import dsm.TRADES.DataOwner;
 import dsm.TRADES.DataOwnerElement;
+import dsm.TRADES.ExternalControl;
+import dsm.TRADES.ExternalThreat;
 import dsm.TRADES.NamedElement;
 import dsm.TRADES.ScoreSystem;
 import dsm.TRADES.TRADESPackage;
@@ -310,6 +312,30 @@ public class AnalysisImpl extends ComponentOwnerImpl implements Analysis {
 		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TRADESPackage.ANALYSIS__SCORE_SYSTEM, newScoreSystem,
 					newScoreSystem));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ExternalThreat getExternalThreat(String id, String source) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ExternalControl getExternalControl(String id, String source) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -665,6 +691,10 @@ public class AnalysisImpl extends ComponentOwnerImpl implements Analysis {
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
+		case TRADESPackage.ANALYSIS___GET_EXTERNAL_THREAT__STRING_STRING:
+			return getExternalThreat((String) arguments.get(0), (String) arguments.get(1));
+		case TRADESPackage.ANALYSIS___GET_EXTERNAL_CONTROL__STRING_STRING:
+			return getExternalControl((String) arguments.get(0), (String) arguments.get(1));
 		case TRADESPackage.ANALYSIS___GET_ALL_CONTROLS:
 			return getAllControls();
 		case TRADESPackage.ANALYSIS___GET_DATAS:

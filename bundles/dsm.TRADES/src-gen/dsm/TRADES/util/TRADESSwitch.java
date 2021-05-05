@@ -100,6 +100,8 @@ public class TRADESSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseNamedElement(threat);
 			if (result == null)
+				result = caseIThreatDefinition(threat);
+			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
@@ -124,6 +126,8 @@ public class TRADESSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseNamedElement(control);
 			if (result == null)
+				result = caseIControlDefinition(control);
+			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
@@ -137,6 +141,8 @@ public class TRADESSwitch<T> extends Switch<T> {
 		case TRADESPackage.THREAT_MITIGATION_RELATION: {
 			ThreatMitigationRelation threatMitigationRelation = (ThreatMitigationRelation) theEObject;
 			T result = caseThreatMitigationRelation(threatMitigationRelation);
+			if (result == null)
+				result = caseIMitigationLink(threatMitigationRelation);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -233,6 +239,8 @@ public class TRADESSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseNamedElement(externalThreat);
 			if (result == null)
+				result = caseIThreatDefinition(externalThreat);
+			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
@@ -259,6 +267,8 @@ public class TRADESSwitch<T> extends Switch<T> {
 				result = caseControl(externalControl);
 			if (result == null)
 				result = caseNamedElement(externalControl);
+			if (result == null)
+				result = caseIControlDefinition(externalControl);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -301,12 +311,42 @@ public class TRADESSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseNamedElement(catalog);
 			if (result == null)
+				result = caseICatalogDefinition(catalog);
+			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
 		case TRADESPackage.ABSTRACT_THREAT_OWNER: {
 			AbstractThreatOwner abstractThreatOwner = (AbstractThreatOwner) theEObject;
 			T result = caseAbstractThreatOwner(abstractThreatOwner);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case TRADESPackage.ITHREAT_DEFINITION: {
+			IThreatDefinition iThreatDefinition = (IThreatDefinition) theEObject;
+			T result = caseIThreatDefinition(iThreatDefinition);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case TRADESPackage.ICONTROL_DEFINITION: {
+			IControlDefinition iControlDefinition = (IControlDefinition) theEObject;
+			T result = caseIControlDefinition(iControlDefinition);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case TRADESPackage.ICATALOG_DEFINITION: {
+			ICatalogDefinition iCatalogDefinition = (ICatalogDefinition) theEObject;
+			T result = caseICatalogDefinition(iCatalogDefinition);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case TRADESPackage.IMITIGATION_LINK: {
+			IMitigationLink iMitigationLink = (IMitigationLink) theEObject;
+			T result = caseIMitigationLink(iMitigationLink);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -703,6 +743,66 @@ public class TRADESSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseAbstractThreatOwner(AbstractThreatOwner object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>IThreat Definition</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>IThreat Definition</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseIThreatDefinition(IThreatDefinition object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>IControl Definition</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>IControl Definition</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseIControlDefinition(IControlDefinition object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>ICatalog Definition</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>ICatalog Definition</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseICatalogDefinition(ICatalogDefinition object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>IMitigation Link</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>IMitigation Link</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseIMitigationLink(IMitigationLink object) {
 		return null;
 	}
 

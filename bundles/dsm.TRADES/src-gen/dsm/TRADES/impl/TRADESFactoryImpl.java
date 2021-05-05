@@ -195,7 +195,7 @@ public class TRADESFactoryImpl extends EFactoryImpl implements TRADESFactory {
 	 */
 	@Override
 	public Control createControl() {
-		ControlImpl control = new ControlImpl();
+		ControlCustomImpl control = new ControlCustomImpl();
 		return control;
 	}
 
@@ -327,7 +327,7 @@ public class TRADESFactoryImpl extends EFactoryImpl implements TRADESFactory {
 	 */
 	@Override
 	public ExternalControl createExternalControl() {
-		ExternalControlImpl externalControl = new ExternalControlImpl();
+		ExternalControlCustomImpl externalControl = new ExternalControlCustomImpl();
 		return externalControl;
 	}
 
@@ -371,7 +371,7 @@ public class TRADESFactoryImpl extends EFactoryImpl implements TRADESFactory {
 	 */
 	@Override
 	public Catalog createCatalog() {
-		CatalogImpl catalog = new CatalogImpl();
+		CatalogCustomImpl catalog = new CatalogCustomImpl();
 		return catalog;
 	}
 

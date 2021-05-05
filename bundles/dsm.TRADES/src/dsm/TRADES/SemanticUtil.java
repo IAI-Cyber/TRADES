@@ -56,6 +56,24 @@ public class SemanticUtil {
 		return analysis;
 	}
 
+	/**
+	 * Create a empty catalog
+	 * @param rootObjectName the name of the catalog
+	 * @return a new {@link Catalog}
+	 */
+	public static Catalog createInitialCatalog(String rootObjectName) {
+		Catalog catalog = TRADESFactory.eINSTANCE.createCatalog();
+		catalog.setName(rootObjectName);
+
+		ThreatsOwner threatOwner = TRADESFactory.eINSTANCE.createThreatsOwner();
+		catalog.setThreatOwner(threatOwner);
+
+		ControlOwner controlOwner = TRADESFactory.eINSTANCE.createControlOwner();
+		catalog.setControlOwner(controlOwner);
+
+		return catalog;
+	}
+
 	public static void createDataOwner(Analysis analysis) {
 		DataOwner dataOwner = TRADESFactory.eINSTANCE.createDataOwner();
 		analysis.setDataOwner(dataOwner);

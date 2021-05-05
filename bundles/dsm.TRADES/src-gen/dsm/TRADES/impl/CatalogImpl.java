@@ -17,9 +17,11 @@ import dsm.TRADES.AbstractControlOwner;
 import dsm.TRADES.Catalog;
 import dsm.TRADES.Control;
 import dsm.TRADES.ControlOwner;
+import dsm.TRADES.ICatalogDefinition;
+import dsm.TRADES.IControlDefinition;
+import dsm.TRADES.IThreatDefinition;
 import dsm.TRADES.NamedElement;
 import dsm.TRADES.TRADESPackage;
-
 import java.lang.reflect.InvocationTargetException;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -176,6 +178,66 @@ public class CatalogImpl extends AbstractThreatOwnerImpl implements Catalog {
 	 * @generated
 	 */
 	@Override
+	public IThreatDefinition getThreatById(String id) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public IControlDefinition getControlById(String id) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<IThreatDefinition> getThreatDefinitions() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<IControlDefinition> getControlDefinitions() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getIdentifier() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EList<Control> getAllControls() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -287,6 +349,12 @@ public class CatalogImpl extends AbstractThreatOwnerImpl implements Catalog {
 				return -1;
 			}
 		}
+		if (baseClass == ICatalogDefinition.class) {
+			switch (derivedFeatureID) {
+			default:
+				return -1;
+			}
+		}
 		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
 	}
 
@@ -309,6 +377,12 @@ public class CatalogImpl extends AbstractThreatOwnerImpl implements Catalog {
 			switch (baseFeatureID) {
 			case TRADESPackage.NAMED_ELEMENT__NAME:
 				return TRADESPackage.CATALOG__NAME;
+			default:
+				return -1;
+			}
+		}
+		if (baseClass == ICatalogDefinition.class) {
+			switch (baseFeatureID) {
 			default:
 				return -1;
 			}
@@ -337,6 +411,22 @@ public class CatalogImpl extends AbstractThreatOwnerImpl implements Catalog {
 				return -1;
 			}
 		}
+		if (baseClass == ICatalogDefinition.class) {
+			switch (baseOperationID) {
+			case TRADESPackage.ICATALOG_DEFINITION___GET_THREAT_BY_ID__STRING:
+				return TRADESPackage.CATALOG___GET_THREAT_BY_ID__STRING;
+			case TRADESPackage.ICATALOG_DEFINITION___GET_CONTROL_BY_ID__STRING:
+				return TRADESPackage.CATALOG___GET_CONTROL_BY_ID__STRING;
+			case TRADESPackage.ICATALOG_DEFINITION___GET_THREAT_DEFINITIONS:
+				return TRADESPackage.CATALOG___GET_THREAT_DEFINITIONS;
+			case TRADESPackage.ICATALOG_DEFINITION___GET_CONTROL_DEFINITIONS:
+				return TRADESPackage.CATALOG___GET_CONTROL_DEFINITIONS;
+			case TRADESPackage.ICATALOG_DEFINITION___GET_IDENTIFIER:
+				return TRADESPackage.CATALOG___GET_IDENTIFIER;
+			default:
+				return -1;
+			}
+		}
 		return super.eDerivedOperationID(baseOperationID, baseClass);
 	}
 
@@ -348,6 +438,16 @@ public class CatalogImpl extends AbstractThreatOwnerImpl implements Catalog {
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
+		case TRADESPackage.CATALOG___GET_THREAT_BY_ID__STRING:
+			return getThreatById((String) arguments.get(0));
+		case TRADESPackage.CATALOG___GET_CONTROL_BY_ID__STRING:
+			return getControlById((String) arguments.get(0));
+		case TRADESPackage.CATALOG___GET_THREAT_DEFINITIONS:
+			return getThreatDefinitions();
+		case TRADESPackage.CATALOG___GET_CONTROL_DEFINITIONS:
+			return getControlDefinitions();
+		case TRADESPackage.CATALOG___GET_IDENTIFIER:
+			return getIdentifier();
 		case TRADESPackage.CATALOG___GET_ALL_CONTROLS:
 			return getAllControls();
 		}

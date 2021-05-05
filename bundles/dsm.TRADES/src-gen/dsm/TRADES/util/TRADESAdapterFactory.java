@@ -208,6 +208,26 @@ public class TRADESAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseIThreatDefinition(IThreatDefinition object) {
+			return createIThreatDefinitionAdapter();
+		}
+
+		@Override
+		public Adapter caseIControlDefinition(IControlDefinition object) {
+			return createIControlDefinitionAdapter();
+		}
+
+		@Override
+		public Adapter caseICatalogDefinition(ICatalogDefinition object) {
+			return createICatalogDefinitionAdapter();
+		}
+
+		@Override
+		public Adapter caseIMitigationLink(IMitigationLink object) {
+			return createIMitigationLinkAdapter();
+		}
+
+		@Override
 		public Adapter defaultCase(EObject object) {
 			return createEObjectAdapter();
 		}
@@ -587,6 +607,62 @@ public class TRADESAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createAbstractThreatOwnerAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link dsm.TRADES.IThreatDefinition <em>IThreat Definition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see dsm.TRADES.IThreatDefinition
+	 * @generated
+	 */
+	public Adapter createIThreatDefinitionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link dsm.TRADES.IControlDefinition <em>IControl Definition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see dsm.TRADES.IControlDefinition
+	 * @generated
+	 */
+	public Adapter createIControlDefinitionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link dsm.TRADES.ICatalogDefinition <em>ICatalog Definition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see dsm.TRADES.ICatalogDefinition
+	 * @generated
+	 */
+	public Adapter createICatalogDefinitionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link dsm.TRADES.IMitigationLink <em>IMitigation Link</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see dsm.TRADES.IMitigationLink
+	 * @generated
+	 */
+	public Adapter createIMitigationLinkAdapter() {
 		return null;
 	}
 

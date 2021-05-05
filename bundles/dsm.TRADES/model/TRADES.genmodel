@@ -6,7 +6,8 @@
     editorDirectory="/dsm.TRADES.editor/src-gen" modelPluginID="dsm.TRADES" modelName="TRADES"
     rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" codeFormatting="true"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
-    operationReflection="true" importOrganizing="true">
+    usedGenPackages="../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore" operationReflection="true"
+    importOrganizing="true">
   <foreignModel>TRADES.ecore</foreignModel>
   <testsDirectory xsi:nil="true"/>
   <genPackages prefix="TRADES" basePackage="dsm" resource="XMI" disposableProviderFactory="true"
@@ -28,6 +29,14 @@
         convert="return it == null ? &quot;&quot; : it.encode();"/>
     <genClasses ecoreClass="TRADES.ecore#//Analysis">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Analysis/scoreSystem"/>
+      <genOperations ecoreOperation="TRADES.ecore#//Analysis/getExternalThreat">
+        <genParameters ecoreParameter="TRADES.ecore#//Analysis/getExternalThreat/id"/>
+        <genParameters ecoreParameter="TRADES.ecore#//Analysis/getExternalThreat/source"/>
+      </genOperations>
+      <genOperations ecoreOperation="TRADES.ecore#//Analysis/getExternalControl">
+        <genParameters ecoreParameter="TRADES.ecore#//Analysis/getExternalControl/id"/>
+        <genParameters ecoreParameter="TRADES.ecore#//Analysis/getExternalControl/source"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="TRADES.ecore#//Threat">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TRADES.ecore#//Threat/threatAllocations"/>
@@ -148,6 +157,32 @@
     <genClasses ecoreClass="TRADES.ecore#//Catalog"/>
     <genClasses ecoreClass="TRADES.ecore#//AbstractThreatOwner">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//AbstractThreatOwner/threatOwner"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="TRADES.ecore#//IThreatDefinition">
+      <genOperations ecoreOperation="TRADES.ecore#//IThreatDefinition/getId"/>
+      <genOperations ecoreOperation="TRADES.ecore#//IThreatDefinition/getDescription"/>
+      <genOperations ecoreOperation="TRADES.ecore#//IThreatDefinition/getName"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="TRADES.ecore#//IControlDefinition">
+      <genOperations ecoreOperation="TRADES.ecore#//IControlDefinition/getDescription"/>
+      <genOperations ecoreOperation="TRADES.ecore#//IControlDefinition/getId"/>
+      <genOperations ecoreOperation="TRADES.ecore#//IControlDefinition/getMitigatedThreatDefinitions"/>
+      <genOperations ecoreOperation="TRADES.ecore#//IControlDefinition/getName"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="TRADES.ecore#//ICatalogDefinition">
+      <genOperations ecoreOperation="TRADES.ecore#//ICatalogDefinition/getThreatById">
+        <genParameters ecoreParameter="TRADES.ecore#//ICatalogDefinition/getThreatById/id"/>
+      </genOperations>
+      <genOperations ecoreOperation="TRADES.ecore#//ICatalogDefinition/getControlById">
+        <genParameters ecoreParameter="TRADES.ecore#//ICatalogDefinition/getControlById/id"/>
+      </genOperations>
+      <genOperations ecoreOperation="TRADES.ecore#//ICatalogDefinition/getThreatDefinitions"/>
+      <genOperations ecoreOperation="TRADES.ecore#//ICatalogDefinition/getControlDefinitions"/>
+      <genOperations ecoreOperation="TRADES.ecore#//ICatalogDefinition/getIdentifier"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="TRADES.ecore#//IMitigationLink">
+      <genOperations ecoreOperation="TRADES.ecore#//IMitigationLink/getDescription"/>
+      <genOperations ecoreOperation="TRADES.ecore#//IMitigationLink/getThreat"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>
