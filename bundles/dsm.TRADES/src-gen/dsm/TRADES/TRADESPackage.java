@@ -1757,13 +1757,31 @@ public interface TRADESPackage extends EPackage {
 	int LINK__LINKTYPE = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Link Conveyed</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK__LINK_CONVEYED = NAMED_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Conveying Link</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK__CONVEYING_LINK = NAMED_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
 	 * The number of structural features of the '<em>Link</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LINK_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int LINK_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of operations of the '<em>Link</em>' class.
@@ -2914,6 +2932,28 @@ public interface TRADESPackage extends EPackage {
 	EReference getLink_Linktype();
 
 	/**
+	 * Returns the meta object for the reference list '{@link dsm.TRADES.Link#getLinkConveyed <em>Link Conveyed</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Link Conveyed</em>'.
+	 * @see dsm.TRADES.Link#getLinkConveyed()
+	 * @see #getLink()
+	 * @generated
+	 */
+	EReference getLink_LinkConveyed();
+
+	/**
+	 * Returns the meta object for the reference list '{@link dsm.TRADES.Link#getConveyingLink <em>Conveying Link</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Conveying Link</em>'.
+	 * @see dsm.TRADES.Link#getConveyingLink()
+	 * @see #getLink()
+	 * @generated
+	 */
+	EReference getLink_ConveyingLink();
+
+	/**
 	 * Returns the meta object for class '{@link dsm.TRADES.LinkOwner <em>Link Owner</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3832,6 +3872,22 @@ public interface TRADESPackage extends EPackage {
 		 * @generated
 		 */
 		EReference LINK__LINKTYPE = eINSTANCE.getLink_Linktype();
+
+		/**
+		 * The meta object literal for the '<em><b>Link Conveyed</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference LINK__LINK_CONVEYED = eINSTANCE.getLink_LinkConveyed();
+
+		/**
+		 * The meta object literal for the '<em><b>Conveying Link</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference LINK__CONVEYING_LINK = eINSTANCE.getLink_ConveyingLink();
 
 		/**
 		 * The meta object literal for the '{@link dsm.TRADES.impl.LinkOwnerImpl <em>Link Owner</em>}' class.

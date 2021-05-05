@@ -197,6 +197,10 @@
         eType="#//AffectRelation" eOpposite="#//AffectRelation/link"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="linktype" lowerBound="1"
         eType="#//LinkType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="linkConveyed" upperBound="-1"
+        eType="#//Link" eOpposite="#//Link/conveyingLink"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="conveyingLink" upperBound="-1"
+        eType="#//Link" eOpposite="#//Link/linkConveyed"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LinkOwner">
     <eStructuralFeatures xsi:type="ecore:EReference" name="link" upperBound="-1" eType="#//Link"

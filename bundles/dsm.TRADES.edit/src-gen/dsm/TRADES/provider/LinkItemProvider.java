@@ -21,7 +21,6 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
@@ -55,6 +54,8 @@ public class LinkItemProvider extends NamedElementItemProvider {
 
 			addAffectRelationsPropertyDescriptor(object);
 			addLinktypePropertyDescriptor(object);
+			addLinkConveyedPropertyDescriptor(object);
+			addConveyingLinkPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -86,6 +87,36 @@ public class LinkItemProvider extends NamedElementItemProvider {
 						getResourceLocator(), getString("_UI_Link_linktype_feature"),
 						getString("_UI_PropertyDescriptor_description", "_UI_Link_linktype_feature", "_UI_Link_type"),
 						TRADESPackage.Literals.LINK__LINKTYPE, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Link Conveyed feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addLinkConveyedPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Link_linkConveyed_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Link_linkConveyed_feature",
+								"_UI_Link_type"),
+						TRADESPackage.Literals.LINK__LINK_CONVEYED, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Conveying Link feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addConveyingLinkPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Link_conveyingLink_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Link_conveyingLink_feature",
+								"_UI_Link_type"),
+						TRADESPackage.Literals.LINK__CONVEYING_LINK, true, false, true, null, null, null));
 	}
 
 	/**

@@ -1297,6 +1297,26 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * @generated
 	 */
 	@Override
+	public EReference getLink_LinkConveyed() {
+		return (EReference) linkEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getLink_ConveyingLink() {
+		return (EReference) linkEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getLinkOwner() {
 		return linkOwnerEClass;
 	}
@@ -1538,6 +1558,8 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		linkEClass = createEClass(LINK);
 		createEReference(linkEClass, LINK__AFFECT_RELATIONS);
 		createEReference(linkEClass, LINK__LINKTYPE);
+		createEReference(linkEClass, LINK__LINK_CONVEYED);
+		createEReference(linkEClass, LINK__CONVEYING_LINK);
 
 		linkOwnerEClass = createEClass(LINK_OWNER);
 		createEReference(linkOwnerEClass, LINK_OWNER__LINK);
@@ -1885,6 +1907,12 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		initEReference(getLink_Linktype(), this.getLinkType(), null, "linktype", null, 1, 1, Link.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
+		initEReference(getLink_LinkConveyed(), this.getLink(), this.getLink_ConveyingLink(), "linkConveyed", null, 0,
+				-1, Link.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getLink_ConveyingLink(), this.getLink(), this.getLink_LinkConveyed(), "conveyingLink", null, 0,
+				-1, Link.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(linkOwnerEClass, LinkOwner.class, "LinkOwner", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
