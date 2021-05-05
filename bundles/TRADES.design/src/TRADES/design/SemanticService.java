@@ -23,6 +23,7 @@ import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.UUID;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -173,7 +174,13 @@ public class SemanticService {
 	}
 
 	public static Control createInternalControl(AbstractControlOwner cmp) {
-		return SemanticUtil.addControl(cmp, TRADESFactory.eINSTANCE.createControl(), true);
+		Control control = SemanticUtil.addControl(cmp, TRADESFactory.eINSTANCE.createControl(), true);
+		control.setId(UUID.randomUUID().toString());
+		return control;
+	}
+
+	public String generateUUID(EObject any) {
+		return UUID.randomUUID().toString();
 	}
 
 	public static Data createData(DataOwnerElement element) {
