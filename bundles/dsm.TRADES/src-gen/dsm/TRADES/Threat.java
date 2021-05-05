@@ -38,7 +38,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface Threat extends NamedElement {
+public interface Threat extends NamedElement, IThreatDefinition {
 	/**
 	 * Returns the value of the '<em><b>Threat Allocations</b></em>' reference list.
 	 * The list contents are of type {@link dsm.TRADES.ThreatAllocationRelation}.

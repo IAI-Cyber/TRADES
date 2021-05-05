@@ -31,19 +31,25 @@ import java.util.stream.Stream;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.ECrossReferenceAdapter;
+import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.sirius.business.api.query.EObjectQuery;
 import org.eclipse.sirius.business.api.session.Session;
+import org.eclipse.sirius.common.ui.tools.api.util.EclipseUIUtil;
 import org.eclipse.sirius.diagram.DDiagram;
 import org.eclipse.sirius.diagram.DNodeContainer;
 import org.eclipse.sirius.diagram.DSemanticDiagram;
 import org.eclipse.sirius.diagram.business.api.helper.graphicalfilters.HideFilterHelper;
+import org.eclipse.sirius.ui.tools.api.views.modelexplorerview.IModelExplorerView;
 import org.eclipse.sirius.viewpoint.DRepresentationElement;
 import org.eclipse.sirius.viewpoint.DSemanticDecorator;
 import org.eclipse.sirius.viewpoint.ViewpointPackage;
+import org.eclipse.ui.IViewPart;
+import org.eclipse.ui.navigator.CommonNavigator;
 
 import dsm.TRADES.AffectRelation;
 import dsm.TRADES.Analysis;
 import dsm.TRADES.AttackChainStep;
+import dsm.TRADES.Catalog;
 import dsm.TRADES.Component;
 import dsm.TRADES.ComponentOwner;
 import dsm.TRADES.Control;
@@ -56,6 +62,26 @@ import dsm.TRADES.ThreatMitigationRelation;
 import dsm.TRADES.util.EcoreUtils;
 
 public class DiagramService {
+
+	/**
+	 * Check is the given {@link EObject} is stored in a {@link Catalog}
+	 * 
+	 * @param o the object to test
+	 * @return <code>true</code> is store inside a {@link Catalog},
+	 *         <code>false</code> otherwise
+	 */
+	public boolean isFromCatalog(EObject o) {
+		EObject current = o;
+		while (current != null) {
+			if (current instanceof Catalog) {
+				return true;
+			} else if (current instanceof Analysis) {
+				return false;
+			}
+			current = current.eContainer();
+		}
+		return false;
+	}
 
 	/**
 	 * Retrieve the containing {@link DSemanticDiagram} from any node in it
@@ -425,6 +451,21 @@ public class DiagramService {
 			Desktop.getDesktop().browse(URI.create(link));
 		} catch (IOException e) {
 			Activator.logError("Problem while open link " + link, e);
+		}
+	}
+
+	/**
+	 * Reveal the given {@link EObject} in the Model explorer view
+	 * 
+	 * @param target a non null {@link EObject}
+	 */
+	public static void revealInModelExplorer(EObject target) {
+		if (target != null) {
+			IViewPart modelExplorerPart = EclipseUIUtil.getView(IModelExplorerView.ID);
+			if (modelExplorerPart instanceof CommonNavigator) {
+				((CommonNavigator) modelExplorerPart).selectReveal(new StructuredSelection(target));
+
+			}
 		}
 	}
 }

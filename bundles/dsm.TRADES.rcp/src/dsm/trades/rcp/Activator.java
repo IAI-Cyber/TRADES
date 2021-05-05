@@ -13,6 +13,8 @@
 *******************************************************************************************************/
 package dsm.trades.rcp;
 
+import org.eclipse.core.runtime.IStatus;
+import org.eclipse.core.runtime.Status;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
 
@@ -52,6 +54,50 @@ public class Activator extends AbstractUIPlugin {
 	 */
 	public static Activator getDefault() {
 		return plugin;
+	}
+
+	private void doLogInfo(String message) {
+		getLog().log(new Status(IStatus.INFO, PLUGIN_ID, message));
+	}
+
+	private void doLogError(String message) {
+		getLog().log(new Status(IStatus.ERROR, PLUGIN_ID, message));
+	}
+
+	public static void logError(String message) {
+		if (plugin != null) {
+			plugin.doLogError(message);
+		} else {
+			System.err.println(message);
+		}
+	}
+
+	public static void logInfo(String message) {
+		if (plugin != null) {
+			plugin.doLogInfo(message);
+		} else {
+			System.out.println(message);
+		}
+	}
+
+	/**
+	 * Tries to log and error (either in the eclipse logging system if the plugin is
+	 * started or in System.err)
+	 * 
+	 * @param message the message
+	 * @param e       an exception
+	 */
+	public static void logError(String message, Throwable e) {
+		if (plugin != null) {
+			plugin.doLogError(message, e);
+		} else {
+			System.err.println(message);
+			e.printStackTrace();
+		}
+	}
+
+	private void doLogError(String string, Throwable e) {
+		getLog().log(new Status(IStatus.ERROR, PLUGIN_ID, string, e));
 	}
 
 }

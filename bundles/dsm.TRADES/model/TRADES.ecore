@@ -4,13 +4,19 @@
   <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
     <details key="documentation" value="TRADES model, by Israel Aerospace Industries. All rights reserved.&#xD;&#xA;&#xD;&#xA;The TRADES model, based on Threat and Risk assessment ontology and the TRADES model-based methodology."/>
   </eAnnotations>
-  <eClassifiers xsi:type="ecore:EClass" name="Analysis" eSuperTypes="#//ComponentOwner #//DataOwnerElement #//NamedElement #//AbstractControlOwner #//LinkTypeOwner">
+  <eClassifiers xsi:type="ecore:EClass" name="Analysis" eSuperTypes="#//ComponentOwner #//DataOwnerElement #//NamedElement #//AbstractControlOwner #//AbstractThreatOwner #//LinkTypeOwner">
+    <eOperations name="getExternalThreat" eType="#//ExternalThreat">
+      <eParameters name="id" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+      <eParameters name="source" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    </eOperations>
+    <eOperations name="getExternalControl" eType="#//ExternalControl">
+      <eParameters name="id" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+      <eParameters name="source" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="scoreSystem" eType="#//ScoreSystem"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="threatOwner" lowerBound="1"
-        eType="#//ThreatsOwner" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Threat" eSuperTypes="#//NamedElement">
+  <eClassifiers xsi:type="ecore:EClass" name="Threat" eSuperTypes="#//NamedElement #//IThreatDefinition">
     <eOperations name="checkIsUsed" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eParameters name="chain" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain"/>
       <eParameters name="context" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap"/>
@@ -28,7 +34,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="affectRelations" upperBound="-1"
         eType="#//AffectRelation" containment="true" eOpposite="#//AffectRelation/sourceComponent"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Control" eSuperTypes="#//NamedElement">
+  <eClassifiers xsi:type="ecore:EClass" name="Control" eSuperTypes="#//NamedElement #//IControlDefinition">
     <eStructuralFeatures xsi:type="ecore:EReference" name="mitigatedThreats" upperBound="-1"
         eType="#//Threat"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -61,7 +67,7 @@
     <eLiterals name="Gap" value="1"/>
     <eLiterals name="Accepted" value="2"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ThreatMitigationRelation">
+  <eClassifiers xsi:type="ecore:EClass" name="ThreatMitigationRelation" eSuperTypes="#//IMitigationLink">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="assessment" lowerBound="1"
         eType="#//AssessmentENUM" defaultValueLiteral="Undecided"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="control" lowerBound="1"
@@ -210,5 +216,46 @@
   <eClassifiers xsi:type="ecore:EClass" name="LinkTypeOwner">
     <eStructuralFeatures xsi:type="ecore:EReference" name="linktype" upperBound="-1"
         eType="#//LinkType" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Catalog" eSuperTypes="#//AbstractThreatOwner #//AbstractControlOwner #//NamedElement #//ICatalogDefinition"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractThreatOwner" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="threatOwner" lowerBound="1"
+        eType="#//ThreatsOwner" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IThreatDefinition" abstract="true" interface="true">
+    <eOperations name="getId" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eOperations name="getDescription" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eOperations name="getName" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IControlDefinition" abstract="true"
+      interface="true">
+    <eOperations name="getDescription" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eOperations name="getId" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eOperations name="getMitigatedThreatDefinitions" upperBound="-1" eType="#//IMitigationLink"/>
+    <eOperations name="getName" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ICatalogDefinition" abstract="true"
+      interface="true">
+    <eOperations name="getThreatById" eType="#//IThreatDefinition">
+      <eParameters name="id" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    </eOperations>
+    <eOperations name="getControlById" eType="#//IControlDefinition">
+      <eParameters name="id" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    </eOperations>
+    <eOperations name="getThreatDefinitions" upperBound="-1" eType="#//IThreatDefinition">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Get all the threat definition (with valid id) contained by this catalog definition"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="getControlDefinitions" upperBound="-1" eType="#//IControlDefinition">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Get all the control definition (with valid id) contained by this catalog definition"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="getIdentifier" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IMitigationLink" abstract="true" interface="true">
+    <eOperations name="getDescription" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eOperations name="getThreat" eType="#//IThreatDefinition"/>
   </eClassifiers>
 </ecore:EPackage>

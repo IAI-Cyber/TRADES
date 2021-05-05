@@ -20,6 +20,7 @@ import java.nio.file.Paths;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.UUID;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -36,7 +37,10 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
-import dsm.TRADES.Analysis;
+import com.google.common.base.Charsets;
+import com.google.common.hash.Hashing;
+
+import dsm.TRADES.Catalog;
 import dsm.TRADES.ControlOwner;
 import dsm.TRADES.ExternalControl;
 import dsm.TRADES.ExternalThreat;
@@ -64,9 +68,9 @@ public class InitCapec implements IApplication {
 
 		Resource resource = rs.createResource(URI.createFileURI(targetModelFile));
 
-		Analysis analysis = SemanticUtil.createInitialModel("Capec");
+		Catalog catalog = SemanticUtil.createInitialCatalog("Capec");
 
-		ThreatsOwner threatOwner = analysis.getThreatOwner();
+		ThreatsOwner threatOwner = catalog.getThreatOwner();
 
 		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 		DocumentBuilder builder = factory.newDocumentBuilder();
@@ -86,8 +90,7 @@ public class InitCapec implements IApplication {
 					for (int j = 0; j < attackPatternList.getLength(); j++) {
 						Node threatNode = attackPatternList.item(j);
 						if (threatNode instanceof Element) {
-
-							ExternalThreat threat = createNewThreat((Element) threatNode, analysis.getControlOwner());
+							ExternalThreat threat = createNewThreat((Element) threatNode, catalog.getControlOwner());
 							threatOwner.getExternals().add(threat);
 						}
 					}
@@ -100,7 +103,7 @@ public class InitCapec implements IApplication {
 			e.printStackTrace();
 		}
 
-		resource.getContents().add(analysis);
+		resource.getContents().add(catalog);
 		resource.save(Collections.emptyMap());
 		return 1;
 	}
@@ -120,12 +123,18 @@ public class InitCapec implements IApplication {
 		extPattern.setId("Capec_" + oritinalId);
 		extPattern.setSource("Capec");
 		extPattern.setLink(SITE_PREFIX + oritinalId + ".html");
-		NodeList descriptionNodes = parent.getElementsByTagName("Description");
-		for (int j = 0; j < descriptionNodes.getLength(); j++) {
-			Element descriptionNode = (Element) descriptionNodes.item(j);
-			String description = descriptionNode.getTextContent();
-			extPattern.setDescription(description);
+		NodeList children = parent.getChildNodes();
+		String description = "";
+		for (int j = 0; j < children.getLength(); j++) {
+			Node descriptionNode = children.item(j);
+			if (descriptionNode instanceof Element) {
+				Element child = (Element) descriptionNode;
+				if ("Description".equals(child.getTagName())) {
+					description += child.getTextContent() + "\n";
+				}
+			}
 		}
+		extPattern.setDescription(description);
 
 		NodeList mitigationsNodes = parent.getElementsByTagName("Mitigations");
 		for (int j = 0; j < mitigationsNodes.getLength(); j++) {
@@ -142,6 +151,13 @@ public class InitCapec implements IApplication {
 					existingControl = TRADESFactory.eINSTANCE.createExternalControl();
 					existingControl.setName(textContent);
 					existingControl.setSource("Capec");
+					final String id;
+					if (textContent != null && !textContent.isBlank()) {
+						id = "Control_" + Hashing.sha256().hashString(textContent, Charsets.UTF_8).toString();
+					} else {
+						id = UUID.randomUUID().toString();
+					}
+					existingControl.setId(id);
 
 					controlOwner.getExternals().add(existingControl);
 					idToControls.put(textContent, existingControl);

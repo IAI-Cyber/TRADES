@@ -32,6 +32,7 @@ import java.util.function.Predicate;
 
 import org.eclipse.emf.codegen.ecore.genmodel.GenClass;
 import org.eclipse.emf.codegen.ecore.genmodel.GenFeature;
+import org.eclipse.emf.codegen.ecore.genmodel.GenModel;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
@@ -44,6 +45,7 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.EcoreFactory;
 import org.eclipse.emf.ecore.EcorePackage;
+import org.eclipse.emf.ecore.resource.ResourceSet;
 
 import com.google.common.base.CaseFormat;
 
@@ -51,6 +53,11 @@ import dsm.oscal.ext.matchers.EClassifierMatchers;
 import gov.nist.secauto.metaschema.datatypes.markup.MarkupMultiline;
 
 public class OscalSemanticRefactorer implements ISemanticRefactorer {
+
+	private static final org.eclipse.emf.common.util.URI tradesMMuri = org.eclipse.emf.common.util.URI
+			.createPlatformPluginURI("/dsm.TRADES/model/TRADES.ecore", true);
+	private static final org.eclipse.emf.common.util.URI tradesGEnMMuri = org.eclipse.emf.common.util.URI
+			.createPlatformPluginURI("/dsm.TRADES/model/TRADES.genmodel", true);
 
 	private static final Predicate<EStructuralFeature> UUID_ATTR = isUnique()/*
 																				 * Also take non unique and for them to
@@ -69,9 +76,26 @@ public class OscalSemanticRefactorer implements ISemanticRefactorer {
 
 	private EDataType uriType;
 
+	private ResourceSet rs;
+
+
+
+	private EPackage tradesEPackage;
+
+	private EClass controlDelf;
+
+	private EClass catalogDelf;
+
 	@Override
-	public void init(EPackage rootEPackage) {
+	public void init(EPackage rootEPackage, ResourceSet rs) {
 		this.rootEPackage = rootEPackage;
+		this.rs = rs;
+
+		this.tradesEPackage = (EPackage) rs.getResource(tradesMMuri, true).getContents().get(0);
+
+		this.controlDelf = (EClass) tradesEPackage.getEClassifier("IControlDefinition");
+		this.catalogDelf = (EClass) tradesEPackage.getEClassifier("ICatalogDefinition");
+
 		this.uuidDataType = (EDataType) rootEPackage.getEClassifiers().stream()
 				.filter(hasInstanceClass(UUID.class.getName())).findFirst().get();
 		this.markupMultilineType = (EDataType) rootEPackage.getEClassifiers().stream()
@@ -102,8 +126,7 @@ public class OscalSemanticRefactorer implements ISemanticRefactorer {
 		EClass paramOwner = createAbstractOwnerClass(getEClass("Parameter"), "params", true);
 		EOperation getParamOperation = createGetParameterOperation();
 		paramOwner.getEOperations().add(getParamOperation);
-		
-		
+
 		createAbstractOwnerClass(getEClass("Property"), "props", true);
 		createAbstractOwnerClass(getEClass("Link"), "links", true);
 
@@ -118,6 +141,8 @@ public class OscalSemanticRefactorer implements ISemanticRefactorer {
 		partOwner.getESuperTypes().add(docComputer);
 
 		getEClass("Part").getESuperTypes().add(docComputer);
+		getEClass("Control").getESuperTypes().add(controlDelf);
+		getEClass("Catalog").getESuperTypes().add(catalogDelf);
 
 		createElementWith(markupMultilineType, "remarks", false);
 		createElementWith(EcorePackage.eINSTANCE.getEString(), "value", false);
@@ -143,18 +168,18 @@ public class OscalSemanticRefactorer implements ISemanticRefactorer {
 
 	public EOperation createGetParameterOperation() {
 		EOperation getParamOperation = createOperation("getParameterValues", null, false);
-		
+
 		EGenericType mapType = EcoreFactory.eINSTANCE.createEGenericType();
-		mapType.setEClassifier( EcorePackage.eINSTANCE.getEMap());
-		
+		mapType.setEClassifier(EcorePackage.eINSTANCE.getEMap());
+
 		EGenericType key = EcoreFactory.eINSTANCE.createEGenericType();
 		key.setEClassifier(EcorePackage.eINSTANCE.getEString());
 		mapType.getETypeArguments().add(key);
-		
+
 		EGenericType value = EcoreFactory.eINSTANCE.createEGenericType();
 		value.setEClassifier(EcorePackage.eINSTANCE.getEString());
 		mapType.getETypeArguments().add(value);
-		
+
 		getParamOperation.setEGenericType(mapType);
 		return getParamOperation;
 	}
@@ -305,12 +330,18 @@ public class OscalSemanticRefactorer implements ISemanticRefactorer {
 	}
 
 	@Override
-	public void refactorGenModel(List<GenClass> genClasses) {
+	public void refactorGenModel(GenModel genModel) {
+		genModel.getForeignModel().add("../../dsm.TRADES/model/TRADES.ecore");
+		genModel.getUsedGenPackages()
+				.add(((GenModel) rs.getResource(tradesGEnMMuri, true).getContents().get(0)).getGenPackages().get(0));
+	}
+
+	@Override
+	public void refactorGenClasses(List<GenClass> genClasses) {
 		this.genClasses = genClasses;
 		for (EReference ref : hiddenContainementReferences) {
 			getGenFeaure(ref).setChildren(false);
 		}
-
 	}
 
 	private GenFeature getGenFeaure(EReference ref) {

@@ -15,6 +15,8 @@
  */
 package dsm.oscal.model.OscalCatalog;
 
+import dsm.TRADES.IControlDefinition;
+
 import dsm.oscal.model.OscalMetadata.ElementWithClazz;
 import dsm.oscal.model.OscalMetadata.ElementWithId;
 import dsm.oscal.model.OscalMetadata.LinkOwner;
@@ -54,7 +56,7 @@ import org.eclipse.emf.common.util.EList;
  * @model annotation="Metaschema source='&lt;Metaschema&gt;oscal-catalog.&lt;AssemblyDefinition&gt;control'"
  * @generated
  */
-public interface Control extends OscalElement, ParameterOwner, PropertyOwner, LinkOwner, PartOwner, ElementWithClazz, ElementWithId {
+public interface Control extends OscalElement, ParameterOwner, PropertyOwner, LinkOwner, PartOwner, IControlDefinition, ElementWithClazz, ElementWithId {
 	/**
 	 * Returns the value of the '<em><b>Controls</b></em>' containment reference list.
 	 * The list contents are of type {@link dsm.oscal.model.OscalCatalog.Control}.

@@ -631,12 +631,34 @@ public class TRADESItemProviderAdapterFactory extends TRADESAdapterFactory
 	}
 
 	/**
-	 * This returns the root adapter factory that contains this factory.
+	 * This keeps track of the one adapter used for all {@link dsm.TRADES.Catalog} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected CatalogItemProviderCustomImpl catalogItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link dsm.TRADES.Catalog}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
+	public Adapter createCatalogAdapter() {
+		if (catalogItemProvider == null) {
+			catalogItemProvider = new CatalogItemProviderCustomImpl(this);
+		}
+
+		return catalogItemProvider;
+	}
+
+	/**
+	 * This returns the root adapter factory that contains this factory.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public ComposeableAdapterFactory getRootAdapterFactory() {
 		return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
 	}
@@ -647,7 +669,6 @@ public class TRADESItemProviderAdapterFactory extends TRADESAdapterFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory) {
 		this.parentAdapterFactory = parentAdapterFactory;
 	}
@@ -723,7 +744,6 @@ public class TRADESItemProviderAdapterFactory extends TRADESAdapterFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void addListener(INotifyChangedListener notifyChangedListener) {
 		changeNotifier.addListener(notifyChangedListener);
 	}
@@ -734,7 +754,6 @@ public class TRADESItemProviderAdapterFactory extends TRADESAdapterFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void removeListener(INotifyChangedListener notifyChangedListener) {
 		changeNotifier.removeListener(notifyChangedListener);
 	}
@@ -745,7 +764,6 @@ public class TRADESItemProviderAdapterFactory extends TRADESAdapterFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void fireNotifyChanged(Notification notification) {
 		changeNotifier.fireNotifyChanged(notification);
 
@@ -760,7 +778,6 @@ public class TRADESItemProviderAdapterFactory extends TRADESAdapterFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void dispose() {
 		if (analysisItemProvider != null)
 			analysisItemProvider.dispose();
@@ -808,6 +825,8 @@ public class TRADESItemProviderAdapterFactory extends TRADESAdapterFactory
 			linkTypeItemProvider.dispose();
 		if (linkTypeOwnerItemProvider != null)
 			linkTypeOwnerItemProvider.dispose();
+		if (catalogItemProvider != null)
+			catalogItemProvider.dispose();
 	}
 
 }

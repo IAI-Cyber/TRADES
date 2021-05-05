@@ -15,9 +15,13 @@
  */
 package dsm.oscal.model.OscalMetadata.provider;
 
+import dsm.TRADES.provider.TRADESEditPlugin;
+
 import org.eclipse.emf.common.EMFPlugin;
 
 import org.eclipse.emf.common.util.ResourceLocator;
+
+import org.eclipse.emf.ecore.provider.EcoreEditPlugin;
 
 /**
  * This is the central singleton for the Oscal edit plugin.
@@ -51,6 +55,8 @@ public final class OscalEditPlugin extends EMFPlugin {
 	public OscalEditPlugin() {
 		super
 		  (new ResourceLocator [] {
+		     TRADESEditPlugin.INSTANCE,
+		     EcoreEditPlugin.INSTANCE,
 		   });
 	}
 

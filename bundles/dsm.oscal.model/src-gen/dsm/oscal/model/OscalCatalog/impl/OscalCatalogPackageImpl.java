@@ -15,6 +15,8 @@
  */
 package dsm.oscal.model.OscalCatalog.impl;
 
+import dsm.TRADES.TRADESPackage;
+
 import dsm.oscal.model.OscalCatalog.Catalog;
 import dsm.oscal.model.OscalCatalog.Control;
 import dsm.oscal.model.OscalCatalog.Group;
@@ -33,6 +35,7 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EcorePackage;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
@@ -111,21 +114,25 @@ public class OscalCatalogPackageImpl extends EPackageImpl implements OscalCatalo
 
 		isInited = true;
 
+		// Initialize simple dependencies
+		TRADESPackage.eINSTANCE.eClass();
+		EcorePackage.eINSTANCE.eClass();
+
 		// Obtain or create and register interdependencies
-		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(OscalMetadataPackage.eNS_URI);
-		OscalMetadataPackageImpl theOscalMetadataPackage = (OscalMetadataPackageImpl)(registeredPackage instanceof OscalMetadataPackageImpl ? registeredPackage : OscalMetadataPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(OscalCatalogCommonPackage.eNS_URI);
+		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(OscalCatalogCommonPackage.eNS_URI);
 		OscalCatalogCommonPackageImpl theOscalCatalogCommonPackage = (OscalCatalogCommonPackageImpl)(registeredPackage instanceof OscalCatalogCommonPackageImpl ? registeredPackage : OscalCatalogCommonPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(OscalMetadataPackage.eNS_URI);
+		OscalMetadataPackageImpl theOscalMetadataPackage = (OscalMetadataPackageImpl)(registeredPackage instanceof OscalMetadataPackageImpl ? registeredPackage : OscalMetadataPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theOscalCatalogPackage.createPackageContents();
-		theOscalMetadataPackage.createPackageContents();
 		theOscalCatalogCommonPackage.createPackageContents();
+		theOscalMetadataPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theOscalCatalogPackage.initializePackageContents();
-		theOscalMetadataPackage.initializePackageContents();
 		theOscalCatalogCommonPackage.initializePackageContents();
+		theOscalMetadataPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theOscalCatalogPackage.freeze();
@@ -325,6 +332,7 @@ public class OscalCatalogPackageImpl extends EPackageImpl implements OscalCatalo
 
 		// Obtain other dependent packages
 		OscalMetadataPackage theOscalMetadataPackage = (OscalMetadataPackage)EPackage.Registry.INSTANCE.getEPackage(OscalMetadataPackage.eNS_URI);
+		TRADESPackage theTRADESPackage = (TRADESPackage)EPackage.Registry.INSTANCE.getEPackage(TRADESPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -334,11 +342,13 @@ public class OscalCatalogPackageImpl extends EPackageImpl implements OscalCatalo
 		catalogEClass.getESuperTypes().add(theOscalMetadataPackage.getOscalElement());
 		catalogEClass.getESuperTypes().add(theOscalMetadataPackage.getUUIDElement());
 		catalogEClass.getESuperTypes().add(theOscalMetadataPackage.getParameterOwner());
+		catalogEClass.getESuperTypes().add(theTRADESPackage.getICatalogDefinition());
 		controlEClass.getESuperTypes().add(theOscalMetadataPackage.getOscalElement());
 		controlEClass.getESuperTypes().add(theOscalMetadataPackage.getParameterOwner());
 		controlEClass.getESuperTypes().add(theOscalMetadataPackage.getPropertyOwner());
 		controlEClass.getESuperTypes().add(theOscalMetadataPackage.getLinkOwner());
 		controlEClass.getESuperTypes().add(theOscalMetadataPackage.getPartOwner());
+		controlEClass.getESuperTypes().add(theTRADESPackage.getIControlDefinition());
 		controlEClass.getESuperTypes().add(theOscalMetadataPackage.getElementWithClazz());
 		controlEClass.getESuperTypes().add(theOscalMetadataPackage.getElementWithId());
 		groupEClass.getESuperTypes().add(theOscalMetadataPackage.getOscalElement());

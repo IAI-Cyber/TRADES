@@ -114,6 +114,8 @@ public class TRADESFactoryImpl extends EFactoryImpl implements TRADESFactory {
 			return createLinkType();
 		case TRADESPackage.LINK_TYPE_OWNER:
 			return createLinkTypeOwner();
+		case TRADESPackage.CATALOG:
+			return createCatalog();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -205,7 +207,7 @@ public class TRADESFactoryImpl extends EFactoryImpl implements TRADESFactory {
 	 */
 	@Override
 	public Control createControl() {
-		ControlImpl control = new ControlImpl();
+		ControlCustomImpl control = new ControlCustomImpl();
 		return control;
 	}
 
@@ -337,7 +339,7 @@ public class TRADESFactoryImpl extends EFactoryImpl implements TRADESFactory {
 	 */
 	@Override
 	public ExternalControl createExternalControl() {
-		ExternalControlImpl externalControl = new ExternalControlImpl();
+		ExternalControlCustomImpl externalControl = new ExternalControlCustomImpl();
 		return externalControl;
 	}
 
@@ -416,6 +418,17 @@ public class TRADESFactoryImpl extends EFactoryImpl implements TRADESFactory {
 	public LinkTypeOwner createLinkTypeOwner() {
 		LinkTypeOwnerImpl linkTypeOwner = new LinkTypeOwnerImpl();
 		return linkTypeOwner;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Catalog createCatalog() {
+		CatalogCustomImpl catalog = new CatalogCustomImpl();
+		return catalog;
 	}
 
 	/**

@@ -398,7 +398,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="OscalElement" abstract="true">
     <eOperations name="resolve">
       <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
-      <eParameters name="uri" eType="//UriType"/>
+      <eParameters name="uri" eType="//UriReferenceType"/>
     </eOperations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ParameterOwner">

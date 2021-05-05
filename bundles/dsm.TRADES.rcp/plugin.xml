@@ -41,5 +41,12 @@
             id="dsm.TRADES.rcp.import"
             name="TRADES">
       </category>
+      <wizard
+            category="dsm.TRADES.rcp.import"
+            class="dsm.trades.rcp.internal.wizards.ImportTradesModelWizard"
+            icon="icons/bookmarks_view.png"
+            id="dsm.TRADES.rcp.trades"
+            name="Import TRADES library">
+      </wizard>
    </extension>
 </plugin>

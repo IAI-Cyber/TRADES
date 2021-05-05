@@ -32,7 +32,8 @@ Require-Bundle: org.eclipse.ui,
  dsm.TRADES.rcp;bundle-version="2.5.2",
  org.eclipse.core.expressions,
  org.eclipse.core.expressions,
- org.eclipse.eef.ide.ui;bundle-version="2.1.5"
+ org.eclipse.eef.ide.ui;bundle-version="2.1.5",
+ org.eclipse.sirius.common.ui;bundle-version="6.5.0"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-11
 Bundle-Vendor: %providerName

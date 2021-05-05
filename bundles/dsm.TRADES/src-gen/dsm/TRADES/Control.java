@@ -35,7 +35,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface Control extends NamedElement {
+public interface Control extends NamedElement, IControlDefinition {
 	/**
 	 * Returns the value of the '<em><b>Mitigated Threats</b></em>' reference list.
 	 * The list contents are of type {@link dsm.TRADES.Threat}.

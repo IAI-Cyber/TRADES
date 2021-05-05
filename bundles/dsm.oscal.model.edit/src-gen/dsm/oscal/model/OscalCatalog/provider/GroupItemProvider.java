@@ -22,10 +22,9 @@ import dsm.oscal.model.OscalCatalog.OscalCatalogPackage;
 
 import dsm.oscal.model.OscalCatalogCommon.OscalCatalogCommonFactory;
 
+import dsm.oscal.model.OscalCatalogCommon.provider.OscalEditPlugin;
 import dsm.oscal.model.OscalMetadata.OscalMetadataFactory;
 import dsm.oscal.model.OscalMetadata.OscalMetadataPackage;
-
-import dsm.oscal.model.OscalMetadata.provider.OscalEditPlugin;
 import dsm.oscal.model.OscalMetadata.provider.OscalElementItemProvider;
 
 import java.util.Collection;

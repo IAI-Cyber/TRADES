@@ -15,6 +15,8 @@
  */
 package dsm.oscal.model.OscalCatalog;
 
+import dsm.TRADES.ICatalogDefinition;
+
 import dsm.oscal.model.OscalMetadata.BackMatter;
 import dsm.oscal.model.OscalMetadata.Metadata;
 import dsm.oscal.model.OscalMetadata.OscalElement;
@@ -52,7 +54,7 @@ import org.eclipse.emf.common.util.EList;
  * @model annotation="Metaschema source='&lt;Metaschema&gt;oscal-catalog.&lt;AssemblyDefinition&gt;catalog'"
  * @generated
  */
-public interface Catalog extends OscalElement, UUIDElement, ParameterOwner {
+public interface Catalog extends OscalElement, UUIDElement, ParameterOwner, ICatalogDefinition {
 	/**
 	 * Returns the value of the '<em><b>Back Matter</b></em>' containment reference.
 	 * <!-- begin-user-doc -->

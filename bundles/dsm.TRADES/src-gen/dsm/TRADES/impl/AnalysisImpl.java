@@ -14,20 +14,26 @@
 package dsm.TRADES.impl;
 
 import dsm.TRADES.AbstractControlOwner;
+import dsm.TRADES.AbstractThreatOwner;
 import dsm.TRADES.Analysis;
 import dsm.TRADES.Control;
 import dsm.TRADES.ControlOwner;
 import dsm.TRADES.Data;
 import dsm.TRADES.DataOwner;
 import dsm.TRADES.DataOwnerElement;
+import dsm.TRADES.ExternalControl;
+import dsm.TRADES.ExternalThreat;
 import dsm.TRADES.LinkType;
 import dsm.TRADES.LinkTypeOwner;
 import dsm.TRADES.NamedElement;
 import dsm.TRADES.ScoreSystem;
 import dsm.TRADES.TRADESPackage;
 import dsm.TRADES.ThreatsOwner;
+
 import java.lang.reflect.InvocationTargetException;
+
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -37,6 +43,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -51,9 +58,9 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getDataOwner <em>Data Owner</em>}</li>
  *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getName <em>Name</em>}</li>
  *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getControlOwner <em>Control Owner</em>}</li>
+ *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getThreatOwner <em>Threat Owner</em>}</li>
  *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getLinktype <em>Linktype</em>}</li>
  *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getScoreSystem <em>Score System</em>}</li>
- *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getThreatOwner <em>Threat Owner</em>}</li>
  * </ul>
  *
  * @generated
@@ -100,6 +107,16 @@ public class AnalysisImpl extends ComponentOwnerImpl implements Analysis {
 	protected ControlOwner controlOwner;
 
 	/**
+	 * The cached value of the '{@link #getThreatOwner() <em>Threat Owner</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getThreatOwner()
+	 * @generated
+	 * @ordered
+	 */
+	protected ThreatsOwner threatOwner;
+
+	/**
 	 * The cached value of the '{@link #getLinktype() <em>Linktype</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -118,16 +135,6 @@ public class AnalysisImpl extends ComponentOwnerImpl implements Analysis {
 	 * @ordered
 	 */
 	protected ScoreSystem scoreSystem;
-
-	/**
-	 * The cached value of the '{@link #getThreatOwner() <em>Threat Owner</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getThreatOwner()
-	 * @generated
-	 * @ordered
-	 */
-	protected ThreatsOwner threatOwner;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -281,6 +288,58 @@ public class AnalysisImpl extends ComponentOwnerImpl implements Analysis {
 	 * @generated
 	 */
 	@Override
+	public ThreatsOwner getThreatOwner() {
+		return threatOwner;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetThreatOwner(ThreatsOwner newThreatOwner, NotificationChain msgs) {
+		ThreatsOwner oldThreatOwner = threatOwner;
+		threatOwner = newThreatOwner;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					TRADESPackage.ANALYSIS__THREAT_OWNER, oldThreatOwner, newThreatOwner);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setThreatOwner(ThreatsOwner newThreatOwner) {
+		if (newThreatOwner != threatOwner) {
+			NotificationChain msgs = null;
+			if (threatOwner != null)
+				msgs = ((InternalEObject) threatOwner).eInverseRemove(this,
+						EOPPOSITE_FEATURE_BASE - TRADESPackage.ANALYSIS__THREAT_OWNER, null, msgs);
+			if (newThreatOwner != null)
+				msgs = ((InternalEObject) newThreatOwner).eInverseAdd(this,
+						EOPPOSITE_FEATURE_BASE - TRADESPackage.ANALYSIS__THREAT_OWNER, null, msgs);
+			msgs = basicSetThreatOwner(newThreatOwner, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TRADESPackage.ANALYSIS__THREAT_OWNER, newThreatOwner,
+					newThreatOwner));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EList<LinkType> getLinktype() {
 		if (linktype == null) {
 			linktype = new EObjectContainmentEList<LinkType>(LinkType.class, this, TRADESPackage.ANALYSIS__LINKTYPE);
@@ -346,27 +405,10 @@ public class AnalysisImpl extends ComponentOwnerImpl implements Analysis {
 	 * @generated
 	 */
 	@Override
-	public ThreatsOwner getThreatOwner() {
-		return threatOwner;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetThreatOwner(ThreatsOwner newThreatOwner, NotificationChain msgs) {
-		ThreatsOwner oldThreatOwner = threatOwner;
-		threatOwner = newThreatOwner;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					TRADESPackage.ANALYSIS__THREAT_OWNER, oldThreatOwner, newThreatOwner);
-			if (msgs == null)
-				msgs = notification;
-			else
-				msgs.add(notification);
-		}
-		return msgs;
+	public ExternalThreat getExternalThreat(String id, String source) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -375,21 +417,10 @@ public class AnalysisImpl extends ComponentOwnerImpl implements Analysis {
 	 * @generated
 	 */
 	@Override
-	public void setThreatOwner(ThreatsOwner newThreatOwner) {
-		if (newThreatOwner != threatOwner) {
-			NotificationChain msgs = null;
-			if (threatOwner != null)
-				msgs = ((InternalEObject) threatOwner).eInverseRemove(this,
-						EOPPOSITE_FEATURE_BASE - TRADESPackage.ANALYSIS__THREAT_OWNER, null, msgs);
-			if (newThreatOwner != null)
-				msgs = ((InternalEObject) newThreatOwner).eInverseAdd(this,
-						EOPPOSITE_FEATURE_BASE - TRADESPackage.ANALYSIS__THREAT_OWNER, null, msgs);
-			msgs = basicSetThreatOwner(newThreatOwner, msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TRADESPackage.ANALYSIS__THREAT_OWNER, newThreatOwner,
-					newThreatOwner));
+	public ExternalControl getExternalControl(String id, String source) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -452,12 +483,12 @@ public class AnalysisImpl extends ComponentOwnerImpl implements Analysis {
 			return basicSetDataOwner(null, msgs);
 		case TRADESPackage.ANALYSIS__CONTROL_OWNER:
 			return basicSetControlOwner(null, msgs);
+		case TRADESPackage.ANALYSIS__THREAT_OWNER:
+			return basicSetThreatOwner(null, msgs);
 		case TRADESPackage.ANALYSIS__LINKTYPE:
 			return ((InternalEList<?>) getLinktype()).basicRemove(otherEnd, msgs);
 		case TRADESPackage.ANALYSIS__SCORE_SYSTEM:
 			return basicSetScoreSystem(null, msgs);
-		case TRADESPackage.ANALYSIS__THREAT_OWNER:
-			return basicSetThreatOwner(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -476,12 +507,12 @@ public class AnalysisImpl extends ComponentOwnerImpl implements Analysis {
 			return getName();
 		case TRADESPackage.ANALYSIS__CONTROL_OWNER:
 			return getControlOwner();
+		case TRADESPackage.ANALYSIS__THREAT_OWNER:
+			return getThreatOwner();
 		case TRADESPackage.ANALYSIS__LINKTYPE:
 			return getLinktype();
 		case TRADESPackage.ANALYSIS__SCORE_SYSTEM:
 			return getScoreSystem();
-		case TRADESPackage.ANALYSIS__THREAT_OWNER:
-			return getThreatOwner();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -504,15 +535,15 @@ public class AnalysisImpl extends ComponentOwnerImpl implements Analysis {
 		case TRADESPackage.ANALYSIS__CONTROL_OWNER:
 			setControlOwner((ControlOwner) newValue);
 			return;
+		case TRADESPackage.ANALYSIS__THREAT_OWNER:
+			setThreatOwner((ThreatsOwner) newValue);
+			return;
 		case TRADESPackage.ANALYSIS__LINKTYPE:
 			getLinktype().clear();
 			getLinktype().addAll((Collection<? extends LinkType>) newValue);
 			return;
 		case TRADESPackage.ANALYSIS__SCORE_SYSTEM:
 			setScoreSystem((ScoreSystem) newValue);
-			return;
-		case TRADESPackage.ANALYSIS__THREAT_OWNER:
-			setThreatOwner((ThreatsOwner) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -535,14 +566,14 @@ public class AnalysisImpl extends ComponentOwnerImpl implements Analysis {
 		case TRADESPackage.ANALYSIS__CONTROL_OWNER:
 			setControlOwner((ControlOwner) null);
 			return;
+		case TRADESPackage.ANALYSIS__THREAT_OWNER:
+			setThreatOwner((ThreatsOwner) null);
+			return;
 		case TRADESPackage.ANALYSIS__LINKTYPE:
 			getLinktype().clear();
 			return;
 		case TRADESPackage.ANALYSIS__SCORE_SYSTEM:
 			setScoreSystem((ScoreSystem) null);
-			return;
-		case TRADESPackage.ANALYSIS__THREAT_OWNER:
-			setThreatOwner((ThreatsOwner) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -562,12 +593,12 @@ public class AnalysisImpl extends ComponentOwnerImpl implements Analysis {
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		case TRADESPackage.ANALYSIS__CONTROL_OWNER:
 			return controlOwner != null;
+		case TRADESPackage.ANALYSIS__THREAT_OWNER:
+			return threatOwner != null;
 		case TRADESPackage.ANALYSIS__LINKTYPE:
 			return linktype != null && !linktype.isEmpty();
 		case TRADESPackage.ANALYSIS__SCORE_SYSTEM:
 			return scoreSystem != null;
-		case TRADESPackage.ANALYSIS__THREAT_OWNER:
-			return threatOwner != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -599,6 +630,14 @@ public class AnalysisImpl extends ComponentOwnerImpl implements Analysis {
 			switch (derivedFeatureID) {
 			case TRADESPackage.ANALYSIS__CONTROL_OWNER:
 				return TRADESPackage.ABSTRACT_CONTROL_OWNER__CONTROL_OWNER;
+			default:
+				return -1;
+			}
+		}
+		if (baseClass == AbstractThreatOwner.class) {
+			switch (derivedFeatureID) {
+			case TRADESPackage.ANALYSIS__THREAT_OWNER:
+				return TRADESPackage.ABSTRACT_THREAT_OWNER__THREAT_OWNER;
 			default:
 				return -1;
 			}
@@ -641,6 +680,14 @@ public class AnalysisImpl extends ComponentOwnerImpl implements Analysis {
 			switch (baseFeatureID) {
 			case TRADESPackage.ABSTRACT_CONTROL_OWNER__CONTROL_OWNER:
 				return TRADESPackage.ANALYSIS__CONTROL_OWNER;
+			default:
+				return -1;
+			}
+		}
+		if (baseClass == AbstractThreatOwner.class) {
+			switch (baseFeatureID) {
+			case TRADESPackage.ABSTRACT_THREAT_OWNER__THREAT_OWNER:
+				return TRADESPackage.ANALYSIS__THREAT_OWNER;
 			default:
 				return -1;
 			}
@@ -689,6 +736,12 @@ public class AnalysisImpl extends ComponentOwnerImpl implements Analysis {
 				return -1;
 			}
 		}
+		if (baseClass == AbstractThreatOwner.class) {
+			switch (baseOperationID) {
+			default:
+				return -1;
+			}
+		}
 		if (baseClass == LinkTypeOwner.class) {
 			switch (baseOperationID) {
 			default:
@@ -706,6 +759,10 @@ public class AnalysisImpl extends ComponentOwnerImpl implements Analysis {
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
+		case TRADESPackage.ANALYSIS___GET_EXTERNAL_THREAT__STRING_STRING:
+			return getExternalThreat((String) arguments.get(0), (String) arguments.get(1));
+		case TRADESPackage.ANALYSIS___GET_EXTERNAL_CONTROL__STRING_STRING:
+			return getExternalControl((String) arguments.get(0), (String) arguments.get(1));
 		case TRADESPackage.ANALYSIS___GET_ALL_CONTROLS:
 			return getAllControls();
 		case TRADESPackage.ANALYSIS___GET_DATAS:

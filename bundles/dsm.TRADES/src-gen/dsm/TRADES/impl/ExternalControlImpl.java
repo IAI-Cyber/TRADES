@@ -16,10 +16,14 @@ package dsm.TRADES.impl;
 import dsm.TRADES.Control;
 import dsm.TRADES.ControlStatusENUM;
 import dsm.TRADES.ExternalControl;
+import dsm.TRADES.IControlDefinition;
+import dsm.TRADES.IMitigationLink;
 import dsm.TRADES.NamedElement;
 import dsm.TRADES.TRADESPackage;
 import dsm.TRADES.Threat;
 import dsm.TRADES.ThreatMitigationRelation;
+
+import java.lang.reflect.InvocationTargetException;
 
 import java.util.Collection;
 
@@ -303,6 +307,18 @@ public class ExternalControlImpl extends ExternalElementImpl implements External
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public EList<IMitigationLink> getMitigatedThreatDefinitions() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -454,6 +470,12 @@ public class ExternalControlImpl extends ExternalElementImpl implements External
 				return -1;
 			}
 		}
+		if (baseClass == IControlDefinition.class) {
+			switch (derivedFeatureID) {
+			default:
+				return -1;
+			}
+		}
 		if (baseClass == Control.class) {
 			switch (derivedFeatureID) {
 			case TRADESPackage.EXTERNAL_CONTROL__MITIGATED_THREATS:
@@ -488,6 +510,12 @@ public class ExternalControlImpl extends ExternalElementImpl implements External
 				return -1;
 			}
 		}
+		if (baseClass == IControlDefinition.class) {
+			switch (baseFeatureID) {
+			default:
+				return -1;
+			}
+		}
 		if (baseClass == Control.class) {
 			switch (baseFeatureID) {
 			case TRADESPackage.CONTROL__MITIGATED_THREATS:
@@ -505,6 +533,56 @@ public class ExternalControlImpl extends ExternalElementImpl implements External
 			}
 		}
 		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
+		if (baseClass == NamedElement.class) {
+			switch (baseOperationID) {
+			default:
+				return -1;
+			}
+		}
+		if (baseClass == IControlDefinition.class) {
+			switch (baseOperationID) {
+			case TRADESPackage.ICONTROL_DEFINITION___GET_DESCRIPTION:
+				return TRADESPackage.EXTERNAL_CONTROL___GET_DESCRIPTION;
+			case TRADESPackage.ICONTROL_DEFINITION___GET_ID:
+				return TRADESPackage.EXTERNAL_CONTROL___GET_ID;
+			case TRADESPackage.ICONTROL_DEFINITION___GET_MITIGATED_THREAT_DEFINITIONS:
+				return TRADESPackage.EXTERNAL_CONTROL___GET_MITIGATED_THREAT_DEFINITIONS;
+			case TRADESPackage.ICONTROL_DEFINITION___GET_NAME:
+				return TRADESPackage.EXTERNAL_CONTROL___GET_NAME;
+			default:
+				return -1;
+			}
+		}
+		if (baseClass == Control.class) {
+			switch (baseOperationID) {
+			default:
+				return -1;
+			}
+		}
+		return super.eDerivedOperationID(baseOperationID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+		case TRADESPackage.EXTERNAL_CONTROL___GET_MITIGATED_THREAT_DEFINITIONS:
+			return getMitigatedThreatDefinitions();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

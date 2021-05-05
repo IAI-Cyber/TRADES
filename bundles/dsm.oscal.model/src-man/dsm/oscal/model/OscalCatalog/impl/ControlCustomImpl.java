@@ -16,6 +16,10 @@ package dsm.oscal.model.OscalCatalog.impl;
 
 import java.util.Map;
 
+import org.eclipse.emf.common.util.ECollections;
+import org.eclipse.emf.common.util.EList;
+
+import dsm.TRADES.IMitigationLink;
 import dsm.oscal.model.DocumentationComputer;
 import dsm.oscal.model.ParameterResolver;
 
@@ -29,5 +33,15 @@ public class ControlCustomImpl extends ControlImpl {
 	@Override
 	public Map<String, String> getParameterValues() {
 		return ParameterResolver.getAvailableParams(this);
+	}
+
+	@Override
+	public String getDescription() {
+		return computeDocumentation();
+	}
+
+	@Override
+	public EList<IMitigationLink> getMitigatedThreatDefinitions() {
+		return ECollections.emptyEList();
 	}
 }

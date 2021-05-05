@@ -18,15 +18,19 @@ import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.codegen.ecore.genmodel.GenClass;
+import org.eclipse.emf.codegen.ecore.genmodel.GenModel;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.resource.ResourceSet;
 
 public interface ISemanticRefactorer {
 
-	void init(EPackage rootEPackage);
+	void init(EPackage rootEPackages, ResourceSet rs);
 
 	void refactorSemantic(Collection<EClass> eClasses);
 
-	void refactorGenModel(List<GenClass> genClasses);
+	void refactorGenModel(GenModel genModel);
+
+	void refactorGenClasses(List<GenClass> genClasses);
 
 }

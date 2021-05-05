@@ -14,12 +14,14 @@
 package dsm.TRADES.impl;
 
 import dsm.TRADES.AbstractControlOwner;
+import dsm.TRADES.AbstractThreatOwner;
 import dsm.TRADES.AffectRelation;
 import dsm.TRADES.AffectedENUM;
 import dsm.TRADES.Analysis;
 import dsm.TRADES.AssessmentENUM;
 import dsm.TRADES.AttackChain;
 import dsm.TRADES.AttackChainStep;
+import dsm.TRADES.Catalog;
 import dsm.TRADES.Component;
 import dsm.TRADES.ComponentOwner;
 import dsm.TRADES.Control;
@@ -32,6 +34,10 @@ import dsm.TRADES.DifficultyScore;
 import dsm.TRADES.ExternalControl;
 import dsm.TRADES.ExternalElement;
 import dsm.TRADES.ExternalThreat;
+import dsm.TRADES.ICatalogDefinition;
+import dsm.TRADES.IControlDefinition;
+import dsm.TRADES.IMitigationLink;
+import dsm.TRADES.IThreatDefinition;
 import dsm.TRADES.ImpactConfiguration;
 import dsm.TRADES.ImpactScore;
 import dsm.TRADES.Link;
@@ -50,6 +56,7 @@ import dsm.TRADES.ThreatsOwner;
 import dsm.TRADES.threatTypeENUM;
 
 import dsm.TRADES.util.TRADESValidator;
+
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
@@ -58,6 +65,7 @@ import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EValidator;
+import org.eclipse.emf.ecore.EcorePackage;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
@@ -269,6 +277,48 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass catalogEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass abstractThreatOwnerEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass iThreatDefinitionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass iControlDefinitionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass iCatalogDefinitionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass iMitigationLinkEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EEnum assessmentENUMEEnum = null;
 
 	/**
@@ -349,6 +399,9 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 
 		isInited = true;
 
+		// Initialize simple dependencies
+		EcorePackage.eINSTANCE.eClass();
+
 		// Create package meta-data objects
 		theTRADESPackage.createPackageContents();
 
@@ -397,8 +450,18 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getAnalysis_ThreatOwner() {
-		return (EReference) analysisEClass.getEStructuralFeatures().get(1);
+	public EOperation getAnalysis__GetExternalThreat__String_String() {
+		return analysisEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getAnalysis__GetExternalControl__String_String() {
+		return analysisEClass.getEOperations().get(1);
 	}
 
 	/**
@@ -1367,6 +1430,216 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * @generated
 	 */
 	@Override
+	public EClass getCatalog() {
+		return catalogEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getAbstractThreatOwner() {
+		return abstractThreatOwnerEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getAbstractThreatOwner_ThreatOwner() {
+		return (EReference) abstractThreatOwnerEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getIThreatDefinition() {
+		return iThreatDefinitionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getIThreatDefinition__GetId() {
+		return iThreatDefinitionEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getIThreatDefinition__GetDescription() {
+		return iThreatDefinitionEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getIThreatDefinition__GetName() {
+		return iThreatDefinitionEClass.getEOperations().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getIControlDefinition() {
+		return iControlDefinitionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getIControlDefinition__GetDescription() {
+		return iControlDefinitionEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getIControlDefinition__GetId() {
+		return iControlDefinitionEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getIControlDefinition__GetMitigatedThreatDefinitions() {
+		return iControlDefinitionEClass.getEOperations().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getIControlDefinition__GetName() {
+		return iControlDefinitionEClass.getEOperations().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getICatalogDefinition() {
+		return iCatalogDefinitionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getICatalogDefinition__GetThreatById__String() {
+		return iCatalogDefinitionEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getICatalogDefinition__GetControlById__String() {
+		return iCatalogDefinitionEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getICatalogDefinition__GetThreatDefinitions() {
+		return iCatalogDefinitionEClass.getEOperations().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getICatalogDefinition__GetControlDefinitions() {
+		return iCatalogDefinitionEClass.getEOperations().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getICatalogDefinition__GetIdentifier() {
+		return iCatalogDefinitionEClass.getEOperations().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getIMitigationLink() {
+		return iMitigationLinkEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getIMitigationLink__GetDescription() {
+		return iMitigationLinkEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getIMitigationLink__GetThreat() {
+		return iMitigationLinkEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EEnum getAssessmentENUM() {
 		return assessmentENUMEEnum;
 	}
@@ -1443,7 +1716,8 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		// Create classes and their features
 		analysisEClass = createEClass(ANALYSIS);
 		createEReference(analysisEClass, ANALYSIS__SCORE_SYSTEM);
-		createEReference(analysisEClass, ANALYSIS__THREAT_OWNER);
+		createEOperation(analysisEClass, ANALYSIS___GET_EXTERNAL_THREAT__STRING_STRING);
+		createEOperation(analysisEClass, ANALYSIS___GET_EXTERNAL_CONTROL__STRING_STRING);
 
 		threatEClass = createEClass(THREAT);
 		createEReference(threatEClass, THREAT__THREAT_ALLOCATIONS);
@@ -1569,6 +1843,33 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		linkTypeOwnerEClass = createEClass(LINK_TYPE_OWNER);
 		createEReference(linkTypeOwnerEClass, LINK_TYPE_OWNER__LINKTYPE);
 
+		catalogEClass = createEClass(CATALOG);
+
+		abstractThreatOwnerEClass = createEClass(ABSTRACT_THREAT_OWNER);
+		createEReference(abstractThreatOwnerEClass, ABSTRACT_THREAT_OWNER__THREAT_OWNER);
+
+		iThreatDefinitionEClass = createEClass(ITHREAT_DEFINITION);
+		createEOperation(iThreatDefinitionEClass, ITHREAT_DEFINITION___GET_ID);
+		createEOperation(iThreatDefinitionEClass, ITHREAT_DEFINITION___GET_DESCRIPTION);
+		createEOperation(iThreatDefinitionEClass, ITHREAT_DEFINITION___GET_NAME);
+
+		iControlDefinitionEClass = createEClass(ICONTROL_DEFINITION);
+		createEOperation(iControlDefinitionEClass, ICONTROL_DEFINITION___GET_DESCRIPTION);
+		createEOperation(iControlDefinitionEClass, ICONTROL_DEFINITION___GET_ID);
+		createEOperation(iControlDefinitionEClass, ICONTROL_DEFINITION___GET_MITIGATED_THREAT_DEFINITIONS);
+		createEOperation(iControlDefinitionEClass, ICONTROL_DEFINITION___GET_NAME);
+
+		iCatalogDefinitionEClass = createEClass(ICATALOG_DEFINITION);
+		createEOperation(iCatalogDefinitionEClass, ICATALOG_DEFINITION___GET_THREAT_BY_ID__STRING);
+		createEOperation(iCatalogDefinitionEClass, ICATALOG_DEFINITION___GET_CONTROL_BY_ID__STRING);
+		createEOperation(iCatalogDefinitionEClass, ICATALOG_DEFINITION___GET_THREAT_DEFINITIONS);
+		createEOperation(iCatalogDefinitionEClass, ICATALOG_DEFINITION___GET_CONTROL_DEFINITIONS);
+		createEOperation(iCatalogDefinitionEClass, ICATALOG_DEFINITION___GET_IDENTIFIER);
+
+		iMitigationLinkEClass = createEClass(IMITIGATION_LINK);
+		createEOperation(iMitigationLinkEClass, IMITIGATION_LINK___GET_DESCRIPTION);
+		createEOperation(iMitigationLinkEClass, IMITIGATION_LINK___GET_THREAT);
+
 		// Create enums
 		assessmentENUMEEnum = createEEnum(ASSESSMENT_ENUM);
 		affectedENUMEEnum = createEEnum(AFFECTED_ENUM);
@@ -1603,6 +1904,9 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		setNsPrefix(eNS_PREFIX);
 		setNsURI(eNS_URI);
 
+		// Obtain other dependent packages
+		EcorePackage theEcorePackage = (EcorePackage) EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
+
 		// Create type parameters
 
 		// Set bounds for type parameters
@@ -1612,14 +1916,18 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		analysisEClass.getESuperTypes().add(this.getDataOwnerElement());
 		analysisEClass.getESuperTypes().add(this.getNamedElement());
 		analysisEClass.getESuperTypes().add(this.getAbstractControlOwner());
+		analysisEClass.getESuperTypes().add(this.getAbstractThreatOwner());
 		analysisEClass.getESuperTypes().add(this.getLinkTypeOwner());
 		threatEClass.getESuperTypes().add(this.getNamedElement());
+		threatEClass.getESuperTypes().add(this.getIThreatDefinition());
 		componentEClass.getESuperTypes().add(this.getComponentOwner());
 		componentEClass.getESuperTypes().add(this.getDataOwnerElement());
 		componentEClass.getESuperTypes().add(this.getNamedElement());
 		componentEClass.getESuperTypes().add(this.getAbstractControlOwner());
 		componentEClass.getESuperTypes().add(this.getLinkOwner());
 		controlEClass.getESuperTypes().add(this.getNamedElement());
+		controlEClass.getESuperTypes().add(this.getIControlDefinition());
+		threatMitigationRelationEClass.getESuperTypes().add(this.getIMitigationLink());
 		dataEClass.getESuperTypes().add(this.getNamedElement());
 		affectRelationEClass.getESuperTypes().add(this.getNamedElement());
 		attackChainEClass.getESuperTypes().add(this.getNamedElement());
@@ -1632,6 +1940,10 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		externalControlEClass.getESuperTypes().add(this.getControl());
 		linkEClass.getESuperTypes().add(this.getNamedElement());
 		linkTypeEClass.getESuperTypes().add(this.getNamedElement());
+		catalogEClass.getESuperTypes().add(this.getAbstractThreatOwner());
+		catalogEClass.getESuperTypes().add(this.getAbstractControlOwner());
+		catalogEClass.getESuperTypes().add(this.getNamedElement());
+		catalogEClass.getESuperTypes().add(this.getICatalogDefinition());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(analysisEClass, Analysis.class, "Analysis", !IS_ABSTRACT, !IS_INTERFACE,
@@ -1639,9 +1951,16 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		initEReference(getAnalysis_ScoreSystem(), this.getScoreSystem(), null, "scoreSystem", null, 0, 1,
 				Analysis.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAnalysis_ThreatOwner(), this.getThreatsOwner(), null, "threatOwner", null, 1, 1,
-				Analysis.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		EOperation op = initEOperation(getAnalysis__GetExternalThreat__String_String(), this.getExternalThreat(),
+				"getExternalThreat", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theEcorePackage.getEString(), "id", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theEcorePackage.getEString(), "source", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getAnalysis__GetExternalControl__String_String(), this.getExternalControl(),
+				"getExternalControl", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theEcorePackage.getEString(), "id", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theEcorePackage.getEString(), "source", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(threatEClass, Threat.class, "Threat", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getThreat_ThreatAllocations(), this.getThreatAllocationRelation(),
@@ -1657,8 +1976,8 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		initEAttribute(getThreat_Applicability(), ecorePackage.getEString(), "applicability", null, 0, 1, Threat.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		EOperation op = initEOperation(getThreat__CheckIsUsed__DiagnosticChain_Map(), ecorePackage.getEBoolean(),
-				"checkIsUsed", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getThreat__CheckIsUsed__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "checkIsUsed", 0,
+				1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "chain", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEMap(), "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -1928,6 +2247,70 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		initEReference(getLinkTypeOwner_Linktype(), this.getLinkType(), null, "linktype", null, 0, -1,
 				LinkTypeOwner.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(catalogEClass, Catalog.class, "Catalog", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(abstractThreatOwnerEClass, AbstractThreatOwner.class, "AbstractThreatOwner", IS_ABSTRACT,
+				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAbstractThreatOwner_ThreatOwner(), this.getThreatsOwner(), null, "threatOwner", null, 1, 1,
+				AbstractThreatOwner.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
+				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(iThreatDefinitionEClass, IThreatDefinition.class, "IThreatDefinition", IS_ABSTRACT, IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+
+		initEOperation(getIThreatDefinition__GetId(), theEcorePackage.getEString(), "getId", 0, 1, IS_UNIQUE,
+				IS_ORDERED);
+
+		initEOperation(getIThreatDefinition__GetDescription(), theEcorePackage.getEString(), "getDescription", 0, 1,
+				IS_UNIQUE, IS_ORDERED);
+
+		initEOperation(getIThreatDefinition__GetName(), theEcorePackage.getEString(), "getName", 0, 1, IS_UNIQUE,
+				IS_ORDERED);
+
+		initEClass(iControlDefinitionEClass, IControlDefinition.class, "IControlDefinition", IS_ABSTRACT, IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+
+		initEOperation(getIControlDefinition__GetDescription(), theEcorePackage.getEString(), "getDescription", 0, 1,
+				IS_UNIQUE, IS_ORDERED);
+
+		initEOperation(getIControlDefinition__GetId(), theEcorePackage.getEString(), "getId", 0, 1, IS_UNIQUE,
+				IS_ORDERED);
+
+		initEOperation(getIControlDefinition__GetMitigatedThreatDefinitions(), this.getIMitigationLink(),
+				"getMitigatedThreatDefinitions", 0, -1, IS_UNIQUE, IS_ORDERED);
+
+		initEOperation(getIControlDefinition__GetName(), theEcorePackage.getEString(), "getName", 0, 1, IS_UNIQUE,
+				IS_ORDERED);
+
+		initEClass(iCatalogDefinitionEClass, ICatalogDefinition.class, "ICatalogDefinition", IS_ABSTRACT, IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+
+		op = initEOperation(getICatalogDefinition__GetThreatById__String(), this.getIThreatDefinition(),
+				"getThreatById", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theEcorePackage.getEString(), "id", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getICatalogDefinition__GetControlById__String(), this.getIControlDefinition(),
+				"getControlById", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theEcorePackage.getEString(), "id", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEOperation(getICatalogDefinition__GetThreatDefinitions(), this.getIThreatDefinition(),
+				"getThreatDefinitions", 0, -1, IS_UNIQUE, IS_ORDERED);
+
+		initEOperation(getICatalogDefinition__GetControlDefinitions(), this.getIControlDefinition(),
+				"getControlDefinitions", 0, -1, IS_UNIQUE, IS_ORDERED);
+
+		initEOperation(getICatalogDefinition__GetIdentifier(), theEcorePackage.getEString(), "getIdentifier", 0, 1,
+				IS_UNIQUE, IS_ORDERED);
+
+		initEClass(iMitigationLinkEClass, IMitigationLink.class, "IMitigationLink", IS_ABSTRACT, IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+
+		initEOperation(getIMitigationLink__GetDescription(), theEcorePackage.getEString(), "getDescription", 0, 1,
+				IS_UNIQUE, IS_ORDERED);
+
+		initEOperation(getIMitigationLink__GetThreat(), this.getIThreatDefinition(), "getThreat", 0, 1, IS_UNIQUE,
+				IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(assessmentENUMEEnum, AssessmentENUM.class, "AssessmentENUM");

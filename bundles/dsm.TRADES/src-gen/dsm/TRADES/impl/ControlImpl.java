@@ -15,9 +15,13 @@ package dsm.TRADES.impl;
 
 import dsm.TRADES.Control;
 import dsm.TRADES.ControlStatusENUM;
+import dsm.TRADES.IControlDefinition;
+import dsm.TRADES.IMitigationLink;
 import dsm.TRADES.TRADESPackage;
 import dsm.TRADES.Threat;
 import dsm.TRADES.ThreatMitigationRelation;
+
+import java.lang.reflect.InvocationTargetException;
 
 import java.util.Collection;
 
@@ -256,6 +260,18 @@ public class ControlImpl extends NamedElementImpl implements Control {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public EList<IMitigationLink> getMitigatedThreatDefinitions() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -380,6 +396,44 @@ public class ControlImpl extends NamedElementImpl implements Control {
 			return status != STATUS_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
+		if (baseClass == IControlDefinition.class) {
+			switch (baseOperationID) {
+			case TRADESPackage.ICONTROL_DEFINITION___GET_DESCRIPTION:
+				return TRADESPackage.CONTROL___GET_DESCRIPTION;
+			case TRADESPackage.ICONTROL_DEFINITION___GET_ID:
+				return TRADESPackage.CONTROL___GET_ID;
+			case TRADESPackage.ICONTROL_DEFINITION___GET_MITIGATED_THREAT_DEFINITIONS:
+				return TRADESPackage.CONTROL___GET_MITIGATED_THREAT_DEFINITIONS;
+			case TRADESPackage.ICONTROL_DEFINITION___GET_NAME:
+				return TRADESPackage.CONTROL___GET_NAME;
+			default:
+				return -1;
+			}
+		}
+		return super.eDerivedOperationID(baseOperationID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+		case TRADESPackage.CONTROL___GET_MITIGATED_THREAT_DEFINITIONS:
+			return getMitigatedThreatDefinitions();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

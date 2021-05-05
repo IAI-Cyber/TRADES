@@ -185,6 +185,18 @@ public class TRADESValidator extends EObjectValidator {
 			return validateLinkType((LinkType) value, diagnostics, context);
 		case TRADESPackage.LINK_TYPE_OWNER:
 			return validateLinkTypeOwner((LinkTypeOwner) value, diagnostics, context);
+		case TRADESPackage.CATALOG:
+			return validateCatalog((Catalog) value, diagnostics, context);
+		case TRADESPackage.ABSTRACT_THREAT_OWNER:
+			return validateAbstractThreatOwner((AbstractThreatOwner) value, diagnostics, context);
+		case TRADESPackage.ITHREAT_DEFINITION:
+			return validateIThreatDefinition((IThreatDefinition) value, diagnostics, context);
+		case TRADESPackage.ICONTROL_DEFINITION:
+			return validateIControlDefinition((IControlDefinition) value, diagnostics, context);
+		case TRADESPackage.ICATALOG_DEFINITION:
+			return validateICatalogDefinition((ICatalogDefinition) value, diagnostics, context);
+		case TRADESPackage.IMITIGATION_LINK:
+			return validateIMitigationLink((IMitigationLink) value, diagnostics, context);
 		case TRADESPackage.ASSESSMENT_ENUM:
 			return validateAssessmentENUM((AssessmentENUM) value, diagnostics, context);
 		case TRADESPackage.AFFECTED_ENUM:
@@ -609,6 +621,65 @@ public class TRADESValidator extends EObjectValidator {
 	public boolean validateLinkTypeOwner(LinkTypeOwner linkTypeOwner, DiagnosticChain diagnostics,
 			Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(linkTypeOwner, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateCatalog(Catalog catalog, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(catalog, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateAbstractThreatOwner(AbstractThreatOwner abstractThreatOwner, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(abstractThreatOwner, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateIThreatDefinition(IThreatDefinition iThreatDefinition, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(iThreatDefinition, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateIControlDefinition(IControlDefinition iControlDefinition, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(iControlDefinition, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateICatalogDefinition(ICatalogDefinition iCatalogDefinition, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(iCatalogDefinition, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateIMitigationLink(IMitigationLink iMitigationLink, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(iMitigationLink, diagnostics, context);
 	}
 
 	/**

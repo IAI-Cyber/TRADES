@@ -15,6 +15,10 @@
  */
 package dsm.oscal.model.OscalCatalog.impl;
 
+import dsm.TRADES.IControlDefinition;
+import dsm.TRADES.IMitigationLink;
+import dsm.TRADES.TRADESPackage;
+
 import dsm.oscal.model.OscalCatalog.Control;
 import dsm.oscal.model.OscalCatalog.OscalCatalogPackage;
 
@@ -39,8 +43,8 @@ import gov.nist.secauto.metaschema.datatypes.markup.MarkupLine;
 import java.lang.reflect.InvocationTargetException;
 
 import java.util.Collection;
-
 import java.util.Map;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -210,6 +214,19 @@ public class ControlImpl extends OscalElementCustomImpl implements Control {
 	 * @generated
 	 */
 	@Override
+	public EList<Parameter> getParams() {
+		if (params == null) {
+			params = new EObjectContainmentEList<Parameter>(Parameter.class, this, OscalCatalogPackage.CONTROL__PARAMS);
+		}
+		return params;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EList<Property> getProps() {
 		if (props == null) {
 			props = new EObjectContainmentEList<Property>(Property.class, this, OscalCatalogPackage.CONTROL__PROPS);
@@ -308,19 +325,6 @@ public class ControlImpl extends OscalElementCustomImpl implements Control {
 	 * @generated
 	 */
 	@Override
-	public EList<Parameter> getParams() {
-		if (params == null) {
-			params = new EObjectContainmentEList<Parameter>(Parameter.class, this, OscalCatalogPackage.CONTROL__PARAMS);
-		}
-		return params;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public MarkupLine getTitle() {
 		return title;
 	}
@@ -336,6 +340,42 @@ public class ControlImpl extends OscalElementCustomImpl implements Control {
 		title = newTitle;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OscalCatalogPackage.CONTROL__TITLE, oldTitle, title));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getDescription() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<IMitigationLink> getMitigatedThreatDefinitions() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getName() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -554,6 +594,11 @@ public class ControlImpl extends OscalElementCustomImpl implements Control {
 				default: return -1;
 			}
 		}
+		if (baseClass == IControlDefinition.class) {
+			switch (derivedFeatureID) {
+				default: return -1;
+			}
+		}
 		if (baseClass == ElementWithClazz.class) {
 			switch (derivedFeatureID) {
 				case OscalCatalogPackage.CONTROL__CLAZZ: return OscalMetadataPackage.ELEMENT_WITH_CLAZZ__CLAZZ;
@@ -602,6 +647,11 @@ public class ControlImpl extends OscalElementCustomImpl implements Control {
 		if (baseClass == PartOwner.class) {
 			switch (baseFeatureID) {
 				case OscalMetadataPackage.PART_OWNER__PARTS: return OscalCatalogPackage.CONTROL__PARTS;
+				default: return -1;
+			}
+		}
+		if (baseClass == IControlDefinition.class) {
+			switch (baseFeatureID) {
 				default: return -1;
 			}
 		}
@@ -654,6 +704,15 @@ public class ControlImpl extends OscalElementCustomImpl implements Control {
 				default: return -1;
 			}
 		}
+		if (baseClass == IControlDefinition.class) {
+			switch (baseOperationID) {
+				case TRADESPackage.ICONTROL_DEFINITION___GET_DESCRIPTION: return OscalCatalogPackage.CONTROL___GET_DESCRIPTION;
+				case TRADESPackage.ICONTROL_DEFINITION___GET_ID: return OscalCatalogPackage.CONTROL___GET_ID;
+				case TRADESPackage.ICONTROL_DEFINITION___GET_MITIGATED_THREAT_DEFINITIONS: return OscalCatalogPackage.CONTROL___GET_MITIGATED_THREAT_DEFINITIONS;
+				case TRADESPackage.ICONTROL_DEFINITION___GET_NAME: return OscalCatalogPackage.CONTROL___GET_NAME;
+				default: return -1;
+			}
+		}
 		if (baseClass == ElementWithClazz.class) {
 			switch (baseOperationID) {
 				default: return -1;
@@ -675,6 +734,12 @@ public class ControlImpl extends OscalElementCustomImpl implements Control {
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
+			case OscalCatalogPackage.CONTROL___GET_DESCRIPTION:
+				return getDescription();
+			case OscalCatalogPackage.CONTROL___GET_MITIGATED_THREAT_DEFINITIONS:
+				return getMitigatedThreatDefinitions();
+			case OscalCatalogPackage.CONTROL___GET_NAME:
+				return getName();
 			case OscalCatalogPackage.CONTROL___COMPUTE_DOCUMENTATION:
 				return computeDocumentation();
 			case OscalCatalogPackage.CONTROL___GET_PARAMETER_VALUES:

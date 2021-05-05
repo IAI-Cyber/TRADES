@@ -12,7 +12,7 @@
  * 
  */
 
-package dsm.oscal.design.wizards;
+package dsm.trades.rcp.internal.wizards;
 
 import java.util.List;
 
@@ -35,7 +35,7 @@ public class ProjectSelectionPage extends WizardPage {
 	private IProject initialSelection;
 	private IProject selectedProject;
 
-	protected ProjectSelectionPage(List<IProject> projects, IProject initialSelection) {
+	public ProjectSelectionPage(List<IProject> projects, IProject initialSelection) {
 		super("Trades project selection page");
 		setMessage("Select a TRADES project");
 		this.projects = projects;
@@ -46,6 +46,7 @@ public class ProjectSelectionPage extends WizardPage {
 	public void createControl(Composite parent) {
 		Composite composite = new Composite(parent, SWT.None);
 		composite.setLayout(new GridLayout(1, true));
+
 		projectViewer = new TableViewer(composite, SWT.SINGLE | SWT.BORDER);
 		projectViewer.getControl().setLayoutData(new GridData(GridData.FILL_BOTH));
 		projectViewer.setContentProvider(new BaseWorkbenchContentProvider());
@@ -59,6 +60,7 @@ public class ProjectSelectionPage extends WizardPage {
 			selectedProject = (IProject) projectViewer.getStructuredSelection().getFirstElement();
 			getContainer().updateButtons();
 		});
+
 		setControl(composite);
 
 	}
