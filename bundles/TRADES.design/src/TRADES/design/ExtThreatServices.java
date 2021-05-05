@@ -156,6 +156,15 @@ public class ExtThreatServices {
 		}
 	}
 
+	public Control copyControl(EObject analysisProvider, IControlDefinition source) {
+		List<Control> result = copyControl(analysisProvider, Collections.singletonList(source));
+		if (result.isEmpty()) {
+			return null;
+		} else {
+			return result.get(0);
+		}
+	}
+
 	/**
 	 * Copy an external control inside my analysis
 	 * 
@@ -163,13 +172,9 @@ public class ExtThreatServices {
 	 * @param source   the source to copy
 	 * @return the result
 	 */
-	public List<Control> copyControl(ExternalThreat threat, List<IControlDefinition> sources) {
+	public List<Control> copyControl(EObject analysisProvider, List<IControlDefinition> sources) {
 		List<Control> result = new ArrayList<>();
-		String threatId = threat.getId();
-		if (threatId == null) {
-			return Collections.emptyList();
-		}
-		Analysis currentAnalysis = EcoreUtils.getAncestor(threat, Analysis.class);
+		Analysis currentAnalysis = EcoreUtils.getAncestor(analysisProvider, Analysis.class);
 
 		for (IControlDefinition source : sources) {
 
@@ -179,7 +184,7 @@ public class ExtThreatServices {
 					catalogDef.getIdentifier());
 			final ExternalControl matchingControl;
 			if (existingControl != null) {
-				matchingControl = (ExternalControl) existingControl;
+				matchingControl = existingControl;
 			} else {
 				matchingControl = TRADESFactory.eINSTANCE.createExternalControl();
 				matchingControl.setName(source.getName());
@@ -188,17 +193,11 @@ public class ExtThreatServices {
 				matchingControl.setId(id);
 				matchingControl.setDescription(source.getDescription());
 
-				EObject analysis = threat.eContainer();
-				while (!(analysis instanceof Analysis) && analysis != null) {
-					analysis = analysis.eContainer();
-				}
-				Analysis realAnalysis = ((Analysis) analysis);
-
 				if (source.eResource().getURI().isPlatformResource()) {
 					matchingControl.setLink(createURIRepresentation(source));
 				}
 
-				SemanticUtil.addControl(realAnalysis, matchingControl, false);
+				SemanticUtil.addControl(currentAnalysis, matchingControl, false);
 			}
 
 			// Copy all existing mitigation
@@ -207,13 +206,8 @@ public class ExtThreatServices {
 
 				if (linkedThreat != null) {
 					String linkedThreatId = linkedThreat.getId();
-					ExternalThreat matchingThreat = null;
-					if (threatId.equals(linkedThreatId)) {
-						matchingThreat = threat;
-					} else {
-						// Mitigates an already imported control
-						matchingThreat = currentAnalysis.getExternalThreat(linkedThreatId, catalogDef.getIdentifier());
-					}
+					ExternalThreat matchingThreat = currentAnalysis.getExternalThreat(linkedThreatId,
+							catalogDef.getIdentifier());
 
 					if (matchingThreat != null) {
 						// Check if existing

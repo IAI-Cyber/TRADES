@@ -29,6 +29,7 @@
       <dropDescriptions href="#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='ExternalControlDrop_TD']"/>
       <dropDescriptions href="../../dsm.oscal.design/description/oscal.odesign#//@ownedViewpoints[name='OscalViewPoint']/@ownedRepresentationExtensions[name='TRADES.design']/@layers[name='OscalLayer']/@toolSections.0/@ownedTools[name='DropOScalControl']"/>
       <dropDescriptions href="#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='DropCatalogThreat']"/>
+      <dropDescriptions href="#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='DropCatalogControl']"/>
       <metamodel href="dsm.TRADES#/"/>
       <metamodel href="http://www.eclipse.org/sirius/diagram/1.1.0#/"/>
       <metamodel href="http://www.eclipse.org/sirius/1.1.0#/"/>
@@ -200,6 +201,7 @@
           <dropDescriptions href="#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='ExternalControlDrop_TD']"/>
           <dropDescriptions href="#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='DnDThreatOnComponent_TD']"/>
           <dropDescriptions href="../../dsm.oscal.design/description/oscal.odesign#//@ownedViewpoints[name='OscalViewPoint']/@ownedRepresentationExtensions[name='TRADES.design']/@layers[name='OscalLayer']/@toolSections.0/@ownedTools[name='DropOScalControl']"/>
+          <dropDescriptions href="#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='DropCatalogControl']"/>
           <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12" showIcon="false" backgroundStyle="GradientTopToBottom" backgroundColor="//@userColorsPalettes[name='Colors']/@entries[name='ComponetBGColor']" foregroundColor="//@userColorsPalettes[name='Colors']/@entries[name='ComponetBGColor']">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelFormat>bold</labelFormat>
@@ -498,6 +500,15 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
+          <ownedTools xsi:type="tool:ContainerDropDescription" name="DropCatalogControl" precondition="aql:self.oclIsTypeOf(TRADES::ExternalControl) and self.isFromCatalog()" dragSource="PROJECT_EXPLORER">
+            <oldContainer name="oldSemanticContainer"/>
+            <newContainer name="newSemanticContainer"/>
+            <element name="element"/>
+            <newViewContainer name="newContainerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:newSemanticContainer.copyControl(element)"/>
+            </initialOperation>
+          </ownedTools>
         </toolSections>
         <toolSections name="ThreatsSectionTool_TD" label="Threats Tools" icon="/dsm.TRADES.edit/icons/custom/Threat.png">
           <ownedTools xsi:type="tool_1:SelectionWizardDescription" name="ExtThreatImportTool_TD" label="Import external threat" precondition="aql:container.oclAsType(TRADES::Analysis)" candidatesExpression="aql:self.oclAsType(TRADES::Analysis).getAvailableExternalServices()->collect(e |e.eAllContents(TRADES::ExternalThreat))->union(self.oclAsType(TRADES::Analysis).getAvailableExternalServices())" multiple="true" tree="true" rootExpression="aql:self.oclAsType(TRADES::Analysis).getAvailableExternalServices()" childrenExpression="aql:self.eAllContents(TRADES::ExternalThreat)" iconPath="/TRADES.design/Images/icons/import_wiz.png">
@@ -577,7 +588,7 @@
         </toolSections>
       </defaultLayer>
     </ownedRepresentations>
-    <ownedRepresentations xsi:type="description_1:DiagramDescription" dropDescriptions="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='copyThreatDragDrop'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Component%20Analysis']/@defaultLayer/@toolSections.1/@ownedTools[name='ExternalControlDrop_CA'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='DropCatalogThreat']" name="Component Analysis" titleExpression="aql: 'Analysis of ' + self.name" domainClass="TRADES::Component">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" dropDescriptions="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='copyThreatDragDrop'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Component%20Analysis']/@defaultLayer/@toolSections.1/@ownedTools[name='ExternalControlDrop_CA'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='DropCatalogThreat'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='DropCatalogControl']" name="Component Analysis" titleExpression="aql: 'Analysis of ' + self.name" domainClass="TRADES::Component">
       <metamodel href="dsm.TRADES#/"/>
       <layout xsi:type="description_1:CustomLayoutConfiguration" id="org.eclipse.elk.layered" label="ELK Layered" description="Layer-based algorithm provided by the Eclipse Layout Kernel. Arranges as many edges as possible into one direction by placing nodes into subsequent layers. This implementation supports different routing styles (straight, orthogonal, splines); if orthogonal routing is selected, arbitrary port constraints are respected, thus enabling the layout of block diagrams such as actor-oriented models or circuit schematics. Furthermore, full layout of compound graphs with cross-hierarchy edges is supported when the respective option is activated on the top level.">
         <layoutOptions xsi:type="description_1:EnumLayoutOption" id="org.eclipse.elk.hierarchyHandling">
@@ -628,6 +639,7 @@
         <containerMappings name="ComponentContainer" semanticCandidatesExpression="aql:self" documentation="Used for component analysis. To be removed after resolving problem with seed element in componentPackage" domainClass="TRADES::Component" reusedNodeMappings="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@nodeMappings[name='ControlNode'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@nodeMappings[name='ControlNode']/@borderedNodeMappings[name='ControlLabel_TD'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@nodeMappings[name='ThreatNode_TD'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@nodeMappings[name='ThreatNode_TD']/@borderedNodeMappings[name='ThreatLabel_TD']" reusedContainerMappings="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage']">
           <dropDescriptions href="#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='ExternalControlDrop_TD']"/>
           <dropDescriptions href="../../dsm.oscal.design/description/oscal.odesign#//@ownedViewpoints[name='OscalViewPoint']/@ownedRepresentationExtensions[name='TRADES.design']/@layers[name='OscalLayer']/@toolSections.0/@ownedTools[name='DropOScalControl']"/>
+          <dropDescriptions href="#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='DropCatalogControl']"/>
           <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12" backgroundColor="//@userColorsPalettes[name='Colors']/@entries[name='ComponetBGColor']" foregroundColor="//@userColorsPalettes[name='Colors']/@entries[name='ComponetBGColor']">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
