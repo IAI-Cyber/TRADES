@@ -108,12 +108,8 @@ public class TRADESFactoryImpl extends EFactoryImpl implements TRADESFactory {
 			return createDataOwner();
 		case TRADESPackage.LINK:
 			return createLink();
-		case TRADESPackage.LINK_OWNER:
-			return createLinkOwner();
 		case TRADESPackage.LINK_TYPE:
 			return createLinkType();
-		case TRADESPackage.LINK_TYPE_OWNER:
-			return createLinkTypeOwner();
 		case TRADESPackage.CATALOG:
 			return createCatalog();
 		default:
@@ -393,31 +389,9 @@ public class TRADESFactoryImpl extends EFactoryImpl implements TRADESFactory {
 	 * @generated
 	 */
 	@Override
-	public LinkOwner createLinkOwner() {
-		LinkOwnerImpl linkOwner = new LinkOwnerImpl();
-		return linkOwner;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public LinkType createLinkType() {
 		LinkTypeImpl linkType = new LinkTypeImpl();
 		return linkType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public LinkTypeOwner createLinkTypeOwner() {
-		LinkTypeOwnerImpl linkTypeOwner = new LinkTypeOwnerImpl();
-		return linkTypeOwner;
 	}
 
 	/**

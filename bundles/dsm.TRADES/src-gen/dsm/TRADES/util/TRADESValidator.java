@@ -179,12 +179,8 @@ public class TRADESValidator extends EObjectValidator {
 			return validateDataOwner((DataOwner) value, diagnostics, context);
 		case TRADESPackage.LINK:
 			return validateLink((Link) value, diagnostics, context);
-		case TRADESPackage.LINK_OWNER:
-			return validateLinkOwner((LinkOwner) value, diagnostics, context);
 		case TRADESPackage.LINK_TYPE:
 			return validateLinkType((LinkType) value, diagnostics, context);
-		case TRADESPackage.LINK_TYPE_OWNER:
-			return validateLinkTypeOwner((LinkTypeOwner) value, diagnostics, context);
 		case TRADESPackage.CATALOG:
 			return validateCatalog((Catalog) value, diagnostics, context);
 		case TRADESPackage.ABSTRACT_THREAT_OWNER:
@@ -600,27 +596,8 @@ public class TRADESValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateLinkOwner(LinkOwner linkOwner, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(linkOwner, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public boolean validateLinkType(LinkType linkType, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(linkType, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateLinkTypeOwner(LinkTypeOwner linkTypeOwner, DiagnosticChain diagnostics,
-			Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(linkTypeOwner, diagnostics, context);
 	}
 
 	/**

@@ -24,7 +24,6 @@ import dsm.TRADES.DataOwnerElement;
 import dsm.TRADES.ExternalControl;
 import dsm.TRADES.ExternalThreat;
 import dsm.TRADES.LinkType;
-import dsm.TRADES.LinkTypeOwner;
 import dsm.TRADES.NamedElement;
 import dsm.TRADES.ScoreSystem;
 import dsm.TRADES.TRADESPackage;
@@ -59,8 +58,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getName <em>Name</em>}</li>
  *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getControlOwner <em>Control Owner</em>}</li>
  *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getThreatOwner <em>Threat Owner</em>}</li>
- *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getLinktype <em>Linktype</em>}</li>
  *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getScoreSystem <em>Score System</em>}</li>
+ *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getLinkTypes <em>Link Types</em>}</li>
  * </ul>
  *
  * @generated
@@ -117,16 +116,6 @@ public class AnalysisImpl extends ComponentOwnerImpl implements Analysis {
 	protected ThreatsOwner threatOwner;
 
 	/**
-	 * The cached value of the '{@link #getLinktype() <em>Linktype</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLinktype()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<LinkType> linktype;
-
-	/**
 	 * The cached value of the '{@link #getScoreSystem() <em>Score System</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -135,6 +124,16 @@ public class AnalysisImpl extends ComponentOwnerImpl implements Analysis {
 	 * @ordered
 	 */
 	protected ScoreSystem scoreSystem;
+
+	/**
+	 * The cached value of the '{@link #getLinkTypes() <em>Link Types</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLinkTypes()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<LinkType> linkTypes;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -340,19 +339,6 @@ public class AnalysisImpl extends ComponentOwnerImpl implements Analysis {
 	 * @generated
 	 */
 	@Override
-	public EList<LinkType> getLinktype() {
-		if (linktype == null) {
-			linktype = new EObjectContainmentEList<LinkType>(LinkType.class, this, TRADESPackage.ANALYSIS__LINKTYPE);
-		}
-		return linktype;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public ScoreSystem getScoreSystem() {
 		return scoreSystem;
 	}
@@ -397,6 +383,19 @@ public class AnalysisImpl extends ComponentOwnerImpl implements Analysis {
 		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TRADESPackage.ANALYSIS__SCORE_SYSTEM, newScoreSystem,
 					newScoreSystem));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<LinkType> getLinkTypes() {
+		if (linkTypes == null) {
+			linkTypes = new EObjectContainmentEList<LinkType>(LinkType.class, this, TRADESPackage.ANALYSIS__LINK_TYPES);
+		}
+		return linkTypes;
 	}
 
 	/**
@@ -485,10 +484,10 @@ public class AnalysisImpl extends ComponentOwnerImpl implements Analysis {
 			return basicSetControlOwner(null, msgs);
 		case TRADESPackage.ANALYSIS__THREAT_OWNER:
 			return basicSetThreatOwner(null, msgs);
-		case TRADESPackage.ANALYSIS__LINKTYPE:
-			return ((InternalEList<?>) getLinktype()).basicRemove(otherEnd, msgs);
 		case TRADESPackage.ANALYSIS__SCORE_SYSTEM:
 			return basicSetScoreSystem(null, msgs);
+		case TRADESPackage.ANALYSIS__LINK_TYPES:
+			return ((InternalEList<?>) getLinkTypes()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -509,10 +508,10 @@ public class AnalysisImpl extends ComponentOwnerImpl implements Analysis {
 			return getControlOwner();
 		case TRADESPackage.ANALYSIS__THREAT_OWNER:
 			return getThreatOwner();
-		case TRADESPackage.ANALYSIS__LINKTYPE:
-			return getLinktype();
 		case TRADESPackage.ANALYSIS__SCORE_SYSTEM:
 			return getScoreSystem();
+		case TRADESPackage.ANALYSIS__LINK_TYPES:
+			return getLinkTypes();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -538,12 +537,12 @@ public class AnalysisImpl extends ComponentOwnerImpl implements Analysis {
 		case TRADESPackage.ANALYSIS__THREAT_OWNER:
 			setThreatOwner((ThreatsOwner) newValue);
 			return;
-		case TRADESPackage.ANALYSIS__LINKTYPE:
-			getLinktype().clear();
-			getLinktype().addAll((Collection<? extends LinkType>) newValue);
-			return;
 		case TRADESPackage.ANALYSIS__SCORE_SYSTEM:
 			setScoreSystem((ScoreSystem) newValue);
+			return;
+		case TRADESPackage.ANALYSIS__LINK_TYPES:
+			getLinkTypes().clear();
+			getLinkTypes().addAll((Collection<? extends LinkType>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -569,11 +568,11 @@ public class AnalysisImpl extends ComponentOwnerImpl implements Analysis {
 		case TRADESPackage.ANALYSIS__THREAT_OWNER:
 			setThreatOwner((ThreatsOwner) null);
 			return;
-		case TRADESPackage.ANALYSIS__LINKTYPE:
-			getLinktype().clear();
-			return;
 		case TRADESPackage.ANALYSIS__SCORE_SYSTEM:
 			setScoreSystem((ScoreSystem) null);
+			return;
+		case TRADESPackage.ANALYSIS__LINK_TYPES:
+			getLinkTypes().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -595,10 +594,10 @@ public class AnalysisImpl extends ComponentOwnerImpl implements Analysis {
 			return controlOwner != null;
 		case TRADESPackage.ANALYSIS__THREAT_OWNER:
 			return threatOwner != null;
-		case TRADESPackage.ANALYSIS__LINKTYPE:
-			return linktype != null && !linktype.isEmpty();
 		case TRADESPackage.ANALYSIS__SCORE_SYSTEM:
 			return scoreSystem != null;
+		case TRADESPackage.ANALYSIS__LINK_TYPES:
+			return linkTypes != null && !linkTypes.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -638,14 +637,6 @@ public class AnalysisImpl extends ComponentOwnerImpl implements Analysis {
 			switch (derivedFeatureID) {
 			case TRADESPackage.ANALYSIS__THREAT_OWNER:
 				return TRADESPackage.ABSTRACT_THREAT_OWNER__THREAT_OWNER;
-			default:
-				return -1;
-			}
-		}
-		if (baseClass == LinkTypeOwner.class) {
-			switch (derivedFeatureID) {
-			case TRADESPackage.ANALYSIS__LINKTYPE:
-				return TRADESPackage.LINK_TYPE_OWNER__LINKTYPE;
 			default:
 				return -1;
 			}
@@ -692,14 +683,6 @@ public class AnalysisImpl extends ComponentOwnerImpl implements Analysis {
 				return -1;
 			}
 		}
-		if (baseClass == LinkTypeOwner.class) {
-			switch (baseFeatureID) {
-			case TRADESPackage.LINK_TYPE_OWNER__LINKTYPE:
-				return TRADESPackage.ANALYSIS__LINKTYPE;
-			default:
-				return -1;
-			}
-		}
 		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
@@ -737,12 +720,6 @@ public class AnalysisImpl extends ComponentOwnerImpl implements Analysis {
 			}
 		}
 		if (baseClass == AbstractThreatOwner.class) {
-			switch (baseOperationID) {
-			default:
-				return -1;
-			}
-		}
-		if (baseClass == LinkTypeOwner.class) {
 			switch (baseOperationID) {
 			default:
 				return -1;

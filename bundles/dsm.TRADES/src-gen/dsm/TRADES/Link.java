@@ -24,10 +24,10 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link dsm.TRADES.Link#getAffectRelations <em>Affect Relations</em>}</li>
  *   <li>{@link dsm.TRADES.Link#getLinktype <em>Linktype</em>}</li>
  *   <li>{@link dsm.TRADES.Link#getLinkConveyed <em>Link Conveyed</em>}</li>
  *   <li>{@link dsm.TRADES.Link#getConveyingLink <em>Conveying Link</em>}</li>
+ *   <li>{@link dsm.TRADES.Link#getComponents <em>Components</em>}</li>
  * </ul>
  *
  * @see dsm.TRADES.TRADESPackage#getLink()
@@ -35,20 +35,6 @@ import org.eclipse.emf.common.util.EList;
  * @generated
  */
 public interface Link extends NamedElement {
-	/**
-	 * Returns the value of the '<em><b>Affect Relations</b></em>' reference list.
-	 * The list contents are of type {@link dsm.TRADES.AffectRelation}.
-	 * It is bidirectional and its opposite is '{@link dsm.TRADES.AffectRelation#getLink <em>Link</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Affect Relations</em>' reference list.
-	 * @see dsm.TRADES.TRADESPackage#getLink_AffectRelations()
-	 * @see dsm.TRADES.AffectRelation#getLink
-	 * @model opposite="link"
-	 * @generated
-	 */
-	EList<AffectRelation> getAffectRelations();
-
 	/**
 	 * Returns the value of the '<em><b>Linktype</b></em>' reference.
 	 * <!-- begin-user-doc -->
@@ -98,5 +84,17 @@ public interface Link extends NamedElement {
 	 * @generated
 	 */
 	EList<Link> getConveyingLink();
+
+	/**
+	 * Returns the value of the '<em><b>Components</b></em>' reference list.
+	 * The list contents are of type {@link dsm.TRADES.Component}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Components</em>' reference list.
+	 * @see dsm.TRADES.TRADESPackage#getLink_Components()
+	 * @model
+	 * @generated
+	 */
+	EList<Component> getComponents();
 
 } // Link

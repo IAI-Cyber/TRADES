@@ -203,18 +203,8 @@ public class TRADESAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseLinkOwner(LinkOwner object) {
-			return createLinkOwnerAdapter();
-		}
-
-		@Override
 		public Adapter caseLinkType(LinkType object) {
 			return createLinkTypeAdapter();
-		}
-
-		@Override
-		public Adapter caseLinkTypeOwner(LinkTypeOwner object) {
-			return createLinkTypeOwnerAdapter();
 		}
 
 		@Override
@@ -617,20 +607,6 @@ public class TRADESAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link dsm.TRADES.LinkOwner <em>Link Owner</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see dsm.TRADES.LinkOwner
-	 * @generated
-	 */
-	public Adapter createLinkOwnerAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link dsm.TRADES.LinkType <em>Link Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -641,20 +617,6 @@ public class TRADESAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createLinkTypeAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link dsm.TRADES.LinkTypeOwner <em>Link Type Owner</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see dsm.TRADES.LinkTypeOwner
-	 * @generated
-	 */
-	public Adapter createLinkTypeOwnerAdapter() {
 		return null;
 	}
 

@@ -35,6 +35,7 @@
         convert="return it == null ? &quot;&quot; : it.encode();"/>
     <genClasses ecoreClass="TRADES.ecore#//Analysis">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Analysis/scoreSystem"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Analysis/linkTypes"/>
       <genOperations ecoreOperation="TRADES.ecore#//Analysis/getExternalThreat">
         <genParameters ecoreParameter="TRADES.ecore#//Analysis/getExternalThreat/id"/>
         <genParameters ecoreParameter="TRADES.ecore#//Analysis/getExternalThreat/source"/>
@@ -58,6 +59,7 @@
     <genClasses ecoreClass="TRADES.ecore#//Component">
       <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference TRADES.ecore#//Component/threatAllocations"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Component/affectRelations"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Component/links"/>
     </genClasses>
     <genClasses ecoreClass="TRADES.ecore#//Control">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TRADES.ecore#//Control/mitigatedThreats"/>
@@ -163,18 +165,12 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//DataOwner/data"/>
     </genClasses>
     <genClasses ecoreClass="TRADES.ecore#//Link">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TRADES.ecore#//Link/affectRelations"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TRADES.ecore#//Link/linktype"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TRADES.ecore#//Link/linkConveyed"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TRADES.ecore#//Link/conveyingLink"/>
-    </genClasses>
-    <genClasses ecoreClass="TRADES.ecore#//LinkOwner">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//LinkOwner/link"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TRADES.ecore#//Link/components"/>
     </genClasses>
     <genClasses ecoreClass="TRADES.ecore#//LinkType"/>
-    <genClasses ecoreClass="TRADES.ecore#//LinkTypeOwner">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//LinkTypeOwner/linktype"/>
-    </genClasses>
     <genClasses ecoreClass="TRADES.ecore#//Catalog"/>
     <genClasses ecoreClass="TRADES.ecore#//AbstractThreatOwner">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//AbstractThreatOwner/threatOwner"/>

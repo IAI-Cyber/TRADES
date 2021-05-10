@@ -168,22 +168,22 @@ public interface TRADESPackage extends EPackage {
 	int ANALYSIS__THREAT_OWNER = COMPONENT_OWNER_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Linktype</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ANALYSIS__LINKTYPE = COMPONENT_OWNER_FEATURE_COUNT + 4;
-
-	/**
 	 * The feature id for the '<em><b>Score System</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ANALYSIS__SCORE_SYSTEM = COMPONENT_OWNER_FEATURE_COUNT + 5;
+	int ANALYSIS__SCORE_SYSTEM = COMPONENT_OWNER_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Link Types</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ANALYSIS__LINK_TYPES = COMPONENT_OWNER_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Analysis</em>' class.
@@ -459,22 +459,13 @@ public interface TRADESPackage extends EPackage {
 	int COMPONENT__CONTROL_OWNER = COMPONENT_OWNER_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Link</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT__LINK = COMPONENT_OWNER_FEATURE_COUNT + 3;
-
-	/**
 	 * The feature id for the '<em><b>Threat Allocations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__THREAT_ALLOCATIONS = COMPONENT_OWNER_FEATURE_COUNT + 4;
+	int COMPONENT__THREAT_ALLOCATIONS = COMPONENT_OWNER_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Affect Relations</b></em>' containment reference list.
@@ -483,7 +474,16 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__AFFECT_RELATIONS = COMPONENT_OWNER_FEATURE_COUNT + 5;
+	int COMPONENT__AFFECT_RELATIONS = COMPONENT_OWNER_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Links</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT__LINKS = COMPONENT_OWNER_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Component</em>' class.
@@ -756,7 +756,7 @@ public interface TRADESPackage extends EPackage {
 	 * @see dsm.TRADES.impl.TRADESPackageImpl#getIMitigationLink()
 	 * @generated
 	 */
-	int IMITIGATION_LINK = 33;
+	int IMITIGATION_LINK = 31;
 
 	/**
 	 * The number of structural features of the '<em>IMitigation Link</em>' class.
@@ -1947,22 +1947,13 @@ public interface TRADESPackage extends EPackage {
 	int LINK__NAME = NAMED_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Affect Relations</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LINK__AFFECT_RELATIONS = NAMED_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Linktype</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LINK__LINKTYPE = NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int LINK__LINKTYPE = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Link Conveyed</b></em>' reference list.
@@ -1971,7 +1962,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LINK__LINK_CONVEYED = NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int LINK__LINK_CONVEYED = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Conveying Link</b></em>' reference list.
@@ -1980,7 +1971,16 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LINK__CONVEYING_LINK = NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int LINK__CONVEYING_LINK = NAMED_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Components</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK__COMPONENTS = NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Link</em>' class.
@@ -2001,43 +2001,6 @@ public interface TRADESPackage extends EPackage {
 	int LINK_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link dsm.TRADES.impl.LinkOwnerImpl <em>Link Owner</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see dsm.TRADES.impl.LinkOwnerImpl
-	 * @see dsm.TRADES.impl.TRADESPackageImpl#getLinkOwner()
-	 * @generated
-	 */
-	int LINK_OWNER = 25;
-
-	/**
-	 * The feature id for the '<em><b>Link</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LINK_OWNER__LINK = 0;
-
-	/**
-	 * The number of structural features of the '<em>Link Owner</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LINK_OWNER_FEATURE_COUNT = 1;
-
-	/**
-	 * The number of operations of the '<em>Link Owner</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LINK_OWNER_OPERATION_COUNT = 0;
-
-	/**
 	 * The meta object id for the '{@link dsm.TRADES.impl.LinkTypeImpl <em>Link Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2045,7 +2008,7 @@ public interface TRADESPackage extends EPackage {
 	 * @see dsm.TRADES.impl.TRADESPackageImpl#getLinkType()
 	 * @generated
 	 */
-	int LINK_TYPE = 26;
+	int LINK_TYPE = 25;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2075,43 +2038,6 @@ public interface TRADESPackage extends EPackage {
 	int LINK_TYPE_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link dsm.TRADES.impl.LinkTypeOwnerImpl <em>Link Type Owner</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see dsm.TRADES.impl.LinkTypeOwnerImpl
-	 * @see dsm.TRADES.impl.TRADESPackageImpl#getLinkTypeOwner()
-	 * @generated
-	 */
-	int LINK_TYPE_OWNER = 27;
-
-	/**
-	 * The feature id for the '<em><b>Linktype</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LINK_TYPE_OWNER__LINKTYPE = 0;
-
-	/**
-	 * The number of structural features of the '<em>Link Type Owner</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LINK_TYPE_OWNER_FEATURE_COUNT = 1;
-
-	/**
-	 * The number of operations of the '<em>Link Type Owner</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LINK_TYPE_OWNER_OPERATION_COUNT = 0;
-
-	/**
 	 * The meta object id for the '{@link dsm.TRADES.impl.AbstractThreatOwnerImpl <em>Abstract Threat Owner</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2119,7 +2045,7 @@ public interface TRADESPackage extends EPackage {
 	 * @see dsm.TRADES.impl.TRADESPackageImpl#getAbstractThreatOwner()
 	 * @generated
 	 */
-	int ABSTRACT_THREAT_OWNER = 29;
+	int ABSTRACT_THREAT_OWNER = 27;
 
 	/**
 	 * The feature id for the '<em><b>Threat Owner</b></em>' containment reference.
@@ -2156,7 +2082,7 @@ public interface TRADESPackage extends EPackage {
 	 * @see dsm.TRADES.impl.TRADESPackageImpl#getCatalog()
 	 * @generated
 	 */
-	int CATALOG = 28;
+	int CATALOG = 26;
 
 	/**
 	 * The feature id for the '<em><b>Threat Owner</b></em>' containment reference.
@@ -2265,7 +2191,7 @@ public interface TRADESPackage extends EPackage {
 	 * @see dsm.TRADES.impl.TRADESPackageImpl#getIThreatDefinition()
 	 * @generated
 	 */
-	int ITHREAT_DEFINITION = 30;
+	int ITHREAT_DEFINITION = 28;
 
 	/**
 	 * The number of structural features of the '<em>IThreat Definition</em>' class.
@@ -2320,7 +2246,7 @@ public interface TRADESPackage extends EPackage {
 	 * @see dsm.TRADES.impl.TRADESPackageImpl#getIControlDefinition()
 	 * @generated
 	 */
-	int ICONTROL_DEFINITION = 31;
+	int ICONTROL_DEFINITION = 29;
 
 	/**
 	 * The number of structural features of the '<em>IControl Definition</em>' class.
@@ -2384,7 +2310,7 @@ public interface TRADESPackage extends EPackage {
 	 * @see dsm.TRADES.impl.TRADESPackageImpl#getICatalogDefinition()
 	 * @generated
 	 */
-	int ICATALOG_DEFINITION = 32;
+	int ICATALOG_DEFINITION = 30;
 
 	/**
 	 * The number of structural features of the '<em>ICatalog Definition</em>' class.
@@ -2457,7 +2383,7 @@ public interface TRADESPackage extends EPackage {
 	 * @see dsm.TRADES.impl.TRADESPackageImpl#getAssessmentENUM()
 	 * @generated
 	 */
-	int ASSESSMENT_ENUM = 34;
+	int ASSESSMENT_ENUM = 32;
 
 	/**
 	 * The meta object id for the '{@link dsm.TRADES.AffectedENUM <em>Affected ENUM</em>}' enum.
@@ -2467,7 +2393,7 @@ public interface TRADESPackage extends EPackage {
 	 * @see dsm.TRADES.impl.TRADESPackageImpl#getAffectedENUM()
 	 * @generated
 	 */
-	int AFFECTED_ENUM = 35;
+	int AFFECTED_ENUM = 33;
 
 	/**
 	 * The meta object id for the '{@link dsm.TRADES.threatTypeENUM <em>threat Type ENUM</em>}' enum.
@@ -2477,7 +2403,7 @@ public interface TRADESPackage extends EPackage {
 	 * @see dsm.TRADES.impl.TRADESPackageImpl#getthreatTypeENUM()
 	 * @generated
 	 */
-	int THREAT_TYPE_ENUM = 36;
+	int THREAT_TYPE_ENUM = 34;
 
 	/**
 	 * The meta object id for the '{@link dsm.TRADES.ControlStatusENUM <em>Control Status ENUM</em>}' enum.
@@ -2487,7 +2413,7 @@ public interface TRADESPackage extends EPackage {
 	 * @see dsm.TRADES.impl.TRADESPackageImpl#getControlStatusENUM()
 	 * @generated
 	 */
-	int CONTROL_STATUS_ENUM = 37;
+	int CONTROL_STATUS_ENUM = 35;
 
 	/**
 	 * The meta object id for the '<em>RGB Color</em>' data type.
@@ -2497,7 +2423,7 @@ public interface TRADESPackage extends EPackage {
 	 * @see dsm.TRADES.impl.TRADESPackageImpl#getRGBColor()
 	 * @generated
 	 */
-	int RGB_COLOR = 38;
+	int RGB_COLOR = 36;
 
 	/**
 	 * Returns the meta object for class '{@link dsm.TRADES.Analysis <em>Analysis</em>}'.
@@ -2519,6 +2445,17 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getAnalysis_ScoreSystem();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link dsm.TRADES.Analysis#getLinkTypes <em>Link Types</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Link Types</em>'.
+	 * @see dsm.TRADES.Analysis#getLinkTypes()
+	 * @see #getAnalysis()
+	 * @generated
+	 */
+	EReference getAnalysis_LinkTypes();
 
 	/**
 	 * Returns the meta object for the '{@link dsm.TRADES.Analysis#getExternalThreat(java.lang.String, java.lang.String) <em>Get External Threat</em>}' operation.
@@ -2646,6 +2583,17 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getComponent_AffectRelations();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link dsm.TRADES.Component#getLinks <em>Links</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Links</em>'.
+	 * @see dsm.TRADES.Component#getLinks()
+	 * @see #getComponent()
+	 * @generated
+	 */
+	EReference getComponent_Links();
 
 	/**
 	 * Returns the meta object for class '{@link dsm.TRADES.Control <em>Control</em>}'.
@@ -3465,17 +3413,6 @@ public interface TRADESPackage extends EPackage {
 	EClass getLink();
 
 	/**
-	 * Returns the meta object for the reference list '{@link dsm.TRADES.Link#getAffectRelations <em>Affect Relations</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Affect Relations</em>'.
-	 * @see dsm.TRADES.Link#getAffectRelations()
-	 * @see #getLink()
-	 * @generated
-	 */
-	EReference getLink_AffectRelations();
-
-	/**
 	 * Returns the meta object for the reference '{@link dsm.TRADES.Link#getLinktype <em>Linktype</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3509,25 +3446,15 @@ public interface TRADESPackage extends EPackage {
 	EReference getLink_ConveyingLink();
 
 	/**
-	 * Returns the meta object for class '{@link dsm.TRADES.LinkOwner <em>Link Owner</em>}'.
+	 * Returns the meta object for the reference list '{@link dsm.TRADES.Link#getComponents <em>Components</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Link Owner</em>'.
-	 * @see dsm.TRADES.LinkOwner
+	 * @return the meta object for the reference list '<em>Components</em>'.
+	 * @see dsm.TRADES.Link#getComponents()
+	 * @see #getLink()
 	 * @generated
 	 */
-	EClass getLinkOwner();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link dsm.TRADES.LinkOwner#getLink <em>Link</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Link</em>'.
-	 * @see dsm.TRADES.LinkOwner#getLink()
-	 * @see #getLinkOwner()
-	 * @generated
-	 */
-	EReference getLinkOwner_Link();
+	EReference getLink_Components();
 
 	/**
 	 * Returns the meta object for class '{@link dsm.TRADES.LinkType <em>Link Type</em>}'.
@@ -3538,27 +3465,6 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getLinkType();
-
-	/**
-	 * Returns the meta object for class '{@link dsm.TRADES.LinkTypeOwner <em>Link Type Owner</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Link Type Owner</em>'.
-	 * @see dsm.TRADES.LinkTypeOwner
-	 * @generated
-	 */
-	EClass getLinkTypeOwner();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link dsm.TRADES.LinkTypeOwner#getLinktype <em>Linktype</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Linktype</em>'.
-	 * @see dsm.TRADES.LinkTypeOwner#getLinktype()
-	 * @see #getLinkTypeOwner()
-	 * @generated
-	 */
-	EReference getLinkTypeOwner_Linktype();
 
 	/**
 	 * Returns the meta object for class '{@link dsm.TRADES.Catalog <em>Catalog</em>}'.
@@ -3864,6 +3770,14 @@ public interface TRADESPackage extends EPackage {
 		EReference ANALYSIS__SCORE_SYSTEM = eINSTANCE.getAnalysis_ScoreSystem();
 
 		/**
+		 * The meta object literal for the '<em><b>Link Types</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ANALYSIS__LINK_TYPES = eINSTANCE.getAnalysis_LinkTypes();
+
+		/**
 		 * The meta object literal for the '<em><b>Get External Threat</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3965,6 +3879,14 @@ public interface TRADESPackage extends EPackage {
 		 * @generated
 		 */
 		EReference COMPONENT__AFFECT_RELATIONS = eINSTANCE.getComponent_AffectRelations();
+
+		/**
+		 * The meta object literal for the '<em><b>Links</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPONENT__LINKS = eINSTANCE.getComponent_Links();
 
 		/**
 		 * The meta object literal for the '{@link dsm.TRADES.impl.ControlImpl <em>Control</em>}' class.
@@ -4634,14 +4556,6 @@ public interface TRADESPackage extends EPackage {
 		EClass LINK = eINSTANCE.getLink();
 
 		/**
-		 * The meta object literal for the '<em><b>Affect Relations</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference LINK__AFFECT_RELATIONS = eINSTANCE.getLink_AffectRelations();
-
-		/**
 		 * The meta object literal for the '<em><b>Linktype</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4666,22 +4580,12 @@ public interface TRADESPackage extends EPackage {
 		EReference LINK__CONVEYING_LINK = eINSTANCE.getLink_ConveyingLink();
 
 		/**
-		 * The meta object literal for the '{@link dsm.TRADES.impl.LinkOwnerImpl <em>Link Owner</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see dsm.TRADES.impl.LinkOwnerImpl
-		 * @see dsm.TRADES.impl.TRADESPackageImpl#getLinkOwner()
-		 * @generated
-		 */
-		EClass LINK_OWNER = eINSTANCE.getLinkOwner();
-
-		/**
-		 * The meta object literal for the '<em><b>Link</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Components</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference LINK_OWNER__LINK = eINSTANCE.getLinkOwner_Link();
+		EReference LINK__COMPONENTS = eINSTANCE.getLink_Components();
 
 		/**
 		 * The meta object literal for the '{@link dsm.TRADES.impl.LinkTypeImpl <em>Link Type</em>}' class.
@@ -4692,24 +4596,6 @@ public interface TRADESPackage extends EPackage {
 		 * @generated
 		 */
 		EClass LINK_TYPE = eINSTANCE.getLinkType();
-
-		/**
-		 * The meta object literal for the '{@link dsm.TRADES.impl.LinkTypeOwnerImpl <em>Link Type Owner</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see dsm.TRADES.impl.LinkTypeOwnerImpl
-		 * @see dsm.TRADES.impl.TRADESPackageImpl#getLinkTypeOwner()
-		 * @generated
-		 */
-		EClass LINK_TYPE_OWNER = eINSTANCE.getLinkTypeOwner();
-
-		/**
-		 * The meta object literal for the '<em><b>Linktype</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference LINK_TYPE_OWNER__LINKTYPE = eINSTANCE.getLinkTypeOwner_Linktype();
 
 		/**
 		 * The meta object literal for the '{@link dsm.TRADES.impl.CatalogImpl <em>Catalog</em>}' class.

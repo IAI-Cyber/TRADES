@@ -213,15 +213,6 @@ public interface TRADESFactory extends EFactory {
 	Link createLink();
 
 	/**
-	 * Returns a new object of class '<em>Link Owner</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Link Owner</em>'.
-	 * @generated
-	 */
-	LinkOwner createLinkOwner();
-
-	/**
 	 * Returns a new object of class '<em>Link Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -229,15 +220,6 @@ public interface TRADESFactory extends EFactory {
 	 * @generated
 	 */
 	LinkType createLinkType();
-
-	/**
-	 * Returns a new object of class '<em>Link Type Owner</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Link Type Owner</em>'.
-	 * @generated
-	 */
-	LinkTypeOwner createLinkTypeOwner();
 
 	/**
 	 * Returns a new object of class '<em>Catalog</em>'.

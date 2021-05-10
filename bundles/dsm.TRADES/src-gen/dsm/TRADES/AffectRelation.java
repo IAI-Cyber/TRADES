@@ -125,14 +125,12 @@ public interface AffectRelation extends NamedElement {
 
 	/**
 	 * Returns the value of the '<em><b>Link</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link dsm.TRADES.Link#getAffectRelations <em>Affect Relations</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Link</em>' reference.
 	 * @see #setLink(Link)
 	 * @see dsm.TRADES.TRADESPackage#getAffectRelation_Link()
-	 * @see dsm.TRADES.Link#getAffectRelations
-	 * @model opposite="affectRelations"
+	 * @model
 	 * @generated
 	 */
 	Link getLink();
