@@ -15,6 +15,8 @@ package dsm.TRADES;
 
 public class SemanticUtil {
 
+	private static final String DEFAULT_ROOT_CMP_NAME = "System Analysis Scope";
+
 	public static <T extends Control> T addControl(AbstractControlOwner cmp, T control, boolean internal) {
 
 		ControlOwner owner = cmp.getControlOwner();
@@ -34,6 +36,10 @@ public class SemanticUtil {
 	public static Analysis createInitialModel(String rootObjectName) {
 		Analysis analysis = TRADESFactory.eINSTANCE.createAnalysis();
 		analysis.setName(rootObjectName);
+
+		Component root = TRADESFactory.eINSTANCE.createComponent();
+		analysis.getComponents().add(root);
+		root.setName(DEFAULT_ROOT_CMP_NAME);
 
 		ScoreSystem scoreSystem = TRADESFactory.eINSTANCE.createScoreSystem();
 		analysis.setScoreSystem(scoreSystem);
@@ -58,6 +64,7 @@ public class SemanticUtil {
 
 	/**
 	 * Create a empty catalog
+	 * 
 	 * @param rootObjectName the name of the catalog
 	 * @return a new {@link Catalog}
 	 */
