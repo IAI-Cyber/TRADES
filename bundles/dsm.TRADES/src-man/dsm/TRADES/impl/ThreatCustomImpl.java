@@ -32,10 +32,9 @@ public class ThreatCustomImpl extends ThreatImpl {
 	public boolean checkIsUsed(DiagnosticChain chain, Map context) {
 		if (EcoreUtils.getInverse(this, ThreatAllocationRelation.class,
 				TRADESPackage.eINSTANCE.getThreatAllocationRelation_Threat()).isEmpty()) {
-			chain.add(new BasicDiagnostic(Diagnostic.WARNING, TRADESValidator.DIAGNOSTIC_SOURCE,
+			chain.add(new BasicDiagnostic(Diagnostic.INFO, TRADESValidator.DIAGNOSTIC_SOURCE,
 					TRADESValidator.THREAT__CHECK_IS_USED,
-					MessageFormat.format("[{0}] This threat is not allocated", name),
-					new Object[] { this }));
+					MessageFormat.format("[{0}] This threat is not allocated", name), new Object[] { this }));
 			return false;
 		}
 		return true;
