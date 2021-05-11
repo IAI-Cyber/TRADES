@@ -444,18 +444,8 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * @generated
 	 */
 	@Override
-	public EOperation getAnalysis__GetExternalThreat__String_String() {
+	public EOperation getAnalysis__GetExternalThreats__String_String() {
 		return analysisEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getAnalysis__GetExternalControl__String_String() {
-		return analysisEClass.getEOperations().get(1);
 	}
 
 	/**
@@ -1314,6 +1304,16 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * @generated
 	 */
 	@Override
+	public EOperation getAbstractControlOwner__GetExternalControls__String_String() {
+		return abstractControlOwnerEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getDataOwner() {
 		return dataOwnerEClass;
 	}
@@ -1681,8 +1681,7 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		analysisEClass = createEClass(ANALYSIS);
 		createEReference(analysisEClass, ANALYSIS__SCORE_SYSTEM);
 		createEReference(analysisEClass, ANALYSIS__LINK_TYPES);
-		createEOperation(analysisEClass, ANALYSIS___GET_EXTERNAL_THREAT__STRING_STRING);
-		createEOperation(analysisEClass, ANALYSIS___GET_EXTERNAL_CONTROL__STRING_STRING);
+		createEOperation(analysisEClass, ANALYSIS___GET_EXTERNAL_THREATS__STRING_STRING);
 
 		threatEClass = createEClass(THREAT);
 		createEReference(threatEClass, THREAT__THREAT_ALLOCATIONS);
@@ -1791,6 +1790,7 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		abstractControlOwnerEClass = createEClass(ABSTRACT_CONTROL_OWNER);
 		createEReference(abstractControlOwnerEClass, ABSTRACT_CONTROL_OWNER__CONTROL_OWNER);
 		createEOperation(abstractControlOwnerEClass, ABSTRACT_CONTROL_OWNER___GET_ALL_CONTROLS);
+		createEOperation(abstractControlOwnerEClass, ABSTRACT_CONTROL_OWNER___GET_EXTERNAL_CONTROLS__STRING_STRING);
 
 		dataOwnerEClass = createEClass(DATA_OWNER);
 		createEReference(dataOwnerEClass, DATA_OWNER__DATA);
@@ -1913,13 +1913,8 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		EOperation op = initEOperation(getAnalysis__GetExternalThreat__String_String(), this.getExternalThreat(),
-				"getExternalThreat", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theEcorePackage.getEString(), "id", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theEcorePackage.getEString(), "source", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = initEOperation(getAnalysis__GetExternalControl__String_String(), this.getExternalControl(),
-				"getExternalControl", 0, 1, IS_UNIQUE, IS_ORDERED);
+		EOperation op = initEOperation(getAnalysis__GetExternalThreats__String_String(), this.getExternalThreat(),
+				"getExternalThreats", 0, -1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theEcorePackage.getEString(), "id", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theEcorePackage.getEString(), "source", 0, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -2155,7 +2150,7 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		initEReference(getThreatsOwner_Internals(), this.getThreat(), null, "internals", null, 0, -1,
 				ThreatsOwner.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getThreatsOwner_Externals(), this.getThreat(), null, "externals", null, 0, -1,
+		initEReference(getThreatsOwner_Externals(), this.getExternalThreat(), null, "externals", null, 0, -1,
 				ThreatsOwner.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -2164,7 +2159,7 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		initEReference(getControlOwner_Internals(), this.getControl(), null, "internals", null, 0, -1,
 				ControlOwner.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getControlOwner_Externals(), this.getControl(), null, "externals", null, 0, -1,
+		initEReference(getControlOwner_Externals(), this.getExternalControl(), null, "externals", null, 0, -1,
 				ControlOwner.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -2176,6 +2171,11 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 
 		initEOperation(getAbstractControlOwner__GetAllControls(), this.getControl(), "getAllControls", 0, -1, IS_UNIQUE,
 				IS_ORDERED);
+
+		op = initEOperation(getAbstractControlOwner__GetExternalControls__String_String(), this.getExternalControl(),
+				"getExternalControls", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theEcorePackage.getEString(), "id", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theEcorePackage.getEString(), "source", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(dataOwnerEClass, DataOwner.class, "DataOwner", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);

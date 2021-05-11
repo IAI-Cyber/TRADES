@@ -17,17 +17,17 @@ public class SemanticUtil {
 
 	private static final String DEFAULT_ROOT_CMP_NAME = "System Analysis Scope";
 
-	public static <T extends Control> T addControl(AbstractControlOwner cmp, T control, boolean internal) {
+	public static <T extends Control> T addControl(AbstractControlOwner cmp, T control) {
 
 		ControlOwner owner = cmp.getControlOwner();
 		if (owner == null) {
 			owner = TRADESFactory.eINSTANCE.createControlOwner();
 			cmp.setControlOwner(owner);
 		}
-		if (internal) {
-			owner.getInternals().add(control);
+		if (control instanceof ExternalControl) {
+			owner.getExternals().add((ExternalControl) control);
 		} else {
-			owner.getExternals().add(control);
+			owner.getInternals().add(control);
 		}
 
 		return control;

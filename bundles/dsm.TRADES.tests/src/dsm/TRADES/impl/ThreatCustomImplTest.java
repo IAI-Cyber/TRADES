@@ -54,8 +54,8 @@ public class ThreatCustomImplTest extends AbstractTest {
 		ThreatAllocationRelation thAllocationRel = fact.createThreatAllocationRelation();
 		thAllocationRel.setComponent(rootComponent);
 
-		Control intControl = SemanticUtil.addControl(root, fact.createControl(), true);
-		Control extControl = SemanticUtil.addControl(root, fact.createExternalControl(), true);
+		Control intControl = SemanticUtil.addControl(root, fact.createControl());
+		Control extControl = SemanticUtil.addControl(root, fact.createExternalControl());
 
 		ThreatMitigationRelation intThreatMitigtion = fact.createThreatMitigationRelation();
 		intControl.getMitigationRelations().add(intThreatMitigtion);

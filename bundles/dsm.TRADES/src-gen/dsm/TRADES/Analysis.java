@@ -74,14 +74,6 @@ public interface Analysis
 	 * @model
 	 * @generated
 	 */
-	ExternalThreat getExternalThreat(String id, String source);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
-	ExternalControl getExternalControl(String id, String source);
+	EList<ExternalThreat> getExternalThreats(String id, String source);
 
 } // Analysis

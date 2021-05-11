@@ -36,13 +36,9 @@
     <genClasses ecoreClass="TRADES.ecore#//Analysis">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Analysis/scoreSystem"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Analysis/linkTypes"/>
-      <genOperations ecoreOperation="TRADES.ecore#//Analysis/getExternalThreat">
-        <genParameters ecoreParameter="TRADES.ecore#//Analysis/getExternalThreat/id"/>
-        <genParameters ecoreParameter="TRADES.ecore#//Analysis/getExternalThreat/source"/>
-      </genOperations>
-      <genOperations ecoreOperation="TRADES.ecore#//Analysis/getExternalControl">
-        <genParameters ecoreParameter="TRADES.ecore#//Analysis/getExternalControl/id"/>
-        <genParameters ecoreParameter="TRADES.ecore#//Analysis/getExternalControl/source"/>
+      <genOperations ecoreOperation="TRADES.ecore#//Analysis/getExternalThreats">
+        <genParameters ecoreParameter="TRADES.ecore#//Analysis/getExternalThreats/id"/>
+        <genParameters ecoreParameter="TRADES.ecore#//Analysis/getExternalThreats/source"/>
       </genOperations>
     </genClasses>
     <genClasses ecoreClass="TRADES.ecore#//Threat">
@@ -160,6 +156,10 @@
     <genClasses ecoreClass="TRADES.ecore#//AbstractControlOwner">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//AbstractControlOwner/controlOwner"/>
       <genOperations ecoreOperation="TRADES.ecore#//AbstractControlOwner/getAllControls"/>
+      <genOperations ecoreOperation="TRADES.ecore#//AbstractControlOwner/getExternalControls">
+        <genParameters ecoreParameter="TRADES.ecore#//AbstractControlOwner/getExternalControls/id"/>
+        <genParameters ecoreParameter="TRADES.ecore#//AbstractControlOwner/getExternalControls/source"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="TRADES.ecore#//DataOwner">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//DataOwner/data"/>

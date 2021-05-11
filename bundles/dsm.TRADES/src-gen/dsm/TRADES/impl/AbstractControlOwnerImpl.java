@@ -16,6 +16,7 @@ package dsm.TRADES.impl;
 import dsm.TRADES.AbstractControlOwner;
 import dsm.TRADES.Control;
 import dsm.TRADES.ControlOwner;
+import dsm.TRADES.ExternalControl;
 import dsm.TRADES.TRADESPackage;
 
 import java.lang.reflect.InvocationTargetException;
@@ -144,6 +145,18 @@ public abstract class AbstractControlOwnerImpl extends MinimalEObjectImpl.Contai
 	 * @generated
 	 */
 	@Override
+	public EList<ExternalControl> getExternalControls(String id, String source) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case TRADESPackage.ABSTRACT_CONTROL_OWNER__CONTROL_OWNER:
@@ -220,6 +233,8 @@ public abstract class AbstractControlOwnerImpl extends MinimalEObjectImpl.Contai
 		switch (operationID) {
 		case TRADESPackage.ABSTRACT_CONTROL_OWNER___GET_ALL_CONTROLS:
 			return getAllControls();
+		case TRADESPackage.ABSTRACT_CONTROL_OWNER___GET_EXTERNAL_CONTROLS__STRING_STRING:
+			return getExternalControls((String) arguments.get(0), (String) arguments.get(1));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

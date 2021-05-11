@@ -404,19 +404,7 @@ public class AnalysisImpl extends ComponentOwnerImpl implements Analysis {
 	 * @generated
 	 */
 	@Override
-	public ExternalThreat getExternalThreat(String id, String source) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ExternalControl getExternalControl(String id, String source) {
+	public EList<ExternalThreat> getExternalThreats(String id, String source) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -429,6 +417,18 @@ public class AnalysisImpl extends ComponentOwnerImpl implements Analysis {
 	 */
 	@Override
 	public EList<Control> getAllControls() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<ExternalControl> getExternalControls(String id, String source) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -715,6 +715,8 @@ public class AnalysisImpl extends ComponentOwnerImpl implements Analysis {
 			switch (baseOperationID) {
 			case TRADESPackage.ABSTRACT_CONTROL_OWNER___GET_ALL_CONTROLS:
 				return TRADESPackage.ANALYSIS___GET_ALL_CONTROLS;
+			case TRADESPackage.ABSTRACT_CONTROL_OWNER___GET_EXTERNAL_CONTROLS__STRING_STRING:
+				return TRADESPackage.ANALYSIS___GET_EXTERNAL_CONTROLS__STRING_STRING;
 			default:
 				return -1;
 			}
@@ -736,12 +738,12 @@ public class AnalysisImpl extends ComponentOwnerImpl implements Analysis {
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-		case TRADESPackage.ANALYSIS___GET_EXTERNAL_THREAT__STRING_STRING:
-			return getExternalThreat((String) arguments.get(0), (String) arguments.get(1));
-		case TRADESPackage.ANALYSIS___GET_EXTERNAL_CONTROL__STRING_STRING:
-			return getExternalControl((String) arguments.get(0), (String) arguments.get(1));
+		case TRADESPackage.ANALYSIS___GET_EXTERNAL_THREATS__STRING_STRING:
+			return getExternalThreats((String) arguments.get(0), (String) arguments.get(1));
 		case TRADESPackage.ANALYSIS___GET_ALL_CONTROLS:
 			return getAllControls();
+		case TRADESPackage.ANALYSIS___GET_EXTERNAL_CONTROLS__STRING_STRING:
+			return getExternalControls((String) arguments.get(0), (String) arguments.get(1));
 		case TRADESPackage.ANALYSIS___GET_DATAS:
 			return getDatas();
 		case TRADESPackage.ANALYSIS___GET_INHERITED_DATAS:

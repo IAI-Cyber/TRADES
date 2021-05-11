@@ -14,6 +14,8 @@
 
 package dsm.oscal.design.service;
 
+import java.text.MessageFormat;
+
 import org.eclipse.emf.ecore.EObject;
 
 import TRADES.design.ExtThreatServices;
@@ -30,6 +32,17 @@ public class OscalDesignService {
 
 	public static ExternalControl createControl(dsm.oscal.model.OscalCatalog.Control control,
 			AbstractControlOwner owner) {
+
+		String catalogTitle = getCatalogTitle(control);
+		String controlId = control.getId();
+		if (!owner.getExternalControls(controlId, catalogTitle).isEmpty()) {
+			if (!ExtThreatServices.confirm("Existing External Control", MessageFormat.format(
+					"An external control with id ''{1}'' (from ''{0}'') already exist in ''{2}''. Do you want to import a new instance?",
+					catalogTitle, controlId, ExtThreatServices.getControlOwnerLabel(owner)))) {
+				return null;
+			}
+		}
+
 		ExternalControl extControl = TRADESFactory.eINSTANCE.createExternalControl();
 		MarkupLine title = control.getTitle();
 		if (title != null) {
@@ -38,7 +51,7 @@ public class OscalDesignService {
 		extControl.setDescription(control.computeDocumentation());
 		extControl.setId(control.getId());
 
-		extControl.setSource(getCatalogTitle(control));
+		extControl.setSource(catalogTitle);
 		extControl.setLink(ExtThreatServices.createURIRepresentation(control));
 
 		ControlOwner controlOwner = owner.getControlOwner();

@@ -13,6 +13,7 @@
  */
 package dsm.TRADES.impl;
 
+import dsm.TRADES.ExternalThreat;
 import dsm.TRADES.TRADESPackage;
 import dsm.TRADES.Threat;
 import dsm.TRADES.ThreatsOwner;
@@ -64,7 +65,7 @@ public class ThreatsOwnerImpl extends MinimalEObjectImpl.Container implements Th
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Threat> externals;
+	protected EList<ExternalThreat> externals;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -104,9 +105,10 @@ public class ThreatsOwnerImpl extends MinimalEObjectImpl.Container implements Th
 	 * @generated
 	 */
 	@Override
-	public EList<Threat> getExternals() {
+	public EList<ExternalThreat> getExternals() {
 		if (externals == null) {
-			externals = new EObjectContainmentEList<Threat>(Threat.class, this, TRADESPackage.THREATS_OWNER__EXTERNALS);
+			externals = new EObjectContainmentEList<ExternalThreat>(ExternalThreat.class, this,
+					TRADESPackage.THREATS_OWNER__EXTERNALS);
 		}
 		return externals;
 	}
@@ -158,7 +160,7 @@ public class ThreatsOwnerImpl extends MinimalEObjectImpl.Container implements Th
 			return;
 		case TRADESPackage.THREATS_OWNER__EXTERNALS:
 			getExternals().clear();
-			getExternals().addAll((Collection<? extends Threat>) newValue);
+			getExternals().addAll((Collection<? extends ExternalThreat>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);

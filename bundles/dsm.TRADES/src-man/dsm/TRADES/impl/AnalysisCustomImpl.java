@@ -14,23 +14,21 @@
 
 package dsm.TRADES.impl;
 
+import static java.util.stream.Collectors.toList;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-import java.util.stream.Stream;
 
 import org.eclipse.emf.common.util.ECollections;
 import org.eclipse.emf.common.util.EList;
 
-import dsm.TRADES.AbstractControlOwner;
 import dsm.TRADES.Control;
-import dsm.TRADES.ControlOwner;
 import dsm.TRADES.Data;
 import dsm.TRADES.ExternalControl;
 import dsm.TRADES.ExternalThreat;
 import dsm.TRADES.SemanticHelper;
 import dsm.TRADES.ThreatsOwner;
-import dsm.TRADES.util.EcoreUtils;
 
 public class AnalysisCustomImpl extends AnalysisImpl {
 	@Override
@@ -58,39 +56,26 @@ public class AnalysisCustomImpl extends AnalysisImpl {
 		return ECollections.asEList(result);
 	}
 
-	private Stream<ExternalControl> getAllExternalControls() {
-		return EcoreUtils.eAllContentSteamWithSelf(this).flatMap(i -> {
-			if (i instanceof AbstractControlOwner) {
-				ControlOwner controlOwner = ((AbstractControlOwner) i).getControlOwner();
-				if (controlOwner != null) {
-					return controlOwner.getExternals().stream().filter(e -> e instanceof ExternalControl)
-							.map(e -> ((ExternalControl) e));
-				}
-			}
-			return Stream.empty();
-		}).filter(t -> t.getId() != null);
-	}
-
 
 	@Override
-	public ExternalControl getExternalControl(String id, String source) {
-		if (id == null) {
+	public EList<ExternalControl> getExternalControls(String id, String source) {
+		if (id == null || getControlOwner() == null) {
 			return null;
 		}
-		return getAllExternalControls().filter(ext -> id.equals(ext.getId()) && Objects.equals(source, ext.getSource()))
-				.findFirst()
-				.orElse(null);
+		return ECollections.asEList(getControlOwner().getExternals().stream()
+				.filter(ext -> id.equals(ext.getId()) && Objects.equals(source, ext.getSource())).collect(toList()));
 	}
 
 	@Override
-	public ExternalThreat getExternalThreat(String id, String source) {
+	public EList<ExternalThreat> getExternalThreats(String id, String source) {
 		ThreatsOwner owner = getThreatOwner();
 		if (owner == null || id == null) {
 			return null;
 		}
-		return (ExternalThreat) owner.getExternals().stream().filter(
-				e -> e instanceof ExternalThreat && id.equals(e.getId())
-						&& Objects.equals(source, ((ExternalThreat) e).getSource()))
-				.findFirst().orElse(null);
+		return ECollections
+				.asEList(owner.getExternals().stream().filter(e -> e instanceof ExternalThreat
+						&& id.equals(e.getId()) && Objects.equals(source, ((ExternalThreat) e).getSource()))
+						.map(e -> (ExternalThreat) e)
+						.collect(toList()));
 	}
 }

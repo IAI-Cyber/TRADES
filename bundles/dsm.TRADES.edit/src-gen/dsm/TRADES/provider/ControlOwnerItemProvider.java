@@ -171,9 +171,6 @@ public class ControlOwnerItemProvider extends ItemProviderAdapter implements IEd
 				TRADESFactory.eINSTANCE.createExternalControl()));
 
 		newChildDescriptors.add(createChildParameter(TRADESPackage.Literals.CONTROL_OWNER__EXTERNALS,
-				TRADESFactory.eINSTANCE.createControl()));
-
-		newChildDescriptors.add(createChildParameter(TRADESPackage.Literals.CONTROL_OWNER__EXTERNALS,
 				TRADESFactory.eINSTANCE.createExternalControl()));
 	}
 
