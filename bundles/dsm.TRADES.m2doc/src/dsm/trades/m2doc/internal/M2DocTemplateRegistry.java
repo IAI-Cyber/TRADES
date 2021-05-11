@@ -25,10 +25,10 @@ import org.apache.poi.xwpf.usermodel.XWPFDocument;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
+import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.resource.impl.ExtensibleURIConverterImpl;
 import org.obeonetwork.m2doc.properties.TemplateCustomProperties;
 
-import dsm.TRADES.TRADESPackage;
 import dsm.trades.m2doc.IM2DocTemplate;
 import dsm.trades.m2doc.IM2DocTemplateRegistry;
 import dsm.trades.m2doc.TradesM2docActivator;
@@ -41,7 +41,6 @@ import dsm.trades.m2doc.TradesM2docActivator;
  */
 public class M2DocTemplateRegistry implements IM2DocTemplateRegistry {
 
-	private static final String TRADES_PKG_PREFIX = "TRADES::";
 	private List<IM2DocTemplate> templates = new ArrayList<IM2DocTemplate>();
 
 	@Override
@@ -62,8 +61,13 @@ public class M2DocTemplateRegistry implements IM2DocTemplateRegistry {
 					return this;
 				}
 
-				EClassifier selfTypeEClass = TRADESPackage.eINSTANCE
-						.getEClassifier(selfType.replace(TRADES_PKG_PREFIX, ""));
+				String[] parts = selfType.split("::");
+				if (parts.length != 2) {
+					TradesM2docActivator.logError("Unkown type of self for the template" + newTemplate);
+					return this;
+				}
+
+				EClassifier selfTypeEClass = getTargetEClass(customProperties.getPackagesURIs(), parts[0], parts[1]);
 				if (!(selfTypeEClass instanceof EClass)) {
 					TradesM2docActivator.logError("Unkown type of self for the template" + newTemplate);
 					return this;
@@ -80,6 +84,19 @@ public class M2DocTemplateRegistry implements IM2DocTemplateRegistry {
 			TradesM2docActivator.logError("Error while reading template " + newTemplate, e2);
 		}
 		return this;
+	}
+
+	private EClassifier getTargetEClass(List<String> availablePackages, String packageName, String typeName) {
+		if (packageName == null || packageName.isBlank() || typeName == null || typeName.isBlank()) {
+			return null;
+		}
+		for (String ePackageURI : availablePackages) {
+			EPackage ePack = EPackage.Registry.INSTANCE.getEPackage(ePackageURI);
+			if (ePack != null && packageName.equals(ePack.getName())) {
+				return ePack.getEClassifier(typeName);
+			}
+		}
+		return null;
 	}
 
 	@Override
