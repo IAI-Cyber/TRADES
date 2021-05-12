@@ -48,7 +48,7 @@ public class ComponentCustomImpl extends ComponentImpl {
 	@Override
 	public EList<ExternalControl> getExternalControls(String id, String source) {
 		if (id == null || getControlOwner() == null) {
-			return null;
+			return ECollections.emptyEList();
 		}
 		return ECollections.asEList(getControlOwner().getExternals().stream()
 				.filter(ext -> id.equals(ext.getId()) && Objects.equals(source, ext.getSource())).collect(toList()));

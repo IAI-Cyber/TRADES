@@ -60,7 +60,7 @@ public class AnalysisCustomImpl extends AnalysisImpl {
 	@Override
 	public EList<ExternalControl> getExternalControls(String id, String source) {
 		if (id == null || getControlOwner() == null) {
-			return null;
+			return ECollections.emptyEList();
 		}
 		return ECollections.asEList(getControlOwner().getExternals().stream()
 				.filter(ext -> id.equals(ext.getId()) && Objects.equals(source, ext.getSource())).collect(toList()));
@@ -70,7 +70,7 @@ public class AnalysisCustomImpl extends AnalysisImpl {
 	public EList<ExternalThreat> getExternalThreats(String id, String source) {
 		ThreatsOwner owner = getThreatOwner();
 		if (owner == null || id == null) {
-			return null;
+			return ECollections.emptyEList();
 		}
 		return ECollections
 				.asEList(owner.getExternals().stream().filter(e -> e instanceof ExternalThreat
