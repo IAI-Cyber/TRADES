@@ -36,6 +36,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.jface.viewers.IStructuredSelection;
@@ -53,6 +54,10 @@ import dsm.TRADES.Analysis;
 import dsm.TRADES.Catalog;
 import dsm.TRADES.Control;
 import dsm.TRADES.ControlOwner;
+import dsm.TRADES.ExternalControl;
+import dsm.TRADES.ExternalThreat;
+import dsm.TRADES.IControlDefinition;
+import dsm.TRADES.IThreatDefinition;
 import dsm.TRADES.NamedElement;
 import dsm.TRADES.SemanticUtil;
 import dsm.TRADES.Threat;
@@ -211,7 +216,7 @@ public class ImportTradesModelWizard extends Wizard implements IImportWizard {
 										if (!controlIds.contains(c.getId())) {
 											controlIds.add(c.getId());
 											controls.add(c);
-						}
+										}
 									});
 						});
 				controlSelectionPage.setInput(controls);
@@ -231,15 +236,6 @@ public class ImportTradesModelWizard extends Wizard implements IImportWizard {
 	}
 
 	private boolean importTradesCatalog(URI repUri, Session session) {
-		URI tradesLibURI = getCatalogFolderURI(repUri)
-				.appendSegment(URI.encodeSegment(importedAnalysisName, false) + ".trades");
-		TransactionalEditingDomain transactionalEditingDomain = session.getTransactionalEditingDomain();
-		ResourceSet resourceSet = transactionalEditingDomain.getResourceSet();
-		Resource existingResource = resourceSet.getResource(tradesLibURI, false);
-		if (existingResource != null) {
-			controlSelectionPage.setErrorMessage("This import already exist");
-			return false;
-		}
 		controlSelectionPage.setErrorMessage(null);
 		try {
 			getContainer().run(false, false, monitor -> {
@@ -248,35 +244,78 @@ public class ImportTradesModelWizard extends Wizard implements IImportWizard {
 
 					@Override
 					protected void doExecute() {
+						URI tradesLibURI = getCatalogFolderURI(repUri)
+								.appendSegment(URI.encodeSegment(importedAnalysisName, false) + ".trades");
+						TransactionalEditingDomain transactionalEditingDomain = session.getTransactionalEditingDomain();
+						ResourceSet resourceSet = transactionalEditingDomain.getResourceSet();
+						Resource existingResource = resourceSet.getResource(tradesLibURI, false);
 
-						// Create a analysis with the same name
-						Catalog catalog = SemanticUtil.createInitialCatalog(importedAnalysisName);
+						ThreatsOwner threatOwner = null;
+						ControlOwner controlOwner = null;
+						Catalog catalog = null;
+						if (existingResource == null) {
 
-						ThreatsOwner threatOwner = catalog.getThreatOwner();
+							existingResource = resourceSet.createResource(tradesLibURI);
+							// Create a analysis with the same name
+							catalog = SemanticUtil.createInitialCatalog(importedAnalysisName);
+							existingResource.getContents().add(catalog);
 
-						ControlOwner controlOwner = catalog.getControlOwner();
+							threatOwner = catalog.getThreatOwner();
+
+							controlOwner = catalog.getControlOwner();
+						} else if (!existingResource.getContents().isEmpty()) {
+							EObject root = existingResource.getContents().get(0);
+							if (root instanceof Catalog) {
+								catalog = (Catalog) root;
+								threatOwner = catalog.getThreatOwner();
+								controlOwner = catalog.getControlOwner();
+							}
+						}
 
 						// For each selected threat create an external threat
+						if (threatOwner != null && controlOwner != null && catalog != null) {
 
-						ThreatCopier threatImporter = new ThreatCopier();
+							ThreatCopier threatImporter = new ThreatCopier();
+							for (Threat t : selectedThreats) {
 
-						for (Threat t : selectedThreats) {
-							threatOwner.getExternals().add(threatImporter.copy(t, importedAnalysisName));
+								IThreatDefinition existingThreat = catalog.getThreatById(t.getId());
+								if (existingThreat == null) {
+									ExternalThreat copy = threatImporter.copy(t, importedAnalysisName);
+									threatOwner.getExternals().add(copy);
+									keepSameId(existingResource, t, copy);
+								} else if (existingThreat instanceof ExternalThreat) {
+									threatImporter.update(t, (ExternalThreat) existingThreat);
+								}
+
+							}
+							// For each selected control create an external control + a threat mitigation
+							ControlCopier controlImporter = new ControlCopier(threatImporter.getOldToNewThreats());
+
+							for (Control c : selectedControl) {
+								IControlDefinition existingControl = catalog.getControlById(c.getId());
+								if (existingControl == null) {
+									ExternalControl copiedControl = controlImporter.copy(c, importedAnalysisName);
+									keepSameId(existingResource, c, copiedControl);
+									controlOwner.getExternals().add(copiedControl);
+								} else if (existingControl instanceof ExternalControl) {
+									controlImporter.update(c, (ExternalControl) existingControl);
+								}
+							}
+
+							session.addSemanticResource(tradesLibURI, new NullProgressMonitor());
+
+							session.save(new NullProgressMonitor());
+						} else {
+							Activator.logError("Invalid catalog model");
 						}
 
-						// For each selected control create an external control + a threat mitigation
-						ControlCopier controlImporter = new ControlCopier(threatImporter.getOldToNewThreats());
+					}
 
-						for (Control c : selectedControl) {
-							controlOwner.getExternals().add(controlImporter.copy(c, importedAnalysisName));
+					public void keepSameId(Resource toUpdateResource, EObject toImport, EObject toUpdate) {
+						if (toUpdateResource instanceof XMLResource) {
+							((XMLResource) toUpdateResource).setID(toUpdate,
+									toImport.eResource().getURIFragment(toImport));
 						}
-
-						Resource newResource = resourceSet.createResource(tradesLibURI);
-
-						newResource.getContents().add(catalog);
-						session.addSemanticResource(tradesLibURI, new NullProgressMonitor());
-
-						session.save(new NullProgressMonitor());
 					}
 				};
 

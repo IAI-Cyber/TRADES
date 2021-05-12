@@ -13,6 +13,8 @@
 *******************************************************************************************************/
 package TRADES.design;
 
+import static java.util.stream.Collectors.toList;
+
 import java.awt.Desktop;
 import java.io.File;
 import java.io.IOException;
@@ -147,11 +149,15 @@ public class ExtThreatServices {
 		for (IControlDefinition def : catalog.getControlDefinitions()) {
 			for (IMitigationLink link : def.getMitigatedThreatDefinitions()) {
 				if (link.getThreat().getId().equals(source.getId())) {
-					EList<ExternalControl> existingControls = analysis.getExternalControls(def.getId(),
-							catalog.getIdentifier());
-					for (ExternalControl existingControl : existingControls) {
-						createMigitationLink(existingControl, link, result);
+
+					List<ExternalControl> connectedControls = EcoreUtils
+							.allContainedObjectOfType(analysis, AbstractControlOwner.class)
+							.flatMap(owner -> owner.getExternalControls(def.getId(), catalog.getIdentifier()).stream())
+							.filter(control -> control != null).collect(toList());
+					for (ExternalControl connectedControl : connectedControls) {
+						createMigitationLink(connectedControl, link, result);
 					}
+
 				}
 			}
 		}

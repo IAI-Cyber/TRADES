@@ -17,9 +17,6 @@ package dsm.trades.rcp.utils;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.resource.Resource;
-
 import dsm.TRADES.Control;
 import dsm.TRADES.ExternalControl;
 import dsm.TRADES.ExternalThreat;
@@ -38,43 +35,41 @@ public class ControlCopier {
 		this.importedThreats = importedThreats;
 	}
 
-	public ExternalControl copy(Control control, String sourceName) {
-
-		ExternalControl result = TRADESFactory.eINSTANCE.createExternalControl();
-		result.setDescription(control.getDescription());
-		result.setId(control.getId());
-		result.setName(control.getName());
-
-		// Mitigation
-		for (Threat mitigatedThreat : control.getMitigatedThreats()) {
-			if (importedThreats.containsKey(mitigatedThreat)) {
-				result.getMitigatedThreats().add(importedThreats.get(mitigatedThreat));
-			}
-		}
-
-		for (ThreatMitigationRelation rel : control.getMitigationRelations()) {
+	public ExternalControl update(Control controlToImport, ExternalControl existingControl) {
+		existingControl.setDescription(controlToImport.getDescription());
+		existingControl.setId(controlToImport.getId());
+		existingControl.setName(controlToImport.getName());
+		
+		existingControl.getMitigationRelations().clear();
+		for (ThreatMitigationRelation rel : controlToImport.getMitigationRelations()) {
 			Threat mThreat = rel.getThreat();
 			if (importedThreats.containsKey(mThreat)) {
 				ThreatMitigationRelation nRel = TRADESFactory.eINSTANCE.createThreatMitigationRelation();
 				nRel.setThreat(importedThreats.get(mThreat));
 				nRel.setAssessment(rel.getAssessment());
-				nRel.setControl(result);
-				result.getMitigationRelations().add(nRel);
+				nRel.setControl(existingControl);
+				existingControl.getMitigationRelations().add(nRel);
 			}
+			oldToNew.put(controlToImport, existingControl);
 		}
+		return existingControl;
+	}
 
-		if (control instanceof ExternalControl) {
-			ExternalControl extControl = (ExternalControl) control;
+	public ExternalControl copy(Control controlToImport, String sourceName) {
+
+		ExternalControl result = TRADESFactory.eINSTANCE.createExternalControl();
+		update(controlToImport, result);
+
+
+		if (controlToImport instanceof ExternalControl) {
+			ExternalControl extControl = (ExternalControl) controlToImport;
 			result.setSource(extControl.getSource());
 			result.setLink(extControl.getLink());
 		} else {
-			Resource eResource = control.eResource();
-			URI uri = eResource.getURI().appendFragment(eResource.getURIFragment(control));
-			result.setLink(URI.decode(uri.toString()));
 			result.setSource(sourceName);
 		}
 
-		oldToNew.put(control, result);
+		oldToNew.put(controlToImport, result);
 		return result;
 	}
 

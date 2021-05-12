@@ -17,9 +17,6 @@ package dsm.trades.rcp.utils;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.resource.Resource;
-
 import dsm.TRADES.ExternalThreat;
 import dsm.TRADES.TRADESFactory;
 import dsm.TRADES.Threat;
@@ -27,6 +24,18 @@ import dsm.TRADES.Threat;
 public class ThreatCopier {
 
 	Map<Threat, ExternalThreat> oldToNewThreats = new HashMap<>();
+
+	public ExternalThreat update(Threat toImport, ExternalThreat existingThreat) {
+		oldToNewThreats.put(toImport, existingThreat);
+		existingThreat.setDescription(toImport.getDescription());
+		existingThreat.setApplicability(toImport.getApplicability());
+		existingThreat.setId(toImport.getId());
+		existingThreat.setName(toImport.getName());
+		existingThreat.setThreatType(toImport.getThreatType());
+
+
+		return existingThreat;
+	}
 
 	public ExternalThreat copy(Threat threat, String analysisSourceName) {
 
@@ -43,9 +52,6 @@ public class ThreatCopier {
 			result.setLink(inputExtThreat.getLink());
 			result.setSource(inputExtThreat.getSource());
 		} else {
-			Resource eResource = threat.eResource();
-			URI uri = eResource.getURI().appendFragment(eResource.getURIFragment(threat));
-			result.setLink(URI.decode(uri.toString()));
 			result.setSource(analysisSourceName);
 		}
 		return result;
