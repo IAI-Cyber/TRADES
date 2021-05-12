@@ -161,13 +161,11 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="source" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="link" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ImpactConfiguration">
+  <eClassifiers xsi:type="ecore:EClass" name="ImpactConfiguration" eSuperTypes="#//ColoredElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="difficulty" lowerBound="1"
         eType="#//DifficultyScore"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="impact" lowerBound="1"
         eType="#//ImpactScore" eOpposite="#//ImpactScore/configurations"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="color" eType="#//RGBColor"
-        defaultValueLiteral="#FFFFFF"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EDataType" name="RGBColor" instanceClassName="dsm.TRADES.RGBColor"/>
   <eClassifiers xsi:type="ecore:EClass" name="ExternalControl" eSuperTypes="#//ExternalElement #//Control"/>
@@ -203,7 +201,7 @@
     <eLiterals name="Rejected" value="3"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Link" eSuperTypes="#//NamedElement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="linktype" lowerBound="1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="linkType" lowerBound="1"
         eType="#//LinkType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="linkConveyed" upperBound="-1"
         eType="#//Link" eOpposite="#//Link/conveyingLink"/>
@@ -212,7 +210,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="components" upperBound="-1"
         eType="#//Component"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="LinkType" eSuperTypes="#//NamedElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="LinkType" eSuperTypes="#//NamedElement #//ColoredElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="Catalog" eSuperTypes="#//AbstractThreatOwner #//AbstractControlOwner #//NamedElement #//ICatalogDefinition"/>
   <eClassifiers xsi:type="ecore:EClass" name="AbstractThreatOwner" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EReference" name="threatOwner" lowerBound="1"
@@ -253,5 +251,9 @@
   <eClassifiers xsi:type="ecore:EClass" name="IMitigationLink" abstract="true" interface="true">
     <eOperations name="getDescription" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
     <eOperations name="getThreat" eType="#//IThreatDefinition"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ColoredElement" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="color" eType="#//RGBColor"
+        defaultValueLiteral="#AAAAAA"/>
   </eClassifiers>
 </ecore:EPackage>

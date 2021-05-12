@@ -1571,6 +1571,43 @@ public interface TRADESPackage extends EPackage {
 	int EXTERNAL_ELEMENT_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link dsm.TRADES.impl.ColoredElementImpl <em>Colored Element</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see dsm.TRADES.impl.ColoredElementImpl
+	 * @see dsm.TRADES.impl.TRADESPackageImpl#getColoredElement()
+	 * @generated
+	 */
+	int COLORED_ELEMENT = 32;
+
+	/**
+	 * The feature id for the '<em><b>Color</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COLORED_ELEMENT__COLOR = 0;
+
+	/**
+	 * The number of structural features of the '<em>Colored Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COLORED_ELEMENT_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Colored Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COLORED_ELEMENT_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link dsm.TRADES.impl.ImpactConfigurationImpl <em>Impact Configuration</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1581,13 +1618,22 @@ public interface TRADESPackage extends EPackage {
 	int IMPACT_CONFIGURATION = 18;
 
 	/**
+	 * The feature id for the '<em><b>Color</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMPACT_CONFIGURATION__COLOR = COLORED_ELEMENT__COLOR;
+
+	/**
 	 * The feature id for the '<em><b>Difficulty</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IMPACT_CONFIGURATION__DIFFICULTY = 0;
+	int IMPACT_CONFIGURATION__DIFFICULTY = COLORED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Impact</b></em>' container reference.
@@ -1596,16 +1642,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMPACT_CONFIGURATION__IMPACT = 1;
-
-	/**
-	 * The feature id for the '<em><b>Color</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IMPACT_CONFIGURATION__COLOR = 2;
+	int IMPACT_CONFIGURATION__IMPACT = COLORED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Impact Configuration</em>' class.
@@ -1614,7 +1651,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMPACT_CONFIGURATION_FEATURE_COUNT = 3;
+	int IMPACT_CONFIGURATION_FEATURE_COUNT = COLORED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Impact Configuration</em>' class.
@@ -1623,7 +1660,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMPACT_CONFIGURATION_OPERATION_COUNT = 0;
+	int IMPACT_CONFIGURATION_OPERATION_COUNT = COLORED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link dsm.TRADES.impl.ExternalControlImpl <em>External Control</em>}' class.
@@ -1965,13 +2002,13 @@ public interface TRADESPackage extends EPackage {
 	int LINK__NAME = NAMED_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Linktype</b></em>' reference.
+	 * The feature id for the '<em><b>Link Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LINK__LINKTYPE = NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int LINK__LINK_TYPE = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Link Conveyed</b></em>' reference list.
@@ -2038,13 +2075,22 @@ public interface TRADESPackage extends EPackage {
 	int LINK_TYPE__NAME = NAMED_ELEMENT__NAME;
 
 	/**
+	 * The feature id for the '<em><b>Color</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK_TYPE__COLOR = NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>Link Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LINK_TYPE_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int LINK_TYPE_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Link Type</em>' class.
@@ -2410,7 +2456,7 @@ public interface TRADESPackage extends EPackage {
 	 * @see dsm.TRADES.impl.TRADESPackageImpl#getAssessmentENUM()
 	 * @generated
 	 */
-	int ASSESSMENT_ENUM = 32;
+	int ASSESSMENT_ENUM = 33;
 
 	/**
 	 * The meta object id for the '{@link dsm.TRADES.AffectedENUM <em>Affected ENUM</em>}' enum.
@@ -2420,7 +2466,7 @@ public interface TRADESPackage extends EPackage {
 	 * @see dsm.TRADES.impl.TRADESPackageImpl#getAffectedENUM()
 	 * @generated
 	 */
-	int AFFECTED_ENUM = 33;
+	int AFFECTED_ENUM = 34;
 
 	/**
 	 * The meta object id for the '{@link dsm.TRADES.threatTypeENUM <em>threat Type ENUM</em>}' enum.
@@ -2430,7 +2476,7 @@ public interface TRADESPackage extends EPackage {
 	 * @see dsm.TRADES.impl.TRADESPackageImpl#getthreatTypeENUM()
 	 * @generated
 	 */
-	int THREAT_TYPE_ENUM = 34;
+	int THREAT_TYPE_ENUM = 35;
 
 	/**
 	 * The meta object id for the '{@link dsm.TRADES.ControlStatusENUM <em>Control Status ENUM</em>}' enum.
@@ -2440,7 +2486,7 @@ public interface TRADESPackage extends EPackage {
 	 * @see dsm.TRADES.impl.TRADESPackageImpl#getControlStatusENUM()
 	 * @generated
 	 */
-	int CONTROL_STATUS_ENUM = 35;
+	int CONTROL_STATUS_ENUM = 36;
 
 	/**
 	 * The meta object id for the '<em>RGB Color</em>' data type.
@@ -2450,7 +2496,7 @@ public interface TRADESPackage extends EPackage {
 	 * @see dsm.TRADES.impl.TRADESPackageImpl#getRGBColor()
 	 * @generated
 	 */
-	int RGB_COLOR = 36;
+	int RGB_COLOR = 37;
 
 	/**
 	 * Returns the meta object for class '{@link dsm.TRADES.Analysis <em>Analysis</em>}'.
@@ -3283,17 +3329,6 @@ public interface TRADESPackage extends EPackage {
 	EReference getImpactConfiguration_Impact();
 
 	/**
-	 * Returns the meta object for the attribute '{@link dsm.TRADES.ImpactConfiguration#getColor <em>Color</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Color</em>'.
-	 * @see dsm.TRADES.ImpactConfiguration#getColor()
-	 * @see #getImpactConfiguration()
-	 * @generated
-	 */
-	EAttribute getImpactConfiguration_Color();
-
-	/**
 	 * Returns the meta object for class '{@link dsm.TRADES.ExternalControl <em>External Control</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3440,15 +3475,15 @@ public interface TRADESPackage extends EPackage {
 	EClass getLink();
 
 	/**
-	 * Returns the meta object for the reference '{@link dsm.TRADES.Link#getLinktype <em>Linktype</em>}'.
+	 * Returns the meta object for the reference '{@link dsm.TRADES.Link#getLinkType <em>Link Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Linktype</em>'.
-	 * @see dsm.TRADES.Link#getLinktype()
+	 * @return the meta object for the reference '<em>Link Type</em>'.
+	 * @see dsm.TRADES.Link#getLinkType()
 	 * @see #getLink()
 	 * @generated
 	 */
-	EReference getLink_Linktype();
+	EReference getLink_LinkType();
 
 	/**
 	 * Returns the meta object for the reference list '{@link dsm.TRADES.Link#getLinkConveyed <em>Link Conveyed</em>}'.
@@ -3703,6 +3738,27 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getIMitigationLink__GetThreat();
+
+	/**
+	 * Returns the meta object for class '{@link dsm.TRADES.ColoredElement <em>Colored Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Colored Element</em>'.
+	 * @see dsm.TRADES.ColoredElement
+	 * @generated
+	 */
+	EClass getColoredElement();
+
+	/**
+	 * Returns the meta object for the attribute '{@link dsm.TRADES.ColoredElement#getColor <em>Color</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Color</em>'.
+	 * @see dsm.TRADES.ColoredElement#getColor()
+	 * @see #getColoredElement()
+	 * @generated
+	 */
+	EAttribute getColoredElement_Color();
 
 	/**
 	 * Returns the meta object for enum '{@link dsm.TRADES.AssessmentENUM <em>Assessment ENUM</em>}'.
@@ -4450,14 +4506,6 @@ public interface TRADESPackage extends EPackage {
 		EReference IMPACT_CONFIGURATION__IMPACT = eINSTANCE.getImpactConfiguration_Impact();
 
 		/**
-		 * The meta object literal for the '<em><b>Color</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute IMPACT_CONFIGURATION__COLOR = eINSTANCE.getImpactConfiguration_Color();
-
-		/**
 		 * The meta object literal for the '{@link dsm.TRADES.impl.ExternalControlImpl <em>External Control</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4583,12 +4631,12 @@ public interface TRADESPackage extends EPackage {
 		EClass LINK = eINSTANCE.getLink();
 
 		/**
-		 * The meta object literal for the '<em><b>Linktype</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Link Type</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference LINK__LINKTYPE = eINSTANCE.getLink_Linktype();
+		EReference LINK__LINK_TYPE = eINSTANCE.getLink_LinkType();
 
 		/**
 		 * The meta object literal for the '<em><b>Link Conveyed</b></em>' reference list feature.
@@ -4808,6 +4856,24 @@ public interface TRADESPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation IMITIGATION_LINK___GET_THREAT = eINSTANCE.getIMitigationLink__GetThreat();
+
+		/**
+		 * The meta object literal for the '{@link dsm.TRADES.impl.ColoredElementImpl <em>Colored Element</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see dsm.TRADES.impl.ColoredElementImpl
+		 * @see dsm.TRADES.impl.TRADESPackageImpl#getColoredElement()
+		 * @generated
+		 */
+		EClass COLORED_ELEMENT = eINSTANCE.getColoredElement();
+
+		/**
+		 * The meta object literal for the '<em><b>Color</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COLORED_ELEMENT__COLOR = eINSTANCE.getColoredElement_Color();
 
 		/**
 		 * The meta object literal for the '{@link dsm.TRADES.AssessmentENUM <em>Assessment ENUM</em>}' enum.

@@ -42,7 +42,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link dsm.TRADES.impl.LinkImpl#getLinktype <em>Linktype</em>}</li>
+ *   <li>{@link dsm.TRADES.impl.LinkImpl#getLinkType <em>Link Type</em>}</li>
  *   <li>{@link dsm.TRADES.impl.LinkImpl#getLinkConveyed <em>Link Conveyed</em>}</li>
  *   <li>{@link dsm.TRADES.impl.LinkImpl#getConveyingLink <em>Conveying Link</em>}</li>
  *   <li>{@link dsm.TRADES.impl.LinkImpl#getComponents <em>Components</em>}</li>
@@ -52,14 +52,14 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class LinkImpl extends NamedElementImpl implements Link {
 	/**
-	 * The cached value of the '{@link #getLinktype() <em>Linktype</em>}' reference.
+	 * The cached value of the '{@link #getLinkType() <em>Link Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getLinktype()
+	 * @see #getLinkType()
 	 * @generated
 	 * @ordered
 	 */
-	protected LinkType linktype;
+	protected LinkType linkType;
 
 	/**
 	 * The cached value of the '{@link #getLinkConveyed() <em>Link Conveyed</em>}' reference list.
@@ -116,17 +116,17 @@ public class LinkImpl extends NamedElementImpl implements Link {
 	 * @generated
 	 */
 	@Override
-	public LinkType getLinktype() {
-		if (linktype != null && linktype.eIsProxy()) {
-			InternalEObject oldLinktype = (InternalEObject) linktype;
-			linktype = (LinkType) eResolveProxy(oldLinktype);
-			if (linktype != oldLinktype) {
+	public LinkType getLinkType() {
+		if (linkType != null && linkType.eIsProxy()) {
+			InternalEObject oldLinkType = (InternalEObject) linkType;
+			linkType = (LinkType) eResolveProxy(oldLinkType);
+			if (linkType != oldLinkType) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TRADESPackage.LINK__LINKTYPE, oldLinktype,
-							linktype));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TRADESPackage.LINK__LINK_TYPE,
+							oldLinkType, linkType));
 			}
 		}
-		return linktype;
+		return linkType;
 	}
 
 	/**
@@ -134,8 +134,8 @@ public class LinkImpl extends NamedElementImpl implements Link {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public LinkType basicGetLinktype() {
-		return linktype;
+	public LinkType basicGetLinkType() {
+		return linkType;
 	}
 
 	/**
@@ -144,11 +144,12 @@ public class LinkImpl extends NamedElementImpl implements Link {
 	 * @generated
 	 */
 	@Override
-	public void setLinktype(LinkType newLinktype) {
-		LinkType oldLinktype = linktype;
-		linktype = newLinktype;
+	public void setLinkType(LinkType newLinkType) {
+		LinkType oldLinkType = linkType;
+		linkType = newLinkType;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TRADESPackage.LINK__LINKTYPE, oldLinktype, linktype));
+			eNotify(new ENotificationImpl(this, Notification.SET, TRADESPackage.LINK__LINK_TYPE, oldLinkType,
+					linkType));
 	}
 
 	/**
@@ -233,10 +234,10 @@ public class LinkImpl extends NamedElementImpl implements Link {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case TRADESPackage.LINK__LINKTYPE:
+		case TRADESPackage.LINK__LINK_TYPE:
 			if (resolve)
-				return getLinktype();
-			return basicGetLinktype();
+				return getLinkType();
+			return basicGetLinkType();
 		case TRADESPackage.LINK__LINK_CONVEYED:
 			return getLinkConveyed();
 		case TRADESPackage.LINK__CONVEYING_LINK:
@@ -256,8 +257,8 @@ public class LinkImpl extends NamedElementImpl implements Link {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case TRADESPackage.LINK__LINKTYPE:
-			setLinktype((LinkType) newValue);
+		case TRADESPackage.LINK__LINK_TYPE:
+			setLinkType((LinkType) newValue);
 			return;
 		case TRADESPackage.LINK__LINK_CONVEYED:
 			getLinkConveyed().clear();
@@ -283,8 +284,8 @@ public class LinkImpl extends NamedElementImpl implements Link {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case TRADESPackage.LINK__LINKTYPE:
-			setLinktype((LinkType) null);
+		case TRADESPackage.LINK__LINK_TYPE:
+			setLinkType((LinkType) null);
 			return;
 		case TRADESPackage.LINK__LINK_CONVEYED:
 			getLinkConveyed().clear();
@@ -307,8 +308,8 @@ public class LinkImpl extends NamedElementImpl implements Link {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case TRADESPackage.LINK__LINKTYPE:
-			return linktype != null;
+		case TRADESPackage.LINK__LINK_TYPE:
+			return linkType != null;
 		case TRADESPackage.LINK__LINK_CONVEYED:
 			return linkConveyed != null && !linkConveyed.isEmpty();
 		case TRADESPackage.LINK__CONVEYING_LINK:

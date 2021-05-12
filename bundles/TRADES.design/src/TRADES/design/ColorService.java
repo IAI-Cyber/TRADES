@@ -18,7 +18,9 @@ import org.eclipse.swt.widgets.ColorDialog;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.PlatformUI;
 
+import dsm.TRADES.ColoredElement;
 import dsm.TRADES.ImpactConfiguration;
+import dsm.TRADES.LinkType;
 import dsm.TRADES.RGBColor;
 
 /**
@@ -56,10 +58,11 @@ public class ColorService {
 
 	/**
 	 * Computes a color from a ratio and two bounding color
-	 * @param start the starting color
-	 * @param end the ending color
-	 * @param min the min value (color of the start)
-	 * @param max the max color (color of the end)
+	 * 
+	 * @param start   the starting color
+	 * @param end     the ending color
+	 * @param min     the min value (color of the start)
+	 * @param max     the max color (color of the end)
 	 * @param current the current value to be represented
 	 * @return a new {@link RGBColor}
 	 */
@@ -81,7 +84,6 @@ public class ColorService {
 				(int) (c1.getGreen() * ratio + c0.getGreen() * (1.0f - ratio)), //
 				(int) (c1.getBlue() * ratio + c0.getBlue() * (1.0f - ratio))); // no transparency
 	}
-
 
 	/**
 	 * Return the color to be used as a foreground color when the background color
@@ -115,7 +117,7 @@ public class ColorService {
 	 * 
 	 * @param conf the context
 	 */
-	public void setRGBColorByUI(ImpactConfiguration conf) {
+	public void setRGBColorByUI(ColoredElement conf) {
 		Shell shell = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell();
 		ColorDialog colorDialog = new ColorDialog(shell);
 		RGBColor current = conf.getColor();

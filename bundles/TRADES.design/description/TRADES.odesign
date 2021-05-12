@@ -186,7 +186,7 @@
             </style>
           </conditionnalStyles>
         </edgeMappings>
-        <edgeMappings name="Affect" labelDirectEdit="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='AffectEditLabel']" semanticCandidatesExpression="feature:eAllContents" sourceMapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage']" targetMapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage']" targetFinderExpression="feature:targetComponent" sourceFinderExpression="feature:sourceComponent" targetExpression="var: self" domainClass="TRADES::AffectRelation" useDomainElement="true">
+        <edgeMappings name="Affect" labelDirectEdit="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='AffectEditLabel']" semanticCandidatesExpression="feature:eAllContents" sourceMapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='System%20Design']/@defaultLayer/@containerMappings[name='ComponentContainer']/@subContainerMappings[name='ComponentPackage_SD']" targetMapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='System%20Design']/@defaultLayer/@containerMappings[name='ComponentContainer']/@subContainerMappings[name='ComponentPackage_SD']" targetFinderExpression="feature:targetComponent" sourceFinderExpression="feature:sourceComponent" targetExpression="var: self" domainClass="TRADES::AffectRelation" useDomainElement="true">
           <style sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_blue']"/>
             <centerLabelStyleDescription labelSize="12" showIcon="false" labelExpression="aql:self.dataLabelOnAffect()">
@@ -238,7 +238,7 @@
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </containerMappings>
-        <toolSections name="TRADES tools" label="Add" icon="/TRADES.design/Images/icons/add.gif">
+        <toolSections name="TRADES tools" label="Add" icon="/TRADES.design/Images/logo_16.png">
           <ownedTools xsi:type="tool:NodeCreationDescription" name="Threat" nodeMappings="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@nodeMappings[name='ThreatNode_TD']">
             <variable name="container"/>
             <viewVariable name="containerView"/>
@@ -261,7 +261,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:ContainerCreationDescription" name="ComponentCreationTool" label="Component" containerMappings="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage']" iconPath="/TRADES.design/Images/ComponentIcon.png">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="ComponentCreationTool" label="Component" containerMappings="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='System%20Design']/@defaultLayer/@containerMappings[name='ComponentContainer']/@subContainerMappings[name='ComponentPackage_SD']" iconPath="/TRADES.design/Images/ComponentIcon.png">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -406,7 +406,7 @@
                           </firstModelOperations>
                         </initialOperation>
                       </buttons>
-                      <page name="Default Page" domainClass="TRADES::Data" semanticCandidateExpression="var:self" extends="//@extensions.0/@categories.0/@groups.13/@controls.0/@controls.1/@actions.0/@initialOperation/@firstModelOperations/@subModelOperations.1/@subModelOperations.0/@page"/>
+                      <page name="Default Page" domainClass="TRADES::Data" semanticCandidateExpression="var:self" extends="//@extensions.0/@categories.0/@groups.13/@controls.0/@controls.0/@actions.0/@initialOperation/@firstModelOperations/@subModelOperations.1/@subModelOperations.0/@page"/>
                     </subModelOperations>
                   </subModelOperations>
                 </firstModelOperations>
@@ -1165,6 +1165,125 @@
         </containerMappings>
       </defaultLayer>
     </ownedRepresentations>
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" dropDescriptions="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='copyThreatDragDrop'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='System%20Design']/@defaultLayer/@toolSections.1/@ownedTools[name='ExternalControlDrop_CA'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='DropCatalogThreat'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='DropCatalogControl']" name="System Design" titleExpression="aql: 'Design of ' + self.name" domainClass="TRADES::Component">
+      <metamodel href="dsm.TRADES#/"/>
+      <validationSet name="SystemDesignValidation" reusedRules="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@validationSet/@ownedRules[name='rejControlMitigates'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@validationSet/@ownedRules[name='unmitigatedThreat']">
+        <ownedRules xsi:type="validation:ViewValidationRule" name="NoLinkType" message="No link type was specified for this link" targets="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='System%20Design']/@defaultLayer/@containerMappings[name='ComponentContainer']/@subNodeMappings[name='componentLinks']">
+          <audits auditExpression="aql: not(self.target.linkType->isEmpty())"/>
+        </ownedRules>
+      </validationSet>
+      <layout xsi:type="description_1:CustomLayoutConfiguration" id="org.eclipse.elk.layered" label="ELK Layered" description="Layer-based algorithm provided by the Eclipse Layout Kernel. Arranges as many edges as possible into one direction by placing nodes into subsequent layers. This implementation supports different routing styles (straight, orthogonal, splines); if orthogonal routing is selected, arbitrary port constraints are respected, thus enabling the layout of block diagrams such as actor-oriented models or circuit schematics. Furthermore, full layout of compound graphs with cross-hierarchy edges is supported when the respective option is activated on the top level.">
+        <layoutOptions xsi:type="description_1:EnumLayoutOption" id="org.eclipse.elk.hierarchyHandling">
+          <targets>PARENT</targets>
+          <targets>NODE</targets>
+          <value name="INCLUDE_CHILDREN"/>
+        </layoutOptions>
+        <layoutOptions xsi:type="description_1:DoubleLayoutOption" id="org.eclipse.elk.spacing.componentComponent" value="25.0">
+          <targets>PARENT</targets>
+        </layoutOptions>
+        <layoutOptions xsi:type="description_1:DoubleLayoutOption" id="org.eclipse.elk.spacing.edgeEdge" value="25.0">
+          <targets>PARENT</targets>
+        </layoutOptions>
+        <layoutOptions xsi:type="description_1:DoubleLayoutOption" id="org.eclipse.elk.spacing.nodeNode" value="25.0">
+          <targets>PARENT</targets>
+        </layoutOptions>
+        <layoutOptions xsi:type="description_1:DoubleLayoutOption" id="org.eclipse.elk.layered.spacing.baseValue" value="25.0">
+          <targets>PARENT</targets>
+        </layoutOptions>
+        <layoutOptions xsi:type="description_1:EnumLayoutOption" id="org.eclipse.elk.layered.nodePlacement.strategy">
+          <targets>PARENT</targets>
+          <value name="NETWORK_SIMPLEX"/>
+        </layoutOptions>
+      </layout>
+      <defaultLayer name="Default" reusedMappings="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@edgeMappings[name='allocatedThreat'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@edgeMappings[name='mitigatesThreat'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@edgeMappings[name='Affect'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@edgeMappings[name='mitigatesThreatAllocation'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@nodeMappings[name='ThreatNode_TD'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@nodeMappings[name='ThreatNode_TD']/@borderedNodeMappings[name='ThreatLabel_TD'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Component%20Analysis']/@defaultLayer/@nodeMappings[name='ControlNode_CA']" reusedTools="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='AffectEditLabel'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='SubComponentDiagramCreation'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='AttachChainDiagramNavTool_TD'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Change%20name'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='ChangeComponentInThreatAllocation'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='ChangeThreatInThreatAllocation'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='ComponentCreationTool'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='DataMenu'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='DataMenu']/@menuItemDescription.0 //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Effect'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='NewMenu_TD'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='NewMenu_TD']/@menuItemDescription.0 //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='OpenProgramTool']">
+        <edgeMappings name="LinkComponents" sourceMapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='System%20Design']/@defaultLayer/@containerMappings[name='ComponentContainer']/@subNodeMappings[name='componentLinks']" targetMapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Component%20Analysis']/@defaultLayer/@containerMappings[name='ComponentContainer'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='System%20Design']/@defaultLayer/@containerMappings[name='ComponentContainer'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='System%20Design']/@defaultLayer/@containerMappings[name='ComponentContainer']/@subContainerMappings[name='ComponentPackage_SD']" targetFinderExpression="aql: self.components">
+          <style strokeColor="//@userColorsPalettes[name='Colors']/@entries[name='LinkTypeColor']" targetArrow="NoDecoration" sizeComputationExpression="2">
+            <centerLabelStyleDescription labelSize="12" labelColor="//@userColorsPalettes[name='Colors']/@entries[name='LinkTypeColor']"/>
+          </style>
+        </edgeMappings>
+        <containerMappings name="LinkTypeContainer" semanticCandidatesExpression="aql: self.eContainer(TRADES::Analysis)" domainClass="TRADES::Analysis" childrenPresentation="List">
+          <subNodeMappings name="linkType" semanticCandidatesExpression="aql: self.eContents(TRADES::LinkType)" domainClass="TRADES::LinkType">
+            <style xsi:type="style:BundledImageDescription" borderColor="//@userColorsPalettes[name='Colors']/@entries[name='HeatMapColorBackGround']" showIcon="false" labelColor="//@userColorsPalettes[name='Colors']/@entries[name='HeatMapColorBackGround']" labelAlignment="LEFT" tooltipExpression="aql: self.name" labelPosition="node" resizeKind="NSEW" color="//@userColorsPalettes[name='Colors']/@entries[name='HeatMapColorBackGround']"/>
+          </subNodeMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12" showIcon="false" labelExpression="aql: 'Link Types Legend'" tooltipExpression="Link Types" roundedCorner="true">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+          </style>
+        </containerMappings>
+        <containerMappings name="ComponentContainer" semanticCandidatesExpression="aql:self" documentation="Used for component analysis. To be removed after resolving problem with seed element in componentPackage" domainClass="TRADES::Component" reusedNodeMappings="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@nodeMappings[name='ControlNode'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@nodeMappings[name='ControlNode']/@borderedNodeMappings[name='ControlLabel_TD'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@nodeMappings[name='ThreatNode_TD'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@nodeMappings[name='ThreatNode_TD']/@borderedNodeMappings[name='ThreatLabel_TD']">
+          <dropDescriptions href="#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='ExternalControlDrop_TD']"/>
+          <dropDescriptions href="../../dsm.oscal.design/description/oscal.odesign#//@ownedViewpoints[name='OscalViewPoint']/@ownedRepresentationExtensions[name='TRADES.design']/@layers[name='OscalLayer']/@toolSections.0/@ownedTools[name='DropOScalControl']"/>
+          <dropDescriptions href="#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='DropCatalogControl']"/>
+          <subNodeMappings name="componentLinks" labelDirectEdit="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Change%20name']" semanticCandidatesExpression="aql: self.links" domainClass="TRADES::Link">
+            <style xsi:type="style:WorkspaceImageDescription" borderColor="//@userColorsPalettes[name='Colors']/@entries[name='LinkTypeColor']" showIcon="false" labelColor="//@userColorsPalettes[name='Colors']/@entries[name='LinkTypeColor']" labelAlignment="RIGHT" tooltipExpression="aql: self.name" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/TRADES.design/Images/Link30.svg"/>
+          </subNodeMappings>
+          <subContainerMappings name="ComponentPackage_SD" detailDescriptions="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='SubComponentDiagramCreation']" navigationDescriptions="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='ComponentDiagNavTool']" preconditionExpression="aql: self->notEmpty() = true" labelDirectEdit="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Change%20name']" semanticCandidatesExpression="aql:self.components" domainClass="TRADES::ComponentOwner" reusedNodeMappings="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@nodeMappings[name='ControlNode'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='System%20Design']/@defaultLayer/@containerMappings[name='ComponentContainer']/@subNodeMappings[name='componentLinks']" reusedContainerMappings="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='System%20Design']/@defaultLayer/@containerMappings[name='ComponentContainer']/@subContainerMappings[name='ComponentPackage_SD']">
+            <dropDescriptions href="#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='ExternalControlDrop_TD']"/>
+            <dropDescriptions href="#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='DnDThreatOnComponent_TD']"/>
+            <dropDescriptions href="../../dsm.oscal.design/description/oscal.odesign#//@ownedViewpoints[name='OscalViewPoint']/@ownedRepresentationExtensions[name='TRADES.design']/@layers[name='OscalLayer']/@toolSections.0/@ownedTools[name='DropOScalControl']"/>
+            <dropDescriptions href="#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='DropCatalogControl']"/>
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12" showIcon="false" backgroundStyle="GradientTopToBottom" backgroundColor="//@userColorsPalettes[name='Colors']/@entries[name='ComponetBGColor']" foregroundColor="//@userColorsPalettes[name='Colors']/@entries[name='ComponetBGColor']">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelFormat>bold</labelFormat>
+              <labelFormat>underline</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </subContainerMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12" backgroundColor="//@userColorsPalettes[name='Colors']/@entries[name='ComponetBGColor']" foregroundColor="//@userColorsPalettes[name='Colors']/@entries[name='ComponetBGColor']">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </containerMappings>
+        <toolSections name="Add" icon="/TRADES.design/Images/icons/add.gif" reusedTools="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='ComponentCreationTool'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Effect'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='copyThreatDragDrop'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='ExternalControlDrop_TD'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.2/@ownedTools[name='DeleteThreatFromModelMenu'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.2/@ownedTools[name='DeleteThreatFromDiagram'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='AttachChainDiagramNavTool_TD'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Change%20name'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='ChangeComponentInThreatAllocation'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='ChangeThreatInThreatAllocation'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='NewMenu_TD'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='CreateAttackChainTool_TD'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='OpenProgramTool']">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Link" nodeMappings="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='System%20Design']/@defaultLayer/@containerMappings[name='ComponentContainer']/@subNodeMappings[name='componentLinks']" iconPath="/TRADES.design/Images/Link16.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="TRADES::Link" referenceName="links"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="AddComponent2Link" label="Add Component to Link" edgeMappings="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='System%20Design']/@defaultLayer/@edgeMappings[name='LinkComponents']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql: source">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="components" valueExpression="aql: target"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="RepresentationTool_CAs" label="Diagram tools" icon="/TRADES.design/Images/icons/diagram.gif" reusedTools="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='Hide%20details'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='Unhide%20details']">
+          <ownedTools xsi:type="tool_1:OperationAction" name="DisplayLinkedControl" label="Display linked controls on selection" precondition="aql:views->canImportLinkedControlOn()" icon="/TRADES.design/Images/icons/Display.png">
+            <view name="views"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:For" expression="var:views" iteratorName="view">
+                <subModelOperations xsi:type="tool_1:For" expression="aql:view.getRelatedControls()" iteratorName="control">
+                  <subModelOperations xsi:type="tool:CreateView" containerViewExpression="var:diagram"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerDropDescription" name="ExternalControlDrop_CA" dragSource="PROJECT_EXPLORER">
+            <oldContainer name="oldSemanticContainer"/>
+            <newContainer name="newSemanticContainer"/>
+            <element name="element"/>
+            <newViewContainer name="newContainerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                <subModelOperations xsi:type="tool:CreateView" containerViewExpression="aql:newContainerView"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+      </defaultLayer>
+      <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+    </ownedRepresentations>
     <ownedJavaExtensions qualifiedClassName="TRADES.design.DiagramService"/>
     <ownedJavaExtensions qualifiedClassName="TRADES.design.ExtThreatServices"/>
     <ownedJavaExtensions qualifiedClassName="org.eclipse.sirius.ext.emf.edit.EditingDomainServices"/>
@@ -1180,6 +1299,7 @@
     <entries xsi:type="description:ComputedColor" name="HeatMapColorForeground" red="aql:self.oclAsType(TRADES::ImpactConfiguration).color.getForegroundColorForColor().getRed()" green="aql:self.oclAsType(TRADES::ImpactConfiguration).color.getForegroundColorForColor().getGreen()" blue="aql:self.oclAsType(TRADES::ImpactConfiguration).color.getForegroundColorForColor().getBlue()"/>
     <entries xsi:type="description:UserFixedColor" red="245" green="245" blue="245" name="ComponetBGColor"/>
     <entries xsi:type="description:UserFixedColor" red="230" green="230" blue="230" name="ComponetDiagramBGColor"/>
+    <entries xsi:type="description:ComputedColor" name="LinkTypeColor" red="aql:self.linkType.color.getRed()" green="aql:self.linkType.color.getGreen()" blue="aql:self.linkType.color.getBlue()"/>
   </userColorsPalettes>
   <extensions xsi:type="properties:ViewExtensionDescription" name="Properties">
     <metamodels href="dsm.TRADES#/"/>
@@ -1187,7 +1307,7 @@
     <categories name="GeneralCategory">
       <pages name="ThreatGeneralPage" label="Threat General" labelExpression="General" domainClass="TRADES::Threat" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.0 //@extensions.0/@categories.0/@groups.1 //@extensions.0/@categories.0/@groups.7"/>
       <pages name="ControlGeneralPage" label="Control General Page" labelExpression="General" domainClass="TRADES::Control" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.0 //@extensions.0/@categories.0/@groups.2 //@extensions.0/@categories.0/@groups.8"/>
-      <pages name="ComponentGeneralPage" label="Component General Page" labelExpression="General" domainClass="TRADES::Component" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.0 //@extensions.0/@categories.0/@groups.3"/>
+      <pages name="ComponentGeneralPage" label="Component General Page" labelExpression="Component" domainClass="TRADES::Component" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.0 //@extensions.0/@categories.0/@groups.3"/>
       <pages name="AttackChainStep_Page" labelExpression="Attack chain step" domainClass="TRADES::AttackChainStep" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.15"/>
       <pages name="AttackChain_Page" labelExpression="Attack chain" domainClass="TRADES::AttackChain" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.14"/>
       <pages name="ThreatAllocationPage" label="Threat Allocation Page" labelExpression="Threat allocation Relation" domainClass="TRADES::ThreatAllocationRelation" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.4 //@extensions.0/@categories.0/@groups.16"/>
@@ -1197,10 +1317,12 @@
       <pages name="ImpactScorePage" labelExpression="Impact score" domainClass="TRADES::ImpactScore" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.0 //@extensions.0/@categories.0/@groups.9"/>
       <pages name="DifficultyPage" labelExpression="Difficulty" domainClass="TRADES::DifficultyScore" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.0 //@extensions.0/@categories.0/@groups.10"/>
       <pages name="ScoreSystemPage" labelExpression="Score system" domainClass="TRADES::ScoreSystem" semanticCandidateExpression="aql:Sequence{self,self.eContainer()}" groups="//@extensions.0/@categories.0/@groups.12"/>
-      <pages name="AffectPage" label="Affect Page" labelExpression="Affect" domainClass="TRADES::AffectRelation" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.0 //@extensions.0/@categories.0/@groups.13"/>
+      <pages name="AffectPage" label="Affect Page" labelExpression="Affect" domainClass="TRADES::AffectRelation" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.0 //@extensions.0/@categories.0/@groups.13 //@extensions.0/@categories.0/@groups.19"/>
       <pages name="LinkeThreatAllocationRelation_Page" label="Linked Threat Allocation" labelExpression="Linked allocation" domainClass="TRADES::ThreatAllocationRelation" semanticCandidateExpression="aql:self.threatAllocationRelation" groups="//@extensions.0/@categories.0/@groups.4" indented="true"/>
       <pages name="DataPage" labelExpression="Data" domainClass="TRADES::Data" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.0"/>
       <pages name="OwnedDataPage" labelExpression="Available Data" domainClass="TRADES::DataOwnerElement" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.17"/>
+      <pages name="LinkPage" label="Link Page" labelExpression="Link" domainClass="TRADES::Link" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.0 //@extensions.0/@categories.0/@groups.20"/>
+      <pages name="LinkTypePage" label="Link Type Page" labelExpression="Link type" domainClass="TRADES::LinkType" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.21"/>
       <groups name="ModelElementGroup" label="Model element" labelExpression="Basic Properties" domainClass="TRADES::NamedElement" semanticCandidateExpression="var:self">
         <controls xsi:type="properties:TextDescription" name="ElementNameFiald" label="Name" labelExpression="Name" helpExpression="Name of the element" isEnabledExpression="aql:not(self.oclIsTypeOf(TRADES::ExternalThreat) or self.oclIsTypeOf(TRADES::ExternalControl) or self.oclIsTypeOf(TRADES::ThreatMitigationRelation)" valueExpression="aql:self.name">
           <initialOperation>
@@ -1488,23 +1610,6 @@
       </groups>
       <groups name="AffectGroup" label="Affect Group" labelExpression="Data" domainClass="TRADES::AffectRelation" semanticCandidateExpression="var:self">
         <controls xsi:type="properties:ContainerDescription" name="AffectDataContainer">
-          <controls xsi:type="properties:ListDescription" name="RelatedDataList" labelExpression="Related Data" valueExpression="aql:self.data" displayExpression="aql:value.name">
-            <onClickOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self"/>
-            </onClickOperation>
-            <actions labelExpression="Remove">
-              <initialOperation>
-                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
-                  <subModelOperations xsi:type="tool_1:Let" variableName="affectRelationEntityR" valueExpression="aql:self"/>
-                  <subModelOperations xsi:type="tool_1:For" expression="var:selection" iteratorName="currentData">
-                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:affectRelationEntityR">
-                      <subModelOperations xsi:type="tool_1:Unset" featureName="data" elementExpression="var:currentData"/>
-                    </subModelOperations>
-                  </subModelOperations>
-                </firstModelOperations>
-              </initialOperation>
-            </actions>
-          </controls>
           <controls xsi:type="properties:ListDescription" name="AvailableData" labelExpression="Available  Data" valueExpression="aql:self.availableData()" displayExpression="aql:value.name">
             <onClickOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self"/>
@@ -1531,7 +1636,7 @@
                           </firstModelOperations>
                         </initialOperation>
                       </buttons>
-                      <page name="AffectRelation_NewData_Page" domainClass="TRADES::Data" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.13/@controls.0/@controls.1/@actions.0/@initialOperation/@firstModelOperations/@subModelOperations.1/@subModelOperations.0/@groups.0"/>
+                      <page name="AffectRelation_NewData_Page" domainClass="TRADES::Data" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.13/@controls.0/@controls.0/@actions.0/@initialOperation/@firstModelOperations/@subModelOperations.1/@subModelOperations.0/@groups.0"/>
                       <groups name="AffectRelation_NewData_Group" domainClass="TRADES::Data" semanticCandidateExpression="var:self">
                         <controls xsi:type="properties:TextDescription" name="DataName" labelExpression="Data Name" valueExpression="aql:self.name">
                           <initialOperation>
@@ -1560,6 +1665,23 @@
                   <subModelOperations xsi:type="tool_1:For" expression="var:selection" iteratorName="currentData">
                     <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:affectRelationEntityA">
                       <subModelOperations xsi:type="tool_1:SetValue" featureName="data" valueExpression="var:currentData"/>
+                    </subModelOperations>
+                  </subModelOperations>
+                </firstModelOperations>
+              </initialOperation>
+            </actions>
+          </controls>
+          <controls xsi:type="properties:ListDescription" name="RelatedDataList" labelExpression="Related Data" valueExpression="aql:self.data" displayExpression="aql:value.name">
+            <onClickOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self"/>
+            </onClickOperation>
+            <actions labelExpression="Remove">
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                  <subModelOperations xsi:type="tool_1:Let" variableName="affectRelationEntityR" valueExpression="aql:self"/>
+                  <subModelOperations xsi:type="tool_1:For" expression="var:selection" iteratorName="currentData">
+                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:affectRelationEntityR">
+                      <subModelOperations xsi:type="tool_1:Unset" featureName="data" elementExpression="var:currentData"/>
                     </subModelOperations>
                   </subModelOperations>
                 </firstModelOperations>
@@ -1684,6 +1806,281 @@
               </firstModelOperations>
             </initialOperation>
           </actions>
+        </controls>
+      </groups>
+      <groups name="ComponentLinksGroup" label="Component Links Group" labelExpression="Links" domainClass="TRADES::Component" semanticCandidateExpression="aql: self">
+        <controls xsi:type="properties:ContainerDescription" name="LinksContainer">
+          <controls xsi:type="properties:SelectDescription" name="LinkSelect" labelExpression="Select Link" valueExpression="aql: self" candidatesExpression="aql: self.links" candidateDisplayExpression="aql: candidate.name">
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                <subModelOperations xsi:type="tool_1:Let" variableName="selectedLink" valueExpression="aql: selection"/>
+              </firstModelOperations>
+            </initialOperation>
+          </controls>
+          <controls xsi:type="properties:ListDescription" name="Link components" labelExpression="Link components" valueExpression="aql:self.components" displayExpression="aql:value.name">
+            <onClickOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self"/>
+            </onClickOperation>
+            <actions labelExpression="New">
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                  <subModelOperations xsi:type="tool_1:Let" variableName="affectRelation" valueExpression="var:self"/>
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.eContainer().oclAsType(TRADES::DataOwnerElement).createDataInRoot()">
+                    <subModelOperations xsi:type="properties:DialogModelOperation" titleExpression="Add New Data">
+                      <buttons labelExpression="Cancel" closeDialogOnClick="true" rollbackChangesOnClose="true">
+                        <initialOperation>
+                          <firstModelOperations xsi:type="tool_1:RemoveElement"/>
+                        </initialOperation>
+                      </buttons>
+                      <buttons labelExpression="Add" default="true" closeDialogOnClick="true">
+                        <initialOperation>
+                          <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self">
+                            <subModelOperations xsi:type="tool_1:Let" variableName="newData" valueExpression="aql:self">
+                              <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:affectRelation">
+                                <subModelOperations xsi:type="tool_1:SetValue" featureName="data" valueExpression="var:newData"/>
+                              </subModelOperations>
+                            </subModelOperations>
+                          </firstModelOperations>
+                        </initialOperation>
+                      </buttons>
+                      <page name="AffectRelation_NewData_Page" domainClass="TRADES::Data" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.18/@controls.0/@controls.1/@actions.0/@initialOperation/@firstModelOperations/@subModelOperations.1/@subModelOperations.0/@groups.0"/>
+                      <groups name="AffectRelation_NewData_Group" domainClass="TRADES::Data" semanticCandidateExpression="var:self">
+                        <controls xsi:type="properties:TextDescription" name="DataName" labelExpression="Data Name" valueExpression="aql:self.name">
+                          <initialOperation>
+                            <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                              <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="var:newValue"/>
+                            </firstModelOperations>
+                          </initialOperation>
+                        </controls>
+                        <controls xsi:type="properties:SelectDescription" name="DataOwnerSelectWidget" labelExpression="aql:'Data Owner'" valueExpression="aql:self.eContainer().eContainer()" candidatesExpression="aql:affectRelation.ancestors()->filter(TRADES::DataOwnerElement)" candidateDisplayExpression="aql:candidate.name">
+                          <initialOperation>
+                            <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self">
+                              <subModelOperations xsi:type="tool_1:MoveElement" newContainerExpression="aql:newValue.oclAsType(TRADES::DataOwnerElement) .getOrCreateDataOwner()" featureName="data"/>
+                            </firstModelOperations>
+                          </initialOperation>
+                        </controls>
+                      </groups>
+                    </subModelOperations>
+                  </subModelOperations>
+                </firstModelOperations>
+              </initialOperation>
+            </actions>
+            <actions labelExpression="Add">
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                  <subModelOperations xsi:type="tool_1:Let" variableName="selectedLink" valueExpression="aql:selection"/>
+                  <subModelOperations xsi:type="tool_1:For" expression="var:selection" iteratorName="currentData">
+                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:affectRelationEntityA">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="data" valueExpression="var:currentData"/>
+                    </subModelOperations>
+                  </subModelOperations>
+                </firstModelOperations>
+              </initialOperation>
+            </actions>
+          </controls>
+          <controls xsi:type="properties:ListDescription" name="AvailableComponents" labelExpression="Available Components" valueExpression="aql:self.components" displayExpression="aql:value.name">
+            <onClickOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self"/>
+            </onClickOperation>
+            <actions labelExpression="New">
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                  <subModelOperations xsi:type="tool_1:Let" variableName="affectRelation" valueExpression="var:self"/>
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.eContainer().oclAsType(TRADES::DataOwnerElement).createDataInRoot()">
+                    <subModelOperations xsi:type="properties:DialogModelOperation" titleExpression="Add New Data">
+                      <buttons labelExpression="Cancel" closeDialogOnClick="true" rollbackChangesOnClose="true">
+                        <initialOperation>
+                          <firstModelOperations xsi:type="tool_1:RemoveElement"/>
+                        </initialOperation>
+                      </buttons>
+                      <buttons labelExpression="Add" default="true" closeDialogOnClick="true">
+                        <initialOperation>
+                          <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self">
+                            <subModelOperations xsi:type="tool_1:Let" variableName="newData" valueExpression="aql:self">
+                              <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:affectRelation">
+                                <subModelOperations xsi:type="tool_1:SetValue" featureName="data" valueExpression="var:newData"/>
+                              </subModelOperations>
+                            </subModelOperations>
+                          </firstModelOperations>
+                        </initialOperation>
+                      </buttons>
+                      <page name="AffectRelation_NewData_Page" domainClass="TRADES::Data" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.18/@controls.0/@controls.2/@actions.0/@initialOperation/@firstModelOperations/@subModelOperations.1/@subModelOperations.0/@groups.0"/>
+                      <groups name="AffectRelation_NewData_Group" domainClass="TRADES::Data" semanticCandidateExpression="var:self">
+                        <controls xsi:type="properties:TextDescription" name="DataName" labelExpression="Data Name" valueExpression="aql:self.name">
+                          <initialOperation>
+                            <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                              <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="var:newValue"/>
+                            </firstModelOperations>
+                          </initialOperation>
+                        </controls>
+                        <controls xsi:type="properties:SelectDescription" name="DataOwnerSelectWidget" labelExpression="aql:'Data Owner'" valueExpression="aql:self.eContainer().eContainer()" candidatesExpression="aql:affectRelation.ancestors()->filter(TRADES::DataOwnerElement)" candidateDisplayExpression="aql:candidate.name">
+                          <initialOperation>
+                            <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self">
+                              <subModelOperations xsi:type="tool_1:MoveElement" newContainerExpression="aql:newValue.oclAsType(TRADES::DataOwnerElement) .getOrCreateDataOwner()" featureName="data"/>
+                            </firstModelOperations>
+                          </initialOperation>
+                        </controls>
+                      </groups>
+                    </subModelOperations>
+                  </subModelOperations>
+                </firstModelOperations>
+              </initialOperation>
+            </actions>
+            <actions labelExpression="Add">
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                  <subModelOperations xsi:type="tool_1:Let" variableName="affectRelationEntityA" valueExpression="aql:self"/>
+                  <subModelOperations xsi:type="tool_1:For" expression="var:selection" iteratorName="currentData">
+                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:affectRelationEntityA">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="data" valueExpression="var:currentData"/>
+                    </subModelOperations>
+                  </subModelOperations>
+                </firstModelOperations>
+              </initialOperation>
+            </actions>
+          </controls>
+          <layout xsi:type="properties:FillLayoutDescription" orientation="HORIZONTAL"/>
+        </controls>
+      </groups>
+      <groups name="ConveyingLinkGroup" labelExpression="Link" domainClass="TRADES::AffectRelation" semanticCandidateExpression="aql: self">
+        <controls xsi:type="properties:TextDescription" name="LinkType" label="Link Type" labelExpression="Link Type" isEnabledExpression="aql: false" valueExpression="aql:self.link.linkType.name.toString()">
+          <initialOperation>
+            <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+              <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="var:newValue"/>
+            </firstModelOperations>
+          </initialOperation>
+        </controls>
+        <controls xsi:type="properties:ContainerDescription" name="AffectDataContainer">
+          <controls xsi:type="properties:SelectDescription" name="ConveyingLink" labelExpression="Conveying Link" helpExpression="The link which conveys this data" valueExpression="aql:self.link" candidatesExpression="aql:self.eContainer(TRADES::Analysis).eAllContents(TRADES::Link)" candidateDisplayExpression="aql:candidate.name">
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="link" valueExpression="aql:newValue"/>
+              </firstModelOperations>
+            </initialOperation>
+          </controls>
+          <controls xsi:type="properties:ListDescription" name="ConveyingLink" labelExpression="Conveyed by link" isEnabledExpression="aql:false" valueExpression="aql:self.link" displayExpression="aql:value.name">
+            <onClickOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self"/>
+            </onClickOperation>
+            <actions labelExpression="Remove">
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                  <subModelOperations xsi:type="tool_1:Let" variableName="affectRelationEntityR" valueExpression="aql:self"/>
+                  <subModelOperations xsi:type="tool_1:For" expression="var:selection" iteratorName="currentData">
+                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:affectRelationEntityR">
+                      <subModelOperations xsi:type="tool_1:Unset" featureName="data" elementExpression="var:currentData"/>
+                    </subModelOperations>
+                  </subModelOperations>
+                </firstModelOperations>
+              </initialOperation>
+            </actions>
+          </controls>
+          <layout xsi:type="properties:FillLayoutDescription" orientation="HORIZONTAL"/>
+        </controls>
+      </groups>
+      <groups name="LinkGroup" label="Link Group" labelExpression="Link definitions" domainClass="TRADES::Link" semanticCandidateExpression="var:self">
+        <controls xsi:type="properties:TextDescription" name="LinkTypeCurrent" label="Current Link Type" labelExpression="Current Link Type" isEnabledExpression="aql: false" valueExpression="aql:self.linkType.name.toString()">
+          <initialOperation>
+            <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+              <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="var:newValue"/>
+            </firstModelOperations>
+          </initialOperation>
+        </controls>
+        <controls xsi:type="properties:ListDescription" name="LinkType" label="Link Type" labelExpression="Available Link Types" helpExpression="Link types available" valueExpression="aql: self.eContainer(TRADES::Analysis).linkTypes" displayExpression="aql:value.name">
+          <onClickOperation>
+            <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self"/>
+          </onClickOperation>
+          <actions labelExpression="Change">
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="linkType" valueExpression="aql: selection->first()"/>
+              </firstModelOperations>
+            </initialOperation>
+          </actions>
+          <actions labelExpression="New">
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.eContainer(TRADES::Analysis)">
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="TRADES::LinkType" referenceName="linkTypes" variableName="newLinkType">
+                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql: newLinkType">
+                      <subModelOperations xsi:type="properties:DialogModelOperation" titleExpression="Add New Link Type">
+                        <buttons labelExpression="Cancel" closeDialogOnClick="true" rollbackChangesOnClose="true">
+                          <initialOperation>
+                            <firstModelOperations xsi:type="tool_1:RemoveElement"/>
+                          </initialOperation>
+                        </buttons>
+                        <buttons labelExpression="Add" default="true" closeDialogOnClick="true">
+                          <initialOperation/>
+                        </buttons>
+                        <page name="NewLinkType_Page" domainClass="TRADES::LinkType" groups="//@extensions.0/@categories.0/@groups.20/@controls.1/@actions.1/@initialOperation/@firstModelOperations/@subModelOperations.0/@subModelOperations.0/@subModelOperations.0/@subModelOperations.0/@groups.0"/>
+                        <groups name="NewTypeGroup" domainClass="TRADES::LinkType" semanticCandidateExpression="var:self">
+                          <controls xsi:type="properties:TextDescription" name="LinkTypeName" labelExpression="Link Name" valueExpression="aql: newLinkType.name">
+                            <initialOperation>
+                              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql: newLinkType">
+                                <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="var:newValue"/>
+                              </firstModelOperations>
+                            </initialOperation>
+                          </controls>
+                        </groups>
+                      </subModelOperations>
+                    </subModelOperations>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </actions>
+        </controls>
+        <controls xsi:type="properties:ContainerDescription" name="LinkContainer">
+          <controls xsi:type="properties:ListDescription" name="AvailableComponents" labelExpression="Available Components" valueExpression="aql:self.eContainer(TRADES::Analysis).eAllContents(TRADES::Component)->select(myComponent | self.components->excludes(myComponent))" displayExpression="aql:value.name">
+            <onClickOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self"/>
+            </onClickOperation>
+            <actions labelExpression="Add">
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                  <subModelOperations xsi:type="tool_1:Let" variableName="affectRelationEntityA" valueExpression="aql:self"/>
+                  <subModelOperations xsi:type="tool_1:For" expression="var:selection" iteratorName="currentData">
+                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:affectRelationEntityA">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="components" valueExpression="var:currentData"/>
+                    </subModelOperations>
+                  </subModelOperations>
+                </firstModelOperations>
+              </initialOperation>
+            </actions>
+          </controls>
+          <controls xsi:type="properties:ListDescription" name="LinkedComponentsList" labelExpression="Linked Componets" valueExpression="aql:self.components" displayExpression="aql:value.name">
+            <onClickOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self"/>
+            </onClickOperation>
+            <actions labelExpression="Remove">
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                  <subModelOperations xsi:type="tool_1:Let" variableName="affectRelationEntityR" valueExpression="aql:self"/>
+                  <subModelOperations xsi:type="tool_1:For" expression="var:selection" iteratorName="currentData">
+                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:affectRelationEntityR">
+                      <subModelOperations xsi:type="tool_1:Unset" featureName="components" elementExpression="var:currentData"/>
+                    </subModelOperations>
+                  </subModelOperations>
+                </firstModelOperations>
+              </initialOperation>
+            </actions>
+          </controls>
+          <layout xsi:type="properties:FillLayoutDescription" orientation="HORIZONTAL"/>
+        </controls>
+        <controls xsi:type="properties:SelectDescription" name="LinkTypeField" label="Link Type" labelExpression="Link Type" helpExpression="The type of the link" isEnabledExpression="true" valueExpression="aql: self.linkType" candidatesExpression="aql:self.eContainer(TRADES::Analysis).linkTypes" candidateDisplayExpression="aql:candidate.name">
+          <initialOperation>
+            <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+              <subModelOperations xsi:type="tool_1:SetValue" featureName="linkType" valueExpression="aql:newValue"/>
+            </firstModelOperations>
+          </initialOperation>
+        </controls>
+      </groups>
+      <groups name="LinkTypeGroup" label="Link Type Group" labelExpression="Configuration" domainClass="TRADES::LinkType" semanticCandidateExpression="var:self">
+        <controls xsi:type="properties:ButtonDescription" name="ImpactConfigurationColor" labelExpression="'  Change color  '">
+          <initialOperation>
+            <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.setRGBColorByUI()"/>
+          </initialOperation>
+          <style labelBackgroundColor="//@userColorsPalettes[name='Colors']/@entries[name='HeatMapColorBackGround']" labelForegroundColor="//@userColorsPalettes[name='Colors']/@entries[name='HeatMapColorForeground']"/>
         </controls>
       </groups>
     </categories>

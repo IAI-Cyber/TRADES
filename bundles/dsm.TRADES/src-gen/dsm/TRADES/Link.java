@@ -24,7 +24,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link dsm.TRADES.Link#getLinktype <em>Linktype</em>}</li>
+ *   <li>{@link dsm.TRADES.Link#getLinkType <em>Link Type</em>}</li>
  *   <li>{@link dsm.TRADES.Link#getLinkConveyed <em>Link Conveyed</em>}</li>
  *   <li>{@link dsm.TRADES.Link#getConveyingLink <em>Conveying Link</em>}</li>
  *   <li>{@link dsm.TRADES.Link#getComponents <em>Components</em>}</li>
@@ -36,26 +36,26 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface Link extends NamedElement {
 	/**
-	 * Returns the value of the '<em><b>Linktype</b></em>' reference.
+	 * Returns the value of the '<em><b>Link Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Linktype</em>' reference.
-	 * @see #setLinktype(LinkType)
-	 * @see dsm.TRADES.TRADESPackage#getLink_Linktype()
+	 * @return the value of the '<em>Link Type</em>' reference.
+	 * @see #setLinkType(LinkType)
+	 * @see dsm.TRADES.TRADESPackage#getLink_LinkType()
 	 * @model required="true"
 	 * @generated
 	 */
-	LinkType getLinktype();
+	LinkType getLinkType();
 
 	/**
-	 * Sets the value of the '{@link dsm.TRADES.Link#getLinktype <em>Linktype</em>}' reference.
+	 * Sets the value of the '{@link dsm.TRADES.Link#getLinkType <em>Link Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Linktype</em>' reference.
-	 * @see #getLinktype()
+	 * @param value the new value of the '<em>Link Type</em>' reference.
+	 * @see #getLinkType()
 	 * @generated
 	 */
-	void setLinktype(LinkType value);
+	void setLinkType(LinkType value);
 
 	/**
 	 * Returns the value of the '<em><b>Link Conveyed</b></em>' reference list.

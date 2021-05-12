@@ -142,7 +142,6 @@
     <genClasses ecoreClass="TRADES.ecore#//ImpactConfiguration">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TRADES.ecore#//ImpactConfiguration/difficulty"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference TRADES.ecore#//ImpactConfiguration/impact"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//ImpactConfiguration/color"/>
     </genClasses>
     <genClasses ecoreClass="TRADES.ecore#//ExternalControl"/>
     <genClasses ecoreClass="TRADES.ecore#//ThreatsOwner">
@@ -165,7 +164,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//DataOwner/data"/>
     </genClasses>
     <genClasses ecoreClass="TRADES.ecore#//Link">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TRADES.ecore#//Link/linktype"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TRADES.ecore#//Link/linkType"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TRADES.ecore#//Link/linkConveyed"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TRADES.ecore#//Link/conveyingLink"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TRADES.ecore#//Link/components"/>
@@ -200,6 +199,9 @@
     <genClasses image="false" ecoreClass="TRADES.ecore#//IMitigationLink">
       <genOperations ecoreOperation="TRADES.ecore#//IMitigationLink/getDescription"/>
       <genOperations ecoreOperation="TRADES.ecore#//IMitigationLink/getThreat"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="TRADES.ecore#//ColoredElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//ColoredElement/color"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

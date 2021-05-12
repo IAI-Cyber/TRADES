@@ -13,7 +13,9 @@
  */
 package dsm.TRADES.impl;
 
-import dsm.TRADES.DifficultyScore;
+import dsm.TRADES.ColoredElement;
+import dsm.TRADES.RGBColor;
+import dsm.TRADES.TRADESFactory;
 import dsm.TRADES.TRADESPackage;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -21,47 +23,49 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Difficulty Score</b></em>'.
+ * An implementation of the model object '<em><b>Colored Element</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link dsm.TRADES.impl.DifficultyScoreImpl#getDifficulty <em>Difficulty</em>}</li>
+ *   <li>{@link dsm.TRADES.impl.ColoredElementImpl#getColor <em>Color</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class DifficultyScoreImpl extends NamedElementImpl implements DifficultyScore {
+public abstract class ColoredElementImpl extends MinimalEObjectImpl.Container implements ColoredElement {
 	/**
-	 * The default value of the '{@link #getDifficulty() <em>Difficulty</em>}' attribute.
+	 * The default value of the '{@link #getColor() <em>Color</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getDifficulty()
+	 * @see #getColor()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int DIFFICULTY_EDEFAULT = 0;
+	protected static final RGBColor COLOR_EDEFAULT = (RGBColor) TRADESFactory.eINSTANCE
+			.createFromString(TRADESPackage.eINSTANCE.getRGBColor(), "#AAAAAA");
 
 	/**
-	 * The cached value of the '{@link #getDifficulty() <em>Difficulty</em>}' attribute.
+	 * The cached value of the '{@link #getColor() <em>Color</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getDifficulty()
+	 * @see #getColor()
 	 * @generated
 	 * @ordered
 	 */
-	protected int difficulty = DIFFICULTY_EDEFAULT;
+	protected RGBColor color = COLOR_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected DifficultyScoreImpl() {
+	protected ColoredElementImpl() {
 		super();
 	}
 
@@ -72,7 +76,7 @@ public class DifficultyScoreImpl extends NamedElementImpl implements DifficultyS
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return TRADESPackage.Literals.DIFFICULTY_SCORE;
+		return TRADESPackage.Literals.COLORED_ELEMENT;
 	}
 
 	/**
@@ -81,8 +85,8 @@ public class DifficultyScoreImpl extends NamedElementImpl implements DifficultyS
 	 * @generated
 	 */
 	@Override
-	public int getDifficulty() {
-		return difficulty;
+	public RGBColor getColor() {
+		return color;
 	}
 
 	/**
@@ -91,12 +95,12 @@ public class DifficultyScoreImpl extends NamedElementImpl implements DifficultyS
 	 * @generated
 	 */
 	@Override
-	public void setDifficulty(int newDifficulty) {
-		int oldDifficulty = difficulty;
-		difficulty = newDifficulty;
+	public void setColor(RGBColor newColor) {
+		RGBColor oldColor = color;
+		color = newColor;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TRADESPackage.DIFFICULTY_SCORE__DIFFICULTY,
-					oldDifficulty, difficulty));
+			eNotify(new ENotificationImpl(this, Notification.SET, TRADESPackage.COLORED_ELEMENT__COLOR, oldColor,
+					color));
 	}
 
 	/**
@@ -107,8 +111,8 @@ public class DifficultyScoreImpl extends NamedElementImpl implements DifficultyS
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case TRADESPackage.DIFFICULTY_SCORE__DIFFICULTY:
-			return getDifficulty();
+		case TRADESPackage.COLORED_ELEMENT__COLOR:
+			return getColor();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -121,8 +125,8 @@ public class DifficultyScoreImpl extends NamedElementImpl implements DifficultyS
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case TRADESPackage.DIFFICULTY_SCORE__DIFFICULTY:
-			setDifficulty((Integer) newValue);
+		case TRADESPackage.COLORED_ELEMENT__COLOR:
+			setColor((RGBColor) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -136,8 +140,8 @@ public class DifficultyScoreImpl extends NamedElementImpl implements DifficultyS
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case TRADESPackage.DIFFICULTY_SCORE__DIFFICULTY:
-			setDifficulty(DIFFICULTY_EDEFAULT);
+		case TRADESPackage.COLORED_ELEMENT__COLOR:
+			setColor(COLOR_EDEFAULT);
 			return;
 		}
 		super.eUnset(featureID);
@@ -151,8 +155,8 @@ public class DifficultyScoreImpl extends NamedElementImpl implements DifficultyS
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case TRADESPackage.DIFFICULTY_SCORE__DIFFICULTY:
-			return difficulty != DIFFICULTY_EDEFAULT;
+		case TRADESPackage.COLORED_ELEMENT__COLOR:
+			return COLOR_EDEFAULT == null ? color != null : !COLOR_EDEFAULT.equals(color);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -168,10 +172,10 @@ public class DifficultyScoreImpl extends NamedElementImpl implements DifficultyS
 			return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (difficulty: ");
-		result.append(difficulty);
+		result.append(" (color: ");
+		result.append(color);
 		result.append(')');
 		return result.toString();
 	}
 
-} //DifficultyScoreImpl
+} //ColoredElementImpl

@@ -53,7 +53,7 @@ public class LinkItemProvider extends NamedElementItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addLinktypePropertyDescriptor(object);
+			addLinkTypePropertyDescriptor(object);
 			addLinkConveyedPropertyDescriptor(object);
 			addConveyingLinkPropertyDescriptor(object);
 			addComponentsPropertyDescriptor(object);
@@ -62,17 +62,17 @@ public class LinkItemProvider extends NamedElementItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Linktype feature.
+	 * This adds a property descriptor for the Link Type feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addLinktypePropertyDescriptor(Object object) {
+	protected void addLinkTypePropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Link_linktype_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Link_linktype_feature", "_UI_Link_type"),
-						TRADESPackage.Literals.LINK__LINKTYPE, true, false, true, null, null, null));
+						getResourceLocator(), getString("_UI_Link_linkType_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Link_linkType_feature", "_UI_Link_type"),
+						TRADESPackage.Literals.LINK__LINK_TYPE, true, false, true, null, null, null));
 	}
 
 	/**

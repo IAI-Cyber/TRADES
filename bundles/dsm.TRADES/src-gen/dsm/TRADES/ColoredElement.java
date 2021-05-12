@@ -17,41 +17,42 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Named Element</b></em>'.
+ * A representation of the model object '<em><b>Colored Element</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link dsm.TRADES.NamedElement#getName <em>Name</em>}</li>
+ *   <li>{@link dsm.TRADES.ColoredElement#getColor <em>Color</em>}</li>
  * </ul>
  *
- * @see dsm.TRADES.TRADESPackage#getNamedElement()
+ * @see dsm.TRADES.TRADESPackage#getColoredElement()
  * @model abstract="true"
  * @generated
  */
-public interface NamedElement extends EObject {
+public interface ColoredElement extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Name</b></em>' attribute.
+	 * Returns the value of the '<em><b>Color</b></em>' attribute.
+	 * The default value is <code>"#AAAAAA"</code>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Name</em>' attribute.
-	 * @see #setName(String)
-	 * @see dsm.TRADES.TRADESPackage#getNamedElement_Name()
-	 * @model
+	 * @return the value of the '<em>Color</em>' attribute.
+	 * @see #setColor(RGBColor)
+	 * @see dsm.TRADES.TRADESPackage#getColoredElement_Color()
+	 * @model default="#AAAAAA" dataType="dsm.TRADES.RGBColor"
 	 * @generated
 	 */
-	String getName();
+	RGBColor getColor();
 
 	/**
-	 * Sets the value of the '{@link dsm.TRADES.NamedElement#getName <em>Name</em>}' attribute.
+	 * Sets the value of the '{@link dsm.TRADES.ColoredElement#getColor <em>Color</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
-	 * @see #getName()
+	 * @param value the new value of the '<em>Color</em>' attribute.
+	 * @see #getColor()
 	 * @generated
 	 */
-	void setName(String value);
+	void setColor(RGBColor value);
 
-} // NamedElement
+} // ColoredElement

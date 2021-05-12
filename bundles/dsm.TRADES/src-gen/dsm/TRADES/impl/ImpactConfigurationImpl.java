@@ -16,8 +16,6 @@ package dsm.TRADES.impl;
 import dsm.TRADES.DifficultyScore;
 import dsm.TRADES.ImpactConfiguration;
 import dsm.TRADES.ImpactScore;
-import dsm.TRADES.RGBColor;
-import dsm.TRADES.TRADESFactory;
 import dsm.TRADES.TRADESPackage;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -27,7 +25,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
@@ -41,12 +38,11 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  * <ul>
  *   <li>{@link dsm.TRADES.impl.ImpactConfigurationImpl#getDifficulty <em>Difficulty</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ImpactConfigurationImpl#getImpact <em>Impact</em>}</li>
- *   <li>{@link dsm.TRADES.impl.ImpactConfigurationImpl#getColor <em>Color</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ImpactConfigurationImpl extends MinimalEObjectImpl.Container implements ImpactConfiguration {
+public class ImpactConfigurationImpl extends ColoredElementImpl implements ImpactConfiguration {
 	/**
 	 * The cached value of the '{@link #getDifficulty() <em>Difficulty</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -56,27 +52,6 @@ public class ImpactConfigurationImpl extends MinimalEObjectImpl.Container implem
 	 * @ordered
 	 */
 	protected DifficultyScore difficulty;
-
-	/**
-	 * The default value of the '{@link #getColor() <em>Color</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getColor()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final RGBColor COLOR_EDEFAULT = (RGBColor) TRADESFactory.eINSTANCE
-			.createFromString(TRADESPackage.eINSTANCE.getRGBColor(), "#FFFFFF");
-
-	/**
-	 * The cached value of the '{@link #getColor() <em>Color</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getColor()
-	 * @generated
-	 * @ordered
-	 */
-	protected RGBColor color = COLOR_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -192,30 +167,6 @@ public class ImpactConfigurationImpl extends MinimalEObjectImpl.Container implem
 	 * @generated
 	 */
 	@Override
-	public RGBColor getColor() {
-		return color;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setColor(RGBColor newColor) {
-		RGBColor oldColor = color;
-		color = newColor;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TRADESPackage.IMPACT_CONFIGURATION__COLOR, oldColor,
-					color));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case TRADESPackage.IMPACT_CONFIGURATION__IMPACT:
@@ -269,8 +220,6 @@ public class ImpactConfigurationImpl extends MinimalEObjectImpl.Container implem
 			return basicGetDifficulty();
 		case TRADESPackage.IMPACT_CONFIGURATION__IMPACT:
 			return getImpact();
-		case TRADESPackage.IMPACT_CONFIGURATION__COLOR:
-			return getColor();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -288,9 +237,6 @@ public class ImpactConfigurationImpl extends MinimalEObjectImpl.Container implem
 			return;
 		case TRADESPackage.IMPACT_CONFIGURATION__IMPACT:
 			setImpact((ImpactScore) newValue);
-			return;
-		case TRADESPackage.IMPACT_CONFIGURATION__COLOR:
-			setColor((RGBColor) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -310,9 +256,6 @@ public class ImpactConfigurationImpl extends MinimalEObjectImpl.Container implem
 		case TRADESPackage.IMPACT_CONFIGURATION__IMPACT:
 			setImpact((ImpactScore) null);
 			return;
-		case TRADESPackage.IMPACT_CONFIGURATION__COLOR:
-			setColor(COLOR_EDEFAULT);
-			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -329,27 +272,8 @@ public class ImpactConfigurationImpl extends MinimalEObjectImpl.Container implem
 			return difficulty != null;
 		case TRADESPackage.IMPACT_CONFIGURATION__IMPACT:
 			return getImpact() != null;
-		case TRADESPackage.IMPACT_CONFIGURATION__COLOR:
-			return COLOR_EDEFAULT == null ? color != null : !COLOR_EDEFAULT.equals(color);
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy())
-			return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (color: ");
-		result.append(color);
-		result.append(')');
-		return result.toString();
 	}
 
 } //ImpactConfigurationImpl
