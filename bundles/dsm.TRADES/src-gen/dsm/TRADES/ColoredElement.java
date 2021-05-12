@@ -32,7 +32,6 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface ColoredElement extends EObject {
-
 	/**
 	 * Returns the value of the '<em><b>Color</b></em>' attribute.
 	 * The default value is <code>"#AAAAAA"</code>.

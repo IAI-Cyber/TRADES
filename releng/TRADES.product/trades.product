@@ -31,7 +31,6 @@
       </win>
    </launcher>
 
-
    <vm>
       <windows include="false">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8</windows>
    </vm>
@@ -128,6 +127,9 @@ Except as expressly stated in Sections 2(a) and 2(b) above, Recipient receives n
       <feature id="org.eclipse.platform" installMode="root"/>
       <feature id="fr.obeo.dsl.designer.gen.html.feature" installMode="root"/>
       <feature id="dsm.TRADES.branding.feature" installMode="root"/>
+      <feature id="org.obeonetwork.m2doc.feature" installMode="root"/>
+      <feature id="org.obeonetwork.m2doc.html.feature" installMode="root"/>
+      <feature id="org.obeonetwork.m2doc.ui.feature" installMode="root"/>
    </features>
 
    <configurations>

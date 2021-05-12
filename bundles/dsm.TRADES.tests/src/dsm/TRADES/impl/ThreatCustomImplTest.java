@@ -44,7 +44,7 @@ public class ThreatCustomImplTest extends AbstractTest {
 
 		BasicDiagnostic chain = new BasicDiagnostic();
 		assertThat(threat.checkIsUsed(chain, new HashMap<>())).isFalse(); // Not used
-		assertThat(chain.getChildren()).hasSize(1).allMatch(b -> b.getSeverity() == Diagnostic.WARNING);
+		assertThat(chain.getChildren()).hasSize(1).allMatch(b -> b.getSeverity() == Diagnostic.INFO);
 
 		// Allocated a ThreatMitigationRelation but no component => not used
 
@@ -54,8 +54,8 @@ public class ThreatCustomImplTest extends AbstractTest {
 		ThreatAllocationRelation thAllocationRel = fact.createThreatAllocationRelation();
 		thAllocationRel.setComponent(rootComponent);
 
-		Control intControl = SemanticUtil.addControl(root, fact.createControl(), true);
-		Control extControl = SemanticUtil.addControl(root, fact.createExternalControl(), true);
+		Control intControl = SemanticUtil.addControl(root, fact.createControl());
+		Control extControl = SemanticUtil.addControl(root, fact.createExternalControl());
 
 		ThreatMitigationRelation intThreatMitigtion = fact.createThreatMitigationRelation();
 		intControl.getMitigationRelations().add(intThreatMitigtion);
@@ -67,7 +67,7 @@ public class ThreatCustomImplTest extends AbstractTest {
 
 		chain = new BasicDiagnostic();
 		assertThat(threat.checkIsUsed(chain, new HashMap<>())).isFalse(); // Still Not used
-		assertThat(chain.getChildren()).hasSize(1).allMatch(b -> b.getSeverity() == Diagnostic.WARNING);
+		assertThat(chain.getChildren()).hasSize(1).allMatch(b -> b.getSeverity() == Diagnostic.INFO);
 
 		// Allocate the threat
 		thAllocationRel.setThreat(threat);

@@ -14,14 +14,18 @@
 
 package dsm.TRADES.impl;
 
+import static java.util.stream.Collectors.toList;
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import org.eclipse.emf.common.util.ECollections;
 import org.eclipse.emf.common.util.EList;
 
 import dsm.TRADES.Control;
 import dsm.TRADES.Data;
+import dsm.TRADES.ExternalControl;
 import dsm.TRADES.SemanticHelper;
 
 public class ComponentCustomImpl extends ComponentImpl {
@@ -39,6 +43,15 @@ public class ComponentCustomImpl extends ComponentImpl {
 	@Override
 	public EList<Data> getInheritedDatas() {
 		return DataOwnerElementCustomImpl.getInheritedData(this);
+	}
+
+	@Override
+	public EList<ExternalControl> getExternalControls(String id, String source) {
+		if (id == null || getControlOwner() == null) {
+			return null;
+		}
+		return ECollections.asEList(getControlOwner().getExternals().stream()
+				.filter(ext -> id.equals(ext.getId()) && Objects.equals(source, ext.getSource())).collect(toList()));
 	}
 
 	@Override

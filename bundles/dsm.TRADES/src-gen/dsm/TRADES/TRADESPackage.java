@@ -231,22 +231,22 @@ public interface TRADESPackage extends EPackage {
 	int ANALYSIS___GET_ALL_CONTROLS = COMPONENT_OWNER_OPERATION_COUNT + 3;
 
 	/**
-	 * The operation id for the '<em>Get External Threat</em>' operation.
+	 * The operation id for the '<em>Get External Controls</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ANALYSIS___GET_EXTERNAL_THREAT__STRING_STRING = COMPONENT_OWNER_OPERATION_COUNT + 4;
+	int ANALYSIS___GET_EXTERNAL_CONTROLS__STRING_STRING = COMPONENT_OWNER_OPERATION_COUNT + 4;
 
 	/**
-	 * The operation id for the '<em>Get External Control</em>' operation.
+	 * The operation id for the '<em>Get External Threats</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ANALYSIS___GET_EXTERNAL_CONTROL__STRING_STRING = COMPONENT_OWNER_OPERATION_COUNT + 5;
+	int ANALYSIS___GET_EXTERNAL_THREATS__STRING_STRING = COMPONENT_OWNER_OPERATION_COUNT + 5;
 
 	/**
 	 * The number of operations of the '<em>Analysis</em>' class.
@@ -531,13 +531,22 @@ public interface TRADESPackage extends EPackage {
 	int COMPONENT___GET_ALL_CONTROLS = COMPONENT_OWNER_OPERATION_COUNT + 3;
 
 	/**
+	 * The operation id for the '<em>Get External Controls</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT___GET_EXTERNAL_CONTROLS__STRING_STRING = COMPONENT_OWNER_OPERATION_COUNT + 4;
+
+	/**
 	 * The number of operations of the '<em>Component</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_OPERATION_COUNT = COMPONENT_OWNER_OPERATION_COUNT + 4;
+	int COMPONENT_OPERATION_COUNT = COMPONENT_OWNER_OPERATION_COUNT + 5;
 
 	/**
 	 * The meta object id for the '{@link dsm.TRADES.impl.ControlImpl <em>Control</em>}' class.
@@ -1919,13 +1928,22 @@ public interface TRADESPackage extends EPackage {
 	int ABSTRACT_CONTROL_OWNER___GET_ALL_CONTROLS = 0;
 
 	/**
+	 * The operation id for the '<em>Get External Controls</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_CONTROL_OWNER___GET_EXTERNAL_CONTROLS__STRING_STRING = 1;
+
+	/**
 	 * The number of operations of the '<em>Abstract Control Owner</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_CONTROL_OWNER_OPERATION_COUNT = 1;
+	int ABSTRACT_CONTROL_OWNER_OPERATION_COUNT = 2;
 
 	/**
 	 * The meta object id for the '{@link dsm.TRADES.impl.DataOwnerImpl <em>Data Owner</em>}' class.
@@ -2176,13 +2194,22 @@ public interface TRADESPackage extends EPackage {
 	int CATALOG___GET_ALL_CONTROLS = ABSTRACT_THREAT_OWNER_OPERATION_COUNT + 0;
 
 	/**
+	 * The operation id for the '<em>Get External Controls</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CATALOG___GET_EXTERNAL_CONTROLS__STRING_STRING = ABSTRACT_THREAT_OWNER_OPERATION_COUNT + 1;
+
+	/**
 	 * The operation id for the '<em>Get Threat By Id</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CATALOG___GET_THREAT_BY_ID__STRING = ABSTRACT_THREAT_OWNER_OPERATION_COUNT + 1;
+	int CATALOG___GET_THREAT_BY_ID__STRING = ABSTRACT_THREAT_OWNER_OPERATION_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>Get Control By Id</em>' operation.
@@ -2191,7 +2218,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CATALOG___GET_CONTROL_BY_ID__STRING = ABSTRACT_THREAT_OWNER_OPERATION_COUNT + 2;
+	int CATALOG___GET_CONTROL_BY_ID__STRING = ABSTRACT_THREAT_OWNER_OPERATION_COUNT + 3;
 
 	/**
 	 * The operation id for the '<em>Get Threat Definitions</em>' operation.
@@ -2200,7 +2227,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CATALOG___GET_THREAT_DEFINITIONS = ABSTRACT_THREAT_OWNER_OPERATION_COUNT + 3;
+	int CATALOG___GET_THREAT_DEFINITIONS = ABSTRACT_THREAT_OWNER_OPERATION_COUNT + 4;
 
 	/**
 	 * The operation id for the '<em>Get Control Definitions</em>' operation.
@@ -2209,7 +2236,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CATALOG___GET_CONTROL_DEFINITIONS = ABSTRACT_THREAT_OWNER_OPERATION_COUNT + 4;
+	int CATALOG___GET_CONTROL_DEFINITIONS = ABSTRACT_THREAT_OWNER_OPERATION_COUNT + 5;
 
 	/**
 	 * The operation id for the '<em>Get Identifier</em>' operation.
@@ -2218,7 +2245,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CATALOG___GET_IDENTIFIER = ABSTRACT_THREAT_OWNER_OPERATION_COUNT + 5;
+	int CATALOG___GET_IDENTIFIER = ABSTRACT_THREAT_OWNER_OPERATION_COUNT + 6;
 
 	/**
 	 * The number of operations of the '<em>Catalog</em>' class.
@@ -2227,7 +2254,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CATALOG_OPERATION_COUNT = ABSTRACT_THREAT_OWNER_OPERATION_COUNT + 6;
+	int CATALOG_OPERATION_COUNT = ABSTRACT_THREAT_OWNER_OPERATION_COUNT + 7;
 
 	/**
 	 * The meta object id for the '{@link dsm.TRADES.IThreatDefinition <em>IThreat Definition</em>}' class.
@@ -2504,24 +2531,14 @@ public interface TRADESPackage extends EPackage {
 	EReference getAnalysis_LinkTypes();
 
 	/**
-	 * Returns the meta object for the '{@link dsm.TRADES.Analysis#getExternalThreat(java.lang.String, java.lang.String) <em>Get External Threat</em>}' operation.
+	 * Returns the meta object for the '{@link dsm.TRADES.Analysis#getExternalThreats(java.lang.String, java.lang.String) <em>Get External Threats</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Get External Threat</em>' operation.
-	 * @see dsm.TRADES.Analysis#getExternalThreat(java.lang.String, java.lang.String)
+	 * @return the meta object for the '<em>Get External Threats</em>' operation.
+	 * @see dsm.TRADES.Analysis#getExternalThreats(java.lang.String, java.lang.String)
 	 * @generated
 	 */
-	EOperation getAnalysis__GetExternalThreat__String_String();
-
-	/**
-	 * Returns the meta object for the '{@link dsm.TRADES.Analysis#getExternalControl(java.lang.String, java.lang.String) <em>Get External Control</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Get External Control</em>' operation.
-	 * @see dsm.TRADES.Analysis#getExternalControl(java.lang.String, java.lang.String)
-	 * @generated
-	 */
-	EOperation getAnalysis__GetExternalControl__String_String();
+	EOperation getAnalysis__GetExternalThreats__String_String();
 
 	/**
 	 * Returns the meta object for class '{@link dsm.TRADES.Threat <em>Threat</em>}'.
@@ -3417,6 +3434,16 @@ public interface TRADESPackage extends EPackage {
 	EOperation getAbstractControlOwner__GetAllControls();
 
 	/**
+	 * Returns the meta object for the '{@link dsm.TRADES.AbstractControlOwner#getExternalControls(java.lang.String, java.lang.String) <em>Get External Controls</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get External Controls</em>' operation.
+	 * @see dsm.TRADES.AbstractControlOwner#getExternalControls(java.lang.String, java.lang.String)
+	 * @generated
+	 */
+	EOperation getAbstractControlOwner__GetExternalControls__String_String();
+
+	/**
 	 * Returns the meta object for class '{@link dsm.TRADES.DataOwner <em>Data Owner</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3834,22 +3861,13 @@ public interface TRADESPackage extends EPackage {
 		EReference ANALYSIS__LINK_TYPES = eINSTANCE.getAnalysis_LinkTypes();
 
 		/**
-		 * The meta object literal for the '<em><b>Get External Threat</b></em>' operation.
+		 * The meta object literal for the '<em><b>Get External Threats</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation ANALYSIS___GET_EXTERNAL_THREAT__STRING_STRING = eINSTANCE
-				.getAnalysis__GetExternalThreat__String_String();
-
-		/**
-		 * The meta object literal for the '<em><b>Get External Control</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ANALYSIS___GET_EXTERNAL_CONTROL__STRING_STRING = eINSTANCE
-				.getAnalysis__GetExternalControl__String_String();
+		EOperation ANALYSIS___GET_EXTERNAL_THREATS__STRING_STRING = eINSTANCE
+				.getAnalysis__GetExternalThreats__String_String();
 
 		/**
 		 * The meta object literal for the '{@link dsm.TRADES.impl.ThreatImpl <em>Threat</em>}' class.
@@ -4574,6 +4592,15 @@ public interface TRADESPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation ABSTRACT_CONTROL_OWNER___GET_ALL_CONTROLS = eINSTANCE.getAbstractControlOwner__GetAllControls();
+
+		/**
+		 * The meta object literal for the '<em><b>Get External Controls</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ABSTRACT_CONTROL_OWNER___GET_EXTERNAL_CONTROLS__STRING_STRING = eINSTANCE
+				.getAbstractControlOwner__GetExternalControls__String_String();
 
 		/**
 		 * The meta object literal for the '{@link dsm.TRADES.impl.DataOwnerImpl <em>Data Owner</em>}' class.

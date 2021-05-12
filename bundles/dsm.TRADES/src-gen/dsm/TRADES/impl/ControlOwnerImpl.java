@@ -15,6 +15,7 @@ package dsm.TRADES.impl;
 
 import dsm.TRADES.Control;
 import dsm.TRADES.ControlOwner;
+import dsm.TRADES.ExternalControl;
 import dsm.TRADES.TRADESPackage;
 
 import java.util.Collection;
@@ -64,7 +65,7 @@ public class ControlOwnerImpl extends MinimalEObjectImpl.Container implements Co
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Control> externals;
+	protected EList<ExternalControl> externals;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -105,9 +106,9 @@ public class ControlOwnerImpl extends MinimalEObjectImpl.Container implements Co
 	 * @generated
 	 */
 	@Override
-	public EList<Control> getExternals() {
+	public EList<ExternalControl> getExternals() {
 		if (externals == null) {
-			externals = new EObjectContainmentEList<Control>(Control.class, this,
+			externals = new EObjectContainmentEList<ExternalControl>(ExternalControl.class, this,
 					TRADESPackage.CONTROL_OWNER__EXTERNALS);
 		}
 		return externals;
@@ -160,7 +161,7 @@ public class ControlOwnerImpl extends MinimalEObjectImpl.Container implements Co
 			return;
 		case TRADESPackage.CONTROL_OWNER__EXTERNALS:
 			getExternals().clear();
-			getExternals().addAll((Collection<? extends Control>) newValue);
+			getExternals().addAll((Collection<? extends ExternalControl>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);

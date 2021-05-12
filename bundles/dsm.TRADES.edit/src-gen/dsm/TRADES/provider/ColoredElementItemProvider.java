@@ -16,6 +16,7 @@ package dsm.TRADES.provider;
 import dsm.TRADES.ColoredElement;
 import dsm.TRADES.RGBColor;
 import dsm.TRADES.TRADESPackage;
+
 import java.util.Collection;
 import java.util.List;
 
@@ -23,6 +24,7 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IChildCreationExtender;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
@@ -83,17 +85,6 @@ public class ColoredElementItemProvider extends ItemProviderAdapter implements I
 								"_UI_ColoredElement_type"),
 						TRADESPackage.Literals.COLORED_ELEMENT__COLOR, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
-	}
-
-	/**
-	 * This returns ColoredElement.gif.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/ColoredElement"));
 	}
 
 	/**

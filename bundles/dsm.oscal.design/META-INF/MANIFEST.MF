@@ -21,7 +21,11 @@ Require-Bundle: org.eclipse.ui,
  dsm.TRADES.edit;bundle-version="2.5.2",
  TRADES.design;bundle-version="2.5.2",
  org.eclipse.eef.ide.ui;bundle-version="2.1.5",
- dsm.TRADES.rcp;bundle-version="2.5.2"
+ dsm.TRADES.rcp;bundle-version="2.5.2",
+ org.obeonetwork.m2doc.ide,
+ org.obeonetwork.m2doc,
+ org.eclipse.acceleo.query,
+ org.apache.poi
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-11
 Bundle-Vendor: %providerName

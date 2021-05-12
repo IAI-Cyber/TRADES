@@ -49,7 +49,7 @@ public interface ThreatsOwner extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Externals</b></em>' containment reference list.
-	 * The list contents are of type {@link dsm.TRADES.Threat}.
+	 * The list contents are of type {@link dsm.TRADES.ExternalThreat}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Externals</em>' containment reference list.
@@ -57,6 +57,6 @@ public interface ThreatsOwner extends EObject {
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Threat> getExternals();
+	EList<ExternalThreat> getExternals();
 
 } // ThreatsOwner

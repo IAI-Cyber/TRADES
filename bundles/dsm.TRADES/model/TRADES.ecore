@@ -5,11 +5,7 @@
     <details key="documentation" value="TRADES model, by Israel Aerospace Industries. All rights reserved.&#xD;&#xA;&#xD;&#xA;The TRADES model, based on Threat and Risk assessment ontology and the TRADES model-based methodology."/>
   </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="Analysis" eSuperTypes="#//ComponentOwner #//DataOwnerElement #//NamedElement #//AbstractControlOwner #//AbstractThreatOwner">
-    <eOperations name="getExternalThreat" eType="#//ExternalThreat">
-      <eParameters name="id" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
-      <eParameters name="source" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
-    </eOperations>
-    <eOperations name="getExternalControl" eType="#//ExternalControl">
+    <eOperations name="getExternalThreats" upperBound="-1" eType="#//ExternalThreat">
       <eParameters name="id" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
       <eParameters name="source" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
     </eOperations>
@@ -177,16 +173,20 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="internals" upperBound="-1"
         eType="#//Threat" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="externals" upperBound="-1"
-        eType="#//Threat" containment="true"/>
+        eType="#//ExternalThreat" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ControlOwner">
     <eStructuralFeatures xsi:type="ecore:EReference" name="internals" upperBound="-1"
         eType="#//Control" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="externals" upperBound="-1"
-        eType="#//Control" containment="true"/>
+        eType="#//ExternalControl" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AbstractControlOwner" abstract="true">
     <eOperations name="getAllControls" upperBound="-1" eType="#//Control"/>
+    <eOperations name="getExternalControls" upperBound="-1" eType="#//ExternalControl">
+      <eParameters name="id" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+      <eParameters name="source" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="controlOwner" eType="#//ControlOwner"
         containment="true"/>
   </eClassifiers>

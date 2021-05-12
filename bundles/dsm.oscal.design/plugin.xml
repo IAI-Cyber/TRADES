@@ -89,4 +89,10 @@
         </description>
      </wizard>
   </extension>
+  <extension
+        point="org.obeonetwork.m2doc.ide.servicesConfigurator">
+     <servicesConfigurators
+           class="dsm.oscal.design.m2doc.OscalM2DocService">
+     </servicesConfigurators>
+  </extension>
 </plugin>

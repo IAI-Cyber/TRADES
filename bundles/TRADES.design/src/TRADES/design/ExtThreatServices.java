@@ -16,10 +16,10 @@ package TRADES.design;
 import java.awt.Desktop;
 import java.io.File;
 import java.io.IOException;
+import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.Objects;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
@@ -27,9 +27,14 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.sirius.business.api.session.Session;
+import org.eclipse.ui.PlatformUI;
 
+import dsm.TRADES.AbstractControlOwner;
 import dsm.TRADES.Analysis;
+import dsm.TRADES.Catalog;
+import dsm.TRADES.Component;
 import dsm.TRADES.Control;
 import dsm.TRADES.ExternalControl;
 import dsm.TRADES.ExternalThreat;
@@ -114,46 +119,44 @@ public class ExtThreatServices {
 	 */
 	public Threat copyTreat(Analysis analysis, ExternalThreat source) {
 
-		ExternalThreat existing = analysis.getExternalThreat(source.getId(), source.getSource());
-		if (existing == null) {
-			ExternalThreat result = EcoreUtil.copy(source);
-
-			ThreatsOwner threatOwner = analysis.getThreatOwner();
-			if (threatOwner == null) {
-				threatOwner = TRADESFactory.eINSTANCE.createThreatsOwner();
-				analysis.setThreatOwner(threatOwner);
+		if (!analysis.getExternalThreats(source.getId(), source.getSource()).isEmpty()) {
+			if (!confirm("Existing External Threat", MessageFormat.format(
+					"An external threat with id ''{1}'' (from ''{0}'') already exist. Do you want to import a new instance?",
+					source.getSource(), source.getId()))) {
+				return null;
 			}
+		}
 
-			ICatalogDefinition catalog = EcoreUtils.getAncestor(source, ICatalogDefinition.class);
-			result.setSource(catalog.getIdentifier());
+		ExternalThreat result = EcoreUtil.copy(source);
 
-			if (source.eResource().getURI().isPlatformResource()) {
-				result.setLink(createURIRepresentation(source));
-			}
+		ThreatsOwner threatOwner = analysis.getThreatOwner();
+		if (threatOwner == null) {
+			threatOwner = TRADESFactory.eINSTANCE.createThreatsOwner();
+			analysis.setThreatOwner(threatOwner);
+		}
 
-			threatOwner.getExternals().add(result);
+		ICatalogDefinition catalog = EcoreUtils.getAncestor(source, ICatalogDefinition.class);
+		result.setSource(catalog.getIdentifier());
 
-			// Check if there is a control already imported that mitigates that threat
+		if (source.eResource().getURI().isPlatformResource()) {
+			result.setLink(createURIRepresentation(source));
+		}
 
-			for (IControlDefinition def : catalog.getControlDefinitions()) {
-				for (IMitigationLink link : def.getMitigatedThreatDefinitions()) {
-					if (link.getThreat().getId().equals(source.getId())) {
-						// Check if that control is already imported in the model
-						ExternalControl existingControl = analysis.getExternalControl(def.getId(),
-								catalog.getIdentifier());
-						if (existingControl != null) {
-							if (!isExistingLink(existingControl, link)) {
-								createMigitationLink(existingControl, link, result);
-							}
-						}
+		threatOwner.getExternals().add(result);
+
+		for (IControlDefinition def : catalog.getControlDefinitions()) {
+			for (IMitigationLink link : def.getMitigatedThreatDefinitions()) {
+				if (link.getThreat().getId().equals(source.getId())) {
+					EList<ExternalControl> existingControls = analysis.getExternalControls(def.getId(),
+							catalog.getIdentifier());
+					for (ExternalControl existingControl : existingControls) {
+						createMigitationLink(existingControl, link, result);
 					}
 				}
 			}
-
-			return result;
-		} else {
-			return existing;
 		}
+
+		return result;
 	}
 
 	public Control copyControl(EObject analysisProvider, IControlDefinition source) {
@@ -162,6 +165,23 @@ public class ExtThreatServices {
 			return null;
 		} else {
 			return result.get(0);
+		}
+	}
+
+	public static boolean confirm(String title, String message) {
+		return MessageDialog.openConfirm(PlatformUI.getWorkbench().getModalDialogShellProvider().getShell(), title,
+				message);
+	}
+
+	public static String getControlOwnerLabel(AbstractControlOwner owner) {
+		if (owner instanceof Analysis) {
+			return ((Analysis) owner).getName();
+		} else if (owner instanceof Catalog) {
+			return ((Catalog) owner).getName();
+		} else if (owner instanceof Component) {
+			return ((Component) owner).getName();
+		} else {
+			return "??";
 		}
 	}
 
@@ -175,30 +195,32 @@ public class ExtThreatServices {
 	public List<Control> copyControl(EObject analysisProvider, List<IControlDefinition> sources) {
 		List<Control> result = new ArrayList<>();
 		Analysis currentAnalysis = EcoreUtils.getAncestor(analysisProvider, Analysis.class);
+		AbstractControlOwner controlOwner = EcoreUtils.getAncestor(analysisProvider, AbstractControlOwner.class);
 
 		for (IControlDefinition source : sources) {
 
 			ICatalogDefinition catalogDef = EcoreUtils.getAncestor(source, ICatalogDefinition.class);
 
-			ExternalControl existingControl = currentAnalysis.getExternalControl(source.getId(),
-					catalogDef.getIdentifier());
-			final ExternalControl matchingControl;
-			if (existingControl != null) {
-				matchingControl = existingControl;
-			} else {
-				matchingControl = TRADESFactory.eINSTANCE.createExternalControl();
-				matchingControl.setName(source.getName());
-				matchingControl.setSource(catalogDef.getIdentifier());
-				String id = source.getId();
-				matchingControl.setId(id);
-				matchingControl.setDescription(source.getDescription());
-
-				if (source.eResource().getURI().isPlatformResource()) {
-					matchingControl.setLink(createURIRepresentation(source));
+			if (!controlOwner.getExternalControls(source.getId(), catalogDef.getIdentifier()).isEmpty()) {
+				if (!confirm("Existing External Control", MessageFormat.format(
+						"An external control with id ''{1}'' (from ''{0}'') already exist in ''{2}''. Do you want to import a new instance?",
+						catalogDef.getIdentifier(), source.getId(), getControlOwnerLabel(controlOwner)))) {
+					return null;
 				}
-
-				SemanticUtil.addControl(currentAnalysis, matchingControl, false);
 			}
+
+			ExternalControl matchingControl = TRADESFactory.eINSTANCE.createExternalControl();
+			matchingControl.setName(source.getName());
+			matchingControl.setSource(catalogDef.getIdentifier());
+			String id = source.getId();
+			matchingControl.setId(id);
+			matchingControl.setDescription(source.getDescription());
+
+			if (source.eResource().getURI().isPlatformResource()) {
+				matchingControl.setLink(createURIRepresentation(source));
+			}
+
+			SemanticUtil.addControl(controlOwner, matchingControl);
 
 			// Copy all existing mitigation
 			for (IMitigationLink link : source.getMitigatedThreatDefinitions()) {
@@ -206,14 +228,13 @@ public class ExtThreatServices {
 
 				if (linkedThreat != null) {
 					String linkedThreatId = linkedThreat.getId();
-					ExternalThreat matchingThreat = currentAnalysis.getExternalThreat(linkedThreatId,
+					List<ExternalThreat> matchingThreats = currentAnalysis.getExternalThreats(linkedThreatId,
 							catalogDef.getIdentifier());
 
-					if (matchingThreat != null) {
-						// Check if existing
-						if (!isExistingLink(matchingControl, link)) {
-							createMigitationLink(matchingControl, link, matchingThreat);
-						}
+					for (ExternalThreat matchingThreat : matchingThreats) {
+//						if (!isExistingLink(matchingControl, link)) {
+						createMigitationLink(matchingControl, link, matchingThreat);
+//						}
 					}
 				}
 			}
@@ -230,20 +251,6 @@ public class ExtThreatServices {
 		controlMitigation.setThreat(matchingThreat);
 		controlMitigation.setDescription(link.getDescription());
 		matchingControl.getMitigationRelations().add(controlMitigation);
-	}
-
-	private boolean isExistingLink(ExternalControl control, IMitigationLink link) {
-		IThreatDefinition linkThreat = link.getThreat();
-		for (ThreatMitigationRelation rel : control.getMitigationRelations()) {
-			Threat threat = rel.getThreat();
-			if (threat != null && linkThreat != null && linkThreat.getId() != null
-					&& linkThreat.getId().equals(threat.getId())) {
-				if (Objects.equals(link.getDescription(), rel.getDescription())) {
-					return true;
-				}
-			}
-		}
-		return false;
 	}
 
 	public List<IControlDefinition> getLinkedControlInDataBases(ExternalThreat ext) {

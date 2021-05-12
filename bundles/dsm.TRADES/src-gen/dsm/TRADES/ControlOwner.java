@@ -49,7 +49,7 @@ public interface ControlOwner extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Externals</b></em>' containment reference list.
-	 * The list contents are of type {@link dsm.TRADES.Control}.
+	 * The list contents are of type {@link dsm.TRADES.ExternalControl}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Externals</em>' containment reference list.
@@ -57,6 +57,6 @@ public interface ControlOwner extends EObject {
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Control> getExternals();
+	EList<ExternalControl> getExternals();
 
 } // ControlOwner

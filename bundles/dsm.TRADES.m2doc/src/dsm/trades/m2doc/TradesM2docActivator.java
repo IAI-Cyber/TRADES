@@ -186,6 +186,19 @@ public class TradesM2docActivator extends AbstractUIPlugin {
 		return img;
 	}
 
+	public ImageDescriptor getImageDescriptor(String path) {
+		ImageDescriptor img = getImageRegistry().getDescriptor(path);
+		if (img == null) {
+
+			URL url = FileLocator.find(getBundle(), new org.eclipse.core.runtime.Path(path), null);
+			if (url != null) {
+				getImageRegistry().put(path, ImageDescriptor.createFromURL(url));
+				img = getImageRegistry().getDescriptor(path);
+			}
+		}
+		return img;
+	}
+
 	private void doLogError(String string, Throwable e) {
 		getLog().log(createErrorStatus(string, e));
 	}

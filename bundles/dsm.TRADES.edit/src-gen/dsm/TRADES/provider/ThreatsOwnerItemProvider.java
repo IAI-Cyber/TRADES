@@ -188,9 +188,6 @@ public class ThreatsOwnerItemProvider extends ItemProviderAdapter implements IEd
 				TRADESFactory.eINSTANCE.createExternalThreat()));
 
 		newChildDescriptors.add(createChildParameter(TRADESPackage.Literals.THREATS_OWNER__EXTERNALS,
-				TRADESFactory.eINSTANCE.createThreat()));
-
-		newChildDescriptors.add(createChildParameter(TRADESPackage.Literals.THREATS_OWNER__EXTERNALS,
 				TRADESFactory.eINSTANCE.createExternalThreat()));
 	}
 

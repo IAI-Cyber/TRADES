@@ -174,7 +174,7 @@ public class SemanticService {
 	}
 
 	public static Control createInternalControl(AbstractControlOwner cmp) {
-		Control control = SemanticUtil.addControl(cmp, TRADESFactory.eINSTANCE.createControl(), true);
+		Control control = SemanticUtil.addControl(cmp, TRADESFactory.eINSTANCE.createControl());
 		control.setId(UUID.randomUUID().toString());
 		return control;
 	}
@@ -330,7 +330,7 @@ public class SemanticService {
 			newOnwer.setControlOwner(owner);
 		}
 		if (control instanceof ExternalControl) {
-			owner.getExternals().add(control);
+			owner.getExternals().add((ExternalControl) control);
 		} else {
 			owner.getInternals().add(control);
 		}

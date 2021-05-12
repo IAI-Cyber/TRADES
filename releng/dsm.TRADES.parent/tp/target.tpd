@@ -24,6 +24,7 @@ location "https://s3-eu-west-1.amazonaws.com/obeo-m2doc-releases/master/nightly/
 	org.obeonetwork.m2doc.feature.feature.group lazy
 	org.obeonetwork.m2doc.sirius.feature.feature.group lazy
 	org.obeonetwork.m2doc.ui.feature.feature.group lazy
+	org.obeonetwork.m2doc.html.feature.feature.group lazy
 	org.eclipse.acceleo.query.feature.group lazy
 	org.apache.poi lazy
 	

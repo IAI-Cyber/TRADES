@@ -11,7 +11,7 @@
 *     ELTA Ltd - initial API and implementation
 * 
 *******************************************************************************************************/
-package dsm.trades.m2doc.menu;
+package dsm.trades.m2doc.internal.actions;
 
 import static java.util.stream.Collectors.toList;
 
@@ -23,8 +23,10 @@ import java.util.stream.Collectors;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.jface.action.Action;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.dialogs.ProgressMonitorDialog;
+import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.Shell;
 
 import dsm.trades.m2doc.IM2DocTemplate;
@@ -37,20 +39,20 @@ import dsm.trades.m2doc.TradesM2docActivator;
  * @author Arthur Daussy
  *
  */
-public class GenerateReportAction {
+public class GenerateReportAction extends Action {
 
-	private final Shell shell;
 	private final EObject selection;
 	private final IM2DocTemplate template;
 
-	public GenerateReportAction(Shell shell, EObject selection, IM2DocTemplate template) {
-		super();
-		this.shell = shell;
+	public GenerateReportAction(EObject selection, IM2DocTemplate template) {
+		super(template.getTemplateName(), TradesM2docActivator.getDefault().getImageDescriptor("icons/m2doc.gif"));
 		this.selection = selection;
 		this.template = template;
 	}
 
-	public void runGeneration() {
+	@Override
+	public void runWithEvent(Event event) {
+		Shell shell = event.display.getActiveShell();
 		ProgressMonitorDialog progressDialog = new ProgressMonitorDialog(shell);
 		try {
 			List<IStatus> results = new ArrayList<IStatus>();

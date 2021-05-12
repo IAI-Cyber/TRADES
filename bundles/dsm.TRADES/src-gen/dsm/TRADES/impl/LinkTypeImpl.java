@@ -18,8 +18,11 @@ import dsm.TRADES.LinkType;
 import dsm.TRADES.RGBColor;
 import dsm.TRADES.TRADESFactory;
 import dsm.TRADES.TRADESPackage;
+
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EClass;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -46,6 +49,7 @@ public class LinkTypeImpl extends NamedElementImpl implements LinkType {
 	 */
 	protected static final RGBColor COLOR_EDEFAULT = (RGBColor) TRADESFactory.eINSTANCE
 			.createFromString(TRADESPackage.eINSTANCE.getRGBColor(), "#AAAAAA");
+
 	/**
 	 * The cached value of the '{@link #getColor() <em>Color</em>}' attribute.
 	 * <!-- begin-user-doc -->

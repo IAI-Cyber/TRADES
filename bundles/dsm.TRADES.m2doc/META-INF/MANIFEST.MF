@@ -16,10 +16,16 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.sirius,
  org.eclipse.core.resources;bundle-version="3.13.700",
  org.eclipse.emf.transaction;bundle-version="1.9.1",
- org.apache.poi
+ org.apache.poi,
+ org.eclipse.ui.navigator,
+ org.eclipse.sirius.table,
+ org.obeonetwork.m2doc.genconf,
+ org.eclipse.sirius.diagram.sequence,
+ org.eclipse.pde.ds.lib;bundle-version="[1.1.400,2.0.0)";resolution:=optional
 Bundle-RequiredExecutionEnvironment: JavaSE-11
 Automatic-Module-Name: dsm.TRADES.m2doc
 Bundle-ActivationPolicy: lazy
 Export-Package: dsm.trades.m2doc,
  dsm.trades.m2doc.utils
 Bundle-Vendor: IAI Cyber Division
+Service-Component: OSGI-INF/dsm.trades.m2doc.internal.DynamicTemplateProvider.xml

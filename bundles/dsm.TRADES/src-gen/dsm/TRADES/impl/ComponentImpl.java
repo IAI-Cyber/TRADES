@@ -21,6 +21,7 @@ import dsm.TRADES.ControlOwner;
 import dsm.TRADES.Data;
 import dsm.TRADES.DataOwner;
 import dsm.TRADES.DataOwnerElement;
+import dsm.TRADES.ExternalControl;
 import dsm.TRADES.Link;
 import dsm.TRADES.NamedElement;
 import dsm.TRADES.TRADESPackage;
@@ -339,6 +340,18 @@ public class ComponentImpl extends ComponentOwnerImpl implements Component {
 	 * @generated
 	 */
 	@Override
+	public EList<ExternalControl> getExternalControls(String id, String source) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EList<Data> getDatas() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -618,6 +631,8 @@ public class ComponentImpl extends ComponentOwnerImpl implements Component {
 			switch (baseOperationID) {
 			case TRADESPackage.ABSTRACT_CONTROL_OWNER___GET_ALL_CONTROLS:
 				return TRADESPackage.COMPONENT___GET_ALL_CONTROLS;
+			case TRADESPackage.ABSTRACT_CONTROL_OWNER___GET_EXTERNAL_CONTROLS__STRING_STRING:
+				return TRADESPackage.COMPONENT___GET_EXTERNAL_CONTROLS__STRING_STRING;
 			default:
 				return -1;
 			}
@@ -635,6 +650,8 @@ public class ComponentImpl extends ComponentOwnerImpl implements Component {
 		switch (operationID) {
 		case TRADESPackage.COMPONENT___GET_ALL_CONTROLS:
 			return getAllControls();
+		case TRADESPackage.COMPONENT___GET_EXTERNAL_CONTROLS__STRING_STRING:
+			return getExternalControls((String) arguments.get(0), (String) arguments.get(1));
 		case TRADESPackage.COMPONENT___GET_DATAS:
 			return getDatas();
 		case TRADESPackage.COMPONENT___GET_INHERITED_DATAS:
