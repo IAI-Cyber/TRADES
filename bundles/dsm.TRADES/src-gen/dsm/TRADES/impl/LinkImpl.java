@@ -13,7 +13,7 @@
  */
 package dsm.TRADES.impl;
 
-import dsm.TRADES.AffectRelation;
+import dsm.TRADES.Component;
 import dsm.TRADES.Link;
 import dsm.TRADES.LinkType;
 import dsm.TRADES.TRADESPackage;
@@ -30,6 +30,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -41,34 +42,24 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link dsm.TRADES.impl.LinkImpl#getAffectRelations <em>Affect Relations</em>}</li>
- *   <li>{@link dsm.TRADES.impl.LinkImpl#getLinktype <em>Linktype</em>}</li>
+ *   <li>{@link dsm.TRADES.impl.LinkImpl#getLinkType <em>Link Type</em>}</li>
  *   <li>{@link dsm.TRADES.impl.LinkImpl#getLinkConveyed <em>Link Conveyed</em>}</li>
  *   <li>{@link dsm.TRADES.impl.LinkImpl#getConveyingLink <em>Conveying Link</em>}</li>
+ *   <li>{@link dsm.TRADES.impl.LinkImpl#getComponents <em>Components</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class LinkImpl extends NamedElementImpl implements Link {
 	/**
-	 * The cached value of the '{@link #getAffectRelations() <em>Affect Relations</em>}' reference list.
+	 * The cached value of the '{@link #getLinkType() <em>Link Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAffectRelations()
+	 * @see #getLinkType()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<AffectRelation> affectRelations;
-
-	/**
-	 * The cached value of the '{@link #getLinktype() <em>Linktype</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLinktype()
-	 * @generated
-	 * @ordered
-	 */
-	protected LinkType linktype;
+	protected LinkType linkType;
 
 	/**
 	 * The cached value of the '{@link #getLinkConveyed() <em>Link Conveyed</em>}' reference list.
@@ -89,6 +80,16 @@ public class LinkImpl extends NamedElementImpl implements Link {
 	 * @ordered
 	 */
 	protected EList<Link> conveyingLink;
+
+	/**
+	 * The cached value of the '{@link #getComponents() <em>Components</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getComponents()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Component> components;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -115,31 +116,17 @@ public class LinkImpl extends NamedElementImpl implements Link {
 	 * @generated
 	 */
 	@Override
-	public EList<AffectRelation> getAffectRelations() {
-		if (affectRelations == null) {
-			affectRelations = new EObjectWithInverseResolvingEList<AffectRelation>(AffectRelation.class, this,
-					TRADESPackage.LINK__AFFECT_RELATIONS, TRADESPackage.AFFECT_RELATION__LINK);
-		}
-		return affectRelations;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public LinkType getLinktype() {
-		if (linktype != null && linktype.eIsProxy()) {
-			InternalEObject oldLinktype = (InternalEObject) linktype;
-			linktype = (LinkType) eResolveProxy(oldLinktype);
-			if (linktype != oldLinktype) {
+	public LinkType getLinkType() {
+		if (linkType != null && linkType.eIsProxy()) {
+			InternalEObject oldLinkType = (InternalEObject) linkType;
+			linkType = (LinkType) eResolveProxy(oldLinkType);
+			if (linkType != oldLinkType) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TRADESPackage.LINK__LINKTYPE, oldLinktype,
-							linktype));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TRADESPackage.LINK__LINK_TYPE,
+							oldLinkType, linkType));
 			}
 		}
-		return linktype;
+		return linkType;
 	}
 
 	/**
@@ -147,8 +134,8 @@ public class LinkImpl extends NamedElementImpl implements Link {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public LinkType basicGetLinktype() {
-		return linktype;
+	public LinkType basicGetLinkType() {
+		return linkType;
 	}
 
 	/**
@@ -157,11 +144,12 @@ public class LinkImpl extends NamedElementImpl implements Link {
 	 * @generated
 	 */
 	@Override
-	public void setLinktype(LinkType newLinktype) {
-		LinkType oldLinktype = linktype;
-		linktype = newLinktype;
+	public void setLinkType(LinkType newLinkType) {
+		LinkType oldLinkType = linkType;
+		linkType = newLinkType;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TRADESPackage.LINK__LINKTYPE, oldLinktype, linktype));
+			eNotify(new ENotificationImpl(this, Notification.SET, TRADESPackage.LINK__LINK_TYPE, oldLinkType,
+					linkType));
 	}
 
 	/**
@@ -197,12 +185,23 @@ public class LinkImpl extends NamedElementImpl implements Link {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public EList<Component> getComponents() {
+		if (components == null) {
+			components = new EObjectResolvingEList<Component>(Component.class, this, TRADESPackage.LINK__COMPONENTS);
+		}
+		return components;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case TRADESPackage.LINK__AFFECT_RELATIONS:
-			return ((InternalEList<InternalEObject>) (InternalEList<?>) getAffectRelations()).basicAdd(otherEnd, msgs);
 		case TRADESPackage.LINK__LINK_CONVEYED:
 			return ((InternalEList<InternalEObject>) (InternalEList<?>) getLinkConveyed()).basicAdd(otherEnd, msgs);
 		case TRADESPackage.LINK__CONVEYING_LINK:
@@ -219,8 +218,6 @@ public class LinkImpl extends NamedElementImpl implements Link {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case TRADESPackage.LINK__AFFECT_RELATIONS:
-			return ((InternalEList<?>) getAffectRelations()).basicRemove(otherEnd, msgs);
 		case TRADESPackage.LINK__LINK_CONVEYED:
 			return ((InternalEList<?>) getLinkConveyed()).basicRemove(otherEnd, msgs);
 		case TRADESPackage.LINK__CONVEYING_LINK:
@@ -237,16 +234,16 @@ public class LinkImpl extends NamedElementImpl implements Link {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case TRADESPackage.LINK__AFFECT_RELATIONS:
-			return getAffectRelations();
-		case TRADESPackage.LINK__LINKTYPE:
+		case TRADESPackage.LINK__LINK_TYPE:
 			if (resolve)
-				return getLinktype();
-			return basicGetLinktype();
+				return getLinkType();
+			return basicGetLinkType();
 		case TRADESPackage.LINK__LINK_CONVEYED:
 			return getLinkConveyed();
 		case TRADESPackage.LINK__CONVEYING_LINK:
 			return getConveyingLink();
+		case TRADESPackage.LINK__COMPONENTS:
+			return getComponents();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -260,12 +257,8 @@ public class LinkImpl extends NamedElementImpl implements Link {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case TRADESPackage.LINK__AFFECT_RELATIONS:
-			getAffectRelations().clear();
-			getAffectRelations().addAll((Collection<? extends AffectRelation>) newValue);
-			return;
-		case TRADESPackage.LINK__LINKTYPE:
-			setLinktype((LinkType) newValue);
+		case TRADESPackage.LINK__LINK_TYPE:
+			setLinkType((LinkType) newValue);
 			return;
 		case TRADESPackage.LINK__LINK_CONVEYED:
 			getLinkConveyed().clear();
@@ -274,6 +267,10 @@ public class LinkImpl extends NamedElementImpl implements Link {
 		case TRADESPackage.LINK__CONVEYING_LINK:
 			getConveyingLink().clear();
 			getConveyingLink().addAll((Collection<? extends Link>) newValue);
+			return;
+		case TRADESPackage.LINK__COMPONENTS:
+			getComponents().clear();
+			getComponents().addAll((Collection<? extends Component>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -287,17 +284,17 @@ public class LinkImpl extends NamedElementImpl implements Link {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case TRADESPackage.LINK__AFFECT_RELATIONS:
-			getAffectRelations().clear();
-			return;
-		case TRADESPackage.LINK__LINKTYPE:
-			setLinktype((LinkType) null);
+		case TRADESPackage.LINK__LINK_TYPE:
+			setLinkType((LinkType) null);
 			return;
 		case TRADESPackage.LINK__LINK_CONVEYED:
 			getLinkConveyed().clear();
 			return;
 		case TRADESPackage.LINK__CONVEYING_LINK:
 			getConveyingLink().clear();
+			return;
+		case TRADESPackage.LINK__COMPONENTS:
+			getComponents().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -311,14 +308,14 @@ public class LinkImpl extends NamedElementImpl implements Link {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case TRADESPackage.LINK__AFFECT_RELATIONS:
-			return affectRelations != null && !affectRelations.isEmpty();
-		case TRADESPackage.LINK__LINKTYPE:
-			return linktype != null;
+		case TRADESPackage.LINK__LINK_TYPE:
+			return linkType != null;
 		case TRADESPackage.LINK__LINK_CONVEYED:
 			return linkConveyed != null && !linkConveyed.isEmpty();
 		case TRADESPackage.LINK__CONVEYING_LINK:
 			return conveyingLink != null && !conveyingLink.isEmpty();
+		case TRADESPackage.LINK__COMPONENTS:
+			return components != null && !components.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

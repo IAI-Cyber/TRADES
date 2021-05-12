@@ -13,6 +13,8 @@
  */
 package dsm.TRADES;
 
+import org.eclipse.emf.common.util.EList;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Analysis</b></em>'.
@@ -23,14 +25,15 @@ package dsm.TRADES;
  * </p>
  * <ul>
  *   <li>{@link dsm.TRADES.Analysis#getScoreSystem <em>Score System</em>}</li>
+ *   <li>{@link dsm.TRADES.Analysis#getLinkTypes <em>Link Types</em>}</li>
  * </ul>
  *
  * @see dsm.TRADES.TRADESPackage#getAnalysis()
  * @model
  * @generated
  */
-public interface Analysis extends ComponentOwner, DataOwnerElement, NamedElement, AbstractControlOwner,
-		AbstractThreatOwner, LinkTypeOwner {
+public interface Analysis
+		extends ComponentOwner, DataOwnerElement, NamedElement, AbstractControlOwner, AbstractThreatOwner {
 	/**
 	 * Returns the value of the '<em><b>Score System</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
@@ -52,6 +55,18 @@ public interface Analysis extends ComponentOwner, DataOwnerElement, NamedElement
 	 * @generated
 	 */
 	void setScoreSystem(ScoreSystem value);
+
+	/**
+	 * Returns the value of the '<em><b>Link Types</b></em>' containment reference list.
+	 * The list contents are of type {@link dsm.TRADES.LinkType}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Link Types</em>' containment reference list.
+	 * @see dsm.TRADES.TRADESPackage#getAnalysis_LinkTypes()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<LinkType> getLinkTypes();
 
 	/**
 	 * <!-- begin-user-doc -->

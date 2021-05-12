@@ -53,41 +53,26 @@ public class LinkItemProvider extends NamedElementItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addAffectRelationsPropertyDescriptor(object);
-			addLinktypePropertyDescriptor(object);
+			addLinkTypePropertyDescriptor(object);
 			addLinkConveyedPropertyDescriptor(object);
 			addConveyingLinkPropertyDescriptor(object);
+			addComponentsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Affect Relations feature.
+	 * This adds a property descriptor for the Link Type feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addAffectRelationsPropertyDescriptor(Object object) {
+	protected void addLinkTypePropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Link_affectRelations_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Link_affectRelations_feature",
-								"_UI_Link_type"),
-						TRADESPackage.Literals.LINK__AFFECT_RELATIONS, true, false, true, null, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Linktype feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addLinktypePropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Link_linktype_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Link_linktype_feature", "_UI_Link_type"),
-						TRADESPackage.Literals.LINK__LINKTYPE, true, false, true, null, null, null));
+						getResourceLocator(), getString("_UI_Link_linkType_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Link_linkType_feature", "_UI_Link_type"),
+						TRADESPackage.Literals.LINK__LINK_TYPE, true, false, true, null, null, null));
 	}
 
 	/**
@@ -118,6 +103,20 @@ public class LinkItemProvider extends NamedElementItemProvider {
 						getString("_UI_PropertyDescriptor_description", "_UI_Link_conveyingLink_feature",
 								"_UI_Link_type"),
 						TRADESPackage.Literals.LINK__CONVEYING_LINK, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Components feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addComponentsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Link_components_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Link_components_feature", "_UI_Link_type"),
+						TRADESPackage.Literals.LINK__COMPONENTS, true, false, true, null, null, null));
 	}
 
 	/**

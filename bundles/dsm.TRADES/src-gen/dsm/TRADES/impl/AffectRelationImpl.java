@@ -294,41 +294,12 @@ public class AffectRelationImpl extends NamedElementImpl implements AffectRelati
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetLink(Link newLink, NotificationChain msgs) {
-		Link oldLink = link;
-		link = newLink;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					TRADESPackage.AFFECT_RELATION__LINK, oldLink, newLink);
-			if (msgs == null)
-				msgs = notification;
-			else
-				msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public void setLink(Link newLink) {
-		if (newLink != link) {
-			NotificationChain msgs = null;
-			if (link != null)
-				msgs = ((InternalEObject) link).eInverseRemove(this, TRADESPackage.LINK__AFFECT_RELATIONS, Link.class,
-						msgs);
-			if (newLink != null)
-				msgs = ((InternalEObject) newLink).eInverseAdd(this, TRADESPackage.LINK__AFFECT_RELATIONS, Link.class,
-						msgs);
-			msgs = basicSetLink(newLink, msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TRADESPackage.AFFECT_RELATION__LINK, newLink,
-					newLink));
+		Link oldLink = link;
+		link = newLink;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TRADESPackage.AFFECT_RELATION__LINK, oldLink, link));
 	}
 
 	/**
@@ -367,11 +338,6 @@ public class AffectRelationImpl extends NamedElementImpl implements AffectRelati
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			return basicSetSourceComponent((Component) otherEnd, msgs);
-		case TRADESPackage.AFFECT_RELATION__LINK:
-			if (link != null)
-				msgs = ((InternalEObject) link).eInverseRemove(this, TRADESPackage.LINK__AFFECT_RELATIONS, Link.class,
-						msgs);
-			return basicSetLink((Link) otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -386,8 +352,6 @@ public class AffectRelationImpl extends NamedElementImpl implements AffectRelati
 		switch (featureID) {
 		case TRADESPackage.AFFECT_RELATION__SOURCE_COMPONENT:
 			return basicSetSourceComponent(null, msgs);
-		case TRADESPackage.AFFECT_RELATION__LINK:
-			return basicSetLink(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}

@@ -183,6 +183,7 @@ public class SemanticService {
 		return UUID.randomUUID().toString();
 	}
 
+
 	public static Data createData(DataOwnerElement element) {
 		DataOwner owner = element.getDataOwner();
 

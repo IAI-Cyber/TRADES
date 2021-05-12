@@ -22,7 +22,6 @@ import dsm.TRADES.Data;
 import dsm.TRADES.DataOwner;
 import dsm.TRADES.DataOwnerElement;
 import dsm.TRADES.Link;
-import dsm.TRADES.LinkOwner;
 import dsm.TRADES.NamedElement;
 import dsm.TRADES.TRADESPackage;
 import dsm.TRADES.ThreatAllocationRelation;
@@ -56,9 +55,9 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dsm.TRADES.impl.ComponentImpl#getDataOwner <em>Data Owner</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ComponentImpl#getName <em>Name</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ComponentImpl#getControlOwner <em>Control Owner</em>}</li>
- *   <li>{@link dsm.TRADES.impl.ComponentImpl#getLink <em>Link</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ComponentImpl#getThreatAllocations <em>Threat Allocations</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ComponentImpl#getAffectRelations <em>Affect Relations</em>}</li>
+ *   <li>{@link dsm.TRADES.impl.ComponentImpl#getLinks <em>Links</em>}</li>
  * </ul>
  *
  * @generated
@@ -105,16 +104,6 @@ public class ComponentImpl extends ComponentOwnerImpl implements Component {
 	protected ControlOwner controlOwner;
 
 	/**
-	 * The cached value of the '{@link #getLink() <em>Link</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLink()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Link> link;
-
-	/**
 	 * The cached value of the '{@link #getThreatAllocations() <em>Threat Allocations</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -133,6 +122,16 @@ public class ComponentImpl extends ComponentOwnerImpl implements Component {
 	 * @ordered
 	 */
 	protected EList<AffectRelation> affectRelations;
+
+	/**
+	 * The cached value of the '{@link #getLinks() <em>Links</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLinks()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Link> links;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -286,19 +285,6 @@ public class ComponentImpl extends ComponentOwnerImpl implements Component {
 	 * @generated
 	 */
 	@Override
-	public EList<Link> getLink() {
-		if (link == null) {
-			link = new EObjectContainmentEList<Link>(Link.class, this, TRADESPackage.COMPONENT__LINK);
-		}
-		return link;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EList<ThreatAllocationRelation> getThreatAllocations() {
 		if (threatAllocations == null) {
 			threatAllocations = new EObjectContainmentWithInverseEList<ThreatAllocationRelation>(
@@ -320,6 +306,19 @@ public class ComponentImpl extends ComponentOwnerImpl implements Component {
 					TRADESPackage.COMPONENT__AFFECT_RELATIONS, TRADESPackage.AFFECT_RELATION__SOURCE_COMPONENT);
 		}
 		return affectRelations;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<Link> getLinks() {
+		if (links == null) {
+			links = new EObjectContainmentEList<Link>(Link.class, this, TRADESPackage.COMPONENT__LINKS);
+		}
+		return links;
 	}
 
 	/**
@@ -400,12 +399,12 @@ public class ComponentImpl extends ComponentOwnerImpl implements Component {
 			return basicSetDataOwner(null, msgs);
 		case TRADESPackage.COMPONENT__CONTROL_OWNER:
 			return basicSetControlOwner(null, msgs);
-		case TRADESPackage.COMPONENT__LINK:
-			return ((InternalEList<?>) getLink()).basicRemove(otherEnd, msgs);
 		case TRADESPackage.COMPONENT__THREAT_ALLOCATIONS:
 			return ((InternalEList<?>) getThreatAllocations()).basicRemove(otherEnd, msgs);
 		case TRADESPackage.COMPONENT__AFFECT_RELATIONS:
 			return ((InternalEList<?>) getAffectRelations()).basicRemove(otherEnd, msgs);
+		case TRADESPackage.COMPONENT__LINKS:
+			return ((InternalEList<?>) getLinks()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -424,12 +423,12 @@ public class ComponentImpl extends ComponentOwnerImpl implements Component {
 			return getName();
 		case TRADESPackage.COMPONENT__CONTROL_OWNER:
 			return getControlOwner();
-		case TRADESPackage.COMPONENT__LINK:
-			return getLink();
 		case TRADESPackage.COMPONENT__THREAT_ALLOCATIONS:
 			return getThreatAllocations();
 		case TRADESPackage.COMPONENT__AFFECT_RELATIONS:
 			return getAffectRelations();
+		case TRADESPackage.COMPONENT__LINKS:
+			return getLinks();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -452,10 +451,6 @@ public class ComponentImpl extends ComponentOwnerImpl implements Component {
 		case TRADESPackage.COMPONENT__CONTROL_OWNER:
 			setControlOwner((ControlOwner) newValue);
 			return;
-		case TRADESPackage.COMPONENT__LINK:
-			getLink().clear();
-			getLink().addAll((Collection<? extends Link>) newValue);
-			return;
 		case TRADESPackage.COMPONENT__THREAT_ALLOCATIONS:
 			getThreatAllocations().clear();
 			getThreatAllocations().addAll((Collection<? extends ThreatAllocationRelation>) newValue);
@@ -463,6 +458,10 @@ public class ComponentImpl extends ComponentOwnerImpl implements Component {
 		case TRADESPackage.COMPONENT__AFFECT_RELATIONS:
 			getAffectRelations().clear();
 			getAffectRelations().addAll((Collection<? extends AffectRelation>) newValue);
+			return;
+		case TRADESPackage.COMPONENT__LINKS:
+			getLinks().clear();
+			getLinks().addAll((Collection<? extends Link>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -485,14 +484,14 @@ public class ComponentImpl extends ComponentOwnerImpl implements Component {
 		case TRADESPackage.COMPONENT__CONTROL_OWNER:
 			setControlOwner((ControlOwner) null);
 			return;
-		case TRADESPackage.COMPONENT__LINK:
-			getLink().clear();
-			return;
 		case TRADESPackage.COMPONENT__THREAT_ALLOCATIONS:
 			getThreatAllocations().clear();
 			return;
 		case TRADESPackage.COMPONENT__AFFECT_RELATIONS:
 			getAffectRelations().clear();
+			return;
+		case TRADESPackage.COMPONENT__LINKS:
+			getLinks().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -512,12 +511,12 @@ public class ComponentImpl extends ComponentOwnerImpl implements Component {
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		case TRADESPackage.COMPONENT__CONTROL_OWNER:
 			return controlOwner != null;
-		case TRADESPackage.COMPONENT__LINK:
-			return link != null && !link.isEmpty();
 		case TRADESPackage.COMPONENT__THREAT_ALLOCATIONS:
 			return threatAllocations != null && !threatAllocations.isEmpty();
 		case TRADESPackage.COMPONENT__AFFECT_RELATIONS:
 			return affectRelations != null && !affectRelations.isEmpty();
+		case TRADESPackage.COMPONENT__LINKS:
+			return links != null && !links.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -549,14 +548,6 @@ public class ComponentImpl extends ComponentOwnerImpl implements Component {
 			switch (derivedFeatureID) {
 			case TRADESPackage.COMPONENT__CONTROL_OWNER:
 				return TRADESPackage.ABSTRACT_CONTROL_OWNER__CONTROL_OWNER;
-			default:
-				return -1;
-			}
-		}
-		if (baseClass == LinkOwner.class) {
-			switch (derivedFeatureID) {
-			case TRADESPackage.COMPONENT__LINK:
-				return TRADESPackage.LINK_OWNER__LINK;
 			default:
 				return -1;
 			}
@@ -595,14 +586,6 @@ public class ComponentImpl extends ComponentOwnerImpl implements Component {
 				return -1;
 			}
 		}
-		if (baseClass == LinkOwner.class) {
-			switch (baseFeatureID) {
-			case TRADESPackage.LINK_OWNER__LINK:
-				return TRADESPackage.COMPONENT__LINK;
-			default:
-				return -1;
-			}
-		}
 		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
@@ -635,12 +618,6 @@ public class ComponentImpl extends ComponentOwnerImpl implements Component {
 			switch (baseOperationID) {
 			case TRADESPackage.ABSTRACT_CONTROL_OWNER___GET_ALL_CONTROLS:
 				return TRADESPackage.COMPONENT___GET_ALL_CONTROLS;
-			default:
-				return -1;
-			}
-		}
-		if (baseClass == LinkOwner.class) {
-			switch (baseOperationID) {
 			default:
 				return -1;
 			}

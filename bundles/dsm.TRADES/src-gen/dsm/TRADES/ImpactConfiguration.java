@@ -13,8 +13,6 @@
  */
 package dsm.TRADES;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Impact Configuration</b></em>'.
@@ -26,14 +24,13 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link dsm.TRADES.ImpactConfiguration#getDifficulty <em>Difficulty</em>}</li>
  *   <li>{@link dsm.TRADES.ImpactConfiguration#getImpact <em>Impact</em>}</li>
- *   <li>{@link dsm.TRADES.ImpactConfiguration#getColor <em>Color</em>}</li>
  * </ul>
  *
  * @see dsm.TRADES.TRADESPackage#getImpactConfiguration()
  * @model
  * @generated
  */
-public interface ImpactConfiguration extends EObject {
+public interface ImpactConfiguration extends ColoredElement {
 	/**
 	 * Returns the value of the '<em><b>Difficulty</b></em>' reference.
 	 * <!-- begin-user-doc -->
@@ -79,28 +76,5 @@ public interface ImpactConfiguration extends EObject {
 	 * @generated
 	 */
 	void setImpact(ImpactScore value);
-
-	/**
-	 * Returns the value of the '<em><b>Color</b></em>' attribute.
-	 * The default value is <code>"#FFFFFF"</code>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Color</em>' attribute.
-	 * @see #setColor(RGBColor)
-	 * @see dsm.TRADES.TRADESPackage#getImpactConfiguration_Color()
-	 * @model default="#FFFFFF" dataType="dsm.TRADES.RGBColor"
-	 * @generated
-	 */
-	RGBColor getColor();
-
-	/**
-	 * Sets the value of the '{@link dsm.TRADES.ImpactConfiguration#getColor <em>Color</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Color</em>' attribute.
-	 * @see #getColor()
-	 * @generated
-	 */
-	void setColor(RGBColor value);
 
 } // ImpactConfiguration

@@ -22,6 +22,7 @@ import dsm.TRADES.AssessmentENUM;
 import dsm.TRADES.AttackChain;
 import dsm.TRADES.AttackChainStep;
 import dsm.TRADES.Catalog;
+import dsm.TRADES.ColoredElement;
 import dsm.TRADES.Component;
 import dsm.TRADES.ComponentOwner;
 import dsm.TRADES.Control;
@@ -41,9 +42,7 @@ import dsm.TRADES.IThreatDefinition;
 import dsm.TRADES.ImpactConfiguration;
 import dsm.TRADES.ImpactScore;
 import dsm.TRADES.Link;
-import dsm.TRADES.LinkOwner;
 import dsm.TRADES.LinkType;
-import dsm.TRADES.LinkTypeOwner;
 import dsm.TRADES.NamedElement;
 import dsm.TRADES.RGBColor;
 import dsm.TRADES.ScoreSystem;
@@ -256,21 +255,7 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass linkOwnerEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass linkTypeEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass linkTypeOwnerEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -313,6 +298,13 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * @generated
 	 */
 	private EClass iMitigationLinkEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass coloredElementEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -450,6 +442,16 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * @generated
 	 */
 	@Override
+	public EReference getAnalysis_LinkTypes() {
+		return (EReference) analysisEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EOperation getAnalysis__GetExternalThreat__String_String() {
 		return analysisEClass.getEOperations().get(0);
 	}
@@ -562,6 +564,16 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	@Override
 	public EReference getComponent_AffectRelations() {
 		return (EReference) componentEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getComponent_Links() {
+		return (EReference) componentEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1200,16 +1212,6 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getImpactConfiguration_Color() {
-		return (EAttribute) impactConfigurationEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getExternalControl() {
 		return externalControlEClass;
 	}
@@ -1340,7 +1342,7 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getLink_AffectRelations() {
+	public EReference getLink_LinkType() {
 		return (EReference) linkEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -1350,7 +1352,7 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getLink_Linktype() {
+	public EReference getLink_LinkConveyed() {
 		return (EReference) linkEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -1360,7 +1362,7 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getLink_LinkConveyed() {
+	public EReference getLink_ConveyingLink() {
 		return (EReference) linkEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -1370,28 +1372,8 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getLink_ConveyingLink() {
+	public EReference getLink_Components() {
 		return (EReference) linkEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getLinkOwner() {
-		return linkOwnerEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getLinkOwner_Link() {
-		return (EReference) linkOwnerEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1402,26 +1384,6 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	@Override
 	public EClass getLinkType() {
 		return linkTypeEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getLinkTypeOwner() {
-		return linkTypeOwnerEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getLinkTypeOwner_Linktype() {
-		return (EReference) linkTypeOwnerEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1640,6 +1602,26 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * @generated
 	 */
 	@Override
+	public EClass getColoredElement() {
+		return coloredElementEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getColoredElement_Color() {
+		return (EAttribute) coloredElementEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EEnum getAssessmentENUM() {
 		return assessmentENUMEEnum;
 	}
@@ -1716,6 +1698,7 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		// Create classes and their features
 		analysisEClass = createEClass(ANALYSIS);
 		createEReference(analysisEClass, ANALYSIS__SCORE_SYSTEM);
+		createEReference(analysisEClass, ANALYSIS__LINK_TYPES);
 		createEOperation(analysisEClass, ANALYSIS___GET_EXTERNAL_THREAT__STRING_STRING);
 		createEOperation(analysisEClass, ANALYSIS___GET_EXTERNAL_CONTROL__STRING_STRING);
 
@@ -1730,6 +1713,7 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		componentEClass = createEClass(COMPONENT);
 		createEReference(componentEClass, COMPONENT__THREAT_ALLOCATIONS);
 		createEReference(componentEClass, COMPONENT__AFFECT_RELATIONS);
+		createEReference(componentEClass, COMPONENT__LINKS);
 
 		controlEClass = createEClass(CONTROL);
 		createEReference(controlEClass, CONTROL__MITIGATED_THREATS);
@@ -1810,7 +1794,6 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		impactConfigurationEClass = createEClass(IMPACT_CONFIGURATION);
 		createEReference(impactConfigurationEClass, IMPACT_CONFIGURATION__DIFFICULTY);
 		createEReference(impactConfigurationEClass, IMPACT_CONFIGURATION__IMPACT);
-		createEAttribute(impactConfigurationEClass, IMPACT_CONFIGURATION__COLOR);
 
 		externalControlEClass = createEClass(EXTERNAL_CONTROL);
 
@@ -1830,18 +1813,12 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		createEReference(dataOwnerEClass, DATA_OWNER__DATA);
 
 		linkEClass = createEClass(LINK);
-		createEReference(linkEClass, LINK__AFFECT_RELATIONS);
-		createEReference(linkEClass, LINK__LINKTYPE);
+		createEReference(linkEClass, LINK__LINK_TYPE);
 		createEReference(linkEClass, LINK__LINK_CONVEYED);
 		createEReference(linkEClass, LINK__CONVEYING_LINK);
-
-		linkOwnerEClass = createEClass(LINK_OWNER);
-		createEReference(linkOwnerEClass, LINK_OWNER__LINK);
+		createEReference(linkEClass, LINK__COMPONENTS);
 
 		linkTypeEClass = createEClass(LINK_TYPE);
-
-		linkTypeOwnerEClass = createEClass(LINK_TYPE_OWNER);
-		createEReference(linkTypeOwnerEClass, LINK_TYPE_OWNER__LINKTYPE);
 
 		catalogEClass = createEClass(CATALOG);
 
@@ -1869,6 +1846,9 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		iMitigationLinkEClass = createEClass(IMITIGATION_LINK);
 		createEOperation(iMitigationLinkEClass, IMITIGATION_LINK___GET_DESCRIPTION);
 		createEOperation(iMitigationLinkEClass, IMITIGATION_LINK___GET_THREAT);
+
+		coloredElementEClass = createEClass(COLORED_ELEMENT);
+		createEAttribute(coloredElementEClass, COLORED_ELEMENT__COLOR);
 
 		// Create enums
 		assessmentENUMEEnum = createEEnum(ASSESSMENT_ENUM);
@@ -1917,14 +1897,12 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		analysisEClass.getESuperTypes().add(this.getNamedElement());
 		analysisEClass.getESuperTypes().add(this.getAbstractControlOwner());
 		analysisEClass.getESuperTypes().add(this.getAbstractThreatOwner());
-		analysisEClass.getESuperTypes().add(this.getLinkTypeOwner());
 		threatEClass.getESuperTypes().add(this.getNamedElement());
 		threatEClass.getESuperTypes().add(this.getIThreatDefinition());
 		componentEClass.getESuperTypes().add(this.getComponentOwner());
 		componentEClass.getESuperTypes().add(this.getDataOwnerElement());
 		componentEClass.getESuperTypes().add(this.getNamedElement());
 		componentEClass.getESuperTypes().add(this.getAbstractControlOwner());
-		componentEClass.getESuperTypes().add(this.getLinkOwner());
 		controlEClass.getESuperTypes().add(this.getNamedElement());
 		controlEClass.getESuperTypes().add(this.getIControlDefinition());
 		threatMitigationRelationEClass.getESuperTypes().add(this.getIMitigationLink());
@@ -1936,10 +1914,12 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		difficultyScoreEClass.getESuperTypes().add(this.getNamedElement());
 		externalThreatEClass.getESuperTypes().add(this.getThreat());
 		externalThreatEClass.getESuperTypes().add(this.getExternalElement());
+		impactConfigurationEClass.getESuperTypes().add(this.getColoredElement());
 		externalControlEClass.getESuperTypes().add(this.getExternalElement());
 		externalControlEClass.getESuperTypes().add(this.getControl());
 		linkEClass.getESuperTypes().add(this.getNamedElement());
 		linkTypeEClass.getESuperTypes().add(this.getNamedElement());
+		linkTypeEClass.getESuperTypes().add(this.getColoredElement());
 		catalogEClass.getESuperTypes().add(this.getAbstractThreatOwner());
 		catalogEClass.getESuperTypes().add(this.getAbstractControlOwner());
 		catalogEClass.getESuperTypes().add(this.getNamedElement());
@@ -1951,6 +1931,9 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		initEReference(getAnalysis_ScoreSystem(), this.getScoreSystem(), null, "scoreSystem", null, 0, 1,
 				Analysis.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAnalysis_LinkTypes(), this.getLinkType(), null, "linkTypes", null, 0, -1, Analysis.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		EOperation op = initEOperation(getAnalysis__GetExternalThreat__String_String(), this.getExternalThreat(),
 				"getExternalThreat", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -1991,6 +1974,9 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 				this.getAffectRelation_SourceComponent(), "affectRelations", null, 0, -1, Component.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getComponent_Links(), this.getLink(), null, "links", null, 0, -1, Component.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
 
 		initEClass(controlEClass, Control.class, "Control", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getControl_MitigatedThreats(), this.getThreat(), null, "mitigatedThreats", null, 0, -1,
@@ -2068,9 +2054,9 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		initEAttribute(getAffectRelation_AnalysisStatus(), this.getAffectedENUM(), "analysisStatus", "Confirmed", 1, 1,
 				AffectRelation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
-		initEReference(getAffectRelation_Link(), this.getLink(), this.getLink_AffectRelations(), "link", null, 0, 1,
-				AffectRelation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAffectRelation_Link(), this.getLink(), null, "link", null, 0, 1, AffectRelation.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		op = initEOperation(getAffectRelation__CheckDataScope__DiagnosticChain_Map(), ecorePackage.getEBoolean(),
 				"checkDataScope", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -2179,9 +2165,6 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		initEReference(getImpactConfiguration_Impact(), this.getImpactScore(), this.getImpactScore_Configurations(),
 				"impact", null, 1, 1, ImpactConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
 				!IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getImpactConfiguration_Color(), this.getRGBColor(), "color", "#FFFFFF", 0, 1,
-				ImpactConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(externalControlEClass, ExternalControl.class, "ExternalControl", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
@@ -2220,10 +2203,7 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 				IS_ORDERED);
 
 		initEClass(linkEClass, Link.class, "Link", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getLink_AffectRelations(), this.getAffectRelation(), this.getAffectRelation_Link(),
-				"affectRelations", null, 0, -1, Link.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
-				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getLink_Linktype(), this.getLinkType(), null, "linktype", null, 1, 1, Link.class, !IS_TRANSIENT,
+		initEReference(getLink_LinkType(), this.getLinkType(), null, "linkType", null, 1, 1, Link.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
 		initEReference(getLink_LinkConveyed(), this.getLink(), this.getLink_ConveyingLink(), "linkConveyed", null, 0,
@@ -2232,21 +2212,12 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		initEReference(getLink_ConveyingLink(), this.getLink(), this.getLink_LinkConveyed(), "conveyingLink", null, 0,
 				-1, Link.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(linkOwnerEClass, LinkOwner.class, "LinkOwner", !IS_ABSTRACT, !IS_INTERFACE,
-				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getLinkOwner_Link(), this.getLink(), null, "link", null, 0, -1, LinkOwner.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
+		initEReference(getLink_Components(), this.getComponent(), null, "components", null, 0, -1, Link.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(linkTypeEClass, LinkType.class, "LinkType", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(linkTypeOwnerEClass, LinkTypeOwner.class, "LinkTypeOwner", !IS_ABSTRACT, !IS_INTERFACE,
-				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getLinkTypeOwner_Linktype(), this.getLinkType(), null, "linktype", null, 0, -1,
-				LinkTypeOwner.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(catalogEClass, Catalog.class, "Catalog", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -2311,6 +2282,11 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 
 		initEOperation(getIMitigationLink__GetThreat(), this.getIThreatDefinition(), "getThreat", 0, 1, IS_UNIQUE,
 				IS_ORDERED);
+
+		initEClass(coloredElementEClass, ColoredElement.class, "ColoredElement", IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getColoredElement_Color(), this.getRGBColor(), "color", "#AAAAAA", 0, 1, ColoredElement.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(assessmentENUMEEnum, AssessmentENUM.class, "AssessmentENUM");

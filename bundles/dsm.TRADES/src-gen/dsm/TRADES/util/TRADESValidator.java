@@ -179,12 +179,8 @@ public class TRADESValidator extends EObjectValidator {
 			return validateDataOwner((DataOwner) value, diagnostics, context);
 		case TRADESPackage.LINK:
 			return validateLink((Link) value, diagnostics, context);
-		case TRADESPackage.LINK_OWNER:
-			return validateLinkOwner((LinkOwner) value, diagnostics, context);
 		case TRADESPackage.LINK_TYPE:
 			return validateLinkType((LinkType) value, diagnostics, context);
-		case TRADESPackage.LINK_TYPE_OWNER:
-			return validateLinkTypeOwner((LinkTypeOwner) value, diagnostics, context);
 		case TRADESPackage.CATALOG:
 			return validateCatalog((Catalog) value, diagnostics, context);
 		case TRADESPackage.ABSTRACT_THREAT_OWNER:
@@ -197,6 +193,8 @@ public class TRADESValidator extends EObjectValidator {
 			return validateICatalogDefinition((ICatalogDefinition) value, diagnostics, context);
 		case TRADESPackage.IMITIGATION_LINK:
 			return validateIMitigationLink((IMitigationLink) value, diagnostics, context);
+		case TRADESPackage.COLORED_ELEMENT:
+			return validateColoredElement((ColoredElement) value, diagnostics, context);
 		case TRADESPackage.ASSESSMENT_ENUM:
 			return validateAssessmentENUM((AssessmentENUM) value, diagnostics, context);
 		case TRADESPackage.AFFECTED_ENUM:
@@ -600,27 +598,8 @@ public class TRADESValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateLinkOwner(LinkOwner linkOwner, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(linkOwner, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public boolean validateLinkType(LinkType linkType, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(linkType, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateLinkTypeOwner(LinkTypeOwner linkTypeOwner, DiagnosticChain diagnostics,
-			Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(linkTypeOwner, diagnostics, context);
 	}
 
 	/**
@@ -680,6 +659,16 @@ public class TRADESValidator extends EObjectValidator {
 	public boolean validateIMitigationLink(IMitigationLink iMitigationLink, DiagnosticChain diagnostics,
 			Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(iMitigationLink, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateColoredElement(ColoredElement coloredElement, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(coloredElement, diagnostics, context);
 	}
 
 	/**

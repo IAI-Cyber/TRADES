@@ -16,6 +16,7 @@ package dsm.TRADES.presentation;
 import org.eclipse.emf.common.EMFPlugin;
 import org.eclipse.emf.common.ui.EclipseUIPlugin;
 import org.eclipse.emf.common.util.ResourceLocator;
+import org.eclipse.emf.ecore.provider.EcoreEditPlugin;
 
 /**
  * This is the central singleton for the TRADES editor plugin.
@@ -47,7 +48,7 @@ public final class TRADESEditorPlugin extends EMFPlugin {
 	 * @generated
 	 */
 	public TRADESEditorPlugin() {
-		super(new ResourceLocator[] {});
+		super(new ResourceLocator[] { EcoreEditPlugin.INSTANCE, });
 	}
 
 	/**

@@ -23,5 +23,5 @@ package dsm.TRADES;
  * @model
  * @generated
  */
-public interface LinkType extends NamedElement {
+public interface LinkType extends NamedElement, ColoredElement {
 } // LinkType
