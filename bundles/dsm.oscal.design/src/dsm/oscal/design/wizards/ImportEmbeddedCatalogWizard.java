@@ -154,13 +154,7 @@ public class ImportEmbeddedCatalogWizard extends Wizard implements IImportWizard
 		URI oscalLibURI = ImportTradesModelWizard.getCatalogFolderURI(repUri)
 				.appendSegment(URI.encodeSegment(oscalLibName, false) + ".oscal");
 		TransactionalEditingDomain transactionalEditingDomain = session.getTransactionalEditingDomain();
-		ResourceSet resourceSet = transactionalEditingDomain.getResourceSet();
-		Resource existingResource = resourceSet.getResource(oscalLibURI, false);
-		if (existingResource != null) {
-			catalogSelectionPage.setErrorMessage("This catalog already exist");
-			return false;
-		}
-		catalogSelectionPage.setErrorMessage(null);
+
 		try {
 			getContainer().run(false, false, monitor -> {
 
@@ -170,15 +164,30 @@ public class ImportEmbeddedCatalogWizard extends Wizard implements IImportWizard
 
 					@Override
 					protected void doExecute() {
-						Resource newResource = resourceSet.createResource(oscalLibURI);
+						ResourceSet resourceSet = transactionalEditingDomain.getResourceSet();
+						Resource existingResource = resourceSet.getResource(oscalLibURI, false);
+						if (existingResource == null) {
+							existingResource = resourceSet.createResource(oscalLibURI);
+						} else {
+							// At the time of implementation there is no link between the other mother to
+							// this model neither any Sirius representation.
+							// This simple implementation works but need to be improved if:
+							// * Some proxy are used to reference element in that model
+							// * Some representation are displaying item in this model
+							existingResource.getContents().clear();
+							// At the time of this implementation the link between ExternalControl and
+							// OscalControl are made using simple EString see CatalogElementURI. In those
+							// URI the id used a semantic so they should not change
+						}
 						monitor.setTaskName("Converting to EMF Model");
 						Catalog migratedCatalog = new OSCALTransformer().importCatalog(libPath);
-						newResource.getContents().add(migratedCatalog);
+						existingResource.getContents().add(migratedCatalog);
+
 						session.addSemanticResource(oscalLibURI, new NullProgressMonitor());
 						monitor.worked(1);
 						try {
 							monitor.setTaskName("Saving the resource");
-							newResource.save(Collections.emptyMap());
+							existingResource.save(Collections.emptyMap());
 							monitor.worked(1);
 						} catch (IOException e) {
 							Activator.logError("Problem while saving catalog " + e.getMessage(), e);

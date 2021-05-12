@@ -16,16 +16,15 @@ package dsm.oscal.design.service;
 
 import java.text.MessageFormat;
 
-import org.eclipse.emf.ecore.EObject;
-
 import TRADES.design.ExtThreatServices;
 import dsm.TRADES.AbstractControlOwner;
+import dsm.TRADES.CatalogElementURI;
 import dsm.TRADES.ControlOwner;
 import dsm.TRADES.ExternalControl;
 import dsm.TRADES.TRADESFactory;
 import dsm.TRADES.util.EcoreUtils;
+import dsm.oscal.design.Activator;
 import dsm.oscal.model.OscalCatalog.Catalog;
-import dsm.oscal.model.OscalMetadata.Metadata;
 import gov.nist.secauto.metaschema.datatypes.markup.MarkupLine;
 
 public class OscalDesignService {
@@ -33,12 +32,17 @@ public class OscalDesignService {
 	public static ExternalControl createControl(dsm.oscal.model.OscalCatalog.Control control,
 			AbstractControlOwner owner) {
 
-		String catalogTitle = getCatalogTitle(control);
+		 Catalog catalog = EcoreUtils.getAncestor(control, Catalog.class);
+			String catalogIdentifier = catalog.getIdentifier();
+		if (catalogIdentifier == null) {
+			Activator.logError("Invalid catalog definition : no catalog UUID");
+			return null;
+		}
 		String controlId = control.getId();
-		if (!owner.getExternalControls(controlId, catalogTitle).isEmpty()) {
+		if (!owner.getExternalControls(controlId, catalogIdentifier).isEmpty()) {
 			if (!ExtThreatServices.confirm("Existing External Control", MessageFormat.format(
 					"An external control with id ''{1}'' (from ''{0}'') already exist in ''{2}''. Do you want to import a new instance?",
-					catalogTitle, controlId, ExtThreatServices.getControlOwnerLabel(owner)))) {
+					catalogIdentifier, controlId, ExtThreatServices.getControlOwnerLabel(owner)))) {
 				return null;
 			}
 		}
@@ -51,8 +55,9 @@ public class OscalDesignService {
 		extControl.setDescription(control.computeDocumentation());
 		extControl.setId(control.getId());
 
-		extControl.setSource(catalogTitle);
-		extControl.setLink(ExtThreatServices.createURIRepresentation(control));
+		extControl.setSource(catalog.getName());
+		extControl.setSourceID(catalogIdentifier);
+		extControl.setLink(CatalogElementURI.createCatalogControlURI(catalogIdentifier, control.getId()).toString());
 
 		ControlOwner controlOwner = owner.getControlOwner();
 		if (controlOwner == null) {
@@ -63,18 +68,5 @@ public class OscalDesignService {
 		return extControl;
 	}
 
-	private static String getCatalogTitle(EObject source) {
-		Catalog ancestor = EcoreUtils.getAncestor(source, Catalog.class);
-		if (ancestor != null) {
-			Metadata metadata = ancestor.getMetadata();
-			if (metadata != null) {
-				MarkupLine title = metadata.getTitle();
-				if (title != null) {
-					return title.toMarkdown();
-				}
-			}
-		}
-		return null;
-	}
 
 }

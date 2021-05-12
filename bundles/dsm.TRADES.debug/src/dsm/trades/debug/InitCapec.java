@@ -122,6 +122,7 @@ public class InitCapec implements IApplication {
 		String oritinalId = parent.getAttribute("ID");
 		extPattern.setId("Capec_" + oritinalId);
 		extPattern.setSource("Capec");
+		extPattern.setSourceID("Capec");
 		extPattern.setLink(SITE_PREFIX + oritinalId + ".html");
 		NodeList children = parent.getChildNodes();
 		String description = "";

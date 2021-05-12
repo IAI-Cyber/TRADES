@@ -70,6 +70,6 @@ public interface AbstractControlOwner extends EObject {
 	 * @model
 	 * @generated
 	 */
-	EList<ExternalControl> getExternalControls(String id, String source);
+	EList<ExternalControl> getExternalControls(String id, String catalogIdentifier);
 
 } // AbstractControlOwner

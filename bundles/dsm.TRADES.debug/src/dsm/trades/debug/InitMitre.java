@@ -112,6 +112,7 @@ public class InitMitre implements IApplication {
 										threat.setId(UUID.randomUUID().toString());
 									}
 									threat.setSource(analysisName);
+									threat.setSourceID(analysisName);
 									threat.setLink(ext.getUrl());
 								}, () -> {
 									System.err.println("No id for threat " + m.getName());
@@ -138,6 +139,7 @@ public class InitMitre implements IApplication {
 											control.setId(UUID.randomUUID().toString());
 										}
 										control.setSource(analysisName);
+										control.setSourceID(analysisName);
 										control.setLink(ext.getUrl());
 									}, () -> {
 										System.err.println("No id for control " + m.getName());

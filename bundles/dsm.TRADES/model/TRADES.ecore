@@ -7,7 +7,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="Analysis" eSuperTypes="#//ComponentOwner #//DataOwnerElement #//NamedElement #//AbstractControlOwner #//AbstractThreatOwner">
     <eOperations name="getExternalThreats" upperBound="-1" eType="#//ExternalThreat">
       <eParameters name="id" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
-      <eParameters name="source" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+      <eParameters name="catalogIdentifier" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
     </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="scoreSystem" eType="#//ScoreSystem"
         containment="true"/>
@@ -160,6 +160,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="ExternalElement" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="source" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="link" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sourceID" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ImpactConfiguration" eSuperTypes="#//ColoredElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="difficulty" lowerBound="1"
@@ -185,7 +186,7 @@
     <eOperations name="getAllControls" upperBound="-1" eType="#//Control"/>
     <eOperations name="getExternalControls" upperBound="-1" eType="#//ExternalControl">
       <eParameters name="id" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
-      <eParameters name="source" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+      <eParameters name="catalogIdentifier" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
     </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="controlOwner" eType="#//ControlOwner"
         containment="true"/>
@@ -247,6 +248,7 @@
       </eAnnotations>
     </eOperations>
     <eOperations name="getIdentifier" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eOperations name="getName" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IMitigationLink" abstract="true" interface="true">
     <eOperations name="getDescription" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>

@@ -74,4 +74,12 @@ public interface ICatalogDefinition extends EObject {
 	 */
 	String getIdentifier();
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation"
+	 * @generated
+	 */
+	String getName();
+
 } // ICatalogDefinition

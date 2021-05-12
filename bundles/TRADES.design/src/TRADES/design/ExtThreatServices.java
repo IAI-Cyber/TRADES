@@ -36,6 +36,7 @@ import org.eclipse.ui.PlatformUI;
 import dsm.TRADES.AbstractControlOwner;
 import dsm.TRADES.Analysis;
 import dsm.TRADES.Catalog;
+import dsm.TRADES.CatalogElementURI;
 import dsm.TRADES.Component;
 import dsm.TRADES.Control;
 import dsm.TRADES.ExternalControl;
@@ -96,23 +97,6 @@ public class ExtThreatServices {
 	}
 
 	/**
-	 * Creates a nice String representation of a Platfome Resource URI
-	 * 
-	 * @param o
-	 * @return
-	 */
-	public static String createURIRepresentation(EObject o) {
-		Resource eResource = o.eResource();
-		if (eResource.getURI().isPlatformResource()) {
-			URI uri = eResource.getURI().appendFragment(eResource.getURIFragment(o));
-			return URI.decode(uri.toString());
-		} else {
-			return null;
-		}
-
-	}
-
-	/**
 	 * Copy an external threat inside my analysis
 	 * 
 	 * @param analysis current analysis
@@ -121,10 +105,10 @@ public class ExtThreatServices {
 	 */
 	public Threat copyTreat(Analysis analysis, ExternalThreat source) {
 
-		if (!analysis.getExternalThreats(source.getId(), source.getSource()).isEmpty()) {
+		if (!analysis.getExternalThreats(source.getId(), source.getSourceID()).isEmpty()) {
 			if (!confirm("Existing External Threat", MessageFormat.format(
 					"An external threat with id ''{1}'' (from ''{0}'') already exist. Do you want to import a new instance?",
-					source.getSource(), source.getId()))) {
+					source.getSourceID(), source.getId()))) {
 				return null;
 			}
 		}
@@ -138,12 +122,9 @@ public class ExtThreatServices {
 		}
 
 		ICatalogDefinition catalog = EcoreUtils.getAncestor(source, ICatalogDefinition.class);
-		result.setSource(catalog.getIdentifier());
-
-		if (source.eResource().getURI().isPlatformResource()) {
-			result.setLink(createURIRepresentation(source));
-		}
-
+		result.setSource(catalog.getName());
+		result.setSourceID(catalog.getIdentifier());
+		result.setLink(CatalogElementURI.createCatalogThreatURI(catalog.getIdentifier(), source.getId()).toString());
 		threatOwner.getExternals().add(result);
 
 		for (IControlDefinition def : catalog.getControlDefinitions()) {
@@ -217,14 +198,14 @@ public class ExtThreatServices {
 
 			ExternalControl matchingControl = TRADESFactory.eINSTANCE.createExternalControl();
 			matchingControl.setName(source.getName());
-			matchingControl.setSource(catalogDef.getIdentifier());
+			matchingControl.setSource(catalogDef.getName());
+			matchingControl.setSourceID(catalogDef.getIdentifier());
 			String id = source.getId();
 			matchingControl.setId(id);
 			matchingControl.setDescription(source.getDescription());
 
-			if (source.eResource().getURI().isPlatformResource()) {
-				matchingControl.setLink(createURIRepresentation(source));
-			}
+			matchingControl
+					.setLink(CatalogElementURI.createCatalogControlURI(catalogDef.getIdentifier(), id).toString());
 
 			SemanticUtil.addControl(controlOwner, matchingControl);
 
@@ -238,9 +219,7 @@ public class ExtThreatServices {
 							catalogDef.getIdentifier());
 
 					for (ExternalThreat matchingThreat : matchingThreats) {
-//						if (!isExistingLink(matchingControl, link)) {
 						createMigitationLink(matchingControl, link, matchingThreat);
-//						}
 					}
 				}
 			}
@@ -261,15 +240,15 @@ public class ExtThreatServices {
 
 	public List<IControlDefinition> getLinkedControlInDataBases(ExternalThreat ext) {
 
-		String source = ext.getSource();
+		String sourceId = ext.getSourceID();
 		String id = ext.getId();
-		if (id == null || source == null) {
+		if (id == null || sourceId == null) {
 			return Collections.emptyList();
 		}
 
 		List<IControlDefinition> controls = new ArrayList<IControlDefinition>();
 		for (ICatalogDefinition c : getAvailableExternalServices(ext)) {
-			if (source.equals(c.getIdentifier())) {
+			if (sourceId.equals(c.getIdentifier())) {
 				for (IControlDefinition controlDef : c.getControlDefinitions()) {
 					for (IMitigationLink link : controlDef.getMitigatedThreatDefinitions()) {
 						IThreatDefinition linkedThreat = link.getThreat();
@@ -288,31 +267,25 @@ public class ExtThreatServices {
 	public static void displayLink(EObject any, String s) {
 
 		if (s != null && !s.isBlank()) {
-			try {
-
-				EObject target = getResovledTarget(any, s);
-				if (target != null) {
-					DiagramService.revealInModelExplorer(target);
-					return;
+			CatalogElementURI catalogURI = CatalogElementURI.fromString(s);
+			if (catalogURI != null) {
+				List<ICatalogDefinition> catalogs = Session.of(any).get().getSemanticResources().stream()
+						.filter(r -> !r.getContents().isEmpty() && r.getContents().get(0) instanceof ICatalogDefinition)
+						.map(r -> (ICatalogDefinition) r.getContents().get(0)).collect(toList());
+				List<EObject> targets = catalogURI.resolveElementFromCatalog(catalogs);
+				if (!targets.isEmpty()) {
+					DiagramService.revealInModelExplorer(targets.get(0));
 				}
-			} catch (IllegalArgumentException e) {
-				// Nothing to do use fallback
-
+			} else {
+				try {
+					Desktop.getDesktop().browse(java.net.URI.create(s));
+				} catch (IOException e2) {
+					Activator.logError("Problem while open link " + s, e2);
+				}
 			}
 		}
 
-		try {
-			Desktop.getDesktop().browse(java.net.URI.create(s));
-		} catch (IOException e2) {
-			Activator.logError("Problem while open link " + s, e2);
-		}
 
-	}
-
-	public static EObject getResovledTarget(EObject any, String s) {
-		URI uri = URI.createURI(s, false);
-		EObject target = Session.of(any).get().getTransactionalEditingDomain().getResourceSet().getEObject(uri, false);
-		return target;
 	}
 
 }

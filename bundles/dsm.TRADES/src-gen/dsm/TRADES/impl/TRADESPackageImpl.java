@@ -1172,6 +1172,16 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * @generated
 	 */
 	@Override
+	public EAttribute getExternalElement_SourceID() {
+		return (EAttribute) externalElementEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getImpactConfiguration() {
 		return impactConfigurationEClass;
 	}
@@ -1572,6 +1582,16 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * @generated
 	 */
 	@Override
+	public EOperation getICatalogDefinition__GetName() {
+		return iCatalogDefinitionEClass.getEOperations().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getIMitigationLink() {
 		return iMitigationLinkEClass;
 	}
@@ -1789,6 +1809,7 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		externalElementEClass = createEClass(EXTERNAL_ELEMENT);
 		createEAttribute(externalElementEClass, EXTERNAL_ELEMENT__SOURCE);
 		createEAttribute(externalElementEClass, EXTERNAL_ELEMENT__LINK);
+		createEAttribute(externalElementEClass, EXTERNAL_ELEMENT__SOURCE_ID);
 
 		impactConfigurationEClass = createEClass(IMPACT_CONFIGURATION);
 		createEReference(impactConfigurationEClass, IMPACT_CONFIGURATION__DIFFICULTY);
@@ -1842,6 +1863,7 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		createEOperation(iCatalogDefinitionEClass, ICATALOG_DEFINITION___GET_THREAT_DEFINITIONS);
 		createEOperation(iCatalogDefinitionEClass, ICATALOG_DEFINITION___GET_CONTROL_DEFINITIONS);
 		createEOperation(iCatalogDefinitionEClass, ICATALOG_DEFINITION___GET_IDENTIFIER);
+		createEOperation(iCatalogDefinitionEClass, ICATALOG_DEFINITION___GET_NAME);
 
 		iMitigationLinkEClass = createEClass(IMITIGATION_LINK);
 		createEOperation(iMitigationLinkEClass, IMITIGATION_LINK___GET_DESCRIPTION);
@@ -1938,7 +1960,7 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		EOperation op = initEOperation(getAnalysis__GetExternalThreats__String_String(), this.getExternalThreat(),
 				"getExternalThreats", 0, -1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theEcorePackage.getEString(), "id", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theEcorePackage.getEString(), "source", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theEcorePackage.getEString(), "catalogIdentifier", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(threatEClass, Threat.class, "Threat", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getThreat_ThreatAllocations(), this.getThreatAllocationRelation(),
@@ -2151,6 +2173,9 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 				!IS_DERIVED, IS_ORDERED);
 		initEAttribute(getExternalElement_Link(), ecorePackage.getEString(), "link", null, 0, 1, ExternalElement.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getExternalElement_SourceID(), theEcorePackage.getEString(), "sourceID", null, 0, 1,
+				ExternalElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 
 		initEClass(impactConfigurationEClass, ImpactConfiguration.class, "ImpactConfiguration", !IS_ABSTRACT,
 				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -2194,7 +2219,7 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		op = initEOperation(getAbstractControlOwner__GetExternalControls__String_String(), this.getExternalControl(),
 				"getExternalControls", 0, -1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theEcorePackage.getEString(), "id", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theEcorePackage.getEString(), "source", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theEcorePackage.getEString(), "catalogIdentifier", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(dataOwnerEClass, DataOwner.class, "DataOwner", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
@@ -2273,6 +2298,9 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 
 		initEOperation(getICatalogDefinition__GetIdentifier(), theEcorePackage.getEString(), "getIdentifier", 0, 1,
 				IS_UNIQUE, IS_ORDERED);
+
+		initEOperation(getICatalogDefinition__GetName(), theEcorePackage.getEString(), "getName", 0, 1, IS_UNIQUE,
+				IS_ORDERED);
 
 		initEClass(iMitigationLinkEClass, IMitigationLink.class, "IMitigationLink", IS_ABSTRACT, IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);

@@ -33,6 +33,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <ul>
  *   <li>{@link dsm.TRADES.impl.ExternalThreatImpl#getSource <em>Source</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ExternalThreatImpl#getLink <em>Link</em>}</li>
+ *   <li>{@link dsm.TRADES.impl.ExternalThreatImpl#getSourceID <em>Source ID</em>}</li>
  * </ul>
  *
  * @generated
@@ -77,6 +78,26 @@ public class ExternalThreatImpl extends ThreatCustomImpl implements ExternalThre
 	 * @ordered
 	 */
 	protected String link = LINK_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getSourceID() <em>Source ID</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSourceID()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String SOURCE_ID_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getSourceID() <em>Source ID</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSourceID()
+	 * @generated
+	 * @ordered
+	 */
+	protected String sourceID = SOURCE_ID_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -150,12 +171,38 @@ public class ExternalThreatImpl extends ThreatCustomImpl implements ExternalThre
 	 * @generated
 	 */
 	@Override
+	public String getSourceID() {
+		return sourceID;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setSourceID(String newSourceID) {
+		String oldSourceID = sourceID;
+		sourceID = newSourceID;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TRADESPackage.EXTERNAL_THREAT__SOURCE_ID, oldSourceID,
+					sourceID));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case TRADESPackage.EXTERNAL_THREAT__SOURCE:
 			return getSource();
 		case TRADESPackage.EXTERNAL_THREAT__LINK:
 			return getLink();
+		case TRADESPackage.EXTERNAL_THREAT__SOURCE_ID:
+			return getSourceID();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -173,6 +220,9 @@ public class ExternalThreatImpl extends ThreatCustomImpl implements ExternalThre
 			return;
 		case TRADESPackage.EXTERNAL_THREAT__LINK:
 			setLink((String) newValue);
+			return;
+		case TRADESPackage.EXTERNAL_THREAT__SOURCE_ID:
+			setSourceID((String) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -192,6 +242,9 @@ public class ExternalThreatImpl extends ThreatCustomImpl implements ExternalThre
 		case TRADESPackage.EXTERNAL_THREAT__LINK:
 			setLink(LINK_EDEFAULT);
 			return;
+		case TRADESPackage.EXTERNAL_THREAT__SOURCE_ID:
+			setSourceID(SOURCE_ID_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -208,6 +261,8 @@ public class ExternalThreatImpl extends ThreatCustomImpl implements ExternalThre
 			return SOURCE_EDEFAULT == null ? source != null : !SOURCE_EDEFAULT.equals(source);
 		case TRADESPackage.EXTERNAL_THREAT__LINK:
 			return LINK_EDEFAULT == null ? link != null : !LINK_EDEFAULT.equals(link);
+		case TRADESPackage.EXTERNAL_THREAT__SOURCE_ID:
+			return SOURCE_ID_EDEFAULT == null ? sourceID != null : !SOURCE_ID_EDEFAULT.equals(sourceID);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -225,6 +280,8 @@ public class ExternalThreatImpl extends ThreatCustomImpl implements ExternalThre
 				return TRADESPackage.EXTERNAL_ELEMENT__SOURCE;
 			case TRADESPackage.EXTERNAL_THREAT__LINK:
 				return TRADESPackage.EXTERNAL_ELEMENT__LINK;
+			case TRADESPackage.EXTERNAL_THREAT__SOURCE_ID:
+				return TRADESPackage.EXTERNAL_ELEMENT__SOURCE_ID;
 			default:
 				return -1;
 			}
@@ -245,6 +302,8 @@ public class ExternalThreatImpl extends ThreatCustomImpl implements ExternalThre
 				return TRADESPackage.EXTERNAL_THREAT__SOURCE;
 			case TRADESPackage.EXTERNAL_ELEMENT__LINK:
 				return TRADESPackage.EXTERNAL_THREAT__LINK;
+			case TRADESPackage.EXTERNAL_ELEMENT__SOURCE_ID:
+				return TRADESPackage.EXTERNAL_THREAT__SOURCE_ID;
 			default:
 				return -1;
 			}
@@ -267,6 +326,8 @@ public class ExternalThreatImpl extends ThreatCustomImpl implements ExternalThre
 		result.append(source);
 		result.append(", link: ");
 		result.append(link);
+		result.append(", sourceID: ");
+		result.append(sourceID);
 		result.append(')');
 		return result.toString();
 	}

@@ -74,6 +74,6 @@ public interface Analysis
 	 * @model
 	 * @generated
 	 */
-	EList<ExternalThreat> getExternalThreats(String id, String source);
+	EList<ExternalThreat> getExternalThreats(String id, String catalogIdentifier);
 
 } // Analysis

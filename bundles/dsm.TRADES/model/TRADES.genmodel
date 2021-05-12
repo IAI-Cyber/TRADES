@@ -38,7 +38,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TRADES.ecore#//Analysis/linkTypes"/>
       <genOperations ecoreOperation="TRADES.ecore#//Analysis/getExternalThreats">
         <genParameters ecoreParameter="TRADES.ecore#//Analysis/getExternalThreats/id"/>
-        <genParameters ecoreParameter="TRADES.ecore#//Analysis/getExternalThreats/source"/>
+        <genParameters ecoreParameter="TRADES.ecore#//Analysis/getExternalThreats/catalogIdentifier"/>
       </genOperations>
     </genClasses>
     <genClasses ecoreClass="TRADES.ecore#//Threat">
@@ -138,6 +138,7 @@
     <genClasses image="false" ecoreClass="TRADES.ecore#//ExternalElement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//ExternalElement/source"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//ExternalElement/link"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TRADES.ecore#//ExternalElement/sourceID"/>
     </genClasses>
     <genClasses ecoreClass="TRADES.ecore#//ImpactConfiguration">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TRADES.ecore#//ImpactConfiguration/difficulty"/>
@@ -157,7 +158,7 @@
       <genOperations ecoreOperation="TRADES.ecore#//AbstractControlOwner/getAllControls"/>
       <genOperations ecoreOperation="TRADES.ecore#//AbstractControlOwner/getExternalControls">
         <genParameters ecoreParameter="TRADES.ecore#//AbstractControlOwner/getExternalControls/id"/>
-        <genParameters ecoreParameter="TRADES.ecore#//AbstractControlOwner/getExternalControls/source"/>
+        <genParameters ecoreParameter="TRADES.ecore#//AbstractControlOwner/getExternalControls/catalogIdentifier"/>
       </genOperations>
     </genClasses>
     <genClasses ecoreClass="TRADES.ecore#//DataOwner">
@@ -195,6 +196,7 @@
       <genOperations ecoreOperation="TRADES.ecore#//ICatalogDefinition/getThreatDefinitions"/>
       <genOperations ecoreOperation="TRADES.ecore#//ICatalogDefinition/getControlDefinitions"/>
       <genOperations ecoreOperation="TRADES.ecore#//ICatalogDefinition/getIdentifier"/>
+      <genOperations ecoreOperation="TRADES.ecore#//ICatalogDefinition/getName"/>
     </genClasses>
     <genClasses image="false" ecoreClass="TRADES.ecore#//IMitigationLink">
       <genOperations ecoreOperation="TRADES.ecore#//IMitigationLink/getDescription"/>

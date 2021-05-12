@@ -20,6 +20,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.UUID;
 
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.common.util.URI;
@@ -131,6 +132,12 @@ public class ConvertCatalogToTradesAction extends Action {
 				extControl.setDescription(control.computeDocumentation());
 				extControl.setId(control.getId());
 				extControl.setSource(analysisName);
+				UUID uuid = c.getUuid();
+				if (uuid != null) {
+					extControl.setSourceID(uuid.toString());
+				} else {
+					extControl.setSourceID(analysisName);
+				}
 				result.add(extControl);
 
 			}

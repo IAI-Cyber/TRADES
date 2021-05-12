@@ -280,7 +280,7 @@ public class ImportTradesModelWizard extends Wizard implements IImportWizard {
 
 								IThreatDefinition existingThreat = catalog.getThreatById(t.getId());
 								if (existingThreat == null) {
-									ExternalThreat copy = threatImporter.copy(t, importedAnalysisName);
+									ExternalThreat copy = threatImporter.copy(t);
 									threatOwner.getExternals().add(copy);
 									keepSameId(existingResource, t, copy);
 								} else if (existingThreat instanceof ExternalThreat) {
@@ -294,7 +294,7 @@ public class ImportTradesModelWizard extends Wizard implements IImportWizard {
 							for (Control c : selectedControl) {
 								IControlDefinition existingControl = catalog.getControlById(c.getId());
 								if (existingControl == null) {
-									ExternalControl copiedControl = controlImporter.copy(c, importedAnalysisName);
+									ExternalControl copiedControl = controlImporter.copy(c);
 									keepSameId(existingResource, c, copiedControl);
 									controlOwner.getExternals().add(copiedControl);
 								} else if (existingControl instanceof ExternalControl) {

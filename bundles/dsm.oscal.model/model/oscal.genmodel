@@ -8,73 +8,8 @@
     usedGenPackages="../../dsm.TRADES/model/TRADES.genmodel#//TRADES ../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore"
     operationReflection="true" importOrganizing="true">
   <foreignModel>../../dsm.TRADES/model/TRADES.ecore</foreignModel>
-  <genPackages prefix="OscalCatalogCommon" basePackage="dsm.oscal.model" disposableProviderFactory="true"
-      ecorePackage="oscal-catalog-common.ecore#/">
-    <genClasses ecoreClass="oscal-catalog-common.ecore#//Parameter">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oscal-catalog-common.ecore#//Parameter/constraints"/>
-      <genFeatures createChild="false" propertyDescription="\nDepends on\n\nDescription\n\nAnother parameter invoking this one\n"
-          ecoreFeature="ecore:EAttribute oscal-catalog-common.ecore#//Parameter/dependsOn"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oscal-catalog-common.ecore#//Parameter/guidelines"/>
-      <genFeatures createChild="false" propertyDescription="\nParameter Label\n\nDescription\n\nA short, placeholder name for the parameter, which can be used as a substitute \nfor avalue if no value is assigned.\n\nRemarks\n\nThe label value should be suitable for inline display in a rendered catalog.\n"
-          ecoreFeature="ecore:EAttribute oscal-catalog-common.ecore#//Parameter/label"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oscal-catalog-common.ecore#//Parameter/select"/>
-      <genFeatures createChild="false" propertyDescription="\nParameter Usage Description\n\nDescription\n\nDescribes the purpose and use of a parameter\n"
-          propertyMultiLine="true" ecoreFeature="ecore:EAttribute oscal-catalog-common.ecore#//Parameter/usage"/>
-      <genFeatures createChild="false" propertyDescription="\nParameter Value\n\nDescription\n\nA parameter value or set of values.\n"
-          ecoreFeature="ecore:EAttribute oscal-catalog-common.ecore#//Parameter/values"/>
-    </genClasses>
-    <genClasses ecoreClass="oscal-catalog-common.ecore#//ParameterConstraint">
-      <genFeatures createChild="false" propertyDescription="\nConstraint Description\n\nDescription\n\nA textual summary of the constraint to be applied.\n"
-          propertyMultiLine="true" ecoreFeature="ecore:EAttribute oscal-catalog-common.ecore#//ParameterConstraint/description"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oscal-catalog-common.ecore#//ParameterConstraint/tests"/>
-    </genClasses>
-    <genClasses ecoreClass="oscal-catalog-common.ecore#//ParameterConstraintTest">
-      <genFeatures createChild="false" propertyDescription="\nConstraint test\n\nDescription\n\nA formal (executable) expression of a constraint\n"
-          ecoreFeature="ecore:EAttribute oscal-catalog-common.ecore#//ParameterConstraintTest/expression"/>
-    </genClasses>
-    <genClasses ecoreClass="oscal-catalog-common.ecore#//ParameterGuideline">
-      <genFeatures createChild="false" propertyDescription="\nGuideline Text\n\nDescription\n\nProse permits multiple paragraphs, lists, tables etc.\n"
-          propertyMultiLine="true" ecoreFeature="ecore:EAttribute oscal-catalog-common.ecore#//ParameterGuideline/prose"/>
-    </genClasses>
-    <genClasses ecoreClass="oscal-catalog-common.ecore#//ParameterSelection">
-      <genFeatures createChild="false" propertyDescription="\nChoice\n\nDescription\n\nA value selection among several such options\n"
-          ecoreFeature="ecore:EAttribute oscal-catalog-common.ecore#//ParameterSelection/choice"/>
-      <genFeatures createChild="false" propertyDescription="\nParameter Cardinality\n\nDescription\n\nDescribes the number of selections that must occur.\n"
-          ecoreFeature="ecore:EAttribute oscal-catalog-common.ecore#//ParameterSelection/howMany"/>
-    </genClasses>
-    <genClasses ecoreClass="oscal-catalog-common.ecore#//Part">
-      <genFeatures createChild="false" propertyDescription="\nPart Name\n\nDescription\n\nA textual label that uniquely identifies the part's semantic type.\n"
-          ecoreFeature="ecore:EAttribute oscal-catalog-common.ecore#//Part/name"/>
-      <genFeatures createChild="false" propertyDescription="\nPart Namespace\n\nDescription\n\nA namespace qualifying the part's name. This allows different organizations to \nassociate distinct semantics with the same name.\n\nRemarks\n\nProvides a means to segment the value space for the name, so that different \norganizations and individuals can assert control over the allowed names and \nassociated text used in a part. This allows the semantics associated with a \ngiven name to be defined on an organization-by-organization basis.\n\nAn organization MUST use a URI that they have control over. e.g., a domain \nregistered to the organization in a URI, a registered uniform resource names \n(URN) namespace.\n\nWhen a ns is not provided, its value should be assumed to be \nhttp://csrc.nist.gov/ns/oscal and the name should be a name defined by the \nassociated OSCAL model.\n"
-          ecoreFeature="ecore:EAttribute oscal-catalog-common.ecore#//Part/ns"/>
-      <genFeatures createChild="false" propertyDescription="\nPart Text\n\nDescription\n\nPermits multiple paragraphs, lists, tables etc.\n"
-          propertyMultiLine="true" ecoreFeature="ecore:EAttribute oscal-catalog-common.ecore#//Part/prose"/>
-      <genFeatures createChild="false" propertyDescription="\nPart Title\n\nDescription\n\nA name given to the part, which may be used by a tool for display and \nnavigation.\n"
-          ecoreFeature="ecore:EAttribute oscal-catalog-common.ecore#//Part/title"/>
-    </genClasses>
-  </genPackages>
-  <genPackages prefix="OscalCatalog" basePackage="dsm.oscal.model" disposableProviderFactory="true"
-      ecorePackage="oscal-catalog.ecore#/">
-    <genClasses ecoreClass="oscal-catalog.ecore#//Catalog">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oscal-catalog.ecore#//Catalog/backMatter"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oscal-catalog.ecore#//Catalog/controls"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oscal-catalog.ecore#//Catalog/groups"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oscal-catalog.ecore#//Catalog/metadata"/>
-    </genClasses>
-    <genClasses ecoreClass="oscal-catalog.ecore#//Control">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oscal-catalog.ecore#//Control/controls"/>
-      <genFeatures createChild="false" propertyDescription="\nControl Title\n\nDescription\n\nA name given to the control, which may be used by a tool for display and \nnavigation.\n"
-          ecoreFeature="ecore:EAttribute oscal-catalog.ecore#//Control/title"/>
-    </genClasses>
-    <genClasses ecoreClass="oscal-catalog.ecore#//Group">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oscal-catalog.ecore#//Group/controls"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oscal-catalog.ecore#//Group/groups"/>
-      <genFeatures createChild="false" propertyDescription="\nGroup Title\n\nDescription\n\nA name given to the group, which may be used by a tool for display and \nnavigation.\n"
-          ecoreFeature="ecore:EAttribute oscal-catalog.ecore#//Group/title"/>
-    </genClasses>
-  </genPackages>
   <genPackages prefix="OscalMetadata" basePackage="dsm.oscal.model" disposableProviderFactory="true"
-      ecorePackage="oscal-metadata.ecore#/">
+      fileExtensions="oscal" ecorePackage="oscal-metadata.ecore#/">
     <genDataTypes ecoreDataType="oscal-metadata.ecore#//Base64Type" create="return dsm.oscal.model.OSCALDataTypeHandler.INSTANCE.loadBase64TypeFromString(it);"
         convert="return dsm.oscal.model.OSCALDataTypeHandler.INSTANCE.saveBase64TypeToString(it);"/>
     <genDataTypes ecoreDataType="oscal-metadata.ecore#//DateTimeType" create="return dsm.oscal.model.OSCALDataTypeHandler.INSTANCE.loadDateTimeTypeFromString(it);"
@@ -291,6 +226,71 @@
     <genClasses ecoreClass="oscal-metadata.ecore#//UUIDElement">
       <genFeatures createChild="false" propertyDescription="Unique UUID identifying this element"
           ecoreFeature="ecore:EAttribute oscal-metadata.ecore#//UUIDElement/uuid"/>
+    </genClasses>
+  </genPackages>
+  <genPackages prefix="OscalCatalog" basePackage="dsm.oscal.model" disposableProviderFactory="true"
+      fileExtensions="oscal" ecorePackage="oscal-catalog.ecore#/">
+    <genClasses ecoreClass="oscal-catalog.ecore#//Catalog">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oscal-catalog.ecore#//Catalog/backMatter"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oscal-catalog.ecore#//Catalog/controls"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oscal-catalog.ecore#//Catalog/groups"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oscal-catalog.ecore#//Catalog/metadata"/>
+    </genClasses>
+    <genClasses ecoreClass="oscal-catalog.ecore#//Control">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oscal-catalog.ecore#//Control/controls"/>
+      <genFeatures createChild="false" propertyDescription="\nControl Title\n\nDescription\n\nA name given to the control, which may be used by a tool for display and \nnavigation.\n"
+          ecoreFeature="ecore:EAttribute oscal-catalog.ecore#//Control/title"/>
+    </genClasses>
+    <genClasses ecoreClass="oscal-catalog.ecore#//Group">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oscal-catalog.ecore#//Group/controls"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oscal-catalog.ecore#//Group/groups"/>
+      <genFeatures createChild="false" propertyDescription="\nGroup Title\n\nDescription\n\nA name given to the group, which may be used by a tool for display and \nnavigation.\n"
+          ecoreFeature="ecore:EAttribute oscal-catalog.ecore#//Group/title"/>
+    </genClasses>
+  </genPackages>
+  <genPackages prefix="OscalCatalogCommon" basePackage="dsm.oscal.model" disposableProviderFactory="true"
+      fileExtensions="oscal" ecorePackage="oscal-catalog-common.ecore#/">
+    <genClasses ecoreClass="oscal-catalog-common.ecore#//Parameter">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oscal-catalog-common.ecore#//Parameter/constraints"/>
+      <genFeatures createChild="false" propertyDescription="\nDepends on\n\nDescription\n\nAnother parameter invoking this one\n"
+          ecoreFeature="ecore:EAttribute oscal-catalog-common.ecore#//Parameter/dependsOn"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oscal-catalog-common.ecore#//Parameter/guidelines"/>
+      <genFeatures createChild="false" propertyDescription="\nParameter Label\n\nDescription\n\nA short, placeholder name for the parameter, which can be used as a substitute \nfor avalue if no value is assigned.\n\nRemarks\n\nThe label value should be suitable for inline display in a rendered catalog.\n"
+          ecoreFeature="ecore:EAttribute oscal-catalog-common.ecore#//Parameter/label"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oscal-catalog-common.ecore#//Parameter/select"/>
+      <genFeatures createChild="false" propertyDescription="\nParameter Usage Description\n\nDescription\n\nDescribes the purpose and use of a parameter\n"
+          propertyMultiLine="true" ecoreFeature="ecore:EAttribute oscal-catalog-common.ecore#//Parameter/usage"/>
+      <genFeatures createChild="false" propertyDescription="\nParameter Value\n\nDescription\n\nA parameter value or set of values.\n"
+          ecoreFeature="ecore:EAttribute oscal-catalog-common.ecore#//Parameter/values"/>
+    </genClasses>
+    <genClasses ecoreClass="oscal-catalog-common.ecore#//ParameterConstraint">
+      <genFeatures createChild="false" propertyDescription="\nConstraint Description\n\nDescription\n\nA textual summary of the constraint to be applied.\n"
+          propertyMultiLine="true" ecoreFeature="ecore:EAttribute oscal-catalog-common.ecore#//ParameterConstraint/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oscal-catalog-common.ecore#//ParameterConstraint/tests"/>
+    </genClasses>
+    <genClasses ecoreClass="oscal-catalog-common.ecore#//ParameterConstraintTest">
+      <genFeatures createChild="false" propertyDescription="\nConstraint test\n\nDescription\n\nA formal (executable) expression of a constraint\n"
+          ecoreFeature="ecore:EAttribute oscal-catalog-common.ecore#//ParameterConstraintTest/expression"/>
+    </genClasses>
+    <genClasses ecoreClass="oscal-catalog-common.ecore#//ParameterGuideline">
+      <genFeatures createChild="false" propertyDescription="\nGuideline Text\n\nDescription\n\nProse permits multiple paragraphs, lists, tables etc.\n"
+          propertyMultiLine="true" ecoreFeature="ecore:EAttribute oscal-catalog-common.ecore#//ParameterGuideline/prose"/>
+    </genClasses>
+    <genClasses ecoreClass="oscal-catalog-common.ecore#//ParameterSelection">
+      <genFeatures createChild="false" propertyDescription="\nChoice\n\nDescription\n\nA value selection among several such options\n"
+          ecoreFeature="ecore:EAttribute oscal-catalog-common.ecore#//ParameterSelection/choice"/>
+      <genFeatures createChild="false" propertyDescription="\nParameter Cardinality\n\nDescription\n\nDescribes the number of selections that must occur.\n"
+          ecoreFeature="ecore:EAttribute oscal-catalog-common.ecore#//ParameterSelection/howMany"/>
+    </genClasses>
+    <genClasses ecoreClass="oscal-catalog-common.ecore#//Part">
+      <genFeatures createChild="false" propertyDescription="\nPart Name\n\nDescription\n\nA textual label that uniquely identifies the part's semantic type.\n"
+          ecoreFeature="ecore:EAttribute oscal-catalog-common.ecore#//Part/name"/>
+      <genFeatures createChild="false" propertyDescription="\nPart Namespace\n\nDescription\n\nA namespace qualifying the part's name. This allows different organizations to \nassociate distinct semantics with the same name.\n\nRemarks\n\nProvides a means to segment the value space for the name, so that different \norganizations and individuals can assert control over the allowed names and \nassociated text used in a part. This allows the semantics associated with a \ngiven name to be defined on an organization-by-organization basis.\n\nAn organization MUST use a URI that they have control over. e.g., a domain \nregistered to the organization in a URI, a registered uniform resource names \n(URN) namespace.\n\nWhen a ns is not provided, its value should be assumed to be \nhttp://csrc.nist.gov/ns/oscal and the name should be a name defined by the \nassociated OSCAL model.\n"
+          ecoreFeature="ecore:EAttribute oscal-catalog-common.ecore#//Part/ns"/>
+      <genFeatures createChild="false" propertyDescription="\nPart Text\n\nDescription\n\nPermits multiple paragraphs, lists, tables etc.\n"
+          propertyMultiLine="true" ecoreFeature="ecore:EAttribute oscal-catalog-common.ecore#//Part/prose"/>
+      <genFeatures createChild="false" propertyDescription="\nPart Title\n\nDescription\n\nA name given to the part, which may be used by a tool for display and \nnavigation.\n"
+          ecoreFeature="ecore:EAttribute oscal-catalog-common.ecore#//Part/title"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

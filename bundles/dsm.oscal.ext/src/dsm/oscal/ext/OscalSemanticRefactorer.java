@@ -33,6 +33,7 @@ import java.util.function.Predicate;
 import org.eclipse.emf.codegen.ecore.genmodel.GenClass;
 import org.eclipse.emf.codegen.ecore.genmodel.GenFeature;
 import org.eclipse.emf.codegen.ecore.genmodel.GenModel;
+import org.eclipse.emf.codegen.ecore.genmodel.GenPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
@@ -85,6 +86,7 @@ public class OscalSemanticRefactorer implements ISemanticRefactorer {
 	private EClass controlDelf;
 
 	private EClass catalogDelf;
+	private GenModel genModel;
 
 	@Override
 	public void init(EPackage rootEPackage, ResourceSet rs) {
@@ -331,13 +333,20 @@ public class OscalSemanticRefactorer implements ISemanticRefactorer {
 
 	@Override
 	public void refactorGenModel(GenModel genModel) {
+		this.genModel = genModel;
 		genModel.getForeignModel().add("../../dsm.TRADES/model/TRADES.ecore");
 		genModel.getUsedGenPackages()
 				.add(((GenModel) rs.getResource(tradesGEnMMuri, true).getContents().get(0)).getGenPackages().get(0));
+
 	}
 
 	@Override
 	public void refactorGenClasses(List<GenClass> genClasses) {
+
+		for (GenPackage genPackage : genModel.getGenPackages()) {
+			genPackage.setFileExtensions("oscal");
+		}
+
 		this.genClasses = genClasses;
 		for (EReference ref : hiddenContainementReferences) {
 			getGenFeaure(ref).setChildren(false);

@@ -17,7 +17,11 @@ package dsm.trades.rcp.utils;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.resource.Resource;
+
 import dsm.TRADES.ExternalThreat;
+import dsm.TRADES.NamedElement;
 import dsm.TRADES.TRADESFactory;
 import dsm.TRADES.Threat;
 
@@ -37,23 +41,22 @@ public class ThreatCopier {
 		return existingThreat;
 	}
 
-	public ExternalThreat copy(Threat threat, String analysisSourceName) {
+	public ExternalThreat copy(Threat threat) {
 
 		ExternalThreat result = TRADESFactory.eINSTANCE.createExternalThreat();
 		oldToNewThreats.put(threat, result);
-		result.setDescription(threat.getDescription());
-		result.setApplicability(threat.getApplicability());
-		result.setId(threat.getId());
-		result.setName(threat.getName());
-		result.setThreatType(threat.getThreatType());
 
-		if (threat instanceof ExternalThreat) {
-			ExternalThreat inputExtThreat = (ExternalThreat) threat;
-			result.setLink(inputExtThreat.getLink());
-			result.setSource(inputExtThreat.getSource());
-		} else {
-			result.setSource(analysisSourceName);
+		Resource resource = threat.eResource();
+		if (resource != null) {
+			EObject root = resource.getContents().get(0);
+			if (root instanceof NamedElement) {
+				result.setSource(((NamedElement) root).getName());
+			}
+			result.setSourceID(resource.getURIFragment(threat));
 		}
+
+		update(threat, result);
+
 		return result;
 	}
 

@@ -145,7 +145,7 @@ public abstract class AbstractControlOwnerImpl extends MinimalEObjectImpl.Contai
 	 * @generated
 	 */
 	@Override
-	public EList<ExternalControl> getExternalControls(String id, String source) {
+	public EList<ExternalControl> getExternalControls(String id, String catalogIdentifier) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

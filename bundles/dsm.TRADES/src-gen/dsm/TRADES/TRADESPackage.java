@@ -1471,13 +1471,22 @@ public interface TRADESPackage extends EPackage {
 	int EXTERNAL_THREAT__LINK = THREAT_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Source ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTERNAL_THREAT__SOURCE_ID = THREAT_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>External Threat</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXTERNAL_THREAT_FEATURE_COUNT = THREAT_FEATURE_COUNT + 2;
+	int EXTERNAL_THREAT_FEATURE_COUNT = THREAT_FEATURE_COUNT + 3;
 
 	/**
 	 * The operation id for the '<em>Get Id</em>' operation.
@@ -1553,13 +1562,22 @@ public interface TRADESPackage extends EPackage {
 	int EXTERNAL_ELEMENT__LINK = 1;
 
 	/**
+	 * The feature id for the '<em><b>Source ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTERNAL_ELEMENT__SOURCE_ID = 2;
+
+	/**
 	 * The number of structural features of the '<em>External Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXTERNAL_ELEMENT_FEATURE_COUNT = 2;
+	int EXTERNAL_ELEMENT_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>External Element</em>' class.
@@ -1689,6 +1707,15 @@ public interface TRADESPackage extends EPackage {
 	 * @ordered
 	 */
 	int EXTERNAL_CONTROL__LINK = EXTERNAL_ELEMENT__LINK;
+
+	/**
+	 * The feature id for the '<em><b>Source ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTERNAL_CONTROL__SOURCE_ID = EXTERNAL_ELEMENT__SOURCE_ID;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2248,13 +2275,22 @@ public interface TRADESPackage extends EPackage {
 	int CATALOG___GET_IDENTIFIER = ABSTRACT_THREAT_OWNER_OPERATION_COUNT + 6;
 
 	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CATALOG___GET_NAME = ABSTRACT_THREAT_OWNER_OPERATION_COUNT + 7;
+
+	/**
 	 * The number of operations of the '<em>Catalog</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CATALOG_OPERATION_COUNT = ABSTRACT_THREAT_OWNER_OPERATION_COUNT + 7;
+	int CATALOG_OPERATION_COUNT = ABSTRACT_THREAT_OWNER_OPERATION_COUNT + 8;
 
 	/**
 	 * The meta object id for the '{@link dsm.TRADES.IThreatDefinition <em>IThreat Definition</em>}' class.
@@ -2440,13 +2476,22 @@ public interface TRADESPackage extends EPackage {
 	int ICATALOG_DEFINITION___GET_IDENTIFIER = 4;
 
 	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ICATALOG_DEFINITION___GET_NAME = 5;
+
+	/**
 	 * The number of operations of the '<em>ICatalog Definition</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ICATALOG_DEFINITION_OPERATION_COUNT = 5;
+	int ICATALOG_DEFINITION_OPERATION_COUNT = 6;
 
 	/**
 	 * The meta object id for the '{@link dsm.TRADES.AssessmentENUM <em>Assessment ENUM</em>}' enum.
@@ -3297,6 +3342,17 @@ public interface TRADESPackage extends EPackage {
 	EAttribute getExternalElement_Link();
 
 	/**
+	 * Returns the meta object for the attribute '{@link dsm.TRADES.ExternalElement#getSourceID <em>Source ID</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Source ID</em>'.
+	 * @see dsm.TRADES.ExternalElement#getSourceID()
+	 * @see #getExternalElement()
+	 * @generated
+	 */
+	EAttribute getExternalElement_SourceID();
+
+	/**
 	 * Returns the meta object for class '{@link dsm.TRADES.ImpactConfiguration <em>Impact Configuration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3708,6 +3764,16 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getICatalogDefinition__GetIdentifier();
+
+	/**
+	 * Returns the meta object for the '{@link dsm.TRADES.ICatalogDefinition#getName() <em>Get Name</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Name</em>' operation.
+	 * @see dsm.TRADES.ICatalogDefinition#getName()
+	 * @generated
+	 */
+	EOperation getICatalogDefinition__GetName();
 
 	/**
 	 * Returns the meta object for class '{@link dsm.TRADES.IMitigationLink <em>IMitigation Link</em>}'.
@@ -4480,6 +4546,14 @@ public interface TRADESPackage extends EPackage {
 		EAttribute EXTERNAL_ELEMENT__LINK = eINSTANCE.getExternalElement_Link();
 
 		/**
+		 * The meta object literal for the '<em><b>Source ID</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute EXTERNAL_ELEMENT__SOURCE_ID = eINSTANCE.getExternalElement_SourceID();
+
+		/**
 		 * The meta object literal for the '{@link dsm.TRADES.impl.ImpactConfigurationImpl <em>Impact Configuration</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4830,6 +4904,14 @@ public interface TRADESPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation ICATALOG_DEFINITION___GET_IDENTIFIER = eINSTANCE.getICatalogDefinition__GetIdentifier();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Name</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ICATALOG_DEFINITION___GET_NAME = eINSTANCE.getICatalogDefinition__GetName();
 
 		/**
 		 * The meta object literal for the '{@link dsm.TRADES.IMitigationLink <em>IMitigation Link</em>}' class.

@@ -170,11 +170,13 @@ public class MetaschemaToEcoreTransformer {
 		sortByName();
 
 		for (Resource r : rs.getResources()) {
-			try {
-				r.save(Collections.emptyMap());
-			} catch (IOException e) {
-				e.printStackTrace();
-				System.err.println(e.getMessage());
+			if (r.getURI().isFile() || r.getURI().isPlatformResource()) {
+				try {
+					r.save(Collections.emptyMap());
+				} catch (IOException e) {
+					e.printStackTrace();
+					System.err.println(e.getMessage());
+				}
 			}
 		}
 

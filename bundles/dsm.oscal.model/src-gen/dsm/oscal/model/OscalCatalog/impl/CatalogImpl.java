@@ -379,6 +379,18 @@ public class CatalogImpl extends OscalElementCustomImpl implements Catalog {
 	 * @generated
 	 */
 	@Override
+	public String getName() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Map<String, String> getParameterValues() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -598,6 +610,7 @@ public class CatalogImpl extends OscalElementCustomImpl implements Catalog {
 				case TRADESPackage.ICATALOG_DEFINITION___GET_THREAT_DEFINITIONS: return OscalCatalogPackage.CATALOG___GET_THREAT_DEFINITIONS;
 				case TRADESPackage.ICATALOG_DEFINITION___GET_CONTROL_DEFINITIONS: return OscalCatalogPackage.CATALOG___GET_CONTROL_DEFINITIONS;
 				case TRADESPackage.ICATALOG_DEFINITION___GET_IDENTIFIER: return OscalCatalogPackage.CATALOG___GET_IDENTIFIER;
+				case TRADESPackage.ICATALOG_DEFINITION___GET_NAME: return OscalCatalogPackage.CATALOG___GET_NAME;
 				default: return -1;
 			}
 		}
@@ -622,6 +635,8 @@ public class CatalogImpl extends OscalElementCustomImpl implements Catalog {
 				return getControlDefinitions();
 			case OscalCatalogPackage.CATALOG___GET_IDENTIFIER:
 				return getIdentifier();
+			case OscalCatalogPackage.CATALOG___GET_NAME:
+				return getName();
 			case OscalCatalogPackage.CATALOG___GET_PARAMETER_VALUES:
 				return getParameterValues();
 		}

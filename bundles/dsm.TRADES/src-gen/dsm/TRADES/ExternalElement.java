@@ -26,6 +26,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link dsm.TRADES.ExternalElement#getSource <em>Source</em>}</li>
  *   <li>{@link dsm.TRADES.ExternalElement#getLink <em>Link</em>}</li>
+ *   <li>{@link dsm.TRADES.ExternalElement#getSourceID <em>Source ID</em>}</li>
  * </ul>
  *
  * @see dsm.TRADES.TRADESPackage#getExternalElement()
@@ -76,5 +77,27 @@ public interface ExternalElement extends EObject {
 	 * @generated
 	 */
 	void setLink(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Source ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Source ID</em>' attribute.
+	 * @see #setSourceID(String)
+	 * @see dsm.TRADES.TRADESPackage#getExternalElement_SourceID()
+	 * @model
+	 * @generated
+	 */
+	String getSourceID();
+
+	/**
+	 * Sets the value of the '{@link dsm.TRADES.ExternalElement#getSourceID <em>Source ID</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Source ID</em>' attribute.
+	 * @see #getSourceID()
+	 * @generated
+	 */
+	void setSourceID(String value);
 
 } // ExternalElement

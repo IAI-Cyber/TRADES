@@ -57,6 +57,7 @@ public class ExternalThreatItemProvider extends ThreatItemProviderCustomImpl {
 
 			addSourcePropertyDescriptor(object);
 			addLinkPropertyDescriptor(object);
+			addSourceIDPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -90,6 +91,22 @@ public class ExternalThreatItemProvider extends ThreatItemProviderCustomImpl {
 						getString("_UI_PropertyDescriptor_description", "_UI_ExternalElement_link_feature",
 								"_UI_ExternalElement_type"),
 						TRADESPackage.Literals.EXTERNAL_ELEMENT__LINK, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Source ID feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSourceIDPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_ExternalElement_sourceID_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_ExternalElement_sourceID_feature",
+								"_UI_ExternalElement_type"),
+						TRADESPackage.Literals.EXTERNAL_ELEMENT__SOURCE_ID, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
@@ -141,6 +158,7 @@ public class ExternalThreatItemProvider extends ThreatItemProviderCustomImpl {
 		switch (notification.getFeatureID(ExternalThreat.class)) {
 		case TRADESPackage.EXTERNAL_THREAT__SOURCE:
 		case TRADESPackage.EXTERNAL_THREAT__LINK:
+		case TRADESPackage.EXTERNAL_THREAT__SOURCE_ID:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}

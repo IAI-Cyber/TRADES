@@ -33,6 +33,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <ul>
  *   <li>{@link dsm.TRADES.impl.ExternalElementImpl#getSource <em>Source</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ExternalElementImpl#getLink <em>Link</em>}</li>
+ *   <li>{@link dsm.TRADES.impl.ExternalElementImpl#getSourceID <em>Source ID</em>}</li>
  * </ul>
  *
  * @generated
@@ -77,6 +78,26 @@ public abstract class ExternalElementImpl extends MinimalEObjectImpl.Container i
 	 * @ordered
 	 */
 	protected String link = LINK_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getSourceID() <em>Source ID</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSourceID()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String SOURCE_ID_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getSourceID() <em>Source ID</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSourceID()
+	 * @generated
+	 * @ordered
+	 */
+	protected String sourceID = SOURCE_ID_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -150,12 +171,38 @@ public abstract class ExternalElementImpl extends MinimalEObjectImpl.Container i
 	 * @generated
 	 */
 	@Override
+	public String getSourceID() {
+		return sourceID;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setSourceID(String newSourceID) {
+		String oldSourceID = sourceID;
+		sourceID = newSourceID;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TRADESPackage.EXTERNAL_ELEMENT__SOURCE_ID,
+					oldSourceID, sourceID));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case TRADESPackage.EXTERNAL_ELEMENT__SOURCE:
 			return getSource();
 		case TRADESPackage.EXTERNAL_ELEMENT__LINK:
 			return getLink();
+		case TRADESPackage.EXTERNAL_ELEMENT__SOURCE_ID:
+			return getSourceID();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -173,6 +220,9 @@ public abstract class ExternalElementImpl extends MinimalEObjectImpl.Container i
 			return;
 		case TRADESPackage.EXTERNAL_ELEMENT__LINK:
 			setLink((String) newValue);
+			return;
+		case TRADESPackage.EXTERNAL_ELEMENT__SOURCE_ID:
+			setSourceID((String) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -192,6 +242,9 @@ public abstract class ExternalElementImpl extends MinimalEObjectImpl.Container i
 		case TRADESPackage.EXTERNAL_ELEMENT__LINK:
 			setLink(LINK_EDEFAULT);
 			return;
+		case TRADESPackage.EXTERNAL_ELEMENT__SOURCE_ID:
+			setSourceID(SOURCE_ID_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -208,6 +261,8 @@ public abstract class ExternalElementImpl extends MinimalEObjectImpl.Container i
 			return SOURCE_EDEFAULT == null ? source != null : !SOURCE_EDEFAULT.equals(source);
 		case TRADESPackage.EXTERNAL_ELEMENT__LINK:
 			return LINK_EDEFAULT == null ? link != null : !LINK_EDEFAULT.equals(link);
+		case TRADESPackage.EXTERNAL_ELEMENT__SOURCE_ID:
+			return SOURCE_ID_EDEFAULT == null ? sourceID != null : !SOURCE_ID_EDEFAULT.equals(sourceID);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -227,6 +282,8 @@ public abstract class ExternalElementImpl extends MinimalEObjectImpl.Container i
 		result.append(source);
 		result.append(", link: ");
 		result.append(link);
+		result.append(", sourceID: ");
+		result.append(sourceID);
 		result.append(')');
 		return result.toString();
 	}

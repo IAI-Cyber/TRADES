@@ -28,6 +28,8 @@ import dsm.TRADES.Threat;
 import dsm.TRADES.util.EcoreUtils;
 import dsm.oscal.model.ParameterResolver;
 import dsm.oscal.model.OscalCatalog.Control;
+import dsm.oscal.model.OscalMetadata.Metadata;
+import gov.nist.secauto.metaschema.datatypes.markup.MarkupLine;
 
 public class CatalogCustomImpl extends CatalogImpl {
 
@@ -69,5 +71,17 @@ public class CatalogCustomImpl extends CatalogImpl {
 		} else {
 			return null;
 		}
+	}
+
+	@Override
+	public String getName() {
+		Metadata m = getMetadata();
+		if (m != null) {
+			MarkupLine title = m.getTitle();
+			if (title != null) {
+				return title.toMarkdown();
+			}
+		}
+		return getIdentifier();
 	}
 }
