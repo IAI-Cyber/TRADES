@@ -52,7 +52,6 @@ public class EObjectSelectionPage<T extends EObject> extends WizardPage {
 		super("Threat selection page");
 		setMessage(message);
 		this.objectConsumer = objectConsumer;
-		setMessage("Select the threats to import.");
 	}
 
 	@Override
