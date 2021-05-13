@@ -1237,23 +1237,31 @@
           </style>
         </containerMappings>
         <toolSections name="Add" icon="/TRADES.design/Images/icons/add.gif" reusedTools="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='ComponentCreationTool'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Effect'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='copyThreatDragDrop'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='ExternalControlDrop_TD'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.2/@ownedTools[name='DeleteThreatFromModelMenu'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.2/@ownedTools[name='DeleteThreatFromDiagram'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='AttachChainDiagramNavTool_TD'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Change%20name'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='ChangeComponentInThreatAllocation'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='ChangeThreatInThreatAllocation'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='NewMenu_TD'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='CreateAttackChainTool_TD'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='OpenProgramTool']">
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="Link" nodeMappings="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='System%20Design']/@defaultLayer/@containerMappings[name='ComponentContainer']/@subNodeMappings[name='componentLinks']" iconPath="/TRADES.design/Images/Link16.png">
-            <variable name="container"/>
-            <viewVariable name="containerView"/>
-            <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="TRADES::Link" referenceName="links"/>
-              </firstModelOperations>
-            </initialOperation>
-          </ownedTools>
-          <ownedTools xsi:type="tool:EdgeCreationDescription" name="AddComponent2Link" label="Add Component to Link" edgeMappings="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='System%20Design']/@defaultLayer/@edgeMappings[name='LinkComponents']">
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="AddLinkOrComponent" label="Link Components" edgeMappings="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='System%20Design']/@defaultLayer/@edgeMappings[name='LinkComponents']" iconPath="/TRADES.design/Images/Link16.png" extraSourceMappings="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='System%20Design']/@defaultLayer/@containerMappings[name='ComponentContainer']/@subContainerMappings[name='ComponentPackage_SD'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='System%20Design']/@defaultLayer/@containerMappings[name='ComponentContainer']/@subNodeMappings[name='componentLinks'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='System%20Design']/@defaultLayer/@containerMappings[name='ComponentContainer']" extraTargetMappings="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='System%20Design']/@defaultLayer/@containerMappings[name='ComponentContainer']/@subContainerMappings[name='ComponentPackage_SD'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='System%20Design']/@defaultLayer/@containerMappings[name='ComponentContainer']/@subNodeMappings[name='componentLinks'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='System%20Design']/@defaultLayer/@containerMappings[name='ComponentContainer']">
             <sourceVariable name="source"/>
             <targetVariable name="target"/>
             <sourceViewVariable name="sourceView"/>
             <targetViewVariable name="targetView"/>
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql: source">
-                <subModelOperations xsi:type="tool_1:SetValue" featureName="components" valueExpression="aql: target"/>
+                <subModelOperations xsi:type="tool_1:Switch">
+                  <cases conditionExpression="aql: source.oclIsTypeOf(TRADES::Link)">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="components" valueExpression="aql: target"/>
+                  </cases>
+                  <cases conditionExpression="aql: target.oclIsTypeOf(TRADES::Link)">
+                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql: target">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="components" valueExpression="aql: source"/>
+                    </subModelOperations>
+                  </cases>
+                  <default>
+                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql: source.eContainer()">
+                      <subModelOperations xsi:type="tool_1:CreateInstance" typeName="TRADES::Link" referenceName="links">
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="components" valueExpression="aql: source"/>
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="components" valueExpression="aql: target"/>
+                      </subModelOperations>
+                    </subModelOperations>
+                  </default>
+                </subModelOperations>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
