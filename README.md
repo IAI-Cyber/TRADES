@@ -1,7 +1,6 @@
 # TRADES Tool
 
-Home of the Threat and Risk Assessment Tool TRADES Tool.
-TRADES Tool is a model-based threat and risk assessment tool for the design of systems. It is based on the TRADES methodology (see [1]).
+TRADES Tool is a model-based threat and risk assessment tool for the design of systems by Israel Aerospace Industries and other contributors. It is based on the TRADES methodology (see [1]).
 
 
 Check the releases section for the most up-to-date version of TRADES Tool as a stand-alone modeling workbench.
