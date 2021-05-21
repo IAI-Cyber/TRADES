@@ -2050,7 +2050,7 @@
           <onClickOperation>
             <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self"/>
           </onClickOperation>
-          <actions labelExpression="Change">
+          <actions labelExpression="Set type">
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
                 <subModelOperations xsi:type="tool_1:SetValue" featureName="linkType" valueExpression="aql: selection->first()"/>
