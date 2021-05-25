@@ -124,7 +124,13 @@ public class ExtThreatServices {
 		ICatalogDefinition catalog = EcoreUtils.getAncestor(source, ICatalogDefinition.class);
 		result.setSource(catalog.getName());
 		result.setSourceID(catalog.getIdentifier());
-		result.setLink(CatalogElementURI.createCatalogThreatURI(catalog.getIdentifier(), source.getId()).toString());
+
+		if (source.getLink() != null) {
+			result.setLink(source.getLink());
+		} else {
+			result.setLink(
+					CatalogElementURI.createCatalogThreatURI(catalog.getIdentifier(), source.getId()).toString());
+		}
 		threatOwner.getExternals().add(result);
 
 		for (IControlDefinition def : catalog.getControlDefinitions()) {
@@ -204,8 +210,15 @@ public class ExtThreatServices {
 			matchingControl.setId(id);
 			matchingControl.setDescription(source.getDescription());
 
-			matchingControl
-					.setLink(CatalogElementURI.createCatalogControlURI(catalogDef.getIdentifier(), id).toString());
+			if (source instanceof ExternalControl) {
+				ExternalControl sourceExtControl = (ExternalControl) source;
+				if (sourceExtControl.getLink() != null) {
+					matchingControl.setLink(sourceExtControl.getLink());
+				}
+			} else {
+				matchingControl
+						.setLink(CatalogElementURI.createCatalogControlURI(catalogDef.getIdentifier(), id).toString());
+			}
 
 			SemanticUtil.addControl(controlOwner, matchingControl);
 
@@ -284,7 +297,6 @@ public class ExtThreatServices {
 				}
 			}
 		}
-
 
 	}
 

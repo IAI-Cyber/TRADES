@@ -36,6 +36,9 @@ public class ThreatCopier {
 		existingThreat.setId(toImport.getId());
 		existingThreat.setName(toImport.getName());
 		existingThreat.setThreatType(toImport.getThreatType());
+		if (toImport instanceof ExternalThreat) {
+			existingThreat.setLink(((ExternalThreat) toImport).getLink());
+		}
 
 
 		return existingThreat;

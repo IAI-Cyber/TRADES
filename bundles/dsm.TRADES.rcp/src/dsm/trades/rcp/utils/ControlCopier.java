@@ -43,6 +43,9 @@ public class ControlCopier {
 		existingControl.setDescription(controlToImport.getDescription());
 		existingControl.setId(controlToImport.getId());
 		existingControl.setName(controlToImport.getName());
+		if (controlToImport instanceof ExternalControl) {
+			existingControl.setLink(((ExternalControl) controlToImport).getLink());
+		}
 
 		existingControl.getMitigationRelations().clear();
 		for (ThreatMitigationRelation rel : controlToImport.getMitigationRelations()) {
