@@ -24,7 +24,7 @@ import org.eclipse.emf.ecore.EObject;
 
 public class CatalogElementURI {
 
-	private static final String CATALOG_URI_SCHEME = "Catatalog:/";
+	private static final String CATALOG_URI_SCHEME = "Catalog:/";
 	private static final Pattern CATALOG_URI_PATTERN = Pattern.compile(CATALOG_URI_SCHEME + "(.*)/(.*)#(.*)");
 
 	public enum Type {
