@@ -116,6 +116,7 @@ public class ParameterResolver {
 				if (md.endsWith("\n")) {
 					return md.substring(0, md.length() - 1);
 				}
+				return md;
 			}
 		}
 		return null;
