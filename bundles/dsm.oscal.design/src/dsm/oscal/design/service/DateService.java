@@ -13,7 +13,7 @@
  *  
  * 
  */
-package dsm.oscal.ext.sirius.lib;
+package dsm.oscal.design.service;
 
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;

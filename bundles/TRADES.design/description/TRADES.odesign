@@ -1394,9 +1394,6 @@
     <ownedJavaExtensions qualifiedClassName="TRADES.design.ColorService"/>
     <ownedJavaExtensions qualifiedClassName="TRADES.design.SemanticService"/>
     <ownedJavaExtensions qualifiedClassName="TRADES.design.DebugService"/>
-    <ownedJavaExtensions qualifiedClassName="dsm.oscal.ext.sirius.lib.OscalWidgetUtil"/>
-    <ownedJavaExtensions qualifiedClassName="dsm.oscal.ext.sirius.lib.URIService"/>
-    <ownedJavaExtensions qualifiedClassName="dsm.oscal.ext.sirius.lib.DateService"/>
   </ownedViewpoints>
   <userColorsPalettes name="Colors">
     <entries xsi:type="description:ComputedColor" name="HeatMapColorBackGround" red="aql:self.color.getRed()" green="aql:self.color.getGreen()" blue="aql:self.color.getBlue()"/>

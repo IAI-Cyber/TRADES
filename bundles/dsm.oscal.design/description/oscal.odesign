@@ -22,6 +22,9 @@
     </ownedRepresentationExtensions>
     <ownedJavaExtensions qualifiedClassName="dsm.oscal.design.service.OscalDesignService"/>
     <ownedJavaExtensions qualifiedClassName="org.eclipse.sirius.ext.emf.edit.EditingDomainServices"/>
+    <ownedJavaExtensions qualifiedClassName="dsm.oscal.design.service.URIService"/>
+    <ownedJavaExtensions qualifiedClassName="dsm.oscal.design.service.OscalWidgetUtil"/>
+    <ownedJavaExtensions qualifiedClassName="dsm.oscal.design.service.DateService"/>
   </ownedViewpoints>
   <extensions xsi:type="properties:ViewExtensionDescription" name="Properties">
     <metamodels href="http://csrc.nist.gov/ns/oscal/1.0/oscal-catalog#/"/>

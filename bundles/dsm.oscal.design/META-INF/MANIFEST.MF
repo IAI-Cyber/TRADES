@@ -11,7 +11,6 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.sirius,
  org.eclipse.sirius.common.acceleo.aql,
  dsm.oscal.ext;bundle-version="2.5.2",
- dsm.oscal.ext.sirius.lib;bundle-version="2.5.2",
  dsm.oscal.model.edit;bundle-version="2.5.2",
  org.eclipse.ui.navigator,
  org.eclipse.sirius.ui;bundle-version="6.5.0",
@@ -25,7 +24,8 @@ Require-Bundle: org.eclipse.ui,
  org.obeonetwork.m2doc.ide,
  org.obeonetwork.m2doc,
  org.eclipse.acceleo.query,
- org.apache.poi
+ org.apache.poi,
+ org.eclipse.sirius.ext.emf.edit
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-11
 Bundle-Vendor: %providerName

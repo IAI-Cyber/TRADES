@@ -147,7 +147,6 @@
 		<module>../../bundles/dsm.oscal.model/</module>
 		<module>../../bundles/dsm.oscal.model.test/</module>
 		<module>../../bundles/dsm.oscal.ext.sirius.tooling/</module>
-		<module>../../bundles/dsm.oscal.ext.sirius.lib/</module>
 		<module>../../bundles/dsm.oscal.model.edit/</module>
 		<module>../../bundles/dsm.oscal.model.editor/</module>
 		<module>../../bundles/dsm.oscal.design/</module>

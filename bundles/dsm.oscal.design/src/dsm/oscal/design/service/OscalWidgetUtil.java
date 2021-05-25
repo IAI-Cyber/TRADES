@@ -13,7 +13,7 @@
  *  
  * 
  */
-package dsm.oscal.ext.sirius.lib;
+package dsm.oscal.design.service;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EObject;
