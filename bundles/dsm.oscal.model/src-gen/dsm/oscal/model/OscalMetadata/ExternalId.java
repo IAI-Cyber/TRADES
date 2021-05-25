@@ -26,7 +26,6 @@ import java.net.URI;
  * <h1>Party External Identifier</h1>
  * <h2>Description</h2>
  * <p>An identifier for a person or organization using a designated scheme. e.g. an Open Researcher and Contributor ID (ORCID)</p>
- * 
  * <!-- end-model-doc -->
  *
  * <p>
@@ -49,7 +48,6 @@ public interface ExternalId extends OscalElement, ElementWithValue {
 	 * <h1>External Identifier Schema</h1>
 	 * <h2>Description</h2>
 	 * <p>Indicates the type of external identifier.</p>
-	 * 
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Scheme</em>' attribute.
 	 * @see #setScheme(URI)

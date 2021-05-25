@@ -30,7 +30,6 @@ import org.eclipse.emf.common.util.EList;
  * <h1>Constraint</h1>
  * <h2>Description</h2>
  * <p>A formal or informal expression of a constraint or test</p>
- * 
  * <!-- end-model-doc -->
  *
  * <p>
@@ -54,7 +53,6 @@ public interface ParameterConstraint extends OscalElement {
 	 * <h1>Constraint Description</h1>
 	 * <h2>Description</h2>
 	 * <p>A textual summary of the constraint to be applied.</p>
-	 * 
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(MarkupMultiline)

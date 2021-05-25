@@ -25,11 +25,9 @@ import gov.nist.secauto.metaschema.datatypes.markup.MarkupLine;
  * <!-- begin-model-doc -->
  * <h1>Citation</h1>
  * <h2>Description</h2>
- * <p>A citation consisting of end note text and optional structured bibliographic data.</p>
- * <h2>Remarks</h2>
+ * <p>A citation consisting of end note text and optional structured bibliographic data.</p><h2>Remarks</h2>
  * <p>The <code>text</code> is used to define the endnote text, without any required bibliographic structure. If structured bibliographic data is needed, then the <code>biblio</code> can be used for this purpose.</p>
  * <p>A <code>biblio</code> can be used to capture a structured bibliographical citation in an appropriate format.</p>
- * 
  * <!-- end-model-doc -->
  *
  * <p>
@@ -52,7 +50,6 @@ public interface ResourceCitation extends OscalElement, PropertyOwner {
 	 * <h1>Citation Text</h1>
 	 * <h2>Description</h2>
 	 * <p>A line of citation text.</p>
-	 * 
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Text</em>' attribute.
 	 * @see #setText(MarkupLine)

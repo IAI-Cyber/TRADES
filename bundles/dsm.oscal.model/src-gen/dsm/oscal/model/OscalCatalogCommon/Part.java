@@ -36,14 +36,12 @@ import java.net.URI;
  * <!-- begin-model-doc -->
  * <h1>Part</h1>
  * <h2>Description</h2>
- * <p>A partition of a control's definition or a child of another part.</p>
- * <h2>Remarks</h2>
+ * <p>A partition of a control's definition or a child of another part.</p><h2>Remarks</h2>
  * <p>A <code>part</code> provides for logical partitioning of prose, and can be thought of as a grouping structure (e.g., section). A <code>part</code> can have child parts allowing for arbitrary nesting of prose content (e.g., statement hierarchy). A <code>part</code> can contain <code>prop</code> objects that allow for enriching prose text with structured name/value information.</p>
  * <p>A <code>part</code> can be assigned an optional <code>id</code>, which allows for internal and external references to the textual concept contained within a <code>part</code>. A <code>id</code> provides a means for an OSCAL profile, or a higher layer OSCAL model to reference a specific part within a <code>catalog</code>. For example, an <code>id</code> can be used to reference or to make modifications to a control statement in a profile.</p>
  * <p>Use of <code>part</code> and <code>prop</code> provides for a wide degree of extensibility within the OSCAL catalog model. The optional <code>ns</code> provides a means to qualify a part's <code>name</code>, allowing for organization-specific vocabularies to be defined with clear semantics. Any organization that extends OSCAL in this way should consistently assign a <code>ns</code> value that represents the organization, making a given namespace qualified <code>name</code> unique to that organization. This allows the combination of <code>ns</code> and <code>name</code> to always be unique and unambiguous, even when mixed with extensions from other organizations. Each organization is responsible for governance of their own extensions, and is strongly encouraged to publish their extensions as standards to their user community. If no <code>ns</code> is provided, the name is expected to be in the <q>OSCAL</q> namespace.</p>
  * <p>To ensure a <code>ns</code> is unique to an organization and naming conflicts are avoided, a URI containing a DNS or other globally defined organization name should be used. For example, if FedRAMP and DoD both extend OSCAL, FedRAMP will use the <code>ns</code> <q>https://fedramp.gov</q>, while DoD will use the <code>ns</code> <q>https://defense.gov</q> for any organization specific <code>name</code>.</p>
  * <p>Tools that process OSCAL content are not required to interpret unrecognized OSCAL extensions; however, OSCAL compliant tools should not modify or remove unrecognized extensions, unless there is a compelling reason to do so, such as data sensitivity.</p>
- * 
  * <!-- end-model-doc -->
  *
  * <p>
@@ -69,7 +67,6 @@ public interface Part extends OscalElement, PropertyOwner, LinkOwner, PartOwner,
 	 * <h1>Part Name</h1>
 	 * <h2>Description</h2>
 	 * <p>A textual label that uniquely identifies the part's semantic type.</p>
-	 * 
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
@@ -97,12 +94,10 @@ public interface Part extends OscalElement, PropertyOwner, LinkOwner, PartOwner,
 	 * <!-- begin-model-doc -->
 	 * <h1>Part Namespace</h1>
 	 * <h2>Description</h2>
-	 * <p>A namespace qualifying the part's name. This allows different organizations to associate distinct semantics with the same name.</p>
-	 * <h2>Remarks</h2>
+	 * <p>A namespace qualifying the part's name. This allows different organizations to associate distinct semantics with the same name.</p><h2>Remarks</h2>
 	 * <p>Provides a means to segment the value space for the <code>name</code>, so that different organizations and individuals can assert control over the allowed names and associated text used in a part. This allows the semantics associated with a given name to be defined on an organization-by-organization basis.</p>
 	 * <p>An organization MUST use a URI that they have control over. e.g., a domain registered to the organization in a URI, a registered uniform resource names (URN) namespace.</p>
 	 * <p>When a <code>ns</code> is not provided, its value should be assumed to be <code>http://csrc.nist.gov/ns/oscal</code> and the name should be a name defined by the associated OSCAL model.</p>
-	 * 
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Ns</em>' attribute.
 	 * @see #setNs(URI)
@@ -131,7 +126,6 @@ public interface Part extends OscalElement, PropertyOwner, LinkOwner, PartOwner,
 	 * <h1>Part Text</h1>
 	 * <h2>Description</h2>
 	 * <p>Permits multiple paragraphs, lists, tables etc.</p>
-	 * 
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Prose</em>' attribute.
 	 * @see #setProse(MarkupMultiline)
@@ -160,7 +154,6 @@ public interface Part extends OscalElement, PropertyOwner, LinkOwner, PartOwner,
 	 * <h1>Part Title</h1>
 	 * <h2>Description</h2>
 	 * <p>A name given to the part, which may be used by a tool for display and navigation.</p>
-	 * 
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Title</em>' attribute.
 	 * @see #setTitle(MarkupLine)

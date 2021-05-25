@@ -28,11 +28,9 @@ import org.eclipse.emf.common.util.EList;
  * <!-- begin-model-doc -->
  * <h1>Resource</h1>
  * <h2>Description</h2>
- * <p>A resource associated with content in the containing document. A resource may be directly included in the document base64 encoded or may point to one or more equivalent internet resources.</p>
- * <h2>Remarks</h2>
+ * <p>A resource associated with content in the containing document. A resource may be directly included in the document base64 encoded or may point to one or more equivalent internet resources.</p><h2>Remarks</h2>
  * <p>A resource can be used in two ways. 1) it may point to an specific retrievable network resource using a <code>rlink</code>, or 2) it may be included as an attachment using a <code>base64</code>. A resource may contain multiple <code>rlink</code> and <code>base64</code> entries that represent alternative download locations (rlink) and attachments (base64) for the same resource. Both rlink and base64 allow for a <code>media-type</code> to be specified, which is used to distinguish between different representations of the same resource (e.g., Microsoft Word, PDF). When multiple <code>rlink</code> and <code>base64</code> items are included for a given resource, all items must contain equivalent information. This allows the document consumer to choose a preferred item to process based on a the selected item's <code>media-type</code>. This is extremely important when the items represent OSCAL content that is represented in alternate formats (i.e., XML, JSON, YAML), allowing the same OSCAL data to be processed from any of the available formats indicated by the items.</p>
  * <p>When a resource includes a citation, then the <code>title</code> and <code>citation</code> properties must both be included.</p>
- * 
  * <!-- end-model-doc -->
  *
  * <p>
@@ -106,7 +104,6 @@ public interface BackMatterResource extends OscalElement, UUIDElement, PropertyO
 	 * <h1>Resource Description</h1>
 	 * <h2>Description</h2>
 	 * <p>A short summary of the resource used to indicate the purpose of the resource.</p>
-	 * 
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(MarkupMultiline)
@@ -161,7 +158,6 @@ public interface BackMatterResource extends OscalElement, UUIDElement, PropertyO
 	 * <h1>Resource Title</h1>
 	 * <h2>Description</h2>
 	 * <p>A name given to the resource, which may be used by a tool for display and navigation.</p>
-	 * 
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Title</em>' attribute.
 	 * @see #setTitle(MarkupLine)

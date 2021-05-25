@@ -157,8 +157,6 @@ public class OSCALDataTypeHandler {
 		}
 	}
 	
-	
-	
 	/**
 	* @generated
 	*/

@@ -27,11 +27,9 @@ import org.eclipse.emf.common.util.EList;
  * <!-- begin-model-doc -->
  * <h1>Resource link</h1>
  * <h2>Description</h2>
- * <p>A pointer to an external resource with an optional hash for verification and change detection.</p>
- * <h2>Remarks</h2>
+ * <p>A pointer to an external resource with an optional hash for verification and change detection.</p><h2>Remarks</h2>
  * <p>This construct is different from <code>link</code>, which makes no provision for a hash or formal title.</p>
  * <p>Multiple <code>rlink</code> can be included for a resource. In such a case, all provided <code>rlink</code> items are intended to be equivalent in content, but may differ in structure. A <code>media-type</code> is used to identify the format of a given rlink, and can be used to differentiate a items in a collection of rlinks. The <code>media-type</code> also provides a hint to the OSCAL document consumer about the structure of the resource referenced by the <code>rlink</code>.</p>
- * 
  * <!-- end-model-doc -->
  *
  * <p>
@@ -56,7 +54,6 @@ public interface ResourceRlink extends OscalElement {
 	 * <h1>Hypertext Reference</h1>
 	 * <h2>Description</h2>
 	 * <p>A resolvable URI reference to a resource.</p>
-	 * 
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>EHref</em>' attribute.
 	 * @see #setEHref(URI)
@@ -98,7 +95,6 @@ public interface ResourceRlink extends OscalElement {
 	 * <h1>Media Type</h1>
 	 * <h2>Description</h2>
 	 * <p>Specifies a media type as defined by the Internet Assigned Numbers Authority (IANA) <a href="https://www.iana.org/assignments/media-types/media-types.xhtml">Media Types Registry</a>.</p>
-	 * 
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Media Type</em>' attribute.
 	 * @see #setMediaType(String)

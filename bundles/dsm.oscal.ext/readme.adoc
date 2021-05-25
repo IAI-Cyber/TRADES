@@ -11,25 +11,6 @@ Here are the reference of the commit and repository used to build the current ve
 When a first release is version use the maven artifacts that will be available online.
 ====
 
-== oss-maven 
-
-* Repository: https://github.com/usnistgov/oss-maven
-* Commit: 03252eb24567a57296086e7574fa3016e3f693c4 
-* Command: `mvn clean install`
-
-== metaschema-java
-
-* Main repository; https://github.com/usnistgov/metaschema-java 
-* Repository used since it contains the current dev: https://github.com/david-waltermire-nist/metaschema-java
-* Commit id: 283a324e3bae9557f881458aa2ee4d574335debd
-* Command: `mvn clean install -DskipTests`
-
-[WARNING]
-====
-This is some test failing so I has to skip the tests.
-====
-
-
 == liboscal-jar
 
 * Main repository: https://github.com/usnistgov/liboscal-java

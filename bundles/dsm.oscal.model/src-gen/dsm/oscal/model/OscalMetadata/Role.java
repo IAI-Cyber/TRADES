@@ -26,10 +26,8 @@ import gov.nist.secauto.metaschema.datatypes.markup.MarkupMultiline;
  * <!-- begin-model-doc -->
  * <h1>Role</h1>
  * <h2>Description</h2>
- * <p>Defines a function assumed or expected to be assumed by a party in a specific situation.</p>
- * <h2>Remarks</h2>
+ * <p>Defines a function assumed or expected to be assumed by a party in a specific situation.</p><h2>Remarks</h2>
  * <p>Permissible values to be determined closer to the application (e.g. by a receiving authority).</p>
- * 
  * <!-- end-model-doc -->
  *
  * <p>
@@ -54,7 +52,6 @@ public interface Role extends OscalElement, PropertyOwner, LinkOwner, ElementWit
 	 * <h1>Role Description</h1>
 	 * <h2>Description</h2>
 	 * <p>A summary of the role's purpose and associated responsibilities.</p>
-	 * 
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(MarkupMultiline)
@@ -83,7 +80,6 @@ public interface Role extends OscalElement, PropertyOwner, LinkOwner, ElementWit
 	 * <h1>Role Short Name</h1>
 	 * <h2>Description</h2>
 	 * <p>A short common name, abbreviation, or acronym for the role.</p>
-	 * 
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Short Name</em>' attribute.
 	 * @see #setShortName(String)
@@ -111,7 +107,6 @@ public interface Role extends OscalElement, PropertyOwner, LinkOwner, ElementWit
 	 * <h1>Role Title</h1>
 	 * <h2>Description</h2>
 	 * <p>A name given to the role, which may be used by a tool for display and navigation.</p>
-	 * 
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Title</em>' attribute.
 	 * @see #setTitle(MarkupLine)

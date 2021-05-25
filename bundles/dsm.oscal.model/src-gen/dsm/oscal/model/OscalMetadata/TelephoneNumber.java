@@ -25,7 +25,6 @@ package dsm.oscal.model.OscalMetadata;
  * <h1>Telephone Number</h1>
  * <h2>Description</h2>
  * <p>Contact number by telephone.</p>
- * 
  * <!-- end-model-doc -->
  *
  * <p>
@@ -48,7 +47,6 @@ public interface TelephoneNumber extends OscalElement, ElementWithValue {
 	 * <h1>type flag</h1>
 	 * <h2>Description</h2>
 	 * <p>Indicates the type of phone number.</p>
-	 * 
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Type</em>' attribute.
 	 * @see #setType(String)

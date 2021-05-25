@@ -35,11 +35,9 @@ import org.eclipse.emf.common.util.EList;
  * <!-- begin-model-doc -->
  * <h1>Parameter</h1>
  * <h2>Description</h2>
- * <p>Parameters provide a mechanism for the dynamic assignment of value(s) in a control.</p>
- * <h2>Remarks</h2>
+ * <p>Parameters provide a mechanism for the dynamic assignment of value(s) in a control.</p><h2>Remarks</h2>
  * <p>In a catalog, a parameter is typically used as a placeholder for the future assignment of a parameter value, although the OSCAL model allows for the direct assignment of a value if desired by the control author. The <code>value</code> may be optionally used to specify one or more values. If no value is provided, then it is expected that the value will be provided at the Profile or Implementation layer.</p>
  * <p>A parameter can include a variety of metadata options that support the future solicitation of one or more values. A <code>label</code> provides a textual placeholder that can be used in a tool to solicit parameter value input, or to display in catalog documentation. The <code>desc</code> provides a short description of what the parameter is used for, which can be used in tooling to help a user understand how to use the parameter. A <code>constraint</code> can be used to provide criteria for the allowed values. A <code>guideline</code> provides a recommendation for the use of a parameter.</p>
- * 
  * <!-- end-model-doc -->
  *
  * <p>
@@ -81,7 +79,6 @@ public interface Parameter extends OscalElement, PropertyOwner, LinkOwner, Eleme
 	 * <h1>Depends on</h1>
 	 * <h2>Description</h2>
 	 * <p>Another parameter invoking this one</p>
-	 * 
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Depends On</em>' attribute.
 	 * @see #setDependsOn(String)
@@ -121,10 +118,8 @@ public interface Parameter extends OscalElement, PropertyOwner, LinkOwner, Eleme
 	 * <!-- begin-model-doc -->
 	 * <h1>Parameter Label</h1>
 	 * <h2>Description</h2>
-	 * <p>A short, placeholder name for the parameter, which can be used as a substitute for a <code>value</code> if no value is assigned.</p>
-	 * <h2>Remarks</h2>
+	 * <p>A short, placeholder name for the parameter, which can be used as a substitute for a <code>value</code> if no value is assigned.</p><h2>Remarks</h2>
 	 * <p>The label value should be suitable for inline display in a rendered catalog.</p>
-	 * 
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Label</em>' attribute.
 	 * @see #setLabel(MarkupLine)
@@ -176,7 +171,6 @@ public interface Parameter extends OscalElement, PropertyOwner, LinkOwner, Eleme
 	 * <h1>Parameter Usage Description</h1>
 	 * <h2>Description</h2>
 	 * <p>Describes the purpose and use of a parameter</p>
-	 * 
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Usage</em>' attribute.
 	 * @see #setUsage(MarkupMultiline)
@@ -206,7 +200,6 @@ public interface Parameter extends OscalElement, PropertyOwner, LinkOwner, Eleme
 	 * <h1>Parameter Value</h1>
 	 * <h2>Description</h2>
 	 * <p>A parameter value or set of values.</p>
-	 * 
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Values</em>' attribute list.
 	 * @see dsm.oscal.model.OscalCatalogCommon.OscalCatalogCommonPackage#getParameter_Values()

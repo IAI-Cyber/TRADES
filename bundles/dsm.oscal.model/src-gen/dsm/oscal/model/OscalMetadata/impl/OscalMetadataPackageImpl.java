@@ -340,13 +340,6 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EDataType emptyTypeEDataType = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EDataType ipV4AddressTypeEDataType = null;
 
 	/**
@@ -1612,16 +1605,6 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 * @generated
 	 */
 	@Override
-	public EDataType getEmptyType() {
-		return emptyTypeEDataType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EDataType getIpV4AddressType() {
 		return ipV4AddressTypeEDataType;
 	}
@@ -1860,7 +1843,6 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 		dateTimeWithTzTypeEDataType = createEDataType(DATE_TIME_WITH_TZ_TYPE);
 		dateTypeEDataType = createEDataType(DATE_TYPE);
 		dateWithTzTypeEDataType = createEDataType(DATE_WITH_TZ_TYPE);
-		emptyTypeEDataType = createEDataType(EMPTY_TYPE);
 		ipV4AddressTypeEDataType = createEDataType(IP_V4_ADDRESS_TYPE);
 		ipV6AddressTypeEDataType = createEDataType(IP_V6_ADDRESS_TYPE);
 		markupLineTypeEDataType = createEDataType(MARKUP_LINE_TYPE);
@@ -2114,7 +2096,6 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 		initEDataType(dateTimeWithTzTypeEDataType, ZonedDateTime.class, "DateTimeWithTzType", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(dateTypeEDataType, Date.class, "DateType", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(dateWithTzTypeEDataType, ZonedDateTime.class, "DateWithTzType", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
-		initEDataType(emptyTypeEDataType, Void.class, "EmptyType", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(ipV4AddressTypeEDataType, IPv4.class, "IpV4AddressType", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(ipV6AddressTypeEDataType, IPv6.class, "IpV6AddressType", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(markupLineTypeEDataType, MarkupLine.class, "MarkupLineType", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);

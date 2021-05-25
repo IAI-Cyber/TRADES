@@ -28,7 +28,6 @@ import org.eclipse.emf.common.util.EList;
  * <h1>Responsible Role</h1>
  * <h2>Description</h2>
  * <p>A reference to one or more roles with responsibility for performing a function relative to the containing object.</p>
- * 
  * <!-- end-model-doc -->
  *
  * <p>
@@ -53,7 +52,6 @@ public interface ResponsibleRole extends OscalElement, PropertyOwner, LinkOwner,
 	 * <h1>Party Reference</h1>
 	 * <h2>Description</h2>
 	 * <p>References a <code>party</code> defined in <code>metadata</code>.</p>
-	 * 
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Party Uuids</em>' attribute list.
 	 * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getResponsibleRole_PartyUuids()
@@ -71,7 +69,6 @@ public interface ResponsibleRole extends OscalElement, PropertyOwner, LinkOwner,
 	 * <h1>Responsible Role ID</h1>
 	 * <h2>Description</h2>
 	 * <p>The role that is responsible for the business function.</p>
-	 * 
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Role Id</em>' attribute.
 	 * @see #setRoleId(String)

@@ -29,10 +29,8 @@ import org.eclipse.emf.common.util.EList;
  * <!-- begin-model-doc -->
  * <h1>Selection</h1>
  * <h2>Description</h2>
- * <p>Presenting a choice among alternatives</p>
- * <h2>Remarks</h2>
+ * <p>Presenting a choice among alternatives</p><h2>Remarks</h2>
  * <p>A set of parameter value choices, that may be picked from to set the parameter value.</p>
- * 
  * <!-- end-model-doc -->
  *
  * <p>
@@ -57,7 +55,6 @@ public interface ParameterSelection extends OscalElement {
 	 * <h1>Choice</h1>
 	 * <h2>Description</h2>
 	 * <p>A value selection among several such options</p>
-	 * 
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Choice</em>' attribute list.
 	 * @see dsm.oscal.model.OscalCatalogCommon.OscalCatalogCommonPackage#getParameterSelection_Choice()
@@ -75,7 +72,6 @@ public interface ParameterSelection extends OscalElement {
 	 * <h1>Parameter Cardinality</h1>
 	 * <h2>Description</h2>
 	 * <p>Describes the number of selections that must occur.</p>
-	 * 
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>How Many</em>' attribute.
 	 * @see #setHowMany(String)

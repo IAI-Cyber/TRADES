@@ -37,11 +37,9 @@ import org.eclipse.emf.common.util.EList;
  * <!-- begin-model-doc -->
  * <h1>Control</h1>
  * <h2>Description</h2>
- * <p>A structured information object representing a security or privacy control. Each security or privacy control within the Catalog is defined by a distinct control instance.</p>
- * <h2>Remarks</h2>
+ * <p>A structured information object representing a security or privacy control. Each security or privacy control within the Catalog is defined by a distinct control instance.</p><h2>Remarks</h2>
  * <p>Controls may be grouped using <code>group</code>, and controls may be partitioned using <code>part</code> or further enhanced (extended) using <code>control</code>.</p>
  * <p>A control must have a part with the name <q>statement</q>, which represents the textual narrative of the control. This <q>statement</q> part must occur only once, but may have nested parts to allow for multiple paragraphs or sections of text.</p>
- * 
  * <!-- end-model-doc -->
  *
  * <p>
@@ -78,7 +76,6 @@ public interface Control extends OscalElement, ParameterOwner, PropertyOwner, Li
 	 * <h1>Control Title</h1>
 	 * <h2>Description</h2>
 	 * <p>A name given to the control, which may be used by a tool for display and navigation.</p>
-	 * 
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Title</em>' attribute.
 	 * @see #setTitle(MarkupLine)

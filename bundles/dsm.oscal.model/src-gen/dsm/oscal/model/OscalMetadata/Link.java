@@ -27,11 +27,9 @@ import java.net.URI;
  * <!-- begin-model-doc -->
  * <h1>Link</h1>
  * <h2>Description</h2>
- * <p>A reference to a local or remote resource</p>
- * <h2>Remarks</h2>
+ * <p>A reference to a local or remote resource</p><h2>Remarks</h2>
  * <p>To provide a cryptographic hash for a remote target resource, a local reference to a back matter <code>resource</code> is needed. The resource allows one or more hash values to be provided using the <code>rlink/hash</code> object.</p>
  * <p>The OSCAL <code>link</code> is a roughly based on the HTML <a href="https://www.w3.org/TR/html401/struct/links.html#edef-LINK">link element</a>.</p>
- * 
  * <!-- end-model-doc -->
  *
  * <p>
@@ -56,13 +54,11 @@ public interface Link extends OscalElement {
 	 * <!-- begin-model-doc -->
 	 * <h1>Hypertext Reference</h1>
 	 * <h2>Description</h2>
-	 * <p>A resolvable URL reference to a resource.</p>
-	 * <h2>Remarks</h2>
+	 * <p>A resolvable URL reference to a resource.</p><h2>Remarks</h2>
 	 * <p>The value of the <code>href</code> can be an internet resource, or a local reference using a fragment e.g. #fragment that points to a <code>back-matter</code>
 	 * <code>resource</code> in the same document.</p>
 	 * <p>If a local reference using a fragment is used, this will be indicated by a fragment <q>#</q> followed by an identifier which references an identified <code>resource</code> in the document's <code>back-matter</code> or another object that is within the scope of the containing OSCAL document.</p>
 	 * <p>If an internet resource is used, the <code>href</code> value will be an absolute or relative URI pointing to the location of the referenced resource. A relative URI will be resolved relative to the location of the document containing the link.</p>
-	 * 
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>EHref</em>' attribute.
 	 * @see #setEHref(URI)
@@ -91,7 +87,6 @@ public interface Link extends OscalElement {
 	 * <h1>Media Type</h1>
 	 * <h2>Description</h2>
 	 * <p>Specifies a media type as defined by the Internet Assigned Numbers Authority (IANA) <a href="https://www.iana.org/assignments/media-types/media-types.xhtml">Media Types Registry</a>.</p>
-	 * 
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Media Type</em>' attribute.
 	 * @see #setMediaType(String)
@@ -119,7 +114,6 @@ public interface Link extends OscalElement {
 	 * <h1>Relation</h1>
 	 * <h2>Description</h2>
 	 * <p>Describes the type of relationship provided by the link. This can be an indicator of the link's purpose.</p>
-	 * 
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Rel</em>' attribute.
 	 * @see #setRel(String)
@@ -147,7 +141,6 @@ public interface Link extends OscalElement {
 	 * <h1>Link Text</h1>
 	 * <h2>Description</h2>
 	 * <p>A textual label to associate with the link, which may be used for presentation in a tool.</p>
-	 * 
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Text</em>' attribute.
 	 * @see #setText(MarkupLine)

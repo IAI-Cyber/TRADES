@@ -25,10 +25,8 @@ import org.eclipse.emf.common.util.EList;
  * <!-- begin-model-doc -->
  * <h1>Back matter</h1>
  * <h2>Description</h2>
- * <p>A collection of resources, which may be included directly or by reference.</p>
- * <h2>Remarks</h2>
+ * <p>A collection of resources, which may be included directly or by reference.</p><h2>Remarks</h2>
  * <p>Provides a collection of identified <code>resource</code> objects that can be referenced by a <code>link</code> with a <code>rel</code> value of <q>reference</q> and an <code>href</code> value that is a fragment <q>#</q> followed by a reference to a reference identifier. Other specialized link <q>rel</q> values also use this pattern when indicated in that context of use.</p>
- * 
  * <!-- end-model-doc -->
  *
  * <p>

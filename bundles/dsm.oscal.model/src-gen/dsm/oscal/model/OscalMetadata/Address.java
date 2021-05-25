@@ -26,7 +26,6 @@ import org.eclipse.emf.common.util.EList;
  * <h1>Address</h1>
  * <h2>Description</h2>
  * <p>A postal address for the location.</p>
- * 
  * <!-- end-model-doc -->
  *
  * <p>
@@ -55,7 +54,6 @@ public interface Address extends OscalElement {
 	 * <h1>Address line</h1>
 	 * <h2>Description</h2>
 	 * <p>A single line of an address.</p>
-	 * 
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Addr Lines</em>' attribute list.
 	 * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getAddress_AddrLines()
@@ -72,7 +70,6 @@ public interface Address extends OscalElement {
 	 * <h1>City</h1>
 	 * <h2>Description</h2>
 	 * <p>City, town or geographical region for the mailing address.</p>
-	 * 
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>City</em>' attribute.
 	 * @see #setCity(String)
@@ -100,7 +97,6 @@ public interface Address extends OscalElement {
 	 * <h1>Country Code</h1>
 	 * <h2>Description</h2>
 	 * <p>The ISO 3166-1 alpha-2 country code for the mailing address.</p>
-	 * 
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Country</em>' attribute.
 	 * @see #setCountry(String)
@@ -128,7 +124,6 @@ public interface Address extends OscalElement {
 	 * <h1>Postal Code</h1>
 	 * <h2>Description</h2>
 	 * <p>Postal or ZIP code for mailing address</p>
-	 * 
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Postal Code</em>' attribute.
 	 * @see #setPostalCode(String)
@@ -156,7 +151,6 @@ public interface Address extends OscalElement {
 	 * <h1>State</h1>
 	 * <h2>Description</h2>
 	 * <p>State, province or analogous geographical region for mailing address</p>
-	 * 
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>State</em>' attribute.
 	 * @see #setState(String)
@@ -184,7 +178,6 @@ public interface Address extends OscalElement {
 	 * <h1>Address Type</h1>
 	 * <h2>Description</h2>
 	 * <p>Indicates the type of address.</p>
-	 * 
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Type</em>' attribute.
 	 * @see #setType(String)

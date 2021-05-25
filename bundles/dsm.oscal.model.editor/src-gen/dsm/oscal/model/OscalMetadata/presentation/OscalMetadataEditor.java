@@ -170,10 +170,12 @@ import org.eclipse.emf.edit.ui.view.ExtendedPropertySheetPage;
 
 import dsm.oscal.model.OscalMetadata.provider.OscalMetadataItemProviderAdapterFactory;
 
+import dsm.TRADES.provider.TRADESItemProviderAdapterFactory;
 import dsm.oscal.model.OscalCatalog.provider.OscalCatalogItemProviderAdapterFactory;
 
 import dsm.oscal.model.OscalCatalogCommon.provider.OscalCatalogCommonItemProviderAdapterFactory;
 
+import org.eclipse.emf.ecore.provider.EcoreItemProviderAdapterFactory;
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
 
 
@@ -727,9 +729,11 @@ public class OscalMetadataEditor
 		adapterFactory = new ComposedAdapterFactory(ComposedAdapterFactory.Descriptor.Registry.INSTANCE);
 
 		adapterFactory.addAdapterFactory(new ResourceItemProviderAdapterFactory());
-		adapterFactory.addAdapterFactory(new OscalMetadataItemProviderAdapterFactory());
-		adapterFactory.addAdapterFactory(new OscalCatalogCommonItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new OscalCatalogItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new OscalCatalogCommonItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new OscalMetadataItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new TRADESItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new EcoreItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());
 
 		// Create the command stack that will notify this editor as commands are executed.

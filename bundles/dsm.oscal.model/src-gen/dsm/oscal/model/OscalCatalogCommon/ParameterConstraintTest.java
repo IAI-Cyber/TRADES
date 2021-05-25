@@ -27,7 +27,6 @@ import dsm.oscal.model.OscalMetadata.OscalElement;
  * <h1>Constraint Test</h1>
  * <h2>Description</h2>
  * <p>A test expression which is expected to be evaluated by a tool.</p>
- * 
  * <!-- end-model-doc -->
  *
  * <p>
@@ -50,7 +49,6 @@ public interface ParameterConstraintTest extends OscalElement, ElementWithRemark
 	 * <h1>Constraint test</h1>
 	 * <h2>Description</h2>
 	 * <p>A formal (executable) expression of a constraint</p>
-	 * 
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Expression</em>' attribute.
 	 * @see #setExpression(String)

@@ -33,11 +33,9 @@ import org.eclipse.emf.common.util.EList;
  * <!-- begin-model-doc -->
  * <h1>Catalog</h1>
  * <h2>Description</h2>
- * <p>A collection of controls.</p>
- * <h2>Remarks</h2>
+ * <p>A collection of controls.</p><h2>Remarks</h2>
  * <p>Catalogs may use one or more <code>group</code> objects to subdivide the control contents of a catalog.</p>
  * <p>An OSCAL catalog model provides a structured representation of control information.</p>
- * 
  * <!-- end-model-doc -->
  *
  * <p>

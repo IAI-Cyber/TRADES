@@ -28,7 +28,6 @@ import gov.nist.secauto.metaschema.datatypes.markup.MarkupMultiline;
  * <h1>Guideline</h1>
  * <h2>Description</h2>
  * <p>A prose statement that provides a recommendation for the use of a parameter.</p>
- * 
  * <!-- end-model-doc -->
  *
  * <p>
@@ -51,7 +50,6 @@ public interface ParameterGuideline extends OscalElement {
 	 * <h1>Guideline Text</h1>
 	 * <h2>Description</h2>
 	 * <p>Prose permits multiple paragraphs, lists, tables etc.</p>
-	 * 
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Prose</em>' attribute.
 	 * @see #setProse(MarkupMultiline)

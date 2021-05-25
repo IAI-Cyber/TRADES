@@ -28,7 +28,6 @@ import org.eclipse.emf.common.util.EList;
  * <h1>Party (organization or person)</h1>
  * <h2>Description</h2>
  * <p>A responsible entity which is either a person or an organization.</p>
- * 
  * <!-- end-model-doc -->
  *
  * <p>
@@ -73,7 +72,6 @@ public interface Party extends OscalElement, UUIDElement, PropertyOwner, LinkOwn
 	 * <h1>Email Address</h1>
 	 * <h2>Description</h2>
 	 * <p>An email address as defined by <a href="https://tools.ietf.org/html/rfc5322#section-3.4.1">RFC 5322 Section 3.4.1</a>.</p>
-	 * 
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Email Addresses</em>' attribute list.
 	 * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getParty_EmailAddresses()
@@ -104,7 +102,6 @@ public interface Party extends OscalElement, UUIDElement, PropertyOwner, LinkOwn
 	 * <h1>Location Reference</h1>
 	 * <h2>Description</h2>
 	 * <p>References a <code>location</code> defined in <code>metadata</code>.</p>
-	 * 
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Location Uuids</em>' attribute list.
 	 * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getParty_LocationUuids()
@@ -122,10 +119,8 @@ public interface Party extends OscalElement, UUIDElement, PropertyOwner, LinkOwn
 	 * <!-- begin-model-doc -->
 	 * <h1>Organizational Affiliation</h1>
 	 * <h2>Description</h2>
-	 * <p>Identifies that the party object is a member of the organization associated with the provided UUID.</p>
-	 * <h2>Remarks</h2>
+	 * <p>Identifies that the party object is a member of the organization associated with the provided UUID.</p><h2>Remarks</h2>
 	 * <p>Parties of both the <code>person</code> or <code>organization</code> type can be associated with an organization using the <code>member-of-organization</code>.</p>
-	 * 
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Member Of Organizations</em>' attribute list.
 	 * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getParty_MemberOfOrganizations()
@@ -143,7 +138,6 @@ public interface Party extends OscalElement, UUIDElement, PropertyOwner, LinkOwn
 	 * <h1>Party Name</h1>
 	 * <h2>Description</h2>
 	 * <p>The full name of the party. This is typically the legal name associated with the party.</p>
-	 * 
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
@@ -171,7 +165,6 @@ public interface Party extends OscalElement, UUIDElement, PropertyOwner, LinkOwn
 	 * <h1>Party Short Name</h1>
 	 * <h2>Description</h2>
 	 * <p>A short common name, abbreviation, or acronym for the party.</p>
-	 * 
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Short Name</em>' attribute.
 	 * @see #setShortName(String)
@@ -212,7 +205,6 @@ public interface Party extends OscalElement, UUIDElement, PropertyOwner, LinkOwn
 	 * <h1>Party Type</h1>
 	 * <h2>Description</h2>
 	 * <p>A category describing the kind of party the object describes.</p>
-	 * 
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Type</em>' attribute.
 	 * @see #setType(String)

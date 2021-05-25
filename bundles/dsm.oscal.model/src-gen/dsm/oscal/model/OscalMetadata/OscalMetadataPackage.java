@@ -2177,16 +2177,6 @@ public interface OscalMetadataPackage extends EPackage {
 	int DATE_WITH_TZ_TYPE = 34;
 
 	/**
-	 * The meta object id for the '<em>Empty Type</em>' data type.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see java.lang.Void
-	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getEmptyType()
-	 * @generated
-	 */
-	int EMPTY_TYPE = 35;
-
-	/**
 	 * The meta object id for the '<em>Ip V4 Address Type</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2194,7 +2184,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getIpV4AddressType()
 	 * @generated
 	 */
-	int IP_V4_ADDRESS_TYPE = 36;
+	int IP_V4_ADDRESS_TYPE = 35;
 
 	/**
 	 * The meta object id for the '<em>Ip V6 Address Type</em>' data type.
@@ -2204,7 +2194,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getIpV6AddressType()
 	 * @generated
 	 */
-	int IP_V6_ADDRESS_TYPE = 37;
+	int IP_V6_ADDRESS_TYPE = 36;
 
 	/**
 	 * The meta object id for the '<em>Markup Line Type</em>' data type.
@@ -2214,7 +2204,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getMarkupLineType()
 	 * @generated
 	 */
-	int MARKUP_LINE_TYPE = 38;
+	int MARKUP_LINE_TYPE = 37;
 
 	/**
 	 * The meta object id for the '<em>Markup Multiline Type</em>' data type.
@@ -2224,7 +2214,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getMarkupMultilineType()
 	 * @generated
 	 */
-	int MARKUP_MULTILINE_TYPE = 39;
+	int MARKUP_MULTILINE_TYPE = 38;
 
 	/**
 	 * The meta object id for the '<em>Uri Reference Type</em>' data type.
@@ -2234,7 +2224,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getUriReferenceType()
 	 * @generated
 	 */
-	int URI_REFERENCE_TYPE = 40;
+	int URI_REFERENCE_TYPE = 39;
 
 	/**
 	 * The meta object id for the '<em>Uri Type</em>' data type.
@@ -2244,7 +2234,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getUriType()
 	 * @generated
 	 */
-	int URI_TYPE = 41;
+	int URI_TYPE = 40;
 
 	/**
 	 * The meta object id for the '<em>Uuid Type</em>' data type.
@@ -2254,7 +2244,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getUuidType()
 	 * @generated
 	 */
-	int UUID_TYPE = 42;
+	int UUID_TYPE = 41;
 
 
 	/**
@@ -3479,17 +3469,6 @@ public interface OscalMetadataPackage extends EPackage {
 	EDataType getDateWithTzType();
 
 	/**
-	 * Returns the meta object for data type '{@link java.lang.Void <em>Empty Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for data type '<em>Empty Type</em>'.
-	 * @see java.lang.Void
-	 * @model instanceClass="java.lang.Void"
-	 * @generated
-	 */
-	EDataType getEmptyType();
-
-	/**
 	 * Returns the meta object for data type '{@link gov.nist.secauto.metaschema.datatypes.IPv4 <em>Ip V4 Address Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4570,16 +4549,6 @@ public interface OscalMetadataPackage extends EPackage {
 		 * @generated
 		 */
 		EDataType DATE_WITH_TZ_TYPE = eINSTANCE.getDateWithTzType();
-
-		/**
-		 * The meta object literal for the '<em>Empty Type</em>' data type.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see java.lang.Void
-		 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getEmptyType()
-		 * @generated
-		 */
-		EDataType EMPTY_TYPE = eINSTANCE.getEmptyType();
 
 		/**
 		 * The meta object literal for the '<em>Ip V4 Address Type</em>' data type.

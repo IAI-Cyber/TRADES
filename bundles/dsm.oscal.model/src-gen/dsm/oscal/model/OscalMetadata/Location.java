@@ -30,7 +30,6 @@ import org.eclipse.emf.common.util.EList;
  * <h1>Location</h1>
  * <h2>Description</h2>
  * <p>A location, with associated metadata that can be referenced.</p>
- * 
  * <!-- end-model-doc -->
  *
  * <p>
@@ -81,7 +80,6 @@ public interface Location extends OscalElement, UUIDElement, PropertyOwner, Link
 	 * <h1>Email Address</h1>
 	 * <h2>Description</h2>
 	 * <p>An email address as defined by <a href="https://tools.ietf.org/html/rfc5322#section-3.4.1">RFC 5322 Section 3.4.1</a>.</p>
-	 * 
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Email Addresses</em>' attribute list.
 	 * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getLocation_EmailAddresses()
@@ -111,7 +109,6 @@ public interface Location extends OscalElement, UUIDElement, PropertyOwner, Link
 	 * <h1>Location Title</h1>
 	 * <h2>Description</h2>
 	 * <p>A name given to the location, which may be used by a tool for display and navigation.</p>
-	 * 
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Title</em>' attribute.
 	 * @see #setTitle(MarkupLine)
@@ -141,7 +138,6 @@ public interface Location extends OscalElement, UUIDElement, PropertyOwner, Link
 	 * <h1>Location URL</h1>
 	 * <h2>Description</h2>
 	 * <p>The uniform resource locator (URL) for a web site or Internet presence associated with the location.</p>
-	 * 
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Urls</em>' attribute list.
 	 * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getLocation_Urls()

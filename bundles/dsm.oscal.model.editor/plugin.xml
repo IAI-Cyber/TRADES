@@ -39,7 +39,7 @@
             id="dsm.oscal.model.OscalCatalog.presentation.OscalCatalogEditorID"
             name="%_UI_OscalCatalogEditor_label"
             icon="icons/full/obj16/OscalCatalogModelFile.gif"
-            extensions="oscalcatalog"
+            extensions="oscal"
             class="dsm.oscal.model.OscalCatalog.presentation.OscalCatalogEditor"
             contributorClass="dsm.oscal.model.OscalCatalog.presentation.OscalCatalogActionBarContributor">
       </editor>
@@ -67,7 +67,7 @@
             id="dsm.oscal.model.OscalCatalogCommon.presentation.OscalCatalogCommonEditorID"
             name="%_UI_OscalCatalogCommonEditor_label"
             icon="icons/full/obj16/OscalCatalogCommonModelFile.gif"
-            extensions="oscalcatalogcommon"
+            extensions="oscal"
             class="dsm.oscal.model.OscalCatalogCommon.presentation.OscalCatalogCommonEditor"
             contributorClass="dsm.oscal.model.OscalCatalogCommon.presentation.OscalCatalogCommonActionBarContributor">
       </editor>
@@ -95,7 +95,7 @@
             id="dsm.oscal.model.OscalMetadata.presentation.OscalMetadataEditorID"
             name="%_UI_OscalMetadataEditor_label"
             icon="icons/full/obj16/OscalMetadataModelFile.gif"
-            extensions="oscalmetadata"
+            extensions="oscal"
             class="dsm.oscal.model.OscalMetadata.presentation.OscalMetadataEditor"
             contributorClass="dsm.oscal.model.OscalMetadata.presentation.OscalMetadataActionBarContributor">
       </editor>

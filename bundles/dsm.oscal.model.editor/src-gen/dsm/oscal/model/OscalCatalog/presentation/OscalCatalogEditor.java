@@ -170,12 +170,11 @@ import org.eclipse.emf.edit.ui.view.ExtendedPropertySheetPage;
 
 import dsm.oscal.model.OscalCatalog.provider.OscalCatalogItemProviderAdapterFactory;
 
+import dsm.TRADES.provider.TRADESItemProviderAdapterFactory;
 import dsm.oscal.model.OscalCatalogCommon.provider.OscalCatalogCommonItemProviderAdapterFactory;
-
-import dsm.oscal.model.OscalMetadata.presentation.OscalEditorPlugin;
-
 import dsm.oscal.model.OscalMetadata.provider.OscalMetadataItemProviderAdapterFactory;
 
+import org.eclipse.emf.ecore.provider.EcoreItemProviderAdapterFactory;
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
 
 
@@ -560,7 +559,7 @@ public class OscalCatalogEditor
 					}
 				}
 				catch (CoreException exception) {
-					OscalEditorPlugin.INSTANCE.log(exception);
+					dsm.oscal.model.OscalCatalog.presentation.OscalEditorPlugin.INSTANCE.log(exception);
 				}
 			}
 		};
@@ -677,7 +676,7 @@ public class OscalCatalogEditor
 					showTabs();
 				}
 				catch (PartInitException exception) {
-					OscalEditorPlugin.INSTANCE.log(exception);
+					dsm.oscal.model.OscalCatalog.presentation.OscalEditorPlugin.INSTANCE.log(exception);
 				}
 			}
 
@@ -686,7 +685,7 @@ public class OscalCatalogEditor
 					markerHelper.updateMarkers(diagnostic);
 				}
 				catch (CoreException exception) {
-					OscalEditorPlugin.INSTANCE.log(exception);
+					dsm.oscal.model.OscalCatalog.presentation.OscalEditorPlugin.INSTANCE.log(exception);
 				}
 			}
 		}
@@ -729,9 +728,11 @@ public class OscalCatalogEditor
 		adapterFactory = new ComposedAdapterFactory(ComposedAdapterFactory.Descriptor.Registry.INSTANCE);
 
 		adapterFactory.addAdapterFactory(new ResourceItemProviderAdapterFactory());
-		adapterFactory.addAdapterFactory(new OscalMetadataItemProviderAdapterFactory());
-		adapterFactory.addAdapterFactory(new OscalCatalogCommonItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new OscalCatalogItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new OscalCatalogCommonItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new OscalMetadataItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new TRADESItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new EcoreItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());
 
 		// Create the command stack that will notify this editor as commands are executed.
@@ -1567,7 +1568,7 @@ public class OscalCatalogEditor
 		catch (Exception exception) {
 			// Something went wrong that shouldn't.
 			//
-			OscalEditorPlugin.INSTANCE.log(exception);
+			dsm.oscal.model.OscalCatalog.presentation.OscalEditorPlugin.INSTANCE.log(exception);
 		}
 		updateProblemIndication = true;
 		updateProblemIndication();
@@ -1776,7 +1777,7 @@ public class OscalCatalogEditor
 	 * @generated
 	 */
 	private static String getString(String key) {
-		return OscalEditorPlugin.INSTANCE.getString(key);
+		return dsm.oscal.model.OscalCatalog.presentation.OscalEditorPlugin.INSTANCE.getString(key);
 	}
 
 	/**
@@ -1786,7 +1787,7 @@ public class OscalCatalogEditor
 	 * @generated
 	 */
 	private static String getString(String key, Object s1) {
-		return OscalEditorPlugin.INSTANCE.getString(key, new Object [] { s1 });
+		return dsm.oscal.model.OscalCatalog.presentation.OscalEditorPlugin.INSTANCE.getString(key, new Object [] { s1 });
 	}
 
 	/**

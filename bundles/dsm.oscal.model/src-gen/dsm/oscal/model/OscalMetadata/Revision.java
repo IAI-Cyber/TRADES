@@ -27,10 +27,8 @@ import java.time.ZonedDateTime;
  * <!-- begin-model-doc -->
  * <h1>Revision History Entry</h1>
  * <h2>Description</h2>
- * <p>An entry in a sequential list of revisions to the containing document in reverse chronological order (i.e., most recent previous revision first).</p>
- * <h2>Remarks</h2>
+ * <p>An entry in a sequential list of revisions to the containing document in reverse chronological order (i.e., most recent previous revision first).</p><h2>Remarks</h2>
  * <p>While <code>published</code>, <code>last-modified</code>, <code>oscal-version</code>, and <code>version</code> are not required, values for these entries should be provided if the information is known. For a revision entry to be considered valid, at least one of the following items must be provided: <code>published</code>, <code>last-modified</code>, <code>version</code>, or a <code>link</code> with a <code>rel</code> of <q>source</q>.</p>
- * 
  * <!-- end-model-doc -->
  *
  * <p>
@@ -56,12 +54,10 @@ public interface Revision extends OscalElement, PropertyOwner, LinkOwner, Elemen
 	 * <!-- begin-model-doc -->
 	 * <h1>Last Modified Timestamp</h1>
 	 * <h2>Description</h2>
-	 * <p>The date and time the document was last modified. The date-time value must be formatted according to <a href="https://tools.ietf.org/html/rfc3339">RFC 3339</a> with full time and time zone included.</p>
-	 * <h2>Remarks</h2>
+	 * <p>The date and time the document was last modified. The date-time value must be formatted according to <a href="https://tools.ietf.org/html/rfc3339">RFC 3339</a> with full time and time zone included.</p><h2>Remarks</h2>
 	 * <p>This value represents the point in time when the OSCAL document was last updated, or at the point of creation the creation date. Typically, this date value will be machine generated at time of creation or modification.</p>
 	 * <p>In some cases, an OSCAL document may be derived from some source material in a different format. In such a case, the <code>last-modified</code> value should indicate the modification time of the OSCAL document, not the source material.</p>
 	 * <p>A publisher of OSCAL content can use this data point along with its siblings <code>published</code> and <code>version</code> to establish a sequence of successive revisions of a given OSCAL-based publication. The metadata for previous revisions can be represented as a <code>revision</code> in this object.</p>
-	 * 
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Last Modified</em>' attribute.
 	 * @see #setLastModified(ZonedDateTime)
@@ -89,10 +85,8 @@ public interface Revision extends OscalElement, PropertyOwner, LinkOwner, Elemen
 	 * <!-- begin-model-doc -->
 	 * <h1>OSCAL version</h1>
 	 * <h2>Description</h2>
-	 * <p>The OSCAL model version the document was authored against.</p>
-	 * <h2>Remarks</h2>
+	 * <p>The OSCAL model version the document was authored against.</p><h2>Remarks</h2>
 	 * <p>Indicates the version of the OSCAL model to which this data set conforms, for example <q>1.1.0</q> or <q>1.0.0-M1</q>. That can be used as a hint by a tool to indicate which version of the OSCAL XML or JSON schema to use for validation.</p>
-	 * 
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Oscal Version</em>' attribute.
 	 * @see #setOscalVersion(String)
@@ -119,12 +113,10 @@ public interface Revision extends OscalElement, PropertyOwner, LinkOwner, Elemen
 	 * <!-- begin-model-doc -->
 	 * <h1>Publication Timestamp</h1>
 	 * <h2>Description</h2>
-	 * <p>The date and time the document was published. The date-time value must be formatted according to <a href="https://tools.ietf.org/html/rfc3339">RFC 3339</a> with full time and time zone included.</p>
-	 * <h2>Remarks</h2>
+	 * <p>The date and time the document was published. The date-time value must be formatted according to <a href="https://tools.ietf.org/html/rfc3339">RFC 3339</a> with full time and time zone included.</p><h2>Remarks</h2>
 	 * <p>This value represents the point in time when the OSCAL document was published. Typically, this date value will be machine generated at the time the containing document is published.</p>
 	 * <p>In some cases, an OSCAL document may be derived from some source material in a different format. In such a case, the <code>published</code> value should indicate when the OSCAL document was published, not the source material. Where necessary, the publication date of the original source material can be captured as a named property or custom metadata construct.</p>
 	 * <p>A publisher of OSCAL content can use this data point along with its siblings <code>last-modified</code> and <code>version</code> to establish a sequence of successive revisions of a given OSCAL-based publication. The metadata for previous revisions can be represented as a <code>revision</code> in this object.</p>
-	 * 
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Published</em>' attribute.
 	 * @see #setPublished(ZonedDateTime)
@@ -153,7 +145,6 @@ public interface Revision extends OscalElement, PropertyOwner, LinkOwner, Elemen
 	 * <h1>Document Title</h1>
 	 * <h2>Description</h2>
 	 * <p>A name given to the document revision, which may be used by a tool for display and navigation.</p>
-	 * 
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Title</em>' attribute.
 	 * @see #setTitle(MarkupLine)
@@ -181,12 +172,10 @@ public interface Revision extends OscalElement, PropertyOwner, LinkOwner, Elemen
 	 * <!-- begin-model-doc -->
 	 * <h1>Document Version</h1>
 	 * <h2>Description</h2>
-	 * <p>A string used to distinguish the current version of the document from other previous (and future) versions.</p>
-	 * <h2>Remarks</h2>
+	 * <p>A string used to distinguish the current version of the document from other previous (and future) versions.</p><h2>Remarks</h2>
 	 * <p>A version string may be a release number, sequence number, date, or other identifier suffcient to distinguish between different document versions. This version is typically set by the document owner or by the tool used to maintain the content.</p>
 	 * <p>While not required, it is recommended that OSCAL content authors use <a href="https://semver.org/spec/v2.0.0.html">Semantic Versioning</a> as a format for version strings. This allows for the easy identification of a version tree consisting of major, minor, and patch numbers.</p>
 	 * <p>A publisher of OSCAL content can use this data point along with its siblings <code>published</code> and <code>last-modified</code> to establish a sequence of successive revisions of a given OSCAL-based publication. The metadata for previous revisions can be represented as a <code>revision</code> in this object.</p>
-	 * 
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Version</em>' attribute.
 	 * @see #setVersion(String)

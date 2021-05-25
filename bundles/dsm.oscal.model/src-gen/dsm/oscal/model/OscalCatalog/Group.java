@@ -35,11 +35,9 @@ import org.eclipse.emf.common.util.EList;
  * <!-- begin-model-doc -->
  * <h1>Control Group</h1>
  * <h2>Description</h2>
- * <p>A group of controls, or of groups of controls.</p>
- * <h2>Remarks</h2>
+ * <p>A group of controls, or of groups of controls.</p><h2>Remarks</h2>
  * <p>Catalogs can use a <code>group</code> to collect related controls into a single grouping. That can be useful to group controls into a family or other logical grouping.</p>
  * <p>A <code>group</code> may have its own properties, statements, parameters, and references, which are inherited by all members of that group.</p>
- * 
  * <!-- end-model-doc -->
  *
  * <p>
@@ -90,7 +88,6 @@ public interface Group extends OscalElement, ParameterOwner, PropertyOwner, Link
 	 * <h1>Group Title</h1>
 	 * <h2>Description</h2>
 	 * <p>A name given to the group, which may be used by a tool for display and navigation.</p>
-	 * 
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Title</em>' attribute.
 	 * @see #setTitle(MarkupLine)

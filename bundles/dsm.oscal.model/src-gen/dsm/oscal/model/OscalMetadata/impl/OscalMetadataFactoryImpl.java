@@ -135,8 +135,6 @@ public class OscalMetadataFactoryImpl extends EFactoryImpl implements OscalMetad
 				return createDateTypeFromString(eDataType, initialValue);
 			case OscalMetadataPackage.DATE_WITH_TZ_TYPE:
 				return createDateWithTzTypeFromString(eDataType, initialValue);
-			case OscalMetadataPackage.EMPTY_TYPE:
-				return createEmptyTypeFromString(eDataType, initialValue);
 			case OscalMetadataPackage.IP_V4_ADDRESS_TYPE:
 				return createIpV4AddressTypeFromString(eDataType, initialValue);
 			case OscalMetadataPackage.IP_V6_ADDRESS_TYPE:
@@ -174,8 +172,6 @@ public class OscalMetadataFactoryImpl extends EFactoryImpl implements OscalMetad
 				return convertDateTypeToString(eDataType, instanceValue);
 			case OscalMetadataPackage.DATE_WITH_TZ_TYPE:
 				return convertDateWithTzTypeToString(eDataType, instanceValue);
-			case OscalMetadataPackage.EMPTY_TYPE:
-				return convertEmptyTypeToString(eDataType, instanceValue);
 			case OscalMetadataPackage.IP_V4_ADDRESS_TYPE:
 				return convertIpV4AddressTypeToString(eDataType, instanceValue);
 			case OscalMetadataPackage.IP_V6_ADDRESS_TYPE:
@@ -681,42 +677,6 @@ public class OscalMetadataFactoryImpl extends EFactoryImpl implements OscalMetad
 	 */
 	public String convertDateWithTzTypeToString(EDataType eDataType, Object instanceValue) {
 		return convertDateWithTzType((ZonedDateTime)instanceValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Void createEmptyType(final String it) {
-		return null;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Void createEmptyTypeFromString(EDataType eDataType, String initialValue) {
-		return createEmptyType(initialValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertEmptyType(final Void it) {
-		return null;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertEmptyTypeToString(EDataType eDataType, Object instanceValue) {
-		return convertEmptyType((Void)instanceValue);
 	}
 
 	/**
