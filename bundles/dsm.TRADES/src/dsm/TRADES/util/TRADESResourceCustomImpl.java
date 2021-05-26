@@ -21,9 +21,4 @@ public class TRADESResourceCustomImpl extends TRADESResourceImpl {
 		super(uri);
 	}
 
-	@Override
-	protected boolean useUUIDs() {
-		return true;
-	}
-
 }

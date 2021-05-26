@@ -28,9 +28,5 @@ public class OscalResource extends XMIResourceImpl {
 		return true;
 	}
 
-	@Override
-	protected boolean useUUIDs() {
-		return true;
-	}
 
 }
