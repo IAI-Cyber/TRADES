@@ -1,0 +1,18 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: TRADES Capec
+Bundle-SymbolicName: dsm.TRADES.rcp.capec
+Bundle-Version: 2.5.2.qualifier
+Bundle-Activator: dsm.trades.rcp.capec.Activator
+Require-Bundle: org.eclipse.core.runtime,
+ dsm.TRADES.rcp;bundle-version="2.5.2",
+ org.eclipse.emf.common,
+ org.eclipse.pde.ds.lib;bundle-version="[1.1.400,2.0.0)";resolution:=optional,
+ org.eclipse.core.jobs,
+ org.eclipse.equinox.common,
+ org.eclipse.osgi
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Automatic-Module-Name: dsm.TRADES.rcp.capec
+Bundle-ActivationPolicy: lazy
+Service-Component: OSGI-INF/dsm.trades.rcp.capec.CapecCatalogProvider.xml
+Bundle-Vendor: Capec Mitre

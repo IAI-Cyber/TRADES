@@ -161,6 +161,8 @@
 		<module>../../bundles/dsm.TRADES.testlib/</module>
 		<module>../../bundles/dsm.TRADES.tests/</module>
 		<module>../../bundles/TRADES.design.test/</module>
+		<module>../../bundles/dsm.TRADES.rcp.mitre/</module>
+		<module>../../bundles/dsm.TRADES.rcp.capec/</module>
 
 
 
@@ -170,6 +172,8 @@
 
 		<!-- releng -->
 		<module>../dsm.TRADES.branding.feature/</module>
+		<module>../dsm.TRADES.mitre.feature/</module>
+		<module>../dsm.TRADES.capec.feature/</module>
 		<module>../TRADES.feature/</module>
 		<module>../TRADES.update/</module>
 		<module>../TRADES.product/</module>

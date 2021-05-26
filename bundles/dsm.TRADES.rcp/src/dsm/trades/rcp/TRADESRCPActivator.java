@@ -15,30 +15,63 @@ package dsm.trades.rcp;
 
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
+import org.eclipse.core.runtime.jobs.Job;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
+import org.osgi.framework.InvalidSyntaxException;
+import org.osgi.framework.ServiceReference;
+
+import dsm.trades.rcp.databases.ICatalogRegistry;
+import dsm.trades.rcp.databases.ICatalogRegistryConfigurator;
+import dsm.trades.rcp.internal.databases.CatalogRegistryImpl;
 
 /**
  * The activator class controls the plug-in life cycle
  */
-public class Activator extends AbstractUIPlugin {
+public class TRADESRCPActivator extends AbstractUIPlugin {
 
 	// The plug-in ID
 	public static final String PLUGIN_ID = "dsm.TRADES.rcp"; //$NON-NLS-1$
 
 	// The shared instance
-	private static Activator plugin;
-	
+	private static TRADESRCPActivator plugin;
+
+	private CatalogRegistryImpl catalogRegistry = new CatalogRegistryImpl();
+
 	/**
 	 * The constructor
 	 */
-	public Activator() {
+	public TRADESRCPActivator() {
 	}
 
 	@Override
 	public void start(BundleContext context) throws Exception {
 		super.start(context);
 		plugin = this;
+
+		Job.create("Init TRADES external catalog registry", monitor -> {
+			try {
+				@SuppressWarnings("unchecked")
+				ServiceReference<?>[] providerRefs = context
+						.getAllServiceReferences(ICatalogRegistryConfigurator.class.getCanonicalName(), null);
+				if (providerRefs != null) {
+					for (ServiceReference<?> ref : providerRefs) {
+						ICatalogRegistryConfigurator tmpProvider = (ICatalogRegistryConfigurator) context
+								.getService(ref);
+						tmpProvider.configure(catalogRegistry);
+						context.ungetService(ref);
+					}
+				}
+			} catch (InvalidSyntaxException e) {
+				logError("Error during registration of external templates", e);
+
+			}
+		}).schedule(1000);
+
+	}
+
+	public ICatalogRegistry getCatalogRegistry() {
+		return catalogRegistry;
 	}
 
 	@Override
@@ -52,7 +85,7 @@ public class Activator extends AbstractUIPlugin {
 	 *
 	 * @return the shared instance
 	 */
-	public static Activator getDefault() {
+	public static TRADESRCPActivator getDefault() {
 		return plugin;
 	}
 

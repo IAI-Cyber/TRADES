@@ -130,6 +130,8 @@ Except as expressly stated in Sections 2(a) and 2(b) above, Recipient receives n
       <feature id="org.obeonetwork.m2doc.feature" installMode="root"/>
       <feature id="org.obeonetwork.m2doc.html.feature" installMode="root"/>
       <feature id="org.obeonetwork.m2doc.ui.feature" installMode="root"/>
+      <feature id="dsm.TRADES.capec.feature" installMode="root"/>
+      <feature id="dsm.TRADES.mitre.feature" installMode="root"/>
    </features>
 
    <configurations>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" immediate="true" name="dsm.trades.rcp.capec.CapecCatalogProvider">
+   <property name="type" value="CAPEC"/>
+   <service>
+      <provide interface="dsm.trades.rcp.databases.ICatalogRegistryConfigurator"/>
+   </service>
+   <implementation class="dsm.trades.rcp.capec.CapecCatalogProvider"/>
+</scr:component>

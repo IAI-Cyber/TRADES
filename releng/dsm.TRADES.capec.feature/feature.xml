@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="dsm.TRADES.capec.feature"
+      label="TRADES Capec Catalog"
+      version="2.5.2.qualifier"
+      provider-name="CAPEC">
+
+   <description url="https://capec.mitre.org/index.html">
+      https://capec.mitre.org/index.html
+   </description>
+
+   <copyright url="https://capec.mitre.org/about/termsofuse.html">
+      https://capec.mitre.org/about/termsofuse.html
+   </copyright>
+
+   <license url="https://capec.mitre.org/about/termsofuse.html">
+      https://capec.mitre.org/about/termsofuse.html
+   </license>
+
+   <plugin
+         id="dsm.TRADES.rcp.capec"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>

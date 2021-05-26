@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: TRADES RCP
 Bundle-SymbolicName: dsm.TRADES.rcp;singleton:=true
 Bundle-Version: 2.5.2.qualifier
-Bundle-Activator: dsm.trades.rcp.Activator
+Bundle-Activator: dsm.trades.rcp.TRADESRCPActivator
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  org.eclipse.ui.console,
@@ -19,5 +19,7 @@ Bundle-RequiredExecutionEnvironment: JavaSE-11
 Automatic-Module-Name: dsm.TRADES.rcp
 Bundle-ActivationPolicy: lazy
 Bundle-Vendor: IAI Cyber Division
-Export-Package: dsm.trades.rcp.internal.wizards;x-friends:="dsm.oscal.design",
+Export-Package: dsm.trades.rcp,
+ dsm.trades.rcp.databases,
+ dsm.trades.rcp.internal.wizards;x-friends:="dsm.oscal.design",
  dsm.trades.rcp.utils

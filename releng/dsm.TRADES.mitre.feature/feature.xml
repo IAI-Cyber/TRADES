@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="dsm.TRADES.mitre.feature"
+      label="TRADES Mitre ATT&amp;CK Catalog"
+      version="2.5.2.qualifier"
+      provider-name="MITRE ATT&amp;CK">
+
+   <description url="https://attack.mitre.org/resources/terms-of-use/">
+      Catalog of control provided by MITREE ATT&amp;CK
+   </description>
+
+   <copyright url="https://attack.mitre.org/resources/terms-of-use/">
+      https://attack.mitre.org/resources/terms-of-use/
+   </copyright>
+
+   <license url="https://attack.mitre.org/resources/terms-of-use/">
+      https://attack.mitre.org/
+   </license>
+
+   <plugin
+         id="dsm.TRADES.rcp.mitre"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>

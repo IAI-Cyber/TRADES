@@ -63,7 +63,7 @@ import dsm.TRADES.SemanticUtil;
 import dsm.TRADES.Threat;
 import dsm.TRADES.ThreatsOwner;
 import dsm.TRADES.util.EcoreUtils;
-import dsm.trades.rcp.Activator;
+import dsm.trades.rcp.TRADESRCPActivator;
 import dsm.trades.rcp.utils.ControlCopier;
 import dsm.trades.rcp.utils.ThreatCopier;
 
@@ -93,7 +93,7 @@ public class ImportTradesModelWizard extends Wizard implements IImportWizard {
 			try {
 				catalogFolder.create(false, true, monitor);
 			} catch (CoreException e) {
-				Activator.logError("Unable to create 'catalogs' fodler " + e.getMessage(), e);
+				TRADESRCPActivator.logError("Unable to create 'catalogs' fodler " + e.getMessage(), e);
 			}
 		}
 	}
@@ -157,7 +157,7 @@ public class ImportTradesModelWizard extends Wizard implements IImportWizard {
 						});
 
 					} catch (InvocationTargetException | InterruptedException e) {
-						Activator.logError("Error occured while loading the session : " + e.getMessage(), e);
+						TRADESRCPActivator.logError("Error occured while loading the session : " + e.getMessage(), e);
 					}
 
 					return importTradesCatalog(repUri, session[0]);
@@ -230,7 +230,7 @@ public class ImportTradesModelWizard extends Wizard implements IImportWizard {
 
 			});
 		} catch (InvocationTargetException | InterruptedException e) {
-			Activator.logError("Error while laoding model " + e.getMessage(), e);
+			TRADESRCPActivator.logError("Error while laoding model " + e.getMessage(), e);
 			return false;
 		}
 
@@ -314,7 +314,7 @@ public class ImportTradesModelWizard extends Wizard implements IImportWizard {
 							}
 
 						} else {
-							Activator.logError("Invalid catalog model");
+							TRADESRCPActivator.logError("Invalid catalog model");
 						}
 
 					}
@@ -323,7 +323,7 @@ public class ImportTradesModelWizard extends Wizard implements IImportWizard {
 				editingDomain.getCommandStack().execute(cmd);
 			});
 		} catch (InvocationTargetException | InterruptedException e) {
-			Activator.logError("Error while importing model " + e.getMessage(), e);
+			TRADESRCPActivator.logError("Error while importing model " + e.getMessage(), e);
 			return false;
 		}
 		return true;

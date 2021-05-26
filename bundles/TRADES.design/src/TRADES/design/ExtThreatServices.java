@@ -24,7 +24,6 @@ import java.util.Collections;
 import java.util.List;
 
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
@@ -50,6 +49,8 @@ import dsm.TRADES.Threat;
 import dsm.TRADES.ThreatMitigationRelation;
 import dsm.TRADES.ThreatsOwner;
 import dsm.TRADES.util.EcoreUtils;
+import dsm.trades.rcp.TRADESRCPActivator;
+import dsm.trades.rcp.databases.CatalogDescription;
 import dsm.trades.rcp.utils.ThreatCopier;
 
 public class ExtThreatServices {
@@ -74,8 +75,9 @@ public class ExtThreatServices {
 
 		ResourceSet rs = session.getTransactionalEditingDomain().getResourceSet();
 		// Embedded catalogs
-		for (URI uri : Activator.getDefault().getDatabaseURI()) {
-			Resource resource = rs.getResource(uri, true);
+		for (CatalogDescription embeddedCatalog : TRADESRCPActivator.getDefault().getCatalogRegistry()
+				.getAvailableCatalogs()) {
+			Resource resource = rs.getResource(embeddedCatalog.getUri(), true);
 
 			EObject eObject = resource.getContents().get(0);
 			if (eObject instanceof ICatalogDefinition) {
