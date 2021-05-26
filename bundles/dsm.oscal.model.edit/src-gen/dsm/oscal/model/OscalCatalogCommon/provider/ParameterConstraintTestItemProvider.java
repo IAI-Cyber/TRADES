@@ -16,6 +16,7 @@
 package dsm.oscal.model.OscalCatalogCommon.provider;
 
 
+import dsm.oscal.model.OscalCatalog.provider.OscalEditPlugin;
 import dsm.oscal.model.OscalCatalogCommon.OscalCatalogCommonPackage;
 import dsm.oscal.model.OscalCatalogCommon.ParameterConstraintTest;
 
@@ -182,7 +183,7 @@ public class ParameterConstraintTestItemProvider extends OscalElementItemProvide
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return dsm.oscal.model.OscalCatalog.provider.OscalEditPlugin.INSTANCE;
+		return OscalEditPlugin.INSTANCE;
 	}
 
 }

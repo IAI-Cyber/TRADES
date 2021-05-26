@@ -16,6 +16,7 @@
 package dsm.oscal.model.OscalCatalog.impl;
 
 import dsm.TRADES.IControlDefinition;
+import dsm.TRADES.IElementWithSource;
 import dsm.TRADES.IMitigationLink;
 import dsm.TRADES.TRADESPackage;
 
@@ -384,6 +385,30 @@ public class ControlImpl extends OscalElementCustomImpl implements Control {
 	 * @generated
 	 */
 	@Override
+	public String getSourceName() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getSourceIdentifier() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public String computeDocumentation() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -594,6 +619,11 @@ public class ControlImpl extends OscalElementCustomImpl implements Control {
 				default: return -1;
 			}
 		}
+		if (baseClass == IElementWithSource.class) {
+			switch (derivedFeatureID) {
+				default: return -1;
+			}
+		}
 		if (baseClass == IControlDefinition.class) {
 			switch (derivedFeatureID) {
 				default: return -1;
@@ -647,6 +677,11 @@ public class ControlImpl extends OscalElementCustomImpl implements Control {
 		if (baseClass == PartOwner.class) {
 			switch (baseFeatureID) {
 				case OscalMetadataPackage.PART_OWNER__PARTS: return OscalCatalogPackage.CONTROL__PARTS;
+				default: return -1;
+			}
+		}
+		if (baseClass == IElementWithSource.class) {
+			switch (baseFeatureID) {
 				default: return -1;
 			}
 		}
@@ -704,6 +739,13 @@ public class ControlImpl extends OscalElementCustomImpl implements Control {
 				default: return -1;
 			}
 		}
+		if (baseClass == IElementWithSource.class) {
+			switch (baseOperationID) {
+				case TRADESPackage.IELEMENT_WITH_SOURCE___GET_SOURCE_NAME: return OscalCatalogPackage.CONTROL___GET_SOURCE_NAME;
+				case TRADESPackage.IELEMENT_WITH_SOURCE___GET_SOURCE_IDENTIFIER: return OscalCatalogPackage.CONTROL___GET_SOURCE_IDENTIFIER;
+				default: return -1;
+			}
+		}
 		if (baseClass == IControlDefinition.class) {
 			switch (baseOperationID) {
 				case TRADESPackage.ICONTROL_DEFINITION___GET_DESCRIPTION: return OscalCatalogPackage.CONTROL___GET_DESCRIPTION;
@@ -740,6 +782,10 @@ public class ControlImpl extends OscalElementCustomImpl implements Control {
 				return getMitigatedThreatDefinitions();
 			case OscalCatalogPackage.CONTROL___GET_NAME:
 				return getName();
+			case OscalCatalogPackage.CONTROL___GET_SOURCE_NAME:
+				return getSourceName();
+			case OscalCatalogPackage.CONTROL___GET_SOURCE_IDENTIFIER:
+				return getSourceIdentifier();
 			case OscalCatalogPackage.CONTROL___COMPUTE_DOCUMENTATION:
 				return computeDocumentation();
 			case OscalCatalogPackage.CONTROL___GET_PARAMETER_VALUES:

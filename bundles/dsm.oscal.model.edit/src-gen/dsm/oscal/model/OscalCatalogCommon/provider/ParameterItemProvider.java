@@ -16,6 +16,7 @@
 package dsm.oscal.model.OscalCatalogCommon.provider;
 
 
+import dsm.oscal.model.OscalCatalog.provider.OscalEditPlugin;
 import dsm.oscal.model.OscalCatalogCommon.OscalCatalogCommonFactory;
 import dsm.oscal.model.OscalCatalogCommon.OscalCatalogCommonPackage;
 import dsm.oscal.model.OscalCatalogCommon.Parameter;
@@ -367,7 +368,7 @@ public class ParameterItemProvider extends OscalElementItemProvider {
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return dsm.oscal.model.OscalCatalog.provider.OscalEditPlugin.INSTANCE;
+		return OscalEditPlugin.INSTANCE;
 	}
 
 }

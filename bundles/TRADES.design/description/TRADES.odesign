@@ -266,9 +266,7 @@
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:container.eContainerOrSelf(TRADES::Analysis).threatOwner">
                 <subModelOperations xsi:type="tool_1:CreateInstance" typeName="TRADES::Threat" referenceName="internals">
-                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="TRADES::Threat" referenceName="internals">
-                    <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql:self.generateUUID()"/>
-                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql:self.generateUUID()"/>
                 </subModelOperations>
               </firstModelOperations>
             </initialOperation>
@@ -1425,6 +1423,7 @@
       <pages name="OwnedDataPage" labelExpression="Available Data" domainClass="TRADES::DataOwnerElement" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.17"/>
       <pages name="LinkPage" label="Link Page" labelExpression="Link" domainClass="TRADES::Link" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.0 //@extensions.0/@categories.0/@groups.20"/>
       <pages name="LinkTypePage" label="Link Type Page" labelExpression="Link type" domainClass="TRADES::LinkType" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.21"/>
+      <pages name="CatalogPage" labelExpression="General" domainClass="TRADES::Catalog" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.22"/>
       <groups name="ModelElementGroup" label="Model element" labelExpression="Basic Properties" domainClass="TRADES::NamedElement" semanticCandidateExpression="var:self">
         <controls xsi:type="properties:TextDescription" name="ElementNameFiald" label="Name" labelExpression="Name" helpExpression="Name of the element" isEnabledExpression="aql:not(self.oclIsTypeOf(TRADES::ExternalThreat) or self.oclIsTypeOf(TRADES::ExternalControl) or self.oclIsTypeOf(TRADES::ThreatMitigationRelation)" valueExpression="aql:self.name">
           <initialOperation>
@@ -1631,6 +1630,9 @@
           <onClickOperation>
             <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self"/>
           </onClickOperation>
+        </controls>
+        <controls xsi:type="properties:TextDescription" name="AnalysisDFieald" label="ID" labelExpression="ID" helpExpression="ID of the analysis" isEnabledExpression="aql:false" valueExpression="aql:self.id">
+          <initialOperation/>
         </controls>
       </groups>
       <groups name="ExternalThreatGroup" label="ExternalThreatDetails" labelExpression="External Threat Details" domainClass="TRADES::ExternalThreat" semanticCandidateExpression="var:self">
@@ -2206,6 +2208,11 @@
             <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.setRGBColorByUI()"/>
           </initialOperation>
           <style labelBackgroundColor="//@userColorsPalettes[name='Colors']/@entries[name='HeatMapColorBackGround']" labelForegroundColor="//@userColorsPalettes[name='Colors']/@entries[name='HeatMapColorForeground']"/>
+        </controls>
+      </groups>
+      <groups name="CatalogGroup" labelExpression="Catalog Details" domainClass="TRADES::Catalog" semanticCandidateExpression="var:self">
+        <controls xsi:type="properties:TextDescription" name="AnalysisDFieald" label="ID" labelExpression="ID" helpExpression="ID of the catalog" isEnabledExpression="aql:false" valueExpression="aql:self.id">
+          <initialOperation/>
         </controls>
       </groups>
     </categories>

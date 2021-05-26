@@ -16,6 +16,7 @@
 package dsm.oscal.model.OscalMetadata.provider;
 
 
+import dsm.oscal.model.OscalCatalog.provider.OscalEditPlugin;
 import dsm.oscal.model.OscalMetadata.OscalMetadataFactory;
 import dsm.oscal.model.OscalMetadata.OscalMetadataPackage;
 import dsm.oscal.model.OscalMetadata.PropertyOwner;

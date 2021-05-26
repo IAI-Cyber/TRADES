@@ -18,6 +18,7 @@ package dsm.oscal.model.OscalCatalog.util;
 import dsm.TRADES.ICatalogDefinition;
 import dsm.TRADES.IControlDefinition;
 
+import dsm.TRADES.IElementWithSource;
 import dsm.oscal.model.OscalCatalog.*;
 
 import dsm.oscal.model.OscalMetadata.DocumentationComputer;
@@ -136,6 +137,10 @@ public class OscalCatalogAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter casePartOwner(PartOwner object) {
 				return createPartOwnerAdapter();
+			}
+			@Override
+			public Adapter caseIElementWithSource(IElementWithSource object) {
+				return createIElementWithSourceAdapter();
 			}
 			@Override
 			public Adapter caseIControlDefinition(IControlDefinition object) {
@@ -320,6 +325,20 @@ public class OscalCatalogAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createPartOwnerAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link dsm.TRADES.IElementWithSource <em>IElement With Source</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see dsm.TRADES.IElementWithSource
+	 * @generated
+	 */
+	public Adapter createIElementWithSourceAdapter() {
 		return null;
 	}
 

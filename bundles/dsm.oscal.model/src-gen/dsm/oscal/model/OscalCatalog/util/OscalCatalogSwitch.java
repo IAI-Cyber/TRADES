@@ -18,6 +18,7 @@ package dsm.oscal.model.OscalCatalog.util;
 import dsm.TRADES.ICatalogDefinition;
 import dsm.TRADES.IControlDefinition;
 
+import dsm.TRADES.IElementWithSource;
 import dsm.oscal.model.OscalCatalog.*;
 
 import dsm.oscal.model.OscalMetadata.DocumentationComputer;
@@ -114,6 +115,7 @@ public class OscalCatalogSwitch<T> extends Switch<T> {
 				if (result == null) result = caseElementWithClazz(control);
 				if (result == null) result = caseElementWithId(control);
 				if (result == null) result = caseDocumentationComputer(control);
+				if (result == null) result = caseIElementWithSource(control);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -297,6 +299,21 @@ public class OscalCatalogSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T casePartOwner(PartOwner object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>IElement With Source</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>IElement With Source</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseIElementWithSource(IElementWithSource object) {
 		return null;
 	}
 

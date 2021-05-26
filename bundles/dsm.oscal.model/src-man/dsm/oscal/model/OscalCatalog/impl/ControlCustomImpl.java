@@ -20,14 +20,16 @@ import org.eclipse.emf.common.util.ECollections;
 import org.eclipse.emf.common.util.EList;
 
 import dsm.TRADES.IMitigationLink;
+import dsm.TRADES.util.EcoreUtils;
 import dsm.oscal.model.DocumentationComputer;
 import dsm.oscal.model.ParameterResolver;
+import dsm.oscal.model.OscalCatalog.Catalog;
 
 public class ControlCustomImpl extends ControlImpl {
 
 	@Override
 	public String computeDocumentation() {
-		return DocumentationComputer.computeDocumentation(this,getParameterValues());
+		return DocumentationComputer.computeDocumentation(this, getParameterValues());
 	}
 
 	@Override
@@ -43,5 +45,23 @@ public class ControlCustomImpl extends ControlImpl {
 	@Override
 	public EList<IMitigationLink> getMitigatedThreatDefinitions() {
 		return ECollections.emptyEList();
+	}
+
+	@Override
+	public String getSourceIdentifier() {
+		Catalog catalog = EcoreUtils.getAncestor(this, Catalog.class);
+		if (catalog != null) {
+			return catalog.getIdentifier();
+		}
+		return null;
+	}
+
+	@Override
+	public String getSourceName() {
+		Catalog catalog = EcoreUtils.getAncestor(this, Catalog.class);
+		if (catalog != null) {
+			return catalog.getName();
+		}
+		return null;
 	}
 }
