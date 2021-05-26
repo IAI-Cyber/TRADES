@@ -8,7 +8,7 @@
       <metamodel href="dsm.TRADES#/"/>
       <layers name="OscalLayer" activeByDefault="true" optional="false">
         <toolSections name="Oscal Tools">
-          <ownedTools xsi:type="tool:ContainerDropDescription" name="DropOScalControl" dragSource="PROJECT_EXPLORER">
+          <ownedTools xsi:type="tool:ContainerDropDescription" name="DropOScalControl_TDExt" precondition="aql:element.oclIsTypeOf(OscalCatalog::Control)" dragSource="PROJECT_EXPLORER">
             <oldContainer name="oldSemanticContainer"/>
             <newContainer name="newSemanticContainer"/>
             <element name="element"/>
@@ -18,6 +18,15 @@
             </initialOperation>
           </ownedTools>
         </toolSections>
+      </layers>
+    </ownedRepresentationExtensions>
+    <ownedRepresentationExtensions xsi:type="description_1:DiagramExtensionDescription" name="TRADES.design" viewpointURI="viewpoint:/TRADES.design/TRADESview" representationName="Component Analysis">
+      <metamodel href="http://csrc.nist.gov/ns/oscal/1.0/oscal-catalog#/"/>
+      <metamodel href="http://csrc.nist.gov/ns/oscal/1.0/oscal-catalog-common#/"/>
+      <metamodel href="http://csrc.nist.gov/ns/oscal/1.0/oscal-metadata#/"/>
+      <metamodel href="dsm.TRADES#/"/>
+      <layers name="OscalLayer_CA" optional="false">
+        <toolSections name="Add_CAExt" reusedTools="//@ownedViewpoints[name='OscalViewPoint']/@ownedRepresentationExtensions[name='TRADES.design']/@layers[name='OscalLayer']/@toolSections.0/@ownedTools[name='DropOScalControl_TDExt']"/>
       </layers>
     </ownedRepresentationExtensions>
     <ownedJavaExtensions qualifiedClassName="dsm.oscal.design.service.OscalDesignService"/>
