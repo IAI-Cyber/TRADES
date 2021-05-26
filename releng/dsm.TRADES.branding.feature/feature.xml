@@ -2,7 +2,7 @@
 <feature
       id="dsm.TRADES.branding.feature"
       label="TRADES Branding Feature"
-      version="2.5.2.qualifier"
+      version="3.0.0.qualifier"
       provider-name="IAI Cyber Division"
       plugin="dsm.TRADES.branding"
       license-feature="org.eclipse.license"

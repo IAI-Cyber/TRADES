@@ -2,7 +2,7 @@
 <feature
       id="dsm.TRADES.capec.feature"
       label="TRADES Capec Catalog"
-      version="2.5.2.qualifier"
+      version="3.0.0.qualifier"
       provider-name="CAPEC">
 
    <description url="https://capec.mitre.org/index.html">

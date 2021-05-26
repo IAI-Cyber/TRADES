@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: dsm.oscal.model.editor;singleton:=true
 Automatic-Module-Name: dsm.oscal.model.editor
-Bundle-Version: 2.5.2.qualifier
+Bundle-Version: 3.0.0.qualifier
 Bundle-ClassPath: .
 Bundle-Activator: dsm.oscal.model.OscalCatalog.presentation.OscalEditorPlugin$Implementation
 Bundle-Vendor: %providerName

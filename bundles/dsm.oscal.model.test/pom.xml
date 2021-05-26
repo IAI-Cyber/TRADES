@@ -5,13 +5,13 @@
 	<artifactId>dsm.oscal.model.test</artifactId>
 	<name>OSCAL Model Test</name>
 	<groupId>TRADES</groupId>
-	<version>2.5.2-SNAPSHOT</version>
+	<version>3.0.0-SNAPSHOT</version>
 	<packaging>eclipse-test-plugin</packaging>
 
 	<parent>
 		<groupId>TRADES</groupId>
 		<artifactId>TRADES.parent</artifactId>
-		<version>2.5.2-SNAPSHOT</version>
+		<version>3.0.0-SNAPSHOT</version>
 		<relativePath>../../releng/dsm.TRADES.parent/</relativePath>
 	</parent>
 
