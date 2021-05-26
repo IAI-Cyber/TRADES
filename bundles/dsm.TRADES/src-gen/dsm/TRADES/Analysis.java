@@ -32,8 +32,8 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface Analysis
-		extends ComponentOwner, DataOwnerElement, NamedElement, AbstractControlOwner, AbstractThreatOwner {
+public interface Analysis extends ComponentOwner, DataOwnerElement, NamedElement, AbstractControlOwner,
+		AbstractThreatOwner, ElementWithId {
 	/**
 	 * Returns the value of the '<em><b>Score System</b></em>' containment reference.
 	 * <!-- begin-user-doc -->

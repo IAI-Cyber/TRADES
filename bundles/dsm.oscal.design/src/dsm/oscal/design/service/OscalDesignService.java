@@ -57,7 +57,8 @@ public class OscalDesignService {
 
 		extControl.setSource(catalog.getName());
 		extControl.setSourceID(catalogIdentifier);
-		extControl.setLink(CatalogElementURI.createCatalogControlURI(catalogIdentifier, control.getId()).toString());
+		extControl.setLink(
+				CatalogElementURI.createCatalogControlURI(control.getSourceIdentifier(), control.getId()).toString());
 
 		ControlOwner controlOwner = owner.getControlOwner();
 		if (controlOwner == null) {

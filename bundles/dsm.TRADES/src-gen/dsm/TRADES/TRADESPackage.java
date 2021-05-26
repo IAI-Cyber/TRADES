@@ -168,13 +168,22 @@ public interface TRADESPackage extends EPackage {
 	int ANALYSIS__THREAT_OWNER = COMPONENT_OWNER_FEATURE_COUNT + 3;
 
 	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ANALYSIS__ID = COMPONENT_OWNER_FEATURE_COUNT + 4;
+
+	/**
 	 * The feature id for the '<em><b>Score System</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ANALYSIS__SCORE_SYSTEM = COMPONENT_OWNER_FEATURE_COUNT + 4;
+	int ANALYSIS__SCORE_SYSTEM = COMPONENT_OWNER_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Link Types</b></em>' containment reference list.
@@ -183,7 +192,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ANALYSIS__LINK_TYPES = COMPONENT_OWNER_FEATURE_COUNT + 5;
+	int ANALYSIS__LINK_TYPES = COMPONENT_OWNER_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of structural features of the '<em>Analysis</em>' class.
@@ -192,7 +201,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ANALYSIS_FEATURE_COUNT = COMPONENT_OWNER_FEATURE_COUNT + 6;
+	int ANALYSIS_FEATURE_COUNT = COMPONENT_OWNER_FEATURE_COUNT + 7;
 
 	/**
 	 * The operation id for the '<em>Get Datas</em>' operation.
@@ -314,13 +323,22 @@ public interface TRADESPackage extends EPackage {
 	int THREAT__NAME = NAMED_ELEMENT__NAME;
 
 	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THREAT__ID = NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Threat Allocations</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int THREAT__THREAT_ALLOCATIONS = NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int THREAT__THREAT_ALLOCATIONS = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Threat Type</b></em>' attribute.
@@ -329,16 +347,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int THREAT__THREAT_TYPE = NAMED_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int THREAT__ID = NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int THREAT__THREAT_TYPE = NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -368,13 +377,31 @@ public interface TRADESPackage extends EPackage {
 	int THREAT_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
+	 * The operation id for the '<em>Get Source Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THREAT___GET_SOURCE_NAME = NAMED_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Get Source Identifier</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THREAT___GET_SOURCE_IDENTIFIER = NAMED_ELEMENT_OPERATION_COUNT + 1;
+
+	/**
 	 * The operation id for the '<em>Get Id</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int THREAT___GET_ID = NAMED_ELEMENT_OPERATION_COUNT + 0;
+	int THREAT___GET_ID = NAMED_ELEMENT_OPERATION_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>Get Description</em>' operation.
@@ -383,7 +410,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int THREAT___GET_DESCRIPTION = NAMED_ELEMENT_OPERATION_COUNT + 1;
+	int THREAT___GET_DESCRIPTION = NAMED_ELEMENT_OPERATION_COUNT + 3;
 
 	/**
 	 * The operation id for the '<em>Get Name</em>' operation.
@@ -392,7 +419,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int THREAT___GET_NAME = NAMED_ELEMENT_OPERATION_COUNT + 2;
+	int THREAT___GET_NAME = NAMED_ELEMENT_OPERATION_COUNT + 4;
 
 	/**
 	 * The operation id for the '<em>Check Is Used</em>' operation.
@@ -401,7 +428,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int THREAT___CHECK_IS_USED__DIAGNOSTICCHAIN_MAP = NAMED_ELEMENT_OPERATION_COUNT + 3;
+	int THREAT___CHECK_IS_USED__DIAGNOSTICCHAIN_MAP = NAMED_ELEMENT_OPERATION_COUNT + 5;
 
 	/**
 	 * The number of operations of the '<em>Threat</em>' class.
@@ -410,7 +437,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int THREAT_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 4;
+	int THREAT_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 6;
 
 	/**
 	 * The meta object id for the '{@link dsm.TRADES.impl.ComponentImpl <em>Component</em>}' class.
@@ -568,22 +595,22 @@ public interface TRADESPackage extends EPackage {
 	int CONTROL__NAME = NAMED_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Mitigated Threats</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTROL__MITIGATED_THREATS = NAMED_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL__ID = NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int CONTROL__ID = NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Mitigated Threats</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL__MITIGATED_THREATS = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -622,13 +649,31 @@ public interface TRADESPackage extends EPackage {
 	int CONTROL_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
+	 * The operation id for the '<em>Get Source Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL___GET_SOURCE_NAME = NAMED_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Get Source Identifier</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL___GET_SOURCE_IDENTIFIER = NAMED_ELEMENT_OPERATION_COUNT + 1;
+
+	/**
 	 * The operation id for the '<em>Get Description</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL___GET_DESCRIPTION = NAMED_ELEMENT_OPERATION_COUNT + 0;
+	int CONTROL___GET_DESCRIPTION = NAMED_ELEMENT_OPERATION_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>Get Id</em>' operation.
@@ -637,7 +682,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL___GET_ID = NAMED_ELEMENT_OPERATION_COUNT + 1;
+	int CONTROL___GET_ID = NAMED_ELEMENT_OPERATION_COUNT + 3;
 
 	/**
 	 * The operation id for the '<em>Get Mitigated Threat Definitions</em>' operation.
@@ -646,7 +691,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL___GET_MITIGATED_THREAT_DEFINITIONS = NAMED_ELEMENT_OPERATION_COUNT + 2;
+	int CONTROL___GET_MITIGATED_THREAT_DEFINITIONS = NAMED_ELEMENT_OPERATION_COUNT + 4;
 
 	/**
 	 * The operation id for the '<em>Get Name</em>' operation.
@@ -655,7 +700,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL___GET_NAME = NAMED_ELEMENT_OPERATION_COUNT + 3;
+	int CONTROL___GET_NAME = NAMED_ELEMENT_OPERATION_COUNT + 5;
 
 	/**
 	 * The number of operations of the '<em>Control</em>' class.
@@ -664,7 +709,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 4;
+	int CONTROL_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 6;
 
 	/**
 	 * The meta object id for the '{@link dsm.TRADES.impl.ThreatAllocationRelationImpl <em>Threat Allocation Relation</em>}' class.
@@ -1408,6 +1453,15 @@ public interface TRADESPackage extends EPackage {
 	int EXTERNAL_THREAT__NAME = THREAT__NAME;
 
 	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTERNAL_THREAT__ID = THREAT__ID;
+
+	/**
 	 * The feature id for the '<em><b>Threat Allocations</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1424,15 +1478,6 @@ public interface TRADESPackage extends EPackage {
 	 * @ordered
 	 */
 	int EXTERNAL_THREAT__THREAT_TYPE = THREAT__THREAT_TYPE;
-
-	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXTERNAL_THREAT__ID = THREAT__ID;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -1487,6 +1532,24 @@ public interface TRADESPackage extends EPackage {
 	 * @ordered
 	 */
 	int EXTERNAL_THREAT_FEATURE_COUNT = THREAT_FEATURE_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Get Source Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTERNAL_THREAT___GET_SOURCE_NAME = THREAT___GET_SOURCE_NAME;
+
+	/**
+	 * The operation id for the '<em>Get Source Identifier</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTERNAL_THREAT___GET_SOURCE_IDENTIFIER = THREAT___GET_SOURCE_IDENTIFIER;
 
 	/**
 	 * The operation id for the '<em>Get Id</em>' operation.
@@ -1727,22 +1790,22 @@ public interface TRADESPackage extends EPackage {
 	int EXTERNAL_CONTROL__NAME = EXTERNAL_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Mitigated Threats</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXTERNAL_CONTROL__MITIGATED_THREATS = EXTERNAL_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXTERNAL_CONTROL__ID = EXTERNAL_ELEMENT_FEATURE_COUNT + 2;
+	int EXTERNAL_CONTROL__ID = EXTERNAL_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Mitigated Threats</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTERNAL_CONTROL__MITIGATED_THREATS = EXTERNAL_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -1781,13 +1844,31 @@ public interface TRADESPackage extends EPackage {
 	int EXTERNAL_CONTROL_FEATURE_COUNT = EXTERNAL_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
+	 * The operation id for the '<em>Get Source Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTERNAL_CONTROL___GET_SOURCE_NAME = EXTERNAL_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Get Source Identifier</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTERNAL_CONTROL___GET_SOURCE_IDENTIFIER = EXTERNAL_ELEMENT_OPERATION_COUNT + 1;
+
+	/**
 	 * The operation id for the '<em>Get Description</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXTERNAL_CONTROL___GET_DESCRIPTION = EXTERNAL_ELEMENT_OPERATION_COUNT + 0;
+	int EXTERNAL_CONTROL___GET_DESCRIPTION = EXTERNAL_ELEMENT_OPERATION_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>Get Id</em>' operation.
@@ -1796,7 +1877,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXTERNAL_CONTROL___GET_ID = EXTERNAL_ELEMENT_OPERATION_COUNT + 1;
+	int EXTERNAL_CONTROL___GET_ID = EXTERNAL_ELEMENT_OPERATION_COUNT + 3;
 
 	/**
 	 * The operation id for the '<em>Get Mitigated Threat Definitions</em>' operation.
@@ -1805,7 +1886,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXTERNAL_CONTROL___GET_MITIGATED_THREAT_DEFINITIONS = EXTERNAL_ELEMENT_OPERATION_COUNT + 2;
+	int EXTERNAL_CONTROL___GET_MITIGATED_THREAT_DEFINITIONS = EXTERNAL_ELEMENT_OPERATION_COUNT + 4;
 
 	/**
 	 * The operation id for the '<em>Get Name</em>' operation.
@@ -1814,7 +1895,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXTERNAL_CONTROL___GET_NAME = EXTERNAL_ELEMENT_OPERATION_COUNT + 3;
+	int EXTERNAL_CONTROL___GET_NAME = EXTERNAL_ELEMENT_OPERATION_COUNT + 5;
 
 	/**
 	 * The number of operations of the '<em>External Control</em>' class.
@@ -1823,7 +1904,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXTERNAL_CONTROL_OPERATION_COUNT = EXTERNAL_ELEMENT_OPERATION_COUNT + 4;
+	int EXTERNAL_CONTROL_OPERATION_COUNT = EXTERNAL_ELEMENT_OPERATION_COUNT + 6;
 
 	/**
 	 * The meta object id for the '{@link dsm.TRADES.impl.ThreatsOwnerImpl <em>Threats Owner</em>}' class.
@@ -2203,13 +2284,22 @@ public interface TRADESPackage extends EPackage {
 	int CATALOG__NAME = ABSTRACT_THREAT_OWNER_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CATALOG__ID = ABSTRACT_THREAT_OWNER_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Catalog</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CATALOG_FEATURE_COUNT = ABSTRACT_THREAT_OWNER_FEATURE_COUNT + 2;
+	int CATALOG_FEATURE_COUNT = ABSTRACT_THREAT_OWNER_FEATURE_COUNT + 3;
 
 	/**
 	 * The operation id for the '<em>Get All Controls</em>' operation.
@@ -2293,6 +2383,52 @@ public interface TRADESPackage extends EPackage {
 	int CATALOG_OPERATION_COUNT = ABSTRACT_THREAT_OWNER_OPERATION_COUNT + 8;
 
 	/**
+	 * The meta object id for the '{@link dsm.TRADES.IElementWithSource <em>IElement With Source</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see dsm.TRADES.IElementWithSource
+	 * @see dsm.TRADES.impl.TRADESPackageImpl#getIElementWithSource()
+	 * @generated
+	 */
+	int IELEMENT_WITH_SOURCE = 33;
+
+	/**
+	 * The number of structural features of the '<em>IElement With Source</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IELEMENT_WITH_SOURCE_FEATURE_COUNT = 0;
+
+	/**
+	 * The operation id for the '<em>Get Source Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IELEMENT_WITH_SOURCE___GET_SOURCE_NAME = 0;
+
+	/**
+	 * The operation id for the '<em>Get Source Identifier</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IELEMENT_WITH_SOURCE___GET_SOURCE_IDENTIFIER = 1;
+
+	/**
+	 * The number of operations of the '<em>IElement With Source</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IELEMENT_WITH_SOURCE_OPERATION_COUNT = 2;
+
+	/**
 	 * The meta object id for the '{@link dsm.TRADES.IThreatDefinition <em>IThreat Definition</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2309,7 +2445,25 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ITHREAT_DEFINITION_FEATURE_COUNT = 0;
+	int ITHREAT_DEFINITION_FEATURE_COUNT = IELEMENT_WITH_SOURCE_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Get Source Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ITHREAT_DEFINITION___GET_SOURCE_NAME = IELEMENT_WITH_SOURCE___GET_SOURCE_NAME;
+
+	/**
+	 * The operation id for the '<em>Get Source Identifier</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ITHREAT_DEFINITION___GET_SOURCE_IDENTIFIER = IELEMENT_WITH_SOURCE___GET_SOURCE_IDENTIFIER;
 
 	/**
 	 * The operation id for the '<em>Get Id</em>' operation.
@@ -2318,7 +2472,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ITHREAT_DEFINITION___GET_ID = 0;
+	int ITHREAT_DEFINITION___GET_ID = IELEMENT_WITH_SOURCE_OPERATION_COUNT + 0;
 
 	/**
 	 * The operation id for the '<em>Get Description</em>' operation.
@@ -2327,7 +2481,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ITHREAT_DEFINITION___GET_DESCRIPTION = 1;
+	int ITHREAT_DEFINITION___GET_DESCRIPTION = IELEMENT_WITH_SOURCE_OPERATION_COUNT + 1;
 
 	/**
 	 * The operation id for the '<em>Get Name</em>' operation.
@@ -2336,7 +2490,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ITHREAT_DEFINITION___GET_NAME = 2;
+	int ITHREAT_DEFINITION___GET_NAME = IELEMENT_WITH_SOURCE_OPERATION_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>IThreat Definition</em>' class.
@@ -2345,7 +2499,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ITHREAT_DEFINITION_OPERATION_COUNT = 3;
+	int ITHREAT_DEFINITION_OPERATION_COUNT = IELEMENT_WITH_SOURCE_OPERATION_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link dsm.TRADES.IControlDefinition <em>IControl Definition</em>}' class.
@@ -2364,7 +2518,25 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ICONTROL_DEFINITION_FEATURE_COUNT = 0;
+	int ICONTROL_DEFINITION_FEATURE_COUNT = IELEMENT_WITH_SOURCE_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Get Source Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ICONTROL_DEFINITION___GET_SOURCE_NAME = IELEMENT_WITH_SOURCE___GET_SOURCE_NAME;
+
+	/**
+	 * The operation id for the '<em>Get Source Identifier</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ICONTROL_DEFINITION___GET_SOURCE_IDENTIFIER = IELEMENT_WITH_SOURCE___GET_SOURCE_IDENTIFIER;
 
 	/**
 	 * The operation id for the '<em>Get Description</em>' operation.
@@ -2373,7 +2545,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ICONTROL_DEFINITION___GET_DESCRIPTION = 0;
+	int ICONTROL_DEFINITION___GET_DESCRIPTION = IELEMENT_WITH_SOURCE_OPERATION_COUNT + 0;
 
 	/**
 	 * The operation id for the '<em>Get Id</em>' operation.
@@ -2382,7 +2554,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ICONTROL_DEFINITION___GET_ID = 1;
+	int ICONTROL_DEFINITION___GET_ID = IELEMENT_WITH_SOURCE_OPERATION_COUNT + 1;
 
 	/**
 	 * The operation id for the '<em>Get Mitigated Threat Definitions</em>' operation.
@@ -2391,7 +2563,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ICONTROL_DEFINITION___GET_MITIGATED_THREAT_DEFINITIONS = 2;
+	int ICONTROL_DEFINITION___GET_MITIGATED_THREAT_DEFINITIONS = IELEMENT_WITH_SOURCE_OPERATION_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>Get Name</em>' operation.
@@ -2400,7 +2572,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ICONTROL_DEFINITION___GET_NAME = 3;
+	int ICONTROL_DEFINITION___GET_NAME = IELEMENT_WITH_SOURCE_OPERATION_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>IControl Definition</em>' class.
@@ -2409,7 +2581,7 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ICONTROL_DEFINITION_OPERATION_COUNT = 4;
+	int ICONTROL_DEFINITION_OPERATION_COUNT = IELEMENT_WITH_SOURCE_OPERATION_COUNT + 4;
 
 	/**
 	 * The meta object id for the '{@link dsm.TRADES.ICatalogDefinition <em>ICatalog Definition</em>}' class.
@@ -2494,6 +2666,43 @@ public interface TRADESPackage extends EPackage {
 	int ICATALOG_DEFINITION_OPERATION_COUNT = 6;
 
 	/**
+	 * The meta object id for the '{@link dsm.TRADES.impl.ElementWithIdImpl <em>Element With Id</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see dsm.TRADES.impl.ElementWithIdImpl
+	 * @see dsm.TRADES.impl.TRADESPackageImpl#getElementWithId()
+	 * @generated
+	 */
+	int ELEMENT_WITH_ID = 34;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELEMENT_WITH_ID__ID = 0;
+
+	/**
+	 * The number of structural features of the '<em>Element With Id</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELEMENT_WITH_ID_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Element With Id</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELEMENT_WITH_ID_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link dsm.TRADES.AssessmentENUM <em>Assessment ENUM</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2501,7 +2710,7 @@ public interface TRADESPackage extends EPackage {
 	 * @see dsm.TRADES.impl.TRADESPackageImpl#getAssessmentENUM()
 	 * @generated
 	 */
-	int ASSESSMENT_ENUM = 33;
+	int ASSESSMENT_ENUM = 35;
 
 	/**
 	 * The meta object id for the '{@link dsm.TRADES.AffectedENUM <em>Affected ENUM</em>}' enum.
@@ -2511,7 +2720,7 @@ public interface TRADESPackage extends EPackage {
 	 * @see dsm.TRADES.impl.TRADESPackageImpl#getAffectedENUM()
 	 * @generated
 	 */
-	int AFFECTED_ENUM = 34;
+	int AFFECTED_ENUM = 36;
 
 	/**
 	 * The meta object id for the '{@link dsm.TRADES.threatTypeENUM <em>threat Type ENUM</em>}' enum.
@@ -2521,7 +2730,7 @@ public interface TRADESPackage extends EPackage {
 	 * @see dsm.TRADES.impl.TRADESPackageImpl#getthreatTypeENUM()
 	 * @generated
 	 */
-	int THREAT_TYPE_ENUM = 35;
+	int THREAT_TYPE_ENUM = 37;
 
 	/**
 	 * The meta object id for the '{@link dsm.TRADES.ControlStatusENUM <em>Control Status ENUM</em>}' enum.
@@ -2531,7 +2740,7 @@ public interface TRADESPackage extends EPackage {
 	 * @see dsm.TRADES.impl.TRADESPackageImpl#getControlStatusENUM()
 	 * @generated
 	 */
-	int CONTROL_STATUS_ENUM = 36;
+	int CONTROL_STATUS_ENUM = 38;
 
 	/**
 	 * The meta object id for the '<em>RGB Color</em>' data type.
@@ -2541,7 +2750,7 @@ public interface TRADESPackage extends EPackage {
 	 * @see dsm.TRADES.impl.TRADESPackageImpl#getRGBColor()
 	 * @generated
 	 */
-	int RGB_COLOR = 37;
+	int RGB_COLOR = 39;
 
 	/**
 	 * Returns the meta object for class '{@link dsm.TRADES.Analysis <em>Analysis</em>}'.
@@ -2616,17 +2825,6 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getThreat_ThreatType();
-
-	/**
-	 * Returns the meta object for the attribute '{@link dsm.TRADES.Threat#getId <em>Id</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Id</em>'.
-	 * @see dsm.TRADES.Threat#getId()
-	 * @see #getThreat()
-	 * @generated
-	 */
-	EAttribute getThreat_Id();
 
 	/**
 	 * Returns the meta object for the attribute '{@link dsm.TRADES.Threat#getDescription <em>Description</em>}'.
@@ -2723,17 +2921,6 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getControl_MitigatedThreats();
-
-	/**
-	 * Returns the meta object for the attribute '{@link dsm.TRADES.Control#getId <em>Id</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Id</em>'.
-	 * @see dsm.TRADES.Control#getId()
-	 * @see #getControl()
-	 * @generated
-	 */
-	EAttribute getControl_Id();
 
 	/**
 	 * Returns the meta object for the attribute '{@link dsm.TRADES.Control#getDescription <em>Description</em>}'.
@@ -3827,6 +4014,57 @@ public interface TRADESPackage extends EPackage {
 	EAttribute getColoredElement_Color();
 
 	/**
+	 * Returns the meta object for class '{@link dsm.TRADES.IElementWithSource <em>IElement With Source</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>IElement With Source</em>'.
+	 * @see dsm.TRADES.IElementWithSource
+	 * @generated
+	 */
+	EClass getIElementWithSource();
+
+	/**
+	 * Returns the meta object for the '{@link dsm.TRADES.IElementWithSource#getSourceName() <em>Get Source Name</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Source Name</em>' operation.
+	 * @see dsm.TRADES.IElementWithSource#getSourceName()
+	 * @generated
+	 */
+	EOperation getIElementWithSource__GetSourceName();
+
+	/**
+	 * Returns the meta object for the '{@link dsm.TRADES.IElementWithSource#getSourceIdentifier() <em>Get Source Identifier</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Source Identifier</em>' operation.
+	 * @see dsm.TRADES.IElementWithSource#getSourceIdentifier()
+	 * @generated
+	 */
+	EOperation getIElementWithSource__GetSourceIdentifier();
+
+	/**
+	 * Returns the meta object for class '{@link dsm.TRADES.ElementWithId <em>Element With Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Element With Id</em>'.
+	 * @see dsm.TRADES.ElementWithId
+	 * @generated
+	 */
+	EClass getElementWithId();
+
+	/**
+	 * Returns the meta object for the attribute '{@link dsm.TRADES.ElementWithId#getId <em>Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Id</em>'.
+	 * @see dsm.TRADES.ElementWithId#getId()
+	 * @see #getElementWithId()
+	 * @generated
+	 */
+	EAttribute getElementWithId_Id();
+
+	/**
 	 * Returns the meta object for enum '{@link dsm.TRADES.AssessmentENUM <em>Assessment ENUM</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3962,14 +4200,6 @@ public interface TRADESPackage extends EPackage {
 		EAttribute THREAT__THREAT_TYPE = eINSTANCE.getThreat_ThreatType();
 
 		/**
-		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute THREAT__ID = eINSTANCE.getThreat_Id();
-
-		/**
 		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4045,14 +4275,6 @@ public interface TRADESPackage extends EPackage {
 		 * @generated
 		 */
 		EReference CONTROL__MITIGATED_THREATS = eINSTANCE.getControl_MitigatedThreats();
-
-		/**
-		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CONTROL__ID = eINSTANCE.getControl_Id();
 
 		/**
 		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
@@ -4956,6 +5178,51 @@ public interface TRADESPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute COLORED_ELEMENT__COLOR = eINSTANCE.getColoredElement_Color();
+
+		/**
+		 * The meta object literal for the '{@link dsm.TRADES.IElementWithSource <em>IElement With Source</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see dsm.TRADES.IElementWithSource
+		 * @see dsm.TRADES.impl.TRADESPackageImpl#getIElementWithSource()
+		 * @generated
+		 */
+		EClass IELEMENT_WITH_SOURCE = eINSTANCE.getIElementWithSource();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Source Name</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation IELEMENT_WITH_SOURCE___GET_SOURCE_NAME = eINSTANCE.getIElementWithSource__GetSourceName();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Source Identifier</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation IELEMENT_WITH_SOURCE___GET_SOURCE_IDENTIFIER = eINSTANCE
+				.getIElementWithSource__GetSourceIdentifier();
+
+		/**
+		 * The meta object literal for the '{@link dsm.TRADES.impl.ElementWithIdImpl <em>Element With Id</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see dsm.TRADES.impl.ElementWithIdImpl
+		 * @see dsm.TRADES.impl.TRADESPackageImpl#getElementWithId()
+		 * @generated
+		 */
+		EClass ELEMENT_WITH_ID = eINSTANCE.getElementWithId();
+
+		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ELEMENT_WITH_ID__ID = eINSTANCE.getElementWithId_Id();
 
 		/**
 		 * The meta object literal for the '{@link dsm.TRADES.AssessmentENUM <em>Assessment ENUM</em>}' enum.

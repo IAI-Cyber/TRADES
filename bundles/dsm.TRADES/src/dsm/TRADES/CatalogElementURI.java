@@ -55,12 +55,12 @@ public class CatalogElementURI {
 
 	}
 
-	public static CatalogElementURI createCatalogControlURI(String catalogIdentifier, String elementId) {
-		return new CatalogElementURI(Type.CONTROL, catalogIdentifier, elementId);
+	public static CatalogElementURI createCatalogControlURI(String sourceIdentifier, String elementId) {
+		return new CatalogElementURI(Type.CONTROL, sourceIdentifier, elementId);
 	}
 
-	public static CatalogElementURI createCatalogThreatURI(String catalogIdentifier, String elementId) {
-		return new CatalogElementURI(Type.THREAT, catalogIdentifier, elementId);
+	public static CatalogElementURI createCatalogThreatURI(String sourceIdentifier, String elementId) {
+		return new CatalogElementURI(Type.THREAT, sourceIdentifier, elementId);
 	}
 
 	public CatalogElementURI(Type type, String calatogIdentifier, String elementIdentifier) {

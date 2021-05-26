@@ -15,8 +15,6 @@ package dsm.TRADES;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>IControl Definition</b></em>'.
@@ -27,7 +25,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model interface="true" abstract="true"
  * @generated
  */
-public interface IControlDefinition extends EObject {
+public interface IControlDefinition extends IElementWithSource {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -36,7 +36,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.jface.viewers.IStructuredSelection;
@@ -54,6 +53,7 @@ import dsm.TRADES.Analysis;
 import dsm.TRADES.Catalog;
 import dsm.TRADES.Control;
 import dsm.TRADES.ControlOwner;
+import dsm.TRADES.ElementWithId;
 import dsm.TRADES.ExternalControl;
 import dsm.TRADES.ExternalThreat;
 import dsm.TRADES.IControlDefinition;
@@ -84,7 +84,8 @@ public class ImportTradesModelWizard extends Wizard implements IImportWizard {
 
 	private List<Threat> selectedThreats = Collections.emptyList();
 	private List<Control> selectedControl = Collections.emptyList();
-	private String importedAnalysisName;
+	private String importedRootName;
+	private String importedRootId;
 
 	public static void createCatalogFolder(IProject selectedProject0, IProgressMonitor monitor) {
 		IFolder catalogFolder = selectedProject0.getFolder(CATALOGS_FOLDER);
@@ -183,10 +184,16 @@ public class ImportTradesModelWizard extends Wizard implements IImportWizard {
 
 				EObject root = tradesResource.getContents().get(0);
 				if (root instanceof NamedElement) {
-					importedAnalysisName = ((NamedElement) root).getName();
+					importedRootName = ((NamedElement) root).getName();
 				} else {
-					importedAnalysisName = "Catalog";
+					importedRootName = "Catalog";
 				}
+
+				if (root instanceof ElementWithId) {
+					importedRootId = ((ElementWithId) root).getId();
+				}
+				
+				//TODO Prevent importing if the id is null...
 
 				Set<String> threatIds = new HashSet<>();
 				List<Threat> threats = new ArrayList<>();
@@ -244,8 +251,11 @@ public class ImportTradesModelWizard extends Wizard implements IImportWizard {
 
 					@Override
 					protected void doExecute() {
+						// Avoid forbiden file name
+						String resourceName = importedRootName.replaceAll("[^\\w.-]", "_");
+						
 						URI tradesLibURI = getCatalogFolderURI(repUri)
-								.appendSegment(URI.encodeSegment(importedAnalysisName, false) + ".trades");
+								.appendSegment(URI.encodeSegment(resourceName, true) + ".trades");
 						TransactionalEditingDomain transactionalEditingDomain = session.getTransactionalEditingDomain();
 						ResourceSet resourceSet = transactionalEditingDomain.getResourceSet();
 						Resource existingResource = resourceSet.getResource(tradesLibURI, false);
@@ -257,12 +267,15 @@ public class ImportTradesModelWizard extends Wizard implements IImportWizard {
 
 							existingResource = resourceSet.createResource(tradesLibURI);
 							// Create a analysis with the same name
-							catalog = SemanticUtil.createInitialCatalog(importedAnalysisName);
+							catalog = SemanticUtil.createInitialCatalog(importedRootName);
+							catalog.setId(importedRootId);
 							existingResource.getContents().add(catalog);
 
 							threatOwner = catalog.getThreatOwner();
-
 							controlOwner = catalog.getControlOwner();
+
+							session.addSemanticResource(tradesLibURI, new NullProgressMonitor());
+							session.save(new NullProgressMonitor());
 						} else if (!existingResource.getContents().isEmpty()) {
 							EObject root = existingResource.getContents().get(0);
 							if (root instanceof Catalog) {
@@ -282,7 +295,6 @@ public class ImportTradesModelWizard extends Wizard implements IImportWizard {
 								if (existingThreat == null) {
 									ExternalThreat copy = threatImporter.copy(t);
 									threatOwner.getExternals().add(copy);
-									keepSameId(existingResource, t, copy);
 								} else if (existingThreat instanceof ExternalThreat) {
 									threatImporter.update(t, (ExternalThreat) existingThreat);
 								}
@@ -295,27 +307,16 @@ public class ImportTradesModelWizard extends Wizard implements IImportWizard {
 								IControlDefinition existingControl = catalog.getControlById(c.getId());
 								if (existingControl == null) {
 									ExternalControl copiedControl = controlImporter.copy(c);
-									keepSameId(existingResource, c, copiedControl);
 									controlOwner.getExternals().add(copiedControl);
 								} else if (existingControl instanceof ExternalControl) {
 									controlImporter.update(c, (ExternalControl) existingControl);
 								}
 							}
 
-							session.addSemanticResource(tradesLibURI, new NullProgressMonitor());
-
-							session.save(new NullProgressMonitor());
 						} else {
 							Activator.logError("Invalid catalog model");
 						}
 
-					}
-
-					public void keepSameId(Resource toUpdateResource, EObject toImport, EObject toUpdate) {
-						if (toUpdateResource instanceof XMLResource) {
-							((XMLResource) toUpdateResource).setID(toUpdate,
-									toImport.eResource().getURIFragment(toImport));
-						}
 					}
 				};
 
@@ -331,7 +332,7 @@ public class ImportTradesModelWizard extends Wizard implements IImportWizard {
 	@Override
 	public boolean canFinish() {
 		return projectSelectionPage.getSelectedProject() != null && fileSelectionPage.getPath() != null
-				&& importedAnalysisName != null && !importedAnalysisName.isBlank()
+				&& importedRootName != null && !importedRootName.isBlank()
 				&& fileSelectionPage.getPath().toFile().exists()
 				&& (!selectedThreats.isEmpty() || !selectedControl.isEmpty());
 	}

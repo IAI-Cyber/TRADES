@@ -55,6 +55,7 @@ import dsm.TRADES.ThreatsOwner;
 
 public class InitCapec implements IApplication {
 
+	private static final String CAPEC = "Capec";
 	private static final String SITE_PREFIX = "https://capec.mitre.org/data/definitions/";
 
 	@Override
@@ -68,7 +69,8 @@ public class InitCapec implements IApplication {
 
 		Resource resource = rs.createResource(URI.createFileURI(targetModelFile));
 
-		Catalog catalog = SemanticUtil.createInitialCatalog("Capec");
+		Catalog catalog = SemanticUtil.createInitialCatalog(CAPEC);
+		catalog.setId(CAPEC);
 
 		ThreatsOwner threatOwner = catalog.getThreatOwner();
 
@@ -121,8 +123,8 @@ public class InitCapec implements IApplication {
 		extPattern.setName(parent.getAttribute("Name"));
 		String oritinalId = parent.getAttribute("ID");
 		extPattern.setId("Capec_" + oritinalId);
-		extPattern.setSource("Capec");
-		extPattern.setSourceID("Capec");
+		extPattern.setSource(CAPEC);
+		extPattern.setSourceID(CAPEC);
 		extPattern.setLink(SITE_PREFIX + oritinalId + ".html");
 		NodeList children = parent.getChildNodes();
 		String description = "";
@@ -151,7 +153,8 @@ public class InitCapec implements IApplication {
 				if (existingControl == null) {
 					existingControl = TRADESFactory.eINSTANCE.createExternalControl();
 					existingControl.setName(textContent);
-					existingControl.setSource("Capec");
+					existingControl.setSource(CAPEC);
+					existingControl.setSourceID(CAPEC);
 					final String id;
 					if (textContent != null && !textContent.isBlank()) {
 						id = "Control_" + Hashing.sha256().hashString(textContent, Charsets.UTF_8).toString();

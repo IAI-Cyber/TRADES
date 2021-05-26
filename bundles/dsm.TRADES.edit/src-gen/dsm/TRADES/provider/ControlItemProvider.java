@@ -58,8 +58,8 @@ public class ControlItemProvider extends NamedElementItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addMitigatedThreatsPropertyDescriptor(object);
 			addIdPropertyDescriptor(object);
+			addMitigatedThreatsPropertyDescriptor(object);
 			addDescriptionPropertyDescriptor(object);
 			addMitigationRelationsPropertyDescriptor(object);
 			addStatusPropertyDescriptor(object);
@@ -91,9 +91,10 @@ public class ControlItemProvider extends NamedElementItemProvider {
 	protected void addIdPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Control_id_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Control_id_feature", "_UI_Control_type"),
-						TRADESPackage.Literals.CONTROL__ID, true, false, false,
+						getResourceLocator(), getString("_UI_ElementWithId_id_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_ElementWithId_id_feature",
+								"_UI_ElementWithId_type"),
+						TRADESPackage.Literals.ELEMENT_WITH_ID__ID, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 

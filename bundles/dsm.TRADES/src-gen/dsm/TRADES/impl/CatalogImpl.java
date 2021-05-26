@@ -17,6 +17,7 @@ import dsm.TRADES.AbstractControlOwner;
 import dsm.TRADES.Catalog;
 import dsm.TRADES.Control;
 import dsm.TRADES.ControlOwner;
+import dsm.TRADES.ElementWithId;
 import dsm.TRADES.ExternalControl;
 import dsm.TRADES.ICatalogDefinition;
 import dsm.TRADES.IControlDefinition;
@@ -46,6 +47,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <ul>
  *   <li>{@link dsm.TRADES.impl.CatalogImpl#getControlOwner <em>Control Owner</em>}</li>
  *   <li>{@link dsm.TRADES.impl.CatalogImpl#getName <em>Name</em>}</li>
+ *   <li>{@link dsm.TRADES.impl.CatalogImpl#getId <em>Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -80,6 +82,26 @@ public class CatalogImpl extends AbstractThreatOwnerImpl implements Catalog {
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String ID_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected String id = ID_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -173,6 +195,29 @@ public class CatalogImpl extends AbstractThreatOwnerImpl implements Catalog {
 		name = newName;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TRADESPackage.CATALOG__NAME, oldName, name));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getId() {
+		return id;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setId(String newId) {
+		String oldId = id;
+		id = newId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TRADESPackage.CATALOG__ID, oldId, id));
 	}
 
 	/**
@@ -285,6 +330,8 @@ public class CatalogImpl extends AbstractThreatOwnerImpl implements Catalog {
 			return getControlOwner();
 		case TRADESPackage.CATALOG__NAME:
 			return getName();
+		case TRADESPackage.CATALOG__ID:
+			return getId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -302,6 +349,9 @@ public class CatalogImpl extends AbstractThreatOwnerImpl implements Catalog {
 			return;
 		case TRADESPackage.CATALOG__NAME:
 			setName((String) newValue);
+			return;
+		case TRADESPackage.CATALOG__ID:
+			setId((String) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -321,6 +371,9 @@ public class CatalogImpl extends AbstractThreatOwnerImpl implements Catalog {
 		case TRADESPackage.CATALOG__NAME:
 			setName(NAME_EDEFAULT);
 			return;
+		case TRADESPackage.CATALOG__ID:
+			setId(ID_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -337,6 +390,8 @@ public class CatalogImpl extends AbstractThreatOwnerImpl implements Catalog {
 			return controlOwner != null;
 		case TRADESPackage.CATALOG__NAME:
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+		case TRADESPackage.CATALOG__ID:
+			return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -370,6 +425,14 @@ public class CatalogImpl extends AbstractThreatOwnerImpl implements Catalog {
 				return -1;
 			}
 		}
+		if (baseClass == ElementWithId.class) {
+			switch (derivedFeatureID) {
+			case TRADESPackage.CATALOG__ID:
+				return TRADESPackage.ELEMENT_WITH_ID__ID;
+			default:
+				return -1;
+			}
+		}
 		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
 	}
 
@@ -398,6 +461,14 @@ public class CatalogImpl extends AbstractThreatOwnerImpl implements Catalog {
 		}
 		if (baseClass == ICatalogDefinition.class) {
 			switch (baseFeatureID) {
+			default:
+				return -1;
+			}
+		}
+		if (baseClass == ElementWithId.class) {
+			switch (baseFeatureID) {
+			case TRADESPackage.ELEMENT_WITH_ID__ID:
+				return TRADESPackage.CATALOG__ID;
 			default:
 				return -1;
 			}
@@ -446,6 +517,12 @@ public class CatalogImpl extends AbstractThreatOwnerImpl implements Catalog {
 				return -1;
 			}
 		}
+		if (baseClass == ElementWithId.class) {
+			switch (baseOperationID) {
+			default:
+				return -1;
+			}
+		}
 		return super.eDerivedOperationID(baseOperationID, baseClass);
 	}
 
@@ -488,6 +565,8 @@ public class CatalogImpl extends AbstractThreatOwnerImpl implements Catalog {
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
+		result.append(", id: ");
+		result.append(id);
 		result.append(')');
 		return result.toString();
 	}

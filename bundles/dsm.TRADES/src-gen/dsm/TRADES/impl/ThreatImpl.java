@@ -13,6 +13,9 @@
  */
 package dsm.TRADES.impl;
 
+import dsm.TRADES.ElementWithId;
+import dsm.TRADES.IElementWithSource;
+import dsm.TRADES.IThreatDefinition;
 import dsm.TRADES.TRADESPackage;
 import dsm.TRADES.Threat;
 import dsm.TRADES.ThreatAllocationRelation;
@@ -52,9 +55,9 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link dsm.TRADES.impl.ThreatImpl#getId <em>Id</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ThreatImpl#getThreatAllocations <em>Threat Allocations</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ThreatImpl#getThreatType <em>Threat Type</em>}</li>
- *   <li>{@link dsm.TRADES.impl.ThreatImpl#getId <em>Id</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ThreatImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ThreatImpl#getApplicability <em>Applicability</em>}</li>
  * </ul>
@@ -62,6 +65,26 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * @generated
  */
 public class ThreatImpl extends NamedElementImpl implements Threat {
+	/**
+	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String ID_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected String id = ID_EDEFAULT;
+
 	/**
 	 * The cached value of the '{@link #getThreatAllocations() <em>Threat Allocations</em>}' reference list.
 	 * <!-- begin-user-doc -->
@@ -91,26 +114,6 @@ public class ThreatImpl extends NamedElementImpl implements Threat {
 	 * @ordered
 	 */
 	protected threatTypeENUM threatType = THREAT_TYPE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String id = ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
@@ -310,6 +313,30 @@ public class ThreatImpl extends NamedElementImpl implements Threat {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public String getSourceName() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getSourceIdentifier() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -343,12 +370,12 @@ public class ThreatImpl extends NamedElementImpl implements Threat {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+		case TRADESPackage.THREAT__ID:
+			return getId();
 		case TRADESPackage.THREAT__THREAT_ALLOCATIONS:
 			return getThreatAllocations();
 		case TRADESPackage.THREAT__THREAT_TYPE:
 			return getThreatType();
-		case TRADESPackage.THREAT__ID:
-			return getId();
 		case TRADESPackage.THREAT__DESCRIPTION:
 			return getDescription();
 		case TRADESPackage.THREAT__APPLICABILITY:
@@ -366,15 +393,15 @@ public class ThreatImpl extends NamedElementImpl implements Threat {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+		case TRADESPackage.THREAT__ID:
+			setId((String) newValue);
+			return;
 		case TRADESPackage.THREAT__THREAT_ALLOCATIONS:
 			getThreatAllocations().clear();
 			getThreatAllocations().addAll((Collection<? extends ThreatAllocationRelation>) newValue);
 			return;
 		case TRADESPackage.THREAT__THREAT_TYPE:
 			setThreatType((threatTypeENUM) newValue);
-			return;
-		case TRADESPackage.THREAT__ID:
-			setId((String) newValue);
 			return;
 		case TRADESPackage.THREAT__DESCRIPTION:
 			setDescription((String) newValue);
@@ -394,14 +421,14 @@ public class ThreatImpl extends NamedElementImpl implements Threat {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+		case TRADESPackage.THREAT__ID:
+			setId(ID_EDEFAULT);
+			return;
 		case TRADESPackage.THREAT__THREAT_ALLOCATIONS:
 			getThreatAllocations().clear();
 			return;
 		case TRADESPackage.THREAT__THREAT_TYPE:
 			setThreatType(THREAT_TYPE_EDEFAULT);
-			return;
-		case TRADESPackage.THREAT__ID:
-			setId(ID_EDEFAULT);
 			return;
 		case TRADESPackage.THREAT__DESCRIPTION:
 			setDescription(DESCRIPTION_EDEFAULT);
@@ -421,12 +448,12 @@ public class ThreatImpl extends NamedElementImpl implements Threat {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+		case TRADESPackage.THREAT__ID:
+			return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
 		case TRADESPackage.THREAT__THREAT_ALLOCATIONS:
 			return threatAllocations != null && !threatAllocations.isEmpty();
 		case TRADESPackage.THREAT__THREAT_TYPE:
 			return threatType != THREAT_TYPE_EDEFAULT;
-		case TRADESPackage.THREAT__ID:
-			return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
 		case TRADESPackage.THREAT__DESCRIPTION:
 			return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 		case TRADESPackage.THREAT__APPLICABILITY:
@@ -442,10 +469,112 @@ public class ThreatImpl extends NamedElementImpl implements Threat {
 	 * @generated
 	 */
 	@Override
+	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == IElementWithSource.class) {
+			switch (derivedFeatureID) {
+			default:
+				return -1;
+			}
+		}
+		if (baseClass == IThreatDefinition.class) {
+			switch (derivedFeatureID) {
+			default:
+				return -1;
+			}
+		}
+		if (baseClass == ElementWithId.class) {
+			switch (derivedFeatureID) {
+			case TRADESPackage.THREAT__ID:
+				return TRADESPackage.ELEMENT_WITH_ID__ID;
+			default:
+				return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == IElementWithSource.class) {
+			switch (baseFeatureID) {
+			default:
+				return -1;
+			}
+		}
+		if (baseClass == IThreatDefinition.class) {
+			switch (baseFeatureID) {
+			default:
+				return -1;
+			}
+		}
+		if (baseClass == ElementWithId.class) {
+			switch (baseFeatureID) {
+			case TRADESPackage.ELEMENT_WITH_ID__ID:
+				return TRADESPackage.THREAT__ID;
+			default:
+				return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
+		if (baseClass == IElementWithSource.class) {
+			switch (baseOperationID) {
+			case TRADESPackage.IELEMENT_WITH_SOURCE___GET_SOURCE_NAME:
+				return TRADESPackage.THREAT___GET_SOURCE_NAME;
+			case TRADESPackage.IELEMENT_WITH_SOURCE___GET_SOURCE_IDENTIFIER:
+				return TRADESPackage.THREAT___GET_SOURCE_IDENTIFIER;
+			default:
+				return -1;
+			}
+		}
+		if (baseClass == IThreatDefinition.class) {
+			switch (baseOperationID) {
+			case TRADESPackage.ITHREAT_DEFINITION___GET_ID:
+				return TRADESPackage.THREAT___GET_ID;
+			case TRADESPackage.ITHREAT_DEFINITION___GET_DESCRIPTION:
+				return TRADESPackage.THREAT___GET_DESCRIPTION;
+			case TRADESPackage.ITHREAT_DEFINITION___GET_NAME:
+				return TRADESPackage.THREAT___GET_NAME;
+			default:
+				return -1;
+			}
+		}
+		if (baseClass == ElementWithId.class) {
+			switch (baseOperationID) {
+			default:
+				return -1;
+			}
+		}
+		return super.eDerivedOperationID(baseOperationID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
 		case TRADESPackage.THREAT___CHECK_IS_USED__DIAGNOSTICCHAIN_MAP:
 			return checkIsUsed((DiagnosticChain) arguments.get(0), (Map) arguments.get(1));
+		case TRADESPackage.THREAT___GET_SOURCE_NAME:
+			return getSourceName();
+		case TRADESPackage.THREAT___GET_SOURCE_IDENTIFIER:
+			return getSourceIdentifier();
 		}
 		return super.eInvoke(operationID, arguments);
 	}
@@ -461,10 +590,10 @@ public class ThreatImpl extends NamedElementImpl implements Threat {
 			return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (threatType: ");
-		result.append(threatType);
-		result.append(", id: ");
+		result.append(" (id: ");
 		result.append(id);
+		result.append(", threatType: ");
+		result.append(threatType);
 		result.append(", description: ");
 		result.append(description);
 		result.append(", applicability: ");

@@ -17,11 +17,7 @@ package dsm.trades.rcp.utils;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.resource.Resource;
-
 import dsm.TRADES.ExternalThreat;
-import dsm.TRADES.NamedElement;
 import dsm.TRADES.TRADESFactory;
 import dsm.TRADES.Threat;
 
@@ -36,8 +32,11 @@ public class ThreatCopier {
 		existingThreat.setId(toImport.getId());
 		existingThreat.setName(toImport.getName());
 		existingThreat.setThreatType(toImport.getThreatType());
+		existingThreat.setSource(toImport.getSourceName());
+		existingThreat.setSourceID(toImport.getSourceIdentifier());
 		if (toImport instanceof ExternalThreat) {
-			existingThreat.setLink(((ExternalThreat) toImport).getLink());
+			ExternalThreat externalThreat = (ExternalThreat) toImport;
+			existingThreat.setLink(externalThreat.getLink());
 		}
 
 
@@ -48,15 +47,6 @@ public class ThreatCopier {
 
 		ExternalThreat result = TRADESFactory.eINSTANCE.createExternalThreat();
 		oldToNewThreats.put(threat, result);
-
-		Resource resource = threat.eResource();
-		if (resource != null) {
-			EObject root = resource.getContents().get(0);
-			if (root instanceof NamedElement) {
-				result.setSource(((NamedElement) root).getName());
-			}
-			result.setSourceID(resource.getURIFragment(threat));
-		}
 
 		update(threat, result);
 

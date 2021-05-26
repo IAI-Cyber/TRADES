@@ -13,6 +13,10 @@
 *******************************************************************************************************/
 package dsm.TRADES;
 
+import java.util.UUID;
+
+import org.eclipse.emf.ecore.EObject;
+
 public class SemanticUtil {
 
 	private static final String DEFAULT_ROOT_CMP_NAME = "System Analysis Scope";
@@ -36,6 +40,7 @@ public class SemanticUtil {
 	public static Analysis createInitialModel(String rootObjectName) {
 		Analysis analysis = TRADESFactory.eINSTANCE.createAnalysis();
 		analysis.setName(rootObjectName);
+		analysis.setId(UUID.randomUUID().toString());
 
 		Component root = TRADESFactory.eINSTANCE.createComponent();
 		analysis.getComponents().add(root);
@@ -71,6 +76,7 @@ public class SemanticUtil {
 	public static Catalog createInitialCatalog(String rootObjectName) {
 		Catalog catalog = TRADESFactory.eINSTANCE.createCatalog();
 		catalog.setName(rootObjectName);
+		catalog.setId(UUID.randomUUID().toString());
 
 		ThreatsOwner threatOwner = TRADESFactory.eINSTANCE.createThreatsOwner();
 		catalog.setThreatOwner(threatOwner);
@@ -110,6 +116,52 @@ public class SemanticUtil {
 			impact.getConfigurations().add(conf);
 			conf.setDifficulty(dif);
 		}
+	}
+
+	/**
+	 * Get the source name for an element
+	 * 
+	 * @param element an element stored in a model
+	 * @return a identifier or null is not found;
+	 */
+	public static String getSourceName(EObject element) {
+		if (element instanceof ExternalElement) {
+			return ((ExternalElement) element).getSource();
+		}
+		EObject parent = element.eContainer();
+		while (parent != null) {
+			if (parent instanceof Analysis) {
+				return ((Analysis) parent).getName();
+
+			} else if (parent instanceof Catalog) {
+				return ((Catalog) parent).getName();
+			}
+			parent = parent.eContainer();
+		}
+		return null;
+	}
+
+	/**
+	 * Get the source identifier for an element
+	 * 
+	 * @param element a element store in a model
+	 * @return a identifier or null is not found
+	 */
+	public static String getSourceIdentifier(EObject element) {
+		if (element instanceof ExternalElement) {
+			return ((ExternalElement) element).getSourceID();
+		}
+		EObject parent = element.eContainer();
+		while (parent != null) {
+			if (parent instanceof Analysis) {
+				return ((Analysis) parent).getId();
+
+			} else if (parent instanceof Catalog) {
+				return ((Catalog) parent).getId();
+			}
+			parent = parent.eContainer();
+		}
+		return null;
 	}
 
 }

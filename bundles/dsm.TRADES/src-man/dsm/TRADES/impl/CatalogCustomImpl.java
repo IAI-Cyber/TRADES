@@ -81,7 +81,7 @@ public class CatalogCustomImpl extends CatalogImpl {
 
 	@Override
 	public String getIdentifier() {
-		return getName();
+		return getId();
 	}
 
 }

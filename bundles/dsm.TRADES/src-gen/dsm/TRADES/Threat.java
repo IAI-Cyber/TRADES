@@ -29,7 +29,6 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link dsm.TRADES.Threat#getThreatAllocations <em>Threat Allocations</em>}</li>
  *   <li>{@link dsm.TRADES.Threat#getThreatType <em>Threat Type</em>}</li>
- *   <li>{@link dsm.TRADES.Threat#getId <em>Id</em>}</li>
  *   <li>{@link dsm.TRADES.Threat#getDescription <em>Description</em>}</li>
  *   <li>{@link dsm.TRADES.Threat#getApplicability <em>Applicability</em>}</li>
  * </ul>
@@ -38,7 +37,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface Threat extends NamedElement, IThreatDefinition {
+public interface Threat extends NamedElement, IThreatDefinition, ElementWithId {
 	/**
 	 * Returns the value of the '<em><b>Threat Allocations</b></em>' reference list.
 	 * The list contents are of type {@link dsm.TRADES.ThreatAllocationRelation}.
@@ -77,28 +76,6 @@ public interface Threat extends NamedElement, IThreatDefinition {
 	 * @generated
 	 */
 	void setThreatType(threatTypeENUM value);
-
-	/**
-	 * Returns the value of the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Id</em>' attribute.
-	 * @see #setId(String)
-	 * @see dsm.TRADES.TRADESPackage#getThreat_Id()
-	 * @model
-	 * @generated
-	 */
-	String getId();
-
-	/**
-	 * Sets the value of the '{@link dsm.TRADES.Threat#getId <em>Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Id</em>' attribute.
-	 * @see #getId()
-	 * @generated
-	 */
-	void setId(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Description</b></em>' attribute.

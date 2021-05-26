@@ -32,11 +32,13 @@ import dsm.TRADES.Data;
 import dsm.TRADES.DataOwner;
 import dsm.TRADES.DataOwnerElement;
 import dsm.TRADES.DifficultyScore;
+import dsm.TRADES.ElementWithId;
 import dsm.TRADES.ExternalControl;
 import dsm.TRADES.ExternalElement;
 import dsm.TRADES.ExternalThreat;
 import dsm.TRADES.ICatalogDefinition;
 import dsm.TRADES.IControlDefinition;
+import dsm.TRADES.IElementWithSource;
 import dsm.TRADES.IMitigationLink;
 import dsm.TRADES.IThreatDefinition;
 import dsm.TRADES.ImpactConfiguration;
@@ -311,6 +313,20 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass iElementWithSourceEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass elementWithIdEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EEnum assessmentENUMEEnum = null;
 
 	/**
@@ -492,7 +508,7 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getThreat_Id() {
+	public EAttribute getThreat_Description() {
 		return (EAttribute) threatEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -502,18 +518,8 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getThreat_Description() {
-		return (EAttribute) threatEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EAttribute getThreat_Applicability() {
-		return (EAttribute) threatEClass.getEStructuralFeatures().get(4);
+		return (EAttribute) threatEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -592,7 +598,7 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getControl_Id() {
+	public EAttribute getControl_Description() {
 		return (EAttribute) controlEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -602,18 +608,8 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getControl_Description() {
-		return (EAttribute) controlEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EReference getControl_MitigationRelations() {
-		return (EReference) controlEClass.getEStructuralFeatures().get(3);
+		return (EReference) controlEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -623,7 +619,7 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 */
 	@Override
 	public EAttribute getControl_Status() {
-		return (EAttribute) controlEClass.getEStructuralFeatures().get(4);
+		return (EAttribute) controlEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1642,6 +1638,56 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * @generated
 	 */
 	@Override
+	public EClass getIElementWithSource() {
+		return iElementWithSourceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getIElementWithSource__GetSourceName() {
+		return iElementWithSourceEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getIElementWithSource__GetSourceIdentifier() {
+		return iElementWithSourceEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getElementWithId() {
+		return elementWithIdEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getElementWithId_Id() {
+		return (EAttribute) elementWithIdEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EEnum getAssessmentENUM() {
 		return assessmentENUMEEnum;
 	}
@@ -1724,7 +1770,6 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		threatEClass = createEClass(THREAT);
 		createEReference(threatEClass, THREAT__THREAT_ALLOCATIONS);
 		createEAttribute(threatEClass, THREAT__THREAT_TYPE);
-		createEAttribute(threatEClass, THREAT__ID);
 		createEAttribute(threatEClass, THREAT__DESCRIPTION);
 		createEAttribute(threatEClass, THREAT__APPLICABILITY);
 		createEOperation(threatEClass, THREAT___CHECK_IS_USED__DIAGNOSTICCHAIN_MAP);
@@ -1736,7 +1781,6 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 
 		controlEClass = createEClass(CONTROL);
 		createEReference(controlEClass, CONTROL__MITIGATED_THREATS);
-		createEAttribute(controlEClass, CONTROL__ID);
 		createEAttribute(controlEClass, CONTROL__DESCRIPTION);
 		createEReference(controlEClass, CONTROL__MITIGATION_RELATIONS);
 		createEAttribute(controlEClass, CONTROL__STATUS);
@@ -1872,6 +1916,13 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		coloredElementEClass = createEClass(COLORED_ELEMENT);
 		createEAttribute(coloredElementEClass, COLORED_ELEMENT__COLOR);
 
+		iElementWithSourceEClass = createEClass(IELEMENT_WITH_SOURCE);
+		createEOperation(iElementWithSourceEClass, IELEMENT_WITH_SOURCE___GET_SOURCE_NAME);
+		createEOperation(iElementWithSourceEClass, IELEMENT_WITH_SOURCE___GET_SOURCE_IDENTIFIER);
+
+		elementWithIdEClass = createEClass(ELEMENT_WITH_ID);
+		createEAttribute(elementWithIdEClass, ELEMENT_WITH_ID__ID);
+
 		// Create enums
 		assessmentENUMEEnum = createEEnum(ASSESSMENT_ENUM);
 		affectedENUMEEnum = createEEnum(AFFECTED_ENUM);
@@ -1919,14 +1970,17 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		analysisEClass.getESuperTypes().add(this.getNamedElement());
 		analysisEClass.getESuperTypes().add(this.getAbstractControlOwner());
 		analysisEClass.getESuperTypes().add(this.getAbstractThreatOwner());
+		analysisEClass.getESuperTypes().add(this.getElementWithId());
 		threatEClass.getESuperTypes().add(this.getNamedElement());
 		threatEClass.getESuperTypes().add(this.getIThreatDefinition());
+		threatEClass.getESuperTypes().add(this.getElementWithId());
 		componentEClass.getESuperTypes().add(this.getComponentOwner());
 		componentEClass.getESuperTypes().add(this.getDataOwnerElement());
 		componentEClass.getESuperTypes().add(this.getNamedElement());
 		componentEClass.getESuperTypes().add(this.getAbstractControlOwner());
 		controlEClass.getESuperTypes().add(this.getNamedElement());
 		controlEClass.getESuperTypes().add(this.getIControlDefinition());
+		controlEClass.getESuperTypes().add(this.getElementWithId());
 		threatMitigationRelationEClass.getESuperTypes().add(this.getIMitigationLink());
 		dataEClass.getESuperTypes().add(this.getNamedElement());
 		affectRelationEClass.getESuperTypes().add(this.getNamedElement());
@@ -1946,6 +2000,9 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		catalogEClass.getESuperTypes().add(this.getAbstractControlOwner());
 		catalogEClass.getESuperTypes().add(this.getNamedElement());
 		catalogEClass.getESuperTypes().add(this.getICatalogDefinition());
+		catalogEClass.getESuperTypes().add(this.getElementWithId());
+		iThreatDefinitionEClass.getESuperTypes().add(this.getIElementWithSource());
+		iControlDefinitionEClass.getESuperTypes().add(this.getIElementWithSource());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(analysisEClass, Analysis.class, "Analysis", !IS_ABSTRACT, !IS_INTERFACE,
@@ -1969,8 +2026,6 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getThreat_ThreatType(), this.getthreatTypeENUM(), "threatType", null, 0, 1, Threat.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getThreat_Id(), ecorePackage.getEString(), "id", null, 0, 1, Threat.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getThreat_Description(), ecorePackage.getEString(), "description", null, 0, 1, Threat.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getThreat_Applicability(), ecorePackage.getEString(), "applicability", null, 0, 1, Threat.class,
@@ -1999,8 +2054,6 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		initEReference(getControl_MitigatedThreats(), this.getThreat(), null, "mitigatedThreats", null, 0, -1,
 				Control.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getControl_Id(), ecorePackage.getEString(), "id", null, 0, 1, Control.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getControl_Description(), ecorePackage.getEString(), "description", null, 0, 1, Control.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getControl_MitigationRelations(), this.getThreatMitigationRelation(),
@@ -2314,6 +2367,20 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		initEClass(coloredElementEClass, ColoredElement.class, "ColoredElement", IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getColoredElement_Color(), this.getRGBColor(), "color", "#AAAAAA", 0, 1, ColoredElement.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(iElementWithSourceEClass, IElementWithSource.class, "IElementWithSource", IS_ABSTRACT, IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+
+		initEOperation(getIElementWithSource__GetSourceName(), theEcorePackage.getEString(), "getSourceName", 0, 1,
+				IS_UNIQUE, IS_ORDERED);
+
+		initEOperation(getIElementWithSource__GetSourceIdentifier(), theEcorePackage.getEString(),
+				"getSourceIdentifier", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEClass(elementWithIdEClass, ElementWithId.class, "ElementWithId", IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getElementWithId_Id(), theEcorePackage.getEString(), "id", null, 0, 1, ElementWithId.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals

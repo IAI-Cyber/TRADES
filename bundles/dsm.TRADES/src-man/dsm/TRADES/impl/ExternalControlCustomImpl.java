@@ -38,4 +38,14 @@ public class ExternalControlCustomImpl extends ExternalControlImpl {
 		return ECollections.toEList(definitions);
 	}
 
+	@Override
+	public String getSourceName() {
+		return getSource();
+	}
+
+	@Override
+	public String getSourceIdentifier() {
+		return getSourceID();
+	}
+
 }

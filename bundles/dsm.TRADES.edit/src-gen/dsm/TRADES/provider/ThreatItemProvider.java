@@ -55,9 +55,9 @@ public class ThreatItemProvider extends NamedElementItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addIdPropertyDescriptor(object);
 			addThreatAllocationsPropertyDescriptor(object);
 			addThreatTypePropertyDescriptor(object);
-			addIdPropertyDescriptor(object);
 			addDescriptionPropertyDescriptor(object);
 			addApplicabilityPropertyDescriptor(object);
 		}
@@ -104,9 +104,10 @@ public class ThreatItemProvider extends NamedElementItemProvider {
 	protected void addIdPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Threat_id_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Threat_id_feature", "_UI_Threat_type"),
-						TRADESPackage.Literals.THREAT__ID, true, false, false,
+						getResourceLocator(), getString("_UI_ElementWithId_id_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_ElementWithId_id_feature",
+								"_UI_ElementWithId_type"),
+						TRADESPackage.Literals.ELEMENT_WITH_ID__ID, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
@@ -188,8 +189,8 @@ public class ThreatItemProvider extends NamedElementItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Threat.class)) {
-		case TRADESPackage.THREAT__THREAT_TYPE:
 		case TRADESPackage.THREAT__ID:
+		case TRADESPackage.THREAT__THREAT_TYPE:
 		case TRADESPackage.THREAT__DESCRIPTION:
 		case TRADESPackage.THREAT__APPLICABILITY:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));

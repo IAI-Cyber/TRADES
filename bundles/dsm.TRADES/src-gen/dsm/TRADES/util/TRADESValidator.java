@@ -195,6 +195,10 @@ public class TRADESValidator extends EObjectValidator {
 			return validateIMitigationLink((IMitigationLink) value, diagnostics, context);
 		case TRADESPackage.COLORED_ELEMENT:
 			return validateColoredElement((ColoredElement) value, diagnostics, context);
+		case TRADESPackage.IELEMENT_WITH_SOURCE:
+			return validateIElementWithSource((IElementWithSource) value, diagnostics, context);
+		case TRADESPackage.ELEMENT_WITH_ID:
+			return validateElementWithId((ElementWithId) value, diagnostics, context);
 		case TRADESPackage.ASSESSMENT_ENUM:
 			return validateAssessmentENUM((AssessmentENUM) value, diagnostics, context);
 		case TRADESPackage.AFFECTED_ENUM:
@@ -669,6 +673,26 @@ public class TRADESValidator extends EObjectValidator {
 	public boolean validateColoredElement(ColoredElement coloredElement, DiagnosticChain diagnostics,
 			Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(coloredElement, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateIElementWithSource(IElementWithSource iElementWithSource, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(iElementWithSource, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateElementWithId(ElementWithId elementWithId, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(elementWithId, diagnostics, context);
 	}
 
 	/**

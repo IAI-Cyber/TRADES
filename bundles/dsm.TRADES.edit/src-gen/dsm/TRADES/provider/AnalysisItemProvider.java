@@ -59,6 +59,7 @@ public class AnalysisItemProvider extends ComponentOwnerItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
+			addIdPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -76,6 +77,22 @@ public class AnalysisItemProvider extends ComponentOwnerItemProvider {
 						getString("_UI_PropertyDescriptor_description", "_UI_NamedElement_name_feature",
 								"_UI_NamedElement_type"),
 						TRADESPackage.Literals.NAMED_ELEMENT__NAME, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Id feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIdPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_ElementWithId_id_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_ElementWithId_id_feature",
+								"_UI_ElementWithId_type"),
+						TRADESPackage.Literals.ELEMENT_WITH_ID__ID, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
@@ -160,6 +177,7 @@ public class AnalysisItemProvider extends ComponentOwnerItemProvider {
 
 		switch (notification.getFeatureID(Analysis.class)) {
 		case TRADESPackage.ANALYSIS__NAME:
+		case TRADESPackage.ANALYSIS__ID:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		case TRADESPackage.ANALYSIS__DATA_OWNER:

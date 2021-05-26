@@ -91,6 +91,8 @@ public class TRADESSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseAbstractThreatOwner(analysis);
 			if (result == null)
+				result = caseElementWithId(analysis);
+			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
@@ -101,6 +103,10 @@ public class TRADESSwitch<T> extends Switch<T> {
 				result = caseNamedElement(threat);
 			if (result == null)
 				result = caseIThreatDefinition(threat);
+			if (result == null)
+				result = caseElementWithId(threat);
+			if (result == null)
+				result = caseIElementWithSource(threat);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -127,6 +133,10 @@ public class TRADESSwitch<T> extends Switch<T> {
 				result = caseNamedElement(control);
 			if (result == null)
 				result = caseIControlDefinition(control);
+			if (result == null)
+				result = caseElementWithId(control);
+			if (result == null)
+				result = caseIElementWithSource(control);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -241,6 +251,10 @@ public class TRADESSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseIThreatDefinition(externalThreat);
 			if (result == null)
+				result = caseElementWithId(externalThreat);
+			if (result == null)
+				result = caseIElementWithSource(externalThreat);
+			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
@@ -271,6 +285,10 @@ public class TRADESSwitch<T> extends Switch<T> {
 				result = caseNamedElement(externalControl);
 			if (result == null)
 				result = caseIControlDefinition(externalControl);
+			if (result == null)
+				result = caseElementWithId(externalControl);
+			if (result == null)
+				result = caseIElementWithSource(externalControl);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -335,6 +353,8 @@ public class TRADESSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseICatalogDefinition(catalog);
 			if (result == null)
+				result = caseElementWithId(catalog);
+			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
@@ -349,12 +369,16 @@ public class TRADESSwitch<T> extends Switch<T> {
 			IThreatDefinition iThreatDefinition = (IThreatDefinition) theEObject;
 			T result = caseIThreatDefinition(iThreatDefinition);
 			if (result == null)
+				result = caseIElementWithSource(iThreatDefinition);
+			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
 		case TRADESPackage.ICONTROL_DEFINITION: {
 			IControlDefinition iControlDefinition = (IControlDefinition) theEObject;
 			T result = caseIControlDefinition(iControlDefinition);
+			if (result == null)
+				result = caseIElementWithSource(iControlDefinition);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -376,6 +400,20 @@ public class TRADESSwitch<T> extends Switch<T> {
 		case TRADESPackage.COLORED_ELEMENT: {
 			ColoredElement coloredElement = (ColoredElement) theEObject;
 			T result = caseColoredElement(coloredElement);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case TRADESPackage.IELEMENT_WITH_SOURCE: {
+			IElementWithSource iElementWithSource = (IElementWithSource) theEObject;
+			T result = caseIElementWithSource(iElementWithSource);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case TRADESPackage.ELEMENT_WITH_ID: {
+			ElementWithId elementWithId = (ElementWithId) theEObject;
+			T result = caseElementWithId(elementWithId);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -877,6 +915,36 @@ public class TRADESSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseColoredElement(ColoredElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>IElement With Source</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>IElement With Source</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseIElementWithSource(IElementWithSource object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Element With Id</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Element With Id</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseElementWithId(ElementWithId object) {
 		return null;
 	}
 

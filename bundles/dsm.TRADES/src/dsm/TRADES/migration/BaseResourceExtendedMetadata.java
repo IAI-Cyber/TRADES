@@ -47,7 +47,8 @@ public class BaseResourceExtendedMetadata extends BasicExtendedMetaData {
 		// On Threat
 		RENAMERS.add(new Renamer(TRADESPackage.eINSTANCE.getThreat_ThreatAllocations(),
 				TRADESPackage.eINSTANCE.getThreat(), "threatallocation"));
-		RENAMERS.add(new Renamer(TRADESPackage.eINSTANCE.getThreat_Id(), TRADESPackage.eINSTANCE.getThreat(), "ID"));
+		RENAMERS.add(
+				new Renamer(TRADESPackage.eINSTANCE.getElementWithId_Id(), TRADESPackage.eINSTANCE.getThreat(), "ID"));
 		RENAMERS.add(new Renamer(TRADESPackage.eINSTANCE.getThreat_Description(), TRADESPackage.eINSTANCE.getThreat(),
 				"Description"));
 		RENAMERS.add(new Renamer(TRADESPackage.eINSTANCE.getThreat_Applicability(), TRADESPackage.eINSTANCE.getThreat(),
@@ -62,7 +63,8 @@ public class BaseResourceExtendedMetadata extends BasicExtendedMetaData {
 		// On control
 		RENAMERS.add(new Renamer(TRADESPackage.eINSTANCE.getControl_MitigatedThreats(),
 				TRADESPackage.eINSTANCE.getControl(), "mitigates"));
-		RENAMERS.add(new Renamer(TRADESPackage.eINSTANCE.getControl_Id(), TRADESPackage.eINSTANCE.getControl(), "ID"));
+		RENAMERS.add(
+				new Renamer(TRADESPackage.eINSTANCE.getElementWithId_Id(), TRADESPackage.eINSTANCE.getControl(), "ID"));
 		RENAMERS.add(new Renamer(TRADESPackage.eINSTANCE.getControl_Description(), TRADESPackage.eINSTANCE.getControl(),
 				"Description"));
 

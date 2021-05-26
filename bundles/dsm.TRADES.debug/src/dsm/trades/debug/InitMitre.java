@@ -77,8 +77,9 @@ public class InitMitre implements IApplication {
 
 			Resource resource = rs.createResource(URI.createFileURI(targetModelFile + "_" + modelName + ".trades"));
 
-			String analysisName = "Mitre Att&ck : " + modelName;
+			String analysisName = "Mitre-ATTCK--" + modelName;
 			Catalog catalog = SemanticUtil.createInitialCatalog(analysisName);
+			catalog.setId(analysisName);
 
 			ThreatsOwner threatOwner = catalog.getThreatOwner();
 			ControlOwner controlOwnedr = catalog.getControlOwner();

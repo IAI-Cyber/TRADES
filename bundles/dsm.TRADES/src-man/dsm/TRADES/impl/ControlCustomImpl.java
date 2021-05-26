@@ -21,6 +21,7 @@ import org.eclipse.emf.common.util.ECollections;
 import org.eclipse.emf.common.util.EList;
 
 import dsm.TRADES.IMitigationLink;
+import dsm.TRADES.SemanticUtil;
 import dsm.TRADES.Threat;
 import dsm.TRADES.ThreatMitigationRelation;
 
@@ -36,6 +37,16 @@ public class ControlCustomImpl extends ControlImpl {
 			}
 		}
 		return ECollections.toEList(definitions);
+	}
+
+	@Override
+	public String getSourceName() {
+		return SemanticUtil.getSourceName(this);
+	}
+
+	@Override
+	public String getSourceIdentifier() {
+		return SemanticUtil.getSourceIdentifier(this);
 	}
 
 }

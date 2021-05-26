@@ -13,8 +13,6 @@
  */
 package dsm.TRADES;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>IThreat Definition</b></em>'.
@@ -25,7 +23,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model interface="true" abstract="true"
  * @generated
  */
-public interface IThreatDefinition extends EObject {
+public interface IThreatDefinition extends IElementWithSource {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -21,6 +21,7 @@ import dsm.TRADES.ControlOwner;
 import dsm.TRADES.Data;
 import dsm.TRADES.DataOwner;
 import dsm.TRADES.DataOwnerElement;
+import dsm.TRADES.ElementWithId;
 import dsm.TRADES.ExternalControl;
 import dsm.TRADES.ExternalThreat;
 import dsm.TRADES.LinkType;
@@ -58,6 +59,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getName <em>Name</em>}</li>
  *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getControlOwner <em>Control Owner</em>}</li>
  *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getThreatOwner <em>Threat Owner</em>}</li>
+ *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getId <em>Id</em>}</li>
  *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getScoreSystem <em>Score System</em>}</li>
  *   <li>{@link dsm.TRADES.impl.AnalysisImpl#getLinkTypes <em>Link Types</em>}</li>
  * </ul>
@@ -114,6 +116,26 @@ public class AnalysisImpl extends ComponentOwnerImpl implements Analysis {
 	 * @ordered
 	 */
 	protected ThreatsOwner threatOwner;
+
+	/**
+	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String ID_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected String id = ID_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getScoreSystem() <em>Score System</em>}' containment reference.
@@ -404,6 +426,29 @@ public class AnalysisImpl extends ComponentOwnerImpl implements Analysis {
 	 * @generated
 	 */
 	@Override
+	public String getId() {
+		return id;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setId(String newId) {
+		String oldId = id;
+		id = newId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TRADESPackage.ANALYSIS__ID, oldId, id));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EList<ExternalThreat> getExternalThreats(String id, String catalogIdentifier) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -508,6 +553,8 @@ public class AnalysisImpl extends ComponentOwnerImpl implements Analysis {
 			return getControlOwner();
 		case TRADESPackage.ANALYSIS__THREAT_OWNER:
 			return getThreatOwner();
+		case TRADESPackage.ANALYSIS__ID:
+			return getId();
 		case TRADESPackage.ANALYSIS__SCORE_SYSTEM:
 			return getScoreSystem();
 		case TRADESPackage.ANALYSIS__LINK_TYPES:
@@ -536,6 +583,9 @@ public class AnalysisImpl extends ComponentOwnerImpl implements Analysis {
 			return;
 		case TRADESPackage.ANALYSIS__THREAT_OWNER:
 			setThreatOwner((ThreatsOwner) newValue);
+			return;
+		case TRADESPackage.ANALYSIS__ID:
+			setId((String) newValue);
 			return;
 		case TRADESPackage.ANALYSIS__SCORE_SYSTEM:
 			setScoreSystem((ScoreSystem) newValue);
@@ -568,6 +618,9 @@ public class AnalysisImpl extends ComponentOwnerImpl implements Analysis {
 		case TRADESPackage.ANALYSIS__THREAT_OWNER:
 			setThreatOwner((ThreatsOwner) null);
 			return;
+		case TRADESPackage.ANALYSIS__ID:
+			setId(ID_EDEFAULT);
+			return;
 		case TRADESPackage.ANALYSIS__SCORE_SYSTEM:
 			setScoreSystem((ScoreSystem) null);
 			return;
@@ -594,6 +647,8 @@ public class AnalysisImpl extends ComponentOwnerImpl implements Analysis {
 			return controlOwner != null;
 		case TRADESPackage.ANALYSIS__THREAT_OWNER:
 			return threatOwner != null;
+		case TRADESPackage.ANALYSIS__ID:
+			return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
 		case TRADESPackage.ANALYSIS__SCORE_SYSTEM:
 			return scoreSystem != null;
 		case TRADESPackage.ANALYSIS__LINK_TYPES:
@@ -641,6 +696,14 @@ public class AnalysisImpl extends ComponentOwnerImpl implements Analysis {
 				return -1;
 			}
 		}
+		if (baseClass == ElementWithId.class) {
+			switch (derivedFeatureID) {
+			case TRADESPackage.ANALYSIS__ID:
+				return TRADESPackage.ELEMENT_WITH_ID__ID;
+			default:
+				return -1;
+			}
+		}
 		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
 	}
 
@@ -679,6 +742,14 @@ public class AnalysisImpl extends ComponentOwnerImpl implements Analysis {
 			switch (baseFeatureID) {
 			case TRADESPackage.ABSTRACT_THREAT_OWNER__THREAT_OWNER:
 				return TRADESPackage.ANALYSIS__THREAT_OWNER;
+			default:
+				return -1;
+			}
+		}
+		if (baseClass == ElementWithId.class) {
+			switch (baseFeatureID) {
+			case TRADESPackage.ELEMENT_WITH_ID__ID:
+				return TRADESPackage.ANALYSIS__ID;
 			default:
 				return -1;
 			}
@@ -727,6 +798,12 @@ public class AnalysisImpl extends ComponentOwnerImpl implements Analysis {
 				return -1;
 			}
 		}
+		if (baseClass == ElementWithId.class) {
+			switch (baseOperationID) {
+			default:
+				return -1;
+			}
+		}
 		return super.eDerivedOperationID(baseOperationID, baseClass);
 	}
 
@@ -767,6 +844,8 @@ public class AnalysisImpl extends ComponentOwnerImpl implements Analysis {
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
+		result.append(", id: ");
+		result.append(id);
 		result.append(')');
 		return result.toString();
 	}

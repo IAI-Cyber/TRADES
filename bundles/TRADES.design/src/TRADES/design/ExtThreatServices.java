@@ -28,7 +28,6 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.ui.PlatformUI;
@@ -51,6 +50,7 @@ import dsm.TRADES.Threat;
 import dsm.TRADES.ThreatMitigationRelation;
 import dsm.TRADES.ThreatsOwner;
 import dsm.TRADES.util.EcoreUtils;
+import dsm.trades.rcp.utils.ThreatCopier;
 
 public class ExtThreatServices {
 
@@ -113,7 +113,7 @@ public class ExtThreatServices {
 			}
 		}
 
-		ExternalThreat result = EcoreUtil.copy(source);
+		ExternalThreat result = new ThreatCopier().copy(source);
 
 		ThreatsOwner threatOwner = analysis.getThreatOwner();
 		if (threatOwner == null) {
@@ -122,14 +122,11 @@ public class ExtThreatServices {
 		}
 
 		ICatalogDefinition catalog = EcoreUtils.getAncestor(source, ICatalogDefinition.class);
-		result.setSource(catalog.getName());
-		result.setSourceID(catalog.getIdentifier());
-
 		if (source.getLink() != null) {
 			result.setLink(source.getLink());
 		} else {
 			result.setLink(
-					CatalogElementURI.createCatalogThreatURI(catalog.getIdentifier(), source.getId()).toString());
+					CatalogElementURI.createCatalogThreatURI(source.getSourceIdentifier(), source.getId()).toString());
 		}
 		threatOwner.getExternals().add(result);
 
@@ -194,6 +191,7 @@ public class ExtThreatServices {
 
 			ICatalogDefinition catalogDef = EcoreUtils.getAncestor(source, ICatalogDefinition.class);
 
+
 			if (!controlOwner.getExternalControls(source.getId(), catalogDef.getIdentifier()).isEmpty()) {
 				if (!confirm("Existing External Control", MessageFormat.format(
 						"An external control with id ''{1}'' (from ''{0}'') already exist in ''{2}''. Do you want to import a new instance?",
@@ -204,20 +202,25 @@ public class ExtThreatServices {
 
 			ExternalControl matchingControl = TRADESFactory.eINSTANCE.createExternalControl();
 			matchingControl.setName(source.getName());
-			matchingControl.setSource(catalogDef.getName());
-			matchingControl.setSourceID(catalogDef.getIdentifier());
+
 			String id = source.getId();
 			matchingControl.setId(id);
 			matchingControl.setDescription(source.getDescription());
+
+			matchingControl.setSource(source.getSourceName());
+			matchingControl.setSourceID(source.getSourceIdentifier());
 
 			if (source instanceof ExternalControl) {
 				ExternalControl sourceExtControl = (ExternalControl) source;
 				if (sourceExtControl.getLink() != null) {
 					matchingControl.setLink(sourceExtControl.getLink());
 				}
-			} else {
+			}
+
+			if (matchingControl.getLink() == null) {
 				matchingControl
-						.setLink(CatalogElementURI.createCatalogControlURI(catalogDef.getIdentifier(), id).toString());
+						.setLink(
+								CatalogElementURI.createCatalogControlURI(source.getSourceIdentifier(), id).toString());
 			}
 
 			SemanticUtil.addControl(controlOwner, matchingControl);

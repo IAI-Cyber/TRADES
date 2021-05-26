@@ -21,6 +21,7 @@ import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 
+import dsm.TRADES.SemanticUtil;
 import dsm.TRADES.TRADESPackage;
 import dsm.TRADES.ThreatAllocationRelation;
 import dsm.TRADES.util.EcoreUtils;
@@ -38,6 +39,16 @@ public class ThreatCustomImpl extends ThreatImpl {
 			return false;
 		}
 		return true;
+	}
+
+	@Override
+	public String getSourceName() {
+		return SemanticUtil.getSourceName(this);
+	}
+
+	@Override
+	public String getSourceIdentifier() {
+		return SemanticUtil.getSourceIdentifier(this);
 	}
 
 }

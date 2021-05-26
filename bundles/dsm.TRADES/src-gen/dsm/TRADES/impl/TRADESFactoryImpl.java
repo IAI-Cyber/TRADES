@@ -313,7 +313,7 @@ public class TRADESFactoryImpl extends EFactoryImpl implements TRADESFactory {
 	 */
 	@Override
 	public ExternalThreat createExternalThreat() {
-		ExternalThreatImpl externalThreat = new ExternalThreatImpl();
+		ExternalThreatCustomImpl externalThreat = new ExternalThreatCustomImpl();
 		return externalThreat;
 	}
 

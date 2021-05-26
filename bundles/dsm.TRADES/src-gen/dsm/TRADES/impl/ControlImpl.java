@@ -15,7 +15,9 @@ package dsm.TRADES.impl;
 
 import dsm.TRADES.Control;
 import dsm.TRADES.ControlStatusENUM;
+import dsm.TRADES.ElementWithId;
 import dsm.TRADES.IControlDefinition;
+import dsm.TRADES.IElementWithSource;
 import dsm.TRADES.IMitigationLink;
 import dsm.TRADES.TRADESPackage;
 import dsm.TRADES.Threat;
@@ -47,8 +49,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link dsm.TRADES.impl.ControlImpl#getMitigatedThreats <em>Mitigated Threats</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ControlImpl#getId <em>Id</em>}</li>
+ *   <li>{@link dsm.TRADES.impl.ControlImpl#getMitigatedThreats <em>Mitigated Threats</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ControlImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ControlImpl#getMitigationRelations <em>Mitigation Relations</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ControlImpl#getStatus <em>Status</em>}</li>
@@ -57,16 +59,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * @generated
  */
 public class ControlImpl extends NamedElementImpl implements Control {
-	/**
-	 * The cached value of the '{@link #getMitigatedThreats() <em>Mitigated Threats</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMitigatedThreats()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Threat> mitigatedThreats;
-
 	/**
 	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -86,6 +78,16 @@ public class ControlImpl extends NamedElementImpl implements Control {
 	 * @ordered
 	 */
 	protected String id = ID_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getMitigatedThreats() <em>Mitigated Threats</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMitigatedThreats()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Threat> mitigatedThreats;
 
 	/**
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
@@ -272,6 +274,30 @@ public class ControlImpl extends NamedElementImpl implements Control {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public String getSourceName() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getSourceIdentifier() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -305,10 +331,10 @@ public class ControlImpl extends NamedElementImpl implements Control {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case TRADESPackage.CONTROL__MITIGATED_THREATS:
-			return getMitigatedThreats();
 		case TRADESPackage.CONTROL__ID:
 			return getId();
+		case TRADESPackage.CONTROL__MITIGATED_THREATS:
+			return getMitigatedThreats();
 		case TRADESPackage.CONTROL__DESCRIPTION:
 			return getDescription();
 		case TRADESPackage.CONTROL__MITIGATION_RELATIONS:
@@ -328,12 +354,12 @@ public class ControlImpl extends NamedElementImpl implements Control {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+		case TRADESPackage.CONTROL__ID:
+			setId((String) newValue);
+			return;
 		case TRADESPackage.CONTROL__MITIGATED_THREATS:
 			getMitigatedThreats().clear();
 			getMitigatedThreats().addAll((Collection<? extends Threat>) newValue);
-			return;
-		case TRADESPackage.CONTROL__ID:
-			setId((String) newValue);
 			return;
 		case TRADESPackage.CONTROL__DESCRIPTION:
 			setDescription((String) newValue);
@@ -357,11 +383,11 @@ public class ControlImpl extends NamedElementImpl implements Control {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case TRADESPackage.CONTROL__MITIGATED_THREATS:
-			getMitigatedThreats().clear();
-			return;
 		case TRADESPackage.CONTROL__ID:
 			setId(ID_EDEFAULT);
+			return;
+		case TRADESPackage.CONTROL__MITIGATED_THREATS:
+			getMitigatedThreats().clear();
 			return;
 		case TRADESPackage.CONTROL__DESCRIPTION:
 			setDescription(DESCRIPTION_EDEFAULT);
@@ -384,10 +410,10 @@ public class ControlImpl extends NamedElementImpl implements Control {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case TRADESPackage.CONTROL__MITIGATED_THREATS:
-			return mitigatedThreats != null && !mitigatedThreats.isEmpty();
 		case TRADESPackage.CONTROL__ID:
 			return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
+		case TRADESPackage.CONTROL__MITIGATED_THREATS:
+			return mitigatedThreats != null && !mitigatedThreats.isEmpty();
 		case TRADESPackage.CONTROL__DESCRIPTION:
 			return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 		case TRADESPackage.CONTROL__MITIGATION_RELATIONS:
@@ -404,7 +430,77 @@ public class ControlImpl extends NamedElementImpl implements Control {
 	 * @generated
 	 */
 	@Override
+	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == IElementWithSource.class) {
+			switch (derivedFeatureID) {
+			default:
+				return -1;
+			}
+		}
+		if (baseClass == IControlDefinition.class) {
+			switch (derivedFeatureID) {
+			default:
+				return -1;
+			}
+		}
+		if (baseClass == ElementWithId.class) {
+			switch (derivedFeatureID) {
+			case TRADESPackage.CONTROL__ID:
+				return TRADESPackage.ELEMENT_WITH_ID__ID;
+			default:
+				return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == IElementWithSource.class) {
+			switch (baseFeatureID) {
+			default:
+				return -1;
+			}
+		}
+		if (baseClass == IControlDefinition.class) {
+			switch (baseFeatureID) {
+			default:
+				return -1;
+			}
+		}
+		if (baseClass == ElementWithId.class) {
+			switch (baseFeatureID) {
+			case TRADESPackage.ELEMENT_WITH_ID__ID:
+				return TRADESPackage.CONTROL__ID;
+			default:
+				return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
+		if (baseClass == IElementWithSource.class) {
+			switch (baseOperationID) {
+			case TRADESPackage.IELEMENT_WITH_SOURCE___GET_SOURCE_NAME:
+				return TRADESPackage.CONTROL___GET_SOURCE_NAME;
+			case TRADESPackage.IELEMENT_WITH_SOURCE___GET_SOURCE_IDENTIFIER:
+				return TRADESPackage.CONTROL___GET_SOURCE_IDENTIFIER;
+			default:
+				return -1;
+			}
+		}
 		if (baseClass == IControlDefinition.class) {
 			switch (baseOperationID) {
 			case TRADESPackage.ICONTROL_DEFINITION___GET_DESCRIPTION:
@@ -415,6 +511,12 @@ public class ControlImpl extends NamedElementImpl implements Control {
 				return TRADESPackage.CONTROL___GET_MITIGATED_THREAT_DEFINITIONS;
 			case TRADESPackage.ICONTROL_DEFINITION___GET_NAME:
 				return TRADESPackage.CONTROL___GET_NAME;
+			default:
+				return -1;
+			}
+		}
+		if (baseClass == ElementWithId.class) {
+			switch (baseOperationID) {
 			default:
 				return -1;
 			}
@@ -432,6 +534,10 @@ public class ControlImpl extends NamedElementImpl implements Control {
 		switch (operationID) {
 		case TRADESPackage.CONTROL___GET_MITIGATED_THREAT_DEFINITIONS:
 			return getMitigatedThreatDefinitions();
+		case TRADESPackage.CONTROL___GET_SOURCE_NAME:
+			return getSourceName();
+		case TRADESPackage.CONTROL___GET_SOURCE_IDENTIFIER:
+			return getSourceIdentifier();
 		}
 		return super.eInvoke(operationID, arguments);
 	}

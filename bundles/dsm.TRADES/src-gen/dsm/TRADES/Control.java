@@ -25,7 +25,6 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link dsm.TRADES.Control#getMitigatedThreats <em>Mitigated Threats</em>}</li>
- *   <li>{@link dsm.TRADES.Control#getId <em>Id</em>}</li>
  *   <li>{@link dsm.TRADES.Control#getDescription <em>Description</em>}</li>
  *   <li>{@link dsm.TRADES.Control#getMitigationRelations <em>Mitigation Relations</em>}</li>
  *   <li>{@link dsm.TRADES.Control#getStatus <em>Status</em>}</li>
@@ -35,7 +34,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface Control extends NamedElement, IControlDefinition {
+public interface Control extends NamedElement, IControlDefinition, ElementWithId {
 	/**
 	 * Returns the value of the '<em><b>Mitigated Threats</b></em>' reference list.
 	 * The list contents are of type {@link dsm.TRADES.Threat}.
@@ -47,28 +46,6 @@ public interface Control extends NamedElement, IControlDefinition {
 	 * @generated
 	 */
 	EList<Threat> getMitigatedThreats();
-
-	/**
-	 * Returns the value of the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Id</em>' attribute.
-	 * @see #setId(String)
-	 * @see dsm.TRADES.TRADESPackage#getControl_Id()
-	 * @model
-	 * @generated
-	 */
-	String getId();
-
-	/**
-	 * Sets the value of the '{@link dsm.TRADES.Control#getId <em>Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Id</em>' attribute.
-	 * @see #getId()
-	 * @generated
-	 */
-	void setId(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Description</b></em>' attribute.
