@@ -34,7 +34,11 @@ public class DebugService {
 	 * @return the context for chaining
 	 */
 	public EObject printAllVariable(EObject context) {
+		return printAllVariable(context, "No message");
+	}
 
+	public EObject printAllVariable(EObject context, String message) {
+		System.out.println("------- " + message);
 		Map<String, ?> variableMap = Session.of(context).get().getInterpreter().getVariables();
 		for (Entry<String, ?> entry : variableMap.entrySet()) {
 			System.out.println(entry.getKey() + "->" + entry.getValue());
