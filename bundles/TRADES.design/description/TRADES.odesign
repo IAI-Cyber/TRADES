@@ -135,12 +135,6 @@
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
-          <conditionnalStyles predicateExpression="aql:self.oclIsTypeOf(TRADES::ExternalControl)">
-            <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="aql:''" tooltipExpression="feature:name" hideLabelByDefault="true" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/TRADES.design/Images/ExternalControlImage.svg">
-              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-            </style>
-          </conditionnalStyles>
           <conditionnalStyles predicateExpression="aql: self.status=TRADES::ControlStatusENUM::Implemented">
             <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="aql:''" tooltipExpression="feature:name" hideLabelByDefault="true" sizeComputationExpression="-1" workspacePath="/TRADES.design/Images/controlImageGreen.svg">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -155,6 +149,12 @@
           </conditionnalStyles>
           <conditionnalStyles predicateExpression="aql: self.status=TRADES::ControlStatusENUM::Agreed">
             <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="aql:''" tooltipExpression="feature:name" hideLabelByDefault="true" sizeComputationExpression="-1" workspacePath="/TRADES.design/Images/controlImageBlue.svg">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </conditionnalStyles>
+          <conditionnalStyles predicateExpression="aql:self.oclIsTypeOf(TRADES::ExternalControl)">
+            <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="aql:''" tooltipExpression="feature:name" hideLabelByDefault="true" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/TRADES.design/Images/ExternalControlImage.svg">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </style>
@@ -1462,7 +1462,7 @@
         </controls>
       </groups>
       <groups name="ControlGroup" label="Control Details" labelExpression="Control Details" domainClass="TRADES::Control" semanticCandidateExpression="var:self">
-        <controls xsi:type="properties:SelectDescription" name="Status" labelExpression="Status" isEnabledExpression="aql:self.oclIsTypeOf(TRADES::Control)" valueExpression="aql: TRADES::ControlStatusENUM.getEEnumLiteral(self.status.toString())" candidatesExpression="aql: TRADES::ControlStatusENUM.eLiterals" candidateDisplayExpression="aql:candidate.name">
+        <controls xsi:type="properties:SelectDescription" name="Status" labelExpression="Status" isEnabledExpression="aql:" valueExpression="aql: TRADES::ControlStatusENUM.getEEnumLiteral(self.status.toString())" candidatesExpression="aql: TRADES::ControlStatusENUM.eLiterals" candidateDisplayExpression="aql:candidate.name">
           <initialOperation>
             <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
               <subModelOperations xsi:type="tool_1:SetValue" featureName="status" valueExpression="aql:newValue.instance"/>
@@ -1649,7 +1649,7 @@
           </initialOperation>
         </controls>
       </groups>
-      <groups name="ExternalControlGroup" labelExpression="External Control detail" domainClass="TRADES::ExternalControl" semanticCandidateExpression="var:self">
+      <groups name="ExternalControlGroup" labelExpression="External Control Details" domainClass="TRADES::ExternalControl" semanticCandidateExpression="var:self">
         <controls xsi:type="properties:TextDescription" name="ExternalControlSource" label=" External Control Source" labelExpression="Source" helpExpression="The source of the control" isEnabledExpression="aql:false" valueExpression="aql:self.source">
           <initialOperation>
             <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
