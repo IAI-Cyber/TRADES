@@ -209,17 +209,17 @@
           </conditionnalStyles>
         </edgeMappings>
         <edgeMappings name="Affect" labelDirectEdit="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='AffectEditLabel']" semanticCandidatesExpression="feature:eAllContents" sourceMapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='System%20Design']/@defaultLayer/@containerMappings[name='ComponentContainer_SD']/@subContainerMappings[name='ComponentPackage_SD']" targetMapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='System%20Design']/@defaultLayer/@containerMappings[name='ComponentContainer_SD']/@subContainerMappings[name='ComponentPackage_SD']" targetFinderExpression="feature:targetComponent" sourceFinderExpression="feature:sourceComponent" targetExpression="var: self" domainClass="TRADES::AffectRelation" useDomainElement="true">
-          <style sizeComputationExpression="2">
-            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_blue']"/>
-            <centerLabelStyleDescription labelSize="12" showIcon="false" labelExpression="aql:self.dataLabelOnAffect()">
-              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          <style targetArrow="InputClosedArrow" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_gray']"/>
+            <centerLabelStyleDescription showIcon="false" labelExpression="aql:self.dataLabelOnAffect()">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_gray']"/>
             </centerLabelStyleDescription>
           </style>
           <conditionnalStyles predicateExpression="aql: self.eGet('analysisStatus')->toString()='Confirmed'">
             <style targetArrow="InputClosedArrow" sizeComputationExpression="3">
               <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <centerLabelStyleDescription showIcon="false" labelExpression="aql:self.dataLabelOnAffect()">
-                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_blue']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               </centerLabelStyleDescription>
             </style>
           </conditionnalStyles>
