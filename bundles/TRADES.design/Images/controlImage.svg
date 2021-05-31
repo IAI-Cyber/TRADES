@@ -9,9 +9,9 @@
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    version="1.1"
    id="svg12"
-   width="14mm"
-   height="15mm"
-   viewBox="0 0 52.913381 56.692906"
+   width="60"
+   height="60"
+   viewBox="0 0 59.999993 59.999993"
    sodipodi:docname="controlImage.svg"
    inkscape:export-filename="C:\dev\ELTA\GitClones\TRADES\bundles\dsm.TRADES.edit\icons\custom\Control.png"
    inkscape:export-xdpi="29.02857"
@@ -25,7 +25,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -45,24 +45,32 @@
      id="namedview14"
      showgrid="false"
      inkscape:zoom="6.5333334"
-     inkscape:cx="19.229648"
-     inkscape:cy="34.056836"
+     inkscape:cx="-22.837082"
+     inkscape:cy="25.754439"
      inkscape:window-x="-8"
      inkscape:window-y="1072"
      inkscape:window-maximized="1"
      inkscape:current-layer="g20"
      inkscape:document-rotation="0"
-     units="mm"
+     units="px"
      width="249mm"
      inkscape:snap-to-guides="true"
      inkscape:object-paths="true" />
   <g
      inkscape:groupmode="layer"
      inkscape:label="Image"
-     id="g20">
+     id="g20"
+     transform="translate(0,3.3070873)">
+    <rect
+       style="fill:#ffffff;fill-opacity:0.00392157;stroke:#0c0c0c;stroke-width:0.54730427;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+       id="rect4522"
+       width="58.452694"
+       height="58.452694"
+       x="0.77365303"
+       y="-2.5334342" />
     <g
        id="g824"
-       transform="translate(-3.2614164e-8,3.6180185)"
+       transform="matrix(0.98933636,0,0,0.98729243,3.8254317,2.2787128)"
        inkscape:export-filename="C:\dev\ELTA\GitClones\TRADES\bundles\dsm.TRADES.edit\icons\custom\g824.png"
        inkscape:export-xdpi="29.02857"
        inkscape:export-ydpi="29.02857">
