@@ -45,7 +45,7 @@ location "https://www.obeo.fr/download/release/designer/11.3/community/latest/re
 }
 
 
-location "https://download.eclipse.org/sirius/updates/stable/6.5.0-S20210326-125830/2020-06/" {
+location "https://download.eclipse.org/sirius/updates/stable/6.5.0-S20210430-052046/2020-06/" {
 	//Sirius
 	org.eclipse.sirius.specifier.feature.group lazy
 	org.eclipse.sirius.properties.feature.feature.group lazy
