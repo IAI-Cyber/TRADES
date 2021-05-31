@@ -17,14 +17,11 @@ import java.util.Optional;
 
 import org.eclipse.elk.core.options.CoreOptions;
 import org.eclipse.elk.core.options.NodeLabelPlacement;
-import org.eclipse.elk.core.options.PortConstraints;
 import org.eclipse.elk.core.service.LayoutMapping;
-import org.eclipse.elk.graph.ElkEdge;
 import org.eclipse.elk.graph.ElkGraphElement;
 import org.eclipse.elk.graph.ElkGraphPackage;
 import org.eclipse.elk.graph.ElkLabel;
 import org.eclipse.elk.graph.ElkNode;
-import org.eclipse.elk.graph.ElkPort;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
@@ -46,19 +43,17 @@ import dsm.TRADES.util.EcoreUtils;
 
 public class TradesAutoLayoutCusto implements IELKLayoutExtension {
 
+	/** The identifier of the node mapping for Control. */
+	private static final String CONTROL_MAPPING_NAME = "ControlNode";
+	private static final String CONTROL_MAPPING_NAME_CA = "ControlNode_CA";
+
+	/** The identifier of the node mapping for Threat. */
+	private static final String THREAT_MAPPING_NAME = "ThreatNode_TD";
+
 	private static final String TRADES_DIAGRAM = "TRADES diagram";
-
-    /** The identifier of the border node mapping used to display label of Control. */
-    private static final String CONTROL_LABEL_PORT_MAPPING_NAME = "ControlLabel_TD";
-
-    /** The identifier of the border node mapping used to display label of Threat. */
-    private static final String THREAT_LABEL_PORT_MAPPING_NAME = "ThreatLabel_TD";
-
-//	private List<ElkEdge> modifiedMitigationRelations;
 
 	@Override
 	public void beforeELKLayout(LayoutMapping layoutMapping) {
-//		modifiedMitigationRelations = new ArrayList<>();
 		Optional<DDiagram> optionalDDiagram = getDDiagram(layoutMapping);
 		if (optionalDDiagram.isPresent()) {
 			String diagramDescriptionName = optionalDDiagram.get().getDescription() != null
@@ -74,7 +69,7 @@ public class TradesAutoLayoutCusto implements IELKLayoutExtension {
 		// Remove all edge layout information
 
 		ElkNode layoutGraph = layoutMapping.getLayoutGraph();
-		EcoreUtils.allContainedObjectOfType(layoutGraph, ElkEdge.class).forEach(edge -> edge.getSections().clear());
+//		EcoreUtils.allContainedObjectOfType(layoutGraph, ElkEdge.class).forEach(edge -> edge.getSections().clear());
 		BiMap<ElkGraphElement, Object> graphMap = layoutMapping.getGraphMap();
 		EcoreUtils.allContainedObjectOfType(layoutGraph, ElkLabel.class).forEach(label -> {
 			ElkGraphElement parent = label.getParent();
@@ -96,129 +91,37 @@ public class TradesAutoLayoutCusto implements IELKLayoutExtension {
 				}
 			}
 		});
-        // Force the location, of ports displaying label of Control/Threat, to remain fix (ie centered below its
-        // Control/Threat)
-        EcoreUtils.allContainedObjectOfType(layoutGraph, ElkPort.class).forEach(port -> {
-            Object oPort = graphMap.get(port);
-            if (oPort instanceof IGraphicalEditPart) {
-                IGraphicalEditPart editpart = (IGraphicalEditPart) oPort;
-                EObject sElement = editpart.resolveSemanticElement();
-                if (sElement instanceof DDiagramElement) {
-                    DDiagramElement node = (DDiagramElement) sElement;
-                    if (CONTROL_LABEL_PORT_MAPPING_NAME.equals(node.getMapping().getName()) || THREAT_LABEL_PORT_MAPPING_NAME.equals(node.getMapping().getName())) {
-                        port.getParent().setProperty(CoreOptions.PORT_CONSTRAINTS, PortConstraints.FIXED_POS);
-                    }
-                }
-            }
-        });
-
-		// Attempt to handle edge that connect node to another edge
-//
-//		List<Pair<ElkEdge, ThreatMitigationRelation>> mitigationEdges = getEdgeWithMappingNames(layoutGraph, graphMap,
-//				ThreatMitigationRelation.class, "mitigatesThreatAllocation");
-//
-//		List<Pair<ElkEdge, ThreatAllocationRelation>> affectEdges = getEdgeWithMappingNames(layoutGraph,
-//				layoutMapping.getGraphMap(), ThreatAllocationRelation.class, "allocatedThreat");
-//		int cmpt = 0;
-//		for (Pair<ElkEdge, ThreatAllocationRelation> affectRelation : affectEdges) {
-//			cmpt++;
-//			ThreatAllocationRelation affectRel = affectRelation.getTwo();
-//
-//			/// Gets linked mitigations
-//			List<Pair<ElkEdge, ThreatMitigationRelation>> linkedMitigation = mitigationEdges.stream()
-//					.filter(e -> e.getTwo().getMitigates() == affectRel).collect(Collectors.toList());
-//
-//			if (!linkedMitigation.isEmpty()) {
-//				ElkEdge affectEdge = affectRelation.getOne();
-//				ElkConnectableShape elkNode = affectEdge.getTargets().get(0);
-//				if (elkNode instanceof ElkNode) {
-//					ElkNode targetNode = (ElkNode) elkNode;
-//					ElkPort port = ElkGraphUtil.createPort(targetNode);
-//					port.setIdentifier(targetNode.getIdentifier() + "_" + cmpt);
-//					port.setDimensions(1, 1);
-//					port.setProperty(CoreOptions.PORT_BORDER_OFFSET, -1.0);
-////					modifiedMitigationRelations.add(affectEdge);
-//					affectEdge.getTargets().clear();
-//					affectEdge.getTargets().add(port);
-//
-//					for (Pair<ElkEdge, ThreatMitigationRelation> miEntry : linkedMitigation) {
-//						ElkEdge miEdge = miEntry.getOne();
-//						modifiedMitigationRelations.add(miEdge);
-//						miEdge.getTargets().clear();
-//						miEdge.getTargets().add(port);
-//					}
-//				}
-//			}
-//		}
-
-		// For each of them create a virtual port on the target component
-
-//		for (Pair<ElkEdge, ThreatMitigationRelation> edgeEntry : mitigationEdges) {
-//
-//			ThreatMitigationRelation mitigationRel = edgeEntry.getTwo();
-//
-//			// Change the relation edges
-//			Optional<Pair<ElkEdge, ThreatAllocationRelation>> optMatchingAffectEdge = getEdgeWithMappingNames(
-//					layoutGraph, layoutMapping.getGraphMap(), ThreatAllocationRelation.class, "allocatedThreat")
-//							.stream()//
-//							.filter(entry -> entry.getTwo() == mitigationRel.getMitigates()).findFirst();
-//
-//			if (!optMatchingAffectEdge.isEmpty()) {
-//				ElkEdge affectEdge = optMatchingAffectEdge.get().getOne();
-//				ElkEdge edge = edgeEntry.getOne();
-//				ElkConnectableShape elkNode = edge.getTargets().get(0);
-//				if (elkNode instanceof ElkNode) {
-//					ElkNode targetNode = (ElkNode) elkNode;
-//					ElkPort port = ElkGraphUtil.createPort(targetNode);
-//					port.setIdentifier(targetNode.getIdentifier() + "_" + edge.getIdentifier());
-//					port.setDimensions(1, 1);
-//					port.setProperty(CoreOptions.PORT_BORDER_OFFSET, -1.0);
-//					edge.getTargets().clear();
-//					edge.getTargets().add(port);
-//					affectEdge.getTargets().clear();
-//					affectEdge.getTargets().add(port);
-//				}
-//			}
-//		}
-
-		// Change the target of both the mitigation and the affectation to that port
-//		System.out.println(mitigationEdges);
+		// Force the location, of label of Control/Threat, to be centered below the node
+		// (with NodeLabelPlacement.outsideBottomCenter() value for NODE_LABELS_PLACEMENT
+		// property)
+		EcoreUtils.allContainedObjectOfType(layoutGraph, ElkNode.class).forEach(node -> {
+			Object objectEditPart = graphMap.get(node);
+			if (objectEditPart instanceof IGraphicalEditPart) {
+				IGraphicalEditPart editpart = (IGraphicalEditPart) objectEditPart;
+				EObject sElement = editpart.resolveSemanticElement();
+				if (sElement instanceof DDiagramElement) {
+					DDiagramElement dde = (DDiagramElement) sElement;
+					if (CONTROL_MAPPING_NAME_CA.equals(dde.getMapping().getName())
+							|| CONTROL_MAPPING_NAME.equals(dde.getMapping().getName())
+							|| THREAT_MAPPING_NAME.equals(dde.getMapping().getName())) {
+						if (node.getLabels().size() > 0) {
+							node.getLabels().get(0).setProperty(CoreOptions.NODE_LABELS_PLACEMENT,
+									NodeLabelPlacement.outsideBottomCenter());
+						}
+					}
+				}
+			}
+		});
 
 	}
 
 	@Override
 	public void afterELKLayout(LayoutMapping layoutMapping) {
 
-		// Attempt to handle edge that connect node to another edge
-//		for (ElkEdge edge : modifiedMitigationRelations) {
-//			System.out.println(edge);
-//			KVectorChain jPoint = edge.getProperty(CoreOptions.JUNCTION_POINTS);
-//			if(jPoint != null && !jPoint.isEmpty()) {
-//				KVector lastJPoint = jPoint.get(jPoint.size() - 1);
-//				System.out.println(jPoint);
-//				List<ElkEdgeSection> sectionToKeep = new ArrayList<ElkEdgeSection>();
-//				for (ElkEdgeSection s : edge.getSections()) {
-//					sectionToKeep.add(s);
-//					List<ElkBendPoint> bendPointToKeep = new ArrayList<ElkBendPoint>();
-//					for (ElkBendPoint bp : s.getBendPoints()) {
-//						if( bp.getX() == lastJPoint.x && bp.getY() == lastJPoint.y) {
-//							break;
-//						}
-//						bendPointToKeep.add(bp);
-//					}
-//					s.getBendPoints().clear();
-//					s.getBendPoints().addAll(bendPointToKeep);
-//					s.setEndLocation(lastJPoint.x, lastJPoint.y);
-//				}
-//			}
-//			edge.setProperty(CoreOptions.JUNCTION_POINTS, null);
-//		}
-
 	}
 
 	@Override
 	public void afterGMFCommandApplied(GmfLayoutCommand gmfLayoutCommand, LayoutMapping layoutMapping) {
-		// TODO Auto-generated method stub
 
 	}
 
@@ -239,75 +142,5 @@ public class TradesAutoLayoutCusto implements IELKLayoutExtension {
 		}
 		return Optional.empty();
 	}
-
-//	private List<ElkNode> getNodesWithMappingNames(ElkNode elkNode, BiMap<ElkGraphElement, Object> graphMap,
-//			Predicate<EObject> semanticFilter, String... mappingNames) {
-//		List<ElkNode> elkNodes = new ArrayList<>();
-//
-//		// We collect nodes with the given mapping.
-//		elkNodes.addAll(elkNode.getChildren().stream().filter(node -> {
-//			Object editPart = graphMap.get(node);
-//			if (editPart instanceof AbstractBorderedDiagramElementEditPart) {
-//				EObject targetElement = ((AbstractBorderedDiagramElementEditPart) editPart).resolveSemanticElement();
-//				if (targetElement instanceof DEdge) {
-//					DEdge dEdge = (DEdge) targetElement;
-//					DiagramElementMapping mapping = dEdge.getDiagramElementMapping();
-//					if (mapping != null) {
-//						for (String mappingName : mappingNames) {
-//							if (mappingName.equals(mapping.getName())) {
-//								return semanticFilter == null || semanticFilter.apply(dEdge.getTarget());
-//							}
-//						}
-//					}
-//				}
-//			}
-//			return false;
-//		}).collect(Collectors.toList()));
-//
-//		// We recursively collect them for each child
-//		elkNodes.addAll(elkNode.getChildren().stream()
-//				.flatMap(n -> getNodesWithMappingNames(n, graphMap, mappingNames).stream())
-//				.collect(Collectors.toList()));
-//
-//		return elkNodes;
-//	}
-
-//	private <T extends EObject> List<Pair<ElkEdge, T>> getEdgeWithMappingNames(ElkNode elkNode,
-//			BiMap<ElkGraphElement, Object> graphMap, Class<T> type, String... mappingNames) {
-//		List<Pair<ElkEdge, T>> elkNodes = new ArrayList<>();
-//
-//		// We collect nodes with the given mapping.
-//		elkNodes.addAll(elkNode.getContainedEdges().stream().map(edge -> {
-//			Object editPart = graphMap.get(edge);
-//			if (editPart instanceof DEdgeEditPart) {
-//				EObject targetElement = ((DEdgeEditPart) editPart).resolveSemanticElement();
-//				if (targetElement instanceof DEdge) {
-//					DEdge dEdge = (DEdge) targetElement;
-//					DiagramElementMapping mapping = dEdge.getDiagramElementMapping();
-//					if (mapping != null) {
-//						for (String mappingName : mappingNames) {
-//							if (mappingName.equals(mapping.getName())) {
-//								EObject target = dEdge.getTarget();
-//								if (type.isInstance(target)) {
-//									return Tuples.pair(edge, type.cast(target));
-//								} else {
-//									return null;
-//								}
-//
-//							}
-//						}
-//					}
-//				}
-//			}
-//			return null;
-//		}).filter(e -> e != null).collect(Collectors.toList()));
-//
-//		// We recursively collect them for each child
-//		elkNodes.addAll(elkNode.getChildren().stream()
-//				.flatMap(n -> getEdgeWithMappingNames(n, graphMap, type, mappingNames).stream())
-//				.collect(Collectors.toList()));
-//
-//		return elkNodes;
-//	}
 
 }
