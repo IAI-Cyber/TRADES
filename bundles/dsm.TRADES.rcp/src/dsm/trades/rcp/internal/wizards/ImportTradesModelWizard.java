@@ -25,11 +25,8 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Stream;
 
-import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.ResourcesPlugin;
-import org.eclipse.core.runtime.CoreException;
-import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
@@ -64,6 +61,7 @@ import dsm.TRADES.Threat;
 import dsm.TRADES.ThreatsOwner;
 import dsm.TRADES.util.EcoreUtils;
 import dsm.trades.rcp.TRADESRCPActivator;
+import dsm.trades.rcp.utils.CatalogUtils;
 import dsm.trades.rcp.utils.ControlCopier;
 import dsm.trades.rcp.utils.ThreatCopier;
 
@@ -75,7 +73,6 @@ import dsm.trades.rcp.utils.ThreatCopier;
  */
 public class ImportTradesModelWizard extends Wizard implements IImportWizard {
 
-	private static final String CATALOGS_FOLDER = "Catalogs";
 	private IStructuredSelection selection;
 	private ProjectSelectionPage projectSelectionPage;
 	private TradesLoadingPage fileSelectionPage;
@@ -87,20 +84,6 @@ public class ImportTradesModelWizard extends Wizard implements IImportWizard {
 	private String importedRootName;
 	private String importedRootId;
 
-	public static void createCatalogFolder(IProject selectedProject0, IProgressMonitor monitor) {
-		IFolder catalogFolder = selectedProject0.getFolder(CATALOGS_FOLDER);
-		if (!catalogFolder.exists()) {
-			try {
-				catalogFolder.create(false, true, monitor);
-			} catch (CoreException e) {
-				TRADESRCPActivator.logError("Unable to create 'catalogs' fodler " + e.getMessage(), e);
-			}
-		}
-	}
-
-	public static URI getCatalogFolderURI(URI sessionURI) {
-		return sessionURI.trimSegments(1).appendSegment(CATALOGS_FOLDER);
-	}
 
 	@Override
 	public void init(IWorkbench workbench, IStructuredSelection selection) {
@@ -153,7 +136,7 @@ public class ImportTradesModelWizard extends Wizard implements IImportWizard {
 							if (!session[0].isOpen()) {
 								session[0].open(monitor);
 							}
-							createCatalogFolder(selectedProject0, monitor);
+							CatalogUtils.createCatalogFolder(selectedProject0, monitor);
 						});
 
 					} catch (InvocationTargetException | InterruptedException e) {
@@ -254,7 +237,7 @@ public class ImportTradesModelWizard extends Wizard implements IImportWizard {
 						// Avoid forbiden file name
 						String resourceName = importedRootName.replaceAll("[^\\w.-]", "_");
 						
-						URI tradesLibURI = getCatalogFolderURI(repUri)
+						URI tradesLibURI = CatalogUtils.getCatalogFolderURI(repUri)
 								.appendSegment(URI.encodeSegment(resourceName, true) + ".trades");
 						TransactionalEditingDomain transactionalEditingDomain = session.getTransactionalEditingDomain();
 						ResourceSet resourceSet = transactionalEditingDomain.getResourceSet();

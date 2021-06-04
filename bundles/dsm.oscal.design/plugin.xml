@@ -58,9 +58,17 @@
                        property="org.eclipse.sirius.ui.isSemanticResourceFileTester">
                  </test>
               </and>
+              <adapt
+                    type="org.eclipse.core.resources.IFolder">
+              </adapt>
            </or>
         </enablement>
      </actionProvider>
+     <commonWizard
+           type="new"
+           wizardId="dsm.oscal.design.oscalcatalog.wizard">
+        <enablement></enablement>
+     </commonWizard>
   </extension>
   <extension
         point="org.eclipse.ui.navigator.viewer">
@@ -94,5 +102,27 @@
      <servicesConfigurators
            class="dsm.oscal.design.m2doc.OscalM2DocService">
      </servicesConfigurators>
+  </extension>
+  <extension
+        point="org.eclipse.ui.newWizards">
+     <wizard
+           canFinishEarly="false"
+           category="dsm.TRADES.wizardCat"
+           class="dsm.oscal.design.wizards.NewOscalCatalog"
+           descriptionImage="icons/bookmarks_view.png"
+           hasPages="true"
+           icon="icons/bookmarks_view.png"
+           id="dsm.oscal.design.oscalcatalog.wizard"
+           name="Oscal Catalog">
+     </wizard>
+  </extension>
+  <extension
+        point="org.eclipse.ui.perspectiveExtensions">
+     <perspectiveExtension
+           targetID="dsm.TRADES.rcp.perspective">
+        <newWizardShortcut
+              id="dsm.oscal.design.oscalcatalog.wizard">
+        </newWizardShortcut>
+     </perspectiveExtension>
   </extension>
 </plugin>

@@ -41,17 +41,16 @@ import org.eclipse.sirius.business.api.modelingproject.ModelingProject;
 import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.sirius.business.api.session.SessionManager;
 import org.eclipse.sirius.ext.base.Option;
-import org.eclipse.sirius.ui.business.api.session.UserSession;
-import org.eclipse.sirius.viewpoint.description.Viewpoint;
 import org.eclipse.ui.IImportWizard;
 import org.eclipse.ui.IWorkbench;
 
 import dsm.oscal.design.Activator;
 import dsm.oscal.design.EmbeddedCatalogRegistry;
+import dsm.oscal.design.actions.OSCALUtils;
 import dsm.oscal.model.OscalCatalog.Catalog;
 import dsm.oscal.model.transform.OSCALTransformer;
-import dsm.trades.rcp.internal.wizards.ImportTradesModelWizard;
 import dsm.trades.rcp.internal.wizards.ProjectSelectionPage;
+import dsm.trades.rcp.utils.CatalogUtils;
 
 /**
  * Wizard use to import an OSCAL catalog
@@ -76,7 +75,8 @@ public class ImportEmbeddedCatalogWizard extends Wizard implements IImportWizard
 		super.addPages();
 		List<IProject> modelingProjects = Stream.of(ResourcesPlugin.getWorkspace().getRoot().getProjects())
 				.filter(p -> ModelingProject.asModelingProject(p).some()).collect(toList());
-		this.projectSelectionPage = new ProjectSelectionPage(modelingProjects, getSelectedProject(selection));
+		this.projectSelectionPage = new ProjectSelectionPage(modelingProjects,
+				OSCALUtils.getSelectedProject(selection));
 		addPage(projectSelectionPage);
 		this.catalogSelectionPage = new CatalogSelectionPage();
 		addPage(catalogSelectionPage);
@@ -101,7 +101,7 @@ public class ImportEmbeddedCatalogWizard extends Wizard implements IImportWizard
 								session[0].open(monitor);
 							}
 
-							ImportTradesModelWizard.createCatalogFolder(selectedProject0, monitor);
+							CatalogUtils.createCatalogFolder(selectedProject0, monitor);
 						});
 					} catch (InvocationTargetException | InterruptedException e) {
 						Activator.logError("Error occured while loading the session : " + e.getMessage(), e);
@@ -151,7 +151,7 @@ public class ImportEmbeddedCatalogWizard extends Wizard implements IImportWizard
 
 	private boolean importOscalCatalog(URI repUri, Session session, String oscalLibName, Path libPath) {
 
-		URI oscalLibURI = ImportTradesModelWizard.getCatalogFolderURI(repUri)
+		URI oscalLibURI = CatalogUtils.getCatalogFolderURI(repUri)
 				.appendSegment(URI.encodeSegment(oscalLibName, false) + ".oscal");
 		TransactionalEditingDomain transactionalEditingDomain = session.getTransactionalEditingDomain();
 
@@ -197,15 +197,7 @@ public class ImportEmbeddedCatalogWizard extends Wizard implements IImportWizard
 				};
 				transactionalEditingDomain.getCommandStack().execute(cmd);
 
-				if (session.getSelectedViewpoints(true).stream()
-						.noneMatch(v -> Activator.OSCAL_VIEWPOINT_NAME.equals(v.getName()))) {
-					monitor.setTaskName("Activating missing viewpoint");
-					List<String> existingViewpoints = session.getSelectedViewpoints(true).stream()
-							.map(Viewpoint::getName).collect(toList());
-					existingViewpoints.add(Activator.OSCAL_VIEWPOINT_NAME);
-					new UserSession(session).selectViewpoints(existingViewpoints);
-					monitor.worked(1);
-				}
+				OSCALUtils.activateOscalViewpointIfMissing(session, monitor);
 				monitor.done();
 			});
 			return true;
@@ -215,23 +207,12 @@ public class ImportEmbeddedCatalogWizard extends Wizard implements IImportWizard
 		return false;
 	}
 
+
 	@Override
 	public boolean canFinish() {
 		return projectSelectionPage.getSelectedProject() != null && catalogSelectionPage.getCatalog() != null;
 	}
 
-	private IProject getSelectedProject(IStructuredSelection selection) {
-		for (Object o : selection.toArray()) {
-			if (o instanceof IProject) {
-				Option<ModelingProject> opt = ModelingProject.asModelingProject((IProject) o);
-				if (opt.some()) {
-					return (IProject) o;
-				}
 
-			}
-		}
-
-		return null;
-	}
 
 }
