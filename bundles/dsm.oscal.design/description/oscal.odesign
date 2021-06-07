@@ -46,7 +46,7 @@
       <pages name="ControlPage" labelExpression="General" domainClass="OscalCatalog::Control" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.0"/>
       <pages name="GroupPage" labelExpression="General" domainClass="OscalCatalog::Group" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.2"/>
       <pages name="PartPage" labelExpression="General" domainClass="OscalCatalogCommon::Part" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.9"/>
-      <pages name="DocumentationComputerPage" labelExpression="Documentation" domainClass="OscalMetadata::DocumentationComputer" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.10" indented="true"/>
+      <pages name="DocumentationComputerPage" labelExpression="Documentation" domainClass="OscalMetadata::DocumentationComputer" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.10 //@extensions.0/@categories.0/@groups.14" indented="true"/>
       <pages name="PropertyOwnerPage" labelExpression="Properties" domainClass="OscalMetadata::PropertyOwner" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.3" indented="true"/>
       <pages name="LinkOwnerPage" labelExpression="Links" domainClass="OscalMetadata::LinkOwner" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.5" indented="true"/>
       <pages name="ElementWithRemarksPage" labelExpression="Remarks" domainClass="OscalMetadata::ElementWithRemarks" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.7" indented="true"/>
@@ -306,6 +306,68 @@
           <onClickOperation>
             <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self"/>
           </onClickOperation>
+        </controls>
+      </groups>
+      <groups name="PartOwnerGroup" labelExpression="Document parts" domainClass="OscalMetadata::ParameterOwner" semanticCandidateExpression="var:self">
+        <controls xsi:type="properties:ListDescription" name="PartsWidget" labelExpression="Parts" valueExpression="aql:self.parts" displayExpression="aql:value.getLabelProviderText()">
+          <onClickOperation>
+            <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self"/>
+          </onClickOperation>
+          <actions imageExpression="/dsm.oscal.design/icons/add.png">
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="OscalCatalogCommon::Part" referenceName="parts">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="New document part"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </actions>
+          <actions imageExpression="/dsm.oscal.design/icons/delete_action.gif">
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                <subModelOperations xsi:type="tool_1:For" expression="var:selection" iteratorName="s">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:s">
+                    <subModelOperations xsi:type="tool_1:RemoveElement"/>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </actions>
+          <actions imageExpression="/dsm.oscal.design/icons/up.gif">
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                <subModelOperations xsi:type="tool_1:For" expression="var:selection" iteratorName="s">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:s.moveUpInManyFeature(s.eContainer(),'parts')"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </actions>
+          <actions imageExpression="/dsm.oscal.design/icons/ArrowDown_16x16.gif">
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                <subModelOperations xsi:type="tool_1:For" expression="var:selection" iteratorName="s">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:s.moveDownInManyFeature(s.eContainer(),'parts')"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </actions>
+          <actions imageExpression="/dsm.oscal.design/icons/edit_template.png">
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                <subModelOperations xsi:type="tool_1:For" expression="var:selection" iteratorName="s">
+                  <subModelOperations xsi:type="properties:DialogModelOperation" titleExpression="Document part edition">
+                    <buttons labelExpression="Cancel" closeDialogOnClick="true" rollbackChangesOnClose="true">
+                      <initialOperation/>
+                    </buttons>
+                    <buttons labelExpression="OK" default="true" closeDialogOnClick="true">
+                      <initialOperation/>
+                    </buttons>
+                    <page name="Default Page" labelExpression="Part detail" domainClass="OscalCatalogCommon::Part" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.9 //@extensions.0/@categories.0/@groups.10"/>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </actions>
         </controls>
       </groups>
     </categories>

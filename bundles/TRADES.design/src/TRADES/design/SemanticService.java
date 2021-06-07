@@ -183,7 +183,6 @@ public class SemanticService {
 		return UUID.randomUUID().toString();
 	}
 
-
 	public static Data createData(DataOwnerElement element) {
 		DataOwner owner = element.getDataOwner();
 
@@ -538,6 +537,30 @@ public class SemanticService {
 			container = container.eContainer();
 		}
 		return false;
+	}
+
+	public void moveUpInManyFeature(EObject toMove, EObject source, String featureName) {
+		EStructuralFeature feature = source.eClass().getEStructuralFeature(featureName);
+		if (feature != null && feature.isMany()) {
+			List<EObject> values = (List<EObject>) source.eGet(feature);
+			int index = values.indexOf(toMove);
+			if (index > 0) {
+				values.remove(index);
+				values.add(index - 1, toMove);
+			}
+		}
+	}
+
+	public void moveDownInManyFeature(EObject toMove, EObject source, String featureName) {
+		EStructuralFeature feature = source.eClass().getEStructuralFeature(featureName);
+		if (feature != null && feature.isMany()) {
+			List<EObject> values = (List<EObject>) source.eGet(feature);
+			int index = values.indexOf(toMove);
+			if (index != -1 && index < values.size() - 1) {
+				values.remove(index);
+				values.add(index + 1, toMove);
+			}
+		}
 	}
 
 }
