@@ -14,15 +14,19 @@
 
 package dsm.oscal.design;
 
+import java.net.URL;
 import java.util.HashSet;
 import java.util.Set;
 
+import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.eef.ide.ui.internal.preferences.EEFPreferences;
 import org.eclipse.eef.ide.ui.internal.widgets.EEFTextLifecycleManager.ConflictResolutionMode;
+import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.sirius.business.api.componentization.ViewpointRegistry;
 import org.eclipse.sirius.viewpoint.description.Viewpoint;
+import org.eclipse.swt.graphics.Image;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
 
@@ -145,5 +149,31 @@ public class Activator extends AbstractUIPlugin {
 
 	private void doLogError(String string, Throwable e) {
 		getLog().log(new Status(IStatus.ERROR, PLUGIN_ID, string, e));
+	}
+
+	public Image getImage(String path) {
+		Image img = getImageRegistry().get(path);
+		if (img == null) {
+
+			URL url = FileLocator.find(getBundle(), new org.eclipse.core.runtime.Path(path), null);
+			if (url != null) {
+				getImageRegistry().put(path, ImageDescriptor.createFromURL(url));
+				img = getImageRegistry().get(path);
+			}
+		}
+		return img;
+	}
+
+	public ImageDescriptor getImageDescriptor(String path) {
+		ImageDescriptor img = getImageRegistry().getDescriptor(path);
+		if (img == null) {
+
+			URL url = FileLocator.find(getBundle(), new org.eclipse.core.runtime.Path(path), null);
+			if (url != null) {
+				getImageRegistry().put(path, ImageDescriptor.createFromURL(url));
+				img = getImageRegistry().getDescriptor(path);
+			}
+		}
+		return img;
 	}
 }

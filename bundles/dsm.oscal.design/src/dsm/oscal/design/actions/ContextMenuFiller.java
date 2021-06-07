@@ -21,6 +21,7 @@ import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 
 import dsm.oscal.model.OscalCatalog.Catalog;
+import dsm.oscal.model.OscalCatalog.Group;
 
 /**
  * Provide some trades action
@@ -44,6 +45,9 @@ public class ContextMenuFiller implements IMenuListener, IMenuListener2 {
 			Object first = selection.getFirstElement();
 			if (first instanceof Catalog) {
 				manager.add(new ActionRemoveCatalog((Catalog) first));
+				manager.add(new NewGroupAction((Catalog) first));
+			} else if (first instanceof Group) {
+				manager.add(new NewGroupAction((Group) first));
 			}
 		}
 
