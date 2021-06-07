@@ -729,9 +729,9 @@ public class OscalMetadataEditor
 		adapterFactory = new ComposedAdapterFactory(ComposedAdapterFactory.Descriptor.Registry.INSTANCE);
 
 		adapterFactory.addAdapterFactory(new ResourceItemProviderAdapterFactory());
-		adapterFactory.addAdapterFactory(new OscalCatalogItemProviderAdapterFactory());
-		adapterFactory.addAdapterFactory(new OscalCatalogCommonItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new OscalMetadataItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new OscalCatalogCommonItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new OscalCatalogItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new TRADESItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new EcoreItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());

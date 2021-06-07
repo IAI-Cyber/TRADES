@@ -29,6 +29,7 @@ import dsm.oscal.model.OscalMetadata.Address;
 import dsm.oscal.model.OscalMetadata.BackMatter;
 import dsm.oscal.model.OscalMetadata.BackMatterResource;
 import dsm.oscal.model.OscalMetadata.Base64;
+import dsm.oscal.model.OscalMetadata.ControlOwner;
 import dsm.oscal.model.OscalMetadata.DocumentId;
 import dsm.oscal.model.OscalMetadata.DocumentationComputer;
 import dsm.oscal.model.OscalMetadata.ElementWithClazz;
@@ -117,6 +118,13 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 * @generated
 	 */
 	private EClass base64EClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass controlOwnerEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -436,20 +444,20 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 		EcorePackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
-		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(OscalCatalogPackage.eNS_URI);
-		OscalCatalogPackageImpl theOscalCatalogPackage = (OscalCatalogPackageImpl)(registeredPackage instanceof OscalCatalogPackageImpl ? registeredPackage : OscalCatalogPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(OscalCatalogCommonPackage.eNS_URI);
+		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(OscalCatalogCommonPackage.eNS_URI);
 		OscalCatalogCommonPackageImpl theOscalCatalogCommonPackage = (OscalCatalogCommonPackageImpl)(registeredPackage instanceof OscalCatalogCommonPackageImpl ? registeredPackage : OscalCatalogCommonPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(OscalCatalogPackage.eNS_URI);
+		OscalCatalogPackageImpl theOscalCatalogPackage = (OscalCatalogPackageImpl)(registeredPackage instanceof OscalCatalogPackageImpl ? registeredPackage : OscalCatalogPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theOscalMetadataPackage.createPackageContents();
-		theOscalCatalogPackage.createPackageContents();
 		theOscalCatalogCommonPackage.createPackageContents();
+		theOscalCatalogPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theOscalMetadataPackage.initializePackageContents();
-		theOscalCatalogPackage.initializePackageContents();
 		theOscalCatalogCommonPackage.initializePackageContents();
+		theOscalCatalogPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theOscalMetadataPackage.freeze();
@@ -657,6 +665,26 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	@Override
 	public EAttribute getBase64_Value() {
 		return (EAttribute)base64EClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getControlOwner() {
+		return controlOwnerEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getControlOwner_Controls() {
+		return (EReference)controlOwnerEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1722,6 +1750,9 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 		createEAttribute(base64EClass, BASE64__MEDIA_TYPE);
 		createEAttribute(base64EClass, BASE64__VALUE);
 
+		controlOwnerEClass = createEClass(CONTROL_OWNER);
+		createEReference(controlOwnerEClass, CONTROL_OWNER__CONTROLS);
+
 		documentIdEClass = createEClass(DOCUMENT_ID);
 		createEAttribute(documentIdEClass, DOCUMENT_ID__SCHEME);
 
@@ -1876,6 +1907,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
+		OscalCatalogPackage theOscalCatalogPackage = (OscalCatalogPackage)EPackage.Registry.INSTANCE.getEPackage(OscalCatalogPackage.eNS_URI);
 		OscalCatalogCommonPackage theOscalCatalogCommonPackage = (OscalCatalogCommonPackage)EPackage.Registry.INSTANCE.getEPackage(OscalCatalogCommonPackage.eNS_URI);
 
 		// Create type parameters
@@ -1965,6 +1997,9 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 		initEAttribute(getBase64_MediaType(), ecorePackage.getEString(), "mediaType", null, 0, 1, Base64.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getBase64_Value(), this.getBase64Type(), "value", null, 0, 1, Base64.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEClass(controlOwnerEClass, ControlOwner.class, "ControlOwner", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getControlOwner_Controls(), theOscalCatalogPackage.getControl(), null, "controls", null, 0, -1, ControlOwner.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		initEClass(documentIdEClass, DocumentId.class, "DocumentId", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDocumentId_Scheme(), this.getUriType(), "scheme", null, 0, 1, DocumentId.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -2022,7 +2057,7 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 		initEClass(oscalElementEClass, OscalElement.class, "OscalElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		EOperation op = initEOperation(getOscalElement__Resolve__URI(), ecorePackage.getEObject(), "resolve", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, this.getUriReferenceType(), "uri", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getUriType(), "uri", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(parameterOwnerEClass, ParameterOwner.class, "ParameterOwner", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getParameterOwner_Params(), theOscalCatalogCommonPackage.getParameter(), null, "params", null, 0, -1, ParameterOwner.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

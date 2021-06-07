@@ -17,10 +17,11 @@ package dsm.oscal.model.OscalCatalog.util;
 
 import dsm.TRADES.ICatalogDefinition;
 import dsm.TRADES.IControlDefinition;
-
 import dsm.TRADES.IElementWithSource;
+
 import dsm.oscal.model.OscalCatalog.*;
 
+import dsm.oscal.model.OscalMetadata.ControlOwner;
 import dsm.oscal.model.OscalMetadata.DocumentationComputer;
 import dsm.oscal.model.OscalMetadata.ElementWithClazz;
 import dsm.oscal.model.OscalMetadata.ElementWithId;
@@ -117,6 +118,10 @@ public class OscalCatalogAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseParameterOwner(ParameterOwner object) {
 				return createParameterOwnerAdapter();
+			}
+			@Override
+			public Adapter caseControlOwner(ControlOwner object) {
+				return createControlOwnerAdapter();
 			}
 			@Override
 			public Adapter caseICatalogDefinition(ICatalogDefinition object) {
@@ -255,6 +260,20 @@ public class OscalCatalogAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createParameterOwnerAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link dsm.oscal.model.OscalMetadata.ControlOwner <em>Control Owner</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see dsm.oscal.model.OscalMetadata.ControlOwner
+	 * @generated
+	 */
+	public Adapter createControlOwnerAdapter() {
 		return null;
 	}
 

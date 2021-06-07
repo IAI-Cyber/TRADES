@@ -23,6 +23,7 @@ import dsm.oscal.model.OscalCatalog.OscalCatalogPackage;
 import dsm.oscal.model.OscalCatalogCommon.OscalCatalogCommonFactory;
 import dsm.oscal.model.OscalMetadata.OscalMetadataFactory;
 import dsm.oscal.model.OscalMetadata.OscalMetadataPackage;
+
 import dsm.oscal.model.OscalMetadata.provider.OscalElementItemProvider;
 
 import java.util.Collection;
@@ -108,8 +109,8 @@ public class CatalogItemProvider extends OscalElementItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
+			childrenFeatures.add(OscalMetadataPackage.Literals.CONTROL_OWNER__CONTROLS);
 			childrenFeatures.add(OscalCatalogPackage.Literals.CATALOG__BACK_MATTER);
-			childrenFeatures.add(OscalCatalogPackage.Literals.CATALOG__CONTROLS);
 			childrenFeatures.add(OscalCatalogPackage.Literals.CATALOG__GROUPS);
 			childrenFeatures.add(OscalCatalogPackage.Literals.CATALOG__METADATA);
 		}
@@ -172,8 +173,8 @@ public class CatalogItemProvider extends OscalElementItemProvider {
 			case OscalCatalogPackage.CATALOG__PARAMS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case OscalCatalogPackage.CATALOG__BACK_MATTER:
 			case OscalCatalogPackage.CATALOG__CONTROLS:
+			case OscalCatalogPackage.CATALOG__BACK_MATTER:
 			case OscalCatalogPackage.CATALOG__GROUPS:
 			case OscalCatalogPackage.CATALOG__METADATA:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
@@ -200,13 +201,13 @@ public class CatalogItemProvider extends OscalElementItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OscalCatalogPackage.Literals.CATALOG__BACK_MATTER,
-				 OscalMetadataFactory.eINSTANCE.createBackMatter()));
+				(OscalMetadataPackage.Literals.CONTROL_OWNER__CONTROLS,
+				 OscalCatalogFactory.eINSTANCE.createControl()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OscalCatalogPackage.Literals.CATALOG__CONTROLS,
-				 OscalCatalogFactory.eINSTANCE.createControl()));
+				(OscalCatalogPackage.Literals.CATALOG__BACK_MATTER,
+				 OscalMetadataFactory.eINSTANCE.createBackMatter()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -227,7 +228,7 @@ public class CatalogItemProvider extends OscalElementItemProvider {
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return OscalEditPlugin.INSTANCE;
+		return dsm.oscal.model.OscalMetadata.provider.OscalEditPlugin.INSTANCE;
 	}
 
 }

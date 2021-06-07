@@ -131,6 +131,7 @@ public class OscalSemanticRefactorer implements ISemanticRefactorer {
 
 		createAbstractOwnerClass(getEClass("Property"), "props", true);
 		createAbstractOwnerClass(getEClass("Link"), "links", true);
+		createAbstractOwnerClass(getEClass("Control"), "controls", false);
 
 		// Create documentation owner
 		EClass docComputer = createEClass("DocumentationComputer");

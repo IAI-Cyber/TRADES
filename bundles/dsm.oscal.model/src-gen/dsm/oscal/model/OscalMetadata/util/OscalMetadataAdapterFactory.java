@@ -97,6 +97,10 @@ public class OscalMetadataAdapterFactory extends AdapterFactoryImpl {
 				return createBase64Adapter();
 			}
 			@Override
+			public Adapter caseControlOwner(ControlOwner object) {
+				return createControlOwnerAdapter();
+			}
+			@Override
 			public Adapter caseDocumentId(DocumentId object) {
 				return createDocumentIdAdapter();
 			}
@@ -273,6 +277,20 @@ public class OscalMetadataAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createBase64Adapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link dsm.oscal.model.OscalMetadata.ControlOwner <em>Control Owner</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see dsm.oscal.model.OscalMetadata.ControlOwner
+	 * @generated
+	 */
+	public Adapter createControlOwnerAdapter() {
 		return null;
 	}
 

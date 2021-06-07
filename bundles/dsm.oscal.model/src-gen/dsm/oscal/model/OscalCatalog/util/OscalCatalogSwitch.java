@@ -17,10 +17,11 @@ package dsm.oscal.model.OscalCatalog.util;
 
 import dsm.TRADES.ICatalogDefinition;
 import dsm.TRADES.IControlDefinition;
-
 import dsm.TRADES.IElementWithSource;
+
 import dsm.oscal.model.OscalCatalog.*;
 
+import dsm.oscal.model.OscalMetadata.ControlOwner;
 import dsm.oscal.model.OscalMetadata.DocumentationComputer;
 import dsm.oscal.model.OscalMetadata.ElementWithClazz;
 import dsm.oscal.model.OscalMetadata.ElementWithId;
@@ -99,6 +100,7 @@ public class OscalCatalogSwitch<T> extends Switch<T> {
 				if (result == null) result = caseOscalElement(catalog);
 				if (result == null) result = caseUUIDElement(catalog);
 				if (result == null) result = caseParameterOwner(catalog);
+				if (result == null) result = caseControlOwner(catalog);
 				if (result == null) result = caseICatalogDefinition(catalog);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -110,6 +112,7 @@ public class OscalCatalogSwitch<T> extends Switch<T> {
 				if (result == null) result = caseParameterOwner(control);
 				if (result == null) result = casePropertyOwner(control);
 				if (result == null) result = caseLinkOwner(control);
+				if (result == null) result = caseControlOwner(control);
 				if (result == null) result = casePartOwner(control);
 				if (result == null) result = caseIControlDefinition(control);
 				if (result == null) result = caseElementWithClazz(control);
@@ -126,6 +129,7 @@ public class OscalCatalogSwitch<T> extends Switch<T> {
 				if (result == null) result = caseParameterOwner(group);
 				if (result == null) result = casePropertyOwner(group);
 				if (result == null) result = caseLinkOwner(group);
+				if (result == null) result = caseControlOwner(group);
 				if (result == null) result = casePartOwner(group);
 				if (result == null) result = caseElementWithClazz(group);
 				if (result == null) result = caseElementWithId(group);
@@ -224,6 +228,21 @@ public class OscalCatalogSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseParameterOwner(ParameterOwner object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Control Owner</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Control Owner</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseControlOwner(ControlOwner object) {
 		return null;
 	}
 

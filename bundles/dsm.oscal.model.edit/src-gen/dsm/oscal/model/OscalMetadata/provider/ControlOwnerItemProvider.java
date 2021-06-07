@@ -16,7 +16,8 @@
 package dsm.oscal.model.OscalMetadata.provider;
 
 
-import dsm.oscal.model.OscalMetadata.ElementWithValue;
+import dsm.oscal.model.OscalCatalog.OscalCatalogFactory;
+import dsm.oscal.model.OscalMetadata.ControlOwner;
 import dsm.oscal.model.OscalMetadata.OscalMetadataPackage;
 
 import java.util.Collection;
@@ -27,24 +28,24 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
+import org.eclipse.emf.ecore.EStructuralFeature;
+
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link dsm.oscal.model.OscalMetadata.ElementWithValue} object.
+ * This is the item provider adapter for a {@link dsm.oscal.model.OscalMetadata.ControlOwner} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ElementWithValueItemProvider 
+public class ControlOwnerItemProvider 
 	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
@@ -58,7 +59,7 @@ public class ElementWithValueItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ElementWithValueItemProvider(AdapterFactory adapterFactory) {
+	public ControlOwnerItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -73,42 +74,49 @@ public class ElementWithValueItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addValuePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Value feature.
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addValuePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ElementWithValue_value_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ElementWithValue_value_feature", "_UI_ElementWithValue_type"),
-				 OscalMetadataPackage.Literals.ELEMENT_WITH_VALUE__VALUE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+	@Override
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
+			super.getChildrenFeatures(object);
+			childrenFeatures.add(OscalMetadataPackage.Literals.CONTROL_OWNER__CONTROLS);
+		}
+		return childrenFeatures;
 	}
 
 	/**
-	 * This returns ElementWithValue.gif.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EStructuralFeature getChildFeature(Object object, Object child) {
+		// Check the type of the specified child object and return the proper feature to use for
+		// adding (see {@link AddCommand}) it as a child.
+
+		return super.getChildFeature(object, child);
+	}
+
+	/**
+	 * This returns ControlOwner.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/ElementWithValue"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/ControlOwner"));
 	}
 
 	/**
@@ -119,10 +127,7 @@ public class ElementWithValueItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ElementWithValue)object).getValue();
-		return label == null || label.length() == 0 ?
-			getString("_UI_ElementWithValue_type") :
-			getString("_UI_ElementWithValue_type") + " " + label;
+		return getString("_UI_ControlOwner_type");
 	}
 
 
@@ -137,9 +142,9 @@ public class ElementWithValueItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(ElementWithValue.class)) {
-			case OscalMetadataPackage.ELEMENT_WITH_VALUE__VALUE:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+		switch (notification.getFeatureID(ControlOwner.class)) {
+			case OscalMetadataPackage.CONTROL_OWNER__CONTROLS:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
 		super.notifyChanged(notification);
@@ -155,6 +160,11 @@ public class ElementWithValueItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OscalMetadataPackage.Literals.CONTROL_OWNER__CONTROLS,
+				 OscalCatalogFactory.eINSTANCE.createControl()));
 	}
 
 	/**

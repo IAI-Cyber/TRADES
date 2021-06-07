@@ -5,7 +5,7 @@ Bundle-SymbolicName: dsm.oscal.model.edit;singleton:=true
 Automatic-Module-Name: dsm.oscal.model.edit
 Bundle-Version: 3.0.0.qualifier
 Bundle-ClassPath: .
-Bundle-Activator: dsm.oscal.model.OscalCatalog.provider.OscalEditPlugin$Implementation
+Bundle-Activator: dsm.oscal.model.OscalMetadata.provider.OscalEditPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-11

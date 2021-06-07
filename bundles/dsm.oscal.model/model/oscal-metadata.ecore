@@ -146,6 +146,11 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="//Base64Type"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EDataType" name="Base64Type" instanceClassName="gov.nist.secauto.metaschema.datatypes.Base64"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ControlOwner">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="controls" upperBound="-1" containment="true">
+      <eType xsi:type="ecore:EClass" href="oscal-catalog.ecore#//Control"/>
+    </eStructuralFeatures>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EDataType" name="DateTimeType" instanceClassName="gov.nist.secauto.metaschema.datatypes.DateTime"/>
   <eClassifiers xsi:type="ecore:EDataType" name="DateTimeWithTzType" instanceClassName="java.time.ZonedDateTime"/>
   <eClassifiers xsi:type="ecore:EDataType" name="DateType" instanceClassName="gov.nist.secauto.metaschema.datatypes.Date"/>
@@ -397,7 +402,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="OscalElement" abstract="true">
     <eOperations name="resolve">
       <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
-      <eParameters name="uri" eType="//UriReferenceType"/>
+      <eParameters name="uri" eType="//UriType"/>
     </eOperations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ParameterOwner">

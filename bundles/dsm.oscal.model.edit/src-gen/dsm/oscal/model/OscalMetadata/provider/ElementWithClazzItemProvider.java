@@ -16,7 +16,6 @@
 package dsm.oscal.model.OscalMetadata.provider;
 
 
-import dsm.oscal.model.OscalCatalog.provider.OscalEditPlugin;
 import dsm.oscal.model.OscalMetadata.ElementWithClazz;
 import dsm.oscal.model.OscalMetadata.OscalMetadataPackage;
 
@@ -166,7 +165,7 @@ public class ElementWithClazzItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return OscalEditPlugin.INSTANCE;
+		return dsm.oscal.model.OscalMetadata.provider.OscalEditPlugin.INSTANCE;
 	}
 
 }

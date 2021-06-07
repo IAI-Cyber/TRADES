@@ -71,6 +71,15 @@ public interface OscalMetadataFactory extends EFactory {
 	Base64 createBase64();
 
 	/**
+	 * Returns a new object of class '<em>Control Owner</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Control Owner</em>'.
+	 * @generated
+	 */
+	ControlOwner createControlOwner();
+
+	/**
 	 * Returns a new object of class '<em>Document Id</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

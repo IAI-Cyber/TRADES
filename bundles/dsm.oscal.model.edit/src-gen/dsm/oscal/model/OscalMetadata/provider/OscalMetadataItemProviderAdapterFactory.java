@@ -177,6 +177,29 @@ public class OscalMetadataItemProviderAdapterFactory extends OscalMetadataAdapte
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link dsm.oscal.model.OscalMetadata.ControlOwner} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ControlOwnerItemProvider controlOwnerItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link dsm.oscal.model.OscalMetadata.ControlOwner}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createControlOwnerAdapter() {
+		if (controlOwnerItemProvider == null) {
+			controlOwnerItemProvider = new ControlOwnerItemProvider(this);
+		}
+
+		return controlOwnerItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link dsm.oscal.model.OscalMetadata.DocumentId} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -831,6 +854,7 @@ public class OscalMetadataItemProviderAdapterFactory extends OscalMetadataAdapte
 		if (backMatterItemProvider != null) backMatterItemProvider.dispose();
 		if (backMatterResourceItemProvider != null) backMatterResourceItemProvider.dispose();
 		if (base64ItemProvider != null) base64ItemProvider.dispose();
+		if (controlOwnerItemProvider != null) controlOwnerItemProvider.dispose();
 		if (documentIdItemProvider != null) documentIdItemProvider.dispose();
 		if (elementWithClazzItemProvider != null) elementWithClazzItemProvider.dispose();
 		if (elementWithIdItemProvider != null) elementWithIdItemProvider.dispose();

@@ -17,6 +17,7 @@ package dsm.oscal.model.OscalCatalog;
 
 import dsm.TRADES.IControlDefinition;
 
+import dsm.oscal.model.OscalMetadata.ControlOwner;
 import dsm.oscal.model.OscalMetadata.ElementWithClazz;
 import dsm.oscal.model.OscalMetadata.ElementWithId;
 import dsm.oscal.model.OscalMetadata.LinkOwner;
@@ -26,8 +27,6 @@ import dsm.oscal.model.OscalMetadata.PartOwner;
 import dsm.oscal.model.OscalMetadata.PropertyOwner;
 
 import gov.nist.secauto.metaschema.datatypes.markup.MarkupLine;
-
-import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -46,7 +45,6 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link dsm.oscal.model.OscalCatalog.Control#getControls <em>Controls</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalog.Control#getTitle <em>Title</em>}</li>
  * </ul>
  *
@@ -54,20 +52,7 @@ import org.eclipse.emf.common.util.EList;
  * @model annotation="Metaschema source='&lt;Metaschema&gt;oscal-catalog.&lt;AssemblyDefinition&gt;control'"
  * @generated
  */
-public interface Control extends OscalElement, ParameterOwner, PropertyOwner, LinkOwner, PartOwner, IControlDefinition, ElementWithClazz, ElementWithId {
-	/**
-	 * Returns the value of the '<em><b>Controls</b></em>' containment reference list.
-	 * The list contents are of type {@link dsm.oscal.model.OscalCatalog.Control}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Controls</em>' containment reference list.
-	 * @see dsm.oscal.model.OscalCatalog.OscalCatalogPackage#getControl_Controls()
-	 * @model containment="true"
-	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-catalog.&lt;AssemblyDefinition&gt;control'"
-	 * @generated
-	 */
-	EList<Control> getControls();
-
+public interface Control extends OscalElement, ParameterOwner, PropertyOwner, LinkOwner, ControlOwner, PartOwner, IControlDefinition, ElementWithClazz, ElementWithId {
 	/**
 	 * Returns the value of the '<em><b>Title</b></em>' attribute.
 	 * <!-- begin-user-doc -->

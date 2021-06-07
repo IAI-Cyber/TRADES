@@ -23,6 +23,7 @@ import dsm.oscal.model.OscalCatalog.OscalCatalogPackage;
 import dsm.oscal.model.OscalCatalogCommon.OscalCatalogCommonFactory;
 import dsm.oscal.model.OscalMetadata.OscalMetadataFactory;
 import dsm.oscal.model.OscalMetadata.OscalMetadataPackage;
+
 import dsm.oscal.model.OscalMetadata.provider.OscalElementItemProvider;
 
 import java.util.Collection;
@@ -153,8 +154,8 @@ public class GroupItemProvider extends OscalElementItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
+			childrenFeatures.add(OscalMetadataPackage.Literals.CONTROL_OWNER__CONTROLS);
 			childrenFeatures.add(OscalMetadataPackage.Literals.PART_OWNER__PARTS);
-			childrenFeatures.add(OscalCatalogPackage.Literals.GROUP__CONTROLS);
 			childrenFeatures.add(OscalCatalogPackage.Literals.GROUP__GROUPS);
 		}
 		return childrenFeatures;
@@ -219,8 +220,8 @@ public class GroupItemProvider extends OscalElementItemProvider {
 			case OscalCatalogPackage.GROUP__TITLE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case OscalCatalogPackage.GROUP__PARTS:
 			case OscalCatalogPackage.GROUP__CONTROLS:
+			case OscalCatalogPackage.GROUP__PARTS:
 			case OscalCatalogPackage.GROUP__GROUPS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
@@ -256,13 +257,13 @@ public class GroupItemProvider extends OscalElementItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OscalMetadataPackage.Literals.PART_OWNER__PARTS,
-				 OscalCatalogCommonFactory.eINSTANCE.createPart()));
+				(OscalMetadataPackage.Literals.CONTROL_OWNER__CONTROLS,
+				 OscalCatalogFactory.eINSTANCE.createControl()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OscalCatalogPackage.Literals.GROUP__CONTROLS,
-				 OscalCatalogFactory.eINSTANCE.createControl()));
+				(OscalMetadataPackage.Literals.PART_OWNER__PARTS,
+				 OscalCatalogCommonFactory.eINSTANCE.createPart()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -278,7 +279,7 @@ public class GroupItemProvider extends OscalElementItemProvider {
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return OscalEditPlugin.INSTANCE;
+		return dsm.oscal.model.OscalMetadata.provider.OscalEditPlugin.INSTANCE;
 	}
 
 }

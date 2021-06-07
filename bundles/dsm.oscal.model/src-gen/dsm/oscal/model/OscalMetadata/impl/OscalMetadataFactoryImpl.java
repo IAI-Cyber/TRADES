@@ -88,6 +88,7 @@ public class OscalMetadataFactoryImpl extends EFactoryImpl implements OscalMetad
 			case OscalMetadataPackage.BACK_MATTER: return createBackMatter();
 			case OscalMetadataPackage.BACK_MATTER_RESOURCE: return createBackMatterResource();
 			case OscalMetadataPackage.BASE64: return createBase64();
+			case OscalMetadataPackage.CONTROL_OWNER: return createControlOwner();
 			case OscalMetadataPackage.DOCUMENT_ID: return createDocumentId();
 			case OscalMetadataPackage.ELEMENT_WITH_CLAZZ: return createElementWithClazz();
 			case OscalMetadataPackage.ELEMENT_WITH_ID: return createElementWithId();
@@ -233,6 +234,17 @@ public class OscalMetadataFactoryImpl extends EFactoryImpl implements OscalMetad
 	public Base64 createBase64() {
 		Base64Impl base64 = new Base64Impl();
 		return base64;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ControlOwner createControlOwner() {
+		ControlOwnerImpl controlOwner = new ControlOwnerImpl();
+		return controlOwner;
 	}
 
 	/**

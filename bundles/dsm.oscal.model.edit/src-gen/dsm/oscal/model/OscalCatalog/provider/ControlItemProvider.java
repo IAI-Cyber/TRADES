@@ -23,6 +23,7 @@ import dsm.oscal.model.OscalCatalog.OscalCatalogPackage;
 import dsm.oscal.model.OscalCatalogCommon.OscalCatalogCommonFactory;
 import dsm.oscal.model.OscalMetadata.OscalMetadataFactory;
 import dsm.oscal.model.OscalMetadata.OscalMetadataPackage;
+
 import dsm.oscal.model.OscalMetadata.provider.OscalElementItemProvider;
 
 import java.util.Collection;
@@ -153,8 +154,8 @@ public class ControlItemProvider extends OscalElementItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
+			childrenFeatures.add(OscalMetadataPackage.Literals.CONTROL_OWNER__CONTROLS);
 			childrenFeatures.add(OscalMetadataPackage.Literals.PART_OWNER__PARTS);
-			childrenFeatures.add(OscalCatalogPackage.Literals.CONTROL__CONTROLS);
 		}
 		return childrenFeatures;
 	}
@@ -218,8 +219,8 @@ public class ControlItemProvider extends OscalElementItemProvider {
 			case OscalCatalogPackage.CONTROL__TITLE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case OscalCatalogPackage.CONTROL__PARTS:
 			case OscalCatalogPackage.CONTROL__CONTROLS:
+			case OscalCatalogPackage.CONTROL__PARTS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -254,13 +255,13 @@ public class ControlItemProvider extends OscalElementItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OscalMetadataPackage.Literals.PART_OWNER__PARTS,
-				 OscalCatalogCommonFactory.eINSTANCE.createPart()));
+				(OscalMetadataPackage.Literals.CONTROL_OWNER__CONTROLS,
+				 OscalCatalogFactory.eINSTANCE.createControl()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OscalCatalogPackage.Literals.CONTROL__CONTROLS,
-				 OscalCatalogFactory.eINSTANCE.createControl()));
+				(OscalMetadataPackage.Literals.PART_OWNER__PARTS,
+				 OscalCatalogCommonFactory.eINSTANCE.createPart()));
 	}
 
 	/**
@@ -271,7 +272,7 @@ public class ControlItemProvider extends OscalElementItemProvider {
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return OscalEditPlugin.INSTANCE;
+		return dsm.oscal.model.OscalMetadata.provider.OscalEditPlugin.INSTANCE;
 	}
 
 }

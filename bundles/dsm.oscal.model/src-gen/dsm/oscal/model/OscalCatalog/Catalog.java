@@ -18,6 +18,7 @@ package dsm.oscal.model.OscalCatalog;
 import dsm.TRADES.ICatalogDefinition;
 
 import dsm.oscal.model.OscalMetadata.BackMatter;
+import dsm.oscal.model.OscalMetadata.ControlOwner;
 import dsm.oscal.model.OscalMetadata.Metadata;
 import dsm.oscal.model.OscalMetadata.OscalElement;
 import dsm.oscal.model.OscalMetadata.ParameterOwner;
@@ -43,7 +44,6 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link dsm.oscal.model.OscalCatalog.Catalog#getBackMatter <em>Back Matter</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalCatalog.Catalog#getControls <em>Controls</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalog.Catalog#getGroups <em>Groups</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalog.Catalog#getMetadata <em>Metadata</em>}</li>
  * </ul>
@@ -52,7 +52,7 @@ import org.eclipse.emf.common.util.EList;
  * @model annotation="Metaschema source='&lt;Metaschema&gt;oscal-catalog.&lt;AssemblyDefinition&gt;catalog'"
  * @generated
  */
-public interface Catalog extends OscalElement, UUIDElement, ParameterOwner, ICatalogDefinition {
+public interface Catalog extends OscalElement, UUIDElement, ParameterOwner, ControlOwner, ICatalogDefinition {
 	/**
 	 * Returns the value of the '<em><b>Back Matter</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
@@ -75,19 +75,6 @@ public interface Catalog extends OscalElement, UUIDElement, ParameterOwner, ICat
 	 * @generated
 	 */
 	void setBackMatter(BackMatter value);
-
-	/**
-	 * Returns the value of the '<em><b>Controls</b></em>' containment reference list.
-	 * The list contents are of type {@link dsm.oscal.model.OscalCatalog.Control}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Controls</em>' containment reference list.
-	 * @see dsm.oscal.model.OscalCatalog.OscalCatalogPackage#getCatalog_Controls()
-	 * @model containment="true"
-	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-catalog.&lt;AssemblyDefinition&gt;control'"
-	 * @generated
-	 */
-	EList<Control> getControls();
 
 	/**
 	 * Returns the value of the '<em><b>Groups</b></em>' containment reference list.

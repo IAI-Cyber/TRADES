@@ -33,7 +33,7 @@ public interface OscalElement extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model uriDataType="dsm.oscal.model.OscalMetadata.UriReferenceType"
+	 * @model uriDataType="dsm.oscal.model.OscalMetadata.UriType"
 	 * @generated
 	 */
 	EObject resolve(URI uri);

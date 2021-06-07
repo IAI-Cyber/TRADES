@@ -79,7 +79,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getOscalElement()
 	 * @generated
 	 */
-	int OSCAL_ELEMENT = 16;
+	int OSCAL_ELEMENT = 17;
 
 	/**
 	 * The number of structural features of the '<em>Oscal Element</em>' class.
@@ -428,6 +428,43 @@ public interface OscalMetadataPackage extends EPackage {
 	int BASE64_OPERATION_COUNT = OSCAL_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link dsm.oscal.model.OscalMetadata.impl.ControlOwnerImpl <em>Control Owner</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see dsm.oscal.model.OscalMetadata.impl.ControlOwnerImpl
+	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getControlOwner()
+	 * @generated
+	 */
+	int CONTROL_OWNER = 4;
+
+	/**
+	 * The feature id for the '<em><b>Controls</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL_OWNER__CONTROLS = 0;
+
+	/**
+	 * The number of structural features of the '<em>Control Owner</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL_OWNER_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Control Owner</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL_OWNER_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link dsm.oscal.model.OscalMetadata.impl.DocumentIdImpl <em>Document Id</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -435,7 +472,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getDocumentId()
 	 * @generated
 	 */
-	int DOCUMENT_ID = 4;
+	int DOCUMENT_ID = 5;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -490,7 +527,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getDocumentationComputer()
 	 * @generated
 	 */
-	int DOCUMENTATION_COMPUTER = 5;
+	int DOCUMENTATION_COMPUTER = 6;
 
 	/**
 	 * The number of structural features of the '<em>Documentation Computer</em>' class.
@@ -527,7 +564,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getElementWithClazz()
 	 * @generated
 	 */
-	int ELEMENT_WITH_CLAZZ = 6;
+	int ELEMENT_WITH_CLAZZ = 7;
 
 	/**
 	 * The feature id for the '<em><b>Clazz</b></em>' attribute.
@@ -564,7 +601,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getElementWithId()
 	 * @generated
 	 */
-	int ELEMENT_WITH_ID = 7;
+	int ELEMENT_WITH_ID = 8;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -601,7 +638,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getElementWithRemarks()
 	 * @generated
 	 */
-	int ELEMENT_WITH_REMARKS = 8;
+	int ELEMENT_WITH_REMARKS = 9;
 
 	/**
 	 * The feature id for the '<em><b>Remarks</b></em>' attribute.
@@ -638,7 +675,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getElementWithValue()
 	 * @generated
 	 */
-	int ELEMENT_WITH_VALUE = 9;
+	int ELEMENT_WITH_VALUE = 10;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -675,7 +712,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getExternalId()
 	 * @generated
 	 */
-	int EXTERNAL_ID = 10;
+	int EXTERNAL_ID = 11;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -730,7 +767,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getHash()
 	 * @generated
 	 */
-	int HASH = 11;
+	int HASH = 12;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -785,7 +822,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getLink()
 	 * @generated
 	 */
-	int LINK = 12;
+	int LINK = 13;
 
 	/**
 	 * The feature id for the '<em><b>EHref</b></em>' attribute.
@@ -858,7 +895,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getLinkOwner()
 	 * @generated
 	 */
-	int LINK_OWNER = 13;
+	int LINK_OWNER = 14;
 
 	/**
 	 * The feature id for the '<em><b>Links</b></em>' containment reference list.
@@ -895,7 +932,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getLocation()
 	 * @generated
 	 */
-	int LOCATION = 14;
+	int LOCATION = 15;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -1013,7 +1050,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getMetadata()
 	 * @generated
 	 */
-	int METADATA = 15;
+	int METADATA = 16;
 
 	/**
 	 * The feature id for the '<em><b>Props</b></em>' containment reference list.
@@ -1176,7 +1213,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getParameterOwner()
 	 * @generated
 	 */
-	int PARAMETER_OWNER = 17;
+	int PARAMETER_OWNER = 18;
 
 	/**
 	 * The feature id for the '<em><b>Params</b></em>' containment reference list.
@@ -1222,7 +1259,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getPartOwner()
 	 * @generated
 	 */
-	int PART_OWNER = 18;
+	int PART_OWNER = 19;
 
 	/**
 	 * The feature id for the '<em><b>Parts</b></em>' containment reference list.
@@ -1268,7 +1305,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getParty()
 	 * @generated
 	 */
-	int PARTY = 19;
+	int PARTY = 20;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -1422,7 +1459,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getProperty()
 	 * @generated
 	 */
-	int PROPERTY = 20;
+	int PROPERTY = 21;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -1513,7 +1550,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getPropertyOwner()
 	 * @generated
 	 */
-	int PROPERTY_OWNER = 21;
+	int PROPERTY_OWNER = 22;
 
 	/**
 	 * The feature id for the '<em><b>Props</b></em>' containment reference list.
@@ -1550,7 +1587,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getResourceCitation()
 	 * @generated
 	 */
-	int RESOURCE_CITATION = 22;
+	int RESOURCE_CITATION = 23;
 
 	/**
 	 * The feature id for the '<em><b>Props</b></em>' containment reference list.
@@ -1605,7 +1642,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getResourceRlink()
 	 * @generated
 	 */
-	int RESOURCE_RLINK = 23;
+	int RESOURCE_RLINK = 24;
 
 	/**
 	 * The feature id for the '<em><b>EHref</b></em>' attribute.
@@ -1669,7 +1706,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getResponsibleParty()
 	 * @generated
 	 */
-	int RESPONSIBLE_PARTY = 24;
+	int RESPONSIBLE_PARTY = 25;
 
 	/**
 	 * The feature id for the '<em><b>Props</b></em>' containment reference list.
@@ -1751,7 +1788,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getResponsibleRole()
 	 * @generated
 	 */
-	int RESPONSIBLE_ROLE = 25;
+	int RESPONSIBLE_ROLE = 26;
 
 	/**
 	 * The feature id for the '<em><b>Props</b></em>' containment reference list.
@@ -1833,7 +1870,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getRevision()
 	 * @generated
 	 */
-	int REVISION = 26;
+	int REVISION = 27;
 
 	/**
 	 * The feature id for the '<em><b>Props</b></em>' containment reference list.
@@ -1942,7 +1979,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getRole()
 	 * @generated
 	 */
-	int ROLE = 27;
+	int ROLE = 28;
 
 	/**
 	 * The feature id for the '<em><b>Props</b></em>' containment reference list.
@@ -2042,7 +2079,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getTelephoneNumber()
 	 * @generated
 	 */
-	int TELEPHONE_NUMBER = 28;
+	int TELEPHONE_NUMBER = 29;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -2097,7 +2134,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getUUIDElement()
 	 * @generated
 	 */
-	int UUID_ELEMENT = 29;
+	int UUID_ELEMENT = 30;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -2134,7 +2171,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getBase64Type()
 	 * @generated
 	 */
-	int BASE64_TYPE = 30;
+	int BASE64_TYPE = 31;
 
 	/**
 	 * The meta object id for the '<em>Date Time Type</em>' data type.
@@ -2144,7 +2181,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getDateTimeType()
 	 * @generated
 	 */
-	int DATE_TIME_TYPE = 31;
+	int DATE_TIME_TYPE = 32;
 
 	/**
 	 * The meta object id for the '<em>Date Time With Tz Type</em>' data type.
@@ -2154,7 +2191,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getDateTimeWithTzType()
 	 * @generated
 	 */
-	int DATE_TIME_WITH_TZ_TYPE = 32;
+	int DATE_TIME_WITH_TZ_TYPE = 33;
 
 	/**
 	 * The meta object id for the '<em>Date Type</em>' data type.
@@ -2164,7 +2201,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getDateType()
 	 * @generated
 	 */
-	int DATE_TYPE = 33;
+	int DATE_TYPE = 34;
 
 	/**
 	 * The meta object id for the '<em>Date With Tz Type</em>' data type.
@@ -2174,7 +2211,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getDateWithTzType()
 	 * @generated
 	 */
-	int DATE_WITH_TZ_TYPE = 34;
+	int DATE_WITH_TZ_TYPE = 35;
 
 	/**
 	 * The meta object id for the '<em>Ip V4 Address Type</em>' data type.
@@ -2184,7 +2221,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getIpV4AddressType()
 	 * @generated
 	 */
-	int IP_V4_ADDRESS_TYPE = 35;
+	int IP_V4_ADDRESS_TYPE = 36;
 
 	/**
 	 * The meta object id for the '<em>Ip V6 Address Type</em>' data type.
@@ -2194,7 +2231,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getIpV6AddressType()
 	 * @generated
 	 */
-	int IP_V6_ADDRESS_TYPE = 36;
+	int IP_V6_ADDRESS_TYPE = 37;
 
 	/**
 	 * The meta object id for the '<em>Markup Line Type</em>' data type.
@@ -2204,7 +2241,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getMarkupLineType()
 	 * @generated
 	 */
-	int MARKUP_LINE_TYPE = 37;
+	int MARKUP_LINE_TYPE = 38;
 
 	/**
 	 * The meta object id for the '<em>Markup Multiline Type</em>' data type.
@@ -2214,7 +2251,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getMarkupMultilineType()
 	 * @generated
 	 */
-	int MARKUP_MULTILINE_TYPE = 38;
+	int MARKUP_MULTILINE_TYPE = 39;
 
 	/**
 	 * The meta object id for the '<em>Uri Reference Type</em>' data type.
@@ -2224,7 +2261,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getUriReferenceType()
 	 * @generated
 	 */
-	int URI_REFERENCE_TYPE = 39;
+	int URI_REFERENCE_TYPE = 40;
 
 	/**
 	 * The meta object id for the '<em>Uri Type</em>' data type.
@@ -2234,7 +2271,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getUriType()
 	 * @generated
 	 */
-	int URI_TYPE = 40;
+	int URI_TYPE = 41;
 
 	/**
 	 * The meta object id for the '<em>Uuid Type</em>' data type.
@@ -2244,7 +2281,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getUuidType()
 	 * @generated
 	 */
-	int UUID_TYPE = 41;
+	int UUID_TYPE = 42;
 
 
 	/**
@@ -2462,6 +2499,27 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getBase64_Value();
+
+	/**
+	 * Returns the meta object for class '{@link dsm.oscal.model.OscalMetadata.ControlOwner <em>Control Owner</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Control Owner</em>'.
+	 * @see dsm.oscal.model.OscalMetadata.ControlOwner
+	 * @generated
+	 */
+	EClass getControlOwner();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link dsm.oscal.model.OscalMetadata.ControlOwner#getControls <em>Controls</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Controls</em>'.
+	 * @see dsm.oscal.model.OscalMetadata.ControlOwner#getControls()
+	 * @see #getControlOwner()
+	 * @generated
+	 */
+	EReference getControlOwner_Controls();
 
 	/**
 	 * Returns the meta object for class '{@link dsm.oscal.model.OscalMetadata.DocumentId <em>Document Id</em>}'.
@@ -3735,6 +3793,24 @@ public interface OscalMetadataPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute BASE64__VALUE = eINSTANCE.getBase64_Value();
+
+		/**
+		 * The meta object literal for the '{@link dsm.oscal.model.OscalMetadata.impl.ControlOwnerImpl <em>Control Owner</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see dsm.oscal.model.OscalMetadata.impl.ControlOwnerImpl
+		 * @see dsm.oscal.model.OscalMetadata.impl.OscalMetadataPackageImpl#getControlOwner()
+		 * @generated
+		 */
+		EClass CONTROL_OWNER = eINSTANCE.getControlOwner();
+
+		/**
+		 * The meta object literal for the '<em><b>Controls</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONTROL_OWNER__CONTROLS = eINSTANCE.getControlOwner_Controls();
 
 		/**
 		 * The meta object literal for the '{@link dsm.oscal.model.OscalMetadata.impl.DocumentIdImpl <em>Document Id</em>}' class.

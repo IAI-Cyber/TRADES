@@ -19,6 +19,7 @@ import dsm.TRADES.ICatalogDefinition;
 import dsm.TRADES.IControlDefinition;
 import dsm.TRADES.IThreatDefinition;
 import dsm.TRADES.TRADESPackage;
+
 import dsm.oscal.model.OscalCatalog.Catalog;
 import dsm.oscal.model.OscalCatalog.Control;
 import dsm.oscal.model.OscalCatalog.Group;
@@ -27,6 +28,7 @@ import dsm.oscal.model.OscalCatalog.OscalCatalogPackage;
 import dsm.oscal.model.OscalCatalogCommon.Parameter;
 
 import dsm.oscal.model.OscalMetadata.BackMatter;
+import dsm.oscal.model.OscalMetadata.ControlOwner;
 import dsm.oscal.model.OscalMetadata.Metadata;
 import dsm.oscal.model.OscalMetadata.OscalMetadataPackage;
 import dsm.oscal.model.OscalMetadata.ParameterOwner;
@@ -63,8 +65,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link dsm.oscal.model.OscalCatalog.impl.CatalogImpl#getUuid <em>Uuid</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalog.impl.CatalogImpl#getParams <em>Params</em>}</li>
- *   <li>{@link dsm.oscal.model.OscalCatalog.impl.CatalogImpl#getBackMatter <em>Back Matter</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalog.impl.CatalogImpl#getControls <em>Controls</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalCatalog.impl.CatalogImpl#getBackMatter <em>Back Matter</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalog.impl.CatalogImpl#getGroups <em>Groups</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalCatalog.impl.CatalogImpl#getMetadata <em>Metadata</em>}</li>
  * </ul>
@@ -103,16 +105,6 @@ public class CatalogImpl extends OscalElementCustomImpl implements Catalog {
 	protected EList<Parameter> params;
 
 	/**
-	 * The cached value of the '{@link #getBackMatter() <em>Back Matter</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getBackMatter()
-	 * @generated
-	 * @ordered
-	 */
-	protected BackMatter backMatter;
-
-	/**
 	 * The cached value of the '{@link #getControls() <em>Controls</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -121,6 +113,16 @@ public class CatalogImpl extends OscalElementCustomImpl implements Catalog {
 	 * @ordered
 	 */
 	protected EList<Control> controls;
+
+	/**
+	 * The cached value of the '{@link #getBackMatter() <em>Back Matter</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBackMatter()
+	 * @generated
+	 * @ordered
+	 */
+	protected BackMatter backMatter;
 
 	/**
 	 * The cached value of the '{@link #getGroups() <em>Groups</em>}' containment reference list.
@@ -203,6 +205,19 @@ public class CatalogImpl extends OscalElementCustomImpl implements Catalog {
 	 * @generated
 	 */
 	@Override
+	public EList<Control> getControls() {
+		if (controls == null) {
+			controls = new EObjectContainmentEList<Control>(Control.class, this, OscalCatalogPackage.CATALOG__CONTROLS);
+		}
+		return controls;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public BackMatter getBackMatter() {
 		return backMatter;
 	}
@@ -240,19 +255,6 @@ public class CatalogImpl extends OscalElementCustomImpl implements Catalog {
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OscalCatalogPackage.CATALOG__BACK_MATTER, newBackMatter, newBackMatter));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EList<Control> getControls() {
-		if (controls == null) {
-			controls = new EObjectContainmentEList<Control>(Control.class, this, OscalCatalogPackage.CATALOG__CONTROLS);
-		}
-		return controls;
 	}
 
 	/**
@@ -407,10 +409,10 @@ public class CatalogImpl extends OscalElementCustomImpl implements Catalog {
 		switch (featureID) {
 			case OscalCatalogPackage.CATALOG__PARAMS:
 				return ((InternalEList<?>)getParams()).basicRemove(otherEnd, msgs);
-			case OscalCatalogPackage.CATALOG__BACK_MATTER:
-				return basicSetBackMatter(null, msgs);
 			case OscalCatalogPackage.CATALOG__CONTROLS:
 				return ((InternalEList<?>)getControls()).basicRemove(otherEnd, msgs);
+			case OscalCatalogPackage.CATALOG__BACK_MATTER:
+				return basicSetBackMatter(null, msgs);
 			case OscalCatalogPackage.CATALOG__GROUPS:
 				return ((InternalEList<?>)getGroups()).basicRemove(otherEnd, msgs);
 			case OscalCatalogPackage.CATALOG__METADATA:
@@ -431,10 +433,10 @@ public class CatalogImpl extends OscalElementCustomImpl implements Catalog {
 				return getUuid();
 			case OscalCatalogPackage.CATALOG__PARAMS:
 				return getParams();
-			case OscalCatalogPackage.CATALOG__BACK_MATTER:
-				return getBackMatter();
 			case OscalCatalogPackage.CATALOG__CONTROLS:
 				return getControls();
+			case OscalCatalogPackage.CATALOG__BACK_MATTER:
+				return getBackMatter();
 			case OscalCatalogPackage.CATALOG__GROUPS:
 				return getGroups();
 			case OscalCatalogPackage.CATALOG__METADATA:
@@ -459,12 +461,12 @@ public class CatalogImpl extends OscalElementCustomImpl implements Catalog {
 				getParams().clear();
 				getParams().addAll((Collection<? extends Parameter>)newValue);
 				return;
-			case OscalCatalogPackage.CATALOG__BACK_MATTER:
-				setBackMatter((BackMatter)newValue);
-				return;
 			case OscalCatalogPackage.CATALOG__CONTROLS:
 				getControls().clear();
 				getControls().addAll((Collection<? extends Control>)newValue);
+				return;
+			case OscalCatalogPackage.CATALOG__BACK_MATTER:
+				setBackMatter((BackMatter)newValue);
 				return;
 			case OscalCatalogPackage.CATALOG__GROUPS:
 				getGroups().clear();
@@ -491,11 +493,11 @@ public class CatalogImpl extends OscalElementCustomImpl implements Catalog {
 			case OscalCatalogPackage.CATALOG__PARAMS:
 				getParams().clear();
 				return;
-			case OscalCatalogPackage.CATALOG__BACK_MATTER:
-				setBackMatter((BackMatter)null);
-				return;
 			case OscalCatalogPackage.CATALOG__CONTROLS:
 				getControls().clear();
+				return;
+			case OscalCatalogPackage.CATALOG__BACK_MATTER:
+				setBackMatter((BackMatter)null);
 				return;
 			case OscalCatalogPackage.CATALOG__GROUPS:
 				getGroups().clear();
@@ -519,10 +521,10 @@ public class CatalogImpl extends OscalElementCustomImpl implements Catalog {
 				return UUID_EDEFAULT == null ? uuid != null : !UUID_EDEFAULT.equals(uuid);
 			case OscalCatalogPackage.CATALOG__PARAMS:
 				return params != null && !params.isEmpty();
-			case OscalCatalogPackage.CATALOG__BACK_MATTER:
-				return backMatter != null;
 			case OscalCatalogPackage.CATALOG__CONTROLS:
 				return controls != null && !controls.isEmpty();
+			case OscalCatalogPackage.CATALOG__BACK_MATTER:
+				return backMatter != null;
 			case OscalCatalogPackage.CATALOG__GROUPS:
 				return groups != null && !groups.isEmpty();
 			case OscalCatalogPackage.CATALOG__METADATA:
@@ -547,6 +549,12 @@ public class CatalogImpl extends OscalElementCustomImpl implements Catalog {
 		if (baseClass == ParameterOwner.class) {
 			switch (derivedFeatureID) {
 				case OscalCatalogPackage.CATALOG__PARAMS: return OscalMetadataPackage.PARAMETER_OWNER__PARAMS;
+				default: return -1;
+			}
+		}
+		if (baseClass == ControlOwner.class) {
+			switch (derivedFeatureID) {
+				case OscalCatalogPackage.CATALOG__CONTROLS: return OscalMetadataPackage.CONTROL_OWNER__CONTROLS;
 				default: return -1;
 			}
 		}
@@ -577,6 +585,12 @@ public class CatalogImpl extends OscalElementCustomImpl implements Catalog {
 				default: return -1;
 			}
 		}
+		if (baseClass == ControlOwner.class) {
+			switch (baseFeatureID) {
+				case OscalMetadataPackage.CONTROL_OWNER__CONTROLS: return OscalCatalogPackage.CATALOG__CONTROLS;
+				default: return -1;
+			}
+		}
 		if (baseClass == ICatalogDefinition.class) {
 			switch (baseFeatureID) {
 				default: return -1;
@@ -600,6 +614,11 @@ public class CatalogImpl extends OscalElementCustomImpl implements Catalog {
 		if (baseClass == ParameterOwner.class) {
 			switch (baseOperationID) {
 				case OscalMetadataPackage.PARAMETER_OWNER___GET_PARAMETER_VALUES: return OscalCatalogPackage.CATALOG___GET_PARAMETER_VALUES;
+				default: return -1;
+			}
+		}
+		if (baseClass == ControlOwner.class) {
+			switch (baseOperationID) {
 				default: return -1;
 			}
 		}
