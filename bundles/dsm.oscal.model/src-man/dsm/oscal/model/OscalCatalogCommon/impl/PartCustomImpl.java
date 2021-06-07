@@ -15,7 +15,6 @@
 package dsm.oscal.model.OscalCatalogCommon.impl;
 
 import dsm.oscal.model.OscalCatalogCommon.Part;
-import dsm.oscal.model.OscalCatalogCommon.impl.PartImpl;
 
 public class PartCustomImpl extends PartImpl {
 	@Override
@@ -26,14 +25,14 @@ public class PartCustomImpl extends PartImpl {
 		if (getTitle() != null) {
 			String tmd = getTitle().toMarkdown();
 			if (tmd != null && !tmd.isBlank()) {
-				builder.append(tmd).append("\n");
+				builder.append(tmd).append("\n").append("\n");
 			}
 		}
 
 		if (getProse() != null) {
 			String pmd = getProse().toMarkdown();
 			if (pmd != null && !pmd.isBlank()) {
-				builder.append(pmd).append("\n");
+				builder.append(pmd).append("\n").append("\n");
 			}
 		}
 
