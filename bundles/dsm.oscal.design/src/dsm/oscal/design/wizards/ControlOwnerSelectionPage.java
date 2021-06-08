@@ -26,9 +26,14 @@ import org.eclipse.jface.wizard.WizardPage;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
+import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Event;
 
+import dsm.oscal.design.Activator;
+import dsm.oscal.design.actions.NewGroupAction;
 import dsm.oscal.model.OscalCatalog.Catalog;
+import dsm.oscal.model.OscalCatalog.Group;
 import dsm.oscal.model.OscalMetadata.ControlOwner;
 
 /**
@@ -43,6 +48,7 @@ public class ControlOwnerSelectionPage extends WizardPage {
 	private ControlOwner selectedOwner;
 	private AdapterFactoryLabelProvider labelProvider;
 	private AdapterFactoryContentProvider contentProvider;
+	private Button newGroupButton;
 
 	public ControlOwnerSelectionPage(AdapterFactory adapterFactory, List<Catalog> catalogs) {
 		super("Container selection page");
@@ -72,6 +78,29 @@ public class ControlOwnerSelectionPage extends WizardPage {
 		viewer.setInput(catalogs);
 		viewer.addSelectionChangedListener(e -> setSelection(e.getStructuredSelection()));
 
+		Composite buttonComposite = WidgetFactory.composite(SWT.BORDER).layoutData(new GridData(GridData.FILL_VERTICAL))
+				.layout(new GridLayout(1, true)).create(cc);
+
+		this.newGroupButton = WidgetFactory.button(SWT.PUSH)
+				.image(Activator.getDefault().getImage("icons/folderType_filter.png"))
+				.tooltip("Create a new group").onSelect(e -> {
+					final NewGroupAction action;
+					if (selectedOwner instanceof Catalog) {
+						action = new NewGroupAction((Catalog) selectedOwner);
+					} else if (selectedOwner instanceof Group) {
+						action = new NewGroupAction((Group) selectedOwner);
+					} else {
+						action = null;
+					}
+					if (action != null) {
+						Event event = new Event();
+						event.display = parent.getDisplay();
+						action.runWithEvent(event);
+					}
+				}).create(buttonComposite);
+		newGroupButton.setEnabled(false);
+		
+
 		setControl(cc);
 
 	}
@@ -83,6 +112,7 @@ public class ControlOwnerSelectionPage extends WizardPage {
 		} else {
 			selectedOwner = null;
 		}
+		newGroupButton.setEnabled(selectedOwner != null);
 		getContainer().updateButtons();
 	}
 

@@ -17,7 +17,10 @@ package dsm.oscal.design.actions;
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.jface.action.Action;
+import org.eclipse.jface.dialogs.IDialogConstants;
+import org.eclipse.jface.dialogs.InputDialog;
 import org.eclipse.sirius.business.api.session.Session;
+import org.eclipse.swt.widgets.Event;
 
 import dsm.oscal.design.Activator;
 import dsm.oscal.model.OscalCatalog.Catalog;
@@ -53,24 +56,34 @@ public class NewGroupAction extends Action {
 	}
 
 	@Override
-	public void run() {
-
+	public void runWithEvent(Event event) {
 		TransactionalEditingDomain editingDomain = session.getTransactionalEditingDomain();
 		RecordingCommand cmd = new RecordingCommand(editingDomain) {
 
 			@Override
 			protected void doExecute() {
 				Group group = OscalCatalogFactory.eINSTANCE.createGroup();
-				group.setTitle(MarkupLine.fromMarkdown("New group"));
 
-				if (catalog != null) {
-					catalog.getGroups().add(group);
-				} else {
-					parentGroup.getGroups().add(group);
+				InputDialog dialog = new InputDialog(event.display.getActiveShell(), "Group name",
+						"Enter a name for the new group", "New group", e -> null);
+
+				if (dialog.open() == IDialogConstants.OK_ID) {
+					String groupName = dialog.getValue();
+					if (groupName != null) {
+
+						group.setTitle(MarkupLine.fromMarkdown(groupName));
+
+						if (catalog != null) {
+							catalog.getGroups().add(group);
+						} else {
+							parentGroup.getGroups().add(group);
+						}
+					}
 				}
 
 			}
 		};
 		editingDomain.getCommandStack().execute(cmd);
 	}
+
 }
