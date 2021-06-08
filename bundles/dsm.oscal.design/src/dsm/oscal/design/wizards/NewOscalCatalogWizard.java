@@ -44,13 +44,13 @@ import dsm.oscal.model.OscalCatalog.Catalog;
 import dsm.trades.rcp.internal.wizards.ProjectSelectionPage;
 import dsm.trades.rcp.utils.CatalogUtils;
 
-public class NewOscalCatalog extends Wizard implements INewWizard {
+public class NewOscalCatalogWizard extends Wizard implements INewWizard {
 
 	private ProjectSelectionPage projectSelectionPage;
 	private IStructuredSelection selection;
 	private CatalogInfoPage infoPage;
 
-	public NewOscalCatalog() {
+	public NewOscalCatalogWizard() {
 		setNeedsProgressMonitor(true);
 	}
 

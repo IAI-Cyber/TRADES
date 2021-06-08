@@ -108,7 +108,7 @@
      <wizard
            canFinishEarly="false"
            category="dsm.TRADES.wizardCat"
-           class="dsm.oscal.design.wizards.NewOscalCatalog"
+           class="dsm.oscal.design.wizards.NewOscalCatalogWizard"
            descriptionImage="icons/bookmarks_view.png"
            hasPages="true"
            icon="icons/bookmarks_view.png"
