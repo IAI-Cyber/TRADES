@@ -114,4 +114,13 @@
         </includes>
      </viewerActionBinding>
   </extension>
+  <extension
+        point="org.eclipse.eef.ide.ui.eefLifecycleManagerProvider">
+     <descriptor
+           class="TRADES.design.eef.EEFLifecycleManagerProvider"
+           description="TRADES EEFLifecycleManagerProvide"
+           id="TRADES.design.EEFLifecycleManagerProvide"
+           label="TRADES EEFLifecycleManagerProvide">
+     </descriptor>
+  </extension>
 </plugin>

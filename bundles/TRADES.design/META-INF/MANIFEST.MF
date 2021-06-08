@@ -33,7 +33,12 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.core.expressions,
  org.eclipse.core.expressions,
  org.eclipse.eef.ide.ui;bundle-version="2.1.5",
- org.eclipse.sirius.common.ui;bundle-version="6.5.0"
+ org.eclipse.sirius.common.ui;bundle-version="6.5.0",
+ org.eclipse.eef,
+ org.eclipse.eef.core,
+ org.eclipse.sirius.common.interpreter,
+ org.eclipse.eef.common.ui,
+ org.eclipse.eef.common
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-11
 Bundle-Vendor: %providerName
