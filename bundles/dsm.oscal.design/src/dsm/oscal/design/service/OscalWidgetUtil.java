@@ -30,10 +30,10 @@ public class OscalWidgetUtil {
 			EAttribute attr = (EAttribute) feature;
 			if (!attr.isMany() && attr.getEAttributeType() != null
 					&& MarkupLine.class.getName().equals(attr.getEAttributeType().getInstanceClassName())) {
-				owner.eSet(feature, MarkupLine.fromMarkdown(value));
+				owner.eSet(feature, value != null ? MarkupLine.fromMarkdown(value) : null);
 			} else if (!attr.isMany() && attr.getEAttributeType() != null
 					&& MarkupMultiline.class.getName().equals(attr.getEAttributeType().getInstanceClassName())) {
-				owner.eSet(feature, MarkupMultiline.fromMarkdown(value));
+				owner.eSet(feature, value != null ? MarkupMultiline.fromMarkdown(value) : null);
 			}
 		}
 	}

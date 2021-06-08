@@ -29,7 +29,7 @@ public class SemanticUtil {
 		catalog.setUuid(UUID.randomUUID());
 		Metadata metadata = OscalMetadataFactory.eINSTANCE.createMetadata();
 		catalog.setMetadata(metadata);
-		metadata.setTitle(MarkupLine.fromMarkdown(name));
+		metadata.setTitle(name != null ? MarkupLine.fromMarkdown(name) : null);
 		return catalog;
 	}
 
