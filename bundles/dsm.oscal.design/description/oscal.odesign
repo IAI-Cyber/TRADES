@@ -17,6 +17,12 @@
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:element.createControl(newSemanticContainer)"/>
             </initialOperation>
           </ownedTools>
+          <ownedTools xsi:type="tool_1:OperationAction" name="ExportToOscalCalalog" label="Export to OSCAL Catalog" precondition="aql:self.oclIsTypeOf(TRADES::Control)" icon="/dsm.oscal.design/icons/bookmarks_view.png">
+            <view name="views"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:views->collect(e|e.target)->asSequence()->exportControlToOSCAL()"/>
+            </initialOperation>
+          </ownedTools>
         </toolSections>
       </layers>
     </ownedRepresentationExtensions>
@@ -26,7 +32,7 @@
       <metamodel href="http://csrc.nist.gov/ns/oscal/1.0/oscal-metadata#/"/>
       <metamodel href="dsm.TRADES#/"/>
       <layers name="OscalLayer_CA" optional="false">
-        <toolSections name="Add_CAExt" reusedTools="//@ownedViewpoints[name='OscalViewPoint']/@ownedRepresentationExtensions[name='TRADES.design']/@layers[name='OscalLayer']/@toolSections.0/@ownedTools[name='DropOScalControl_TDExt']"/>
+        <toolSections name="Add_CAExt" reusedTools="//@ownedViewpoints[name='OscalViewPoint']/@ownedRepresentationExtensions[name='TRADES.design']/@layers[name='OscalLayer']/@toolSections.0/@ownedTools[name='DropOScalControl_TDExt'] //@ownedViewpoints[name='OscalViewPoint']/@ownedRepresentationExtensions[name='TRADES.design']/@layers[name='OscalLayer']/@toolSections.0/@ownedTools[name='ExportToOscalCalalog']"/>
       </layers>
     </ownedRepresentationExtensions>
     <ownedJavaExtensions qualifiedClassName="dsm.oscal.design.service.OscalDesignService"/>
@@ -34,6 +40,7 @@
     <ownedJavaExtensions qualifiedClassName="dsm.oscal.design.service.URIService"/>
     <ownedJavaExtensions qualifiedClassName="dsm.oscal.design.service.OscalWidgetUtil"/>
     <ownedJavaExtensions qualifiedClassName="dsm.oscal.design.service.DateService"/>
+    <ownedJavaExtensions qualifiedClassName="TRADES.design.DebugService"/>
   </ownedViewpoints>
   <extensions xsi:type="properties:ViewExtensionDescription" name="Properties">
     <metamodels href="http://csrc.nist.gov/ns/oscal/1.0/oscal-catalog#/"/>

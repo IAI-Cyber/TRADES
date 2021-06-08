@@ -455,17 +455,26 @@ public class DiagramService {
 	}
 
 	/**
+	 * Reveal the given targets in the model explorer view
+	 * 
+	 * @param targets list of targets
+	 */
+	public static void revealInModelExplorer(List<? extends EObject> targets) {
+
+		if (targets != null && !targets.isEmpty()) {
+			IViewPart modelExplorerPart = EclipseUIUtil.getView(IModelExplorerView.ID);
+			if (modelExplorerPart instanceof CommonNavigator) {
+				((CommonNavigator) modelExplorerPart).selectReveal(new StructuredSelection(targets));
+			}
+		}
+	}
+
+	/**
 	 * Reveal the given {@link EObject} in the Model explorer view
 	 * 
 	 * @param target a non null {@link EObject}
 	 */
 	public static void revealInModelExplorer(EObject target) {
-		if (target != null) {
-			IViewPart modelExplorerPart = EclipseUIUtil.getView(IModelExplorerView.ID);
-			if (modelExplorerPart instanceof CommonNavigator) {
-				((CommonNavigator) modelExplorerPart).selectReveal(new StructuredSelection(target));
-
-			}
-		}
+		revealInModelExplorer(Collections.singletonList(target));
 	}
 }

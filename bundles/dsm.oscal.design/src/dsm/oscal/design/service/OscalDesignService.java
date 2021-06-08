@@ -15,25 +15,47 @@
 package dsm.oscal.design.service;
 
 import java.text.MessageFormat;
+import java.util.List;
+
+import org.eclipse.jface.wizard.WizardDialog;
+import org.eclipse.sirius.business.api.session.Session;
+import org.eclipse.ui.PlatformUI;
 
 import TRADES.design.ExtThreatServices;
 import dsm.TRADES.AbstractControlOwner;
 import dsm.TRADES.CatalogElementURI;
+import dsm.TRADES.Control;
 import dsm.TRADES.ControlOwner;
 import dsm.TRADES.ExternalControl;
 import dsm.TRADES.TRADESFactory;
 import dsm.TRADES.util.EcoreUtils;
 import dsm.oscal.design.Activator;
+import dsm.oscal.design.wizards.ConvertToOSCALControlWizard;
 import dsm.oscal.model.OscalCatalog.Catalog;
 import gov.nist.secauto.metaschema.datatypes.markup.MarkupLine;
 
 public class OscalDesignService {
 
+	/**
+	 * Action used to export the selection {@link Control} into an OSCAL Catalog
+	 * 
+	 * @param controlToExport the list of control to export
+	 */
+	public static void exportControlToOSCAL(List<Control> controlToExport) {
+		if (!controlToExport.isEmpty()) {
+			ConvertToOSCALControlWizard wizard = new ConvertToOSCALControlWizard(controlToExport,
+					Session.of(controlToExport.get(0)).get());
+			WizardDialog dialog = new WizardDialog(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(),
+					wizard);
+			dialog.open();
+		}
+	}
+
 	public static ExternalControl createControl(dsm.oscal.model.OscalCatalog.Control control,
 			AbstractControlOwner owner) {
 
-		 Catalog catalog = EcoreUtils.getAncestor(control, Catalog.class);
-			String catalogIdentifier = catalog.getIdentifier();
+		Catalog catalog = EcoreUtils.getAncestor(control, Catalog.class);
+		String catalogIdentifier = catalog.getIdentifier();
 		if (catalogIdentifier == null) {
 			Activator.logError("Invalid catalog definition : no catalog UUID");
 			return null;
@@ -68,6 +90,5 @@ public class OscalDesignService {
 		controlOwner.getExternals().add(extControl);
 		return extControl;
 	}
-
 
 }

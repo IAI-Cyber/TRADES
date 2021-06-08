@@ -14,12 +14,16 @@
 
 package dsm.oscal.design.actions;
 
+import java.util.List;
+
 import org.eclipse.jface.action.IMenuListener;
 import org.eclipse.jface.action.IMenuListener2;
 import org.eclipse.jface.action.IMenuManager;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 
+import dsm.TRADES.Control;
+import dsm.TRADES.ExternalControl;
 import dsm.oscal.model.OscalCatalog.Catalog;
 import dsm.oscal.model.OscalCatalog.Group;
 
@@ -38,6 +42,7 @@ public class ContextMenuFiller implements IMenuListener, IMenuListener2 {
 		selection = null;
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public void menuAboutToShow(IMenuManager manager) {
 
@@ -48,6 +53,11 @@ public class ContextMenuFiller implements IMenuListener, IMenuListener2 {
 				manager.add(new NewGroupAction((Catalog) first));
 			} else if (first instanceof Group) {
 				manager.add(new NewGroupAction((Group) first));
+			}
+
+			List<?> all = selection.toList();
+			if (all.stream().allMatch(e -> e instanceof Control && !(e instanceof ExternalControl))) {
+				manager.add(new ConvertToOscalAction((List<Control>) all));
 			}
 		}
 
