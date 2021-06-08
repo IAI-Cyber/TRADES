@@ -313,6 +313,59 @@
           <onClickOperation>
             <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self"/>
           </onClickOperation>
+          <actions imageExpression="/dsm.oscal.design/icons/add.png">
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="OscalCatalogCommon::Parameter" referenceName="params"/>
+              </firstModelOperations>
+            </initialOperation>
+          </actions>
+          <actions imageExpression="/dsm.oscal.design/icons/edit_template.png">
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                <subModelOperations xsi:type="tool_1:For" expression="var:selection" iteratorName="s">
+                  <subModelOperations xsi:type="properties:DialogModelOperation" titleExpression="Parameter edition">
+                    <buttons labelExpression="Cancel" closeDialogOnClick="true" rollbackChangesOnClose="true">
+                      <initialOperation/>
+                    </buttons>
+                    <buttons labelExpression="OK" default="true" closeDialogOnClick="true">
+                      <initialOperation/>
+                    </buttons>
+                    <page name="Default Page" labelExpression="Part detail" domainClass="OscalCatalogCommon::Parameter" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.15"/>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </actions>
+          <actions imageExpression="/dsm.oscal.design/icons/delete_action.gif">
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                <subModelOperations xsi:type="tool_1:For" expression="var:selection" iteratorName="s">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:s">
+                    <subModelOperations xsi:type="tool_1:RemoveElement"/>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </actions>
+          <actions imageExpression="/dsm.oscal.design/icons/up.gif">
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                <subModelOperations xsi:type="tool_1:For" expression="var:selection" iteratorName="s">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:s.moveUpInManyFeature(s.eContainer(),'params')"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </actions>
+          <actions imageExpression="/dsm.oscal.design/icons/ArrowDown_16x16.gif">
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                <subModelOperations xsi:type="tool_1:For" expression="var:selection" iteratorName="s">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:s.moveDownInManyFeature(s.eContainer(),'params')"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </actions>
         </controls>
       </groups>
       <groups name="PartOwnerGroup" labelExpression="Document parts" domainClass="OscalMetadata::ParameterOwner" semanticCandidateExpression="var:self">
@@ -324,7 +377,7 @@
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
                 <subModelOperations xsi:type="tool_1:CreateInstance" typeName="OscalCatalogCommon::Part" referenceName="parts">
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="New document part"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="New documentation part"/>
                 </subModelOperations>
               </firstModelOperations>
             </initialOperation>
@@ -375,6 +428,71 @@
               </firstModelOperations>
             </initialOperation>
           </actions>
+        </controls>
+      </groups>
+      <groups name="ParamaterGroup" labelExpression="Details" domainClass="OscalCatalogCommon::Parameter" semanticCandidateExpression="var:self">
+        <controls xsi:type="properties:TextDescription" name="OscalCatalogCommon::Parameter label" labelExpression="aql:input.emfEditServices(self).getText(self.eClass().getEStructuralFeature('label')) + ':'" helpExpression="aql:input.emfEditServices(self).getDescription(self.eClass().getEStructuralFeature('label'))" isEnabledExpression="aql:self.eClass().getEStructuralFeature('label').changeable" valueExpression="aql:self.getMarkupAttribute('label')">
+          <initialOperation>
+            <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.setMarkupAttribute('label',newValue)"/>
+          </initialOperation>
+        </controls>
+        <controls xsi:type="properties:TextDescription" name="OscalCatalogCommon::Parameter id" labelExpression="aql:input.emfEditServices(self).getText(self.eClass().getEStructuralFeature('id')) + ':'" helpExpression="aql:input.emfEditServices(self).getDescription(self.eClass().getEStructuralFeature('id'))" isEnabledExpression="aql:self.eClass().getEStructuralFeature('id').changeable" valueExpression="aql:self.id">
+          <initialOperation>
+            <firstModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="var:newValue"/>
+          </initialOperation>
+        </controls>
+        <controls xsi:type="properties:ListDescription" name="OscalCatalogCommon::Parameter values" labelExpression="aql:input.emfEditServices(self).getText(self.eClass().getEStructuralFeature('values')) + ':'" helpExpression="aql:input.emfEditServices(self).getDescription(self.eClass().getEStructuralFeature('values'))" isEnabledExpression="aql:self.eClass().getEStructuralFeature('values').changeable" valueExpression="aql:self.values" displayExpression="var:value">
+          <actions imageExpression="/dsm.oscal.design/icons/add.png">
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.performAddCommand('values',Sequence{'newValue'+self.values->size()})"/>
+            </initialOperation>
+          </actions>
+          <actions imageExpression="/dsm.oscal.design/icons/edit_template.png">
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                <subModelOperations xsi:type="tool_1:For" expression="var:selection" iteratorName="s">
+                  <subModelOperations xsi:type="tool_1:Let" variableName="index" valueExpression="aql:self.values->indexOf(s)"/>
+                  <subModelOperations xsi:type="properties:DialogModelOperation" titleExpression="Value edition">
+                    <buttons labelExpression="Cancel" closeDialogOnClick="true" rollbackChangesOnClose="true">
+                      <initialOperation/>
+                    </buttons>
+                    <buttons labelExpression="OK" default="true" closeDialogOnClick="true">
+                      <initialOperation/>
+                    </buttons>
+                    <page name="Default Page" labelExpression="Edit value" domainClass="OscalCatalogCommon::Parameter" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.15/@controls.2/@actions.1/@initialOperation/@firstModelOperations/@subModelOperations.0/@subModelOperations.1/@groups.0"/>
+                    <groups name="ParameterValueGroup" domainClass="OscalCatalogCommon::Parameter">
+                      <controls xsi:type="properties:TextDescription" name="ParameterValueTestWidget" labelExpression="Value" valueExpression="aql:self.values->at(index)">
+                        <initialOperation>
+                          <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self">
+                            <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.performReplaceCommand('values',self.values->at(index),Sequence{newValue})"/>
+                          </firstModelOperations>
+                        </initialOperation>
+                      </controls>
+                    </groups>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </actions>
+          <actions imageExpression="/dsm.oscal.design/icons/delete_action.gif">
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                <subModelOperations xsi:type="tool_1:For" expression="var:selection" iteratorName="s">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.performRemoveCommand('values',Sequence{s})"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </actions>
+        </controls>
+        <controls xsi:type="properties:TextAreaDescription" name="OscalCatalogCommon::Parameter usage" labelExpression="aql:input.emfEditServices(self).getText(self.eClass().getEStructuralFeature('usage')) + ':'" helpExpression="aql:input.emfEditServices(self).getDescription(self.eClass().getEStructuralFeature('usage'))" isEnabledExpression="aql:self.eClass().getEStructuralFeature('usage').changeable" valueExpression="aql:self.getMarkupAttribute('usage')">
+          <initialOperation>
+            <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.setMarkupAttribute('usage',newValue)"/>
+          </initialOperation>
+        </controls>
+        <controls xsi:type="properties:TextAreaDescription" name="OscalCatalogCommon::Parameter remarks" labelExpression="aql:input.emfEditServices(self).getText(self.eClass().getEStructuralFeature('remarks')) + ':'" helpExpression="aql:input.emfEditServices(self).getDescription(self.eClass().getEStructuralFeature('remarks'))" isEnabledExpression="aql:self.eClass().getEStructuralFeature('remarks').changeable" valueExpression="aql:self.getMarkupAttribute('remarks')">
+          <initialOperation>
+            <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.setMarkupAttribute('remarks',newValue)"/>
+          </initialOperation>
         </controls>
       </groups>
     </categories>
