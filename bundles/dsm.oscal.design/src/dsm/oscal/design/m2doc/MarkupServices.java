@@ -20,10 +20,16 @@ import gov.nist.secauto.metaschema.datatypes.markup.MarkupMultiline;
 public class MarkupServices {
 
 	public static String toHTML(MarkupLine line) {
+		if (line == null) {
+			return "";
+		}
 		return line.toHtml();
 	}
 
 	public static String toHTML(MarkupMultiline line) {
+		if (line == null) {
+			return "";
+		}
 		return line.toHtml();
 	}
 
