@@ -16,7 +16,10 @@ package dsm.oscal.design.service;
 
 import java.text.MessageFormat;
 import java.util.List;
+import java.util.Map;
 
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.jface.dialogs.IDialogConstants;
 import org.eclipse.jface.wizard.WizardDialog;
 import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.ui.PlatformUI;
@@ -30,8 +33,12 @@ import dsm.TRADES.ExternalControl;
 import dsm.TRADES.TRADESFactory;
 import dsm.TRADES.util.EcoreUtils;
 import dsm.oscal.design.Activator;
+import dsm.oscal.design.dialogs.ParameterValueSetterDialog;
 import dsm.oscal.design.wizards.ConvertToOSCALControlWizard;
+import dsm.oscal.model.DocumentationComputer;
 import dsm.oscal.model.OscalCatalog.Catalog;
+import dsm.oscal.model.OscalCatalogCommon.Parameter;
+import dsm.oscal.model.OscalMetadata.PartOwner;
 import gov.nist.secauto.metaschema.datatypes.markup.MarkupLine;
 
 public class OscalDesignService {
@@ -74,7 +81,20 @@ public class OscalDesignService {
 		if (title != null) {
 			extControl.setName(title.toMarkdown());
 		}
-		extControl.setDescription(control.computeDocumentation());
+
+		EList<Parameter> usedParameters = control.collectParametersInUse();
+		if (usedParameters.isEmpty()) {
+			extControl.setDescription(control.computeDocumentation(true));
+		} else {
+			Map<String, String> idToValue = fillParameterValuesAndUpdate(usedParameters, control);
+			if (idToValue == null) {
+				// The user canceled the action
+				return null;
+			}
+			extControl.setDescription(DocumentationComputer.computeDocumentation(control, true, idToValue));
+			// Keeps the entered value in the OSCAL model for next use
+		}
+
 		extControl.setId(control.getId());
 
 		extControl.setSource(catalog.getName());
@@ -89,6 +109,30 @@ public class OscalDesignService {
 		}
 		controlOwner.getExternals().add(extControl);
 		return extControl;
+	}
+
+	/**
+	 * Gives a value for each parameter in used in the model
+	 * 
+	 * @return a map from parameter if to a value
+	 */
+	private static Map<String, String> fillParameterValuesAndUpdate(List<Parameter> parameters, PartOwner element) {
+		ParameterValueSetterDialog dialog = new ParameterValueSetterDialog(
+				PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(), parameters,
+				idToValue -> DocumentationComputer.computeDocumentation(element, true, idToValue));
+		if (dialog.open() != IDialogConstants.OK_ID) {
+			return null;
+		}
+		Map<Parameter, String> paramToValue = dialog.getParamToValue();
+		// Update OSCAL library to keep entered value for subsequent use
+		if (dialog.isKeepValue()) {
+			paramToValue.forEach((param, value) -> {
+				if (!param.getValues().contains(value)) {
+					param.getValues().add(value);
+				}
+			});
+		}
+		return dialog.getIdToValueMap();
 	}
 
 }
