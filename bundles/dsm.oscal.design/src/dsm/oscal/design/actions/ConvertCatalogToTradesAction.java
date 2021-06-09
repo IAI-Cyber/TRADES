@@ -129,7 +129,7 @@ public class ConvertCatalogToTradesAction extends Action {
 				if(title != null) {
 					extControl.setName(title.toMarkdown());
 				}
-				extControl.setDescription(control.computeDocumentation());
+				extControl.setDescription(control.computeDocumentation(true));
 				extControl.setId(control.getId());
 				extControl.setSource(analysisName);
 				UUID uuid = c.getUuid();

@@ -17,6 +17,7 @@ package dsm.oscal.model.OscalMetadata.provider;
 
 
 import dsm.oscal.model.OscalCatalog.OscalCatalogFactory;
+import dsm.oscal.model.OscalCatalogCommon.provider.OscalEditPlugin;
 import dsm.oscal.model.OscalMetadata.ControlOwner;
 import dsm.oscal.model.OscalMetadata.OscalMetadataPackage;
 
@@ -175,7 +176,7 @@ public class ControlOwnerItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return dsm.oscal.model.OscalMetadata.provider.OscalEditPlugin.INSTANCE;
+		return OscalEditPlugin.INSTANCE;
 	}
 
 }

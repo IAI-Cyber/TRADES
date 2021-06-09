@@ -79,8 +79,6 @@ public class OscalSemanticRefactorer implements ISemanticRefactorer {
 
 	private ResourceSet rs;
 
-
-
 	private EPackage tradesEPackage;
 
 	private EClass controlDelf;
@@ -137,8 +135,10 @@ public class OscalSemanticRefactorer implements ISemanticRefactorer {
 		EClass docComputer = createEClass("DocumentationComputer");
 		docComputer.setInterface(true);
 		docComputer.setAbstract(true);
-		docComputer.getEOperations()
-				.add(createOperation("computeDocumentation", EcorePackage.eINSTANCE.getEString(), false));
+		EOperation computeDocumentation = createComputeDocumentationOperation();
+		docComputer.getEOperations().add(computeDocumentation);
+
+		docComputer.getEOperations().add(createOperation("collectParametersInUse", getEClass("Parameter"), true));
 
 		EClass partOwner = createAbstractOwnerClass(getEClass("Part"), "parts", false);
 		partOwner.getESuperTypes().add(docComputer);
@@ -167,6 +167,16 @@ public class OscalSemanticRefactorer implements ISemanticRefactorer {
 						+ commonFeatures.size() + " : " + feature.getEType().getName());
 			}
 		}
+	}
+
+	public EOperation createComputeDocumentationOperation() {
+		EOperation computeDocumentation = createOperation("computeDocumentation", EcorePackage.eINSTANCE.getEString(),
+				false);
+		EParameter paramater = EcoreFactory.eINSTANCE.createEParameter();
+		paramater.setName("resolveParameters");
+		paramater.setEType(EcorePackage.eINSTANCE.getEBoolean());
+		computeDocumentation.getEParameters().add(paramater);
+		return computeDocumentation;
 	}
 
 	public EOperation createGetParameterOperation() {

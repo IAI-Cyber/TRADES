@@ -341,7 +341,16 @@ public interface OscalCatalogPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL___COMPUTE_DOCUMENTATION = OscalMetadataPackage.OSCAL_ELEMENT_OPERATION_COUNT + 1;
+	int CONTROL___COMPUTE_DOCUMENTATION__BOOLEAN = OscalMetadataPackage.OSCAL_ELEMENT_OPERATION_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Collect Parameters In Use</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL___COLLECT_PARAMETERS_IN_USE = OscalMetadataPackage.OSCAL_ELEMENT_OPERATION_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>Get Source Name</em>' operation.
@@ -350,7 +359,7 @@ public interface OscalCatalogPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL___GET_SOURCE_NAME = OscalMetadataPackage.OSCAL_ELEMENT_OPERATION_COUNT + 2;
+	int CONTROL___GET_SOURCE_NAME = OscalMetadataPackage.OSCAL_ELEMENT_OPERATION_COUNT + 3;
 
 	/**
 	 * The operation id for the '<em>Get Source Identifier</em>' operation.
@@ -359,7 +368,7 @@ public interface OscalCatalogPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL___GET_SOURCE_IDENTIFIER = OscalMetadataPackage.OSCAL_ELEMENT_OPERATION_COUNT + 3;
+	int CONTROL___GET_SOURCE_IDENTIFIER = OscalMetadataPackage.OSCAL_ELEMENT_OPERATION_COUNT + 4;
 
 	/**
 	 * The operation id for the '<em>Get Description</em>' operation.
@@ -368,7 +377,7 @@ public interface OscalCatalogPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL___GET_DESCRIPTION = OscalMetadataPackage.OSCAL_ELEMENT_OPERATION_COUNT + 4;
+	int CONTROL___GET_DESCRIPTION = OscalMetadataPackage.OSCAL_ELEMENT_OPERATION_COUNT + 5;
 
 	/**
 	 * The operation id for the '<em>Get Id</em>' operation.
@@ -377,7 +386,7 @@ public interface OscalCatalogPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL___GET_ID = OscalMetadataPackage.OSCAL_ELEMENT_OPERATION_COUNT + 5;
+	int CONTROL___GET_ID = OscalMetadataPackage.OSCAL_ELEMENT_OPERATION_COUNT + 6;
 
 	/**
 	 * The operation id for the '<em>Get Mitigated Threat Definitions</em>' operation.
@@ -386,7 +395,7 @@ public interface OscalCatalogPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL___GET_MITIGATED_THREAT_DEFINITIONS = OscalMetadataPackage.OSCAL_ELEMENT_OPERATION_COUNT + 6;
+	int CONTROL___GET_MITIGATED_THREAT_DEFINITIONS = OscalMetadataPackage.OSCAL_ELEMENT_OPERATION_COUNT + 7;
 
 	/**
 	 * The operation id for the '<em>Get Name</em>' operation.
@@ -395,7 +404,7 @@ public interface OscalCatalogPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL___GET_NAME = OscalMetadataPackage.OSCAL_ELEMENT_OPERATION_COUNT + 7;
+	int CONTROL___GET_NAME = OscalMetadataPackage.OSCAL_ELEMENT_OPERATION_COUNT + 8;
 
 	/**
 	 * The number of operations of the '<em>Control</em>' class.
@@ -404,7 +413,7 @@ public interface OscalCatalogPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL_OPERATION_COUNT = OscalMetadataPackage.OSCAL_ELEMENT_OPERATION_COUNT + 8;
+	int CONTROL_OPERATION_COUNT = OscalMetadataPackage.OSCAL_ELEMENT_OPERATION_COUNT + 9;
 
 	/**
 	 * The meta object id for the '{@link dsm.oscal.model.OscalCatalog.impl.GroupImpl <em>Group</em>}' class.
@@ -531,7 +540,16 @@ public interface OscalCatalogPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GROUP___COMPUTE_DOCUMENTATION = OscalMetadataPackage.OSCAL_ELEMENT_OPERATION_COUNT + 1;
+	int GROUP___COMPUTE_DOCUMENTATION__BOOLEAN = OscalMetadataPackage.OSCAL_ELEMENT_OPERATION_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Collect Parameters In Use</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GROUP___COLLECT_PARAMETERS_IN_USE = OscalMetadataPackage.OSCAL_ELEMENT_OPERATION_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Group</em>' class.
@@ -540,7 +558,7 @@ public interface OscalCatalogPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GROUP_OPERATION_COUNT = OscalMetadataPackage.OSCAL_ELEMENT_OPERATION_COUNT + 2;
+	int GROUP_OPERATION_COUNT = OscalMetadataPackage.OSCAL_ELEMENT_OPERATION_COUNT + 3;
 
 
 	/**

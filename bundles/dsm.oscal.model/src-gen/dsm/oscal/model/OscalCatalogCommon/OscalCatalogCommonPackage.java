@@ -543,7 +543,16 @@ public interface OscalCatalogCommonPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PART___COMPUTE_DOCUMENTATION = OscalMetadataPackage.OSCAL_ELEMENT_OPERATION_COUNT + 0;
+	int PART___COMPUTE_DOCUMENTATION__BOOLEAN = OscalMetadataPackage.OSCAL_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Collect Parameters In Use</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PART___COLLECT_PARAMETERS_IN_USE = OscalMetadataPackage.OSCAL_ELEMENT_OPERATION_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Part</em>' class.
@@ -552,7 +561,7 @@ public interface OscalCatalogCommonPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PART_OPERATION_COUNT = OscalMetadataPackage.OSCAL_ELEMENT_OPERATION_COUNT + 1;
+	int PART_OPERATION_COUNT = OscalMetadataPackage.OSCAL_ELEMENT_OPERATION_COUNT + 2;
 
 
 	/**

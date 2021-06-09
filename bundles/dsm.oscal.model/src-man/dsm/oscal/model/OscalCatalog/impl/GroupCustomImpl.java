@@ -16,19 +16,28 @@ package dsm.oscal.model.OscalCatalog.impl;
 
 import java.util.Map;
 
+import org.eclipse.emf.common.util.EList;
+
 import dsm.oscal.model.DocumentationComputer;
 import dsm.oscal.model.ParameterResolver;
+import dsm.oscal.model.OscalCatalogCommon.Parameter;
 
 public class GroupCustomImpl extends GroupImpl {
 
 	@Override
-	public String computeDocumentation() {
-		return DocumentationComputer.computeDocumentation(this,getParameterValues());
+	public String computeDocumentation(boolean resolve) {
+		return DocumentationComputer.computeDocumentation(this, resolve, getParameterValues());
 	}
 
 	@Override
 	public Map<String, String> getParameterValues() {
 		return ParameterResolver.getAvailableParams(this);
 	}
+
+	@Override
+	public EList<Parameter> collectParametersInUse() {
+		return DocumentationComputer.collectParametersInUse(this);
+	}
+
 
 }

@@ -16,6 +16,7 @@
 package dsm.oscal.model.OscalCatalogCommon.impl;
 
 import dsm.oscal.model.OscalCatalogCommon.OscalCatalogCommonPackage;
+import dsm.oscal.model.OscalCatalogCommon.Parameter;
 import dsm.oscal.model.OscalCatalogCommon.Part;
 
 import dsm.oscal.model.OscalMetadata.DocumentationComputer;
@@ -426,7 +427,19 @@ public class PartImpl extends OscalElementCustomImpl implements Part {
 	 * @generated
 	 */
 	@Override
-	public String computeDocumentation() {
+	public String computeDocumentation(boolean resolveParameters) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<Parameter> collectParametersInUse() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -701,7 +714,8 @@ public class PartImpl extends OscalElementCustomImpl implements Part {
 		}
 		if (baseClass == DocumentationComputer.class) {
 			switch (baseOperationID) {
-				case OscalMetadataPackage.DOCUMENTATION_COMPUTER___COMPUTE_DOCUMENTATION: return OscalCatalogCommonPackage.PART___COMPUTE_DOCUMENTATION;
+				case OscalMetadataPackage.DOCUMENTATION_COMPUTER___COMPUTE_DOCUMENTATION__BOOLEAN: return OscalCatalogCommonPackage.PART___COMPUTE_DOCUMENTATION__BOOLEAN;
+				case OscalMetadataPackage.DOCUMENTATION_COMPUTER___COLLECT_PARAMETERS_IN_USE: return OscalCatalogCommonPackage.PART___COLLECT_PARAMETERS_IN_USE;
 				default: return -1;
 			}
 		}
@@ -731,8 +745,10 @@ public class PartImpl extends OscalElementCustomImpl implements Part {
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case OscalCatalogCommonPackage.PART___COMPUTE_DOCUMENTATION:
-				return computeDocumentation();
+			case OscalCatalogCommonPackage.PART___COMPUTE_DOCUMENTATION__BOOLEAN:
+				return computeDocumentation((Boolean)arguments.get(0));
+			case OscalCatalogCommonPackage.PART___COLLECT_PARAMETERS_IN_USE:
+				return collectParametersInUse();
 		}
 		return super.eInvoke(operationID, arguments);
 	}

@@ -16,6 +16,7 @@
 package dsm.oscal.model.OscalMetadata.provider;
 
 
+import dsm.oscal.model.OscalCatalogCommon.provider.OscalEditPlugin;
 import java.util.Collection;
 import java.util.List;
 
@@ -116,7 +117,7 @@ public class OscalElementItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return dsm.oscal.model.OscalMetadata.provider.OscalEditPlugin.INSTANCE;
+		return OscalEditPlugin.INSTANCE;
 	}
 
 }

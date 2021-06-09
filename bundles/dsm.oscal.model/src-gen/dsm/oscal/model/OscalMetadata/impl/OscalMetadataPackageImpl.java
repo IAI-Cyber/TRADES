@@ -723,8 +723,18 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 	 * @generated
 	 */
 	@Override
-	public EOperation getDocumentationComputer__ComputeDocumentation() {
+	public EOperation getDocumentationComputer__ComputeDocumentation__boolean() {
 		return documentationComputerEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getDocumentationComputer__CollectParametersInUse() {
+		return documentationComputerEClass.getEOperations().get(1);
 	}
 
 	/**
@@ -1757,7 +1767,8 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 		createEAttribute(documentIdEClass, DOCUMENT_ID__SCHEME);
 
 		documentationComputerEClass = createEClass(DOCUMENTATION_COMPUTER);
-		createEOperation(documentationComputerEClass, DOCUMENTATION_COMPUTER___COMPUTE_DOCUMENTATION);
+		createEOperation(documentationComputerEClass, DOCUMENTATION_COMPUTER___COMPUTE_DOCUMENTATION__BOOLEAN);
+		createEOperation(documentationComputerEClass, DOCUMENTATION_COMPUTER___COLLECT_PARAMETERS_IN_USE);
 
 		elementWithClazzEClass = createEClass(ELEMENT_WITH_CLAZZ);
 		createEAttribute(elementWithClazzEClass, ELEMENT_WITH_CLAZZ__CLAZZ);
@@ -2005,7 +2016,10 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 
 		initEClass(documentationComputerEClass, DocumentationComputer.class, "DocumentationComputer", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEOperation(getDocumentationComputer__ComputeDocumentation(), ecorePackage.getEString(), "computeDocumentation", 0, 1, IS_UNIQUE, IS_ORDERED);
+		EOperation op = initEOperation(getDocumentationComputer__ComputeDocumentation__boolean(), ecorePackage.getEString(), "computeDocumentation", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEBoolean(), "resolveParameters", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEOperation(getDocumentationComputer__CollectParametersInUse(), theOscalCatalogCommonPackage.getParameter(), "collectParametersInUse", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(elementWithClazzEClass, ElementWithClazz.class, "ElementWithClazz", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getElementWithClazz_Clazz(), ecorePackage.getEString(), "clazz", null, 0, 1, ElementWithClazz.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2056,8 +2070,8 @@ public class OscalMetadataPackageImpl extends EPackageImpl implements OscalMetad
 
 		initEClass(oscalElementEClass, OscalElement.class, "OscalElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		EOperation op = initEOperation(getOscalElement__Resolve__URI(), ecorePackage.getEObject(), "resolve", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, this.getUriType(), "uri", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getOscalElement__Resolve__URI(), ecorePackage.getEObject(), "resolve", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getUriReferenceType(), "uri", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(parameterOwnerEClass, ParameterOwner.class, "ParameterOwner", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getParameterOwner_Params(), theOscalCatalogCommonPackage.getParameter(), null, "params", null, 0, -1, ParameterOwner.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

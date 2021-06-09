@@ -14,11 +14,16 @@
 
 package dsm.oscal.model.OscalCatalogCommon.impl;
 
+import org.eclipse.emf.common.util.EList;
+
+import dsm.oscal.model.DocumentationComputer;
+import dsm.oscal.model.OscalCatalogCommon.Parameter;
 import dsm.oscal.model.OscalCatalogCommon.Part;
 
 public class PartCustomImpl extends PartImpl {
+
 	@Override
-	public String computeDocumentation() {
+	public String computeDocumentation(boolean resolve) {
 
 		StringBuilder builder = new StringBuilder();
 
@@ -37,7 +42,7 @@ public class PartCustomImpl extends PartImpl {
 		}
 
 		for (Part sub : getParts()) {
-			String smd = sub.computeDocumentation();
+			String smd = sub.computeDocumentation(resolve);
 			if (smd != null && !smd.isBlank()) {
 				builder.append(smd);
 			}
@@ -45,5 +50,10 @@ public class PartCustomImpl extends PartImpl {
 		}
 
 		return builder.toString();
+	}
+
+	@Override
+	public EList<Parameter> collectParametersInUse() {
+		return DocumentationComputer.collectParametersInUse(this);
 	}
 }

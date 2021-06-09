@@ -545,7 +545,16 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOCUMENTATION_COMPUTER___COMPUTE_DOCUMENTATION = 0;
+	int DOCUMENTATION_COMPUTER___COMPUTE_DOCUMENTATION__BOOLEAN = 0;
+
+	/**
+	 * The operation id for the '<em>Collect Parameters In Use</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DOCUMENTATION_COMPUTER___COLLECT_PARAMETERS_IN_USE = 1;
 
 	/**
 	 * The number of operations of the '<em>Documentation Computer</em>' class.
@@ -554,7 +563,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOCUMENTATION_COMPUTER_OPERATION_COUNT = 1;
+	int DOCUMENTATION_COMPUTER_OPERATION_COUNT = 2;
 
 	/**
 	 * The meta object id for the '{@link dsm.oscal.model.OscalMetadata.impl.ElementWithClazzImpl <em>Element With Clazz</em>}' class.
@@ -1286,7 +1295,16 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PART_OWNER___COMPUTE_DOCUMENTATION = DOCUMENTATION_COMPUTER___COMPUTE_DOCUMENTATION;
+	int PART_OWNER___COMPUTE_DOCUMENTATION__BOOLEAN = DOCUMENTATION_COMPUTER___COMPUTE_DOCUMENTATION__BOOLEAN;
+
+	/**
+	 * The operation id for the '<em>Collect Parameters In Use</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PART_OWNER___COLLECT_PARAMETERS_IN_USE = DOCUMENTATION_COMPUTER___COLLECT_PARAMETERS_IN_USE;
 
 	/**
 	 * The number of operations of the '<em>Part Owner</em>' class.
@@ -2553,14 +2571,24 @@ public interface OscalMetadataPackage extends EPackage {
 	EClass getDocumentationComputer();
 
 	/**
-	 * Returns the meta object for the '{@link dsm.oscal.model.OscalMetadata.DocumentationComputer#computeDocumentation() <em>Compute Documentation</em>}' operation.
+	 * Returns the meta object for the '{@link dsm.oscal.model.OscalMetadata.DocumentationComputer#computeDocumentation(boolean) <em>Compute Documentation</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Compute Documentation</em>' operation.
-	 * @see dsm.oscal.model.OscalMetadata.DocumentationComputer#computeDocumentation()
+	 * @see dsm.oscal.model.OscalMetadata.DocumentationComputer#computeDocumentation(boolean)
 	 * @generated
 	 */
-	EOperation getDocumentationComputer__ComputeDocumentation();
+	EOperation getDocumentationComputer__ComputeDocumentation__boolean();
+
+	/**
+	 * Returns the meta object for the '{@link dsm.oscal.model.OscalMetadata.DocumentationComputer#collectParametersInUse() <em>Collect Parameters In Use</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Collect Parameters In Use</em>' operation.
+	 * @see dsm.oscal.model.OscalMetadata.DocumentationComputer#collectParametersInUse()
+	 * @generated
+	 */
+	EOperation getDocumentationComputer__CollectParametersInUse();
 
 	/**
 	 * Returns the meta object for class '{@link dsm.oscal.model.OscalMetadata.ElementWithClazz <em>Element With Clazz</em>}'.
@@ -3846,7 +3874,15 @@ public interface OscalMetadataPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation DOCUMENTATION_COMPUTER___COMPUTE_DOCUMENTATION = eINSTANCE.getDocumentationComputer__ComputeDocumentation();
+		EOperation DOCUMENTATION_COMPUTER___COMPUTE_DOCUMENTATION__BOOLEAN = eINSTANCE.getDocumentationComputer__ComputeDocumentation__boolean();
+
+		/**
+		 * The meta object literal for the '<em><b>Collect Parameters In Use</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DOCUMENTATION_COMPUTER___COLLECT_PARAMETERS_IN_USE = eINSTANCE.getDocumentationComputer__CollectParametersInUse();
 
 		/**
 		 * The meta object literal for the '{@link dsm.oscal.model.OscalMetadata.impl.ElementWithClazzImpl <em>Element With Clazz</em>}' class.

@@ -24,12 +24,13 @@ import dsm.TRADES.util.EcoreUtils;
 import dsm.oscal.model.DocumentationComputer;
 import dsm.oscal.model.ParameterResolver;
 import dsm.oscal.model.OscalCatalog.Catalog;
+import dsm.oscal.model.OscalCatalogCommon.Parameter;
 
 public class ControlCustomImpl extends ControlImpl {
 
 	@Override
-	public String computeDocumentation() {
-		return DocumentationComputer.computeDocumentation(this, getParameterValues());
+	public String computeDocumentation(boolean resolve) {
+		return DocumentationComputer.computeDocumentation(this, resolve, getParameterValues());
 	}
 
 	@Override
@@ -39,7 +40,7 @@ public class ControlCustomImpl extends ControlImpl {
 
 	@Override
 	public String getDescription() {
-		return computeDocumentation();
+		return computeDocumentation(true);
 	}
 
 	@Override
@@ -63,5 +64,10 @@ public class ControlCustomImpl extends ControlImpl {
 			return catalog.getName();
 		}
 		return null;
+	}
+
+	@Override
+	public EList<Parameter> collectParametersInUse() {
+		return DocumentationComputer.collectParametersInUse(this);
 	}
 }

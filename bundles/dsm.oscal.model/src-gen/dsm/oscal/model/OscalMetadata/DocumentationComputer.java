@@ -15,6 +15,8 @@
  */
 package dsm.oscal.model.OscalMetadata;
 
+import dsm.oscal.model.OscalCatalogCommon.Parameter;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -34,6 +36,14 @@ public interface DocumentationComputer extends EObject {
 	 * @model
 	 * @generated
 	 */
-	String computeDocumentation();
+	String computeDocumentation(boolean resolveParameters);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	EList<Parameter> collectParametersInUse();
 
 } // DocumentationComputer

@@ -143,20 +143,20 @@ public class OscalCatalogCommonPackageImpl extends EPackageImpl implements Oscal
 		EcorePackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
-		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(OscalMetadataPackage.eNS_URI);
-		OscalMetadataPackageImpl theOscalMetadataPackage = (OscalMetadataPackageImpl)(registeredPackage instanceof OscalMetadataPackageImpl ? registeredPackage : OscalMetadataPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(OscalCatalogPackage.eNS_URI);
+		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(OscalCatalogPackage.eNS_URI);
 		OscalCatalogPackageImpl theOscalCatalogPackage = (OscalCatalogPackageImpl)(registeredPackage instanceof OscalCatalogPackageImpl ? registeredPackage : OscalCatalogPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(OscalMetadataPackage.eNS_URI);
+		OscalMetadataPackageImpl theOscalMetadataPackage = (OscalMetadataPackageImpl)(registeredPackage instanceof OscalMetadataPackageImpl ? registeredPackage : OscalMetadataPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theOscalCatalogCommonPackage.createPackageContents();
-		theOscalMetadataPackage.createPackageContents();
 		theOscalCatalogPackage.createPackageContents();
+		theOscalMetadataPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theOscalCatalogCommonPackage.initializePackageContents();
-		theOscalMetadataPackage.initializePackageContents();
 		theOscalCatalogPackage.initializePackageContents();
+		theOscalMetadataPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theOscalCatalogCommonPackage.freeze();

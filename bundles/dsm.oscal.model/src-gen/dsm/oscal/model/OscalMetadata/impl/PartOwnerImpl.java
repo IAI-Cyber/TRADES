@@ -15,6 +15,7 @@
  */
 package dsm.oscal.model.OscalMetadata.impl;
 
+import dsm.oscal.model.OscalCatalogCommon.Parameter;
 import dsm.oscal.model.OscalCatalogCommon.Part;
 
 import dsm.oscal.model.OscalMetadata.OscalMetadataPackage;
@@ -98,7 +99,19 @@ public class PartOwnerImpl extends MinimalEObjectImpl.Container implements PartO
 	 * @generated
 	 */
 	@Override
-	public String computeDocumentation() {
+	public String computeDocumentation(boolean resolveParameters) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<Parameter> collectParametersInUse() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -186,8 +199,10 @@ public class PartOwnerImpl extends MinimalEObjectImpl.Container implements PartO
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case OscalMetadataPackage.PART_OWNER___COMPUTE_DOCUMENTATION:
-				return computeDocumentation();
+			case OscalMetadataPackage.PART_OWNER___COMPUTE_DOCUMENTATION__BOOLEAN:
+				return computeDocumentation((Boolean)arguments.get(0));
+			case OscalMetadataPackage.PART_OWNER___COLLECT_PARAMETERS_IN_USE:
+				return collectParametersInUse();
 		}
 		return super.eInvoke(operationID, arguments);
 	}

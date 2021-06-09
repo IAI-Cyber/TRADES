@@ -370,7 +370,19 @@ public class GroupImpl extends OscalElementCustomImpl implements Group {
 	 * @generated
 	 */
 	@Override
-	public String computeDocumentation() {
+	public String computeDocumentation(boolean resolveParameters) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<Parameter> collectParametersInUse() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -701,7 +713,8 @@ public class GroupImpl extends OscalElementCustomImpl implements Group {
 		}
 		if (baseClass == DocumentationComputer.class) {
 			switch (baseOperationID) {
-				case OscalMetadataPackage.DOCUMENTATION_COMPUTER___COMPUTE_DOCUMENTATION: return OscalCatalogPackage.GROUP___COMPUTE_DOCUMENTATION;
+				case OscalMetadataPackage.DOCUMENTATION_COMPUTER___COMPUTE_DOCUMENTATION__BOOLEAN: return OscalCatalogPackage.GROUP___COMPUTE_DOCUMENTATION__BOOLEAN;
+				case OscalMetadataPackage.DOCUMENTATION_COMPUTER___COLLECT_PARAMETERS_IN_USE: return OscalCatalogPackage.GROUP___COLLECT_PARAMETERS_IN_USE;
 				default: return -1;
 			}
 		}
@@ -731,8 +744,10 @@ public class GroupImpl extends OscalElementCustomImpl implements Group {
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case OscalCatalogPackage.GROUP___COMPUTE_DOCUMENTATION:
-				return computeDocumentation();
+			case OscalCatalogPackage.GROUP___COMPUTE_DOCUMENTATION__BOOLEAN:
+				return computeDocumentation((Boolean)arguments.get(0));
+			case OscalCatalogPackage.GROUP___COLLECT_PARAMETERS_IN_USE:
+				return collectParametersInUse();
 			case OscalCatalogPackage.GROUP___GET_PARAMETER_VALUES:
 				return getParameterValues();
 		}

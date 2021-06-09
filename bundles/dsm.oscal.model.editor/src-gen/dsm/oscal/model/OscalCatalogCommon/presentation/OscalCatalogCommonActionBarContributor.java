@@ -15,7 +15,6 @@
  */
 package dsm.oscal.model.OscalCatalogCommon.presentation;
 
-import dsm.oscal.model.OscalMetadata.presentation.OscalEditorPlugin;
 import java.util.ArrayList;
 import java.util.Collection;
 
@@ -85,14 +84,14 @@ public class OscalCatalogCommonActionBarContributor
 	 * @generated
 	 */
 	protected IAction showPropertiesViewAction =
-		new Action(OscalEditorPlugin.INSTANCE.getString("_UI_ShowPropertiesView_menu_item")) {
+		new Action(dsm.oscal.model.OscalCatalogCommon.presentation.OscalEditorPlugin.INSTANCE.getString("_UI_ShowPropertiesView_menu_item")) {
 			@Override
 			public void run() {
 				try {
 					getPage().showView("org.eclipse.ui.views.PropertySheet");
 				}
 				catch (PartInitException exception) {
-					OscalEditorPlugin.INSTANCE.log(exception);
+					dsm.oscal.model.OscalCatalogCommon.presentation.OscalEditorPlugin.INSTANCE.log(exception);
 				}
 			}
 		};
@@ -105,7 +104,7 @@ public class OscalCatalogCommonActionBarContributor
 	 * @generated
 	 */
 	protected IAction refreshViewerAction =
-		new Action(OscalEditorPlugin.INSTANCE.getString("_UI_RefreshViewer_menu_item")) {
+		new Action(dsm.oscal.model.OscalCatalogCommon.presentation.OscalEditorPlugin.INSTANCE.getString("_UI_RefreshViewer_menu_item")) {
 			@Override
 			public boolean isEnabled() {
 				return activeEditorPart instanceof IViewerProvider;
@@ -193,7 +192,7 @@ public class OscalCatalogCommonActionBarContributor
 	public void contributeToMenu(IMenuManager menuManager) {
 		super.contributeToMenu(menuManager);
 
-		IMenuManager submenuManager = new MenuManager(OscalEditorPlugin.INSTANCE.getString("_UI_OscalCatalogCommonEditor_menu"), "dsm.oscal.model.OscalCatalogCommonMenuID");
+		IMenuManager submenuManager = new MenuManager(dsm.oscal.model.OscalCatalogCommon.presentation.OscalEditorPlugin.INSTANCE.getString("_UI_OscalCatalogCommonEditor_menu"), "dsm.oscal.model.OscalCatalogCommonMenuID");
 		menuManager.insertAfter("additions", submenuManager);
 		submenuManager.add(new Separator("settings"));
 		submenuManager.add(new Separator("actions"));
@@ -202,12 +201,12 @@ public class OscalCatalogCommonActionBarContributor
 
 		// Prepare for CreateChild item addition or removal.
 		//
-		createChildMenuManager = new MenuManager(OscalEditorPlugin.INSTANCE.getString("_UI_CreateChild_menu_item"));
+		createChildMenuManager = new MenuManager(dsm.oscal.model.OscalCatalogCommon.presentation.OscalEditorPlugin.INSTANCE.getString("_UI_CreateChild_menu_item"));
 		submenuManager.insertBefore("additions", createChildMenuManager);
 
 		// Prepare for CreateSibling item addition or removal.
 		//
-		createSiblingMenuManager = new MenuManager(OscalEditorPlugin.INSTANCE.getString("_UI_CreateSibling_menu_item"));
+		createSiblingMenuManager = new MenuManager(dsm.oscal.model.OscalCatalogCommon.presentation.OscalEditorPlugin.INSTANCE.getString("_UI_CreateSibling_menu_item"));
 		submenuManager.insertBefore("additions", createSiblingMenuManager);
 
 		// Force an update because Eclipse hides empty menus now.
@@ -400,11 +399,11 @@ public class OscalCatalogCommonActionBarContributor
 		super.menuAboutToShow(menuManager);
 		MenuManager submenuManager = null;
 
-		submenuManager = new MenuManager(OscalEditorPlugin.INSTANCE.getString("_UI_CreateChild_menu_item"));
+		submenuManager = new MenuManager(dsm.oscal.model.OscalCatalogCommon.presentation.OscalEditorPlugin.INSTANCE.getString("_UI_CreateChild_menu_item"));
 		populateManager(submenuManager, createChildActions, null);
 		menuManager.insertBefore("edit", submenuManager);
 
-		submenuManager = new MenuManager(OscalEditorPlugin.INSTANCE.getString("_UI_CreateSibling_menu_item"));
+		submenuManager = new MenuManager(dsm.oscal.model.OscalCatalogCommon.presentation.OscalEditorPlugin.INSTANCE.getString("_UI_CreateSibling_menu_item"));
 		populateManager(submenuManager, createSiblingActions, null);
 		menuManager.insertBefore("edit", submenuManager);
 	}

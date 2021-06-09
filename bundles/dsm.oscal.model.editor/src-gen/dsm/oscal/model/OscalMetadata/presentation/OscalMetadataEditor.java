@@ -172,7 +172,6 @@ import dsm.oscal.model.OscalMetadata.provider.OscalMetadataItemProviderAdapterFa
 
 import dsm.TRADES.provider.TRADESItemProviderAdapterFactory;
 import dsm.oscal.model.OscalCatalog.provider.OscalCatalogItemProviderAdapterFactory;
-
 import dsm.oscal.model.OscalCatalogCommon.provider.OscalCatalogCommonItemProviderAdapterFactory;
 
 import org.eclipse.emf.ecore.provider.EcoreItemProviderAdapterFactory;
@@ -729,9 +728,9 @@ public class OscalMetadataEditor
 		adapterFactory = new ComposedAdapterFactory(ComposedAdapterFactory.Descriptor.Registry.INSTANCE);
 
 		adapterFactory.addAdapterFactory(new ResourceItemProviderAdapterFactory());
-		adapterFactory.addAdapterFactory(new OscalMetadataItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new OscalCatalogCommonItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new OscalCatalogItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new OscalMetadataItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new TRADESItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new EcoreItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());

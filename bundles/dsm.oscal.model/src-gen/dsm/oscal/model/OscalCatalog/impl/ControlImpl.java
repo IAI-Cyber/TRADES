@@ -410,7 +410,19 @@ public class ControlImpl extends OscalElementCustomImpl implements Control {
 	 * @generated
 	 */
 	@Override
-	public String computeDocumentation() {
+	public String computeDocumentation(boolean resolveParameters) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<Parameter> collectParametersInUse() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -748,7 +760,8 @@ public class ControlImpl extends OscalElementCustomImpl implements Control {
 		}
 		if (baseClass == DocumentationComputer.class) {
 			switch (baseOperationID) {
-				case OscalMetadataPackage.DOCUMENTATION_COMPUTER___COMPUTE_DOCUMENTATION: return OscalCatalogPackage.CONTROL___COMPUTE_DOCUMENTATION;
+				case OscalMetadataPackage.DOCUMENTATION_COMPUTER___COMPUTE_DOCUMENTATION__BOOLEAN: return OscalCatalogPackage.CONTROL___COMPUTE_DOCUMENTATION__BOOLEAN;
+				case OscalMetadataPackage.DOCUMENTATION_COMPUTER___COLLECT_PARAMETERS_IN_USE: return OscalCatalogPackage.CONTROL___COLLECT_PARAMETERS_IN_USE;
 				default: return -1;
 			}
 		}
@@ -804,8 +817,10 @@ public class ControlImpl extends OscalElementCustomImpl implements Control {
 				return getSourceName();
 			case OscalCatalogPackage.CONTROL___GET_SOURCE_IDENTIFIER:
 				return getSourceIdentifier();
-			case OscalCatalogPackage.CONTROL___COMPUTE_DOCUMENTATION:
-				return computeDocumentation();
+			case OscalCatalogPackage.CONTROL___COMPUTE_DOCUMENTATION__BOOLEAN:
+				return computeDocumentation((Boolean)arguments.get(0));
+			case OscalCatalogPackage.CONTROL___COLLECT_PARAMETERS_IN_USE:
+				return collectParametersInUse();
 			case OscalCatalogPackage.CONTROL___GET_PARAMETER_VALUES:
 				return getParameterValues();
 		}

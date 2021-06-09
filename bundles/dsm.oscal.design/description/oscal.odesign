@@ -253,7 +253,7 @@
         </controls>
       </groups>
       <groups name="DocumentationComputerGroup" labelExpression="Computed documentation" domainClass="OscalMetadata::DocumentationComputer" semanticCandidateExpression="var:self">
-        <controls xsi:type="properties:TextAreaDescription" name="ComputedDocumentation" labelExpression="Documentation" helpExpression="Documentation computed from the contained parts. To edit the documentation select each part in the tree." isEnabledExpression="aql:true" lineCount="10" valueExpression="aql:self.computeDocumentation()">
+        <controls xsi:type="properties:TextAreaDescription" name="ComputedDocumentation" labelExpression="Documentation" helpExpression="Documentation computed from the contained parts. To edit the documentation select each part in the tree." isEnabledExpression="aql:true" lineCount="10" valueExpression="aql:self.computeDocumentation(true)">
           <initialOperation>
             <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self"/>
           </initialOperation>

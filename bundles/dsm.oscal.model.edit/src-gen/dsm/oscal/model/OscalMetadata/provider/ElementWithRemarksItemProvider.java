@@ -16,6 +16,7 @@
 package dsm.oscal.model.OscalMetadata.provider;
 
 
+import dsm.oscal.model.OscalCatalogCommon.provider.OscalEditPlugin;
 import dsm.oscal.model.OscalMetadata.ElementWithRemarks;
 import dsm.oscal.model.OscalMetadata.OscalMetadataPackage;
 
@@ -168,7 +169,7 @@ public class ElementWithRemarksItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return dsm.oscal.model.OscalMetadata.provider.OscalEditPlugin.INSTANCE;
+		return OscalEditPlugin.INSTANCE;
 	}
 
 }

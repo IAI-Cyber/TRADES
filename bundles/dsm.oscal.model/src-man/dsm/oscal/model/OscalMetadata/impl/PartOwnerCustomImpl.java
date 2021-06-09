@@ -20,8 +20,8 @@ import dsm.oscal.model.ParameterResolver;
 public class PartOwnerCustomImpl extends PartOwnerImpl {
 
 	@Override
-	public String computeDocumentation() {
-		return DocumentationComputer.computeDocumentation(this,ParameterResolver.getAvailableParams(this));
+	public String computeDocumentation(boolean resolve) {
+		return DocumentationComputer.computeDocumentation(this, resolve, ParameterResolver.getAvailableParams(this));
 	}
 
 }

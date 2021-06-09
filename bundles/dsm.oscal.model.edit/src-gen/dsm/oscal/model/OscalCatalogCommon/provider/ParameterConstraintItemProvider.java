@@ -197,7 +197,7 @@ public class ParameterConstraintItemProvider extends OscalElementItemProvider {
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return OscalEditPlugin.INSTANCE;
+		return dsm.oscal.model.OscalCatalogCommon.provider.OscalEditPlugin.INSTANCE;
 	}
 
 }
