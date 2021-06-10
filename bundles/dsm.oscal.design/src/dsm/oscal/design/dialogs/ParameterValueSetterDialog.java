@@ -87,8 +87,9 @@ public class ParameterValueSetterDialog extends Dialog {
 		for (Parameter param : parameters) {
 			if (param.getId() != null) {
 
+				String label = ParameterResolver.safeToMarkdown(param.getLabel());
 				WidgetFactory.label(SWT.NONE).layoutData(new GridData(GridData.BEGINNING))
-						.text(ParameterResolver.safeToMarkdown(param.getLabel())).create(valueContainer);
+						.text(label != null ? label : "").create(valueContainer);
 
 				String usage = MarkupServices.toHTML(param.getUsage());
 
