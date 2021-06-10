@@ -24,7 +24,6 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.jface.dialogs.Dialog;
 import org.eclipse.jface.widgets.WidgetFactory;
 import org.eclipse.swt.SWT;
-import org.eclipse.swt.layout.FillLayout;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
@@ -82,7 +81,7 @@ public class ParameterValueSetterDialog extends Dialog {
 		Group valueContainer = new Group(cc, SWT.None);
 		valueContainer.setText("Values");
 		valueContainer.setLayoutData(new GridData(GridData.FILL_BOTH));
-		valueContainer.setLayout(new GridLayout(3, false));
+		valueContainer.setLayout(new GridLayout(6, false));
 
 		for (Parameter param : parameters) {
 			if (param.getId() != null) {
@@ -124,20 +123,20 @@ public class ParameterValueSetterDialog extends Dialog {
 
 		}
 
-		GridData docLayoutData = new GridData(GridData.FILL_BOTH);
-		docLayoutData.horizontalSpan = 3;
+		GridData docLayoutData = new GridData(GridData.FILL_HORIZONTAL);
 
 		Group textGroup = new Group(cc, SWT.None);
 		textGroup.setText("Documentation");
 		textGroup.setLayoutData(docLayoutData);
-		textGroup.setLayout(new FillLayout());
+		textGroup.setLayout(new GridLayout(1, false));
 
-		computedDocumentationText = WidgetFactory.text(SWT.MULTI | SWT.READ_ONLY)
+		GridData layoutData = new GridData(GridData.FILL_HORIZONTAL);
+		layoutData.heightHint = 350;
+		computedDocumentationText = WidgetFactory.text(SWT.WRAP | SWT.READ_ONLY | SWT.V_SCROLL)
 				.background(parent.getDisplay().getSystemColor(SWT.COLOR_WHITE))
+				.layoutData(layoutData)
 				.text(textRendererComputer.apply(getIdToValueMap())).create(textGroup);
-
-		GridData memorizeButtonLayoutData = new GridData(GridData.CENTER);
-		memorizeButtonLayoutData.horizontalSpan = 3;
+		GridData memorizeButtonLayoutData = new GridData(GridData.FILL_HORIZONTAL);
 
 		Button memorizeButton = WidgetFactory.button(SWT.CHECK).layoutData(memorizeButtonLayoutData).onSelect(e -> {
 			keepValue = ((Button) e.widget).getSelection();
