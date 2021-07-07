@@ -189,17 +189,17 @@
           </conditionnalStyles>
         </edgeMappings>
         <edgeMappings name="Affect" labelDirectEdit="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='AffectEditLabel']" semanticCandidatesExpression="feature:eAllContents" sourceMapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='System%20Design']/@defaultLayer/@containerMappings[name='ComponentContainer_SD']/@subContainerMappings[name='ComponentPackage_SD']" targetMapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='System%20Design']/@defaultLayer/@containerMappings[name='ComponentContainer_SD']/@subContainerMappings[name='ComponentPackage_SD']" targetFinderExpression="feature:targetComponent" sourceFinderExpression="feature:sourceComponent" targetExpression="var: self" domainClass="TRADES::AffectRelation" useDomainElement="true">
-          <style sizeComputationExpression="2">
-            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_blue']"/>
-            <centerLabelStyleDescription labelSize="12" showIcon="false" labelExpression="aql:self.dataLabelOnAffect()">
-              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          <style targetArrow="InputClosedArrow" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_gray']"/>
+            <centerLabelStyleDescription showIcon="false" labelExpression="aql:self.dataLabelOnAffect()">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_gray']"/>
             </centerLabelStyleDescription>
           </style>
           <conditionnalStyles predicateExpression="aql: self.eGet('analysisStatus')->toString()='Confirmed'">
             <style targetArrow="InputClosedArrow" sizeComputationExpression="3">
               <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <centerLabelStyleDescription showIcon="false" labelExpression="aql:self.dataLabelOnAffect()">
-                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_blue']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               </centerLabelStyleDescription>
             </style>
           </conditionnalStyles>
@@ -376,7 +376,7 @@
             <containerVariable name="container"/>
             <representationNameVariable name="diagramName"/>
           </ownedTools>
-          <ownedTools xsi:type="tool:DiagramCreationDescription" name="SubComponentDiagramCreation" label="Analysis of component" diagramDescription="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Component%20Analysis']">
+          <ownedTools xsi:type="tool:DiagramCreationDescription" name="SubComponentDiagramCreation" label="Component Analysis (TRADES diagram)" diagramDescription="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Component%20Analysis']">
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self"/>
             </initialOperation>
@@ -433,7 +433,7 @@
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.editAffectLabel(arg0)"/>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:DiagramCreationDescription" name="ComponentDesignDiagramCreation" label="Design component" diagramDescription="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='System%20Design']">
+          <ownedTools xsi:type="tool:DiagramCreationDescription" name="ComponentDesignDiagramCreation" label="Component Design (nice diagram)" diagramDescription="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='System%20Design']">
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self"/>
             </initialOperation>
@@ -782,25 +782,25 @@
         <ownedSubLines name="subComp Row" reusedSubLines="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Controls%20to%20Components%20']/@ownedLineMappings[name='Component%20Row']" domainClass="TRADES::Component" semanticCandidatesExpression="aql:self.components"/>
       </ownedLineMappings>
       <ownedColumnMappings name="Control Column" domainClass="TRADES::Control"/>
-      <intersection name="Controls to Components Mapping Rejected" semanticElements="var:view" lineMapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Controls%20to%20Components%20']/@ownedLineMappings[name='Component%20Row'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Controls%20to%20Components%20']/@ownedLineMappings[name='Component%20Row']/@ownedSubLines[name='subComp%20Row']" columnMapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Controls%20to%20Components%20']/@ownedColumnMappings.0" labelExpression="aql:'V'" columnFinderExpression="aql:self.controlOwner.eAllContents(TRADES::Control)->select(c | c.status = TRADES::ControlStatusENUM::Rejected)" lineFinderExpression="feature:eContainer" domainClass="TRADES::Control">
+      <intersection name="Controls to Components Mapping Rejected" semanticElements="var:view" lineMapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Controls%20to%20Components%20']/@ownedLineMappings[name='Component%20Row'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Controls%20to%20Components%20']/@ownedLineMappings[name='Component%20Row']/@ownedSubLines[name='subComp%20Row']" columnMapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Controls%20to%20Components%20']/@ownedColumnMappings.0" labelExpression="aql:'V'" columnFinderExpression="aql:self.controlOwner.eAllContents(TRADES::Control)->select(c | c.status == TRADES::ControlStatusENUM::Rejected)" lineFinderExpression="feature:eContainer" domainClass="TRADES::Control">
         <defaultForeground>
           <labelFormat>bold</labelFormat>
           <foreGroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
         </defaultForeground>
       </intersection>
-      <intersection name="Controls to Components Mapping Agreed" semanticElements="var:view" lineMapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Controls%20to%20Components%20']/@ownedLineMappings[name='Component%20Row'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Controls%20to%20Components%20']/@ownedLineMappings[name='Component%20Row']/@ownedSubLines[name='subComp%20Row']" columnMapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Controls%20to%20Components%20']/@ownedColumnMappings.0" labelExpression="aql:'V'" columnFinderExpression="aql:self.controlOwner.eAllContents(TRADES::Control)->select(c | c.status = TRADES::ControlStatusENUM::Agreed)" lineFinderExpression="feature:eContainer" domainClass="TRADES::Control">
+      <intersection name="Controls to Components Mapping Agreed" semanticElements="var:view" lineMapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Controls%20to%20Components%20']/@ownedLineMappings[name='Component%20Row'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Controls%20to%20Components%20']/@ownedLineMappings[name='Component%20Row']/@ownedSubLines[name='subComp%20Row']" columnMapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Controls%20to%20Components%20']/@ownedColumnMappings.0" labelExpression="aql:'V'" columnFinderExpression="aql:self.controlOwner.eAllContents(TRADES::Control)->select(c | c.status == TRADES::ControlStatusENUM::Agreed)" lineFinderExpression="feature:eContainer" domainClass="TRADES::Control">
         <defaultForeground>
           <labelFormat>bold</labelFormat>
           <foreGroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
         </defaultForeground>
       </intersection>
-      <intersection name="Controls to Components Mapping Implemented" semanticElements="var:view" lineMapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Controls%20to%20Components%20']/@ownedLineMappings[name='Component%20Row'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Controls%20to%20Components%20']/@ownedLineMappings[name='Component%20Row']/@ownedSubLines[name='subComp%20Row']" columnMapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Controls%20to%20Components%20']/@ownedColumnMappings.0" labelExpression="aql:'V'" columnFinderExpression="aql:self.controlOwner.eAllContents(TRADES::Control)->select(c | c.status = TRADES::ControlStatusENUM::Implemented)" lineFinderExpression="feature:eContainer" domainClass="TRADES::Control">
+      <intersection name="Controls to Components Mapping Implemented" semanticElements="var:view" lineMapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Controls%20to%20Components%20']/@ownedLineMappings[name='Component%20Row'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Controls%20to%20Components%20']/@ownedLineMappings[name='Component%20Row']/@ownedSubLines[name='subComp%20Row']" columnMapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Controls%20to%20Components%20']/@ownedColumnMappings.0" labelExpression="aql:'V'" columnFinderExpression="aql:self.controlOwner.eAllContents(TRADES::Control)->select(c | c.status == TRADES::ControlStatusENUM::Implemented)" lineFinderExpression="feature:eContainer" domainClass="TRADES::Control">
         <defaultForeground>
           <labelFormat>bold</labelFormat>
           <foreGroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='green']"/>
         </defaultForeground>
       </intersection>
-      <intersection name="Controls to Components Mapping Proposed" semanticElements="var:view" lineMapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Controls%20to%20Components%20']/@ownedLineMappings[name='Component%20Row'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Controls%20to%20Components%20']/@ownedLineMappings[name='Component%20Row']/@ownedSubLines[name='subComp%20Row']" columnMapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Controls%20to%20Components%20']/@ownedColumnMappings.0" labelExpression="aql:'V'" columnFinderExpression="aql:self.controlOwner.eAllContents(TRADES::Control)->select(c | c.status = TRADES::ControlStatusENUM::Proposed)" lineFinderExpression="feature:eContainer" domainClass="TRADES::Control">
+      <intersection name="Controls to Components Mapping Proposed" semanticElements="var:view" lineMapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Controls%20to%20Components%20']/@ownedLineMappings[name='Component%20Row'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Controls%20to%20Components%20']/@ownedLineMappings[name='Component%20Row']/@ownedSubLines[name='subComp%20Row']" columnMapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Controls%20to%20Components%20']/@ownedColumnMappings.0" labelExpression="aql:'V'" columnFinderExpression="aql:self.controlOwner.eAllContents(TRADES::Control)->select(c | c.status == TRADES::ControlStatusENUM::Proposed)" lineFinderExpression="feature:eContainer" domainClass="TRADES::Control">
         <defaultForeground>
           <labelFormat>bold</labelFormat>
           <foreGroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -1442,7 +1442,7 @@
         </controls>
       </groups>
       <groups name="ControlGroup" label="Control Details" labelExpression="Control Details" domainClass="TRADES::Control" semanticCandidateExpression="var:self">
-        <controls xsi:type="properties:SelectDescription" name="Status" labelExpression="Status" isEnabledExpression="aql:self.oclIsTypeOf(TRADES::Control)" valueExpression="aql: TRADES::ControlStatusENUM.getEEnumLiteral(self.status.toString())" candidatesExpression="aql: TRADES::ControlStatusENUM.eLiterals" candidateDisplayExpression="aql:candidate.name">
+        <controls xsi:type="properties:SelectDescription" name="Status" labelExpression="Status" isEnabledExpression="aql:" valueExpression="aql: TRADES::ControlStatusENUM.getEEnumLiteral(self.status.toString())" candidatesExpression="aql: TRADES::ControlStatusENUM.eLiterals" candidateDisplayExpression="aql:candidate.name">
           <initialOperation>
             <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
               <subModelOperations xsi:type="tool_1:SetValue" featureName="status" valueExpression="aql:newValue.instance"/>
@@ -1629,7 +1629,7 @@
           </initialOperation>
         </controls>
       </groups>
-      <groups name="ExternalControlGroup" labelExpression="External Control detail" domainClass="TRADES::ExternalControl" semanticCandidateExpression="var:self">
+      <groups name="ExternalControlGroup" labelExpression="External Control Details" domainClass="TRADES::ExternalControl" semanticCandidateExpression="var:self">
         <controls xsi:type="properties:TextDescription" name="ExternalControlSource" label=" External Control Source" labelExpression="Source" helpExpression="The source of the control" isEnabledExpression="aql:false" valueExpression="aql:self.source">
           <initialOperation>
             <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">

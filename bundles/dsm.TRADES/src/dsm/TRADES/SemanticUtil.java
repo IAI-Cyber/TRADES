@@ -19,7 +19,7 @@ import org.eclipse.emf.ecore.EObject;
 
 public class SemanticUtil {
 
-	private static final String DEFAULT_ROOT_CMP_NAME = "System Analysis Scope";
+	private static final String DEFAULT_ROOT_CMP_NAME = "System Scope";
 
 	public static <T extends Control> T addControl(AbstractControlOwner cmp, T control) {
 
