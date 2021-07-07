@@ -65,8 +65,18 @@
         </enablement>
      </actionProvider>
      <commonWizard
+           type="export"
+           wizardId="dsm.oscal.design.exportToXML">
+        <enablement></enablement>
+     </commonWizard>
+     <commonWizard
            type="new"
            wizardId="dsm.oscal.design.oscalcatalog.wizard">
+        <enablement></enablement>
+     </commonWizard>
+     <commonWizard
+           type="import"
+           wizardId="dsm.oscal.design.importoscalcatalog">
         <enablement></enablement>
      </commonWizard>
   </extension>
@@ -124,5 +134,15 @@
               id="dsm.oscal.design.oscalcatalog.wizard">
         </newWizardShortcut>
      </perspectiveExtension>
+  </extension>
+  <extension
+        point="org.eclipse.ui.exportWizards">
+     <wizard
+           category="dsm.TRADES.rcp.export"
+           class="dsm.oscal.design.wizards.ExpotToOscalXMLWizard"
+           icon="icons/bookmarks_view.png"
+           id="dsm.oscal.design.exportToXML"
+           name="Export Catalog to OSCAL Format">
+     </wizard>
   </extension>
 </plugin>

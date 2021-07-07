@@ -126,7 +126,7 @@ public class OSCALImporterTest {
 		assertThat(tradesCatalog.getUuid()).isEqualTo(UUID.fromString("759bc696-630d-4b50-bfdf-cf93c7b1bf62"));
 
 		// Export the catalog back to XML
-		transformer.exportCatalog(tradesCatalog, resultFile.toPath());
+		transformer.exportCatalog(tradesCatalog, resultFile.toPath(), Format.XML);
 
 		// Save the input file with default serializer to see only semantic changes
 		saveInputFileUsingJavaLib();

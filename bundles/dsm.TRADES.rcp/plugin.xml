@@ -49,4 +49,11 @@
             name="Import TRADES library">
       </wizard>
    </extension>
+   <extension
+         point="org.eclipse.ui.exportWizards">
+      <category
+            id="dsm.TRADES.rcp.export"
+            name="TRADES">
+      </category>
+   </extension>
 </plugin>

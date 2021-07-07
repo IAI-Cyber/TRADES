@@ -66,7 +66,7 @@ public class OSCALTransformer {
 	 * @param catalog    the catalog to export (non <code>null</code>)
 	 * @param pathToSave the path to save the file (Its overrides existing file)
 	 */
-	public void exportCatalog(Catalog catalog, Path pathToSave) {
+	public void exportCatalog(Catalog catalog, Path pathToSave, Format format) {
 		if (catalog == null) {
 			throw new IllegalArgumentException("Invalid input 'null'");
 		}
@@ -75,7 +75,7 @@ public class OSCALTransformer {
 
 		MutableConfiguration config = new MutableConfiguration().enableFeature(Feature.SERIALIZE_ROOT);
 		Serializer<gov.nist.secauto.oscal.lib.Catalog> serializer = BindingContext.newInstance()
-				.newSerializer(Format.XML, gov.nist.secauto.oscal.lib.Catalog.class, config);
+				.newSerializer(format, gov.nist.secauto.oscal.lib.Catalog.class, config);
 
 		try {
 			serializer.serialize(oscalCatalog, pathToSave.toFile());
