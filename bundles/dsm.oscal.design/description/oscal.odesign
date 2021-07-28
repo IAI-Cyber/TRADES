@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:properties="http://www.eclipse.org/sirius/properties/1.0.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="oscal" version="12.0.0.2017041100">
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:PropertiesMarkupWidgets="http://www.eclipse.org/sirius/properties/1.0.0/ext/widgets/markupWidgets" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:properties="http://www.eclipse.org/sirius/properties/1.0.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="oscal" version="12.0.0.2017041100">
   <ownedViewpoints name="OscalViewPoint" modelFileExtension="oscal">
     <ownedRepresentationExtensions xsi:type="description_1:DiagramExtensionDescription" name="TRADES.design" viewpointURI="viewpoint:/TRADES.design/TRADESview" representationName="TRADES diagram">
       <metamodel href="http://csrc.nist.gov/ns/oscal/1.0/oscal-catalog#/"/>
@@ -41,6 +41,8 @@
     <ownedJavaExtensions qualifiedClassName="dsm.oscal.design.service.OscalWidgetUtil"/>
     <ownedJavaExtensions qualifiedClassName="dsm.oscal.design.service.DateService"/>
     <ownedJavaExtensions qualifiedClassName="TRADES.design.DebugService"/>
+    <ownedJavaExtensions qualifiedClassName="org.eclipse.eef.ide.ui.ext.widgets.markup.markdown.MarkdownService"/>
+    <ownedJavaExtensions qualifiedClassName="dsm.oscal.design.service.MarkownService"/>
   </ownedViewpoints>
   <extensions xsi:type="properties:ViewExtensionDescription" name="Properties">
     <metamodels href="http://csrc.nist.gov/ns/oscal/1.0/oscal-catalog#/"/>
@@ -246,18 +248,16 @@
             <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.setMarkupAttribute('title',newValue)"/>
           </initialOperation>
         </controls>
-        <controls xsi:type="properties:TextAreaDescription" name="OscalCatalogCommon::Part prose" labelExpression="aql:input.emfEditServices(self).getText(self.eClass().getEStructuralFeature('prose')) + ':'" helpExpression="aql:input.emfEditServices(self).getDescription(self.eClass().getEStructuralFeature('prose'))" isEnabledExpression="aql:self.eClass().getEStructuralFeature('prose').changeable" valueExpression="aql:self.getMarkupAttribute('prose')">
+        <controls xsi:type="PropertiesMarkupWidgets:ExtHTMLRendererDescription" name="PartGroupProse" labelExpression="Prose" helpExpression="Prose for this part" toHtmlExpression="aql:self.prose.toMarkdown().markdownToHTMLBody()" valueExpression="aql:self.prose" numberOfLines="20" editionToolExpression="aql:self.prose.toMarkdown().editMarkdownExpression(true)" cssExpression="aql:self.getCSSContent()">
           <initialOperation>
-            <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.setMarkupAttribute('prose',newValue)"/>
+            <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self">
+              <subModelOperations xsi:type="tool_1:SetValue" featureName="prose" valueExpression="aql:newValue.toMarkupMultiline()"/>
+            </firstModelOperations>
           </initialOperation>
         </controls>
       </groups>
       <groups name="DocumentationComputerGroup" labelExpression="Computed documentation" domainClass="OscalMetadata::DocumentationComputer" semanticCandidateExpression="var:self">
-        <controls xsi:type="properties:TextAreaDescription" name="ComputedDocumentation" labelExpression="Documentation" helpExpression="Documentation computed from the contained parts. To edit the documentation select each part in the tree." isEnabledExpression="aql:true" lineCount="10" valueExpression="aql:self.computeDocumentation(true)">
-          <initialOperation>
-            <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self"/>
-          </initialOperation>
-        </controls>
+        <controls xsi:type="PropertiesMarkupWidgets:ExtHTMLRendererDescription" name="ComputedDocumentationWidget" labelExpression="Doc" toHtmlExpression="aql:newValue.markdownToHTMLBody()" valueExpression="aql:self.computeDocumentation(true)" numberOfLines="20" cssExpression="aql:self.getCSSContent()"/>
       </groups>
       <groups name="ElementWithIdGroup" labelExpression="ID" domainClass="OscalMetadata::ElementWithId" semanticCandidateExpression="var:self">
         <controls xsi:type="properties:TextDescription" name="OscalMetadata::ElementWithId id" labelExpression="aql:input.emfEditServices(self).getText(self.eClass().getEStructuralFeature('id')) + ':'" helpExpression="aql:input.emfEditServices(self).getDescription(self.eClass().getEStructuralFeature('id'))" isEnabledExpression="aql:self.eClass().getEStructuralFeature('id').changeable" valueExpression="aql:self.id">
@@ -267,15 +267,10 @@
         </controls>
       </groups>
       <groups name="MetadataGroup" labelExpression="Metadata" domainClass="OscalMetadata::Metadata" semanticCandidateExpression="aql:Sequence{self,self.metadata} ">
-        <controls xsi:type="properties:TextDescription" name="OscalMetadata::Metadata title" labelExpression="aql:input.emfEditServices(self).getText(self.eClass().getEStructuralFeature('title')) + ':'" helpExpression="aql:input.emfEditServices(self).getDescription(self.eClass().getEStructuralFeature('title'))" isEnabledExpression="aql:self.eClass().getEStructuralFeature('title').changeable" valueExpression="aql:self.getMarkupAttribute('title')">
+        <controls xsi:type="PropertiesMarkupWidgets:ExtMarkdownDescription" name="TitleWidget" labelExpression="Title" valueExpression="aql:self.title.toMarkdown()" numberOfLines="1">
           <initialOperation>
-            <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.setMarkupAttribute('title',newValue)"/>
+            <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:newValue.toMarkupLine()"/>
           </initialOperation>
-          <conditionalStyles preconditionExpression="aql:self.eClass().getEStructuralFeature('title').lowerBound = 1">
-            <style>
-              <labelFontFormat>bold</labelFontFormat>
-            </style>
-          </conditionalStyles>
         </controls>
         <controls xsi:type="properties:TextDescription" name="OscalMetadata::Metadata oscalVersion" labelExpression="aql:input.emfEditServices(self).getText(self.eClass().getEStructuralFeature('oscalVersion')) + ':'" helpExpression="aql:input.emfEditServices(self).getDescription(self.eClass().getEStructuralFeature('oscalVersion'))" isEnabledExpression="aql:self.eClass().getEStructuralFeature('oscalVersion').changeable" valueExpression="aql:self.oscalVersion">
           <initialOperation>

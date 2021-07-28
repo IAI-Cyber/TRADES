@@ -63,8 +63,7 @@ Bundle-ClassPath: .,
  lib/metaschema-model-0.4.0.jar
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Export-Package: com.vladsch.flexmark.util.ast,
- dsm.oscal.ext,
+Export-Package: dsm.oscal.ext,
  dsm.oscal.ext.matchers,
  gov.nist.csrc.ns.metaschemaBinding.x10,
  gov.nist.csrc.ns.metaschemaBinding.x10.impl,
@@ -101,14 +100,7 @@ Export-Package: com.vladsch.flexmark.util.ast,
  gov.nist.secauto.metaschema.model.xml,
  gov.nist.secauto.metaschema.model.xmlbeans,
  gov.nist.secauto.oscal.java,
- gov.nist.secauto.oscal.lib,
- org.jsoup,
- org.jsoup.helper,
- org.jsoup.internal,
- org.jsoup.nodes,
- org.jsoup.parser,
- org.jsoup.safety,
- org.jsoup.select
+ gov.nist.secauto.oscal.lib
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;bundle-version="2.22.0";visibility:=reexport,
  org.eclipse.emf.ecore.xmi;bundle-version="2.16.0",

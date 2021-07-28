@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?pde?>
 <!-- generated with https://github.com/eclipse-cbi/targetplatform-dsl -->
-<target name="TRADES" sequenceNumber="1622465436">
+<target name="TRADES" sequenceNumber="1626698971">
   <locations>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.license.feature.group" version="0.0.0"/>
@@ -33,7 +33,7 @@
       <unit id="org.eclipse.eef.ide" version="0.0.0"/>
       <unit id="org.eclipse.sirius.runtime.ide.ui.acceleo.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.sirius.interpreter.feature.feature.group" version="0.0.0"/>
-      <unit id="org.eclipse.sirius.properties.feature.source.feature.group" version="6.5.0.202104300923"/>
+      <unit id="org.eclipse.sirius.properties.feature.source.feature.group" version="6.5.1.202106111115"/>
       <unit id="org.eclipse.sirius.runtime.acceleo.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.sirius.runtime.aql.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.sirius.runtime.ide.eef.feature.group" version="0.0.0"/>
@@ -43,7 +43,8 @@
       <unit id="org.eclipse.sirius.specifier.ide.ui.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.sirius.specifier.properties.feature.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.sirius.diagram.elk.sdk.feature.feature.group" version="0.0.0"/>
-      <repository location="https://download.eclipse.org/sirius/updates/stable/6.5.0-S20210430-052046/2020-06/"/>
+      <unit id="org.eclipse.eef.sdk.feature.feature.group" version="0.0.0"/>
+      <repository location="https://download.eclipse.org/sirius/updates/releases/6.5.1/2020-09/"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.jsoup" version="0.0.0"/>
@@ -55,6 +56,7 @@
       <unit id="javax.annotation" version="0.0.0"/>
       <unit id="javax.xml.bind" version="0.0.0"/>
       <unit id="org.assertj" version="0.0.0"/>
+      <unit id="org.junit" version="0.0.0"/>
       <repository location="https://download.eclipse.org/tools/orbit/downloads/drops/R20200529191137/repository"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">

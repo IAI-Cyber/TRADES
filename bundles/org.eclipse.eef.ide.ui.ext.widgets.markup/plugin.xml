@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.eef.ide.ui.eefLifecycleManagerProvider">
+      <descriptor
+            class="org.eclipse.eef.ide.ui.ext.widgets.markup.internal.html.HTMLRendererLifeCycleManagerProvider"
+            description="%HTMLRendererWidget.LifeCycleManager.Description"
+            id="org.eclipse.eef.ide.ui.ext.widgets.htmlrenderer.lifeCycleManager"
+            label="%HTMLRendererWidget.LifeCycleManager.Name">
+      </descriptor>
+      <descriptor
+            class="org.eclipse.eef.ide.ui.ext.widgets.markup.internal.markdown.MarkdownWidgetLifeCycleManagerProvider"
+            description="%MarkdownWidget.LifeCycleManager.Description"
+            id="org.eclipse.eef.ide.ui.ext.widgets.markdown.lifeCycleManager"
+            label="%MarkdownWidget.LifeCycleManager.Name">
+      </descriptor>
+   </extension>
+
+</plugin>

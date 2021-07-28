@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    copyrightText=" Copyright (c) Obeo, Eclipse contributors and others 2021.&#xA; This program and the accompanying materials&#xA; are made available under the terms of the Eclipse Public License 2.0&#xA; which accompanies this distribution, and is available at&#xA; https://www.eclipse.org/legal/epl-2.0/&#xA;&#xA; SPDX-License-Identifier: EPL-2.0&#xA;&#xA; Contributors:&#xA;    Obeo and Israel Aerospace Industries - initial API and implementation&#xA;"
+    modelDirectory="/org.eclipse.eef.ext.widgets.markup/src-gen" creationIcons="false"
+    editDirectory="/org.eclipse.eef.ext.widgets.markup.edit/src-gen" editorDirectory="/org.eclipse.eef.ext.widgets.markup.editor/src-gen"
+    modelPluginID="org.eclipse.eef.ext.widgets.markup" modelName="MarkupWidgets" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0"
+    runtimeVersion="2.3" usedGenPackages="../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../org.eclipse.eef/model/eef.genmodel#//eef"
+    importOrganizing="true">
+  <foreignModel>MarkupWidgets.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="MarkupWidgets" basePackage="org.eclipse.eef.ext.widgets.markup"
+      disposableProviderFactory="true" ecorePackage="MarkupWidgets.ecore#/">
+    <genClasses documentation="Widget that renders HTML and offers edition capacities."
+        ecoreClass="MarkupWidgets.ecore#//EEFExtHTMLRendererDescription">
+      <genFeatures documentation="Expression that returns either an HTML document. If the CSS feature is filled this expression should only return the body of the HTML document"
+          createChild="false" ecoreFeature="ecore:EAttribute MarkupWidgets.ecore#//EEFExtHTMLRendererDescription/toHtmlExpression"/>
+      <genFeatures documentation="The value as an input for the HTML convertion."
+          createChild="false" ecoreFeature="ecore:EAttribute MarkupWidgets.ecore#//EEFExtHTMLRendererDescription/valueExpression"/>
+      <genFeatures documentation="Number of line to be displayed. This is an approximation since the side of each line will depend on the CSS in used."
+          createChild="false" ecoreFeature="ecore:EAttribute MarkupWidgets.ecore#//EEFExtHTMLRendererDescription/numberOfLine"/>
+      <genFeatures documentation="Expression set a new value (same type as the valueExpression returned type)."
+          createChild="false" ecoreFeature="ecore:EAttribute MarkupWidgets.ecore#//EEFExtHTMLRendererDescription/editExpression"/>
+      <genFeatures documentation="Expression used to edit the value." createChild="false"
+          ecoreFeature="ecore:EAttribute MarkupWidgets.ecore#//EEFExtHTMLRendererDescription/editionToolExpression"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MarkupWidgets.ecore#//EEFExtHTMLRendererDescription/cssExpression"/>
+    </genClasses>
+    <genClasses ecoreClass="MarkupWidgets.ecore#//EEFExtMarkdownWidget">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MarkupWidgets.ecore#//EEFExtMarkdownWidget/valueExpression"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MarkupWidgets.ecore#//EEFExtMarkdownWidget/numberOfLine"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MarkupWidgets.ecore#//EEFExtMarkdownWidget/editExpression"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

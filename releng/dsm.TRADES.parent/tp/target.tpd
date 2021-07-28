@@ -30,9 +30,6 @@ location "https://s3-eu-west-1.amazonaws.com/obeo-m2doc-releases/master/nightly/
 	
 }
 
-location "https://download.eclipse.org/tools/orbit/downloads/drops/R20200529191137/repository" {
-	org.assertj lazy
-}
 
 location "http://download.eclipse.org/e4/snapshots/org.eclipse.e4.tools/latest/" {
 	org.eclipse.e4.tools.bundle.spy.feature.feature.group lazy
@@ -45,7 +42,7 @@ location "https://www.obeo.fr/download/release/designer/11.3/community/latest/re
 }
 
 
-location "https://download.eclipse.org/sirius/updates/stable/6.5.0-S20210430-052046/2020-06/" {
+location "https://download.eclipse.org/sirius/updates/releases/6.5.1/2020-09/" {
 	//Sirius
 	org.eclipse.sirius.specifier.feature.group lazy
 	org.eclipse.sirius.properties.feature.feature.group lazy
@@ -67,6 +64,8 @@ location "https://download.eclipse.org/sirius/updates/stable/6.5.0-S20210430-052
 	org.eclipse.sirius.specifier.properties.feature.feature.group lazy
 	
 	org.eclipse.sirius.diagram.elk.sdk.feature.feature.group lazy
+	org.eclipse.eef.sdk.feature.feature.group lazy
+	
 }
 
 location  "https://download.eclipse.org/tools/orbit/downloads/drops/R20200529191137/repository" {
@@ -78,6 +77,8 @@ location  "https://download.eclipse.org/tools/orbit/downloads/drops/R20200529191
 	javax.xml lazy
 	javax.annotation lazy
 	javax.xml.bind lazy
+	org.assertj lazy
+	org.junit lazy
 }
 
 

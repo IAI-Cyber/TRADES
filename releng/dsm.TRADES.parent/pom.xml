@@ -89,6 +89,9 @@
 					<groupId>org.eclipse.tycho</groupId>
 					<artifactId>tycho-compiler</artifactId>
 					<version>${tycho.version}</version>
+					<configuration>
+					<useProjectSettings>false</useProjectSettings>
+					</configuration>
 				</plugin>
 				<plugin>
 					<groupId>org.eclipse.tycho</groupId>
@@ -163,6 +166,18 @@
 		<module>../../bundles/TRADES.design.test/</module>
 		<module>../../bundles/dsm.TRADES.rcp.mitre/</module>
 		<module>../../bundles/dsm.TRADES.rcp.capec/</module>
+
+		<!-- Markup Widget renderer -->
+
+		<module>../../bundles/org.eclipse.eef.ext.widgets.markup</module>
+		<module>../../bundles/org.eclipse.eef.ext.widgets.markup.edit</module>
+		<module>../../bundles/org.eclipse.eef.ide.ui.ext.widgets.markup</module>
+		<module>../../bundles/org.eclipse.sirius.editor.properties.ext.widgets.markup</module>
+		<module>../../bundles/org.eclipse.sirius.properties.ext.widgets.markup</module>
+		<module>../../bundles/org.eclipse.sirius.properties.ext.widgets.markup.edit</module>
+		<module>../../bundles/org.eclipse.sirius.ui.properties.ext.widgets.markup</module>
+
+	
 
 
 

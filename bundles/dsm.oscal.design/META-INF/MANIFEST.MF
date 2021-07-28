@@ -26,7 +26,8 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.acceleo.query,
  org.apache.poi,
  org.eclipse.sirius.ext.emf.edit,
- org.eclipse.emf.edit.ui;bundle-version="2.19.0"
+ org.eclipse.emf.edit.ui;bundle-version="2.19.0",
+ org.eclipse.eef.ide.ui.ext.widgets.markup;bundle-version="2.1.6"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-11
 Bundle-Vendor: %providerName
