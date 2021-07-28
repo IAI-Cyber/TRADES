@@ -194,13 +194,15 @@ public class HTMLRendererLifeCycleManager extends AbstractEEFWidgetLifecycleMana
 		// Approximation here since the size of the font used in the renderer depends on
 		// the CSS
 		int fontHeight = gc.getFontMetrics().getHeight();
-		browserLayoutData.minimumHeight = fontHeight * controlDescription.getNumberOfLine();
+		browserLayoutData.heightHint = fontHeight * controlDescription.getNumberOfLine();
 
 		if (hasEditButton) {
 			editButton = widgetFactory.createButton(composite, "", SWT.PUSH); //$NON-NLS-1$
 			editButton.setLayoutData(new GridData(SWT.CENTER, SWT.CENTER, false, false));
 			editButton.setImage(EEFExtMarkupUIPlugin.getPlugin().getImage("icons/edit.png")); //$NON-NLS-1$
 		}
+
+		gc.dispose();
 
 		this.controller = new HTMLRendererController(variableManager, interpreter, editingContextAdapter, controlDescription);
 

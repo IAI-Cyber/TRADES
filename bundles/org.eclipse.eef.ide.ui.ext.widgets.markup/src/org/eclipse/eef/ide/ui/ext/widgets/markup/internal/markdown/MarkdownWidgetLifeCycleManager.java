@@ -121,7 +121,7 @@ public class MarkdownWidgetLifeCycleManager extends AbstractEEFWidgetLifecycleMa
 					controller.updateValue(v);
 				});
 		mdWidget.buildWidget(composite);
-		GridData browserLayoutData = new GridData(GridData.FILL_BOTH);
+		GridData browserLayoutData = new GridData(GridData.FILL_HORIZONTAL);
 
 		mdWidget.getControl().setLayoutData(browserLayoutData);
 
@@ -129,7 +129,7 @@ public class MarkdownWidgetLifeCycleManager extends AbstractEEFWidgetLifecycleMa
 		widgetFactory.paintBordersFor(parent);
 
 		if (isMultiLine) {
-			browserLayoutData.minimumHeight = mdWidget.getControl().getLineHeight() * numberOfLine;
+			browserLayoutData.heightHint = mdWidget.getControl().getLineHeight() * numberOfLine;
 		}
 
 	}
