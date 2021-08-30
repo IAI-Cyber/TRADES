@@ -25,7 +25,7 @@ import java.net.URI;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * <h1>Link</h1>
+ * <h1>link</h1>
  * <h2>Description</h2>
  * <p>A reference to a local or remote resource</p><h2>Remarks</h2>
  * <p>To provide a cryptographic hash for a remote target resource, a local reference to a back matter <code>resource</code> is needed. The resource allows one or more hash values to be provided using the <code>rlink/hash</code> object.</p>
@@ -43,7 +43,7 @@ import java.net.URI;
  * </ul>
  *
  * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getLink()
- * @model annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;AssemblyDefinition&gt;link'"
+ * @model
  * @generated
  */
 public interface Link extends OscalElement {
@@ -52,7 +52,7 @@ public interface Link extends OscalElement {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * <h1>Hypertext Reference</h1>
+	 * <h1>href</h1>
 	 * <h2>Description</h2>
 	 * <p>A resolvable URL reference to a resource.</p><h2>Remarks</h2>
 	 * <p>The value of the <code>href</code> can be an internet resource, or a local reference using a fragment e.g. #fragment that points to a <code>back-matter</code>
@@ -64,7 +64,6 @@ public interface Link extends OscalElement {
 	 * @see #setEHref(URI)
 	 * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getLink_EHref()
 	 * @model dataType="dsm.oscal.model.OscalMetadata.UriReferenceType" required="true"
-	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;AssemblyDefinition&gt;link.&lt;FlagInstance&gt;href'"
 	 * @generated
 	 */
 	URI getEHref();
@@ -84,14 +83,14 @@ public interface Link extends OscalElement {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * <h1>Media Type</h1>
+	 * <h1>media-type</h1>
 	 * <h2>Description</h2>
 	 * <p>Specifies a media type as defined by the Internet Assigned Numbers Authority (IANA) <a href="https://www.iana.org/assignments/media-types/media-types.xhtml">Media Types Registry</a>.</p>
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Media Type</em>' attribute.
 	 * @see #setMediaType(String)
 	 * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getLink_MediaType()
-	 * @model annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;AssemblyDefinition&gt;link.&lt;FlagInstance&gt;media-type'"
+	 * @model
 	 * @generated
 	 */
 	String getMediaType();
@@ -111,14 +110,14 @@ public interface Link extends OscalElement {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * <h1>Relation</h1>
+	 * <h1>rel</h1>
 	 * <h2>Description</h2>
 	 * <p>Describes the type of relationship provided by the link. This can be an indicator of the link's purpose.</p>
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Rel</em>' attribute.
 	 * @see #setRel(String)
 	 * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getLink_Rel()
-	 * @model annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;AssemblyDefinition&gt;link.&lt;FlagInstance&gt;rel'"
+	 * @model
 	 * @generated
 	 */
 	String getRel();
@@ -138,7 +137,7 @@ public interface Link extends OscalElement {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * <h1>Link Text</h1>
+	 * <h1>text</h1>
 	 * <h2>Description</h2>
 	 * <p>A textual label to associate with the link, which may be used for presentation in a tool.</p>
 	 * <!-- end-model-doc -->
@@ -146,7 +145,6 @@ public interface Link extends OscalElement {
 	 * @see #setText(MarkupLine)
 	 * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getLink_Text()
 	 * @model dataType="dsm.oscal.model.OscalMetadata.MarkupLineType"
-	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;AssemblyDefinition&gt;link.&lt;FieldInstance&gt;text'"
 	 * @generated
 	 */
 	MarkupLine getText();

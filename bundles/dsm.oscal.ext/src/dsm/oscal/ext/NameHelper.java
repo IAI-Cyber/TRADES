@@ -15,10 +15,10 @@ package dsm.oscal.ext;
 
 import com.google.common.base.CaseFormat;
 
-import gov.nist.secauto.metaschema.datatypes.IPv4;
+import gov.nist.secauto.metaschema.datatypes.DataTypes;
 import gov.nist.secauto.metaschema.model.Metaschema;
-import gov.nist.secauto.metaschema.model.instances.AssemblyInstance;
-import gov.nist.secauto.metaschema.model.instances.FieldInstance;
+import gov.nist.secauto.metaschema.model.common.instance.IAssemblyInstance;
+import gov.nist.secauto.metaschema.model.common.instance.IFieldInstance;
 
 /**
  * Helper class used to provide correct name for the migration
@@ -36,8 +36,8 @@ public class NameHelper {
 		return CaseFormat.LOWER_HYPHEN.to(CaseFormat.UPPER_CAMEL, schema.getShortName());
 	}
 
-	public static String getProperEDataTypeName(gov.nist.secauto.metaschema.codegen.type.DataType genType) {
-		return CaseFormat.UPPER_UNDERSCORE.to(CaseFormat.UPPER_CAMEL, genType.name()) + "Type";
+	public static String getProperEDataTypeName(DataTypes type) {
+		return CaseFormat.UPPER_UNDERSCORE.to(CaseFormat.UPPER_CAMEL, type.name()) + "Type";
 	}
 
 	public static String getProperEStructuralFeatureName(String featureName) {
@@ -52,7 +52,7 @@ public class NameHelper {
 		return result;
 	}
 
-	public static String getFieldName(AssemblyInstance<?> assInstance) {
+	public static String getFieldName(IAssemblyInstance assInstance) {
 		String fieldName;
 		String groupName = assInstance.getGroupAsName();
 		if (groupName != null) {
@@ -63,7 +63,7 @@ public class NameHelper {
 		return fieldName;
 	}
 
-	public static String getFieldName(FieldInstance<?> fieldInstance) {
+	public static String getFieldName(IFieldInstance fieldInstance) {
 		String fieldName;
 		String groupName = fieldInstance.getGroupAsName();
 		if (groupName != null) {

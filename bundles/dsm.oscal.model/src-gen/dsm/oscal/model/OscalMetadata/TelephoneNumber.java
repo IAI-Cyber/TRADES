@@ -22,7 +22,7 @@ package dsm.oscal.model.OscalMetadata;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * <h1>Telephone Number</h1>
+ * <h1>telephone-number</h1>
  * <h2>Description</h2>
  * <p>Contact number by telephone.</p>
  * <!-- end-model-doc -->
@@ -35,7 +35,7 @@ package dsm.oscal.model.OscalMetadata;
  * </ul>
  *
  * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getTelephoneNumber()
- * @model annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;FieldDefinition&gt;telephone-number'"
+ * @model
  * @generated
  */
 public interface TelephoneNumber extends OscalElement, ElementWithValue {
@@ -44,14 +44,14 @@ public interface TelephoneNumber extends OscalElement, ElementWithValue {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * <h1>type flag</h1>
+	 * <h1>type</h1>
 	 * <h2>Description</h2>
 	 * <p>Indicates the type of phone number.</p>
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Type</em>' attribute.
 	 * @see #setType(String)
 	 * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getTelephoneNumber_Type()
-	 * @model annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;FieldDefinition&gt;telephone-number.&lt;FlagInstance&gt;type'"
+	 * @model
 	 * @generated
 	 */
 	String getType();

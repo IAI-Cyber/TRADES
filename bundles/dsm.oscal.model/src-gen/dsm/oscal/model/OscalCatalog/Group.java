@@ -34,7 +34,7 @@ import org.eclipse.emf.common.util.EList;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * <h1>Control Group</h1>
+ * <h1>group</h1>
  * <h2>Description</h2>
  * <p>A group of controls, or of groups of controls.</p><h2>Remarks</h2>
  * <p>Catalogs can use a <code>group</code> to collect related controls into a single grouping. That can be useful to group controls into a family or other logical grouping.</p>
@@ -50,7 +50,7 @@ import org.eclipse.emf.common.util.EList;
  * </ul>
  *
  * @see dsm.oscal.model.OscalCatalog.OscalCatalogPackage#getGroup()
- * @model annotation="Metaschema source='&lt;Metaschema&gt;oscal-catalog.&lt;AssemblyDefinition&gt;group'"
+ * @model
  * @generated
  */
 public interface Group extends OscalElement, ParameterOwner, PropertyOwner, LinkOwner, ControlOwner, PartOwner, ElementWithClazz, ElementWithId {
@@ -62,7 +62,6 @@ public interface Group extends OscalElement, ParameterOwner, PropertyOwner, Link
 	 * @return the value of the '<em>Groups</em>' containment reference list.
 	 * @see dsm.oscal.model.OscalCatalog.OscalCatalogPackage#getGroup_Groups()
 	 * @model containment="true"
-	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-catalog.&lt;AssemblyDefinition&gt;group'"
 	 * @generated
 	 */
 	EList<Group> getGroups();
@@ -72,7 +71,7 @@ public interface Group extends OscalElement, ParameterOwner, PropertyOwner, Link
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * <h1>Group Title</h1>
+	 * <h1>title</h1>
 	 * <h2>Description</h2>
 	 * <p>A name given to the group, which may be used by a tool for display and navigation.</p>
 	 * <!-- end-model-doc -->
@@ -80,7 +79,6 @@ public interface Group extends OscalElement, ParameterOwner, PropertyOwner, Link
 	 * @see #setTitle(MarkupLine)
 	 * @see dsm.oscal.model.OscalCatalog.OscalCatalogPackage#getGroup_Title()
 	 * @model dataType="dsm.oscal.model.OscalMetadata.MarkupLineType" required="true"
-	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-catalog.&lt;AssemblyDefinition&gt;group.&lt;FieldInstance&gt;title'"
 	 * @generated
 	 */
 	MarkupLine getTitle();

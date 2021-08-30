@@ -1,7 +1,7 @@
 package dsm.oscal.model.transform.mappers;
 
 import dsm.oscal.model.OscalCatalogCommon.OscalCatalogCommonFactory;
-import gov.nist.secauto.oscal.lib.Part;
+import gov.nist.secauto.oscal.lib.model.Part;
 
 public class PartitionMapper extends AbstractObjectMapper<dsm.oscal.model.OscalCatalogCommon.Part, Part> {
 

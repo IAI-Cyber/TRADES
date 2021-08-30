@@ -25,7 +25,7 @@ import gov.nist.secauto.metaschema.datatypes.markup.MarkupMultiline;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * <h1>Guideline</h1>
+ * <h1>parameter-guideline</h1>
  * <h2>Description</h2>
  * <p>A prose statement that provides a recommendation for the use of a parameter.</p>
  * <!-- end-model-doc -->
@@ -38,7 +38,7 @@ import gov.nist.secauto.metaschema.datatypes.markup.MarkupMultiline;
  * </ul>
  *
  * @see dsm.oscal.model.OscalCatalogCommon.OscalCatalogCommonPackage#getParameterGuideline()
- * @model annotation="Metaschema source='&lt;Metaschema&gt;oscal-catalog-common.&lt;AssemblyDefinition&gt;parameter-guideline'"
+ * @model
  * @generated
  */
 public interface ParameterGuideline extends OscalElement {
@@ -47,7 +47,7 @@ public interface ParameterGuideline extends OscalElement {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * <h1>Guideline Text</h1>
+	 * <h1>prose</h1>
 	 * <h2>Description</h2>
 	 * <p>Prose permits multiple paragraphs, lists, tables etc.</p>
 	 * <!-- end-model-doc -->
@@ -55,7 +55,6 @@ public interface ParameterGuideline extends OscalElement {
 	 * @see #setProse(MarkupMultiline)
 	 * @see dsm.oscal.model.OscalCatalogCommon.OscalCatalogCommonPackage#getParameterGuideline_Prose()
 	 * @model dataType="dsm.oscal.model.OscalMetadata.MarkupMultilineType" required="true"
-	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-catalog-common.&lt;AssemblyDefinition&gt;parameter-guideline.&lt;FieldInstance&gt;prose'"
 	 * @generated
 	 */
 	MarkupMultiline getProse();

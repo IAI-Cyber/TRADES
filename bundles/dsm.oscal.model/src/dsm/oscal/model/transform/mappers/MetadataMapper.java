@@ -1,14 +1,15 @@
 package dsm.oscal.model.transform.mappers;
 
-import static java.util.stream.Collectors.toList;
+import static java.util.stream.Collectors.toCollection;
 
 import java.util.LinkedHashMap;
+import java.util.LinkedList;
 
 import dsm.oscal.model.OscalMetadata.Metadata;
 import dsm.oscal.model.OscalMetadata.OscalMetadataFactory;
 import dsm.oscal.model.OscalMetadata.ResponsibleParty;
 
-public class MetadataMapper extends AbstractObjectMapper<Metadata, gov.nist.secauto.oscal.lib.Metadata> {
+public class MetadataMapper extends AbstractObjectMapper<Metadata, gov.nist.secauto.oscal.lib.model.Metadata> {
 
 	private MetadataMapper() {
 	}
@@ -25,8 +26,8 @@ public class MetadataMapper extends AbstractObjectMapper<Metadata, gov.nist.seca
 	}
 
 	@Override
-	protected gov.nist.secauto.oscal.lib.Metadata safeToOscal(Metadata tradesObject) {
-		gov.nist.secauto.oscal.lib.Metadata metadata = new gov.nist.secauto.oscal.lib.Metadata();
+	protected gov.nist.secauto.oscal.lib.model.Metadata safeToOscal(Metadata tradesObject) {
+		gov.nist.secauto.oscal.lib.model.Metadata metadata = new gov.nist.secauto.oscal.lib.model.Metadata();
 
 		buildXMLChildList(DocumentIdMapper.getInstance(), tradesObject.getDocumentIds(), metadata::setDocumentIds);
 		metadata.setLastModified(tradesObject.getLastModified());
@@ -40,13 +41,14 @@ public class MetadataMapper extends AbstractObjectMapper<Metadata, gov.nist.seca
 		metadata.setPublished(tradesObject.getPublished());
 		metadata.setRemarks(tradesObject.getRemarks());
 
-		LinkedHashMap<String, gov.nist.secauto.oscal.lib.ResponsibleParty> rParties = new LinkedHashMap<>();
+		LinkedHashMap<String, gov.nist.secauto.oscal.lib.model.ResponsibleParty> rParties = new LinkedHashMap<>();
 		for (ResponsibleParty r : tradesObject.getResponsibleParties()) {
 			if (r.getRoleId() != null) {
 				rParties.put(r.getRoleId(), ResponsiblePartyMapper.getInstance().toOscal(r));
 			}
 		}
-		metadata.setResponsibleParties(rParties);
+		metadata.setResponsibleParties(tradesObject.getResponsibleParties().stream()
+				.map(e -> ResponsiblePartyMapper.getInstance().toOscal(e)).collect(toCollection(LinkedList::new)));
 
 		buildXMLChildList(RevisionMapper.getInstance(), tradesObject.getRevisions(), metadata::setRevisions);
 		buildXMLChildList(RoleMapper.getInstance(), tradesObject.getRoles(), metadata::setRoles);
@@ -57,7 +59,7 @@ public class MetadataMapper extends AbstractObjectMapper<Metadata, gov.nist.seca
 	}
 
 	@Override
-	protected Metadata safeToTrades(gov.nist.secauto.oscal.lib.Metadata oscalObject) {
+	protected Metadata safeToTrades(gov.nist.secauto.oscal.lib.model.Metadata oscalObject) {
 		Metadata metadata = OscalMetadataFactory.eINSTANCE.createMetadata();
 
 		buildChildList(DocumentIdMapper.getInstance(), oscalObject.getDocumentIds(), metadata::getDocumentIds);
@@ -71,8 +73,7 @@ public class MetadataMapper extends AbstractObjectMapper<Metadata, gov.nist.seca
 		buildChildList(PropertyMapper.getInstance(), oscalObject.getProps(), metadata::getProps);
 		metadata.setPublished(oscalObject.getPublished());
 		metadata.setRemarks(oscalObject.getRemarks());
-		buildChildList(ResponsiblePartyMapper.getInstance(),
-				oscalObject.getResponsibleParties().values().stream().collect(toList()),
+		buildChildList(ResponsiblePartyMapper.getInstance(), oscalObject.getResponsibleParties(),
 				metadata::getResponsibleParties);
 
 		buildChildList(RevisionMapper.getInstance(), oscalObject.getRevisions(), metadata::getRevisions);

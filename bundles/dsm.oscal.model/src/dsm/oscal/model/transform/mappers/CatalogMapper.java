@@ -4,7 +4,7 @@ import dsm.oscal.model.OscalCatalog.Catalog;
 import dsm.oscal.model.OscalCatalog.OscalCatalogFactory;
 import dsm.oscal.model.transform.MigrationUtils;
 
-public class CatalogMapper extends AbstractObjectMapper<Catalog, gov.nist.secauto.oscal.lib.Catalog> {
+public class CatalogMapper extends AbstractObjectMapper<Catalog, gov.nist.secauto.oscal.lib.model.Catalog> {
 
 	private CatalogMapper() {
 	}
@@ -21,7 +21,7 @@ public class CatalogMapper extends AbstractObjectMapper<Catalog, gov.nist.secaut
 	}
 
 	@Override
-	protected Catalog safeToTrades(gov.nist.secauto.oscal.lib.Catalog oscalObject) {
+	protected Catalog safeToTrades(gov.nist.secauto.oscal.lib.model.Catalog oscalObject) {
 
 		Catalog result = OscalCatalogFactory.eINSTANCE.createCatalog();
 
@@ -37,9 +37,9 @@ public class CatalogMapper extends AbstractObjectMapper<Catalog, gov.nist.secaut
 	}
 
 	@Override
-	protected gov.nist.secauto.oscal.lib.Catalog safeToOscal(Catalog tradesObject) {
+	protected gov.nist.secauto.oscal.lib.model.Catalog safeToOscal(Catalog tradesObject) {
 
-		gov.nist.secauto.oscal.lib.Catalog result = new gov.nist.secauto.oscal.lib.Catalog();
+		gov.nist.secauto.oscal.lib.model.Catalog result = new gov.nist.secauto.oscal.lib.model.Catalog();
 
 		result.setUuid(tradesObject.getUuid());
 

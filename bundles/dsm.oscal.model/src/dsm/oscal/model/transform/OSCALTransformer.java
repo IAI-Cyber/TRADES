@@ -48,7 +48,7 @@ public class OSCALTransformer {
 			throw new IllegalArgumentException("Invalid input file");
 		}
 
-		gov.nist.secauto.oscal.lib.Catalog catalog;
+		gov.nist.secauto.oscal.lib.model.Catalog catalog;
 		try {
 			catalog = new OscalLoader().loadCatalog(path.toFile());
 		} catch (FileNotFoundException | BindingException e) {
@@ -71,11 +71,11 @@ public class OSCALTransformer {
 			throw new IllegalArgumentException("Invalid input 'null'");
 		}
 
-		gov.nist.secauto.oscal.lib.Catalog oscalCatalog = toOscal(catalog);
+		gov.nist.secauto.oscal.lib.model.Catalog oscalCatalog = toOscal(catalog);
 
 		MutableConfiguration config = new MutableConfiguration().enableFeature(Feature.SERIALIZE_ROOT);
-		Serializer<gov.nist.secauto.oscal.lib.Catalog> serializer = BindingContext.newInstance()
-				.newSerializer(format, gov.nist.secauto.oscal.lib.Catalog.class, config);
+		Serializer<gov.nist.secauto.oscal.lib.model.Catalog> serializer = BindingContext.newInstance()
+				.newSerializer(format, gov.nist.secauto.oscal.lib.model.Catalog.class, config);
 
 		try {
 			serializer.serialize(oscalCatalog, pathToSave.toFile());
@@ -85,11 +85,11 @@ public class OSCALTransformer {
 
 	}
 
-	private Catalog toTRADES(gov.nist.secauto.oscal.lib.Catalog catalog) {
+	private Catalog toTRADES(gov.nist.secauto.oscal.lib.model.Catalog catalog) {
 		return CatalogMapper.getInstance().toTrades(catalog);
 	}
 
-	private gov.nist.secauto.oscal.lib.Catalog toOscal(Catalog catalog) {
+	private gov.nist.secauto.oscal.lib.model.Catalog toOscal(Catalog catalog) {
 		return CatalogMapper.getInstance().toOscal(catalog);
 	}
 

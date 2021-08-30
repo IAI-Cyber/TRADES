@@ -1617,13 +1617,22 @@ public interface OscalMetadataPackage extends EPackage {
 	int RESOURCE_CITATION__PROPS = OSCAL_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Links</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_CITATION__LINKS = OSCAL_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
 	 * The feature id for the '<em><b>Text</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_CITATION__TEXT = OSCAL_ELEMENT_FEATURE_COUNT + 1;
+	int RESOURCE_CITATION__TEXT = OSCAL_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Resource Citation</em>' class.
@@ -1632,7 +1641,7 @@ public interface OscalMetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_CITATION_FEATURE_COUNT = OSCAL_ELEMENT_FEATURE_COUNT + 2;
+	int RESOURCE_CITATION_FEATURE_COUNT = OSCAL_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The operation id for the '<em>Resolve</em>' operation.

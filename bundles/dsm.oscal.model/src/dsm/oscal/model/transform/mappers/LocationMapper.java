@@ -4,7 +4,7 @@ import dsm.oscal.model.OscalMetadata.Location;
 import dsm.oscal.model.OscalMetadata.OscalMetadataFactory;
 import dsm.oscal.model.transform.MigrationUtils;
 
-public class LocationMapper extends AbstractObjectMapper<Location, gov.nist.secauto.oscal.lib.Location> {
+public class LocationMapper extends AbstractObjectMapper<Location, gov.nist.secauto.oscal.lib.model.Location> {
 
 	private LocationMapper() {
 	}
@@ -21,8 +21,8 @@ public class LocationMapper extends AbstractObjectMapper<Location, gov.nist.seca
 	}
 
 	@Override
-	protected gov.nist.secauto.oscal.lib.Location safeToOscal(Location tradesObject) {
-		gov.nist.secauto.oscal.lib.Location location = new gov.nist.secauto.oscal.lib.Location();
+	protected gov.nist.secauto.oscal.lib.model.Location safeToOscal(Location tradesObject) {
+		gov.nist.secauto.oscal.lib.model.Location location = new gov.nist.secauto.oscal.lib.model.Location();
 
 		location.setAddress(AddresseMapper.getInstance().toOscal(tradesObject.getAddress()));
 
@@ -41,7 +41,7 @@ public class LocationMapper extends AbstractObjectMapper<Location, gov.nist.seca
 	}
 
 	@Override
-	protected Location safeToTrades(gov.nist.secauto.oscal.lib.Location oscalObject) {
+	protected Location safeToTrades(gov.nist.secauto.oscal.lib.model.Location oscalObject) {
 		Location location = OscalMetadataFactory.eINSTANCE.createLocation();
 
 		location.setAddress(AddresseMapper.getInstance().toTrades(oscalObject.getAddress()));

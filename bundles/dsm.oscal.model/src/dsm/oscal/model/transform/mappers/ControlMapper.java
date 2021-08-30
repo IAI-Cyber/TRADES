@@ -1,10 +1,10 @@
 package dsm.oscal.model.transform.mappers;
 
 import dsm.oscal.model.OscalCatalog.OscalCatalogFactory;
-import gov.nist.secauto.oscal.lib.Control;
+import gov.nist.secauto.oscal.lib.model.Control;
 
 public class ControlMapper
-		extends AbstractObjectMapper<dsm.oscal.model.OscalCatalog.Control, gov.nist.secauto.oscal.lib.Control> {
+		extends AbstractObjectMapper<dsm.oscal.model.OscalCatalog.Control, gov.nist.secauto.oscal.lib.model.Control> {
 
 	private ControlMapper() {
 	}

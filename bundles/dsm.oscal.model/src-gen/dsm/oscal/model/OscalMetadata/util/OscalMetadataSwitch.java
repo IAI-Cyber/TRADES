@@ -256,6 +256,7 @@ public class OscalMetadataSwitch<T> extends Switch<T> {
 				T result = caseResourceCitation(resourceCitation);
 				if (result == null) result = caseOscalElement(resourceCitation);
 				if (result == null) result = casePropertyOwner(resourceCitation);
+				if (result == null) result = caseLinkOwner(resourceCitation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}

@@ -26,7 +26,7 @@ import org.eclipse.emf.common.util.EList;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * <h1>Resource</h1>
+ * <h1>resource</h1>
  * <h2>Description</h2>
  * <p>A resource associated with content in the containing document. A resource may be directly included in the document base64 encoded or may point to one or more equivalent internet resources.</p><h2>Remarks</h2>
  * <p>A resource can be used in two ways. 1) it may point to an specific retrievable network resource using a <code>rlink</code>, or 2) it may be included as an attachment using a <code>base64</code>. A resource may contain multiple <code>rlink</code> and <code>base64</code> entries that represent alternative download locations (rlink) and attachments (base64) for the same resource. Both rlink and base64 allow for a <code>media-type</code> to be specified, which is used to distinguish between different representations of the same resource (e.g., Microsoft Word, PDF). When multiple <code>rlink</code> and <code>base64</code> items are included for a given resource, all items must contain equivalent information. This allows the document consumer to choose a preferred item to process based on a the selected item's <code>media-type</code>. This is extremely important when the items represent OSCAL content that is represented in alternate formats (i.e., XML, JSON, YAML), allowing the same OSCAL data to be processed from any of the available formats indicated by the items.</p>
@@ -46,7 +46,7 @@ import org.eclipse.emf.common.util.EList;
  * </ul>
  *
  * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getBackMatterResource()
- * @model annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;AssemblyDefinition&gt;resource'"
+ * @model
  * @generated
  */
 public interface BackMatterResource extends OscalElement, UUIDElement, PropertyOwner, ElementWithRemarks {
@@ -58,7 +58,6 @@ public interface BackMatterResource extends OscalElement, UUIDElement, PropertyO
 	 * @see #setBase64(Base64)
 	 * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getBackMatterResource_Base64()
 	 * @model containment="true"
-	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;FieldDefinition&gt;base64'"
 	 * @generated
 	 */
 	Base64 getBase64();
@@ -81,7 +80,6 @@ public interface BackMatterResource extends OscalElement, UUIDElement, PropertyO
 	 * @see #setCitation(ResourceCitation)
 	 * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getBackMatterResource_Citation()
 	 * @model containment="true"
-	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;AssemblyDefinition&gt;citation'"
 	 * @generated
 	 */
 	ResourceCitation getCitation();
@@ -101,7 +99,7 @@ public interface BackMatterResource extends OscalElement, UUIDElement, PropertyO
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * <h1>Resource Description</h1>
+	 * <h1>description</h1>
 	 * <h2>Description</h2>
 	 * <p>A short summary of the resource used to indicate the purpose of the resource.</p>
 	 * <!-- end-model-doc -->
@@ -109,7 +107,6 @@ public interface BackMatterResource extends OscalElement, UUIDElement, PropertyO
 	 * @see #setDescription(MarkupMultiline)
 	 * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getBackMatterResource_Description()
 	 * @model dataType="dsm.oscal.model.OscalMetadata.MarkupMultilineType"
-	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;AssemblyDefinition&gt;resource.&lt;FieldInstance&gt;description'"
 	 * @generated
 	 */
 	MarkupMultiline getDescription();
@@ -132,7 +129,6 @@ public interface BackMatterResource extends OscalElement, UUIDElement, PropertyO
 	 * @return the value of the '<em>Document Ids</em>' containment reference list.
 	 * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getBackMatterResource_DocumentIds()
 	 * @model containment="true"
-	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;FieldDefinition&gt;document-id'"
 	 * @generated
 	 */
 	EList<DocumentId> getDocumentIds();
@@ -145,7 +141,6 @@ public interface BackMatterResource extends OscalElement, UUIDElement, PropertyO
 	 * @return the value of the '<em>Rlinks</em>' containment reference list.
 	 * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getBackMatterResource_Rlinks()
 	 * @model containment="true"
-	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;AssemblyDefinition&gt;rlink'"
 	 * @generated
 	 */
 	EList<ResourceRlink> getRlinks();
@@ -155,7 +150,7 @@ public interface BackMatterResource extends OscalElement, UUIDElement, PropertyO
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * <h1>Resource Title</h1>
+	 * <h1>title</h1>
 	 * <h2>Description</h2>
 	 * <p>A name given to the resource, which may be used by a tool for display and navigation.</p>
 	 * <!-- end-model-doc -->
@@ -163,7 +158,6 @@ public interface BackMatterResource extends OscalElement, UUIDElement, PropertyO
 	 * @see #setTitle(MarkupLine)
 	 * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getBackMatterResource_Title()
 	 * @model dataType="dsm.oscal.model.OscalMetadata.MarkupLineType"
-	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;AssemblyDefinition&gt;resource.&lt;FieldInstance&gt;title'"
 	 * @generated
 	 */
 	MarkupLine getTitle();

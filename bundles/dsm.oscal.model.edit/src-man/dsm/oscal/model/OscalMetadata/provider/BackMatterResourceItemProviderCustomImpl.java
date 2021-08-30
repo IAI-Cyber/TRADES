@@ -12,23 +12,14 @@
  * 
  */
 package dsm.oscal.model.OscalMetadata.provider;
-
+		
 import org.eclipse.emf.common.notify.AdapterFactory;
 
-import dsm.oscal.model.OscalMetadata.BackMatterResource;
-import dsm.oscal.model.edit.LabelUtils;
-
 public class BackMatterResourceItemProviderCustomImpl extends BackMatterResourceItemProviderBaseCustomImpl {
-
+	
 	public BackMatterResourceItemProviderCustomImpl(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
-	@Override
-	public String getText(Object object) {
-		BackMatterResource resource = (BackMatterResource) object;
-
-		return LabelUtils.toSimpleLabel(resource.getTitle());
-	}
-
+	
 }

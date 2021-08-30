@@ -24,7 +24,7 @@ import dsm.oscal.model.OscalMetadata.OscalElement;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * <h1>Constraint Test</h1>
+ * <h1>test</h1>
  * <h2>Description</h2>
  * <p>A test expression which is expected to be evaluated by a tool.</p>
  * <!-- end-model-doc -->
@@ -37,7 +37,7 @@ import dsm.oscal.model.OscalMetadata.OscalElement;
  * </ul>
  *
  * @see dsm.oscal.model.OscalCatalogCommon.OscalCatalogCommonPackage#getParameterConstraintTest()
- * @model annotation="Metaschema source='&lt;Metaschema&gt;oscal-catalog-common.&lt;AssemblyDefinition&gt;test'"
+ * @model
  * @generated
  */
 public interface ParameterConstraintTest extends OscalElement, ElementWithRemarks {
@@ -46,7 +46,7 @@ public interface ParameterConstraintTest extends OscalElement, ElementWithRemark
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * <h1>Constraint test</h1>
+	 * <h1>expression</h1>
 	 * <h2>Description</h2>
 	 * <p>A formal (executable) expression of a constraint</p>
 	 * <!-- end-model-doc -->
@@ -54,7 +54,6 @@ public interface ParameterConstraintTest extends OscalElement, ElementWithRemark
 	 * @see #setExpression(String)
 	 * @see dsm.oscal.model.OscalCatalogCommon.OscalCatalogCommonPackage#getParameterConstraintTest_Expression()
 	 * @model required="true"
-	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-catalog-common.&lt;AssemblyDefinition&gt;test.&lt;FieldInstance&gt;expression'"
 	 * @generated
 	 */
 	String getExpression();

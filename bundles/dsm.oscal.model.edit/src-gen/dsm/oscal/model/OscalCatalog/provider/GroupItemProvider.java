@@ -21,8 +21,12 @@ import dsm.oscal.model.OscalCatalog.OscalCatalogFactory;
 import dsm.oscal.model.OscalCatalog.OscalCatalogPackage;
 
 import dsm.oscal.model.OscalCatalogCommon.OscalCatalogCommonFactory;
+
+import dsm.oscal.model.OscalCatalogCommon.provider.OscalEditPlugin;
+
 import dsm.oscal.model.OscalMetadata.OscalMetadataFactory;
 import dsm.oscal.model.OscalMetadata.OscalMetadataPackage;
+
 import dsm.oscal.model.OscalMetadata.provider.OscalElementItemProvider;
 
 import java.util.Collection;
@@ -278,7 +282,7 @@ public class GroupItemProvider extends OscalElementItemProvider {
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return dsm.oscal.model.OscalCatalogCommon.provider.OscalEditPlugin.INSTANCE;
+		return OscalEditPlugin.INSTANCE;
 	}
 
 }

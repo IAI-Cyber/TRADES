@@ -13,14 +13,12 @@
  */
 package dsm.oscal.ext
 
-import gov.nist.secauto.metaschema.codegen.type.DataType
+import gov.nist.secauto.metaschema.datatypes.DataTypes
 import java.nio.file.Files
 import java.nio.file.Path
 import java.nio.file.StandardOpenOption
 import java.util.List
 import java.util.function.BiFunction
-
-import static java.util.stream.Collectors.toList
 
 /**
  * Generator that create an helper class to handle custom data types
@@ -30,23 +28,23 @@ class OscalDataTypeHandlerGenerator {
 	val String CLASS_NAME = "OSCALDataTypeHandler";
 
 	val String packageName;
-	
+
 	val String header;
-	
+
 	/**
 	 * <Message,Exception variable> -> java code to log
 	 */
 	val BiFunction<String, String, String> logExpressionProvider;
 
-	List<gov.nist.secauto.metaschema.model.definitions.DataType> types
+	List<DataTypes> types
 
 	/**
 	 * @param packageName The package name of this class 
 	 * @param logExpressionProvider a provider of log function code <error message, name of the exception variable> -> the code that log the error
 	 * @param types the list of types to generate
 	 */
-	new(String packageName, BiFunction<String, String, String> logExpressionProvider,
-		List<gov.nist.secauto.metaschema.model.definitions.DataType> types,String header) {
+	new(String packageName, BiFunction<String, String, String> logExpressionProvider, List<DataTypes> types,
+		String header) {
 		this.packageName = packageName;
 		this.logExpressionProvider = logExpressionProvider;
 		this.types = types;
@@ -74,9 +72,10 @@ class OscalDataTypeHandlerGenerator {
 
 package «packageName»;
 
-«FOR dataType : getGenTypes()»
-	«IF dataType.javaTypeAdapterClass !== null»
-		import «dataType.javaTypeAdapterClass.name»;
+«FOR dataType : types»
+	«IF dataType.javaTypeAdapter.javaClass !== null»
+		import «dataType.javaTypeAdapter.javaClass.name»;
+		import «dataType.javaTypeAdapter.class.canonicalName»;
 	«ENDIF»
 «ENDFOR»
 import java.lang.String;
@@ -85,33 +84,31 @@ public class «CLASS_NAME» {
 	
 	public static final «CLASS_NAME» INSTANCE = new «packageName».«CLASS_NAME»CustomImpl();
 	
-	«FOR dataType : getGenTypes()»
-		«IF dataType.javaTypeAdapterClass !== null»
-		private static «dataType.javaTypeAdapterClass.simpleName» «dataType.attrName» = new «dataType.javaTypeAdapterClass.simpleName»();
+	«FOR dataType : types»
+		«IF dataType.javaTypeAdapter.javaClass  !== null»
+		private static «dataType.javaTypeAdapter.class.simpleName» «dataType.attrName» = new «dataType.javaTypeAdapter.class.simpleName»();
 		«ENDIF»
 	«ENDFOR»
 	
 	«FOR dataType : types»
 	
+		«IF dataType.javaTypeAdapter.javaClass  !== null»
 	«dataType.generaToStringMethod»
 	
 	«dataType.generaToValueMethod»
+		«ENDIF»
 	«ENDFOR»
 	
 }
 	'''
 
-	private def List<DataType> getGenTypes() {
-		types.stream.map[DataType.lookupByDatatype(it)].collect(toList)
-	}
 
 	/**
 	 * Gets the code to convert the given data type to a String
 	 */
-	def String getToStringCode(gov.nist.secauto.metaschema.model.definitions.DataType dataType) {
-		var genDataType = DataType.lookupByDatatype(dataType)
-		if (genDataType.javaTypeAdapterClass !== null) {
-			return '''return «packageName».«CLASS_NAME».INSTANCE.«genDataType.toStringMethodName»(it);'''
+	def String getToStringCode(DataTypes dataType) {
+		if (dataType.javaTypeAdapter.javaClass !== null) {
+			return '''return «packageName».«CLASS_NAME».INSTANCE.«dataType.toStringMethodName»(it);'''
 		} else {
 			return "return null;";
 		}
@@ -120,30 +117,28 @@ public class «CLASS_NAME» {
 	/**
 	 * Gets the code to convert from a String to an instance of the given data type
 	 */
-	def String getFromStringCode(gov.nist.secauto.metaschema.model.definitions.DataType dataType) {
-		var genDataType = DataType.lookupByDatatype(dataType)
-		if (genDataType.javaTypeAdapterClass !== null) {
-			return '''return «packageName».«CLASS_NAME».INSTANCE.«genDataType.getFromStringMethodName»(it);'''
+	def String getFromStringCode(DataTypes dataType) {
+		if (dataType.javaTypeAdapter.javaClass !== null) {
+			return '''return «packageName».«CLASS_NAME».INSTANCE.«dataType.getFromStringMethodName»(it);'''
 		} else {
 			return "return null;";
 		}
 	}
 
 	private def String getToStringMethodName(
-		DataType genType) '''save«NameHelper.getProperEDataTypeName(genType)»ToString'''
+		DataTypes genType) '''save«NameHelper.getProperEDataTypeName(genType)»ToString'''
 
 	private def String getFromStringMethodName(
-		DataType genType) '''load«NameHelper.getProperEDataTypeName(genType)»FromString'''
+		DataTypes genType) '''load«NameHelper.getProperEDataTypeName(genType)»FromString'''
 
-	private def String generaToStringMethod(gov.nist.secauto.metaschema.model.definitions.DataType dataType) {
-		var genDataType = DataType.lookupByDatatype(dataType)
-		if (genDataType.javaTypeAdapterClass !== null) {
+	private def String generaToStringMethod(DataTypes dataType) {
+		if (dataType.javaTypeAdapter.javaClass !== null) {
 			return '''
 				/**
 				* @generated
 				*/
-				public String «genDataType.getToStringMethodName»(«genDataType.getTypeName().toString()» value){
-					return «genDataType.attrName».asString(value);
+				public String «dataType.getToStringMethodName»(«dataType.javaTypeAdapter.javaClass.simpleName» value){
+					return «dataType.attrName».asString(value);
 				}
 			'''
 		} else {
@@ -151,20 +146,20 @@ public class «CLASS_NAME» {
 		}
 	}
 
-	private def String generaToValueMethod(gov.nist.secauto.metaschema.model.definitions.DataType dataType) {
-		var genDataType = DataType.lookupByDatatype(dataType)
-		val loggerCode = logExpressionProvider.apply('''Unable to parse data type «NameHelper.getProperEDataTypeName(genDataType)»''',"e");
-		if (genDataType.javaTypeAdapterClass !== null) {
+	private def String generaToValueMethod(DataTypes dataType) {
+		val loggerCode = logExpressionProvider.
+			apply('''Unable to parse data type «NameHelper.getProperEDataTypeName(dataType)»''', "e");
+		if (dataType.javaTypeAdapter.javaClass !== null) {
 			return '''
 				/**
 				* @generated
 				*/
-				public «genDataType.getTypeName().toString()» «genDataType.fromStringMethodName»(String value){
+				public «dataType.javaTypeAdapter.javaClass.simpleName» «dataType.fromStringMethodName»(String value){
 					if(value == null){
 						return null;
 					}
 					try {
-						return «genDataType.attrName».parse(value);
+						return «dataType.attrName».parse(value);
 					} catch (java.lang.Exception e){
 						«loggerCode»;
 						return null;
@@ -176,5 +171,5 @@ public class «CLASS_NAME» {
 		}
 	}
 
-	private def String attrName(DataType dataType) '''adapter«NameHelper.getProperEDataTypeName(dataType)»'''
+	private def String attrName(DataTypes dataType) '''adapter«NameHelper.getProperEDataTypeName(dataType)»'''
 }

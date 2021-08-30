@@ -4,7 +4,7 @@ import dsm.oscal.model.OscalCatalogCommon.OscalCatalogCommonFactory;
 import dsm.oscal.model.OscalCatalogCommon.ParameterGuideline;
 
 public class ParameterGuidelineMapper
-		extends AbstractObjectMapper<ParameterGuideline, gov.nist.secauto.oscal.lib.ParameterGuideline> {
+		extends AbstractObjectMapper<ParameterGuideline, gov.nist.secauto.oscal.lib.model.ParameterGuideline> {
 
 	private ParameterGuidelineMapper() {
 	}
@@ -21,15 +21,15 @@ public class ParameterGuidelineMapper
 	}
 
 	@Override
-	protected ParameterGuideline safeToTrades(gov.nist.secauto.oscal.lib.ParameterGuideline oscalObject) {
+	protected ParameterGuideline safeToTrades(gov.nist.secauto.oscal.lib.model.ParameterGuideline oscalObject) {
 		ParameterGuideline result = OscalCatalogCommonFactory.eINSTANCE.createParameterGuideline();
 		result.setProse(oscalObject.getProse());
 		return result;
 	}
 
 	@Override
-	protected gov.nist.secauto.oscal.lib.ParameterGuideline safeToOscal(ParameterGuideline tardesObject) {
-		gov.nist.secauto.oscal.lib.ParameterGuideline result = new gov.nist.secauto.oscal.lib.ParameterGuideline();
+	protected gov.nist.secauto.oscal.lib.model.ParameterGuideline safeToOscal(ParameterGuideline tardesObject) {
+		gov.nist.secauto.oscal.lib.model.ParameterGuideline result = new gov.nist.secauto.oscal.lib.model.ParameterGuideline();
 		result.setProse(tardesObject.getProse());
 		return result;
 	}

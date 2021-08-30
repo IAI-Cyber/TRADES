@@ -23,7 +23,7 @@ import java.net.URI;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * <h1>Base64</h1>
+ * <h1>base64</h1>
  * <h2>Description</h2>
  * <p>The Base64 alphabet in RFC 2045 - aligned with XSD.</p>
  * <!-- end-model-doc -->
@@ -38,7 +38,7 @@ import java.net.URI;
  * </ul>
  *
  * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getBase64()
- * @model annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;FieldDefinition&gt;base64'"
+ * @model
  * @generated
  */
 public interface Base64 extends OscalElement {
@@ -47,7 +47,7 @@ public interface Base64 extends OscalElement {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * <h1>File Name</h1>
+	 * <h1>filename</h1>
 	 * <h2>Description</h2>
 	 * <p>Name of the file before it was encoded as Base64 to be embedded in a <code>resource</code>. This is the name that will be assigned to the file when the file is decoded.</p>
 	 * <!-- end-model-doc -->
@@ -55,7 +55,6 @@ public interface Base64 extends OscalElement {
 	 * @see #setFilename(URI)
 	 * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getBase64_Filename()
 	 * @model dataType="dsm.oscal.model.OscalMetadata.UriReferenceType"
-	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;FieldDefinition&gt;base64.&lt;FlagInstance&gt;filename'"
 	 * @generated
 	 */
 	URI getFilename();
@@ -75,14 +74,14 @@ public interface Base64 extends OscalElement {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * <h1>Media Type</h1>
+	 * <h1>media-type</h1>
 	 * <h2>Description</h2>
 	 * <p>Specifies a media type as defined by the Internet Assigned Numbers Authority (IANA) <a href="https://www.iana.org/assignments/media-types/media-types.xhtml">Media Types Registry</a>.</p>
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Media Type</em>' attribute.
 	 * @see #setMediaType(String)
 	 * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getBase64_MediaType()
-	 * @model annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;FieldDefinition&gt;base64.&lt;FlagInstance&gt;media-type'"
+	 * @model
 	 * @generated
 	 */
 	String getMediaType();

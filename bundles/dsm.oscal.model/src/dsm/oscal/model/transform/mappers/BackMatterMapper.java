@@ -3,7 +3,7 @@ package dsm.oscal.model.transform.mappers;
 import dsm.oscal.model.OscalMetadata.BackMatter;
 import dsm.oscal.model.OscalMetadata.OscalMetadataFactory;
 
-public class BackMatterMapper extends AbstractObjectMapper<BackMatter, gov.nist.secauto.oscal.lib.BackMatter> {
+public class BackMatterMapper extends AbstractObjectMapper<BackMatter, gov.nist.secauto.oscal.lib.model.BackMatter> {
 	private BackMatterMapper() {
 	}
 
@@ -19,14 +19,14 @@ public class BackMatterMapper extends AbstractObjectMapper<BackMatter, gov.nist.
 	}
 
 	@Override
-	protected gov.nist.secauto.oscal.lib.BackMatter safeToOscal(BackMatter tradesObject) {
-		gov.nist.secauto.oscal.lib.BackMatter backmatter = new gov.nist.secauto.oscal.lib.BackMatter();
+	protected gov.nist.secauto.oscal.lib.model.BackMatter safeToOscal(BackMatter tradesObject) {
+		gov.nist.secauto.oscal.lib.model.BackMatter backmatter = new gov.nist.secauto.oscal.lib.model.BackMatter();
 		buildXMLChildList(ResourceMapper.getInstance(), tradesObject.getResources(), backmatter::setResources);
 		return backmatter;
 	}
 
 	@Override
-	protected BackMatter safeToTrades(gov.nist.secauto.oscal.lib.BackMatter oscalObject) {
+	protected BackMatter safeToTrades(gov.nist.secauto.oscal.lib.model.BackMatter oscalObject) {
 		BackMatter backmatter = OscalMetadataFactory.eINSTANCE.createBackMatter();
 		buildChildList(ResourceMapper.getInstance(), oscalObject.getResources(), backmatter::getResources);
 		return backmatter;

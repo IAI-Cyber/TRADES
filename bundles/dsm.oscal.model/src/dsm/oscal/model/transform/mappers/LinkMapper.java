@@ -3,7 +3,7 @@ package dsm.oscal.model.transform.mappers;
 import dsm.oscal.model.OscalMetadata.Link;
 import dsm.oscal.model.OscalMetadata.OscalMetadataFactory;
 
-public class LinkMapper extends AbstractObjectMapper<Link, gov.nist.secauto.oscal.lib.Link> {
+public class LinkMapper extends AbstractObjectMapper<Link, gov.nist.secauto.oscal.lib.model.Link> {
 
 	private LinkMapper() {
 	}
@@ -19,7 +19,7 @@ public class LinkMapper extends AbstractObjectMapper<Link, gov.nist.secauto.osca
 		return SingletonHolder.instance;
 	}
 	@Override
-	protected Link safeToTrades(gov.nist.secauto.oscal.lib.Link oscalObject) {
+	protected Link safeToTrades(gov.nist.secauto.oscal.lib.model.Link oscalObject) {
 		Link link = OscalMetadataFactory.eINSTANCE.createLink();
 		link.setEHref(oscalObject.getHref());
 		link.setMediaType(oscalObject.getMediaType());
@@ -30,8 +30,8 @@ public class LinkMapper extends AbstractObjectMapper<Link, gov.nist.secauto.osca
 	}
 
 	@Override
-	protected gov.nist.secauto.oscal.lib.Link safeToOscal(Link tradesObject) {
-		gov.nist.secauto.oscal.lib.Link link = new gov.nist.secauto.oscal.lib.Link();
+	protected gov.nist.secauto.oscal.lib.model.Link safeToOscal(Link tradesObject) {
+		gov.nist.secauto.oscal.lib.model.Link link = new gov.nist.secauto.oscal.lib.model.Link();
 		link.setHref(tradesObject.getEHref());
 		link.setMediaType(tradesObject.getMediaType());
 		link.setRel(tradesObject.getRel());

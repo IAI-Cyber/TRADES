@@ -4,7 +4,7 @@ import dsm.oscal.model.OscalMetadata.OscalMetadataFactory;
 import dsm.oscal.model.OscalMetadata.ResponsibleParty;
 
 public class ResponsiblePartyMapper
-		extends AbstractObjectMapper<ResponsibleParty, gov.nist.secauto.oscal.lib.ResponsibleParty> {
+		extends AbstractObjectMapper<ResponsibleParty, gov.nist.secauto.oscal.lib.model.ResponsibleParty> {
 
 	private ResponsiblePartyMapper() {
 	}
@@ -21,8 +21,8 @@ public class ResponsiblePartyMapper
 	}
 
 	@Override
-	protected gov.nist.secauto.oscal.lib.ResponsibleParty safeToOscal(ResponsibleParty tradesObject) {
-		gov.nist.secauto.oscal.lib.ResponsibleParty respParty = new gov.nist.secauto.oscal.lib.ResponsibleParty();
+	protected gov.nist.secauto.oscal.lib.model.ResponsibleParty safeToOscal(ResponsibleParty tradesObject) {
+		gov.nist.secauto.oscal.lib.model.ResponsibleParty respParty = new gov.nist.secauto.oscal.lib.model.ResponsibleParty();
 
 		buildXMLChildList(LinkMapper.getInstance(), tradesObject.getLinks(), respParty::setLinks);
 		setXMLList(tradesObject.getPartyUuids(), respParty::setPartyUuids);
@@ -34,7 +34,7 @@ public class ResponsiblePartyMapper
 	}
 
 	@Override
-	protected ResponsibleParty safeToTrades(gov.nist.secauto.oscal.lib.ResponsibleParty oscalObject) {
+	protected ResponsibleParty safeToTrades(gov.nist.secauto.oscal.lib.model.ResponsibleParty oscalObject) {
 		ResponsibleParty respParty = OscalMetadataFactory.eINSTANCE.createResponsibleParty();
 
 		buildChildList(LinkMapper.getInstance(), oscalObject.getLinks(), respParty::getLinks);

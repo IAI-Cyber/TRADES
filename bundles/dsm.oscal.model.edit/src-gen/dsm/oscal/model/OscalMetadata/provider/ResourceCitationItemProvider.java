@@ -128,6 +128,7 @@ public class ResourceCitationItemProvider extends OscalElementItemProvider {
 
 		switch (notification.getFeatureID(ResourceCitation.class)) {
 			case OscalMetadataPackage.RESOURCE_CITATION__PROPS:
+			case OscalMetadataPackage.RESOURCE_CITATION__LINKS:
 			case OscalMetadataPackage.RESOURCE_CITATION__TEXT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
@@ -150,6 +151,11 @@ public class ResourceCitationItemProvider extends OscalElementItemProvider {
 			(createChildParameter
 				(OscalMetadataPackage.Literals.PROPERTY_OWNER__PROPS,
 				 OscalMetadataFactory.eINSTANCE.createProperty()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OscalMetadataPackage.Literals.LINK_OWNER__LINKS,
+				 OscalMetadataFactory.eINSTANCE.createLink()));
 	}
 
 }

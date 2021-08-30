@@ -33,7 +33,7 @@ import org.eclipse.emf.common.util.EList;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * <h1>Parameter</h1>
+ * <h1>param</h1>
  * <h2>Description</h2>
  * <p>Parameters provide a mechanism for the dynamic assignment of value(s) in a control.</p><h2>Remarks</h2>
  * <p>In a catalog, a parameter is typically used as a placeholder for the future assignment of a parameter value, although the OSCAL model allows for the direct assignment of a value if desired by the control author. The <code>value</code> may be optionally used to specify one or more values. If no value is provided, then it is expected that the value will be provided at the Profile or Implementation layer.</p>
@@ -54,7 +54,7 @@ import org.eclipse.emf.common.util.EList;
  * </ul>
  *
  * @see dsm.oscal.model.OscalCatalogCommon.OscalCatalogCommonPackage#getParameter()
- * @model annotation="Metaschema source='&lt;Metaschema&gt;oscal-catalog-common.&lt;AssemblyDefinition&gt;parameter'"
+ * @model
  * @generated
  */
 public interface Parameter extends OscalElement, PropertyOwner, LinkOwner, ElementWithRemarks, ElementWithClazz, ElementWithId {
@@ -66,7 +66,6 @@ public interface Parameter extends OscalElement, PropertyOwner, LinkOwner, Eleme
 	 * @return the value of the '<em>Constraints</em>' containment reference list.
 	 * @see dsm.oscal.model.OscalCatalogCommon.OscalCatalogCommonPackage#getParameter_Constraints()
 	 * @model containment="true"
-	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-catalog-common.&lt;AssemblyDefinition&gt;parameter-constraint'"
 	 * @generated
 	 */
 	EList<ParameterConstraint> getConstraints();
@@ -76,14 +75,14 @@ public interface Parameter extends OscalElement, PropertyOwner, LinkOwner, Eleme
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * <h1>Depends on</h1>
+	 * <h1>depends-on</h1>
 	 * <h2>Description</h2>
 	 * <p>Another parameter invoking this one</p>
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Depends On</em>' attribute.
 	 * @see #setDependsOn(String)
 	 * @see dsm.oscal.model.OscalCatalogCommon.OscalCatalogCommonPackage#getParameter_DependsOn()
-	 * @model annotation="Metaschema source='&lt;Metaschema&gt;oscal-catalog-common.&lt;AssemblyDefinition&gt;parameter.&lt;FlagInstance&gt;depends-on'"
+	 * @model
 	 * @generated
 	 */
 	String getDependsOn();
@@ -106,7 +105,6 @@ public interface Parameter extends OscalElement, PropertyOwner, LinkOwner, Eleme
 	 * @return the value of the '<em>Guidelines</em>' containment reference list.
 	 * @see dsm.oscal.model.OscalCatalogCommon.OscalCatalogCommonPackage#getParameter_Guidelines()
 	 * @model containment="true"
-	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-catalog-common.&lt;AssemblyDefinition&gt;parameter-guideline'"
 	 * @generated
 	 */
 	EList<ParameterGuideline> getGuidelines();
@@ -116,7 +114,7 @@ public interface Parameter extends OscalElement, PropertyOwner, LinkOwner, Eleme
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * <h1>Parameter Label</h1>
+	 * <h1>label</h1>
 	 * <h2>Description</h2>
 	 * <p>A short, placeholder name for the parameter, which can be used as a substitute for a <code>value</code> if no value is assigned.</p><h2>Remarks</h2>
 	 * <p>The label value should be suitable for inline display in a rendered catalog.</p>
@@ -125,7 +123,6 @@ public interface Parameter extends OscalElement, PropertyOwner, LinkOwner, Eleme
 	 * @see #setLabel(MarkupLine)
 	 * @see dsm.oscal.model.OscalCatalogCommon.OscalCatalogCommonPackage#getParameter_Label()
 	 * @model dataType="dsm.oscal.model.OscalMetadata.MarkupLineType"
-	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-catalog-common.&lt;AssemblyDefinition&gt;parameter.&lt;FieldInstance&gt;label'"
 	 * @generated
 	 */
 	MarkupLine getLabel();
@@ -148,7 +145,6 @@ public interface Parameter extends OscalElement, PropertyOwner, LinkOwner, Eleme
 	 * @see #setSelect(ParameterSelection)
 	 * @see dsm.oscal.model.OscalCatalogCommon.OscalCatalogCommonPackage#getParameter_Select()
 	 * @model containment="true"
-	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-catalog-common.&lt;AssemblyDefinition&gt;parameter-selection'"
 	 * @generated
 	 */
 	ParameterSelection getSelect();
@@ -168,7 +164,7 @@ public interface Parameter extends OscalElement, PropertyOwner, LinkOwner, Eleme
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * <h1>Parameter Usage Description</h1>
+	 * <h1>usage</h1>
 	 * <h2>Description</h2>
 	 * <p>Describes the purpose and use of a parameter</p>
 	 * <!-- end-model-doc -->
@@ -176,7 +172,6 @@ public interface Parameter extends OscalElement, PropertyOwner, LinkOwner, Eleme
 	 * @see #setUsage(MarkupMultiline)
 	 * @see dsm.oscal.model.OscalCatalogCommon.OscalCatalogCommonPackage#getParameter_Usage()
 	 * @model dataType="dsm.oscal.model.OscalMetadata.MarkupMultilineType"
-	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-catalog-common.&lt;AssemblyDefinition&gt;parameter.&lt;FieldInstance&gt;usage'"
 	 * @generated
 	 */
 	MarkupMultiline getUsage();
@@ -197,13 +192,13 @@ public interface Parameter extends OscalElement, PropertyOwner, LinkOwner, Eleme
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * <h1>Parameter Value</h1>
+	 * <h1>parameter-value</h1>
 	 * <h2>Description</h2>
 	 * <p>A parameter value or set of values.</p>
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Values</em>' attribute list.
 	 * @see dsm.oscal.model.OscalCatalogCommon.OscalCatalogCommonPackage#getParameter_Values()
-	 * @model annotation="Metaschema source='&lt;Metaschema&gt;oscal-catalog-common.&lt;AssemblyDefinition&gt;parameter.&lt;FieldInstance&gt;parameter-value'"
+	 * @model
 	 * @generated
 	 */
 	EList<String> getValues();

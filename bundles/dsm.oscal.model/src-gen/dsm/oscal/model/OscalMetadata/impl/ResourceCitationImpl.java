@@ -15,6 +15,8 @@
  */
 package dsm.oscal.model.OscalMetadata.impl;
 
+import dsm.oscal.model.OscalMetadata.Link;
+import dsm.oscal.model.OscalMetadata.LinkOwner;
 import dsm.oscal.model.OscalMetadata.OscalMetadataPackage;
 import dsm.oscal.model.OscalMetadata.Property;
 import dsm.oscal.model.OscalMetadata.PropertyOwner;
@@ -46,6 +48,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.ResourceCitationImpl#getProps <em>Props</em>}</li>
+ *   <li>{@link dsm.oscal.model.OscalMetadata.impl.ResourceCitationImpl#getLinks <em>Links</em>}</li>
  *   <li>{@link dsm.oscal.model.OscalMetadata.impl.ResourceCitationImpl#getText <em>Text</em>}</li>
  * </ul>
  *
@@ -61,6 +64,16 @@ public class ResourceCitationImpl extends OscalElementCustomImpl implements Reso
 	 * @ordered
 	 */
 	protected EList<Property> props;
+
+	/**
+	 * The cached value of the '{@link #getLinks() <em>Links</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLinks()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Link> links;
 
 	/**
 	 * The default value of the '{@link #getText() <em>Text</em>}' attribute.
@@ -120,6 +133,19 @@ public class ResourceCitationImpl extends OscalElementCustomImpl implements Reso
 	 * @generated
 	 */
 	@Override
+	public EList<Link> getLinks() {
+		if (links == null) {
+			links = new EObjectContainmentEList<Link>(Link.class, this, OscalMetadataPackage.RESOURCE_CITATION__LINKS);
+		}
+		return links;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public MarkupLine getText() {
 		return text;
 	}
@@ -147,6 +173,8 @@ public class ResourceCitationImpl extends OscalElementCustomImpl implements Reso
 		switch (featureID) {
 			case OscalMetadataPackage.RESOURCE_CITATION__PROPS:
 				return ((InternalEList<?>)getProps()).basicRemove(otherEnd, msgs);
+			case OscalMetadataPackage.RESOURCE_CITATION__LINKS:
+				return ((InternalEList<?>)getLinks()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -161,6 +189,8 @@ public class ResourceCitationImpl extends OscalElementCustomImpl implements Reso
 		switch (featureID) {
 			case OscalMetadataPackage.RESOURCE_CITATION__PROPS:
 				return getProps();
+			case OscalMetadataPackage.RESOURCE_CITATION__LINKS:
+				return getLinks();
 			case OscalMetadataPackage.RESOURCE_CITATION__TEXT:
 				return getText();
 		}
@@ -180,6 +210,10 @@ public class ResourceCitationImpl extends OscalElementCustomImpl implements Reso
 				getProps().clear();
 				getProps().addAll((Collection<? extends Property>)newValue);
 				return;
+			case OscalMetadataPackage.RESOURCE_CITATION__LINKS:
+				getLinks().clear();
+				getLinks().addAll((Collection<? extends Link>)newValue);
+				return;
 			case OscalMetadataPackage.RESOURCE_CITATION__TEXT:
 				setText((MarkupLine)newValue);
 				return;
@@ -198,6 +232,9 @@ public class ResourceCitationImpl extends OscalElementCustomImpl implements Reso
 			case OscalMetadataPackage.RESOURCE_CITATION__PROPS:
 				getProps().clear();
 				return;
+			case OscalMetadataPackage.RESOURCE_CITATION__LINKS:
+				getLinks().clear();
+				return;
 			case OscalMetadataPackage.RESOURCE_CITATION__TEXT:
 				setText(TEXT_EDEFAULT);
 				return;
@@ -215,6 +252,8 @@ public class ResourceCitationImpl extends OscalElementCustomImpl implements Reso
 		switch (featureID) {
 			case OscalMetadataPackage.RESOURCE_CITATION__PROPS:
 				return props != null && !props.isEmpty();
+			case OscalMetadataPackage.RESOURCE_CITATION__LINKS:
+				return links != null && !links.isEmpty();
 			case OscalMetadataPackage.RESOURCE_CITATION__TEXT:
 				return TEXT_EDEFAULT == null ? text != null : !TEXT_EDEFAULT.equals(text);
 		}
@@ -234,6 +273,12 @@ public class ResourceCitationImpl extends OscalElementCustomImpl implements Reso
 				default: return -1;
 			}
 		}
+		if (baseClass == LinkOwner.class) {
+			switch (derivedFeatureID) {
+				case OscalMetadataPackage.RESOURCE_CITATION__LINKS: return OscalMetadataPackage.LINK_OWNER__LINKS;
+				default: return -1;
+			}
+		}
 		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
 	}
 
@@ -247,6 +292,12 @@ public class ResourceCitationImpl extends OscalElementCustomImpl implements Reso
 		if (baseClass == PropertyOwner.class) {
 			switch (baseFeatureID) {
 				case OscalMetadataPackage.PROPERTY_OWNER__PROPS: return OscalMetadataPackage.RESOURCE_CITATION__PROPS;
+				default: return -1;
+			}
+		}
+		if (baseClass == LinkOwner.class) {
+			switch (baseFeatureID) {
+				case OscalMetadataPackage.LINK_OWNER__LINKS: return OscalMetadataPackage.RESOURCE_CITATION__LINKS;
 				default: return -1;
 			}
 		}

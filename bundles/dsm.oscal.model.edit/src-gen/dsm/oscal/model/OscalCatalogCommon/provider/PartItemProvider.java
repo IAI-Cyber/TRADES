@@ -22,6 +22,7 @@ import dsm.oscal.model.OscalCatalogCommon.Part;
 
 import dsm.oscal.model.OscalMetadata.OscalMetadataFactory;
 import dsm.oscal.model.OscalMetadata.OscalMetadataPackage;
+
 import dsm.oscal.model.OscalMetadata.provider.OscalElementItemProvider;
 
 import java.util.Collection;
@@ -329,7 +330,7 @@ public class PartItemProvider extends OscalElementItemProvider {
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return dsm.oscal.model.OscalCatalogCommon.provider.OscalEditPlugin.INSTANCE;
+		return OscalEditPlugin.INSTANCE;
 	}
 
 }

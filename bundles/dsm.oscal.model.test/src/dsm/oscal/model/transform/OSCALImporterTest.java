@@ -123,7 +123,7 @@ public class OSCALImporterTest {
 		resource.save(Collections.emptyMap());
 
 		// Simple check on UUID
-		assertThat(tradesCatalog.getUuid()).isEqualTo(UUID.fromString("759bc696-630d-4b50-bfdf-cf93c7b1bf62"));
+		assertThat(tradesCatalog.getUuid()).isEqualTo(UUID.fromString("613fca2d-704a-42e7-8e2b-b206fb92b456"));
 
 		// Export the catalog back to XML
 		transformer.exportCatalog(tradesCatalog, resultFile.toPath(), Format.XML);
@@ -139,6 +139,7 @@ public class OSCALImporterTest {
 		Source test = new WhitespaceStrippedSource(Input.fromFile(resultFile).build());
 		DifferenceEngine diff = new DOMDifferenceEngine();
 		diff.addDifferenceListener(new ComparisonListener() {
+			@Override
 			public void comparisonPerformed(Comparison comparison, ComparisonResult outcome) {
 				if (isNewUUIDDiff(comparison)) {
 					return;
@@ -187,10 +188,10 @@ public class OSCALImporterTest {
 
 	public void saveInputFileUsingJavaLib() {
 		try {
-			gov.nist.secauto.oscal.lib.Catalog catalog = new OscalLoader().loadCatalog(inputFile);
+			gov.nist.secauto.oscal.lib.model.Catalog catalog = new OscalLoader().loadCatalog(inputFile);
 			MutableConfiguration config = new MutableConfiguration().enableFeature(Feature.SERIALIZE_ROOT);
-			Serializer<gov.nist.secauto.oscal.lib.Catalog> serializer = BindingContext.newInstance()
-					.newSerializer(Format.XML, gov.nist.secauto.oscal.lib.Catalog.class, config);
+			Serializer<gov.nist.secauto.oscal.lib.model.Catalog> serializer = BindingContext.newInstance()
+					.newSerializer(Format.XML, gov.nist.secauto.oscal.lib.model.Catalog.class, config);
 
 			try {
 				serializer.serialize(catalog, saveInputFile);
@@ -207,7 +208,7 @@ public class OSCALImporterTest {
 		@Override
 		public boolean test(Node n) {
 			if (n instanceof Node) {
-				return !isEmpty((Node) n);
+				return !isEmpty(n);
 			}
 			// not an element - a commment, nested text and so on
 			return true;

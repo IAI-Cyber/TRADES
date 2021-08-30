@@ -16,9 +16,7 @@ package dsm.oscal.ext;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EModelElement;
 import org.eclipse.emf.ecore.EcoreFactory;
-import org.jsoup.Jsoup;
 
-import gov.nist.secauto.metaschema.model.definitions.InfoElementDefinition;
 
 public class MigrationEcoreUtils {
 	

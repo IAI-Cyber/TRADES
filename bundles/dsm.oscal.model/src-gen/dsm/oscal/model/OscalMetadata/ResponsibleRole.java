@@ -25,7 +25,7 @@ import org.eclipse.emf.common.util.EList;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * <h1>Responsible Role</h1>
+ * <h1>responsible-role</h1>
  * <h2>Description</h2>
  * <p>A reference to one or more roles with responsibility for performing a function relative to the containing object.</p>
  * <!-- end-model-doc -->
@@ -39,7 +39,7 @@ import org.eclipse.emf.common.util.EList;
  * </ul>
  *
  * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getResponsibleRole()
- * @model annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;AssemblyDefinition&gt;responsible-role'"
+ * @model
  * @generated
  */
 public interface ResponsibleRole extends OscalElement, PropertyOwner, LinkOwner, ElementWithRemarks {
@@ -49,14 +49,13 @@ public interface ResponsibleRole extends OscalElement, PropertyOwner, LinkOwner,
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * <h1>Party Reference</h1>
+	 * <h1>party-uuid</h1>
 	 * <h2>Description</h2>
 	 * <p>References a <code>party</code> defined in <code>metadata</code>.</p>
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Party Uuids</em>' attribute list.
 	 * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getResponsibleRole_PartyUuids()
 	 * @model dataType="dsm.oscal.model.OscalMetadata.UuidType"
-	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;AssemblyDefinition&gt;responsible-role.&lt;FieldInstance&gt;party-uuid'"
 	 * @generated
 	 */
 	EList<UUID> getPartyUuids();
@@ -66,7 +65,7 @@ public interface ResponsibleRole extends OscalElement, PropertyOwner, LinkOwner,
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * <h1>Responsible Role ID</h1>
+	 * <h1>role-id</h1>
 	 * <h2>Description</h2>
 	 * <p>The role that is responsible for the business function.</p>
 	 * <!-- end-model-doc -->
@@ -74,7 +73,6 @@ public interface ResponsibleRole extends OscalElement, PropertyOwner, LinkOwner,
 	 * @see #setRoleId(String)
 	 * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getResponsibleRole_RoleId()
 	 * @model required="true"
-	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;AssemblyDefinition&gt;responsible-role.&lt;FlagInstance&gt;role-id'"
 	 * @generated
 	 */
 	String getRoleId();

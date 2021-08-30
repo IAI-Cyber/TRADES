@@ -23,7 +23,7 @@ import gov.nist.secauto.metaschema.datatypes.markup.MarkupLine;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * <h1>Citation</h1>
+ * <h1>citation</h1>
  * <h2>Description</h2>
  * <p>A citation consisting of end note text and optional structured bibliographic data.</p><h2>Remarks</h2>
  * <p>The <code>text</code> is used to define the endnote text, without any required bibliographic structure. If structured bibliographic data is needed, then the <code>biblio</code> can be used for this purpose.</p>
@@ -38,16 +38,16 @@ import gov.nist.secauto.metaschema.datatypes.markup.MarkupLine;
  * </ul>
  *
  * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getResourceCitation()
- * @model annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;AssemblyDefinition&gt;citation'"
+ * @model
  * @generated
  */
-public interface ResourceCitation extends OscalElement, PropertyOwner {
+public interface ResourceCitation extends OscalElement, PropertyOwner, LinkOwner {
 	/**
 	 * Returns the value of the '<em><b>Text</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * <h1>Citation Text</h1>
+	 * <h1>text</h1>
 	 * <h2>Description</h2>
 	 * <p>A line of citation text.</p>
 	 * <!-- end-model-doc -->
@@ -55,7 +55,6 @@ public interface ResourceCitation extends OscalElement, PropertyOwner {
 	 * @see #setText(MarkupLine)
 	 * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getResourceCitation_Text()
 	 * @model dataType="dsm.oscal.model.OscalMetadata.MarkupLineType" required="true"
-	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;AssemblyDefinition&gt;citation.&lt;FieldInstance&gt;text'"
 	 * @generated
 	 */
 	MarkupLine getText();

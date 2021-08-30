@@ -5,7 +5,7 @@ import dsm.oscal.model.OscalMetadata.OscalMetadataFactory;
 import dsm.oscal.model.transform.MigrationUtils;
 
 public class ResourceMapper
-		extends AbstractObjectMapper<BackMatterResource, gov.nist.secauto.oscal.lib.BackMatter.Resource> {
+		extends AbstractObjectMapper<BackMatterResource, gov.nist.secauto.oscal.lib.model.BackMatter.Resource> {
 
 	private ResourceMapper() {
 	}
@@ -22,8 +22,8 @@ public class ResourceMapper
 	}
 
 	@Override
-	protected gov.nist.secauto.oscal.lib.BackMatter.Resource safeToOscal(BackMatterResource tradesObject) {
-		gov.nist.secauto.oscal.lib.BackMatter.Resource resource = new gov.nist.secauto.oscal.lib.BackMatter.Resource();
+	protected gov.nist.secauto.oscal.lib.model.BackMatter.Resource safeToOscal(BackMatterResource tradesObject) {
+		gov.nist.secauto.oscal.lib.model.BackMatter.Resource resource = new gov.nist.secauto.oscal.lib.model.BackMatter.Resource();
 
 		resource.setBase64(Base64Mapper.getInstance().toOscal(tradesObject.getBase64()));
 		resource.setCitation(CitationWrapper.getInstance().toOscal(tradesObject.getCitation()));
@@ -39,7 +39,7 @@ public class ResourceMapper
 	}
 
 	@Override
-	protected BackMatterResource safeToTrades(gov.nist.secauto.oscal.lib.BackMatter.Resource oscalObject) {
+	protected BackMatterResource safeToTrades(gov.nist.secauto.oscal.lib.model.BackMatter.Resource oscalObject) {
 		BackMatterResource resource = OscalMetadataFactory.eINSTANCE.createBackMatterResource();
 
 		resource.setBase64(Base64Mapper.getInstance().toTrades(oscalObject.getBase64()));

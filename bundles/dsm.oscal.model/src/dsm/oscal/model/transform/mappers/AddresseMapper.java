@@ -3,7 +3,7 @@ package dsm.oscal.model.transform.mappers;
 import dsm.oscal.model.OscalMetadata.Address;
 import dsm.oscal.model.OscalMetadata.OscalMetadataFactory;
 
-public class AddresseMapper extends AbstractObjectMapper<Address, gov.nist.secauto.oscal.lib.Address> {
+public class AddresseMapper extends AbstractObjectMapper<Address, gov.nist.secauto.oscal.lib.model.Address> {
 
 	private AddresseMapper() {
 	}
@@ -20,8 +20,8 @@ public class AddresseMapper extends AbstractObjectMapper<Address, gov.nist.secau
 	}
 
 	@Override
-	protected gov.nist.secauto.oscal.lib.Address safeToOscal(Address tradesObject) {
-		gov.nist.secauto.oscal.lib.Address adresse = new gov.nist.secauto.oscal.lib.Address();
+	protected gov.nist.secauto.oscal.lib.model.Address safeToOscal(Address tradesObject) {
+		gov.nist.secauto.oscal.lib.model.Address adresse = new gov.nist.secauto.oscal.lib.model.Address();
 
 		setXMLList(tradesObject.getAddrLines(), adresse::setAddrLines);
 		adresse.setCity(tradesObject.getCity());
@@ -34,7 +34,7 @@ public class AddresseMapper extends AbstractObjectMapper<Address, gov.nist.secau
 	}
 
 	@Override
-	protected Address safeToTrades(gov.nist.secauto.oscal.lib.Address oscalObject) {
+	protected Address safeToTrades(gov.nist.secauto.oscal.lib.model.Address oscalObject) {
 		Address adresse = OscalMetadataFactory.eINSTANCE.createAddress();
 
 		setList(oscalObject.getAddrLines(), adresse.getAddrLines());

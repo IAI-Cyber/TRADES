@@ -4,7 +4,7 @@ import dsm.oscal.model.OscalMetadata.OscalMetadataFactory;
 import dsm.oscal.model.OscalMetadata.Party;
 import dsm.oscal.model.transform.MigrationUtils;
 
-public class PartyMapper extends AbstractObjectMapper<Party, gov.nist.secauto.oscal.lib.Party> {
+public class PartyMapper extends AbstractObjectMapper<Party, gov.nist.secauto.oscal.lib.model.Party> {
 
 	private PartyMapper() {
 	}
@@ -21,8 +21,8 @@ public class PartyMapper extends AbstractObjectMapper<Party, gov.nist.secauto.os
 	}
 
 	@Override
-	protected gov.nist.secauto.oscal.lib.Party safeToOscal(Party tradesObject) {
-		gov.nist.secauto.oscal.lib.Party party = new gov.nist.secauto.oscal.lib.Party();
+	protected gov.nist.secauto.oscal.lib.model.Party safeToOscal(Party tradesObject) {
+		gov.nist.secauto.oscal.lib.model.Party party = new gov.nist.secauto.oscal.lib.model.Party();
 
 		buildXMLChildList(AddresseMapper.getInstance(), tradesObject.getAddresses(), party::setAddresses);
 
@@ -46,7 +46,7 @@ public class PartyMapper extends AbstractObjectMapper<Party, gov.nist.secauto.os
 	}
 
 	@Override
-	protected Party safeToTrades(gov.nist.secauto.oscal.lib.Party oscalObject) {
+	protected Party safeToTrades(gov.nist.secauto.oscal.lib.model.Party oscalObject) {
 		Party party = OscalMetadataFactory.eINSTANCE.createParty();
 
 		buildChildList(AddresseMapper.getInstance(), oscalObject.getAddresses(), party::getAddresses);

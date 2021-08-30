@@ -34,7 +34,7 @@ import gov.nist.secauto.metaschema.datatypes.markup.MarkupLine;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * <h1>Control</h1>
+ * <h1>control</h1>
  * <h2>Description</h2>
  * <p>A structured information object representing a security or privacy control. Each security or privacy control within the Catalog is defined by a distinct control instance.</p><h2>Remarks</h2>
  * <p>Controls may be grouped using <code>group</code>, and controls may be partitioned using <code>part</code> or further enhanced (extended) using <code>control</code>.</p>
@@ -49,7 +49,7 @@ import gov.nist.secauto.metaschema.datatypes.markup.MarkupLine;
  * </ul>
  *
  * @see dsm.oscal.model.OscalCatalog.OscalCatalogPackage#getControl()
- * @model annotation="Metaschema source='&lt;Metaschema&gt;oscal-catalog.&lt;AssemblyDefinition&gt;control'"
+ * @model
  * @generated
  */
 public interface Control extends OscalElement, ParameterOwner, PropertyOwner, LinkOwner, ControlOwner, PartOwner, IControlDefinition, ElementWithClazz, ElementWithId {
@@ -58,7 +58,7 @@ public interface Control extends OscalElement, ParameterOwner, PropertyOwner, Li
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * <h1>Control Title</h1>
+	 * <h1>title</h1>
 	 * <h2>Description</h2>
 	 * <p>A name given to the control, which may be used by a tool for display and navigation.</p>
 	 * <!-- end-model-doc -->
@@ -66,7 +66,6 @@ public interface Control extends OscalElement, ParameterOwner, PropertyOwner, Li
 	 * @see #setTitle(MarkupLine)
 	 * @see dsm.oscal.model.OscalCatalog.OscalCatalogPackage#getControl_Title()
 	 * @model dataType="dsm.oscal.model.OscalMetadata.MarkupLineType" required="true"
-	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-catalog.&lt;AssemblyDefinition&gt;control.&lt;FieldInstance&gt;title'"
 	 * @generated
 	 */
 	MarkupLine getTitle();

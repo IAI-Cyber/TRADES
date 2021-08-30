@@ -4,7 +4,8 @@ import dsm.oscal.model.OscalCatalogCommon.OscalCatalogCommonFactory;
 import dsm.oscal.model.OscalCatalogCommon.ParameterConstraintTest;
 
 public class TestMapper
-		extends AbstractObjectMapper<ParameterConstraintTest, gov.nist.secauto.oscal.lib.ParameterConstraint.Test> {
+		extends
+		AbstractObjectMapper<ParameterConstraintTest, gov.nist.secauto.oscal.lib.model.ParameterConstraint.Test> {
 
 	private TestMapper() {
 	}
@@ -21,7 +22,8 @@ public class TestMapper
 	}
 
 	@Override
-	protected ParameterConstraintTest safeToTrades(gov.nist.secauto.oscal.lib.ParameterConstraint.Test oscalObject) {
+	protected ParameterConstraintTest safeToTrades(
+			gov.nist.secauto.oscal.lib.model.ParameterConstraint.Test oscalObject) {
 		ParameterConstraintTest test = OscalCatalogCommonFactory.eINSTANCE.createParameterConstraintTest();
 
 		test.setRemarks(oscalObject.getRemarks());
@@ -30,8 +32,9 @@ public class TestMapper
 	}
 
 	@Override
-	protected gov.nist.secauto.oscal.lib.ParameterConstraint.Test safeToOscal(ParameterConstraintTest tradesObject) {
-		gov.nist.secauto.oscal.lib.ParameterConstraint.Test test = new gov.nist.secauto.oscal.lib.ParameterConstraint.Test();
+	protected gov.nist.secauto.oscal.lib.model.ParameterConstraint.Test safeToOscal(
+			ParameterConstraintTest tradesObject) {
+		gov.nist.secauto.oscal.lib.model.ParameterConstraint.Test test = new gov.nist.secauto.oscal.lib.model.ParameterConstraint.Test();
 
 		test.setRemarks(tradesObject.getRemarks());
 		test.setExpression(tradesObject.getExpression());

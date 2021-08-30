@@ -4,7 +4,7 @@ import dsm.oscal.model.OscalMetadata.OscalMetadataFactory;
 import dsm.oscal.model.OscalMetadata.Property;
 import dsm.oscal.model.transform.MigrationUtils;
 
-public class PropertyMapper extends AbstractObjectMapper<Property, gov.nist.secauto.oscal.lib.Property> {
+public class PropertyMapper extends AbstractObjectMapper<Property, gov.nist.secauto.oscal.lib.model.Property> {
 
 	private PropertyMapper() {
 	}
@@ -21,7 +21,7 @@ public class PropertyMapper extends AbstractObjectMapper<Property, gov.nist.seca
 	}
 
 	@Override
-	protected Property safeToTrades(gov.nist.secauto.oscal.lib.Property oscalObject) {
+	protected Property safeToTrades(gov.nist.secauto.oscal.lib.model.Property oscalObject) {
 		Property property = OscalMetadataFactory.eINSTANCE.createProperty();
 
 		property.setClazz(oscalObject.getClazz());
@@ -36,8 +36,8 @@ public class PropertyMapper extends AbstractObjectMapper<Property, gov.nist.seca
 	}
 
 	@Override
-	protected gov.nist.secauto.oscal.lib.Property safeToOscal(Property tradesObject) {
-		gov.nist.secauto.oscal.lib.Property property = new gov.nist.secauto.oscal.lib.Property();
+	protected gov.nist.secauto.oscal.lib.model.Property safeToOscal(Property tradesObject) {
+		gov.nist.secauto.oscal.lib.model.Property property = new gov.nist.secauto.oscal.lib.model.Property();
 
 		property.setClazz(tradesObject.getClazz());
 		property.setName(tradesObject.getName());

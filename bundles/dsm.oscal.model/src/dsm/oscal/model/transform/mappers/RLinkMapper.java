@@ -3,7 +3,7 @@ package dsm.oscal.model.transform.mappers;
 import dsm.oscal.model.OscalMetadata.OscalMetadataFactory;
 import dsm.oscal.model.OscalMetadata.ResourceRlink;
 
-public class RLinkMapper extends AbstractObjectMapper<ResourceRlink, gov.nist.secauto.oscal.lib.BackMatter.Resource.Rlink> {
+public class RLinkMapper extends AbstractObjectMapper<ResourceRlink, gov.nist.secauto.oscal.lib.model.BackMatter.Resource.Rlink> {
 
 	private RLinkMapper() {
 	}
@@ -20,8 +20,8 @@ public class RLinkMapper extends AbstractObjectMapper<ResourceRlink, gov.nist.se
 	}
 
 	@Override
-	protected gov.nist.secauto.oscal.lib.BackMatter.Resource.Rlink safeToOscal(ResourceRlink tradesObject) {
-		gov.nist.secauto.oscal.lib.BackMatter.Resource.Rlink rLink = new gov.nist.secauto.oscal.lib.BackMatter.Resource.Rlink();
+	protected gov.nist.secauto.oscal.lib.model.BackMatter.Resource.Rlink safeToOscal(ResourceRlink tradesObject) {
+		gov.nist.secauto.oscal.lib.model.BackMatter.Resource.Rlink rLink = new gov.nist.secauto.oscal.lib.model.BackMatter.Resource.Rlink();
 
 		buildXMLChildList(HashMapper.getInstance(), tradesObject.getHashes(), rLink::setHashes);
 		rLink.setHref(tradesObject.getEHref());
@@ -31,7 +31,7 @@ public class RLinkMapper extends AbstractObjectMapper<ResourceRlink, gov.nist.se
 	}
 
 	@Override
-	protected ResourceRlink safeToTrades(gov.nist.secauto.oscal.lib.BackMatter.Resource.Rlink oscalObject) {
+	protected ResourceRlink safeToTrades(gov.nist.secauto.oscal.lib.model.BackMatter.Resource.Rlink oscalObject) {
 		ResourceRlink rLink = OscalMetadataFactory.eINSTANCE.createResourceRlink();
 
 		buildChildList(HashMapper.getInstance(), oscalObject.getHashes(), rLink::getHashes);

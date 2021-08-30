@@ -3,7 +3,7 @@ package dsm.oscal.model.transform.mappers;
 import dsm.oscal.model.OscalCatalog.Group;
 import dsm.oscal.model.OscalCatalog.OscalCatalogFactory;
 
-public class GroupMapper extends AbstractObjectMapper<Group, gov.nist.secauto.oscal.lib.GrouposcalCatalog> {
+public class GroupMapper extends AbstractObjectMapper<Group, gov.nist.secauto.oscal.lib.model.GrouposcalCatalog> {
 
 	private GroupMapper() {
 	}
@@ -20,7 +20,7 @@ public class GroupMapper extends AbstractObjectMapper<Group, gov.nist.secauto.os
 	}
 
 	@Override
-	protected Group safeToTrades(gov.nist.secauto.oscal.lib.GrouposcalCatalog oscalObject) {
+	protected Group safeToTrades(gov.nist.secauto.oscal.lib.model.GrouposcalCatalog oscalObject) {
 		Group group = OscalCatalogFactory.eINSTANCE.createGroup();
 		group.setId(oscalObject.getId());
 		group.setTitle(oscalObject.getTitle());
@@ -37,8 +37,8 @@ public class GroupMapper extends AbstractObjectMapper<Group, gov.nist.secauto.os
 	}
 
 	@Override
-	protected gov.nist.secauto.oscal.lib.GrouposcalCatalog safeToOscal(Group tradesObject) {
-		gov.nist.secauto.oscal.lib.GrouposcalCatalog group = new gov.nist.secauto.oscal.lib.GrouposcalCatalog();
+	protected gov.nist.secauto.oscal.lib.model.GrouposcalCatalog safeToOscal(Group tradesObject) {
+		gov.nist.secauto.oscal.lib.model.GrouposcalCatalog group = new gov.nist.secauto.oscal.lib.model.GrouposcalCatalog();
 		group.setId(tradesObject.getId());
 		group.setTitle(tradesObject.getTitle());
 		group.setClazz(tradesObject.getClazz());

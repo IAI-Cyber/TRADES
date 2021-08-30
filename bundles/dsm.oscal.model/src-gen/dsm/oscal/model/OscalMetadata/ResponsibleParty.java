@@ -25,7 +25,7 @@ import org.eclipse.emf.common.util.EList;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * <h1>Responsible Party</h1>
+ * <h1>responsible-party</h1>
  * <h2>Description</h2>
  * <p>A reference to a set of organizations or persons that have responsibility for performing a referenced role in the context of the containing object.</p>
  * <!-- end-model-doc -->
@@ -39,7 +39,7 @@ import org.eclipse.emf.common.util.EList;
  * </ul>
  *
  * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getResponsibleParty()
- * @model annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;AssemblyDefinition&gt;responsible-party'"
+ * @model
  * @generated
  */
 public interface ResponsibleParty extends OscalElement, PropertyOwner, LinkOwner, ElementWithRemarks {
@@ -49,14 +49,13 @@ public interface ResponsibleParty extends OscalElement, PropertyOwner, LinkOwner
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * <h1>Party Reference</h1>
+	 * <h1>party-uuid</h1>
 	 * <h2>Description</h2>
 	 * <p>References a <code>party</code> defined in <code>metadata</code>.</p>
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Party Uuids</em>' attribute list.
 	 * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getResponsibleParty_PartyUuids()
 	 * @model dataType="dsm.oscal.model.OscalMetadata.UuidType" required="true"
-	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;AssemblyDefinition&gt;responsible-party.&lt;FieldInstance&gt;party-uuid'"
 	 * @generated
 	 */
 	EList<UUID> getPartyUuids();
@@ -66,7 +65,7 @@ public interface ResponsibleParty extends OscalElement, PropertyOwner, LinkOwner
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * <h1>Responsible Role</h1>
+	 * <h1>role-id</h1>
 	 * <h2>Description</h2>
 	 * <p>The role that the party is responsible for.</p>
 	 * <!-- end-model-doc -->
@@ -74,7 +73,6 @@ public interface ResponsibleParty extends OscalElement, PropertyOwner, LinkOwner
 	 * @see #setRoleId(String)
 	 * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getResponsibleParty_RoleId()
 	 * @model required="true"
-	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;AssemblyDefinition&gt;responsible-party.&lt;FlagInstance&gt;role-id'"
 	 * @generated
 	 */
 	String getRoleId();

@@ -3,7 +3,7 @@ package dsm.oscal.model.transform.mappers;
 import static java.util.stream.Collectors.toList;
 
 import dsm.oscal.model.OscalCatalogCommon.OscalCatalogCommonFactory;
-import gov.nist.secauto.oscal.lib.ParameterSelection;
+import gov.nist.secauto.oscal.lib.model.ParameterSelection;
 
 public class SelectMapper
 		extends AbstractObjectMapper<dsm.oscal.model.OscalCatalogCommon.ParameterSelection, ParameterSelection> {

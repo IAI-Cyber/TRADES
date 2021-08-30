@@ -1,7 +1,7 @@
 package dsm.oscal.model.transform.mappers;
 
 import dsm.oscal.model.OscalCatalogCommon.OscalCatalogCommonFactory;
-import gov.nist.secauto.oscal.lib.ParameterConstraint;
+import gov.nist.secauto.oscal.lib.model.ParameterConstraint;
 
 public class ConstraintMapper
 		extends AbstractObjectMapper<dsm.oscal.model.OscalCatalogCommon.ParameterConstraint, ParameterConstraint> {

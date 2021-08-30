@@ -23,7 +23,7 @@ import java.net.URI;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * <h1>Document Identifier</h1>
+ * <h1>document-id</h1>
  * <h2>Description</h2>
  * <p>A document identifier qualified by an identifier <code>scheme</code>. A document identifier provides a globally unique identifier for a group of documents that are to be treated as different versions of the same document. If this element does not appear, or if the value of this element is empty, the value of <q>document-id</q> is equal to the value of the <q>uuid</q> flag of the top-level root element.</p><h2>Remarks</h2>
  * <p>This element is optional, but it will always have a valid value, as if it is missing the value of <q>document-id</q> is assumed to be equal to the UUID of the root. This requirement allows for document creators to retroactively link an update to the original version, by providing a document-id on the new document that is equal to the uuid of the original document.</p>
@@ -37,7 +37,7 @@ import java.net.URI;
  * </ul>
  *
  * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getDocumentId()
- * @model annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;FieldDefinition&gt;document-id'"
+ * @model
  * @generated
  */
 public interface DocumentId extends OscalElement, ElementWithValue {
@@ -46,7 +46,7 @@ public interface DocumentId extends OscalElement, ElementWithValue {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * <h1>Document Identification Scheme</h1>
+	 * <h1>scheme</h1>
 	 * <h2>Description</h2>
 	 * <p>Qualifies the kind of document identifier using a URI. If the scheme is not provided the value of the element will be interpreted as a string of characters.</p>
 	 * <!-- end-model-doc -->
@@ -54,7 +54,6 @@ public interface DocumentId extends OscalElement, ElementWithValue {
 	 * @see #setScheme(URI)
 	 * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getDocumentId_Scheme()
 	 * @model dataType="dsm.oscal.model.OscalMetadata.UriType"
-	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;FieldDefinition&gt;document-id.&lt;FlagInstance&gt;scheme'"
 	 * @generated
 	 */
 	URI getScheme();

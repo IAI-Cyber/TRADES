@@ -3,7 +3,7 @@ package dsm.oscal.model.transform.mappers;
 import dsm.oscal.model.OscalMetadata.OscalMetadataFactory;
 
 public class ExternalIdMapper extends
-		AbstractObjectMapper<dsm.oscal.model.OscalMetadata.ExternalId, gov.nist.secauto.oscal.lib.Party.ExternalId> {
+		AbstractObjectMapper<dsm.oscal.model.OscalMetadata.ExternalId, gov.nist.secauto.oscal.lib.model.Party.ExternalId> {
 
 	private ExternalIdMapper() {
 	}
@@ -20,9 +20,9 @@ public class ExternalIdMapper extends
 	}
 
 	@Override
-	protected gov.nist.secauto.oscal.lib.Party.ExternalId safeToOscal(
+	protected gov.nist.secauto.oscal.lib.model.Party.ExternalId safeToOscal(
 			dsm.oscal.model.OscalMetadata.ExternalId tradesObject) {
-		gov.nist.secauto.oscal.lib.Party.ExternalId extId = new gov.nist.secauto.oscal.lib.Party.ExternalId();
+		gov.nist.secauto.oscal.lib.model.Party.ExternalId extId = new gov.nist.secauto.oscal.lib.model.Party.ExternalId();
 		extId.setScheme(tradesObject.getScheme());
 		extId.setValue(tradesObject.getValue());
 		return extId;
@@ -30,7 +30,7 @@ public class ExternalIdMapper extends
 
 	@Override
 	protected dsm.oscal.model.OscalMetadata.ExternalId safeToTrades(
-			gov.nist.secauto.oscal.lib.Party.ExternalId oscalObject) {
+			gov.nist.secauto.oscal.lib.model.Party.ExternalId oscalObject) {
 		dsm.oscal.model.OscalMetadata.ExternalId extId = OscalMetadataFactory.eINSTANCE.createExternalId();
 		extId.setScheme(oscalObject.getScheme());
 		extId.setValue(oscalObject.getValue());

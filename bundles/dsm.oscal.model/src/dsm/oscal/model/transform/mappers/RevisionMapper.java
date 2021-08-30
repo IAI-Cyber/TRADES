@@ -3,7 +3,7 @@ package dsm.oscal.model.transform.mappers;
 import dsm.oscal.model.OscalMetadata.OscalMetadataFactory;
 import dsm.oscal.model.OscalMetadata.Revision;
 
-public class RevisionMapper extends AbstractObjectMapper<Revision, gov.nist.secauto.oscal.lib.Revision> {
+public class RevisionMapper extends AbstractObjectMapper<Revision, gov.nist.secauto.oscal.lib.model.Revision> {
 
 	private RevisionMapper() {
 	}
@@ -20,8 +20,8 @@ public class RevisionMapper extends AbstractObjectMapper<Revision, gov.nist.seca
 	}
 
 	@Override
-	protected gov.nist.secauto.oscal.lib.Revision safeToOscal(Revision tradesObject) {
-		gov.nist.secauto.oscal.lib.Revision revision = new gov.nist.secauto.oscal.lib.Revision();
+	protected gov.nist.secauto.oscal.lib.model.Revision safeToOscal(Revision tradesObject) {
+		gov.nist.secauto.oscal.lib.model.Revision revision = new gov.nist.secauto.oscal.lib.model.Revision();
 
 		revision.setLastModified(tradesObject.getLastModified());
 		buildXMLChildList(LinkMapper.getInstance(), tradesObject.getLinks(), revision::setLinks);
@@ -36,7 +36,7 @@ public class RevisionMapper extends AbstractObjectMapper<Revision, gov.nist.seca
 	}
 
 	@Override
-	protected Revision safeToTrades(gov.nist.secauto.oscal.lib.Revision oscalObject) {
+	protected Revision safeToTrades(gov.nist.secauto.oscal.lib.model.Revision oscalObject) {
 		Revision revision = OscalMetadataFactory.eINSTANCE.createRevision();
 
 		revision.setLastModified(oscalObject.getLastModified());

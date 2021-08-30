@@ -3,7 +3,7 @@ package dsm.oscal.model.transform.mappers;
 import dsm.oscal.model.OscalMetadata.OscalMetadataFactory;
 import dsm.oscal.model.OscalMetadata.Role;
 
-public class RoleMapper extends AbstractObjectMapper<Role, gov.nist.secauto.oscal.lib.Role> {
+public class RoleMapper extends AbstractObjectMapper<Role, gov.nist.secauto.oscal.lib.model.Role> {
 
 	private RoleMapper() {
 	}
@@ -20,8 +20,8 @@ public class RoleMapper extends AbstractObjectMapper<Role, gov.nist.secauto.osca
 	}
 
 	@Override
-	protected gov.nist.secauto.oscal.lib.Role safeToOscal(Role tradesObject) {
-		gov.nist.secauto.oscal.lib.Role role = new gov.nist.secauto.oscal.lib.Role();
+	protected gov.nist.secauto.oscal.lib.model.Role safeToOscal(Role tradesObject) {
+		gov.nist.secauto.oscal.lib.model.Role role = new gov.nist.secauto.oscal.lib.model.Role();
 		role.setDescription(tradesObject.getDescription());
 		role.setId(tradesObject.getId());
 		buildXMLChildList(LinkMapper.getInstance(), tradesObject.getLinks(), role::setLinks);
@@ -33,7 +33,7 @@ public class RoleMapper extends AbstractObjectMapper<Role, gov.nist.secauto.osca
 	}
 
 	@Override
-	protected Role safeToTrades(gov.nist.secauto.oscal.lib.Role oscalObject) {
+	protected Role safeToTrades(gov.nist.secauto.oscal.lib.model.Role oscalObject) {
 		Role role = OscalMetadataFactory.eINSTANCE.createRole();
 		role.setDescription(oscalObject.getDescription());
 		role.setId(oscalObject.getId());

@@ -23,7 +23,7 @@ import java.net.URI;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * <h1>Party External Identifier</h1>
+ * <h1>external-id</h1>
  * <h2>Description</h2>
  * <p>An identifier for a person or organization using a designated scheme. e.g. an Open Researcher and Contributor ID (ORCID)</p>
  * <!-- end-model-doc -->
@@ -36,7 +36,7 @@ import java.net.URI;
  * </ul>
  *
  * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getExternalId()
- * @model annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;FieldDefinition&gt;external-id'"
+ * @model
  * @generated
  */
 public interface ExternalId extends OscalElement, ElementWithValue {
@@ -45,7 +45,7 @@ public interface ExternalId extends OscalElement, ElementWithValue {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * <h1>External Identifier Schema</h1>
+	 * <h1>scheme</h1>
 	 * <h2>Description</h2>
 	 * <p>Indicates the type of external identifier.</p>
 	 * <!-- end-model-doc -->
@@ -53,7 +53,6 @@ public interface ExternalId extends OscalElement, ElementWithValue {
 	 * @see #setScheme(URI)
 	 * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getExternalId_Scheme()
 	 * @model dataType="dsm.oscal.model.OscalMetadata.UriType" required="true"
-	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;FieldDefinition&gt;external-id.&lt;FlagInstance&gt;scheme'"
 	 * @generated
 	 */
 	URI getScheme();

@@ -27,7 +27,7 @@ import org.eclipse.emf.common.util.EList;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * <h1>Selection</h1>
+ * <h1>parameter-selection</h1>
  * <h2>Description</h2>
  * <p>Presenting a choice among alternatives</p><h2>Remarks</h2>
  * <p>A set of parameter value choices, that may be picked from to set the parameter value.</p>
@@ -42,7 +42,7 @@ import org.eclipse.emf.common.util.EList;
  * </ul>
  *
  * @see dsm.oscal.model.OscalCatalogCommon.OscalCatalogCommonPackage#getParameterSelection()
- * @model annotation="Metaschema source='&lt;Metaschema&gt;oscal-catalog-common.&lt;AssemblyDefinition&gt;parameter-selection'"
+ * @model
  * @generated
  */
 public interface ParameterSelection extends OscalElement {
@@ -52,14 +52,13 @@ public interface ParameterSelection extends OscalElement {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * <h1>Choice</h1>
+	 * <h1>parameter-choice</h1>
 	 * <h2>Description</h2>
 	 * <p>A value selection among several such options</p>
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Choice</em>' attribute list.
 	 * @see dsm.oscal.model.OscalCatalogCommon.OscalCatalogCommonPackage#getParameterSelection_Choice()
 	 * @model dataType="dsm.oscal.model.OscalMetadata.MarkupLineType"
-	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-catalog-common.&lt;AssemblyDefinition&gt;parameter-selection.&lt;FieldInstance&gt;parameter-choice'"
 	 * @generated
 	 */
 	EList<MarkupLine> getChoice();
@@ -69,14 +68,14 @@ public interface ParameterSelection extends OscalElement {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * <h1>Parameter Cardinality</h1>
+	 * <h1>how-many</h1>
 	 * <h2>Description</h2>
-	 * <p>Describes the number of selections that must occur.</p>
+	 * <p>Describes the number of selections that must occur. Without this setting, only one value should be assumed to be permitted.</p>
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>How Many</em>' attribute.
 	 * @see #setHowMany(String)
 	 * @see dsm.oscal.model.OscalCatalogCommon.OscalCatalogCommonPackage#getParameterSelection_HowMany()
-	 * @model annotation="Metaschema source='&lt;Metaschema&gt;oscal-catalog-common.&lt;AssemblyDefinition&gt;parameter-selection.&lt;FlagInstance&gt;how-many'"
+	 * @model
 	 * @generated
 	 */
 	String getHowMany();

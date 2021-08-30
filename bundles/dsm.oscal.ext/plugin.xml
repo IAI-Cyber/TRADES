@@ -13,5 +13,17 @@
          </run>
       </application>
    </extension>
+   <extension
+         id="DeleteMetaschemaAnnotApplication"
+         point="org.eclipse.core.runtime.applications">
+      <application
+            cardinality="singleton-global"
+            thread="main"
+            visible="true">
+         <run
+               class="dsm.oscal.ext.DeleteMetaschemaAnnotApplication">
+         </run>
+      </application>
+   </extension>
 
 </plugin>

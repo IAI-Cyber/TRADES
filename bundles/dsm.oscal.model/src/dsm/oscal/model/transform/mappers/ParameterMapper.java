@@ -3,7 +3,7 @@ package dsm.oscal.model.transform.mappers;
 import dsm.oscal.model.OscalCatalogCommon.OscalCatalogCommonFactory;
 import dsm.oscal.model.OscalCatalogCommon.Parameter;
 
-public class ParameterMapper extends AbstractObjectMapper<Parameter, gov.nist.secauto.oscal.lib.Parameter> {
+public class ParameterMapper extends AbstractObjectMapper<Parameter, gov.nist.secauto.oscal.lib.model.Parameter> {
 
 	private ParameterMapper() {
 	}
@@ -20,7 +20,7 @@ public class ParameterMapper extends AbstractObjectMapper<Parameter, gov.nist.se
 	}
 
 	@Override
-	protected Parameter safeToTrades(gov.nist.secauto.oscal.lib.Parameter oscalObject) {
+	protected Parameter safeToTrades(gov.nist.secauto.oscal.lib.model.Parameter oscalObject) {
 		Parameter parameter = OscalCatalogCommonFactory.eINSTANCE.createParameter();
 		parameter.setClazz(oscalObject.getClazz());
 		parameter.setId(oscalObject.getId());
@@ -42,8 +42,8 @@ public class ParameterMapper extends AbstractObjectMapper<Parameter, gov.nist.se
 	}
 
 	@Override
-	protected gov.nist.secauto.oscal.lib.Parameter safeToOscal(Parameter tradesObject) {
-		gov.nist.secauto.oscal.lib.Parameter parameter = new gov.nist.secauto.oscal.lib.Parameter();
+	protected gov.nist.secauto.oscal.lib.model.Parameter safeToOscal(Parameter tradesObject) {
+		gov.nist.secauto.oscal.lib.model.Parameter parameter = new gov.nist.secauto.oscal.lib.model.Parameter();
 		parameter.setClazz(tradesObject.getClazz());
 		parameter.setId(tradesObject.getId());
 		parameter.setDependsOn(tradesObject.getDependsOn());

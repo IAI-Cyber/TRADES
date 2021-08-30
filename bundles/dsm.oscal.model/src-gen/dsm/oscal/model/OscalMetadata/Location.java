@@ -27,7 +27,7 @@ import org.eclipse.emf.common.util.EList;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * <h1>Location</h1>
+ * <h1>location</h1>
  * <h2>Description</h2>
  * <p>A location, with associated metadata that can be referenced.</p>
  * <!-- end-model-doc -->
@@ -44,7 +44,7 @@ import org.eclipse.emf.common.util.EList;
  * </ul>
  *
  * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getLocation()
- * @model annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;AssemblyDefinition&gt;location'"
+ * @model
  * @generated
  */
 public interface Location extends OscalElement, UUIDElement, PropertyOwner, LinkOwner, ElementWithRemarks {
@@ -56,7 +56,6 @@ public interface Location extends OscalElement, UUIDElement, PropertyOwner, Link
 	 * @see #setAddress(Address)
 	 * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getLocation_Address()
 	 * @model containment="true" required="true"
-	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;AssemblyDefinition&gt;address'"
 	 * @generated
 	 */
 	Address getAddress();
@@ -77,13 +76,13 @@ public interface Location extends OscalElement, UUIDElement, PropertyOwner, Link
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * <h1>Email Address</h1>
+	 * <h1>email-address</h1>
 	 * <h2>Description</h2>
 	 * <p>An email address as defined by <a href="https://tools.ietf.org/html/rfc5322#section-3.4.1">RFC 5322 Section 3.4.1</a>.</p>
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Email Addresses</em>' attribute list.
 	 * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getLocation_EmailAddresses()
-	 * @model annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;AssemblyDefinition&gt;location.&lt;FieldInstance&gt;email-address'"
+	 * @model
 	 * @generated
 	 */
 	EList<String> getEmailAddresses();
@@ -96,7 +95,6 @@ public interface Location extends OscalElement, UUIDElement, PropertyOwner, Link
 	 * @return the value of the '<em>Telephone Numbers</em>' containment reference list.
 	 * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getLocation_TelephoneNumbers()
 	 * @model containment="true"
-	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;FieldDefinition&gt;telephone-number'"
 	 * @generated
 	 */
 	EList<TelephoneNumber> getTelephoneNumbers();
@@ -106,7 +104,7 @@ public interface Location extends OscalElement, UUIDElement, PropertyOwner, Link
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * <h1>Location Title</h1>
+	 * <h1>title</h1>
 	 * <h2>Description</h2>
 	 * <p>A name given to the location, which may be used by a tool for display and navigation.</p>
 	 * <!-- end-model-doc -->
@@ -114,7 +112,6 @@ public interface Location extends OscalElement, UUIDElement, PropertyOwner, Link
 	 * @see #setTitle(MarkupLine)
 	 * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getLocation_Title()
 	 * @model dataType="dsm.oscal.model.OscalMetadata.MarkupLineType"
-	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;AssemblyDefinition&gt;location.&lt;FieldInstance&gt;title'"
 	 * @generated
 	 */
 	MarkupLine getTitle();
@@ -135,14 +132,13 @@ public interface Location extends OscalElement, UUIDElement, PropertyOwner, Link
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * <h1>Location URL</h1>
+	 * <h1>url</h1>
 	 * <h2>Description</h2>
 	 * <p>The uniform resource locator (URL) for a web site or Internet presence associated with the location.</p>
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Urls</em>' attribute list.
 	 * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getLocation_Urls()
 	 * @model dataType="dsm.oscal.model.OscalMetadata.UriType"
-	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;AssemblyDefinition&gt;location.&lt;FieldInstance&gt;url'"
 	 * @generated
 	 */
 	EList<URI> getUrls();

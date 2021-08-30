@@ -3,7 +3,7 @@ package dsm.oscal.model.transform.mappers;
 import dsm.oscal.model.OscalMetadata.OscalMetadataFactory;
 
 public class TelephoneNumberMapper extends
-		AbstractObjectMapper<dsm.oscal.model.OscalMetadata.TelephoneNumber, gov.nist.secauto.oscal.lib.TelephoneNumber> {
+		AbstractObjectMapper<dsm.oscal.model.OscalMetadata.TelephoneNumber, gov.nist.secauto.oscal.lib.model.TelephoneNumber> {
 
 	private TelephoneNumberMapper() {
 	}
@@ -20,8 +20,8 @@ public class TelephoneNumberMapper extends
 	}
 
 	@Override
-	protected gov.nist.secauto.oscal.lib.TelephoneNumber safeToOscal(dsm.oscal.model.OscalMetadata.TelephoneNumber tradesObject) {
-		gov.nist.secauto.oscal.lib.TelephoneNumber tel = new gov.nist.secauto.oscal.lib.TelephoneNumber();
+	protected gov.nist.secauto.oscal.lib.model.TelephoneNumber safeToOscal(dsm.oscal.model.OscalMetadata.TelephoneNumber tradesObject) {
+		gov.nist.secauto.oscal.lib.model.TelephoneNumber tel = new gov.nist.secauto.oscal.lib.model.TelephoneNumber();
 		tel.setType(tradesObject.getType());
 		tel.setValue(tradesObject.getValue());
 		return tel;
@@ -29,7 +29,7 @@ public class TelephoneNumberMapper extends
 
 	@Override
 	protected dsm.oscal.model.OscalMetadata.TelephoneNumber safeToTrades(
-			gov.nist.secauto.oscal.lib.TelephoneNumber oscalObject) {
+			gov.nist.secauto.oscal.lib.model.TelephoneNumber oscalObject) {
 		dsm.oscal.model.OscalMetadata.TelephoneNumber tel = OscalMetadataFactory.eINSTANCE.createTelephoneNumber();
 		tel.setType(oscalObject.getType());
 		tel.setValue(oscalObject.getValue());

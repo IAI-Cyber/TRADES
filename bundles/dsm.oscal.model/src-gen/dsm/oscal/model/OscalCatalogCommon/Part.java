@@ -34,7 +34,7 @@ import java.net.URI;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * <h1>Part</h1>
+ * <h1>part</h1>
  * <h2>Description</h2>
  * <p>A partition of a control's definition or a child of another part.</p><h2>Remarks</h2>
  * <p>A <code>part</code> provides for logical partitioning of prose, and can be thought of as a grouping structure (e.g., section). A <code>part</code> can have child parts allowing for arbitrary nesting of prose content (e.g., statement hierarchy). A <code>part</code> can contain <code>prop</code> objects that allow for enriching prose text with structured name/value information.</p>
@@ -55,7 +55,7 @@ import java.net.URI;
  * </ul>
  *
  * @see dsm.oscal.model.OscalCatalogCommon.OscalCatalogCommonPackage#getPart()
- * @model annotation="Metaschema source='&lt;Metaschema&gt;oscal-catalog-common.&lt;AssemblyDefinition&gt;part'"
+ * @model
  * @generated
  */
 public interface Part extends OscalElement, PropertyOwner, LinkOwner, PartOwner, DocumentationComputer, ElementWithClazz, ElementWithId {
@@ -64,7 +64,7 @@ public interface Part extends OscalElement, PropertyOwner, LinkOwner, PartOwner,
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * <h1>Part Name</h1>
+	 * <h1>name</h1>
 	 * <h2>Description</h2>
 	 * <p>A textual label that uniquely identifies the part's semantic type.</p>
 	 * <!-- end-model-doc -->
@@ -72,7 +72,6 @@ public interface Part extends OscalElement, PropertyOwner, LinkOwner, PartOwner,
 	 * @see #setName(String)
 	 * @see dsm.oscal.model.OscalCatalogCommon.OscalCatalogCommonPackage#getPart_Name()
 	 * @model required="true"
-	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-catalog-common.&lt;AssemblyDefinition&gt;part.&lt;FlagInstance&gt;name'"
 	 * @generated
 	 */
 	String getName();
@@ -92,7 +91,7 @@ public interface Part extends OscalElement, PropertyOwner, LinkOwner, PartOwner,
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * <h1>Part Namespace</h1>
+	 * <h1>ns</h1>
 	 * <h2>Description</h2>
 	 * <p>A namespace qualifying the part's name. This allows different organizations to associate distinct semantics with the same name.</p><h2>Remarks</h2>
 	 * <p>Provides a means to segment the value space for the <code>name</code>, so that different organizations and individuals can assert control over the allowed names and associated text used in a part. This allows the semantics associated with a given name to be defined on an organization-by-organization basis.</p>
@@ -103,7 +102,6 @@ public interface Part extends OscalElement, PropertyOwner, LinkOwner, PartOwner,
 	 * @see #setNs(URI)
 	 * @see dsm.oscal.model.OscalCatalogCommon.OscalCatalogCommonPackage#getPart_Ns()
 	 * @model dataType="dsm.oscal.model.OscalMetadata.UriType"
-	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-catalog-common.&lt;AssemblyDefinition&gt;part.&lt;FlagInstance&gt;ns'"
 	 * @generated
 	 */
 	URI getNs();
@@ -123,7 +121,7 @@ public interface Part extends OscalElement, PropertyOwner, LinkOwner, PartOwner,
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * <h1>Part Text</h1>
+	 * <h1>prose</h1>
 	 * <h2>Description</h2>
 	 * <p>Permits multiple paragraphs, lists, tables etc.</p>
 	 * <!-- end-model-doc -->
@@ -131,7 +129,6 @@ public interface Part extends OscalElement, PropertyOwner, LinkOwner, PartOwner,
 	 * @see #setProse(MarkupMultiline)
 	 * @see dsm.oscal.model.OscalCatalogCommon.OscalCatalogCommonPackage#getPart_Prose()
 	 * @model dataType="dsm.oscal.model.OscalMetadata.MarkupMultilineType"
-	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-catalog-common.&lt;AssemblyDefinition&gt;part.&lt;FieldInstance&gt;prose'"
 	 * @generated
 	 */
 	MarkupMultiline getProse();
@@ -151,7 +148,7 @@ public interface Part extends OscalElement, PropertyOwner, LinkOwner, PartOwner,
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * <h1>Part Title</h1>
+	 * <h1>title</h1>
 	 * <h2>Description</h2>
 	 * <p>A name given to the part, which may be used by a tool for display and navigation.</p>
 	 * <!-- end-model-doc -->
@@ -159,7 +156,6 @@ public interface Part extends OscalElement, PropertyOwner, LinkOwner, PartOwner,
 	 * @see #setTitle(MarkupLine)
 	 * @see dsm.oscal.model.OscalCatalogCommon.OscalCatalogCommonPackage#getPart_Title()
 	 * @model dataType="dsm.oscal.model.OscalMetadata.MarkupLineType"
-	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-catalog-common.&lt;AssemblyDefinition&gt;part.&lt;FieldInstance&gt;title'"
 	 * @generated
 	 */
 	MarkupLine getTitle();

@@ -20,6 +20,7 @@ import dsm.oscal.model.OscalCatalogCommon.OscalCatalogCommonPackage;
 import dsm.oscal.model.OscalCatalogCommon.ParameterConstraintTest;
 
 import dsm.oscal.model.OscalMetadata.OscalMetadataPackage;
+
 import dsm.oscal.model.OscalMetadata.provider.OscalElementItemProvider;
 
 import gov.nist.secauto.metaschema.datatypes.markup.MarkupMultiline;
@@ -182,7 +183,7 @@ public class ParameterConstraintTestItemProvider extends OscalElementItemProvide
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return dsm.oscal.model.OscalCatalogCommon.provider.OscalEditPlugin.INSTANCE;
+		return OscalEditPlugin.INSTANCE;
 	}
 
 }

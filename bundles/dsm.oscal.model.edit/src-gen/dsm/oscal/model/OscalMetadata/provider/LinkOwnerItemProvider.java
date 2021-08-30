@@ -17,6 +17,7 @@ package dsm.oscal.model.OscalMetadata.provider;
 
 
 import dsm.oscal.model.OscalCatalogCommon.provider.OscalEditPlugin;
+
 import dsm.oscal.model.OscalMetadata.LinkOwner;
 import dsm.oscal.model.OscalMetadata.OscalMetadataFactory;
 import dsm.oscal.model.OscalMetadata.OscalMetadataPackage;

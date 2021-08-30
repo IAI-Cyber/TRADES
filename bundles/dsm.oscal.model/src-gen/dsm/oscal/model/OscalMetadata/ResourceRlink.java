@@ -25,7 +25,7 @@ import org.eclipse.emf.common.util.EList;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * <h1>Resource link</h1>
+ * <h1>rlink</h1>
  * <h2>Description</h2>
  * <p>A pointer to an external resource with an optional hash for verification and change detection.</p><h2>Remarks</h2>
  * <p>This construct is different from <code>link</code>, which makes no provision for a hash or formal title.</p>
@@ -42,7 +42,7 @@ import org.eclipse.emf.common.util.EList;
  * </ul>
  *
  * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getResourceRlink()
- * @model annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;AssemblyDefinition&gt;rlink'"
+ * @model
  * @generated
  */
 public interface ResourceRlink extends OscalElement {
@@ -51,7 +51,7 @@ public interface ResourceRlink extends OscalElement {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * <h1>Hypertext Reference</h1>
+	 * <h1>href</h1>
 	 * <h2>Description</h2>
 	 * <p>A resolvable URI reference to a resource.</p>
 	 * <!-- end-model-doc -->
@@ -59,7 +59,6 @@ public interface ResourceRlink extends OscalElement {
 	 * @see #setEHref(URI)
 	 * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getResourceRlink_EHref()
 	 * @model dataType="dsm.oscal.model.OscalMetadata.UriReferenceType" required="true"
-	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;AssemblyDefinition&gt;rlink.&lt;FlagInstance&gt;href'"
 	 * @generated
 	 */
 	URI getEHref();
@@ -82,7 +81,6 @@ public interface ResourceRlink extends OscalElement {
 	 * @return the value of the '<em>Hashes</em>' containment reference list.
 	 * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getResourceRlink_Hashes()
 	 * @model containment="true"
-	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;FieldDefinition&gt;hash'"
 	 * @generated
 	 */
 	EList<Hash> getHashes();
@@ -92,14 +90,14 @@ public interface ResourceRlink extends OscalElement {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * <h1>Media Type</h1>
+	 * <h1>media-type</h1>
 	 * <h2>Description</h2>
 	 * <p>Specifies a media type as defined by the Internet Assigned Numbers Authority (IANA) <a href="https://www.iana.org/assignments/media-types/media-types.xhtml">Media Types Registry</a>.</p>
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Media Type</em>' attribute.
 	 * @see #setMediaType(String)
 	 * @see dsm.oscal.model.OscalMetadata.OscalMetadataPackage#getResourceRlink_MediaType()
-	 * @model annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;AssemblyDefinition&gt;rlink.&lt;FlagInstance&gt;media-type'"
+	 * @model
 	 * @generated
 	 */
 	String getMediaType();

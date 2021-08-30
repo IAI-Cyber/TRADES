@@ -3,7 +3,7 @@ package dsm.oscal.model.transform.mappers;
 import dsm.oscal.model.OscalMetadata.OscalMetadataFactory;
 
 public class HashMapper
-		extends AbstractObjectMapper<dsm.oscal.model.OscalMetadata.Hash, gov.nist.secauto.oscal.lib.Hash> {
+		extends AbstractObjectMapper<dsm.oscal.model.OscalMetadata.Hash, gov.nist.secauto.oscal.lib.model.Hash> {
 
 	private HashMapper() {
 	}
@@ -20,15 +20,15 @@ public class HashMapper
 	}
 
 	@Override
-	protected gov.nist.secauto.oscal.lib.Hash safeToOscal(dsm.oscal.model.OscalMetadata.Hash tradesObject) {
-		gov.nist.secauto.oscal.lib.Hash hash = new gov.nist.secauto.oscal.lib.Hash();
+	protected gov.nist.secauto.oscal.lib.model.Hash safeToOscal(dsm.oscal.model.OscalMetadata.Hash tradesObject) {
+		gov.nist.secauto.oscal.lib.model.Hash hash = new gov.nist.secauto.oscal.lib.model.Hash();
 		hash.setAlgorithm(tradesObject.getAlgorithm());
 		hash.setValue(tradesObject.getValue());
 		return hash;
 	}
 
 	@Override
-	protected dsm.oscal.model.OscalMetadata.Hash safeToTrades(gov.nist.secauto.oscal.lib.Hash oscalObject) {
+	protected dsm.oscal.model.OscalMetadata.Hash safeToTrades(gov.nist.secauto.oscal.lib.model.Hash oscalObject) {
 		dsm.oscal.model.OscalMetadata.Hash hash = OscalMetadataFactory.eINSTANCE.createHash();
 		hash.setAlgorithm(oscalObject.getAlgorithm());
 		hash.setValue(oscalObject.getValue());

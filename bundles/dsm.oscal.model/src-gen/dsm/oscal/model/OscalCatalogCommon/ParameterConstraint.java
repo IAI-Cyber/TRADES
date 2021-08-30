@@ -27,7 +27,7 @@ import org.eclipse.emf.common.util.EList;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * <h1>Constraint</h1>
+ * <h1>parameter-constraint</h1>
  * <h2>Description</h2>
  * <p>A formal or informal expression of a constraint or test</p>
  * <!-- end-model-doc -->
@@ -41,7 +41,7 @@ import org.eclipse.emf.common.util.EList;
  * </ul>
  *
  * @see dsm.oscal.model.OscalCatalogCommon.OscalCatalogCommonPackage#getParameterConstraint()
- * @model annotation="Metaschema source='&lt;Metaschema&gt;oscal-catalog-common.&lt;AssemblyDefinition&gt;parameter-constraint'"
+ * @model
  * @generated
  */
 public interface ParameterConstraint extends OscalElement {
@@ -50,7 +50,7 @@ public interface ParameterConstraint extends OscalElement {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * <h1>Constraint Description</h1>
+	 * <h1>description</h1>
 	 * <h2>Description</h2>
 	 * <p>A textual summary of the constraint to be applied.</p>
 	 * <!-- end-model-doc -->
@@ -58,7 +58,6 @@ public interface ParameterConstraint extends OscalElement {
 	 * @see #setDescription(MarkupMultiline)
 	 * @see dsm.oscal.model.OscalCatalogCommon.OscalCatalogCommonPackage#getParameterConstraint_Description()
 	 * @model dataType="dsm.oscal.model.OscalMetadata.MarkupMultilineType"
-	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-catalog-common.&lt;AssemblyDefinition&gt;parameter-constraint.&lt;FieldInstance&gt;description'"
 	 * @generated
 	 */
 	MarkupMultiline getDescription();
@@ -81,7 +80,6 @@ public interface ParameterConstraint extends OscalElement {
 	 * @return the value of the '<em>Tests</em>' containment reference list.
 	 * @see dsm.oscal.model.OscalCatalogCommon.OscalCatalogCommonPackage#getParameterConstraint_Tests()
 	 * @model containment="true"
-	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-catalog-common.&lt;AssemblyDefinition&gt;test'"
 	 * @generated
 	 */
 	EList<ParameterConstraintTest> getTests();

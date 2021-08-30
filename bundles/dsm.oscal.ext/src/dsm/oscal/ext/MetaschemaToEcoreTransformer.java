@@ -40,7 +40,6 @@ import org.eclipse.emf.codegen.ecore.genmodel.impl.GenClassImpl;
 import org.eclipse.emf.codegen.ecore.genmodel.impl.GenDataTypeImpl;
 import org.eclipse.emf.common.util.ECollections;
 import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
@@ -56,15 +55,22 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
+import gov.nist.secauto.metaschema.datatypes.DataTypes;
 import gov.nist.secauto.metaschema.datatypes.markup.MarkupLine;
 import gov.nist.secauto.metaschema.datatypes.markup.MarkupMultiline;
 import gov.nist.secauto.metaschema.model.MetaschemaException;
 import gov.nist.secauto.metaschema.model.MetaschemaLoader;
+import gov.nist.secauto.metaschema.model.common.IModelElement;
+import gov.nist.secauto.metaschema.model.common.INamedModelElement;
+import gov.nist.secauto.metaschema.model.common.definition.IAssemblyDefinition;
+import gov.nist.secauto.metaschema.model.common.definition.IFieldDefinition;
+import gov.nist.secauto.metaschema.model.common.definition.IFlagDefinition;
+import gov.nist.secauto.metaschema.model.common.instance.IAssemblyInstance;
+import gov.nist.secauto.metaschema.model.common.instance.IFieldInstance;
+import gov.nist.secauto.metaschema.model.common.instance.IFlagInstance;
 import gov.nist.secauto.metaschema.model.definitions.AssemblyDefinition;
-import gov.nist.secauto.metaschema.model.definitions.DataType;
 import gov.nist.secauto.metaschema.model.definitions.FieldDefinition;
-import gov.nist.secauto.metaschema.model.definitions.FlagDefinition;
-import gov.nist.secauto.metaschema.model.definitions.InfoElementDefinition;
+import gov.nist.secauto.metaschema.model.definitions.MetaschemaDefinition;
 import gov.nist.secauto.metaschema.model.instances.AssemblyInstance;
 import gov.nist.secauto.metaschema.model.instances.FieldInstance;
 import gov.nist.secauto.metaschema.model.instances.FlagInstance;
@@ -97,12 +103,8 @@ public class MetaschemaToEcoreTransformer {
 			+ " https://www.eclipse.org/legal/epl-2.0/\r\n" + " \r\n" + " SPDX-License-Identifier: EPL-2.0\r\n"
 			+ " \r\n" + " Contributors:\r\n" + "     ELTA Ltd - initial API and implementation\r\n" + " \r\n";
 
-	private static final String SOURCE = "source";
-
-	private static final String METASCHEMA_SOURCE = "Metaschema";
-
-	private Map<DataType, EDataType> dataTypes = new HashMap<>();
-	private Map<EDataType, DataType> dataTypesReverse = new HashMap<>();
+	private Map<DataTypes, EDataType> dataTypes = new HashMap<>();
+	private Map<EDataType, DataTypes> dataTypesReverse = new HashMap<>();
 
 	private MetaschemaLoader loader = new MetaschemaLoader();;
 
@@ -234,15 +236,15 @@ public class MetaschemaToEcoreTransformer {
 		refactorer.refactorGenModel(genModel);
 		genModel.initialize(ePackages);
 
-		List<DataType> eDataToGenerate = new ArrayList<>();
+		List<DataTypes> eDataToGenerate = new ArrayList<>();
 		Collection<EPackage> oscalSchemas = schemaToPackage.values();
-		for (Entry<DataType, EDataType> entry : dataTypes.entrySet()) {
+		for (Entry<DataTypes, EDataType> entry : dataTypes.entrySet()) {
 			if (oscalSchemas.contains(entry.getValue().getEPackage())) {
 				eDataToGenerate.add(entry.getKey());
 			}
 		}
-
-		Collections.sort(eDataToGenerate, Comparator.comparing(DataType::name));
+		
+		Collections.sort(eDataToGenerate, Comparator.comparing(d -> d.toString()));
 
 		OscalDataTypeHandlerGenerator genTypeGenerator = new OscalDataTypeHandlerGenerator("dsm.oscal.model", (msg,
 				exVariable) -> "dsm.oscal.model.OSCALModelActivator.logError(\"" + msg + "\", " + exVariable + ")",
@@ -255,7 +257,7 @@ public class MetaschemaToEcoreTransformer {
 			genPack.setBasePackage("dsm.oscal.model");
 			genPacks.add(genPack);
 			for (GenDataType genType : genPack.getGenDataTypes()) {
-				DataType oscalDataType = dataTypesReverse.get(genType.getEcoreDataType());
+				DataTypes oscalDataType = dataTypesReverse.get(genType.getEcoreDataType());
 				if (oscalDataType != null) {
 					((GenDataTypeImpl) genType).setCreate(genTypeGenerator.getFromStringCode(oscalDataType));
 					((GenDataTypeImpl) genType).setConvert(genTypeGenerator.getToStringCode(oscalDataType));
@@ -285,8 +287,7 @@ public class MetaschemaToEcoreTransformer {
 		refactorer.refactorGenClasses(genClasses);
 		try {
 
-			Resource genModelResource = rs.createResource(
-					genModelURI);
+			Resource genModelResource = rs.createResource(genModelURI);
 			genModelResource.getContents().add(genModel);
 			genModelResource.save(Collections.emptyMap());
 		} catch (IOException e) {
@@ -355,7 +356,7 @@ public class MetaschemaToEcoreTransformer {
 	 */
 	private void createDataType() {
 		// Map simple data types to the one provided by Ecore
-		for (DataType type : DataType.values()) {
+		for (DataTypes type : DataTypes.values()) {
 
 			EDataType eDataType;
 			switch (type) {
@@ -382,9 +383,8 @@ public class MetaschemaToEcoreTransformer {
 
 			// Fallback for more complexe type
 			if (eDataType == null) {
-				gov.nist.secauto.metaschema.codegen.type.DataType genType = gov.nist.secauto.metaschema.codegen.type.DataType
-						.lookupByDatatype(type);
-				String instanceClassName = genType.getTypeName().toString();
+				Class<?> javaClass = type.getJavaTypeAdapter().getJavaClass();
+				String instanceClassName = javaClass.getName();
 
 				// For type mapped to String use UString
 				if ("java.lang.String".equals(instanceClassName)) {
@@ -394,7 +394,7 @@ public class MetaschemaToEcoreTransformer {
 				// Only creates a new data types when required
 				if (eDataType == null) {
 					eDataType = EcoreFactory.eINSTANCE.createEDataType();
-					eDataType.setName(NameHelper.getProperEDataTypeName(genType));
+					eDataType.setName(NameHelper.getProperEDataTypeName(type));
 					eDataType.setInstanceClassName(instanceClassName);
 				}
 			}
@@ -428,12 +428,14 @@ public class MetaschemaToEcoreTransformer {
 
 		// Collect all AssemblyDefinition and FieldDefinition (fields with flags) that
 		// will be transformed into EClass
-		List<AssemblyDefinition> defs = new ArrayList<>();
-		List<FieldDefinition> complexeFielDefs = new ArrayList<>();
-		collectAssemblyDefinition(metadata.getAssemblyDefinitions().values(), defs, complexeFielDefs, null);
+		List<IAssemblyDefinition> defs = new ArrayList<>();
+		List<IFieldDefinition> complexeFielDefs = new ArrayList<>();
+
+		collectAssemblyDefinition(new ArrayList<>(metadata.getAssemblyDefinitions().values()), defs, complexeFielDefs,
+				null);
 
 		// Create EClass for assembly definition (and simple attributes only)
-		for (AssemblyDefinition def : defs) {
+		for (IAssemblyDefinition def : defs) {
 			EClass eClass = toEClass(def);
 			if (eClass != null) {
 				ePack.getEClassifiers().add(eClass);
@@ -441,7 +443,7 @@ public class MetaschemaToEcoreTransformer {
 		}
 
 		// Create EClass for complex field
-		for (FieldDefinition def : complexeFielDefs) {
+		for (IFieldDefinition def : complexeFielDefs) {
 			EClass eClass = toEClass(def);
 			if (eClass != null) {
 				ePack.getEClassifiers().add(eClass);
@@ -449,9 +451,9 @@ public class MetaschemaToEcoreTransformer {
 		}
 
 		// Then create all references
-		for (AssemblyDefinition definition : defs) {
+		for (IAssemblyDefinition definition : defs) {
 
-			EClass eClass = defToEClass.get(QualifiedNameHelper.getQualifiedName(definition));
+			EClass eClass = defToEClass.get(definition.toCoordinates());
 			if (eClass != null) {
 				fillReferences(eClass, definition);
 			}
@@ -465,23 +467,19 @@ public class MetaschemaToEcoreTransformer {
 	 * @param complexeFielCollector collector of {@link FieldDefinition}
 	 * @param parent                optional parent {@link AssemblyDefinition}
 	 */
-	private void collectAssemblyDefinition(Collection<AssemblyDefinition> defs,
-			List<AssemblyDefinition> assemblyCollector, List<FieldDefinition> complexeFielCollector,
-			AssemblyDefinition parent) {
+	private void collectAssemblyDefinition(List<IAssemblyDefinition> defs, List<IAssemblyDefinition> assemblyCollector,
+			List<IFieldDefinition> complexeFielCollector, IAssemblyDefinition parent) {
 
-		for (AssemblyDefinition def : defs) {
-			String qn = QualifiedNameHelper.getQualifiedName(def);
+		for (IAssemblyDefinition def : defs) {
+			String qn = def.toCoordinates();
 			if (!defToEClass.containsKey(qn)) {
 				EClass eClass = EcoreFactory.eINSTANCE.createEClass();
 
-				setMigrationAnnotation(eClass, SOURCE, QualifiedNameHelper.getQualifiedName(def));
-				if (!def.isGlobal()) {
-					if (parent != null) {
-						eClass.setName(NameHelper.getProperEClassName(parent.getName())
-								+ NameHelper.getProperEClassName(def.getName()));
-					} else {
-						throw new IllegalStateException("Local definition without parent");
-					}
+				if (def.getClass().isMemberClass() // Only way for now to check local assembly definition
+						// We need o distinguish them to avoid name collision
+						&& parent != null) {
+					eClass.setName(NameHelper.getProperEClassName(parent.getName())
+							+ NameHelper.getProperEClassName(def.getName()));
 				} else {
 					eClass.setName(NameHelper.getProperEClassName(def.getName()));
 				}
@@ -489,22 +487,52 @@ public class MetaschemaToEcoreTransformer {
 				defToEClass.put(qn, eClass);
 				assemblyCollector.add(def);
 
-				for (Entry<String, FieldInstance<?>> entry : def.getFieldInstances().entrySet()) {
-					FieldInstance<?> inst = entry.getValue();
-					if (!inst.isSimple()) {
+				for (Entry<String, ? extends IFieldInstance> entry : def.getFieldInstances().entrySet()) {
+					IFieldInstance inst = entry.getValue();
+					if (!isSimple(inst)) {
 						addComplexeFieldDefinition(complexeFielCollector, inst.getDefinition());
 					}
 				}
 
-				List<AssemblyDefinition> childrenDefinition = def.getAssemblyInstances().values().stream()
-						.filter(i -> !i.isSimple()).map(i -> i.getDefinition()).collect(toList());
+				List<IAssemblyDefinition> childrenDefinition = def.getAssemblyInstances().values().stream()
+						.filter(i -> !isSimple(i)).map(i -> i.getDefinition()).collect(toList());
 				collectAssemblyDefinition(childrenDefinition, assemblyCollector, complexeFielCollector, def);
 			}
 		}
 	}
 
-	private void addComplexeFieldDefinition(List<FieldDefinition> complexeFielDefs, FieldDefinition cfd) {
-		String fqn = QualifiedNameHelper.getQualifiedName(cfd);
+	/**
+	 * Check if the given model element is a complex data type that would be
+	 * represented by an EClass
+	 * 
+	 * @param modelElement
+	 * @return
+	 */
+	private boolean isSimple(IModelElement modelElement) {
+		final boolean result;
+
+		if (modelElement instanceof IFieldInstance) {
+			result = ((IFieldInstance) modelElement).getDefinition().getFlagInstances().isEmpty();
+		} else if (modelElement instanceof IAssemblyDefinition || modelElement instanceof IAssemblyInstance) {
+			result = false;
+		} else if (modelElement instanceof IFieldDefinition) {
+			result = ((IFieldDefinition) modelElement).getFlagInstances().isEmpty();
+		} else {
+			result = true;
+		}
+
+		if (result) {
+			if (modelElement instanceof INamedModelElement) {
+				System.out.println(((INamedModelElement) modelElement).getName() + " is simple");
+
+			}
+		}
+		return result;
+
+	}
+
+	private void addComplexeFieldDefinition(List<IFieldDefinition> complexeFielDefs, IFieldDefinition cfd) {
+		String fqn = cfd.toCoordinates();
 		if (!defToEClass.containsKey(fqn)) {
 			EClass feClass = EcoreFactory.eINSTANCE.createEClass();
 			defToEClass.put(fqn, feClass);
@@ -515,8 +543,13 @@ public class MetaschemaToEcoreTransformer {
 			feClass.getEStructuralFeatures().add(attr);
 			attr.setName("value");
 
-			DataType dataType = cfd.getDatatype();
-			attr.setEType(dataTypes.get(dataType));
+			DataTypes dataType = cfd.getDatatype();
+			EDataType matchingType = dataTypes.get(dataType);
+			if (matchingType == null) {
+				System.err.println("Matching data type note found for " + dataType);
+			} else {
+				attr.setEType(matchingType);
+			}
 
 		}
 	}
@@ -527,16 +560,16 @@ public class MetaschemaToEcoreTransformer {
 	 * @param eClass     {@link EClass} to fill
 	 * @param definition {@link AssemblyDefinition}
 	 */
-	private void fillReferences(EClass eClass, AssemblyDefinition definition) {
-		for (Entry<String, AssemblyInstance<?>> entry : definition.getAssemblyInstances().entrySet()) {
-			AssemblyInstance<?> assInstance = entry.getValue();
+	private void fillReferences(EClass eClass, IAssemblyDefinition definition) {
+		for (Entry<String, ? extends IAssemblyInstance> entry : definition.getAssemblyInstances().entrySet()) {
+			IAssemblyInstance assInstance = entry.getValue();
 			toContainmentRef(eClass, assInstance);
 
 		}
 
-		for (Entry<String, FieldInstance<?>> entry : definition.getFieldInstances().entrySet()) {
-			FieldInstance<?> fieldInstance = entry.getValue();
-			if (!fieldInstance.isSimple()) {
+		for (Entry<String, ? extends IFieldInstance> entry : definition.getFieldInstances().entrySet()) {
+			IFieldInstance fieldInstance = entry.getValue();
+			if (!isSimple(fieldInstance)) {
 				toContainmentRef(eClass, fieldInstance);
 			}
 		}
@@ -550,16 +583,15 @@ public class MetaschemaToEcoreTransformer {
 	 * @param eClass        owning {@link EClass}
 	 * @param fieldInstance field definition (for complex type only)
 	 */
-	private void toContainmentRef(EClass eClass, FieldInstance<?> fieldInstance) {
-		FieldDefinition fieldDefinition = fieldInstance.getDefinition();
+	private void toContainmentRef(EClass eClass, IFieldInstance fieldInstance) {
+		IFieldDefinition fieldDefinition = fieldInstance.getDefinition();
 
 		EReference containmentRef = EcoreFactory.eINSTANCE.createEReference();
-		setMigrationAnnotation(containmentRef, SOURCE, QualifiedNameHelper.getQualifiedName(fieldDefinition));
 		eClass.getEStructuralFeatures().add(containmentRef);
 		containmentRef.setContainment(true);
 		containmentRef.setName(NameHelper.getProperEStructuralFeatureName(NameHelper.getFieldName(fieldInstance)));
 
-		String defQualifiedName = QualifiedNameHelper.getQualifiedName(fieldDefinition);
+		String defQualifiedName = fieldDefinition.toCoordinates();
 		EClass targetEClass = defToEClass.get(defQualifiedName);
 		if (targetEClass == null) {
 			// Locally defined type
@@ -580,32 +612,25 @@ public class MetaschemaToEcoreTransformer {
 	 * @param eClass      owning {@link EClass}
 	 * @param assInstance assembly definition
 	 */
-	private void toContainmentRef(EClass eClass, AssemblyInstance<?> assInstance) {
-		AssemblyDefinition childDef = assInstance.getDefinition();
+	private void toContainmentRef(EClass eClass, IAssemblyInstance assInstance) {
+		IAssemblyDefinition childDef = assInstance.getDefinition();
 
-		if (assInstance.isSimple()) {
-			System.err.println("Warning: " + eClass.getName() + "." + childDef.getName()
-					+ "is a simple AssemblyDefinition. We do not handle them well now.");
+		EReference containmentRef = EcoreFactory.eINSTANCE.createEReference();
+		eClass.getEStructuralFeatures().add(containmentRef);
+		containmentRef.setContainment(true);
+		containmentRef.setName(NameHelper.getProperEStructuralFeatureName(NameHelper.getFieldName(assInstance)));
 
+		String defQualifiedName = childDef.toCoordinates();
+		EClass targetEClass = defToEClass.get(defQualifiedName);
+		if (targetEClass == null) {
+			// Locally defined type
+			System.err.println("Unknown definition " + defQualifiedName);
 		} else {
-			EReference containmentRef = EcoreFactory.eINSTANCE.createEReference();
-			setMigrationAnnotation(containmentRef, SOURCE, QualifiedNameHelper.getQualifiedName(childDef));
-			eClass.getEStructuralFeatures().add(containmentRef);
-			containmentRef.setContainment(true);
-			containmentRef.setName(NameHelper.getProperEStructuralFeatureName(NameHelper.getFieldName(assInstance)));
-
-			String defQualifiedName = QualifiedNameHelper.getQualifiedName(childDef);
-			EClass targetEClass = defToEClass.get(defQualifiedName);
-			if (targetEClass == null) {
-				// Locally defined type
-				System.err.println("Unknown definition " + defQualifiedName);
-			} else {
-				containmentRef.setEType(targetEClass);
-			}
-
-			containmentRef.setUpperBound(assInstance.getMaxOccurs());
-			containmentRef.setLowerBound(assInstance.getMinOccurs());
+			containmentRef.setEType(targetEClass);
 		}
+
+		containmentRef.setUpperBound(assInstance.getMaxOccurs());
+		containmentRef.setLowerBound(assInstance.getMinOccurs());
 	}
 
 	/**
@@ -616,15 +641,15 @@ public class MetaschemaToEcoreTransformer {
 	 * 
 	 * @return the new EClass
 	 */
-	private EClass toEClass(AssemblyDefinition def) {
-		EClass eClass = defToEClass.get(QualifiedNameHelper.getQualifiedName(def));
+	private EClass toEClass(IAssemblyDefinition def) {
+		EClass eClass = defToEClass.get(def.toCoordinates());
 
 		setDocumentation(eClass, def);
 		transformFlags(def.getFlagInstances(), eClass);
 
-		for (Entry<String, FieldInstance<?>> entry : def.getFieldInstances().entrySet()) {
-			FieldInstance<?> fieldInstance = entry.getValue();
-			if (fieldInstance.isSimple()) {
+		for (Entry<String, ? extends IFieldInstance> entry : def.getFieldInstances().entrySet()) {
+			IFieldInstance fieldInstance = entry.getValue();
+			if (isSimple(fieldInstance)) {
 				toEAttribute(eClass, fieldInstance);
 			}
 		}
@@ -641,10 +666,9 @@ public class MetaschemaToEcoreTransformer {
 	 * 
 	 * @return the new EClass
 	 */
-	private EClass toEClass(FieldDefinition def) {
-		EClass eClass = defToEClass.get(QualifiedNameHelper.getQualifiedName(def));
+	private EClass toEClass(IFieldDefinition def) {
+		EClass eClass = defToEClass.get(def.toCoordinates());
 
-		setMigrationAnnotation(eClass, SOURCE, QualifiedNameHelper.getQualifiedName(def));
 		eClass.setName(NameHelper.getProperEClassName(def.getName()));
 		setDocumentation(eClass, def);
 		transformFlags(def.getFlagInstances(), eClass);
@@ -658,15 +682,14 @@ public class MetaschemaToEcoreTransformer {
 	 * @param eClass        the owning {@link EClass}
 	 * @param fieldInstance the field instance
 	 */
-	private void toEAttribute(EClass eClass, FieldInstance<?> fieldInstance) {
-		FieldDefinition fieldDef = fieldInstance.getDefinition();
+	private void toEAttribute(EClass eClass, IFieldInstance fieldInstance) {
+		IFieldDefinition fieldDef = fieldInstance.getDefinition();
 
 		EAttribute attr = EcoreFactory.eINSTANCE.createEAttribute();
-		setMigrationAnnotation(attr, SOURCE, QualifiedNameHelper.getQualifiedName(fieldInstance));
 		eClass.getEStructuralFeatures().add(attr);
 		attr.setName(NameHelper.getProperEStructuralFeatureName(NameHelper.getFieldName(fieldInstance)));
 
-		DataType dataType = fieldDef.getDatatype();
+		DataTypes dataType = fieldDef.getDatatype();
 		attr.setEType(dataTypes.get(dataType));
 		setDocumentation(attr, fieldDef);
 
@@ -674,23 +697,6 @@ public class MetaschemaToEcoreTransformer {
 		attr.setLowerBound(fieldInstance.getMinOccurs());
 	}
 
-	/**
-	 * Add migration annotation
-	 * 
-	 * @param element the owning element
-	 * @param key     the key
-	 * @param value   the value
-	 */
-	private void setMigrationAnnotation(EModelElement element, String key, String value) {
-		EAnnotation annot = element.getEAnnotation(METASCHEMA_SOURCE);
-		if (annot == null) {
-			annot = EcoreFactory.eINSTANCE.createEAnnotation();
-			element.getEAnnotations().add(annot);
-			annot.setSource(METASCHEMA_SOURCE);
-		}
-
-		annot.getDetails().put(key, value);
-	}
 
 	/**
 	 * Transforms the given {@link FlagInstance} into {@link EAttribute}s
@@ -698,18 +704,17 @@ public class MetaschemaToEcoreTransformer {
 	 * @param flags  the flag instance with the attribute name
 	 * @param eClass the owning {@link EClass}
 	 */
-	private void transformFlags(Map<String, ? extends FlagInstance<?>> flags, EClass eClass) {
-		for (Entry<String, ? extends FlagInstance<?>> flagEntry : flags.entrySet()) {
+	private void transformFlags(Map<String, ? extends IFlagInstance> flags, EClass eClass) {
+		for (Entry<String, ? extends IFlagInstance> flagEntry : flags.entrySet()) {
 			EAttribute attr = EcoreFactory.eINSTANCE.createEAttribute();
 			eClass.getEStructuralFeatures().add(attr);
-			FlagInstance<?> entry = flagEntry.getValue();
+			IFlagInstance entry = flagEntry.getValue();
 
 			attr.setName(NameHelper.getProperEStructuralFeatureName(flagEntry.getKey()));
 
-			FlagDefinition flagDef = entry.getDefinition();
-			setMigrationAnnotation(attr, SOURCE, QualifiedNameHelper.getQualifiedName(entry));
+			IFlagDefinition flagDef = entry.getDefinition();
 
-			DataType dataType = flagDef.getDatatype();
+			DataTypes dataType = flagDef.getDatatype();
 			EDataType tDataType = dataTypes.get(dataType);
 			if (tDataType == null) {
 				System.err.println("Unkown data type " + tDataType);
@@ -732,14 +737,17 @@ public class MetaschemaToEcoreTransformer {
 	 * @param element the element to set documentation on
 	 * @param def     the documentation owner
 	 */
-	private void setDocumentation(EModelElement element, InfoElementDefinition def) {
+	private void setDocumentation(EModelElement element, INamedModelElement def) {
 		String doc = "";
 
-		doc += "<h1>" + def.getFormalName() + "</h1>\n";
-		MarkupLine description = def.getDescription();
-		if (description != null) {
-			doc += "<h2>Description</h2>\n";
-			doc += description.toHtml();
+		doc += "<h1>" + def.getEffectiveName() + "</h1>\n";
+		if (def instanceof MetaschemaDefinition) {
+			MetaschemaDefinition metaDef = (MetaschemaDefinition) def;
+			MarkupLine description = metaDef.getDescription();
+			if (description != null) {
+				doc += "<h2>Description</h2>\n";
+				doc += description.toHtml();
+			}
 		}
 		MarkupMultiline remarks = def.getRemarks();
 		if (remarks != null) {
@@ -749,6 +757,5 @@ public class MetaschemaToEcoreTransformer {
 		MigrationEcoreUtils.setDocumentation(element, doc);
 
 	}
-
 
 }

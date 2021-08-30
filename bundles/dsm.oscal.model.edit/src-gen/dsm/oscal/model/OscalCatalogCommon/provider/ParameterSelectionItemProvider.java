@@ -18,6 +18,7 @@ package dsm.oscal.model.OscalCatalogCommon.provider;
 
 import dsm.oscal.model.OscalCatalogCommon.OscalCatalogCommonPackage;
 import dsm.oscal.model.OscalCatalogCommon.ParameterSelection;
+
 import dsm.oscal.model.OscalMetadata.provider.OscalElementItemProvider;
 
 import java.util.Collection;
@@ -177,7 +178,7 @@ public class ParameterSelectionItemProvider extends OscalElementItemProvider {
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return dsm.oscal.model.OscalCatalogCommon.provider.OscalEditPlugin.INSTANCE;
+		return OscalEditPlugin.INSTANCE;
 	}
 
 }

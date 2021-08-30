@@ -32,7 +32,7 @@ import org.eclipse.emf.common.util.EList;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * <h1>Catalog</h1>
+ * <h1>catalog</h1>
  * <h2>Description</h2>
  * <p>A collection of controls.</p><h2>Remarks</h2>
  * <p>Catalogs may use one or more <code>group</code> objects to subdivide the control contents of a catalog.</p>
@@ -49,7 +49,7 @@ import org.eclipse.emf.common.util.EList;
  * </ul>
  *
  * @see dsm.oscal.model.OscalCatalog.OscalCatalogPackage#getCatalog()
- * @model annotation="Metaschema source='&lt;Metaschema&gt;oscal-catalog.&lt;AssemblyDefinition&gt;catalog'"
+ * @model
  * @generated
  */
 public interface Catalog extends OscalElement, UUIDElement, ParameterOwner, ControlOwner, ICatalogDefinition {
@@ -61,7 +61,6 @@ public interface Catalog extends OscalElement, UUIDElement, ParameterOwner, Cont
 	 * @see #setBackMatter(BackMatter)
 	 * @see dsm.oscal.model.OscalCatalog.OscalCatalogPackage#getCatalog_BackMatter()
 	 * @model containment="true"
-	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;AssemblyDefinition&gt;back-matter'"
 	 * @generated
 	 */
 	BackMatter getBackMatter();
@@ -84,7 +83,6 @@ public interface Catalog extends OscalElement, UUIDElement, ParameterOwner, Cont
 	 * @return the value of the '<em>Groups</em>' containment reference list.
 	 * @see dsm.oscal.model.OscalCatalog.OscalCatalogPackage#getCatalog_Groups()
 	 * @model containment="true"
-	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-catalog.&lt;AssemblyDefinition&gt;group'"
 	 * @generated
 	 */
 	EList<Group> getGroups();
@@ -97,7 +95,6 @@ public interface Catalog extends OscalElement, UUIDElement, ParameterOwner, Cont
 	 * @see #setMetadata(Metadata)
 	 * @see dsm.oscal.model.OscalCatalog.OscalCatalogPackage#getCatalog_Metadata()
 	 * @model containment="true" required="true"
-	 *        annotation="Metaschema source='&lt;Metaschema&gt;oscal-metadata.&lt;AssemblyDefinition&gt;metadata'"
 	 * @generated
 	 */
 	Metadata getMetadata();

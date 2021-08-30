@@ -3,7 +3,7 @@ package dsm.oscal.model.transform.mappers;
 import dsm.oscal.model.OscalMetadata.Base64;
 import dsm.oscal.model.OscalMetadata.OscalMetadataFactory;
 
-public class Base64Mapper extends AbstractObjectMapper<Base64, gov.nist.secauto.oscal.lib.BackMatter.Resource.Base64> {
+public class Base64Mapper extends AbstractObjectMapper<Base64, gov.nist.secauto.oscal.lib.model.BackMatter.Resource.Base64> {
 
 	private Base64Mapper() {
 	}
@@ -20,8 +20,8 @@ public class Base64Mapper extends AbstractObjectMapper<Base64, gov.nist.secauto.
 	}
 
 	@Override
-	protected gov.nist.secauto.oscal.lib.BackMatter.Resource.Base64 safeToOscal(Base64 tradesObject) {
-		gov.nist.secauto.oscal.lib.BackMatter.Resource.Base64 base64 = new gov.nist.secauto.oscal.lib.BackMatter.Resource.Base64();
+	protected gov.nist.secauto.oscal.lib.model.BackMatter.Resource.Base64 safeToOscal(Base64 tradesObject) {
+		gov.nist.secauto.oscal.lib.model.BackMatter.Resource.Base64 base64 = new gov.nist.secauto.oscal.lib.model.BackMatter.Resource.Base64();
 		base64.setFilename(tradesObject.getFilename());
 		base64.setMediaType(tradesObject.getMediaType());
 		base64.setValue(tradesObject.getValue());
@@ -29,7 +29,7 @@ public class Base64Mapper extends AbstractObjectMapper<Base64, gov.nist.secauto.
 	}
 
 	@Override
-	protected Base64 safeToTrades(gov.nist.secauto.oscal.lib.BackMatter.Resource.Base64 oscalObject) {
+	protected Base64 safeToTrades(gov.nist.secauto.oscal.lib.model.BackMatter.Resource.Base64 oscalObject) {
 		Base64 base64 = OscalMetadataFactory.eINSTANCE.createBase64();
 		base64.setFilename(oscalObject.getFilename());
 		base64.setMediaType(oscalObject.getMediaType());
