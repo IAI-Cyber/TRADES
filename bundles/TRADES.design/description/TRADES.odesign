@@ -134,7 +134,7 @@
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
           <conditionnalStyles predicateExpression="aql:self.oclIsTypeOf(TRADES::ExternalThreat)">
-            <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" labelExpression="aql:''" tooltipExpression="feature:name" sizeComputationExpression="-1" workspacePath="/TRADES.design/Images/ExteenalThreatImage.svg">
+            <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" labelExpression="aql:self.getLabelProviderText()" tooltipExpression="feature:name" sizeComputationExpression="-1" workspacePath="/TRADES.design/Images/ExteenalThreatImage.svg">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </style>
@@ -164,7 +164,7 @@
             </style>
           </conditionnalStyles>
         </edgeMappings>
-        <edgeMappings name="mitigatesThreat" labelDirectEdit="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Change%20name']" sourceMapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@nodeMappings[name='ControlNode'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Component%20Analysis']/@defaultLayer/@nodeMappings[name='ControlNode_CA']" targetMapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@nodeMappings[name='ThreatNode_TD']" targetFinderExpression="feature:threat" sourceFinderExpression="feature:control" targetExpression="var:self" domainClass="TRADES::ThreatMitigationRelation" useDomainElement="true">
+        <edgeMappings name="mitigatesThreat" labelDirectEdit="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Change%20name']" sourceMapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@nodeMappings[name='ControlNode'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Component%20Analysis']/@defaultLayer/@nodeMappings[name='ControlNode_CA']" targetMapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@nodeMappings[name='ThreatNode_TD'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@edgeMappings[name='allocatedThreat_TD']" targetFinderExpression="feature:threat" sourceFinderExpression="feature:control" targetExpression="var:self" domainClass="TRADES::ThreatMitigationRelation" useDomainElement="true">
           <style lineStyle="dash" sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <centerLabelStyleDescription labelSize="12">
