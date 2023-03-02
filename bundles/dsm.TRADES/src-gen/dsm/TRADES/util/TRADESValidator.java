@@ -199,6 +199,22 @@ public class TRADESValidator extends EObjectValidator {
 			return validateIElementWithSource((IElementWithSource) value, diagnostics, context);
 		case TRADESPackage.ELEMENT_WITH_ID:
 			return validateElementWithId((ElementWithId) value, diagnostics, context);
+		case TRADESPackage.DOMAIN_ASSET:
+			return validateDomainAsset((DomainAsset) value, diagnostics, context);
+		case TRADESPackage.VULNERABILITY_OWNER:
+			return validateVulnerabilityOwner((VulnerabilityOwner) value, diagnostics, context);
+		case TRADESPackage.VULNERABILITY:
+			return validateVulnerability((Vulnerability) value, diagnostics, context);
+		case TRADESPackage.COMPONENT_TYPE_OWNER:
+			return validateComponentTypeOwner((ComponentTypeOwner) value, diagnostics, context);
+		case TRADESPackage.COMPONENT_TYPE:
+			return validateComponentType((ComponentType) value, diagnostics, context);
+		case TRADESPackage.ASSET:
+			return validateAsset((Asset) value, diagnostics, context);
+		case TRADESPackage.VULNERABLE_ASSET:
+			return validateVulnerableAsset((VulnerableAsset) value, diagnostics, context);
+		case TRADESPackage.VA_OWNER:
+			return validateVAOwner((VAOwner) value, diagnostics, context);
 		case TRADESPackage.ASSESSMENT_ENUM:
 			return validateAssessmentENUM((AssessmentENUM) value, diagnostics, context);
 		case TRADESPackage.AFFECTED_ENUM:
@@ -207,6 +223,8 @@ public class TRADESValidator extends EObjectValidator {
 			return validatethreatTypeENUM((threatTypeENUM) value, diagnostics, context);
 		case TRADESPackage.CONTROL_STATUS_ENUM:
 			return validateControlStatusENUM((ControlStatusENUM) value, diagnostics, context);
+		case TRADESPackage.COMPONENT_CATEGORY_ENUM:
+			return validateComponentCategoryENUM((ComponentCategoryENUM) value, diagnostics, context);
 		case TRADESPackage.RGB_COLOR:
 			return validateRGBColor((RGBColor) value, diagnostics, context);
 		default:
@@ -700,6 +718,84 @@ public class TRADESValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validateDomainAsset(DomainAsset domainAsset, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(domainAsset, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateVulnerabilityOwner(VulnerabilityOwner vulnerabilityOwner, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(vulnerabilityOwner, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateVulnerability(Vulnerability vulnerability, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(vulnerability, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateComponentTypeOwner(ComponentTypeOwner componentTypeOwner, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(componentTypeOwner, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateComponentType(ComponentType componentType, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(componentType, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateAsset(Asset asset, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(asset, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateVulnerableAsset(VulnerableAsset vulnerableAsset, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(vulnerableAsset, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateVAOwner(VAOwner vaOwner, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(vaOwner, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean validateAssessmentENUM(AssessmentENUM assessmentENUM, DiagnosticChain diagnostics,
 			Map<Object, Object> context) {
 		return true;
@@ -732,6 +828,16 @@ public class TRADESValidator extends EObjectValidator {
 	 */
 	public boolean validateControlStatusENUM(ControlStatusENUM controlStatusENUM, DiagnosticChain diagnostics,
 			Map<Object, Object> context) {
+		return true;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateComponentCategoryENUM(ComponentCategoryENUM componentCategoryENUM,
+			DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return true;
 	}
 

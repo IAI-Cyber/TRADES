@@ -23,6 +23,7 @@ import dsm.TRADES.TRADESPackage;
 import dsm.TRADES.Threat;
 import dsm.TRADES.ThreatMitigationRelation;
 
+import dsm.TRADES.Vulnerability;
 import java.lang.reflect.InvocationTargetException;
 
 import java.util.Collection;
@@ -54,6 +55,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dsm.TRADES.impl.ControlImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ControlImpl#getMitigationRelations <em>Mitigation Relations</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ControlImpl#getStatus <em>Status</em>}</li>
+ *   <li>{@link dsm.TRADES.impl.ControlImpl#getMitigatesVulnerability <em>Mitigates Vulnerability</em>}</li>
  * </ul>
  *
  * @generated
@@ -138,6 +140,16 @@ public class ControlImpl extends NamedElementImpl implements Control {
 	 * @ordered
 	 */
 	protected ControlStatusENUM status = STATUS_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getMitigatesVulnerability() <em>Mitigates Vulnerability</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMitigatesVulnerability()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Vulnerability> mitigatesVulnerability;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -263,6 +275,20 @@ public class ControlImpl extends NamedElementImpl implements Control {
 	 * @generated
 	 */
 	@Override
+	public EList<Vulnerability> getMitigatesVulnerability() {
+		if (mitigatesVulnerability == null) {
+			mitigatesVulnerability = new EObjectResolvingEList<Vulnerability>(Vulnerability.class, this,
+					TRADESPackage.CONTROL__MITIGATES_VULNERABILITY);
+		}
+		return mitigatesVulnerability;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EList<IMitigationLink> getMitigatedThreatDefinitions() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -341,6 +367,8 @@ public class ControlImpl extends NamedElementImpl implements Control {
 			return getMitigationRelations();
 		case TRADESPackage.CONTROL__STATUS:
 			return getStatus();
+		case TRADESPackage.CONTROL__MITIGATES_VULNERABILITY:
+			return getMitigatesVulnerability();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -371,6 +399,10 @@ public class ControlImpl extends NamedElementImpl implements Control {
 		case TRADESPackage.CONTROL__STATUS:
 			setStatus((ControlStatusENUM) newValue);
 			return;
+		case TRADESPackage.CONTROL__MITIGATES_VULNERABILITY:
+			getMitigatesVulnerability().clear();
+			getMitigatesVulnerability().addAll((Collection<? extends Vulnerability>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -398,6 +430,9 @@ public class ControlImpl extends NamedElementImpl implements Control {
 		case TRADESPackage.CONTROL__STATUS:
 			setStatus(STATUS_EDEFAULT);
 			return;
+		case TRADESPackage.CONTROL__MITIGATES_VULNERABILITY:
+			getMitigatesVulnerability().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -420,6 +455,8 @@ public class ControlImpl extends NamedElementImpl implements Control {
 			return mitigationRelations != null && !mitigationRelations.isEmpty();
 		case TRADESPackage.CONTROL__STATUS:
 			return status != STATUS_EDEFAULT;
+		case TRADESPackage.CONTROL__MITIGATES_VULNERABILITY:
+			return mitigatesVulnerability != null && !mitigatesVulnerability.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

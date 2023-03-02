@@ -64,6 +64,7 @@ public class ExternalControlItemProvider extends ExternalElementItemProvider {
 			addDescriptionPropertyDescriptor(object);
 			addMitigationRelationsPropertyDescriptor(object);
 			addStatusPropertyDescriptor(object);
+			addMitigatesVulnerabilityPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -160,6 +161,21 @@ public class ExternalControlItemProvider extends ExternalElementItemProvider {
 								"_UI_Control_type"),
 						TRADESPackage.Literals.CONTROL__STATUS, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Mitigates Vulnerability feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addMitigatesVulnerabilityPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Control_mitigatesVulnerability_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Control_mitigatesVulnerability_feature",
+								"_UI_Control_type"),
+						TRADESPackage.Literals.CONTROL__MITIGATES_VULNERABILITY, true, false, true, null, null, null));
 	}
 
 	/**

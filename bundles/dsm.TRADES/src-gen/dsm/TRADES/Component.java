@@ -27,13 +27,15 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link dsm.TRADES.Component#getThreatAllocations <em>Threat Allocations</em>}</li>
  *   <li>{@link dsm.TRADES.Component#getAffectRelations <em>Affect Relations</em>}</li>
  *   <li>{@link dsm.TRADES.Component#getLinks <em>Links</em>}</li>
+ *   <li>{@link dsm.TRADES.Component#getComponenttype <em>Componenttype</em>}</li>
+ *   <li>{@link dsm.TRADES.Component#getVulnerableasset <em>Vulnerableasset</em>}</li>
  * </ul>
  *
  * @see dsm.TRADES.TRADESPackage#getComponent()
  * @model
  * @generated
  */
-public interface Component extends ComponentOwner, DataOwnerElement, NamedElement, AbstractControlOwner {
+public interface Component extends ComponentOwner, DataOwnerElement, NamedElement, AbstractControlOwner, DomainAsset {
 	/**
 	 * Returns the value of the '<em><b>Threat Allocations</b></em>' containment reference list.
 	 * The list contents are of type {@link dsm.TRADES.ThreatAllocationRelation}.
@@ -73,5 +75,39 @@ public interface Component extends ComponentOwner, DataOwnerElement, NamedElemen
 	 * @generated
 	 */
 	EList<Link> getLinks();
+
+	/**
+	 * Returns the value of the '<em><b>Componenttype</b></em>' reference list.
+	 * The list contents are of type {@link dsm.TRADES.ComponentType}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Componenttype</em>' reference list.
+	 * @see dsm.TRADES.TRADESPackage#getComponent_Componenttype()
+	 * @model
+	 * @generated
+	 */
+	EList<ComponentType> getComponenttype();
+
+	/**
+	 * Returns the value of the '<em><b>Vulnerableasset</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Vulnerableasset</em>' reference.
+	 * @see #setVulnerableasset(VulnerableAsset)
+	 * @see dsm.TRADES.TRADESPackage#getComponent_Vulnerableasset()
+	 * @model
+	 * @generated
+	 */
+	VulnerableAsset getVulnerableasset();
+
+	/**
+	 * Sets the value of the '{@link dsm.TRADES.Component#getVulnerableasset <em>Vulnerableasset</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Vulnerableasset</em>' reference.
+	 * @see #getVulnerableasset()
+	 * @generated
+	 */
+	void setVulnerableasset(VulnerableAsset value);
 
 } // Component

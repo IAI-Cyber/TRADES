@@ -28,6 +28,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link dsm.TRADES.Control#getDescription <em>Description</em>}</li>
  *   <li>{@link dsm.TRADES.Control#getMitigationRelations <em>Mitigation Relations</em>}</li>
  *   <li>{@link dsm.TRADES.Control#getStatus <em>Status</em>}</li>
+ *   <li>{@link dsm.TRADES.Control#getMitigatesVulnerability <em>Mitigates Vulnerability</em>}</li>
  * </ul>
  *
  * @see dsm.TRADES.TRADESPackage#getControl()
@@ -107,5 +108,17 @@ public interface Control extends NamedElement, IControlDefinition, ElementWithId
 	 * @generated
 	 */
 	void setStatus(ControlStatusENUM value);
+
+	/**
+	 * Returns the value of the '<em><b>Mitigates Vulnerability</b></em>' reference list.
+	 * The list contents are of type {@link dsm.TRADES.Vulnerability}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Mitigates Vulnerability</em>' reference list.
+	 * @see dsm.TRADES.TRADESPackage#getControl_MitigatesVulnerability()
+	 * @model
+	 * @generated
+	 */
+	EList<Vulnerability> getMitigatesVulnerability();
 
 } // Control

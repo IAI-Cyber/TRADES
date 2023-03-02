@@ -19,6 +19,7 @@ import dsm.TRADES.IThreatDefinition;
 import dsm.TRADES.TRADESPackage;
 import dsm.TRADES.Threat;
 import dsm.TRADES.ThreatAllocationRelation;
+import dsm.TRADES.Vulnerability;
 import dsm.TRADES.threatTypeENUM;
 
 import dsm.TRADES.util.TRADESValidator;
@@ -43,6 +44,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EObjectValidator;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -60,6 +62,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dsm.TRADES.impl.ThreatImpl#getThreatType <em>Threat Type</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ThreatImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ThreatImpl#getApplicability <em>Applicability</em>}</li>
+ *   <li>{@link dsm.TRADES.impl.ThreatImpl#getExploitsVulnerability <em>Exploits Vulnerability</em>}</li>
  * </ul>
  *
  * @generated
@@ -154,6 +157,16 @@ public class ThreatImpl extends NamedElementImpl implements Threat {
 	 * @ordered
 	 */
 	protected String applicability = APPLICABILITY_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getExploitsVulnerability() <em>Exploits Vulnerability</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getExploitsVulnerability()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Vulnerability> exploitsVulnerability;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -290,6 +303,20 @@ public class ThreatImpl extends NamedElementImpl implements Threat {
 	 * @generated
 	 */
 	@Override
+	public EList<Vulnerability> getExploitsVulnerability() {
+		if (exploitsVulnerability == null) {
+			exploitsVulnerability = new EObjectResolvingEList<Vulnerability>(Vulnerability.class, this,
+					TRADESPackage.THREAT__EXPLOITS_VULNERABILITY);
+		}
+		return exploitsVulnerability;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public boolean checkIsUsed(DiagnosticChain chain, Map context) {
 		// TODO: implement this method
 		// -> specify the condition that violates the invariant
@@ -380,6 +407,8 @@ public class ThreatImpl extends NamedElementImpl implements Threat {
 			return getDescription();
 		case TRADESPackage.THREAT__APPLICABILITY:
 			return getApplicability();
+		case TRADESPackage.THREAT__EXPLOITS_VULNERABILITY:
+			return getExploitsVulnerability();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -409,6 +438,10 @@ public class ThreatImpl extends NamedElementImpl implements Threat {
 		case TRADESPackage.THREAT__APPLICABILITY:
 			setApplicability((String) newValue);
 			return;
+		case TRADESPackage.THREAT__EXPLOITS_VULNERABILITY:
+			getExploitsVulnerability().clear();
+			getExploitsVulnerability().addAll((Collection<? extends Vulnerability>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -436,6 +469,9 @@ public class ThreatImpl extends NamedElementImpl implements Threat {
 		case TRADESPackage.THREAT__APPLICABILITY:
 			setApplicability(APPLICABILITY_EDEFAULT);
 			return;
+		case TRADESPackage.THREAT__EXPLOITS_VULNERABILITY:
+			getExploitsVulnerability().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -459,6 +495,8 @@ public class ThreatImpl extends NamedElementImpl implements Threat {
 		case TRADESPackage.THREAT__APPLICABILITY:
 			return APPLICABILITY_EDEFAULT == null ? applicability != null
 					: !APPLICABILITY_EDEFAULT.equals(applicability);
+		case TRADESPackage.THREAT__EXPLOITS_VULNERABILITY:
+			return exploitsVulnerability != null && !exploitsVulnerability.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

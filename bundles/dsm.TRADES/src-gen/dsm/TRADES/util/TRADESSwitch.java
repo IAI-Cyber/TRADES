@@ -93,6 +93,12 @@ public class TRADESSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseElementWithId(analysis);
 			if (result == null)
+				result = caseVulnerabilityOwner(analysis);
+			if (result == null)
+				result = caseComponentTypeOwner(analysis);
+			if (result == null)
+				result = caseVAOwner(analysis);
+			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
@@ -119,9 +125,13 @@ public class TRADESSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseDataOwnerElement(component);
 			if (result == null)
-				result = caseNamedElement(component);
-			if (result == null)
 				result = caseAbstractControlOwner(component);
+			if (result == null)
+				result = caseDomainAsset(component);
+			if (result == null)
+				result = caseAsset(component);
+			if (result == null)
+				result = caseNamedElement(component);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -414,6 +424,76 @@ public class TRADESSwitch<T> extends Switch<T> {
 		case TRADESPackage.ELEMENT_WITH_ID: {
 			ElementWithId elementWithId = (ElementWithId) theEObject;
 			T result = caseElementWithId(elementWithId);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case TRADESPackage.DOMAIN_ASSET: {
+			DomainAsset domainAsset = (DomainAsset) theEObject;
+			T result = caseDomainAsset(domainAsset);
+			if (result == null)
+				result = caseAsset(domainAsset);
+			if (result == null)
+				result = caseNamedElement(domainAsset);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case TRADESPackage.VULNERABILITY_OWNER: {
+			VulnerabilityOwner vulnerabilityOwner = (VulnerabilityOwner) theEObject;
+			T result = caseVulnerabilityOwner(vulnerabilityOwner);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case TRADESPackage.VULNERABILITY: {
+			Vulnerability vulnerability = (Vulnerability) theEObject;
+			T result = caseVulnerability(vulnerability);
+			if (result == null)
+				result = caseNamedElement(vulnerability);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case TRADESPackage.COMPONENT_TYPE_OWNER: {
+			ComponentTypeOwner componentTypeOwner = (ComponentTypeOwner) theEObject;
+			T result = caseComponentTypeOwner(componentTypeOwner);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case TRADESPackage.COMPONENT_TYPE: {
+			ComponentType componentType = (ComponentType) theEObject;
+			T result = caseComponentType(componentType);
+			if (result == null)
+				result = caseNamedElement(componentType);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case TRADESPackage.ASSET: {
+			Asset asset = (Asset) theEObject;
+			T result = caseAsset(asset);
+			if (result == null)
+				result = caseNamedElement(asset);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case TRADESPackage.VULNERABLE_ASSET: {
+			VulnerableAsset vulnerableAsset = (VulnerableAsset) theEObject;
+			T result = caseVulnerableAsset(vulnerableAsset);
+			if (result == null)
+				result = caseAsset(vulnerableAsset);
+			if (result == null)
+				result = caseNamedElement(vulnerableAsset);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case TRADESPackage.VA_OWNER: {
+			VAOwner vaOwner = (VAOwner) theEObject;
+			T result = caseVAOwner(vaOwner);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -945,6 +1025,126 @@ public class TRADESSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseElementWithId(ElementWithId object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Domain Asset</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Domain Asset</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDomainAsset(DomainAsset object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Vulnerability Owner</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Vulnerability Owner</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseVulnerabilityOwner(VulnerabilityOwner object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Vulnerability</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Vulnerability</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseVulnerability(Vulnerability object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Component Type Owner</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Component Type Owner</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseComponentTypeOwner(ComponentTypeOwner object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Component Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Component Type</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseComponentType(ComponentType object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Asset</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Asset</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAsset(Asset object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Vulnerable Asset</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Vulnerable Asset</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseVulnerableAsset(VulnerableAsset object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>VA Owner</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>VA Owner</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseVAOwner(VAOwner object) {
 		return null;
 	}
 

@@ -59,7 +59,10 @@ public class ComponentItemProvider extends ComponentOwnerItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
+			addCategoryPropertyDescriptor(object);
 			addThreatAllocationsPropertyDescriptor(object);
+			addComponenttypePropertyDescriptor(object);
+			addVulnerableassetPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -81,6 +84,22 @@ public class ComponentItemProvider extends ComponentOwnerItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Category feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCategoryPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_DomainAsset_category_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_DomainAsset_category_feature",
+								"_UI_DomainAsset_type"),
+						TRADESPackage.Literals.DOMAIN_ASSET__CATEGORY, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Threat Allocations feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -93,6 +112,36 @@ public class ComponentItemProvider extends ComponentOwnerItemProvider {
 						getString("_UI_PropertyDescriptor_description", "_UI_Component_threatAllocations_feature",
 								"_UI_Component_type"),
 						TRADESPackage.Literals.COMPONENT__THREAT_ALLOCATIONS, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Componenttype feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addComponenttypePropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Component_componenttype_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Component_componenttype_feature",
+								"_UI_Component_type"),
+						TRADESPackage.Literals.COMPONENT__COMPONENTTYPE, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Vulnerableasset feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addVulnerableassetPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Component_vulnerableasset_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Component_vulnerableasset_feature",
+								"_UI_Component_type"),
+						TRADESPackage.Literals.COMPONENT__VULNERABLEASSET, true, false, true, null, null, null));
 	}
 
 	/**
@@ -176,6 +225,7 @@ public class ComponentItemProvider extends ComponentOwnerItemProvider {
 
 		switch (notification.getFeatureID(Component.class)) {
 		case TRADESPackage.COMPONENT__NAME:
+		case TRADESPackage.COMPONENT__CATEGORY:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		case TRADESPackage.COMPONENT__DATA_OWNER:

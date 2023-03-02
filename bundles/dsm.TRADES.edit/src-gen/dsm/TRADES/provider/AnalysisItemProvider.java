@@ -111,6 +111,9 @@ public class AnalysisItemProvider extends ComponentOwnerItemProvider {
 			childrenFeatures.add(TRADESPackage.Literals.DATA_OWNER_ELEMENT__DATA_OWNER);
 			childrenFeatures.add(TRADESPackage.Literals.ABSTRACT_CONTROL_OWNER__CONTROL_OWNER);
 			childrenFeatures.add(TRADESPackage.Literals.ABSTRACT_THREAT_OWNER__THREAT_OWNER);
+			childrenFeatures.add(TRADESPackage.Literals.VULNERABILITY_OWNER__VULNERABILITIES);
+			childrenFeatures.add(TRADESPackage.Literals.COMPONENT_TYPE_OWNER__COMPONENTTYPE);
+			childrenFeatures.add(TRADESPackage.Literals.VA_OWNER__VULNERABLEASSET);
 			childrenFeatures.add(TRADESPackage.Literals.ANALYSIS__SCORE_SYSTEM);
 			childrenFeatures.add(TRADESPackage.Literals.ANALYSIS__LINK_TYPES);
 		}
@@ -183,6 +186,9 @@ public class AnalysisItemProvider extends ComponentOwnerItemProvider {
 		case TRADESPackage.ANALYSIS__DATA_OWNER:
 		case TRADESPackage.ANALYSIS__CONTROL_OWNER:
 		case TRADESPackage.ANALYSIS__THREAT_OWNER:
+		case TRADESPackage.ANALYSIS__VULNERABILITIES:
+		case TRADESPackage.ANALYSIS__COMPONENTTYPE:
+		case TRADESPackage.ANALYSIS__VULNERABLEASSET:
 		case TRADESPackage.ANALYSIS__SCORE_SYSTEM:
 		case TRADESPackage.ANALYSIS__LINK_TYPES:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
@@ -210,6 +216,15 @@ public class AnalysisItemProvider extends ComponentOwnerItemProvider {
 
 		newChildDescriptors.add(createChildParameter(TRADESPackage.Literals.ABSTRACT_THREAT_OWNER__THREAT_OWNER,
 				TRADESFactory.eINSTANCE.createThreatsOwner()));
+
+		newChildDescriptors.add(createChildParameter(TRADESPackage.Literals.VULNERABILITY_OWNER__VULNERABILITIES,
+				TRADESFactory.eINSTANCE.createVulnerability()));
+
+		newChildDescriptors.add(createChildParameter(TRADESPackage.Literals.COMPONENT_TYPE_OWNER__COMPONENTTYPE,
+				TRADESFactory.eINSTANCE.createComponentType()));
+
+		newChildDescriptors.add(createChildParameter(TRADESPackage.Literals.VA_OWNER__VULNERABLEASSET,
+				TRADESFactory.eINSTANCE.createVulnerableAsset()));
 
 		newChildDescriptors.add(createChildParameter(TRADESPackage.Literals.ANALYSIS__SCORE_SYSTEM,
 				TRADESFactory.eINSTANCE.createScoreSystem()));

@@ -253,6 +253,46 @@ public class TRADESAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseDomainAsset(DomainAsset object) {
+			return createDomainAssetAdapter();
+		}
+
+		@Override
+		public Adapter caseVulnerabilityOwner(VulnerabilityOwner object) {
+			return createVulnerabilityOwnerAdapter();
+		}
+
+		@Override
+		public Adapter caseVulnerability(Vulnerability object) {
+			return createVulnerabilityAdapter();
+		}
+
+		@Override
+		public Adapter caseComponentTypeOwner(ComponentTypeOwner object) {
+			return createComponentTypeOwnerAdapter();
+		}
+
+		@Override
+		public Adapter caseComponentType(ComponentType object) {
+			return createComponentTypeAdapter();
+		}
+
+		@Override
+		public Adapter caseAsset(Asset object) {
+			return createAssetAdapter();
+		}
+
+		@Override
+		public Adapter caseVulnerableAsset(VulnerableAsset object) {
+			return createVulnerableAssetAdapter();
+		}
+
+		@Override
+		public Adapter caseVAOwner(VAOwner object) {
+			return createVAOwnerAdapter();
+		}
+
+		@Override
 		public Adapter defaultCase(EObject object) {
 			return createEObjectAdapter();
 		}
@@ -758,6 +798,118 @@ public class TRADESAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createElementWithIdAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link dsm.TRADES.DomainAsset <em>Domain Asset</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see dsm.TRADES.DomainAsset
+	 * @generated
+	 */
+	public Adapter createDomainAssetAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link dsm.TRADES.VulnerabilityOwner <em>Vulnerability Owner</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see dsm.TRADES.VulnerabilityOwner
+	 * @generated
+	 */
+	public Adapter createVulnerabilityOwnerAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link dsm.TRADES.Vulnerability <em>Vulnerability</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see dsm.TRADES.Vulnerability
+	 * @generated
+	 */
+	public Adapter createVulnerabilityAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link dsm.TRADES.ComponentTypeOwner <em>Component Type Owner</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see dsm.TRADES.ComponentTypeOwner
+	 * @generated
+	 */
+	public Adapter createComponentTypeOwnerAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link dsm.TRADES.ComponentType <em>Component Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see dsm.TRADES.ComponentType
+	 * @generated
+	 */
+	public Adapter createComponentTypeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link dsm.TRADES.Asset <em>Asset</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see dsm.TRADES.Asset
+	 * @generated
+	 */
+	public Adapter createAssetAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link dsm.TRADES.VulnerableAsset <em>Vulnerable Asset</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see dsm.TRADES.VulnerableAsset
+	 * @generated
+	 */
+	public Adapter createVulnerableAssetAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link dsm.TRADES.VAOwner <em>VA Owner</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see dsm.TRADES.VAOwner
+	 * @generated
+	 */
+	public Adapter createVAOwnerAdapter() {
 		return null;
 	}
 

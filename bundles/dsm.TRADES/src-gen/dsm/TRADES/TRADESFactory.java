@@ -231,6 +231,42 @@ public interface TRADESFactory extends EFactory {
 	Catalog createCatalog();
 
 	/**
+	 * Returns a new object of class '<em>Domain Asset</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Domain Asset</em>'.
+	 * @generated
+	 */
+	DomainAsset createDomainAsset();
+
+	/**
+	 * Returns a new object of class '<em>Vulnerability</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Vulnerability</em>'.
+	 * @generated
+	 */
+	Vulnerability createVulnerability();
+
+	/**
+	 * Returns a new object of class '<em>Component Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Component Type</em>'.
+	 * @generated
+	 */
+	ComponentType createComponentType();
+
+	/**
+	 * Returns a new object of class '<em>Vulnerable Asset</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Vulnerable Asset</em>'.
+	 * @generated
+	 */
+	VulnerableAsset createVulnerableAsset();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

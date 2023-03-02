@@ -608,6 +608,98 @@ public class TRADESItemProviderAdapterFactory extends TRADESAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link dsm.TRADES.DomainAsset} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected DomainAssetItemProvider domainAssetItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link dsm.TRADES.DomainAsset}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createDomainAssetAdapter() {
+		if (domainAssetItemProvider == null) {
+			domainAssetItemProvider = new DomainAssetItemProvider(this);
+		}
+
+		return domainAssetItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link dsm.TRADES.Vulnerability} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected VulnerabilityItemProvider vulnerabilityItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link dsm.TRADES.Vulnerability}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createVulnerabilityAdapter() {
+		if (vulnerabilityItemProvider == null) {
+			vulnerabilityItemProvider = new VulnerabilityItemProvider(this);
+		}
+
+		return vulnerabilityItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link dsm.TRADES.ComponentType} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ComponentTypeItemProvider componentTypeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link dsm.TRADES.ComponentType}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createComponentTypeAdapter() {
+		if (componentTypeItemProvider == null) {
+			componentTypeItemProvider = new ComponentTypeItemProvider(this);
+		}
+
+		return componentTypeItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link dsm.TRADES.VulnerableAsset} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected VulnerableAssetItemProvider vulnerableAssetItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link dsm.TRADES.VulnerableAsset}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createVulnerableAssetAdapter() {
+		if (vulnerableAssetItemProvider == null) {
+			vulnerableAssetItemProvider = new VulnerableAssetItemProvider(this);
+		}
+
+		return vulnerableAssetItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -777,6 +869,14 @@ public class TRADESItemProviderAdapterFactory extends TRADESAdapterFactory
 			linkTypeItemProvider.dispose();
 		if (catalogItemProvider != null)
 			catalogItemProvider.dispose();
+		if (domainAssetItemProvider != null)
+			domainAssetItemProvider.dispose();
+		if (vulnerabilityItemProvider != null)
+			vulnerabilityItemProvider.dispose();
+		if (componentTypeItemProvider != null)
+			componentTypeItemProvider.dispose();
+		if (vulnerableAssetItemProvider != null)
+			vulnerableAssetItemProvider.dispose();
 	}
 
 }

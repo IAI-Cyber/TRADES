@@ -1,60 +1,38 @@
 <?xml version="1.0" encoding="ASCII"?>
-<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="OscalCatalog" nsURI="http://csrc.nist.gov/ns/oscal/1.0/oscal-catalog" nsPrefix="oscal-catalog">
-  <eClassifiers xsi:type="ecore:EClass" name="Catalog">
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="OscalCatalog" nsURI="http://csrc.nist.gov/ns/oscal/1.0/oscal-catalog"
+    nsPrefix="oscal-catalog">
+  <eClassifiers xsi:type="ecore:EClass" name="Catalog" eSuperTypes="oscal-metadata.ecore#//OscalElement oscal-metadata.ecore#//UUIDElement oscal-metadata.ecore#//ParameterOwner oscal-metadata.ecore#//ControlOwner ../../dsm.TRADES/model/TRADES.ecore#//ICatalogDefinition">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="&lt;h1>catalog&lt;/h1>&#xA;&lt;h2>Description&lt;/h2>&#xA;&lt;p>A collection of controls.&lt;/p>&lt;h2>Remarks&lt;/h2>&#xA;&lt;p>Catalogs may use one or more &lt;code>group&lt;/code> objects to subdivide the control contents of a catalog.&lt;/p>&#xA;&lt;p>An OSCAL catalog model provides a structured representation of control information.&lt;/p>"/>
     </eAnnotations>
-    <eSuperTypes href="oscal-metadata.ecore#//OscalElement"/>
-    <eSuperTypes href="oscal-metadata.ecore#//UUIDElement"/>
-    <eSuperTypes href="oscal-metadata.ecore#//ParameterOwner"/>
-    <eSuperTypes href="oscal-metadata.ecore#//ControlOwner"/>
-    <eSuperTypes href="platform:/plugin/dsm.TRADES/model/TRADES.ecore#//ICatalogDefinition"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="backMatter" containment="true">
-      <eType xsi:type="ecore:EClass" href="oscal-metadata.ecore#//BackMatter"/>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="groups" upperBound="-1" eType="//Group" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="metadata" lowerBound="1" containment="true">
-      <eType xsi:type="ecore:EClass" href="oscal-metadata.ecore#//Metadata"/>
-    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="backMatter" eType="ecore:EClass oscal-metadata.ecore#//BackMatter"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="groups" upperBound="-1"
+        eType="#//Group" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="metadata" lowerBound="1"
+        eType="ecore:EClass oscal-metadata.ecore#//Metadata" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Control">
+  <eClassifiers xsi:type="ecore:EClass" name="Control" eSuperTypes="oscal-metadata.ecore#//OscalElement oscal-metadata.ecore#//ParameterOwner oscal-metadata.ecore#//PropertyOwner oscal-metadata.ecore#//LinkOwner oscal-metadata.ecore#//ControlOwner oscal-metadata.ecore#//PartOwner ../../dsm.TRADES/model/TRADES.ecore#//IControlDefinition oscal-metadata.ecore#//ElementWithClazz oscal-metadata.ecore#//ElementWithId">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="&lt;h1>control&lt;/h1>&#xA;&lt;h2>Description&lt;/h2>&#xA;&lt;p>A structured information object representing a security or privacy control. Each security or privacy control within the Catalog is defined by a distinct control instance.&lt;/p>&lt;h2>Remarks&lt;/h2>&#xA;&lt;p>Controls may be grouped using &lt;code>group&lt;/code>, and controls may be partitioned using &lt;code>part&lt;/code> or further enhanced (extended) using &lt;code>control&lt;/code>.&lt;/p>&#xA;&lt;p>A control must have a part with the name &lt;q>statement&lt;/q>, which represents the textual narrative of the control. This &lt;q>statement&lt;/q> part must occur only once, but may have nested parts to allow for multiple paragraphs or sections of text.&lt;/p>"/>
     </eAnnotations>
-    <eSuperTypes href="oscal-metadata.ecore#//OscalElement"/>
-    <eSuperTypes href="oscal-metadata.ecore#//ParameterOwner"/>
-    <eSuperTypes href="oscal-metadata.ecore#//PropertyOwner"/>
-    <eSuperTypes href="oscal-metadata.ecore#//LinkOwner"/>
-    <eSuperTypes href="oscal-metadata.ecore#//ControlOwner"/>
-    <eSuperTypes href="oscal-metadata.ecore#//PartOwner"/>
-    <eSuperTypes href="platform:/plugin/dsm.TRADES/model/TRADES.ecore#//IControlDefinition"/>
-    <eSuperTypes href="oscal-metadata.ecore#//ElementWithClazz"/>
-    <eSuperTypes href="oscal-metadata.ecore#//ElementWithId"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" lowerBound="1">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" lowerBound="1" eType="ecore:EDataType oscal-metadata.ecore#//MarkupLineType">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="&lt;h1>title&lt;/h1>&#xA;&lt;h2>Description&lt;/h2>&#xA;&lt;p>A name given to the control, which may be used by a tool for display and navigation.&lt;/p>"/>
       </eAnnotations>
-      <eType xsi:type="ecore:EDataType" href="oscal-metadata.ecore#//MarkupLineType"/>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Group">
+  <eClassifiers xsi:type="ecore:EClass" name="Group" eSuperTypes="oscal-metadata.ecore#//OscalElement oscal-metadata.ecore#//ParameterOwner oscal-metadata.ecore#//PropertyOwner oscal-metadata.ecore#//LinkOwner oscal-metadata.ecore#//ControlOwner oscal-metadata.ecore#//PartOwner oscal-metadata.ecore#//ElementWithClazz oscal-metadata.ecore#//ElementWithId">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="&lt;h1>group&lt;/h1>&#xA;&lt;h2>Description&lt;/h2>&#xA;&lt;p>A group of controls, or of groups of controls.&lt;/p>&lt;h2>Remarks&lt;/h2>&#xA;&lt;p>Catalogs can use a &lt;code>group&lt;/code> to collect related controls into a single grouping. That can be useful to group controls into a family or other logical grouping.&lt;/p>&#xA;&lt;p>A &lt;code>group&lt;/code> may have its own properties, statements, parameters, and references, which are inherited by all members of that group.&lt;/p>"/>
     </eAnnotations>
-    <eSuperTypes href="oscal-metadata.ecore#//OscalElement"/>
-    <eSuperTypes href="oscal-metadata.ecore#//ParameterOwner"/>
-    <eSuperTypes href="oscal-metadata.ecore#//PropertyOwner"/>
-    <eSuperTypes href="oscal-metadata.ecore#//LinkOwner"/>
-    <eSuperTypes href="oscal-metadata.ecore#//ControlOwner"/>
-    <eSuperTypes href="oscal-metadata.ecore#//PartOwner"/>
-    <eSuperTypes href="oscal-metadata.ecore#//ElementWithClazz"/>
-    <eSuperTypes href="oscal-metadata.ecore#//ElementWithId"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="groups" upperBound="-1" eType="//Group" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" lowerBound="1">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="groups" upperBound="-1"
+        eType="#//Group" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" lowerBound="1" eType="ecore:EDataType oscal-metadata.ecore#//MarkupLineType">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="&lt;h1>title&lt;/h1>&#xA;&lt;h2>Description&lt;/h2>&#xA;&lt;p>A name given to the group, which may be used by a tool for display and navigation.&lt;/p>"/>
       </eAnnotations>
-      <eType xsi:type="ecore:EDataType" href="oscal-metadata.ecore#//MarkupLineType"/>
     </eStructuralFeatures>
   </eClassifiers>
 </ecore:EPackage>

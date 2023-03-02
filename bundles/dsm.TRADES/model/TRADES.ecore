@@ -4,7 +4,7 @@
   <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
     <details key="documentation" value="TRADES model, by Israel Aerospace Industries. All rights reserved.&#xD;&#xA;&#xD;&#xA;The TRADES model, based on Threat and Risk assessment ontology and the TRADES model-based methodology."/>
   </eAnnotations>
-  <eClassifiers xsi:type="ecore:EClass" name="Analysis" eSuperTypes="#//ComponentOwner #//DataOwnerElement #//NamedElement #//AbstractControlOwner #//AbstractThreatOwner #//ElementWithId">
+  <eClassifiers xsi:type="ecore:EClass" name="Analysis" eSuperTypes="#//ComponentOwner #//DataOwnerElement #//NamedElement #//AbstractControlOwner #//AbstractThreatOwner #//ElementWithId #//VulnerabilityOwner #//ComponentTypeOwner #//VAOwner">
     <eOperations name="getExternalThreats" upperBound="-1" eType="#//ExternalThreat">
       <eParameters name="id" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
       <eParameters name="catalogIdentifier" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
@@ -24,14 +24,19 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="threatType" eType="#//threatTypeENUM"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="applicability" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="exploitsVulnerability"
+        upperBound="-1" eType="#//Vulnerability"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Component" eSuperTypes="#//ComponentOwner #//DataOwnerElement #//NamedElement #//AbstractControlOwner">
+  <eClassifiers xsi:type="ecore:EClass" name="Component" eSuperTypes="#//ComponentOwner #//DataOwnerElement #//NamedElement #//AbstractControlOwner #//DomainAsset">
     <eStructuralFeatures xsi:type="ecore:EReference" name="threatAllocations" upperBound="-1"
         eType="#//ThreatAllocationRelation" containment="true" eOpposite="#//ThreatAllocationRelation/component"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="affectRelations" upperBound="-1"
         eType="#//AffectRelation" containment="true" eOpposite="#//AffectRelation/sourceComponent"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="links" upperBound="-1"
         eType="#//Link" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="componenttype" upperBound="-1"
+        eType="#//ComponentType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="vulnerableasset" eType="#//VulnerableAsset"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Control" eSuperTypes="#//NamedElement #//IControlDefinition #//ElementWithId">
     <eStructuralFeatures xsi:type="ecore:EReference" name="mitigatedThreats" upperBound="-1"
@@ -40,6 +45,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="mitigationRelations" upperBound="-1"
         eType="#//ThreatMitigationRelation" containment="true" eOpposite="#//ThreatMitigationRelation/control"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="status" eType="#//ControlStatusENUM"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mitigatesVulnerability"
+        upperBound="-1" eType="#//Vulnerability"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ThreatAllocationRelation">
     <eOperations name="checkComputedDifficultyConstraint" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
@@ -264,5 +271,42 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ElementWithId" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DomainAsset" eSuperTypes="#//Asset">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="category" upperBound="-1"
+        eType="#//ComponentCategoryENUM"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="VulnerabilityOwner" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="vulnerabilities" upperBound="-1"
+        eType="#//Vulnerability" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Vulnerability" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="refines" upperBound="-1"
+        eType="#//Vulnerability"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ComponentCategoryENUM">
+    <eLiterals name="Data"/>
+    <eLiterals name="SystemFunction" value="1"/>
+    <eLiterals name="HumanRelatedInfo" value="2"/>
+    <eLiterals name="Physical" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ComponentTypeOwner" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="componenttype" upperBound="-1"
+        eType="#//ComponentType" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ComponentType" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="refines" upperBound="-1"
+        eType="#//ComponentType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subjectToThreats" upperBound="-1"
+        eType="#//Threat"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Asset" abstract="true" eSuperTypes="#//NamedElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="VulnerableAsset" eSuperTypes="#//Asset">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="vulnerability" lowerBound="1"
+        upperBound="-1" eType="#//Vulnerability"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="VAOwner" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="vulnerableasset" upperBound="-1"
+        eType="#//VulnerableAsset" containment="true"/>
   </eClassifiers>
 </ecore:EPackage>
