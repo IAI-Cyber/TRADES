@@ -404,13 +404,22 @@ public interface TRADESPackage extends EPackage {
 	int THREAT__EXPLOITS_VULNERABILITY = NAMED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
+	 * The feature id for the '<em><b>Refines</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THREAT__REFINES = NAMED_ELEMENT_FEATURE_COUNT + 6;
+
+	/**
 	 * The number of structural features of the '<em>Threat</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int THREAT_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 6;
+	int THREAT_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The operation id for the '<em>Get Source Name</em>' operation.
@@ -567,7 +576,7 @@ public interface TRADESPackage extends EPackage {
 	int COMPONENT__COMPONENTTYPE = COMPONENT_OWNER_FEATURE_COUNT + 7;
 
 	/**
-	 * The feature id for the '<em><b>Vulnerableasset</b></em>' reference.
+	 * The feature id for the '<em><b>Vulnerableasset</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1031,13 +1040,22 @@ public interface TRADESPackage extends EPackage {
 	int DATA__NAME = NAMED_ELEMENT__NAME;
 
 	/**
+	 * The feature id for the '<em><b>Category</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA__CATEGORY = NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>Data</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int DATA_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Data</em>' class.
@@ -1577,6 +1595,15 @@ public interface TRADESPackage extends EPackage {
 	 * @ordered
 	 */
 	int EXTERNAL_THREAT__EXPLOITS_VULNERABILITY = THREAT__EXPLOITS_VULNERABILITY;
+
+	/**
+	 * The feature id for the '<em><b>Refines</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTERNAL_THREAT__REFINES = THREAT__REFINES;
 
 	/**
 	 * The feature id for the '<em><b>Source</b></em>' attribute.
@@ -3079,13 +3106,22 @@ public interface TRADESPackage extends EPackage {
 	int VULNERABLE_ASSET__VULNERABILITY = ASSET_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Component Type Affected</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VULNERABLE_ASSET__COMPONENT_TYPE_AFFECTED = ASSET_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Vulnerable Asset</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VULNERABLE_ASSET_FEATURE_COUNT = ASSET_FEATURE_COUNT + 1;
+	int VULNERABLE_ASSET_FEATURE_COUNT = ASSET_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Vulnerable Asset</em>' class.
@@ -3301,6 +3337,17 @@ public interface TRADESPackage extends EPackage {
 	EReference getThreat_ExploitsVulnerability();
 
 	/**
+	 * Returns the meta object for the reference list '{@link dsm.TRADES.Threat#getRefines <em>Refines</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Refines</em>'.
+	 * @see dsm.TRADES.Threat#getRefines()
+	 * @see #getThreat()
+	 * @generated
+	 */
+	EReference getThreat_Refines();
+
+	/**
 	 * Returns the meta object for the '{@link dsm.TRADES.Threat#checkIsUsed(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Check Is Used</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3365,10 +3412,10 @@ public interface TRADESPackage extends EPackage {
 	EReference getComponent_Componenttype();
 
 	/**
-	 * Returns the meta object for the reference '{@link dsm.TRADES.Component#getVulnerableasset <em>Vulnerableasset</em>}'.
+	 * Returns the meta object for the reference list '{@link dsm.TRADES.Component#getVulnerableasset <em>Vulnerableasset</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Vulnerableasset</em>'.
+	 * @return the meta object for the reference list '<em>Vulnerableasset</em>'.
 	 * @see dsm.TRADES.Component#getVulnerableasset()
 	 * @see #getComponent()
 	 * @generated
@@ -4697,6 +4744,17 @@ public interface TRADESPackage extends EPackage {
 	EReference getVulnerableAsset_Vulnerability();
 
 	/**
+	 * Returns the meta object for the reference '{@link dsm.TRADES.VulnerableAsset#getComponentTypeAffected <em>Component Type Affected</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Component Type Affected</em>'.
+	 * @see dsm.TRADES.VulnerableAsset#getComponentTypeAffected()
+	 * @see #getVulnerableAsset()
+	 * @generated
+	 */
+	EReference getVulnerableAsset_ComponentTypeAffected();
+
+	/**
 	 * Returns the meta object for class '{@link dsm.TRADES.VAOwner <em>VA Owner</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4887,6 +4945,14 @@ public interface TRADESPackage extends EPackage {
 		EReference THREAT__EXPLOITS_VULNERABILITY = eINSTANCE.getThreat_ExploitsVulnerability();
 
 		/**
+		 * The meta object literal for the '<em><b>Refines</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference THREAT__REFINES = eINSTANCE.getThreat_Refines();
+
+		/**
 		 * The meta object literal for the '<em><b>Check Is Used</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4938,7 +5004,7 @@ public interface TRADESPackage extends EPackage {
 		EReference COMPONENT__COMPONENTTYPE = eINSTANCE.getComponent_Componenttype();
 
 		/**
-		 * The meta object literal for the '<em><b>Vulnerableasset</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Vulnerableasset</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -6044,6 +6110,14 @@ public interface TRADESPackage extends EPackage {
 		 * @generated
 		 */
 		EReference VULNERABLE_ASSET__VULNERABILITY = eINSTANCE.getVulnerableAsset_Vulnerability();
+
+		/**
+		 * The meta object literal for the '<em><b>Component Type Affected</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference VULNERABLE_ASSET__COMPONENT_TYPE_AFFECTED = eINSTANCE.getVulnerableAsset_ComponentTypeAffected();
 
 		/**
 		 * The meta object literal for the '{@link dsm.TRADES.impl.VAOwnerImpl <em>VA Owner</em>}' class.

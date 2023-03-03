@@ -13,13 +13,17 @@
  */
 package dsm.TRADES.impl;
 
+import dsm.TRADES.ComponentType;
 import dsm.TRADES.TRADESPackage;
 import dsm.TRADES.Vulnerability;
 import dsm.TRADES.VulnerableAsset;
 
 import java.util.Collection;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
@@ -31,6 +35,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * </p>
  * <ul>
  *   <li>{@link dsm.TRADES.impl.VulnerableAssetImpl#getVulnerability <em>Vulnerability</em>}</li>
+ *   <li>{@link dsm.TRADES.impl.VulnerableAssetImpl#getComponentTypeAffected <em>Component Type Affected</em>}</li>
  * </ul>
  *
  * @generated
@@ -45,6 +50,16 @@ public class VulnerableAssetImpl extends AssetImpl implements VulnerableAsset {
 	 * @ordered
 	 */
 	protected EList<Vulnerability> vulnerability;
+
+	/**
+	 * The cached value of the '{@link #getComponentTypeAffected() <em>Component Type Affected</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getComponentTypeAffected()
+	 * @generated
+	 * @ordered
+	 */
+	protected ComponentType componentTypeAffected;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -85,10 +100,58 @@ public class VulnerableAssetImpl extends AssetImpl implements VulnerableAsset {
 	 * @generated
 	 */
 	@Override
+	public ComponentType getComponentTypeAffected() {
+		if (componentTypeAffected != null && componentTypeAffected.eIsProxy()) {
+			InternalEObject oldComponentTypeAffected = (InternalEObject) componentTypeAffected;
+			componentTypeAffected = (ComponentType) eResolveProxy(oldComponentTypeAffected);
+			if (componentTypeAffected != oldComponentTypeAffected) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+							TRADESPackage.VULNERABLE_ASSET__COMPONENT_TYPE_AFFECTED, oldComponentTypeAffected,
+							componentTypeAffected));
+			}
+		}
+		return componentTypeAffected;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ComponentType basicGetComponentTypeAffected() {
+		return componentTypeAffected;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setComponentTypeAffected(ComponentType newComponentTypeAffected) {
+		ComponentType oldComponentTypeAffected = componentTypeAffected;
+		componentTypeAffected = newComponentTypeAffected;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					TRADESPackage.VULNERABLE_ASSET__COMPONENT_TYPE_AFFECTED, oldComponentTypeAffected,
+					componentTypeAffected));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case TRADESPackage.VULNERABLE_ASSET__VULNERABILITY:
 			return getVulnerability();
+		case TRADESPackage.VULNERABLE_ASSET__COMPONENT_TYPE_AFFECTED:
+			if (resolve)
+				return getComponentTypeAffected();
+			return basicGetComponentTypeAffected();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -106,6 +169,9 @@ public class VulnerableAssetImpl extends AssetImpl implements VulnerableAsset {
 			getVulnerability().clear();
 			getVulnerability().addAll((Collection<? extends Vulnerability>) newValue);
 			return;
+		case TRADESPackage.VULNERABLE_ASSET__COMPONENT_TYPE_AFFECTED:
+			setComponentTypeAffected((ComponentType) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -121,6 +187,9 @@ public class VulnerableAssetImpl extends AssetImpl implements VulnerableAsset {
 		case TRADESPackage.VULNERABLE_ASSET__VULNERABILITY:
 			getVulnerability().clear();
 			return;
+		case TRADESPackage.VULNERABLE_ASSET__COMPONENT_TYPE_AFFECTED:
+			setComponentTypeAffected((ComponentType) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -135,6 +204,8 @@ public class VulnerableAssetImpl extends AssetImpl implements VulnerableAsset {
 		switch (featureID) {
 		case TRADESPackage.VULNERABLE_ASSET__VULNERABILITY:
 			return vulnerability != null && !vulnerability.isEmpty();
+		case TRADESPackage.VULNERABLE_ASSET__COMPONENT_TYPE_AFFECTED:
+			return componentTypeAffected != null;
 		}
 		return super.eIsSet(featureID);
 	}

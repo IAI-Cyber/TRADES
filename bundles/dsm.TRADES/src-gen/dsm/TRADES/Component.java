@@ -89,25 +89,15 @@ public interface Component extends ComponentOwner, DataOwnerElement, NamedElemen
 	EList<ComponentType> getComponenttype();
 
 	/**
-	 * Returns the value of the '<em><b>Vulnerableasset</b></em>' reference.
+	 * Returns the value of the '<em><b>Vulnerableasset</b></em>' reference list.
+	 * The list contents are of type {@link dsm.TRADES.VulnerableAsset}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Vulnerableasset</em>' reference.
-	 * @see #setVulnerableasset(VulnerableAsset)
+	 * @return the value of the '<em>Vulnerableasset</em>' reference list.
 	 * @see dsm.TRADES.TRADESPackage#getComponent_Vulnerableasset()
 	 * @model
 	 * @generated
 	 */
-	VulnerableAsset getVulnerableasset();
-
-	/**
-	 * Sets the value of the '{@link dsm.TRADES.Component#getVulnerableasset <em>Vulnerableasset</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Vulnerableasset</em>' reference.
-	 * @see #getVulnerableasset()
-	 * @generated
-	 */
-	void setVulnerableasset(VulnerableAsset value);
+	EList<VulnerableAsset> getVulnerableasset();
 
 } // Component

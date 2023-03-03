@@ -63,6 +63,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dsm.TRADES.impl.ThreatImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ThreatImpl#getApplicability <em>Applicability</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ThreatImpl#getExploitsVulnerability <em>Exploits Vulnerability</em>}</li>
+ *   <li>{@link dsm.TRADES.impl.ThreatImpl#getRefines <em>Refines</em>}</li>
  * </ul>
  *
  * @generated
@@ -167,6 +168,16 @@ public class ThreatImpl extends NamedElementImpl implements Threat {
 	 * @ordered
 	 */
 	protected EList<Vulnerability> exploitsVulnerability;
+
+	/**
+	 * The cached value of the '{@link #getRefines() <em>Refines</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRefines()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Threat> refines;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -317,6 +328,19 @@ public class ThreatImpl extends NamedElementImpl implements Threat {
 	 * @generated
 	 */
 	@Override
+	public EList<Threat> getRefines() {
+		if (refines == null) {
+			refines = new EObjectResolvingEList<Threat>(Threat.class, this, TRADESPackage.THREAT__REFINES);
+		}
+		return refines;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public boolean checkIsUsed(DiagnosticChain chain, Map context) {
 		// TODO: implement this method
 		// -> specify the condition that violates the invariant
@@ -409,6 +433,8 @@ public class ThreatImpl extends NamedElementImpl implements Threat {
 			return getApplicability();
 		case TRADESPackage.THREAT__EXPLOITS_VULNERABILITY:
 			return getExploitsVulnerability();
+		case TRADESPackage.THREAT__REFINES:
+			return getRefines();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -442,6 +468,10 @@ public class ThreatImpl extends NamedElementImpl implements Threat {
 			getExploitsVulnerability().clear();
 			getExploitsVulnerability().addAll((Collection<? extends Vulnerability>) newValue);
 			return;
+		case TRADESPackage.THREAT__REFINES:
+			getRefines().clear();
+			getRefines().addAll((Collection<? extends Threat>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -472,6 +502,9 @@ public class ThreatImpl extends NamedElementImpl implements Threat {
 		case TRADESPackage.THREAT__EXPLOITS_VULNERABILITY:
 			getExploitsVulnerability().clear();
 			return;
+		case TRADESPackage.THREAT__REFINES:
+			getRefines().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -497,6 +530,8 @@ public class ThreatImpl extends NamedElementImpl implements Threat {
 					: !APPLICABILITY_EDEFAULT.equals(applicability);
 		case TRADESPackage.THREAT__EXPLOITS_VULNERABILITY:
 			return exploitsVulnerability != null && !exploitsVulnerability.isEmpty();
+		case TRADESPackage.THREAT__REFINES:
+			return refines != null && !refines.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

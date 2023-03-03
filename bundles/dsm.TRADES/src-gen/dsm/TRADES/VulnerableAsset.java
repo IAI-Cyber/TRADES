@@ -25,6 +25,7 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link dsm.TRADES.VulnerableAsset#getVulnerability <em>Vulnerability</em>}</li>
+ *   <li>{@link dsm.TRADES.VulnerableAsset#getComponentTypeAffected <em>Component Type Affected</em>}</li>
  * </ul>
  *
  * @see dsm.TRADES.TRADESPackage#getVulnerableAsset()
@@ -44,4 +45,26 @@ public interface VulnerableAsset extends Asset {
 	 * @generated
 	 */
 	EList<Vulnerability> getVulnerability();
+
+	/**
+	 * Returns the value of the '<em><b>Component Type Affected</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Component Type Affected</em>' reference.
+	 * @see #setComponentTypeAffected(ComponentType)
+	 * @see dsm.TRADES.TRADESPackage#getVulnerableAsset_ComponentTypeAffected()
+	 * @model required="true"
+	 * @generated
+	 */
+	ComponentType getComponentTypeAffected();
+
+	/**
+	 * Sets the value of the '{@link dsm.TRADES.VulnerableAsset#getComponentTypeAffected <em>Component Type Affected</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Component Type Affected</em>' reference.
+	 * @see #getComponentTypeAffected()
+	 * @generated
+	 */
+	void setComponentTypeAffected(ComponentType value);
 } // VulnerableAsset

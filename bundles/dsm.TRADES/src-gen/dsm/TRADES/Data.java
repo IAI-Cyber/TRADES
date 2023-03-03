@@ -23,5 +23,5 @@ package dsm.TRADES;
  * @model
  * @generated
  */
-public interface Data extends NamedElement {
+public interface Data extends NamedElement, DomainAsset {
 } // Data

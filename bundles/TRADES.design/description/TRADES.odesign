@@ -624,6 +624,7 @@
           </ownedTools>
         </toolSections>
       </defaultLayer>
+      <additionalLayers name="VA_Layer" label="Vulnerability Assessment"/>
     </ownedRepresentations>
     <ownedRepresentations xsi:type="description_1:DiagramDescription" dropDescriptions="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='copyThreatDragDrop'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Component%20Analysis']/@defaultLayer/@toolSections.1/@ownedTools[name='ExternalControlDrop_CA'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='DropCatalogControl_TD']" name="Component Analysis" titleExpression="aql: 'Analysis of ' + self.name" domainClass="TRADES::Component">
       <metamodel href="dsm.TRADES#/"/>

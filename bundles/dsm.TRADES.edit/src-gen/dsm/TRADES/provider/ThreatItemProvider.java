@@ -61,6 +61,7 @@ public class ThreatItemProvider extends NamedElementItemProvider {
 			addDescriptionPropertyDescriptor(object);
 			addApplicabilityPropertyDescriptor(object);
 			addExploitsVulnerabilityPropertyDescriptor(object);
+			addRefinesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -157,6 +158,21 @@ public class ThreatItemProvider extends NamedElementItemProvider {
 						getString("_UI_PropertyDescriptor_description", "_UI_Threat_exploitsVulnerability_feature",
 								"_UI_Threat_type"),
 						TRADESPackage.Literals.THREAT__EXPLOITS_VULNERABILITY, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Refines feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRefinesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Threat_refines_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Threat_refines_feature",
+								"_UI_Threat_type"),
+						TRADESPackage.Literals.THREAT__REFINES, true, false, true, null, null, null));
 	}
 
 	/**

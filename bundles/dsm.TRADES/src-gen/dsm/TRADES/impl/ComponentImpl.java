@@ -165,14 +165,14 @@ public class ComponentImpl extends ComponentOwnerImpl implements Component {
 	protected EList<ComponentType> componenttype;
 
 	/**
-	 * The cached value of the '{@link #getVulnerableasset() <em>Vulnerableasset</em>}' reference.
+	 * The cached value of the '{@link #getVulnerableasset() <em>Vulnerableasset</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getVulnerableasset()
 	 * @generated
 	 * @ordered
 	 */
-	protected VulnerableAsset vulnerableasset;
+	protected EList<VulnerableAsset> vulnerableasset;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -396,40 +396,12 @@ public class ComponentImpl extends ComponentOwnerImpl implements Component {
 	 * @generated
 	 */
 	@Override
-	public VulnerableAsset getVulnerableasset() {
-		if (vulnerableasset != null && vulnerableasset.eIsProxy()) {
-			InternalEObject oldVulnerableasset = (InternalEObject) vulnerableasset;
-			vulnerableasset = (VulnerableAsset) eResolveProxy(oldVulnerableasset);
-			if (vulnerableasset != oldVulnerableasset) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TRADESPackage.COMPONENT__VULNERABLEASSET,
-							oldVulnerableasset, vulnerableasset));
-			}
+	public EList<VulnerableAsset> getVulnerableasset() {
+		if (vulnerableasset == null) {
+			vulnerableasset = new EObjectResolvingEList<VulnerableAsset>(VulnerableAsset.class, this,
+					TRADESPackage.COMPONENT__VULNERABLEASSET);
 		}
 		return vulnerableasset;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public VulnerableAsset basicGetVulnerableasset() {
-		return vulnerableasset;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setVulnerableasset(VulnerableAsset newVulnerableasset) {
-		VulnerableAsset oldVulnerableasset = vulnerableasset;
-		vulnerableasset = newVulnerableasset;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TRADESPackage.COMPONENT__VULNERABLEASSET,
-					oldVulnerableasset, vulnerableasset));
 	}
 
 	/**
@@ -557,9 +529,7 @@ public class ComponentImpl extends ComponentOwnerImpl implements Component {
 		case TRADESPackage.COMPONENT__COMPONENTTYPE:
 			return getComponenttype();
 		case TRADESPackage.COMPONENT__VULNERABLEASSET:
-			if (resolve)
-				return getVulnerableasset();
-			return basicGetVulnerableasset();
+			return getVulnerableasset();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -603,7 +573,8 @@ public class ComponentImpl extends ComponentOwnerImpl implements Component {
 			getComponenttype().addAll((Collection<? extends ComponentType>) newValue);
 			return;
 		case TRADESPackage.COMPONENT__VULNERABLEASSET:
-			setVulnerableasset((VulnerableAsset) newValue);
+			getVulnerableasset().clear();
+			getVulnerableasset().addAll((Collection<? extends VulnerableAsset>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -642,7 +613,7 @@ public class ComponentImpl extends ComponentOwnerImpl implements Component {
 			getComponenttype().clear();
 			return;
 		case TRADESPackage.COMPONENT__VULNERABLEASSET:
-			setVulnerableasset((VulnerableAsset) null);
+			getVulnerableasset().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -673,7 +644,7 @@ public class ComponentImpl extends ComponentOwnerImpl implements Component {
 		case TRADESPackage.COMPONENT__COMPONENTTYPE:
 			return componenttype != null && !componenttype.isEmpty();
 		case TRADESPackage.COMPONENT__VULNERABLEASSET:
-			return vulnerableasset != null;
+			return vulnerableasset != null && !vulnerableasset.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

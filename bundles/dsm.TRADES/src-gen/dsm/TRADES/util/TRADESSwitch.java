@@ -171,6 +171,10 @@ public class TRADESSwitch<T> extends Switch<T> {
 			Data data = (Data) theEObject;
 			T result = caseData(data);
 			if (result == null)
+				result = caseDomainAsset(data);
+			if (result == null)
+				result = caseAsset(data);
+			if (result == null)
 				result = caseNamedElement(data);
 			if (result == null)
 				result = defaultCase(theEObject);
