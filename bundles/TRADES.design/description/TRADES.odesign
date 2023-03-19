@@ -240,6 +240,13 @@
             <labelFormat>underline</labelFormat>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
+          <conditionnalStyles predicateExpression="aql: self.vulnerableasset->notEmpty()">
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12" tooltipExpression="aql: self.vulnerableasset.name" foregroundColor="//@userColorsPalettes[name='Colors']/@entries[name='ComponetBGColor']">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_red']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </conditionnalStyles>
         </containerMappings>
         <toolSections name="TRADES tools" label="Add" icon="/TRADES.design/Images/logo_16.png">
           <ownedTools xsi:type="tool:NodeCreationDescription" name="Threat" nodeMappings="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@nodeMappings[name='ThreatNode_TD']">
