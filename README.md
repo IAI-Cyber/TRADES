@@ -7,6 +7,7 @@ Check the releases section for the most up-to-date version of TRADES Tool as a s
 
 Documentation is available at the respective folder.
 [1] Shaked, A. (2023). A model-based methodology to support systems security design and assessment. Journal of Industrial Information Integration, 100465. https://doi.org/10.1016/j.jii.2023.100465
+
 [2] Shaked, A. and Reich, Y. (2021). Model-based Threat and Risk Assessment for Systems Design. In Proceedings of the 7th International Conference on Information Systems Security and Privacy - ICISSP, ISBN 978-989-758-491-6; ISSN 2184-4356, pages 331-338. DOI: 10.5220/0010187203310338 https://www.scitepress.org/Papers/2021/101872/101872.pdf
 
 ## How to set up an environment
