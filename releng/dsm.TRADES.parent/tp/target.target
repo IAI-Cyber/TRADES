@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?pde?>
 <!-- generated with https://github.com/eclipse-cbi/targetplatform-dsl -->
-<target name="TRADES" sequenceNumber="1626698971">
+<target name="TRADES" sequenceNumber="1680732260">
   <locations>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.platform.sdk" version="0.0.0"/>
@@ -26,7 +26,7 @@
       <unit id="org.obeonetwork.m2doc.html.feature.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.acceleo.query.feature.group" version="0.0.0"/>
       <unit id="org.apache.poi" version="0.0.0"/>
-      <repository location="https://s3-eu-west-1.amazonaws.com/obeo-m2doc-releases/master/nightly/repository"/>
+      <repository location="https://s3-eu-west-1.amazonaws.com/obeo-m2doc-releases/3.2.2/repository"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.e4.tools.bundle.spy.feature.feature.group" version="0.0.0"/>

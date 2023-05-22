@@ -39,7 +39,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="componenttype" upperBound="-1"
         eType="#//ComponentType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="vulnerableasset" upperBound="-1"
-        eType="#//VulnerableAsset"/>
+        eType="#//VulnerableAsset" derived="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Control" eSuperTypes="#//NamedElement #//IControlDefinition #//ElementWithId">
     <eStructuralFeatures xsi:type="ecore:EReference" name="mitigatedThreats" upperBound="-1"
@@ -311,6 +311,8 @@
         upperBound="-1" eType="#//Vulnerability"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="componentTypeAffected"
         lowerBound="1" eType="#//ComponentType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="controls" upperBound="-1"
+        eType="#//Control"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="VAOwner" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EReference" name="vulnerableasset" upperBound="-1"

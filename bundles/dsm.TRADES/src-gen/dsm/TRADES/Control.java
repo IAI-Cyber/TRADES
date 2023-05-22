@@ -29,6 +29,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link dsm.TRADES.Control#getMitigationRelations <em>Mitigation Relations</em>}</li>
  *   <li>{@link dsm.TRADES.Control#getStatus <em>Status</em>}</li>
  *   <li>{@link dsm.TRADES.Control#getMitigatesVulnerability <em>Mitigates Vulnerability</em>}</li>
+ *   <li>{@link dsm.TRADES.Control#getSecurityObjective <em>Security Objective</em>}</li>
  * </ul>
  *
  * @see dsm.TRADES.TRADESPackage#getControl()
@@ -120,5 +121,31 @@ public interface Control extends NamedElement, IControlDefinition, ElementWithId
 	 * @generated
 	 */
 	EList<Vulnerability> getMitigatesVulnerability();
+
+	/**
+	 * Returns the value of the '<em><b>Security Objective</b></em>' attribute.
+	 * The default value is <code>"Undefined"</code>.
+	 * The literals are from the enumeration {@link dsm.TRADES.SecurityObjectiveENUM}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Security Objective</em>' attribute.
+	 * @see dsm.TRADES.SecurityObjectiveENUM
+	 * @see #setSecurityObjective(SecurityObjectiveENUM)
+	 * @see dsm.TRADES.TRADESPackage#getControl_SecurityObjective()
+	 * @model default="Undefined"
+	 * @generated
+	 */
+	SecurityObjectiveENUM getSecurityObjective();
+
+	/**
+	 * Sets the value of the '{@link dsm.TRADES.Control#getSecurityObjective <em>Security Objective</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Security Objective</em>' attribute.
+	 * @see dsm.TRADES.SecurityObjectiveENUM
+	 * @see #getSecurityObjective()
+	 * @generated
+	 */
+	void setSecurityObjective(SecurityObjectiveENUM value);
 
 } // Control
