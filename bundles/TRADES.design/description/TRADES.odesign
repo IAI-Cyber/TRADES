@@ -234,21 +234,21 @@
           <dropDescriptions href="../../dsm.oscal.design/description/oscal.odesign#//@ownedViewpoints[name='OscalViewPoint']/@ownedRepresentationExtensions[name='TRADES.design']/@layers[name='OscalLayer']/@toolSections.0/@ownedTools[name='DropOScalControl']"/>
           <dropDescriptions href="../../dsm.oscal.design/description/oscal.odesign#//@ownedViewpoints[name='OscalViewPoint']/@ownedRepresentationExtensions[name='TRADES.design']/@layers[name='OscalLayer']/@toolSections.0/@ownedTools[name='DropOScalControl_TDExt']"/>
           <dropDescriptions href="#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='ExternalControlDrop_TD']"/>
-          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12" showIcon="false" backgroundStyle="GradientTopToBottom" backgroundColor="//@userColorsPalettes[name='Colors']/@entries[name='ComponetBGColor']" foregroundColor="//@userColorsPalettes[name='Colors']/@entries[name='ComponetBGColor']">
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12" showIcon="false" tooltipExpression="aql: name" backgroundStyle="GradientTopToBottom" backgroundColor="//@userColorsPalettes[name='Colors']/@entries[name='ComponetBGColor']" foregroundColor="//@userColorsPalettes[name='Colors']/@entries[name='ComponetBGColor']">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelFormat>bold</labelFormat>
             <labelFormat>underline</labelFormat>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
           <conditionnalStyles predicateExpression="aql: self.vulnerableasset->notEmpty()">
-            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12" tooltipExpression="aql: self.vulnerableasset.name" foregroundColor="//@userColorsPalettes[name='Colors']/@entries[name='ComponetBGColor']">
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12" tooltipExpression="aql: 'Deperecated'" foregroundColor="//@userColorsPalettes[name='Colors']/@entries[name='ComponetBGColor']">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_red']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
               <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
             </style>
           </conditionnalStyles>
-          <conditionnalStyles predicateExpression="aql: self.componenttype.eInverse('componentTypeAffected')->select(va | va.controls->select(control | self.controlOwner.internals->excludes(control))->notEmpty())->notEmpty()">
-            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12" labelExpression="aql: self.name+'[VA]'" tooltipExpression="aql: self.vulnerableasset.name" foregroundColor="//@userColorsPalettes[name='Colors']/@entries[name='ComponetBGColor']">
+          <conditionnalStyles predicateExpression="aql: let AVAD=self.componenttype.eInverse('componentTypeAffected')->select(va | not(va.controls->exists(control | self.controlOwner.internals->includes(control) or self.controlOwner.externals->includes(control)))) AVAD->notEmpty()">
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12" labelExpression="aql: self.name+' [VAD exist]'" tooltipExpression="aql: 'VADs: ' + self.componenttype.eInverse('componentTypeAffected')->select(va | not(va.controls->exists(control | self.controlOwner.internals->includes(control) or self.controlOwner.externals->includes(control)))).name)" foregroundColor="//@userColorsPalettes[name='Colors']/@entries[name='ComponetBGColor']">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_red']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
               <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
