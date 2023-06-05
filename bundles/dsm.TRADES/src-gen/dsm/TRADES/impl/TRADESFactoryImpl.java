@@ -143,6 +143,8 @@ public class TRADESFactoryImpl extends EFactoryImpl implements TRADESFactory {
 			return createControlStatusENUMFromString(eDataType, initialValue);
 		case TRADESPackage.COMPONENT_CATEGORY_ENUM:
 			return createComponentCategoryENUMFromString(eDataType, initialValue);
+		case TRADESPackage.SECURITY_OBJECTIVE_ENUM:
+			return createSecurityObjectiveENUMFromString(eDataType, initialValue);
 		case TRADESPackage.RGB_COLOR:
 			return createRGBColorFromString(eDataType, initialValue);
 		default:
@@ -168,6 +170,8 @@ public class TRADESFactoryImpl extends EFactoryImpl implements TRADESFactory {
 			return convertControlStatusENUMToString(eDataType, instanceValue);
 		case TRADESPackage.COMPONENT_CATEGORY_ENUM:
 			return convertComponentCategoryENUMToString(eDataType, instanceValue);
+		case TRADESPackage.SECURITY_OBJECTIVE_ENUM:
+			return convertSecurityObjectiveENUMToString(eDataType, instanceValue);
 		case TRADESPackage.RGB_COLOR:
 			return convertRGBColorToString(eDataType, instanceValue);
 		default:
@@ -568,6 +572,28 @@ public class TRADESFactoryImpl extends EFactoryImpl implements TRADESFactory {
 	 * @generated
 	 */
 	public String convertComponentCategoryENUMToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SecurityObjectiveENUM createSecurityObjectiveENUMFromString(EDataType eDataType, String initialValue) {
+		SecurityObjectiveENUM result = SecurityObjectiveENUM.get(initialValue);
+		if (result == null)
+			throw new IllegalArgumentException(
+					"The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertSecurityObjectiveENUMToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

@@ -55,6 +55,7 @@ public class VulnerableAssetItemProvider extends AssetItemProvider {
 
 			addVulnerabilityPropertyDescriptor(object);
 			addComponentTypeAffectedPropertyDescriptor(object);
+			addControlsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -87,6 +88,21 @@ public class VulnerableAssetItemProvider extends AssetItemProvider {
 				getString("_UI_PropertyDescriptor_description", "_UI_VulnerableAsset_componentTypeAffected_feature",
 						"_UI_VulnerableAsset_type"),
 				TRADESPackage.Literals.VULNERABLE_ASSET__COMPONENT_TYPE_AFFECTED, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Controls feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addControlsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_VulnerableAsset_controls_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_VulnerableAsset_controls_feature",
+								"_UI_VulnerableAsset_type"),
+						TRADESPackage.Literals.VULNERABLE_ASSET__CONTROLS, true, false, true, null, null, null));
 	}
 
 	/**

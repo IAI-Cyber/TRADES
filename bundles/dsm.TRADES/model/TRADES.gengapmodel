@@ -3,5 +3,8 @@
   <genModel href="TRADES.genmodel#/"/>
   <genGapPackages customClassPackageSuffix="impl" customProviderPackageSuffix="provider">
     <genPackage href="TRADES.genmodel#//TRADES"/>
+    <nestedGenGapPackages customClassPackageSuffix="impl" customProviderPackageSuffix="provider">
+      <genPackage href="TRADES.genmodel#//TRADES"/>
+    </nestedGenGapPackages>
   </genGapPackages>
 </loophole:GenGapModel>

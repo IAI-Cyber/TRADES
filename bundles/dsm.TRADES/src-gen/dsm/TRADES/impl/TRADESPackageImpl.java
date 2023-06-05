@@ -53,6 +53,7 @@ import dsm.TRADES.LinkType;
 import dsm.TRADES.NamedElement;
 import dsm.TRADES.RGBColor;
 import dsm.TRADES.ScoreSystem;
+import dsm.TRADES.SecurityObjectiveENUM;
 import dsm.TRADES.TRADESFactory;
 import dsm.TRADES.TRADESPackage;
 import dsm.TRADES.Threat;
@@ -427,6 +428,13 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EEnum securityObjectiveENUMEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EDataType rgbColorEDataType = null;
 
 	/**
@@ -690,6 +698,16 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * @generated
 	 */
 	@Override
+	public EReference getComponent_AssignedControl() {
+		return (EReference) componentEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getControl() {
 		return controlEClass;
 	}
@@ -742,6 +760,16 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	@Override
 	public EReference getControl_MitigatesVulnerability() {
 		return (EReference) controlEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getControl_SecurityObjective() {
+		return (EAttribute) controlEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -1960,6 +1988,16 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * @generated
 	 */
 	@Override
+	public EReference getVulnerableAsset_Controls() {
+		return (EReference) vulnerableAssetEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getVAOwner() {
 		return vaOwnerEClass;
 	}
@@ -2030,6 +2068,16 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 	 * @generated
 	 */
 	@Override
+	public EEnum getSecurityObjectiveENUM() {
+		return securityObjectiveENUMEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EDataType getRGBColor() {
 		return rgbColorEDataType;
 	}
@@ -2084,6 +2132,7 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		createEReference(componentEClass, COMPONENT__LINKS);
 		createEReference(componentEClass, COMPONENT__COMPONENTTYPE);
 		createEReference(componentEClass, COMPONENT__VULNERABLEASSET);
+		createEReference(componentEClass, COMPONENT__ASSIGNED_CONTROL);
 
 		controlEClass = createEClass(CONTROL);
 		createEReference(controlEClass, CONTROL__MITIGATED_THREATS);
@@ -2091,6 +2140,7 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		createEReference(controlEClass, CONTROL__MITIGATION_RELATIONS);
 		createEAttribute(controlEClass, CONTROL__STATUS);
 		createEReference(controlEClass, CONTROL__MITIGATES_VULNERABILITY);
+		createEAttribute(controlEClass, CONTROL__SECURITY_OBJECTIVE);
 
 		threatAllocationRelationEClass = createEClass(THREAT_ALLOCATION_RELATION);
 		createEAttribute(threatAllocationRelationEClass, THREAT_ALLOCATION_RELATION__ASSESSMENT);
@@ -2251,6 +2301,7 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		vulnerableAssetEClass = createEClass(VULNERABLE_ASSET);
 		createEReference(vulnerableAssetEClass, VULNERABLE_ASSET__VULNERABILITY);
 		createEReference(vulnerableAssetEClass, VULNERABLE_ASSET__COMPONENT_TYPE_AFFECTED);
+		createEReference(vulnerableAssetEClass, VULNERABLE_ASSET__CONTROLS);
 
 		vaOwnerEClass = createEClass(VA_OWNER);
 		createEReference(vaOwnerEClass, VA_OWNER__VULNERABLEASSET);
@@ -2261,6 +2312,7 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		threatTypeENUMEEnum = createEEnum(THREAT_TYPE_ENUM);
 		controlStatusENUMEEnum = createEEnum(CONTROL_STATUS_ENUM);
 		componentCategoryENUMEEnum = createEEnum(COMPONENT_CATEGORY_ENUM);
+		securityObjectiveENUMEEnum = createEEnum(SECURITY_OBJECTIVE_ENUM);
 
 		// Create data types
 		rgbColorEDataType = createEDataType(RGB_COLOR);
@@ -2403,6 +2455,9 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getComponent_Vulnerableasset(), this.getVulnerableAsset(), null, "vulnerableasset", null, 0, -1,
 				Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getComponent_AssignedControl(), this.getControl(), null, "assignedControl", null, 0, -1,
+				Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(controlEClass, Control.class, "Control", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -2420,6 +2475,9 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		initEReference(getControl_MitigatesVulnerability(), this.getVulnerability(), null, "mitigatesVulnerability",
 				null, 0, -1, Control.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
 				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getControl_SecurityObjective(), this.getSecurityObjectiveENUM(), "securityObjective",
+				"Undefined", 0, 1, Control.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(threatAllocationRelationEClass, ThreatAllocationRelation.class, "ThreatAllocationRelation",
 				!IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -2782,8 +2840,11 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 				VulnerableAsset.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getVulnerableAsset_ComponentTypeAffected(), this.getComponentType(), null,
-				"componentTypeAffected", null, 1, 1, VulnerableAsset.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				"componentTypeAffected", null, 1, -1, VulnerableAsset.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
 				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getVulnerableAsset_Controls(), this.getControl(), null, "controls", null, 0, -1,
+				VulnerableAsset.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(vaOwnerEClass, VAOwner.class, "VAOwner", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getVAOwner_Vulnerableasset(), this.getVulnerableAsset(), null, "vulnerableasset", null, 0, -1,
@@ -2815,6 +2876,16 @@ public class TRADESPackageImpl extends EPackageImpl implements TRADESPackage {
 		addEEnumLiteral(componentCategoryENUMEEnum, ComponentCategoryENUM.SYSTEM_FUNCTION);
 		addEEnumLiteral(componentCategoryENUMEEnum, ComponentCategoryENUM.HUMAN_RELATED_INFO);
 		addEEnumLiteral(componentCategoryENUMEEnum, ComponentCategoryENUM.PHYSICAL);
+
+		initEEnum(securityObjectiveENUMEEnum, SecurityObjectiveENUM.class, "SecurityObjectiveENUM");
+		addEEnumLiteral(securityObjectiveENUMEEnum, SecurityObjectiveENUM.CONFIDENTIALITY);
+		addEEnumLiteral(securityObjectiveENUMEEnum, SecurityObjectiveENUM.AVAILIABILITY);
+		addEEnumLiteral(securityObjectiveENUMEEnum, SecurityObjectiveENUM.INTEGRITY);
+		addEEnumLiteral(securityObjectiveENUMEEnum, SecurityObjectiveENUM.AUTHENTICITY);
+		addEEnumLiteral(securityObjectiveENUMEEnum, SecurityObjectiveENUM.NON_REPUDIATION);
+		addEEnumLiteral(securityObjectiveENUMEEnum, SecurityObjectiveENUM.RELIABILITY);
+		addEEnumLiteral(securityObjectiveENUMEEnum, SecurityObjectiveENUM.ACCOUNTABILITY);
+		addEEnumLiteral(securityObjectiveENUMEEnum, SecurityObjectiveENUM.UNDEFINED);
 
 		// Initialize data types
 		initEDataType(rgbColorEDataType, RGBColor.class, "RGBColor", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);

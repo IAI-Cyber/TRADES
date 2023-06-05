@@ -69,6 +69,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dsm.TRADES.impl.ComponentImpl#getLinks <em>Links</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ComponentImpl#getComponenttype <em>Componenttype</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ComponentImpl#getVulnerableasset <em>Vulnerableasset</em>}</li>
+ *   <li>{@link dsm.TRADES.impl.ComponentImpl#getAssignedControl <em>Assigned Control</em>}</li>
  * </ul>
  *
  * @generated
@@ -173,6 +174,16 @@ public class ComponentImpl extends ComponentOwnerImpl implements Component {
 	 * @ordered
 	 */
 	protected EList<VulnerableAsset> vulnerableasset;
+
+	/**
+	 * The cached value of the '{@link #getAssignedControl() <em>Assigned Control</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAssignedControl()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Control> assignedControl;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -410,6 +421,20 @@ public class ComponentImpl extends ComponentOwnerImpl implements Component {
 	 * @generated
 	 */
 	@Override
+	public EList<Control> getAssignedControl() {
+		if (assignedControl == null) {
+			assignedControl = new EObjectResolvingEList<Control>(Control.class, this,
+					TRADESPackage.COMPONENT__ASSIGNED_CONTROL);
+		}
+		return assignedControl;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EList<Control> getAllControls() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -530,6 +555,8 @@ public class ComponentImpl extends ComponentOwnerImpl implements Component {
 			return getComponenttype();
 		case TRADESPackage.COMPONENT__VULNERABLEASSET:
 			return getVulnerableasset();
+		case TRADESPackage.COMPONENT__ASSIGNED_CONTROL:
+			return getAssignedControl();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -576,6 +603,10 @@ public class ComponentImpl extends ComponentOwnerImpl implements Component {
 			getVulnerableasset().clear();
 			getVulnerableasset().addAll((Collection<? extends VulnerableAsset>) newValue);
 			return;
+		case TRADESPackage.COMPONENT__ASSIGNED_CONTROL:
+			getAssignedControl().clear();
+			getAssignedControl().addAll((Collection<? extends Control>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -615,6 +646,9 @@ public class ComponentImpl extends ComponentOwnerImpl implements Component {
 		case TRADESPackage.COMPONENT__VULNERABLEASSET:
 			getVulnerableasset().clear();
 			return;
+		case TRADESPackage.COMPONENT__ASSIGNED_CONTROL:
+			getAssignedControl().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -645,6 +679,8 @@ public class ComponentImpl extends ComponentOwnerImpl implements Component {
 			return componenttype != null && !componenttype.isEmpty();
 		case TRADESPackage.COMPONENT__VULNERABLEASSET:
 			return vulnerableasset != null && !vulnerableasset.isEmpty();
+		case TRADESPackage.COMPONENT__ASSIGNED_CONTROL:
+			return assignedControl != null && !assignedControl.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

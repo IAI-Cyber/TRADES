@@ -63,6 +63,7 @@ public class ComponentItemProvider extends ComponentOwnerItemProvider {
 			addThreatAllocationsPropertyDescriptor(object);
 			addComponenttypePropertyDescriptor(object);
 			addVulnerableassetPropertyDescriptor(object);
+			addAssignedControlPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -142,6 +143,21 @@ public class ComponentItemProvider extends ComponentOwnerItemProvider {
 						getString("_UI_PropertyDescriptor_description", "_UI_Component_vulnerableasset_feature",
 								"_UI_Component_type"),
 						TRADESPackage.Literals.COMPONENT__VULNERABLEASSET, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Assigned Control feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAssignedControlPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Component_assignedControl_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Component_assignedControl_feature",
+								"_UI_Component_type"),
+						TRADESPackage.Literals.COMPONENT__ASSIGNED_CONTROL, true, false, true, null, null, null));
 	}
 
 	/**

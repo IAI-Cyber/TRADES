@@ -29,6 +29,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link dsm.TRADES.Component#getLinks <em>Links</em>}</li>
  *   <li>{@link dsm.TRADES.Component#getComponenttype <em>Componenttype</em>}</li>
  *   <li>{@link dsm.TRADES.Component#getVulnerableasset <em>Vulnerableasset</em>}</li>
+ *   <li>{@link dsm.TRADES.Component#getAssignedControl <em>Assigned Control</em>}</li>
  * </ul>
  *
  * @see dsm.TRADES.TRADESPackage#getComponent()
@@ -95,9 +96,21 @@ public interface Component extends ComponentOwner, DataOwnerElement, NamedElemen
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Vulnerableasset</em>' reference list.
 	 * @see dsm.TRADES.TRADESPackage#getComponent_Vulnerableasset()
-	 * @model
+	 * @model derived="true"
 	 * @generated
 	 */
 	EList<VulnerableAsset> getVulnerableasset();
+
+	/**
+	 * Returns the value of the '<em><b>Assigned Control</b></em>' reference list.
+	 * The list contents are of type {@link dsm.TRADES.Control}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Assigned Control</em>' reference list.
+	 * @see dsm.TRADES.TRADESPackage#getComponent_AssignedControl()
+	 * @model
+	 * @generated
+	 */
+	EList<Control> getAssignedControl();
 
 } // Component

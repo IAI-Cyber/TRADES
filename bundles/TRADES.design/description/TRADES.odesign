@@ -248,7 +248,7 @@
             </style>
           </conditionnalStyles>
           <conditionnalStyles predicateExpression="aql: let AVAD=self.componenttype.eInverse('componentTypeAffected')->select(va | not(va.controls->exists(control | self.controlOwner.internals->includes(control) or self.controlOwner.externals->includes(control)))) AVAD->notEmpty()">
-            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12" labelExpression="aql: self.name+' [VAD exist]'" tooltipExpression="aql: 'VADs: ' + self.componenttype.eInverse('componentTypeAffected')->select(va | not(va.controls->exists(control | self.controlOwner.internals->includes(control) or self.controlOwner.externals->includes(control)))).name)" foregroundColor="//@userColorsPalettes[name='Colors']/@entries[name='ComponetBGColor']">
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12" labelExpression="aql: self.name+' [VADs exist]'" tooltipExpression="aql: 'VADs: ' + self.componenttype.eInverse('componentTypeAffected')->select(va | not(va.controls->exists(control | self.controlOwner.internals->includes(control) or self.controlOwner.externals->includes(control)))).name)" foregroundColor="//@userColorsPalettes[name='Colors']/@entries[name='ComponetBGColor']">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_red']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
               <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
@@ -638,7 +638,11 @@
           </ownedTools>
         </toolSections>
       </defaultLayer>
-      <additionalLayers name="VA_Layer" label="Vulnerability Assessment"/>
+      <additionalLayers name="VA_Layer" label="Vulnerability Assessment" reusedMappings="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@edgeMappings[name='Affect'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@edgeMappings[name='allocatedThreat_TD'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@nodeMappings[name='ControlNode'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@edgeMappings[name='mitigatesThreat'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@edgeMappings[name='mitigatesThreatAllocation'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@nodeMappings[name='ThreatNode_TD'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@additionalLayers[name='VA_Layer']/@containerMappings[name=''] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@additionalLayers[name='VA_Layer']/@containerMappings[name='']/@borderedNodeMappings[name=''] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Component%20Analysis']/@defaultLayer/@containerMappings[name='ComponentContainer_CA'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Component%20Analysis']/@defaultLayer/@nodeMappings[name='ControlNode_CA'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Component%20Analysis']/@defaultLayer/@nodeMappings[name='ControlNode_CA']/@borderedNodeMappings[name='ControlLabel_CA'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='DataFlowDiagram']/@defaultLayer/@edgeMappings[name='AffetRelation_DFD'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='DataFlowDiagram']/@defaultLayer/@containerMappings[name='FitleredByDataComponent_DFD'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='DataFlowDiagram']/@defaultLayer/@containerMappings[name='FitleredByDataComponent_DFD']/@subContainerMappings[name='FitleredByDataComponentChild_DFD'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='DataByComponentDiagram']/@additionalLayers[name='AvailableData_DCD']/@containerMappings[name='ComponentNode_DS'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='DataByComponentDiagram']/@additionalLayers[name='AvailableData_DCD']/@containerMappings[name='ComponentNode_DS']/@subNodeMappings[name='InheritedData'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='DataByComponentDiagram']/@defaultLayer/@edgeMappings[name='Children_DCD'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='DataByComponentDiagram']/@defaultLayer/@containerMappings[name='DataOwnerElement_DCD'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='DataByComponentDiagram']/@defaultLayer/@containerMappings[name='DataOwnerElement_DCD']/@subNodeMappings[name='Data'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='System%20Design']/@defaultLayer/@containerMappings[name='ComponentContainer_SD'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='System%20Design']/@defaultLayer/@containerMappings[name='ComponentContainer_SD']/@subNodeMappings[name='componentLinks'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='System%20Design']/@defaultLayer/@containerMappings[name='ComponentContainer_SD']/@subContainerMappings[name='ComponentPackage_SD'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='System%20Design']/@defaultLayer/@nodeMappings[name='extComponentLinks_SD'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='System%20Design']/@defaultLayer/@edgeMappings[name='LinkComponents_SD']" reusedTools="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='AffectEditLabel'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='AttachChainDiagramNavTool_TD'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Change%20name'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='ChangeComponentInThreatAllocation'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='ChangeThreatInThreatAllocation'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='ComponentCreationTool'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='SubComponentDiagramCreation'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='ComponentDesignDiagramCreation'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Control'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='CreateAttackChainTool_TD'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='DataMenu'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='DataMenu']/@menuItemDescription.0 //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Effect'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='NewMenu_TD'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='NewMenu_TD']/@menuItemDescription.0 //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='OpenProgramTool'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Threat'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Threat%20Allocation'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Threat%20Mitigation%20'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='ComponentDiagNavTool'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='copyThreatDragDrop'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='DnDThreatOnComponent_TD'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='DropCatalogControl_TD'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='DropCatalogThreat_TD'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='ExternalControlDrop_TD'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='Hide%20details'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='ImportControl'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='Unhide%20details'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.2/@ownedTools[name='DeleteThreatFromModelMenu'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.2/@ownedTools[name='DeleteThreatFromDiagram'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.2/@ownedTools[name='RelatedThreatTool_TD'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.2/@ownedTools[name='Display%20Allocated%20Threats'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.2/@ownedTools[name='AddThreat'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.2/@ownedTools[name='ExtThreatImportTool_TD']">
+        <containerMappings xsi:type="description_1:ContainerMappingImport" inheritsAncestorFilters="false" importedMapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD']">
+          <borderedNodeMappings semanticCandidatesExpression="feature:eAllContents"/>
+        </containerMappings>
+      </additionalLayers>
     </ownedRepresentations>
     <ownedRepresentations xsi:type="description_1:DiagramDescription" dropDescriptions="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='copyThreatDragDrop'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Component%20Analysis']/@defaultLayer/@toolSections.1/@ownedTools[name='ExternalControlDrop_CA'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='DropCatalogControl_TD']" name="Component Analysis" titleExpression="aql: 'Analysis of ' + self.name" domainClass="TRADES::Component">
       <metamodel href="dsm.TRADES#/"/>
@@ -1375,6 +1379,641 @@
         </toolSections>
       </defaultLayer>
       <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+    </ownedRepresentations>
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="TRADES Vulnerability diagram" initialisation="true" showOnStartup="true" domainClass="TRADES::Analysis" enablePopupBars="true">
+      <dropDescriptions href="#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='copyThreatDragDrop']"/>
+      <dropDescriptions href="#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='DropCatalogControl_TD']"/>
+      <dropDescriptions href="#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='DropCatalogThreat_TD']"/>
+      <dropDescriptions href="../../dsm.oscal.design/description/oscal.odesign#//@ownedViewpoints[name='OscalViewPoint']/@ownedRepresentationExtensions[name='TRADES.design']/@layers[name='OscalLayer']/@toolSections.0/@ownedTools[name='DropOScalControl']"/>
+      <dropDescriptions href="../../dsm.oscal.design/description/oscal.odesign#//@ownedViewpoints[name='OscalViewPoint']/@ownedRepresentationExtensions[name='TRADES.design']/@layers[name='OscalLayer']/@toolSections.0/@ownedTools[name='DropOScalControl_TDExt']"/>
+      <dropDescriptions href="#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='ExternalControlDrop_TD']"/>
+      <metamodel href="dsm.TRADES#/"/>
+      <metamodel href="http://www.eclipse.org/sirius/diagram/1.1.0#/"/>
+      <metamodel href="http://www.eclipse.org/sirius/1.1.0#/"/>
+      <filters xsi:type="filter:CompositeFilterDescription" name="HideComponentFilter_TD" label="Hide Components">
+        <filters xsi:type="filter:MappingFilter" mappings="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD']"/>
+      </filters>
+      <filters xsi:type="filter:CompositeFilterDescription" name="HideThreatFilter_TD" label="Hide Threats">
+        <filters xsi:type="filter:MappingFilter" mappings="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@nodeMappings[name='ThreatNode_TD']"/>
+      </filters>
+      <filters xsi:type="filter:CompositeFilterDescription" name="HideControlFilter_TD" label="Hide controls">
+        <filters xsi:type="filter:MappingFilter" mappings="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@nodeMappings[name='ControlNode']"/>
+      </filters>
+      <filters xsi:type="filter:CompositeFilterDescription" name="ComponentBlackFilter_TD" label="Component Black Box Filter">
+        <filters xsi:type="filter:MappingFilter" mappings="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@nodeMappings[name='ControlNode'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD']" semanticConditionExpression="aql:not self.containedInComponent()"/>
+      </filters>
+      <validationSet name="threatRelatedValidation">
+        <ownedRules xsi:type="validation:SemanticValidationRule" name="rejControlMitigates" label="Mitigation by rejected control" level="WARNING" message="The control for this mitigation has been rejected" targetClass="TRADES::ThreatMitigationRelation">
+          <audits auditExpression="aql: (self.control.status!=TRADES::ControlStatusENUM::Rejected) or self.assessment!=TRADES::AssessmentENUM::Accepted"/>
+        </ownedRules>
+        <ownedRules xsi:type="validation:SemanticValidationRule" name="unmitigatedThreat" label="Unmitigated threat accepted" message="This threat allocation is accepted despite having no mitigations designed" targetClass="TRADES::ThreatAllocationRelation">
+          <audits auditExpression="aql: self.assessment!=TRADES::AssessmentENUM::Accepted or self.eInverse(TRADES::ThreatMitigationRelation)->notEmpty()"/>
+        </ownedRules>
+        <ownedRules xsi:type="validation:ViewValidationRule" name="UnassignedControl" level="ERROR" message="This control has not been assigned to a component" targets="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Component%20Analysis']/@defaultLayer/@nodeMappings[name='ControlNode_CA'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@nodeMappings[name='ControlNode']">
+          <audits auditExpression="aql: self.target.eContainer(TRADES::Component)!=null"/>
+        </ownedRules>
+        <ownedRules xsi:type="validation:SemanticValidationRule" name="Well-defined scope" message="There are several components placed in the top hierarchy. The TRADES methodology recommends a single, well-defined compnent as the system scope." targetClass="TRADES::Analysis">
+          <audits auditExpression="aql: self.components->size()&lt;2"/>
+          <fixes name="Create a top level component as a single system scope and place other components within the top level component">
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql: self">
+                <subModelOperations xsi:type="tool_1:Let" variableName="currentComponents" valueExpression="aql: self.components">
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="TRADES::Component" referenceName="components" variableName="scopeComponent">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="System Scope"/>
+                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql: self.eContainerOrSelf(TRADES::Analysis)">
+                      <subModelOperations xsi:type="tool_1:For" expression="aql: currentComponents">
+                        <subModelOperations xsi:type="tool_1:If" conditionExpression="aql: i &lt;> scopeComponent">
+                          <subModelOperations xsi:type="tool_1:MoveElement" newContainerExpression="aql: scopeComponent" featureName="components"/>
+                        </subModelOperations>
+                      </subModelOperations>
+                    </subModelOperations>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </fixes>
+        </ownedRules>
+      </validationSet>
+      <layout xsi:type="description_1:CustomLayoutConfiguration" id="org.eclipse.elk.layered" label="ELK Layered" description="Layer-based algorithm provided by the Eclipse Layout Kernel. Arranges as many edges as possible into one direction by placing nodes into subsequent layers. This implementation supports different routing styles (straight, orthogonal, splines); if orthogonal routing is selected, arbitrary port constraints are respected, thus enabling the layout of block diagrams such as actor-oriented models or circuit schematics. Furthermore, full layout of compound graphs with cross-hierarchy edges is supported when the respective option is activated on the top level.">
+        <layoutOptions xsi:type="description_1:EnumLayoutOption" id="org.eclipse.elk.hierarchyHandling">
+          <targets>PARENT</targets>
+          <targets>NODE</targets>
+          <value name="INCLUDE_CHILDREN"/>
+        </layoutOptions>
+        <layoutOptions xsi:type="description_1:DoubleLayoutOption" id="org.eclipse.elk.spacing.componentComponent" value="25.0">
+          <targets>PARENT</targets>
+        </layoutOptions>
+        <layoutOptions xsi:type="description_1:DoubleLayoutOption" id="org.eclipse.elk.spacing.edgeEdge" value="25.0">
+          <targets>PARENT</targets>
+        </layoutOptions>
+        <layoutOptions xsi:type="description_1:DoubleLayoutOption" id="org.eclipse.elk.spacing.nodeNode" value="25.0">
+          <targets>PARENT</targets>
+        </layoutOptions>
+        <layoutOptions xsi:type="description_1:DoubleLayoutOption" id="org.eclipse.elk.layered.spacing.baseValue" value="25.0">
+          <targets>PARENT</targets>
+        </layoutOptions>
+      </layout>
+      <defaultLayer name="Default_TD">
+        <nodeMappings name="ControlNode" labelDirectEdit="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Change%20name']" semanticCandidatesExpression="aql: self.getAllControls()" domainClass="TRADES::Control">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="aql:self.getLabelProviderText()" tooltipExpression="aql:self.getLabelProviderText()" sizeComputationExpression="-1" workspacePath="/TRADES.design/Images/controlImage.svg">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+          <conditionnalStyles predicateExpression="aql:self.oclIsTypeOf(TRADES::ExternalControl)">
+            <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="aql:self.getLabelProviderText()" tooltipExpression="feature:name" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/TRADES.design/Images/ExternalControlImage.svg">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_gray']"/>
+            </style>
+          </conditionnalStyles>
+          <conditionnalStyles predicateExpression="aql: self.status=TRADES::ControlStatusENUM::Implemented">
+            <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="aql:self.getLabelProviderText()" tooltipExpression="feature:name" sizeComputationExpression="-1" workspacePath="/TRADES.design/Images/controlImageGreen.svg">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='green']"/>
+            </style>
+          </conditionnalStyles>
+          <conditionnalStyles predicateExpression="aql: self.status=TRADES::ControlStatusENUM::Rejected">
+            <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="aql:self.getLabelProviderText()" tooltipExpression="feature:name" sizeComputationExpression="-1" workspacePath="/TRADES.design/Images/controlImageRed.svg">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
+            </style>
+          </conditionnalStyles>
+          <conditionnalStyles predicateExpression="aql: self.status=TRADES::ControlStatusENUM::Agreed">
+            <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="aql:self.getLabelProviderText()" tooltipExpression="feature:name" sizeComputationExpression="-1" workspacePath="/TRADES.design/Images/controlImageBlue.svg">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
+            </style>
+          </conditionnalStyles>
+        </nodeMappings>
+        <nodeMappings name="ThreatNode_TD" deletionDescription="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@toolSections.2/@ownedTools[name='DeleteThreatFromDiagram']" labelDirectEdit="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Change%20name']" semanticCandidatesExpression="aql:self.eContainerOrSelf(TRADES::Analysis).threatOwner.eAllContents(TRADES::Threat)" createElements="false" doubleClickDescription="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='OpenProgramTool']" domainClass="TRADES::Threat">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" labelExpression="aql:self.getLabelProviderText()" tooltipExpression="aql:self.getLabelProviderText()" sizeComputationExpression="-1" workspacePath="/TRADES.design/Images/ThreatImage.svg">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+          <conditionnalStyles predicateExpression="aql:self.oclIsTypeOf(TRADES::ExternalThreat)">
+            <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" labelExpression="aql:self.getLabelProviderText()" tooltipExpression="feature:name" sizeComputationExpression="-1" workspacePath="/TRADES.design/Images/ExteenalThreatImage.svg">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </conditionnalStyles>
+        </nodeMappings>
+        <edgeMappings name="allocatedThreat_TD" navigationDescriptions="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='AttachChainDiagramNavTool_TD']" labelDirectEdit="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Change%20name']" sourceMapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@nodeMappings[name='ThreatNode_TD']" targetMapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Component%20Analysis']/@defaultLayer/@containerMappings[name='ComponentContainer_CA']" targetFinderExpression="feature:component" sourceFinderExpression="feature:threat" targetExpression="var:self" domainClass="TRADES::ThreatAllocationRelation" useDomainElement="true" reconnections="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='ChangeThreatInThreatAllocation'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='ChangeComponentInThreatAllocation']">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+          <conditionnalStyles predicateExpression="aql: self.eGet('assessment')->toString()='Accepted'">
+            <style sizeComputationExpression="2">
+              <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='green']"/>
+              <centerLabelStyleDescription labelSize="12" showIcon="false">
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
+              </centerLabelStyleDescription>
+            </style>
+          </conditionnalStyles>
+          <conditionnalStyles predicateExpression="aql: self.eGet('assessment')->toString()='Gap'">
+            <style sizeComputationExpression="2">
+              <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
+              <centerLabelStyleDescription labelSize="12" showIcon="false">
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
+              </centerLabelStyleDescription>
+            </style>
+          </conditionnalStyles>
+        </edgeMappings>
+        <edgeMappings name="mitigatesThreat" labelDirectEdit="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Change%20name']" sourceMapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@nodeMappings[name='ControlNode'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Component%20Analysis']/@defaultLayer/@nodeMappings[name='ControlNode_CA']" targetMapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@nodeMappings[name='ThreatNode_TD'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@edgeMappings[name='allocatedThreat_TD']" targetFinderExpression="feature:threat" sourceFinderExpression="feature:control" targetExpression="var:self" domainClass="TRADES::ThreatMitigationRelation" useDomainElement="true">
+          <style lineStyle="dash" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+          <conditionnalStyles predicateExpression="aql: self.eGet('assessment')->toString()='Accepted'">
+            <style lineStyle="dash" sizeComputationExpression="2">
+              <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='green']"/>
+              <centerLabelStyleDescription labelSize="12">
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
+              </centerLabelStyleDescription>
+            </style>
+          </conditionnalStyles>
+          <conditionnalStyles predicateExpression="aql: self.eGet('assessment')->toString()='Gap'">
+            <style lineStyle="dash" sizeComputationExpression="2">
+              <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
+              <centerLabelStyleDescription labelSize="12">
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
+              </centerLabelStyleDescription>
+            </style>
+          </conditionnalStyles>
+        </edgeMappings>
+        <edgeMappings name="Affect" labelDirectEdit="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='AffectEditLabel']" semanticCandidatesExpression="feature:eAllContents" sourceMapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='System%20Design']/@defaultLayer/@containerMappings[name='ComponentContainer_SD']/@subContainerMappings[name='ComponentPackage_SD']" targetMapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='System%20Design']/@defaultLayer/@containerMappings[name='ComponentContainer_SD']/@subContainerMappings[name='ComponentPackage_SD']" targetFinderExpression="feature:targetComponent" sourceFinderExpression="feature:sourceComponent" targetExpression="var: self" domainClass="TRADES::AffectRelation" useDomainElement="true">
+          <style targetArrow="InputClosedArrow" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_gray']"/>
+            <centerLabelStyleDescription showIcon="false" labelExpression="aql:self.dataLabelOnAffect()">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_gray']"/>
+            </centerLabelStyleDescription>
+          </style>
+          <conditionnalStyles predicateExpression="aql: self.eGet('analysisStatus')->toString()='Confirmed'">
+            <style targetArrow="InputClosedArrow" sizeComputationExpression="3">
+              <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <centerLabelStyleDescription showIcon="false" labelExpression="aql:self.dataLabelOnAffect()">
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              </centerLabelStyleDescription>
+            </style>
+          </conditionnalStyles>
+        </edgeMappings>
+        <edgeMappings name="mitigatesThreatAllocation" labelDirectEdit="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Change%20name']" sourceMapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@edgeMappings[name='allocatedThreat_TD']" targetMapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Component%20Analysis']/@defaultLayer/@nodeMappings[name='ControlNode_CA'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@nodeMappings[name='ControlNode']" targetFinderExpression="feature:control" sourceFinderExpression="feature:mitigatedAllocation" targetExpression="var:self" domainClass="TRADES::ThreatMitigationRelation" useDomainElement="true">
+          <style lineStyle="dash" sourceArrow="InputClosedArrow" targetArrow="NoDecoration" sizeComputationExpression="2" routingStyle="manhattan">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+          <conditionnalStyles predicateExpression="aql: self.eGet('assessment')->toString()='Accepted'">
+            <style lineStyle="dash" sourceArrow="InputClosedArrow" targetArrow="NoDecoration" sizeComputationExpression="2">
+              <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='green']"/>
+              <centerLabelStyleDescription labelSize="12">
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
+              </centerLabelStyleDescription>
+            </style>
+          </conditionnalStyles>
+          <conditionnalStyles predicateExpression="aql: self.eGet('assessment')->toString()='Gap'">
+            <style lineStyle="dash" targetArrow="InputClosedArrow" sizeComputationExpression="2">
+              <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
+              <centerLabelStyleDescription labelSize="12">
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
+              </centerLabelStyleDescription>
+            </style>
+          </conditionnalStyles>
+        </edgeMappings>
+        <containerMappings name="ComponentPackage_TD" detailDescriptions="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='SubComponentDiagramCreation'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='ComponentDesignDiagramCreation']" navigationDescriptions="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='ComponentDiagNavTool']" preconditionExpression="aql: self->notEmpty() = true" labelDirectEdit="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Change%20name']" semanticCandidatesExpression="aql:self.components" domainClass="TRADES::ComponentOwner" reusedNodeMappings="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@nodeMappings[name='ControlNode']" reusedContainerMappings="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD']">
+          <dropDescriptions href="#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='DnDThreatOnComponent_TD']"/>
+          <dropDescriptions href="#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='DropCatalogControl_TD']"/>
+          <dropDescriptions href="../../dsm.oscal.design/description/oscal.odesign#//@ownedViewpoints[name='OscalViewPoint']/@ownedRepresentationExtensions[name='TRADES.design']/@layers[name='OscalLayer']/@toolSections.0/@ownedTools[name='DropOScalControl']"/>
+          <dropDescriptions href="../../dsm.oscal.design/description/oscal.odesign#//@ownedViewpoints[name='OscalViewPoint']/@ownedRepresentationExtensions[name='TRADES.design']/@layers[name='OscalLayer']/@toolSections.0/@ownedTools[name='DropOScalControl_TDExt']"/>
+          <dropDescriptions href="#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='ExternalControlDrop_TD']"/>
+          <subContainerMappings name="Vulnerable Assets" semanticCandidatesExpression="aql: self" domainClass="TRADES::Component" childrenPresentation="List">
+            <subNodeMappings name="VulnerableAssetDefinition" semanticCandidatesExpression="aql: let AVAD=self.componenttype.eInverse('componentTypeAffected')->select(va | not(va.controls->exists(control | self.controlOwner.internals->includes(control) or self.controlOwner.externals->includes(control)))) AVAD" domainClass="TRADES::VulnerableAsset">
+              <style xsi:type="style:SquareDescription" borderSizeComputationExpression="1" borderLineStyle="dash_dot" labelSize="12" labelExpression="aql: self.name + ' [' + self.vulnerability.name->sep(';')+']'" labelPosition="node" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelFormat>italic</labelFormat>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_red']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_red']"/>
+              </style>
+            </subNodeMappings>
+            <style xsi:type="style:WorkspaceImageDescription" borderSizeComputationExpression="1" borderLineStyle="dash" labelSize="12" showIcon="false" labelExpression="VADs" roundedCorner="true">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_red']"/>
+              <labelFormat>italic</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_red']"/>
+            </style>
+          </subContainerMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12" showIcon="false" labelExpression="aql: self.name + '[' + self.componenttype.name->sep(';') + ']'" tooltipExpression="aql: name" backgroundStyle="GradientTopToBottom" backgroundColor="//@userColorsPalettes[name='Colors']/@entries[name='ComponetBGColor']" foregroundColor="//@userColorsPalettes[name='Colors']/@entries[name='ComponetBGColor']">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelFormat>bold</labelFormat>
+            <labelFormat>underline</labelFormat>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+          <conditionnalStyles predicateExpression="aql: self.vulnerableasset->notEmpty()">
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12" showIcon="false" labelExpression="aql: self.name + '[' + self.componenttype.name->sep(';') + ']'" tooltipExpression="aql: 'Deperecated'" foregroundColor="//@userColorsPalettes[name='Colors']/@entries[name='ComponetBGColor']">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_red']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </conditionnalStyles>
+          <conditionnalStyles predicateExpression="aql: let AVAD=self.componenttype.eInverse('componentTypeAffected')->select(va | not(va.controls->exists(control | self.controlOwner.internals->includes(control) or self.controlOwner.externals->includes(control)))) AVAD->notEmpty()">
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12" showIcon="false" labelExpression="aql: self.name + '[' + self.componenttype.name->sep(';') + ']'" tooltipExpression="aql: 'VADs: ' + self.componenttype.eInverse('componentTypeAffected')->select(va | not(va.controls->exists(control | self.controlOwner.internals->includes(control) or self.controlOwner.externals->includes(control)))).name)" foregroundColor="//@userColorsPalettes[name='Colors']/@entries[name='ComponetBGColor']">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_red']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </conditionnalStyles>
+        </containerMappings>
+        <toolSections name="TRADES tools" label="Add" icon="/TRADES.design/Images/logo_16.png">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Threat" nodeMappings="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@nodeMappings[name='ThreatNode_TD']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:container.eContainerOrSelf(TRADES::Analysis).threatOwner">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="TRADES::Threat" referenceName="internals">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql:self.generateUUID()"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Control" nodeMappings="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@nodeMappings[name='ControlNode']" iconPath="/TRADES.design/Images/ContrilIcon.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.createInternalControl()"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="ComponentCreationTool" label="Component" containerMappings="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='System%20Design']/@defaultLayer/@containerMappings[name='ComponentContainer_SD']/@subContainerMappings[name='ComponentPackage_SD']" iconPath="/TRADES.design/Images/ComponentIcon.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="TRADES::Component" referenceName="components"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Threat Allocation" edgeMappings="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@edgeMappings[name='allocatedThreat_TD']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:target">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="TRADES::ThreatAllocationRelation" referenceName="threatAllocations">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="threat" valueExpression="var:source"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql: self.threat.name + ' on ' + self.component.name"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Threat Mitigation " edgeMappings="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@edgeMappings[name='mitigatesThreat'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@edgeMappings[name='mitigatesThreatAllocation']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql: source">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="TRADES::ThreatMitigationRelation" referenceName="mitigationRelations">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql: instance">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="control" valueExpression="var:source"/>
+                    <subModelOperations xsi:type="tool_1:If" conditionExpression="aql: target.oclIsKindOf(TRADES::Threat)">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="threat" valueExpression="var:target"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:If" conditionExpression="aql: target.oclIsTypeOf(TRADES::ThreatAllocationRelation)">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="mitigatedAllocation" valueExpression="var:target"/>
+                    </subModelOperations>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Effect" edgeMappings="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@edgeMappings[name='Affect']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql: source">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="TRADES::AffectRelation" referenceName="affectRelations">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="sourceComponent" valueExpression="var:source"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="targetComponent" valueExpression="var:target"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="Change name">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql: arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ReconnectEdgeDescription" name="ChangeThreatInThreatAllocation" reconnectionKind="RECONNECT_SOURCE">
+            <source name="source"/>
+            <target name="target"/>
+            <sourceView name="sourceView"/>
+            <targetView name="targetView"/>
+            <element name="element"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql: element">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="threat" valueExpression="aql: target">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql: element.threat.name + ' on ' + element.component.name"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+            <edgeView name="edgeView"/>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ReconnectEdgeDescription" name="ChangeComponentInThreatAllocation">
+            <source name="source"/>
+            <target name="target"/>
+            <sourceView name="sourceView"/>
+            <targetView name="targetView"/>
+            <element name="element"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql: element">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="component" valueExpression="aql: target">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql: element.threat.name + ' on ' + element.component.name"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+            <edgeView name="edgeView"/>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DoubleClickDescription" name="OpenProgramTool" precondition="aql:self.oclIsTypeOf(TRADES::ExternalThreat)" mappings="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@nodeMappings[name='ThreatNode_TD']">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:element.link.openInBrowser()"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:PopupMenu" name="NewMenu_TD" label="New">
+            <menuItemDescription xsi:type="tool_1:OperationAction" name="CreateScoreSystemTool_TD" label="New score system" precondition="aql:self.scoreSystem = null">
+              <view name="views"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="TRADES::ScoreSystem" referenceName="scoreSystem"/>
+              </initialOperation>
+            </menuItemDescription>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DiagramNavigationDescription" name="AttachChainDiagramNavTool_TD" navigationNameExpression="aql:self.attackChain.name" diagramDescription="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='AttackChainDiagram']">
+            <containerViewVariable name="containerView"/>
+            <containerVariable name="container"/>
+            <representationNameVariable name="diagramName"/>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DiagramCreationDescription" name="SubComponentDiagramCreation" label="Component Analysis (TRADES diagram)" diagramDescription="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Component%20Analysis']">
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self"/>
+            </initialOperation>
+            <containerViewVariable name="containerView"/>
+            <representationNameVariable name="diagramName"/>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:PopupMenu" name="DataMenu" label="Data" precondition="aql:self.oclIsKindOf(TRADES::AffectRelation)">
+            <menuItemDescription xsi:type="tool_1:OperationAction" name="CreateNewData" label="Create New Data" precondition="aql:self.oclIsKindOf(TRADES::AffectRelation)">
+              <view name="views"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.oclAsType(TRADES::AffectRelation)">
+                  <subModelOperations xsi:type="tool_1:Let" variableName="affectRelation" valueExpression="var:self"/>
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.eContainer().createData()">
+                    <subModelOperations xsi:type="properties:DialogModelOperation" titleExpression="Add New Data">
+                      <buttons labelExpression="Cancel" closeDialogOnClick="true" rollbackChangesOnClose="true">
+                        <initialOperation>
+                          <firstModelOperations xsi:type="tool_1:RemoveElement"/>
+                        </initialOperation>
+                      </buttons>
+                      <buttons labelExpression="Add" default="true" closeDialogOnClick="true">
+                        <initialOperation>
+                          <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self">
+                            <subModelOperations xsi:type="tool_1:Let" variableName="newData" valueExpression="aql:self">
+                              <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:affectRelation">
+                                <subModelOperations xsi:type="tool_1:SetValue" featureName="data" valueExpression="var:newData"/>
+                              </subModelOperations>
+                            </subModelOperations>
+                          </firstModelOperations>
+                        </initialOperation>
+                      </buttons>
+                      <page name="Default Page" domainClass="TRADES::Data" semanticCandidateExpression="var:self" extends="//@extensions.0/@categories.0/@groups.13/@controls.0/@controls.0/@actions.0/@initialOperation/@firstModelOperations/@subModelOperations.1/@subModelOperations.0/@page"/>
+                    </subModelOperations>
+                  </subModelOperations>
+                </firstModelOperations>
+              </initialOperation>
+            </menuItemDescription>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:OperationAction" name="CreateAttackChainTool_TD" label="Create attack decomposition" precondition="aql:self.oclIsTypeOf(TRADES::ThreatAllocationRelation)">
+            <view name="views"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.oclAsType(TRADES::ThreatAllocationRelation)">
+                <subModelOperations xsi:type="tool_1:Let" variableName="relation" valueExpression="var:self">
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="TRADES::AttackChain" referenceName="attackChain">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Attack decomposition on '+relation.threat.name"/>
+                    <subModelOperations xsi:type="tool:Navigation" createIfNotExistent="true" diagramDescription="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='AttackChainDiagram']"/>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="AffectEditLabel">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.editAffectLabel(arg0)"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DiagramCreationDescription" name="ComponentDesignDiagramCreation" label="Component Design (nice diagram)" diagramDescription="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='System%20Design']">
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self"/>
+            </initialOperation>
+            <containerViewVariable name="containerView"/>
+            <representationNameVariable name="diagramName"/>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="Representation Tools" label="Diagram tools" icon="/TRADES.design/Images/icons/diagram.gif">
+          <ownedTools xsi:type="tool_1:SelectionWizardDescription" name="Hide details" precondition="aql:self.oclAsType(TRADES::ComponentOwner)" candidatesExpression="aql:self.oclAsType(TRADES::ComponentOwner).components" multiple="true" message="Select components to hide in this diagram" iconPath="/TRADES.design/Images/inspectEncapSmall.png" windowTitle="Component encapsulation">
+            <element name="element"/>
+            <containerView name="containerView"/>
+            <container name="container"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:element->filter(TRADES::Component).encapsulateElements(containerView)"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:SelectionWizardDescription" name="Unhide details" precondition="aql:self.oclAsType(TRADES::ComponentOwner)" candidatesExpression="aql:self.oclAsType(TRADES::ComponentOwner).components" multiple="true" message="Select components to show in this diagram" iconPath="/TRADES.design/Images/inspectDeEncapSmall.png" windowTitle="Cancel Component Encapsulation">
+            <element name="element"/>
+            <containerView name="containerView"/>
+            <container name="container"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql: element->filter(TRADES::Component).decapsulateElements(containerView)"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerDropDescription" name="copyThreatDragDrop" precondition="aql:element.oclIsKindOf(TRADES::Threat) and not self.isFromCatalog()" mappings="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@nodeMappings[name='ThreatNode_TD']" dragSource="PROJECT_EXPLORER">
+            <oldContainer name="oldSemanticContainer"/>
+            <newContainer name="newSemanticContainer"/>
+            <element name="element"/>
+            <newViewContainer name="newContainerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                <subModelOperations xsi:type="tool:CreateView" mapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@nodeMappings[name='ThreatNode_TD']" containerViewExpression="aql:newContainerView"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:OperationAction" name="ImportControl" label="Import External Control in project" precondition="aql:self.oclIsTypeOf(TRADES::ExternalThreat)" icon="/TRADES.design/Images/icons/import_wiz.png">
+            <view name="views"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:Let" variableName="externalThreat" valueExpression="var:self">
+                <subModelOperations xsi:type="properties:DialogModelOperation" titleExpression="Import controls">
+                  <buttons labelExpression="Cancel" closeDialogOnClick="true" rollbackChangesOnClose="true">
+                    <initialOperation>
+                      <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self"/>
+                    </initialOperation>
+                  </buttons>
+                  <buttons labelExpression="Create" default="true" closeDialogOnClick="true">
+                    <initialOperation>
+                      <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:externalThreat.oclAsType(TRADES::ExternalThreat).copyControl(controls)"/>
+                    </initialOperation>
+                  </buttons>
+                  <page name="Default Page" semanticCandidateExpression="var:self" groups="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='ImportControl']/@initialOperation/@firstModelOperations/@subModelOperations.0/@groups.0"/>
+                  <groups name="RelatedControls" labelExpression="aql:'Controls for ' + self.name" domainClass="TRADES::ExternalThreat" semanticCandidateExpression="var:self">
+                    <controls xsi:type="properties:ListDescription" name="ControlsList" labelExpression="aql:'Linked control'" helpExpression="aql:'Controls related to ' + self.name " valueExpression="aql:self.getLinkedControlInDataBases()" displayExpression="aql:value.name">
+                      <onClickOperation>
+                        <firstModelOperations xsi:type="tool_1:Let" variableName="controls" valueExpression="var:selection"/>
+                      </onClickOperation>
+                    </controls>
+                  </groups>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerDropDescription" name="ExternalControlDrop_TD" precondition="aql:not element.isFromCatalog()" mappings="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@nodeMappings[name='ControlNode']">
+            <oldContainer name="oldSemanticContainer"/>
+            <newContainer name="newSemanticContainer"/>
+            <element name="element"/>
+            <newViewContainer name="newContainerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:newSemanticContainer.moveControl(element)"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DiagramNavigationDescription" name="ComponentDiagNavTool" diagramDescription="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Component%20Analysis']">
+            <containerViewVariable name="containerView"/>
+            <containerVariable name="container"/>
+            <representationNameVariable name="diagramName"/>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerDropDescription" name="DnDThreatOnComponent_TD" precondition="aql:element.oclIsKindOf(TRADES::Threat) and not self.isFromCatalog()" dragSource="PROJECT_EXPLORER">
+            <oldContainer name="oldSemanticContainer"/>
+            <newContainer name="newSemanticContainer"/>
+            <element name="element"/>
+            <newViewContainer name="newContainerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:newSemanticContainer">
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="TRADES::ThreatAllocationRelation" referenceName="threatAllocations">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="threat" valueExpression="var:element"/>
+                  </subModelOperations>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool:CreateView" mapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@nodeMappings[name='ThreatNode_TD']" containerViewExpression="aql:newContainerView.oclAsType(viewpoint::DSemanticDecorator).getContainingDiagram()"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerDropDescription" name="DropCatalogThreat_TD" precondition="aql:element.oclIsTypeOf(TRADES::ExternalThreat) and self.isFromCatalog()" dragSource="PROJECT_EXPLORER">
+            <oldContainer name="oldSemanticContainer"/>
+            <newContainer name="newSemanticContainer"/>
+            <element name="element"/>
+            <newViewContainer name="newContainerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:newSemanticContainer.copyTreat(element)">
+                <subModelOperations xsi:type="tool:CreateView" mapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@nodeMappings[name='ThreatNode_TD']" containerViewExpression="aql:newContainerView"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerDropDescription" name="DropCatalogControl_TD" precondition="aql:element.oclIsTypeOf(TRADES::ExternalControl) and element.isFromCatalog()" dragSource="PROJECT_EXPLORER">
+            <oldContainer name="oldSemanticContainer"/>
+            <newContainer name="newSemanticContainer"/>
+            <element name="element"/>
+            <newViewContainer name="newContainerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:newSemanticContainer.copyControl(element)"/>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="ThreatsSectionTool_TD" label="Threats Tools" icon="/dsm.TRADES.edit/icons/custom/Threat.png">
+          <ownedTools xsi:type="tool_1:SelectionWizardDescription" name="ExtThreatImportTool_TD" label="Import external threat" precondition="aql:container.oclAsType(TRADES::Analysis)" candidatesExpression="aql:self.oclAsType(TRADES::Analysis).getAvailableExternalServices()->collect(e |e.eAllContents(TRADES::ExternalThreat))->union(self.oclAsType(TRADES::Analysis).getAvailableExternalServices())" multiple="true" tree="true" rootExpression="aql:self.oclAsType(TRADES::Analysis).getAvailableExternalServices()" childrenExpression="aql:self.eAllContents(TRADES::ExternalThreat)" iconPath="/TRADES.design/Images/icons/import_wiz.png">
+            <element name="element"/>
+            <containerView name="containerView"/>
+            <container name="container"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:For" expression="aql:element.oclAsType(TRADES::ExternalThreat)">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:container.oclAsType(TRADES::Analysis).copyTreat(i)">
+                  <subModelOperations xsi:type="tool:CreateView" mapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@nodeMappings[name='ThreatNode_TD']" containerViewExpression="var:containerView"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:SelectionWizardDescription" documentation="Display a threat in the diagram (only non displayed threats are displayed)" name="AddThreat" label="Display threats" candidatesExpression="aql:self.getAllNonDisplayedThreats(containerView)" multiple="true" message="Please select threat(s)" iconPath="/TRADES.design/Images/icons/Display.png" windowImagePath="/TRADES.design/Images/icons/Display.png">
+            <element name="element"/>
+            <containerView name="containerView"/>
+            <container name="container"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:For" expression="aql: element">
+                <subModelOperations xsi:type="tool:CreateView" mapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@nodeMappings[name='ThreatNode_TD']" containerViewExpression="var:containerView"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:SelectionWizardDescription" documentation="Display all allocated threats on the selection Component" name="Display Allocated Threats" label="Display Allocated Threats" precondition="aql:container.oclIsKindOf(TRADES::Component)" candidatesExpression="aql:self.threatAllocations.threat" multiple="true" iconPath="/TRADES.design/Images/icons/Display.png" windowImagePath="/TRADES.design/Images/icons/Display.png">
+            <element name="element"/>
+            <containerView name="containerView"/>
+            <container name="container"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:For" expression="aql: element">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self"/>
+                <subModelOperations xsi:type="tool:CreateView" mapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@nodeMappings[name='ThreatNode_TD']" containerViewExpression="var:diagram"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:SelectionWizardDescription" documentation="Displays all the threats allocated to the target and its descendants." name="RelatedThreatTool_TD" label="Display All Allocated threats" precondition="aql:container.oclIsKindOf(TRADES::ComponentOwner)" candidatesExpression="aql:containerView.getRelatedThreats()" multiple="true" iconPath="/TRADES.design/Images/icons/Display.png" windowImagePath="/TRADES.design/Images/icons/Display.png">
+            <element name="element"/>
+            <containerView name="containerView"/>
+            <container name="container"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:For" expression="var:element" iteratorName="rThreat">
+                <subModelOperations xsi:type="tool:CreateView" mapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@nodeMappings[name='ThreatNode_TD']" containerViewExpression="var:diagram"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DeleteElementDescription" name="DeleteThreatFromDiagram">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <containerView name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:elementView">
+                <subModelOperations xsi:type="tool_1:DeleteView"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:OperationAction" name="DeleteThreatFromModelMenu" label="Delete from model" precondition="aql:views->any(v | not v.target.oclIsKindOf(TRADES::Threat)) == null" icon="/TRADES.design/Images/delete.png">
+            <view name="views"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:views">
+                <subModelOperations xsi:type="tool_1:For" expression="var:views" iteratorName="view">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:view.target">
+                    <subModelOperations xsi:type="tool_1:Switch">
+                      <cases conditionExpression="aql:self.oclIsKindOf(TRADES::Threat)">
+                        <subModelOperations xsi:type="tool_1:For" expression="aql:self.threatAllocations">
+                          <subModelOperations xsi:type="tool_1:RemoveElement"/>
+                        </subModelOperations>
+                      </cases>
+                      <default>
+                        <subModelOperations xsi:type="tool_1:RemoveElement"/>
+                      </default>
+                    </subModelOperations>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+      </defaultLayer>
+      <additionalLayers name="VA_Layer" label="Vulnerability Assessment" reusedMappings="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@edgeMappings[name='Affect'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@edgeMappings[name='allocatedThreat_TD'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@nodeMappings[name='ControlNode'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@edgeMappings[name='mitigatesThreat'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@edgeMappings[name='mitigatesThreatAllocation'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@nodeMappings[name='ThreatNode_TD'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@additionalLayers[name='VA_Layer']/@containerMappings[name=''] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@additionalLayers[name='VA_Layer']/@containerMappings[name='']/@borderedNodeMappings[name=''] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Component%20Analysis']/@defaultLayer/@containerMappings[name='ComponentContainer_CA'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Component%20Analysis']/@defaultLayer/@nodeMappings[name='ControlNode_CA'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='Component%20Analysis']/@defaultLayer/@nodeMappings[name='ControlNode_CA']/@borderedNodeMappings[name='ControlLabel_CA'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='DataFlowDiagram']/@defaultLayer/@edgeMappings[name='AffetRelation_DFD'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='DataFlowDiagram']/@defaultLayer/@containerMappings[name='FitleredByDataComponent_DFD'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='DataFlowDiagram']/@defaultLayer/@containerMappings[name='FitleredByDataComponent_DFD']/@subContainerMappings[name='FitleredByDataComponentChild_DFD'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='DataByComponentDiagram']/@additionalLayers[name='AvailableData_DCD']/@containerMappings[name='ComponentNode_DS'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='DataByComponentDiagram']/@additionalLayers[name='AvailableData_DCD']/@containerMappings[name='ComponentNode_DS']/@subNodeMappings[name='InheritedData'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='DataByComponentDiagram']/@defaultLayer/@edgeMappings[name='Children_DCD'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='DataByComponentDiagram']/@defaultLayer/@containerMappings[name='DataOwnerElement_DCD'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='DataByComponentDiagram']/@defaultLayer/@containerMappings[name='DataOwnerElement_DCD']/@subNodeMappings[name='Data'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='System%20Design']/@defaultLayer/@containerMappings[name='ComponentContainer_SD'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='System%20Design']/@defaultLayer/@containerMappings[name='ComponentContainer_SD']/@subNodeMappings[name='componentLinks'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='System%20Design']/@defaultLayer/@containerMappings[name='ComponentContainer_SD']/@subContainerMappings[name='ComponentPackage_SD'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='System%20Design']/@defaultLayer/@nodeMappings[name='extComponentLinks_SD'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='System%20Design']/@defaultLayer/@edgeMappings[name='LinkComponents_SD']" reusedTools="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='AffectEditLabel'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='AttachChainDiagramNavTool_TD'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Change%20name'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='ChangeComponentInThreatAllocation'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='ChangeThreatInThreatAllocation'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='ComponentCreationTool'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='SubComponentDiagramCreation'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='ComponentDesignDiagramCreation'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Control'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='CreateAttackChainTool_TD'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='DataMenu'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='DataMenu']/@menuItemDescription.0 //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Effect'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='NewMenu_TD'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='NewMenu_TD']/@menuItemDescription.0 //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='OpenProgramTool'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Threat'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Threat%20Allocation'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Threat%20Mitigation%20'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='ComponentDiagNavTool'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='copyThreatDragDrop'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='DnDThreatOnComponent_TD'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='DropCatalogControl_TD'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='DropCatalogThreat_TD'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='ExternalControlDrop_TD'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='Hide%20details'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='ImportControl'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='Unhide%20details'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@toolSections.2/@ownedTools[name='DeleteThreatFromModelMenu'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@toolSections.2/@ownedTools[name='DeleteThreatFromDiagram'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@toolSections.2/@ownedTools[name='RelatedThreatTool_TD'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@toolSections.2/@ownedTools[name='Display%20Allocated%20Threats'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@toolSections.2/@ownedTools[name='AddThreat'] //@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@toolSections.2/@ownedTools[name='ExtThreatImportTool_TD']">
+        <containerMappings xsi:type="description_1:ContainerMappingImport" inheritsAncestorFilters="false" importedMapping="//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD']">
+          <borderedNodeMappings semanticCandidatesExpression="feature:eAllContents"/>
+        </containerMappings>
+      </additionalLayers>
     </ownedRepresentations>
     <ownedJavaExtensions qualifiedClassName="TRADES.design.DiagramService"/>
     <ownedJavaExtensions qualifiedClassName="TRADES.design.ExtThreatServices"/>

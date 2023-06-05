@@ -65,6 +65,7 @@ public class ExternalControlItemProvider extends ExternalElementItemProvider {
 			addMitigationRelationsPropertyDescriptor(object);
 			addStatusPropertyDescriptor(object);
 			addMitigatesVulnerabilityPropertyDescriptor(object);
+			addSecurityObjectivePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -179,6 +180,22 @@ public class ExternalControlItemProvider extends ExternalElementItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Security Objective feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSecurityObjectivePropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Control_securityObjective_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Control_securityObjective_feature",
+								"_UI_Control_type"),
+						TRADESPackage.Literals.CONTROL__SECURITY_OBJECTIVE, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -258,6 +275,7 @@ public class ExternalControlItemProvider extends ExternalElementItemProvider {
 		case TRADESPackage.EXTERNAL_CONTROL__ID:
 		case TRADESPackage.EXTERNAL_CONTROL__DESCRIPTION:
 		case TRADESPackage.EXTERNAL_CONTROL__STATUS:
+		case TRADESPackage.EXTERNAL_CONTROL__SECURITY_OBJECTIVE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		case TRADESPackage.EXTERNAL_CONTROL__MITIGATION_RELATIONS:

@@ -585,13 +585,22 @@ public interface TRADESPackage extends EPackage {
 	int COMPONENT__VULNERABLEASSET = COMPONENT_OWNER_FEATURE_COUNT + 8;
 
 	/**
+	 * The feature id for the '<em><b>Assigned Control</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT__ASSIGNED_CONTROL = COMPONENT_OWNER_FEATURE_COUNT + 9;
+
+	/**
 	 * The number of structural features of the '<em>Component</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_FEATURE_COUNT = COMPONENT_OWNER_FEATURE_COUNT + 9;
+	int COMPONENT_FEATURE_COUNT = COMPONENT_OWNER_FEATURE_COUNT + 10;
 
 	/**
 	 * The operation id for the '<em>Get Datas</em>' operation.
@@ -721,13 +730,22 @@ public interface TRADESPackage extends EPackage {
 	int CONTROL__MITIGATES_VULNERABILITY = NAMED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
+	 * The feature id for the '<em><b>Security Objective</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL__SECURITY_OBJECTIVE = NAMED_ELEMENT_FEATURE_COUNT + 6;
+
+	/**
 	 * The number of structural features of the '<em>Control</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 6;
+	int CONTROL_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The operation id for the '<em>Get Source Name</em>' operation.
@@ -1952,13 +1970,22 @@ public interface TRADESPackage extends EPackage {
 	int EXTERNAL_CONTROL__MITIGATES_VULNERABILITY = EXTERNAL_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
+	 * The feature id for the '<em><b>Security Objective</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTERNAL_CONTROL__SECURITY_OBJECTIVE = EXTERNAL_ELEMENT_FEATURE_COUNT + 7;
+
+	/**
 	 * The number of structural features of the '<em>External Control</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXTERNAL_CONTROL_FEATURE_COUNT = EXTERNAL_ELEMENT_FEATURE_COUNT + 7;
+	int EXTERNAL_CONTROL_FEATURE_COUNT = EXTERNAL_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The operation id for the '<em>Get Source Name</em>' operation.
@@ -3106,7 +3133,7 @@ public interface TRADESPackage extends EPackage {
 	int VULNERABLE_ASSET__VULNERABILITY = ASSET_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Component Type Affected</b></em>' reference.
+	 * The feature id for the '<em><b>Component Type Affected</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -3115,13 +3142,22 @@ public interface TRADESPackage extends EPackage {
 	int VULNERABLE_ASSET__COMPONENT_TYPE_AFFECTED = ASSET_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Controls</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VULNERABLE_ASSET__CONTROLS = ASSET_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Vulnerable Asset</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VULNERABLE_ASSET_FEATURE_COUNT = ASSET_FEATURE_COUNT + 2;
+	int VULNERABLE_ASSET_FEATURE_COUNT = ASSET_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Vulnerable Asset</em>' class.
@@ -3220,6 +3256,16 @@ public interface TRADESPackage extends EPackage {
 	int COMPONENT_CATEGORY_ENUM = 47;
 
 	/**
+	 * The meta object id for the '{@link dsm.TRADES.SecurityObjectiveENUM <em>Security Objective ENUM</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see dsm.TRADES.SecurityObjectiveENUM
+	 * @see dsm.TRADES.impl.TRADESPackageImpl#getSecurityObjectiveENUM()
+	 * @generated
+	 */
+	int SECURITY_OBJECTIVE_ENUM = 48;
+
+	/**
 	 * The meta object id for the '<em>RGB Color</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3227,7 +3273,7 @@ public interface TRADESPackage extends EPackage {
 	 * @see dsm.TRADES.impl.TRADESPackageImpl#getRGBColor()
 	 * @generated
 	 */
-	int RGB_COLOR = 48;
+	int RGB_COLOR = 49;
 
 	/**
 	 * Returns the meta object for class '{@link dsm.TRADES.Analysis <em>Analysis</em>}'.
@@ -3423,6 +3469,17 @@ public interface TRADESPackage extends EPackage {
 	EReference getComponent_Vulnerableasset();
 
 	/**
+	 * Returns the meta object for the reference list '{@link dsm.TRADES.Component#getAssignedControl <em>Assigned Control</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Assigned Control</em>'.
+	 * @see dsm.TRADES.Component#getAssignedControl()
+	 * @see #getComponent()
+	 * @generated
+	 */
+	EReference getComponent_AssignedControl();
+
+	/**
 	 * Returns the meta object for class '{@link dsm.TRADES.Control <em>Control</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3486,6 +3543,17 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getControl_MitigatesVulnerability();
+
+	/**
+	 * Returns the meta object for the attribute '{@link dsm.TRADES.Control#getSecurityObjective <em>Security Objective</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Security Objective</em>'.
+	 * @see dsm.TRADES.Control#getSecurityObjective()
+	 * @see #getControl()
+	 * @generated
+	 */
+	EAttribute getControl_SecurityObjective();
 
 	/**
 	 * Returns the meta object for class '{@link dsm.TRADES.ThreatAllocationRelation <em>Threat Allocation Relation</em>}'.
@@ -4744,15 +4812,26 @@ public interface TRADESPackage extends EPackage {
 	EReference getVulnerableAsset_Vulnerability();
 
 	/**
-	 * Returns the meta object for the reference '{@link dsm.TRADES.VulnerableAsset#getComponentTypeAffected <em>Component Type Affected</em>}'.
+	 * Returns the meta object for the reference list '{@link dsm.TRADES.VulnerableAsset#getComponentTypeAffected <em>Component Type Affected</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Component Type Affected</em>'.
+	 * @return the meta object for the reference list '<em>Component Type Affected</em>'.
 	 * @see dsm.TRADES.VulnerableAsset#getComponentTypeAffected()
 	 * @see #getVulnerableAsset()
 	 * @generated
 	 */
 	EReference getVulnerableAsset_ComponentTypeAffected();
+
+	/**
+	 * Returns the meta object for the reference list '{@link dsm.TRADES.VulnerableAsset#getControls <em>Controls</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Controls</em>'.
+	 * @see dsm.TRADES.VulnerableAsset#getControls()
+	 * @see #getVulnerableAsset()
+	 * @generated
+	 */
+	EReference getVulnerableAsset_Controls();
 
 	/**
 	 * Returns the meta object for class '{@link dsm.TRADES.VAOwner <em>VA Owner</em>}'.
@@ -4824,6 +4903,16 @@ public interface TRADESPackage extends EPackage {
 	 * @generated
 	 */
 	EEnum getComponentCategoryENUM();
+
+	/**
+	 * Returns the meta object for enum '{@link dsm.TRADES.SecurityObjectiveENUM <em>Security Objective ENUM</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Security Objective ENUM</em>'.
+	 * @see dsm.TRADES.SecurityObjectiveENUM
+	 * @generated
+	 */
+	EEnum getSecurityObjectiveENUM();
 
 	/**
 	 * Returns the meta object for data type '{@link dsm.TRADES.RGBColor <em>RGB Color</em>}'.
@@ -5012,6 +5101,14 @@ public interface TRADESPackage extends EPackage {
 		EReference COMPONENT__VULNERABLEASSET = eINSTANCE.getComponent_Vulnerableasset();
 
 		/**
+		 * The meta object literal for the '<em><b>Assigned Control</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPONENT__ASSIGNED_CONTROL = eINSTANCE.getComponent_AssignedControl();
+
+		/**
 		 * The meta object literal for the '{@link dsm.TRADES.impl.ControlImpl <em>Control</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -5060,6 +5157,14 @@ public interface TRADESPackage extends EPackage {
 		 * @generated
 		 */
 		EReference CONTROL__MITIGATES_VULNERABILITY = eINSTANCE.getControl_MitigatesVulnerability();
+
+		/**
+		 * The meta object literal for the '<em><b>Security Objective</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CONTROL__SECURITY_OBJECTIVE = eINSTANCE.getControl_SecurityObjective();
 
 		/**
 		 * The meta object literal for the '{@link dsm.TRADES.impl.ThreatAllocationRelationImpl <em>Threat Allocation Relation</em>}' class.
@@ -6112,12 +6217,20 @@ public interface TRADESPackage extends EPackage {
 		EReference VULNERABLE_ASSET__VULNERABILITY = eINSTANCE.getVulnerableAsset_Vulnerability();
 
 		/**
-		 * The meta object literal for the '<em><b>Component Type Affected</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Component Type Affected</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference VULNERABLE_ASSET__COMPONENT_TYPE_AFFECTED = eINSTANCE.getVulnerableAsset_ComponentTypeAffected();
+
+		/**
+		 * The meta object literal for the '<em><b>Controls</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference VULNERABLE_ASSET__CONTROLS = eINSTANCE.getVulnerableAsset_Controls();
 
 		/**
 		 * The meta object literal for the '{@link dsm.TRADES.impl.VAOwnerImpl <em>VA Owner</em>}' class.
@@ -6186,6 +6299,16 @@ public interface TRADESPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum COMPONENT_CATEGORY_ENUM = eINSTANCE.getComponentCategoryENUM();
+
+		/**
+		 * The meta object literal for the '{@link dsm.TRADES.SecurityObjectiveENUM <em>Security Objective ENUM</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see dsm.TRADES.SecurityObjectiveENUM
+		 * @see dsm.TRADES.impl.TRADESPackageImpl#getSecurityObjectiveENUM()
+		 * @generated
+		 */
+		EEnum SECURITY_OBJECTIVE_ENUM = eINSTANCE.getSecurityObjectiveENUM();
 
 		/**
 		 * The meta object literal for the '<em>RGB Color</em>' data type.
