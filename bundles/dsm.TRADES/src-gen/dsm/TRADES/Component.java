@@ -84,7 +84,7 @@ public interface Component extends ComponentOwner, DataOwnerElement, NamedElemen
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Componenttype</em>' reference list.
 	 * @see dsm.TRADES.TRADESPackage#getComponent_Componenttype()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	EList<ComponentType> getComponenttype();

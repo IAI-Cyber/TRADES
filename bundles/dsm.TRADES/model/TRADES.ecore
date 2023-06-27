@@ -6,8 +6,8 @@
   </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="Analysis" eSuperTypes="#//ComponentOwner #//DataOwnerElement #//NamedElement #//AbstractControlOwner #//AbstractThreatOwner #//ElementWithId #//VulnerabilityOwner #//ComponentTypeOwner #//VAOwner">
     <eOperations name="getExternalThreats" upperBound="-1" eType="#//ExternalThreat">
-      <eParameters name="id" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
-      <eParameters name="catalogIdentifier" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+      <eParameters name="id" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+      <eParameters name="catalogIdentifier" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
     </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="scoreSystem" eType="#//ScoreSystem"
         containment="true"/>
@@ -36,8 +36,8 @@
         eType="#//AffectRelation" containment="true" eOpposite="#//AffectRelation/sourceComponent"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="links" upperBound="-1"
         eType="#//Link" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="componenttype" upperBound="-1"
-        eType="#//ComponentType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="componenttype" lowerBound="1"
+        upperBound="-1" eType="#//ComponentType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="vulnerableasset" upperBound="-1"
         eType="#//VulnerableAsset" derived="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="assignedControl" upperBound="-1"
@@ -172,7 +172,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="ExternalElement" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="source" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="link" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sourceID" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sourceID" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ImpactConfiguration" eSuperTypes="#//ColoredElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="difficulty" lowerBound="1"
@@ -197,8 +197,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="AbstractControlOwner" abstract="true">
     <eOperations name="getAllControls" upperBound="-1" eType="#//Control"/>
     <eOperations name="getExternalControls" upperBound="-1" eType="#//ExternalControl">
-      <eParameters name="id" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
-      <eParameters name="catalogIdentifier" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+      <eParameters name="id" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+      <eParameters name="catalogIdentifier" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
     </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="controlOwner" eType="#//ControlOwner"
         containment="true"/>
@@ -231,24 +231,24 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IThreatDefinition" abstract="true" interface="true"
       eSuperTypes="#//IElementWithSource">
-    <eOperations name="getId" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
-    <eOperations name="getDescription" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
-    <eOperations name="getName" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eOperations name="getId" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eOperations name="getDescription" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eOperations name="getName" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IControlDefinition" abstract="true"
       interface="true" eSuperTypes="#//IElementWithSource">
-    <eOperations name="getDescription" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
-    <eOperations name="getId" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eOperations name="getDescription" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eOperations name="getId" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
     <eOperations name="getMitigatedThreatDefinitions" upperBound="-1" eType="#//IMitigationLink"/>
-    <eOperations name="getName" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eOperations name="getName" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ICatalogDefinition" abstract="true"
       interface="true">
     <eOperations name="getThreatById" eType="#//IThreatDefinition">
-      <eParameters name="id" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+      <eParameters name="id" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
     </eOperations>
     <eOperations name="getControlById" eType="#//IControlDefinition">
-      <eParameters name="id" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+      <eParameters name="id" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
     </eOperations>
     <eOperations name="getThreatDefinitions" upperBound="-1" eType="#//IThreatDefinition">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -260,11 +260,11 @@
         <details key="documentation" value="Get all the control definition (with valid id) contained by this catalog definition"/>
       </eAnnotations>
     </eOperations>
-    <eOperations name="getIdentifier" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
-    <eOperations name="getName" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eOperations name="getIdentifier" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eOperations name="getName" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IMitigationLink" abstract="true" interface="true">
-    <eOperations name="getDescription" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eOperations name="getDescription" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
     <eOperations name="getThreat" eType="#//IThreatDefinition"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ColoredElement" abstract="true">
@@ -273,11 +273,11 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IElementWithSource" abstract="true"
       interface="true">
-    <eOperations name="getSourceName" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
-    <eOperations name="getSourceIdentifier" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eOperations name="getSourceName" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eOperations name="getSourceIdentifier" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ElementWithId" abstract="true">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DomainAsset" eSuperTypes="#//Asset">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="category" upperBound="-1"
