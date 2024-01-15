@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: dsm.TRADES.edit;singleton:=true
 Automatic-Module-Name: dsm.TRADES.edit
-Bundle-Version: 3.0.0.qualifier
+Bundle-Version: 3.7.0.qualifier
 Bundle-ClassPath: .
 Bundle-Activator: dsm.TRADES.provider.TRADESEditPlugin$Implementation
 Bundle-Vendor: %providerName

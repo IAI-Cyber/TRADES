@@ -11,7 +11,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>TRADES</groupId>
 	<artifactId>TRADES.parent</artifactId>
-	<version>3.0.0-SNAPSHOT</version>
+	<version>3.7.0-SNAPSHOT</version>
 
 	<packaging>pom</packaging>
 	<name>TRADES Parent</name>
@@ -126,7 +126,7 @@
 							<artifact>
 								<groupId>TRADES</groupId><!-- self -->
 								<artifactId>TRADES.parent</artifactId><!-- self -->
-								<version>3.0.0-SNAPSHOT</version>
+								<version>3.7.0-SNAPSHOT</version>
 								<classifier>tp/target</classifier>
 							</artifact>
 						</target>
@@ -169,13 +169,13 @@
 
 		<!-- Markup Widget renderer -->
 
-		<module>../../bundles/org.eclipse.eef.ext.widgets.markup</module>
-		<module>../../bundles/org.eclipse.eef.ext.widgets.markup.edit</module>
-		<module>../../bundles/org.eclipse.eef.ide.ui.ext.widgets.markup</module>
-		<module>../../bundles/org.eclipse.sirius.editor.properties.ext.widgets.markup</module>
-		<module>../../bundles/org.eclipse.sirius.properties.ext.widgets.markup</module>
-		<module>../../bundles/org.eclipse.sirius.properties.ext.widgets.markup.edit</module>
-		<module>../../bundles/org.eclipse.sirius.ui.properties.ext.widgets.markup</module>
+		
+		
+		
+		
+		
+		
+		
 
 	
 

@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: TRADES Capec
 Bundle-SymbolicName: dsm.TRADES.rcp.capec
-Bundle-Version: 3.0.0.qualifier
+Bundle-Version: 3.7.0.qualifier
 Bundle-Activator: dsm.trades.rcp.capec.Activator
 Require-Bundle: org.eclipse.core.runtime,
  dsm.TRADES.rcp;bundle-version="2.5.2",

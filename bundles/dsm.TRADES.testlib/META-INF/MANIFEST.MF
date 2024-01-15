@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: TRADES Testlib
 Bundle-SymbolicName: dsm.TRADES.testlib
-Bundle-Version: 3.0.0.qualifier
+Bundle-Version: 3.7.0.qualifier
 Automatic-Module-Name: dsm.TRADES.testlib
 Bundle-RequiredExecutionEnvironment: JavaSE-11
 Require-Bundle: dsm.TRADES;bundle-version="2.5.0",
