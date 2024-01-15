@@ -112,6 +112,14 @@ public class TRADESFactoryImpl extends EFactoryImpl implements TRADESFactory {
 			return createLinkType();
 		case TRADESPackage.CATALOG:
 			return createCatalog();
+		case TRADESPackage.DOMAIN_ASSET:
+			return createDomainAsset();
+		case TRADESPackage.VULNERABILITY:
+			return createVulnerability();
+		case TRADESPackage.COMPONENT_TYPE:
+			return createComponentType();
+		case TRADESPackage.VULNERABLE_ASSET:
+			return createVulnerableAsset();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -133,6 +141,10 @@ public class TRADESFactoryImpl extends EFactoryImpl implements TRADESFactory {
 			return createthreatTypeENUMFromString(eDataType, initialValue);
 		case TRADESPackage.CONTROL_STATUS_ENUM:
 			return createControlStatusENUMFromString(eDataType, initialValue);
+		case TRADESPackage.COMPONENT_CATEGORY_ENUM:
+			return createComponentCategoryENUMFromString(eDataType, initialValue);
+		case TRADESPackage.SECURITY_OBJECTIVE_ENUM:
+			return createSecurityObjectiveENUMFromString(eDataType, initialValue);
 		case TRADESPackage.RGB_COLOR:
 			return createRGBColorFromString(eDataType, initialValue);
 		default:
@@ -156,6 +168,10 @@ public class TRADESFactoryImpl extends EFactoryImpl implements TRADESFactory {
 			return convertthreatTypeENUMToString(eDataType, instanceValue);
 		case TRADESPackage.CONTROL_STATUS_ENUM:
 			return convertControlStatusENUMToString(eDataType, instanceValue);
+		case TRADESPackage.COMPONENT_CATEGORY_ENUM:
+			return convertComponentCategoryENUMToString(eDataType, instanceValue);
+		case TRADESPackage.SECURITY_OBJECTIVE_ENUM:
+			return convertSecurityObjectiveENUMToString(eDataType, instanceValue);
 		case TRADESPackage.RGB_COLOR:
 			return convertRGBColorToString(eDataType, instanceValue);
 		default:
@@ -410,6 +426,50 @@ public class TRADESFactoryImpl extends EFactoryImpl implements TRADESFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public DomainAsset createDomainAsset() {
+		DomainAssetImpl domainAsset = new DomainAssetImpl();
+		return domainAsset;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Vulnerability createVulnerability() {
+		VulnerabilityImpl vulnerability = new VulnerabilityImpl();
+		return vulnerability;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ComponentType createComponentType() {
+		ComponentTypeImpl componentType = new ComponentTypeImpl();
+		return componentType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public VulnerableAsset createVulnerableAsset() {
+		VulnerableAssetImpl vulnerableAsset = new VulnerableAssetImpl();
+		return vulnerableAsset;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public AssessmentENUM createAssessmentENUMFromString(EDataType eDataType, String initialValue) {
 		AssessmentENUM result = AssessmentENUM.get(initialValue);
 		if (result == null)
@@ -490,6 +550,50 @@ public class TRADESFactoryImpl extends EFactoryImpl implements TRADESFactory {
 	 * @generated
 	 */
 	public String convertControlStatusENUMToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ComponentCategoryENUM createComponentCategoryENUMFromString(EDataType eDataType, String initialValue) {
+		ComponentCategoryENUM result = ComponentCategoryENUM.get(initialValue);
+		if (result == null)
+			throw new IllegalArgumentException(
+					"The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertComponentCategoryENUMToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SecurityObjectiveENUM createSecurityObjectiveENUMFromString(EDataType eDataType, String initialValue) {
+		SecurityObjectiveENUM result = SecurityObjectiveENUM.get(initialValue);
+		if (result == null)
+			throw new IllegalArgumentException(
+					"The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertSecurityObjectiveENUMToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

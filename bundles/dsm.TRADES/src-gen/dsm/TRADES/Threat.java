@@ -31,6 +31,8 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link dsm.TRADES.Threat#getThreatType <em>Threat Type</em>}</li>
  *   <li>{@link dsm.TRADES.Threat#getDescription <em>Description</em>}</li>
  *   <li>{@link dsm.TRADES.Threat#getApplicability <em>Applicability</em>}</li>
+ *   <li>{@link dsm.TRADES.Threat#getExploitsVulnerability <em>Exploits Vulnerability</em>}</li>
+ *   <li>{@link dsm.TRADES.Threat#getRefines <em>Refines</em>}</li>
  * </ul>
  *
  * @see dsm.TRADES.TRADESPackage#getThreat()
@@ -120,6 +122,30 @@ public interface Threat extends NamedElement, IThreatDefinition, ElementWithId {
 	 * @generated
 	 */
 	void setApplicability(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Exploits Vulnerability</b></em>' reference list.
+	 * The list contents are of type {@link dsm.TRADES.Vulnerability}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Exploits Vulnerability</em>' reference list.
+	 * @see dsm.TRADES.TRADESPackage#getThreat_ExploitsVulnerability()
+	 * @model
+	 * @generated
+	 */
+	EList<Vulnerability> getExploitsVulnerability();
+
+	/**
+	 * Returns the value of the '<em><b>Refines</b></em>' reference list.
+	 * The list contents are of type {@link dsm.TRADES.Threat}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Refines</em>' reference list.
+	 * @see dsm.TRADES.TRADESPackage#getThreat_Refines()
+	 * @model
+	 * @generated
+	 */
+	EList<Threat> getRefines();
 
 	/**
 	 * <!-- begin-user-doc -->

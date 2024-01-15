@@ -15,18 +15,23 @@ package dsm.TRADES.impl;
 
 import dsm.TRADES.AbstractControlOwner;
 import dsm.TRADES.AffectRelation;
+import dsm.TRADES.Asset;
 import dsm.TRADES.Component;
+import dsm.TRADES.ComponentCategoryENUM;
+import dsm.TRADES.ComponentType;
 import dsm.TRADES.Control;
 import dsm.TRADES.ControlOwner;
 import dsm.TRADES.Data;
 import dsm.TRADES.DataOwner;
 import dsm.TRADES.DataOwnerElement;
+import dsm.TRADES.DomainAsset;
 import dsm.TRADES.ExternalControl;
 import dsm.TRADES.Link;
 import dsm.TRADES.NamedElement;
 import dsm.TRADES.TRADESPackage;
 import dsm.TRADES.ThreatAllocationRelation;
 
+import dsm.TRADES.VulnerableAsset;
 import java.lang.reflect.InvocationTargetException;
 
 import java.util.Collection;
@@ -41,8 +46,10 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -56,9 +63,13 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dsm.TRADES.impl.ComponentImpl#getDataOwner <em>Data Owner</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ComponentImpl#getName <em>Name</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ComponentImpl#getControlOwner <em>Control Owner</em>}</li>
+ *   <li>{@link dsm.TRADES.impl.ComponentImpl#getCategory <em>Category</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ComponentImpl#getThreatAllocations <em>Threat Allocations</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ComponentImpl#getAffectRelations <em>Affect Relations</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ComponentImpl#getLinks <em>Links</em>}</li>
+ *   <li>{@link dsm.TRADES.impl.ComponentImpl#getComponenttype <em>Componenttype</em>}</li>
+ *   <li>{@link dsm.TRADES.impl.ComponentImpl#getVulnerableasset <em>Vulnerableasset</em>}</li>
+ *   <li>{@link dsm.TRADES.impl.ComponentImpl#getAssignedControl <em>Assigned Control</em>}</li>
  * </ul>
  *
  * @generated
@@ -105,6 +116,16 @@ public class ComponentImpl extends ComponentOwnerImpl implements Component {
 	protected ControlOwner controlOwner;
 
 	/**
+	 * The cached value of the '{@link #getCategory() <em>Category</em>}' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCategory()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<ComponentCategoryENUM> category;
+
+	/**
 	 * The cached value of the '{@link #getThreatAllocations() <em>Threat Allocations</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -133,6 +154,36 @@ public class ComponentImpl extends ComponentOwnerImpl implements Component {
 	 * @ordered
 	 */
 	protected EList<Link> links;
+
+	/**
+	 * The cached value of the '{@link #getComponenttype() <em>Componenttype</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getComponenttype()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<ComponentType> componenttype;
+
+	/**
+	 * The cached value of the '{@link #getVulnerableasset() <em>Vulnerableasset</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getVulnerableasset()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<VulnerableAsset> vulnerableasset;
+
+	/**
+	 * The cached value of the '{@link #getAssignedControl() <em>Assigned Control</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAssignedControl()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Control> assignedControl;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -286,6 +337,20 @@ public class ComponentImpl extends ComponentOwnerImpl implements Component {
 	 * @generated
 	 */
 	@Override
+	public EList<ComponentCategoryENUM> getCategory() {
+		if (category == null) {
+			category = new EDataTypeUniqueEList<ComponentCategoryENUM>(ComponentCategoryENUM.class, this,
+					TRADESPackage.COMPONENT__CATEGORY);
+		}
+		return category;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EList<ThreatAllocationRelation> getThreatAllocations() {
 		if (threatAllocations == null) {
 			threatAllocations = new EObjectContainmentWithInverseEList<ThreatAllocationRelation>(
@@ -320,6 +385,48 @@ public class ComponentImpl extends ComponentOwnerImpl implements Component {
 			links = new EObjectContainmentEList<Link>(Link.class, this, TRADESPackage.COMPONENT__LINKS);
 		}
 		return links;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<ComponentType> getComponenttype() {
+		if (componenttype == null) {
+			componenttype = new EObjectResolvingEList<ComponentType>(ComponentType.class, this,
+					TRADESPackage.COMPONENT__COMPONENTTYPE);
+		}
+		return componenttype;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<VulnerableAsset> getVulnerableasset() {
+		if (vulnerableasset == null) {
+			vulnerableasset = new EObjectResolvingEList<VulnerableAsset>(VulnerableAsset.class, this,
+					TRADESPackage.COMPONENT__VULNERABLEASSET);
+		}
+		return vulnerableasset;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<Control> getAssignedControl() {
+		if (assignedControl == null) {
+			assignedControl = new EObjectResolvingEList<Control>(Control.class, this,
+					TRADESPackage.COMPONENT__ASSIGNED_CONTROL);
+		}
+		return assignedControl;
 	}
 
 	/**
@@ -436,12 +543,20 @@ public class ComponentImpl extends ComponentOwnerImpl implements Component {
 			return getName();
 		case TRADESPackage.COMPONENT__CONTROL_OWNER:
 			return getControlOwner();
+		case TRADESPackage.COMPONENT__CATEGORY:
+			return getCategory();
 		case TRADESPackage.COMPONENT__THREAT_ALLOCATIONS:
 			return getThreatAllocations();
 		case TRADESPackage.COMPONENT__AFFECT_RELATIONS:
 			return getAffectRelations();
 		case TRADESPackage.COMPONENT__LINKS:
 			return getLinks();
+		case TRADESPackage.COMPONENT__COMPONENTTYPE:
+			return getComponenttype();
+		case TRADESPackage.COMPONENT__VULNERABLEASSET:
+			return getVulnerableasset();
+		case TRADESPackage.COMPONENT__ASSIGNED_CONTROL:
+			return getAssignedControl();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -464,6 +579,10 @@ public class ComponentImpl extends ComponentOwnerImpl implements Component {
 		case TRADESPackage.COMPONENT__CONTROL_OWNER:
 			setControlOwner((ControlOwner) newValue);
 			return;
+		case TRADESPackage.COMPONENT__CATEGORY:
+			getCategory().clear();
+			getCategory().addAll((Collection<? extends ComponentCategoryENUM>) newValue);
+			return;
 		case TRADESPackage.COMPONENT__THREAT_ALLOCATIONS:
 			getThreatAllocations().clear();
 			getThreatAllocations().addAll((Collection<? extends ThreatAllocationRelation>) newValue);
@@ -475,6 +594,18 @@ public class ComponentImpl extends ComponentOwnerImpl implements Component {
 		case TRADESPackage.COMPONENT__LINKS:
 			getLinks().clear();
 			getLinks().addAll((Collection<? extends Link>) newValue);
+			return;
+		case TRADESPackage.COMPONENT__COMPONENTTYPE:
+			getComponenttype().clear();
+			getComponenttype().addAll((Collection<? extends ComponentType>) newValue);
+			return;
+		case TRADESPackage.COMPONENT__VULNERABLEASSET:
+			getVulnerableasset().clear();
+			getVulnerableasset().addAll((Collection<? extends VulnerableAsset>) newValue);
+			return;
+		case TRADESPackage.COMPONENT__ASSIGNED_CONTROL:
+			getAssignedControl().clear();
+			getAssignedControl().addAll((Collection<? extends Control>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -497,6 +628,9 @@ public class ComponentImpl extends ComponentOwnerImpl implements Component {
 		case TRADESPackage.COMPONENT__CONTROL_OWNER:
 			setControlOwner((ControlOwner) null);
 			return;
+		case TRADESPackage.COMPONENT__CATEGORY:
+			getCategory().clear();
+			return;
 		case TRADESPackage.COMPONENT__THREAT_ALLOCATIONS:
 			getThreatAllocations().clear();
 			return;
@@ -505,6 +639,15 @@ public class ComponentImpl extends ComponentOwnerImpl implements Component {
 			return;
 		case TRADESPackage.COMPONENT__LINKS:
 			getLinks().clear();
+			return;
+		case TRADESPackage.COMPONENT__COMPONENTTYPE:
+			getComponenttype().clear();
+			return;
+		case TRADESPackage.COMPONENT__VULNERABLEASSET:
+			getVulnerableasset().clear();
+			return;
+		case TRADESPackage.COMPONENT__ASSIGNED_CONTROL:
+			getAssignedControl().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -524,12 +667,20 @@ public class ComponentImpl extends ComponentOwnerImpl implements Component {
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		case TRADESPackage.COMPONENT__CONTROL_OWNER:
 			return controlOwner != null;
+		case TRADESPackage.COMPONENT__CATEGORY:
+			return category != null && !category.isEmpty();
 		case TRADESPackage.COMPONENT__THREAT_ALLOCATIONS:
 			return threatAllocations != null && !threatAllocations.isEmpty();
 		case TRADESPackage.COMPONENT__AFFECT_RELATIONS:
 			return affectRelations != null && !affectRelations.isEmpty();
 		case TRADESPackage.COMPONENT__LINKS:
 			return links != null && !links.isEmpty();
+		case TRADESPackage.COMPONENT__COMPONENTTYPE:
+			return componenttype != null && !componenttype.isEmpty();
+		case TRADESPackage.COMPONENT__VULNERABLEASSET:
+			return vulnerableasset != null && !vulnerableasset.isEmpty();
+		case TRADESPackage.COMPONENT__ASSIGNED_CONTROL:
+			return assignedControl != null && !assignedControl.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -565,6 +716,20 @@ public class ComponentImpl extends ComponentOwnerImpl implements Component {
 				return -1;
 			}
 		}
+		if (baseClass == Asset.class) {
+			switch (derivedFeatureID) {
+			default:
+				return -1;
+			}
+		}
+		if (baseClass == DomainAsset.class) {
+			switch (derivedFeatureID) {
+			case TRADESPackage.COMPONENT__CATEGORY:
+				return TRADESPackage.DOMAIN_ASSET__CATEGORY;
+			default:
+				return -1;
+			}
+		}
 		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
 	}
 
@@ -595,6 +760,20 @@ public class ComponentImpl extends ComponentOwnerImpl implements Component {
 			switch (baseFeatureID) {
 			case TRADESPackage.ABSTRACT_CONTROL_OWNER__CONTROL_OWNER:
 				return TRADESPackage.COMPONENT__CONTROL_OWNER;
+			default:
+				return -1;
+			}
+		}
+		if (baseClass == Asset.class) {
+			switch (baseFeatureID) {
+			default:
+				return -1;
+			}
+		}
+		if (baseClass == DomainAsset.class) {
+			switch (baseFeatureID) {
+			case TRADESPackage.DOMAIN_ASSET__CATEGORY:
+				return TRADESPackage.COMPONENT__CATEGORY;
 			default:
 				return -1;
 			}
@@ -637,6 +816,18 @@ public class ComponentImpl extends ComponentOwnerImpl implements Component {
 				return -1;
 			}
 		}
+		if (baseClass == Asset.class) {
+			switch (baseOperationID) {
+			default:
+				return -1;
+			}
+		}
+		if (baseClass == DomainAsset.class) {
+			switch (baseOperationID) {
+			default:
+				return -1;
+			}
+		}
 		return super.eDerivedOperationID(baseOperationID, baseClass);
 	}
 
@@ -675,6 +866,8 @@ public class ComponentImpl extends ComponentOwnerImpl implements Component {
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
+		result.append(", category: ");
+		result.append(category);
 		result.append(')');
 		return result.toString();
 	}

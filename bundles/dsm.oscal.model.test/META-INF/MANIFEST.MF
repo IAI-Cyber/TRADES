@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: OSCAL Model test
 Bundle-SymbolicName: dsm.oscal.model.test
-Bundle-Version: 3.0.0.qualifier
+Bundle-Version: 3.7.0.qualifier
 Fragment-Host: dsm.oscal.model;bundle-version="2.5.0"
 Automatic-Module-Name: dsm.oscal.model.test
 Bundle-RequiredExecutionEnvironment: JavaSE-11

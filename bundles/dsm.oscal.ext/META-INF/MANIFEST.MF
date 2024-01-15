@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: dsm.oscal.ext;singleton:=true
-Bundle-Version: 3.0.0.qualifier
+Bundle-Version: 3.7.0.qualifier
 Automatic-Module-Name: dsm.oscal.ext
 Bundle-RequiredExecutionEnvironment: JavaSE-11
 Bundle-ClassPath: .,

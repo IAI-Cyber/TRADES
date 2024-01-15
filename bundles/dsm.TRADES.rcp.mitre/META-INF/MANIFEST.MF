@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Mitre Catalog
 Bundle-SymbolicName: dsm.TRADES.rcp.mitre;singleton:=true
-Bundle-Version: 3.0.0.qualifier
+Bundle-Version: 3.7.0.qualifier
 Automatic-Module-Name: dsm.TRADES.rcp.mitre
 Bundle-RequiredExecutionEnvironment: JavaSE-11
 Require-Bundle: dsm.TRADES.rcp;bundle-version="2.5.2",

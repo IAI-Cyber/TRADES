@@ -21,10 +21,12 @@ import dsm.TRADES.IControlDefinition;
 import dsm.TRADES.IElementWithSource;
 import dsm.TRADES.IMitigationLink;
 import dsm.TRADES.NamedElement;
+import dsm.TRADES.SecurityObjectiveENUM;
 import dsm.TRADES.TRADESPackage;
 import dsm.TRADES.Threat;
 import dsm.TRADES.ThreatMitigationRelation;
 
+import dsm.TRADES.Vulnerability;
 import java.lang.reflect.InvocationTargetException;
 
 import java.util.Collection;
@@ -57,6 +59,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dsm.TRADES.impl.ExternalControlImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ExternalControlImpl#getMitigationRelations <em>Mitigation Relations</em>}</li>
  *   <li>{@link dsm.TRADES.impl.ExternalControlImpl#getStatus <em>Status</em>}</li>
+ *   <li>{@link dsm.TRADES.impl.ExternalControlImpl#getMitigatesVulnerability <em>Mitigates Vulnerability</em>}</li>
+ *   <li>{@link dsm.TRADES.impl.ExternalControlImpl#getSecurityObjective <em>Security Objective</em>}</li>
  * </ul>
  *
  * @generated
@@ -161,6 +165,36 @@ public class ExternalControlImpl extends ExternalElementImpl implements External
 	 * @ordered
 	 */
 	protected ControlStatusENUM status = STATUS_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getMitigatesVulnerability() <em>Mitigates Vulnerability</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMitigatesVulnerability()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Vulnerability> mitigatesVulnerability;
+
+	/**
+	 * The default value of the '{@link #getSecurityObjective() <em>Security Objective</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSecurityObjective()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final SecurityObjectiveENUM SECURITY_OBJECTIVE_EDEFAULT = SecurityObjectiveENUM.UNDEFINED;
+
+	/**
+	 * The cached value of the '{@link #getSecurityObjective() <em>Security Objective</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSecurityObjective()
+	 * @generated
+	 * @ordered
+	 */
+	protected SecurityObjectiveENUM securityObjective = SECURITY_OBJECTIVE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -310,6 +344,44 @@ public class ExternalControlImpl extends ExternalElementImpl implements External
 	 * @generated
 	 */
 	@Override
+	public EList<Vulnerability> getMitigatesVulnerability() {
+		if (mitigatesVulnerability == null) {
+			mitigatesVulnerability = new EObjectResolvingEList<Vulnerability>(Vulnerability.class, this,
+					TRADESPackage.EXTERNAL_CONTROL__MITIGATES_VULNERABILITY);
+		}
+		return mitigatesVulnerability;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public SecurityObjectiveENUM getSecurityObjective() {
+		return securityObjective;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setSecurityObjective(SecurityObjectiveENUM newSecurityObjective) {
+		SecurityObjectiveENUM oldSecurityObjective = securityObjective;
+		securityObjective = newSecurityObjective == null ? SECURITY_OBJECTIVE_EDEFAULT : newSecurityObjective;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TRADESPackage.EXTERNAL_CONTROL__SECURITY_OBJECTIVE,
+					oldSecurityObjective, securityObjective));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EList<IMitigationLink> getMitigatedThreatDefinitions() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -390,6 +462,10 @@ public class ExternalControlImpl extends ExternalElementImpl implements External
 			return getMitigationRelations();
 		case TRADESPackage.EXTERNAL_CONTROL__STATUS:
 			return getStatus();
+		case TRADESPackage.EXTERNAL_CONTROL__MITIGATES_VULNERABILITY:
+			return getMitigatesVulnerability();
+		case TRADESPackage.EXTERNAL_CONTROL__SECURITY_OBJECTIVE:
+			return getSecurityObjective();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -423,6 +499,13 @@ public class ExternalControlImpl extends ExternalElementImpl implements External
 		case TRADESPackage.EXTERNAL_CONTROL__STATUS:
 			setStatus((ControlStatusENUM) newValue);
 			return;
+		case TRADESPackage.EXTERNAL_CONTROL__MITIGATES_VULNERABILITY:
+			getMitigatesVulnerability().clear();
+			getMitigatesVulnerability().addAll((Collection<? extends Vulnerability>) newValue);
+			return;
+		case TRADESPackage.EXTERNAL_CONTROL__SECURITY_OBJECTIVE:
+			setSecurityObjective((SecurityObjectiveENUM) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -453,6 +536,12 @@ public class ExternalControlImpl extends ExternalElementImpl implements External
 		case TRADESPackage.EXTERNAL_CONTROL__STATUS:
 			setStatus(STATUS_EDEFAULT);
 			return;
+		case TRADESPackage.EXTERNAL_CONTROL__MITIGATES_VULNERABILITY:
+			getMitigatesVulnerability().clear();
+			return;
+		case TRADESPackage.EXTERNAL_CONTROL__SECURITY_OBJECTIVE:
+			setSecurityObjective(SECURITY_OBJECTIVE_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -477,6 +566,10 @@ public class ExternalControlImpl extends ExternalElementImpl implements External
 			return mitigationRelations != null && !mitigationRelations.isEmpty();
 		case TRADESPackage.EXTERNAL_CONTROL__STATUS:
 			return status != STATUS_EDEFAULT;
+		case TRADESPackage.EXTERNAL_CONTROL__MITIGATES_VULNERABILITY:
+			return mitigatesVulnerability != null && !mitigatesVulnerability.isEmpty();
+		case TRADESPackage.EXTERNAL_CONTROL__SECURITY_OBJECTIVE:
+			return securityObjective != SECURITY_OBJECTIVE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -526,6 +619,10 @@ public class ExternalControlImpl extends ExternalElementImpl implements External
 				return TRADESPackage.CONTROL__MITIGATION_RELATIONS;
 			case TRADESPackage.EXTERNAL_CONTROL__STATUS:
 				return TRADESPackage.CONTROL__STATUS;
+			case TRADESPackage.EXTERNAL_CONTROL__MITIGATES_VULNERABILITY:
+				return TRADESPackage.CONTROL__MITIGATES_VULNERABILITY;
+			case TRADESPackage.EXTERNAL_CONTROL__SECURITY_OBJECTIVE:
+				return TRADESPackage.CONTROL__SECURITY_OBJECTIVE;
 			default:
 				return -1;
 			}
@@ -578,6 +675,10 @@ public class ExternalControlImpl extends ExternalElementImpl implements External
 				return TRADESPackage.EXTERNAL_CONTROL__MITIGATION_RELATIONS;
 			case TRADESPackage.CONTROL__STATUS:
 				return TRADESPackage.EXTERNAL_CONTROL__STATUS;
+			case TRADESPackage.CONTROL__MITIGATES_VULNERABILITY:
+				return TRADESPackage.EXTERNAL_CONTROL__MITIGATES_VULNERABILITY;
+			case TRADESPackage.CONTROL__SECURITY_OBJECTIVE:
+				return TRADESPackage.EXTERNAL_CONTROL__SECURITY_OBJECTIVE;
 			default:
 				return -1;
 			}
@@ -674,6 +775,8 @@ public class ExternalControlImpl extends ExternalElementImpl implements External
 		result.append(description);
 		result.append(", status: ");
 		result.append(status);
+		result.append(", securityObjective: ");
+		result.append(securityObjective);
 		result.append(')');
 		return result.toString();
 	}

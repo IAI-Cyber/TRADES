@@ -27,13 +27,16 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link dsm.TRADES.Component#getThreatAllocations <em>Threat Allocations</em>}</li>
  *   <li>{@link dsm.TRADES.Component#getAffectRelations <em>Affect Relations</em>}</li>
  *   <li>{@link dsm.TRADES.Component#getLinks <em>Links</em>}</li>
+ *   <li>{@link dsm.TRADES.Component#getComponenttype <em>Componenttype</em>}</li>
+ *   <li>{@link dsm.TRADES.Component#getVulnerableasset <em>Vulnerableasset</em>}</li>
+ *   <li>{@link dsm.TRADES.Component#getAssignedControl <em>Assigned Control</em>}</li>
  * </ul>
  *
  * @see dsm.TRADES.TRADESPackage#getComponent()
  * @model
  * @generated
  */
-public interface Component extends ComponentOwner, DataOwnerElement, NamedElement, AbstractControlOwner {
+public interface Component extends ComponentOwner, DataOwnerElement, NamedElement, AbstractControlOwner, DomainAsset {
 	/**
 	 * Returns the value of the '<em><b>Threat Allocations</b></em>' containment reference list.
 	 * The list contents are of type {@link dsm.TRADES.ThreatAllocationRelation}.
@@ -73,5 +76,41 @@ public interface Component extends ComponentOwner, DataOwnerElement, NamedElemen
 	 * @generated
 	 */
 	EList<Link> getLinks();
+
+	/**
+	 * Returns the value of the '<em><b>Componenttype</b></em>' reference list.
+	 * The list contents are of type {@link dsm.TRADES.ComponentType}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Componenttype</em>' reference list.
+	 * @see dsm.TRADES.TRADESPackage#getComponent_Componenttype()
+	 * @model required="true"
+	 * @generated
+	 */
+	EList<ComponentType> getComponenttype();
+
+	/**
+	 * Returns the value of the '<em><b>Vulnerableasset</b></em>' reference list.
+	 * The list contents are of type {@link dsm.TRADES.VulnerableAsset}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Vulnerableasset</em>' reference list.
+	 * @see dsm.TRADES.TRADESPackage#getComponent_Vulnerableasset()
+	 * @model derived="true"
+	 * @generated
+	 */
+	EList<VulnerableAsset> getVulnerableasset();
+
+	/**
+	 * Returns the value of the '<em><b>Assigned Control</b></em>' reference list.
+	 * The list contents are of type {@link dsm.TRADES.Control}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Assigned Control</em>' reference list.
+	 * @see dsm.TRADES.TRADESPackage#getComponent_AssignedControl()
+	 * @model
+	 * @generated
+	 */
+	EList<Control> getAssignedControl();
 
 } // Component
