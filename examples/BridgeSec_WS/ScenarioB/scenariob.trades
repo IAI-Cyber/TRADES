@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="ASCII"?>
+<TRADES:Analysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:TRADES="dsm.TRADES" name="ScenarioB" id="7a460d83-768a-465d-ad2e-9c621006159a">
+  <components name="System X Scope">
+    <components name="Application X Server">
+      <components name="Operating System" componenttype="//@componenttype.1 //@componenttype.3 //@componenttype.2">
+        <controlOwner>
+          <internals name="Windows RDP Server Security Patch August 2019"/>
+        </controlOwner>
+      </components>
+      <components name="Internally Developed Software X" componenttype="//@componenttype.4"/>
+      <affectRelations data="//@components.0/@dataOwner/@data.1" targetComponent="//@components.0/@components.1"/>
+    </components>
+    <components name="Application X Client">
+      <components name="Windows 10" componenttype="//@componenttype.0">
+        <controlOwner>
+          <internals name="Disable RDS"/>
+        </controlOwner>
+      </components>
+      <components name="X Client Software" componenttype="//@componenttype.4"/>
+      <affectRelations data="//@components.0/@dataOwner/@data.0" targetComponent="//@components.0/@components.0"/>
+    </components>
+    <dataOwner>
+      <data name="User Request"/>
+      <data name="Server Reply"/>
+    </dataOwner>
+  </components>
+  <dataOwner/>
+  <controlOwner/>
+  <threatOwner/>
+  <vulnerabilities name="CVE-2019-1181 (Remote Desktop Services Remote Code Execution Vulnerability)"/>
+  <vulnerabilities name="CVE-2019-1182 (Remote Desktop Services Remote Code Execution Vulnerability)"/>
+  <vulnerabilities name="CVE-2019-1222 (Remote Desktop Services Remote Code Execution Vulnerability)"/>
+  <vulnerabilities name="CVE-2019-1226 (Remote Desktop Services Remote Code Execution Vulnerability)"/>
+  <componenttype name="cpe:2.3:o:microsoft:windows_10_1507"/>
+  <componenttype name="cpe:2.3:o:microsoft:windows_server_2019" refines="//@componenttype.3"/>
+  <componenttype name="Server"/>
+  <componenttype name="Windows Server" refines="//@componenttype.2"/>
+  <componenttype name="Internally developed application"/>
+  <vulnerableasset name="Remote Code Execution via RDP Server" vulnerability="//@vulnerabilities.0" componentTypeAffected="//@componenttype.1 //@componenttype.0" controls="//@components.0/@components.1/@components.0/@controlOwner/@internals.0 //@components.0/@components.0/@components.0/@controlOwner/@internals.0"/>
+  <scoreSystem>
+    <impactScores name="Low" impact="1">
+      <configurations difficulty="//@scoreSystem/@difficultyScores.0"/>
+      <configurations difficulty="//@scoreSystem/@difficultyScores.1"/>
+      <configurations difficulty="//@scoreSystem/@difficultyScores.2"/>
+    </impactScores>
+    <impactScores name="Medium" impact="2">
+      <configurations difficulty="//@scoreSystem/@difficultyScores.0"/>
+      <configurations difficulty="//@scoreSystem/@difficultyScores.1"/>
+      <configurations difficulty="//@scoreSystem/@difficultyScores.2"/>
+    </impactScores>
+    <impactScores name="High" impact="3">
+      <configurations difficulty="//@scoreSystem/@difficultyScores.0"/>
+      <configurations difficulty="//@scoreSystem/@difficultyScores.1"/>
+      <configurations difficulty="//@scoreSystem/@difficultyScores.2"/>
+    </impactScores>
+    <difficultyScores name="Low" difficulty="1"/>
+    <difficultyScores name="Medium" difficulty="2"/>
+    <difficultyScores name="High" difficulty="3"/>
+  </scoreSystem>
+</TRADES:Analysis>

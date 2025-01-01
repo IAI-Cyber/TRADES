@@ -1,0 +1,1550 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TRADES="dsm.TRADES" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:description_2="http://www.eclipse.org/sirius/table/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:table="http://www.eclipse.org/sirius/table/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/table/description/1.1.0 http://www.eclipse.org/sirius/table/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
+  <viewpoint:DAnalysis uid="_r8dK0P62Ee2b7p5ytR3FIg" selectedViews="_yLJBgMh8Ee-T_cC07e87Mw" version="14.5.1.202106111100">
+    <semanticResources>scenariob2.trades</semanticResources>
+    <ownedViews xmi:type="viewpoint:DView" uid="_r-OscP62Ee2b7p5ytR3FIg">
+      <viewpoint xmi:type="description:Viewpoint" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='NoOp']"/>
+    </ownedViews>
+    <ownedViews xmi:type="viewpoint:DView" uid="_r-S94P62Ee2b7p5ytR3FIg">
+      <viewpoint xmi:type="description:Viewpoint" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']"/>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_r-Tk8v62Ee2b7p5ytR3FIg" name="TRADES diagram" repPath="#_r-Tk8P62Ee2b7p5ytR3FIg" changeId="7a5dcedb-0572-4761-b850-3fdf30fad1ed">
+        <description xmi:type="description_1:DiagramDescription" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']"/>
+        <target xmi:type="TRADES:Analysis" href="scenariob2.trades#/"/>
+      </ownedRepresentationDescriptors>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_r-oVFf62Ee2b7p5ytR3FIg" name="ScenarioB Risk Management Summary" repPath="#_r-mf4P62Ee2b7p5ytR3FIg">
+        <description xmi:type="description_2:CrossTableDescription" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='RiskManagementSummaryTable']"/>
+        <target xmi:type="TRADES:Analysis" href="scenariob2.trades#/"/>
+      </ownedRepresentationDescriptors>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_G5aWIP7bEe2b7p5ytR3FIg" name="TRADES Vulnerability diagram" repPath="#_G5ZvEP7bEe2b7p5ytR3FIg" changeId="ba4350b3-14e3-49a5-affa-d4c7b8f0ae34">
+        <description xmi:type="description_1:DiagramDescription" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']"/>
+        <target xmi:type="TRADES:Analysis" href="scenariob2.trades#/"/>
+      </ownedRepresentationDescriptors>
+    </ownedViews>
+    <ownedViews xmi:type="viewpoint:DView" uid="_yLJBgMh8Ee-T_cC07e87Mw">
+      <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']"/>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_yLJBg8h8Ee-T_cC07e87Mw" name="TRADES diagram" repPath="#_yLJBgch8Ee-T_cC07e87Mw" changeId="605c37b7-2121-42ec-a1a4-1b2f73703341">
+        <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']"/>
+        <target xmi:type="TRADES:Analysis" href="scenariob2.trades#/"/>
+      </ownedRepresentationDescriptors>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_yLvecMh8Ee-T_cC07e87Mw" name="TRADES Vulnerability diagram" repPath="#_yLqmC8h8Ee-T_cC07e87Mw" changeId="e03540f7-44bd-473f-9ff7-b8b96f4b61f2">
+        <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']"/>
+        <target xmi:type="TRADES:Analysis" href="scenariob2.trades#/"/>
+      </ownedRepresentationDescriptors>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_yMMxe8h8Ee-T_cC07e87Mw" name="ScenarioB2 Risk Management Summary" repPath="#_yMCZo8h8Ee-T_cC07e87Mw">
+        <description xmi:type="description_2:CrossTableDescription" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='RiskManagementSummaryTable']"/>
+        <target xmi:type="TRADES:Analysis" href="scenariob2.trades#/"/>
+      </ownedRepresentationDescriptors>
+    </ownedViews>
+  </viewpoint:DAnalysis>
+  <diagram:DSemanticDiagram uid="_r-Tk8P62Ee2b7p5ytR3FIg">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_r-UMAP62Ee2b7p5ytR3FIg" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_r-UMAf62Ee2b7p5ytR3FIg" type="Sirius" element="_r-Tk8P62Ee2b7p5ytR3FIg" measurementUnit="Pixel">
+        <children xmi:type="notation:Node" xmi:id="_r-lRxP62Ee2b7p5ytR3FIg" type="2002" element="_r-kDoP62Ee2b7p5ytR3FIg">
+          <children xmi:type="notation:Node" xmi:id="_r-l40P62Ee2b7p5ytR3FIg" type="5006"/>
+          <children xmi:type="notation:Node" xmi:id="_r-l40f62Ee2b7p5ytR3FIg" type="7001">
+            <children xmi:type="notation:Node" xmi:id="_HJPmEP7UEe2b7p5ytR3FIg" type="3008" element="_HHxmcP7UEe2b7p5ytR3FIg">
+              <children xmi:type="notation:Node" xmi:id="_HJSCUP7UEe2b7p5ytR3FIg" type="5005"/>
+              <children xmi:type="notation:Node" xmi:id="_HJSpYP7UEe2b7p5ytR3FIg" type="7002">
+                <children xmi:type="notation:Node" xmi:id="_LcbSgv7UEe2b7p5ytR3FIg" type="3008" element="_LcWaAP7UEe2b7p5ytR3FIg">
+                  <children xmi:type="notation:Node" xmi:id="_Lcb5kv7UEe2b7p5ytR3FIg" type="5005"/>
+                  <children xmi:type="notation:Node" xmi:id="_Lcb5k_7UEe2b7p5ytR3FIg" type="7002">
+                    <styles xmi:type="notation:SortingStyle" xmi:id="_Lcb5lP7UEe2b7p5ytR3FIg"/>
+                    <styles xmi:type="notation:FilteringStyle" xmi:id="_Lcb5lf7UEe2b7p5ytR3FIg"/>
+                  </children>
+                  <styles xmi:type="notation:ShapeStyle" xmi:id="_Lcb5kP7UEe2b7p5ytR3FIg" fontName="Segoe UI" fontHeight="12" bold="true" underline="true"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Lcb5kf7UEe2b7p5ytR3FIg" x="10" y="84"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_TR9rYP7UEe2b7p5ytR3FIg" type="3008" element="_TR4y4P7UEe2b7p5ytR3FIg">
+                  <children xmi:type="notation:Node" xmi:id="_TR9rY_7UEe2b7p5ytR3FIg" type="5005"/>
+                  <children xmi:type="notation:Node" xmi:id="_TR9rZP7UEe2b7p5ytR3FIg" type="7002">
+                    <styles xmi:type="notation:SortingStyle" xmi:id="_TR9rZf7UEe2b7p5ytR3FIg"/>
+                    <styles xmi:type="notation:FilteringStyle" xmi:id="_TR9rZv7UEe2b7p5ytR3FIg"/>
+                  </children>
+                  <styles xmi:type="notation:ShapeStyle" xmi:id="_TR9rYf7UEe2b7p5ytR3FIg" fontName="Segoe UI" fontHeight="12" bold="true" underline="true"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TR9rYv7UEe2b7p5ytR3FIg" x="10" y="169"/>
+                </children>
+                <styles xmi:type="notation:SortingStyle" xmi:id="_HJSpYf7UEe2b7p5ytR3FIg"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_HJSpYv7UEe2b7p5ytR3FIg"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_HJPmEf7UEe2b7p5ytR3FIg" fontName="Segoe UI" fontHeight="12" bold="true" underline="true"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HJPmEv7UEe2b7p5ytR3FIg" x="15" y="59" height="308"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_JRj9cP7UEe2b7p5ytR3FIg" type="3008" element="_JRbakP7UEe2b7p5ytR3FIg">
+              <children xmi:type="notation:Node" xmi:id="_JRj9c_7UEe2b7p5ytR3FIg" type="5005"/>
+              <children xmi:type="notation:Node" xmi:id="_JRj9dP7UEe2b7p5ytR3FIg" type="7002">
+                <children xmi:type="notation:Node" xmi:id="_M_p_0v7UEe2b7p5ytR3FIg" type="3008" element="_M_Y6EP7UEe2b7p5ytR3FIg">
+                  <children xmi:type="notation:Node" xmi:id="_M_qm4P7UEe2b7p5ytR3FIg" type="5005"/>
+                  <children xmi:type="notation:Node" xmi:id="_M_qm4f7UEe2b7p5ytR3FIg" type="7002">
+                    <styles xmi:type="notation:SortingStyle" xmi:id="_M_qm4v7UEe2b7p5ytR3FIg"/>
+                    <styles xmi:type="notation:FilteringStyle" xmi:id="_M_qm4_7UEe2b7p5ytR3FIg"/>
+                  </children>
+                  <styles xmi:type="notation:ShapeStyle" xmi:id="_M_p_0_7UEe2b7p5ytR3FIg" fontName="Segoe UI" fontHeight="12" bold="true" underline="true"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_M_p_1P7UEe2b7p5ytR3FIg" x="15" y="67"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_cA6YgP7UEe2b7p5ytR3FIg" type="3008" element="_cA0R4P7UEe2b7p5ytR3FIg">
+                  <children xmi:type="notation:Node" xmi:id="_cA6Yg_7UEe2b7p5ytR3FIg" type="5005"/>
+                  <children xmi:type="notation:Node" xmi:id="_cA6YhP7UEe2b7p5ytR3FIg" type="7002">
+                    <styles xmi:type="notation:SortingStyle" xmi:id="_cA6Yhf7UEe2b7p5ytR3FIg"/>
+                    <styles xmi:type="notation:FilteringStyle" xmi:id="_cA6Yhv7UEe2b7p5ytR3FIg"/>
+                  </children>
+                  <styles xmi:type="notation:ShapeStyle" xmi:id="_cA6Ygf7UEe2b7p5ytR3FIg" fontName="Segoe UI" fontHeight="12" bold="true" underline="true"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_cA6Ygv7UEe2b7p5ytR3FIg" x="15" y="157"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_e_LgcP7UEe2b7p5ytR3FIg" type="3008" element="_e_HPAP7UEe2b7p5ytR3FIg">
+                  <children xmi:type="notation:Node" xmi:id="_e_MHgP7UEe2b7p5ytR3FIg" type="5005"/>
+                  <children xmi:type="notation:Node" xmi:id="_e_MHgf7UEe2b7p5ytR3FIg" type="7002">
+                    <styles xmi:type="notation:SortingStyle" xmi:id="_e_MHgv7UEe2b7p5ytR3FIg"/>
+                    <styles xmi:type="notation:FilteringStyle" xmi:id="_e_MHg_7UEe2b7p5ytR3FIg"/>
+                  </children>
+                  <styles xmi:type="notation:ShapeStyle" xmi:id="_e_Lgcf7UEe2b7p5ytR3FIg" fontName="Segoe UI" fontHeight="12" bold="true" underline="true"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_e_Lgcv7UEe2b7p5ytR3FIg" x="15" y="238"/>
+                </children>
+                <styles xmi:type="notation:SortingStyle" xmi:id="_JRj9df7UEe2b7p5ytR3FIg"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_JRj9dv7UEe2b7p5ytR3FIg"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_JRj9cf7UEe2b7p5ytR3FIg" fontName="Segoe UI" fontHeight="12" bold="true" underline="true"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JRj9cv7UEe2b7p5ytR3FIg" x="355" y="64" width="293" height="313"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_r-l40v62Ee2b7p5ytR3FIg"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_r-l40_62Ee2b7p5ytR3FIg"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_r-lRxf62Ee2b7p5ytR3FIg" fontName="Segoe UI" fontHeight="12" bold="true" underline="true"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_r-lRxv62Ee2b7p5ytR3FIg" x="20" y="20" width="698" height="413"/>
+        </children>
+        <styles xmi:type="notation:DiagramStyle" xmi:id="_r-UMAv62Ee2b7p5ytR3FIg"/>
+        <edges xmi:type="notation:Edge" xmi:id="_l9pucP7UEe2b7p5ytR3FIg" type="4001" element="_l9iZsP7UEe2b7p5ytR3FIg" source="_JRj9cP7UEe2b7p5ytR3FIg" target="_HJPmEP7UEe2b7p5ytR3FIg">
+          <children xmi:type="notation:Node" xmi:id="_l9pudP7UEe2b7p5ytR3FIg" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l9pudf7UEe2b7p5ytR3FIg" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_l9pudv7UEe2b7p5ytR3FIg" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l9pud_7UEe2b7p5ytR3FIg" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_l9pueP7UEe2b7p5ytR3FIg" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l9puef7UEe2b7p5ytR3FIg" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_l9pucf7UEe2b7p5ytR3FIg"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_l9pucv7UEe2b7p5ytR3FIg" fontName="Segoe UI" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_l9puc_7UEe2b7p5ytR3FIg" points="[0, 0, 145, 0]$[-145, 0, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l9qVgP7UEe2b7p5ytR3FIg" id="(0.0,0.6270096463022508)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l9qVgf7UEe2b7p5ytR3FIg" id="(1.0,0.6535947712418301)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_nwzuIP7UEe2b7p5ytR3FIg" type="4001" element="_nwovAv7UEe2b7p5ytR3FIg" source="_HJPmEP7UEe2b7p5ytR3FIg" target="_JRj9cP7UEe2b7p5ytR3FIg">
+          <children xmi:type="notation:Node" xmi:id="_nwzuJP7UEe2b7p5ytR3FIg" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nwzuJf7UEe2b7p5ytR3FIg" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_nwzuJv7UEe2b7p5ytR3FIg" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nwzuJ_7UEe2b7p5ytR3FIg" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_nwzuKP7UEe2b7p5ytR3FIg" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nwzuKf7UEe2b7p5ytR3FIg" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_nwzuIf7UEe2b7p5ytR3FIg"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_nwzuIv7UEe2b7p5ytR3FIg" fontName="Segoe UI" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_nwzuI_7UEe2b7p5ytR3FIg" points="[0, 0, -145, 0]$[145, 0, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_nwzuKv7UEe2b7p5ytR3FIg" id="(1.0,0.26143790849673204)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_nwzuK_7UEe2b7p5ytR3FIg" id="(0.0,0.2411575562700964)"/>
+        </edges>
+      </data>
+    </ownedAnnotationEntries>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_r-lRwv62Ee2b7p5ytR3FIg" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_r-lRw_62Ee2b7p5ytR3FIg"/>
+    </ownedAnnotationEntries>
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_r-kDoP62Ee2b7p5ytR3FIg" name="System X Scope" tooltipText="">
+      <target xmi:type="TRADES:Component" href="scenariob2.trades#//@components.0"/>
+      <semanticElements xmi:type="TRADES:Component" href="scenariob2.trades#//@components.0"/>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_r-lRwP62Ee2b7p5ytR3FIg" labelSize="12" showIcon="false" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="GradientTopToBottom" backgroundColor="245,245,245" foregroundColor="245,245,245">
+        <labelFormat>bold</labelFormat>
+        <labelFormat>underline</labelFormat>
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD']"/>
+      <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_HHxmcP7UEe2b7p5ytR3FIg" name="Application X Server" tooltipText="" outgoingEdges="_nwovAv7UEe2b7p5ytR3FIg" incomingEdges="_l9iZsP7UEe2b7p5ytR3FIg">
+        <target xmi:type="TRADES:Component" href="scenariob2.trades#//@components.0/@components.0"/>
+        <semanticElements xmi:type="TRADES:Component" href="scenariob2.trades#//@components.0/@components.0"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_HITx8P7UEe2b7p5ytR3FIg" labelSize="12" showIcon="false" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="GradientTopToBottom" backgroundColor="245,245,245" foregroundColor="245,245,245">
+          <labelFormat>bold</labelFormat>
+          <labelFormat>underline</labelFormat>
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD']"/>
+        <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_LcWaAP7UEe2b7p5ytR3FIg" name="Operating System [VADs exist]" tooltipText="VADs: Remote Code Execution via RDP for Servers">
+          <target xmi:type="TRADES:Component" href="scenariob2.trades#//@components.0/@components.0/@components.0"/>
+          <semanticElements xmi:type="TRADES:Component" href="scenariob2.trades#//@components.0/@components.0/@components.0"/>
+          <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+          <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+          <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+          <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_IFM3A_7fEe2b7p5ytR3FIg" labelSize="12" labelColor="239,41,41" borderSize="1" borderSizeComputationExpression="1" borderColor="156,12,12" foregroundColor="245,245,245">
+            <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD']/@conditionnalStyles.1/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD']"/>
+        </ownedDiagramElements>
+        <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_TR4y4P7UEe2b7p5ytR3FIg" name="Internally Developed Software X" tooltipText="">
+          <target xmi:type="TRADES:Component" href="scenariob2.trades#//@components.0/@components.0/@components.1"/>
+          <semanticElements xmi:type="TRADES:Component" href="scenariob2.trades#//@components.0/@components.0/@components.1"/>
+          <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+          <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+          <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+          <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_TR5Z8P7UEe2b7p5ytR3FIg" labelSize="12" showIcon="false" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="GradientTopToBottom" backgroundColor="245,245,245" foregroundColor="245,245,245">
+            <labelFormat>bold</labelFormat>
+            <labelFormat>underline</labelFormat>
+            <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD']"/>
+        </ownedDiagramElements>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_JRbakP7UEe2b7p5ytR3FIg" name="Client side" tooltipText="" outgoingEdges="_l9iZsP7UEe2b7p5ytR3FIg" incomingEdges="_nwovAv7UEe2b7p5ytR3FIg">
+        <target xmi:type="TRADES:Component" href="scenariob2.trades#//@components.0/@components.1"/>
+        <semanticElements xmi:type="TRADES:Component" href="scenariob2.trades#//@components.0/@components.1"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_JRg6IP7UEe2b7p5ytR3FIg" labelSize="12" showIcon="false" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="GradientTopToBottom" backgroundColor="245,245,245" foregroundColor="245,245,245">
+          <labelFormat>bold</labelFormat>
+          <labelFormat>underline</labelFormat>
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD']"/>
+        <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_M_Y6EP7UEe2b7p5ytR3FIg" name="Windows 10" tooltipText="">
+          <target xmi:type="TRADES:Component" href="scenariob2.trades#//@components.0/@components.1/@components.0"/>
+          <semanticElements xmi:type="TRADES:Component" href="scenariob2.trades#//@components.0/@components.1/@components.0"/>
+          <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+          <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+          <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+          <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_M_ZhIP7UEe2b7p5ytR3FIg" labelSize="12" showIcon="false" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="GradientTopToBottom" backgroundColor="245,245,245" foregroundColor="245,245,245">
+            <labelFormat>bold</labelFormat>
+            <labelFormat>underline</labelFormat>
+            <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD']"/>
+        </ownedDiagramElements>
+        <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_cA0R4P7UEe2b7p5ytR3FIg" name="Chrome Web Broswer" tooltipText="">
+          <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+          <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+          <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+          <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_cA048P7UEe2b7p5ytR3FIg" labelSize="12" showIcon="false" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="GradientTopToBottom" backgroundColor="245,245,245" foregroundColor="245,245,245">
+            <labelFormat>bold</labelFormat>
+            <labelFormat>underline</labelFormat>
+            <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD']"/>
+        </ownedDiagramElements>
+        <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_e_HPAP7UEe2b7p5ytR3FIg" name="Proprietary Chrome Add-on" tooltipText="">
+          <target xmi:type="TRADES:Component" href="scenariob2.trades#//@components.0/@components.1/@components.1"/>
+          <semanticElements xmi:type="TRADES:Component" href="scenariob2.trades#//@components.0/@components.1/@components.1"/>
+          <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+          <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+          <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+          <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_e_H2EP7UEe2b7p5ytR3FIg" labelSize="12" showIcon="false" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="GradientTopToBottom" backgroundColor="245,245,245" foregroundColor="245,245,245">
+            <labelFormat>bold</labelFormat>
+            <labelFormat>underline</labelFormat>
+            <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD']"/>
+        </ownedDiagramElements>
+      </ownedDiagramElements>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_l9iZsP7UEe2b7p5ytR3FIg" name="User Request" sourceNode="_JRbakP7UEe2b7p5ytR3FIg" targetNode="_HHxmcP7UEe2b7p5ytR3FIg">
+      <target xmi:type="TRADES:AffectRelation" href="scenariob2.trades#//@components.0/@components.1/@affectRelations.0"/>
+      <semanticElements xmi:type="TRADES:AffectRelation" href="scenariob2.trades#//@components.0/@components.1/@affectRelations.0"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_l9jAwP7UEe2b7p5ytR3FIg" targetArrow="InputClosedArrow" size="3" strokeColor="0,0,0">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@edgeMappings[name='Affect']/@conditionnalStyles.0/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_l9jAwf7UEe2b7p5ytR3FIg" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@edgeMappings[name='Affect']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_nwovAv7UEe2b7p5ytR3FIg" name="Server Reply" sourceNode="_HHxmcP7UEe2b7p5ytR3FIg" targetNode="_JRbakP7UEe2b7p5ytR3FIg">
+      <target xmi:type="TRADES:AffectRelation" href="scenariob2.trades#//@components.0/@components.0/@affectRelations.0"/>
+      <semanticElements xmi:type="TRADES:AffectRelation" href="scenariob2.trades#//@components.0/@components.0/@affectRelations.0"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_nwovA_7UEe2b7p5ytR3FIg" targetArrow="InputClosedArrow" size="3" strokeColor="0,0,0">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@edgeMappings[name='Affect']/@conditionnalStyles.0/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_nwovBP7UEe2b7p5ytR3FIg" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@edgeMappings[name='Affect']"/>
+    </ownedDiagramElements>
+    <description xmi:type="description_1:DiagramDescription" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_r-Tk8f62Ee2b7p5ytR3FIg"/>
+    <activatedLayers xmi:type="description_1:Layer" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer"/>
+    <target xmi:type="TRADES:Analysis" href="scenariob2.trades#/"/>
+  </diagram:DSemanticDiagram>
+  <table:DTable uid="_r-mf4P62Ee2b7p5ytR3FIg">
+    <target xmi:type="TRADES:Analysis" href="scenariob2.trades#/"/>
+    <lines xmi:type="table:DLine" uid="_r-mf4f62Ee2b7p5ytR3FIg" label=" Low [1]">
+      <target xmi:type="TRADES:ImpactScore" href="scenariob2.trades#//@scoreSystem/@impactScores.0"/>
+      <semanticElements xmi:type="TRADES:ImpactScore" href="scenariob2.trades#//@scoreSystem/@impactScores.0"/>
+      <originMapping xmi:type="description_2:LineMapping" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='RiskManagementSummaryTable']/@ownedLineMappings[name='ImpactRow_RMS']"/>
+      <cells xmi:type="table:DCell" uid="_r-nG8P62Ee2b7p5ytR3FIg" label="[]" column="_r-mf5_62Ee2b7p5ytR3FIg">
+        <target xmi:type="TRADES:ImpactConfiguration" href="scenariob2.trades#//@scoreSystem/@impactScores.0/@configurations.0"/>
+        <currentStyle xmi:type="table:DCellStyle" uid="_r-nG8f62Ee2b7p5ytR3FIg" labelSize="10" defaultBackgroundStyle="true" backgroundColor="170,170,170">
+          <foregroundStyleOrigin xmi:type="description_2:IntersectionMapping" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='RiskManagementSummaryTable']/@intersection.0"/>
+          <backgroundStyleOrigin xmi:type="description_2:IntersectionMapping" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='RiskManagementSummaryTable']/@intersection.0"/>
+        </currentStyle>
+        <intersectionMapping xmi:type="description_2:IntersectionMapping" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='RiskManagementSummaryTable']/@intersection.0"/>
+      </cells>
+      <cells xmi:type="table:DCell" uid="_r-nG8v62Ee2b7p5ytR3FIg" label="[]" column="_r-mf6f62Ee2b7p5ytR3FIg">
+        <target xmi:type="TRADES:ImpactConfiguration" href="scenariob2.trades#//@scoreSystem/@impactScores.0/@configurations.1"/>
+        <currentStyle xmi:type="table:DCellStyle" uid="_r-nG8_62Ee2b7p5ytR3FIg" labelSize="10" defaultBackgroundStyle="true" backgroundColor="170,170,170">
+          <foregroundStyleOrigin xmi:type="description_2:IntersectionMapping" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='RiskManagementSummaryTable']/@intersection.0"/>
+          <backgroundStyleOrigin xmi:type="description_2:IntersectionMapping" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='RiskManagementSummaryTable']/@intersection.0"/>
+        </currentStyle>
+        <intersectionMapping xmi:type="description_2:IntersectionMapping" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='RiskManagementSummaryTable']/@intersection.0"/>
+      </cells>
+      <cells xmi:type="table:DCell" uid="_r-nG9P62Ee2b7p5ytR3FIg" label="[]" column="_r-mf6_62Ee2b7p5ytR3FIg">
+        <target xmi:type="TRADES:ImpactConfiguration" href="scenariob2.trades#//@scoreSystem/@impactScores.0/@configurations.2"/>
+        <currentStyle xmi:type="table:DCellStyle" uid="_r-nG9f62Ee2b7p5ytR3FIg" labelSize="10" defaultBackgroundStyle="true" backgroundColor="170,170,170">
+          <foregroundStyleOrigin xmi:type="description_2:IntersectionMapping" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='RiskManagementSummaryTable']/@intersection.0"/>
+          <backgroundStyleOrigin xmi:type="description_2:IntersectionMapping" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='RiskManagementSummaryTable']/@intersection.0"/>
+        </currentStyle>
+        <intersectionMapping xmi:type="description_2:IntersectionMapping" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='RiskManagementSummaryTable']/@intersection.0"/>
+      </cells>
+      <currentStyle xmi:type="table:DTableElementStyle" uid="_r-mf4v62Ee2b7p5ytR3FIg" labelSize="15" defaultForegroundStyle="true"/>
+    </lines>
+    <lines xmi:type="table:DLine" uid="_r-mf4_62Ee2b7p5ytR3FIg" label=" Medium [2]">
+      <target xmi:type="TRADES:ImpactScore" href="scenariob2.trades#//@scoreSystem/@impactScores.1"/>
+      <semanticElements xmi:type="TRADES:ImpactScore" href="scenariob2.trades#//@scoreSystem/@impactScores.1"/>
+      <originMapping xmi:type="description_2:LineMapping" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='RiskManagementSummaryTable']/@ownedLineMappings[name='ImpactRow_RMS']"/>
+      <cells xmi:type="table:DCell" uid="_r-nG9v62Ee2b7p5ytR3FIg" label="[]" column="_r-mf5_62Ee2b7p5ytR3FIg">
+        <target xmi:type="TRADES:ImpactConfiguration" href="scenariob2.trades#//@scoreSystem/@impactScores.1/@configurations.0"/>
+        <currentStyle xmi:type="table:DCellStyle" uid="_r-nG9_62Ee2b7p5ytR3FIg" labelSize="10" defaultBackgroundStyle="true" backgroundColor="170,170,170">
+          <foregroundStyleOrigin xmi:type="description_2:IntersectionMapping" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='RiskManagementSummaryTable']/@intersection.0"/>
+          <backgroundStyleOrigin xmi:type="description_2:IntersectionMapping" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='RiskManagementSummaryTable']/@intersection.0"/>
+        </currentStyle>
+        <intersectionMapping xmi:type="description_2:IntersectionMapping" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='RiskManagementSummaryTable']/@intersection.0"/>
+      </cells>
+      <cells xmi:type="table:DCell" uid="_r-nuAP62Ee2b7p5ytR3FIg" label="[]" column="_r-mf6f62Ee2b7p5ytR3FIg">
+        <target xmi:type="TRADES:ImpactConfiguration" href="scenariob2.trades#//@scoreSystem/@impactScores.1/@configurations.1"/>
+        <currentStyle xmi:type="table:DCellStyle" uid="_r-nuAf62Ee2b7p5ytR3FIg" labelSize="10" defaultBackgroundStyle="true" backgroundColor="170,170,170">
+          <foregroundStyleOrigin xmi:type="description_2:IntersectionMapping" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='RiskManagementSummaryTable']/@intersection.0"/>
+          <backgroundStyleOrigin xmi:type="description_2:IntersectionMapping" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='RiskManagementSummaryTable']/@intersection.0"/>
+        </currentStyle>
+        <intersectionMapping xmi:type="description_2:IntersectionMapping" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='RiskManagementSummaryTable']/@intersection.0"/>
+      </cells>
+      <cells xmi:type="table:DCell" uid="_r-nuAv62Ee2b7p5ytR3FIg" label="[]" column="_r-mf6_62Ee2b7p5ytR3FIg">
+        <target xmi:type="TRADES:ImpactConfiguration" href="scenariob2.trades#//@scoreSystem/@impactScores.1/@configurations.2"/>
+        <currentStyle xmi:type="table:DCellStyle" uid="_r-nuA_62Ee2b7p5ytR3FIg" labelSize="10" defaultBackgroundStyle="true" backgroundColor="170,170,170">
+          <foregroundStyleOrigin xmi:type="description_2:IntersectionMapping" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='RiskManagementSummaryTable']/@intersection.0"/>
+          <backgroundStyleOrigin xmi:type="description_2:IntersectionMapping" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='RiskManagementSummaryTable']/@intersection.0"/>
+        </currentStyle>
+        <intersectionMapping xmi:type="description_2:IntersectionMapping" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='RiskManagementSummaryTable']/@intersection.0"/>
+      </cells>
+      <currentStyle xmi:type="table:DTableElementStyle" uid="_r-mf5P62Ee2b7p5ytR3FIg" labelSize="15" defaultForegroundStyle="true"/>
+    </lines>
+    <lines xmi:type="table:DLine" uid="_r-mf5f62Ee2b7p5ytR3FIg" label=" High [3]">
+      <target xmi:type="TRADES:ImpactScore" href="scenariob2.trades#//@scoreSystem/@impactScores.2"/>
+      <semanticElements xmi:type="TRADES:ImpactScore" href="scenariob2.trades#//@scoreSystem/@impactScores.2"/>
+      <originMapping xmi:type="description_2:LineMapping" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='RiskManagementSummaryTable']/@ownedLineMappings[name='ImpactRow_RMS']"/>
+      <cells xmi:type="table:DCell" uid="_r-nuBP62Ee2b7p5ytR3FIg" label="[]" column="_r-mf5_62Ee2b7p5ytR3FIg">
+        <target xmi:type="TRADES:ImpactConfiguration" href="scenariob2.trades#//@scoreSystem/@impactScores.2/@configurations.0"/>
+        <currentStyle xmi:type="table:DCellStyle" uid="_r-oVEP62Ee2b7p5ytR3FIg" labelSize="10" defaultBackgroundStyle="true" backgroundColor="170,170,170">
+          <foregroundStyleOrigin xmi:type="description_2:IntersectionMapping" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='RiskManagementSummaryTable']/@intersection.0"/>
+          <backgroundStyleOrigin xmi:type="description_2:IntersectionMapping" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='RiskManagementSummaryTable']/@intersection.0"/>
+        </currentStyle>
+        <intersectionMapping xmi:type="description_2:IntersectionMapping" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='RiskManagementSummaryTable']/@intersection.0"/>
+      </cells>
+      <cells xmi:type="table:DCell" uid="_r-oVEf62Ee2b7p5ytR3FIg" label="[]" column="_r-mf6f62Ee2b7p5ytR3FIg">
+        <target xmi:type="TRADES:ImpactConfiguration" href="scenariob2.trades#//@scoreSystem/@impactScores.2/@configurations.1"/>
+        <currentStyle xmi:type="table:DCellStyle" uid="_r-oVEv62Ee2b7p5ytR3FIg" labelSize="10" defaultBackgroundStyle="true" backgroundColor="170,170,170">
+          <foregroundStyleOrigin xmi:type="description_2:IntersectionMapping" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='RiskManagementSummaryTable']/@intersection.0"/>
+          <backgroundStyleOrigin xmi:type="description_2:IntersectionMapping" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='RiskManagementSummaryTable']/@intersection.0"/>
+        </currentStyle>
+        <intersectionMapping xmi:type="description_2:IntersectionMapping" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='RiskManagementSummaryTable']/@intersection.0"/>
+      </cells>
+      <cells xmi:type="table:DCell" uid="_r-oVE_62Ee2b7p5ytR3FIg" label="[]" column="_r-mf6_62Ee2b7p5ytR3FIg">
+        <target xmi:type="TRADES:ImpactConfiguration" href="scenariob2.trades#//@scoreSystem/@impactScores.2/@configurations.2"/>
+        <currentStyle xmi:type="table:DCellStyle" uid="_r-oVFP62Ee2b7p5ytR3FIg" labelSize="10" defaultBackgroundStyle="true" backgroundColor="170,170,170">
+          <foregroundStyleOrigin xmi:type="description_2:IntersectionMapping" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='RiskManagementSummaryTable']/@intersection.0"/>
+          <backgroundStyleOrigin xmi:type="description_2:IntersectionMapping" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='RiskManagementSummaryTable']/@intersection.0"/>
+        </currentStyle>
+        <intersectionMapping xmi:type="description_2:IntersectionMapping" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='RiskManagementSummaryTable']/@intersection.0"/>
+      </cells>
+      <currentStyle xmi:type="table:DTableElementStyle" uid="_r-mf5v62Ee2b7p5ytR3FIg" labelSize="15" defaultForegroundStyle="true"/>
+    </lines>
+    <columns xmi:type="table:DTargetColumn" uid="_r-mf5_62Ee2b7p5ytR3FIg" label=" Low [1]" cells="_r-nG8P62Ee2b7p5ytR3FIg _r-nG9v62Ee2b7p5ytR3FIg _r-nuBP62Ee2b7p5ytR3FIg">
+      <target xmi:type="TRADES:DifficultyScore" href="scenariob2.trades#//@scoreSystem/@difficultyScores.0"/>
+      <semanticElements xmi:type="TRADES:DifficultyScore" href="scenariob2.trades#//@scoreSystem/@difficultyScores.0"/>
+      <originMapping xmi:type="description_2:ElementColumnMapping" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='RiskManagementSummaryTable']/@ownedColumnMappings.0"/>
+    </columns>
+    <columns xmi:type="table:DTargetColumn" uid="_r-mf6f62Ee2b7p5ytR3FIg" label=" Medium [2]" cells="_r-nG8v62Ee2b7p5ytR3FIg _r-nuAP62Ee2b7p5ytR3FIg _r-oVEf62Ee2b7p5ytR3FIg">
+      <target xmi:type="TRADES:DifficultyScore" href="scenariob2.trades#//@scoreSystem/@difficultyScores.1"/>
+      <semanticElements xmi:type="TRADES:DifficultyScore" href="scenariob2.trades#//@scoreSystem/@difficultyScores.1"/>
+      <originMapping xmi:type="description_2:ElementColumnMapping" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='RiskManagementSummaryTable']/@ownedColumnMappings.0"/>
+    </columns>
+    <columns xmi:type="table:DTargetColumn" uid="_r-mf6_62Ee2b7p5ytR3FIg" label=" High [3]" cells="_r-nG9P62Ee2b7p5ytR3FIg _r-nuAv62Ee2b7p5ytR3FIg _r-oVE_62Ee2b7p5ytR3FIg">
+      <target xmi:type="TRADES:DifficultyScore" href="scenariob2.trades#//@scoreSystem/@difficultyScores.2"/>
+      <semanticElements xmi:type="TRADES:DifficultyScore" href="scenariob2.trades#//@scoreSystem/@difficultyScores.2"/>
+      <originMapping xmi:type="description_2:ElementColumnMapping" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='RiskManagementSummaryTable']/@ownedColumnMappings.0"/>
+    </columns>
+    <description xmi:type="description_2:CrossTableDescription" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='RiskManagementSummaryTable']"/>
+  </table:DTable>
+  <diagram:DSemanticDiagram uid="_G5ZvEP7bEe2b7p5ytR3FIg">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_G5a9MP7bEe2b7p5ytR3FIg" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_G5a9Mf7bEe2b7p5ytR3FIg" type="Sirius" element="_G5ZvEP7bEe2b7p5ytR3FIg" measurementUnit="Pixel">
+        <children xmi:type="notation:Node" xmi:id="_G5hq4P7bEe2b7p5ytR3FIg" type="2002" element="_G5cLUP7bEe2b7p5ytR3FIg">
+          <children xmi:type="notation:Node" xmi:id="_G5hq4_7bEe2b7p5ytR3FIg" type="5006"/>
+          <children xmi:type="notation:Node" xmi:id="_G5hq5P7bEe2b7p5ytR3FIg" type="7001">
+            <children xmi:type="notation:Node" xmi:id="_G5hq5_7bEe2b7p5ytR3FIg" visible="false" type="3009" element="_G5cyYv7bEe2b7p5ytR3FIg">
+              <children xmi:type="notation:Node" xmi:id="_G5hq6v7bEe2b7p5ytR3FIg" type="5004"/>
+              <children xmi:type="notation:Node" xmi:id="_G5hq6_7bEe2b7p5ytR3FIg" type="7003">
+                <styles xmi:type="notation:SortingStyle" xmi:id="_G5hq7P7bEe2b7p5ytR3FIg"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_G5hq7f7bEe2b7p5ytR3FIg"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_G5hq6P7bEe2b7p5ytR3FIg" fontColor="9145334" fontName="Segoe UI" fontHeight="12" italic="true"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_G5hq6f7bEe2b7p5ytR3FIg" x="105" y="34" width="40" height="46"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_G5i5AP7bEe2b7p5ytR3FIg" type="3008" element="_G5dZcP7bEe2b7p5ytR3FIg">
+              <children xmi:type="notation:Node" xmi:id="_G5i5A_7bEe2b7p5ytR3FIg" type="5005"/>
+              <children xmi:type="notation:Node" xmi:id="_G5i5BP7bEe2b7p5ytR3FIg" type="7002">
+                <children xmi:type="notation:Node" xmi:id="_G5i5Dv7bEe2b7p5ytR3FIg" visible="false" type="3009" element="_G5eAgf7bEe2b7p5ytR3FIg">
+                  <children xmi:type="notation:Node" xmi:id="_G5i5Ef7bEe2b7p5ytR3FIg" type="5004"/>
+                  <children xmi:type="notation:Node" xmi:id="_G5i5Ev7bEe2b7p5ytR3FIg" type="7003">
+                    <styles xmi:type="notation:SortingStyle" xmi:id="_G5i5E_7bEe2b7p5ytR3FIg"/>
+                    <styles xmi:type="notation:FilteringStyle" xmi:id="_G5i5FP7bEe2b7p5ytR3FIg"/>
+                  </children>
+                  <styles xmi:type="notation:ShapeStyle" xmi:id="_G5i5D_7bEe2b7p5ytR3FIg" fontColor="9145334" fontName="Segoe UI" fontHeight="12" italic="true"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_G5i5EP7bEe2b7p5ytR3FIg" x="164" y="157" width="40" height="46"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_G5i5Ff7bEe2b7p5ytR3FIg" type="3008" element="_G5eAhP7bEe2b7p5ytR3FIg">
+                  <children xmi:type="notation:Node" xmi:id="_G5i5GP7bEe2b7p5ytR3FIg" type="5005"/>
+                  <children xmi:type="notation:Node" xmi:id="_G5i5Gf7bEe2b7p5ytR3FIg" type="7002">
+                    <children xmi:type="notation:Node" xmi:id="_G5jgF_7bEe2b7p5ytR3FIg" type="3009" element="_G5eAiv7bEe2b7p5ytR3FIg">
+                      <children xmi:type="notation:Node" xmi:id="_G5jgGv7bEe2b7p5ytR3FIg" type="5004"/>
+                      <children xmi:type="notation:Node" xmi:id="_G5jgG_7bEe2b7p5ytR3FIg" type="7003">
+                        <children xmi:type="notation:Node" xmi:id="_qa9gzgOJEe6fft6OmZhTUQ" type="3010" element="_qa9gtAOJEe6fft6OmZhTUQ">
+                          <styles xmi:type="notation:FontStyle" xmi:id="_qa9gzwOJEe6fft6OmZhTUQ" fontColor="9145334" fontName="Segoe UI" fontHeight="12" italic="true"/>
+                          <layoutConstraint xmi:type="notation:Location" xmi:id="_qa9g0AOJEe6fft6OmZhTUQ"/>
+                        </children>
+                        <styles xmi:type="notation:SortingStyle" xmi:id="_G5jgHP7bEe2b7p5ytR3FIg"/>
+                        <styles xmi:type="notation:FilteringStyle" xmi:id="_G5jgHf7bEe2b7p5ytR3FIg"/>
+                      </children>
+                      <styles xmi:type="notation:ShapeStyle" xmi:id="_G5jgGP7bEe2b7p5ytR3FIg" fontColor="9145334" fontName="Segoe UI" fontHeight="12" italic="true"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_G5jgGf7bEe2b7p5ytR3FIg" x="15" y="54" width="351" height="56"/>
+                    </children>
+                    <children xmi:type="notation:Node" xmi:id="_NqPuiQOJEe6fft6OmZhTUQ" type="3007" element="_JQI6kAOJEe6fft6OmZhTUQ">
+                      <children xmi:type="notation:Node" xmi:id="_NqPujAOJEe6fft6OmZhTUQ" type="5003">
+                        <layoutConstraint xmi:type="notation:Location" xmi:id="_NqPujQOJEe6fft6OmZhTUQ" x="-142" y="61"/>
+                      </children>
+                      <children xmi:type="notation:Node" xmi:id="_NqPujgOJEe6fft6OmZhTUQ" type="3005" element="_JQI6kQOJEe6fft6OmZhTUQ">
+                        <styles xmi:type="notation:ShapeStyle" xmi:id="_NqPujwOJEe6fft6OmZhTUQ" fontName="Segoe UI"/>
+                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_NqPukAOJEe6fft6OmZhTUQ"/>
+                      </children>
+                      <styles xmi:type="notation:ShapeStyle" xmi:id="_NqPuigOJEe6fft6OmZhTUQ" fontName="Segoe UI" fontHeight="12"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_NqPuiwOJEe6fft6OmZhTUQ" x="150" y="134" width="60" height="60"/>
+                    </children>
+                    <styles xmi:type="notation:SortingStyle" xmi:id="_G5i5Gv7bEe2b7p5ytR3FIg"/>
+                    <styles xmi:type="notation:FilteringStyle" xmi:id="_G5i5G_7bEe2b7p5ytR3FIg"/>
+                  </children>
+                  <styles xmi:type="notation:ShapeStyle" xmi:id="_G5i5Fv7bEe2b7p5ytR3FIg" fontName="Segoe UI" fontHeight="12" bold="true" underline="true"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_G5i5F_7bEe2b7p5ytR3FIg" x="45" y="214" width="508" height="258"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_G5jgEP7bEe2b7p5ytR3FIg" type="3008" element="_G5eAh_7bEe2b7p5ytR3FIg">
+                  <children xmi:type="notation:Node" xmi:id="_G5jgE_7bEe2b7p5ytR3FIg" type="5005"/>
+                  <children xmi:type="notation:Node" xmi:id="_G5jgFP7bEe2b7p5ytR3FIg" type="7002">
+                    <children xmi:type="notation:Node" xmi:id="_G5jgHv7bEe2b7p5ytR3FIg" type="3009" element="_G5eAjf7bEe2b7p5ytR3FIg">
+                      <children xmi:type="notation:Node" xmi:id="_G5jgIf7bEe2b7p5ytR3FIg" type="5004"/>
+                      <children xmi:type="notation:Node" xmi:id="_G5jgIv7bEe2b7p5ytR3FIg" type="7003">
+                        <styles xmi:type="notation:SortingStyle" xmi:id="_G5jgI_7bEe2b7p5ytR3FIg"/>
+                        <styles xmi:type="notation:FilteringStyle" xmi:id="_G5jgJP7bEe2b7p5ytR3FIg"/>
+                      </children>
+                      <styles xmi:type="notation:ShapeStyle" xmi:id="_G5jgH_7bEe2b7p5ytR3FIg" fontColor="9145334" fontName="Segoe UI" fontHeight="12" italic="true"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_G5jgIP7bEe2b7p5ytR3FIg" x="5" y="40" width="40" height="46"/>
+                    </children>
+                    <styles xmi:type="notation:SortingStyle" xmi:id="_G5jgFf7bEe2b7p5ytR3FIg"/>
+                    <styles xmi:type="notation:FilteringStyle" xmi:id="_G5jgFv7bEe2b7p5ytR3FIg"/>
+                  </children>
+                  <styles xmi:type="notation:ShapeStyle" xmi:id="_G5jgEf7bEe2b7p5ytR3FIg" fontName="Segoe UI" fontHeight="12" bold="true" underline="true"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_G5jgEv7bEe2b7p5ytR3FIg" x="45" y="44" width="508" height="133"/>
+                </children>
+                <styles xmi:type="notation:SortingStyle" xmi:id="_G5i5Bf7bEe2b7p5ytR3FIg"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_G5i5Bv7bEe2b7p5ytR3FIg"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_G5i5Af7bEe2b7p5ytR3FIg" fontName="Segoe UI" fontHeight="12" bold="true" underline="true"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_G5i5Av7bEe2b7p5ytR3FIg" x="10" y="64" width="653" height="503"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_G5i5B_7bEe2b7p5ytR3FIg" type="3008" element="_G5dZc_7bEe2b7p5ytR3FIg">
+              <children xmi:type="notation:Node" xmi:id="_G5i5Cv7bEe2b7p5ytR3FIg" type="5005"/>
+              <children xmi:type="notation:Node" xmi:id="_G5i5C_7bEe2b7p5ytR3FIg" type="7002">
+                <children xmi:type="notation:Node" xmi:id="_G5jgJf7bEe2b7p5ytR3FIg" visible="false" type="3009" element="_G5eAkP7bEe2b7p5ytR3FIg">
+                  <children xmi:type="notation:Node" xmi:id="_G5jgKP7bEe2b7p5ytR3FIg" type="5004"/>
+                  <children xmi:type="notation:Node" xmi:id="_G5jgKf7bEe2b7p5ytR3FIg" type="7003">
+                    <styles xmi:type="notation:SortingStyle" xmi:id="_G5jgKv7bEe2b7p5ytR3FIg"/>
+                    <styles xmi:type="notation:FilteringStyle" xmi:id="_G5jgK_7bEe2b7p5ytR3FIg"/>
+                  </children>
+                  <styles xmi:type="notation:ShapeStyle" xmi:id="_G5jgJv7bEe2b7p5ytR3FIg" fontColor="9145334" fontName="Segoe UI" fontHeight="12" italic="true"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_G5jgJ_7bEe2b7p5ytR3FIg" x="93" y="157" width="40" height="46"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_G5jgLP7bEe2b7p5ytR3FIg" type="3008" element="_G5eAk_7bEe2b7p5ytR3FIg">
+                  <children xmi:type="notation:Node" xmi:id="_G5kHIP7bEe2b7p5ytR3FIg" type="5005"/>
+                  <children xmi:type="notation:Node" xmi:id="_G5kHIf7bEe2b7p5ytR3FIg" type="7002">
+                    <children xmi:type="notation:Node" xmi:id="_G5kuO_7bEe2b7p5ytR3FIg" type="3009" element="_G5f1sP7bEe2b7p5ytR3FIg">
+                      <children xmi:type="notation:Node" xmi:id="_G5lVQP7bEe2b7p5ytR3FIg" type="5004"/>
+                      <children xmi:type="notation:Node" xmi:id="_G5lVQf7bEe2b7p5ytR3FIg" type="7003">
+                        <styles xmi:type="notation:SortingStyle" xmi:id="_G5lVQv7bEe2b7p5ytR3FIg"/>
+                        <styles xmi:type="notation:FilteringStyle" xmi:id="_G5lVQ_7bEe2b7p5ytR3FIg"/>
+                      </children>
+                      <styles xmi:type="notation:ShapeStyle" xmi:id="_G5kuPP7bEe2b7p5ytR3FIg" fontColor="9145334" fontName="Segoe UI" fontHeight="12" italic="true"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_G5kuPf7bEe2b7p5ytR3FIg" y="44" width="96" height="96"/>
+                    </children>
+                    <children xmi:type="notation:Node" xmi:id="_MYqxwwOJEe6fft6OmZhTUQ" type="3007" element="_JQI6kwOJEe6fft6OmZhTUQ">
+                      <children xmi:type="notation:Node" xmi:id="_MYqxxgOJEe6fft6OmZhTUQ" type="5003">
+                        <layoutConstraint xmi:type="notation:Location" xmi:id="_MYqxxwOJEe6fft6OmZhTUQ" x="-13" y="61"/>
+                      </children>
+                      <children xmi:type="notation:Node" xmi:id="_MYqxyAOJEe6fft6OmZhTUQ" type="3005" element="_JQI6lAOJEe6fft6OmZhTUQ">
+                        <styles xmi:type="notation:ShapeStyle" xmi:id="_MYqxyQOJEe6fft6OmZhTUQ" fontName="Segoe UI"/>
+                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_MYqxygOJEe6fft6OmZhTUQ"/>
+                      </children>
+                      <styles xmi:type="notation:ShapeStyle" xmi:id="_MYqxxAOJEe6fft6OmZhTUQ" fontName="Segoe UI" fontHeight="12"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_MYqxxQOJEe6fft6OmZhTUQ" x="285" y="114" width="60" height="60"/>
+                    </children>
+                    <styles xmi:type="notation:SortingStyle" xmi:id="_G5kHIv7bEe2b7p5ytR3FIg"/>
+                    <styles xmi:type="notation:FilteringStyle" xmi:id="_G5kHI_7bEe2b7p5ytR3FIg"/>
+                  </children>
+                  <styles xmi:type="notation:ShapeStyle" xmi:id="_G5jgLf7bEe2b7p5ytR3FIg" fontName="Segoe UI" fontHeight="12" bold="true" underline="true"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_G5jgLv7bEe2b7p5ytR3FIg" x="20" y="214" width="408" height="258"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_G5kuNP7bEe2b7p5ytR3FIg" type="3008" element="_G5fOpf7bEe2b7p5ytR3FIg">
+                  <children xmi:type="notation:Node" xmi:id="_G5kuN_7bEe2b7p5ytR3FIg" type="5005"/>
+                  <children xmi:type="notation:Node" xmi:id="_G5kuOP7bEe2b7p5ytR3FIg" type="7002">
+                    <children xmi:type="notation:Node" xmi:id="_G5lVS_7bEe2b7p5ytR3FIg" type="3009" element="_G5f1tv7bEe2b7p5ytR3FIg">
+                      <children xmi:type="notation:Node" xmi:id="_G5lVTv7bEe2b7p5ytR3FIg" type="5004"/>
+                      <children xmi:type="notation:Node" xmi:id="_G5lVT_7bEe2b7p5ytR3FIg" type="7003">
+                        <styles xmi:type="notation:SortingStyle" xmi:id="_G5lVUP7bEe2b7p5ytR3FIg"/>
+                        <styles xmi:type="notation:FilteringStyle" xmi:id="_G5lVUf7bEe2b7p5ytR3FIg"/>
+                      </children>
+                      <styles xmi:type="notation:ShapeStyle" xmi:id="_G5lVTP7bEe2b7p5ytR3FIg" fontColor="9145334" fontName="Segoe UI" fontHeight="12" italic="true"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_G5lVTf7bEe2b7p5ytR3FIg" y="39" width="40" height="46"/>
+                    </children>
+                    <styles xmi:type="notation:SortingStyle" xmi:id="_G5kuOf7bEe2b7p5ytR3FIg"/>
+                    <styles xmi:type="notation:FilteringStyle" xmi:id="_G5kuOv7bEe2b7p5ytR3FIg"/>
+                  </children>
+                  <styles xmi:type="notation:ShapeStyle" xmi:id="_G5kuNf7bEe2b7p5ytR3FIg" fontName="Segoe UI" fontHeight="12" bold="true" underline="true"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_G5kuNv7bEe2b7p5ytR3FIg" x="20" y="39" width="408" height="148"/>
+                </children>
+                <styles xmi:type="notation:SortingStyle" xmi:id="_G5i5DP7bEe2b7p5ytR3FIg"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_G5i5Df7bEe2b7p5ytR3FIg"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_G5i5CP7bEe2b7p5ytR3FIg" fontName="Segoe UI" fontHeight="12" bold="true" underline="true"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_G5i5Cf7bEe2b7p5ytR3FIg" x="770" y="64" width="488" height="503"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_G5hq5f7bEe2b7p5ytR3FIg"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_G5hq5v7bEe2b7p5ytR3FIg"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_G5hq4f7bEe2b7p5ytR3FIg" fontName="Segoe UI" fontHeight="12" bold="true" underline="true"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_G5hq4v7bEe2b7p5ytR3FIg" x="20" y="20" width="1288" height="592"/>
+        </children>
+        <styles xmi:type="notation:DiagramStyle" xmi:id="_G5a9Mv7bEe2b7p5ytR3FIg"/>
+        <edges xmi:type="notation:Edge" xmi:id="_G5l8UP7bEe2b7p5ytR3FIg" type="4001" element="_G5f1uf7bEe2b7p5ytR3FIg" source="_G5i5AP7bEe2b7p5ytR3FIg" target="_G5i5B_7bEe2b7p5ytR3FIg">
+          <children xmi:type="notation:Node" xmi:id="_G5l8VP7bEe2b7p5ytR3FIg" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_G5l8Vf7bEe2b7p5ytR3FIg" x="-1" y="-11"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_G5l8Vv7bEe2b7p5ytR3FIg" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_G5l8V_7bEe2b7p5ytR3FIg" x="-3" y="8"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_G5l8WP7bEe2b7p5ytR3FIg" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_G5l8Wf7bEe2b7p5ytR3FIg" x="-7" y="9"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_G5l8Uf7bEe2b7p5ytR3FIg"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_G5l8Uv7bEe2b7p5ytR3FIg" fontName="Segoe UI" fontHeight="8"/>
+          <styles xmi:type="notation:StringValueStyle" xmi:id="_G9mSkf7bEe2b7p5ytR3FIg" name="junctionPoints" stringValue="()"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_G5l8U_7bEe2b7p5ytR3FIg" points="[0, -2, -500, -11]$[264, 4, -236, -5]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_G5mjYP7bEe2b7p5ytR3FIg" id="(1.0,0.29141716566866266)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_G5mjYf7bEe2b7p5ytR3FIg" id="(0.8045267489711934,0.31071190951430466)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_G5mjYv7bEe2b7p5ytR3FIg" type="4001" element="_G5gcxP7bEe2b7p5ytR3FIg" source="_G5i5B_7bEe2b7p5ytR3FIg" target="_G5i5AP7bEe2b7p5ytR3FIg">
+          <children xmi:type="notation:Node" xmi:id="_G5mjZv7bEe2b7p5ytR3FIg" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_G5mjZ_7bEe2b7p5ytR3FIg" x="11" y="-13"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_G5mjaP7bEe2b7p5ytR3FIg" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_G5mjaf7bEe2b7p5ytR3FIg" x="55" y="-8"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_G5mjav7bEe2b7p5ytR3FIg" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_G5mja_7bEe2b7p5ytR3FIg" x="33" y="31"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_G5mjY_7bEe2b7p5ytR3FIg"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_G5mjZP7bEe2b7p5ytR3FIg" fontName="Segoe UI" fontHeight="8"/>
+          <styles xmi:type="notation:StringValueStyle" xmi:id="_G9mSkP7bEe2b7p5ytR3FIg" name="junctionPoints" stringValue="()"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_G5mjZf7bEe2b7p5ytR3FIg" points="[-1, -8, 860, 0]$[-265, -8, 596, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_G5mjbP7bEe2b7p5ytR3FIg" id="(0.32098765432098764,0.47305389221556876)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_G5mjbf7bEe2b7p5ytR3FIg" id="(0.08448540706605223,0.4577511643379906)"/>
+        </edges>
+      </data>
+    </ownedAnnotationEntries>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_G5gcyf7bEe2b7p5ytR3FIg" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_G5gcyv7bEe2b7p5ytR3FIg"/>
+    </ownedAnnotationEntries>
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_G5cLUP7bEe2b7p5ytR3FIg" name="System X Scope[]" tooltipText="">
+      <target xmi:type="TRADES:Component" href="scenariob2.trades#//@components.0"/>
+      <semanticElements xmi:type="TRADES:Component" href="scenariob2.trades#//@components.0"/>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_G5cyYP7bEe2b7p5ytR3FIg" labelSize="12" showIcon="false" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="GradientTopToBottom" backgroundColor="245,245,245" foregroundColor="245,245,245">
+        <labelFormat>bold</labelFormat>
+        <labelFormat>underline</labelFormat>
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD']"/>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_G5cyYv7bEe2b7p5ytR3FIg" name="VADs" visible="false">
+        <target xmi:type="TRADES:Component" href="scenariob2.trades#//@components.0"/>
+        <semanticElements xmi:type="TRADES:Component" href="scenariob2.trades#//@components.0"/>
+        <graphicalFilters xmi:type="diagram:HideFilter" uid="_Oo9bwP7bEe2b7p5ytR3FIg"/>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_G5cyY_7bEe2b7p5ytR3FIg" labelSize="12" showIcon="false" labelColor="246,139,139" borderSize="1" borderSizeComputationExpression="1" borderColor="246,139,139" borderLineStyle="dash">
+          <labelFormat>italic</labelFormat>
+          <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD']/@subContainerMappings[name='Vulnerable%20Assets']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD']/@subContainerMappings[name='Vulnerable%20Assets']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_G5dZcP7bEe2b7p5ytR3FIg" name="Application X Server[]" tooltipText="" outgoingEdges="_G5f1uf7bEe2b7p5ytR3FIg" incomingEdges="_G5gcxP7bEe2b7p5ytR3FIg">
+        <target xmi:type="TRADES:Component" href="scenariob2.trades#//@components.0/@components.0"/>
+        <semanticElements xmi:type="TRADES:Component" href="scenariob2.trades#//@components.0/@components.0"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_G5dZcf7bEe2b7p5ytR3FIg" labelSize="12" showIcon="false" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="GradientTopToBottom" backgroundColor="245,245,245" foregroundColor="245,245,245">
+          <labelFormat>bold</labelFormat>
+          <labelFormat>underline</labelFormat>
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD']"/>
+        <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_G5eAgf7bEe2b7p5ytR3FIg" name="VADs" visible="false">
+          <target xmi:type="TRADES:Component" href="scenariob2.trades#//@components.0/@components.0"/>
+          <semanticElements xmi:type="TRADES:Component" href="scenariob2.trades#//@components.0/@components.0"/>
+          <graphicalFilters xmi:type="diagram:HideFilter" uid="_PEuhoAOEEe6fft6OmZhTUQ"/>
+          <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_G5eAgv7bEe2b7p5ytR3FIg" labelSize="12" showIcon="false" labelColor="246,139,139" borderSize="1" borderSizeComputationExpression="1" borderColor="246,139,139" borderLineStyle="dash">
+            <labelFormat>italic</labelFormat>
+            <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD']/@subContainerMappings[name='Vulnerable%20Assets']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD']/@subContainerMappings[name='Vulnerable%20Assets']"/>
+        </ownedDiagramElements>
+        <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_G5eAhP7bEe2b7p5ytR3FIg" name="Operating System[cpe:2.3:o:microsoft:windows_server_2019;Windows Server;Server]" tooltipText="VADs: Remote Code Execution via RDP Server 2020">
+          <target xmi:type="TRADES:Component" href="scenariob2.trades#//@components.0/@components.0/@components.0"/>
+          <semanticElements xmi:type="TRADES:Component" href="scenariob2.trades#//@components.0/@components.0/@components.0"/>
+          <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+          <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+          <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+          <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_qazvuwOJEe6fft6OmZhTUQ" labelSize="12" showIcon="false" labelColor="239,41,41" borderSize="1" borderSizeComputationExpression="1" borderColor="156,12,12" foregroundColor="245,245,245">
+            <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD']/@conditionnalStyles.1/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD']"/>
+          <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_G5eAiv7bEe2b7p5ytR3FIg" name="VADs">
+            <target xmi:type="TRADES:Component" href="scenariob2.trades#//@components.0/@components.0/@components.0"/>
+            <semanticElements xmi:type="TRADES:Component" href="scenariob2.trades#//@components.0/@components.0/@components.0"/>
+            <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+            <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+            <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+            <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_G5eAi_7bEe2b7p5ytR3FIg" labelSize="12" showIcon="false" labelColor="246,139,139" borderSize="1" borderSizeComputationExpression="1" borderColor="246,139,139" borderLineStyle="dash">
+              <labelFormat>italic</labelFormat>
+              <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD']/@subContainerMappings[name='Vulnerable%20Assets']/@style"/>
+            </ownedStyle>
+            <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD']/@subContainerMappings[name='Vulnerable%20Assets']"/>
+            <ownedElements xmi:type="diagram:DNodeListElement" uid="_qa9gtAOJEe6fft6OmZhTUQ" name="Remote Code Execution via RDP Server 2020 [ CVE-2020-0655 (Remote Desktop Services Remote Code Execution Vulnerability)]">
+              <target xmi:type="TRADES:VulnerableAsset" href="scenariob2.trades#//@vulnerableasset.1"/>
+              <semanticElements xmi:type="TRADES:VulnerableAsset" href="scenariob2.trades#//@vulnerableasset.1"/>
+              <ownedStyle xmi:type="diagram:Square" uid="_qa9gtQOJEe6fft6OmZhTUQ" labelSize="12" labelColor="246,139,139" borderSize="1" borderSizeComputationExpression="1" borderLineStyle="dash_dot" labelPosition="node" color="246,139,139">
+                <labelFormat>italic</labelFormat>
+                <description xmi:type="style:SquareDescription" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD']/@subContainerMappings[name='Vulnerable%20Assets']/@subNodeMappings[name='VulnerableAssetDefinition']/@style"/>
+              </ownedStyle>
+              <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD']/@subContainerMappings[name='Vulnerable%20Assets']/@subNodeMappings[name='VulnerableAssetDefinition']"/>
+            </ownedElements>
+          </ownedDiagramElements>
+          <ownedDiagramElements xmi:type="diagram:DNode" uid="_JQI6kAOJEe6fft6OmZhTUQ" name="Windows RDP Server Security Patch August 2019" tooltipText="Windows RDP Server Security Patch August 2019" width="-1" height="-1">
+            <target xmi:type="TRADES:Control" href="scenariob2.trades#//@components.0/@components.0/@components.0/@controlOwner/@internals.0"/>
+            <semanticElements xmi:type="TRADES:Control" href="scenariob2.trades#//@components.0/@components.0/@components.0/@controlOwner/@internals.0"/>
+            <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+            <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+            <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+            <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_JQI6kQOJEe6fft6OmZhTUQ" labelSize="12" showIcon="false" workspacePath="/TRADES.design/Images/controlImage.svg">
+              <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@nodeMappings[name='ControlNode']/@style"/>
+            </ownedStyle>
+            <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@nodeMappings[name='ControlNode']"/>
+          </ownedDiagramElements>
+        </ownedDiagramElements>
+        <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_G5eAh_7bEe2b7p5ytR3FIg" name="Internally Developed Software X[Internally developed application]" tooltipText="">
+          <target xmi:type="TRADES:Component" href="scenariob2.trades#//@components.0/@components.0/@components.1"/>
+          <semanticElements xmi:type="TRADES:Component" href="scenariob2.trades#//@components.0/@components.0/@components.1"/>
+          <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+          <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+          <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+          <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_G5eAiP7bEe2b7p5ytR3FIg" labelSize="12" showIcon="false" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="GradientTopToBottom" backgroundColor="245,245,245" foregroundColor="245,245,245">
+            <labelFormat>bold</labelFormat>
+            <labelFormat>underline</labelFormat>
+            <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD']"/>
+          <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_G5eAjf7bEe2b7p5ytR3FIg" name="VADs">
+            <target xmi:type="TRADES:Component" href="scenariob2.trades#//@components.0/@components.0/@components.1"/>
+            <semanticElements xmi:type="TRADES:Component" href="scenariob2.trades#//@components.0/@components.0/@components.1"/>
+            <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+            <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+            <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+            <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_G5eAjv7bEe2b7p5ytR3FIg" labelSize="12" showIcon="false" labelColor="246,139,139" borderSize="1" borderSizeComputationExpression="1" borderColor="246,139,139" borderLineStyle="dash">
+              <labelFormat>italic</labelFormat>
+              <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD']/@subContainerMappings[name='Vulnerable%20Assets']/@style"/>
+            </ownedStyle>
+            <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD']/@subContainerMappings[name='Vulnerable%20Assets']"/>
+          </ownedDiagramElements>
+        </ownedDiagramElements>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_G5dZc_7bEe2b7p5ytR3FIg" name="Application X Client[]" tooltipText="" outgoingEdges="_G5gcxP7bEe2b7p5ytR3FIg" incomingEdges="_G5f1uf7bEe2b7p5ytR3FIg">
+        <target xmi:type="TRADES:Component" href="scenariob2.trades#//@components.0/@components.1"/>
+        <semanticElements xmi:type="TRADES:Component" href="scenariob2.trades#//@components.0/@components.1"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_G5dZdP7bEe2b7p5ytR3FIg" labelSize="12" showIcon="false" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="GradientTopToBottom" backgroundColor="245,245,245" foregroundColor="245,245,245">
+          <labelFormat>bold</labelFormat>
+          <labelFormat>underline</labelFormat>
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD']"/>
+        <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_G5eAkP7bEe2b7p5ytR3FIg" name="VADs" visible="false">
+          <target xmi:type="TRADES:Component" href="scenariob2.trades#//@components.0/@components.1"/>
+          <semanticElements xmi:type="TRADES:Component" href="scenariob2.trades#//@components.0/@components.1"/>
+          <graphicalFilters xmi:type="diagram:HideFilter" uid="_PjVJMAOEEe6fft6OmZhTUQ"/>
+          <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_G5eAkf7bEe2b7p5ytR3FIg" labelSize="12" showIcon="false" labelColor="246,139,139" borderSize="1" borderSizeComputationExpression="1" borderColor="246,139,139" borderLineStyle="dash">
+            <labelFormat>italic</labelFormat>
+            <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD']/@subContainerMappings[name='Vulnerable%20Assets']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD']/@subContainerMappings[name='Vulnerable%20Assets']"/>
+        </ownedDiagramElements>
+        <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_G5eAk_7bEe2b7p5ytR3FIg" name="Windows 10[cpe:2.3:o:microsoft:windows_10_1507]" tooltipText="">
+          <target xmi:type="TRADES:Component" href="scenariob2.trades#//@components.0/@components.1/@components.0"/>
+          <semanticElements xmi:type="TRADES:Component" href="scenariob2.trades#//@components.0/@components.1/@components.0"/>
+          <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+          <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+          <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+          <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_MYhn6gOJEe6fft6OmZhTUQ" labelSize="12" showIcon="false" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="GradientTopToBottom" backgroundColor="245,245,245" foregroundColor="245,245,245">
+            <labelFormat>bold</labelFormat>
+            <labelFormat>underline</labelFormat>
+            <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD']"/>
+          <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_G5f1sP7bEe2b7p5ytR3FIg" name="VADs">
+            <target xmi:type="TRADES:Component" href="scenariob2.trades#//@components.0/@components.1/@components.0"/>
+            <semanticElements xmi:type="TRADES:Component" href="scenariob2.trades#//@components.0/@components.1/@components.0"/>
+            <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+            <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+            <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+            <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_G5f1sf7bEe2b7p5ytR3FIg" labelSize="12" showIcon="false" labelColor="246,139,139" borderSize="1" borderSizeComputationExpression="1" borderColor="246,139,139" borderLineStyle="dash">
+              <labelFormat>italic</labelFormat>
+              <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD']/@subContainerMappings[name='Vulnerable%20Assets']/@style"/>
+            </ownedStyle>
+            <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD']/@subContainerMappings[name='Vulnerable%20Assets']"/>
+          </ownedDiagramElements>
+          <ownedDiagramElements xmi:type="diagram:DNode" uid="_JQI6kwOJEe6fft6OmZhTUQ" name="Disable RDS" tooltipText="Disable RDS" width="-1" height="-1">
+            <target xmi:type="TRADES:Control" href="scenariob2.trades#//@components.0/@components.1/@components.0/@controlOwner/@internals.0"/>
+            <semanticElements xmi:type="TRADES:Control" href="scenariob2.trades#//@components.0/@components.1/@components.0/@controlOwner/@internals.0"/>
+            <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+            <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+            <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+            <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_JQI6lAOJEe6fft6OmZhTUQ" labelSize="12" showIcon="false" workspacePath="/TRADES.design/Images/controlImage.svg">
+              <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@nodeMappings[name='ControlNode']/@style"/>
+            </ownedStyle>
+            <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@nodeMappings[name='ControlNode']"/>
+          </ownedDiagramElements>
+        </ownedDiagramElements>
+        <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_G5fOpf7bEe2b7p5ytR3FIg" name="X Client Software[Internally developed application]" tooltipText="">
+          <target xmi:type="TRADES:Component" href="scenariob2.trades#//@components.0/@components.1/@components.1"/>
+          <semanticElements xmi:type="TRADES:Component" href="scenariob2.trades#//@components.0/@components.1/@components.1"/>
+          <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+          <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+          <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+          <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_G5fOpv7bEe2b7p5ytR3FIg" labelSize="12" showIcon="false" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="GradientTopToBottom" backgroundColor="245,245,245" foregroundColor="245,245,245">
+            <labelFormat>bold</labelFormat>
+            <labelFormat>underline</labelFormat>
+            <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD']"/>
+          <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_G5f1tv7bEe2b7p5ytR3FIg" name="VADs">
+            <target xmi:type="TRADES:Component" href="scenariob2.trades#//@components.0/@components.1/@components.1"/>
+            <semanticElements xmi:type="TRADES:Component" href="scenariob2.trades#//@components.0/@components.1/@components.1"/>
+            <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+            <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+            <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+            <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_G5f1t_7bEe2b7p5ytR3FIg" labelSize="12" showIcon="false" labelColor="246,139,139" borderSize="1" borderSizeComputationExpression="1" borderColor="246,139,139" borderLineStyle="dash">
+              <labelFormat>italic</labelFormat>
+              <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD']/@subContainerMappings[name='Vulnerable%20Assets']/@style"/>
+            </ownedStyle>
+            <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD']/@subContainerMappings[name='Vulnerable%20Assets']"/>
+          </ownedDiagramElements>
+        </ownedDiagramElements>
+      </ownedDiagramElements>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_G5f1uf7bEe2b7p5ytR3FIg" name="Server Reply" sourceNode="_G5dZcP7bEe2b7p5ytR3FIg" targetNode="_G5dZc_7bEe2b7p5ytR3FIg">
+      <target xmi:type="TRADES:AffectRelation" href="scenariob2.trades#//@components.0/@components.0/@affectRelations.0"/>
+      <semanticElements xmi:type="TRADES:AffectRelation" href="scenariob2.trades#//@components.0/@components.0/@affectRelations.0"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_G5gcwP7bEe2b7p5ytR3FIg" targetArrow="InputClosedArrow" size="3" strokeColor="0,0,0">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@edgeMappings[name='Affect']/@conditionnalStyles.0/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_G5gcwf7bEe2b7p5ytR3FIg" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@edgeMappings[name='Affect']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_G5gcxP7bEe2b7p5ytR3FIg" name="User Request" sourceNode="_G5dZc_7bEe2b7p5ytR3FIg" targetNode="_G5dZcP7bEe2b7p5ytR3FIg">
+      <target xmi:type="TRADES:AffectRelation" href="scenariob2.trades#//@components.0/@components.1/@affectRelations.0"/>
+      <semanticElements xmi:type="TRADES:AffectRelation" href="scenariob2.trades#//@components.0/@components.1/@affectRelations.0"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_G5gcxf7bEe2b7p5ytR3FIg" targetArrow="InputClosedArrow" size="3" strokeColor="0,0,0">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@edgeMappings[name='Affect']/@conditionnalStyles.0/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_G5gcxv7bEe2b7p5ytR3FIg" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@edgeMappings[name='Affect']"/>
+    </ownedDiagramElements>
+    <description xmi:type="description_1:DiagramDescription" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_G5ZvEf7bEe2b7p5ytR3FIg"/>
+    <activatedLayers xmi:type="description_1:Layer" href="platform:/resource/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer"/>
+    <target xmi:type="TRADES:Analysis" href="scenariob2.trades#/"/>
+  </diagram:DSemanticDiagram>
+  <diagram:DSemanticDiagram uid="_yLJBgch8Ee-T_cC07e87Mw">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_yLJBhch8Ee-T_cC07e87Mw" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_yLJBhsh8Ee-T_cC07e87Mw" type="Sirius" element="_yLJBgch8Ee-T_cC07e87Mw" measurementUnit="Pixel">
+        <children xmi:type="notation:Node" xmi:id="_yLb8jch8Ee-T_cC07e87Mw" type="2001" element="_yLSLcMh8Ee-T_cC07e87Mw">
+          <children xmi:type="notation:Node" xmi:id="_yLb8kMh8Ee-T_cC07e87Mw" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_yLb8kch8Ee-T_cC07e87Mw" x="-168" y="66"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_yLltdMh8Ee-T_cC07e87Mw" type="3005" element="_yLSLcch8Ee-T_cC07e87Mw">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_yLltdch8Ee-T_cC07e87Mw" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yLltdsh8Ee-T_cC07e87Mw"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_yLb8jsh8Ee-T_cC07e87Mw" fontName="Segoe UI" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yLb8j8h8Ee-T_cC07e87Mw" x="397" y="20" width="60" height="60"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_yLb8ksh8Ee-T_cC07e87Mw" type="2002" element="_yLSLc8h8Ee-T_cC07e87Mw">
+          <children xmi:type="notation:Node" xmi:id="_yLltcMh8Ee-T_cC07e87Mw" type="5006"/>
+          <children xmi:type="notation:Node" xmi:id="_yLltcch8Ee-T_cC07e87Mw" type="7001">
+            <children xmi:type="notation:Node" xmi:id="_yLltd8h8Ee-T_cC07e87Mw" type="3008" element="_yLSLdsh8Ee-T_cC07e87Mw">
+              <children xmi:type="notation:Node" xmi:id="_yLltesh8Ee-T_cC07e87Mw" type="5005"/>
+              <children xmi:type="notation:Node" xmi:id="_yLlte8h8Ee-T_cC07e87Mw" type="7002">
+                <children xmi:type="notation:Node" xmi:id="_yLlthch8Ee-T_cC07e87Mw" type="3008" element="_yLSLfMh8Ee-T_cC07e87Mw">
+                  <children xmi:type="notation:Node" xmi:id="_yLltiMh8Ee-T_cC07e87Mw" type="5005"/>
+                  <children xmi:type="notation:Node" xmi:id="_yLltich8Ee-T_cC07e87Mw" type="7002">
+                    <children xmi:type="notation:Node" xmi:id="_yLltk8h8Ee-T_cC07e87Mw" type="3007" element="_yLb8dch8Ee-T_cC07e87Mw">
+                      <children xmi:type="notation:Node" xmi:id="_yLltlsh8Ee-T_cC07e87Mw" type="5003">
+                        <layoutConstraint xmi:type="notation:Location" xmi:id="_yLltl8h8Ee-T_cC07e87Mw" x="-183" y="66"/>
+                      </children>
+                      <children xmi:type="notation:Node" xmi:id="_yLltmMh8Ee-T_cC07e87Mw" type="3005" element="_yLb8dsh8Ee-T_cC07e87Mw">
+                        <styles xmi:type="notation:ShapeStyle" xmi:id="_yLltmch8Ee-T_cC07e87Mw" fontName="Segoe UI"/>
+                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yLltmsh8Ee-T_cC07e87Mw"/>
+                      </children>
+                      <styles xmi:type="notation:ShapeStyle" xmi:id="_yLltlMh8Ee-T_cC07e87Mw" fontName="Segoe UI" fontHeight="12"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yLltlch8Ee-T_cC07e87Mw" x="190" y="39" width="60" height="60"/>
+                    </children>
+                    <styles xmi:type="notation:SortingStyle" xmi:id="_yLltish8Ee-T_cC07e87Mw"/>
+                    <styles xmi:type="notation:FilteringStyle" xmi:id="_yLlti8h8Ee-T_cC07e87Mw"/>
+                  </children>
+                  <styles xmi:type="notation:ShapeStyle" xmi:id="_yLlthsh8Ee-T_cC07e87Mw" fontColor="2697711" fontName="Segoe UI" fontHeight="12"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yLlth8h8Ee-T_cC07e87Mw" x="7" y="39" width="452" height="153"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_yLltjMh8Ee-T_cC07e87Mw" type="3008" element="_yLb8csh8Ee-T_cC07e87Mw">
+                  <children xmi:type="notation:Node" xmi:id="_yLltj8h8Ee-T_cC07e87Mw" type="5005"/>
+                  <children xmi:type="notation:Node" xmi:id="_yLltkMh8Ee-T_cC07e87Mw" type="7002">
+                    <styles xmi:type="notation:SortingStyle" xmi:id="_yLltkch8Ee-T_cC07e87Mw"/>
+                    <styles xmi:type="notation:FilteringStyle" xmi:id="_yLltksh8Ee-T_cC07e87Mw"/>
+                  </children>
+                  <styles xmi:type="notation:ShapeStyle" xmi:id="_yLltjch8Ee-T_cC07e87Mw" fontName="Segoe UI" fontHeight="12" bold="true" underline="true"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yLltjsh8Ee-T_cC07e87Mw" x="81" y="215" width="304" height="62"/>
+                </children>
+                <styles xmi:type="notation:SortingStyle" xmi:id="_yLltfMh8Ee-T_cC07e87Mw"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_yLltfch8Ee-T_cC07e87Mw"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_yLlteMh8Ee-T_cC07e87Mw" fontName="Segoe UI" fontHeight="12" bold="true" underline="true"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yLltech8Ee-T_cC07e87Mw" x="324" y="39" width="476" height="295"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_yLltfsh8Ee-T_cC07e87Mw" type="3008" element="_yLSLech8Ee-T_cC07e87Mw">
+              <children xmi:type="notation:Node" xmi:id="_yLltgch8Ee-T_cC07e87Mw" type="5005"/>
+              <children xmi:type="notation:Node" xmi:id="_yLltgsh8Ee-T_cC07e87Mw" type="7002">
+                <children xmi:type="notation:Node" xmi:id="_yLltm8h8Ee-T_cC07e87Mw" type="3008" element="_yLb8eMh8Ee-T_cC07e87Mw">
+                  <children xmi:type="notation:Node" xmi:id="_yLltnsh8Ee-T_cC07e87Mw" type="5005"/>
+                  <children xmi:type="notation:Node" xmi:id="_yLltn8h8Ee-T_cC07e87Mw" type="7002">
+                    <children xmi:type="notation:Node" xmi:id="_yLltqch8Ee-T_cC07e87Mw" type="3007" element="_yLb8fsh8Ee-T_cC07e87Mw">
+                      <children xmi:type="notation:Node" xmi:id="_yLltrMh8Ee-T_cC07e87Mw" type="5003">
+                        <layoutConstraint xmi:type="notation:Location" xmi:id="_yLltrch8Ee-T_cC07e87Mw" x="-23" y="66"/>
+                      </children>
+                      <children xmi:type="notation:Node" xmi:id="_yLql8Mh8Ee-T_cC07e87Mw" type="3005" element="_yLb8f8h8Ee-T_cC07e87Mw">
+                        <styles xmi:type="notation:ShapeStyle" xmi:id="_yLql8ch8Ee-T_cC07e87Mw" fontName="Segoe UI"/>
+                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yLql8sh8Ee-T_cC07e87Mw"/>
+                      </children>
+                      <styles xmi:type="notation:ShapeStyle" xmi:id="_yLltqsh8Ee-T_cC07e87Mw" fontName="Segoe UI" fontHeight="12"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yLltq8h8Ee-T_cC07e87Mw" x="30" y="39" width="60" height="60"/>
+                    </children>
+                    <styles xmi:type="notation:SortingStyle" xmi:id="_yLltoMh8Ee-T_cC07e87Mw"/>
+                    <styles xmi:type="notation:FilteringStyle" xmi:id="_yLltoch8Ee-T_cC07e87Mw"/>
+                  </children>
+                  <styles xmi:type="notation:ShapeStyle" xmi:id="_yLltnMh8Ee-T_cC07e87Mw" fontName="Segoe UI" fontHeight="12" bold="true" underline="true"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yLltnch8Ee-T_cC07e87Mw" x="24" y="39" width="132" height="153"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_yLltosh8Ee-T_cC07e87Mw" type="3008" element="_yLb8e8h8Ee-T_cC07e87Mw">
+                  <children xmi:type="notation:Node" xmi:id="_yLltpch8Ee-T_cC07e87Mw" type="5005"/>
+                  <children xmi:type="notation:Node" xmi:id="_yLltpsh8Ee-T_cC07e87Mw" type="7002">
+                    <styles xmi:type="notation:SortingStyle" xmi:id="_yLltp8h8Ee-T_cC07e87Mw"/>
+                    <styles xmi:type="notation:FilteringStyle" xmi:id="_yLltqMh8Ee-T_cC07e87Mw"/>
+                  </children>
+                  <styles xmi:type="notation:ShapeStyle" xmi:id="_yLlto8h8Ee-T_cC07e87Mw" fontName="Segoe UI" fontHeight="12" bold="true" underline="true"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yLltpMh8Ee-T_cC07e87Mw" x="10" y="215" width="161" height="62"/>
+                </children>
+                <styles xmi:type="notation:SortingStyle" xmi:id="_yLltg8h8Ee-T_cC07e87Mw"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_yLlthMh8Ee-T_cC07e87Mw"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_yLltf8h8Ee-T_cC07e87Mw" fontName="Segoe UI" fontHeight="12" bold="true" underline="true"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yLltgMh8Ee-T_cC07e87Mw" x="7" y="39" width="191" height="295"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_yLltcsh8Ee-T_cC07e87Mw"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_yLltc8h8Ee-T_cC07e87Mw"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_yLb8k8h8Ee-T_cC07e87Mw" fontName="Segoe UI" fontHeight="12" bold="true" underline="true"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yLb8lMh8Ee-T_cC07e87Mw" x="20" y="139" width="817" height="352"/>
+        </children>
+        <styles xmi:type="notation:DiagramStyle" xmi:id="_yLJBh8h8Ee-T_cC07e87Mw"/>
+        <edges xmi:type="notation:Edge" xmi:id="_yLql88h8Ee-T_cC07e87Mw" type="4001" element="_yLb8gch8Ee-T_cC07e87Mw" source="_yLltd8h8Ee-T_cC07e87Mw" target="_yLltfsh8Ee-T_cC07e87Mw">
+          <children xmi:type="notation:Node" xmi:id="_yLql98h8Ee-T_cC07e87Mw" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yLql-Mh8Ee-T_cC07e87Mw" x="1" y="15"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_yLql-ch8Ee-T_cC07e87Mw" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yLql-sh8Ee-T_cC07e87Mw" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_yLql-8h8Ee-T_cC07e87Mw" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yLql_Mh8Ee-T_cC07e87Mw" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_yLql9Mh8Ee-T_cC07e87Mw" jumpLinkStatus="Below" jumpLinkType="Tunnel"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_yLql9ch8Ee-T_cC07e87Mw" fontName="Segoe UI" fontHeight="8"/>
+          <styles xmi:type="notation:StringValueStyle" xmi:id="_2Q9AUch8Ee-T_cC07e87Mw" name="junctionPoints" stringValue="()"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_yLql9sh8Ee-T_cC07e87Mw" points="[0, 0, 128, 0]$[-128, 0, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_yLql_ch8Ee-T_cC07e87Mw" id="(0.0,0.33418584825234443)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_yLql_sh8Ee-T_cC07e87Mw" id="(1.0,0.33418584825234443)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_yLql_8h8Ee-T_cC07e87Mw" type="4001" element="_yLb8hsh8Ee-T_cC07e87Mw" source="_yLltfsh8Ee-T_cC07e87Mw" target="_yLltd8h8Ee-T_cC07e87Mw">
+          <children xmi:type="notation:Node" xmi:id="_yLqmA8h8Ee-T_cC07e87Mw" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yLqmBMh8Ee-T_cC07e87Mw" y="13"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_yLqmBch8Ee-T_cC07e87Mw" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yLqmBsh8Ee-T_cC07e87Mw" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_yLqmB8h8Ee-T_cC07e87Mw" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yLqmCMh8Ee-T_cC07e87Mw" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_yLqmAMh8Ee-T_cC07e87Mw" jumpLinkStatus="Below" jumpLinkType="Tunnel"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_yLqmAch8Ee-T_cC07e87Mw" fontName="Segoe UI" fontHeight="8"/>
+          <styles xmi:type="notation:StringValueStyle" xmi:id="_2Q9AUMh8Ee-T_cC07e87Mw" name="junctionPoints" stringValue="()"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_yLqmAsh8Ee-T_cC07e87Mw" points="[0, 0, -128, 0]$[128, 0, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_yLqmCch8Ee-T_cC07e87Mw" id="(1.0,0.6675191815856778)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_yLqmCsh8Ee-T_cC07e87Mw" id="(0.0,0.6675191815856778)"/>
+        </edges>
+      </data>
+    </ownedAnnotationEntries>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_yLb8i8h8Ee-T_cC07e87Mw" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_yLb8jMh8Ee-T_cC07e87Mw"/>
+    </ownedAnnotationEntries>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_yLSLcMh8Ee-T_cC07e87Mw" name="Windows RDP Server Security Patch Feb 2020" tooltipText="Windows RDP Server Security Patch Feb 2020" width="-1" height="-1">
+      <target xmi:type="TRADES:Control" href="scenariob2.trades#//@controlOwner/@internals.0"/>
+      <semanticElements xmi:type="TRADES:Control" href="scenariob2.trades#//@controlOwner/@internals.0"/>
+      <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_yLSLcch8Ee-T_cC07e87Mw" labelSize="12" showIcon="false" workspacePath="/TRADES.design/Images/controlImage.svg">
+        <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@nodeMappings[name='ControlNode']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@nodeMappings[name='ControlNode']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_yLSLc8h8Ee-T_cC07e87Mw" name="System X Scope" tooltipText="">
+      <target xmi:type="TRADES:Component" href="scenariob2.trades#//@components.0"/>
+      <semanticElements xmi:type="TRADES:Component" href="scenariob2.trades#//@components.0"/>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_yLSLdMh8Ee-T_cC07e87Mw" labelSize="12" showIcon="false" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="GradientTopToBottom" backgroundColor="245,245,245" foregroundColor="245,245,245">
+        <labelFormat>bold</labelFormat>
+        <labelFormat>underline</labelFormat>
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD']"/>
+      <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_yLSLdsh8Ee-T_cC07e87Mw" name="Application X Server" tooltipText="" outgoingEdges="_yLb8gch8Ee-T_cC07e87Mw" incomingEdges="_yLb8hsh8Ee-T_cC07e87Mw">
+        <target xmi:type="TRADES:Component" href="scenariob2.trades#//@components.0/@components.0"/>
+        <semanticElements xmi:type="TRADES:Component" href="scenariob2.trades#//@components.0/@components.0"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_yLSLd8h8Ee-T_cC07e87Mw" labelSize="12" showIcon="false" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="GradientTopToBottom" backgroundColor="245,245,245" foregroundColor="245,245,245">
+          <labelFormat>bold</labelFormat>
+          <labelFormat>underline</labelFormat>
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD']"/>
+        <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_yLSLfMh8Ee-T_cC07e87Mw" name="Operating System [VADs exist]" tooltipText="VADs: Remote Code Execution via RDP Server 2020">
+          <target xmi:type="TRADES:Component" href="scenariob2.trades#//@components.0/@components.0/@components.0"/>
+          <semanticElements xmi:type="TRADES:Component" href="scenariob2.trades#//@components.0/@components.0/@components.0"/>
+          <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_yLb8cMh8Ee-T_cC07e87Mw" labelSize="12" labelColor="239,41,41" borderSize="1" borderSizeComputationExpression="1" borderColor="156,12,12" foregroundColor="245,245,245">
+            <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD']/@conditionnalStyles.1/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD']"/>
+          <ownedDiagramElements xmi:type="diagram:DNode" uid="_yLb8dch8Ee-T_cC07e87Mw" name="Windows RDP Server Security Patch August 2019" tooltipText="Windows RDP Server Security Patch August 2019" width="-1" height="-1">
+            <target xmi:type="TRADES:Control" href="scenariob2.trades#//@components.0/@components.0/@components.0/@controlOwner/@internals.0"/>
+            <semanticElements xmi:type="TRADES:Control" href="scenariob2.trades#//@components.0/@components.0/@components.0/@controlOwner/@internals.0"/>
+            <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_yLb8dsh8Ee-T_cC07e87Mw" labelSize="12" showIcon="false" workspacePath="/TRADES.design/Images/controlImage.svg">
+              <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@nodeMappings[name='ControlNode']/@style"/>
+            </ownedStyle>
+            <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@nodeMappings[name='ControlNode']"/>
+          </ownedDiagramElements>
+        </ownedDiagramElements>
+        <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_yLb8csh8Ee-T_cC07e87Mw" name="Internally Developed Software X" tooltipText="">
+          <target xmi:type="TRADES:Component" href="scenariob2.trades#//@components.0/@components.0/@components.1"/>
+          <semanticElements xmi:type="TRADES:Component" href="scenariob2.trades#//@components.0/@components.0/@components.1"/>
+          <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_yLb8c8h8Ee-T_cC07e87Mw" labelSize="12" showIcon="false" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="GradientTopToBottom" backgroundColor="245,245,245" foregroundColor="245,245,245">
+            <labelFormat>bold</labelFormat>
+            <labelFormat>underline</labelFormat>
+            <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD']"/>
+        </ownedDiagramElements>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_yLSLech8Ee-T_cC07e87Mw" name="Application X Client" tooltipText="" outgoingEdges="_yLb8hsh8Ee-T_cC07e87Mw" incomingEdges="_yLb8gch8Ee-T_cC07e87Mw">
+        <target xmi:type="TRADES:Component" href="scenariob2.trades#//@components.0/@components.1"/>
+        <semanticElements xmi:type="TRADES:Component" href="scenariob2.trades#//@components.0/@components.1"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_yLSLesh8Ee-T_cC07e87Mw" labelSize="12" showIcon="false" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="GradientTopToBottom" backgroundColor="245,245,245" foregroundColor="245,245,245">
+          <labelFormat>bold</labelFormat>
+          <labelFormat>underline</labelFormat>
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD']"/>
+        <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_yLb8eMh8Ee-T_cC07e87Mw" name="Windows 10" tooltipText="">
+          <target xmi:type="TRADES:Component" href="scenariob2.trades#//@components.0/@components.1/@components.0"/>
+          <semanticElements xmi:type="TRADES:Component" href="scenariob2.trades#//@components.0/@components.1/@components.0"/>
+          <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_yLb8ech8Ee-T_cC07e87Mw" labelSize="12" showIcon="false" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="GradientTopToBottom" backgroundColor="245,245,245" foregroundColor="245,245,245">
+            <labelFormat>bold</labelFormat>
+            <labelFormat>underline</labelFormat>
+            <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD']"/>
+          <ownedDiagramElements xmi:type="diagram:DNode" uid="_yLb8fsh8Ee-T_cC07e87Mw" name="Disable RDS" tooltipText="Disable RDS" width="-1" height="-1">
+            <target xmi:type="TRADES:Control" href="scenariob2.trades#//@components.0/@components.1/@components.0/@controlOwner/@internals.0"/>
+            <semanticElements xmi:type="TRADES:Control" href="scenariob2.trades#//@components.0/@components.1/@components.0/@controlOwner/@internals.0"/>
+            <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_yLb8f8h8Ee-T_cC07e87Mw" labelSize="12" showIcon="false" workspacePath="/TRADES.design/Images/controlImage.svg">
+              <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@nodeMappings[name='ControlNode']/@style"/>
+            </ownedStyle>
+            <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@nodeMappings[name='ControlNode']"/>
+          </ownedDiagramElements>
+        </ownedDiagramElements>
+        <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_yLb8e8h8Ee-T_cC07e87Mw" name="X Client Software" tooltipText="">
+          <target xmi:type="TRADES:Component" href="scenariob2.trades#//@components.0/@components.1/@components.1"/>
+          <semanticElements xmi:type="TRADES:Component" href="scenariob2.trades#//@components.0/@components.1/@components.1"/>
+          <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_yLb8fMh8Ee-T_cC07e87Mw" labelSize="12" showIcon="false" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="GradientTopToBottom" backgroundColor="245,245,245" foregroundColor="245,245,245">
+            <labelFormat>bold</labelFormat>
+            <labelFormat>underline</labelFormat>
+            <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD']"/>
+        </ownedDiagramElements>
+      </ownedDiagramElements>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_yLb8gch8Ee-T_cC07e87Mw" name="Server Reply" sourceNode="_yLSLdsh8Ee-T_cC07e87Mw" targetNode="_yLSLech8Ee-T_cC07e87Mw">
+      <target xmi:type="TRADES:AffectRelation" href="scenariob2.trades#//@components.0/@components.0/@affectRelations.0"/>
+      <semanticElements xmi:type="TRADES:AffectRelation" href="scenariob2.trades#//@components.0/@components.0/@affectRelations.0"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_yLb8gsh8Ee-T_cC07e87Mw" targetArrow="InputClosedArrow" size="3" strokeColor="0,0,0">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@edgeMappings[name='Affect']/@conditionnalStyles.0/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_yLb8g8h8Ee-T_cC07e87Mw" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@edgeMappings[name='Affect']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_yLb8hsh8Ee-T_cC07e87Mw" name="User Request" sourceNode="_yLSLech8Ee-T_cC07e87Mw" targetNode="_yLSLdsh8Ee-T_cC07e87Mw">
+      <target xmi:type="TRADES:AffectRelation" href="scenariob2.trades#//@components.0/@components.1/@affectRelations.0"/>
+      <semanticElements xmi:type="TRADES:AffectRelation" href="scenariob2.trades#//@components.0/@components.1/@affectRelations.0"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_yLb8h8h8Ee-T_cC07e87Mw" targetArrow="InputClosedArrow" size="3" strokeColor="0,0,0">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@edgeMappings[name='Affect']/@conditionnalStyles.0/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_yLb8iMh8Ee-T_cC07e87Mw" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer/@edgeMappings[name='Affect']"/>
+    </ownedDiagramElements>
+    <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_yLJBgsh8Ee-T_cC07e87Mw"/>
+    <activatedLayers xmi:type="description_1:Layer" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20diagram']/@defaultLayer"/>
+    <target xmi:type="TRADES:Analysis" href="scenariob2.trades#/"/>
+  </diagram:DSemanticDiagram>
+  <diagram:DSemanticDiagram uid="_yLqmC8h8Ee-T_cC07e87Mw">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_yLvecsh8Ee-T_cC07e87Mw" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_yLvec8h8Ee-T_cC07e87Mw" type="Sirius" element="_yLqmC8h8Ee-T_cC07e87Mw" measurementUnit="Pixel">
+        <children xmi:type="notation:Node" xmi:id="_yL5Pcsh8Ee-T_cC07e87Mw" type="2001" element="_yLvedch8Ee-T_cC07e87Mw">
+          <children xmi:type="notation:Node" xmi:id="_yL5Pdch8Ee-T_cC07e87Mw" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_yL5Pdsh8Ee-T_cC07e87Mw" x="61" y="16"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_yL5Pfsh8Ee-T_cC07e87Mw" type="3005" element="_yLvedsh8Ee-T_cC07e87Mw">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_yL5Pf8h8Ee-T_cC07e87Mw" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yL5PgMh8Ee-T_cC07e87Mw"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_yL5Pc8h8Ee-T_cC07e87Mw" fontName="Segoe UI" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yL5PdMh8Ee-T_cC07e87Mw" x="933" y="20" width="60" height="60"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_yL5Pd8h8Ee-T_cC07e87Mw" type="2002" element="_yLveeMh8Ee-T_cC07e87Mw">
+          <children xmi:type="notation:Node" xmi:id="_yL5Pesh8Ee-T_cC07e87Mw" type="5006"/>
+          <children xmi:type="notation:Node" xmi:id="_yL5Pe8h8Ee-T_cC07e87Mw" type="7001">
+            <children xmi:type="notation:Node" xmi:id="_yL5Pgch8Ee-T_cC07e87Mw" type="3009" element="_yLvee8h8Ee-T_cC07e87Mw">
+              <children xmi:type="notation:Node" xmi:id="_yL5PhMh8Ee-T_cC07e87Mw" type="5004"/>
+              <children xmi:type="notation:Node" xmi:id="_yL5Phch8Ee-T_cC07e87Mw" type="7003">
+                <styles xmi:type="notation:SortingStyle" xmi:id="_yL5Phsh8Ee-T_cC07e87Mw"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_yL5Ph8h8Ee-T_cC07e87Mw"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_yL5Pgsh8Ee-T_cC07e87Mw" fontColor="9145334" fontName="Segoe UI" fontHeight="12" italic="true"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yL5Pg8h8Ee-T_cC07e87Mw" x="237" y="39" width="50" height="51"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_yL5PiMh8Ee-T_cC07e87Mw" type="3008" element="_yLvefsh8Ee-T_cC07e87Mw">
+              <children xmi:type="notation:Node" xmi:id="_yL5Pi8h8Ee-T_cC07e87Mw" type="5005"/>
+              <children xmi:type="notation:Node" xmi:id="_yL5PjMh8Ee-T_cC07e87Mw" type="7002">
+                <children xmi:type="notation:Node" xmi:id="_yL5Plsh8Ee-T_cC07e87Mw" type="3009" element="_yLvehMh8Ee-T_cC07e87Mw">
+                  <children xmi:type="notation:Node" xmi:id="_yL5Pmch8Ee-T_cC07e87Mw" type="5004"/>
+                  <children xmi:type="notation:Node" xmi:id="_yL5Pmsh8Ee-T_cC07e87Mw" type="7003">
+                    <styles xmi:type="notation:SortingStyle" xmi:id="_yL5Pm8h8Ee-T_cC07e87Mw"/>
+                    <styles xmi:type="notation:FilteringStyle" xmi:id="_yL5PnMh8Ee-T_cC07e87Mw"/>
+                  </children>
+                  <styles xmi:type="notation:ShapeStyle" xmi:id="_yL5Pl8h8Ee-T_cC07e87Mw" fontColor="9145334" fontName="Segoe UI" fontHeight="12" italic="true"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yL5PmMh8Ee-T_cC07e87Mw" x="581" y="172" width="50" height="51"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_yL5Pnch8Ee-T_cC07e87Mw" type="3008" element="_yLveh8h8Ee-T_cC07e87Mw">
+                  <children xmi:type="notation:Node" xmi:id="_yL5PoMh8Ee-T_cC07e87Mw" type="5005"/>
+                  <children xmi:type="notation:Node" xmi:id="_yL5Poch8Ee-T_cC07e87Mw" type="7002">
+                    <children xmi:type="notation:Node" xmi:id="_yL5Pq8h8Ee-T_cC07e87Mw" type="3009" element="_yLvejch8Ee-T_cC07e87Mw">
+                      <children xmi:type="notation:Node" xmi:id="_yL5Prsh8Ee-T_cC07e87Mw" type="5004"/>
+                      <children xmi:type="notation:Node" xmi:id="_yL5Pr8h8Ee-T_cC07e87Mw" type="7003">
+                        <children xmi:type="notation:Node" xmi:id="_yL5Pt8h8Ee-T_cC07e87Mw" type="3010" element="_yLvekMh8Ee-T_cC07e87Mw">
+                          <styles xmi:type="notation:FontStyle" xmi:id="_yL5PuMh8Ee-T_cC07e87Mw" fontColor="9145334" fontName="Segoe UI" fontHeight="12" italic="true"/>
+                          <layoutConstraint xmi:type="notation:Location" xmi:id="_yL5Puch8Ee-T_cC07e87Mw" x="16" y="-8"/>
+                        </children>
+                        <styles xmi:type="notation:SortingStyle" xmi:id="_yL5PsMh8Ee-T_cC07e87Mw"/>
+                        <styles xmi:type="notation:FilteringStyle" xmi:id="_yL5Psch8Ee-T_cC07e87Mw"/>
+                      </children>
+                      <styles xmi:type="notation:ShapeStyle" xmi:id="_yL5PrMh8Ee-T_cC07e87Mw" fontColor="9145334" fontName="Segoe UI" fontHeight="12" italic="true"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yL5Prch8Ee-T_cC07e87Mw" x="7" y="39" width="1175" height="36"/>
+                    </children>
+                    <children xmi:type="notation:Node" xmi:id="_yL5Pssh8Ee-T_cC07e87Mw" type="3007" element="_yLveksh8Ee-T_cC07e87Mw">
+                      <children xmi:type="notation:Node" xmi:id="_yL5Ptch8Ee-T_cC07e87Mw" type="5003">
+                        <layoutConstraint xmi:type="notation:Location" xmi:id="_yL5Ptsh8Ee-T_cC07e87Mw" x="61" y="16"/>
+                      </children>
+                      <children xmi:type="notation:Node" xmi:id="_yL5Push8Ee-T_cC07e87Mw" type="3005" element="_yLvek8h8Ee-T_cC07e87Mw">
+                        <styles xmi:type="notation:ShapeStyle" xmi:id="_yL5Pu8h8Ee-T_cC07e87Mw" fontName="Segoe UI"/>
+                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yL5PvMh8Ee-T_cC07e87Mw"/>
+                      </children>
+                      <styles xmi:type="notation:ShapeStyle" xmi:id="_yL5Ps8h8Ee-T_cC07e87Mw" fontName="Segoe UI" fontHeight="12"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yL5PtMh8Ee-T_cC07e87Mw" x="564" y="100" width="60" height="60"/>
+                    </children>
+                    <styles xmi:type="notation:SortingStyle" xmi:id="_yL5Posh8Ee-T_cC07e87Mw"/>
+                    <styles xmi:type="notation:FilteringStyle" xmi:id="_yL5Po8h8Ee-T_cC07e87Mw"/>
+                  </children>
+                  <styles xmi:type="notation:ShapeStyle" xmi:id="_yL5Pnsh8Ee-T_cC07e87Mw" fontColor="2697711" fontName="Segoe UI" fontHeight="12"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yL5Pn8h8Ee-T_cC07e87Mw" x="7" y="248" width="1201" height="180"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_yL5PpMh8Ee-T_cC07e87Mw" type="3008" element="_yLveish8Ee-T_cC07e87Mw">
+                  <children xmi:type="notation:Node" xmi:id="_yL5Pp8h8Ee-T_cC07e87Mw" type="5005"/>
+                  <children xmi:type="notation:Node" xmi:id="_yL5PqMh8Ee-T_cC07e87Mw" type="7002">
+                    <children xmi:type="notation:Node" xmi:id="_yL5Pvch8Ee-T_cC07e87Mw" type="3009" element="_yLvelch8Ee-T_cC07e87Mw">
+                      <children xmi:type="notation:Node" xmi:id="_yL5PwMh8Ee-T_cC07e87Mw" type="5004"/>
+                      <children xmi:type="notation:Node" xmi:id="_yL5Pwch8Ee-T_cC07e87Mw" type="7003">
+                        <styles xmi:type="notation:SortingStyle" xmi:id="_yL5Pwsh8Ee-T_cC07e87Mw"/>
+                        <styles xmi:type="notation:FilteringStyle" xmi:id="_yL5Pw8h8Ee-T_cC07e87Mw"/>
+                      </children>
+                      <styles xmi:type="notation:ShapeStyle" xmi:id="_yL5Pvsh8Ee-T_cC07e87Mw" fontColor="9145334" fontName="Segoe UI" fontHeight="12" italic="true"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yL5Pv8h8Ee-T_cC07e87Mw" x="7" y="39" width="50" height="51"/>
+                    </children>
+                    <styles xmi:type="notation:SortingStyle" xmi:id="_yL5Pqch8Ee-T_cC07e87Mw"/>
+                    <styles xmi:type="notation:FilteringStyle" xmi:id="_yL5Pqsh8Ee-T_cC07e87Mw"/>
+                  </children>
+                  <styles xmi:type="notation:ShapeStyle" xmi:id="_yL5Ppch8Ee-T_cC07e87Mw" fontName="Segoe UI" fontHeight="12" bold="true" underline="true"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yL5Ppsh8Ee-T_cC07e87Mw" x="569" y="39" width="76" height="110"/>
+                </children>
+                <styles xmi:type="notation:SortingStyle" xmi:id="_yL5Pjch8Ee-T_cC07e87Mw"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_yL5Pjsh8Ee-T_cC07e87Mw"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_yL5Pich8Ee-T_cC07e87Mw" fontName="Segoe UI" fontHeight="12" bold="true" underline="true"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yL5Pish8Ee-T_cC07e87Mw" x="646" y="120" width="1225" height="446"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_yL5Pj8h8Ee-T_cC07e87Mw" type="3008" element="_yLvegch8Ee-T_cC07e87Mw">
+              <children xmi:type="notation:Node" xmi:id="_yL5Pksh8Ee-T_cC07e87Mw" type="5005"/>
+              <children xmi:type="notation:Node" xmi:id="_yL5Pk8h8Ee-T_cC07e87Mw" type="7002">
+                <children xmi:type="notation:Node" xmi:id="_yMCZYMh8Ee-T_cC07e87Mw" type="3009" element="_yLvemMh8Ee-T_cC07e87Mw">
+                  <children xmi:type="notation:Node" xmi:id="_yMCZY8h8Ee-T_cC07e87Mw" type="5004"/>
+                  <children xmi:type="notation:Node" xmi:id="_yMCZZMh8Ee-T_cC07e87Mw" type="7003">
+                    <styles xmi:type="notation:SortingStyle" xmi:id="_yMCZZch8Ee-T_cC07e87Mw"/>
+                    <styles xmi:type="notation:FilteringStyle" xmi:id="_yMCZZsh8Ee-T_cC07e87Mw"/>
+                  </children>
+                  <styles xmi:type="notation:ShapeStyle" xmi:id="_yMCZYch8Ee-T_cC07e87Mw" fontColor="9145334" fontName="Segoe UI" fontHeight="12" italic="true"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yMCZYsh8Ee-T_cC07e87Mw" x="225" y="172" width="50" height="51"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_yMCZZ8h8Ee-T_cC07e87Mw" type="3008" element="_yLvem8h8Ee-T_cC07e87Mw">
+                  <children xmi:type="notation:Node" xmi:id="_yMCZash8Ee-T_cC07e87Mw" type="5005"/>
+                  <children xmi:type="notation:Node" xmi:id="_yMCZa8h8Ee-T_cC07e87Mw" type="7002">
+                    <children xmi:type="notation:Node" xmi:id="_yMCZdch8Ee-T_cC07e87Mw" type="3009" element="_yLveoch8Ee-T_cC07e87Mw">
+                      <children xmi:type="notation:Node" xmi:id="_yMCZeMh8Ee-T_cC07e87Mw" type="5004"/>
+                      <children xmi:type="notation:Node" xmi:id="_yMCZech8Ee-T_cC07e87Mw" type="7003">
+                        <styles xmi:type="notation:SortingStyle" xmi:id="_yMCZesh8Ee-T_cC07e87Mw"/>
+                        <styles xmi:type="notation:FilteringStyle" xmi:id="_yMCZe8h8Ee-T_cC07e87Mw"/>
+                      </children>
+                      <styles xmi:type="notation:ShapeStyle" xmi:id="_yMCZdsh8Ee-T_cC07e87Mw" fontColor="9145334" fontName="Segoe UI" fontHeight="12" italic="true"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yMCZd8h8Ee-T_cC07e87Mw" x="65" y="39" width="50" height="51"/>
+                    </children>
+                    <children xmi:type="notation:Node" xmi:id="_yMCZfMh8Ee-T_cC07e87Mw" type="3007" element="_yLvepMh8Ee-T_cC07e87Mw">
+                      <children xmi:type="notation:Node" xmi:id="_yMCZf8h8Ee-T_cC07e87Mw" type="5003">
+                        <layoutConstraint xmi:type="notation:Location" xmi:id="_yMCZgMh8Ee-T_cC07e87Mw" x="61" y="16"/>
+                      </children>
+                      <children xmi:type="notation:Node" xmi:id="_yMCZgch8Ee-T_cC07e87Mw" type="3005" element="_yLvepch8Ee-T_cC07e87Mw">
+                        <styles xmi:type="notation:ShapeStyle" xmi:id="_yMCZgsh8Ee-T_cC07e87Mw" fontName="Segoe UI"/>
+                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yMCZg8h8Ee-T_cC07e87Mw"/>
+                      </children>
+                      <styles xmi:type="notation:ShapeStyle" xmi:id="_yMCZfch8Ee-T_cC07e87Mw" fontName="Segoe UI" fontHeight="12"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yMCZfsh8Ee-T_cC07e87Mw" x="7" y="115" width="60" height="60"/>
+                    </children>
+                    <styles xmi:type="notation:SortingStyle" xmi:id="_yMCZbMh8Ee-T_cC07e87Mw"/>
+                    <styles xmi:type="notation:FilteringStyle" xmi:id="_yMCZbch8Ee-T_cC07e87Mw"/>
+                  </children>
+                  <styles xmi:type="notation:ShapeStyle" xmi:id="_yMCZaMh8Ee-T_cC07e87Mw" fontName="Segoe UI" fontHeight="12" bold="true" underline="true"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yMCZach8Ee-T_cC07e87Mw" x="155" y="248" width="193" height="195"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_yMCZbsh8Ee-T_cC07e87Mw" type="3008" element="_yLvensh8Ee-T_cC07e87Mw">
+                  <children xmi:type="notation:Node" xmi:id="_yMCZcch8Ee-T_cC07e87Mw" type="5005"/>
+                  <children xmi:type="notation:Node" xmi:id="_yMCZcsh8Ee-T_cC07e87Mw" type="7002">
+                    <children xmi:type="notation:Node" xmi:id="_yMCZhMh8Ee-T_cC07e87Mw" type="3009" element="_yLvep8h8Ee-T_cC07e87Mw">
+                      <children xmi:type="notation:Node" xmi:id="_yMCZh8h8Ee-T_cC07e87Mw" type="5004"/>
+                      <children xmi:type="notation:Node" xmi:id="_yMCZiMh8Ee-T_cC07e87Mw" type="7003">
+                        <styles xmi:type="notation:SortingStyle" xmi:id="_yMCZich8Ee-T_cC07e87Mw"/>
+                        <styles xmi:type="notation:FilteringStyle" xmi:id="_yMCZish8Ee-T_cC07e87Mw"/>
+                      </children>
+                      <styles xmi:type="notation:ShapeStyle" xmi:id="_yMCZhch8Ee-T_cC07e87Mw" fontColor="9145334" fontName="Segoe UI" fontHeight="12" italic="true"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yMCZhsh8Ee-T_cC07e87Mw" x="7" y="39" width="50" height="51"/>
+                    </children>
+                    <styles xmi:type="notation:SortingStyle" xmi:id="_yMCZc8h8Ee-T_cC07e87Mw"/>
+                    <styles xmi:type="notation:FilteringStyle" xmi:id="_yMCZdMh8Ee-T_cC07e87Mw"/>
+                  </children>
+                  <styles xmi:type="notation:ShapeStyle" xmi:id="_yMCZb8h8Ee-T_cC07e87Mw" fontName="Segoe UI" fontHeight="12" bold="true" underline="true"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yMCZcMh8Ee-T_cC07e87Mw" x="213" y="39" width="76" height="110"/>
+                </children>
+                <styles xmi:type="notation:SortingStyle" xmi:id="_yL5PlMh8Ee-T_cC07e87Mw"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_yL5Plch8Ee-T_cC07e87Mw"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_yL5PkMh8Ee-T_cC07e87Mw" fontName="Segoe UI" fontHeight="12" bold="true" underline="true"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yL5Pkch8Ee-T_cC07e87Mw" x="7" y="115" width="513" height="461"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_yL5PfMh8Ee-T_cC07e87Mw"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_yL5Pfch8Ee-T_cC07e87Mw"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_yL5PeMh8Ee-T_cC07e87Mw" fontName="Segoe UI" fontHeight="12" bold="true" underline="true"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yL5Pech8Ee-T_cC07e87Mw" x="20" y="105" width="1888" height="594"/>
+        </children>
+        <styles xmi:type="notation:DiagramStyle" xmi:id="_yLvedMh8Ee-T_cC07e87Mw"/>
+        <edges xmi:type="notation:Edge" xmi:id="_yMCZi8h8Ee-T_cC07e87Mw" type="4001" element="_yLveqsh8Ee-T_cC07e87Mw" source="_yL5PiMh8Ee-T_cC07e87Mw" target="_yL5Pj8h8Ee-T_cC07e87Mw">
+          <children xmi:type="notation:Node" xmi:id="_yMCZj8h8Ee-T_cC07e87Mw" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yMCZkMh8Ee-T_cC07e87Mw" x="1" y="16"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_yMCZkch8Ee-T_cC07e87Mw" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yMCZksh8Ee-T_cC07e87Mw" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_yMCZk8h8Ee-T_cC07e87Mw" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yMCZlMh8Ee-T_cC07e87Mw" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_yMCZjMh8Ee-T_cC07e87Mw" jumpLinkStatus="Below" jumpLinkType="Tunnel"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_yMCZjch8Ee-T_cC07e87Mw" fontName="Segoe UI" fontHeight="8"/>
+          <styles xmi:type="notation:StringValueStyle" xmi:id="_2vxDQch8Ee-T_cC07e87Mw" name="junctionPoints" stringValue="()"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_yMCZjsh8Ee-T_cC07e87Mw" points="[0, 0, 128, 0]$[-128, 0, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_yMCZlch8Ee-T_cC07e87Mw" id="(0.0,0.3333333333333333)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_yMCZlsh8Ee-T_cC07e87Mw" id="(1.0,0.3333333333333333)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_yMCZl8h8Ee-T_cC07e87Mw" type="4001" element="_yLver8h8Ee-T_cC07e87Mw" source="_yL5Pj8h8Ee-T_cC07e87Mw" target="_yL5PiMh8Ee-T_cC07e87Mw">
+          <children xmi:type="notation:Node" xmi:id="_yMCZm8h8Ee-T_cC07e87Mw" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yMCZnMh8Ee-T_cC07e87Mw" x="-2" y="12"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_yMCZnch8Ee-T_cC07e87Mw" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yMCZnsh8Ee-T_cC07e87Mw" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_yMCZn8h8Ee-T_cC07e87Mw" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yMCZoMh8Ee-T_cC07e87Mw" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_yMCZmMh8Ee-T_cC07e87Mw" jumpLinkStatus="Below" jumpLinkType="Tunnel"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_yMCZmch8Ee-T_cC07e87Mw" fontName="Segoe UI" fontHeight="8"/>
+          <styles xmi:type="notation:StringValueStyle" xmi:id="_2vxDQMh8Ee-T_cC07e87Mw" name="junctionPoints" stringValue="()"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_yMCZmsh8Ee-T_cC07e87Mw" points="[0, 0, -128, 5]$[115, 0, -13, 5]$[115, -5, -13, 0]$[128, -5, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_yMCZoch8Ee-T_cC07e87Mw" id="(1.0,0.6666666666666666)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_yMCZosh8Ee-T_cC07e87Mw" id="(0.0,0.6666666666666666)"/>
+        </edges>
+      </data>
+    </ownedAnnotationEntries>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_yL5PcMh8Ee-T_cC07e87Mw" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_yL5Pcch8Ee-T_cC07e87Mw"/>
+    </ownedAnnotationEntries>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_yLvedch8Ee-T_cC07e87Mw" name="Windows RDP Server Security Patch Feb 2020" tooltipText="Windows RDP Server Security Patch Feb 2020" width="-1" height="-1">
+      <target xmi:type="TRADES:Control" href="scenariob2.trades#//@controlOwner/@internals.0"/>
+      <semanticElements xmi:type="TRADES:Control" href="scenariob2.trades#//@controlOwner/@internals.0"/>
+      <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_yLvedsh8Ee-T_cC07e87Mw" labelSize="12" showIcon="false" workspacePath="/TRADES.design/Images/controlImage.svg">
+        <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@nodeMappings[name='ControlNode']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@nodeMappings[name='ControlNode']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_yLveeMh8Ee-T_cC07e87Mw" name="System X Scope[]" tooltipText="">
+      <target xmi:type="TRADES:Component" href="scenariob2.trades#//@components.0"/>
+      <semanticElements xmi:type="TRADES:Component" href="scenariob2.trades#//@components.0"/>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_yLveech8Ee-T_cC07e87Mw" labelSize="12" showIcon="false" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="GradientTopToBottom" backgroundColor="245,245,245" foregroundColor="245,245,245">
+        <labelFormat>bold</labelFormat>
+        <labelFormat>underline</labelFormat>
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD']"/>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_yLvee8h8Ee-T_cC07e87Mw" name="VADs">
+        <target xmi:type="TRADES:Component" href="scenariob2.trades#//@components.0"/>
+        <semanticElements xmi:type="TRADES:Component" href="scenariob2.trades#//@components.0"/>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_yLvefMh8Ee-T_cC07e87Mw" labelSize="12" showIcon="false" labelColor="246,139,139" borderSize="1" borderSizeComputationExpression="1" borderColor="246,139,139" borderLineStyle="dash">
+          <labelFormat>italic</labelFormat>
+          <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD']/@subContainerMappings[name='Vulnerable%20Assets']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD']/@subContainerMappings[name='Vulnerable%20Assets']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_yLvefsh8Ee-T_cC07e87Mw" name="Application X Server[]" tooltipText="" outgoingEdges="_yLveqsh8Ee-T_cC07e87Mw" incomingEdges="_yLver8h8Ee-T_cC07e87Mw">
+        <target xmi:type="TRADES:Component" href="scenariob2.trades#//@components.0/@components.0"/>
+        <semanticElements xmi:type="TRADES:Component" href="scenariob2.trades#//@components.0/@components.0"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_yLvef8h8Ee-T_cC07e87Mw" labelSize="12" showIcon="false" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="GradientTopToBottom" backgroundColor="245,245,245" foregroundColor="245,245,245">
+          <labelFormat>bold</labelFormat>
+          <labelFormat>underline</labelFormat>
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD']"/>
+        <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_yLvehMh8Ee-T_cC07e87Mw" name="VADs">
+          <target xmi:type="TRADES:Component" href="scenariob2.trades#//@components.0/@components.0"/>
+          <semanticElements xmi:type="TRADES:Component" href="scenariob2.trades#//@components.0/@components.0"/>
+          <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_yLvehch8Ee-T_cC07e87Mw" labelSize="12" showIcon="false" labelColor="246,139,139" borderSize="1" borderSizeComputationExpression="1" borderColor="246,139,139" borderLineStyle="dash">
+            <labelFormat>italic</labelFormat>
+            <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD']/@subContainerMappings[name='Vulnerable%20Assets']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD']/@subContainerMappings[name='Vulnerable%20Assets']"/>
+        </ownedDiagramElements>
+        <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_yLveh8h8Ee-T_cC07e87Mw" name="Operating System[cpe:2.3:o:microsoft:windows_server_2019;Windows Server;Server]" tooltipText="VADs: Remote Code Execution via RDP Server 2020">
+          <target xmi:type="TRADES:Component" href="scenariob2.trades#//@components.0/@components.0/@components.0"/>
+          <semanticElements xmi:type="TRADES:Component" href="scenariob2.trades#//@components.0/@components.0/@components.0"/>
+          <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_yLveiMh8Ee-T_cC07e87Mw" labelSize="12" showIcon="false" labelColor="239,41,41" borderSize="1" borderSizeComputationExpression="1" borderColor="156,12,12" foregroundColor="245,245,245">
+            <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD']/@conditionnalStyles.1/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD']"/>
+          <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_yLvejch8Ee-T_cC07e87Mw" name="VADs">
+            <target xmi:type="TRADES:Component" href="scenariob2.trades#//@components.0/@components.0/@components.0"/>
+            <semanticElements xmi:type="TRADES:Component" href="scenariob2.trades#//@components.0/@components.0/@components.0"/>
+            <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_yLvejsh8Ee-T_cC07e87Mw" labelSize="12" showIcon="false" labelColor="246,139,139" borderSize="1" borderSizeComputationExpression="1" borderColor="246,139,139" borderLineStyle="dash">
+              <labelFormat>italic</labelFormat>
+              <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD']/@subContainerMappings[name='Vulnerable%20Assets']/@style"/>
+            </ownedStyle>
+            <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD']/@subContainerMappings[name='Vulnerable%20Assets']"/>
+            <ownedElements xmi:type="diagram:DNodeListElement" uid="_yLvekMh8Ee-T_cC07e87Mw" name="Remote Code Execution via RDP Server 2020 [ CVE-2020-0655 (Remote Desktop Services Remote Code Execution Vulnerability)]">
+              <target xmi:type="TRADES:VulnerableAsset" href="scenariob2.trades#//@vulnerableasset.1"/>
+              <semanticElements xmi:type="TRADES:VulnerableAsset" href="scenariob2.trades#//@vulnerableasset.1"/>
+              <ownedStyle xmi:type="diagram:Square" uid="_yLvekch8Ee-T_cC07e87Mw" labelSize="12" labelColor="246,139,139" borderSize="1" borderSizeComputationExpression="1" borderLineStyle="dash_dot" labelPosition="node" color="246,139,139">
+                <labelFormat>italic</labelFormat>
+                <description xmi:type="style:SquareDescription" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD']/@subContainerMappings[name='Vulnerable%20Assets']/@subNodeMappings[name='VulnerableAssetDefinition']/@style"/>
+              </ownedStyle>
+              <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD']/@subContainerMappings[name='Vulnerable%20Assets']/@subNodeMappings[name='VulnerableAssetDefinition']"/>
+            </ownedElements>
+          </ownedDiagramElements>
+          <ownedDiagramElements xmi:type="diagram:DNode" uid="_yLveksh8Ee-T_cC07e87Mw" name="Windows RDP Server Security Patch August 2019" tooltipText="Windows RDP Server Security Patch August 2019" width="-1" height="-1">
+            <target xmi:type="TRADES:Control" href="scenariob2.trades#//@components.0/@components.0/@components.0/@controlOwner/@internals.0"/>
+            <semanticElements xmi:type="TRADES:Control" href="scenariob2.trades#//@components.0/@components.0/@components.0/@controlOwner/@internals.0"/>
+            <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_yLvek8h8Ee-T_cC07e87Mw" labelSize="12" showIcon="false" workspacePath="/TRADES.design/Images/controlImage.svg">
+              <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@nodeMappings[name='ControlNode']/@style"/>
+            </ownedStyle>
+            <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@nodeMappings[name='ControlNode']"/>
+          </ownedDiagramElements>
+        </ownedDiagramElements>
+        <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_yLveish8Ee-T_cC07e87Mw" name="Internally Developed Software X[Internally developed application]" tooltipText="">
+          <target xmi:type="TRADES:Component" href="scenariob2.trades#//@components.0/@components.0/@components.1"/>
+          <semanticElements xmi:type="TRADES:Component" href="scenariob2.trades#//@components.0/@components.0/@components.1"/>
+          <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_yLvei8h8Ee-T_cC07e87Mw" labelSize="12" showIcon="false" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="GradientTopToBottom" backgroundColor="245,245,245" foregroundColor="245,245,245">
+            <labelFormat>bold</labelFormat>
+            <labelFormat>underline</labelFormat>
+            <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD']"/>
+          <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_yLvelch8Ee-T_cC07e87Mw" name="VADs">
+            <target xmi:type="TRADES:Component" href="scenariob2.trades#//@components.0/@components.0/@components.1"/>
+            <semanticElements xmi:type="TRADES:Component" href="scenariob2.trades#//@components.0/@components.0/@components.1"/>
+            <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_yLvelsh8Ee-T_cC07e87Mw" labelSize="12" showIcon="false" labelColor="246,139,139" borderSize="1" borderSizeComputationExpression="1" borderColor="246,139,139" borderLineStyle="dash">
+              <labelFormat>italic</labelFormat>
+              <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD']/@subContainerMappings[name='Vulnerable%20Assets']/@style"/>
+            </ownedStyle>
+            <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD']/@subContainerMappings[name='Vulnerable%20Assets']"/>
+          </ownedDiagramElements>
+        </ownedDiagramElements>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_yLvegch8Ee-T_cC07e87Mw" name="Application X Client[]" tooltipText="" outgoingEdges="_yLver8h8Ee-T_cC07e87Mw" incomingEdges="_yLveqsh8Ee-T_cC07e87Mw">
+        <target xmi:type="TRADES:Component" href="scenariob2.trades#//@components.0/@components.1"/>
+        <semanticElements xmi:type="TRADES:Component" href="scenariob2.trades#//@components.0/@components.1"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_yLvegsh8Ee-T_cC07e87Mw" labelSize="12" showIcon="false" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="GradientTopToBottom" backgroundColor="245,245,245" foregroundColor="245,245,245">
+          <labelFormat>bold</labelFormat>
+          <labelFormat>underline</labelFormat>
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD']"/>
+        <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_yLvemMh8Ee-T_cC07e87Mw" name="VADs">
+          <target xmi:type="TRADES:Component" href="scenariob2.trades#//@components.0/@components.1"/>
+          <semanticElements xmi:type="TRADES:Component" href="scenariob2.trades#//@components.0/@components.1"/>
+          <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_yLvemch8Ee-T_cC07e87Mw" labelSize="12" showIcon="false" labelColor="246,139,139" borderSize="1" borderSizeComputationExpression="1" borderColor="246,139,139" borderLineStyle="dash">
+            <labelFormat>italic</labelFormat>
+            <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD']/@subContainerMappings[name='Vulnerable%20Assets']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD']/@subContainerMappings[name='Vulnerable%20Assets']"/>
+        </ownedDiagramElements>
+        <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_yLvem8h8Ee-T_cC07e87Mw" name="Windows 10[cpe:2.3:o:microsoft:windows_10_1507]" tooltipText="">
+          <target xmi:type="TRADES:Component" href="scenariob2.trades#//@components.0/@components.1/@components.0"/>
+          <semanticElements xmi:type="TRADES:Component" href="scenariob2.trades#//@components.0/@components.1/@components.0"/>
+          <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_yLvenMh8Ee-T_cC07e87Mw" labelSize="12" showIcon="false" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="GradientTopToBottom" backgroundColor="245,245,245" foregroundColor="245,245,245">
+            <labelFormat>bold</labelFormat>
+            <labelFormat>underline</labelFormat>
+            <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD']"/>
+          <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_yLveoch8Ee-T_cC07e87Mw" name="VADs">
+            <target xmi:type="TRADES:Component" href="scenariob2.trades#//@components.0/@components.1/@components.0"/>
+            <semanticElements xmi:type="TRADES:Component" href="scenariob2.trades#//@components.0/@components.1/@components.0"/>
+            <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_yLveosh8Ee-T_cC07e87Mw" labelSize="12" showIcon="false" labelColor="246,139,139" borderSize="1" borderSizeComputationExpression="1" borderColor="246,139,139" borderLineStyle="dash">
+              <labelFormat>italic</labelFormat>
+              <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD']/@subContainerMappings[name='Vulnerable%20Assets']/@style"/>
+            </ownedStyle>
+            <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD']/@subContainerMappings[name='Vulnerable%20Assets']"/>
+          </ownedDiagramElements>
+          <ownedDiagramElements xmi:type="diagram:DNode" uid="_yLvepMh8Ee-T_cC07e87Mw" name="Disable RDS" tooltipText="Disable RDS" width="-1" height="-1">
+            <target xmi:type="TRADES:Control" href="scenariob2.trades#//@components.0/@components.1/@components.0/@controlOwner/@internals.0"/>
+            <semanticElements xmi:type="TRADES:Control" href="scenariob2.trades#//@components.0/@components.1/@components.0/@controlOwner/@internals.0"/>
+            <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_yLvepch8Ee-T_cC07e87Mw" labelSize="12" showIcon="false" workspacePath="/TRADES.design/Images/controlImage.svg">
+              <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@nodeMappings[name='ControlNode']/@style"/>
+            </ownedStyle>
+            <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@nodeMappings[name='ControlNode']"/>
+          </ownedDiagramElements>
+        </ownedDiagramElements>
+        <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_yLvensh8Ee-T_cC07e87Mw" name="X Client Software[Internally developed application]" tooltipText="">
+          <target xmi:type="TRADES:Component" href="scenariob2.trades#//@components.0/@components.1/@components.1"/>
+          <semanticElements xmi:type="TRADES:Component" href="scenariob2.trades#//@components.0/@components.1/@components.1"/>
+          <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_yLven8h8Ee-T_cC07e87Mw" labelSize="12" showIcon="false" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="GradientTopToBottom" backgroundColor="245,245,245" foregroundColor="245,245,245">
+            <labelFormat>bold</labelFormat>
+            <labelFormat>underline</labelFormat>
+            <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD']"/>
+          <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_yLvep8h8Ee-T_cC07e87Mw" name="VADs">
+            <target xmi:type="TRADES:Component" href="scenariob2.trades#//@components.0/@components.1/@components.1"/>
+            <semanticElements xmi:type="TRADES:Component" href="scenariob2.trades#//@components.0/@components.1/@components.1"/>
+            <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_yLveqMh8Ee-T_cC07e87Mw" labelSize="12" showIcon="false" labelColor="246,139,139" borderSize="1" borderSizeComputationExpression="1" borderColor="246,139,139" borderLineStyle="dash">
+              <labelFormat>italic</labelFormat>
+              <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD']/@subContainerMappings[name='Vulnerable%20Assets']/@style"/>
+            </ownedStyle>
+            <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@containerMappings[name='ComponentPackage_TD']/@subContainerMappings[name='Vulnerable%20Assets']"/>
+          </ownedDiagramElements>
+        </ownedDiagramElements>
+      </ownedDiagramElements>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_yLveqsh8Ee-T_cC07e87Mw" name="Server Reply" sourceNode="_yLvefsh8Ee-T_cC07e87Mw" targetNode="_yLvegch8Ee-T_cC07e87Mw">
+      <target xmi:type="TRADES:AffectRelation" href="scenariob2.trades#//@components.0/@components.0/@affectRelations.0"/>
+      <semanticElements xmi:type="TRADES:AffectRelation" href="scenariob2.trades#//@components.0/@components.0/@affectRelations.0"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_yLveq8h8Ee-T_cC07e87Mw" targetArrow="InputClosedArrow" size="3" strokeColor="0,0,0">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@edgeMappings[name='Affect']/@conditionnalStyles.0/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_yLverMh8Ee-T_cC07e87Mw" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@edgeMappings[name='Affect']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_yLver8h8Ee-T_cC07e87Mw" name="User Request" sourceNode="_yLvegch8Ee-T_cC07e87Mw" targetNode="_yLvefsh8Ee-T_cC07e87Mw">
+      <target xmi:type="TRADES:AffectRelation" href="scenariob2.trades#//@components.0/@components.1/@affectRelations.0"/>
+      <semanticElements xmi:type="TRADES:AffectRelation" href="scenariob2.trades#//@components.0/@components.1/@affectRelations.0"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_yLvesMh8Ee-T_cC07e87Mw" targetArrow="InputClosedArrow" size="3" strokeColor="0,0,0">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@edgeMappings[name='Affect']/@conditionnalStyles.0/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_yLvesch8Ee-T_cC07e87Mw" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer/@edgeMappings[name='Affect']"/>
+    </ownedDiagramElements>
+    <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_yLqmDMh8Ee-T_cC07e87Mw"/>
+    <activatedLayers xmi:type="description_1:Layer" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='TRADES%20Vulnerability%20diagram']/@defaultLayer"/>
+    <target xmi:type="TRADES:Analysis" href="scenariob2.trades#/"/>
+  </diagram:DSemanticDiagram>
+  <table:DTable uid="_yMCZo8h8Ee-T_cC07e87Mw">
+    <target xmi:type="TRADES:Analysis" href="scenariob2.trades#/"/>
+    <lines xmi:type="table:DLine" uid="_yMCZpMh8Ee-T_cC07e87Mw" label=" Low [1]">
+      <target xmi:type="TRADES:ImpactScore" href="scenariob2.trades#//@scoreSystem/@impactScores.0"/>
+      <semanticElements xmi:type="TRADES:ImpactScore" href="scenariob2.trades#//@scoreSystem/@impactScores.0"/>
+      <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='RiskManagementSummaryTable']/@ownedLineMappings[name='ImpactRow_RMS']"/>
+      <cells xmi:type="table:DCell" uid="_yMCZsMh8Ee-T_cC07e87Mw" label="[]" column="_yMCZqsh8Ee-T_cC07e87Mw">
+        <target xmi:type="TRADES:ImpactConfiguration" href="scenariob2.trades#//@scoreSystem/@impactScores.0/@configurations.0"/>
+        <currentStyle xmi:type="table:DCellStyle" uid="_yMCZsch8Ee-T_cC07e87Mw" labelSize="10" defaultBackgroundStyle="true" backgroundColor="170,170,170">
+          <foregroundStyleOrigin xmi:type="description_2:IntersectionMapping" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='RiskManagementSummaryTable']/@intersection.0"/>
+          <backgroundStyleOrigin xmi:type="description_2:IntersectionMapping" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='RiskManagementSummaryTable']/@intersection.0"/>
+        </currentStyle>
+        <intersectionMapping xmi:type="description_2:IntersectionMapping" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='RiskManagementSummaryTable']/@intersection.0"/>
+      </cells>
+      <cells xmi:type="table:DCell" uid="_yMMKYMh8Ee-T_cC07e87Mw" label="[]" column="_yMCZrMh8Ee-T_cC07e87Mw">
+        <target xmi:type="TRADES:ImpactConfiguration" href="scenariob2.trades#//@scoreSystem/@impactScores.0/@configurations.1"/>
+        <currentStyle xmi:type="table:DCellStyle" uid="_yMMKYch8Ee-T_cC07e87Mw" labelSize="10" defaultBackgroundStyle="true" backgroundColor="170,170,170">
+          <foregroundStyleOrigin xmi:type="description_2:IntersectionMapping" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='RiskManagementSummaryTable']/@intersection.0"/>
+          <backgroundStyleOrigin xmi:type="description_2:IntersectionMapping" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='RiskManagementSummaryTable']/@intersection.0"/>
+        </currentStyle>
+        <intersectionMapping xmi:type="description_2:IntersectionMapping" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='RiskManagementSummaryTable']/@intersection.0"/>
+      </cells>
+      <cells xmi:type="table:DCell" uid="_yMMKYsh8Ee-T_cC07e87Mw" label="[]" column="_yMCZrsh8Ee-T_cC07e87Mw">
+        <target xmi:type="TRADES:ImpactConfiguration" href="scenariob2.trades#//@scoreSystem/@impactScores.0/@configurations.2"/>
+        <currentStyle xmi:type="table:DCellStyle" uid="_yMMKY8h8Ee-T_cC07e87Mw" labelSize="10" defaultBackgroundStyle="true" backgroundColor="170,170,170">
+          <foregroundStyleOrigin xmi:type="description_2:IntersectionMapping" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='RiskManagementSummaryTable']/@intersection.0"/>
+          <backgroundStyleOrigin xmi:type="description_2:IntersectionMapping" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='RiskManagementSummaryTable']/@intersection.0"/>
+        </currentStyle>
+        <intersectionMapping xmi:type="description_2:IntersectionMapping" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='RiskManagementSummaryTable']/@intersection.0"/>
+      </cells>
+      <currentStyle xmi:type="table:DTableElementStyle" uid="_yMCZpch8Ee-T_cC07e87Mw" labelSize="15" defaultForegroundStyle="true"/>
+    </lines>
+    <lines xmi:type="table:DLine" uid="_yMCZpsh8Ee-T_cC07e87Mw" label=" Medium [2]">
+      <target xmi:type="TRADES:ImpactScore" href="scenariob2.trades#//@scoreSystem/@impactScores.1"/>
+      <semanticElements xmi:type="TRADES:ImpactScore" href="scenariob2.trades#//@scoreSystem/@impactScores.1"/>
+      <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='RiskManagementSummaryTable']/@ownedLineMappings[name='ImpactRow_RMS']"/>
+      <cells xmi:type="table:DCell" uid="_yMMKZMh8Ee-T_cC07e87Mw" label="[]" column="_yMCZqsh8Ee-T_cC07e87Mw">
+        <target xmi:type="TRADES:ImpactConfiguration" href="scenariob2.trades#//@scoreSystem/@impactScores.1/@configurations.0"/>
+        <currentStyle xmi:type="table:DCellStyle" uid="_yMMxcMh8Ee-T_cC07e87Mw" labelSize="10" defaultBackgroundStyle="true" backgroundColor="170,170,170">
+          <foregroundStyleOrigin xmi:type="description_2:IntersectionMapping" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='RiskManagementSummaryTable']/@intersection.0"/>
+          <backgroundStyleOrigin xmi:type="description_2:IntersectionMapping" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='RiskManagementSummaryTable']/@intersection.0"/>
+        </currentStyle>
+        <intersectionMapping xmi:type="description_2:IntersectionMapping" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='RiskManagementSummaryTable']/@intersection.0"/>
+      </cells>
+      <cells xmi:type="table:DCell" uid="_yMMxcch8Ee-T_cC07e87Mw" label="[]" column="_yMCZrMh8Ee-T_cC07e87Mw">
+        <target xmi:type="TRADES:ImpactConfiguration" href="scenariob2.trades#//@scoreSystem/@impactScores.1/@configurations.1"/>
+        <currentStyle xmi:type="table:DCellStyle" uid="_yMMxcsh8Ee-T_cC07e87Mw" labelSize="10" defaultBackgroundStyle="true" backgroundColor="170,170,170">
+          <foregroundStyleOrigin xmi:type="description_2:IntersectionMapping" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='RiskManagementSummaryTable']/@intersection.0"/>
+          <backgroundStyleOrigin xmi:type="description_2:IntersectionMapping" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='RiskManagementSummaryTable']/@intersection.0"/>
+        </currentStyle>
+        <intersectionMapping xmi:type="description_2:IntersectionMapping" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='RiskManagementSummaryTable']/@intersection.0"/>
+      </cells>
+      <cells xmi:type="table:DCell" uid="_yMMxc8h8Ee-T_cC07e87Mw" label="[]" column="_yMCZrsh8Ee-T_cC07e87Mw">
+        <target xmi:type="TRADES:ImpactConfiguration" href="scenariob2.trades#//@scoreSystem/@impactScores.1/@configurations.2"/>
+        <currentStyle xmi:type="table:DCellStyle" uid="_yMMxdMh8Ee-T_cC07e87Mw" labelSize="10" defaultBackgroundStyle="true" backgroundColor="170,170,170">
+          <foregroundStyleOrigin xmi:type="description_2:IntersectionMapping" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='RiskManagementSummaryTable']/@intersection.0"/>
+          <backgroundStyleOrigin xmi:type="description_2:IntersectionMapping" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='RiskManagementSummaryTable']/@intersection.0"/>
+        </currentStyle>
+        <intersectionMapping xmi:type="description_2:IntersectionMapping" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='RiskManagementSummaryTable']/@intersection.0"/>
+      </cells>
+      <currentStyle xmi:type="table:DTableElementStyle" uid="_yMCZp8h8Ee-T_cC07e87Mw" labelSize="15" defaultForegroundStyle="true"/>
+    </lines>
+    <lines xmi:type="table:DLine" uid="_yMCZqMh8Ee-T_cC07e87Mw" label=" High [3]">
+      <target xmi:type="TRADES:ImpactScore" href="scenariob2.trades#//@scoreSystem/@impactScores.2"/>
+      <semanticElements xmi:type="TRADES:ImpactScore" href="scenariob2.trades#//@scoreSystem/@impactScores.2"/>
+      <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='RiskManagementSummaryTable']/@ownedLineMappings[name='ImpactRow_RMS']"/>
+      <cells xmi:type="table:DCell" uid="_yMMxdch8Ee-T_cC07e87Mw" label="[]" column="_yMCZqsh8Ee-T_cC07e87Mw">
+        <target xmi:type="TRADES:ImpactConfiguration" href="scenariob2.trades#//@scoreSystem/@impactScores.2/@configurations.0"/>
+        <currentStyle xmi:type="table:DCellStyle" uid="_yMMxdsh8Ee-T_cC07e87Mw" labelSize="10" defaultBackgroundStyle="true" backgroundColor="170,170,170">
+          <foregroundStyleOrigin xmi:type="description_2:IntersectionMapping" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='RiskManagementSummaryTable']/@intersection.0"/>
+          <backgroundStyleOrigin xmi:type="description_2:IntersectionMapping" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='RiskManagementSummaryTable']/@intersection.0"/>
+        </currentStyle>
+        <intersectionMapping xmi:type="description_2:IntersectionMapping" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='RiskManagementSummaryTable']/@intersection.0"/>
+      </cells>
+      <cells xmi:type="table:DCell" uid="_yMMxd8h8Ee-T_cC07e87Mw" label="[]" column="_yMCZrMh8Ee-T_cC07e87Mw">
+        <target xmi:type="TRADES:ImpactConfiguration" href="scenariob2.trades#//@scoreSystem/@impactScores.2/@configurations.1"/>
+        <currentStyle xmi:type="table:DCellStyle" uid="_yMMxeMh8Ee-T_cC07e87Mw" labelSize="10" defaultBackgroundStyle="true" backgroundColor="170,170,170">
+          <foregroundStyleOrigin xmi:type="description_2:IntersectionMapping" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='RiskManagementSummaryTable']/@intersection.0"/>
+          <backgroundStyleOrigin xmi:type="description_2:IntersectionMapping" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='RiskManagementSummaryTable']/@intersection.0"/>
+        </currentStyle>
+        <intersectionMapping xmi:type="description_2:IntersectionMapping" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='RiskManagementSummaryTable']/@intersection.0"/>
+      </cells>
+      <cells xmi:type="table:DCell" uid="_yMMxech8Ee-T_cC07e87Mw" label="[]" column="_yMCZrsh8Ee-T_cC07e87Mw">
+        <target xmi:type="TRADES:ImpactConfiguration" href="scenariob2.trades#//@scoreSystem/@impactScores.2/@configurations.2"/>
+        <currentStyle xmi:type="table:DCellStyle" uid="_yMMxesh8Ee-T_cC07e87Mw" labelSize="10" defaultBackgroundStyle="true" backgroundColor="170,170,170">
+          <foregroundStyleOrigin xmi:type="description_2:IntersectionMapping" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='RiskManagementSummaryTable']/@intersection.0"/>
+          <backgroundStyleOrigin xmi:type="description_2:IntersectionMapping" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='RiskManagementSummaryTable']/@intersection.0"/>
+        </currentStyle>
+        <intersectionMapping xmi:type="description_2:IntersectionMapping" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='RiskManagementSummaryTable']/@intersection.0"/>
+      </cells>
+      <currentStyle xmi:type="table:DTableElementStyle" uid="_yMCZqch8Ee-T_cC07e87Mw" labelSize="15" defaultForegroundStyle="true"/>
+    </lines>
+    <columns xmi:type="table:DTargetColumn" uid="_yMCZqsh8Ee-T_cC07e87Mw" label=" Low [1]" cells="_yMCZsMh8Ee-T_cC07e87Mw _yMMKZMh8Ee-T_cC07e87Mw _yMMxdch8Ee-T_cC07e87Mw">
+      <target xmi:type="TRADES:DifficultyScore" href="scenariob2.trades#//@scoreSystem/@difficultyScores.0"/>
+      <semanticElements xmi:type="TRADES:DifficultyScore" href="scenariob2.trades#//@scoreSystem/@difficultyScores.0"/>
+      <originMapping xmi:type="description_2:ElementColumnMapping" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='RiskManagementSummaryTable']/@ownedColumnMappings.0"/>
+    </columns>
+    <columns xmi:type="table:DTargetColumn" uid="_yMCZrMh8Ee-T_cC07e87Mw" label=" Medium [2]" cells="_yMMKYMh8Ee-T_cC07e87Mw _yMMxcch8Ee-T_cC07e87Mw _yMMxd8h8Ee-T_cC07e87Mw">
+      <target xmi:type="TRADES:DifficultyScore" href="scenariob2.trades#//@scoreSystem/@difficultyScores.1"/>
+      <semanticElements xmi:type="TRADES:DifficultyScore" href="scenariob2.trades#//@scoreSystem/@difficultyScores.1"/>
+      <originMapping xmi:type="description_2:ElementColumnMapping" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='RiskManagementSummaryTable']/@ownedColumnMappings.0"/>
+    </columns>
+    <columns xmi:type="table:DTargetColumn" uid="_yMCZrsh8Ee-T_cC07e87Mw" label=" High [3]" cells="_yMMKYsh8Ee-T_cC07e87Mw _yMMxc8h8Ee-T_cC07e87Mw _yMMxech8Ee-T_cC07e87Mw">
+      <target xmi:type="TRADES:DifficultyScore" href="scenariob2.trades#//@scoreSystem/@difficultyScores.2"/>
+      <semanticElements xmi:type="TRADES:DifficultyScore" href="scenariob2.trades#//@scoreSystem/@difficultyScores.2"/>
+      <originMapping xmi:type="description_2:ElementColumnMapping" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='RiskManagementSummaryTable']/@ownedColumnMappings.0"/>
+    </columns>
+    <description xmi:type="description_2:CrossTableDescription" href="platform:/plugin/TRADES.design/description/TRADES.odesign#//@ownedViewpoints[name='TRADESview']/@ownedRepresentations[name='RiskManagementSummaryTable']"/>
+  </table:DTable>
+</xmi:XMI>
